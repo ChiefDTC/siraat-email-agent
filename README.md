@@ -26,6 +26,8 @@ Elke sessie van Claude begint met het lezen van deze repo en eindigt met het bij
 | --- | --- |
 | Klaviyo account | TdtTzz |
 | Figma design system | https://www.figma.com/design/K8qNiZ7OEThlRrUXH7QImi |
+| Figma Welcome Flow v2 | https://www.figma.com/design/74S1Tjr8BkSgQfm6vLnrLo |
+| Oude welcome flow (live) | https://www.klaviyo.com/flow/SiaNLu/edit |
 | Review flow (live sinds 6 okt 2026) | https://www.klaviyo.com/flow/XzHrez/edit |
 | Review template (bron) | https://www.klaviyo.com/email-editor/S2tykT/edit |
 | Oude review flow (uit op 12 okt 2026) | https://www.klaviyo.com/flow/Vixr6X/edit |

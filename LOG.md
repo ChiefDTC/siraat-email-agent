@@ -16,6 +16,10 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - Vondst: de Homestead Flow Doc is een leeg sjabloon. Hun flow-copy is nooit gedocumenteerd; de enige bron is Klaviyo zelf. De Copy Doc bevat wel alle campagnes van september en oktober.
 - Vondst: de welcome-pop-up geeft een giveaway-lot, geen kortingscode. De welkomstreeks mag dus niet openen met een aanbod.
 
+- Welcome Flow v2 ontworpen en in een nieuw Figma-bestand gezet: https://www.figma.com/design/74S1Tjr8BkSgQfm6vLnrLo (pagina 01 Flow: schema met trigger, drie splits, wachttijden; pagina 02 Emails: E0 tot en met E6 met echte foto's, reviews en producten). Spec en volledige copy in klaviyo/flows/01-welcome-v2.md. Twee onderzoeken erbij in research/.
+- Diagnose oude welcome: 8 mails in 10 dagen, allemaal beeldslices, mail 1 na 5 minuten met code HI10 die de pop-up niet meer belooft; 2,7 procent uitschrijf op mail 1, 0,16 procent spamklachten. Afzender "Benjamin" terwijl de brand guidelines Floris noemen.
+- Besluiten v2: 5 mails in 7 dagen (6 voor klikkers), geen code, aanbodblok wisselbaar, tak voor bestaande klanten, A/B op onderwerp mail 1, oprichter = Floris (te bevestigen).
+
 **Geleerd**
 - Delivered Shipment (Shopify) is de betrouwbare bezorgtrigger: 3.360 in augustus, 2.880 in september, gelijk aan het ordervolume. Postflows-variant vuurt 2,5 keer zo vaak.
 - Gorgias-tickets: 3.500 per maand, 2.300 unieke klanten. Een filter "nooit een ticket" sluit bijna iedereen uit. Alleen tickets ná bezorging tellen.
