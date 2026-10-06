@@ -12,6 +12,10 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - Oude reviewflow Vixr6X: template was om 17:46 vervangen door een conceptversie met placeholder-links. Siraat heeft de juiste template teruggezet (gecontroleerd in de HTML). E-mailstap gaat op 12 oktober op Draft; herinnering ingepland.
 - Dagelijks Slack-rapport: eerste editie handmatig gepost in #claude-mail. Routine aangemaakt (08:52 Amsterdam) maar zonder connectors; moet opnieuw in de Routines-UI.
 
+- Content-index gebouwd (CONTENT-INDEX.md): Drive-mappen, Notion-databases en pagina's, Homestead-docs, Figma en MCP-bronnen in kaart. Officiële logo's in `brand/logo/`. Brand Guidelines v1.4 gelezen en samengevat in het playbook (claims, pijlers, voice, aanbod).
+- Vondst: de Homestead Flow Doc is een leeg sjabloon. Hun flow-copy is nooit gedocumenteerd; de enige bron is Klaviyo zelf. De Copy Doc bevat wel alle campagnes van september en oktober.
+- Vondst: de welcome-pop-up geeft een giveaway-lot, geen kortingscode. De welkomstreeks mag dus niet openen met een aanbod.
+
 **Geleerd**
 - Delivered Shipment (Shopify) is de betrouwbare bezorgtrigger: 3.360 in augustus, 2.880 in september, gelijk aan het ordervolume. Postflows-variant vuurt 2,5 keer zo vaak.
 - Gorgias-tickets: 3.500 per maand, 2.300 unieke klanten. Een filter "nooit een ticket" sluit bijna iedereen uit. Alleen tickets ná bezorging tellen.

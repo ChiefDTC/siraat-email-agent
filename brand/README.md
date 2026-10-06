@@ -12,3 +12,9 @@ Officiële logobestanden van Siraat, aangeleverd 6 oktober 2026.
 | Siraat-MAINLOGO.pdf | Hoofdlogo | Referentie |
 
 Regels: in e-mail het witte logo op foto of donkere achtergrond, het zwarte op crème of wit. Nooit het logo door AI laten renderen; altijd deze bestanden. Overlay-logo op een hero: witte versie, 140px breed op 600px, 24px van de bovenrand.
+
+## Overige bestanden in brand/
+
+- Siraats_Kitchen_Brand_Guidelines_v1.4.pdf: de brand guidelines (Homestead, aug 2026, goedgekeurd door Floris). Samenvatting in PLAYBOOK.md.
+- homestead-2026-copy-doc.md: alle campagnecopy van Homestead voor september en oktober 2026 (export uit het Google Doc).
+- homestead-2026-flow-doc-template.md: het lege flow-sjabloon van Homestead, bewaard als bewijs dat de flow-copy nooit gedocumenteerd is.

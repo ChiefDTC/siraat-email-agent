@@ -4,12 +4,26 @@ Vaste regels. Alles hier is geleerd uit echte fouten of echte cijfers. Wijzig al
 
 ## 1. Merk en toon
 
+Bron: Brand Guidelines v1.4 (augustus 2026, goedgekeurd door Floris van der Heijden, kopie in `brand/`). Dit is leidend boven alles hieronder.
+
+- One-liner: "Cook without coatings. Cook without compromise." Positionering: voor gezondheidsbewuste thuiskoks die niet willen kiezen tussen niet-giftig en prestaties; puur titanium dat gecoate pannen overtreft, met levenslange garantie en 100 dagen proef.
+- Vier messaging-pijlers, per mail één, nooit alle vier: (1) Non-toxic, for real (koud publiek, welcome), (2) Pure titanium performance (bezwaren, cart/checkout, post-purchase), (3) Built for life (campagnes, vergelijkingen, retargeting), (4) Made for people who love to cook (recepten, community, UGC).
+- Goedgekeurde claims, letterlijk: "100% pure titanium", "Free from PFAS, BPA and toxins", "No PFAS, PFOA, or BPA", "No coatings", "Lifetime warranty", "100-day trial", "Free shipping on all orders", "100K+ happy customers", "Anti-microbial" (alleen snijplank), "3-ply" (alleen Pan Pro-lijn). Plus uit de oktober-brief: "Tested free from Light Labs", "PFAS-free titanium cooking surface".
+- Verboden: medische of ziekteclaims, "doctor recommended", aanvallen op concurrenten bij naam, vage superlatieven. Geen angst als hoofdtoon: bewijs eerst, dan vreugde.
+- Open punt: de brand guidelines zeggen "100% pure titanium", de nieuwste ad-briefs (oktober 2026) zeggen "zeg niet pure titanium, zeg titanium cooking surface, zero coatings". Tot Siraat beslist: in e-mail "titanium cooking surface, zero coatings" gebruiken, dat is in beide gevallen veilig.
+- Twee registers: campagnes LOUD (caps, emoji, echte countdowns, uitroeptekens, superlatieven die waar zijn), flows en productpagina's kalm (zinskapitalen, specificaties met middots, cijfers boven adjectieven, geen uitroeptekens). Reviewmails en educatie horen bij kalm.
+- Elke regel: echte cijfers, echte deadlines, echte compare-at-prijzen. Nooit een asterisk nodig.
+- Vuistregel: als een zin in de mail van elk willekeurig DTC-merk kan staan, scherp hem aan tot hij alleen van Siraat kan zijn.
+- Oprichtersverhaal (kort): Nederlandse oprichters, begonnen met titanium snijplanken, uitgegroeid tot een complete cookware-lijn, ruim 100.000 klanten in iets meer dan een jaar. Eén materiaal is het hele idee: puur titanium, geen coating die kan slijten. Klanten gooien hun oude pannen binnen een week weg.
+
 - Engels, Amerikaans publiek (US is de hoofdmarkt, INT-segment apart).
 - Toon: eerlijk, direct, warm. Geen hype, geen uitroeptekens-stapels, geen "Don't miss out".
 - Founder-notes (tekstmails van de oprichter) halen 1,3 procent klik tegenover 0,3 tot 0,6 procent voor beeldmails. Minstens één tekstmail per campagnereeks.
 - Nooit een gedachtestreepje (em dash) in teksten, ook niet in Nederlandse berichten aan Siraat. Komma of nieuwe zin.
 
 ## 2. Visuele stijl (design system in Figma)
+
+Let op: de brand guidelines (site) gebruiken Inter voor koppen en Terracotta #C75442 als merkrood, Ink #272727 voor knoppen. Siraat heeft voor e-mail gekozen voor TT Ramillas Light Italic als kopletter en brick #AC3B19. Dat is een bewuste afwijking voor e-mail; de rest van de site-canon (Ink, hairline #E4DED3, warm #F6F4F0) mag in e-mail gebruikt worden waar het past.
 
 - Achtergrond: wit buiten de mail, crème #F8F7F2 alleen op de 600px-kolom. Nooit crème over het hele scherm.
 - Kleuren: paper #FFFFFF, sand #ECE7DD (lijnen), ink #282828 (tekst), charcoal #2B2929, espresso #321E1D, brick #AC3B19 (knoppen, sterren, eyebrows), titanium #C9C6C0, grijs #727272 (bodytekst secundair), legal #9A948B.
@@ -43,6 +57,9 @@ Vaste regels. Alles hier is geleerd uit echte fouten of echte cijfers. Wijzig al
 
 ## 5. Segmentatie en filters (reviewflow als standaard)
 
+- Welcome-pop-up: opt-in geeft een lot in de giveaway "Win your order for free", geen kortingscode. De welkomstreeks kan dus niet openen met een aanbieding. Eerst verhaal en bewijs, aanbod later in de reeks (bron: oktober-brief aan Homestead).
+- Vaatwasstrips (Dishwashing Detergent Sheets) zijn het enige abonnementsproduct en het instapproduct. Ze komen als mystery gift mee. Eerst 10 dagen educatie, dan pas soft-sell met 20 procent op het abonnement; pak bevat 10 vellen, dus de refill-timing is kort.
+
 - Trigger voor "na bezorging": Shopify-metric Delivered Shipment (VcUF33). Vuurt één keer per zending en loopt gelijk met het aantal orders. Niet de Postflows- of segment-variant gebruiken.
 - Wachttijd reviewverzoek: 14 dagen na bezorging, 09:30 lokale tijd van de klant.
 - Instapfilters: één keer per klant, ooit; set-kopers in backorder uitsluiten op alle producttitels (titels wijzigen per actie, dus altijd de hele lijst); geen mail uit een overlappende flow in de laatste 30 dagen.
@@ -67,7 +84,15 @@ Vaste regels. Alles hier is geleerd uit echte fouten of echte cijfers. Wijzig al
 3. Dan de e-mailstap in de oude flow op Draft. Niet archiveren, de cijfers blijven nodig.
 4. Controleer na elke template-wissel in een live flow de HTML op de echte links (Trustpilot, your-experience) en op verouderde blokken. Op 6 oktober 2026 stond er een conceptversie met placeholder-links in de live flow.
 
-## 8. Werken met Claude (permissies)
+## 8. Producten en aanbod (bron: brand guidelines en Shopify)
+
+- Hero: 12-delige Cookware Set ("A complete PFAS-free kitchen in one decision"), de Q4-push. Nu in backorder, dus tijdelijk niet pushen en uitgesloten van reviewverzoeken.
+- Kernlijn: Titanium Hammered Pan Pro (Mini, Small, Standard, Large), Wok, Deep, Crepe, Roasting, Pizza Steel. Uitbreiding: snijplanken, schorten (Moss, Ember, Oak, Azure), molens, utensils.
+- Naamgeving: Title Case, materiaal eerst ("Titanium Hammered..."), maat als suffix. Nooit "Ti" of "SK".
+- Evergreen aanbod: 41 procent korting plus gratis mystery gift. Diepere kortingen zijn campagnemomenten. Oktober 2026: "4 gifts, up to 50 percent off". Bundel-eerst, gift-with-purchase boven blanco korting.
+- Garanties: levenslange garantie op cookware (in ads soms "75-year warranty"), 100 dagen proef vanaf bezorging, gratis verzending, 30 dagen gratis retour.
+
+## 9. Werken met Claude (permissies)
 
 - Cloud-sessies in "Auto"-modus blokkeren wijzigingen aan live flows, ook met mondeling akkoord. Voor bouwwerk aan live flows: gewone modus en één keer "Allow".
 - Klaviyo-API-key zit als credential in de omgeving (header Authorization: Klaviyo-API-Key, host a.klaviyo.com). Scopes: flows full, templates read, metrics read, segments read. Voor campagnes en profielen is een aparte key nodig.
