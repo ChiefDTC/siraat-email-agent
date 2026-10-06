@@ -118,7 +118,7 @@ Most nonstick pans are a thin layer of PTFE over aluminium. The layer starts bre
 
 Kop: What we did instead
 
-We skipped the coating. The Titanium Hammered Pan Pro has a pure titanium cooking surface. Titanium is the metal used for surgical implants because it does not react with the body, and it does not react with your food either.
+We skipped the coating. The Titanium Hammered Pan Pro has a pure titanium cooking surface. Titanium is the metal used for surgical implants because it does not react with the body, and it does not react with your food either. Under it sits an aluminium core for even heat and a stainless base for induction. Only the titanium touches your food.
 
 The hammered pattern is not decoration. Food touches less surface, so it releases with less oil. A thin oil film, medium heat, and the pan does the rest.
 
@@ -144,16 +144,16 @@ Hero (vierkant): gebakken ei in de pan, van bovenaf. Kop als afbeelding: "Five h
 Intro: These are the five questions we get most, in the order people ask them. Straight answers, including the one that needs a small adjustment on your side.
 
 1. Does food really not stick?
-Not like Teflon, and that is on purpose. Titanium needs two things: a preheat of about a minute on medium, and a thin film of oil for the first few weeks. Do that and eggs slide. Skip the preheat and they will stick, same as any uncoated pan. Our 2-minute video shows exactly how. [link naar instructievideo]
+Not like Teflon, and that is on purpose. There is no coating doing the work, so two habits do it instead. Preheat on medium for 2 to 3 minutes, then flick a few drops of water in: when they bead up and dance, add a thin film of oil. Give the food a moment before you flip; it releases on its own. Skip the preheat and it will stick, same as any uncoated pan. Our 2-minute video shows the water test. [link naar instructievideo]
 
 2. Which stoves does it work on?
-Gas, induction, electric, ceramic, and the oven up to 548°C / 1000°F. The handle is titanium too, so the whole pan can go in the oven.
+Gas, induction, electric and ceramic, thanks to the magnetic stainless base. Oven safe to 548°C / 1000°F.
 
 3. How do I clean it?
-Warm water, a sponge, 30 seconds. It is dishwasher safe, but it rarely needs it. No seasoning, no special soap, no rules about soaking.
+Let it cool, then warm water and a soft sponge. Thirty seconds on a normal day. Brown marks after a hot sear are heat patina, not damage: a baking soda paste for ten minutes takes them off. No steel wool.
 
-4. Can I use metal utensils?
-Yes. Titanium does not have a coating to protect. You may see a mark after a year of use. The pan cooks exactly the same.
+4. What is the pan actually made of?
+Three layers. A 0.5 mm pure titanium cooking surface, the only layer that touches your food. A 1 mm aluminium core for even heat. A 0.6 mm stainless base for induction. No coating anywhere. Metal utensils are fine; a mark on titanium is a mark, not a leak.
 
 5. What if it is not for me?
 You have 100 days at home to decide. If it is not the pan for you, send it back, free. After that, the lifetime warranty covers the pan itself.
@@ -169,9 +169,9 @@ Preview: Thomas threw out his old pans after a week. Three more stories inside.
 Hero (vierkant): flash-stijl foto, mensen aan het koken (flash-duo). Kop als afbeelding: "100,000+ kitchens later"
 
 Reviewblok, drie reviews (crème kaart, 5 sterren in brick, citaat in Instrument Serif Italic 22, naam in Inter 13):
-- "I threw out all my old pans after a week. Cleanup is 30 seconds." Thomas H., verified buyer
-- [review 2 uit Trustpilot-onderzoek, concreet over eieren of niet-plakken]
-- [review 3 uit Trustpilot-onderzoek, concreet over gezondheid of familie]
+- "I followed your directions, made scrambled eggs and they came out of the pan perfectly. I am getting rid of my non stick pans. I only need the new one." Marilyn B., verified buyer
+- "I don't want the forever chemicals. The real test was my egg the next morning. After a very light nudge, the egg released completely and slid around the pan." Michael G., verified buyer
+- "The eggs DO NOT STICK! The meat is seared perfectly on the outside and tender inside. No more scrubbing pan!" Jeanne K., verified buyer
 
 Regel onder de reviews: 4.8 out of 5 · 3,281 reviews · 100,000+ customers
 
@@ -197,6 +197,8 @@ Aanbodblok (wisselbaar blok, nu het oktober-aanbod):
 4 gifts with every order
 Free shipping protection · Mystery gift · Cooking e-book · Weekly draw for a $450 PFAS water purifier
 Up to 50% off, applied on the site. No code needed.
+(The mystery gift is a pack of our plastic-free dishwasher sheets: one sheet, one cycle, no plastic pod.)
+Prices are in USD and convert to your currency at checkout.
 
 Garantieblok (drie kolommen, iconen):
 100-day home trial · starts the day the box arrives
@@ -229,8 +231,7 @@ Floris
 
 ## Wat er nog ingevuld moet worden
 
-- Review 2 en 3 voor E4 (uit het Trustpilot-onderzoek).
-- Vijf vragen in E3 controleren tegen de Gorgias-top-12.
+- Garantiewoord: brand guidelines zeggen "lifetime warranty", Gorgias-macros "75-year warranty". E-mail gebruikt "lifetime warranty" tot Siraat beslist.
 - Naam van de oprichter bevestigen (Floris of Benjamin).
 - Link van de instructievideo: https://cdn.shopify.com/videos/c/o/v/a0f401a864224d35b1e30d8dc2b3617e.mp4 (uit de oktober-brief). In e-mail: afbeelding met play-knop die naar een pagina met de video linkt, niet de mp4 zelf.
 - Het aanbodblok in E5 is wisselbaar per maand.
