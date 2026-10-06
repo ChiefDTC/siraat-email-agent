@@ -1,0 +1,630 @@
+[
+  {
+    "campaign_id": "01M46KSJ2B38GJ2JW3B12KCQSY",
+    "name": "HS // Siraats Kitchen // October Email 3: Sale Midweek // 10.07.2026",
+    "channel": "email",
+    "status": "Draft",
+    "scheduled_at": null,
+    "planned_send_date": "2026-10-07",
+    "send_strategy": {
+      "method": "ab_test_campaign"
+    },
+    "created": "2026-10-05T18:04:09Z",
+    "updated": "2026-10-05T21:57:09Z",
+    "tags": [],
+    "audiences": {
+      "included": [
+        "ShPpDV",
+        "U5Ksvk",
+        "Uw8eZG",
+        "VJkN42"
+      ],
+      "excluded": [
+        "SLVWps",
+        "VSnBnJ",
+        "W3q7Zy",
+        "W4vNzF",
+        "XTpfNG"
+      ]
+    },
+    "subject": "Still live: 4 gifts + Up to 70% off ❗",
+    "preview": "PFAS-free cookware—now on sale",
+    "from": {
+      "email": "send@siraatskitchen.com",
+      "label": "SiraatsKitchen"
+    },
+    "template_id": "VudrUb",
+    "template_name": "Clone of QNA6kK",
+    "message_id": "01M46KSJ2MQ1X743VAYH8A6YQ8",
+    "variation": "A",
+    "blocks": [
+      {
+        "type": "image",
+        "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/df8e6110-195a-4faa-9b67-0a794a919447.jpeg",
+        "alt": "4 Free Gifts With Every Order Up to 70% Off Claim My 4 Gifts",
+        "width": 600,
+        "href": "https://siraatskitchen.com/collections/prime-sale"
+      },
+      {
+        "type": "image",
+        "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/aa19adc9-f5cd-42f7-9908-88a51803ccfe.jpeg",
+        "alt": "Non-toxic. No coatings. No learning curve. The cooking surface is pure titanium — lab-tested PFAS-free. Dishwasher safe, metal utensil safe, no seasoning required. Cook the way you already cook.",
+        "width": 600,
+        "href": "https://siraatskitchen.com/collections/prime-sale"
+      },
+      {
+        "type": "image",
+        "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/4eaaa43d-6c66-4e83-90fa-f1bbfd4e9330.gif",
+        "alt": "titanium surface",
+        "width": 600,
+        "href": "https://siraatskitchen.com/collections/prime-sale"
+      },
+      {
+        "type": "image",
+        "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/b84d0bea-a8f4-441b-b7af-bee9c1f48580.jpeg",
+        "alt": "Non-toxic. No coatings. No learning curve. The cooking surface is pure titanium — lab-tested PFAS-free. Dishwasher safe, metal utensil safe, no seasoning required. Cook the way you already cook.",
+        "width": 600,
+        "href": "https://siraatskitchen.com/collections/prime-sale"
+      },
+      {
+        "type": "image",
+        "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/44acd8bb-fc8c-4804-bc2c-c6c50001d783.jpeg",
+        "alt": "Claim My 4 Gifts",
+        "width": 600,
+        "href": "https://siraatskitchen.com/"
+      },
+      {
+        "type": "image",
+        "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/7c7cd551-3ea3-4688-9db7-70f83e35b81f.jpeg",
+        "alt": "Over $70 in guaranteed gift value Free Shipping Plastic-Free Home Ebook Mystery Gift Win a PFAS Water Purifyer",
+        "width": 600,
+        "href": "https://siraatskitchen.com/collections/prime-sale"
+      },
+      {
+        "type": "image",
+        "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/75cc61c9-368f-4e0a-805d-d6787da2826f.jpeg",
+        "alt": "Offer valid while supplies last.",
+        "width": 600,
+        "href": "https://siraatskitchen.com/collections/prime-sale"
+      },
+      {
+        "type": "footer",
+        "background": "#2B2929",
+        "note": "Image-based footer: logo 'Built for Life Non-Toxic Cookware' (link siraatskitchen.com), nav image links TITANIUM COOKWARE / BUNDLE & SETS / ACCESSORIES / ABOUT US, Facebook + Instagram icons on #2B2929, unsubscribe | manage preferences | web view, {{ organization.name }} | {{ organization.full_address }}"
+      }
+    ],
+    "variations": [
+      {
+        "variation": "B",
+        "message_id": "01M46KY42ZZ8SYR1Y4P27V7Q4J",
+        "subject": "Still live: 4 gifts + Up to 70% off ❗",
+        "preview": "PFAS-free cookware—now on sale",
+        "from": {
+          "email": "send@siraatskitchen.com",
+          "label": "SiraatsKitchen"
+        },
+        "template_id": "SRBJVe",
+        "template_name": "2026-10-05 14:07 HS // Siraats Kitchen // October Email 3: Sale Midweek // 10.07.2026 // B",
+        "blocks": [
+          {
+            "type": "image",
+            "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/098895dc-617d-4120-bd31-63a971440042.jpeg",
+            "alt": "4 Free Gifts With Every Order Up to 70% Off Shop the Sale",
+            "width": 600,
+            "href": "https://siraatskitchen.com/collections/prime-sale"
+          },
+          {
+            "type": "image",
+            "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/d18d05aa-93ac-4886-838c-9be8dd25a6b2.jpeg",
+            "alt": "Non-toxic. No coatings. No learning curve. The cooking surface is pure titanium — lab-tested PFAS-free. Dishwasher safe, metal utensil safe, no seasoning required. Cook the way you already cook.",
+            "width": 600,
+            "href": "https://siraatskitchen.com/collections/prime-sale"
+          },
+          {
+            "type": "image",
+            "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/4eaaa43d-6c66-4e83-90fa-f1bbfd4e9330.gif",
+            "alt": "titanium surface",
+            "width": 600,
+            "href": "https://siraatskitchen.com/collections/prime-sale"
+          },
+          {
+            "type": "image",
+            "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/13c3e9af-e235-4669-81cb-304a63995cb2.jpeg",
+            "alt": "Non-toxic. No coatings. No learning curve. The cooking surface is pure titanium — lab-tested PFAS-free. Dishwasher safe, metal utensil safe, no seasoning required. Cook the way you already cook.",
+            "width": 600,
+            "href": "https://siraatskitchen.com/collections/prime-sale"
+          },
+          {
+            "type": "image",
+            "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/34dadd40-9630-4fbb-8a9d-34d70d09f8a5.jpeg",
+            "alt": "Shop the Sale",
+            "width": 600,
+            "href": "https://siraatskitchen.com/collections/prime-sale"
+          },
+          {
+            "type": "image",
+            "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/f854ecf3-f60b-4a91-9048-a14504f8e6e7.jpeg",
+            "alt": "Over $70 in guaranteed gift value Free Shipping Plastic-Free Home Ebook Mystery Gift Win a PFAS Water Purifyer",
+            "width": 600,
+            "href": "https://siraatskitchen.com/collections/prime-sale"
+          },
+          {
+            "type": "image",
+            "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/1cc1f283-a09a-4061-a5f2-67b265e3743e.jpeg",
+            "alt": "Offer valid while supplies last.",
+            "width": 600,
+            "href": "https://siraatskitchen.com/collections/prime-sale"
+          },
+          {
+            "type": "footer",
+            "background": "#2B2929",
+            "note": "Image-based footer: logo 'Built for Life Non-Toxic Cookware' (link siraatskitchen.com), nav image links TITANIUM COOKWARE / BUNDLE & SETS / ACCESSORIES / ABOUT US, Facebook + Instagram icons on #2B2929, unsubscribe | manage preferences | web view, {{ organization.name }} | {{ organization.full_address }}"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "campaign_id": "01M46XND42JYG340YSD8J9GB36",
+    "name": "HS // Siraats Kitchen // October  Email 4: Weekend Sale Push (Plain Text) // 10.10.2026",
+    "channel": "email",
+    "status": "Draft",
+    "scheduled_at": null,
+    "planned_send_date": "2026-10-10",
+    "send_strategy": {
+      "method": "static",
+      "datetime": "2026-10-05T20:21:22+00:00",
+      "is_local": true
+    },
+    "created": "2026-10-05T20:56:39Z",
+    "updated": "2026-10-05T20:56:39Z",
+    "tags": [],
+    "audiences": {
+      "included": [
+        "Uw8eZG"
+      ],
+      "excluded": [
+        "VJkN42",
+        "VSnBnJ",
+        "W3q7Zy",
+        "W4vNzF",
+        "XTpfNG"
+      ]
+    },
+    "subject": "Up to 70% off + a note from Benjamin",
+    "preview": "",
+    "from": {
+      "email": "send@siraatskitchen.com",
+      "label": "SiraatsKitchen"
+    },
+    "template_id": "WthuTA",
+    "template_name": null,
+    "template_type": "plain_text",
+    "message_id": "01M46XND5KVBXDG6S4HBT5ZWHF",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Hi {{ person.first_name|default:'there' }},"
+      },
+      {
+        "type": "text",
+        "text": "It’s Benjamin, the founder of Siraat. Taking a minute this weekend to reach out while our non-toxic cookware sale is still live — and to make sure you saw what's included."
+      },
+      {
+        "type": "button",
+        "text": "Up to 70% off, plus four free gifts on every order:",
+        "href": "https://siraatskitchen.com/collections/prime-sale"
+      },
+      {
+        "type": "text",
+        "text": "• Free shipping\n• Plastic-free home e-book\n• A mystery gift\n• A chance to win a PFAS-free water purifier ($450 value, 5 winners this week)"
+      },
+      {
+        "type": "button",
+        "text": "Claim your free gifts →",
+        "href": "https://siraatskitchen.com/collections/prime-sale"
+      },
+      {
+        "type": "text",
+        "text": "Siraat started the non-toxic hammered titanium pan category — pure titanium cooking surface, hammered pattern, third-party tested PFAS-free, no coating of any kind. First orders shipped December 20, 2024. Look-alikes have appeared since. We're still the original, and we’re proud of that."
+      },
+      {
+        "type": "text",
+        "text": "If you've been thinking about it, this weekend is the right time."
+      },
+      {
+        "type": "button",
+        "text": "Shop up to 70% off now →",
+        "href": "https://siraatskitchen.com/collections/prime-sale"
+      },
+      {
+        "type": "text",
+        "text": "Benjamin"
+      },
+      {
+        "type": "text",
+        "text": "Founder, Siraat"
+      },
+      {
+        "type": "text",
+        "text": "P.S. 30-day returns from the day the box arrives. If the pan isn't for you, send it back."
+      },
+      {
+        "type": "footer",
+        "note": "Plain-text template: no designed footer; Klaviyo appends standard unsubscribe block"
+      }
+    ]
+  },
+  {
+    "campaign_id": "01M46VN2QJHR35FQ73YKBRF40A",
+    "name": "HS // Siraats Kitchen // October Email 1: Non-Toxic Origin — Plain-Text Founder // 10.03.2026",
+    "channel": "email",
+    "status": "Draft",
+    "scheduled_at": null,
+    "planned_send_date": "2026-10-03",
+    "send_strategy": {
+      "method": "static",
+      "datetime": "2026-10-05T20:21:22+00:00",
+      "is_local": true
+    },
+    "created": "2026-10-05T20:21:31Z",
+    "updated": "2026-10-05T20:21:31Z",
+    "tags": [],
+    "audiences": {
+      "included": [
+        "Uw8eZG"
+      ],
+      "excluded": [
+        "VJkN42",
+        "VSnBnJ",
+        "W3q7Zy",
+        "W4vNzF",
+        "XTpfNG"
+      ]
+    },
+    "subject": "The pan nobody else was making",
+    "preview": "",
+    "from": {
+      "email": "send@siraatskitchen.com",
+      "label": "SiraatsKitchen"
+    },
+    "template_id": "UPYngv",
+    "template_name": null,
+    "template_type": "plain_text",
+    "message_id": "01M46VN2T5VVXX6G8TGBHPF4D7",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Hi {{ person.first_name|default:'there' }},"
+      },
+      {
+        "type": "text",
+        "text": "Benjamin here, founder of Siraat. I want to tell you the story behind our non-toxic pans."
+      },
+      {
+        "type": "text",
+        "text": "The hammered titanium pan — Siraat started that category. Our first orders shipped December 20, 2024, and at that point nobody else was making a pan like this: pure titanium cooking surface, hammered pattern, no coating of any kind. We developed it ourselves, and we're proud of it."
+      },
+      {
+        "type": "button",
+        "text": "See the pan →",
+        "href": "https://siraatskitchen.com/"
+      },
+      {
+        "type": "text",
+        "text": "Since then, look-alikes have appeared. Same shape. Similar claims. Different materials in the fine print."
+      },
+      {
+        "type": "text",
+        "text": "I started Siraat because I believed a pan with nothing added to it could cook just as well as one built around a coating — better, actually. The hammered pattern creates tiny points of contact between the food and the surface. Less surface touching the pan means less sticking. And because there's nothing on the surface, there's nothing to scratch, wear, or wonder about years from now."
+      },
+      {
+        "type": "text",
+        "text": "That's still the whole idea."
+      },
+      {
+        "type": "button",
+        "text": "Shop what we built →",
+        "href": "https://siraatskitchen.com/"
+      },
+      {
+        "type": "text",
+        "text": "Benjamin"
+      },
+      {
+        "type": "text",
+        "text": "Founder, Siraat"
+      },
+      {
+        "type": "footer",
+        "note": "Plain-text template: no designed footer; Klaviyo appends standard unsubscribe block"
+      }
+    ]
+  },
+  {
+    "campaign_id": "01M3BP48NN4ES5EVZFB1T89ZD9",
+    "name": "Campaign Sep 25, 2026, 9:05 AM",
+    "channel": "email",
+    "status": "Draft",
+    "scheduled_at": null,
+    "planned_send_date": null,
+    "send_strategy": {
+      "method": "static",
+      "datetime": "2026-09-25T09:05:25+00:00",
+      "is_local": true
+    },
+    "created": "2026-09-25T07:05:27Z",
+    "updated": "2026-09-25T07:06:27Z",
+    "tags": [],
+    "audiences": {
+      "included": [
+        "Uw8eZG"
+      ],
+      "excluded": [
+        "VJkN42",
+        "W3q7Zy",
+        "W4vNzF",
+        "XTpfNG"
+      ]
+    },
+    "subject": "",
+    "preview": "",
+    "from": {
+      "email": "send@siraatskitchen.com",
+      "label": "SiraatsKitchen"
+    },
+    "template_id": "XfRxJc",
+    "template_name": "2026-09-25 03:06 Untitled email template",
+    "message_id": "01M3BP48P05JG219M0MYF3VX9T",
+    "blocks": [
+      {
+        "type": "header",
+        "note": "Logo image only (160px): https://d3k81ch9hvuctc.cloudfront.net/company/TdtTzz/images/5a70a984-1415-41b9-8399-46b4b1e03e61.png"
+      },
+      {
+        "type": "footer",
+        "note": "Facebook / Instagram / LinkedIn icons, 'No longer want to receive these emails? Unsubscribe.', {{ organization.name }} {{ organization.full_address }}; no body content"
+      }
+    ],
+    "note": "Empty untitled draft (header + footer only)"
+  },
+  {
+    "campaign_id": "01M3BP3QQN086TRAVC5EX1CV0W",
+    "name": "Campaign Sep 25, 2026, 9:05 AM",
+    "channel": "email",
+    "status": "Draft",
+    "scheduled_at": null,
+    "planned_send_date": null,
+    "send_strategy": {
+      "method": "static",
+      "datetime": "2026-09-25T09:05:04+00:00",
+      "is_local": true
+    },
+    "created": "2026-09-25T07:05:10Z",
+    "updated": "2026-09-25T07:05:18Z",
+    "tags": [],
+    "audiences": {
+      "included": [
+        "Uw8eZG"
+      ],
+      "excluded": []
+    },
+    "subject": "",
+    "preview": "",
+    "from": {
+      "email": "send@siraatskitchen.com",
+      "label": "SiraatsKitchen"
+    },
+    "template_id": null,
+    "template_name": null,
+    "message_id": "01M3BP3QQXKA6DYQF3PAD1SVVF",
+    "blocks": [],
+    "note": "Empty untitled draft, no template assigned"
+  },
+  {
+    "campaign_id": "01M3BK573WZETFKMSRZ16R07T2",
+    "name": "Campaign Sep 25, 2026, 8:13 AM",
+    "channel": "email",
+    "status": "Draft",
+    "scheduled_at": null,
+    "planned_send_date": null,
+    "send_strategy": {
+      "method": "static",
+      "datetime": "2026-09-25T08:13:25+00:00",
+      "is_local": true
+    },
+    "created": "2026-09-25T06:13:33Z",
+    "updated": "2026-09-25T06:15:18Z",
+    "tags": [],
+    "audiences": {
+      "included": [
+        "Uw8eZG"
+      ],
+      "excluded": [
+        "UfyDPs",
+        "VJkN42",
+        "VSnBnJ",
+        "W3q7Zy",
+        "W4vNzF",
+        "XTpfNG"
+      ]
+    },
+    "subject": "I went too far this time",
+    "preview": "",
+    "from": {
+      "email": "send@siraatskitchen.com",
+      "label": "SiraatsKitchen"
+    },
+    "template_id": "XCC5rh",
+    "template_name": null,
+    "template_type": "plain_text",
+    "message_id": "01M3BK5744FQND4JDK58NTHY7S",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Hi {{ first_name }},"
+      },
+      {
+        "type": "text",
+        "text": "This is an email just for you. We hope you like it."
+      },
+      {
+        "type": "text",
+        "text": "The Team"
+      },
+      {
+        "type": "footer",
+        "note": "Plain-text template: no designed footer; Klaviyo appends standard unsubscribe block"
+      }
+    ],
+    "note": "Body is Klaviyo's default placeholder text; only subject written"
+  },
+  {
+    "campaign_id": "01M48HW72Z6AQ7BH0Q585CHZYZ",
+    "name": "HS // Siraats Kitchen // October SMS 1: Sale Launch // 10.04.2026",
+    "channel": "sms",
+    "status": "Draft",
+    "scheduled_at": null,
+    "planned_send_date": "2026-10-04",
+    "send_strategy": {
+      "method": "static",
+      "datetime": "2026-10-05T20:28:51+00:00",
+      "is_local": true
+    },
+    "created": "2026-10-06T12:09:08Z",
+    "updated": "2026-10-06T12:09:24Z",
+    "tags": [
+      "HS",
+      "Promo"
+    ],
+    "audiences": {
+      "included": [
+        "XsSSQk",
+        "YcUbXM"
+      ],
+      "excluded": [
+        "SLVWps",
+        "UbXDP6"
+      ]
+    },
+    "subject": null,
+    "preview": null,
+    "from": null,
+    "template_id": null,
+    "template_name": null,
+    "message_id": "01M48HW750FS8NG0HMTYNTPJ3G",
+    "blocks": [],
+    "sms_body": "4 FREE GIFTS with every order + Up to 70% OFF PFAS-free cookware.\n\nShop the sale: https://siraatskitchen.com/collections/prime-sale"
+  },
+  {
+    "campaign_id": "01M46W2NYD7WZVZQ6CD6JFX0DW",
+    "name": "HS // Siraats Kitchen // October SMS 2: Sale Midweek Reinforcement // 10.07.2026",
+    "channel": "sms",
+    "status": "Draft",
+    "scheduled_at": null,
+    "planned_send_date": "2026-10-07",
+    "send_strategy": {
+      "method": "static",
+      "datetime": "2026-10-05T20:28:51+00:00",
+      "is_local": true
+    },
+    "created": "2026-10-05T20:28:57Z",
+    "updated": "2026-10-05T22:08:50Z",
+    "tags": [
+      "HS",
+      "Promo"
+    ],
+    "audiences": {
+      "included": [
+        "XsSSQk",
+        "YcUbXM"
+      ],
+      "excluded": [
+        "SLVWps",
+        "UbXDP6"
+      ]
+    },
+    "subject": null,
+    "preview": null,
+    "from": null,
+    "template_id": null,
+    "template_name": null,
+    "message_id": "01M46W2P0FASVHFEW0X27G3P1G",
+    "blocks": [],
+    "sms_body": "Non-toxic, PFAS-free cookware with no coatings + no learning curve.\n\n4 FREE gifts with every order + up to 70% off: https://siraatskitchen.com/collections/prime-sale"
+  },
+  {
+    "campaign_id": "01M46W6GQWQESXKPAYCX9S8YPR",
+    "name": "HS // Siraats Kitchen // October SMS 3: Weekend Sale Push // 10.10.2026",
+    "channel": "sms",
+    "status": "Draft",
+    "scheduled_at": null,
+    "planned_send_date": "2026-10-10",
+    "send_strategy": {
+      "method": "static",
+      "datetime": "2026-10-05T20:28:51+00:00",
+      "is_local": true
+    },
+    "created": "2026-10-05T20:31:02Z",
+    "updated": "2026-10-05T20:31:17Z",
+    "tags": [
+      "HS",
+      "Promo"
+    ],
+    "audiences": {
+      "included": [
+        "XsSSQk",
+        "YcUbXM"
+      ],
+      "excluded": [
+        "SLVWps",
+        "UbXDP6"
+      ]
+    },
+    "subject": null,
+    "preview": null,
+    "from": null,
+    "template_id": null,
+    "template_name": null,
+    "message_id": "01M46W6GTBKNF18EWFH3CAJ4PB",
+    "blocks": [],
+    "sms_body": "Don't miss out: 4 FREE gifts + up to 70% OFF third-party tested PFAS-free cookware. \n\nShop now: https://siraatskitchen.com/collections/prime-sale"
+  },
+  {
+    "campaign_id": "01M46WD2JQ7YP994CNWSEKNTZ9",
+    "name": "HS // Siraats Kitchen // October SMS 4: 5-Star Social Proof // 10.14.2026",
+    "channel": "sms",
+    "status": "Draft",
+    "scheduled_at": null,
+    "planned_send_date": "2026-10-14",
+    "send_strategy": {
+      "method": "static",
+      "datetime": "2026-10-05T20:28:51+00:00",
+      "is_local": true
+    },
+    "created": "2026-10-05T20:34:37Z",
+    "updated": "2026-10-05T22:08:23Z",
+    "tags": [
+      "HS",
+      "Promo"
+    ],
+    "audiences": {
+      "included": [
+        "XsSSQk",
+        "YcUbXM"
+      ],
+      "excluded": [
+        "SLVWps",
+        "UbXDP6"
+      ]
+    },
+    "subject": null,
+    "preview": null,
+    "from": null,
+    "template_id": null,
+    "template_name": null,
+    "message_id": "01M46WD2MY71GNMRF5TXCXMASN",
+    "blocks": [],
+    "sms_body": "\"No coatings, no worries.\" - Lena D. \n\n100K+ happy customers agree. \n\nUp to 70% off + 4 free gifts on every order: https://siraatskitchen.com/collections/prime-sale"
+  }
+]

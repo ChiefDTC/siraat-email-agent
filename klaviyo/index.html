@@ -1,0 +1,96 @@
+<!DOCTYPE html><html lang="nl"><head><meta charset="utf-8"><title>Siraat's Kitchen · Klaviyo flows</title>
+<style>
+body{margin:0;font-family:Helvetica,Arial,sans-serif;color:#1f1f1f;background:#f4f1ec;display:grid;grid-template-columns:460px 1fr;height:100vh}
+nav{overflow:auto;padding:20px;border-right:1px solid #ddd;background:#fff}
+iframe{width:100%;height:100%;border:0;background:#f4f1ec}
+h1{font-size:18px;letter-spacing:2px} h2{font-size:15px;margin:24px 0 4px}
+pre{font-size:11px;line-height:1.35;background:#f9f7f3;padding:10px;border-radius:6px;overflow:auto}
+ul{list-style:none;padding:0;margin:0} li{padding:6px 0;border-top:1px solid #eee;font-size:13px}
+.muted{color:#777;font-size:11px} .subj{color:#444;font-size:12px}
+a{color:#1f1f1f}
+</style></head><body>
+<nav><h1>KLAVIYO FLOWS</h1><p class="muted">Klik een mail om hem rechts te bekijken. Specs per flow staan in <code>flows/</code>.</p><section class='flow'><h2>Welcome Flow (nieuw)</h2><p class='muted'>Trigger: Added to List: Email List (Uw8eZG) &middot; <a href='flows/01-welcome.md'>spec</a></p><pre>Trigger: Added to List &quot;Email List&quot;
+│
+├─ [5 min] ─ W1  Welcome + 10% (HI10 uniek)
+├─ [1 dag, 10:00] ─ W2  Note from Benjamin
+├─ [2 dagen, 10:00] ─ W3  Why titanium, not coating
+├─ [2 dagen, 10:00] ─ W4  100,000 kitchens (bestsellers)
+├─ [2 dagen, 10:00] ─ W5  Your 10% expires tonight
+│
+└─ Conditional split: Placed Order &gt; 0 since start?
+     ├─ YES → exit (Post Purchase flow neemt over)
+     └─ NO  → exit (Failure to launch pakt ze op dag 14 op)</pre><ul><li><a href='emails/01-welcome/w1-welcome-10.html' target='preview'>w1-welcome-10</a> <span class='muted'>5 min na trigger</span><br><span class='subj'>{{ first_name|default:&#x27;Welcome&#x27; }}, here&#x27;s your 10% off</span></li><li><a href='emails/01-welcome/w2-note-from-benjamin.html' target='preview'>w2-note-from-benjamin</a> <span class='muted'>1 dag, 10:00</span><br><span class='subj'>A note from Benjamin</span></li><li><a href='emails/01-welcome/w3-why-titanium.html' target='preview'>w3-why-titanium</a> <span class='muted'>2 dagen, 10:00</span><br><span class='subj'>Why food sticks (and why it won&#x27;t on titanium)</span></li><li><a href='emails/01-welcome/w4-social-proof.html' target='preview'>w4-social-proof</a> <span class='muted'>2 dagen, 10:00</span><br><span class='subj'>What 100,000 kitchens figured out</span></li><li><a href='emails/01-welcome/w5-expires-tonight.html' target='preview'>w5-expires-tonight</a> <span class='muted'>2 dagen, 10:00</span><br><span class='subj'>Your 10% ends tonight</span></li></ul></section><section class='flow'><h2>Checkout Abandonment (samengevoegd, A/B gift card vs 10%)</h2><p class='muted'>Trigger: Checkout Started (Shopify, RfMvni) &middot; <a href='flows/02-checkout-abandonment.md'>spec</a></p><pre>Trigger: Checkout Started (Shopify)
+│
+├─ [1 uur] ─ C1  You left something on the stove (cart, geen korting)
+│
+├─ Conditional split: SMS consent?
+│    └─ YES → [1 uur] SMS-1  &quot;Your cart is saved: {{ checkout_url }}&quot;
+│
+└─ Random sample split 50%
+     ├─ A (gift card)
+     │    ├─ [1 dag, 09:00] ─ C2a  $25 is waiting in your account (GIFT25)
+     │    ├─ [1 dag, 09:00] ─ C3   Still deciding? 100 days to try it
+     │    └─ [1 dag, 09:00] ─ C4a  Your $25 expires tonight
+     └─ B (10%)
+          ├─ [1 dag, 09:00] ─ C2b  10% off to finish your order (CHECKOUT10)
+          ├─ [1 dag, 09:00] ─ C3   Still deciding? 100 days to try it
+          └─ [1 dag, 09:00] ─ C4b  Your 10% expires tonight</pre><ul><li><a href='emails/02-checkout-abandonment/c1-left-on-the-stove.html' target='preview'>c1-left-on-the-stove</a> <span class='muted'>1 uur na trigger</span><br><span class='subj'>You left something on the stove</span></li><li><a href='emails/02-checkout-abandonment/c2a-25-in-your-account.html' target='preview'>c2a-25-in-your-account</a> <span class='muted'>1 dag, 09:00 (tak A)</span><br><span class='subj'>{{ first_name|default:&#x27;Hey&#x27; }}, there&#x27;s $25 in your account</span></li><li><a href='emails/02-checkout-abandonment/c2b-10-off-to-finish.html' target='preview'>c2b-10-off-to-finish</a> <span class='muted'>1 dag, 09:00 (tak B)</span><br><span class='subj'>{{ first_name|default:&#x27;Hey&#x27; }}, 10% off to finish your order</span></li><li><a href='emails/02-checkout-abandonment/c3-still-deciding.html' target='preview'>c3-still-deciding</a> <span class='muted'>1 dag, 09:00 (beide takken)</span><br><span class='subj'>Still deciding? Here&#x27;s what actually matters</span></li><li><a href='emails/02-checkout-abandonment/c4a-25-expires-tonight.html' target='preview'>c4a-25-expires-tonight</a> <span class='muted'>1 dag, 09:00 (tak A)</span><br><span class='subj'>Your $25 expires tonight</span></li><li><a href='emails/02-checkout-abandonment/c4b-10-expires-tonight.html' target='preview'>c4b-10-expires-tonight</a> <span class='muted'>1 dag, 09:00 (tak B)</span><br><span class='subj'>Your 10% expires tonight</span></li></ul></section><section class='flow'><h2>Cart Abandonment (nieuw)</h2><p class='muted'>Trigger: Added to Cart (Shopify, QXcV8K) &middot; <a href='flows/03-cart-abandonment.md'>spec</a></p><pre>Trigger: Added to Cart (Shopify)
+│
+├─ [1 uur] ─ K1  We saved these for you (geen korting)
+├─ [1 dag, 09:00] ─ K2  Questions before you decide? (trial, care)
+├─ [1 dag, 09:00] ─ K3  Get cooking with 10% off (COOK10)
+└─ [1 dag, 09:00] ─ K4  Last call for 10%
+     (K3 en K4 alleen als Checkout Started = 0 in laatste 3 dagen)</pre><ul><li><a href='emails/03-cart-abandonment/k1-we-saved-these.html' target='preview'>k1-we-saved-these</a> <span class='muted'>1 uur na trigger</span><br><span class='subj'>{{ first_name|default:&#x27;Hey&#x27; }}, we saved these for you</span></li><li><a href='emails/03-cart-abandonment/k2-questions.html' target='preview'>k2-questions</a> <span class='muted'>1 dag, 09:00</span><br><span class='subj'>Questions before you decide?</span></li><li><a href='emails/03-cart-abandonment/k3-cook10.html' target='preview'>k3-cook10</a> <span class='muted'>1 dag, 09:00</span><br><span class='subj'>{{ first_name|default:&#x27;Hey&#x27; }}, get cooking with 10% off</span></li><li><a href='emails/03-cart-abandonment/k4-last-call.html' target='preview'>k4-last-call</a> <span class='muted'>1 dag, 09:00</span><br><span class='subj'>Last call for 10% off</span></li></ul></section><section class='flow'><h2>Browse Abandonment (samengevoegd)</h2><p class='muted'>Trigger: Viewed Product (Klaviyo onsite, XNtYMB) &middot; <a href='flows/04-browse-abandonment.md'>spec</a></p><pre>Trigger: Viewed Product
+│
+├─ [2 uur] ─ B1  Still looking at {{ event.ProductName }}?
+└─ Conditional split: Added to Cart since start?
+     ├─ YES → exit (Cart flow neemt over)
+     └─ NO  → [2 dagen, 09:00] ─ B2  What 100,000 cooks say</pre><ul><li><a href='emails/04-browse-abandonment/b1-still-looking.html' target='preview'>b1-still-looking</a> <span class='muted'>2 uur na trigger</span><br><span class='subj'>Still looking at {{ event.ProductName|default:&#x27;this&#x27; }}?</span></li><li><a href='emails/04-browse-abandonment/b2-what-cooks-say.html' target='preview'>b2-what-cooks-say</a> <span class='muted'>2 dagen, 09:00</span><br><span class='subj'>What 100,000 cooks say about it</span></li></ul></section><section class='flow'><h2>Failure to launch (ingekort tot 3 mails)</h2><p class='muted'>Trigger: Added to List: Email List (Uw8eZG) &middot; <a href='flows/05-failure-to-launch.md'>spec</a></p><pre>Trigger: Added to List &quot;Email List&quot;
+│
+└─ [14 dagen, 09:00]
+    └─ Conditional split: Placed Order = 0 AND Opened Email ≥ 1 (last 14 d)?
+         ├─ NO  → exit
+         └─ YES
+              ├─ F1  Titanium vs non-stick
+              ├─ [3 dagen, 09:00] ─ F2  Care FAQ
+              └─ [4 dagen, 09:00] ─ F3  What customers really think
+                   └─ split: Opened Email = 0 since F1? → YES: property FTL_unopened = true</pre><ul><li><a href='emails/05-failure-to-launch/f1-titanium-vs-nonstick.html' target='preview'>f1-titanium-vs-nonstick</a> <span class='muted'>14 dagen na trigger, 09:00</span><br><span class='subj'>Us vs the pan in your drawer</span></li><li><a href='emails/05-failure-to-launch/f2-care-faq.html' target='preview'>f2-care-faq</a> <span class='muted'>3 dagen, 09:00</span><br><span class='subj'>Unlocking the non-stick effect</span></li><li><a href='emails/05-failure-to-launch/f3-real-reviews.html' target='preview'>f3-real-reviews</a> <span class='muted'>4 dagen, 09:00</span><br><span class='subj'>What our customers really think</span></li></ul></section><section class='flow'><h2>Sunset Flow (met echte suppressie)</h2><p class='muted'>Trigger: Added to Segment: Sunset Segment (XY4NVp) &middot; <a href='flows/06-sunset.md'>spec</a></p><pre>Trigger: Added to Segment &quot;Sunset Segment&quot;
+│
+├─ S1  Should we keep emailing you?
+├─ [5 dagen, 09:00]
+│    └─ split: Opened or Clicked since start?
+│         ├─ YES → property Re_engaged = true → exit
+│         └─ NO  → S2  This is our last email
+└─ [5 dagen]
+     └─ split: Opened or Clicked since start?
+          ├─ YES → property Re_engaged = true → exit
+          └─ NO  → Unsubscribe profile from email marketing</pre><ul><li><a href='emails/06-sunset/s1-staying-or-going.html' target='preview'>s1-staying-or-going</a> <span class='muted'>Direct</span><br><span class='subj'>Should we keep emailing you?</span></li><li><a href='emails/06-sunset/s2-last-email.html' target='preview'>s2-last-email</a> <span class='muted'>5 dagen, 09:00</span><br><span class='subj'>This is our last email</span></li></ul></section><section class='flow'><h2>Post Purchase (met holiday next-purchase gift card)</h2><p class='muted'>Trigger: Placed Order (Shopify, RSNxYV) &middot; <a href='flows/07-post-purchase.md'>spec</a></p><pre>Trigger: Placed Order
+│
+└─ Conditional split: Placed Order count &gt; 1 (all time)?
+     ├─ YES (repeat) ─ [2 min] ─ R1  Welcome back
+     └─ NO (first order)
+          ├─ [2 min] ─ P1  We&#x27;ve got your order
+          ├─ [1 dag, 09:30] ─ P2  A note from Benjamin
+          ├─ [2 dagen, 09:30] ─ P3  Get ready to cook (3-step method, 100-day trial)
+          └─ Conditional split: order placed between 20 Nov and 31 Dec?
+               ├─ NO  → exit
+               └─ YES ─ [7 dagen] ─ P4  Your $25 for January (JAN25, 1 to 15 Jan)
+                              (JAN50 voor orders &gt; $400 via extra split)</pre><ul><li><a href='emails/07-post-purchase/p1-weve-got-your-order.html' target='preview'>p1-weve-got-your-order</a> <span class='muted'>2 min na order</span><br><span class='subj'>We&#x27;ve got your order</span></li><li><a href='emails/07-post-purchase/p2-founder-note.html' target='preview'>p2-founder-note</a> <span class='muted'>1 dag, 09:30</span><br><span class='subj'>A note from Benjamin</span></li><li><a href='emails/07-post-purchase/p3-get-ready-to-cook.html' target='preview'>p3-get-ready-to-cook</a> <span class='muted'>2 dagen, 09:30</span><br><span class='subj'>Get ready to cook: the 3-step method</span></li><li><a href='emails/07-post-purchase/p4-your-25-for-january.html' target='preview'>p4-your-25-for-january</a> <span class='muted'>7 dagen (alleen orders 20 nov tot 31 dec)</span><br><span class='subj'>{{ first_name|default:&#x27;Hey&#x27; }}, we set aside $25 for you in January</span></li><li><a href='emails/07-post-purchase/r1-welcome-back.html' target='preview'>r1-welcome-back</a> <span class='muted'>2 min na order (repeat buyers)</span><br><span class='subj'>Welcome back</span></li></ul></section><section class='flow'><h2>Customer Winback (met herhaalcheck)</h2><p class='muted'>Trigger: Placed Order (Shopify) &middot; <a href='flows/08-winback.md'>spec</a></p><pre>Trigger: Placed Order
+│
+└─ [60 dagen, 09:00]
+    └─ split: Placed Order = 0 in last 60 days?
+         ├─ NO  → exit
+         └─ YES
+              ├─ WB1  What&#x27;s new since your last order
+              ├─ [3 dagen, 09:00] ─ WB2  10% off your next pan (WINBACK10)
+              └─ [2 dagen, 09:00] ─ WB3  10% expires tonight</pre><ul><li><a href='emails/08-winback/wb1-whats-new.html' target='preview'>wb1-whats-new</a> <span class='muted'>60 dagen na order, 09:00</span><br><span class='subj'>What&#x27;s new since your last order</span></li><li><a href='emails/08-winback/wb2-winback10.html' target='preview'>wb2-winback10</a> <span class='muted'>3 dagen, 09:00</span><br><span class='subj'>10% off your next pan</span></li><li><a href='emails/08-winback/wb3-expires.html' target='preview'>wb3-expires</a> <span class='muted'>2 dagen, 09:00</span><br><span class='subj'>Your 10% expires tonight</span></li></ul></section><section class='flow'><h2>Gift Card flows en december-campagnes</h2><p class='muted'>Trigger: Flow A: Placed Order where Items contains &#x27;E-Gift Card&#x27;. Campagnes: engaged 90 dagen, 15 tot 24 december &middot; <a href='flows/09-gift-card.md'>spec</a></p><pre>Flow A: Placed Order with E-Gift Card
+│
+├─ [2 min] ─ G1  Thanks for gifting Siraat&#x27;s Kitchen (hoe het werkt)
+└─ [14 dagen, 09:00] ─ G2  Has it been opened yet? (herinnering + pan-tips om door te sturen)
+
+Campagnes (geen flow):
+├─ 15 dec ─ GC1  Too late to ship? A gift card arrives in a minute
+├─ 20 dec ─ GC2  The gift that arrives today (last ship date voorbij)
+└─ 23 dec ─ GC3  Christmas Eve: still time for a Siraat gift card</pre><ul><li><a href='emails/09-gift-card/g1-thanks-for-gifting.html' target='preview'>g1-thanks-for-gifting</a> <span class='muted'>2 min na order (transactioneel)</span><br><span class='subj'>Thanks for gifting Siraat&#x27;s Kitchen</span></li><li><a href='emails/09-gift-card/g2-opened-yet.html' target='preview'>g2-opened-yet</a> <span class='muted'>14 dagen, 09:00</span><br><span class='subj'>Has your gift been opened yet?</span></li><li><a href='emails/09-gift-card/gc1-too-late-to-ship.html' target='preview'>gc1-too-late-to-ship</a> <span class='muted'>Campagne 15 dec</span><br><span class='subj'>Too late to ship? A gift card arrives in a minute</span></li><li><a href='emails/09-gift-card/gc2-arrives-today.html' target='preview'>gc2-arrives-today</a> <span class='muted'>Campagne 20 dec</span><br><span class='subj'>The gift that arrives today</span></li><li><a href='emails/09-gift-card/gc3-christmas-eve.html' target='preview'>gc3-christmas-eve</a> <span class='muted'>Campagne 23 dec</span><br><span class='subj'>Christmas Eve plan: a Siraat gift card</span></li></ul></section></nav>
+<iframe name="preview" src="emails/01-welcome/w1-welcome-10.html"></iframe>
+</body></html>

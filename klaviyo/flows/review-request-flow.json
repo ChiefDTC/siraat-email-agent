@@ -1,0 +1,196 @@
+{
+  "data": {
+    "type": "flow",
+    "attributes": {
+      "name": "Review request · Delivered +14d (Siraat DS)",
+      "definition": {
+        "triggers": [
+          {"type": "metric", "id": "VcUF33", "trigger_filter": null}
+        ],
+        "profile_filter": {
+          "condition_groups": [
+            {"conditions": [
+              {"type": "profile-not-in-flow", "timeframe_filter": {"type": "date", "operator": "alltime"}}
+            ]},
+            {"conditions": [
+              {"type": "profile-metric", "metric_id": "RSNxYV", "measurement": "count",
+               "measurement_filter": {"type": "numeric", "operator": "equals", "value": 0},
+               "timeframe_filter": {"type": "date", "operator": "alltime"},
+               "metric_filters": [{"property": "Items", "filter": {"type": "list", "operator": "contains-any", "value": [
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs | + FREE PIZZA STEEL",
+                 "Titanium Hammered Cookware Set | 12-Pcs | + FREE PIZZA STEEL (EXCLUSIVE)"
+               ]}}]}
+            ]},
+            {"conditions": [
+              {"type": "profile-metric", "metric_id": "YkRM4Q", "measurement": "count",
+               "measurement_filter": {"type": "numeric", "operator": "equals", "value": 0},
+               "timeframe_filter": {"type": "date", "operator": "in-the-last", "unit": "day", "quantity": 30},
+               "metric_filters": [{"property": "$flow", "filter": {"type": "string", "operator": "equals", "value": "Vixr6X"}}]}
+            ]}
+          ]
+        },
+        "actions": [
+          {
+            "temporary_id": "delay14",
+            "type": "time-delay",
+            "data": {"unit": "days", "value": 14, "secondary_value": null, "timezone": "profile", "delay_until_time": "09:30:00"},
+            "links": {"next": "abtest"}
+          },
+          {
+            "temporary_id": "abtest",
+            "type": "ab-test",
+            "data": {
+              "main_action": {
+                "temporary_id": "mainmail",
+                "type": "send-email",
+                "data": {
+                  "message": {
+                    "from_email": "send@siraatskitchen.com",
+                    "from_label": "SiraatsKitchen",
+                    "reply_to_email": null,
+                    "cc_email": null,
+                    "bcc_email": null,
+                    "subject_line": "Win your purchase amount back",
+                    "preview_text": "Two minutes. One honest review.",
+                    "template_id": "S2tykT",
+                    "smart_sending_enabled": false,
+                    "transactional": false,
+                    "add_tracking_params": true,
+                    "custom_tracking_params": null,
+                    "additional_filters": {
+                      "condition_groups": [
+                        {"conditions": [
+                          {"type": "profile-metric", "metric_id": "YzvjGf", "measurement": "count",
+                           "measurement_filter": {"type": "numeric", "operator": "equals", "value": 0},
+                           "timeframe_filter": {"type": "date", "operator": "flow-start"},
+                           "metric_filters": null}
+                        ]},
+                        {"conditions": [
+                          {"type": "profile-metric", "metric_id": "Xg6cwn", "measurement": "count",
+                           "measurement_filter": {"type": "numeric", "operator": "equals", "value": 0},
+                           "timeframe_filter": {"type": "date", "operator": "in-the-last", "unit": "day", "quantity": 30},
+                           "metric_filters": null}
+                        ]},
+                        {"conditions": [
+                          {"type": "profile-metric", "metric_id": "VtEiZT", "measurement": "count",
+                           "measurement_filter": {"type": "numeric", "operator": "greater-than", "value": 0},
+                           "timeframe_filter": {"type": "date", "operator": "in-the-last", "unit": "day", "quantity": 60},
+                           "metric_filters": null}
+                        ]}
+                      ]
+                    },
+                    "name": "Review request · Win your purchase back"
+                  },
+                  "status": "draft"
+                },
+                "links": {"next": null}
+              },
+              "current_experiment": {
+                "name": "Subject line: incentive vs question",
+                "variations": [
+                  {
+                    "temporary_id": "varA",
+                    "type": "send-email",
+                    "data": {
+                      "message": {
+                        "from_email": "send@siraatskitchen.com",
+                        "from_label": "SiraatsKitchen",
+                        "reply_to_email": null,
+                        "cc_email": null,
+                        "bcc_email": null,
+                        "subject_line": "Win your purchase amount back",
+                        "preview_text": "Two minutes. One honest review.",
+                        "template_id": "S2tykT",
+                        "smart_sending_enabled": false,
+                        "transactional": false,
+                        "add_tracking_params": true,
+                        "custom_tracking_params": null,
+                        "additional_filters": {
+                          "condition_groups": [
+                            {"conditions": [
+                              {"type": "profile-metric", "metric_id": "YzvjGf", "measurement": "count",
+                               "measurement_filter": {"type": "numeric", "operator": "equals", "value": 0},
+                               "timeframe_filter": {"type": "date", "operator": "flow-start"},
+                               "metric_filters": null}
+                            ]},
+                            {"conditions": [
+                              {"type": "profile-metric", "metric_id": "Xg6cwn", "measurement": "count",
+                               "measurement_filter": {"type": "numeric", "operator": "equals", "value": 0},
+                               "timeframe_filter": {"type": "date", "operator": "in-the-last", "unit": "day", "quantity": 30},
+                               "metric_filters": null}
+                            ]},
+                            {"conditions": [
+                              {"type": "profile-metric", "metric_id": "VtEiZT", "measurement": "count",
+                               "measurement_filter": {"type": "numeric", "operator": "greater-than", "value": 0},
+                               "timeframe_filter": {"type": "date", "operator": "in-the-last", "unit": "day", "quantity": 60},
+                               "metric_filters": null}
+                            ]}
+                          ]
+                        },
+                        "name": "A · Subject: Win your purchase amount back"
+                      },
+                      "status": "draft"
+                    },
+                    "links": {"next": null}
+                  },
+                  {
+                    "temporary_id": "varB",
+                    "type": "send-email",
+                    "data": {
+                      "message": {
+                        "from_email": "send@siraatskitchen.com",
+                        "from_label": "SiraatsKitchen",
+                        "reply_to_email": null,
+                        "cc_email": null,
+                        "bcc_email": null,
+                        "subject_line": "How was your experience?",
+                        "preview_text": "Two minutes. One honest review.",
+                        "template_id": "S2tykT",
+                        "smart_sending_enabled": false,
+                        "transactional": false,
+                        "add_tracking_params": true,
+                        "custom_tracking_params": null,
+                        "additional_filters": {
+                          "condition_groups": [
+                            {"conditions": [
+                              {"type": "profile-metric", "metric_id": "YzvjGf", "measurement": "count",
+                               "measurement_filter": {"type": "numeric", "operator": "equals", "value": 0},
+                               "timeframe_filter": {"type": "date", "operator": "flow-start"},
+                               "metric_filters": null}
+                            ]},
+                            {"conditions": [
+                              {"type": "profile-metric", "metric_id": "Xg6cwn", "measurement": "count",
+                               "measurement_filter": {"type": "numeric", "operator": "equals", "value": 0},
+                               "timeframe_filter": {"type": "date", "operator": "in-the-last", "unit": "day", "quantity": 30},
+                               "metric_filters": null}
+                            ]},
+                            {"conditions": [
+                              {"type": "profile-metric", "metric_id": "VtEiZT", "measurement": "count",
+                               "measurement_filter": {"type": "numeric", "operator": "greater-than", "value": 0},
+                               "timeframe_filter": {"type": "date", "operator": "in-the-last", "unit": "day", "quantity": 60},
+                               "metric_filters": null}
+                            ]}
+                          ]
+                        },
+                        "name": "B · Subject: How was your experience?"
+                      },
+                      "status": "draft"
+                    },
+                    "links": {"next": null}
+                  }
+                ],
+                "allocations": {"varA": 0.5, "varB": 0.5},
+                "winner_metric": "unique-clicks",
+                "automatic_winner_selection_settings": {"enabled": false, "automatic_end_date": null, "automatic_end_statistical_certainty": false}
+              }
+            },
+            "links": {"next": null}
+          }
+        ],
+        "entry_action_id": "delay14",
+        "reentry_criteria": {"duration": 1, "unit": "alltime"}
+      }
+    }
+  }
+}
