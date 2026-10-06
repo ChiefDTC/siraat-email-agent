@@ -16,6 +16,7 @@ Vaste regels. Alles hier is geleerd uit echte fouten of echte cijfers. Wijzig al
 - Koppen: TT Ramillas Light Italic. Licentie is desktop-only, dus in e-mail altijd als afbeelding (PNG, transparant, 2x). Nooit als webfont insluiten.
 - Lopende tekst: Inter via `@import` van Google Fonts in de `<style>`. Klaviyo verwijdert `<link>`-tags. Gmail toont dan Arial, dat is acceptabel.
 - Fallback-serif voor live tekst: Instrument Serif Italic, dan Times New Roman. Nooit Georgia bold (ziet er zwaar uit in Gmail).
+- Logo: altijd de officiële bestanden uit `brand/logo/` (wit op foto of donker, zwart op crème of wit). Nooit nagetekend, nooit door AI.
 - Hero: één vierkante afbeelding (600x600, 1200x1200 geleverd) met de kop erin gebakken en een donkere overlay. Het logo mag als overlay op de foto. Geen navigatiemenu's.
 - Alles gecentreerd. Geen trust-bar, geen social footer, geen "Built for Life"-blok in flow-mails. Alleen privacy, terms, manage preferences, unsubscribe en adres onderin.
 - Ruimte: buitenkant boven 8px (Gmail voegt zelf ongeveer 20px toe), intro-padding 28px, tussen hero en kop 28px.
