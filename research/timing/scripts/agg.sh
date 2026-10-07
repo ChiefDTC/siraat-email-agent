@@ -1,0 +1,1 @@
+agg(){ for i in 1 2 3 4 5 6; do r=$(curl -s -X POST "https://a.klaviyo.com/api/metric-aggregates" -H "revision: 2025-10-15" -H "accept: application/vnd.api+json" -H "content-type: application/vnd.api+json" -d "$1"); if echo "$r" | grep -q throttled; then sleep 3; else echo "$r"; return; fi; done; echo "$r"; }

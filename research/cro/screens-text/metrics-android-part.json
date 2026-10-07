@@ -1,0 +1,90 @@
+{
+ "home": {
+  "path": "/",
+  "status": 200,
+  "finalUrl": "https://siraatskitchen.com/",
+  "title": "Titanium Cookware Set: Premium & Non-Toxic Kitchenware",
+  "wall": 3492,
+  "popup": [],
+  "ttfb": 468,
+  "dcl": 2420,
+  "load": 3483,
+  "lcp": 1344,
+  "lcpEl": "IMG  https://siraatskitchen.com/cdn/shop/files/preview_images/d47befb26cd746298ccd7cb956e6df0e.thumbnail.0000000000.jpg?v=1790677790&width=1200",
+  "cls": 0,
+  "shifts": [],
+  "bytes": 2652,
+  "reqs": 266,
+  "docH": 5662,
+  "overflowX": false
+ },
+ "panpro-std": {
+  "path": "/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern",
+  "status": 200,
+  "finalUrl": "https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern",
+  "title": "Titanium Hammered Pan Pro Standard | Non Toxic Frying Pan",
+  "wall": 4246,
+  "popup": [],
+  "ttfb": 713,
+  "dcl": 2574,
+  "load": 4227,
+  "lcp": 1276,
+  "lcpEl": "IMG  https://siraatskitchen.com/cdn/shop/files/Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-40a5-9ad7-523bdddc54d4.webp?v=1781682831&width=1200",
+  "cls": 0,
+  "shifts": [],
+  "bytes": 3057,
+  "reqs": 317,
+  "docH": 10515,
+  "overflowX": false
+ },
+ "set6-349-bday": {
+  "path": "/products/titanium-hammered-pan-set-with-lids-6-pcs-bday-sale",
+  "status": 200,
+  "finalUrl": "https://siraatskitchen.com/products/titanium-hammered-pan-set-with-lids-6-pcs-bday-sale",
+  "title": "Titanium Hammered Pan Set With Lids | 6-Pcs (BDAY SALE)",
+  "wall": 3645,
+  "popup": [],
+  "ttfb": 638,
+  "dcl": 2936,
+  "load": 3624,
+  "lcp": 1780,
+  "lcpEl": "IMG  https://siraatskitchen.com/cdn/shop/files/6pcscookwareset.webp?v=1783062518&width=1200",
+  "cls": 0.055,
+  "shifts": [
+   {
+    "v": 0.048,
+    "t": 3493,
+    "src": "|||DIV.siraat-fg"
+   }
+  ],
+  "bytes": 2796,
+  "reqs": 309,
+  "docH": 10939,
+  "overflowX": false
+ },
+ "set12": {
+  "path": "/products/titanium-hammered-cookware-set",
+  "status": 200,
+  "finalUrl": "https://siraatskitchen.com/products/titanium-hammered-cookware-set",
+  "title": "Titanium Hammered Cookware Set | 12-Pcs",
+  "wall": 3115,
+  "popup": [],
+  "ttfb": 260,
+  "dcl": 2606,
+  "load": 3070,
+  "lcp": 1156,
+  "lcpEl": "IMG  https://siraatskitchen.com/cdn/shop/files/12pcsset.webp?v=1781591412&width=1200",
+  "cls": 0.062,
+  "shifts": [
+   {
+    "v": 0.054,
+    "t": 2425,
+    "src": "|||DIV.yuy product-info__block-item"
+   }
+  ],
+  "bytes": 2598,
+  "reqs": 301,
+  "docH": 11079,
+  "overflowX": false
+ }
+}

@@ -47,7 +47,7 @@
 
 <!-- INTRO -->
 <tr><td class="pad" style="padding:26px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">
-  <p style="margin:0;">Hi {{ first_name|default:'there' }}, your order is confirmed. {% if 'Pan' in event.Items|join:',' or 'Pot' in event.Items|join:',' or 'Pizza Steel' in event.Items|join:',' or 'ookware' in event.Items|join:',' or 'Everything' in event.Items|join:',' or 'Pfanne' in event.Items|join:',' %}Thank you for choosing a pan with a pure titanium cooking surface and no coatings: nothing to peel, nothing to replace.{% else %}Thank you for ordering from us. Here is what is in the box and what happens next.{% endif %}</p>
+  <p style="margin:0;">Hi {{ first_name|default:'there' }}, your order is confirmed. {% if 'Hammer' in event.Items|join:',' or 'Pan' in event.Items|join:',' or 'Pot' in event.Items|join:',' or 'ookware' in event.Items|join:',' or 'Everything' in event.Items|join:',' or 'fanne' in event.Items|join:',' or 'Prep Bundle' in event.Items|join:',' %}Thank you for choosing a pan with a pure titanium cooking surface and no coatings: nothing to peel, nothing to replace.{% else %}Thank you for ordering from us. Here is what is in the box and what happens next.{% endif %}</p>
 </td></tr>
 
 <!-- ORDER (Placed Order line items) -->
@@ -79,7 +79,7 @@
 {{BLOCK:cta label="Download your e-book" url="https://siraatskitchen.com/products/e" pad="22px 44px 4px 44px"}}
 <tr><td class="pad" style="padding:30px 44px 14px 44px;">
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">WHAT HAPPENS NEXT</div>
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding-top:6px;">{% if 'Pan' in event.Items|join:',' or 'Pot' in event.Items|join:',' or 'Pizza Steel' in event.Items|join:',' or 'ookware' in event.Items|join:',' or 'Everything' in event.Items|join:',' or 'Pfanne' in event.Items|join:',' %}From order to first egg{% else %}From order to your door{% endif %}</div>
+  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding-top:6px;">{% if 'Hammer' in event.Items|join:',' or 'Pan' in event.Items|join:',' or 'Pot' in event.Items|join:',' or 'ookware' in event.Items|join:',' or 'Everything' in event.Items|join:',' or 'fanne' in event.Items|join:',' or 'Prep Bundle' in event.Items|join:',' %}From order to first egg{% else %}From order to your door{% endif %}</div>
 </td></tr>
 <tr><td class="pad" style="padding:0 44px 6px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
@@ -89,12 +89,12 @@
       <td valign="top" style="padding:16px 20px 14px 14px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Tracking link by email</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">It lands in your inbox as soon as your order ships.</div></td></tr>
     <tr><td width="58" valign="top" style="padding:18px 0 14px 20px;"><img src="{{SHARED}}/icon-free-shipping.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
       <td valign="top" style="padding:16px 20px 14px 14px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Free shipping, tracked to your door</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Sets and lids can travel in separate parcels.</div></td></tr>
-    {% if 'Pan' in event.Items|join:',' or 'Pot' in event.Items|join:',' or 'Pizza Steel' in event.Items|join:',' or 'ookware' in event.Items|join:',' or 'Everything' in event.Items|join:',' or 'Pfanne' in event.Items|join:',' %}<tr><td width="58" valign="top" style="padding:18px 0 18px 20px;"><img src="{{IMG}}/icon-egg.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
+    {% if 'Hammer' in event.Items|join:',' or 'Pan' in event.Items|join:',' or 'Pot' in event.Items|join:',' or 'ookware' in event.Items|join:',' or 'Everything' in event.Items|join:',' or 'fanne' in event.Items|join:',' or 'Prep Bundle' in event.Items|join:',' %}<tr><td width="58" valign="top" style="padding:18px 0 18px 20px;"><img src="{{IMG}}/icon-egg.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
       <td valign="top" style="padding:16px 20px 18px 14px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">The day after delivery: your first cook</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">We send you the chef's guide. Then breakfast.</div></td></tr>{% endif %}
   </table>
 </td></tr>
 
-{% if 'Pan' in event.Items|join:',' or 'Pot' in event.Items|join:',' or 'Pizza Steel' in event.Items|join:',' or 'ookware' in event.Items|join:',' or 'Everything' in event.Items|join:',' or 'Pfanne' in event.Items|join:',' %}
+{% if 'Hammer' in event.Items|join:',' or 'Pan' in event.Items|join:',' or 'Pot' in event.Items|join:',' or 'ookware' in event.Items|join:',' or 'Everything' in event.Items|join:',' or 'fanne' in event.Items|join:',' or 'Prep Bundle' in event.Items|join:',' %}
 <!-- NOTE -->
 <tr><td class="pad" style="padding:24px 44px 4px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#ECE7DD;" bgcolor="#ECE7DD">

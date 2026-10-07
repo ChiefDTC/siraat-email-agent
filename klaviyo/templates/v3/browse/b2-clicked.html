@@ -46,14 +46,14 @@
 <!-- PRODUCTKAART inline, stijl BLOCK:cart. Event: Viewed Product (metric XNtYMB): Name, ImageURL, Price (tekst met $), URL -->
 <tr><td class="pad" style="padding:22px 44px 4px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-    <tr><td colspan="3" style="padding:16px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">{% if 'Pan' in event.Name or 'Pot' in event.Name or 'Pizza Steel' in event.Name or 'ookware' in event.Name or 'Everything' in event.Name or 'Pfanne' in event.Name %}THE PAN YOU VIEWED{% else %}YOU LOOKED AT{% endif %}</td></tr>
+    <tr><td colspan="3" style="padding:16px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">{% if 'Hammer' in event.Name or 'Pan' in event.Name or 'Pot' in event.Name or 'ookware' in event.Name or 'Everything' in event.Name or 'fanne' in event.Name or 'Prep Bundle' in event.Name %}THE PAN YOU VIEWED{% else %}YOU LOOKED AT{% endif %}</td></tr>
     <tr>
       <td width="104" valign="middle" style="padding:12px 0 12px 16px;">
         <a href="https://siraatskitchen.com/discount/{% coupon_code 'B2_10_48H' %}?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}"><img src="{{ event.ImageURL|default:'https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-40a5-9ad7-523bdddc54d4.webp?v=1781682831&width=600' }}" width="88" alt="{{ event.Name|default:'Titanium Hammered Pan Pro' }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;"></a>
       </td>
       <td valign="middle" style="padding:12px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
         <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">{{ event.Name|default:'Titanium Hammered Pan Pro' }}</div>
-        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">{% if 'Pan' in event.Name or 'Pot' in event.Name or 'Pizza Steel' in event.Name or 'ookware' in event.Name or 'Everything' in event.Name or 'Pfanne' in event.Name %}Pure titanium cooking surface{% elif 'Board' in event.Name or 'Utensil' in event.Name or 'Chopsticks' in event.Name %}Pure titanium{% else %}From Siraat&rsquo;s Kitchen{% endif %}</div>
+        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">{% if 'Hammer' in event.Name or 'Pan' in event.Name or 'Pot' in event.Name or 'ookware' in event.Name or 'Everything' in event.Name or 'fanne' in event.Name or 'Prep Bundle' in event.Name %}Pure titanium cooking surface{% elif 'Board' in event.Name or 'Utensil' in event.Name or 'Chopsticks' in event.Name %}Pure titanium{% else %}From Siraat&rsquo;s Kitchen{% endif %}</div>
       </td>
       <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;white-space:nowrap;">{% if event.Price %}{{ event.Price }}{% endif %}</td>
     </tr>
@@ -71,7 +71,7 @@
 
 {{BLOCK:gifts}}
 
-{% if 'Pan' in event.Name or 'Pot' in event.Name or 'Pizza Steel' in event.Name or 'ookware' in event.Name or 'Everything' in event.Name or 'Pfanne' in event.Name %}
+{% if 'Hammer' in event.Name or 'Pan' in event.Name or 'Pot' in event.Name or 'ookware' in event.Name or 'Everything' in event.Name or 'fanne' in event.Name or 'Prep Bundle' in event.Name %}
 {{BLOCK:features eyebrow="WHAT YOU ARE BUYING" headline="One pan. Nothing to wear off." i1="no-coating" t1="No coating. Ever." d1="Pure titanium cooking surface. Nothing to flake off." i2="pfas-tested" t2="Lab tested, not just claimed" d2="Light Labs no. 25895: 31 PFAS below detection." i3="induction-ready" t3="Every cooktop, metal utensils" d3="Gas, electric, induction. Dishwasher safe."}}
 {% endif %}
 

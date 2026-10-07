@@ -1,0 +1,36 @@
+groep,n,15m,1u,4u,24u,3d,7d
+Checkout Started alle,111485,73.94,75.14,75.58,76.22,76.7,77.15
+Checkout Started US,47082,78.95,79.97,80.35,80.95,81.4,81.81
+Checkout Started AU,12568,79.77,81.08,81.51,82.16,82.66,83.04
+Checkout Started CA,3615,76.29,77.76,78.31,78.98,79.53,80.25
+Checkout Started UK,14559,81.67,82.76,83.14,83.71,84.15,84.68
+Checkout Started overig,28708,70.36,72.0,72.62,73.45,74.09,74.64
+Checkout Started onbekend,4953,7.75,8.04,8.08,8.12,8.16,8.2
+Checkout Started nieuwe klant,103717,73.3,74.48,74.91,75.52,75.98,76.4
+Checkout Started eerdere koper,7768,82.44,83.97,84.51,85.57,86.38,87.17
+Checkout Started waarde >= $300,26304,69.1,70.94,71.62,72.56,73.27,73.89
+Checkout Started waarde < $300,85181,75.43,76.44,76.8,77.35,77.77,78.16
+Added to Cart alle,115064,29.95,32.15,32.92,33.99,35.01,35.93
+Added to Cart US,49603,34.15,36.37,37.1,38.23,39.23,40.07
+Added to Cart AU,14783,33.64,35.97,36.79,37.77,38.79,39.69
+Added to Cart CA,4332,29.89,32.48,33.29,34.35,35.34,36.24
+Added to Cart UK,10667,34.84,36.76,37.58,38.67,39.68,40.79
+Added to Cart overig,32171,23.44,25.82,26.68,27.82,28.95,30.06
+Added to Cart onbekend,3508,0.14,0.14,0.14,0.14,0.14,0.14
+Added to Cart nieuwe klant,106158,29.03,31.11,31.83,32.83,33.73,34.59
+Added to Cart eerdere koper,8906,40.99,44.61,45.87,47.87,50.17,51.86
+Added to Cart waarde >= $300,18528,21.68,24.43,25.37,26.53,27.73,28.75
+Added to Cart waarde < $300,96536,31.54,33.64,34.37,35.42,36.4,37.31
+Viewed Product (Klaviyo onsite) alle,45246,11.31,13.03,13.74,14.78,15.8,16.9
+Viewed Product (Klaviyo onsite) US,24164,14.24,16.24,17.02,18.29,19.55,20.83
+Viewed Product (Klaviyo onsite) AU,4051,15.03,17.11,18.0,19.11,20.37,21.65
+Viewed Product (Klaviyo onsite) CA,2702,9.96,11.36,12.03,13.21,13.99,14.8
+Viewed Product (Klaviyo onsite) UK,1231,9.75,12.1,13.24,14.62,15.52,16.41
+Viewed Product (Klaviyo onsite) overig,7896,8.55,10.4,11.25,12.13,13.06,14.35
+Viewed Product (Klaviyo onsite) onbekend,5202,0.02,0.02,0.02,0.02,0.02,0.04
+Viewed Product (Klaviyo onsite) nieuwe klant,40070,11.67,13.42,14.14,15.17,16.17,17.16
+Viewed Product (Klaviyo onsite) eerdere koper,5176,8.52,10.03,10.68,11.79,12.93,14.9
+Viewed Product (Triple Pixel) alle,32789,17.09,19.88,21.03,22.71,24.4,26.11
+Viewed Product (Triple Pixel) onbekend,32789,17.09,19.88,21.03,22.71,24.4,26.11
+Viewed Product (Triple Pixel) nieuwe klant,26511,19.35,22.47,23.73,25.55,27.4,29.09
+Viewed Product (Triple Pixel) eerdere koper,6278,7.55,8.94,9.64,10.74,11.72,13.49
