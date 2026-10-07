@@ -1,0 +1,76 @@
+{
+ "iphone": {
+  "empty-cart": {
+   "final": "https://siraatskitchen.com/cart",
+   "hasHI10": false,
+   "discountLines": [],
+   "cookies": [
+    "discount_code=HI10"
+   ]
+  },
+  "pdp": {
+   "final": "https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern",
+   "hasHI10": false,
+   "discountLines": [],
+   "cookies": [
+    "discount_code=HI10"
+   ]
+  },
+  "bday": {
+   "final": "chrome-error://chromewebdata/",
+   "hasHI10": false,
+   "discountLines": [
+    "The webpage at https://shop.app/accounts/sur?code=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3OTEzOTMxMDksImJvZHkiOnsiaXAiOiIxNjAuNzkuMTA2LjI0IiwiaXNzdWVkX2F0X21zIjoxNzkxMzkzMTA5NTg2LCJyZWRpcmVjdF91cmkiOiJodHRwczovL3NpcmFhdHNraXRjaGVuLmNvbS9wcm9kdWN0cy90aXRhbml1bS1oYW1tZXJlZC1wYW4tc2V0LXdpdGgtbGlkcy02LXBjcy1iZGF5LXNhbGUiLCJhbmFseXRpY3NfdHJhY2VfaWQiOiJmZmFiNjYxZC1lNzhkLTQwMWMtYTA4NC04YjQxN2RhNmJmNWIiLCJzb3VyY2UiOiJzZWNvbmRfdmlzaXQifX0.FLHUPPVeND4t0xeqJA04HYCn-itcnV9jhOj7w-M87mw&_su_rec_id=ef1092da-8750-40bf-9739-0cdf15b27f84-1791393109 might be temporarily down or it may have moved permanently to a new web address."
+   ],
+   "cookies": [
+    "discount_code=HI10"
+   ]
+  },
+  "badcode": {
+   "final": "chrome-error://chromewebdata/",
+   "hasHI10": false,
+   "discountLines": [
+    "The webpage at https://shop.app/accounts/sur?code=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3OTEzOTMxMjQsImJvZHkiOnsiaXAiOiIxNjAuNzkuMTA2LjI0IiwiaXNzdWVkX2F0X21zIjoxNzkxMzkzMTI0ODM1LCJyZWRpcmVjdF91cmkiOiJodHRwczovL3NpcmFhdHNraXRjaGVuLmNvbS9jYXJ0IiwiYW5hbHl0aWNzX3RyYWNlX2lkIjoiZmZhYjY2MWQtZTc4ZC00MDFjLWEwODQtOGI0MTdkYTZiZjViIiwic291cmNlIjoic2Vjb25kX3Zpc2l0In19.MepdQaJsqOmzIgV8K8IbBfav_jDozYWO4DYl-AhjRiA&_su_rec_id=7648d09a-5386-439c-a371-52808df970b4-1791393124 might be temporarily down or it may have moved permanently to a new web address."
+   ],
+   "cookies": [
+    "discount_code=K3_10_48H"
+   ]
+  }
+ },
+ "desktop": {
+  "empty-cart": {
+   "final": "https://siraatskitchen.com/cart",
+   "hasHI10": false,
+   "discountLines": [],
+   "cookies": [
+    "discount_code=HI10"
+   ]
+  },
+  "pdp": {
+   "final": "https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern",
+   "hasHI10": false,
+   "discountLines": [],
+   "cookies": [
+    "discount_code=HI10"
+   ]
+  },
+  "bday": {
+   "final": "https://siraatskitchen.com/products/titanium-hammered-pan-set-with-lids-6-pcs-bday-sale",
+   "hasHI10": false,
+   "discountLines": [
+    "3 pans · 3 fitted lids. 45% off for our birthday. The biggest discount we've ever done, and it won't get better than this."
+   ],
+   "cookies": [
+    "discount_code=HI10"
+   ]
+  },
+  "badcode": {
+   "final": "https://siraatskitchen.com/cart",
+   "hasHI10": false,
+   "discountLines": [],
+   "cookies": [
+    "discount_code=K3_10_48H"
+   ]
+  }
+ }
+}
