@@ -16,7 +16,7 @@ DEF={'codebar':{'text':'EXTRA 10% OFF YOUR ORDER &middot; CODE','code':'HI10'},
  'cta':{'pad':'24px 44px 6px 44px','sub':''},
  'icons':{'pad':'22px 44px 6px 44px','icon4':'pfas-tested','text4':'PFAS<br>LAB TESTED'},
  'icons-int':{'pad':'22px 44px 6px 44px','icon4':'no-duties','text4':'NO IMPORT<br>DUTIES'},
- 'gifts':{'pad':'30px 44px 6px 44px','eyebrow':'WITH EVERY ORDER','headline':'$70 in gifts, on us','note':'Plus a chance to win a $450 PFAS water filter. Nothing to add: it all comes with your order.'},
+ 'gifts':{'pad':'30px 44px 6px 44px','eyebrow':'WITH EVERY ORDER','headline':'$70 in gifts, on us','note':'Plus a chance to win a $450 PFAS water filter. Nothing to add: it all comes with every order.'},
  'offer':{'pad':'26px 44px 6px 44px','eyebrow':'YOUR CODE','headline':'10% off your order','code':'HI10','note':'Applied automatically with the button. Or enter it at checkout.','deadline':''},
  'reviews':{'pad':'28px 44px 6px 44px'},
  'features':{'pad':'30px 44px 6px 44px','eyebrow':'WHY IT LASTS'},
@@ -24,6 +24,9 @@ DEF={'codebar':{'text':'EXTRA 10% OFF YOUR ORDER &middot; CODE','code':'HI10'},
  'closerlook':{'pad':'34px 44px 6px 44px','eyebrow':'UP CLOSE','headline':'Take a closer look.'},
  'productcard':{'pad':'0 44px 10px 44px','pill':'','note':'','was':'','link':'Shop now'},
  'cart':{'pad':'24px 44px 6px 44px','title':'STILL IN YOUR CART','line':'<b>HI10</b> takes an extra 10% off, applied with the button below.'}}
+# US-voorwaarde per trigger (dezelfde als de bestaande mails): Placed Order = verzendland, Checkout = presentment currency, Added to Cart = $currency, Viewed Product = '$' in prijs
+USCOND={'post-purchase':"event.extra.shipping_address.country_code == 'US'",'winback':"event.extra.shipping_address.country_code == 'US'",'vip':"event.extra.shipping_address.country_code == 'US'",'anniversary':"event.extra.shipping_address.country_code == 'US'",
+ 'checkout':"event.extra.presentment_currency == 'USD' or not event.extra.presentment_currency",'cart':"event|lookup:'$currency' == 'USD'",'browse':"'$' in event.Price"}
 def blk(m):
     name=m.group(1); kv=dict(DEF.get(name,{})); kv.update(dict(re.findall(r'(\w+)="([^"]*)"',m.group(2))))
     fn='icons.html' if name=='icons-int' else name+'.html'
@@ -39,7 +42,16 @@ def blk(m):
     if name=='productcard':
         if '/' not in kv.get('img',''): kv['img']='{{SHARED}}/'+kv.get('img','')
         kv['pill']=('<div style="padding-bottom:8px;"><span style="display:inline-block;background:#AC3B19;color:#FFFFFF;font-size:10px;line-height:14px;letter-spacing:1.4px;font-weight:600;padding:3px 9px;border-radius:10px;">%s</span></div>'%kv['pill']) if kv['pill'] else ''
-        w=kv.pop('was'); kv['washtml']=('<span style="color:#9A948B;text-decoration:line-through;">%s</span>&nbsp; '%w) if w else ''
+        w=kv.pop('was'); now=kv.pop('now',''); note=kv.pop('note',''); us=kv.pop('us',''); cond=kv.pop('uscond','')
+        ph=('<div style="padding-top:10px;font-size:16px;line-height:22px;">%s<b style="color:#AC3B19;font-weight:600;">%s</b></div>'%(('<span style="color:#9A948B;text-decoration:line-through;">%s</span>&nbsp; '%w) if w else '',now)) if (w or now) else ''
+        nh=('<div style="font-size:12px;line-height:17px;color:#727272;">%s</div>'%note) if note else ''
+        if us:  # us="1": prijsregel en note alleen voor US; us="price": alleen de prijsregel, note altijd zichtbaar
+            cond=cond or USCOND.get(os.path.basename(os.path.dirname(os.path.abspath(src))))
+            if not cond: sys.exit('productcard us="1": geen US-voorwaarde bekend voor deze flow, geef uscond="..."')
+            wrap=lambda x:('{%% if %s %%}%s{%% endif %%}'%(cond,x)) if x else ''
+            if us=='price': ph=wrap(ph)
+            else: ph,nh=wrap(ph+nh),''
+        kv['pricehtml']=ph+nh
     if name=='offer' and kv['deadline']: kv['deadline']=open(os.path.join(B,'deadline.html')).read().replace('[[text]]',kv['deadline'])
     for k,v in kv.items(): t=t.replace('[['+k+']]',v)
     left=re.findall(r'\[\[\w+\]\]',t)

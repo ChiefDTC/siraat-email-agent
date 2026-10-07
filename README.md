@@ -65,3 +65,8 @@ Elke sessie van Claude begint met het lezen van deze repo en eindigt met het bij
 
 Daarnaast 46 flows op Draft (HKT, Farooq, Postflows, oude EB-versies). Volledige lijst: `curl -g "https://a.klaviyo.com/api/flows?page[size]=50"`.
 Pad van een nieuwe lead die niet koopt: 8 welcome-mails (dag 0 tot 10) plus 10 failure-to-launch-mails (dag 30 tot 41) plus browse, cart en campagnes.
+
+
+## Figma v4
+
+Flow System v4: https://www.figma.com/design/ahGP2wWoVIif8ETXcBq1Dj (12 flowpagina's volgens klaviyo/flows/v4-flow-system.md; bouwscripts in klaviyo/figma/v4). v3 blijft als historie: vFxoMn3Oqw1jf5t21uv4sJ.

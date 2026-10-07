@@ -1,5 +1,6 @@
   /* blocks (partials/blocks, ingevoegd door build_template.py) */
   @media only screen and (max-width:620px){
+    .navhide{display:none!important;}
     .btnw{width:100%!important;min-width:0!important;}
     .btnw a{display:block!important;}
     .g2{display:block!important;width:100%!important;padding:0 0 10px 0!important;}

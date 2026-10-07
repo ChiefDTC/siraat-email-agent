@@ -25,6 +25,7 @@
   }
   /* blocks (partials/blocks, ingevoegd door build_template.py) */
   @media only screen and (max-width:620px){
+    .navhide{display:none!important;}
     .btnw{width:100%!important;min-width:0!important;}
     .btnw a{display:block!important;}
     .g2{display:block!important;width:100%!important;padding:0 0 10px 0!important;}
@@ -59,7 +60,7 @@
 <tr><td style="padding:18px 36px;background:#F8F7F2;border-bottom:1px solid #ECE7DD;" class="pad">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
     <td valign="middle"><a href="https://siraatskitchen.com"><img src="assets/logo-black.png" width="150" alt="Siraat" style="width:150px;height:auto;"></a></td>
-    <td valign="middle" align="right" class="navhide" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:1.5px;font-weight:600;white-space:nowrap;">
+    <td valign="middle" align="right" class="navhide" style="padding-left:20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:1.5px;font-weight:600;white-space:nowrap;">
       <a href="https://siraatskitchen.com/collections/pans" style="color:#282828;text-decoration:none;">COOKWARE</a>&nbsp;&nbsp;&nbsp;
       <a href="https://siraatskitchen.com/collections/bundles" style="color:#282828;text-decoration:none;">SETS</a>&nbsp;&nbsp;&nbsp;
       <a href="https://siraatskitchen.com/pages/faq" style="color:#282828;text-decoration:none;">ABOUT</a>
@@ -72,6 +73,11 @@
 <tr><td style="padding:0;">
   <a href="https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3acc-hero&utm_term=t02-b"><img src="assets/p3-accessory-nocode-hero.jpg" width="600" alt="For Siraat owners. Now meet the pan: the original hammered titanium pan. Free shipping and 4 gifts with every order." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
+<!-- BLOCK productcard (research/ux-round2): productkaart met sticker in het beeld (scripts/place_sticker.py).
+     Beeld 200 px desktop, 132 px mobiel. Optionele pill als live tekst: pill="BEST SELLER" (leeg = geen).
+     img="card-x.jpg" = gedeeld beeld uit partials/shared; img met de IMG-variabele ervoor (dubbele accolades, zie PLAYBOOK 12) = eigen beeld uit de assets-map van de flow.
+     was="$439" alleen bij een echte compare-at uit Shopify (PLAYBOOK 12). now leeg en was leeg = geen prijsregel.
+     us="1" zet prijsregel en note binnen een if-tag op de US-voorwaarde van de trigger (build_template.py, USCOND), us="price" alleen de prijsregel; uscond="..." overschrijft de voorwaarde. -->
 <tr><td class="pad" style="padding:22px 44px 4px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;"><tr>
     <td width="200" class="pc-i" valign="middle" style="width:200px;padding:0;"><a href="https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3acc-prod-panpro&utm_term=t02-b"><img src="../../partials/shared/card-panpro-bestseller.jpg" width="200" alt="Titanium Hammered Pan Pro, best seller" class="pc-img" style="display:block;width:200px;height:auto;"></a></td>
@@ -79,11 +85,12 @@
       
       <div class="pc-n" style="font-size:18px;line-height:24px;font-weight:600;color:#282828;">Titanium Hammered Pan Pro</div>
       <div class="pc-s" style="font-size:14px;line-height:20px;color:#727272;padding-top:3px;">Standard 11&Prime; (28 cm), the size most people start with. Covered for 75 years.</div>
-      {% if event.extra.shipping_address.country_code == 'US' %}<div style="padding-top:10px;font-size:16px;line-height:22px;"><span style="color:#9A948B;text-decoration:line-through;">$439</span>&nbsp; <b style="color:#AC3B19;font-weight:600;">$134</b></div>{% endif %}
+      <div style="padding-top:10px;font-size:16px;line-height:22px;"><span style="color:#9A948B;text-decoration:line-through;">$439</span>&nbsp; <b style="color:#AC3B19;font-weight:600;">$134</b></div>
       <div style="padding-top:10px;font-size:13px;line-height:16px;letter-spacing:1.5px;font-weight:600;color:#282828;text-transform:uppercase;"><span style="border-bottom:1px solid #282828;padding-bottom:2px;">Choose your size</span> &rarr;</div>
     </a></td>
   </tr></table>
 </td></tr>
+
 <!-- BLOCK cta: primaire knop, 340 px desktop, volle breedte mobiel -->
 <tr><td align="center" class="pad" style="padding:18px 44px 4px 44px;">
   <table role="presentation" class="btnw" width="340" cellpadding="0" cellspacing="0" border="0" style="width:340px;"><tr>
@@ -92,7 +99,7 @@
       <!--[if !mso]><!--><a href="https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3acc-cta1&utm_term=t02-b" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Get the Pan Pro &rarr;</a><!--<![endif]-->
     </td>
   </tr></table>
-  <div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 4 gifts with every order.</div>
+  <div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>
 </td></tr>
 
 <tr><td class="pad" style="padding:24px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">
@@ -248,7 +255,7 @@
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:19px;color:#BDB8B0;text-align:center;">
     Free shipping on all orders &middot; 30-day returns &middot; 75-year warranty<br><br>
     <a href="#" style="color:#BDB8B0;">Unsubscribe</a> &nbsp;|&nbsp; <a href="#" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; <a href="#" style="color:#BDB8B0;">View in browser</a><br>
-    Siraat's Kitchen &middot; [address]
+    Siraat&#x27;s Kitchen &middot; [address]
   </div>
 </td></tr>
 
