@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: Forgetting something? | SUBJECT_B: Your pan is still here | PREVIEW: Your cart is saved. Free shipping, 30-day returns and a 75-year warranty. | SEND: Step 0, 1 hour after Checkout Started | FILTERS: Flow: Placed Order = 0 since starting this flow, not in this flow in last 14 days, not in post-purchase in last 7 days. Message: Placed Order = 0 since starting this flow -->
+<!-- SUBJECT_A: Forgetting something? | SUBJECT_B: Your pan is still here (+10% off) | PREVIEW: Your cart is saved. Extra 10% off with HI10, plus $70 in gifts. | SEND: Step 0, 1 hour after Checkout Started | FILTERS: Flow: Placed Order = 0 since starting this flow, not in this flow in last 14 days, not in post-purchase in last 7 days. Message: Placed Order = 0 since starting this flow -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -29,134 +29,37 @@
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Your cart is saved. Free shipping, 30-day returns and a 75-year warranty.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Your cart is saved. Extra 10% off with HI10, plus $70 in gifts.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
+{{BLOCK:codebar}}
+
 {{HEADER}}
 
-<!-- HERO: shoot photo + TT Ramillas headline baked in -->
+<!-- HERO 4:3 met aanbodbalk (make_hero.py --offer --ratio=4:3) -->
 <tr><td style="padding:0;">
-  <a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/cart' }}"><img src="{{IMG}}/c1-hero.jpg" width="600" alt="Your cart is still here. Saved exactly as you left it." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10"><img src="{{IMG}}/c1-hero.jpg" width="600" alt="Your cart is still here. Extra 10% off with code HI10, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
-<!-- CTA under hero -->
-<tr><td align="center" style="padding:24px 44px 4px 44px;">
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-    <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:2px;">
-      <a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/cart' }}" style="display:inline-block;padding:16px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:16px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;">RETURN TO MY CART</a>
-    </td>
-  </tr></table>
-</td></tr>
+{{BLOCK:cart pad="22px 44px 4px 44px"}}
 
-<!-- INTRO -->
-<tr><td class="pad" style="padding:30px 44px 6px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;color:#282828;">
-  <p style="margin:0 0 14px 0;">Hi {{ first_name|default:'there' }},</p>
-  <p style="margin:0;">You got as far as checkout and stopped. That happens. Your cart is saved exactly as you left it, so it is one click to pick up where you were.</p>
-</td></tr>
+{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10" pad="16px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>Your 10% is applied automatically.</div>"}}
 
-<!-- CART BLOCK (Klaviyo Checkout Started data) -->
-<tr><td class="pad" style="padding:26px 44px 6px 44px;">
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:34px;line-height:38px;color:#282828;text-align:center;padding-bottom:14px;">Still in your cart</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-    {% for item in event.extra.line_items %}{% if forloop.counter <= 3 %}
-    <tr>
-      <td width="112" valign="middle" style="padding:14px 0 14px 14px;">
-        <img src="{{ item.product.images.0.src|default:'{{IMG}}/cart-fallback.jpg' }}" width="96" alt="{{ item.title }}" style="width:96px;height:96px;object-fit:cover;background:#F8F7F2;">
-      </td>
-      <td valign="middle" style="padding:14px 16px;font-family:Inter,Arial,Helvetica,sans-serif;">
-        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">{{ item.title }}</div>
-        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">Qty {{ item.quantity|floatformat:0 }}</div>
-      </td>
-      <td align="right" valign="middle" style="padding:14px 16px 14px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;white-space:nowrap;">${{ item.line_price|floatformat:2 }}</td>
-    </tr>
-    {% endif %}{% endfor %}
-  </table>
-</td></tr>
+{{BLOCK:icons}}
 
-<!-- OBJECTION CARD: delivery and returns -->
-<tr><td class="pad" style="padding:26px 44px 8px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-    <tr><td style="padding:20px 22px 6px 22px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:1.5px;font-weight:600;color:#AC3B19;">WHAT HAPPENS AFTER YOU ORDER</td></tr>
-    <tr><td style="padding:0 22px;">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td width="44" valign="top" style="padding:14px 0;font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:34px;line-height:34px;color:#AC3B19;">1</td>
-          <td valign="top" style="padding:14px 0;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">It ships within 1 business day</div>
-            <div style="font-size:14px;line-height:21px;color:#727272;padding-top:4px;">In-stock items leave our warehouse the next business day. You get tracking by email.</div>
-          </td>
-        </tr>
-        <tr>
-          <td width="44" valign="top" style="padding:14px 0;font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:34px;line-height:34px;color:#AC3B19;">2</td>
-          <td valign="top" style="padding:14px 0;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">It arrives in 6 to 10 days</div>
-            <div style="font-size:14px;line-height:21px;color:#727272;padding-top:4px;">Standard delivery to the US, UK, EU, Australia and most other countries. Shipping is free on every order.</div>
-          </td>
-        </tr>
-        <tr>
-          <td width="44" valign="top" style="padding:14px 0 18px 0;font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:34px;line-height:34px;color:#AC3B19;">3</td>
-          <td valign="top" style="padding:14px 0 18px 0;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">You have 30 days to decide</div>
-            <div style="font-size:14px;line-height:21px;color:#727272;padding-top:4px;">Not for you? Return it unused within 30 days of delivery for a full refund. After that, the 75-year warranty covers defects.</div>
-          </td>
-        </tr>
-      </table>
-    </td></tr>
-  </table>
-</td></tr>
+{{BLOCK:gifts}}
 
-<!-- REVIEWS -->
-<tr><td class="pad" style="padding:28px 44px 6px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-    <tr>
-      <td class="stack stackpad" width="50%" valign="top" style="padding:0 7px 0 0;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-          <tr><td style="padding:18px 18px 16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <div style="font-size:14px;line-height:21px;color:#282828;padding:8px 0 10px 0;">&ldquo;I purchased the hammered pro pan standard. It is beautiful and lightweight. I cooked perfect over easy eggs for the first time in a non coated pan.&rdquo;</div>
-            <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Deb, verified buyer</div>
-          </td></tr>
-        </table>
-      </td>
-      <td class="stack stackpad" width="50%" valign="top" style="padding:0 0 0 7px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-          <tr><td style="padding:18px 18px 16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <div style="font-size:14px;line-height:21px;color:#282828;padding:8px 0 10px 0;">&ldquo;It&rsquo;s a great pan! Even eggs don&rsquo;t stick!&rdquo;</div>
-            <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Susan M., verified buyer</div>
-          </td></tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;text-align:center;padding-top:14px;">Join 100,000+ happy customers.</div>
-</td></tr>
+{{BLOCK:features eyebrow="WHY 100,000+ PEOPLE SWITCHED" headline="One pan. Nothing to wear off." i1="no-coating" t1="No coating. Ever." d1="Pure titanium cooking surface. There is nothing to scratch, flake or end up in your food." i2="pfas-tested" t2="Lab tested, not just claimed" d2="Light Labs report no. 25895: 31 PFAS compounds tested, every one below detection." i3="metal-utensil-safe" t3="Metal utensils, high heat, dishwasher" d3="Sear, scrape and clean it the way you like. The 75-year warranty covers the rest."}}
 
-<!-- CTA -->
-<tr><td align="center" style="padding:22px 44px 8px 44px;">
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-    <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:2px;">
-      <a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/cart' }}" style="display:inline-block;padding:16px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:16px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;">RETURN TO MY CART</a>
-    </td>
-  </tr></table>
-</td></tr>
+{{BLOCK:reviews q1="One of the best pans I've ever used and so impressed with how easy it is to clean" n1="Carol E." q2="I really like the no stick effect. It's going to become my #1 go to frying pan" n2="Adele M."}}
 
-<!-- TRUST ROW -->
-<tr><td class="pad" style="padding:22px 44px 6px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #ECE7DD;border-bottom:1px solid #ECE7DD;">
-    <tr>
-      <td width="33%" align="center" style="padding:16px 4px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;">30-DAY<br>RETURNS</td>
-      <td width="34%" align="center" style="padding:16px 4px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;border-left:1px solid #ECE7DD;border-right:1px solid #ECE7DD;">75-YEAR<br>WARRANTY</td>
-      <td width="33%" align="center" style="padding:16px 4px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;">FREE<br>SHIPPING</td>
-    </tr>
-  </table>
-</td></tr>
+{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10" pad="26px 44px 6px 44px"}}
 
 <!-- SIGN-OFF -->
-<tr><td class="pad" style="padding:22px 44px 26px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  Something stopped you at checkout? A question about sizes, induction or delivery to your country? Just reply. A real person reads every email.<br><br>
+<tr><td class="pad" style="padding:24px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+  Hi {{ first_name|default:'there' }}, something stopped you at checkout? A question about sizes or induction? Just reply. A real person reads every email.<br><br>
   Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
 </td></tr>
 

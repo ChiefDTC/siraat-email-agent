@@ -8,13 +8,38 @@ h=open(src).read()
 P=os.path.join(os.path.dirname(os.path.abspath(src)),'partials')
 d=os.path.dirname(os.path.abspath(src))
 while not os.path.isdir(os.path.join(d,'partials')) and os.path.dirname(d)!=d: d=os.path.dirname(d)
-P=os.path.join(d,'partials')
+P=os.path.join(d,'partials'); R=os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','klaviyo','templates','partials')
 h=h.replace('{{HEADER}}',open(os.path.join(P,'header.html')).read()).replace('{{FOOTER}}',open(os.path.join(P,'footer.html')).read())
+# Blokken uit klaviyo/templates/partials/blocks: {{BLOCK:naam key="waarde"}} met [[key]] in het blok
+B=os.path.join(R,'blocks'); SH=os.path.join(R,'shared')
+DEF={'codebar':{'text':'EXTRA 10% OFF YOUR ORDER &middot; CODE','code':'HI10'},
+ 'cta':{'pad':'24px 44px 6px 44px','sub':''},
+ 'icons':{'pad':'22px 44px 6px 44px','icon4':'pfas-tested','text4':'PFAS<br>LAB TESTED'},
+ 'icons-int':{'pad':'22px 44px 6px 44px','icon4':'no-duties','text4':'NO IMPORT<br>DUTIES'},
+ 'gifts':{'pad':'30px 44px 6px 44px','eyebrow':'WITH EVERY ORDER','headline':'$70 in gifts, on us','note':'Plus a chance to win a $450 PFAS water filter. Nothing to add: it all comes with your order.'},
+ 'offer':{'pad':'26px 44px 6px 44px','eyebrow':'YOUR CODE','headline':'10% off your order','code':'HI10','note':'Applied automatically with the button. Or enter it at checkout.','deadline':''},
+ 'reviews':{'pad':'28px 44px 6px 44px'},
+ 'features':{'pad':'30px 44px 6px 44px','eyebrow':'WHY IT LASTS'},
+ 'cart':{'pad':'24px 44px 6px 44px','title':'STILL IN YOUR CART','line':'<b>HI10</b> takes an extra 10% off, applied with the button below.'}}
+def blk(m):
+    name=m.group(1); kv=dict(DEF.get(name,{})); kv.update(dict(re.findall(r'(\w+)="([^"]*)"',m.group(2))))
+    fn='icons.html' if name=='icons-int' else name+'.html'
+    t=open(os.path.join(B,fn)).read()
+    if name=='offer' and kv['deadline']: kv['deadline']=open(os.path.join(B,'deadline.html')).read().replace('[[text]]',kv['deadline'])
+    for k,v in kv.items(): t=t.replace('[['+k+']]',v)
+    left=re.findall(r'\[\[\w+\]\]',t)
+    if left: sys.exit('blok %s mist %s'%(name,left))
+    return t
+h=re.sub(r'\{\{BLOCK:([\w-]+)((?:\s+\w+="[^"]*")*)\s*\}\}',blk,h)
+h=h.replace('</style>',open(os.path.join(B,'_style.css')).read()+'</style>',1)
+su=dict(l.split() for l in open(os.path.join(SH,'klaviyo-urls.txt')) if l.strip()) if os.path.exists(os.path.join(SH,'klaviyo-urls.txt')) else {}
 k=h
 for a,b in sorted(u.items(),key=lambda x:-len(x[0])): k=k.replace('{{IMG}}/'+a,b)
+for a,b in su.items(): k=k.replace('{{SHARED}}/'+a,b)
 base=src[:-5]
-if '{{IMG}}' not in k: open(base+'.klaviyo.html','w').write(k)
-p=h.replace('{{IMG}}',os.path.basename(assets.rstrip('/')))
+if '{{IMG}}' not in k and '{{SHARED}}' not in k: open(base+'.klaviyo.html','w').write(k)
+p=h.replace('{{IMG}}',os.path.basename(assets.rstrip('/'))).replace('{{SHARED}}',os.path.relpath(SH,os.path.dirname(os.path.abspath(src))))
+p=re.sub(r"\{% coupon_code [^%]*%\}",'SRT-K7Q2M',p)
 m=re.search(r'\{% for item in event.extra.line_items %\}\{% if forloop.counter <= 3 %\}(.*?)\{% endif %\}\{% endfor %\}',p,re.S)
 if m:
     r=re.sub(r"\{\{ item.product.images.0.src[^}]*\}\}",os.path.basename(assets.rstrip('/'))+'/cart-fallback.jpg',m.group(1)).replace('{{ item.title }}','Titanium Hammered Pan Pro, 11"').replace('{{ item.quantity|floatformat:0 }}','1').replace('{{ item.line_price|floatformat:2 }}','134.00')

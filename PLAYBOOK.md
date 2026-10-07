@@ -106,3 +106,19 @@ Let op: de brand guidelines (site) gebruiken Inter voor koppen en Terracotta #C7
 - Beelden met labels krijgen op mobiel een aparte versie zonder labels plus live tekst eronder.
 - Header en footer zijn vast en komen uit `klaviyo/templates/partials/` (header.html, footer.html). In elke bron-template staan alleen `{{HEADER}}` en `{{FOOTER}}`; `scripts/build_template.py` vult ze in. Header: monogram + "Built for Life" (TT Ramillas, PNG) en navigatie Cookware, Sets, About (live tekst, verborgen op mobiel). Footer: donker #282828, monogram + "Built for Life / Non-Toxic Cookware", vier navigatieregels, Facebook en Instagram, claims-regel, unsubscribe, voorkeuren, webversie, adres.
 - Wijzig je header of footer, dan in de partial, en alle templates opnieuw bouwen.
+
+## 11. UX-standaard en blokken (vanaf 7 oktober 2026, na UX-ronde)
+
+Bron: research/ux-2026-10-07 (00-samenvatting, 01-ux-audit deel D). Referentiemail: `klaviyo/templates/v3/checkout/c1.html`.
+
+- **Aanbod altijd in de hero.** `make_hero.py ... --offer="EXTRA 10% OFF WITH HI10  ·  $70 IN GIFTS"`. Checkout, cart en browse `--ratio=4:3`. Label en subregel zijn groot genoeg voor mobiel (40 en 48 px op 1200). Alt-tekst noemt het aanbod letterlijk.
+- **Codebalk** `{{BLOCK:codebar}}` boven `{{HEADER}}` in elke verkoopmail (niet in P1, P2, W0, W2-tekstmail).
+- **Cart en knop boven de vouw** in checkout en cart: hero, dan `{{BLOCK:cart}}`, dan `{{BLOCK:cta}}`.
+- **Knoppen** alleen via `{{BLOCK:cta label="..." url="..."}}`: 340 px desktop, volle breedte mobiel, ik-vorm met voordeel ("Complete my order", "Claim my 10% + gifts", "Get 10% off this pan"). Drie keer dezelfde primaire knop. Links met de korting al toegepast: checkout `responsive_checkout_url` + `&discount=HI10`, elders `https://siraatskitchen.com/discount/HI10?redirect=/pad`.
+- **Feiten als iconen**: `{{BLOCK:icons}}` (US) of `{{BLOCK:icons-int}}` (internationaal, "No import duties", DDP). Nooit levertijden in marketingmails.
+- **Gifts** `{{BLOCK:gifts}}`: vier beelden met waarde, "$70 in gifts", filter is altijd "win/chance to win a PFAS water filter", nooit "purifier" of "free filter".
+- **Uitleg over de pan** `{{BLOCK:features}}` met drie iconregels (i1..i3 = icoonnaam uit `partials/shared/icon-*.png`).
+- **Reviews** `{{BLOCK:reviews q1 n1 q2 n2}}`: gelijke hoogte, quotes 5 sterren, max 120 tekens, lengteverschil max 30.
+- **Aanbodblok** `{{BLOCK:offer}}` (espresso) met optioneel `deadline="..."` alleen bij een unieke verlopende code (`{% coupon_code 'NAAM' %}`). Geen "final call", "reserved", "expires tonight" zonder echte deadline.
+- Gedeelde beelden staan in `klaviyo/templates/partials/shared/` en heten in de bron `{{SHARED}}/bestand`. CDN-links in `partials/shared/klaviyo-urls.txt`.
+- Hero-foto's per flow in `content/media/hero-register/<flow>.csv`, nooit dubbel over flowpaden.
