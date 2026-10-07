@@ -153,7 +153,7 @@ def check(k,subj_a,subj_b,prev):
     for a in re.findall(r'\bhref="([^"]*)"',k):
         if re.search(r'siraatskitchen\.com',a) and 'utm_source' not in a and not a.startswith('mailto'):
             B.append('link zonder UTM: %s'%a[:80])
-    if '—' in k or '&mdash;' in k: B.append('gedachtestreepje (em dash)')
+    if '\u2014' in k or '&mdash;' in k: B.append('gedachtestreepje (em dash)')
     return sorted(set(B)),sorted(set(W))
 
 # ---------- live (alleen met --live --i-am-sure) ----------
