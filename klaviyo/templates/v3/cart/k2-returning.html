@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: Adding to your Siraat kitchen? | SUBJECT_B: Your cart, 10% off, as a thank-you | PREVIEW: Code HI10 takes 10% off. The pan you know, plus $70 in gifts. | SEND: 1 day after K1 (step 1), split: Placed Order over all time > 0 (returning customer, short version) | FILTERS: Flow: Added to Cart; Checkout Started = 0 since flow start; Placed Order = 0 since flow start; not in checkout flow last 7 days; not in this flow last 14 days. Message: Placed Order = 0 since flow start -->
+<!-- SUBJECT_A: Adding to your Siraat kitchen? | SUBJECT_B: "I am on my 4th pan from Siraat" (reserve) | SUBJECTS (5 types): C+B 'Your next pan cooks like the first' / SPEC 'Same titanium, same 4 gifts, same free shipping' / Q 'Adding to your Siraat kitchen?' / STORY '"I am on my 4th pan from Siraat"' / OFFER 'HI10 still takes 10% off your cart' | PREVIEW: You know how it works. Your cart is saved, and HI10 still takes 10% off. | SEND: 1 day after K1 (24 hours, no time of day), CS HEEFT_GEKOCHT = yes | FILTERS: Trigger: Added to Cart (QXcV8K) with Price greater than 0 and Product Name doesn't contain Mystery Gift, E-Book, Free Shipping, Giveaway. Flow: Checkout Started = 0 since flow start; Placed Order = 0 since flow start; Received Email where Flow = 'v4 · Checkout abandonment' = 0 in the last 7 days; not in this flow in the last 14 days. Message: Checkout Started = 0 and Placed Order = 0 since flow start | UTM: utm_content=k2ret-<blok> -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
-<title>Your cart, 10% off.</title>
+<title>You know this pan.</title>
 <!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
@@ -25,14 +25,16 @@
     .desk{display:none!important;max-height:0!important;overflow:hidden!important;}
     .mob{display:block!important;max-height:none!important;overflow:visible!important;}
     .center{text-align:center!important;}
+    .lead{font-size:16px!important;line-height:25px!important;}
   }
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Code HI10 takes 10% off. The pan you know, plus $70 in gifts.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">You know how it works. Your cart is saved, and HI10 still takes 10% off.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
+
 
 {{BLOCK:codebar}}
 
@@ -40,46 +42,112 @@
 
 <!-- HERO 4:3 met aanbodbalk (make_hero.py --offer --ratio=4:3) -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/discount/HI10?redirect=/cart"><img src="{{IMG}}/k2-returning-hero.jpg" width="600" alt="Welcome back. Your cart, 10% off: extra 10% off with code HI10, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://siraatskitchen.com/discount/HI10?redirect=/cart%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk2ret-hero"><img src="{{IMG}}/k2-returning-hero.jpg" width="600" alt="Welcome back. You know this pan: same titanium, same 4 gifts. Extra 10% off with code HI10, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
-<!-- PRODUCTKAART inline, stijl BLOCK:cart. Event: Added to Cart (Shopify, metric QXcV8K): Product Name, ImageURL, Price (getal), Quantity -->
+<!-- PRODUCTKAART Added to Cart (QXcV8K): 'Product Name', ImageURL, Price (getal), Quantity, $currency. Prijs alleen bij USD; ankerprijs $439 alleen bij Pan Pro Standard 11" voor $134 in USD. -->
 <tr><td class="pad" style="padding:22px 44px 4px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
     <tr><td colspan="3" style="padding:16px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">STILL IN YOUR CART</td></tr>
     <tr>
       <td width="104" valign="middle" style="padding:12px 0 12px 16px;">
-        <a href="https://siraatskitchen.com/discount/HI10?redirect=/cart"><img src="{% if event.ImageURL %}{{ event.ImageURL }}&width=200{% else %}https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-40a5-9ad7-523bdddc54d4.webp?v=1781682831&width=600{% endif %}" width="88" alt="{{ event|lookup:'Product Name'|default:'Titanium Hammered Pan Pro' }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;"></a>
+        <a href="https://siraatskitchen.com/discount/HI10?redirect=/cart%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk2ret-product"><img src="{% if event.ImageURL %}{{ event.ImageURL }}&width=200{% else %}https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-40a5-9ad7-523bdddc54d4.webp?v=1781682831&width=200{% endif %}" width="88" alt="{{ event|lookup:'Product Name'|default:'Titanium Hammered Pan Pro' }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;"></a>
       </td>
       <td valign="middle" style="padding:12px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
         <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">{{ event|lookup:'Product Name'|default:'Titanium Hammered Pan Pro' }}</div>
         <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">Qty {{ event.Quantity|default:1|floatformat:0 }}</div>
       </td>
-      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;white-space:nowrap;">{% if event.Price and event|lookup:'$currency' == 'USD' %}${{ event.Price|floatformat:2 }}{% endif %}</td>
+      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;white-space:nowrap;">{% if 'Pan Pro Standard' in event|lookup:'Product Name' and event.Price == 134 and event.Quantity == 1 and event|lookup:'$currency' == 'USD' %}<span style="color:#9A948B;text-decoration:line-through;font-weight:400;">$439</span>&nbsp; {% endif %}{% if event.Price and event|lookup:'$currency' == 'USD' %}${{ event.Price|floatformat:2 }}{% endif %}</td>
     </tr>
     <tr><td colspan="3" style="padding:0 16px 16px 16px;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:11px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">
-        <img src="{{SHARED}}/icon-discount-tag.png" width="20" height="20" alt="" style="display:inline-block;vertical-align:-5px;width:20px;height:20px;">&nbsp; <b>HI10</b> takes an extra 10% off, applied with the button below.
+        <img src="{{SHARED}}/icon-discount-tag.png" width="20" height="20" alt="" style="display:inline-block;vertical-align:-5px;width:20px;height:20px;">&nbsp; {% if 'Pan Pro Standard' in event|lookup:'Product Name' and event.Price == 134 and event.Quantity == 1 and event|lookup:'$currency' == 'USD' %}With <b>HI10</b> it&rsquo;s <b>$120.60</b>, applied with the button below.{% else %}<b>HI10</b> takes an extra 10% off, applied with the button below.{% endif %}
       </td></tr></table>
     </td></tr>
   </table>
 </td></tr>
 
-{{BLOCK:cta label="Finish my order" url="https://siraatskitchen.com/discount/HI10?redirect=/cart" pad="16px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>Your 10% is applied automatically.</div>"}}
+{{BLOCK:cta label="Finish my order" url="https://siraatskitchen.com/discount/HI10?redirect=/cart%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk2ret-cta1" pad="16px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>Free shipping. Same 75-year warranty. 4 gifts with every order.</div>"}}
 
-{{BLOCK:offer eyebrow="A THANK-YOU FOR COMING BACK" headline="10% off your cart" note="Applied automatically with the button. Or enter it at checkout. On top of the sale price." label="Finish my order" url="https://siraatskitchen.com/discount/HI10?redirect=/cart"}}
+<!-- OPENER (live tekst) -->
+<tr><td class="pad lead" style="padding:24px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:17px;line-height:27px;color:#282828;"><p style="margin:0 0 14px 0;">You know how this works: medium heat, the water test, a little oil. This one cooks the same way.</p><p style="margin:0 0 0 0;">Your cart is saved, and HI10 still takes 10% off. The 4 gifts come with this order too.</p></td></tr>
 
-{{BLOCK:gifts eyebrow="STILL WITH EVERY ORDER" note="Plus a chance to win a $450 PFAS water filter. Same free shipping and 75-year warranty you know."}}
+{{BLOCK:reviews q1="I am on my 4th pan from Siraat... I even gifted one to my son, and he says it's the best pan he owns." n1="Tammy" q2="This is my second purchase of Siraat frying pans in just a couple of weeks too, and I must say, they are the best!" n2="Don J." pad="28px 44px 6px 44px"}}
 
-{{BLOCK:reviews q1="...it is a game changer! Super easy to fry vegetables or meat, love it! I will certainly buy another one!" n1="Marianne M." q2="The pans are great- the food slips right out with only a little oil. I would order additional pans from this company" n2="Marlene"}}
+{{BLOCK:cta label="Finish my order" url="https://siraatskitchen.com/discount/HI10?redirect=/cart%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk2ret-cta2" pad="26px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>Free shipping. Same 75-year warranty. 4 gifts with every order.</div>"}}
 
-{{BLOCK:cta label="Finish my order" url="https://siraatskitchen.com/discount/HI10?redirect=/cart" pad="26px 44px 6px 44px"}}
+<!-- WAT VASTE KLANTEN ERBIJ NEMEN (cross-sell content/products/titanium-hammered-pan-pro/cross-sell.md: deksel nr. 1, Deep Pan Pro nr. 3). Prijzen alleen bij USD. -->
+<tr><td class="pad" style="padding:30px 44px 12px 44px;">
+  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">WHILE YOU ARE HERE</div>
+  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 0 0;">What regulars add next.</div>
+</td></tr>
+{% if event|lookup:'$currency' == 'USD' %}
+<!-- PRODUCTCARD (uitgevouwen uit partials/blocks/productcard.html) -->
+<tr><td class="pad" style="padding:0 44px 10px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;"><tr>
+    <td width="200" class="pc-i" valign="middle" style="width:200px;padding:0;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/stainless-steel-lid%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk2ret-prod-lid"><img src="{{IMG}}/card-lid.jpg" width="200" alt="Stainless Steel Lid" class="pc-img" style="display:block;width:200px;height:auto;"></a></td>
+    <td valign="middle" class="pc-t" style="padding:16px 20px 16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/stainless-steel-lid%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk2ret-prod-lid" style="text-decoration:none;">
+      <div style="padding-bottom:8px;"><span style="display:inline-block;background:#AC3B19;color:#FFFFFF;font-size:10px;line-height:14px;letter-spacing:1.4px;font-weight:600;padding:3px 9px;border-radius:10px;">MOST ADDED</span></div>
+      <div class="pc-n" style="font-size:18px;line-height:24px;font-weight:600;color:#282828;">Stainless Steel Lid</div>
+      <div class="pc-s" style="font-size:14px;line-height:20px;color:#727272;padding-top:3px;">Sized to your pan: 20, 26, 28 or 30 cm.</div>
+      <div style="padding-top:10px;font-size:16px;line-height:22px;"><b style="color:#AC3B19;font-weight:600;">$59</b></div>
+      <div style="font-size:12px;line-height:17px;color:#727272;">$53.10 with HI10</div>
+      <div style="padding-top:10px;font-size:13px;line-height:16px;letter-spacing:1.5px;font-weight:600;color:#282828;text-transform:uppercase;"><span style="border-bottom:1px solid #282828;padding-bottom:2px;">Add the lid</span> &rarr;</div>
+    </a></td>
+  </tr></table>
+</td></tr>
+<!-- PRODUCTCARD (uitgevouwen uit partials/blocks/productcard.html) -->
+<tr><td class="pad" style="padding:0 44px 10px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;"><tr>
+    <td width="200" class="pc-i" valign="middle" style="width:200px;padding:0;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-deep-pan-pro%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk2ret-prod-deep"><img src="{{IMG}}/card-deeppan.jpg" width="200" alt="Titanium Hammered Deep Pan Pro" class="pc-img" style="display:block;width:200px;height:auto;"></a></td>
+    <td valign="middle" class="pc-t" style="padding:16px 20px 16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-deep-pan-pro%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk2ret-prod-deep" style="text-decoration:none;">
+      
+      <div class="pc-n" style="font-size:18px;line-height:24px;font-weight:600;color:#282828;">Deep Pan Pro</div>
+      <div class="pc-s" style="font-size:14px;line-height:20px;color:#727272;padding-top:3px;">6 cm deep, for sauces and one-pan dinners.</div>
+      <div style="padding-top:10px;font-size:16px;line-height:22px;"><b style="color:#AC3B19;font-weight:600;">From $119</b></div>
+      <div style="font-size:12px;line-height:17px;color:#727272;">Same titanium cooking surface.</div>
+      <div style="padding-top:10px;font-size:13px;line-height:16px;letter-spacing:1.5px;font-weight:600;color:#282828;text-transform:uppercase;"><span style="border-bottom:1px solid #282828;padding-bottom:2px;">See the Deep Pan</span> &rarr;</div>
+    </a></td>
+  </tr></table>
+</td></tr>
+{% else %}
+<!-- PRODUCTCARD (uitgevouwen uit partials/blocks/productcard.html) -->
+<tr><td class="pad" style="padding:0 44px 10px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;"><tr>
+    <td width="200" class="pc-i" valign="middle" style="width:200px;padding:0;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/stainless-steel-lid%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk2ret-prod-lid"><img src="{{IMG}}/card-lid.jpg" width="200" alt="Stainless Steel Lid" class="pc-img" style="display:block;width:200px;height:auto;"></a></td>
+    <td valign="middle" class="pc-t" style="padding:16px 20px 16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/stainless-steel-lid%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk2ret-prod-lid" style="text-decoration:none;">
+      <div style="padding-bottom:8px;"><span style="display:inline-block;background:#AC3B19;color:#FFFFFF;font-size:10px;line-height:14px;letter-spacing:1.4px;font-weight:600;padding:3px 9px;border-radius:10px;">MOST ADDED</span></div>
+      <div class="pc-n" style="font-size:18px;line-height:24px;font-weight:600;color:#282828;">Stainless Steel Lid</div>
+      <div class="pc-s" style="font-size:14px;line-height:20px;color:#727272;padding-top:3px;">Sized to your pan: 20, 26, 28 or 30 cm.</div>
+      <div style="padding-top:10px;font-size:16px;line-height:22px;"><b style="color:#AC3B19;font-weight:600;"></b></div>
+      <div style="font-size:12px;line-height:17px;color:#727272;"></div>
+      <div style="padding-top:10px;font-size:13px;line-height:16px;letter-spacing:1.5px;font-weight:600;color:#282828;text-transform:uppercase;"><span style="border-bottom:1px solid #282828;padding-bottom:2px;">Add the lid</span> &rarr;</div>
+    </a></td>
+  </tr></table>
+</td></tr>
+<!-- PRODUCTCARD (uitgevouwen uit partials/blocks/productcard.html) -->
+<tr><td class="pad" style="padding:0 44px 10px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;"><tr>
+    <td width="200" class="pc-i" valign="middle" style="width:200px;padding:0;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-deep-pan-pro%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk2ret-prod-deep"><img src="{{IMG}}/card-deeppan.jpg" width="200" alt="Titanium Hammered Deep Pan Pro" class="pc-img" style="display:block;width:200px;height:auto;"></a></td>
+    <td valign="middle" class="pc-t" style="padding:16px 20px 16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-deep-pan-pro%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk2ret-prod-deep" style="text-decoration:none;">
+      
+      <div class="pc-n" style="font-size:18px;line-height:24px;font-weight:600;color:#282828;">Deep Pan Pro</div>
+      <div class="pc-s" style="font-size:14px;line-height:20px;color:#727272;padding-top:3px;">6 cm deep, for sauces and one-pan dinners.</div>
+      <div style="padding-top:10px;font-size:16px;line-height:22px;"><b style="color:#AC3B19;font-weight:600;"></b></div>
+      <div style="font-size:12px;line-height:17px;color:#727272;">Same titanium cooking surface.</div>
+      <div style="padding-top:10px;font-size:13px;line-height:16px;letter-spacing:1.5px;font-weight:600;color:#282828;text-transform:uppercase;"><span style="border-bottom:1px solid #282828;padding-bottom:2px;">See the Deep Pan</span> &rarr;</div>
+    </a></td>
+  </tr></table>
+</td></tr>
+{% endif %}
 
-{{BLOCK:icons pad="22px 44px 6px 44px"}}
+{{BLOCK:gifts eyebrow="STILL WITH EVERY ORDER" headline="$70 in gifts, in the box" note="Plus a chance to win a $450 PFAS water filter. Same free shipping and 75-year warranty you know."}}
+
+{{BLOCK:cta label="Finish my order" url="https://siraatskitchen.com/discount/HI10?redirect=/cart%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk2ret-cta3" pad="26px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>Free shipping. Same 75-year warranty. 4 gifts with every order.</div>"}}
 
 <!-- SIGN-OFF -->
-<tr><td class="pad" style="padding:24px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  Thank you for coming back. If there is anything you would like to see us make next, reply and tell me.<br><br>
+<tr><td class="pad" style="padding:26px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+  Which pan do you reach for most? Reply and tell me. It shapes what we make next.<br><br>
   Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
 </td></tr>
 

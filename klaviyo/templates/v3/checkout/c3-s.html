@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: Your set, plus four gifts | SUBJECT_B: Your set, 10% lighter | PREVIEW: HI10 takes an extra 10% off your set, plus $70 in gifts in the box. | SEND: Step 2, 1 day after C2 | FILTERS: Message: Placed Order = 0 since starting this flow. Conditional split: Checkout Started value >= 300 (branch S, set buyers) -->
+<!-- SUBJECT_A: $70 in gifts ship with your set | SUBJECT_B: "I've replaced all the pans..." | SUBJECTS (5 types): curiosity+benefit 'What ships in the box with your set' / specificity '$70 in gifts ship with your set' / question 'Is a set the right first step?' / story '"I've replaced all the pans..."' / offer 'Your set, 4 gifts, and 10% on top' | A/B: reciprocity (A) vs social proof (B); v4 3.19: alleen A. PREVIEW B: One decision, every pan on your stove done. And HI10 takes 10% more. | PREVIEW: Free shipping, a mystery gift, the e-book and a chance at a PFAS water filter. | SEND: v4 2.1 stap 4K: wait 2 days until 09:00 (day 3, 09:00); TS T2a Items contains any of SET_TITELS, or TS T2b $value >= 300 | FILTERS: Message: Placed Order = 0 since starting this flow -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
-<title>Your set, 10% lighter</title>
+<title>Every pan, one decision</title>
 <!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
@@ -25,11 +25,12 @@
     .desk{display:none!important;max-height:0!important;overflow:hidden!important;}
     .mob{display:block!important;max-height:none!important;overflow:visible!important;}
     .center{text-align:center!important;}
+    .vs td{font-size:13px!important;}
   }
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">HI10 takes an extra 10% off your set, plus $70 in gifts in the box.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Free shipping, a mystery gift, the e-book and a chance at a PFAS water filter.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
@@ -38,30 +39,37 @@
 
 {{HEADER}}
 
-<!-- HERO 4:3 met aanbodbalk (P02-A_GasRange) -->
+<!-- HERO 4:3 met aanbodbalk (make_hero.py --offer --ratio=4:3, bron: content/media/hero-register/checkout.csv) -->
 <tr><td style="padding:0;">
-  <a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10"><img src="{{IMG}}/c3s-hero.jpg" width="600" alt="Your set, 10% lighter. Extra 10% off with code HI10, plus $70 in gifts with your set." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c3s-hero"><img src="{{IMG}}/c3s-hero.jpg" width="600" alt="Every pan, one decision. One 75-year warranty covers it all. Extra 10% off with code HI10, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
 {{BLOCK:cart pad="22px 44px 4px 44px" title="YOUR SET, STILL IN YOUR CART" line="<b>HI10</b> takes an extra 10% off your set, applied with the button below."}}
 
-{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10" pad="16px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>Your 10% is applied automatically.</div>"}}
+{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c3s-cta1" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
 
-{{BLOCK:gifts eyebrow="IN THE BOX WITH YOUR SET" headline="$70 in gifts, on us"}}
+<tr><td class="pad" style="padding:28px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">A set is a bigger decision than one pan. Here is what it settles: every pan on your stove gets the same titanium cooking surface, the same 75-year warranty, and nothing on it to wear through. You make this choice once.</td></tr>
 
-{{BLOCK:features eyebrow="WHY A SET PAYS OFF" headline="Bought once. Built for life." i1="no-coating" t1="No coating on any piece" d1="Pure titanium cooking surface on every pan. Nothing to flake, so nothing to replace in a few years." i2="induction-ready" t2="Every burner, and the oven" d2="Gas, electric and induction. Oven, dishwasher and metal utensil safe." i3="warranty-75-year" t3="One 75-year warranty for the whole set" d3="Every piece covered. Tested free from PFAS by Light Labs, report no. 25895."}}
+<!-- 6-delige set in de cart: closer look; andere sets of carts vanaf $300: wat een set regelt -->
+{% if '6-Pcs' in event.Items|join:',' %}
+{{BLOCK:closerlook pad="30px 44px 6px 44px" eyebrow="WHAT IS IN THE BOX" headline="Take a closer look." img="set6" alt="The Siraat 6-piece set from above: three hammered titanium pans and three stainless steel lids" h1="304 STAINLESS LIDS" d1="A lid for every pan." h2="OVEN SAFE" d2="Every pan goes stovetop to oven." h3="TITANIUM SURFACE" d3="The same titanium cooking surface on all three." h4="LAB TESTED" d4="Light Labs report no. 25895."}}
+{% else %}
+{{BLOCK:features eyebrow="WHAT A SET SETTLES" headline="Every piece, covered" i1="no-coating" t1="No coating on any piece" d1="A titanium cooking surface on every pan, so there is nothing to flake off in a few years." i2="induction-ready" t2="Every burner, and the oven" d2="Gas, electric, ceramic and induction. Oven, dishwasher and metal utensil safe." i3="warranty-75-year" t3="One 75-year warranty" d3="Every piece covered. Tested free from PFAS by Light Labs, report no. 25895."}}
+{% endif %}
 
-{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10" pad="24px 44px 4px 44px"}}
+{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c3s-cta2" pad="26px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
 
-{{BLOCK:reviews q1="Brilliant service.. amazing quality.. I got the full pan set and the utensils.. Best non stick pan on the market.." n1="David I." q2="The product is amazing. Easy clean and dishwasher safe. I use all my items daily, an recommend to others.... Love!!" n2="Mel"}}
+{{BLOCK:gifts eyebrow="WITH YOUR SET" headline="$70 in gifts, included" note=""}}
+
+{{BLOCK:reviews q1="I ordered a full set of the titanium cookware... All of it works as stated. It's also super lightweight. Easy to clean." n1="Lauren W." q2="We ordered almost all the pans and some in different sizes too. I've replaced all the pans and some pots in our kitchen." n2="Jibz C."}}
 
 {{BLOCK:icons}}
 
-{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10" pad="22px 44px 6px 44px"}}
+{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c3s-cta3" pad="24px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
 
 <!-- SIGN-OFF -->
-<tr><td class="pad" style="padding:22px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  Hi {{ first_name|default:'there' }}, a set is a bigger decision than one pan. Not sure which pieces you need? Just reply. A real person reads every email.<br><br>
+<tr><td class="pad" style="padding:24px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+  Hi {{ first_name|default:'there' }}, not sure which pieces you need? Tell me what you cook in a normal week and I will tell you.<br><br>
   Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
 </td></tr>
 

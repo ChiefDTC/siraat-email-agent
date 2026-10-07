@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: Last email from me (unless you tap) | SUBJECT_B: Should I stop writing? | PREVIEW: One tap and you stay. Otherwise this is goodbye, and that's okay. | SEND: Step 1, 4 dagen na S1, 10:00 lokale tijd. Afzender 'Benjamin at Siraat's Kitchen'. Tekstmail: geen hero, geen codebalk. | FILTERS: Message: Clicked Email = 0 sinds flow-start, Opened Email = 0 sinds flow-start (alleen hier: wie opent maar niet klikt krijgt S2 niet, om Apple-opens niet te straffen gebeurt de echte beslissing pas in de split na S2), Active on Site = 0 sinds flow-start, Placed Order = 0 sinds flow-start. -->
+<!-- SUBJECT_A: Last email from me (unless you tap) | SUBJECT_B: Should I stop writing? | PREVIEW: One tap and you stay. Otherwise this is goodbye, and that's okay. | SEND: v4 · Sunset, stap 2: wacht 4 dagen na S1, tot 09:00 lokale tijd. Afzender "Benjamin at Siraat's Kitchen", reply-to support@siraatskitchen.com. Tekstmail: geen hero, geen codebalk, geen aanbod. Daarna stap 3: wacht 3 dagen, split (Clicked Email OR Active on Site OR Placed Order since starting this flow): JA sunset_status = kept, NEE sunset_status = suppressed + sunset_at. | FILTERS: Message: Clicked Email zero times since starting this flow; Active on Site zero times since starting this flow; Placed Order zero times since starting this flow. Geen Opened Email-filter (v4 besluit 3.16: opens tellen niet, Apple MPP). UTM: utm_campaign=v4-sunset, utm_content=s2-<blok>. -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -31,6 +31,7 @@
   }
 </style>
 </head>
+
 <body style="margin:0;padding:0;background:#FFFFFF;">
 <div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">One tap and you stay. Otherwise this is goodbye, and that's okay.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
@@ -41,24 +42,24 @@
 
 <tr><td class="pad" style="padding:34px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;color:#282828;">
   <p style="margin:0 0 18px 0;">Hi {{ first_name|default:'there' }},</p>
-  <p style="margin:0 0 18px 0;">It&rsquo;s Benjamin, the founder of Siraat&rsquo;s Kitchen.</p>
-  <p style="margin:0 0 18px 0;">A few days ago we asked whether you still want our emails. We didn&rsquo;t hear back, so this is the last one we&rsquo;ll send, unless you tell us otherwise.</p>
-  <p style="margin:0 0 18px 0;">No hard feelings. I&rsquo;d rather write to people who want to read it.</p>
-  <p style="margin:0 0 18px 0;">If you do want to stay, one tap on the button below and nothing changes.</p>
-  <p style="margin:0 0 18px 0;">And if you have one of our pans: your 75-year warranty doesn&rsquo;t depend on our emails. If anything ever goes wrong with it, write to <a href="mailto:support@siraatskitchen.com" style="color:#AC3B19;">support@siraatskitchen.com</a> and we&rsquo;ll take care of it.</p>
-  <p style="margin:0 0 18px 0;">Benjamin<br>Founder, Siraat&rsquo;s Kitchen</p>
+  <p style="margin:0 0 18px 0;">Benjamin here, founder of Siraat&rsquo;s Kitchen.</p>
+  <p style="margin:0 0 18px 0;">A few days ago we asked if you still want our emails. We didn&rsquo;t hear back, so this is the last one, unless you tell us otherwise.</p>
+  <p style="margin:0 0 18px 0;">That&rsquo;s okay. I&rsquo;d rather write to fewer people who want to read it.</p>
+  <p style="margin:0 0 8px 0;">Want to stay? One tap below and nothing changes.</p>
 </td></tr>
 
-{{BLOCK:cta label="Keep me on the list" url="https://siraatskitchen.com/?utm_source=klaviyo&amp;utm_medium=email&amp;utm_campaign=sunset-v3&amp;utm_content=stay" pad="4px 44px 6px 44px"}}
+{{BLOCK:cta label="Keep me on the list" url="https://siraatskitchen.com/?utm_source=klaviyo&amp;utm_medium=email&amp;utm_campaign=v4-sunset&amp;utm_content=s2-cta1" pad="14px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>One tap. Nothing to fill in, nothing to buy.</div>"}}
 
-<tr><td class="pad" style="padding:22px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  <p style="margin:0 0 18px 0;"><b>P.S.</b> Been meaning to try one? HI10 still takes 10% off on top of the sale, and every order ships with $70 in gifts and free 30-day returns.</p>
+<tr><td class="pad" style="padding:26px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;color:#282828;">
+  <p style="margin:0 0 18px 0;">One more thing, if you own one of our pans. Your 75-year warranty doesn&rsquo;t depend on these emails. If it ever dents, warps or a rivet comes loose, write to <a href="mailto:support@siraatskitchen.com" style="color:#AC3B19;">support@siraatskitchen.com</a> and we&rsquo;ll take care of it.</p>
+  <p style="margin:0 0 18px 0;">Thanks for giving us a place in your inbox.</p>
+  <p style="margin:0 0 22px 0;">Benjamin<br><span style="color:#727272;">Founder, Siraat&rsquo;s Kitchen</span></p>
 </td></tr>
 
-<!-- KEUZE: blijven, minder, uitschrijven -->
+<!-- KEUZE: minder of uitschrijven -->
 <tr><td class="pad" align="center" style="padding:0 44px 30px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:22px;color:#727272;text-align:center;">
   Rather hear from us less? <a href="{% manage_preferences_url %}" style="color:#282828;font-weight:600;">Choose fewer emails</a><br>
-  Done with us? <a href="{% unsubscribe_url %}" style="color:#282828;font-weight:600;">Unsubscribe in one tap</a>. No hard feelings.
+  Done with us? <a href="{% unsubscribe_url %}" style="color:#282828;font-weight:600;">Unsubscribe in one tap</a>
 </td></tr>
 
 {{FOOTER}}

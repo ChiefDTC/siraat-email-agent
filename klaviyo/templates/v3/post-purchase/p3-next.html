@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: What goes next to your pan | SUBJECT_B: Two weeks in. Your thank-you code inside. | SUBJECTS (5 types): curiosity+benefit 'What pan owners add in week three' / specificity '10% off, 14 days, for owners only' / question 'How is the pan treating you?' / story '"I will be looking for a larger size"' / offer 'Your thank-you code: 10% off' | PREVIEW: The board or the lid that goes with your pan, 10% off with your own code. It expires 14 days after this email. | SEND: 14 days after Placed Order, 10:00 local | FILTERS: P3 split: order contains cookware AND a Stainless Steel Lid, or accessory-only order from a profile that bought cookware before. Hoofdkaart dynamisch: deksel in order = snijplank, anders deksel. Prijzen alleen bij shipping country US. COUPON: P3_THANKYOU_10_14D -->
+<!-- SUBJECT_A: What goes next to your pan | SUBJECT_B: How is the pan treating you? | PREVIEW: The board or the lid that matches your order, 10% off with your own code. | SEND: Placed Order + 20 days, until 09:00 local (flow step 3, decision 3.9) | FILTERS: Flow 'v4 · Post-purchase' step 3: CS R0 Placed Order equals 2 over all time = end (VIP takes over); router 3K/3A (v4 2.5). Send filters: Placed Order zero times since starting this flow; Refunded Order (Xg6cwn) zero times in 30 days. Code-router: no cooldown (last_flow_code_at not in last 30 days) + T02 arm A = this template; then Update profile property last_flow_code_at = today, last_flow_code_pool = 'P3_THANKYOU_10_14D'. COUPON: P3_THANKYOU_10_14D (unique, 10%, one use, expires 14 days after assignment). | SUBJECTS (5 types): C+B 'What goes next to your pan' / SPEC '10% off, 14 days, for owners only' / Q 'How is the pan treating you?' / STORY '"will be looking for a larger size soon"' / OFFER 'Your thank-you code: 10% off' | A/B: curiosity+benefit vs question (liking); main card dynamic: lid in order = board, else lid. Prices only for shipping country US | UTM: utm_content=p3next-<block>, utm_term=t02-a (T02 arm A); discount links carry the UTMs URL-encoded inside redirect -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -18,127 +18,112 @@
   @media only screen and (max-width:620px){
     .w{width:100%!important;}
     .pad{padding-left:22px!important;padding-right:22px!important;}
-    .stack{display:block!important;width:100%!important;}
-    .stackpad{padding:0 0 14px 0!important;}
     .h2{font-size:30px!important;line-height:34px!important;}
-    .navhide{display:none!important;}
     .desk{display:none!important;max-height:0!important;overflow:hidden!important;}
     .mob{display:block!important;max-height:none!important;overflow:visible!important;}
-    .center{text-align:center!important;}
-    .pimg{width:112px!important;}
-    .pimg img{width:100px!important;height:100px!important;}
+    .stepimg{width:100%!important;}
   }
 </style>
-<style>@media only screen and (max-width:620px){.pimg{width:112px!important;}.pimg img{width:100px!important;height:100px!important;}.pcd{display:none!important;}.pim{width:96px!important;padding:14px 0 14px 12px!important;}.pim img{width:88px!important;height:88px!important;}}</style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">The board or the lid that goes with your pan, 10% off with your own code. It expires 14 days after this email.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">The board or the lid that matches your order, 10% off with your own code.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
-
 {{BLOCK:codebar text="YOUR THANK-YOU CODE &middot; 10% OFF" code="{% coupon_code 'P3_THANKYOU_10_14D' %}"}}
-
 {{HEADER}}
 
-<!-- HERO met aanbodbalk (make_hero.py --offer) -->
+<!-- HERO 1:1 met aanbodbalk (make_hero.py --offer) -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/discount/{% coupon_code 'P3_THANKYOU_10_14D' %}?redirect=/products/titanium-cutting-board-v2"><img src="{{IMG}}/p3-next-hero.jpg" width="600" alt="For pan owners: what goes next to your pan. Your 10% thank-you code is inside. Your code expires in 14 days." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://siraatskitchen.com/discount/{% coupon_code 'P3_THANKYOU_10_14D' %}?redirect=/products/titanium-cutting-board-v2%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-postpurchase%26utm_content%3Dp3next-hero%26utm_term%3Dt02-a"><img src="{{IMG}}/p3-next-hero.jpg" width="600" alt="For pan owners. What goes next to your pan, picked to match what you have. Your 10% thank-you code, for 14 days." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
-<tr><td class="pad" style="padding:26px 44px 0 44px;">
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">Two weeks with your pan. By now you know the routine: medium heat, the water test, then a thin layer of oil.<br><br>Here is what owners add next, with a thank-you code that takes 10% off.</div>
+<tr><td class="pad" style="padding:26px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+  <p style="margin:0;">Hi {{ first_name|default:'there' }}, by now you know the routine: medium heat, the water test, then a thin layer of oil. Here is what owners add next, matched to what you already have, with a thank-you code that takes 10% off.</p>
 </td></tr>
 {% if 'Lid' in event.Items|join:',' %}
 <tr><td class="pad" style="padding:22px 44px 4px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-    <tr>
-      <td class="pimg" width="196" valign="top" style="padding:14px 0 14px 14px;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'P3_THANKYOU_10_14D' %}?redirect=/products/titanium-cutting-board-v2"><img src="{{IMG}}/p-board.jpg" width="180" alt="Titanium Cutting Board" style="width:180px;height:180px;"></a></td>
-      <td valign="top" style="padding:16px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
-        <div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">YOU HAVE THE LID</div>
-        <div style="font-size:17px;line-height:23px;font-weight:600;color:#282828;padding-top:6px;">Titanium Cutting Board</div>
-        <div style="font-size:14px;line-height:21px;color:#727272;padding-top:4px;">Pure titanium, anti-microbial, dishwasher safe. The board that goes next to the pan.</div>
-        {% if event.extra.shipping_address.country_code == 'US' %}<div style="font-size:17px;line-height:24px;font-weight:600;color:#282828;padding-top:8px;"><span style="color:#AC3B19;white-space:nowrap;">from $62.10</span> <span style="font-weight:400;color:#9A948B;text-decoration:line-through;">$69</span><div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;padding-top:1px;">with your code</div></div>{% endif %}
-        <div style="font-size:14px;line-height:20px;font-weight:600;padding-top:6px;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'P3_THANKYOU_10_14D' %}?redirect=/products/titanium-cutting-board-v2" style="color:#AC3B19;text-decoration:none;">Add the board, 10% off &rarr;</a></div>
-      </td>
-    </tr>
-  </table>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;"><tr>
+    <td width="200" class="pc-i" valign="middle" style="width:200px;padding:0;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'P3_THANKYOU_10_14D' %}?redirect=/products/titanium-cutting-board-v2%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-postpurchase%26utm_content%3Dp3next-prod-board%26utm_term%3Dt02-a"><img src="{{IMG}}/card-board.jpg" width="200" alt="Titanium Cutting Board" class="pc-img" style="display:block;width:200px;height:auto;"></a></td>
+    <td valign="middle" class="pc-t" style="padding:16px 20px 16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'P3_THANKYOU_10_14D' %}?redirect=/products/titanium-cutting-board-v2%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-postpurchase%26utm_content%3Dp3next-prod-board%26utm_term%3Dt02-a" style="text-decoration:none;">
+      <div style="padding-bottom:8px;"><span style="display:inline-block;background:#AC3B19;color:#FFFFFF;font-size:10px;line-height:14px;letter-spacing:1.4px;font-weight:600;padding:3px 9px;border-radius:10px;">YOU HAVE THE LID</span></div>
+      <div class="pc-n" style="font-size:18px;line-height:24px;font-weight:600;color:#282828;">Titanium Cutting Board</div>
+      <div class="pc-s" style="font-size:14px;line-height:20px;color:#727272;padding-top:3px;">Anti-microbial titanium, dishwasher safe. The board that goes next to the pan.</div>
+      {% if event.extra.shipping_address.country_code == 'US' %}<div style="padding-top:10px;font-size:16px;line-height:22px;"><span style="color:#9A948B;text-decoration:line-through;">$69</span>&nbsp; <b style="color:#AC3B19;font-weight:600;">from $62.10</b></div><div style="font-size:12px;line-height:17px;color:#727272;">with your code</div>{% endif %}
+      <div style="padding-top:10px;font-size:13px;line-height:16px;letter-spacing:1.5px;font-weight:600;color:#282828;text-transform:uppercase;"><span style="border-bottom:1px solid #282828;padding-bottom:2px;">Add the board, 10% off</span> &rarr;</div>
+    </a></td>
+  </tr></table>
 </td></tr>
 {% else %}
 <tr><td class="pad" style="padding:22px 44px 4px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-    <tr>
-      <td class="pimg" width="196" valign="top" style="padding:14px 0 14px 14px;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'P3_THANKYOU_10_14D' %}?redirect=/products/stainless-steel-lid"><img src="{{IMG}}/p-lid.jpg" width="180" alt="Stainless Steel Lid" style="width:180px;height:180px;"></a></td>
-      <td valign="top" style="padding:16px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
-        <div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">MATCHED TO YOUR PAN</div>
-        <div style="font-size:17px;line-height:23px;font-weight:600;color:#282828;padding-top:6px;">Stainless Steel Lid</div>
-        <div style="font-size:14px;line-height:21px;color:#727272;padding-top:4px;">Pick the same diameter as your pan: 20, 26, 28 or 30 cm. Steams, melts, keeps warm, stops the splatter.</div>
-        {% if event.extra.shipping_address.country_code == 'US' %}<div style="font-size:17px;line-height:24px;font-weight:600;color:#282828;padding-top:8px;"><span style="color:#AC3B19;white-space:nowrap;">$53.10</span> <span style="font-weight:400;color:#9A948B;text-decoration:line-through;">$59</span><div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;padding-top:1px;">with your code</div></div>{% endif %}
-        <div style="font-size:14px;line-height:20px;font-weight:600;padding-top:6px;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'P3_THANKYOU_10_14D' %}?redirect=/products/stainless-steel-lid" style="color:#AC3B19;text-decoration:none;">Add the lid, 10% off &rarr;</a></div>
-      </td>
-    </tr>
-  </table>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;"><tr>
+    <td width="200" class="pc-i" valign="middle" style="width:200px;padding:0;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'P3_THANKYOU_10_14D' %}?redirect=/products/stainless-steel-lid%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-postpurchase%26utm_content%3Dp3next-prod-lid%26utm_term%3Dt02-a"><img src="{{IMG}}/card-lid.jpg" width="200" alt="Stainless Steel Lid" class="pc-img" style="display:block;width:200px;height:auto;"></a></td>
+    <td valign="middle" class="pc-t" style="padding:16px 20px 16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'P3_THANKYOU_10_14D' %}?redirect=/products/stainless-steel-lid%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-postpurchase%26utm_content%3Dp3next-prod-lid%26utm_term%3Dt02-a" style="text-decoration:none;">
+      <div style="padding-bottom:8px;"><span style="display:inline-block;background:#AC3B19;color:#FFFFFF;font-size:10px;line-height:14px;letter-spacing:1.4px;font-weight:600;padding:3px 9px;border-radius:10px;">MATCHED TO YOUR PAN</span></div>
+      <div class="pc-n" style="font-size:18px;line-height:24px;font-weight:600;color:#282828;">Stainless Steel Lid</div>
+      <div class="pc-s" style="font-size:14px;line-height:20px;color:#727272;padding-top:3px;">Pick the same diameter as your pan: 20, 26, 28 or 30 cm. Steams, melts, keeps warm, stops the splatter.</div>
+      {% if event.extra.shipping_address.country_code == 'US' %}<div style="padding-top:10px;font-size:16px;line-height:22px;"><span style="color:#9A948B;text-decoration:line-through;">$59</span>&nbsp; <b style="color:#AC3B19;font-weight:600;">$53.10</b></div><div style="font-size:12px;line-height:17px;color:#727272;">with your code</div>{% endif %}
+      <div style="padding-top:10px;font-size:13px;line-height:16px;letter-spacing:1.5px;font-weight:600;color:#282828;text-transform:uppercase;"><span style="border-bottom:1px solid #282828;padding-bottom:2px;">Add the lid, 10% off</span> &rarr;</div>
+    </a></td>
+  </tr></table>
 </td></tr>
 {% endif %}
-{{BLOCK:cta label="Use my 10% code" url="https://siraatskitchen.com/discount/{% coupon_code 'P3_THANKYOU_10_14D' %}?redirect=/collections/all" pad="18px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>One use, already applied. 30-day returns. 100,000+ happy customers.</div>"}}
-
-{{BLOCK:offer eyebrow="YOUR THANK-YOU CODE" headline="10% off, for owners only" code="{% coupon_code 'P3_THANKYOU_10_14D' %}" note="Applied automatically with the button. Or enter it at checkout. One code per order, not valid on subscriptions." deadline="Expires 14 days after this email" label="Use my 10% code" url="https://siraatskitchen.com/discount/{% coupon_code 'P3_THANKYOU_10_14D' %}?redirect=/collections/all"}}
-
-<tr><td class="pad" style="padding:28px 44px 4px 44px;">
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:0 0 16px 0;">Or a second shape</div>
+{{BLOCK:cta label="Use my 10% code" url="https://siraatskitchen.com/discount/{% coupon_code 'P3_THANKYOU_10_14D' %}?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-postpurchase%26utm_content%3Dp3next-cta1%26utm_term%3Dt02-a" pad="18px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>One use, already applied. Free shipping. 30-day returns.</div>"}}
+{{BLOCK:offer eyebrow="YOUR THANK-YOU CODE" headline="10% off, for owners" code="{% coupon_code 'P3_THANKYOU_10_14D' %}" note="Made for you, so it has an end date. After that, the regular price applies. One use, one order." deadline="Ends 14 days after this email" label="Use my 10% code" url="https://siraatskitchen.com/discount/{% coupon_code 'P3_THANKYOU_10_14D' %}?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-postpurchase%26utm_content%3Dp3next-offer%26utm_term%3Dt02-a"}}
+<tr><td class="pad" style="padding:28px 44px 14px 44px;">
+  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding-top:6px;">Or a second shape</div>
+</td></tr>
+<tr><td class="pad" style="padding:0 44px 4px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;border-bottom:0;">
 {% if 'Wok' not in event.Items|join:',' %}
     <tr>
-      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'P3_THANKYOU_10_14D' %}?redirect=/products/titanium-hammered-wok-pan-pro"><img src="{{IMG}}/p-wok.jpg" width="114" alt="Wok Pan Pro" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
+      <td width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'P3_THANKYOU_10_14D' %}?redirect=/products/titanium-hammered-wok-pan-pro%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-postpurchase%26utm_content%3Dp3next-prod-wok%26utm_term%3Dt02-a"><img src="{{IMG}}/card-wok.jpg" width="114" alt="Wok Pan Pro" style="width:114px;height:114px;background:#FFFFFF;"></a></td>
       <td valign="middle" style="padding:14px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;">
         <div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Wok Pan Pro</div>
-        <div class="pcd" style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">Deep sides for stir-fry, fried rice and big batches.</div>
+        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">Deep sides for stir-fry, fried rice and big batches.</div>
         {% if event.extra.shipping_address.country_code == 'US' %}<div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">From $119&nbsp; <span style="color:#AC3B19;white-space:nowrap;">from $107.10 with your code</span></div>{% endif %}
-        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'P3_THANKYOU_10_14D' %}?redirect=/products/titanium-hammered-wok-pan-pro" style="color:#AC3B19;font-weight:600;text-decoration:underline;">See the wok &rarr;</a></div>
+        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'P3_THANKYOU_10_14D' %}?redirect=/products/titanium-hammered-wok-pan-pro%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-postpurchase%26utm_content%3Dp3next-prod-wok%26utm_term%3Dt02-a" style="color:#AC3B19;font-weight:600;text-decoration:underline;">See it &rarr;</a></div>
       </td>
     </tr>
 {% endif %}{% if 'Cr' not in event.Items|join:',' %}
     <tr>
-      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'P3_THANKYOU_10_14D' %}?redirect=/products/titanium-hammered-crepe-pan-pro"><img src="{{IMG}}/p-crepe.jpg" width="114" alt="Crepe Pan Pro" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
+      <td width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'P3_THANKYOU_10_14D' %}?redirect=/products/titanium-hammered-crepe-pan-pro%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-postpurchase%26utm_content%3Dp3next-prod-crepe%26utm_term%3Dt02-a"><img src="{{IMG}}/card-crepe.jpg" width="114" alt="Crêpe Pan Pro" style="width:114px;height:114px;background:#FFFFFF;"></a></td>
       <td valign="middle" style="padding:14px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;">
         <div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Crêpe Pan Pro</div>
-        <div class="pcd" style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">Flat and wide for crêpes, pancakes, eggs and tortillas.</div>
+        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">Flat and wide for crêpes, pancakes, eggs and tortillas.</div>
         {% if event.extra.shipping_address.country_code == 'US' %}<div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">From $139&nbsp; <span style="color:#AC3B19;white-space:nowrap;">from $125.10 with your code</span></div>{% endif %}
-        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'P3_THANKYOU_10_14D' %}?redirect=/products/titanium-hammered-crepe-pan-pro" style="color:#AC3B19;font-weight:600;text-decoration:underline;">See the crêpe pan &rarr;</a></div>
+        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'P3_THANKYOU_10_14D' %}?redirect=/products/titanium-hammered-crepe-pan-pro%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-postpurchase%26utm_content%3Dp3next-prod-crepe%26utm_term%3Dt02-a" style="color:#AC3B19;font-weight:600;text-decoration:underline;">See it &rarr;</a></div>
       </td>
     </tr>
 {% endif %}{% if 'Lid' in event.Items|join:',' %}
     <tr>
-      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'P3_THANKYOU_10_14D' %}?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern"><img src="{{IMG}}/p-panpro.jpg" width="114" alt="Pan Pro" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
+      <td width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'P3_THANKYOU_10_14D' %}?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-postpurchase%26utm_content%3Dp3next-prod-panpro%26utm_term%3Dt02-a"><img src="{{IMG}}/card-panpro.jpg" width="114" alt="Pan Pro" style="width:114px;height:114px;background:#FFFFFF;"></a></td>
       <td valign="middle" style="padding:14px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;">
         <div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">A second Pan Pro</div>
-        <div class="pcd" style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">A second size, so one pan is never busy.</div>
+        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">A second size, so one pan is never busy.</div>
         {% if event.extra.shipping_address.country_code == 'US' %}<div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">From $127&nbsp; <span style="color:#AC3B19;white-space:nowrap;">from $114.30 with your code</span></div>{% endif %}
-        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'P3_THANKYOU_10_14D' %}?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern" style="color:#AC3B19;font-weight:600;text-decoration:underline;">Choose a size &rarr;</a></div>
+        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'P3_THANKYOU_10_14D' %}?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-postpurchase%26utm_content%3Dp3next-prod-panpro%26utm_term%3Dt02-a" style="color:#AC3B19;font-weight:600;text-decoration:underline;">See it &rarr;</a></div>
       </td>
     </tr>
 {% else %}
     <tr>
-      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'P3_THANKYOU_10_14D' %}?redirect=/products/titanium-cutting-board-v2"><img src="{{IMG}}/p-board.jpg" width="114" alt="Titanium Cutting Board" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
+      <td width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'P3_THANKYOU_10_14D' %}?redirect=/products/titanium-cutting-board-v2%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-postpurchase%26utm_content%3Dp3next-prod-board%26utm_term%3Dt02-a"><img src="{{IMG}}/card-board.jpg" width="114" alt="Titanium Cutting Board" style="width:114px;height:114px;background:#FFFFFF;"></a></td>
       <td valign="middle" style="padding:14px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;">
         <div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Titanium Cutting Board</div>
-        <div class="pcd" style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">Pure titanium, anti-microbial, four sizes.</div>
+        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">Anti-microbial titanium, four sizes.</div>
         {% if event.extra.shipping_address.country_code == 'US' %}<div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">From $69&nbsp; <span style="color:#AC3B19;white-space:nowrap;">from $62.10 with your code</span></div>{% endif %}
-        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'P3_THANKYOU_10_14D' %}?redirect=/products/titanium-cutting-board-v2" style="color:#AC3B19;font-weight:600;text-decoration:underline;">See the board &rarr;</a></div>
+        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'P3_THANKYOU_10_14D' %}?redirect=/products/titanium-cutting-board-v2%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-postpurchase%26utm_content%3Dp3next-prod-board%26utm_term%3Dt02-a" style="color:#AC3B19;font-weight:600;text-decoration:underline;">See it &rarr;</a></div>
       </td>
     </tr>
 {% endif %}
   </table>
 </td></tr>
-
-{{BLOCK:reviews q1="...Im loving the little chopping board, and will be looking for a larger size soon." n1="Janet R." q2="Excellent quality and we look forward to using them for a long time." n2="Robert H."}}
-
-{{BLOCK:cta label="Use my 10% code" url="https://siraatskitchen.com/discount/{% coupon_code 'P3_THANKYOU_10_14D' %}?redirect=/collections/all" pad="26px 44px 4px 44px"}}
-
+{{BLOCK:gifts eyebrow="WITH EVERY ORDER" headline="4 gifts, this order too" note="Free shipping, the e-book, a mystery gift in the box, and a chance to win a $450 PFAS water filter."}}
+{{BLOCK:reviews q1="...Im loving the little chopping board, and will be looking for a larger size soon." n1="Janet R." q2="...Love the nonstick pan, which works even better than I expected, and will be adding to my collection." n2="Cynthia"}}
+{{BLOCK:cta label="Use my 10% code" url="https://siraatskitchen.com/discount/{% coupon_code 'P3_THANKYOU_10_14D' %}?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-postpurchase%26utm_content%3Dp3next-cta2%26utm_term%3Dt02-a" pad="26px 44px 4px 44px" sub=""}}
 {{BLOCK:icons}}
-
 <!-- SIGN-OFF -->
 <tr><td class="pad" style="padding:24px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  Hi {{ first_name|default:'there' }}, how is the pan treating you? If anything sticks, reply and tell me what you cooked. I will tell you what to change.<br><br>
+  How is the pan treating you? If anything sticks, reply and tell me what you cooked. I will tell you what to change.<br><br>
   Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
 </td></tr>
 

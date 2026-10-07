@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: 10% off your cart, for 48 hours | SUBJECT_B: Last reminder: your cart, 4 gifts and 10% off | PREVIEW: Your personal code is already applied. It expires 48 hours after this email. | SEND: Step 3, 1 day after C3 (last email) | FILTERS: Message: Placed Order = 0 since starting this flow. Conditional split: Location country is not United States (branch INT). COUPON: C4_10_48H (unique, 10%, expires 48 hours after assignment) -->
+<!-- SUBJECT_A: 10% off your cart, for 48 hours | SUBJECT_B: "They honored the warranty" | SUBJECTS (5 types): curiosity+benefit 'Why your code has an end date' / specificity '10% off your cart. Code applied. 48 hours.' / question 'Still deciding on your cart?' / story '"They honored the warranty"' / offer '10% off your cart, for 48 hours' | A/B: scarcity (A) vs risk reversal/social proof (B); volgt op de C2-test, alleen in een vrije testplek. PREVIEW B: Brandon sent one photo. Your cart is 10% off for 48 hours. | PREVIEW: Your personal code is already applied. After 48 hours, the regular sale price. | SEND: v4 2.1 stap 6K/6A: wait 2 days until 09:00 (day 5, 09:00) after C3; country split (5K) then code router (1.4) pool C4_10_48H, T02 arm A. Then Update profile property last_flow_code_at = today, last_flow_code_pool = C4_10_48H. COUPON: C4_10_48H (unique, 10%, one use, one per customer, expires 48 hours after assignment) | FILTERS: Message: Placed Order = 0 since starting this flow. Branch: INT (not US) -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
-<title>10% off, 48 hours</title>
+<title>Your cart, 10% less</title>
 <!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
@@ -25,41 +25,54 @@
     .desk{display:none!important;max-height:0!important;overflow:hidden!important;}
     .mob{display:block!important;max-height:none!important;overflow:visible!important;}
     .center{text-align:center!important;}
+    .vs td{font-size:13px!important;}
   }
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Your personal code is already applied. It expires 48 hours after this email.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Your personal code is already applied. After 48 hours, the regular sale price.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
-{{BLOCK:codebar text="YOUR 10% CODE &middot; 48 HOURS" code="{% coupon_code 'C4_10_48H' %}"}}
+{{BLOCK:codebar text="YOUR OWN 10% CODE &middot; 48 HOURS" code="{% coupon_code 'C4_10_48H' %}"}}
 
 {{HEADER}}
 
-<!-- HERO 4:3 met aanbodbalk (P11-C_Edge) -->
+<!-- HERO 4:3 met aanbodbalk (make_hero.py --offer --ratio=4:3, bron: content/media/hero-register/checkout.csv) -->
 <tr><td style="padding:0;">
-  <a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/checkout?utm_source=klaviyo' }}&discount={% coupon_code 'C4_10_48H' %}"><img src="{{IMG}}/c4int-hero.jpg" width="600" alt="Last reminder. 10% off your cart for 48 hours with your personal code, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/checkout?ref=email' }}&discount={% coupon_code 'C4_10_48H' %}&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4int-hero"><img src="{{IMG}}/c4int-hero.jpg" width="600" alt="Last email about your cart. Your cart, 10% less: your own code, 48 hours, duties paid, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
-{{BLOCK:cart pad="22px 44px 4px 44px" line="<b>Your personal code</b> takes 10% off, applied with the button below."}}
+{{BLOCK:cart pad="22px 44px 4px 44px" line="<b>Your own code</b> takes 10% off, applied with the button below."}}
 
-{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/checkout?utm_source=klaviyo' }}&discount={% coupon_code 'C4_10_48H' %}" pad="16px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>Your code expires 48 hours after this email.</div>"}}
+{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/checkout?ref=email' }}&discount={% coupon_code 'C4_10_48H' %}&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4int-cta1" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>One use, already applied. Duties paid. 30-day returns.</div>"}}
 
-{{BLOCK:offer eyebrow="YOUR PERSONAL CODE" headline="10% off, just for you" code="{% coupon_code 'C4_10_48H' %}" note="Applied automatically with the button. On top of the sale, one use, with all 4 gifts." deadline="Expires 48 hours after this email" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/checkout?utm_source=klaviyo' }}&discount={% coupon_code 'C4_10_48H' %}" label="Complete my order"}}
+{{BLOCK:offer eyebrow="THE LAST EMAIL ABOUT YOUR CART" headline="10% off, made for you" code="{% coupon_code 'C4_10_48H' %}" note="One code, made for you, so it has an end date. After 48 hours the regular sale price applies. One use, on top of the sale, with all 4 gifts. Shipping is free and duties are paid, so there is nothing more to pay at your door." deadline="Ends 48 hours after this email" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/checkout?ref=email' }}&discount={% coupon_code 'C4_10_48H' %}&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4int-offer" label="Complete my order"}}
 
-{{BLOCK:gifts eyebrow="STILL WITH YOUR ORDER" headline="$70 in gifts, on us"}}
+<!-- RISK REVERSAL: TWO PROMISES (06-offer-design 3) -->
+<tr><td class="pad" style="padding:30px 44px 6px 44px;">
+  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">STILL UNSURE?</div>
+  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 16px 0;">Two promises</div>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
+    <tr><td width="58" valign="top" style="padding:20px 0 16px 20px;border-bottom:1px solid #ECE7DD;"><img src="{{SHARED}}/icon-returns-30-day.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
+      <td valign="top" style="padding:18px 20px 16px 14px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Changed your mind?</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Send it back unused within 30 days of delivery for a full refund.</div></td></tr>
+    <tr><td width="58" valign="top" style="padding:20px 0 16px 20px;"><img src="{{SHARED}}/icon-warranty-75-year.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
+      <td valign="top" style="padding:18px 20px 16px 14px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Something wrong with it?</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">If it arrives damaged or with a defect, you choose a refund or a new one, and we pay the shipping.{% if 'Hammer' in event.Items|join:',' or 'Pan' in event.Items|join:',' or 'Pot' in event.Items|join:',' or 'ookware' in event.Items|join:',' or 'Everything' in event.Items|join:',' or 'fanne' in event.Items|join:',' or 'Prep Bundle' in event.Items|join:',' %} After that, the 75-year warranty covers dents, a warped base, and a loose handle or rivet.{% endif %} A few photos is all it takes.</div></td></tr>
+  </table>
+</td></tr>
 
-{{BLOCK:reviews q1="The pans are great- the food slips right out with only a little oil. I would order additional pans from this company" n1="Marlene" q2="The cooking experience has been great. Performs as described. Very pleased with the pan." n2="Tyrone B."}}
+{{BLOCK:reviews q1="Siraat replaced a pan free of charge... I just sent them the picture and they honored the warranty." n1="Brandon W." q2="I returned my pans, unused, and received a refund, no questions asked. Easy return procedure." n2="Steven T."}}
 
-{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/checkout?utm_source=klaviyo' }}&discount={% coupon_code 'C4_10_48H' %}" pad="24px 44px 6px 44px"}}
+{{BLOCK:gifts eyebrow="STILL WITH YOUR ORDER" headline="$70 in gifts, included" note=""}}
+
+{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/checkout?ref=email' }}&discount={% coupon_code 'C4_10_48H' %}&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4int-cta2" pad="26px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>One use, already applied. Duties paid. 30-day returns.</div>"}}
 
 {{BLOCK:icons-int}}
 
 <!-- SIGN-OFF -->
-<tr><td class="pad" style="padding:22px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  Hi {{ first_name|default:'there' }}, this is the last email about your cart. After 48 hours your code stops working and the regular sale price applies. A question first? Just reply.<br><br>
+<tr><td class="pad" style="padding:24px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+  Hi {{ first_name|default:'there' }}, after 48 hours your code stops working and the regular sale price applies. A question first? Reply.<br><br>
   Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
 </td></tr>
 

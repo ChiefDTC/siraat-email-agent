@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: The last note about your 10% | SUBJECT_B: What 100,000+ happy customers found out (and your 10%) | PREVIEW: Tammy is on her fourth pan. Your code HI10 still takes 10% off. | SEND: Day 9, 10:00 local time. Last mail of the flow; day 10 end, non-buyers go to campaigns | FILTERS: Flow: list Uw8eZG (Alia Card Game), email not contains test@, never in this flow, re-entry never. Split A: Placed Order = 0 ever (prospect path). Send filter: Placed Order = 0 since flow start | TEST LATER (not built): unique code [coupon_code W5_10_72H] with 'Expires 72 hours after this email', see build-notes-welcome.md -->
+<!-- SUBJECT_A: Tammy is on her fourth pan | SUBJECT_B: The last note about your 10% | PREVIEW: She gave one to her son, too. And your code HI10 still takes 10% off. | SEND: v4 Welcome step 7: wait 4 days, until 09:00 (day 10). Last email of the series (true); flow ends day 14, then campaigns (segment v4 Welcome-bescherming). HI10, no deadline (besluit A). Subject A only (v4 3.19) | FILTERS: Flow: list Uw8eZG (Alia Card Game, $source Alia sign-up), email does not contain test@, has not been in this flow over all time, re-entry never. Prospect path: CS A1 Placed Order = 0 since flow start (after 20 min), CS A2 Placed Order = 0 over all time. Send filter on this email: Placed Order zero times since starting this flow AND Received Email where Flow = v4 Checkout abandonment zero times in the last 1 day AND idem v4 Cart abandonment (skip, not exit). Smart sending off | LATER (not built): unique code only with besluit B (T09) -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
-<title>Your 10% is still here</title>
+<title>Tammy is on her fourth pan</title>
 <!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
@@ -25,11 +25,12 @@
     .desk{display:none!important;max-height:0!important;overflow:hidden!important;}
     .mob{display:block!important;max-height:none!important;overflow:visible!important;}
     .center{text-align:center!important;}
+    .cs-q{font-size:15px!important;line-height:22px!important;}
   }
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Tammy is on her fourth pan. Your code HI10 still takes 10% off.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">She gave one to her son, too. And your code HI10 still takes 10% off.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
@@ -38,57 +39,59 @@
 
 {{HEADER}}
 
-<!-- HERO 1:1: HI10-herinnering in de kop en aanbodbalk -->
+<!-- HERO 1:1, aanbod in de aanbodbalk; de kop draagt het idee -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern"><img src="{{IMG}}/w5-hero.jpg" width="600" alt="Your 10% is still here. Last welcome email: code HI10 takes 10% off on top of the sale, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw5-hero"><img src="{{IMG}}/w5-hero.jpg" width="600" alt="Skeptical first. Then the egg. Last welcome email: code HI10 still takes 10% off on top of the sale, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
-<!-- AANBOD direct onder de hero -->
-{{BLOCK:offer pad="14px 44px 4px 44px" eyebrow="STILL YOURS" headline="10% on top of the sale" note="The last time we mention it in this series." label="Claim my 10% + gifts" url="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern"}}
+{{BLOCK:cta label="Claim my 10% + gifts" url="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw5-cta1" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
 
-{{BLOCK:gifts pad="26px 44px 6px 44px" eyebrow="WITH EVERY ORDER" note="Plus a chance to win a $450 PFAS water filter. Nothing to add: it all comes with your order."}}
+<!-- OPENER -->
+<tr><td class="pad" style="padding:26px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;color:#282828;text-align:center;"><p style="margin:0 0 14px 0;">The last email in our welcome series, so I&rsquo;ll let three customers talk. Each started where you might be now: a little skeptical.</p></td></tr>
 
-{{BLOCK:cta label="Claim my 10% + gifts" url="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern" pad="20px 44px 4px 44px"}}
-
-<!-- REVIEWS: uitgelichte quote plus twee gelijke kaarten -->
-<tr><td class="pad" style="padding:34px 44px 0 44px;">
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">100,000+ HAPPY CUSTOMERS</div>
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 16px 0;">In their words.</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;"><tr><td align="center" style="padding:24px 26px 22px 26px;font-family:Inter,Arial,Helvetica,sans-serif;">
-    <div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-    <div style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:26px;line-height:32px;color:#282828;padding:10px 0 12px 0;">&ldquo;I am on my 4th pan from Siraat. I even gifted one to my son, and he says it&rsquo;s the best pan he owns.&rdquo;</div>
-    <div style="font-size:12px;line-height:16px;font-weight:600;letter-spacing:1px;color:#727272;">TAMMY &middot; VERIFIED BUYER</div>
-  </td></tr></table>
+<!-- REVIEWS ALS MINI CASE STUDIES (Trustpilot, letterlijk, alleen ingekort met ...) -->
+<tr><td class="pad" style="padding:24px 44px 16px 44px;">
+  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">IN THEIR WORDS</div>
+  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 4px 0;">Three kitchens, start to finish.</div>
 </td></tr>
 
-{{BLOCK:reviews pad="12px 44px 6px 44px" q1="...they came out of the pan perfectly. I am pleased and getting rid (or giving away) my non stick pans." n1="Marilyn B." q2="...it definitely needed just a thin covering of oil, and it cleaned up beautifully. I am very impressed." n2="Sandi R."}}
-
-<!-- PRODUCTEN met prijs na HI10 -->
-<tr><td class="pad" style="padding:28px 44px 6px 44px;">
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">WHERE MOST PEOPLE START</div>
-  <div style="height:14px;line-height:14px;font-size:0;">&nbsp;</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;"><tr>
-    <td width="104" valign="middle" style="padding:10px 0 10px 10px;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern"><img src="{{IMG}}/prod-panpro.jpg" width="94" alt="Titanium Hammered Pan Pro" style="width:94px;height:94px;"></a></td>
-    <td valign="middle" style="padding:12px 16px 12px 12px;font-family:Inter,Arial,Helvetica,sans-serif;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern" style="text-decoration:none;"><div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">Pan Pro, Standard 11&Prime;</div><div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">Our best seller.</div><div style="font-size:14px;line-height:20px;font-weight:600;color:#AC3B19;padding-top:4px;"><span style="color:#9A948B;font-weight:400;text-decoration:line-through;">$134</span>&nbsp; $120.60 with HI10</div></a></td>
-  </tr></table>
-  <div style="height:10px;line-height:10px;font-size:0;">&nbsp;</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;"><tr>
-    <td width="104" valign="middle" style="padding:10px 0 10px 10px;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-pan-pro-duo"><img src="{{IMG}}/prod-duo.jpg" width="94" alt="Titanium Hammered Pan Pro Duo" style="width:94px;height:94px;"></a></td>
-    <td valign="middle" style="padding:12px 16px 12px 12px;font-family:Inter,Arial,Helvetica,sans-serif;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-pan-pro-duo" style="text-decoration:none;"><div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">Pan Pro Duo</div><div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">Small plus Standard.</div><div style="font-size:14px;line-height:20px;font-weight:600;color:#AC3B19;padding-top:4px;"><span style="color:#9A948B;font-weight:400;text-decoration:line-through;">$229</span>&nbsp; $206.10 with HI10</div></a></td>
-  </tr></table>
+<tr><td class="pad" style="padding:0 44px 12px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;">
+    <tr><td style="padding:16px 22px 0 22px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">BEFORE</div><div class="cs-q" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:20px;line-height:26px;color:#282828;padding-top:4px;">&ldquo;My wife had badgered me to get a traditional non-stick but I don't want the forever chemicals.&rdquo;</div></td></tr><tr><td style="padding:14px 22px 0 22px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">THE TEST</div><div class="cs-q" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:20px;line-height:26px;color:#282828;padding-top:4px;">&ldquo;The real test was my egg the next morning... after a very light nudge, the egg released completely...&rdquo;</div></td></tr><tr><td style="padding:14px 22px 0 22px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">NOW</div><div class="cs-q" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:20px;line-height:26px;color:#282828;padding-top:4px;">&ldquo;I was super skeptical but this is a now officially my favorite pan.&rdquo;</div></td></tr>
+    <tr><td style="padding:14px 22px 18px 22px;font-family:Inter,Arial,Helvetica,sans-serif;"><span style="font-family:Arial,Helvetica,sans-serif;font-size:13px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>&nbsp; <span style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Michael G. &middot; Pan Pro &middot; Verified buyer</span></td></tr>
+  </table>
 </td></tr>
 
-{{BLOCK:cta label="Claim my 10% + gifts" url="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern" pad="24px 44px 4px 44px"}}
+<tr><td class="pad" style="padding:0 44px 12px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;">
+    <tr><td style="padding:16px 22px 0 22px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">BEFORE</div><div class="cs-q" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:20px;line-height:26px;color:#282828;padding-top:4px;">&ldquo;A gift for my daughter who loves to cook, but was complaining of food sticking to cookware products...&rdquo;</div></td></tr><tr><td style="padding:14px 22px 0 22px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">NOW</div><div class="cs-q" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:20px;line-height:26px;color:#282828;padding-top:4px;">&ldquo;This has now become a past grumble...&rdquo;</div></td></tr>
+    <tr><td style="padding:14px 22px 18px 22px;font-family:Inter,Arial,Helvetica,sans-serif;"><span style="font-family:Arial,Helvetica,sans-serif;font-size:13px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>&nbsp; <span style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Louise T. &middot; Pan Pro &middot; Verified buyer</span></td></tr>
+  </table>
+</td></tr>
+
+<tr><td class="pad" style="padding:0 44px 12px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;">
+    <tr><td style="padding:16px 22px 0 22px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">HOW MANY</div><div class="cs-q" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:20px;line-height:26px;color:#282828;padding-top:4px;">&ldquo;I am on my 4th pan from Siraat.&rdquo;</div></td></tr><tr><td style="padding:14px 22px 0 22px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">AND HER SON</div><div class="cs-q" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:20px;line-height:26px;color:#282828;padding-top:4px;">&ldquo;I even gifted one to my son, and he says it's the best pan he owns.&rdquo;</div></td></tr>
+    <tr><td style="padding:14px 22px 18px 22px;font-family:Inter,Arial,Helvetica,sans-serif;"><span style="font-family:Arial,Helvetica,sans-serif;font-size:13px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>&nbsp; <span style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Tammy &middot; Pan Pro &middot; Verified buyer</span></td></tr>
+  </table>
+</td></tr>
+
+<!-- AANBODKAARTJE: hetzelfde in elke welcome-mail -->
+{{BLOCK:offer pad="24px 44px 6px 44px" eyebrow="STILL YOURS" headline="10% on top of the sale" code="HI10" note="The last time we mention it in this series." label="Claim my 10% + gifts" url="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw5-offer"}}
+
+{{BLOCK:gifts pad="30px 44px 6px 44px" eyebrow="WITH EVERY ORDER" headline="$70 in gifts, included" note="Three gifts in every order, plus a chance to win the filter."}}
+
+{{BLOCK:productcard pad="22px 44px 6px 44px" img="card-panpro-save305.jpg" name="The Pan Pro, 11&Prime;" sub="Where most people start." now="$134" was="$439" pill="BEST SELLER" note="$120.60 with HI10" url="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw5-prod-panpro" link="Get the pan" alt="The Pan Pro, 11 inch, save $305"}}
+
+{{BLOCK:cta label="Claim my 10% + gifts" url="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw5-cta2" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
 
 {{BLOCK:icons}}
 
 <!-- SIGN-OFF -->
 <tr><td class="pad" style="padding:22px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  Not for you? Free 30-day returns on unused pans, and a 75-year warranty on every one.<br><br>
+  Not for you? Unused pans can go back within 30 days. Damaged or defective in that time? We refund or replace it and pay the shipping. After that, every pan is covered for 75 years.<br><br>
   Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
 </td></tr>
-
-
 {{FOOTER}}
 
 </table>

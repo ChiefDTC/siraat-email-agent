@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: New since your last order | SUBJECT_B: What your set does not have yet (+10%) | PREVIEW: The crepe pan, the utensils and the board. 10% off with HI10, plus $70 in gifts. | SEND: 60 days after Placed Order, 10:00 local time | FILTERS: Flow 'Winback v3' (trigger Placed Order, re-entry after 90 days); send filter: Placed Order = 0 since flow start; not in post-purchase in the last 14 days; split on last order: value of $300 or more, or Items contains 'Set' = this email. Offer: HI10 (public code, no unique code in R1). -->
+<!-- SUBJECT_A: The shapes a set leaves out | SUBJECT_B: Which pan do you reach for most? | SUBJECTS (5 types): C+B 'The shapes a set leaves out' / SPEC 'Crepe pan, wok, board and tools for your set' / Q 'Which pan do you reach for most?' / STORY '"He already had the whole set"' / OFFER 'Your set, one step further. HI10 still works.' | PREVIEW: The flat one, the deep one, the board and the tools. HI10 takes 10% off. | SEND: dag 45 na Placed Order, wacht 45 dagen tot 09:00 lokaal | FILTERS: v4 Winback stap 1, wacht 45 dagen tot 09:00. Verzendfilter: Placed Order zero times since starting this flow; Received Email where Flow = v4 Post-purchase zero times in the last 7 days; idem Flow = v4 VIP. Router: TS Items contains-any KOOK_TITELS + SET_TITELS; JA en (SET_TITELS of value >= 300) = r1-set, anders r1-pan; NEE en HEEFT_KOOKGEREI = r1-pan, NEE en nooit kookgerei = r1-acc. Offer: HI10 (publiek, geen deadline). Prijzen alleen bij verzendland US. Tak: r1-set (SET_TITELS of value >= 300). Rijen verdwijnen als de set dat stuk al bevat. | UTM: utm_campaign=v4-winback, utm_content=<mail>-<blok>; bij /discount/CODE?redirect=<pad> staan de UTM-parameters gecodeerd (%3F, %3D, %26) achter het pad binnen redirect -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
-<title>Your set, one step further</title>
+<title>The shapes a set leaves out</title>
 <!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
@@ -31,8 +31,9 @@
   }
 </style>
 </head>
+
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">The crepe pan, the utensils and the board. 10% off with HI10, plus $70 in gifts.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">The flat one, the deep one, the board and the tools. HI10 takes 10% off.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
@@ -43,73 +44,79 @@
 
 <!-- HERO 1:1 met aanbodbalk (make_hero.py --offer) -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/discount/HI10?redirect=/collections/all"><img src="{{IMG}}/r1-set-hero.jpg" width="600" alt="Your set, one step further. What is new, with 10% off for you: extra 10% off with code HI10, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://siraatskitchen.com/discount/HI10?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-winback%26utm_content%3Dr1set-hero"><img src="{{IMG}}/r1-set-hero.jpg" width="600" alt="For set owners: the shapes a set leaves out. Crepe, wok, board and tools. Extra 10% off with code HI10, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
-{{BLOCK:cta label="Shop with my 10%" url="https://siraatskitchen.com/discount/HI10?redirect=/collections/all" pad="22px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>HI10 is applied automatically. Plus $70 in gifts.</div>"}}
+{{BLOCK:cta label="Shop with my 10%" url="https://siraatskitchen.com/discount/HI10?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-winback%26utm_content%3Dr1set-cta1" pad="22px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>Free shipping. Same 75-year warranty. 4 gifts with every order.</div>"}}
 
-<!-- INTRO -->
-<tr><td class="pad" style="padding:26px 44px 2px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;text-align:center;">
-  <p style="margin:0 0 0px 0;">Hi {{ first_name|default:'there' }}, two months with your set. By now it has probably taken over the stovetop. These four cover what a set leaves out: the flat shape, the deep one, the tools and the surface to prep on.</p>
+<tr><td class="pad" style="padding:26px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;color:#282828;">
+  <p style="margin:0 0 16px 0;">Hi {{ first_name|default:'there' }}, six weeks with your set. By now one of those pans has become the one you grab first.</p>
+  <p style="margin:0 0 0px 0;">These cover what a set leaves out: the flat shape, the deep one, the tools and a board to prep on.</p>
 </td></tr>
 
-<!-- PRODUCTEN: lijst met prijs en prijs na code -->
+<!-- PRODUCTEN: lijst, prijzen alleen bij verzendland US -->
 <tr><td class="pad" style="padding:30px 44px 6px 44px;">
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">FOR SET OWNERS</div>
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 16px 0;">What your set does not have yet</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;">
+  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 16px 0;">What your set leaves out</div>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;border-bottom:0;">
+{% if 'Crepe' not in event.Items|join:',' and 'Complete' not in event.Items|join:',' %}
     <tr>
-      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-crepe-pan-pro"><img src="{{IMG}}/p-crepe.jpg" width="114" alt="Crepe Pan Pro" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
+      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-crepe-pan-pro%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-winback%26utm_content%3Dr1set-prod-crepe"><img src="{{IMG}}/p-crepe.jpg" width="114" alt="Titanium Hammered Crepe Pan Pro" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
       <td valign="middle" style="padding:14px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;">
-        <div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Crepe Pan Pro</div>
-        <div class="pcd" style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">The flat, wide shape most sets leave out. Crepes, pancakes, tortillas.</div>
-        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">$139&nbsp; <span style="color:#AC3B19;white-space:nowrap;">$125.10 with HI10</span></div>
-        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-crepe-pan-pro" style="color:#AC3B19;font-weight:600;text-decoration:underline;">See the crepe pan &rarr;</a></div>
+        <div style="font-size:10px;line-height:14px;letter-spacing:1.5px;font-weight:600;color:#AC3B19;padding-bottom:3px;">THE FLAT ONE</div><div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Crepe Pan Pro</div>
+        <div class="pcd" style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">Flat and wide for crepes, pancakes and tortillas.</div>
+        {% if event.extra.shipping_address.country_code == 'US' %}<div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">$139&nbsp; <span style="color:#AC3B19;white-space:nowrap;">$125.10 with HI10</span></div>{% endif %}
+        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-crepe-pan-pro%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-winback%26utm_content%3Dr1set-prod-crepe" style="color:#AC3B19;font-weight:600;text-decoration:underline;">See the crepe pan &rarr;</a></div>
       </td>
     </tr>
+{% endif %}
+{% if 'Wok' not in event.Items|join:',' and 'Complete' not in event.Items|join:',' and 'Set Pro' not in event.Items|join:',' %}
     <tr>
-      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/siraat-pure-titanium-utensils-bundle"><img src="{{IMG}}/p-utensils.jpg" width="114" alt="Titanium Utensil Set" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
+      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-wok-pan-pro%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-winback%26utm_content%3Dr1set-prod-wok"><img src="{{IMG}}/p-wok.jpg" width="114" alt="Titanium Hammered Wok Pan Pro" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
       <td valign="middle" style="padding:14px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;">
-        <div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Titanium Utensil Set</div>
+        <div style="font-size:10px;line-height:14px;letter-spacing:1.5px;font-weight:600;color:#AC3B19;padding-bottom:3px;">THE DEEP ONE</div><div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Wok Pan Pro</div>
+        <div class="pcd" style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">9 cm deep, for stir-fry and big batches.</div>
+        {% if event.extra.shipping_address.country_code == 'US' %}<div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">From $119&nbsp; <span style="color:#AC3B19;white-space:nowrap;">from $107.10 with HI10</span></div>{% endif %}
+        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-wok-pan-pro%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-winback%26utm_content%3Dr1set-prod-wok" style="color:#AC3B19;font-weight:600;text-decoration:underline;">See the wok &rarr;</a></div>
+      </td>
+    </tr>
+{% endif %}
+{% if 'Utensil' not in event.Items|join:',' and 'Set Pro' not in event.Items|join:',' %}
+    <tr>
+      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/siraat-pure-titanium-utensils-bundle%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-winback%26utm_content%3Dr1set-prod-utensils"><img src="{{IMG}}/p-utensils.jpg" width="114" alt="Titanium Utensil Set" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
+      <td valign="middle" style="padding:14px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;">
+        <div style="font-size:10px;line-height:14px;letter-spacing:1.5px;font-weight:600;color:#AC3B19;padding-bottom:3px;">THE TOOLS</div><div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Titanium Utensil Set</div>
         <div class="pcd" style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">Titanium tools made to match your pans.</div>
-        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">$149&nbsp; <span style="color:#AC3B19;white-space:nowrap;">$134.10 with HI10</span></div>
-        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/siraat-pure-titanium-utensils-bundle" style="color:#AC3B19;font-weight:600;text-decoration:underline;">See the utensils &rarr;</a></div>
+        {% if event.extra.shipping_address.country_code == 'US' %}<div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">$149&nbsp; <span style="color:#AC3B19;white-space:nowrap;">$134.10 with HI10</span></div>{% endif %}
+        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/siraat-pure-titanium-utensils-bundle%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-winback%26utm_content%3Dr1set-prod-utensils" style="color:#AC3B19;font-weight:600;text-decoration:underline;">See the utensils &rarr;</a></div>
       </td>
     </tr>
+{% endif %}
     <tr>
-      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-cutting-board-v2"><img src="{{IMG}}/p-board.jpg" width="114" alt="Titanium Cutting Board" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
+      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-cutting-board-v2%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-winback%26utm_content%3Dr1set-prod-board"><img src="{{IMG}}/p-board.jpg" width="114" alt="Titanium Cutting Board V2" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
       <td valign="middle" style="padding:14px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;">
-        <div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Titanium Cutting Board</div>
-        <div class="pcd" style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">Anti-microbial titanium. Four sizes, from Mini to Large.</div>
-        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">From $69&nbsp; <span style="color:#AC3B19;white-space:nowrap;">from $62.10 with HI10</span></div>
-        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-cutting-board-v2" style="color:#AC3B19;font-weight:600;text-decoration:underline;">See the sizes &rarr;</a></div>
-      </td>
-    </tr>
-    <tr>
-      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-wok-pan-pro"><img src="{{IMG}}/p-wok.jpg" width="114" alt="Wok Pan Pro" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
-      <td valign="middle" style="padding:14px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
-        <div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Wok Pan Pro</div>
-        <div class="pcd" style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">9 cm deep, for stir-fry and big batches. If your set came without one.</div>
-        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">From $119&nbsp; <span style="color:#AC3B19;white-space:nowrap;">from $107.10 with HI10</span></div>
-        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-wok-pan-pro" style="color:#AC3B19;font-weight:600;text-decoration:underline;">See the wok &rarr;</a></div>
+        <div style="font-size:10px;line-height:14px;letter-spacing:1.5px;font-weight:600;color:#AC3B19;padding-bottom:3px;">THE BOARD</div><div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Titanium Cutting Board</div>
+        <div class="pcd" style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">Anti-microbial titanium. Four sizes, Mini to Large.</div>
+        {% if event.extra.shipping_address.country_code == 'US' %}<div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">From $69&nbsp; <span style="color:#AC3B19;white-space:nowrap;">from $62.10 with HI10</span></div>{% endif %}
+        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-cutting-board-v2%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-winback%26utm_content%3Dr1set-prod-board" style="color:#AC3B19;font-weight:600;text-decoration:underline;">See the sizes &rarr;</a></div>
       </td>
     </tr>
   </table>
 </td></tr>
 
-{{BLOCK:cta label="Shop with my 10%" url="https://siraatskitchen.com/discount/HI10?redirect=/collections/all" pad="24px 44px 4px 44px"}}
+{{BLOCK:cta label="Shop with my 10%" url="https://siraatskitchen.com/discount/HI10?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-winback%26utm_content%3Dr1set-cta2" pad="24px 44px 4px 44px"}}
 
-{{BLOCK:gifts note="Plus a chance to win a $450 PFAS water filter."}}
+{{BLOCK:gifts pad="30px 44px 6px 44px" eyebrow="WITH EVERY ORDER" headline="$70 in gifts, included" note="Plus a chance to win a $450 PFAS water filter. It all comes with your order."}}
 
-{{BLOCK:reviews q1="My son bought me the wok for Christmas and he already had the whole set. Great to cook with." n1="Pam B." q2="Brilliant service.. amazing quality.. I got the full pan set and the utensils.. Best non stick pan on the market.." n2="David I."}}
+{{BLOCK:reviews pad="28px 44px 6px 44px" q1="My son bought me the wok for Christmas and he already had the whole set." n1="Pam B." q2="We ordered almost all the pans and some in different sizes too." n2="Jibz C."}}
 
 {{BLOCK:icons}}
 
-{{BLOCK:cta label="Shop with my 10%" url="https://siraatskitchen.com/discount/HI10?redirect=/collections/all" pad="24px 44px 4px 44px"}}
+{{BLOCK:cta label="Shop with my 10%" url="https://siraatskitchen.com/discount/HI10?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-winback%26utm_content%3Dr1set-cta3" pad="24px 44px 4px 44px"}}
 
 <!-- SIGN-OFF -->
 <tr><td class="pad" style="padding:24px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  Two months in, how is the set holding up? Reply and tell us which pan you reach for most. We read every answer, and it shapes what we make next.<br><br>
+  Which pan do you reach for most? Reply and tell me. I read every answer, and it shapes what we make next.<br><br>
   Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
 </td></tr>
 

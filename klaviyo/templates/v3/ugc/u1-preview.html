@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: Show us your first egg? | SUBJECT_B: Reply with a photo, get 15% off | PREVIEW: Reply with a photo of anything you cooked on your pan. We'll send you 15% off your next order. | SEND: Step 0, 6 dagen na Delivered Shipment (VcUF33), 10:00 lokale tijd (tussen P2 op levering +1 en het reviewverzoek XzHrez op levering +14). Reply-to support@siraatskitchen.com. Geen codebalk: geen verkoopmail. | FILTERS: Flow: trigger Delivered Shipment; Placed Order count over all time = 1 (eerste order); nooit eerder in deze flow; zelfde backorder-uitsluiting op producttitels als XzHrez. Message: Opened Ticket (Gorgias) = 0 sinds flow-start; Refunded Order = 0 in de laatste 30 dagen; Fulfilled Order >= 1 in de laatste 60 dagen (volledig geleverd). Incentive: 15%-code handmatig via Gorgias-macro (pool UGC15, Shopify bulk codes, 1 gebruik, 60 dagen). -->
+<!-- SUBJECT_A: Show us your first egg? | SUBJECT_B: One photo, 15% off your next order | PREVIEW: Reply with a photo of your first egg, or anything you cooked. We'll send you 15% off. | SEND: v4 · UGC first egg, stap 1: wacht 4 dagen na Delivered Shipment (VcUF33), tot 09:00 lokale tijd (levering +4, zodat U1 niet vlak voor of na P3 valt). Reply-to support@siraatskitchen.com (Gorgias). Klantmail: geen codebalk, geen coupon-tag. Beloning: 15%-code via Gorgias-macro uit Shopify-bulkpool UGC15- (1 gebruik, 60 dagen), na een foto, ook bij "private". | FILTERS: Flow: trigger Delivered Shipment; Placed Order equals 1 over all time; HEEFT_KOOKGEREI; has not been in this flow over all time; zelfde backorder-uitsluiting op producttitels als XzHrez. Message: Opened Ticket (YzvjGf) zero times since starting this flow; Refunded Order zero times in the last 30 days; Fulfilled Order (VtEiZT) at least once in the last 60 days. UTM: utm_campaign=v4-ugc, utm_content=u1-<blok>. -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -41,10 +41,22 @@
     .rv{display:block!important;width:100%!important;box-sizing:border-box!important;}
     .rvsp{display:block!important;width:100%!important;height:12px!important;font-size:0!important;line-height:0!important;}
   }
+  /* research/ux-round2 blokken (compare, closerlook, productcard) */
+  @media only screen and (max-width:620px){
+    .cmp-h{font-size:15px!important;line-height:20px!important;padding:0 8px 12px 8px!important;}
+    .cmp-c{padding:0 8px 0 12px!important;height:68px!important;}
+    .cmp-t{font-size:14px!important;line-height:19px!important;}
+    .pc-i{width:132px!important;}
+    .pc-img{width:132px!important;}
+    .pc-t{padding:12px 14px 12px 12px!important;}
+    .pc-n{font-size:16px!important;line-height:21px!important;}
+    .pc-s{font-size:13px!important;line-height:18px!important;}
+  }
 </style>
 </head>
+
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Reply with a photo of anything you cooked on your pan. We'll send you 15% off your next order.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Reply with a photo of your first egg, or anything you cooked. We'll send you 15% off.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
@@ -54,7 +66,7 @@
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
     <td valign="middle"><a href="https://siraatskitchen.com"><img src="assets/logo-black.png" width="150" alt="Siraat" style="width:150px;height:auto;"></a></td>
     <td valign="middle" align="right" class="navhide" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:1.5px;font-weight:600;white-space:nowrap;">
-      <a href="https://siraatskitchen.com/collections/cookware" style="color:#282828;text-decoration:none;">COOKWARE</a>&nbsp;&nbsp;&nbsp;
+      <a href="https://siraatskitchen.com/collections/pans" style="color:#282828;text-decoration:none;">COOKWARE</a>&nbsp;&nbsp;&nbsp;
       <a href="https://siraatskitchen.com/collections/bundles" style="color:#282828;text-decoration:none;">SETS</a>&nbsp;&nbsp;&nbsp;
       <a href="https://siraatskitchen.com/pages/faq" style="color:#282828;text-decoration:none;">ABOUT</a>
     </td>
@@ -62,46 +74,51 @@
 </td></tr>
 
 
-<!-- HERO (1:1 met aanbodbalk (incentive)) -->
+<!-- HERO (1:1 met aanbodbalk: de beloning) -->
 <tr><td style="padding:0;">
-  <a href="mailto:support@siraatskitchen.com?subject=My%20first%20egg"><img src="assets/u1-hero.jpg" width="600" alt="Your first week: show us your first egg. Reply with a photo and get 15% off your next order." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="mailto:support@siraatskitchen.com?subject=My%20first%20egg"><img src="assets/u1-hero.jpg" width="600" alt="Your first week: show us your first egg. How did it go? Reply with a photo and get 15% off your next order." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
 <!-- BLOCK cta: primaire knop, 340 px desktop, volle breedte mobiel -->
 <tr><td align="center" class="pad" style="padding:22px 44px 4px 44px;">
   <table role="presentation" class="btnw" width="340" cellpadding="0" cellspacing="0" border="0" style="width:340px;"><tr>
     <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:3px;">
-      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="mailto:support@siraatskitchen.com?subject=My%20first%20egg" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Reply with my photo</center></v:roundrect><![endif]-->
-      <!--[if !mso]><!--><a href="mailto:support@siraatskitchen.com?subject=My%20first%20egg" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Reply with my photo &rarr;</a><!--<![endif]-->
+      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="mailto:support@siraatskitchen.com?subject=My%20first%20egg" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Send my photo</center></v:roundrect><![endif]-->
+      <!--[if !mso]><!--><a href="mailto:support@siraatskitchen.com?subject=My%20first%20egg" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Send my photo &rarr;</a><!--<![endif]-->
     </td>
   </tr></table>
-  <div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>Or simply hit reply on this email.</div>
+  <div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>Or just hit reply. A phone photo is perfect. Faces optional.</div>
 </td></tr>
 
 
 <tr><td class="pad" style="padding:24px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;color:#282828;">
   <p style="margin:0 0 18px 0;">Hi Sarah,</p>
-  <p style="margin:0 0 18px 0;">Your pan arrived about a week ago. By now you&rsquo;ve probably cooked your first egg on it. If not, this weekend is a good moment: medium heat for 2 to 3 minutes, the water drop test, a teaspoon of oil, and let it release on its own.</p>
-  <p style="margin:0 0 18px 0;">We&rsquo;d love to see what you made. Real kitchens, real breakfasts, nothing staged.</p>
+  <p style="margin:0 0 18px 0;">Your pan arrived a few days ago. Has the first egg happened yet?</p>
+  <p style="margin:0 0 18px 0;">If it has, I&rsquo;d love to see it. Messy plate, bad light, half-eaten: all good. Real kitchens are the whole point.</p>
+  <p style="margin:0 0 18px 0;">If it hasn&rsquo;t, here is the one thing to know. Cold metal grabs your food, hot metal lets it go. Medium heat for 2 to 3 minutes, until a drop of water rolls around like a ball. Then a teaspoon of oil, then the egg. Wait until it lets go on its own.</p>
 </td></tr>
 
 <!-- DRIE STAPPEN -->
-<tr><td class="pad" style="padding:30px 44px 6px 44px;">
+<tr><td class="pad" style="padding:14px 44px 6px 44px;">
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">HOW IT WORKS</div>
   <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 16px 0;">One photo, one thank you</div>
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-    <tr><td width="58" valign="top" style="padding:18px 0 16px 20px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:28px;line-height:30px;color:#AC3B19;font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;">1</td>
+    <tr><td width="58" valign="top" style="padding:18px 0 16px 20px;border-bottom:1px solid #ECE7DD;font-size:28px;line-height:30px;color:#AC3B19;font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;">1</td>
       <td valign="top" style="padding:18px 20px 16px 6px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Cook something</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Your first egg, a steak, Sunday pancakes. Anything from your Siraat pan.</div></td></tr>
     <tr><td width="58" valign="top" style="padding:18px 0 16px 20px;border-bottom:1px solid #ECE7DD;font-size:28px;line-height:30px;color:#AC3B19;font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;">2</td>
-      <td valign="top" style="padding:18px 20px 16px 6px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Reply with a photo</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Hit reply and attach it. A phone photo is perfect, no styling needed.</div></td></tr>
+      <td valign="top" style="padding:18px 20px 16px 6px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Reply with a photo</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Hit reply and attach it. Only photos you took yourself, please.</div></td></tr>
     <tr><td width="58" valign="top" style="padding:18px 0 20px 20px;font-size:28px;line-height:30px;color:#AC3B19;font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;">3</td>
-      <td valign="top" style="padding:18px 20px 20px 6px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Get 15% off your next order</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Our team sends you a personal code, usually within 2 business days. One per customer.</div></td></tr>
+      <td valign="top" style="padding:18px 20px 20px 6px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Get 15% off your next order</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Our team replies with a personal code. One use, valid for 60 days, one per customer.</div></td></tr>
   </table>
 </td></tr>
 
-<tr><td class="pad" style="padding:26px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  <p style="margin:0 0 18px 0;"><b>What we do with your photo.</b> We may share it on our website, in our emails and on Instagram (@siraatskitchen), with your first name only. Rather we didn&rsquo;t? Write &ldquo;private&rdquo; in your reply. You still get your code.</p>
-  <p style="margin:0 0 18px 0;"><b>Egg stuck?</b> Reply anyway and tell us what happened. Sticking almost always comes down to heat, and we&rsquo;ll help you get it right.</p>
+<!-- TOESTEMMING -->
+<tr><td class="pad" style="padding:22px 44px 0 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-left:3px solid #AC3B19;"><tr>
+    <td style="padding:2px 0 2px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:22px;color:#282828;">
+      <b>Your photo, your call.</b> When you send a photo, you&rsquo;re saying we may share it on siraatskitchen.com, in our emails and on our social channels, with your first name only. Rather keep it private? Write &ldquo;private&rdquo; in your reply and we&rsquo;ll only look at it ourselves. You still get your code. Change your mind later? Email support@siraatskitchen.com and we&rsquo;ll stop using it.
+    </td>
+  </tr></table>
 </td></tr>
 
 <!-- BLOCK reviews: twee kaarten, gelijke hoogte (achtergrond op de kolomcel) -->
@@ -109,14 +126,14 @@
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
     <td class="rv" width="48%" valign="top" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:20px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;">
       <div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;I really like the no stick effect. It's going to become my #1 go to frying pan&rdquo;</div>
-      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Adele M. &middot; Verified buyer</div>
+      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;I followed the instructions... Then fried an egg which didn't stick to the pan.&rdquo;</div>
+      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Aggie M. &middot; Verified buyer</div>
     </td>
     <td class="rvsp" width="14" style="font-size:0;line-height:0;">&nbsp;</td>
     <td class="rv" width="48%" valign="top" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:20px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;">
       <div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;Quick delivery. Brilliant pan. Heats up fast non stick.&rdquo;</div>
-      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Margo &middot; Verified buyer</div>
+      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;We cooked the best omelette we have ever eaten when we used the pan for the first time.&rdquo;</div>
+      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Graham C. &middot; Verified buyer</div>
     </td>
   </tr></table>
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;text-align:center;padding-top:14px;"><img src="../../partials/shared/icon-customers-100k.png" width="18" height="18" alt="" style="display:inline-block;vertical-align:-4px;width:18px;height:18px;">&nbsp; Join 100,000+ happy customers</div>
@@ -124,20 +141,20 @@
 
 
 <!-- BLOCK cta: primaire knop, 340 px desktop, volle breedte mobiel -->
-<tr><td align="center" class="pad" style="padding:26px 44px 6px 44px;">
+<tr><td align="center" class="pad" style="padding:24px 44px 4px 44px;">
   <table role="presentation" class="btnw" width="340" cellpadding="0" cellspacing="0" border="0" style="width:340px;"><tr>
     <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:3px;">
-      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="mailto:support@siraatskitchen.com?subject=My%20first%20egg" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Reply with my photo</center></v:roundrect><![endif]-->
-      <!--[if !mso]><!--><a href="mailto:support@siraatskitchen.com?subject=My%20first%20egg" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Reply with my photo &rarr;</a><!--<![endif]-->
+      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="mailto:support@siraatskitchen.com?subject=My%20first%20egg" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Send my photo</center></v:roundrect><![endif]-->
+      <!--[if !mso]><!--><a href="mailto:support@siraatskitchen.com?subject=My%20first%20egg" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Send my photo &rarr;</a><!--<![endif]-->
     </td>
   </tr></table>
-  
+  <div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>Egg stuck? Reply anyway. It&rsquo;s almost always the heat, and we&rsquo;ll help.</div>
 </td></tr>
 
 
 <!-- SIGN-OFF -->
 <tr><td class="pad" style="padding:24px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  Thank you for cooking with us. Every photo lands in our team chat, and yes, we cheer for the good eggs.<br><br>
+  The full how-to, with video, is on our <a href="https://siraatskitchen.com/pages/care-use?utm_source=klaviyo&amp;utm_medium=email&amp;utm_campaign=v4-ugc&amp;utm_content=u1-guide" style="color:#AC3B19;">care and use page</a>. Thank you for cooking without coatings.<br><br>
   Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
 </td></tr>
 
@@ -146,7 +163,7 @@
   <a href="https://siraatskitchen.com"><img src="assets/logo-white.png" width="190" alt="Siraat" style="width:190px;height:auto;"></a>
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;letter-spacing:2px;font-weight:600;color:#BDB8B0;padding-top:14px;">NON-TOXIC COOKWARE &middot; BUILT FOR LIFE</div>
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:28px;">
-    <tr><td style="border-top:1px solid #5A5856;padding:15px 4px;"><a href="https://siraatskitchen.com/collections/cookware" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;font-weight:600;color:#F2F2F2;text-decoration:none;">TITANIUM COOKWARE &nbsp;&rarr;</a></td></tr>
+    <tr><td style="border-top:1px solid #5A5856;padding:15px 4px;"><a href="https://siraatskitchen.com/collections/pans" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;font-weight:600;color:#F2F2F2;text-decoration:none;">TITANIUM COOKWARE &nbsp;&rarr;</a></td></tr>
     <tr><td style="border-top:1px solid #5A5856;padding:15px 4px;"><a href="https://siraatskitchen.com/collections/bundles" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;font-weight:600;color:#F2F2F2;text-decoration:none;">BUNDLES &amp; SETS &nbsp;&rarr;</a></td></tr>
     <tr><td style="border-top:1px solid #5A5856;padding:15px 4px;"><a href="https://siraatskitchen.com/collections/accessories" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;font-weight:600;color:#F2F2F2;text-decoration:none;">ACCESSORIES &nbsp;&rarr;</a></td></tr>
     <tr><td style="border-top:1px solid #5A5856;border-bottom:1px solid #5A5856;padding:15px 4px;"><a href="https://siraatskitchen.com/pages/third-party-testing" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;font-weight:600;color:#F2F2F2;text-decoration:none;">LAB RESULTS &nbsp;&rarr;</a></td></tr>

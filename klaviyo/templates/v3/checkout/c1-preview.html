@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: Forgetting something? | SUBJECT_B: Your pan is still here (+10% off) | PREVIEW: Your cart is saved. Extra 10% off with HI10, plus $70 in gifts. | SEND: Step 0, 1 hour after Checkout Started | FILTERS: Flow: Placed Order = 0 since starting this flow, not in this flow in last 14 days, not in post-purchase in last 7 days. Message: Placed Order = 0 since starting this flow -->
+<!-- SUBJECT_A: Something stop you at checkout? | SUBJECT_B: Your cart, plus 4 gifts, still saved | SUBJECTS (5 types): curiosity+benefit 'The one question people ask at this step. Answered.' / specificity 'Your titanium pan is saved, exactly as you left it' / question 'Something stop you at checkout?' / story '"I only need the new one."' / offer 'Your cart, plus 4 gifts, still saved' | A/B: liking (question) vs reciprocity (offer). v4 T12: in fase 1 geen C1-onderwerptest, alleen A versturen. PREVIEW B: Free shipping, a mystery gift, the e-book and HI10 on top. One tap back. | PREVIEW: Saved exactly as you left it. Free shipping, and HI10 takes 10% more. | SEND: v4 2.1 stap 1: 30 minutes after Checkout Started (T01 v4-pad) | FILTERS: Flow: Placed Order = 0 since starting this flow, not in this flow in last 14 days, Received Email from v4 Post-purchase zero times in last 7 days; trigger filter $value > 0. Message: Placed Order = 0 since starting this flow -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
-<title>Your cart is still here</title>
+<title>Your cart is saved</title>
 <!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
@@ -25,6 +25,7 @@
     .desk{display:none!important;max-height:0!important;overflow:hidden!important;}
     .mob{display:block!important;max-height:none!important;overflow:visible!important;}
     .center{text-align:center!important;}
+    .vs td{font-size:13px!important;}
   }
   /* blocks (partials/blocks, ingevoegd door build_template.py) */
   @media only screen and (max-width:620px){
@@ -38,10 +39,21 @@
     .rv{display:block!important;width:100%!important;box-sizing:border-box!important;}
     .rvsp{display:block!important;width:100%!important;height:12px!important;font-size:0!important;line-height:0!important;}
   }
+  /* research/ux-round2 blokken (compare, closerlook, productcard) */
+  @media only screen and (max-width:620px){
+    .cmp-h{font-size:15px!important;line-height:20px!important;padding:0 8px 12px 8px!important;}
+    .cmp-c{padding:0 8px 0 12px!important;height:68px!important;}
+    .cmp-t{font-size:14px!important;line-height:19px!important;}
+    .pc-i{width:132px!important;}
+    .pc-img{width:132px!important;}
+    .pc-t{padding:12px 14px 12px 12px!important;}
+    .pc-n{font-size:16px!important;line-height:21px!important;}
+    .pc-s{font-size:13px!important;line-height:18px!important;}
+  }
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Your cart is saved. Extra 10% off with HI10, plus $70 in gifts.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Saved exactly as you left it. Free shipping, and HI10 takes 10% more.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
@@ -65,9 +77,9 @@
 </td></tr>
 
 
-<!-- HERO 4:3 met aanbodbalk (make_hero.py --offer --ratio=4:3) -->
+<!-- HERO 4:3 met aanbodbalk (make_hero.py --offer --ratio=4:3, bron: content/media/hero-register/checkout.csv) -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/checkouts/sample/recover?key=x&discount=HI10"><img src="assets/c1-hero.jpg" width="600" alt="Your cart is still here. Extra 10% off with code HI10, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="#&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-hero"><img src="assets/c1-hero.jpg" width="600" alt="Your cart is saved, right where you left it. Extra 10% off with code HI10, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
 <!-- BLOCK cart: Checkout Started line items + HI10-regel + knop -->
@@ -77,10 +89,10 @@
     
     <tr>
       <td width="104" valign="middle" style="padding:12px 0 12px 16px;">
-        <img src="../../../../content/products/titanium-hammered-pan-pro/img/packshot-1.jpg" width="88" alt="Titanium Hammered Pan Pro Standard" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;">
+        <img src="assets/cart-fallback.jpg" width="88" alt="Titanium Hammered Pan Pro, 11"" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;">
       </td>
       <td valign="middle" style="padding:12px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
-        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">Titanium Hammered Pan Pro Standard</div>
+        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">Titanium Hammered Pan Pro, 11"</div>
         <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">Qty 1</div>
       </td>
       <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;white-space:nowrap;">$134.00</td>
@@ -95,16 +107,26 @@
 </td></tr>
 
 
+<!-- EEN REGEL PROOF DIRECT ONDER DE CART -->
+<tr><td class="pad" style="padding:14px 44px 0 44px;">
+  <div style="border-left:3px solid #AC3B19;padding:2px 0 2px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#282828;font-style:italic;">&ldquo;I followed your directions, made scrambled eggs and they came out of the pan perfectly.&rdquo;<div style="font-style:normal;font-size:12px;line-height:18px;font-weight:600;color:#727272;padding-top:4px;">Marilyn B. &middot; Verified buyer</div></div>
+</td></tr>
+
 <!-- BLOCK cta: primaire knop, 340 px desktop, volle breedte mobiel -->
-<tr><td align="center" class="pad" style="padding:16px 44px 4px 44px;">
+<tr><td align="center" class="pad" style="padding:20px 44px 4px 44px;">
   <table role="presentation" class="btnw" width="340" cellpadding="0" cellspacing="0" border="0" style="width:340px;"><tr>
     <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:3px;">
-      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/checkouts/sample/recover?key=x&discount=HI10" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Complete my order</center></v:roundrect><![endif]-->
-      <!--[if !mso]><!--><a href="https://siraatskitchen.com/checkouts/sample/recover?key=x&discount=HI10" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Complete my order &rarr;</a><!--<![endif]-->
+      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="#&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-cta1" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Complete my order</center></v:roundrect><![endif]-->
+      <!--[if !mso]><!--><a href="#&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-cta1" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Complete my order &rarr;</a><!--<![endif]-->
     </td>
   </tr></table>
-  <div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>Your 10% is applied automatically.</div>
+  <div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>
 </td></tr>
+
+
+<!-- EEN TWIJFEL WEG: kookgerei krijgt maat en kookplaat, accessoires verzending en retour -->
+
+<tr><td class="pad" style="padding:26px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">Something stopped you? The two questions we hear most at this step are size and stove. The 11-inch is our best seller and suits one or two people. And every Siraat pan has a magnetic base, so it works on induction, gas, electric and ceramic.</td></tr>
 
 
 <!-- BLOCK icons: vier feiten met iconen, nooit levertijd -->
@@ -123,7 +145,7 @@
 <!-- BLOCK gifts: vier gifts met beeld en waarde, gelijke hoogte, 2x2 op mobiel -->
 <tr><td class="pad" style="padding:30px 44px 6px 44px;">
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">WITH EVERY ORDER</div>
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 18px 0;">$70 in gifts, on us</div>
+  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 18px 0;">$70 in gifts, included</div>
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
     <td class="g2" width="50%" valign="top" style="padding:0 5px 0 0;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
@@ -156,25 +178,79 @@
       </tr></table>
     </td>
   </tr></table>
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#727272;text-align:center;padding-top:14px;">Plus a chance to win a $450 PFAS water filter. Nothing to add: it all comes with your order.</div>
+  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#727272;text-align:center;padding-top:14px;"></div>
 </td></tr>
 
 
 
-<!-- BLOCK features: drie redenen met icoon (uitleg over de pan) -->
-<tr><td class="pad" style="padding:30px 44px 6px 44px;">
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">WHY 100,000+ PEOPLE SWITCHED</div>
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 16px 0;">One pan. Nothing to wear off.</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-    <tr><td width="58" valign="top" style="padding:20px 0 16px 20px;border-bottom:1px solid #ECE7DD;"><img src="../../partials/shared/icon-no-coating.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
-      <td valign="top" style="padding:18px 20px 16px 14px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">No coating. Ever.</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Pure titanium cooking surface. There is nothing to scratch, flake or end up in your food.</div></td></tr>
-    <tr><td width="58" valign="top" style="padding:20px 0 16px 20px;border-bottom:1px solid #ECE7DD;"><img src="../../partials/shared/icon-pfas-tested.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
-      <td valign="top" style="padding:18px 20px 16px 14px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Lab tested, not just claimed</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Light Labs report no. 25895: 31 PFAS compounds tested, every one below detection.</div></td></tr>
-    <tr><td width="58" valign="top" style="padding:20px 0 20px 20px;"><img src="../../partials/shared/icon-metal-utensil-safe.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
-      <td valign="top" style="padding:18px 20px 20px 14px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Metal utensils, high heat, dishwasher</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Sear, scrape and clean it the way you like. The 75-year warranty covers the rest.</div></td></tr>
+<!-- BLOCK compare (research/ux-round2): vergelijkingstabel, 5 rijen, live tekst, eigen kolom wit, andere kolom grijs.
+     Kopstuk compare-cap-panpro.png = scripts/make_compare_assets.py (productfoto steekt over de rand). Iconen: icon-check (brick), icon-cross, icon-same (grijs vinkje, voor gedeelde eigenschappen). -->
+<tr><td class="pad" style="padding:34px 44px 6px 44px;">
+  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">THE DIFFERENCE</div>
+  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 10px 0;">One pan. Nothing to wear off.</div>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;table-layout:fixed;">
+    <tr><td colspan="2" style="padding:0;font-size:0;line-height:0;"><img src="../../partials/shared/compare-cap-panpro.png" width="512" alt="" style="display:block;width:100%;max-width:512px;height:auto;"></td></tr>
+    <tr>
+      <td width="50%" align="center" valign="bottom" bgcolor="#FFFFFF" class="cmp-h" style="background:#FFFFFF;padding:0 12px 14px 12px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:17px;line-height:22px;font-weight:600;color:#282828;">Siraat Titanium</td>
+      <td width="50%" align="center" valign="bottom" bgcolor="#ECE8E1" class="cmp-h" style="background:#ECE8E1;padding:0 12px 14px 12px;border-bottom:1px solid #DDD7CD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:17px;line-height:22px;font-weight:600;color:#5E5A55;">Coated nonstick</td>
+    </tr>
+        <tr>
+      <td height="64" valign="middle" bgcolor="#FFFFFF" class="cmp-c" style="background:#FFFFFF;height:64px;padding:0 10px 0 18px;border-bottom:1px solid #ECE7DD;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td width="24" valign="middle" style="padding:0 8px 0 0;"><img src="../../partials/shared/icon-check.png" width="16" height="16" alt="Yes:" style="display:block;width:16px;height:16px;"></td>
+        <td valign="middle" class="cmp-t" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:20px;font-weight:600;color:#282828;">Titanium cooking surface</td></tr></table></td>
+      <td height="64" valign="middle" bgcolor="#ECE8E1" class="cmp-c" style="background:#ECE8E1;height:64px;padding:0 10px 0 18px;border-bottom:1px solid #DDD7CD;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td width="24" valign="middle" style="padding:0 8px 0 0;"><img src="../../partials/shared/icon-cross.png" width="16" height="16" alt="No:" style="display:block;width:16px;height:16px;"></td>
+        <td valign="middle" class="cmp-t" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:20px;color:#5E5A55;">A PTFE or ceramic coating</td></tr></table></td>
+    </tr>
+    <tr>
+      <td height="64" valign="middle" bgcolor="#FFFFFF" class="cmp-c" style="background:#FFFFFF;height:64px;padding:0 10px 0 18px;border-bottom:1px solid #ECE7DD;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td width="24" valign="middle" style="padding:0 8px 0 0;"><img src="../../partials/shared/icon-check.png" width="16" height="16" alt="Yes:" style="display:block;width:16px;height:16px;"></td>
+        <td valign="middle" class="cmp-t" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:20px;font-weight:600;color:#282828;">No coating to wear off</td></tr></table></td>
+      <td height="64" valign="middle" bgcolor="#ECE8E1" class="cmp-c" style="background:#ECE8E1;height:64px;padding:0 10px 0 18px;border-bottom:1px solid #DDD7CD;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td width="24" valign="middle" style="padding:0 8px 0 0;"><img src="../../partials/shared/icon-cross.png" width="16" height="16" alt="No:" style="display:block;width:16px;height:16px;"></td>
+        <td valign="middle" class="cmp-t" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:20px;color:#5E5A55;">Coating wears with use</td></tr></table></td>
+    </tr>
+    <tr>
+      <td height="64" valign="middle" bgcolor="#FFFFFF" class="cmp-c" style="background:#FFFFFF;height:64px;padding:0 10px 0 18px;border-bottom:1px solid #ECE7DD;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td width="24" valign="middle" style="padding:0 8px 0 0;"><img src="../../partials/shared/icon-check.png" width="16" height="16" alt="Yes:" style="display:block;width:16px;height:16px;"></td>
+        <td valign="middle" class="cmp-t" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:20px;font-weight:600;color:#282828;">Metal utensils welcome</td></tr></table></td>
+      <td height="64" valign="middle" bgcolor="#ECE8E1" class="cmp-c" style="background:#ECE8E1;height:64px;padding:0 10px 0 18px;border-bottom:1px solid #DDD7CD;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td width="24" valign="middle" style="padding:0 8px 0 0;"><img src="../../partials/shared/icon-cross.png" width="16" height="16" alt="No:" style="display:block;width:16px;height:16px;"></td>
+        <td valign="middle" class="cmp-t" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:20px;color:#5E5A55;">Wood or silicone advised</td></tr></table></td>
+    </tr>
+    <tr>
+      <td height="64" valign="middle" bgcolor="#FFFFFF" class="cmp-c" style="background:#FFFFFF;height:64px;padding:0 10px 0 18px;border-bottom:1px solid #ECE7DD;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td width="24" valign="middle" style="padding:0 8px 0 0;"><img src="../../partials/shared/icon-check.png" width="16" height="16" alt="Yes:" style="display:block;width:16px;height:16px;"></td>
+        <td valign="middle" class="cmp-t" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:20px;font-weight:600;color:#282828;">Tested by Light Labs</td></tr></table></td>
+      <td height="64" valign="middle" bgcolor="#ECE8E1" class="cmp-c" style="background:#ECE8E1;height:64px;padding:0 10px 0 18px;border-bottom:1px solid #DDD7CD;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td width="24" valign="middle" style="padding:0 8px 0 0;"><img src="../../partials/shared/icon-cross.png" width="16" height="16" alt="No:" style="display:block;width:16px;height:16px;"></td>
+        <td valign="middle" class="cmp-t" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:20px;color:#5E5A55;">Testing varies by brand</td></tr></table></td>
+    </tr>
+    <tr>
+      <td height="64" valign="middle" bgcolor="#FFFFFF" class="cmp-c" style="background:#FFFFFF;height:64px;padding:0 10px 0 18px;border-bottom:1px solid #ECE7DD;border-bottom:0;border-radius:0 0 0 12px;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td width="24" valign="middle" style="padding:0 8px 0 0;"><img src="../../partials/shared/icon-check.png" width="16" height="16" alt="Yes:" style="display:block;width:16px;height:16px;"></td>
+        <td valign="middle" class="cmp-t" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:20px;font-weight:600;color:#282828;">Dishwasher safe</td></tr></table></td>
+      <td height="64" valign="middle" bgcolor="#ECE8E1" class="cmp-c" style="background:#ECE8E1;height:64px;padding:0 10px 0 18px;border-bottom:1px solid #DDD7CD;border-bottom:0;border-radius:0 0 12px 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td width="24" valign="middle" style="padding:0 8px 0 0;"><img src="../../partials/shared/icon-cross.png" width="16" height="16" alt="No:" style="display:block;width:16px;height:16px;"></td>
+        <td valign="middle" class="cmp-t" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:20px;color:#5E5A55;">Hand wash advised</td></tr></table></td>
+    </tr>
+
   </table>
+  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#9A948B;text-align:center;padding-top:10px;">Light Labs report no. 25895: 31 PFAS compounds tested, every one below detection.</div>
 </td></tr>
 
+
+
+<!-- BLOCK cta: primaire knop, 340 px desktop, volle breedte mobiel -->
+<tr><td align="center" class="pad" style="padding:26px 44px 4px 44px;">
+  <table role="presentation" class="btnw" width="340" cellpadding="0" cellspacing="0" border="0" style="width:340px;"><tr>
+    <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:3px;">
+      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="#&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-cta2" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Complete my order</center></v:roundrect><![endif]-->
+      <!--[if !mso]><!--><a href="#&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-cta2" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Complete my order &rarr;</a><!--<![endif]-->
+    </td>
+  </tr></table>
+  <div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>
+</td></tr>
 
 
 <!-- BLOCK reviews: twee kaarten, gelijke hoogte (achtergrond op de kolomcel) -->
@@ -182,14 +258,14 @@
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
     <td class="rv" width="48%" valign="top" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:20px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;">
       <div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;One of the best pans I've ever used and so impressed with how easy it is to clean&rdquo;</div>
-      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Carol E. &middot; Verified buyer</div>
+      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;This pan is fantastic. Makes all of our others &quot;non stick&quot; seem really sticky.&rdquo;</div>
+      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Thomas D. &middot; Verified buyer</div>
     </td>
     <td class="rvsp" width="14" style="font-size:0;line-height:0;">&nbsp;</td>
     <td class="rv" width="48%" valign="top" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:20px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;">
       <div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;I really like the no stick effect. It's going to become my #1 go to frying pan&rdquo;</div>
-      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Adele M. &middot; Verified buyer</div>
+      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;We cooked the best omelette we have ever eaten when we used the pan for the first time...&rdquo;</div>
+      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Graham C. &middot; Verified buyer</div>
     </td>
   </tr></table>
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;text-align:center;padding-top:14px;"><img src="../../partials/shared/icon-customers-100k.png" width="18" height="18" alt="" style="display:inline-block;vertical-align:-4px;width:18px;height:18px;">&nbsp; Join 100,000+ happy customers</div>
@@ -197,20 +273,20 @@
 
 
 <!-- BLOCK cta: primaire knop, 340 px desktop, volle breedte mobiel -->
-<tr><td align="center" class="pad" style="padding:26px 44px 6px 44px;">
+<tr><td align="center" class="pad" style="padding:24px 44px 6px 44px;">
   <table role="presentation" class="btnw" width="340" cellpadding="0" cellspacing="0" border="0" style="width:340px;"><tr>
     <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:3px;">
-      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/checkouts/sample/recover?key=x&discount=HI10" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Complete my order</center></v:roundrect><![endif]-->
-      <!--[if !mso]><!--><a href="https://siraatskitchen.com/checkouts/sample/recover?key=x&discount=HI10" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Complete my order &rarr;</a><!--<![endif]-->
+      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="#&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-cta3" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Complete my order</center></v:roundrect><![endif]-->
+      <!--[if !mso]><!--><a href="#&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-cta3" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Complete my order &rarr;</a><!--<![endif]-->
     </td>
   </tr></table>
-  
+  <div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>
 </td></tr>
 
 
 <!-- SIGN-OFF -->
 <tr><td class="pad" style="padding:24px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  Hi Sarah, something stopped you at checkout? A question about sizes or induction? Just reply. A real person reads every email.<br><br>
+  Hi Sarah, if something stopped you, I would like to know what it was. Just reply. A real person reads every email.<br><br>
   Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
 </td></tr>
 
@@ -231,7 +307,7 @@
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:19px;color:#BDB8B0;text-align:center;">
     Free shipping on all orders &middot; 30-day returns &middot; 75-year warranty<br><br>
     <a href="#" style="color:#BDB8B0;">Unsubscribe</a> &nbsp;|&nbsp; <a href="#" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; <a href="#" style="color:#BDB8B0;">View in browser</a><br>
-    Siraat&#x27;s Kitchen &middot; [address]
+    Siraat's Kitchen &middot; [address]
   </div>
 </td></tr>
 

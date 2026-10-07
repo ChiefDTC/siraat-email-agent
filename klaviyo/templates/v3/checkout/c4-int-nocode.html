@@ -1,0 +1,87 @@
+<!-- SUBJECT_A: Last reminder: your cart and 4 gifts | SUBJECT_B: "They honored the warranty" | SUBJECTS (5 types): curiosity+benefit 'Two promises that come with your cart' / specificity 'Your cart, 4 gifts, 30 days to decide' / question 'Still deciding on your cart?' / story '"They honored the warranty"' / offer 'Last reminder: your cart and 4 gifts' | A/B: geen onderwerptest (T02 loopt op deze stap); B alleen na de T02-beslissing. PREVIEW B: Brandon sent one photo. That is how the warranty works. | PREVIEW: The last email about your cart. Free shipping, 4 gifts and two promises. | SEND: v4 2.1 stap 6K/6A: wait 2 days until 09:00 (day 5, 09:00) after C3; country split (5K) then code router (1.4) pool C4_10_48H, T02 arm B or cooldown (last_flow_code_at in the last 30 days). No code, no profile update. | FILTERS: Message: Placed Order = 0 since starting this flow. Branch: INT (not US) -->
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
+<title>Still yours, if you want it</title>
+<!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
+  body{margin:0;padding:0;background:#FFFFFF;-webkit-text-size-adjust:100%;}
+  table{border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;}
+  img{border:0;display:block;line-height:100%;outline:none;text-decoration:none;}
+  a{color:#AC3B19;}
+  @media only screen and (max-width:620px){
+    .w{width:100%!important;}
+    .pad{padding-left:22px!important;padding-right:22px!important;}
+    .stack{display:block!important;width:100%!important;}
+    .stackpad{padding:0 0 14px 0!important;}
+    .h2{font-size:30px!important;line-height:34px!important;}
+    .navhide{display:none!important;}
+    .desk{display:none!important;max-height:0!important;overflow:hidden!important;}
+    .mob{display:block!important;max-height:none!important;overflow:visible!important;}
+    .center{text-align:center!important;}
+    .vs td{font-size:13px!important;}
+  }
+</style>
+</head>
+<body style="margin:0;padding:0;background:#FFFFFF;">
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">The last email about your cart. Free shipping, 4 gifts and two promises.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
+<tr><td align="center" style="padding:8px 0 32px 0;">
+<table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
+
+{{BLOCK:codebar text="WITH EVERY ORDER" code="$70 IN GIFTS"}}
+
+{{HEADER}}
+
+<!-- HERO 4:3 met aanbodbalk (make_hero.py --offer --ratio=4:3, bron: content/media/hero-register/checkout.csv) -->
+<tr><td style="padding:0;">
+  <a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/cart?ref=email' }}&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4intnocode-hero"><img src="{{IMG}}/c4int-nocode-hero.jpg" width="600" alt="Last email about your cart. Still yours, if you want it. Free shipping, duties paid, plus $70 in gifts with every order." style="width:100%;max-width:600px;height:auto;"></a>
+</td></tr>
+
+{{BLOCK:cart pad="22px 44px 4px 44px" line="Free shipping, duties paid, and <b>$70 in gifts</b> come with your order."}}
+
+{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/cart?ref=email' }}&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4intnocode-cta1" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping, duties paid. 30-day returns. 100,000+ happy customers.</div>"}}
+
+<tr><td class="pad" style="padding:28px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">This is the last email about your cart, so here is everything in one place. Your cart is saved, shipping is free and duties are paid, and four gifts come with it. Plus two promises, in case it is not what you hoped for.</td></tr>
+
+<!-- RISK REVERSAL: TWO PROMISES (06-offer-design 3) -->
+<tr><td class="pad" style="padding:30px 44px 6px 44px;">
+  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">STILL UNSURE?</div>
+  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 16px 0;">Two promises</div>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
+    <tr><td width="58" valign="top" style="padding:20px 0 16px 20px;border-bottom:1px solid #ECE7DD;"><img src="{{SHARED}}/icon-returns-30-day.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
+      <td valign="top" style="padding:18px 20px 16px 14px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Changed your mind?</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Send it back unused within 30 days of delivery for a full refund.</div></td></tr>
+    <tr><td width="58" valign="top" style="padding:20px 0 16px 20px;"><img src="{{SHARED}}/icon-warranty-75-year.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
+      <td valign="top" style="padding:18px 20px 16px 14px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Something wrong with it?</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">If it arrives damaged or with a defect, you choose a refund or a new one, and we pay the shipping.{% if 'Hammer' in event.Items|join:',' or 'Pan' in event.Items|join:',' or 'Pot' in event.Items|join:',' or 'ookware' in event.Items|join:',' or 'Everything' in event.Items|join:',' or 'fanne' in event.Items|join:',' or 'Prep Bundle' in event.Items|join:',' %} After that, the 75-year warranty covers dents, a warped base, and a loose handle or rivet.{% endif %} A few photos is all it takes.</div></td></tr>
+  </table>
+</td></tr>
+
+{{BLOCK:reviews q1="Siraat replaced a pan free of charge... I just sent them the picture and they honored the warranty." n1="Brandon W." q2="I returned my pans, unused, and received a refund, no questions asked. Easy return procedure." n2="Steven T."}}
+
+{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/cart?ref=email' }}&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4intnocode-cta2" pad="26px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping, duties paid. 30-day returns. 100,000+ happy customers.</div>"}}
+
+{{BLOCK:gifts eyebrow="WITH EVERY ORDER" headline="$70 in gifts, included" note=""}}
+
+{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/cart?ref=email' }}&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4intnocode-cta3" pad="26px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping, duties paid. 30-day returns. 100,000+ happy customers.</div>"}}
+
+{{BLOCK:icons-int}}
+
+<!-- SIGN-OFF -->
+<tr><td class="pad" style="padding:24px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+  Hi {{ first_name|default:'there' }}, this is the last email about your cart. A question first? Reply and tell me.<br><br>
+  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
+</td></tr>
+
+{{FOOTER}}
+
+</table>
+</td></tr>
+</table>
+</body>
+</html>

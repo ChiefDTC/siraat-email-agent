@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: Twice is a habit. Here's 15% off. | SUBJECT_B: For our regulars: 15% off your next piece | PREVIEW: You've ordered twice. This personal 15% code is yours for 14 days, with $70 in gifts. | SEND: Step 0, 30 dagen na de tweede Placed Order (dus na het P3-codevenster van 14 dagen), 10:00 lokale tijd. | FILTERS: Flow: trigger Placed Order; Placed Order count over all time = 2; nooit eerder in deze flow; kan e-mailmarketing ontvangen. Message: Refunded Order = 0 sinds flow-start; Placed Order = 0 in de laatste 14 dagen (wie net weer kocht krijgt V1 later niet dubbel); profiel-eigenschap last_flow_code_at niet in de laatste 30 dagen. Na de mail: Update profile property last_flow_code_at = vandaag, last_flow_code_pool = SK_REGULARS15_14D, siraat_regular = true. Offer: unieke Klaviyo-coupon SK_REGULARS15_14D (15%, 14 dagen na toewijzing, 1 gebruik, alleen one-time purchase). -->
+<!-- SUBJECT_A: Twice is a habit. Here's 15% off. | SUBJECT_B: 15% off, 14 days, for our regulars | SUBJECTS (5 types): C+B 'Why regulars get a different code' / SPEC '15% off, 14 days, for our regulars' / Q 'What would you add to your kitchen?' / STORY '"I am on my 4th pan from Siraat"' / OFFER 'Twice is a habit. Here's 15% off.' | PREVIEW: You've ordered twice. This personal 15% code is yours for 14 days. | SEND: stap 1, wacht 30 dagen na de 2e Placed Order, tot 09:00 lokaal | FILTERS: v4 VIP, flowfilters: Placed Order equals 2 over all time, has not been in this flow, can receive email marketing. Verzendfilter: Refunded Order zero since start; Placed Order zero in the last 14 days. Code-router zonder cooldown = deze mail met unieke coupon SK_REGULARS15_14D (15%, 14 dagen na toewijzing, 1 gebruik, alleen one-time purchase); eerste 4 weken 100% code, daarna stratum in T02. Daarna Update profile property last_flow_code_at = vandaag, last_flow_code_pool = SK_REGULARS15_14D, siraat_regular = true. Prijzen alleen bij verzendland US. Berichtnaam begint met CODE. | UTM: utm_campaign=v4-vip, utm_content=<mail>-<blok>, utm_term=t02-a; bij /discount/CODE?redirect=<pad> staan de UTM-parameters gecodeerd (%3F, %3D, %26) achter het pad binnen redirect -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
-<title>Twice is a habit</title>
+<title>Twice is a habit. Here's 15% off.</title>
 <!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
@@ -31,8 +31,9 @@
   }
 </style>
 </head>
+
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">You've ordered twice. This personal 15% code is yours for 14 days, with $70 in gifts.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">You've ordered twice. This personal 15% code is yours for 14 days.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
@@ -41,76 +42,78 @@
 
 {{HEADER}}
 
-<!-- HERO (1:1 met aanbodbalk) -->
+<!-- HERO 1:1 met aanbodbalk (make_hero.py --offer) -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/discount/{% coupon_code 'SK_REGULARS15_14D' %}?redirect=/collections/all"><img src="{{IMG}}/v1-hero.jpg" width="600" alt="For our regulars: a thank you, 15% off your next piece with your personal code. Valid for 14 days. Plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://siraatskitchen.com/discount/{% coupon_code 'SK_REGULARS15_14D' %}?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-vip%26utm_content%3Dv1-hero%26utm_term%3Dt02-a"><img src="{{IMG}}/v1-hero.jpg" width="600" alt="For our regulars: twice is a habit. 15% off your next piece with your own code, for 14 days. Plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
-{{BLOCK:cta label="Claim my 15%" url="https://siraatskitchen.com/discount/{% coupon_code 'SK_REGULARS15_14D' %}?redirect=/collections/all" pad="22px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>Applied automatically, on top of the sale. One use, just for you.</div>"}}
+{{BLOCK:cta label="Claim my 15%" url="https://siraatskitchen.com/discount/{% coupon_code 'SK_REGULARS15_14D' %}?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-vip%26utm_content%3Dv1-cta1%26utm_term%3Dt02-a" pad="22px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>One use, already applied. Free shipping. 4 gifts with every order.</div>"}}
 
 <tr><td class="pad" style="padding:26px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;color:#282828;">
-  <p style="margin:0 0 18px 0;">Hi {{ first_name|default:'there' }},</p>
-  <p style="margin:0 0 18px 0;">You have now ordered from us twice. Most people stop at one pan. You came back, and for a small team that means a lot.</p>
-  <p style="margin:0 0 18px 0;">So here is a thank you: 15% off your next piece, on top of the sale price. It&rsquo;s a personal code, it works once, and it&rsquo;s yours for 14 days.</p>
+  <p style="margin:0 0 16px 0;">Hi {{ first_name|default:'there' }},</p>
+  <p style="margin:0 0 16px 0;">It's Benjamin. You've now ordered from us twice. Most people stop at one pan, so a second order tells me the first one earned its place on your stove.</p>
+  <p style="margin:0 0 0px 0;">So here's a thank you: 15% off your next piece, on top of the sale price. It's your own code, it works once, and it's good for 14 days. Made for you, so it has an end date. After that, the regular sale price applies.</p>
 </td></tr>
 
-{{BLOCK:offer eyebrow="YOUR THANK-YOU CODE" headline="15% off, for our regulars" code="{% coupon_code 'SK_REGULARS15_14D' %}" note="Applied automatically with the button. One code per order." deadline="Valid for 14 days from this email" label="Claim my 15%" url="https://siraatskitchen.com/discount/{% coupon_code 'SK_REGULARS15_14D' %}?redirect=/collections/all" pad="12px 44px 6px 44px"}}
+{{BLOCK:offer pad="22px 44px 6px 44px" eyebrow="YOUR THANK-YOU CODE" headline="15% off, for our regulars" code="{% coupon_code 'SK_REGULARS15_14D' %}" note="Applied automatically with the button. One code per order." deadline="Ends 14 days after this email" label="Claim my 15%" url="https://siraatskitchen.com/discount/{% coupon_code 'SK_REGULARS15_14D' %}?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-vip%26utm_content%3Dv1-offer%26utm_term%3Dt02-a"}}
 
-<!-- PRODUCTEN -->
+<!-- PRODUCTEN: lijst, prijzen alleen bij verzendland US -->
 <tr><td class="pad" style="padding:30px 44px 6px 44px;">
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">WHAT REGULARS ADD NEXT</div>
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 16px 0;">Complete your kitchen</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;">
+  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 16px 0;">Matched to what you have</div>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;border-bottom:0;">
+{% if 'Lid' not in event.Items|join:',' %}
     <tr>
-      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'SK_REGULARS15_14D' %}?redirect=/products/stainless-steel-lid"><img src="{{IMG}}/p-lid.jpg" width="114" alt="Stainless Steel Lid" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
+      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'SK_REGULARS15_14D' %}?redirect=/products/stainless-steel-lid%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-vip%26utm_content%3Dv1-prod-lid%26utm_term%3Dt02-a"><img src="{{IMG}}/p-lid.jpg" width="114" alt="Stainless Steel Lid" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
       <td valign="middle" style="padding:14px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;">
-        <div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Stainless Steel Lid</div>
-        <div class="pcd" style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">304 stainless steel, made to fit your Siraat pan.</div>
-        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">$59&nbsp; <span style="color:#AC3B19;white-space:nowrap;">$50.15 with your code</span></div>
-        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'SK_REGULARS15_14D' %}?redirect=/products/stainless-steel-lid" style="color:#AC3B19;font-weight:600;text-decoration:underline;">Find your lid &rarr;</a></div>
+        <div style="font-size:10px;line-height:14px;letter-spacing:1.5px;font-weight:600;color:#AC3B19;padding-bottom:3px;">FITS YOUR PAN</div><div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Stainless Steel Lid</div>
+        <div class="pcd" style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">304 stainless steel. Match the diameter of the pan you own.</div>
+        {% if event.extra.shipping_address.country_code == 'US' %}<div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">$59&nbsp; <span style="color:#AC3B19;white-space:nowrap;">$50.15 with your code</span></div>{% endif %}
+        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'SK_REGULARS15_14D' %}?redirect=/products/stainless-steel-lid%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-vip%26utm_content%3Dv1-prod-lid%26utm_term%3Dt02-a" style="color:#AC3B19;font-weight:600;text-decoration:underline;">Find my size &rarr;</a></div>
       </td>
     </tr>
+{% endif %}
     <tr>
-      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'SK_REGULARS15_14D' %}?redirect=/products/titanium-hammered-pan-set-with-lids-6-pcs"><img src="{{IMG}}/p-set6.jpg" width="114" alt="Pan Set With Lids, 6 pcs" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
+      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'SK_REGULARS15_14D' %}?redirect=/products/titanium-hammered-pan-set-with-lids-6-pcs-bday-sale%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-vip%26utm_content%3Dv1-prod-set6%26utm_term%3Dt02-a"><img src="{{IMG}}/p-set6.jpg" width="114" alt="Titanium Hammered Pan Set With Lids, 6 pieces" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
       <td valign="middle" style="padding:14px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;">
         <div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Pan Set With Lids, 6 pcs</div>
-        <div class="pcd" style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">Three hammered pans, three stainless steel lids.</div>
-        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">$349&nbsp; <span style="color:#AC3B19;white-space:nowrap;">$296.65 with your code</span></div>
-        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'SK_REGULARS15_14D' %}?redirect=/products/titanium-hammered-pan-set-with-lids-6-pcs" style="color:#AC3B19;font-weight:600;text-decoration:underline;">Shop the set &rarr;</a></div>
+        <div class="pcd" style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">Three pans, three lids. About $116 a pan.</div>
+        {% if event.extra.shipping_address.country_code == 'US' %}<div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">$349&nbsp; <span style="color:#AC3B19;white-space:nowrap;">$296.65 with your code</span></div>{% endif %}
+        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'SK_REGULARS15_14D' %}?redirect=/products/titanium-hammered-pan-set-with-lids-6-pcs-bday-sale%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-vip%26utm_content%3Dv1-prod-set6%26utm_term%3Dt02-a" style="color:#AC3B19;font-weight:600;text-decoration:underline;">Shop the set &rarr;</a></div>
       </td>
     </tr>
     <tr>
-      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'SK_REGULARS15_14D' %}?redirect=/products/titanium-hammered-cookware-set-pro"><img src="{{IMG}}/p-setpro.jpg" width="114" alt="Cookware Set Pro" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
+      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'SK_REGULARS15_14D' %}?redirect=/products/titanium-hammered-cookware-set-pro%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-vip%26utm_content%3Dv1-prod-setpro%26utm_term%3Dt02-a"><img src="{{IMG}}/p-setpro.jpg" width="114" alt="Titanium Hammered Cookware Set Pro" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
       <td valign="middle" style="padding:14px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;">
         <div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Cookware Set Pro</div>
         <div class="pcd" style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">Pan Pro, Wok Pan Pro, Deep Pan Pro and titanium utensils.</div>
-        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">$479&nbsp; <span style="color:#AC3B19;white-space:nowrap;">$407.15 with your code</span></div>
-        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'SK_REGULARS15_14D' %}?redirect=/products/titanium-hammered-cookware-set-pro" style="color:#AC3B19;font-weight:600;text-decoration:underline;">Shop the set &rarr;</a></div>
+        {% if event.extra.shipping_address.country_code == 'US' %}<div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">$479&nbsp; <span style="color:#AC3B19;white-space:nowrap;">$407.15 with your code</span></div>{% endif %}
+        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'SK_REGULARS15_14D' %}?redirect=/products/titanium-hammered-cookware-set-pro%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-vip%26utm_content%3Dv1-prod-setpro%26utm_term%3Dt02-a" style="color:#AC3B19;font-weight:600;text-decoration:underline;">Shop the set &rarr;</a></div>
       </td>
     </tr>
     <tr>
-      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'SK_REGULARS15_14D' %}?redirect=/products/titanium-cutting-board-v2"><img src="{{IMG}}/p-board.jpg" width="114" alt="Titanium Cutting Board V2" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
-      <td valign="middle" style="padding:14px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
-        <div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Titanium Cutting Board V2</div>
-        <div class="pcd" style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">Grade 1 titanium, anti-microbial. Four sizes.</div>
-        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">From $69&nbsp; <span style="color:#AC3B19;white-space:nowrap;">$58.65 with your code</span></div>
-        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'SK_REGULARS15_14D' %}?redirect=/products/titanium-cutting-board-v2" style="color:#AC3B19;font-weight:600;text-decoration:underline;">Shop the board &rarr;</a></div>
+      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'SK_REGULARS15_14D' %}?redirect=/products/titanium-cutting-board-v2%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-vip%26utm_content%3Dv1-prod-board%26utm_term%3Dt02-a"><img src="{{IMG}}/p-board.jpg" width="114" alt="Titanium Cutting Board V2" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
+      <td valign="middle" style="padding:14px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;">
+        <div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Titanium Cutting Board</div>
+        <div class="pcd" style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">Anti-microbial titanium. Four sizes.</div>
+        {% if event.extra.shipping_address.country_code == 'US' %}<div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">From $69&nbsp; <span style="color:#AC3B19;white-space:nowrap;">from $58.65 with your code</span></div>{% endif %}
+        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'SK_REGULARS15_14D' %}?redirect=/products/titanium-cutting-board-v2%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-vip%26utm_content%3Dv1-prod-board%26utm_term%3Dt02-a" style="color:#AC3B19;font-weight:600;text-decoration:underline;">Shop the board &rarr;</a></div>
       </td>
     </tr>
   </table>
 </td></tr>
 
-{{BLOCK:gifts note="Plus a chance to win a $450 PFAS water filter. It all comes with your order."}}
+{{BLOCK:gifts pad="30px 44px 6px 44px" eyebrow="WITH EVERY ORDER" headline="$70 in gifts, included" note="Plus a chance to win a $450 PFAS water filter. It all comes with your order."}}
 
-{{BLOCK:reviews q1="Amazing product, healthy and made to last a lifetime. Customer service outstanding." n1="Angelo T." q2="I love my new pan. It looks good, cooks good and cleans good too. Would highly recommend" n2="Nicola"}}
+{{BLOCK:reviews pad="28px 44px 6px 44px" q1="I am on my 4th pan from Siraat... I even gifted one to my son, and he says it's the best pan he owns." n1="Tammy" q2="I provided a few photos and received a replacement at no cost. Very happy with their titanium pans. I have two." n2="Arthur D."}}
 
 {{BLOCK:icons}}
 
-{{BLOCK:cta label="Claim my 15%" url="https://siraatskitchen.com/discount/{% coupon_code 'SK_REGULARS15_14D' %}?redirect=/collections/all" pad="26px 44px 6px 44px"}}
+{{BLOCK:cta label="Claim my 15%" url="https://siraatskitchen.com/discount/{% coupon_code 'SK_REGULARS15_14D' %}?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-vip%26utm_content%3Dv1-cta2%26utm_term%3Dt02-a" pad="24px 44px 4px 44px"}}
 
 <!-- SIGN-OFF -->
 <tr><td class="pad" style="padding:24px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  One small request: tell me what you cook most on your Siraat pans. Hit reply. I read every answer, and it shapes what we make next.<br><br>
+  One request: hit reply and tell me which pan you reach for most. I read every answer.<br><br>
   Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
 </td></tr>
 

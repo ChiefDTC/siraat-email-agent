@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: Good to see you again | SUBJECT_B: Round two. Here's what's coming. | PREVIEW: Your order is in. Same careful packing, same 4 gifts. | SEND: Placed Order + 1 hour (quiet hours 21:00 to 08:00 local) | FILTERS: Flow 'Post-purchase v3' (trigger Placed Order); flow filter: not in this flow in the last 30 days; split A = Placed Order count greater than 1 over all time (repeat buyer). No brand explainer in this version. -->
+<!-- SUBJECT_A: Good to see you again | SUBJECT_B: Round two. Here's what's coming. | PREVIEW: Your order is in. Same careful packing, same 4 gifts. | SEND: Placed Order + 1 hour, realtime (also in the evening) | FILTERS: Flow 'v4 · Post-purchase' (trigger Placed Order RSNxYV); flow filter: not in this flow in the last 30 days; CS: Placed Order equals 1 over all time = NO branch (repeat buyer). No coupon, no code bar. | SUBJECTS (5 types): C+B 'Round two. Here's what's coming.' / SPEC 'Same careful packing, same 4 gifts' / Q 'Which pan did you add this time?' / STORY '"I am on my 4th pan from Siraat"' / OFFER 'Same 4 gifts, on the way' | A/B: liking vs curiosity (only if a test slot is free; otherwise A) | UTM: utm_content=p1rep-<block> -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -18,15 +18,10 @@
   @media only screen and (max-width:620px){
     .w{width:100%!important;}
     .pad{padding-left:22px!important;padding-right:22px!important;}
-    .stack{display:block!important;width:100%!important;}
-    .stackpad{padding:0 0 14px 0!important;}
     .h2{font-size:30px!important;line-height:34px!important;}
-    .navhide{display:none!important;}
     .desk{display:none!important;max-height:0!important;overflow:hidden!important;}
     .mob{display:block!important;max-height:none!important;overflow:visible!important;}
-    .center{text-align:center!important;}
-    .pimg{width:112px!important;}
-    .pimg img{width:100px!important;height:100px!important;}
+    .stepimg{width:100%!important;}
   }
   /* blocks (partials/blocks, ingevoegd door build_template.py) */
   @media only screen and (max-width:620px){
@@ -39,6 +34,17 @@
     .offer-code{font-size:26px!important;letter-spacing:4px!important;}
     .rv{display:block!important;width:100%!important;box-sizing:border-box!important;}
     .rvsp{display:block!important;width:100%!important;height:12px!important;font-size:0!important;line-height:0!important;}
+  }
+  /* research/ux-round2 blokken (compare, closerlook, productcard) */
+  @media only screen and (max-width:620px){
+    .cmp-h{font-size:15px!important;line-height:20px!important;padding:0 8px 12px 8px!important;}
+    .cmp-c{padding:0 8px 0 12px!important;height:68px!important;}
+    .cmp-t{font-size:14px!important;line-height:19px!important;}
+    .pc-i{width:132px!important;}
+    .pc-img{width:132px!important;}
+    .pc-t{padding:12px 14px 12px 12px!important;}
+    .pc-n{font-size:16px!important;line-height:21px!important;}
+    .pc-s{font-size:13px!important;line-height:18px!important;}
   }
 </style>
 </head>
@@ -61,30 +67,26 @@
 </td></tr>
 
 
-<!-- HERO 1:1 (make_hero.py) -->
+<!-- HERO 1:1 met aanbodbalk (make_hero.py --offer) -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/products/e"><img src="assets/p1-repeat-hero.jpg" width="600" alt="Order confirmed. Good to see you again. Same careful packing, same 4 gifts on the way." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://siraatskitchen.com/pages/care-use?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1rep-hero"><img src="assets/p1-repeat-hero.jpg" width="600" alt="Order confirmed. Good to see you again. Same packing, same 4 gifts on the way." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
-
 <!-- BLOCK cta: primaire knop, 340 px desktop, volle breedte mobiel -->
 <tr><td align="center" class="pad" style="padding:20px 44px 4px 44px;">
   <table role="presentation" class="btnw" width="340" cellpadding="0" cellspacing="0" border="0" style="width:340px;"><tr>
     <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:3px;">
-      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/products/e" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Download your e-book</center></v:roundrect><![endif]-->
-      <!--[if !mso]><!--><a href="https://siraatskitchen.com/products/e" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Download your e-book &rarr;</a><!--<![endif]-->
+      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/pages/care-use?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1rep-cta1" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Read the care guide</center></v:roundrect><![endif]-->
+      <!--[if !mso]><!--><a href="https://siraatskitchen.com/pages/care-use?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1rep-cta1" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Read the care guide &rarr;</a><!--<![endif]-->
     </td>
   </tr></table>
-  <div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>Free with this order too. Or read the <a href='https://siraatskitchen.com/pages/care-use' style='color:#AC3B19;'>care guide</a>.</div>
+  <div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>New shape? Same rules: medium heat, the water test, a little oil.</div>
 </td></tr>
 
-
-<!-- INTRO -->
 <tr><td class="pad" style="padding:26px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">
-  <p style="margin:0;">Hi Sarah, thank you for coming back. Your order is in, and you know how this works, so we will keep it short.</p>
+  <p style="margin:0;">Hi Sarah, thank you for coming back. Your order is in, and you know how this works, so I will keep it short.</p>
 </td></tr>
-
-<!-- ORDER (Placed Order line items) -->
-<tr><td class="pad" style="padding:26px 44px 4px 44px;">
+<!-- ORDER (Placed Order line items; alleen regels met prijs, prijs alleen in USD) -->
+<tr><td class="pad" style="padding:24px 44px 4px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
     <tr><td colspan="3" style="padding:16px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">ORDER #SIRAAT1042</td></tr>
     
@@ -106,7 +108,6 @@
     </td></tr>
   </table>
 </td></tr>
-
 <!-- BLOCK gifts: vier gifts met beeld en waarde, gelijke hoogte, 2x2 op mobiel -->
 <tr><td class="pad" style="padding:30px 44px 6px 44px;">
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">IN YOUR ORDER</div>
@@ -143,39 +144,41 @@
       </tr></table>
     </td>
   </tr></table>
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#727272;text-align:center;padding-top:14px;">Your order is entered in the PFAS water filter draw again. New shape in this order? Same rules: medium heat, the water test, a thin layer of oil.</div>
+  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#727272;text-align:center;padding-top:14px;">Your order is in the PFAS water filter draw again. Lost the e-book? <a href='https://siraatskitchen.com/products/e?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1rep-ebook' style='color:#AC3B19;'>Download it here</a>.</div>
 </td></tr>
 
-<tr><td class="pad" style="padding:30px 44px 14px 44px;">
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">WHAT HAPPENS NEXT</div>
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding-top:6px;">Three steps, no surprises</div>
-</td></tr>
-<tr><td class="pad" style="padding:0 44px 6px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-    <tr><td width="58" valign="top" style="padding:18px 0 14px 20px;"><img src="assets/icon-package.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
-      <td valign="top" style="padding:16px 20px 14px 14px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">We pack and check it</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Checked by hand, like your first order.</div></td></tr>
-    <tr><td width="58" valign="top" style="padding:18px 0 14px 20px;"><img src="assets/icon-tracking-email.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
-      <td valign="top" style="padding:16px 20px 14px 14px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Tracking link by email</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">It lands in your inbox as soon as your order ships.</div></td></tr>
-    <tr><td width="58" valign="top" style="padding:18px 0 18px 20px;"><img src="../../partials/shared/icon-free-shipping.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
-      <td valign="top" style="padding:16px 20px 18px 14px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Free shipping, tracked to your door</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Sets and lids sometimes travel in separate parcels.</div></td></tr>
-  </table>
+<!-- BLOCK reviews: twee kaarten, gelijke hoogte (achtergrond op de kolomcel) -->
+<tr><td class="pad" style="padding:28px 44px 6px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+    <td class="rv" width="48%" valign="top" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:20px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;I am on my 4th pan from Siraat... I even gifted one to my son, and he says it's the best pan he owns.&rdquo;</div>
+      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Tammy &middot; Verified buyer</div>
+    </td>
+    <td class="rvsp" width="14" style="font-size:0;line-height:0;">&nbsp;</td>
+    <td class="rv" width="48%" valign="top" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:20px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;This is my second purchase of Siraat frying pans in just a couple of weeks too, and I must say, they are the best!&rdquo;</div>
+      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Don J. &middot; Verified buyer</div>
+    </td>
+  </tr></table>
+  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;text-align:center;padding-top:14px;"><img src="../../partials/shared/icon-customers-100k.png" width="18" height="18" alt="" style="display:inline-block;vertical-align:-4px;width:18px;height:18px;">&nbsp; Join 100,000+ happy customers</div>
 </td></tr>
 
 <!-- BLOCK cta: primaire knop, 340 px desktop, volle breedte mobiel -->
-<tr><td align="center" class="pad" style="padding:26px 44px 4px 44px;">
+<tr><td align="center" class="pad" style="padding:24px 44px 4px 44px;">
   <table role="presentation" class="btnw" width="340" cellpadding="0" cellspacing="0" border="0" style="width:340px;"><tr>
     <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:3px;">
-      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/products/e" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Download your e-book</center></v:roundrect><![endif]-->
-      <!--[if !mso]><!--><a href="https://siraatskitchen.com/products/e" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Download your e-book &rarr;</a><!--<![endif]-->
+      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/pages/care-use?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1rep-cta2" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Read the care guide</center></v:roundrect><![endif]-->
+      <!--[if !mso]><!--><a href="https://siraatskitchen.com/pages/care-use?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1rep-cta2" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Read the care guide &rarr;</a><!--<![endif]-->
     </td>
   </tr></table>
   
 </td></tr>
 
-
 <!-- SIGN-OFF -->
 <tr><td class="pad" style="padding:24px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  Anything to change on this order? Just reply. A real person reads every email.<br><br>
+  Anything to change on this order? Reply to this email and a person on our team picks it up. New size in this order? Send me the pan and I will tell you which lid fits.<br><br>
   Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
 </td></tr>
 

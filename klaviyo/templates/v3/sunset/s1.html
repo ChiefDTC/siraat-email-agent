@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: Should we keep writing to you? | SUBJECT_B: Still want our emails? One tap. | PREVIEW: One tap keeps you on the list. No tap, and we stop next week. | SEND: Step 0, direct bij instap in segment 'Sunset v3 · unengaged 120d', 10:00 lokale tijd (smart send uit). | FILTERS: Flow: segment-trigger, niet in deze flow in de laatste 180 dagen, niet in Welcome v3 of Post-purchase v3 in de laatste 30 dagen, Placed Order = 0 in de laatste 180 dagen. Message: Clicked Email = 0 in de laatste 120 dagen (bot clicks uit). -->
+<!-- SUBJECT_A: Should we keep writing to you? | SUBJECT_B: Still want our emails? One tap. | PREVIEW: One tap keeps you on the list. No tap, and we'll stop writing in about a week. | SEND: v4 · Sunset, stap 1: wacht 1 dag, tot 09:00 lokale tijd, na instap in segment "v4 · Sunset · unengaged 120d". Afzender "Siraat's Kitchen". Geen A/B (meten: % kept). Geen codebalk, geen aanbod: re-permission, geen verkoopmail. Elke klik op een siraatskitchen.com-link telt als Clicked Email en houdt het profiel op de lijst (split na S2). | FILTERS: Flow: has not been in this flow in the last 180 days; Received Email where Flow = "v4 · Welcome" zero times in the last 30 days; Received Email where Flow = "v4 · Post-purchase" zero times in the last 30 days. Trigger-segment: can receive email marketing, profiel ouder dan 120 dagen, Clicked Email (Bot Click false) zero in 120 dagen, Active on Site zero in 120 dagen, Placed Order zero in 180 dagen, Received Email at least 8 in 120 dagen. UTM: utm_campaign=v4-sunset, utm_content=s1-<blok>. -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
-<title>Still want to hear from us?</title>
+<title>Should we keep writing?</title>
 <!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
@@ -31,8 +31,9 @@
   }
 </style>
 </head>
+
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">One tap keeps you on the list. No tap, and we stop next week.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">One tap keeps you on the list. No tap, and we'll stop writing in about a week.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
@@ -41,30 +42,35 @@
 
 <!-- HERO (4:3, geen aanbodbalk: geen verkoopmail) -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/?utm_source=klaviyo&amp;utm_medium=email&amp;utm_campaign=sunset-v3&amp;utm_content=stay"><img src="{{IMG}}/s1-hero.jpg" width="600" alt="Quick question: still want to hear from us? One tap keeps you on the list." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://siraatskitchen.com/?utm_source=klaviyo&amp;utm_medium=email&amp;utm_campaign=v4-sunset&amp;utm_content=s1-hero"><img src="{{IMG}}/s1-hero.jpg" width="600" alt="Quick question: still want our emails? One tap keeps you on the list." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
 <tr><td class="pad" style="padding:28px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;color:#282828;">
   <p style="margin:0 0 18px 0;">Hi {{ first_name|default:'there' }},</p>
-  <p style="margin:0 0 18px 0;">We haven&rsquo;t seen you open or click one of our emails in a while. That&rsquo;s fine, inboxes get busy.</p>
-  <p style="margin:0 0 18px 0;">But we would rather write to fewer people who want to hear from us than fill an inbox that doesn&rsquo;t. So one question: should we keep writing to you?</p>
+  <p style="margin:0 0 18px 0;">You haven&rsquo;t clicked one of our emails in a few months. That&rsquo;s fine. Inboxes fill up, and maybe a pan just isn&rsquo;t on your mind right now.</p>
+  <p style="margin:0 0 18px 0;">So I&rsquo;d rather ask than guess. Do you still want to hear from us?</p>
 </td></tr>
 
-{{BLOCK:cta label="Yes, keep me on the list" url="https://siraatskitchen.com/?utm_source=klaviyo&amp;utm_medium=email&amp;utm_campaign=sunset-v3&amp;utm_content=stay" pad="8px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>One tap is enough. Nothing else to fill in.</div>"}}
+{{BLOCK:cta label="Yes, keep me on the list" url="https://siraatskitchen.com/?utm_source=klaviyo&amp;utm_medium=email&amp;utm_campaign=v4-sunset&amp;utm_content=s1-cta1" pad="6px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>One tap is all it takes. Nothing to fill in, nothing to buy.</div>"}}
 
-<!-- KEUZE: blijven, minder, uitschrijven -->
-<tr><td class="pad" align="center" style="padding:14px 44px 6px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:22px;color:#727272;text-align:center;">
-  Rather hear from us less? <a href="{% manage_preferences_url %}" style="color:#282828;font-weight:600;">Choose fewer emails</a><br>
-  Done with us? <a href="{% unsubscribe_url %}" style="color:#282828;font-weight:600;">Unsubscribe in one tap</a>. No hard feelings.
+<tr><td class="pad" style="padding:26px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;color:#282828;">
+  <p style="margin:0 0 18px 0;">If you stay, you&rsquo;ll get what we send everyone: cooking notes for a pan with no coating, new pans when they launch, and our sales the day they start.</p>
+  <p style="margin:0 0 18px 0;">If you don&rsquo;t tap, we&rsquo;ll stop writing in about a week. No hard feelings. You can always sign up again at siraatskitchen.com.</p>
 </td></tr>
 
-{{BLOCK:features eyebrow="IF YOU STAY" headline="What lands in your inbox" i1="discount-tag" t1="First word on our sales" d1="Sale weeks and gift weeks, in your inbox the day they start." i2="e-book" t2="How-tos that save a pan" d2="How to sear, flip and clean on a pure titanium surface, with no coating to protect." i3="gift" t3="$70 in gifts with every order" d3="Free shipping, a mystery gift and our e-book, plus a chance to win a PFAS water filter."}}
-
-{{BLOCK:cta label="Keep me on the list" url="https://siraatskitchen.com/?utm_source=klaviyo&amp;utm_medium=email&amp;utm_campaign=sunset-v3&amp;utm_content=stay" pad="26px 44px 6px 44px"}}
+<!-- KEUZE: minder of uitschrijven -->
+<tr><td class="pad" align="center" style="padding:4px 44px 8px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;"><tr>
+    <td align="center" style="padding:18px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:22px;color:#727272;text-align:center;">
+      Rather hear from us less? <a href="{% manage_preferences_url %}" style="color:#282828;font-weight:600;">Choose fewer emails</a><br>
+      Done with us? <a href="{% unsubscribe_url %}" style="color:#282828;font-weight:600;">Unsubscribe in one tap</a>
+    </td>
+  </tr></table>
+</td></tr>
 
 <!-- SIGN-OFF -->
 <tr><td class="pad" style="padding:24px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  If we&rsquo;re not hearing back from you, we&rsquo;ll stop by next week. You can always come back: siraatskitchen.com is right where you left it.<br><br>
+  Thanks for reading this far.<br><br>
   Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
 </td></tr>
 
