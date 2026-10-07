@@ -1,8 +1,11 @@
 """Bouwt Klaviyo-HTML en een lokale preview uit een bron-template met {{IMG}}.
 Gebruik: python3 -I scripts/build_template.py <bron.html> <assets-map> <urls.txt>
-Schrijft <bron>.klaviyo.html (CDN-links) en <bron-zonder-.html>-preview.html (lokale beelden, voorbeelddata)."""
+Schrijft <bron>.klaviyo.html (CDN-links) en <bron-zonder-.html>-preview.html (lokale beelden, voorbeelddata).
+Opties (voor scripts/export_klaviyo.py): --out=<pad> (Klaviyo-versie elders), --shared-urls=<bestand> (extra 'bestand url' voor {{SHARED}}), --no-preview.
+De Klaviyo-versie krijgt UTM's op elke siraatskitchen.com-link zonder UTM (header, footer): utm_content=<mail>-logo|nav-*|ft-*, campaign uit de mail zelf (04-utm.md 5.2)."""
 import sys,re,os
-src,assets,urls=sys.argv[1:4]
+OPT={a.split('=',1)[0]:(a.split('=',1)[1] if '=' in a else '1') for a in sys.argv[1:] if a.startswith('--')}
+src,assets,urls=[a for a in sys.argv[1:] if not a.startswith('--')][:3]
 u=dict(l.split() for l in open(urls) if l.strip()) if os.path.exists(urls) else {}
 h=open(src).read()
 P=os.path.join(os.path.dirname(os.path.abspath(src)),'partials')
@@ -60,6 +63,7 @@ def blk(m):
 h=re.sub(r'\{\{BLOCK:([\w-]+)((?:\s+\w+="[^"]*")*)\s*\}\}',blk,h)
 h=h.replace('</style>',open(os.path.join(B,'_style.css')).read()+'</style>',1)
 su=dict(l.split() for l in open(os.path.join(SH,'klaviyo-urls.txt')) if l.strip()) if os.path.exists(os.path.join(SH,'klaviyo-urls.txt')) else {}
+if OPT.get('--shared-urls'): su.update(dict(l.split() for l in open(OPT['--shared-urls']) if l.strip()))
 k=h
 for a,b in sorted(u.items(),key=lambda x:-len(x[0])): k=k.replace('{{IMG}}/'+a,b)
 for a,b in su.items(): k=k.replace('{{SHARED}}/'+a,b)
@@ -74,7 +78,23 @@ def head_fix(x):
     return x.replace('</head>',MSO+'</head>',1)
 k=head_fix(k)
 k=re.sub(r'<!--(?![\[<>]).*?-->\n?','',k,flags=re.S)
-if '{{IMG}}' not in k and '{{SHARED}}' not in k: open(base+'.klaviyo.html','w').write(k)
+# UTM op siraatskitchen.com-links zonder UTM (header/footer-partials); prefix en campaign uit de eigen links van de mail
+def add_utm(x):
+    camp=re.findall(r'utm_campaign(?:=|%3D)([\w-]+)',x); cont=re.findall(r'utm_content(?:=|%3D)([a-z0-9]+)-',x)
+    if not camp or not cont: return x
+    camp=max(set(camp),key=camp.count); mid=max(set(cont),key=cont.count)
+    def fix(m):
+        url=m.group(2)
+        if 'utm_' in url or not re.match(r'https://(www\.)?siraatskitchen\.com',url): return m.group(0)
+        path=re.sub(r'https://(www\.)?siraatskitchen\.com','',url).strip('/')
+        blk='logo' if not path else re.sub(r'[^a-z0-9]+','-',path.split('/')[-1].lower())
+        pre='nav-' if m.start()<x.find('<!-- FOOTER') or ('ft-' not in blk and x.find('#282828',m.start())==-1) else ''
+        return '%s%s%sutm_source=klaviyo&utm_medium=email&utm_campaign=%s&utm_content=%s-%s%s"'%(m.group(1),url if path else url.rstrip('/')+'/', '&' if '?' in url else '?',camp,mid,blk,'')
+    return re.sub(r'(href=")([^"{}]+)"',fix,x)
+k=add_utm(k)
+if '{{IMG}}' not in k and '{{SHARED}}' not in k: open(OPT.get('--out',base+'.klaviyo.html'),'w').write(k)
+elif OPT.get('--out'): sys.exit('nog {{IMG}}/{{SHARED}} zonder URL: '+', '.join(sorted(set(re.findall(r'\{\{(?:IMG|SHARED)\}\}/([\w.-]+)',k)))))
+if OPT.get('--no-preview'): sys.exit(0)
 p=h.replace('{{IMG}}',os.path.basename(assets.rstrip('/'))).replace('{{SHARED}}',os.path.relpath(SH,os.path.dirname(os.path.abspath(src))))
 p=re.sub(r"\{% coupon_code [^%]*%\}",'SRT-K7Q2M',p)
 m=re.search(r'\{% for item in event.extra.line_items %\}\{% if (?:forloop.counter <= 3|item.line_price > 0) %\}(.*?)\{% endif %\}\{% endfor %\}',p,re.S)
