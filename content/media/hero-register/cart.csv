@@ -1,6 +1,7 @@
 mail,bronfoto,hero
 k1,content/media/hp-shoot/images/P12-A_Wipe_Clean_1920w_q82 (1).jpg,klaviyo/templates/v3/cart/assets/k1-hero.jpg
-k2-new,content/media/hp-shoot/images/P11-D_Handle_1920w_q82.jpg,klaviyo/templates/v3/cart/assets/k2-new-hero.jpg
-k2-returning,content/media/hp-shoot/images/P11-B_Rim_1920w_q82.jpg,klaviyo/templates/v3/cart/assets/k2-returning-hero.jpg
-k3,content/media/chef-video/still-steak-sear.jpg (uitsnede van kopie: cart/assets/_src/k3-steak-sear-crop.jpg),klaviyo/templates/v3/cart/assets/k3-hero.jpg
 k1-acc,https://cdn.shopify.com/s/files/1/0907/0877/1156/files/ApronAzureEating.webp (kopie: klaviyo/templates/v3/cart/assets/src/ApronAzureEating.webp; thuiskok proeft in Azure-schort),klaviyo/templates/v3/cart/assets/k1acc-hero.jpg
+k2-new,content/media/ai-flash/pan-microphone-4x3-01.jpg (v4; research/images/02-voorstel.md),klaviyo/templates/v3/cart/assets/k2-new-hero.jpg
+k2-returning,content/media/hp-shoot/images/P11-B_Rim_1920w_q82.jpg,klaviyo/templates/v3/cart/assets/k2-returning-hero.jpg
+k3,content/media/ai-flash/steak-sear-4x3-01.jpg (v4; research/images/02-voorstel.md),klaviyo/templates/v3/cart/assets/k3-hero.jpg
+k3-nocode,content/media/ai-flash/steak-sear-4x3-01.jpg (zelfde beeld als k3: A/B-variant van dezelfde plek, niemand krijgt beide),klaviyo/templates/v3/cart/assets/k3-nocode-hero.jpg
