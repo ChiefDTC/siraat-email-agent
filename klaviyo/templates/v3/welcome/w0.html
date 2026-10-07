@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: Thank you. Now the first egg. | SUBJECT_B: Before your pan arrives: three steps | PREVIEW: Cold metal grabs your food, hot metal lets it go. | SEND: 10 min after signup, buyers path (Split A: Placed Order > 0 ever). Then end of flow; post-purchase takes over | FILTERS: Flow: list Uw8eZG, email not contains test@, never in this flow. No offer, no HI10 -->
+<!-- SUBJECT_A: Thank you. Now the first egg. | SUBJECT_B: Before your pan arrives: three steps | PREVIEW: Cold metal grabs your food, hot metal lets it go. | SEND: 10 min after signup, buyers path (Split A: Placed Order > 0 ever). Then end of flow; post-purchase takes over. Consider skipping W0 for profiles in post-purchase in the last 7 days (overlap with P2) | FILTERS: Flow: list Uw8eZG, email not contains test@, never in this flow. No offer, no HI10, no codebar -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -24,8 +24,7 @@
     .navhide{display:none!important;}
     .desk{display:none!important;max-height:0!important;overflow:hidden!important;}
     .mob{display:block!important;max-height:none!important;overflow:visible!important;}
-    .code{font-size:26px!important;letter-spacing:4px!important;}
-    .btn{padding:16px 20px!important;letter-spacing:1px!important;font-size:13px!important;}
+    .center{text-align:center!important;}
   }
 </style>
 </head>
@@ -37,135 +36,76 @@
 
 {{HEADER}}
 
-<!-- HERO: shoot photo + TT Ramillas headline baked in (scripts/make_hero.py) -->
+<!-- HERO 1:1, kopers-pad: geen aanbod -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/pages/care-use"><img src="{{IMG}}/hero-w0.jpg" width="600" alt="First heat, then oil. Your first egg in three steps. An egg in a Siraat hammered titanium pan." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://siraatskitchen.com/pages/care-use"><img src="{{IMG}}/w0-hero.jpg" width="600" alt="First heat, then oil. Your first egg in three steps." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
-<!-- CTA -->
-<tr><td align="center" style="padding:24px 44px 4px 44px;">
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-    <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:2px;">
-      <a class="btn" href="https://siraatskitchen.com/pages/care-use" style="display:inline-block;padding:16px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:16px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;">WATCH THE COOK GUIDE</a>
-    </td>
+{{BLOCK:cta label="Watch the cook guide" url="https://siraatskitchen.com/pages/care-use" pad="20px 44px 4px 44px"}}
+
+<!-- INTRO + card game in één regel -->
+<tr><td class="pad" style="padding:24px 44px 6px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+  Hi {{ first_name|default:'there' }}, thank you. This email is not here to sell you anything. Titanium has no coating, so it cooks a little differently from the pan you are used to. Three steps, and your first egg slides.
+  <div style="font-size:13px;line-height:19px;color:#727272;padding-top:10px;"><img src="{{SHARED}}/icon-gift.png" width="16" height="16" alt="" style="display:inline-block;vertical-align:-3px;width:16px;height:16px;">&nbsp;Your entry is in: a chance at an order refund.</div>
+</td></tr>
+
+<tr><td class="pad" style="padding:22px 44px 0 44px;">
+  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">FIRST USE</div>
+  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 16px 0;">Three steps, one egg.</div>
+</td></tr>
+<tr><td class="pad" style="padding:0 44px 12px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
+    <tr><td width="58" valign="top" style="padding:18px 0 14px 20px;"><img src="{{SHARED}}/icon-induction-ready.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
+      <td valign="top" style="padding:16px 20px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">STEP 1</div><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;padding-top:2px;">Heat first</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Medium heat for 2 to 3 minutes, before anything goes in. Never on high.</div></td></tr>
+  </table>
+</td></tr>
+
+<tr><td class="pad" style="padding:0 44px 12px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
+    <tr><td width="58" valign="top" style="padding:18px 0 14px 20px;"><img src="{{SHARED}}/icon-water-filter.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
+      <td valign="top" style="padding:16px 20px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">STEP 2</div><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;padding-top:2px;">Do the water test</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">A drop of water should form a ball and glide. Evaporates at once? Too hot. Sits still? Wait.</div></td></tr>
+    <tr><td colspan="2" style="padding:0 18px 18px 18px;"><img src="{{IMG}}/gif-water-test.gif" width="480" alt="A drop of water gliding in a hot Siraat titanium pan" style="width:100%;max-width:480px;height:auto;margin:0 auto;"></td></tr>
+  </table>
+</td></tr>
+
+<tr><td class="pad" style="padding:0 44px 12px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
+    <tr><td width="58" valign="top" style="padding:18px 0 14px 20px;"><img src="{{SHARED}}/icon-no-coating.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
+      <td valign="top" style="padding:16px 20px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">STEP 3</div><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;padding-top:2px;">Then oil, then the egg</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">A teaspoon of oil, 10 to 15 seconds until it shines, then the egg. Let it release by itself.</div></td></tr>
+    <tr><td colspan="2" style="padding:0 18px 18px 18px;"><img src="{{IMG}}/gif-egg-slide.gif" width="480" alt="An egg sliding freely in a Siraat titanium pan" style="width:100%;max-width:480px;height:auto;margin:0 auto;"></td></tr>
+  </table>
+</td></tr>
+
+
+<!-- GOED OM TE WETEN: iconen -->
+<tr><td class="pad" style="padding:14px 44px 6px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;"><tr>
+    <td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;"><img src="{{SHARED}}/icon-no-coating.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">NO<br>SEASONING</div></td><td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;border-left:1px solid #ECE7DD;"><img src="{{SHARED}}/icon-metal-utensil-safe.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">METAL<br>UTENSILS OK</div></td><td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;border-left:1px solid #ECE7DD;"><img src="{{SHARED}}/icon-dishwasher-safe.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">DISHWASHER<br>SAFE</div></td><td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;border-left:1px solid #ECE7DD;"><img src="{{SHARED}}/icon-warranty-75-year.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">75-YEAR<br>WARRANTY</div></td>
   </tr></table>
-</td></tr>
-
-<!-- INTRO -->
-<tr><td class="pad" style="padding:30px 44px 6px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;color:#282828;">
-  <p style="margin:0 0 14px 0;">Hi {{ first_name|default:'there' }},</p>
-  <p style="margin:0 0 14px 0;">Thank you. You already cook with us, or your pan is on its way, so this email is not here to sell you anything.</p>
-  <p style="margin:0 0 14px 0;">One line about the card game: your entry is in, with a chance to have your order refunded.</p>
-  <p style="margin:0;">Now the part that matters. A pure titanium cooking surface has no coating, so it does not behave like the pan you are used to. Our chef teaches every new owner the same three steps. Give it two minutes and the first egg slides.</p>
-</td></tr>
-
-<tr><td class="pad" style="padding:34px 44px 6px 44px;">
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:34px;line-height:38px;color:#282828;text-align:center;">Three steps, one egg</div>
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#727272;text-align:center;padding-top:8px;">Cold metal grabs your food. Hot metal lets it go.</div>
-</td></tr>
-
-<!-- STEP 1 -->
-<tr><td class="pad" style="padding:22px 44px 0 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-    <tr><td style="padding:20px 22px 20px 22px;">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-        <td width="44" valign="top" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:34px;line-height:34px;color:#AC3B19;">1</td>
-        <td valign="top" style="font-family:Inter,Arial,Helvetica,sans-serif;">
-          <div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Heat first</div>
-          <div style="font-size:14px;line-height:21px;color:#727272;padding-top:4px;">Medium heat, about two minutes, before anything goes in. Medium on titanium works like high on a normal pan.</div>
-        </td>
-      </tr></table>
-    </td></tr>
-  </table>
-</td></tr>
-
-<!-- STEP 2 -->
-<tr><td class="pad" style="padding:22px 44px 0 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-    <tr><td style="padding:20px 22px 14px 22px;">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-        <td width="44" valign="top" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:34px;line-height:34px;color:#AC3B19;">2</td>
-        <td valign="top" style="font-family:Inter,Arial,Helvetica,sans-serif;">
-          <div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Do the water test</div>
-          <div style="font-size:14px;line-height:21px;color:#727272;padding-top:4px;">Flick in a drop of water. If it dances and rolls around, the pan is ready. If it just sits and sizzles, wait a little longer.</div>
-        </td>
-      </tr></table>
-    </td></tr>
-    <tr><td style="padding:0 22px 22px 22px;"><img src="{{IMG}}/gif-water-test.gif" width="512" alt="A drop of water dancing in a hot Siraat titanium pan" style="width:100%;max-width:512px;height:auto;"></td></tr>
-  </table>
-</td></tr>
-
-<!-- STEP 3 -->
-<tr><td class="pad" style="padding:22px 44px 0 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-    <tr><td style="padding:20px 22px 14px 22px;">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-        <td width="44" valign="top" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:34px;line-height:34px;color:#AC3B19;">3</td>
-        <td valign="top" style="font-family:Inter,Arial,Helvetica,sans-serif;">
-          <div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Then oil, then the egg</div>
-          <div style="font-size:14px;line-height:21px;color:#727272;padding-top:4px;">A thin layer of oil, let it shimmer, then the egg. Leave it alone until it lets go by itself. Then it slides.</div>
-        </td>
-      </tr></table>
-    </td></tr>
-    <tr><td style="padding:0 22px 22px 22px;"><img src="{{IMG}}/gif-egg-slide.gif" width="512" alt="An egg sliding freely in a Siraat titanium pan" style="width:100%;max-width:512px;height:auto;"></td></tr>
-  </table>
-</td></tr>
-
-<!-- CHEF LINE -->
-<tr><td class="pad" style="padding:22px 44px 6px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#727272;">
-  <p style="margin:0;">If you can do an egg, you can do anything. Steak, fish and pancakes follow the same rule: heat first, then oil, then patience.</p>
 </td></tr>
 
 <!-- REVIEW -->
 <tr><td class="pad" style="padding:20px 44px 6px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-          <tr><td style="padding:18px 18px 16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <div style="font-size:14px;line-height:21px;color:#282828;padding:8px 0 10px 0;">&ldquo;I followed the instructions; let the pan heat up and did the water test. Then fried an egg which didn&rsquo;t stick to the pan. Easy clean up.&rdquo;</div>
-            <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Aggie M., verified buyer</div>
-          </td></tr>
-        </table>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;"><tr><td style="padding:20px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;">
+    <div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+    <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;I followed the instructions; let the pan heat up and did the water test. Then fried an egg which didn&rsquo;t stick to the pan. Easy clean up.&rdquo;</div>
+    <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Aggie M. &middot; Verified buyer</div>
+  </td></tr></table>
 </td></tr>
 
-<tr><td class="pad" style="padding:30px 44px 0 44px;">
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:34px;line-height:38px;color:#282828;text-align:center;">Good to know</div>
-</td></tr>
+{{BLOCK:cta label="Watch the cook guide" url="https://siraatskitchen.com/pages/care-use" pad="22px 44px 4px 44px"}}
 
-<!-- CARE FACTS -->
-<tr><td class="pad" style="padding:14px 44px 6px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-    <tr><td style="padding:14px 20px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#727272;"><span style="font-weight:600;color:#282828;">No seasoning required.</span> Wash it once and cook.</td></tr>
-    <tr><td style="padding:14px 20px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#727272;"><span style="font-weight:600;color:#282828;">Metal utensils are fine.</span> There is no coating to scratch off.</td></tr>
-    <tr><td style="padding:14px 20px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#727272;"><span style="font-weight:600;color:#282828;">Dishwasher safe.</span> A soft sponge by hand works just as well.</td></tr>
-    <tr><td style="padding:14px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#727272;"><span style="font-weight:600;color:#282828;">Covered for 75 years.</span> Against defects, for as long as you own it.</td></tr>
-  </table>
-</td></tr>
-
-<!-- CTA -->
-<tr><td align="center" style="padding:26px 44px 8px 44px;">
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-    <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:2px;">
-      <a class="btn" href="https://siraatskitchen.com/pages/care-use" style="display:inline-block;padding:16px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:16px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;">WATCH THE COOK GUIDE</a>
-    </td>
-  </tr></table>
-</td></tr>
-
-<!-- TRUST ROW -->
-<tr><td class="pad" style="padding:22px 44px 6px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #ECE7DD;border-bottom:1px solid #ECE7DD;">
-    <tr>
-      <td width="33%" align="center" style="padding:16px 4px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;">NO<br>SEASONING</td>
-      <td width="34%" align="center" style="padding:16px 4px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;border-left:1px solid #ECE7DD;border-right:1px solid #ECE7DD;">75-YEAR<br>WARRANTY</td>
-      <td width="33%" align="center" style="padding:16px 4px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;">DISHWASHER<br>SAFE</td>
-    </tr>
-  </table>
+<!-- ZACHTE CROSS-SELL: deksel, klein -->
+<tr><td class="pad" align="center" style="padding:18px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#727272;text-align:center;">
+  Simmering or steaming? <a href="https://siraatskitchen.com/products/stainless-steel-lid" style="color:#AC3B19;font-weight:600;">The stainless steel lid that fits your pan, $59 &rarr;</a>
 </td></tr>
 
 <!-- SIGN-OFF -->
-<tr><td class="pad" style="padding:22px 44px 26px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+<tr><td class="pad" style="padding:22px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
   Stuck on something, literally or not? Just reply. A real person reads every email.<br><br>
   Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
 </td></tr>
+
 
 {{FOOTER}}
 
