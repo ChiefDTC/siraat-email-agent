@@ -37,6 +37,7 @@ def blk(m):
             rows.append(r)
         kv['rows']=''.join(rows)
     if name=='productcard':
+        if '/' not in kv.get('img',''): kv['img']='{{SHARED}}/'+kv.get('img','')
         kv['pill']=('<div style="padding-bottom:8px;"><span style="display:inline-block;background:#AC3B19;color:#FFFFFF;font-size:10px;line-height:14px;letter-spacing:1.4px;font-weight:600;padding:3px 9px;border-radius:10px;">%s</span></div>'%kv['pill']) if kv['pill'] else ''
         w=kv.pop('was'); kv['washtml']=('<span style="color:#9A948B;text-decoration:line-through;">%s</span>&nbsp; '%w) if w else ''
     if name=='offer' and kv['deadline']: kv['deadline']=open(os.path.join(B,'deadline.html')).read().replace('[[text]]',kv['deadline'])
