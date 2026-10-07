@@ -1,0 +1,85 @@
+flow_id,flow_name,category,flow_message_id,message_name,subject,recipients,delivered,open_rate,click_rate,conversion_rate,conversion_uniques,conversion_value,revenue_per_recipient,unsubscribe_rate,spam_complaint_rate,bounce_rate,conversions
+WsQDYu,BIS | Back in Stock Waitlist,other,Scuk9u,BIS 1 — You're On The List,You're On The List!,236,235,0.6340,0.0511,0.0383,9,2200.08,9.362,0.0085,0.0043,0.0042,9
+WsQDYu,BIS | Back in Stock Waitlist,other,Rrh2Qh,BIS 2 — It's Back,It's Back! {{ event.ProductName }},115,114,0.5965,0.1053,0.0439,5,661.35,5.801,0.0088,0.0000,0.0087,5
+UYALJ8,EB - E-Gift Card,other,VmBygA,Thank you Email,Thanks for Gifting Siraat’s Kitchen,3,3,0.3333,0.0000,0.0000,0,0.00,0.000,0.0000,0.0000,0.0000,0
+SwkMyn,EB | Cart Abandonment | 2/03/26,cart,URatk6,Copy of Email #1,"Hi {{ first_name }}, we saved these for you",6013,5983,0.4606,0.0286,0.0084,50,13585.73,2.271,0.0150,0.0008,0.0050,52
+SwkMyn,EB | Cart Abandonment | 2/03/26,cart,UBgGhU,Copy of Email #3,Last Call for 10% Off!,3004,3000,0.6933,0.0167,0.0030,9,2895.31,0.965,0.0083,0.0007,0.0013,9
+SwkMyn,EB | Cart Abandonment | 2/03/26,cart,W7cyzk,Email #1,"Hi {{ first_name }}, we saved these for you",6417,6380,0.4538,0.0263,0.0086,55,18498.83,2.900,0.0111,0.0014,0.0058,56
+SwkMyn,EB | Cart Abandonment | 2/03/26,cart,SY7jud,Email #2,"Hi {{ first_name }}, getting cooking with 10% off",11270,11206,0.4103,0.0176,0.0036,40,8856.94,0.790,0.0112,0.0009,0.0057,41
+SwkMyn,EB | Cart Abandonment | 2/03/26,cart,STu58P,Email #3,Last Call for 10% Off!,2971,2968,0.6877,0.0169,0.0054,16,3242.94,1.093,0.0094,0.0010,0.0010,16
+TBWngE,EB | Cart Abandonment | 8/15/25 - Triple Pixel,cart,SUi5iD,Copy of Email #1,"Hi {{ first_name }}, we saved these for you",165,158,0.5063,0.0380,0.0000,0,0.00,0.000,0.0000,0.0000,0.0424,0
+TBWngE,EB | Cart Abandonment | 8/15/25 - Triple Pixel,cart,REfY5p,Copy of Email #3,Last Call for 10% Off!,799,787,0.4244,0.0114,0.0025,2,393.65,0.500,0.0089,0.0013,0.0150,2
+TBWngE,EB | Cart Abandonment | 8/15/25 - Triple Pixel,cart,VWL44n,Email #1,"Hi {{ first_name }}, we saved these for you",300,289,0.4498,0.0242,0.0069,2,193.10,0.668,0.0069,0.0000,0.0367,2
+TBWngE,EB | Cart Abandonment | 8/15/25 - Triple Pixel,cart,SYVjE3,Email #2,"Hi {{ first_name }}, getting cooking with 10% off",1889,1862,0.4350,0.0226,0.0027,5,934.23,0.502,0.0091,0.0000,0.0143,5
+TBWngE,EB | Cart Abandonment | 8/15/25 - Triple Pixel,cart,Shh2G2,Email #3,Last Call for 10% Off!,852,839,0.4458,0.0179,0.0048,4,666.46,0.794,0.0024,0.0000,0.0153,4
+UEfh4h,EB | Customer Winback | 5/8/25,winback,WW78hc,Copy of Email #2,We Cut a Deal for You,7896,7877,0.4318,0.0072,0.0015,12,1940.65,0.246,0.0093,0.0005,0.0024,13
+UEfh4h,EB | Customer Winback | 5/8/25,winback,Wrnas5,Email #1,Serving Up New Must-Haves,16040,16000,0.4141,0.0079,0.0013,20,3763.57,0.235,0.0091,0.0004,0.0025,20
+UEfh4h,EB | Customer Winback | 5/8/25,winback,XWQLLB,Email #2,We Cut a Deal for You,8113,8096,0.4253,0.0068,0.0005,4,539.82,0.067,0.0059,0.0006,0.0021,4
+UEfh4h,EB | Customer Winback | 5/8/25,winback,WC4V9Y,Email #3,10% Off Expires Tonight,15910,15869,0.4049,0.0045,0.0008,13,3214.64,0.203,0.0074,0.0005,0.0026,13
+Wj6x6V,EB | DEC 25 | Browse Abandonment,browse,WUsPxr,Copy of Email #1,"Hi {{ first_name|default:'' }}, we saw you looking...",18471,18378,0.4425,0.0237,0.0029,53,13642.30,0.742,0.0178,0.0012,0.0050,53
+Wj6x6V,EB | DEC 25 | Browse Abandonment,browse,Y7wqBq,Email #1,"Hi {{ first_name|default:'' }}, we saw you looking...",18745,18640,0.4527,0.0263,0.0030,56,11035.32,0.592,0.0165,0.0012,0.0056,56
+TyEjuQ,EB | DEC 25 | Browse Abandonment | Triple Pixel,browse,Wwv3Tb,Copy of Email #1,"Hi {{ first_name|default:'' }}, we saw you looking...",20120,20004,0.3902,0.0312,0.0052,103,23679.17,1.184,0.0103,0.0003,0.0058,106
+TyEjuQ,EB | DEC 25 | Browse Abandonment | Triple Pixel,browse,Vm6cZj,Email #1,"Hi {{ first_name|default:'' }}, we saw you looking...",20410,20304,0.3970,0.0341,0.0058,117,26502.42,1.305,0.0126,0.0005,0.0052,124
+Y2TmNB,EB | DEC 25 | Checkout Abandonment,checkout,RZ4Urm,Copy of Email #1,Don’t leave these hanging,1349,1273,0.4368,0.0361,0.0220,28,5442.25,4.275,0.0149,0.0000,0.0563,28
+Y2TmNB,EB | DEC 25 | Checkout Abandonment,checkout,RpzC3U,Email #1,Don’t leave these hanging,1420,1330,0.4624,0.0331,0.0210,28,7478.32,5.623,0.0135,0.0008,0.0634,30
+Y2TmNB,EB | DEC 25 | Checkout Abandonment,checkout,Yjpp3E,Email #2,Join the Happy Chef Club,2385,2377,0.4068,0.0156,0.0029,7,977.48,0.411,0.0126,0.0004,0.0034,7
+Y2TmNB,EB | DEC 25 | Checkout Abandonment,checkout,SRuuaP,Email #3,Your Order with a Special Extra Bonus,2314,2307,0.4378,0.0273,0.0052,12,3081.57,1.336,0.0082,0.0009,0.0030,12
+Y2TmNB,EB | DEC 25 | Checkout Abandonment,checkout,S9QbcN,Email #4,We Can’t Keep these Forever,2300,2292,0.3988,0.0166,0.0031,7,1551.58,0.677,0.0061,0.0009,0.0035,7
+Y2TmNB,EB | DEC 25 | Checkout Abandonment,checkout,R4g5Wr,New AB Checkout 1,Don’t leave these hanging,2363,2201,0.4684,0.0400,0.0236,52,17307.41,7.863,0.0104,0.0000,0.0686,52
+Y2TmNB,EB | DEC 25 | Checkout Abandonment,checkout,XWU6HU,New AB Checkout 2,Join the Happy Chef Club,826,822,0.4075,0.0158,0.0037,3,546.45,0.665,0.0170,0.0000,0.0048,4
+Y2TmNB,EB | DEC 25 | Checkout Abandonment,checkout,U3byfW,New AB Checkout 3,We’ve cooked something for you!,1438,1432,0.4113,0.0244,0.0091,13,3426.88,2.393,0.0126,0.0000,0.0042,13
+Y2TmNB,EB | DEC 25 | Checkout Abandonment,checkout,SZuXUJ,New AB Checkout 4,One Click to Cooking Better for Life,1056,1053,0.3533,0.0133,0.0019,2,458.96,0.436,0.0086,0.0000,0.0028,2
+Y2TmNB,EB | DEC 25 | Checkout Abandonment,checkout,Xbtxpg,New AB Checkout 5,We Can’t Keep these Forever,1313,1307,0.3887,0.0168,0.0076,10,1640.36,1.255,0.0092,0.0008,0.0046,10
+Tsg2tV,EB | DEC 25 | Checkout Abandonment | Triple Pixel,checkout,VGsrUf,Copy of Email #1,Don’t leave these hanging,1501,1480,0.4932,0.0527,0.0169,25,5588.06,3.776,0.0115,0.0007,0.0140,25
+Tsg2tV,EB | DEC 25 | Checkout Abandonment | Triple Pixel,checkout,X37MuT,Email #1,Don’t leave these hanging,1537,1519,0.5089,0.0474,0.0204,31,7380.03,4.858,0.0053,0.0013,0.0117,31
+Tsg2tV,EB | DEC 25 | Checkout Abandonment | Triple Pixel,checkout,XjBNHW,Email #2,Join the Happy Chef Club,2749,2734,0.4473,0.0223,0.0037,10,1999.66,0.731,0.0128,0.0007,0.0055,10
+Tsg2tV,EB | DEC 25 | Checkout Abandonment | Triple Pixel,checkout,TE8MmA,Email #3,Your Order with a Special Extra Bonus,2594,2581,0.4696,0.0368,0.0035,9,2059.91,0.798,0.0097,0.0015,0.0050,9
+Tsg2tV,EB | DEC 25 | Checkout Abandonment | Triple Pixel,checkout,VYWt9i,Email #4,We Can’t Keep these Forever,2550,2541,0.4274,0.0264,0.0047,12,5351.75,2.106,0.0087,0.0012,0.0035,12
+TSUnLs,EB | E-Book,other,SvpV7D,Copy of The Green Clean Guide Email,Your Mystery Gift Is Here,3068,3040,0.6059,0.0651,0.0020,6,2847.37,0.937,0.0066,0.0007,0.0091,6
+TSUnLs,EB | E-Book,other,XtL9Mq,Email 2: E-Book Reminder,Open Your Mystery Gift 🎁,828,823,0.1385,0.0656,0.0000,0,0.00,0.000,0.0024,0.0000,0.0060,0
+TSUnLs,EB | E-Book,other,YjAsnx,Email 3: Last Reminder about the E-Book,"Hey {{ first_name|default:'there' }}, Don’t Forget Your Gift",393,391,0.0972,0.0512,0.0026,1,515.54,1.319,0.0051,0.0000,0.0051,1
+T2SmtR,EB | Failure to launch,other,S6wMyn,Bestsellers + Product Reviews,Kitchen Confidential,35536,35362,0.3627,0.0050,0.0002,8,1994.18,0.056,0.0056,0.0010,0.0049,8
+T2SmtR,EB | Failure to launch,other,S5P3Wn,Ceramic VS Titanium,Ceramic VS Titanium,33468,33402,0.3532,0.0048,0.0001,5,1067.67,0.032,0.0030,0.0005,0.0020,5
+T2SmtR,EB | Failure to launch,other,RifeeX,FAQ's,Unlocking the Non-Stick Effect,36069,35945,0.3634,0.0031,0.0001,5,926.75,0.026,0.0052,0.0008,0.0034,5
+T2SmtR,EB | Failure to launch,other,U6PsqR,Healthy Habits Start Here,You Are What You Eat,33421,33275,0.3530,0.0035,0.0001,5,606.10,0.018,0.0051,0.0005,0.0044,5
+T2SmtR,EB | Failure to launch,other,WFZ9ka,How to Store + Care for Your Kitchen Tools,FAQ Care Tips,34905,34808,0.3593,0.0037,0.0003,10,2466.85,0.071,0.0046,0.0006,0.0028,10
+T2SmtR,EB | Failure to launch,other,RgzVJY,Micro-Plastic Free,Cook Better = Feel Better,34198,34117,0.3595,0.0025,0.0003,10,1871.66,0.055,0.0036,0.0008,0.0024,10
+T2SmtR,EB | Failure to launch,other,SmQwfi,Review Focus,"What our customers really think,",32791,32720,0.3497,0.0023,0.0001,3,423.44,0.013,0.0042,0.0005,0.0022,3
+T2SmtR,EB | Failure to launch,other,WwCjFD,Titanium Care,Titanium = Easy Cleaning,34132,34056,0.3602,0.0046,0.0004,13,2486.27,0.073,0.0031,0.0005,0.0022,13
+T2SmtR,EB | Failure to launch,other,RA3fUx,Titanium Vs Stainless Steel,Titanium Vs Stainless Steel,34721,34625,0.3643,0.0044,0.0002,6,926.66,0.027,0.0038,0.0008,0.0028,6
+T2SmtR,EB | Failure to launch,other,WFwksy,Titanium vs Non-Stick (Updated 6/9/26),Us vs Others,35728,35622,0.3620,0.0033,0.0003,12,3307.83,0.093,0.0046,0.0006,0.0030,12
+YcXbHx,EB | Pan Education,other,UJMq2j,FLOW: Cutting Board Education | Email 1,Your New Cutting Boards Almost Here,602,599,0.6845,0.0718,0.0017,1,0.00,0.000,0.0000,0.0000,0.0050,1
+YcXbHx,EB | Pan Education,other,QTNBVJ,FLOW: Cutting Board Education | Email 2,Quick Cutting Board FAQs,580,576,0.6146,0.0833,0.0052,3,191.95,0.333,0.0243,0.0000,0.0069,3
+YcXbHx,EB | Pan Education,other,VVxZpH,Pan Education | Email 1,"Your Siraat Titanium Pan is about to arrive,",11227,11193,0.6140,0.0618,0.0021,23,6718.35,0.600,0.0031,0.0000,0.0030,25
+YcXbHx,EB | Pan Education,other,X4Pk75,Pan Education | Email 2,The #1 mistake that makes titanium stick 🔥,5308,5295,0.5603,0.0578,0.0021,11,3055.41,0.577,0.0070,0.0002,0.0024,13
+YcXbHx,EB | Pan Education,other,RzJb6Z,Pan Education | Email 3,Why your pan is changing color (and why that's a good thing),5277,5268,0.5300,0.0205,0.0021,11,1177.51,0.224,0.0047,0.0004,0.0017,11
+YcXbHx,EB | Pan Education,other,XtJ7me,Pan Education | Email 4,The right way to clean your titanium pan,5435,5428,0.5217,0.0306,0.0026,14,1662.33,0.306,0.0059,0.0002,0.0013,14
+YcXbHx,EB | Pan Education,other,XXRDsv,Pan Education | Email 5,5 things that will shorten your pan's life,5264,5250,0.5358,0.0350,0.0027,14,2119.55,0.404,0.0061,0.0002,0.0027,15
+YcXbHx,EB | Pan Education,other,TiT2Ni,Pan Education | Email 6,It’s been over a week cooking with real titanium,5311,5302,0.5008,0.0175,0.0013,7,1056.51,0.199,0.0051,0.0000,0.0017,7
+RL3TU6,EB | Post Purchase Flow | 4/6/2026,post-purchase,X6wxL3,Copy of Post Purchase Flow | Founder's Note,A note from Benjamin,2609,2602,0.6322,0.0957,0.0023,6,1179.46,0.453,0.0150,0.0004,0.0027,8
+RL3TU6,EB | Post Purchase Flow | 4/6/2026,post-purchase,Tse2up,Copy of Post Purchase Flow | IT'S ON ITS WAY,Your Package Is On Its Way,2532,2525,0.7283,0.3473,0.0032,8,1356.77,0.537,0.0008,0.0000,0.0028,8
+RL3TU6,EB | Post Purchase Flow | 4/6/2026,post-purchase,Xg94tJ,Copy of Post Purchase Flow | IT'S ON ITS WAY,Your Package Is On It’s Way,1203,1202,0.6681,0.2537,0.0042,5,644.21,0.536,0.0008,0.0000,0.0008,5
+RL3TU6,EB | Post Purchase Flow | 4/6/2026,post-purchase,Y6xS2a,Post Purchase Flow | 100 Day-Trial,100 Days to Try Us Out,12163,12114,0.5350,0.0286,0.0005,6,1513.91,0.125,0.0091,0.0007,0.0040,6
+RL3TU6,EB | Post Purchase Flow | 4/6/2026,post-purchase,SPaYdU,Post Purchase Flow | 1st time buyer | Multiple Purchase,We’ve Got Your Order,10484,10430,0.6219,0.0706,0.0024,25,6093.04,0.584,0.0032,0.0010,0.0052,29
+RL3TU6,EB | Post Purchase Flow | 4/6/2026,post-purchase,Vp4qSX,Post Purchase Flow | 1st time buyer | Single Purchase,We’ve Got Your Order,1943,1929,0.6236,0.0824,0.0036,7,1577.57,0.818,0.0036,0.0005,0.0072,7
+RL3TU6,EB | Post Purchase Flow | 4/6/2026,post-purchase,U98PFG,Post Purchase Flow | 2nd time buyers,Welcome Back,1247,1245,0.6779,0.0402,0.0064,8,936.25,0.752,0.0064,0.0000,0.0016,9
+RL3TU6,EB | Post Purchase Flow | 4/6/2026,post-purchase,QUeA2U,Post Purchase Flow | Founder's Note,A note from Benjamin,12291,12239,0.5858,0.0739,0.0009,11,1473.44,0.120,0.0136,0.0008,0.0042,11
+RL3TU6,EB | Post Purchase Flow | 4/6/2026,post-purchase,XaMN6w,Post Purchase Flow | GET READY TO COOK,Unlocking the Non-Stick,7589,7561,0.5407,0.0684,0.0007,5,645.62,0.085,0.0071,0.0003,0.0037,5
+RL3TU6,EB | Post Purchase Flow | 4/6/2026,post-purchase,Y8Nn9B,Post Purchase Flow | IT'S ON ITS WAY,Your Package Is On Its Way,12100,12047,0.6913,0.2976,0.0015,18,3919.41,0.325,0.0024,0.0007,0.0044,26
+RL3TU6,EB | Post Purchase Flow | 4/6/2026,post-purchase,UwgBb7,Post Purchase Flow | Purchased other collection,We’ve Got Your Order,2643,2633,0.6738,0.0737,0.0030,8,1210.17,0.460,0.0042,0.0000,0.0038,8
+S7V4a7,EB | Sunset Flow | 5/15/25,other,TdxnHR,Email #1,"Hi {{ first_name }}, it’s been a while",13753,13718,0.1419,0.0039,0.0001,1,304.00,0.022,0.0047,0.0006,0.0025,1
+S7V4a7,EB | Sunset Flow | 5/15/25,other,UyjuhX,Email #2,"Hi {{ first_name }},  are you Staying or Going?",11848,11812,0.0576,0.0043,0.0000,0,0.00,0.000,0.0061,0.0003,0.0030,0
+SiaNLu,EB | Welcome Flow | Updated 02.03.26,welcome,V427ZY,EB [DG] | Email #2,A Note from Benjamin,45998,45705,0.4631,0.0214,0.0029,131,28514.44,0.624,0.0224,0.0017,0.0064,134
+SiaNLu,EB | Welcome Flow | Updated 02.03.26,welcome,Rs6ATL,EB [DG] | Email #3,Straight from the kitchen,19796,19767,0.7284,0.0190,0.0023,45,11654.23,0.590,0.0235,0.0012,0.0015,48
+SiaNLu,EB | Welcome Flow | Updated 02.03.26,welcome,SrZF5p,EB [DG] | Email #4,Cook with the Best,17145,17119,0.7877,0.0134,0.0013,23,5255.16,0.307,0.0178,0.0006,0.0015,23
+SiaNLu,EB | Welcome Flow | Updated 02.03.26,welcome,XUgzX9,EB [DG] | Email #5,The ultimate showdown,17170,17137,0.7763,0.0103,0.0009,16,3932.88,0.230,0.0145,0.0005,0.0019,18
+SiaNLu,EB | Welcome Flow | Updated 02.03.26,welcome,RxYqFv,EB | Welcome Email | Additional 2,See Why We Are Top Rated,32252,31997,0.3826,0.0085,0.0006,18,4084.05,0.128,0.0085,0.0011,0.0079,20
+SiaNLu,EB | Welcome Flow | Updated 02.03.26,welcome,X99646,EB | Welcome Email | Additional 3,Last Call for an Extra 10% Off,31524,31265,0.3799,0.0095,0.0014,43,8144.50,0.261,0.0065,0.0008,0.0082,43
+SiaNLu,EB | Welcome Flow | Updated 02.03.26,welcome,U473Qm,Eb [DG] | Email #1 (FLOW Updated 5/31/25),"{{ first_name|default:'Hey' }}, Thanks For Joining Us",49174,48136,0.4706,0.0238,0.0071,341,85427.77,1.775,0.0275,0.0018,0.0211,345
+YyaMjx,FREE E - GUIDE,other,XtYsPr,E-Guide Flow,Your E-Guide Is Ready,15793,15680,0.5883,0.0669,0.0018,28,5090.83,0.325,0.0085,0.0010,0.0072,28
+WvRupU,Mystery Gift Reveal — Sheets,other,SynbCN,"Alright, here's the offer","Alright, here's the offer",4772,4762,0.5248,0.0271,0.0021,10,1503.33,0.316,0.0164,0.0002,0.0021,10
+WvRupU,Mystery Gift Reveal — Sheets,other,SpGUYn,Last one from me about the sheets,Last one from me about the sheets,4613,4603,0.4816,0.0139,0.0022,10,1284.94,0.279,0.0141,0.0000,0.0022,10
+WvRupU,Mystery Gift Reveal — Sheets,other,Y3G6Km,Mystery Gift 1/4 — The reveal,Let's reveal your mystery gift,4958,4942,0.5666,0.0000,0.0010,5,454.87,0.092,0.0051,0.0004,0.0032,5
+WvRupU,Mystery Gift Reveal — Sheets,other,U6yi6c,Why no cookware brand sells these,Why no cookware brand sells these,4898,4883,0.5087,0.0000,0.0012,6,1050.08,0.215,0.0094,0.0000,0.0031,6
+SxN86d,Orders - War - Middle East (DELAY),other,TT4XEG,Email #1,Shipping Update Regarding Your Order,113,113,0.7080,0.0089,0.0000,0,0.00,0.000,0.0000,0.0000,0.0000,0
+Vixr6X,Trustpilot 4 emojis FLOW - 7JAN,other,SfeWhr,How was your experience?,How was your experience?,10761,10735,0.5035,0.0331,0.0019,20,2679.49,0.250,0.0075,0.0001,0.0024,21
