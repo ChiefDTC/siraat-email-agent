@@ -13,7 +13,7 @@ Datum: 7 oktober 2026. Alleen gelezen uit Klaviyo (account TdtTzz, REST revision
 
 | Bron | Call | Venster |
 | --- | --- | --- |
-| Campagnes en berichten (onderwerp, preview, afzender, template-ID, verzendtijd) | `GET /api/campaigns?filter=and(equals(messages.channel,'email'),equals(archived,false|true))&include=campaign-messages` | alles (413 campagnes, waarvan 376 verzonden) |
+| Campagnes en berichten (onderwerp, preview, afzender, template-ID, verzendtijd) | `GET /api/campaigns?filter=and(equals(messages.channel,'email'),equals(archived,false) en ook true)&include=campaign-messages` | alles (413 campagnes, waarvan 376 verzonden) |
 | Campagnecijfers | `POST /api/campaign-values-reports`, group_by campaign_id, statistieken recipients, delivered, opens_unique, clicks_unique, conversion_uniques, conversions, conversion_value, unsubscribe_uniques, spam_complaints, bounced | 2025-01-01 t/m 2025-12-31 en 2026-01-01 t/m 2026-10-08 (max 1 jaar per call) |
 | Flowcijfers per bericht | `POST /api/flow-values-reports`, group_by flow_id, flow_message_id | 2024-10-08 t/m 2025-10-07 en 2025-10-07 t/m 2026-10-07, per bericht opgeteld |
 | Flowberichten en flows | `GET /api/flow-messages/{id}`, `GET /api/flows` (ook archived) | stand 7 okt |
@@ -27,7 +27,7 @@ Afspraken:
 
 Beperkingen (belangrijk bij het lezen):
 1. **Attributie, geen incrementaliteit.** Klaviyo schrijft een order toe aan de laatste mail binnen het venster. Mail 1 van checkout krijgt veel orders die ook zonder mail gekomen waren (research/timing 1a).
-2. **Templates leven.** Flowtemplates zijn sinds verzending soms aangepast, en universal content (de rode sale-balk "SIRAAT PRIME TIME SALE | UP TO 56% OFF") staat nu in 415 templates. De HTML is dus de huidige versie, niet altijd wat er toen verstuurd werd. Campagnetemplates zijn na verzending bevroren, op die balk na.
+2. **Templates leven.** Flowtemplates zijn sinds verzending soms aangepast, en universal content (de rode sale-balk "SIRAAT PRIME TIME SALE, UP TO 56% OFF") staat nu in 415 templates. De HTML is dus de huidige versie, niet altijd wat er toen verstuurd werd. Campagnetemplates zijn na verzending bevroren, op die balk na.
 3. **A/B per variant ontbreekt.** Het campagnerapport geeft één regel per campagne; bij 16 A/B-campagnes staan beide onderwerpen in de CSV (gescheiden door `||`).
 4. **Publieksgrootte.** Kleine "highly engaged"-segmenten (1.940 tot 3.801) halen hoge RPR. Ze staan in de lijsten, maar het patroon telt pas als het ook bij grote segmenten terugkomt.
 5. **Verwijderde flowberichten** van vóór oktober 2024 zitten niet in het rapport. De oudste campagne is van januari 2025.
@@ -184,13 +184,15 @@ Volledige kolommen (preview, template-ID, publiek, formaat, producten) in de CSV
 | Urgentie (last, ends, hours left) | 40 | **1,17** | 1,10 | 0,75% | 0,57% | Alleen met echte deadline |
 | PFAS / non-toxic / healthy | 13 | 1,19 | 1,17 | 0,88% | 0,72% | Licht positief, kleine n |
 | Social proof (bestsellers, reviews, #1) | 22 | 1,00 | 0,97 | 0,66% | 0,63% | Geen effect in het onderwerp |
-| Vraag (?) | 13 | **0,84** | 0,99 | 1,02% | 0,78% | Zwakker op omzet |
+| Vraag (?) | 13 | **0,84** | 0,99 | 1,02% | 0,78% | Meer klik (gewogen +34%), minder omzet |
 | Nieuwsgierigheid zonder aanbod | 41 | 1,00 | 1,00 | 0,83% | 0,70% | Neutraal |
 | Nieuw / launch | 13 | 0,84 | 1,09 | 0,77% | 0,72% | Woord "new" alleen helpt niet; het nieuwe product wel (2b) |
 | Emoji | 36 | 0,98 | 0,98 | **0,56%** | 0,46% | Gewogen RPR $0,086 tegen $0,141 zonder: niet gebruiken |
 | Lengte 0 tot 2 woorden | 33 | 1,11 | 1,10 | 0,77% | 0,68% | Kort mag ("Put a lid on it", "Why Food Sticks") |
 | Lengte 6 tot 8 woorden | 90 | 0,92 | 0,99 | 0,71% | 0,55% | |
 | Lengte 9+ woorden | 19 | 1,11 | 1,05 | 0,79% | 0,40% | Founder-onderwerpen zijn lang en doen het goed |
+
+Vergelijk met `research/onderwerpen/01-lab.md` (zelfde dag, 365 dagen, regressie met publiek x maand, maat klik): vraag +57% klik (n=7), emoji -25% klik, voornaam opent beter, getallen generiek. Deze analyse (21 maanden, maat RPR) bevestigt emoji en de klikwinst van voornaam en vraag, maar ziet bij vragen geen omzetwinst. Conclusie voor v4: een vraag mag om klik te halen, alleen niet als de omzetmail van een reeks op een vraag leunt zonder test.
 
 ### 2b. Invalshoek (thema uit naam, onderwerp en preview, zonder Black Friday)
 
@@ -308,7 +310,7 @@ Impact = volume van de mail × grootte van het historische verschil × hoe zeker
 | --- | --- | --- | --- | --- | --- |
 | 1 | **C1** (checkout 1) | A/B onderwerp | B = "Don't leave these hanging" (of "We kept your cart safe") tegen v4-A. Let op: manifest zegt "Something stop you at checkout?", v4-flow-system 2.1 zegt "Forgetting something?"; eerst één A kiezen. | Dit onderwerp stond op alle zeven checkout-1-varianten met 1.000+ ontvangers ($2,17 tot $7,83, 3,3 tot 4,8% klik), samen $194.000 omzet. Een vraagonderwerp zakte in campagnes naar index 0,84. | Fase 2, na T01 (T01 vergelijkt het hele pad, niet het onderwerp) |
 | 2 | **C1** | Vast / T03-controle | Geen HI10 in preview en hero van C1 als controlearm van T03. | Alle historische checkout-1-mails hadden geen code en zijn de best verdienende flowmails; kortingen pas vanaf mail 3. 74% van de checkout-starters koopt toch al (timing 1a), korting in mail 1 geeft vooral marge weg. | T03 (fase 2) zo inrichten |
-| 3 | **W1-A/B** | A/B onderwerp (T05b) | B = "{first_name}, thanks for joining. Your 10% is inside" (voornaam + dank + aanbod) tegen "No PFAS, nothing to wear off, and your 10%". | Oude welcome 1 "{first_name}, Thanks For Joining Us" haalde $2,73 op 199.479 ontvangers ($535.843), de HKT-versie met het aanbod in het onderwerp $6,58. Voornaam in campagne-onderwerpen: klikindex 1,17. | T05b, fase 2 |
+| 3 | **W1-A/B** | A/B onderwerp (T05b) | B = "{first_name}, thanks for joining. Your 10% is inside" (voornaam + dank + aanbod) tegen "No PFAS, nothing to wear off, and your 10%". | Oude welcome 1 "{first_name}, Thanks For Joining Us" haalde $2,73 op 199.479 ontvangers ($535.843), de HKT-versie met het aanbod in het onderwerp $6,58 (1.004 ontvangers). Voornaam in campagne-onderwerpen: klikindex 1,17. | T05b, fase 2 |
 | 4 | **K1** (cart 1, kookgerei) | A/B onderwerp | B = "{first_name}, we saved your cart (and 4 gifts)" tegen "Nothing on it to peel off". | Oude cart 1 "Hi {first_name}, we saved these for you": $2,43 tot $2,66, 2,8% klik op 71.417 ontvangers. Een productvoordeel als onderwerp van cart 1 is nooit getest. | Na T02 in cart (fase 2) |
 | 5 | **C2** | A/B onderwerp | B = gift-framing: "Your order, with 4 gifts inside" tegen de PFAS-vraag "Has the pan in your cart actually been tested?". Body blijft het bewijs (rapport 25895). | Checkout 3 "Your Order with a Special Extra Bonus" klikte 2,9 tot 3,8% tegen 1,5 tot 2,2% voor de merkmail op dag 1; "We've cooked something for you!" $2,39. PFAS-onderwerpen in flows: $0,14 gewogen (n=3), in campagnes klikindex 0,88 als thema. | Fase 3 (checkout heeft in fase 1 en 2 al T01, T02, T03) |
 | 6 | **P2** | Vast | Wissel A en B: "The one mistake that makes titanium stick" wordt A, "If you can do an egg, you can do anything" wordt B (of laat de test vallen). | Pan education 2 "The #1 mistake that makes titanium stick" 6,9% klik; campagne "Why Food Sticks" 7,18% klik, hoogste campagne ooit, RPR-index 4,36. | Bij export |
@@ -320,7 +322,7 @@ Impact = volume van de mail × grootte van het historische verschil × hoe zeker
 | 12 | **W3 (T07 hero)** | Variant voor de geplande hero-test | Hero B = pan in gebruik met eten en handen (flash-stijl), tegen het certificaatbeeld. | 4 van de 7 beeld-hero's in de top 10 plus de klikkampioen "Why Food Sticks" tonen de pan tijdens het koken; abstracte of documentbeelden alleen bij sales. | T07, fase 2 |
 | 13 | **V1 / R2-VIP** | A/B formaat | B = kale tekstmail van Benjamin (4 tot 8 zinnen, één link met de code al toegepast), zelfde aanbod. | Tekstcampagnes: mediaan RPR-index 1,22 en minder uitschrijving (0,56% tegen 0,65%); 7/24 Benjamin-tekstmail aan de US: index 2,22 bij 0,34% uitschrijving; tariff note index 2,10 en 3,4% klik. | V1/N2 zijn stratum in T02; formaattest pas fase 3 |
 | 14 | **R1-pan / R1-set** | Voorwaardelijk | Alleen als er echt iets nieuws is: onderwerp B "New since your last order: ..." met het nieuwe product als hero. | Winback "Serving Up New Must-Haves" $0,24 tegen $0,11 tot $0,24 voor "We Cut a Deal for You" (10%); launch-campagnes mediaan index 1,15, klikindex 1,24; crêpe-, wok- en deksellancering index 2,1 tot 6,9. | Bij de eerstvolgende productlancering |
-| 15 | **Alle v4-onderwerpen** | Vaste regels | (a) Geen emoji. (b) Getal waar het kan ("4 gifts", "$70", "2 minutes", "75 years"). (c) Vraag alleen als die over hun eigen pan of cart gaat (#9), niet als algemene nieuwsgierigheidsvraag. (d) Kort mag: 1 tot 3 woorden. | Emoji: RPR $0,086 tegen $0,141. Getal: klikindex 1,10 en uitschrijving 0,49% tegen 0,67%. Vraag: RPR-index 0,84 (n=13). Onderwerpen van 0 tot 2 woorden: index 1,11. | Toetsen in qa bij elke nieuwe mail |
+| 15 | **Alle v4-onderwerpen** | Vaste regels | (a) Geen emoji. (b) Getal waar het kan ("4 gifts", "$70", "2 minutes", "75 years"). (c) Vraag vooral als die over hun eigen pan of cart gaat (#9); een algemene nieuwsgierigheidsvraag wint klik maar historisch geen omzet. (e) Geen tekenvervanging ("0ff", "BIack", "BestseIIers" uit de BFCM-mails). (d) Kort mag: 1 tot 3 woorden. | Emoji: RPR $0,086 tegen $0,141 (onderwerplab: -25% klik). Getal: klikindex 1,10 en uitschrijving 0,49% tegen 0,67%. Vraag: RPR-index 0,84 (n=13), klik wel hoger. Onderwerpen van 0 tot 2 woorden: index 1,11 (onderwerplab: kort +19% klik). | Toetsen in qa bij elke nieuwe mail |
 
 Bevestigd zonder wijziging (v4 volgt de historische winnaar al):
 - **K3 / C4**: "Last chance: your own 10% ends in 48 hours". Oude cart 3 "Last Call for 10% Off! / ends in 48 hours" verslaat de kale 10% van cart 2 in de hoofdflow met 40 tot 65% RPR (in de kleine Triple Pixel-variant gelijk) en heeft de laagste uitschrijving van de reeks.
