@@ -88,4 +88,4 @@ Bijwerken zodra een map of database verandert.
 | Hooks en video | content/hooks/hooks.csv (69), angles.md, videos.csv (162), videos-summary.md | Adnova-prestaties, Notion-concepten, concurrenten, Drive-video's met GIF-kandidaten. |
 | Bewijs | brand/proof/ (Light Labs certificaat, README met rapportnummer en chef-script) | Report 25895, Pan Pro Medium, 30 okt 2025. Publieke pagina /pages/third-party-testing. |
 | Media uit chef-video | content/media/chef-video/ (5 GIF's onder 1,2 MB, 11 stills 1200px) | Ei glijdt, watertest, olie, steak, regenboogtint. Bron: care-use-video op Shopify CDN. |
-| Foto-index | content/assets/ (volgt, agent draait) | Alle afbeeldingen Drive, Shopify, Figma met categorie. |
+| Foto-index | content/assets/index.csv (5.905 rijen), summary.md, contact-shopify.png | Alle afbeeldingen Drive, Shopify, Figma met categorie. |
