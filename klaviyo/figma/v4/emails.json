@@ -1,0 +1,453 @@
+{
+ "Checkout abandonment": {
+  "c1": {
+   "a": "Something stop you at checkout?",
+   "b": "Your cart, plus 4 gifts, still saved",
+   "p": "Saved exactly as you left it. Free shipping, and HI10 takes 10% more.",
+   "h": 1706,
+   "png": "klaviyo/templates/v3/checkout/previews/c1-desktop.png"
+  },
+  "c2-acc": {
+   "a": "Yours, or a gift? Both work.",
+   "b": "\"Such lovely gifts\"",
+   "p": "What it is made of, how to look after it, and 10% off with HI10.",
+   "h": 1540,
+   "png": "klaviyo/templates/v3/checkout/previews/c2-acc-desktop.png"
+  },
+  "c2": {
+   "a": "Has the pan in your cart actually been tested?",
+   "b": "\"I honestly thought this might be another scam\"",
+   "p": "Ours has. Light Labs tested it for 31 PFAS compounds. Every one below detection.",
+   "h": 1619,
+   "png": "klaviyo/templates/v3/checkout/previews/c2-desktop.png"
+  },
+  "c3-acc": {
+   "a": "Most kitchens start with the pan",
+   "b": "The pan 100,000+ people cook on",
+   "p": "Your cart is saved. Still cooking on a coated pan? Here is the one change worth making.",
+   "h": 1600,
+   "png": "klaviyo/templates/v3/checkout/previews/c3-acc-desktop.png"
+  },
+  "c3-p": {
+   "a": "One pan, or three for $349?",
+   "b": "\"I ordered one pan to try it out\"",
+   "p": "Three hammered pans and three lids. About $116 a pan, lid included.",
+   "h": 1769,
+   "png": "klaviyo/templates/v3/checkout/previews/c3-p-desktop.png"
+  },
+  "c3-s": {
+   "a": "$70 in gifts ship with your set",
+   "b": "\"I've replaced all the pans...\"",
+   "p": "Free shipping, a mystery gift, the e-book and a chance at a PFAS water filter.",
+   "h": 1647,
+   "png": "klaviyo/templates/v3/checkout/previews/c3-s-desktop.png"
+  },
+  "c4-int-nocode": {
+   "a": "Last reminder: your cart and 4 gifts",
+   "b": "\"They honored the warranty\"",
+   "p": "The last email about your cart. Free shipping, 4 gifts and two promises.",
+   "h": 1566,
+   "png": "klaviyo/templates/v3/checkout/previews/c4-int-nocode-desktop.png"
+  },
+  "c4-int": {
+   "a": "10% off your cart, for 48 hours",
+   "b": "\"They honored the warranty\"",
+   "p": "Your personal code is already applied. After 48 hours, the regular sale price.",
+   "h": 1652,
+   "png": "klaviyo/templates/v3/checkout/previews/c4-int-desktop.png"
+  },
+  "c4-us-nocode": {
+   "a": "Last reminder: your cart and 4 gifts",
+   "b": "\"They honored the warranty\"",
+   "p": "The last email about your cart. Free shipping, 4 gifts and two promises.",
+   "h": 1663,
+   "png": "klaviyo/templates/v3/checkout/previews/c4-us-nocode-desktop.png"
+  },
+  "c4-us": {
+   "a": "10% off your cart, for 48 hours",
+   "b": "\"They honored the warranty\"",
+   "p": "Your personal code is already applied. After 48 hours, the regular sale price.",
+   "h": 1690,
+   "png": "klaviyo/templates/v3/checkout/previews/c4-us-desktop.png"
+  }
+ },
+ "Cart abandonment": {
+  "k1-acc": {
+   "a": "Picked it out? It's still here.",
+   "b": "Still deciding? Your cart is saved. (reserve)",
+   "p": "Saved in your cart, with 4 gifts. HI10 takes an extra 10% off.",
+   "h": 1477,
+   "png": "klaviyo/templates/v3/cart/previews/k1-acc-desktop.png"
+  },
+  "k1": {
+   "a": "One pass with a damp cloth.",
+   "b": "How long do you scrub a pan? (reserve; cart runs no subject test in phase 1, v4 3.19)",
+   "p": "No scrubbing. That's the whole trick. And 4 gifts ship with every order.",
+   "h": 1666,
+   "png": "klaviyo/templates/v3/cart/previews/k1-desktop.png"
+  },
+  "k2-new": {
+   "a": "The pan you keep replacing is the expensive one",
+   "b": "How many pans have you thrown out since 2020? (reserve)",
+   "p": "Even if a coated pan lasted 5 years, that's 15 pans in 75. Here's the math.",
+   "h": 1699,
+   "png": "klaviyo/templates/v3/cart/previews/k2-new-desktop.png"
+  },
+  "k2-returning": {
+   "a": "Adding to your Siraat kitchen?",
+   "b": "\"I am on my 4th pan from Siraat\" (reserve)",
+   "p": "You know how it works. Your cart is saved, and HI10 still takes 10% off.",
+   "h": 1705,
+   "png": "klaviyo/templates/v3/cart/previews/k2-returning-desktop.png"
+  },
+  "k3-nocode": {
+   "a": "What if it's not for you?",
+   "b": "The last email about your cart (reserve)",
+   "p": "Then it goes back unused within 30 days. Your cart and 4 gifts are saved.",
+   "h": 1567,
+   "png": "klaviyo/templates/v3/cart/previews/k3-nocode-desktop.png"
+  },
+  "k3": {
+   "a": "Your own 10% code, for 48 hours",
+   "b": "What if it's not for you? (reserve; cart runs no subject test in phase 1)",
+   "p": "Applied to your cart with one tap. It ends 48 hours after this email.",
+   "h": 1646,
+   "png": "klaviyo/templates/v3/cart/previews/k3-desktop.png"
+  }
+ },
+ "Browse abandonment": {
+  "b1-acc": {
+   "a": "Looked twice? Here's the detail.",
+   "b": "What it's made of, in two lines (reserve)",
+   "p": "What it's made of, how it lasts, and 10% off with HI10.",
+   "h": 1477,
+   "png": "klaviyo/templates/v3/browse/previews/b1-acc-desktop.png"
+  },
+  "b1": {
+   "a": "Lab-tested: nothing on this pan to scratch off",
+   "b": "100,000+ happy customers cook on this pan",
+   "p": "Metal utensils welcome. No coating, and a lab report to prove it.",
+   "h": 1715,
+   "png": "klaviyo/templates/v3/browse/previews/b1-desktop.png"
+  },
+  "b2-clicked-nocode": {
+   "a": "\"I ordered one pan to try it out\"",
+   "b": "Still thinking it over? (reserve)",
+   "p": "Sunny C. started with one. Your first order comes with 4 gifts too.",
+   "h": 1472,
+   "png": "klaviyo/templates/v3/browse/previews/b2-clicked-nocode-desktop.png"
+  },
+  "b2-clicked": {
+   "a": "Your own 10%, for the next 48 hours",
+   "b": "\"I ordered one pan to try it out\" (reserve; browse tests only T05a in phase 1)",
+   "p": "A personal code, on top of the sale. It ends 48 hours after this email.",
+   "h": 1649,
+   "png": "klaviyo/templates/v3/browse/previews/b2-clicked-desktop.png"
+  },
+  "b2-notclicked": {
+   "a": "Week one, in their words",
+   "b": "The first egg, the fourth pan, the last Teflon (reserve; T08 length test in phase 2)",
+   "p": "The first egg, the second pan, the fourth. And HI10 takes 10% off.",
+   "h": 1517,
+   "png": "klaviyo/templates/v3/browse/previews/b2-notclicked-desktop.png"
+  }
+ },
+ "Welcome": {
+  "w0": {
+   "a": "Thank you. Now the first egg.",
+   "b": "2 to 3 minutes on medium. Then the egg.",
+   "p": "Cold metal grabs your food, hot metal lets it go.",
+   "h": 1586,
+   "png": "klaviyo/templates/v3/welcome/previews/w0-desktop.png"
+  },
+  "w1-a": {
+   "a": "The pan with nothing on it (and your 10%)",
+   "b": "Your 10% is inside (plus $70 in gifts)",
+   "p": "Your Card Game entry is in. HI10 takes 10% off the sale price, with 4 gifts.",
+   "h": 1617,
+   "png": "klaviyo/templates/v3/welcome/previews/w1-a-desktop.png"
+  },
+  "w1-b": {
+   "a": "The pan with nothing on it (and your 10%)",
+   "b": "Your 10% is inside (plus $70 in gifts)",
+   "p": "Your Card Game entry is in. HI10 takes 10% off the sale price, with 4 gifts.",
+   "h": 1671,
+   "png": "klaviyo/templates/v3/welcome/previews/w1-b-desktop.png"
+  },
+  "w2": {
+   "a": "The pan nobody else was making",
+   "b": "December 20, 2024",
+   "p": "It's Benjamin. I wanted to write to you myself. (Your 10% is in the P.S.)",
+   "h": 1012,
+   "png": "klaviyo/templates/v3/welcome/previews/w2-desktop.png"
+  },
+  "w3": {
+   "a": "Has your cookware actually been tested?",
+   "b": "Report no. 25895: what it says",
+   "p": "Ours has. Report no. 25895, from an ISO/IEC 17025-accredited lab.",
+   "h": 1675,
+   "png": "klaviyo/templates/v3/welcome/previews/w3-desktop.png"
+  },
+  "w4-int": {
+   "a": "Who are you cooking for?",
+   "b": "Start with the Pan Pro (your 10% inside)",
+   "p": "One, two, or a family? Pick your pan by that. Free shipping, duties paid.",
+   "h": 1758,
+   "png": "klaviyo/templates/v3/welcome/previews/w4-int-desktop.png"
+  },
+  "w4-us": {
+   "a": "Who are you cooking for?",
+   "b": "Start with the Pan Pro (10% off already applied)",
+   "p": "One, two, or a family? Pick your pan by that. Your 10% is already taken off.",
+   "h": 1885,
+   "png": "klaviyo/templates/v3/welcome/previews/w4-us-desktop.png"
+  },
+  "w5": {
+   "a": "Tammy is on her fourth pan",
+   "b": "The last note about your 10%",
+   "p": "She gave one to her son, too. And your code HI10 still takes 10% off.",
+   "h": 1766,
+   "png": "klaviyo/templates/v3/welcome/previews/w5-desktop.png"
+  }
+ },
+ "Post-purchase": {
+  "p1-first": {
+   "a": "Good call. Here's what's coming.",
+   "b": "Want the one tip our chef gives everyone?",
+   "p": "Order confirmed. Your 4 gifts, your e-book and the one tip that matters.",
+   "h": 1723,
+   "png": "klaviyo/templates/v3/post-purchase/previews/p1-first-desktop.png"
+  },
+  "p1-repeat": {
+   "a": "Good to see you again",
+   "b": "Round two. Here's what's coming.",
+   "p": "Your order is in. Same careful packing, same 4 gifts.",
+   "h": 1326,
+   "png": "klaviyo/templates/v3/post-purchase/previews/p1-repeat-desktop.png"
+  },
+  "p2-safe": {
+   "a": "When your pan arrives: the first egg",
+   "b": "Is your pan on the stove yet?",
+   "p": "Heat first, then oil, then the egg. Keep this for your first cook.",
+   "h": 1794,
+   "png": "klaviyo/templates/v3/post-purchase/previews/p2-safe-desktop.png"
+  },
+  "p3-accessory-nocode": {
+   "a": "Now meet the pan",
+   "b": "\"I ordered one pan to try it out\"",
+   "p": "The original hammered titanium pan. Free shipping and 4 gifts with every order.",
+   "h": 1688,
+   "png": "klaviyo/templates/v3/post-purchase/previews/p3-accessory-nocode-desktop.png"
+  },
+  "p3-accessory": {
+   "a": "Now meet the pan",
+   "b": "\"I ordered one pan to try it out\"",
+   "p": "Your thank-you code takes 10% off the Pan Pro. It ends 14 days after this email.",
+   "h": 1629,
+   "png": "klaviyo/templates/v3/post-purchase/previews/p3-accessory-desktop.png"
+  },
+  "p3-apron-nocode": {
+   "a": "An apron deserves a pan",
+   "b": "Was the apron a gift?",
+   "p": "The pan it was made for, for you or for them. 4 gifts with every order.",
+   "h": 1501,
+   "png": "klaviyo/templates/v3/post-purchase/previews/p3-apron-nocode-desktop.png"
+  },
+  "p3-apron": {
+   "a": "An apron deserves a pan",
+   "b": "Was the apron a gift?",
+   "p": "Here is 10% off the pan it was made for, for you or for them.",
+   "h": 1615,
+   "png": "klaviyo/templates/v3/post-purchase/previews/p3-apron-desktop.png"
+  },
+  "p3-next-nocode": {
+   "a": "What goes next to your pan",
+   "b": "How is the pan treating you?",
+   "p": "The board or the lid that matches your order. 4 gifts with every order.",
+   "h": 1630,
+   "png": "klaviyo/templates/v3/post-purchase/previews/p3-next-nocode-desktop.png"
+  },
+  "p3-next": {
+   "a": "What goes next to your pan",
+   "b": "How is the pan treating you?",
+   "p": "The board or the lid that matches your order, 10% off with your own code.",
+   "h": 1669,
+   "png": "klaviyo/templates/v3/post-purchase/previews/p3-next-desktop.png"
+  },
+  "p3-pan-nocode": {
+   "a": "Which lid fits your pan?",
+   "b": "The lid that fits your pan",
+   "p": "The lid in your pan's size, plus the board. 4 gifts with every order.",
+   "h": 1579,
+   "png": "klaviyo/templates/v3/post-purchase/previews/p3-pan-nocode-desktop.png"
+  },
+  "p3-pan": {
+   "a": "Which lid fits your pan?",
+   "b": "Your thank-you code: 10% off, 14 days",
+   "p": "The lid in your pan's size, plus the board. 10% off with your own code.",
+   "h": 1704,
+   "png": "klaviyo/templates/v3/post-purchase/previews/p3-pan-desktop.png"
+  },
+  "p3-set-nocode": {
+   "a": "The pan your set is missing",
+   "b": "\"Works like a non-stick but gives crispy output\"",
+   "p": "Crepe or wok: the two shapes a set doesn't cover. 4 gifts with every order.",
+   "h": 1581,
+   "png": "klaviyo/templates/v3/post-purchase/previews/p3-set-nocode-desktop.png"
+  },
+  "p3-set": {
+   "a": "The pan your set is missing",
+   "b": "\"Works like a non-stick but gives crispy output\"",
+   "p": "Crepe or wok, 10% off with your own code. It ends 14 days after this email.",
+   "h": 1723,
+   "png": "klaviyo/templates/v3/post-purchase/previews/p3-set-desktop.png"
+  }
+ },
+ "Post-purchase · levering": {
+  "p2": {
+   "a": "If you can do an egg, you can do anything",
+   "b": "The one mistake that makes titanium stick",
+   "p": "Medium on titanium works like high on a normal pan. The chef's five steps.",
+   "h": 2033,
+   "png": "klaviyo/templates/v3/post-purchase/previews/p2-desktop.png"
+  }
+ },
+ "Winback": {
+  "r1-acc": {
+   "a": "Ready for the pan?",
+   "b": "Still cooking on a coated pan?",
+   "p": "You started with us the other way round. Here's the pan most kitchens start with.",
+   "h": 1690,
+   "png": "klaviyo/templates/v3/winback/previews/r1-acc-desktop.png"
+  },
+  "r1-pan": {
+   "a": "How's your pan doing?",
+   "b": "What pan owners add next",
+   "p": "Six weeks with your pan. Here is what owners add next, with HI10 and 4 gifts.",
+   "h": 1736,
+   "png": "klaviyo/templates/v3/winback/previews/r1-pan-desktop.png"
+  },
+  "r1-set": {
+   "a": "The shapes a set leaves out",
+   "b": "Which pan do you reach for most?",
+   "p": "The flat one, the deep one, the board and the tools. HI10 takes 10% off.",
+   "h": 1685,
+   "png": "klaviyo/templates/v3/winback/previews/r1-set-desktop.png"
+  },
+  "r2-nocode": {
+   "a": "Ready for pan number two?",
+   "b": "Your next piece comes with 4 gifts",
+   "p": "If one pan is always busy, this is for the second. Free shipping and 4 gifts.",
+   "h": 1709,
+   "png": "klaviyo/templates/v3/winback/previews/r2-nocode-desktop.png"
+  },
+  "r2-vip-nocode": {
+   "a": "You came back. Thank you.",
+   "b": "What should we make next?",
+   "p": "You have ordered more than once. A thank you, and 4 gifts with every order.",
+   "h": 1723,
+   "png": "klaviyo/templates/v3/winback/previews/r2-vip-nocode-desktop.png"
+  },
+  "r2-vip": {
+   "a": "For our regulars: 15% for 72 hours",
+   "b": "Why you're getting 15% (and why it ends)",
+   "p": "You've ordered more than once. This 15% code is yours for 72 hours.",
+   "h": 1630,
+   "png": "klaviyo/templates/v3/winback/previews/r2-vip-desktop.png"
+  },
+  "r2": {
+   "a": "10% off your next piece, for 72 hours",
+   "b": "Ready for pan number two?",
+   "p": "Your own code, applied with one tap. It ends 72 hours after this email.",
+   "h": 1617,
+   "png": "klaviyo/templates/v3/winback/previews/r2-desktop.png"
+  }
+ },
+ "Site abandonment": {
+  "a1": {
+   "a": "Not sure which pan? Start here.",
+   "b": "Four eggs or five?",
+   "p": "Four sizes, one titanium cooking surface. Here is how to pick yours in 30 seconds.",
+   "h": 1675,
+   "png": "klaviyo/templates/v3/site/previews/a1-desktop.png"
+  },
+  "a2": {
+   "a": "Where 100,000+ people started",
+   "b": "One pan, or three?",
+   "p": "Most kitchens start with the 11-inch pan. Some go straight to three. Here's how to choose.",
+   "h": 1754,
+   "png": "klaviyo/templates/v3/site/previews/a2-desktop.png"
+  }
+ },
+ "Sunset": {
+  "s1": {
+   "a": "Should we keep writing to you?",
+   "b": "Still want our emails? One tap.",
+   "p": "One tap keeps you on the list. No tap, and we'll stop writing in about a week.",
+   "h": 927,
+   "png": "klaviyo/templates/v3/sunset/previews/s1-desktop.png"
+  },
+  "s2": {
+   "a": "Last email from me (unless you tap)",
+   "b": "Should I stop writing?",
+   "p": "One tap and you stay. Otherwise this is goodbye, and that's okay.",
+   "h": 694,
+   "png": "klaviyo/templates/v3/sunset/previews/s2-desktop.png"
+  }
+ },
+ "VIP": {
+  "v1-nocode": {
+   "a": "Twice is a habit. Thank you.",
+   "b": "For our regulars: a note from Benjamin",
+   "p": "You came back for a second order. A thank you from Benjamin, and HI10 still works.",
+   "h": 1751,
+   "png": "klaviyo/templates/v3/vip/previews/v1-nocode-desktop.png"
+  },
+  "v1": {
+   "a": "Twice is a habit. Here's 15% off.",
+   "b": "15% off, 14 days, for our regulars",
+   "p": "You've ordered twice. This personal 15% code is yours for 14 days.",
+   "h": 1596,
+   "png": "klaviyo/templates/v3/vip/previews/v1-desktop.png"
+  },
+  "v2": {
+   "a": "A question from Benjamin",
+   "b": "What should we make next?",
+   "p": "You've ordered twice. I'd love to know what you want us to make next.",
+   "h": 644,
+   "png": "klaviyo/templates/v3/vip/previews/v2-desktop.png"
+  }
+ },
+ "Anniversary": {
+  "n1": {
+   "a": "How's your pan at six months?",
+   "b": "The brown tint on your pan, explained",
+   "p": "A brown tint, a bit of sticking, a loose handle. The three short answers.",
+   "h": 1622,
+   "png": "klaviyo/templates/v3/anniversary/previews/n1-desktop.png"
+  },
+  "n2-nocode": {
+   "a": "One year ago this week",
+   "b": "A year on titanium. 74 years to go.",
+   "p": "A year ago this week you placed your first order. 74 years left on your warranty.",
+   "h": 1676,
+   "png": "klaviyo/templates/v3/anniversary/previews/n2-nocode-desktop.png"
+  },
+  "n2": {
+   "a": "One year ago this week",
+   "b": "Happy first year. Here's 10% off.",
+   "p": "A year ago you placed your first order. Here's 10% off, yours for 7 days.",
+   "h": 1596,
+   "png": "klaviyo/templates/v3/anniversary/previews/n2-desktop.png"
+  }
+ },
+ "UGC first egg": {
+  "u1": {
+   "a": "Show us your first egg?",
+   "b": "One photo, 15% off your next order",
+   "p": "Reply with a photo of your first egg, or anything you cooked. We'll send you 15% off.",
+   "h": 1395,
+   "png": "klaviyo/templates/v3/ugc/previews/u1-desktop.png"
+  }
+ }
+}
