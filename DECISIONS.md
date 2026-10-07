@@ -22,3 +22,11 @@ Bijwerken bij elk nieuw besluit. Datum per regel.
 | 2026-10-07 | Pop-up tekst: staat in Klaviyo (forms). Zelf bekijken zodra forms:read werkt. | |
 | 2026-10-07 | Klaviyo-sleutel heeft nu volledige leestoegang (campaigns, lists, forms, flows). | Dagelijkse Slack-update kan campagnes meenemen. |
 | 2026-10-07 | Feit: de pop-up is geen Klaviyo-form maar Alia ("Card Game", campagne "US \| Evergreen"). Profielen komen binnen met $source "Alia sign-up". Alle 35 Klaviyo-forms staan op draft. | Wat de pop-up belooft staat in Alia, niet in Klaviyo. W1 moet aansluiten op de Card Game-belofte. Floris: screenshot van de Alia-kaart of Alia-toegang. |
+| 2026-10-07 | Alia Card Game belooft: kans om je order terugbetaald te krijgen (order refund). | W1 bevestigt de deelname in één regel en verkoopt daarna. Geen "You're in"-mail. |
+| 2026-10-07 | Offer mail 1: mogelijk HI10 als gift card met beeld, of een nieuwe code SRT3CKA. Nog niet definitief. | SRT3CKA bestaat nog niet in Shopify (gecontroleerd). A/B voorstellen: HI10 als code tegen HI10 als gift card. |
+| 2026-10-07 | Uploaden naar Shopify Files mag, zolang er geen producten worden aangeraakt. | Eigen e-mailbeelden met prefix "email-". |
+| 2026-10-07 | Einddatum oktober-actie en BFCM-planning: nog niet bekend. | Geen harde datum in mails tot Floris die geeft. |
+| 2026-10-07 | Klantfoto's (UGC, reviewfoto's) mogen gebruikt worden. | Reviewkaarten met foto, lifestyle uit reviews. |
+| 2026-10-07 | Trustpilot-incentive (gift card voor review): Floris accepteert het risico. | Geen actie. In mails nooit "unsolicited" of "independent". |
+| 2026-10-07 | Geen maximale korting vastgelegd. | Winback en checkout mogen een extra aanbod testen. |
+| 2026-10-07 | Trustpilot mag volledig gescraped worden (trustpilot.com/review/siraatskitchen.com). | Netwerkinstelling: www.trustpilot.com moet nog toegevoegd aan Allowed domains. |

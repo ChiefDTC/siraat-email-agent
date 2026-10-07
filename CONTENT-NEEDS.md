@@ -7,9 +7,9 @@ Eigenaar: F = Floris levert aan, C = Claude regelt zelf.
 
 | # | Wat | Waarom | Eigenaar |
 | --- | --- | --- | --- |
-| A1 | Screenshot van de Alia Card Game (voorkant, achterkant na omdraaien, alle mogelijke prijzen) of Alia-toegang | Mail 1 moet aansluiten op wat de pop-up belooft. De pop-up zit niet in Klaviyo. | F |
+| A1 | Alia Card Game | Belooft kans op order refund. Verwerkt in DECISIONS | gedaan |
 | A2 | Keuze offer-weergave mail 1: HI10 als code, of HI10 als "gift card" met beeld, of A/B van beide | Bepaalt het offer-blok in welcome en checkout | F |
-| A3 | Toestemming om eigen e-mailbeelden te uploaden naar Shopify Files (prefix "email-", alleen nieuwe bestanden) | Alleen Shopify-links werken stabiel in Klaviyo. De sessie blokkeert dit tot je het expliciet toestaat. | F |
+| A3 | Upload eigen beelden naar Shopify Files | Toestemming gegeven 7 okt, agent uploadt | C |
 | A4 | Einddatum van de oktober-actie (4 gifts, tot 50 procent) en de november/BFCM-planning | Checkout mail 4 en welcome mail 5 noemen de gift-stack en de deadline | F |
 
 ## B. Merk en oprichter
@@ -48,10 +48,10 @@ Eigenaar: F = Floris levert aan, C = Claude regelt zelf.
 
 | # | Wat | Waarom | Eigenaar |
 | --- | --- | --- | --- |
-| E1 | Trustpilot-export als csv (alle reviews, niet alleen de meldingen in Gorgias) | Nu hebben we 180 dagen via Gorgias. De export geeft alles, met productnaam | F |
+| E1 | Alle Trustpilot-reviews scrapen | Mag. Wacht op www.trustpilot.com in Allowed domains | F (netwerk), daarna C |
 | E2 | Reviews over de 12-delige set, deksels, potten en gebruik na maanden | Ontbreken volledig. Oplossing: review-flow per product uitbreiden | C (flow) |
-| E3 | Mogen we UGC van klanten gebruiken (foto's uit reviews, Instagram-tags)? | Lifestyle zonder agency-look | F |
-| E4 | Besluit over de 20 procent gift card voor een Trustpilot-review | Trustpilot verbiedt incentives; 47 lage reviews noemen reviews nep | F |
+| E3 | UGC verzamelen (reviewfoto's) | Mag, besluit 7 okt | C |
+
 
 ## F. Commercieel
 
@@ -59,7 +59,7 @@ Eigenaar: F = Floris levert aan, C = Claude regelt zelf.
 | --- | --- | --- | --- |
 | F1 | Prijzen per markt (AU, CA, UK, SG, Midden-Oosten, EU) uit Shopify Markets | Niet-VS-versie van welcome mail 4 | C |
 | F2 | Welke producten per markt leverbaar zijn (12-pcs en potten alleen VS?) | Splits in de flows | C (catalog), F bevestigt |
-| F3 | Marge per product of minimaal toegestane korting | Hoe ver een winback- of checkout-aanbod mag gaan | F |
+
 | F4 | Cross-sell logica: wat koopt een Pan Pro-klant daarna het vaakst? | Post-purchase mail 3 en winback | C (uit Shopify-orders) |
 | F5 | Abonnement vaatwasstrips: bestaat het, en hoe heet het in Shopify? | Post-purchase en replenishment-flow | F |
 
@@ -70,7 +70,7 @@ Eigenaar: F = Floris levert aan, C = Claude regelt zelf.
 | G1 | Klaviyo volledige leestoegang | Werkt sinds 7 oktober | gedaan |
 | G2 | Drive shoot-map | Werkt via openbare link | gedaan |
 | G3 | Alia (pop-up) | Geen koppeling. Screenshot volstaat (A1) | F |
-| G4 | Schrijfrechten Klaviyo voor templates (templates:write) | Nodig om HTML-templates te zetten | F (scope op de sleutel) |
+| G4 | Schrijfrechten Klaviyo templates | Volgens Floris aanwezig, check bij eerste template | C |
 
 ## Binnen
 
