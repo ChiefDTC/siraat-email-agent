@@ -100,8 +100,8 @@
 </td></tr>
 
 <tr><td class="pad" align="center" style="padding:0 44px 30px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:22px;color:#727272;text-align:center;">
-  Rather hear from us less? <a href="{% manage_preferences_url %}" style="color:#282828;font-weight:600;">Choose fewer emails</a><br>
-  Done with us? <a href="{% unsubscribe_url %}" style="color:#282828;font-weight:600;">Unsubscribe in one tap</a>
+  Rather hear from us less? <a href="{% manage_preferences_link %}" style="color:#282828;font-weight:600;">Choose fewer emails</a><br>
+  Done with us? <a href="{% unsubscribe_link %}" style="color:#282828;font-weight:600;">Unsubscribe in one tap</a>
 </td></tr>
 
 <tr><td class="pad" style="padding:38px 40px 30px 40px;background:#282828;">
@@ -119,7 +119,7 @@
   </tr></table>
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:19px;color:#BDB8B0;text-align:center;">
     Free shipping on all orders &middot; 30-day returns &middot; 75-year warranty<br><br>
-    {% unsubscribe 'Unsubscribe' %} &nbsp;|&nbsp; <a href="{% manage_preferences_url %}" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; {% web_view 'View in browser' %}<br>
+    {% unsubscribe 'Unsubscribe' %} &nbsp;|&nbsp; <a href="{% manage_preferences_link %}" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; {% web_view 'View in browser' %}<br>
     {{ organization.name }} &middot; {{ organization.full_address }}
   </div>
 </td></tr>

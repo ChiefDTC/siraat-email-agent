@@ -61,7 +61,7 @@
 
 
 <tr><td align="center" class="codebar" bgcolor="#282828" style="background:#282828;padding:11px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;letter-spacing:1.5px;font-weight:600;color:#FFFFFF;">
-  WITH EVERY ORDER &middot;&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;">$70 IN GIFTS</span>
+  WITH EVERY ORDER &middot;&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;word-break:break-all;">$70 IN GIFTS</span>
 </td></tr>
 
 
@@ -89,10 +89,10 @@
         <a href="https://siraatskitchen.com/cart?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-cart&utm_content=k3-product&utm_term=t02-b"><img src="{% if event.ImageURL %}{{ event.ImageURL }}&width=200{% else %}https://cdn.klaviyomail.com/company/TdtTzz/images/DRYRUN-cart-cart-fallback.jpg{% endif %}" width="88" alt="{{ event|lookup:'Product Name'|default:'Your item' }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;"></a>
       </td>
       <td valign="middle" style="padding:12px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
-        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">{{ event|lookup:'Product Name'|default:'Your item' }}</div>
-        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">Qty {{ event.Quantity|default:1|floatformat:0 }}</div>
+        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;word-break:break-word;">{{ event|lookup:'Product Name'|default:'Your item' }}</div>
+        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;word-break:break-word;">Qty {{ event.Quantity|default:1|floatformat:0 }}</div>
       </td>
-      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;white-space:nowrap;">{% if 'Pan Pro Standard' in event|lookup:'Product Name' and event.Price == 134 and event.Quantity == 1 and event|lookup:'$currency' == 'USD' %}<div style="font-size:13px;line-height:17px;color:#9A948B;text-decoration:line-through;font-weight:400;">$439</div>{% endif %}{% if event.Price and event|lookup:'$currency' == 'USD' %}${{ event.Price|floatformat:2 }}{% endif %}</td>
+      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;"><!--{% if 'Pan Pro Standard' in event|lookup:'Product Name' and event.Price == 134 and event.Quantity == 1 and event|lookup:'$currency' == 'USD' %}--><div style="font-size:13px;line-height:17px;color:#9A948B;text-decoration:line-through;font-weight:400;">$439</div><!--{% endif %}--><!--{% if event.Price and event|lookup:'$currency' == 'USD' %}-->${{ event.Price|floatformat:2 }}<!--{% endif %}--></td>
     </tr>
     <tr><td colspan="3" style="padding:0 16px 16px 16px;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:11px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">
@@ -122,7 +122,7 @@
     <tr><td width="58" valign="top" style="padding:20px 0 16px 20px;border-bottom:1px solid #ECE7DD;"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/543e925f-fed4-4f3b-a811-a70761a13542.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
       <td valign="top" style="padding:18px 20px 16px 14px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Changed your mind?</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Send it back unused within 30 days of delivery for a full refund.</div></td></tr>
     <tr><td width="58" valign="top" style="padding:20px 0 16px 20px;"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/e39ac58c-e419-47b6-ab84-b2cd8185e946.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
-      <td valign="top" style="padding:18px 20px 16px 14px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Something wrong with it?</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">If it arrives damaged or with a defect, you choose a refund or a new one, and we pay the shipping.{% if 'Hammer' in event|lookup:'Product Name' or 'Pan' in event|lookup:'Product Name' or 'Pot' in event|lookup:'Product Name' or 'ookware' in event|lookup:'Product Name' or 'Everything' in event|lookup:'Product Name' or 'fanne' in event|lookup:'Product Name' or 'Prep Bundle' in event|lookup:'Product Name' %} After that, the 75-year warranty covers dents, a warped base, a loose handle or rivet, and a lid that no longer fits.{% endif %}</div></td></tr>
+      <td valign="top" style="padding:18px 20px 16px 14px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Something wrong with it?</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">If it arrives damaged or with a defect, you choose a refund or a new one, and we pay the shipping.<!--{% if 'Hammer' in event|lookup:'Product Name' or 'Pan' in event|lookup:'Product Name' or 'Pot' in event|lookup:'Product Name' or 'ookware' in event|lookup:'Product Name' or 'Everything' in event|lookup:'Product Name' or 'fanne' in event|lookup:'Product Name' or 'Prep Bundle' in event|lookup:'Product Name' %}--> After that, the 75-year warranty covers dents, a warped base, a loose handle or rivet, and a lid that no longer fits.<!--{% endif %}--></div></td></tr>
   </table>
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;text-align:center;padding-top:12px;">A few photos is all it takes.</div>
 </td></tr>
@@ -206,7 +206,7 @@
 </td></tr>
 
 
-{% if 'Hammer' in event|lookup:'Product Name' or 'Pan' in event|lookup:'Product Name' or 'Pot' in event|lookup:'Product Name' or 'ookware' in event|lookup:'Product Name' or 'Everything' in event|lookup:'Product Name' or 'fanne' in event|lookup:'Product Name' or 'Prep Bundle' in event|lookup:'Product Name' %}
+<!--{% if 'Hammer' in event|lookup:'Product Name' or 'Pan' in event|lookup:'Product Name' or 'Pot' in event|lookup:'Product Name' or 'ookware' in event|lookup:'Product Name' or 'Everything' in event|lookup:'Product Name' or 'fanne' in event|lookup:'Product Name' or 'Prep Bundle' in event|lookup:'Product Name' %}-->
 <tr><td class="pad" style="padding:22px 44px 6px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
     <tr>
@@ -218,7 +218,7 @@
   </table>
 </td></tr>
 
-{% else %}
+<!--{% else %}-->
 <tr><td class="pad" style="padding:22px 44px 6px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
     <tr>
@@ -229,7 +229,7 @@
     </tr>
   </table>
 </td></tr>
-{% endif %}
+<!--{% endif %}-->
 
 <tr><td class="pad" style="padding:26px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
   Questions about size or your cooktop? Reply and our team will help.<br><br>
@@ -252,7 +252,7 @@
   </tr></table>
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:19px;color:#BDB8B0;text-align:center;">
     Free shipping on all orders &middot; 30-day returns &middot; 75-year warranty<br><br>
-    {% unsubscribe 'Unsubscribe' %} &nbsp;|&nbsp; <a href="{% manage_preferences_url %}" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; {% web_view 'View in browser' %}<br>
+    {% unsubscribe 'Unsubscribe' %} &nbsp;|&nbsp; <a href="{% manage_preferences_link %}" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; {% web_view 'View in browser' %}<br>
     {{ organization.name }} &middot; {{ organization.full_address }}
   </div>
 </td></tr>

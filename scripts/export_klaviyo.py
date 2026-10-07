@@ -19,6 +19,7 @@ Live (alleen met --i-am-sure, na akkoord Floris; API-key met scopes images:write
   3. maakt per mail een template "v4 · <flow> · <id>" aan (editor_type CODE), slaat namen over die al bestaan,
      en logt naam en template-ID in exports/live/templates.csv.
 Mails met een blokkade worden in live overgeslagen.
+QA-poort: --live draait eerst scripts/qa_render.py en weigert alles bij een FOUT (exitcode != 0).
 """
 import sys,os,re,csv,json,glob,hashlib,subprocess,tempfile,time,html as H
 ROOT=os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)),'..'))
@@ -138,6 +139,7 @@ def check(k,subj_a,subj_b,prev):
     if kb>=MAXKB: B.append('HTML %.1f KB (Gmail knipt rond 102 KB)'%kb)
     com=[c for c in re.findall(r'<!--.*?-->',k,re.S) if not re.match(r'<!--\[if|<!--<!\[endif\]|<!\[endif\]',c) and not c.startswith('<!--[if')]
     com=[c for c in com if c not in ('<!--<![endif]-->',) and not c.startswith('<!--[if !mso]><!-->')]
+    com=[c for c in com if not re.match(r'<!--\{%.*%\}-->$',c,re.S)]  # Django-logica in commentaar (build_template wrap_ctrl, qa_render.py)
     if com: B.append('interne HTML-comments: %d'%len(com))
     if not subj_a: B.append('geen SUBJECT_A in topcomment')
     elif len(subj_a)>50: B.append('onderwerp A %d tekens (max 50)'%len(subj_a))
@@ -198,7 +200,14 @@ def create_template(name,k,subj,prev):
     return res['data']['id']
 
 # ---------- hoofdlus ----------
+def qa_gate():
+    """QA-poort (PLAYBOOK 12): scripts/qa_render.py moet groen zijn, anders weigert --live."""
+    cmd=[sys.executable,'-I',os.path.join(ROOT,'scripts','qa_render.py')]+(['--only='+OPT['--only']] if OPT.get('--only') else [])
+    r=subprocess.run(cmd,cwd=tempfile.gettempdir())
+    if r.returncode: sys.exit('QA-poort rood (scripts/qa_render.py, zie exports/qa/render-report.md): --live geweigerd, niets naar Klaviyo gestuurd.')
+
 def main():
+    if LIVE: qa_gate()
     inv=inventory(); ms=mails(); have={m[1] for m in ms}
     rows=[]; up_total=set()
     if LIVE: os.makedirs(os.path.join(EXP,'live'),exist_ok=True); tlog=open(os.path.join(EXP,'live','templates.csv'),'a')

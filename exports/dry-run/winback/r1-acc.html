@@ -63,7 +63,7 @@
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
 <tr><td align="center" class="codebar" bgcolor="#282828" style="background:#282828;padding:11px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;letter-spacing:1.5px;font-weight:600;color:#FFFFFF;">
-  EXTRA 10% OFF YOUR ORDER &middot; CODE&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;">HI10</span>
+  EXTRA 10% OFF YOUR ORDER &middot; CODE&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;word-break:break-all;">HI10</span>
 </td></tr>
 
 
@@ -131,7 +131,7 @@
 </td></tr>
 
 
-{% if event.extra.shipping_address.country_code == 'US' %}
+<!--{% if event.extra.shipping_address.country_code == 'US' %}-->
 <tr><td class="pad" style="padding:22px 44px 10px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;"><tr>
     <td width="200" class="pc-i" valign="middle" style="width:200px;padding:0;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-winback%26utm_content%3Dr1acc-prod-panpro"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/116af585-4e31-4518-8021-7afec699de85.jpeg" width="200" alt="Titanium Hammered Pan Pro, 11 inch, save $305" class="pc-img" style="display:block;width:200px;height:auto;"></a></td>
@@ -145,7 +145,7 @@
   </tr></table>
 </td></tr>
 
-{% else %}
+<!--{% else %}-->
 <tr><td class="pad" style="padding:22px 44px 10px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;"><tr>
     <td width="200" class="pc-i" valign="middle" style="width:200px;padding:0;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-winback%26utm_content%3Dr1acc-prod-panpro"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/fb415418-b932-479f-b3fd-5ea028ac219a.jpeg" width="200" alt="Titanium Hammered Pan Pro, best seller" class="pc-img" style="display:block;width:200px;height:auto;"></a></td>
@@ -159,7 +159,7 @@
   </tr></table>
 </td></tr>
 
-{% endif %}
+<!--{% endif %}-->
 
 <tr><td align="center" class="pad" style="padding:14px 44px 4px 44px;">
   <table role="presentation" class="btnw" width="340" cellpadding="0" cellspacing="0" border="0" style="width:340px;"><tr>
@@ -261,7 +261,7 @@
   </tr></table>
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:19px;color:#BDB8B0;text-align:center;">
     Free shipping on all orders &middot; 30-day returns &middot; 75-year warranty<br><br>
-    {% unsubscribe 'Unsubscribe' %} &nbsp;|&nbsp; <a href="{% manage_preferences_url %}" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; {% web_view 'View in browser' %}<br>
+    {% unsubscribe 'Unsubscribe' %} &nbsp;|&nbsp; <a href="{% manage_preferences_link %}" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; {% web_view 'View in browser' %}<br>
     {{ organization.name }} &middot; {{ organization.full_address }}
   </div>
 </td></tr>

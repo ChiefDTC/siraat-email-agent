@@ -60,7 +60,7 @@
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
 <tr><td align="center" class="codebar" bgcolor="#282828" style="background:#282828;padding:11px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;letter-spacing:1.5px;font-weight:600;color:#FFFFFF;">
-  EXTRA 10% OFF YOUR ORDER &middot; CODE&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;">HI10</span>
+  EXTRA 10% OFF YOUR ORDER &middot; CODE&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;word-break:break-all;">HI10</span>
 </td></tr>
 
 
@@ -77,24 +77,24 @@
 
 
 <tr><td style="padding:0;">
-  <a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c2acc-hero"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/DRYRUN-checkout-c2acc-hero.jpg" width="600" alt="Still in your cart. Yours, or a gift? Both work. Extra 10% off with code HI10, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c2acc-hero"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/07c7633a-fe53-43aa-9a83-79cf9aa287d6.jpeg" width="600" alt="Still in your cart. Yours, or a gift? Both work. Extra 10% off with code HI10, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
 <tr><td class="pad" style="padding:22px 44px 4px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
     <tr><td colspan="3" style="padding:16px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">STILL IN YOUR CART</td></tr>
-    {% for item in event.extra.line_items %}{% if item.line_price > 0 %}
+    <!--{% for item in event.extra.line_items %}--><!--{% if item.line_price > 0 %}-->
     <tr>
       <td width="104" valign="middle" style="padding:12px 0 12px 16px;">
-        <img src="{% if item.product.images.0.thumb_src %}{{ item.product.images.0.thumb_src }}{% else %}https://cdn.klaviyomail.com/company/TdtTzz/images/DRYRUN-checkout-cart-fallback.jpg{% endif %}" width="88" alt="{{ item.title }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;">
+        <img src="{% if item.product.images.0.thumb_src %}{{ item.product.images.0.thumb_src }}{% else %}https://cdn.klaviyomail.com/company/TdtTzz/images/dbc7ad3d-1d00-42dc-a21a-caf761ec4e8b.jpeg{% endif %}" width="88" alt="{{ item.title }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;">
       </td>
       <td valign="middle" style="padding:12px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
         <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">{{ item.title }}</div>
         <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">Qty {{ item.quantity|floatformat:0 }}</div>
       </td>
-      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;white-space:nowrap;">{% if event.extra.presentment_currency == 'USD' or not event.extra.presentment_currency %}${{ item.line_price|floatformat:2 }}{% endif %}</td>
+      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;"><!--{% if event.extra.presentment_currency == 'USD' or not event.extra.presentment_currency %}-->${{ item.line_price|floatformat:2 }}<!--{% endif %}--></td>
     </tr>
-    {% endif %}{% endfor %}
+    <!--{% endif %}--><!--{% endfor %}-->
     <tr><td colspan="3" style="padding:0 16px 16px 16px;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:11px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">
         <img src="https://cdn.klaviyomail.com/company/TdtTzz/images/d9a8b8cc-8cf5-4ffd-a959-e3703f800dea.png" width="20" height="20" alt="" style="display:inline-block;vertical-align:-5px;width:20px;height:20px;">&nbsp; <b>HI10</b> takes an extra 10% off, applied with the button below.
@@ -119,13 +119,13 @@
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">WHAT YOU PICKED</div>
   <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 16px 0;">The short version</div>
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;border-bottom:0;">
-    {% if 'Apron' in event.Items|join:',' %}<tr><td style="padding:16px 20px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Siraat Signature Apron</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Heavy 16-oz canvas with a water-repellent finish, adjustable straps and a front pocket. Wipe it down, or hand wash cold.</div></td></tr>{% endif %}
-    {% if 'Cutting Board' in event.Items|join:',' %}<tr><td style="padding:16px 20px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Titanium Cutting Board</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Pure titanium, non-porous, so it does not soak up juices or smells. Anti-microbial, and dishwasher safe.</div></td></tr>{% endif %}
-    {% if 'Lid' in event.Items|join:',' %}<tr><td style="padding:16px 20px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Stainless Steel Lid</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">304 stainless steel. Match it to your pan&rsquo;s diameter: 20, 26, 28 or 30 cm. One lid fits every Siraat pan of that size.</div></td></tr>{% endif %}
-    {% if 'Mill' in event.Items|join:',' %}<tr><td style="padding:16px 20px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Salt and Pepper Mill</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">A heavy metal body with a knurled grip and 12 numbered grind settings, from fine to coarse.</div></td></tr>{% endif %}
-    {% if 'Utensil' in event.Items|join:',' or 'Chopsticks' in event.Items|join:',' %}<tr><td style="padding:16px 20px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Titanium Utensils</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Titanium tools that are light in the hand and safe on every Siraat pan.</div></td></tr>{% endif %}
-    {% if 'Gift Card' in event.Items|join:',' %}<tr><td style="padding:16px 20px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">E-Gift Card</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Sent by email, so it cannot get stuck in the mail. They choose the pan and the size.</div></td></tr>{% endif %}
-    {% if 'Dishwasher Sheets' in event.Items|join:',' %}<tr><td style="padding:16px 20px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Dishwasher Sheets</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">One pre-dosed sheet per load. No plastic pod, phosphate-free.</div></td></tr>{% endif %}
+    <!--{% if 'Apron' in event.Items|join:',' %}--><tr><td style="padding:16px 20px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Siraat Signature Apron</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Heavy 16-oz canvas with a water-repellent finish, adjustable straps and a front pocket. Wipe it down, or hand wash cold.</div></td></tr><!--{% endif %}-->
+    <!--{% if 'Cutting Board' in event.Items|join:',' %}--><tr><td style="padding:16px 20px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Titanium Cutting Board</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Pure titanium, non-porous, so it does not soak up juices or smells. Anti-microbial, and dishwasher safe.</div></td></tr><!--{% endif %}-->
+    <!--{% if 'Lid' in event.Items|join:',' %}--><tr><td style="padding:16px 20px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Stainless Steel Lid</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">304 stainless steel. Match it to your pan&rsquo;s diameter: 20, 26, 28 or 30 cm. One lid fits every Siraat pan of that size.</div></td></tr><!--{% endif %}-->
+    <!--{% if 'Mill' in event.Items|join:',' %}--><tr><td style="padding:16px 20px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Salt and Pepper Mill</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">A heavy metal body with a knurled grip and 12 numbered grind settings, from fine to coarse.</div></td></tr><!--{% endif %}-->
+    <!--{% if 'Utensil' in event.Items|join:',' or 'Chopsticks' in event.Items|join:',' %}--><tr><td style="padding:16px 20px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Titanium Utensils</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Titanium tools that are light in the hand and safe on every Siraat pan.</div></td></tr><!--{% endif %}-->
+    <!--{% if 'Gift Card' in event.Items|join:',' %}--><tr><td style="padding:16px 20px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">E-Gift Card</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Sent by email, so it cannot get stuck in the mail. They choose the pan and the size.</div></td></tr><!--{% endif %}-->
+    <!--{% if 'Dishwasher Sheets' in event.Items|join:',' %}--><tr><td style="padding:16px 20px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Dishwasher Sheets</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">One pre-dosed sheet per load. No plastic pod, phosphate-free.</div></td></tr><!--{% endif %}-->
   </table>
 </td></tr>
 
@@ -246,7 +246,7 @@
   </tr></table>
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:19px;color:#BDB8B0;text-align:center;">
     Free shipping on all orders &middot; 30-day returns &middot; 75-year warranty<br><br>
-    {% unsubscribe 'Unsubscribe' %} &nbsp;|&nbsp; <a href="{% manage_preferences_url %}" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; {% web_view 'View in browser' %}<br>
+    {% unsubscribe 'Unsubscribe' %} &nbsp;|&nbsp; <a href="{% manage_preferences_link %}" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; {% web_view 'View in browser' %}<br>
     {{ organization.name }} &middot; {{ organization.full_address }}
   </div>
 </td></tr>

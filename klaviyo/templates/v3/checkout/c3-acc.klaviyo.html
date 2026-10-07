@@ -60,7 +60,7 @@
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
 <tr><td align="center" class="codebar" bgcolor="#282828" style="background:#282828;padding:11px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;letter-spacing:1.5px;font-weight:600;color:#FFFFFF;">
-  EXTRA 10% OFF YOUR ORDER &middot; CODE&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;">HI10</span>
+  EXTRA 10% OFF YOUR ORDER &middot; CODE&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;word-break:break-all;">HI10</span>
 </td></tr>
 
 
@@ -83,7 +83,7 @@
 <tr><td class="pad" style="padding:22px 44px 4px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
     <tr><td colspan="3" style="padding:16px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">STILL IN YOUR CART</td></tr>
-    {% for item in event.extra.line_items %}{% if item.line_price > 0 %}
+    <!--{% for item in event.extra.line_items %}--><!--{% if item.line_price > 0 %}-->
     <tr>
       <td width="104" valign="middle" style="padding:12px 0 12px 16px;">
         <img src="{% if item.product.images.0.thumb_src %}{{ item.product.images.0.thumb_src }}{% else %}https://cdn.klaviyomail.com/company/TdtTzz/images/dbc7ad3d-1d00-42dc-a21a-caf761ec4e8b.jpeg{% endif %}" width="88" alt="{{ item.title }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;">
@@ -92,9 +92,9 @@
         <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">{{ item.title }}</div>
         <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">Qty {{ item.quantity|floatformat:0 }}</div>
       </td>
-      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;white-space:nowrap;">{% if event.extra.presentment_currency == 'USD' or not event.extra.presentment_currency %}${{ item.line_price|floatformat:2 }}{% endif %}</td>
+      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;"><!--{% if event.extra.presentment_currency == 'USD' or not event.extra.presentment_currency %}-->${{ item.line_price|floatformat:2 }}<!--{% endif %}--></td>
     </tr>
-    {% endif %}{% endfor %}
+    <!--{% endif %}--><!--{% endfor %}-->
     <tr><td colspan="3" style="padding:0 16px 16px 16px;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:11px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">
         <img src="https://cdn.klaviyomail.com/company/TdtTzz/images/d9a8b8cc-8cf5-4ffd-a959-e3703f800dea.png" width="20" height="20" alt="" style="display:inline-block;vertical-align:-5px;width:20px;height:20px;">&nbsp; <b>HI10</b> takes an extra 10% off, on your cart or on the pan.
@@ -120,9 +120,9 @@
   <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 0 0;">The pan behind the name</div>
 </td></tr>
 
-<tr><td class="pad" style="padding:14px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">Most people start with one of our pans and add the rest later. You started next to it, which is fine.{% if 'Apron' in event.Items|join:',' %} An apron does want something to cook in, though.{% endif %}<br><br>If you still cook on a coated pan, this is the one change worth making. The Pan Pro has a pure titanium cooking surface with no coatings, so there is nothing on it to wear off. That is why it carries a 75-year warranty.</td></tr>
+<tr><td class="pad" style="padding:14px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">Most people start with one of our pans and add the rest later. You started next to it, which is fine.<!--{% if 'Apron' in event.Items|join:',' %}--> An apron does want something to cook in, though.<!--{% endif %}--><br><br>If you still cook on a coated pan, this is the one change worth making. The Pan Pro has a pure titanium cooking surface with no coatings, so there is nothing on it to wear off. That is why it carries a 75-year warranty.</td></tr>
 
-{% if event.extra.presentment_currency == 'USD' or not event.extra.presentment_currency %}
+<!--{% if event.extra.presentment_currency == 'USD' or not event.extra.presentment_currency %}-->
 <tr><td class="pad" style="padding:20px 44px 6px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;"><tr>
     <td width="200" class="pc-i" valign="middle" style="width:200px;padding:0;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-checkout%26utm_content%3Dc3acc-prod-panpro"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/116af585-4e31-4518-8021-7afec699de85.jpeg" width="200" alt="Titanium Hammered Pan Pro, Standard 11 inch" class="pc-img" style="display:block;width:200px;height:auto;"></a></td>
@@ -136,7 +136,7 @@
   </tr></table>
 </td></tr>
 
-{% else %}
+<!--{% else %}-->
 <tr><td class="pad" style="padding:20px 44px 6px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;"><tr>
     <td width="200" class="pc-i" valign="middle" style="width:200px;padding:0;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-checkout%26utm_content%3Dc3acc-prod-panpro"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/fb415418-b932-479f-b3fd-5ea028ac219a.jpeg" width="200" alt="Titanium Hammered Pan Pro, Standard 11 inch" class="pc-img" style="display:block;width:200px;height:auto;"></a></td>
@@ -150,7 +150,7 @@
   </tr></table>
 </td></tr>
 
-{% endif %}
+<!--{% endif %}-->
 
 <tr><td align="center" class="pad" style="padding:26px 44px 4px 44px;">
   <table role="presentation" class="btnw" width="340" cellpadding="0" cellspacing="0" border="0" style="width:340px;"><tr>
@@ -263,7 +263,7 @@
   </tr></table>
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:19px;color:#BDB8B0;text-align:center;">
     Free shipping on all orders &middot; 30-day returns &middot; 75-year warranty<br><br>
-    {% unsubscribe 'Unsubscribe' %} &nbsp;|&nbsp; <a href="{% manage_preferences_url %}" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; {% web_view 'View in browser' %}<br>
+    {% unsubscribe 'Unsubscribe' %} &nbsp;|&nbsp; <a href="{% manage_preferences_link %}" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; {% web_view 'View in browser' %}<br>
     {{ organization.name }} &middot; {{ organization.full_address }}
   </div>
 </td></tr>

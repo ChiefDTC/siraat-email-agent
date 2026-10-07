@@ -95,6 +95,24 @@ def add_utm(x):
         return '%s%s%sutm_source=klaviyo&utm_medium=email&utm_campaign=%s&utm_content=%s-%s"'%(m.group(1),u,'&' if '?' in u else '?',camp,mid,blk)
     return re.sub(r'(href=")([^"{}]+)"',fix,x)
 k=add_utm(k)
+# QA-poort 2026-10-07 (qa_render.py): Django-logica in HTML-tekst (tussen <table>/<tr>/<td>) in een HTML-commentaar,
+# <!--{% if ... %}-->. Django/Klaviyo verwerkt tags ook binnen commentaar (gerenderd blijft alleen <!----> over),
+# de browser en de Klaviyo-code-editor tonen ze niet en "foster-parenten" ze dus niet boven de tabel.
+# Alleen besturingstags; uitvoertags (coupon_code, unsubscribe, web_view ...) en tags in attributen, <title>, <style> en bestaande commentaren blijven staan.
+CTRL=('if','elif','else','endif','for','empty','endfor','with','endwith','comment','endcomment','ifchanged','endifchanged','spaceless','endspaceless','autoescape','endautoescape','filter','endfilter')
+def wrap_ctrl(x):
+    toks=[]
+    x=re.sub(r'\{%.*?%\}|\{\{.*?\}\}',lambda m:(toks.append(m.group(0)),'\x00%d\x00'%(len(toks)-1))[1],x,flags=re.S)
+    out=[]; raw=None; pos=0
+    for m in re.finditer(r'<!--.*?-->|<(/?)([a-zA-Z][\w:-]*)[^>]*>|<![^>]*>',x,re.S):
+        text=x[pos:m.start()]; pos=m.end()
+        if raw is None: text=re.sub(r'\x00(\d+)\x00',lambda t:'<!--%s-->'%toks[int(t.group(1))] if re.match(r'\{%-?\s*('+'|'.join(CTRL)+r')\b',toks[int(t.group(1))]) and '--' not in toks[int(t.group(1))] else t.group(0),text)
+        out.append(text); out.append(m.group(0))
+        tag=(m.group(2) or '').lower()
+        if tag in ('style','title','script','textarea'): raw=None if m.group(1) else tag
+    out.append(x[pos:])
+    return re.sub(r'\x00(\d+)\x00',lambda t:toks[int(t.group(1))],''.join(out))
+k=wrap_ctrl(k)
 if '{{IMG}}' not in k and '{{SHARED}}' not in k: open(OPT.get('--out',base+'.klaviyo.html'),'w').write(k)
 elif OPT.get('--out'): sys.exit('nog {{IMG}}/{{SHARED}} zonder URL: '+', '.join(sorted(set(re.findall(r'\{\{(?:IMG|SHARED)\}\}/([\w.-]+)',k)))))
 if OPT.get('--no-preview'): sys.exit(0)
@@ -108,5 +126,5 @@ if m:
 p=re.sub(r"\{\{ event.extra.(?:order_number|name)[^}]*\}\}",'#SIRAAT1042',p)
 p=re.sub(r"\{% if event.ImageURL %\}.*?\{% else %\}(.*?)\{% endif %\}",r'\1',p)
 p=re.sub(r"\{\{ first_name[^}]*\}\}",'Sarah',p);p=re.sub(r"\{\{ event[^}]*\}\}",'#',p)
-p=p.replace("{% web_view 'View in browser' %}",'<a href="#" style="color:#BDB8B0;">View in browser</a>').replace("{% unsubscribe 'Unsubscribe' %}",'<a href="#" style="color:#BDB8B0;">Unsubscribe</a>').replace('{% manage_preferences_url %}','#').replace('{{ organization.name }}',"Siraat's Kitchen").replace('{{ organization.full_address }}','[address]')
+p=p.replace("{% web_view 'View in browser' %}",'<a href="#" style="color:#BDB8B0;">View in browser</a>').replace("{% unsubscribe 'Unsubscribe' %}",'<a href="#" style="color:#BDB8B0;">Unsubscribe</a>').replace('{% manage_preferences_link %}','#').replace('{{ organization.name }}',"Siraat's Kitchen").replace('{{ organization.full_address }}','[address]')
 open(base+'-preview.html','w').write(p); print('ok',base)

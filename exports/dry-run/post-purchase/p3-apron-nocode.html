@@ -77,7 +77,7 @@
       
       <div class="pc-n" style="font-size:18px;line-height:24px;font-weight:600;color:#282828;">Titanium Hammered Pan Pro</div>
       <div class="pc-s" style="font-size:14px;line-height:20px;color:#727272;padding-top:3px;">Tested free from PFAS by Light Labs, report no. 25895. Most people start with the 11&Prime;.</div>
-      {% if event.extra.shipping_address.country_code == 'US' %}<div style="padding-top:10px;font-size:16px;line-height:22px;"><span style="color:#9A948B;text-decoration:line-through;">$439</span>&nbsp; <b style="color:#AC3B19;font-weight:600;">$134</b></div>{% endif %}
+      <!--{% if event.extra.shipping_address.country_code == 'US' %}--><div style="padding-top:10px;font-size:16px;line-height:22px;"><span style="color:#9A948B;text-decoration:line-through;">$439</span>&nbsp; <b style="color:#AC3B19;font-weight:600;">$134</b></div><!--{% endif %}-->
       <div style="padding-top:10px;font-size:13px;line-height:16px;letter-spacing:1.5px;font-weight:600;color:#282828;text-transform:uppercase;"><span style="border-bottom:1px solid #282828;padding-bottom:2px;">Choose your size</span> &rarr;</div>
     </a></td>
   </tr></table>
@@ -205,7 +205,7 @@
   </tr></table>
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:19px;color:#BDB8B0;text-align:center;">
     Free shipping on all orders &middot; 30-day returns &middot; 75-year warranty<br><br>
-    {% unsubscribe 'Unsubscribe' %} &nbsp;|&nbsp; <a href="{% manage_preferences_url %}" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; {% web_view 'View in browser' %}<br>
+    {% unsubscribe 'Unsubscribe' %} &nbsp;|&nbsp; <a href="{% manage_preferences_link %}" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; {% web_view 'View in browser' %}<br>
     {{ organization.name }} &middot; {{ organization.full_address }}
   </div>
 </td></tr>

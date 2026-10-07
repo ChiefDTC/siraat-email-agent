@@ -60,7 +60,7 @@
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
 <tr><td align="center" class="codebar" bgcolor="#282828" style="background:#282828;padding:11px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;letter-spacing:1.5px;font-weight:600;color:#FFFFFF;">
-  WITH EVERY ORDER&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;">$70 IN GIFTS</span>
+  WITH EVERY ORDER&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;word-break:break-all;">$70 IN GIFTS</span>
 </td></tr>
 
 
@@ -77,24 +77,24 @@
 
 
 <tr><td style="padding:0;">
-  <a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/cart?ref=email' }}&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4intnocode-hero"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/DRYRUN-checkout-c4int-nocode-hero.jpg" width="600" alt="Last email about your cart. Still yours, if you want it. Free shipping, duties paid, plus $70 in gifts with every order." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/cart?ref=email' }}&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4intnocode-hero"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/ae4aa8d1-0a0e-4f07-a152-584dad80b07e.jpeg" width="600" alt="Last email about your cart. Still yours, if you want it. Free shipping, duties paid, plus $70 in gifts with every order." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
 <tr><td class="pad" style="padding:22px 44px 4px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
     <tr><td colspan="3" style="padding:16px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">STILL IN YOUR CART</td></tr>
-    {% for item in event.extra.line_items %}{% if item.line_price > 0 %}
+    <!--{% for item in event.extra.line_items %}--><!--{% if item.line_price > 0 %}-->
     <tr>
       <td width="104" valign="middle" style="padding:12px 0 12px 16px;">
-        <img src="{% if item.product.images.0.thumb_src %}{{ item.product.images.0.thumb_src }}{% else %}https://cdn.klaviyomail.com/company/TdtTzz/images/DRYRUN-checkout-cart-fallback.jpg{% endif %}" width="88" alt="{{ item.title }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;">
+        <img src="{% if item.product.images.0.thumb_src %}{{ item.product.images.0.thumb_src }}{% else %}https://cdn.klaviyomail.com/company/TdtTzz/images/dbc7ad3d-1d00-42dc-a21a-caf761ec4e8b.jpeg{% endif %}" width="88" alt="{{ item.title }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;">
       </td>
       <td valign="middle" style="padding:12px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
         <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">{{ item.title }}</div>
         <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">Qty {{ item.quantity|floatformat:0 }}</div>
       </td>
-      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;white-space:nowrap;">{% if event.extra.presentment_currency == 'USD' or not event.extra.presentment_currency %}${{ item.line_price|floatformat:2 }}{% endif %}</td>
+      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;"><!--{% if event.extra.presentment_currency == 'USD' or not event.extra.presentment_currency %}-->${{ item.line_price|floatformat:2 }}<!--{% endif %}--></td>
     </tr>
-    {% endif %}{% endfor %}
+    <!--{% endif %}--><!--{% endfor %}-->
     <tr><td colspan="3" style="padding:0 16px 16px 16px;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:11px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">
         <img src="https://cdn.klaviyomail.com/company/TdtTzz/images/d9a8b8cc-8cf5-4ffd-a959-e3703f800dea.png" width="20" height="20" alt="" style="display:inline-block;vertical-align:-5px;width:20px;height:20px;">&nbsp; Free shipping, duties paid, and <b>$70 in gifts</b> come with every order.
@@ -124,7 +124,7 @@
     <tr><td width="58" valign="top" style="padding:20px 0 16px 20px;border-bottom:1px solid #ECE7DD;"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/543e925f-fed4-4f3b-a811-a70761a13542.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
       <td valign="top" style="padding:18px 20px 16px 14px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Changed your mind?</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Send it back unused within 30 days of delivery for a full refund.</div><div style="font-size:14px;line-height:21px;color:#282828;font-style:italic;padding-top:10px;"><span style="font-style:normal;color:#AC3B19;letter-spacing:1px;">&#9733;&#9733;&#9733;&#9733;&#9733;</span><br>&ldquo;I returned my pans, unused, and received a refund, no questions asked. Easy return procedure.&rdquo;<div style="font-style:normal;font-size:12px;line-height:17px;font-weight:600;color:#727272;padding-top:3px;">Steven T. &middot; Verified buyer</div></div></td></tr>
     <tr><td width="58" valign="top" style="padding:20px 0 16px 20px;"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/e39ac58c-e419-47b6-ab84-b2cd8185e946.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
-      <td valign="top" style="padding:18px 20px 16px 14px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Something wrong with it?</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Damaged or defective on arrival? You choose a refund or a new one, and we pay the shipping.{% if 'Hammer' in event.Items|join:',' or 'Pan' in event.Items|join:',' or 'Pot' in event.Items|join:',' or 'ookware' in event.Items|join:',' or 'Everything' in event.Items|join:',' or 'fanne' in event.Items|join:',' or 'Prep Bundle' in event.Items|join:',' %} After that, the 75-year warranty covers dents, a warped base, and a loose handle or rivet.{% endif %}</div><div style="font-size:14px;line-height:21px;color:#282828;font-style:italic;padding-top:10px;"><span style="font-style:normal;color:#AC3B19;letter-spacing:1px;">&#9733;&#9733;&#9733;&#9733;&#9733;</span><br>&ldquo;Siraat replaced a pan free of charge... I just sent them the picture and they honored the warranty.&rdquo;<div style="font-style:normal;font-size:12px;line-height:17px;font-weight:600;color:#727272;padding-top:3px;">Brandon W. &middot; Verified buyer</div></div></td></tr>
+      <td valign="top" style="padding:18px 20px 16px 14px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Something wrong with it?</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Damaged or defective on arrival? You choose a refund or a new one, and we pay the shipping.<!--{% if 'Hammer' in event.Items|join:',' or 'Pan' in event.Items|join:',' or 'Pot' in event.Items|join:',' or 'ookware' in event.Items|join:',' or 'Everything' in event.Items|join:',' or 'fanne' in event.Items|join:',' or 'Prep Bundle' in event.Items|join:',' %}--> After that, the 75-year warranty covers dents, a warped base, and a loose handle or rivet.<!--{% endif %}--></div><div style="font-size:14px;line-height:21px;color:#282828;font-style:italic;padding-top:10px;"><span style="font-style:normal;color:#AC3B19;letter-spacing:1px;">&#9733;&#9733;&#9733;&#9733;&#9733;</span><br>&ldquo;Siraat replaced a pan free of charge... I just sent them the picture and they honored the warranty.&rdquo;<div style="font-style:normal;font-size:12px;line-height:17px;font-weight:600;color:#727272;padding-top:3px;">Brandon W. &middot; Verified buyer</div></div></td></tr>
   </table>
 </td></tr>
 
@@ -221,7 +221,7 @@
   </tr></table>
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:19px;color:#BDB8B0;text-align:center;">
     Free shipping on all orders &middot; 30-day returns &middot; 75-year warranty<br><br>
-    {% unsubscribe 'Unsubscribe' %} &nbsp;|&nbsp; <a href="{% manage_preferences_url %}" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; {% web_view 'View in browser' %}<br>
+    {% unsubscribe 'Unsubscribe' %} &nbsp;|&nbsp; <a href="{% manage_preferences_link %}" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; {% web_view 'View in browser' %}<br>
     {{ organization.name }} &middot; {{ organization.full_address }}
   </div>
 </td></tr>

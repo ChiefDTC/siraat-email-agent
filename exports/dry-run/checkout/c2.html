@@ -60,7 +60,7 @@
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
 <tr><td align="center" class="codebar" bgcolor="#282828" style="background:#282828;padding:11px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;letter-spacing:1.5px;font-weight:600;color:#FFFFFF;">
-  EXTRA 10% OFF YOUR ORDER &middot; CODE&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;">HI10</span>
+  EXTRA 10% OFF YOUR ORDER &middot; CODE&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;word-break:break-all;">HI10</span>
 </td></tr>
 
 
@@ -77,24 +77,24 @@
 
 
 <tr><td style="padding:0;">
-  <a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c2-hero"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/DRYRUN-checkout-c2-hero.jpg" width="600" alt="Has it been tested? Ours has, report no. 25895. Extra 10% off with code HI10, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c2-hero"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/1ddba55a-e9b5-4c60-ab53-6d7761e23e68.jpeg" width="600" alt="Has it been tested? Ours has, report no. 25895. Extra 10% off with code HI10, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
 <tr><td class="pad" style="padding:22px 44px 4px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
     <tr><td colspan="3" style="padding:16px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">STILL IN YOUR CART</td></tr>
-    {% for item in event.extra.line_items %}{% if item.line_price > 0 %}
+    <!--{% for item in event.extra.line_items %}--><!--{% if item.line_price > 0 %}-->
     <tr>
       <td width="104" valign="middle" style="padding:12px 0 12px 16px;">
-        <img src="{% if item.product.images.0.thumb_src %}{{ item.product.images.0.thumb_src }}{% else %}https://cdn.klaviyomail.com/company/TdtTzz/images/DRYRUN-checkout-cart-fallback.jpg{% endif %}" width="88" alt="{{ item.title }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;">
+        <img src="{% if item.product.images.0.thumb_src %}{{ item.product.images.0.thumb_src }}{% else %}https://cdn.klaviyomail.com/company/TdtTzz/images/dbc7ad3d-1d00-42dc-a21a-caf761ec4e8b.jpeg{% endif %}" width="88" alt="{{ item.title }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;">
       </td>
       <td valign="middle" style="padding:12px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
         <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">{{ item.title }}</div>
         <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">Qty {{ item.quantity|floatformat:0 }}</div>
       </td>
-      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;white-space:nowrap;">{% if event.extra.presentment_currency == 'USD' or not event.extra.presentment_currency %}${{ item.line_price|floatformat:2 }}{% endif %}</td>
+      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;"><!--{% if event.extra.presentment_currency == 'USD' or not event.extra.presentment_currency %}-->${{ item.line_price|floatformat:2 }}<!--{% endif %}--></td>
     </tr>
-    {% endif %}{% endfor %}
+    <!--{% endif %}--><!--{% endfor %}-->
     <tr><td colspan="3" style="padding:0 16px 16px 16px;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:11px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">
         <img src="https://cdn.klaviyomail.com/company/TdtTzz/images/d9a8b8cc-8cf5-4ffd-a959-e3703f800dea.png" width="20" height="20" alt="" style="display:inline-block;vertical-align:-5px;width:20px;height:20px;">&nbsp; <b>HI10</b> takes an extra 10% off, applied with the button below.
@@ -126,7 +126,7 @@
     <tr><td width="58" valign="top" style="padding:20px 0 16px 20px;"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/e39ac58c-e419-47b6-ab84-b2cd8185e946.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
       <td valign="top" style="padding:18px 20px 16px 14px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">A warranty that outlasts you?</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">75 years. With no coating to wear through, we can offer it.</div></td></tr>
     <tr><td colspan="2" align="center" style="padding:0 20px 20px 20px;border-top:1px solid #ECE7DD;">
-      <a href="https://siraatskitchen.com/pages/third-party-testing?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c2-report"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/DRYRUN-checkout-certificate.jpg" width="300" alt="Light Labs Certificate of Analysis for Siraat's Kitchen, Titanium Hammered Pan Pro, report no. 25895" style="width:100%;max-width:300px;height:auto;border:1px solid #ECE7DD;margin:18px auto 0 auto;"></a>
+      <a href="https://siraatskitchen.com/pages/third-party-testing?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c2-report"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/30175116-1407-4403-b3a1-37ed19aada89.jpeg" width="300" alt="Light Labs Certificate of Analysis for Siraat's Kitchen, Titanium Hammered Pan Pro, report no. 25895" style="width:100%;max-width:300px;height:auto;border:1px solid #ECE7DD;margin:18px auto 0 auto;"></a>
       <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#9A948B;padding-top:10px;">Light Labs, Ann Arbor, Michigan. Tested product: Titanium Hammered Pan Pro. Every Siraat pan has the same titanium cooking surface.</div>
       <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;padding-top:10px;"><a href="https://siraatskitchen.com/pages/third-party-testing?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c2-report" style="color:#AC3B19;font-weight:600;text-decoration:none;">Read report no. 25895 &rarr;</a></div>
     </td></tr>
@@ -233,7 +233,7 @@
   </tr></table>
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:19px;color:#BDB8B0;text-align:center;">
     Free shipping on all orders &middot; 30-day returns &middot; 75-year warranty<br><br>
-    {% unsubscribe 'Unsubscribe' %} &nbsp;|&nbsp; <a href="{% manage_preferences_url %}" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; {% web_view 'View in browser' %}<br>
+    {% unsubscribe 'Unsubscribe' %} &nbsp;|&nbsp; <a href="{% manage_preferences_link %}" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; {% web_view 'View in browser' %}<br>
     {{ organization.name }} &middot; {{ organization.full_address }}
   </div>
 </td></tr>

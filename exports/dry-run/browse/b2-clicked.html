@@ -61,7 +61,7 @@
 
 
 <tr><td align="center" class="codebar" bgcolor="#282828" style="background:#282828;padding:11px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;letter-spacing:1.5px;font-weight:600;color:#FFFFFF;">
-  YOUR OWN 10% CODE &middot;&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;">{% coupon_code 'B2_10_48H' %}</span>
+  YOUR OWN 10% CODE &middot;&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;word-break:break-all;">{% coupon_code 'B2_10_48H' %}</span>
 </td></tr>
 
 
@@ -83,20 +83,20 @@
 
 <tr><td class="pad" style="padding:22px 44px 4px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-    <tr><td colspan="3" style="padding:16px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">{% if 'Hammer' in event.Name or 'Pan' in event.Name or 'Pot' in event.Name or 'ookware' in event.Name or 'Everything' in event.Name or 'fanne' in event.Name or 'Prep Bundle' in event.Name %}THE {% if 'Set' in event.Name or 'Edition' in event.Name or 'Bundle' in event.Name or 'Duo' in event.Name or 'Kit' in event.Name %}SET{% else %}PAN{% endif %} YOU VIEWED{% else %}YOU LOOKED AT{% endif %}</td></tr>
+    <tr><td colspan="3" style="padding:16px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;"><!--{% if 'Hammer' in event.Name or 'Pan' in event.Name or 'Pot' in event.Name or 'ookware' in event.Name or 'Everything' in event.Name or 'fanne' in event.Name or 'Prep Bundle' in event.Name %}-->THE <!--{% if 'Set' in event.Name or 'Edition' in event.Name or 'Bundle' in event.Name or 'Duo' in event.Name or 'Kit' in event.Name %}-->SET<!--{% else %}-->PAN<!--{% endif %}--> YOU VIEWED<!--{% else %}-->YOU LOOKED AT<!--{% endif %}--></td></tr>
     <tr>
       <td width="104" valign="middle" style="padding:12px 0 12px 16px;">
         <a href="https://siraatskitchen.com/discount/{% coupon_code 'B2_10_48H' %}?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2c-product%26utm_term%3Dt02-a"><img src="{% if event.ImageURL %}{{ event.ImageURL }}{% else %}https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-40a5-9ad7-523bdddc54d4.webp?v=1781682831&width=600{% endif %}" width="88" alt="{{ event.Name|default:'Titanium Hammered Pan Pro' }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;"></a>
       </td>
       <td valign="middle" style="padding:12px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
         <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">{{ event.Name|default:'Titanium Hammered Pan Pro' }}</div>
-        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">{% if 'Hammer' in event.Name or 'Pan' in event.Name or 'Pot' in event.Name or 'ookware' in event.Name or 'Everything' in event.Name or 'fanne' in event.Name or 'Prep Bundle' in event.Name %}Pure titanium cooking surface{% elif 'Board' in event.Name or 'Utensil' in event.Name or 'Chopsticks' in event.Name %}Pure titanium{% else %}From Siraat&rsquo;s Kitchen{% endif %}</div>
+        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;"><!--{% if 'Hammer' in event.Name or 'Pan' in event.Name or 'Pot' in event.Name or 'ookware' in event.Name or 'Everything' in event.Name or 'fanne' in event.Name or 'Prep Bundle' in event.Name %}-->Pure titanium cooking surface<!--{% elif 'Board' in event.Name or 'Utensil' in event.Name or 'Chopsticks' in event.Name %}-->Pure titanium<!--{% else %}-->From Siraat&rsquo;s Kitchen<!--{% endif %}--></div>
       </td>
-      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;white-space:nowrap;">{% if 'Pan Pro Standard' in event.Name and event.Price|slice:':4' == '$134' %}<div style="font-size:13px;line-height:17px;color:#9A948B;text-decoration:line-through;font-weight:400;">$439</div>{% endif %}{% if '$' in event.Price %}{{ event.Price }}{% endif %}</td>
+      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;"><!--{% if 'Pan Pro Standard' in event.Name and event.Price|slice:':4' == '$134' %}--><div style="font-size:13px;line-height:17px;color:#9A948B;text-decoration:line-through;font-weight:400;">$439</div><!--{% endif %}--><!--{% if '$' in event.Price %}-->{{ event.Price }}<!--{% endif %}--></td>
     </tr>
     <tr><td colspan="3" style="padding:0 16px 16px 16px;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:11px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">
-        <img src="https://cdn.klaviyomail.com/company/TdtTzz/images/d9a8b8cc-8cf5-4ffd-a959-e3703f800dea.png" width="20" height="20" alt="" style="display:inline-block;vertical-align:-5px;width:20px;height:20px;">&nbsp; {% if 'Pan Pro Standard' in event.Name and event.Price|slice:':4' == '$134' %}Your own code: <b>$120.60</b>, applied with the button below.{% else %}Your own code takes 10% off this price, applied with the button below.{% endif %}
+        <img src="https://cdn.klaviyomail.com/company/TdtTzz/images/d9a8b8cc-8cf5-4ffd-a959-e3703f800dea.png" width="20" height="20" alt="" style="display:inline-block;vertical-align:-5px;width:20px;height:20px;">&nbsp; <!--{% if 'Pan Pro Standard' in event.Name and event.Price|slice:':4' == '$134' %}-->Your own code: <b>$120.60</b>, applied with the button below.<!--{% else %}-->Your own code takes 10% off this price, applied with the button below.<!--{% endif %}-->
       </td></tr></table>
     </td></tr>
   </table>
@@ -120,7 +120,7 @@
     <tr><td align="center" style="padding:30px 26px 8px 26px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#D9CFC7;">YOUR OWN CODE</td></tr>
     <tr><td align="center" class="h2" style="padding:0 26px 16px 26px;font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#FFFFFF;">10% off, on top of the sale</td></tr>
     <tr><td align="center" style="padding:0 26px;">
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" class="offer-code" style="border:2px dashed #FFFFFF;padding:12px 30px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:32px;line-height:36px;letter-spacing:6px;font-weight:600;color:#FFFFFF;">{% coupon_code 'B2_10_48H' %}</td></tr></table>
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" class="offer-code" style="border:2px dashed #FFFFFF;padding:12px 30px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:32px;line-height:36px;letter-spacing:6px;font-weight:600;color:#FFFFFF;word-break:break-all;">{% coupon_code 'B2_10_48H' %}</td></tr></table>
     </td></tr>
     <tr><td align="center" style="padding:14px 26px 0 26px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#EDE6E0;">One use, already applied with the button. One code per order.</td></tr>
     <tr><td align="center" style="padding:14px 26px 0 26px;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:8px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;font-weight:600;color:#AC3B19;"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/b7e73206-d320-43bf-a098-a7c7f3cb0b10.png" width="18" height="18" alt="" style="display:inline-block;vertical-align:-4px;width:18px;height:18px;">&nbsp; Ends 48 hours after this email</td></tr></table></td></tr>
@@ -134,23 +134,23 @@
 </td></tr>
 
 
-{% if 'Hammer' in event.Name or 'Pan' in event.Name or 'Pot' in event.Name or 'ookware' in event.Name or 'Everything' in event.Name or 'fanne' in event.Name or 'Prep Bundle' in event.Name %}
+<!--{% if 'Hammer' in event.Name or 'Pan' in event.Name or 'Pot' in event.Name or 'ookware' in event.Name or 'Everything' in event.Name or 'fanne' in event.Name or 'Prep Bundle' in event.Name %}-->
 <tr><td class="pad" style="padding:30px 44px 6px 44px;">
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">WHAT YOU GET</div>
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 16px 0;">{% if 'Set' in event.Name or 'Edition' in event.Name or 'Bundle' in event.Name or 'Duo' in event.Name or 'Kit' in event.Name %}One set.{% else %}One pan.{% endif %} Plus all this.</div>
+  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 16px 0;"><!--{% if 'Set' in event.Name or 'Edition' in event.Name or 'Bundle' in event.Name or 'Duo' in event.Name or 'Kit' in event.Name %}-->One set.<!--{% else %}-->One pan.<!--{% endif %}--> Plus all this.</div>
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-    {% if 'Pan Pro Standard' in event.Name and event.Price|slice:':4' == '$134' %}<tr><td style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">Pan Pro, 11&Prime;</td><td align="right" style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#727272;white-space:nowrap;"><span style="text-decoration:line-through;color:#9A948B;">$439</span>&nbsp; <b style="color:#282828;">$134</b></td></tr>{% endif %}
+    <!--{% if 'Pan Pro Standard' in event.Name and event.Price|slice:':4' == '$134' %}--><tr><td style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">Pan Pro, 11&Prime;</td><td align="right" style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#727272;white-space:nowrap;"><span style="text-decoration:line-through;color:#9A948B;">$439</span>&nbsp; <b style="color:#282828;">$134</b></td></tr><!--{% endif %}-->
     <tr><td style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">Free shipping</td><td align="right" style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#727272;white-space:nowrap;">$15 value</td></tr>
     <tr><td style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">Plastic-Free Home e-book</td><td align="right" style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#727272;white-space:nowrap;">$30 value</td></tr>
     <tr><td style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">Mystery gift in the box</td><td align="right" style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#727272;white-space:nowrap;">$25 value</td></tr>
     <tr><td style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">75-year warranty</td><td align="right" style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#727272;white-space:nowrap;">Included</td></tr>
     <tr><td style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">30-day returns</td><td align="right" style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#727272;white-space:nowrap;">Included</td></tr>
-    {% if 'Pan Pro Standard' in event.Name and event.Price|slice:':4' == '$134' %}<tr><td style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">Your own code: extra 10% off</td><td align="right" style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#AC3B19;white-space:nowrap;">&minus;$13.40</td></tr>{% else %}<tr><td style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">Your own code: extra 10% off</td><td align="right" style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#AC3B19;white-space:nowrap;">on top of the sale</td></tr>{% endif %}
-    {% if 'Pan Pro Standard' in event.Name and event.Price|slice:':4' == '$134' %}<tr><td style="padding:14px 18px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;">Value $509</td><td align="right" style="padding:14px 18px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:18px;font-weight:600;color:#AC3B19;white-space:nowrap;">Your price $120.60</td></tr>{% endif %}
+    <!--{% if 'Pan Pro Standard' in event.Name and event.Price|slice:':4' == '$134' %}--><tr><td style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">Your own code: extra 10% off</td><td align="right" style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#AC3B19;white-space:nowrap;">&minus;$13.40</td></tr><!--{% else %}--><tr><td style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">Your own code: extra 10% off</td><td align="right" style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#AC3B19;white-space:nowrap;">on top of the sale</td></tr><!--{% endif %}-->
+    <!--{% if 'Pan Pro Standard' in event.Name and event.Price|slice:':4' == '$134' %}--><tr><td style="padding:14px 18px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;">Value $509</td><td align="right" style="padding:14px 18px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:18px;font-weight:600;color:#AC3B19;white-space:nowrap;">Your price $120.60</td></tr><!--{% endif %}-->
   </table>
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;text-align:center;padding-top:10px;">Plus a chance to win a $450 PFAS water filter with every order. Not counted in the value.</div>
 </td></tr>
-{% else %}
+<!--{% else %}-->
 <tr><td class="pad" style="padding:30px 44px 6px 44px;">
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">WITH EVERY ORDER</div>
   <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 18px 0;">$70 in gifts, in the box</div>
@@ -189,7 +189,7 @@
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#727272;text-align:center;padding-top:14px;">Plus a chance to win a $450 PFAS water filter.</div>
 </td></tr>
 
-{% endif %}
+<!--{% endif %}-->
 
 <tr><td class="pad" style="padding:28px 44px 6px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
@@ -220,7 +220,7 @@
 </td></tr>
 
 
-{% if 'Hammer' in event.Name or 'Pan' in event.Name or 'Pot' in event.Name or 'ookware' in event.Name or 'Everything' in event.Name or 'fanne' in event.Name or 'Prep Bundle' in event.Name %}
+<!--{% if 'Hammer' in event.Name or 'Pan' in event.Name or 'Pot' in event.Name or 'ookware' in event.Name or 'Everything' in event.Name or 'fanne' in event.Name or 'Prep Bundle' in event.Name %}-->
 <tr><td class="pad" style="padding:22px 44px 6px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
     <tr>
@@ -232,7 +232,7 @@
   </table>
 </td></tr>
 
-{% else %}
+<!--{% else %}-->
 <tr><td class="pad" style="padding:22px 44px 6px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
     <tr>
@@ -243,7 +243,7 @@
     </tr>
   </table>
 </td></tr>
-{% endif %}
+<!--{% endif %}-->
 
 <tr><td class="pad" style="padding:26px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
   A question before you decide? Reply and ask.<br><br>
@@ -266,7 +266,7 @@
   </tr></table>
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:19px;color:#BDB8B0;text-align:center;">
     Free shipping on all orders &middot; 30-day returns &middot; 75-year warranty<br><br>
-    {% unsubscribe 'Unsubscribe' %} &nbsp;|&nbsp; <a href="{% manage_preferences_url %}" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; {% web_view 'View in browser' %}<br>
+    {% unsubscribe 'Unsubscribe' %} &nbsp;|&nbsp; <a href="{% manage_preferences_link %}" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; {% web_view 'View in browser' %}<br>
     {{ organization.name }} &middot; {{ organization.full_address }}
   </div>
 </td></tr>

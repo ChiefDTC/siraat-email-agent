@@ -24,4 +24,9 @@ t post-purchase/p3-next po_panlid_us 'YOU HAVE THE LID' '$62.10' 'A second Pan P
 t post-purchase/p3-apron po_apron_us '$120.60'
 t winback/r1-pan po_panlid_us '!Stainless Steel Lid'; t winback/r1-pan po_pan_us 'Stainless Steel Lid'
 t winback/r1-acc po_board_us '$120.60'; t winback/r1-acc po_board '!$120.60'
+# Strenger op tags (QA-poort 2026-10-07): kltags.py mag alleen Klaviyo-tags kennen, en alle 61 mails moeten de allowlist,
+# de Django-render op alle varianten en de ruwe-HTML-structuur halen (scripts/qa_render.py --static, zonder browser).
+python3 -c "import re,sys;sys.path.insert(0,'../../../scripts');t=set(re.findall(r'def (\w+)\(',open('kltags.py').read()))-{'lookup'};A={'coupon_code','unsubscribe','unsubscribe_link','manage_preferences','manage_preferences_link','web_view','web_view_link'};sys.exit(0 if t==A else 1)" && echo "ok   kltags.py = Klaviyo-allowlist" || { echo "FOUT kltags.py wijkt af van de Klaviyo-allowlist"; fail=1; }
+python3 -I -c "import sys;sys.argv=['q'];sys.path.insert(0,'$PWD/../../../scripts');import qa_render as q;f=q.tags_filters('{% manage_preferences_url %}{% unsubscribe_url %}{{ x|bogus }}')[0];sys.exit(0 if len(f)==3 else 1)" && echo "ok   allowlist weigert manage_preferences_url, unsubscribe_url, |bogus" || { echo "FOUT allowlist laat foute tags door"; fail=1; }
+(cd /tmp && python3 -I "$OLDPWD/../../../scripts/qa_render.py" --static >/dev/null) && echo "ok   qa_render.py --static: alle mails groen" || { echo "FOUT qa_render.py --static (zie exports/qa/render-report.md)"; fail=1; }
 exit $fail

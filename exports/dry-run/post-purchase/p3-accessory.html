@@ -55,7 +55,7 @@
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 <tr><td align="center" class="codebar" bgcolor="#282828" style="background:#282828;padding:11px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;letter-spacing:1.5px;font-weight:600;color:#FFFFFF;">
-  YOUR THANK-YOU CODE &middot; 10% OFF&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;">{% coupon_code 'P3_THANKYOU_10_14D' %}</span>
+  YOUR THANK-YOU CODE &middot; 10% OFF&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;word-break:break-all;">{% coupon_code 'P3_THANKYOU_10_14D' %}</span>
 </td></tr>
 
 <tr><td style="padding:18px 36px;background:#F8F7F2;border-bottom:1px solid #ECE7DD;" class="pad">
@@ -80,7 +80,7 @@
       
       <div class="pc-n" style="font-size:18px;line-height:24px;font-weight:600;color:#282828;">Titanium Hammered Pan Pro</div>
       <div class="pc-s" style="font-size:14px;line-height:20px;color:#727272;padding-top:3px;">Standard 11&Prime; (28 cm), the size most people start with. Covered for 75 years.</div>
-      {% if event.extra.shipping_address.country_code == 'US' %}<div style="padding-top:10px;font-size:16px;line-height:22px;"><span style="color:#9A948B;text-decoration:line-through;">$439</span>&nbsp; <b style="color:#AC3B19;font-weight:600;">$134</b></div><div style="font-size:12px;line-height:17px;color:#727272;">$120.60 with your code</div>{% endif %}
+      <!--{% if event.extra.shipping_address.country_code == 'US' %}--><div style="padding-top:10px;font-size:16px;line-height:22px;"><span style="color:#9A948B;text-decoration:line-through;">$439</span>&nbsp; <b style="color:#AC3B19;font-weight:600;">$134</b></div><div style="font-size:12px;line-height:17px;color:#727272;">$120.60 with your code</div><!--{% endif %}-->
       <div style="padding-top:10px;font-size:13px;line-height:16px;letter-spacing:1.5px;font-weight:600;color:#282828;text-transform:uppercase;"><span style="border-bottom:1px solid #282828;padding-bottom:2px;">Choose your size</span> &rarr;</div>
     </a></td>
   </tr></table>
@@ -196,7 +196,7 @@
   </tr></table>
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:19px;color:#BDB8B0;text-align:center;">
     Free shipping on all orders &middot; 30-day returns &middot; 75-year warranty<br><br>
-    {% unsubscribe 'Unsubscribe' %} &nbsp;|&nbsp; <a href="{% manage_preferences_url %}" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; {% web_view 'View in browser' %}<br>
+    {% unsubscribe 'Unsubscribe' %} &nbsp;|&nbsp; <a href="{% manage_preferences_link %}" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; {% web_view 'View in browser' %}<br>
     {{ organization.name }} &middot; {{ organization.full_address }}
   </div>
 </td></tr>

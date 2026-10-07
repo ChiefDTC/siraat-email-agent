@@ -63,7 +63,7 @@
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
 <tr><td align="center" class="codebar" bgcolor="#282828" style="background:#282828;padding:11px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;letter-spacing:1.5px;font-weight:600;color:#FFFFFF;">
-  YOUR ANNIVERSARY CODE &middot; 7 DAYS &middot;&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;">{% coupon_code 'SK_ANNIV10_7D' %}</span>
+  YOUR ANNIVERSARY CODE &middot; 7 DAYS &middot;&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;word-break:break-all;">{% coupon_code 'SK_ANNIV10_7D' %}</span>
 </td></tr>
 
 
@@ -105,7 +105,7 @@
     <tr><td align="center" style="padding:30px 26px 8px 26px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#D9CFC7;">YOUR ANNIVERSARY GIFT</td></tr>
     <tr><td align="center" class="h2" style="padding:0 26px 16px 26px;font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#FFFFFF;">10% off, for one week</td></tr>
     <tr><td align="center" style="padding:0 26px;">
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" class="offer-code" style="border:2px dashed #FFFFFF;padding:12px 30px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:32px;line-height:36px;letter-spacing:6px;font-weight:600;color:#FFFFFF;">{% coupon_code 'SK_ANNIV10_7D' %}</td></tr></table>
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" class="offer-code" style="border:2px dashed #FFFFFF;padding:12px 30px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:32px;line-height:36px;letter-spacing:6px;font-weight:600;color:#FFFFFF;word-break:break-all;">{% coupon_code 'SK_ANNIV10_7D' %}</td></tr></table>
     </td></tr>
     <tr><td align="center" style="padding:14px 26px 0 26px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#EDE6E0;">Made for you, so it has an end date. After that, the regular sale price applies. Plus $70 in gifts with every order.</td></tr>
     <tr><td align="center" style="padding:14px 26px 0 26px;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:8px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;font-weight:600;color:#AC3B19;"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/b7e73206-d320-43bf-a098-a7c7f3cb0b10.png" width="18" height="18" alt="" style="display:inline-block;vertical-align:-4px;width:18px;height:18px;">&nbsp; Ends 7 days after this email</td></tr></table></td></tr>
@@ -123,23 +123,23 @@
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">FOR YEAR TWO</div>
   <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 16px 0;">What fits what you have</div>
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;border-bottom:0;">
-{% if 'Lid' not in event.Items|join:',' %}
+<!--{% if 'Lid' not in event.Items|join:',' %}-->
     <tr>
       <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'SK_ANNIV10_7D' %}?redirect=/products/stainless-steel-lid%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-anniversary%26utm_content%3Dn2-prod-lid%26utm_term%3Dt02-a"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/DRYRUN-anniversary-p-lid.jpg" width="114" alt="Stainless Steel Lid" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
       <td valign="middle" style="padding:14px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;">
         <div style="font-size:10px;line-height:14px;letter-spacing:1.5px;font-weight:600;color:#AC3B19;padding-bottom:3px;">FITS YOUR PAN</div><div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Stainless Steel Lid</div>
         <div class="pcd" style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">304 stainless steel. Match the diameter of the pan you own.</div>
-        {% if event.extra.shipping_address.country_code == 'US' %}<div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">$59&nbsp; <span style="color:#AC3B19;white-space:nowrap;">$53.10 with your code</span></div>{% endif %}
+        <!--{% if event.extra.shipping_address.country_code == 'US' %}--><div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">$59&nbsp; <span style="color:#AC3B19;white-space:nowrap;">$53.10 with your code</span></div><!--{% endif %}-->
         <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'SK_ANNIV10_7D' %}?redirect=/products/stainless-steel-lid%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-anniversary%26utm_content%3Dn2-prod-lid%26utm_term%3Dt02-a" style="color:#AC3B19;font-weight:600;text-decoration:underline;">Find my size &rarr;</a></div>
       </td>
     </tr>
-{% endif %}
+<!--{% endif %}-->
     <tr>
       <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'SK_ANNIV10_7D' %}?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-anniversary%26utm_content%3Dn2-prod-panpro%26utm_term%3Dt02-a"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/DRYRUN-anniversary-p-panpro.jpg" width="114" alt="Titanium Hammered Pan Pro, 11 inch" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
       <td valign="middle" style="padding:14px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;">
         <div style="font-size:10px;line-height:14px;letter-spacing:1.5px;font-weight:600;color:#AC3B19;padding-bottom:3px;">A SECOND PAN</div><div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Pan Pro 11&Prime;</div>
         <div class="pcd" style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">So eggs and dinner can share the stove.</div>
-        {% if event.extra.shipping_address.country_code == 'US' %}<div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">$134&nbsp; <span style="color:#AC3B19;white-space:nowrap;">$120.60 with your code</span></div>{% endif %}
+        <!--{% if event.extra.shipping_address.country_code == 'US' %}--><div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">$134&nbsp; <span style="color:#AC3B19;white-space:nowrap;">$120.60 with your code</span></div><!--{% endif %}-->
         <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'SK_ANNIV10_7D' %}?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-anniversary%26utm_content%3Dn2-prod-panpro%26utm_term%3Dt02-a" style="color:#AC3B19;font-weight:600;text-decoration:underline;">Shop the pan &rarr;</a></div>
       </td>
     </tr>
@@ -148,7 +148,7 @@
       <td valign="middle" style="padding:14px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;">
         <div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Pan Set With Lids, 6 pcs</div>
         <div class="pcd" style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">Three pans, three lids. About $116 a pan.</div>
-        {% if event.extra.shipping_address.country_code == 'US' %}<div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">$349&nbsp; <span style="color:#AC3B19;white-space:nowrap;">$314.10 with your code</span></div>{% endif %}
+        <!--{% if event.extra.shipping_address.country_code == 'US' %}--><div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">$349&nbsp; <span style="color:#AC3B19;white-space:nowrap;">$314.10 with your code</span></div><!--{% endif %}-->
         <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'SK_ANNIV10_7D' %}?redirect=/products/titanium-hammered-pan-set-with-lids-6-pcs-bday-sale%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-anniversary%26utm_content%3Dn2-prod-set6%26utm_term%3Dt02-a" style="color:#AC3B19;font-weight:600;text-decoration:underline;">Shop the set &rarr;</a></div>
       </td>
     </tr>
@@ -206,7 +206,7 @@
   </tr></table>
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:19px;color:#BDB8B0;text-align:center;">
     Free shipping on all orders &middot; 30-day returns &middot; 75-year warranty<br><br>
-    {% unsubscribe 'Unsubscribe' %} &nbsp;|&nbsp; <a href="{% manage_preferences_url %}" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; {% web_view 'View in browser' %}<br>
+    {% unsubscribe 'Unsubscribe' %} &nbsp;|&nbsp; <a href="{% manage_preferences_link %}" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; {% web_view 'View in browser' %}<br>
     {{ organization.name }} &middot; {{ organization.full_address }}
   </div>
 </td></tr>
