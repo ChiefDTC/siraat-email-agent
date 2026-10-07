@@ -4,7 +4,6 @@ card-panpro-save305.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/116af5
 card-roast-new.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/3b033523-2964-44ab-b818-dbb2f4b44c2e.jpeg
 card-set12-save587.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/c56f8978-ac6b-49ca-9bf9-606ee2630222.jpeg
 card-set6.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/8db3dc36-9daa-4f5e-8e1f-13882b6c825e.jpeg
-compare-cap-panpro.png https://cdn.klaviyomail.com/company/TdtTzz/images/eaa9751a-f31d-44fa-ad2d-3c88ba753f60.png
 compare-cap-plain.png https://cdn.klaviyomail.com/company/TdtTzz/images/3d02b673-4647-4eab-80ca-6962cec5da9a.png
 gift-ebook.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/3fab7ff2-1993-48d2-8567-d9f3d0ce04dd.jpeg
 gift-filter.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/a6aec8e7-f289-424e-ab60-689f1ae85c39.jpeg
@@ -45,3 +44,4 @@ sticker-new.png https://cdn.klaviyomail.com/company/TdtTzz/images/472dcef0-b6fd-
 sticker-save305.png https://cdn.klaviyomail.com/company/TdtTzz/images/4cd2bed4-42e4-4c1d-89d8-ef42d659b328.png
 sticker-save587.png https://cdn.klaviyomail.com/company/TdtTzz/images/06da4c3a-19c9-4400-9aca-dc0ab4c2fd97.png
 gift-shipping.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/fc1878e8-1cc0-4699-8f62-1110afb1750e.jpeg
+compare-cap-panpro.png https://cdn.klaviyomail.com/company/TdtTzz/images/adf1c2fa-cd6b-44ff-b2d8-38a2b2a69928.png
