@@ -530,3 +530,11 @@ Status: **gebouwd** = HTML en preview klaar, hero lokaal in `assets/`, upload na
 | u1 | ugc/u1.html | UGC | 1 | | Show us your first egg? | Reply with a photo, get 15% off | gebouwd, preview 94 (inkorten) |
 
 Totaal: 47 gebouwde mails (31 v3, 7 tailoring, 9 nieuwe flows), 14 te bouwen varianten (p2-safe, 12 `-nocode`, v1-nocode) plus 9 `-nohi10` voor fase 2. Onderwerp B wordt alleen gebruikt waar een onderwerptest loopt (W1 via T05b in fase 2, B1 via T05a); elders A.
+
+### Bouwnotitie 2.1 (7 okt 2026, Klaviyo-flow Y6yj2z, Draft)
+
+Gebouwd met `scripts/build_flow_checkout.py` via de Flows API. Afwijkingen van de tabel hierboven, met dezelfde uitkomst per klant:
+- Klaviyo staat geen samenkomende takken toe. Categoriekeuze (C2/C2-ACC, C3-S/C3-P/C3-ACC) zit daarom als verzendfilter op de mail zelf (Checkout Started met Items/$value in de laatste 2 of 4 dagen); per profiel komt per stap hoogstens één mail door. Bestaande klanten: filter Placed Order alltime = 0 op C2 en C3-ACC.
+- Land: splits (US, land gezet = INT, geen land: trigger split op Customer Locale en-US). De code-router staat daardoor vier keer; berichten met "(geen land)" in de naam.
+- Update profile property weigert de API. Cooldown via terugval 1.4: codemails heten "CODE · ...", split = Received Email where Campaign Name contains "CODE ·" in de laatste 30 dagen. Alle andere flows moeten hun codemails ook zo noemen. v3_arm wordt niet gezet; T01-arm is af te lezen aan de berichtnamen (C1.. tegen Old · ..).
+- Post-purchase-uitsluiting gebruikt nu RL3TU6; omzetten naar de v4 · Post-purchase-flow zodra die bestaat.

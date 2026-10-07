@@ -1,0 +1,2432 @@
+{
+ "data": {
+  "type": "flow",
+  "attributes": {
+   "name": "v4 · Checkout abandonment",
+   "definition": {
+    "triggers": [
+     {
+      "type": "metric",
+      "id": "RfMvni",
+      "trigger_filter": {
+       "condition_groups": [
+        {
+         "conditions": [
+          {
+           "type": "metric-property",
+           "metric_id": "RfMvni",
+           "field": "$value",
+           "filter": {
+            "type": "numeric",
+            "operator": "greater-than",
+            "value": 0
+           }
+          }
+         ]
+        }
+       ]
+      }
+     }
+    ],
+    "profile_filter": {
+     "condition_groups": [
+      {
+       "conditions": [
+        {
+         "type": "profile-metric",
+         "metric_id": "RSNxYV",
+         "measurement": "count",
+         "measurement_filter": {
+          "type": "numeric",
+          "operator": "equals",
+          "value": 0
+         },
+         "timeframe_filter": {
+          "type": "date",
+          "operator": "flow-start"
+         },
+         "metric_filters": null
+        }
+       ]
+      },
+      {
+       "conditions": [
+        {
+         "type": "profile-not-in-flow",
+         "timeframe_filter": {
+          "type": "date",
+          "operator": "in-the-last",
+          "unit": "day",
+          "quantity": 14
+         }
+        }
+       ]
+      },
+      {
+       "conditions": [
+        {
+         "type": "profile-metric",
+         "metric_id": "YkRM4Q",
+         "measurement": "count",
+         "measurement_filter": {
+          "type": "numeric",
+          "operator": "equals",
+          "value": 0
+         },
+         "timeframe_filter": {
+          "type": "date",
+          "operator": "in-the-last",
+          "unit": "day",
+          "quantity": 7
+         },
+         "metric_filters": [
+          {
+           "property": "$flow",
+           "filter": {
+            "type": "string",
+            "operator": "equals",
+            "value": "RL3TU6"
+           }
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    "actions": [
+     {
+      "temporary_id": "a01",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "10% off your cart, for 48 hours",
+        "preview_text": "Your personal code is already applied. After 48 hours, the regular sale price.",
+        "template_id": "RYrBuU",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-checkout"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "CODE · C4-US (geen land)"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a02",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Last reminder: your cart and 4 gifts",
+        "preview_text": "The last email about your cart. Free shipping, 4 gifts and two promises.",
+        "template_id": "UDLiEc",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-checkout"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "C4-US (geen land) nocode · T02-B"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a03",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Last reminder: your cart and 4 gifts",
+        "preview_text": "The last email about your cart. Free shipping, 4 gifts and two promises.",
+        "template_id": "UDLiEc",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-checkout"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "C4-US (geen land) nocode · cooldown"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a04",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-sample",
+            "percentage": 50
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "a01",
+       "next_if_false": "a02"
+      }
+     },
+     {
+      "temporary_id": "a05",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "YkRM4Q",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "greater-than",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 30
+            },
+            "metric_filters": [
+             {
+              "property": "Campaign Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "CODE ·"
+              }
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "a03",
+       "next_if_false": "a04"
+      }
+     },
+     {
+      "temporary_id": "a06",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "10% off your cart, for 48 hours",
+        "preview_text": "Your personal code is already applied. After 48 hours, the regular sale price.",
+        "template_id": "T2AVQv",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-checkout"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "CODE · C4-INT (geen land)"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a07",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Last reminder: your cart and 4 gifts",
+        "preview_text": "The last email about your cart. Free shipping, 4 gifts and two promises.",
+        "template_id": "SDtEg4",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-checkout"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "C4-INT (geen land) nocode · T02-B"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a08",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Last reminder: your cart and 4 gifts",
+        "preview_text": "The last email about your cart. Free shipping, 4 gifts and two promises.",
+        "template_id": "SDtEg4",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-checkout"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "C4-INT (geen land) nocode · cooldown"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a09",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-sample",
+            "percentage": 50
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "a06",
+       "next_if_false": "a07"
+      }
+     },
+     {
+      "temporary_id": "a10",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "YkRM4Q",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "greater-than",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 30
+            },
+            "metric_filters": [
+             {
+              "property": "Campaign Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "CODE ·"
+              }
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "a08",
+       "next_if_false": "a09"
+      }
+     },
+     {
+      "temporary_id": "a11",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "RfMvni",
+            "field": "Customer Locale",
+            "filter": {
+             "type": "string",
+             "operator": "equals",
+             "value": "en-US"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "RfMvni",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "a05",
+       "next_if_false": "a10"
+      }
+     },
+     {
+      "temporary_id": "a12",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "10% off your cart, for 48 hours",
+        "preview_text": "Your personal code is already applied. After 48 hours, the regular sale price.",
+        "template_id": "T2AVQv",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-checkout"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "CODE · C4-INT"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a13",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Last reminder: your cart and 4 gifts",
+        "preview_text": "The last email about your cart. Free shipping, 4 gifts and two promises.",
+        "template_id": "SDtEg4",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-checkout"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "C4-INT nocode · T02-B"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a14",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Last reminder: your cart and 4 gifts",
+        "preview_text": "The last email about your cart. Free shipping, 4 gifts and two promises.",
+        "template_id": "SDtEg4",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-checkout"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "C4-INT nocode · cooldown"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a15",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-sample",
+            "percentage": 50
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "a12",
+       "next_if_false": "a13"
+      }
+     },
+     {
+      "temporary_id": "a16",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "YkRM4Q",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "greater-than",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 30
+            },
+            "metric_filters": [
+             {
+              "property": "Campaign Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "CODE ·"
+              }
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "a14",
+       "next_if_false": "a15"
+      }
+     },
+     {
+      "temporary_id": "a17",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "location['country']",
+            "filter": {
+             "type": "existence",
+             "operator": "is-set"
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "a16",
+       "next_if_false": "a11"
+      }
+     },
+     {
+      "temporary_id": "a18",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "10% off your cart, for 48 hours",
+        "preview_text": "Your personal code is already applied. After 48 hours, the regular sale price.",
+        "template_id": "RYrBuU",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-checkout"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "CODE · C4-US"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a19",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Last reminder: your cart and 4 gifts",
+        "preview_text": "The last email about your cart. Free shipping, 4 gifts and two promises.",
+        "template_id": "UDLiEc",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-checkout"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "C4-US nocode · T02-B"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a20",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Last reminder: your cart and 4 gifts",
+        "preview_text": "The last email about your cart. Free shipping, 4 gifts and two promises.",
+        "template_id": "UDLiEc",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-checkout"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "C4-US nocode · cooldown"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a21",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-sample",
+            "percentage": 50
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "a18",
+       "next_if_false": "a19"
+      }
+     },
+     {
+      "temporary_id": "a22",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "YkRM4Q",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "greater-than",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 30
+            },
+            "metric_filters": [
+             {
+              "property": "Campaign Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "CODE ·"
+              }
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "a20",
+       "next_if_false": "a21"
+      }
+     },
+     {
+      "temporary_id": "a23",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "location['country']",
+            "filter": {
+             "type": "string",
+             "operator": "equals",
+             "value": "United States"
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "a22",
+       "next_if_false": "a17"
+      }
+     },
+     {
+      "temporary_id": "a24",
+      "type": "time-delay",
+      "data": {
+       "unit": "days",
+       "value": 2,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": "09:00:00"
+      },
+      "links": {
+       "next": "a23"
+      }
+     },
+     {
+      "temporary_id": "a25",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Most kitchens start with the pan",
+        "preview_text": "Your cart is saved. Still cooking on a coated pan? Here is the one change worth making.",
+        "template_id": "SL7UKX",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-checkout"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RfMvni",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 4
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "alltime"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "C3-ACC"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a24"
+      }
+     },
+     {
+      "temporary_id": "a26",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "One pan, or three for $349?",
+        "preview_text": "Three hammered pans and three lids. About $116 a pan, lid included.",
+        "template_id": "W75UJK",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-checkout"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RfMvni",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 4
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Pan Pro With Lid"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RfMvni",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 4
+             },
+             "metric_filters": [
+              {
+               "property": "$value",
+               "filter": {
+                "type": "numeric",
+                "operator": "less-than",
+                "value": 250
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RfMvni",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 4
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RfMvni",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 4
+             },
+             "metric_filters": [
+              {
+               "property": "$value",
+               "filter": {
+                "type": "numeric",
+                "operator": "greater-than-or-equal",
+                "value": 300
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "name": "C3-P"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a25"
+      }
+     },
+     {
+      "temporary_id": "a27",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "$70 in gifts ship with your set",
+        "preview_text": "Free shipping, a mystery gift, the e-book and a chance at a PFAS water filter.",
+        "template_id": "Veb75W",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-checkout"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RfMvni",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 4
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            },
+            {
+             "type": "profile-metric",
+             "metric_id": "RfMvni",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 4
+             },
+             "metric_filters": [
+              {
+               "property": "$value",
+               "filter": {
+                "type": "numeric",
+                "operator": "greater-than-or-equal",
+                "value": 300
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "name": "C3-S"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a26"
+      }
+     },
+     {
+      "temporary_id": "a28",
+      "type": "time-delay",
+      "data": {
+       "unit": "days",
+       "value": 2,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": "09:00:00"
+      },
+      "links": {
+       "next": "a27"
+      }
+     },
+     {
+      "temporary_id": "a29",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Yours, or a gift? Both work.",
+        "preview_text": "What it is made of, how to look after it, and 10% off with HI10.",
+        "template_id": "QZH3pZ",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-checkout"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RfMvni",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 2
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "name": "C2-ACC"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a28"
+      }
+     },
+     {
+      "temporary_id": "a30",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Has the pan in your cart actually been tested?",
+        "preview_text": "Ours has. Light Labs tested it for 31 PFAS compounds. Every one below detection.",
+        "template_id": "Syf9Si",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-checkout"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RfMvni",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 2
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "alltime"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "C2"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a29"
+      }
+     },
+     {
+      "temporary_id": "a31",
+      "type": "time-delay",
+      "data": {
+       "unit": "days",
+       "value": 1,
+       "secondary_value": null,
+       "timezone": "profile"
+      },
+      "links": {
+       "next": "a30"
+      }
+     },
+     {
+      "temporary_id": "a32",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Something stop you at checkout?",
+        "preview_text": "Saved exactly as you left it. Free shipping, and HI10 takes 10% more.",
+        "template_id": "U8Ngv8",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-checkout"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "C1"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a31"
+      }
+     },
+     {
+      "temporary_id": "a33",
+      "type": "time-delay",
+      "data": {
+       "unit": "minutes",
+       "value": 30,
+       "secondary_value": null,
+       "timezone": "profile"
+      },
+      "links": {
+       "next": "a32"
+      }
+     },
+     {
+      "temporary_id": "a34",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "We Can’t Keep these Forever",
+        "preview_text": "Your Cart & Discount Expires Tonight",
+        "template_id": "RbaQfc",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "old-checkout"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "Old · Checkout 5"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a35",
+      "type": "time-delay",
+      "data": {
+       "unit": "days",
+       "value": 1,
+       "secondary_value": null,
+       "timezone": "profile"
+      },
+      "links": {
+       "next": "a34"
+      }
+     },
+     {
+      "temporary_id": "a36",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "One Click to Cooking Better for Life",
+        "preview_text": "Checkout Your Cart",
+        "template_id": "UMURrd",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "old-checkout"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "Old · Checkout 4"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a35"
+      }
+     },
+     {
+      "temporary_id": "a37",
+      "type": "time-delay",
+      "data": {
+       "unit": "days",
+       "value": 2,
+       "secondary_value": null,
+       "timezone": "profile"
+      },
+      "links": {
+       "next": "a36"
+      }
+     },
+     {
+      "temporary_id": "a38",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "We’ve cooked something for you!",
+        "preview_text": "See Inside for Details",
+        "template_id": "VPBrLr",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "old-checkout"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "Old · Checkout 3"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a37"
+      }
+     },
+     {
+      "temporary_id": "a39",
+      "type": "time-delay",
+      "data": {
+       "unit": "days",
+       "value": 1,
+       "secondary_value": null,
+       "timezone": "profile"
+      },
+      "links": {
+       "next": "a38"
+      }
+     },
+     {
+      "temporary_id": "a40",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Join the Happy Chef Club",
+        "preview_text": "Plus Your Questions Answered",
+        "template_id": "TK3h6j",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "old-checkout"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "Old · Checkout 2"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a39"
+      }
+     },
+     {
+      "temporary_id": "a41",
+      "type": "time-delay",
+      "data": {
+       "unit": "days",
+       "value": 1,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": "08:30:00"
+      },
+      "links": {
+       "next": "a40"
+      }
+     },
+     {
+      "temporary_id": "a42",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Don’t leave these hanging",
+        "preview_text": "You’re a click away from better kitchen tools",
+        "template_id": "UD7QXp",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "old-checkout"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "Old · Checkout 1"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a41"
+      }
+     },
+     {
+      "temporary_id": "a43",
+      "type": "time-delay",
+      "data": {
+       "unit": "minutes",
+       "value": 10,
+       "secondary_value": null,
+       "timezone": "profile"
+      },
+      "links": {
+       "next": "a42"
+      }
+     },
+     {
+      "temporary_id": "a44",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-sample",
+            "percentage": 50
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "a33",
+       "next_if_false": "a43"
+      }
+     }
+    ],
+    "entry_action_id": "a44",
+    "reentry_criteria": {
+     "duration": 14,
+     "unit": "day"
+    }
+   }
+  }
+ }
+}
