@@ -48,7 +48,7 @@
 
 {{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/checkout?ref=email' }}&discount={% coupon_code 'C4_10_48H' %}&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4us-cta1" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>One use, already applied. 30-day returns. 100,000+ happy customers.</div>"}}
 
-{{BLOCK:offer eyebrow="THE LAST EMAIL ABOUT YOUR CART" headline="10% off, made for you" code="{% coupon_code 'C4_10_48H' %}" note="Made for you, so it has an end date. After 48 hours the regular sale price applies. One use, with all 4 gifts." deadline="Ends 48 hours after this email" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/checkout?ref=email' }}&discount={% coupon_code 'C4_10_48H' %}&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4us-offer" label="Complete my order"}}
+{{BLOCK:offer eyebrow="THE LAST EMAIL ABOUT YOUR CART" headline="10% off your cart" code="{% coupon_code 'C4_10_48H' %}" note="Made for you, so it has an end date. After 48 hours the regular sale price applies. One use, with all 4 gifts." deadline="Ends 48 hours after this email" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/checkout?ref=email' }}&discount={% coupon_code 'C4_10_48H' %}&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4us-offer" label="Complete my order"}}
 
 <!-- RISK REVERSAL: TWO PROMISES (06-offer-design 3) -->
 <tr><td class="pad" style="padding:30px 44px 6px 44px;">
@@ -62,13 +62,13 @@
   </table>
 </td></tr>
 
-{{BLOCK:gifts eyebrow="STILL WITH YOUR ORDER" headline="$70 in gifts, included" note=""}}
+{{BLOCK:gifts eyebrow="STILL WITH YOUR ORDER" headline="$70 in gifts, included" note="The filter is a chance to win. Everything else comes with every order."}}
 
 {{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/checkout?ref=email' }}&discount={% coupon_code 'C4_10_48H' %}&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4us-cta2" pad="26px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>One use, already applied. 30-day returns. 100,000+ happy customers.</div>"}}
 
 <!-- ALTERNATIEF (alleen US, alleen bij kookgerei): 12-delige set -->
 {% if 'Hammer' in event.Items|join:',' or 'Pan' in event.Items|join:',' or 'Pot' in event.Items|join:',' or 'ookware' in event.Items|join:',' or 'Everything' in event.Items|join:',' or 'fanne' in event.Items|join:',' or 'Prep Bundle' in event.Items|join:',' %}
-{{BLOCK:productcard pad="26px 44px 6px 44px" img="card-set12-save587.jpg" alt="Siraat Titanium Hammered Cookware Set, 12 pieces: three pans, three pots and six lids" pill="US ONLY" name="The 12-piece set" sub="For a full house: 3 pans, 3 pots, 6 lids. Your code works here too." was="$1,186" now="$599" note="" link="See the 12-piece set" url="https://siraatskitchen.com/discount/{% coupon_code 'C4_10_48H' %}?redirect=/products/titanium-hammered-cookware-set%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-checkout%26utm_content%3Dc4us-set12"}}
+{{BLOCK:productcard pad="26px 44px 6px 44px" img="card-set12-save587.jpg" alt="Siraat Titanium Hammered Cookware Set, 12 pieces: three pans, three pots and six lids" pill="US ONLY" name="The 12-piece set" sub="For a full house: 3 pans, 3 pots, 6 lids. Your code works here too." was="$1,186" now="$599" note="" link="See the set" url="https://siraatskitchen.com/discount/{% coupon_code 'C4_10_48H' %}?redirect=/products/titanium-hammered-cookware-set%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-checkout%26utm_content%3Dc4us-set12"}}
 {% endif %}
 
 {{BLOCK:icons}}

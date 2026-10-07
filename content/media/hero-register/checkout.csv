@@ -1,9 +1,11 @@
 mail,bronfoto,hero
 c1,content/media/hp-shoot/images/P06-A_Stovetop_1920w_q82.jpg,klaviyo/templates/v3/checkout/assets/c1-hero.jpg
-c2,content/media/hp-shoot/images/P11-A_Hammered_1920w_q82.jpg,klaviyo/templates/v3/checkout/assets/c2-hero.jpg
+c2,content/media/ai-flash/olive-oil-4x3-01.jpg,klaviyo/templates/v3/checkout/assets/c2-hero.jpg
 c3-s,content/media/hp-shoot/images/P02-A_GasRange_2560w_q76.jpg,klaviyo/templates/v3/checkout/assets/c3s-hero.jpg
-c3-p,content/media/hp-shoot/square/P022-A_GasRange_2560w_q76.jpg,klaviyo/templates/v3/checkout/assets/c3p-hero.jpg
+c3-p,content/media/ai-flash/three-pans-4x3-01.jpg,klaviyo/templates/v3/checkout/assets/c3p-hero.jpg
 c4-us,content/media/hp-shoot/images/P07-A_OvenSafe_1920w_q82.jpg,klaviyo/templates/v3/checkout/assets/c4us-hero.jpg
 c4-int,content/media/hp-shoot/images/P11-C_Edge_2560w_q76.jpg,klaviyo/templates/v3/checkout/assets/c4int-hero.jpg
+c4-us-nocode,content/media/hp-shoot/images/P07-A_OvenSafe_1920w_q82.jpg (zelfde bron als c4-us: andere tak van dezelfde stap; een ontvanger krijgt er maar één),klaviyo/templates/v3/checkout/assets/c4us-nocode-hero.jpg
+c4-int-nocode,content/media/hp-shoot/images/P11-C_Edge_2560w_q76.jpg (zelfde bron als c4-int: andere tak van dezelfde stap),klaviyo/templates/v3/checkout/assets/c4int-nocode-hero.jpg
 c2-acc,https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Apron_Ember.webp (kopie: klaviyo/templates/v3/checkout/assets/src/Apron_Ember.webp; stel kookt in Ember- en Moss-schort),klaviyo/templates/v3/checkout/assets/c2acc-hero.jpg
 c3-acc,https://cdn.shopify.com/s/files/1/0907/0877/1156/files/apron_lifestyle_image.webp (kopie: klaviyo/templates/v3/checkout/assets/src/apron_lifestyle_image.webp; kok in Moss-schort schudt pan),klaviyo/templates/v3/checkout/assets/c3acc-hero.jpg

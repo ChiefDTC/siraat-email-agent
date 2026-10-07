@@ -46,12 +46,14 @@
 
 {{BLOCK:cart pad="22px 44px 4px 44px"}}
 
+{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-cta1" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
+
+{% if 'Hammer' in event.Items|join:',' or 'Pan' in event.Items|join:',' or 'Pot' in event.Items|join:',' or 'ookware' in event.Items|join:',' or 'Everything' in event.Items|join:',' or 'fanne' in event.Items|join:',' or 'Prep Bundle' in event.Items|join:',' %}
 <!-- EEN REGEL PROOF DIRECT ONDER DE CART -->
 <tr><td class="pad" style="padding:14px 44px 0 44px;">
   <div style="border-left:3px solid #AC3B19;padding:2px 0 2px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#282828;font-style:italic;">&ldquo;I followed your directions, made scrambled eggs and they came out of the pan perfectly.&rdquo;<div style="font-style:normal;font-size:12px;line-height:18px;font-weight:600;color:#727272;padding-top:4px;">Marilyn B. &middot; Verified buyer</div></div>
 </td></tr>
-
-{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-cta1" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
+{% endif %}
 
 <!-- EEN TWIJFEL WEG: kookgerei krijgt maat en kookplaat, accessoires verzending en retour -->
 {% if 'Hammer' in event.Items|join:',' or 'Pan' in event.Items|join:',' or 'Pot' in event.Items|join:',' or 'ookware' in event.Items|join:',' or 'Everything' in event.Items|join:',' or 'fanne' in event.Items|join:',' or 'Prep Bundle' in event.Items|join:',' %}
@@ -62,7 +64,7 @@
 
 {{BLOCK:icons}}
 
-{{BLOCK:gifts headline="$70 in gifts, included" note=""}}
+{{BLOCK:gifts headline="$70 in gifts, included" note="The filter is a chance to win. Everything else comes with every order."}}
 
 {% if 'Hammer' in event.Items|join:',' or 'Pan' in event.Items|join:',' or 'Pot' in event.Items|join:',' or 'ookware' in event.Items|join:',' or 'Everything' in event.Items|join:',' or 'fanne' in event.Items|join:',' or 'Prep Bundle' in event.Items|join:',' %}
 {{BLOCK:compare eyebrow="THE DIFFERENCE" headline="One pan. Nothing to wear off." a1="Titanium cooking surface" b1="A PTFE or ceramic coating" a2="No coating to wear off" b2="Coating wears with use" a3="Metal utensils welcome" b3="Wood or silicone advised" a4="Tested by Light Labs" b4="Testing varies by brand" a5="Dishwasher safe" b5="Hand wash advised" note="Light Labs report no. 25895: 31 PFAS compounds tested, every one below detection."}}
@@ -70,7 +72,11 @@
 
 {{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-cta2" pad="26px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
 
+{% if 'Hammer' in event.Items|join:',' or 'Pan' in event.Items|join:',' or 'Pot' in event.Items|join:',' or 'ookware' in event.Items|join:',' or 'Everything' in event.Items|join:',' or 'fanne' in event.Items|join:',' or 'Prep Bundle' in event.Items|join:',' %}
 {{BLOCK:reviews q1="This pan is fantastic. Makes all of our others &quot;non stick&quot; seem really sticky." n1="Thomas D." q2="We cooked the best omelette we have ever eaten when we used the pan for the first time..." n2="Graham C."}}
+{% else %}
+{{BLOCK:reviews q1="Outstanding customer service and communication. Very happy with the quality of the products!" n1="Vince" q2="Excellent customer service who followed up right through to check the shipment was delivered. Good honest seller." n2="Becki"}}
+{% endif %}
 
 {{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-cta3" pad="24px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
 
