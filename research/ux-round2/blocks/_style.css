@@ -1,0 +1,11 @@
+  /* research/ux-round2 blokken (compare, closerlook, productcard) */
+  @media only screen and (max-width:620px){
+    .cmp-h{font-size:15px!important;line-height:20px!important;padding:0 8px 12px 8px!important;}
+    .cmp-c{padding:0 8px 0 12px!important;height:68px!important;}
+    .cmp-t{font-size:14px!important;line-height:19px!important;}
+    .pc-i{width:132px!important;}
+    .pc-img{width:132px!important;}
+    .pc-t{padding:12px 14px 12px 12px!important;}
+    .pc-n{font-size:16px!important;line-height:21px!important;}
+    .pc-s{font-size:13px!important;line-height:18px!important;}
+  }

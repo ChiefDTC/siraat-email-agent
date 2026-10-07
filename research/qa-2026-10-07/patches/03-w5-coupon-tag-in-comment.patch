@@ -1,0 +1,8 @@
+--- a/klaviyo/templates/v3/welcome/w5.html
++++ b/klaviyo/templates/v3/welcome/w5.html
+@@ -1,4 +1,4 @@
+-<!-- SUBJECT_A: The last note about your 10% | SUBJECT_B: What 100,000+ happy customers found out (and your 10%) | PREVIEW: Tammy is on her fourth pan. Your code HI10 still takes 10% off. | SEND: Day 9, 10:00 local time. Last mail of the flow; day 10 end, non-buyers go to campaigns | FILTERS: Flow: list Uw8eZG (Alia Card Game), email not contains test@, never in this flow, re-entry never. Split A: Placed Order = 0 ever (prospect path). Send filter: Placed Order = 0 since flow start | TEST LATER (not built): unique code {% coupon_code 'W5_10_72H' %} with 'Expires 72 hours after this email', see build-notes-welcome.md -->
++<!-- SUBJECT_A: The last note about your 10% | SUBJECT_B: What 100,000+ happy customers found out (and your 10%) | PREVIEW: Tammy is on her fourth pan. Your code HI10 still takes 10% off. | SEND: Day 9, 10:00 local time. Last mail of the flow; day 10 end, non-buyers go to campaigns | FILTERS: Flow: list Uw8eZG (Alia Card Game), email not contains test@, never in this flow, re-entry never. Split A: Placed Order = 0 ever (prospect path). Send filter: Placed Order = 0 since flow start | TEST LATER (not built): unique code [coupon_code W5_10_72H] with 'Expires 72 hours after this email', see build-notes-welcome.md -->
+ <!DOCTYPE html>
+ <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+ <head>

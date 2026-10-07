@@ -10,6 +10,7 @@ Gebruik:
   --square               centraal vierkant uitsnijden voor productkaarten
   --bgmatch              crème van Shopify-packshots (#F7F2EC) gelijktrekken naar mail-crème #F8F7F2
   --shadow               zachte schaduw onder de sticker
+  --white                crème achtergrond van het packshot naar wit (voor witte productkaarten); schaduw blijft
 """
 import sys, os
 from PIL import Image, ImageFilter
@@ -19,6 +20,12 @@ def bgmatch(im, src=(247, 242, 236), dst=(248, 247, 242)):
     r, g, b = im.split()[:3]
     ch = [c.point(lambda v, k=d / s: min(255, int(round(v * k)))) for c, s, d in zip((r, g, b), src, dst)]
     return Image.merge('RGB', ch)
+
+
+def towhite(im, src=(247, 242, 236)):
+    # foto / achtergrondkleur: crème wordt wit, metaal en schaduw blijven; licht verloop boven 96 procent valt weg
+    return Image.merge('RGB', [c.point(lambda v, k=1 / s: 255 if v * k >= 0.96 else int(255 * v * k / 0.96))
+                               for c, s in zip(im.split()[:3], src)])
 
 
 def main():
@@ -33,8 +40,10 @@ def main():
     W = min(int(o.get('width', im.width)), 1200)
     if W != im.width: im = im.resize((W, int(im.height * W / im.width)), Image.LANCZOS)
     if 'bgmatch' in o: im = bgmatch(im)
+    if 'white' in o: im = towhite(im)
     st = Image.open(stk).convert('RGBA')
     sw = int(W * float(o.get('scale', 0.26)))
+    if sw < 8: base = im; base.save(out, quality=88, optimize=True); print('ok (zonder sticker)', out); return
     st = st.resize((sw, int(st.height * sw / st.width)), Image.LANCZOS)
     rot = float(o.get('rotate', -12))
     if rot: st = st.rotate(rot, resample=Image.BICUBIC, expand=True)

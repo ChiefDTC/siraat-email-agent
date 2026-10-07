@@ -1,0 +1,4 @@
+type,url,width,height,text_in_image,source,title,product_handle,alt_or_note,used_in,local_copy
+packshot-transparent,content/media/gifts/final/gift-mystery-cutout.png,1200,1200,no,repo content/media/gifts/final,gift-mystery-cutout.png,,"bewerkt gift-beeld, zie content/media/gifts/README.md",,img/gift-mystery-cutout.png
+packshot-cream,content/media/gifts/final/gift-mystery-cutout-cream.jpg,1200,1200,no,repo content/media/gifts/final,gift-mystery-cutout-cream.jpg,,"bewerkt gift-beeld, zie content/media/gifts/README.md",,img/gift-mystery-cutout-cream.jpg
+packshot-cream,content/media/gifts/final/gift-mystery-photo-dark.jpg,1200,1200,no,repo content/media/gifts/final,gift-mystery-photo-dark.jpg,,"bewerkt gift-beeld, zie content/media/gifts/README.md",,img/gift-mystery-photo-dark.jpg

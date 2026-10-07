@@ -2,16 +2,16 @@
 <tr><td class="pad" style="padding:[[pad]];">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
     <tr><td colspan="3" style="padding:16px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">[[title]]</td></tr>
-    {% for item in event.extra.line_items %}{% if forloop.counter <= 3 %}
+    {% for item in event.extra.line_items %}{% if item.line_price > 0 %}
     <tr>
       <td width="104" valign="middle" style="padding:12px 0 12px 16px;">
-        <img src="{{ item.product.images.0.src|default:'{{IMG}}/cart-fallback.jpg' }}" width="88" alt="{{ item.title }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;">
+        <img src="{% if item.product.images.0.thumb_src %}{{ item.product.images.0.thumb_src }}{% else %}{{IMG}}/cart-fallback.jpg{% endif %}" width="88" alt="{{ item.title }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;">
       </td>
       <td valign="middle" style="padding:12px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
         <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">{{ item.title }}</div>
         <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">Qty {{ item.quantity|floatformat:0 }}</div>
       </td>
-      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;white-space:nowrap;">${{ item.line_price|floatformat:2 }}</td>
+      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;white-space:nowrap;">{% if event.extra.presentment_currency == 'USD' or not event.extra.presentment_currency %}${{ item.line_price|floatformat:2 }}{% endif %}</td>
     </tr>
     {% endif %}{% endfor %}
     <tr><td colspan="3" style="padding:0 16px 16px 16px;">

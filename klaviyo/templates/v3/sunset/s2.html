@@ -1,0 +1,70 @@
+<!-- SUBJECT_A: Last email from me (unless you tap) | SUBJECT_B: Should I stop writing? | PREVIEW: One tap and you stay. Otherwise this is goodbye, and that's okay. | SEND: Step 1, 4 dagen na S1, 10:00 lokale tijd. Afzender 'Benjamin at Siraat's Kitchen'. Tekstmail: geen hero, geen codebalk. | FILTERS: Message: Clicked Email = 0 sinds flow-start, Opened Email = 0 sinds flow-start (alleen hier: wie opent maar niet klikt krijgt S2 niet, om Apple-opens niet te straffen gebeurt de echte beslissing pas in de split na S2), Active on Site = 0 sinds flow-start, Placed Order = 0 sinds flow-start. -->
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
+<title>Last email from me</title>
+<!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
+  body{margin:0;padding:0;background:#FFFFFF;-webkit-text-size-adjust:100%;}
+  table{border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;}
+  img{border:0;display:block;line-height:100%;outline:none;text-decoration:none;}
+  a{color:#AC3B19;}
+  @media only screen and (max-width:620px){
+    .w{width:100%!important;}
+    .pad{padding-left:22px!important;padding-right:22px!important;}
+    .stack{display:block!important;width:100%!important;}
+    .stackpad{padding:0 0 14px 0!important;}
+    .h2{font-size:30px!important;line-height:34px!important;}
+    .navhide{display:none!important;}
+    .desk{display:none!important;max-height:0!important;overflow:hidden!important;}
+    .mob{display:block!important;max-height:none!important;overflow:visible!important;}
+    .center{text-align:center!important;}
+    .pcd{display:none!important;}
+    .pim{width:96px!important;padding:14px 0 14px 12px!important;}
+    .pim img{width:88px!important;height:88px!important;}
+  }
+</style>
+</head>
+<body style="margin:0;padding:0;background:#FFFFFF;">
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">One tap and you stay. Otherwise this is goodbye, and that's okay.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
+<tr><td align="center" style="padding:8px 0 32px 0;">
+<table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
+
+{{HEADER}}
+
+<tr><td class="pad" style="padding:34px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;color:#282828;">
+  <p style="margin:0 0 18px 0;">Hi {{ first_name|default:'there' }},</p>
+  <p style="margin:0 0 18px 0;">It&rsquo;s Benjamin, the founder of Siraat&rsquo;s Kitchen.</p>
+  <p style="margin:0 0 18px 0;">A few days ago we asked whether you still want our emails. We didn&rsquo;t hear back, so this is the last one we&rsquo;ll send, unless you tell us otherwise.</p>
+  <p style="margin:0 0 18px 0;">No hard feelings. I&rsquo;d rather write to people who want to read it.</p>
+  <p style="margin:0 0 18px 0;">If you do want to stay, one tap on the button below and nothing changes.</p>
+  <p style="margin:0 0 18px 0;">And if you have one of our pans: your 75-year warranty doesn&rsquo;t depend on our emails. If anything ever goes wrong with it, write to <a href="mailto:support@siraatskitchen.com" style="color:#AC3B19;">support@siraatskitchen.com</a> and we&rsquo;ll take care of it.</p>
+  <p style="margin:0 0 18px 0;">Benjamin<br>Founder, Siraat&rsquo;s Kitchen</p>
+</td></tr>
+
+{{BLOCK:cta label="Keep me on the list" url="https://siraatskitchen.com/?utm_source=klaviyo&amp;utm_medium=email&amp;utm_campaign=sunset-v3&amp;utm_content=stay" pad="4px 44px 6px 44px"}}
+
+<tr><td class="pad" style="padding:22px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+  <p style="margin:0 0 18px 0;"><b>P.S.</b> Been meaning to try one? HI10 still takes 10% off on top of the sale, and every order ships with $70 in gifts and free 30-day returns.</p>
+</td></tr>
+
+<!-- KEUZE: blijven, minder, uitschrijven -->
+<tr><td class="pad" align="center" style="padding:0 44px 30px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:22px;color:#727272;text-align:center;">
+  Rather hear from us less? <a href="{% manage_preferences_url %}" style="color:#282828;font-weight:600;">Choose fewer emails</a><br>
+  Done with us? <a href="{% unsubscribe_url %}" style="color:#282828;font-weight:600;">Unsubscribe in one tap</a>. No hard feelings.
+</td></tr>
+
+{{FOOTER}}
+
+</table>
+</td></tr>
+</table>
+</body>
+</html>

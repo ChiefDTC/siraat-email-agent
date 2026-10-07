@@ -1,0 +1,32 @@
+--- a/scripts/build_template.py
++++ b/scripts/build_template.py
+@@ -37,14 +37,26 @@
+ for a,b in sorted(u.items(),key=lambda x:-len(x[0])): k=k.replace('{{IMG}}/'+a,b)
+ for a,b in su.items(): k=k.replace('{{SHARED}}/'+a,b)
+ base=src[:-5]
++# QA 2026-10-07: Outlook-fontfallback, @import apart (niet-mso), interne comments weg uit de verzendversie
++MSO='<!--[if mso]><style>body,table,td,div,p,a,span{font-family:Arial,Helvetica,sans-serif!important;}</style><![endif]-->\n'
++def head_fix(x):
++    imp=re.search(r"\s*@import url\([^)]*\);",x)
++    if imp:
++        x=x.replace(imp.group(0),'',1)
++        x=x.replace('<style>','<!--[if !mso]><!--><style>'+imp.group(0).strip()+'</style><!--<![endif]-->\n<style>',1)
++    return x.replace('</head>',MSO+'</head>',1)
++k=head_fix(k)
++k=re.sub(r'<!--(?![\[<>]).*?-->\n?','',k,flags=re.S)
+ if '{{IMG}}' not in k and '{{SHARED}}' not in k: open(base+'.klaviyo.html','w').write(k)
+ p=h.replace('{{IMG}}',os.path.basename(assets.rstrip('/'))).replace('{{SHARED}}',os.path.relpath(SH,os.path.dirname(os.path.abspath(src))))
+ p=re.sub(r"\{% coupon_code [^%]*%\}",'SRT-K7Q2M',p)
+-m=re.search(r'\{% for item in event.extra.line_items %\}\{% if forloop.counter <= 3 %\}(.*?)\{% endif %\}\{% endfor %\}',p,re.S)
++m=re.search(r'\{% for item in event.extra.line_items %\}\{% if (?:forloop.counter <= 3|item.line_price > 0) %\}(.*?)\{% endif %\}\{% endfor %\}',p,re.S)
+ if m:
+-    r=re.sub(r"\{\{ item.product.images.0.src[^}]*\}\}",os.path.basename(assets.rstrip('/'))+'/cart-fallback.jpg',m.group(1)).replace('{{ item.title }}','Titanium Hammered Pan Pro, 11"').replace('{{ item.quantity|floatformat:0 }}','1').replace('{{ item.line_price|floatformat:2 }}','134.00')
++    r=re.sub(r"\{% if item.product.images.0.thumb_src %\}.*?\{% endif %\}|\{\{ item.product.images.0.src[^}]*\}\}",os.path.basename(assets.rstrip('/'))+'/cart-fallback.jpg',m.group(1),flags=re.S)
++    r=re.sub(r"\{% if event.extra.presentment_currency[^%]*%\}(.*?)\{% endif %\}",r'\1',r).replace('{{ item.title }}','Titanium Hammered Pan Pro, 11"').replace('{{ item.quantity|floatformat:0 }}','1').replace('{{ item.line_price|floatformat:2 }}','134.00')
+     p=p[:m.start()]+r+p[m.end():]
+-p=re.sub(r"\{\{ event.extra.order_number[^}]*\}\}",'1042',p)
++p=re.sub(r"\{\{ event.extra.(?:order_number|name)[^}]*\}\}",'#SIRAAT1042',p)
++p=re.sub(r"\{% if event.ImageURL %\}.*?\{% else %\}(.*?)\{% endif %\}",r'\1',p)
+ p=re.sub(r"\{\{ first_name[^}]*\}\}",'Sarah',p);p=re.sub(r"\{\{ event[^}]*\}\}",'#',p)
+ p=p.replace("{% web_view 'View in browser' %}",'<a href="#" style="color:#BDB8B0;">View in browser</a>').replace("{% unsubscribe 'Unsubscribe' %}",'<a href="#" style="color:#BDB8B0;">Unsubscribe</a>').replace('{% manage_preferences_url %}','#').replace('{{ organization.name }}',"Siraat's Kitchen").replace('{{ organization.full_address }}','[address]')
+ open(base+'-preview.html','w').write(p); print('ok',base)

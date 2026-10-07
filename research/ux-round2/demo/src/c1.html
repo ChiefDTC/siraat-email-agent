@@ -1,0 +1,72 @@
+<!-- SUBJECT_A: Forgetting something? | SUBJECT_B: Your pan is still here (+10% off) | PREVIEW: Your cart is saved. Extra 10% off with HI10, plus $70 in gifts. | SEND: Step 0, 1 hour after Checkout Started | FILTERS: Flow: Placed Order = 0 since starting this flow, not in this flow in last 14 days, not in post-purchase in last 7 days. Message: Placed Order = 0 since starting this flow -->
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
+<title>Your cart is still here (UX round 2 demo)</title>
+<!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
+  body{margin:0;padding:0;background:#FFFFFF;-webkit-text-size-adjust:100%;}
+  table{border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;}
+  img{border:0;display:block;line-height:100%;outline:none;text-decoration:none;}
+  a{color:#AC3B19;}
+  @media only screen and (max-width:620px){
+    .w{width:100%!important;}
+    .pad{padding-left:22px!important;padding-right:22px!important;}
+    .stack{display:block!important;width:100%!important;}
+    .stackpad{padding:0 0 14px 0!important;}
+    .h2{font-size:30px!important;line-height:34px!important;}
+    .navhide{display:none!important;}
+    .desk{display:none!important;max-height:0!important;overflow:hidden!important;}
+    .mob{display:block!important;max-height:none!important;overflow:visible!important;}
+    .center{text-align:center!important;}
+  }
+</style>
+</head>
+<body style="margin:0;padding:0;background:#FFFFFF;">
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Your cart is saved. Extra 10% off with HI10, plus $70 in gifts.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
+<tr><td align="center" style="padding:8px 0 32px 0;">
+<table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
+
+{{BLOCK:codebar}}
+
+{{HEADER}}
+
+<!-- HERO 4:3 met aanbodbalk (make_hero.py --offer --ratio=4:3) -->
+<tr><td style="padding:0;">
+  <a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10"><img src="{{IMG}}/c1-hero.jpg" width="600" alt="Your cart is still here. Extra 10% off with code HI10, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
+</td></tr>
+
+{{BLOCK:cart pad="22px 44px 4px 44px"}}
+
+{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10" pad="16px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>Your 10% is applied automatically.</div>"}}
+
+{{BLOCK:icons}}
+
+{{BLOCK:gifts}}
+
+{{RBLOCK:compare eyebrow="WHY 100,000+ PEOPLE SWITCHED" headline="Titanium vs. coated nonstick" a1="Pure titanium surface" b1="A PTFE or ceramic coating" a2="No coating to wear off" b2="Coating wears with use" a3="Metal utensils welcome" b3="Wood or silicone advised" a4="Lab tested PFAS&#8209;free" b4="PTFE is itself a PFAS" a5="Dishwasher safe" b5="Hand wash advised" note="Light Labs report no. 25895: 31 PFAS compounds tested, all below detection."}}
+
+{{BLOCK:reviews q1="One of the best pans I've ever used and so impressed with how easy it is to clean" n1="Carol E." q2="I really like the no stick effect. It's going to become my #1 go to frying pan" n2="Adele M."}}
+
+{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10" pad="26px 44px 6px 44px"}}
+
+<!-- SIGN-OFF -->
+<tr><td class="pad" style="padding:24px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+  Hi {{ first_name|default:'there' }}, something stopped you at checkout? A question about sizes or induction? Just reply. A real person reads every email.<br><br>
+  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
+</td></tr>
+
+{{FOOTER}}
+
+</table>
+</td></tr>
+</table>
+</body>
+</html>

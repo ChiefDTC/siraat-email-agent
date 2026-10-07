@@ -1,0 +1,150 @@
+{
+ "panpro": {
+  "src": "research/ux-round2/assets/src/panpro-top.jpg",
+  "rotate": 58,
+  "zoom": 0.235,
+  "center": [
+   468,
+   302
+  ],
+  "h": 640,
+  "points": [
+   {
+    "pos": "TL",
+    "a": [
+     300,
+     232
+    ],
+    "ex": 40
+   },
+   {
+    "pos": "TR",
+    "a": [
+     842,
+     236
+    ],
+    "ex": 984
+   },
+   {
+    "pos": "BL",
+    "a": [
+     330,
+     410
+    ],
+    "ex": 40
+   },
+   {
+    "pos": "BR",
+    "a": [
+     522,
+     462
+    ],
+    "ex": 984
+   }
+  ],
+  "mob_zoom": 0.3,
+  "mob_h": 620,
+  "mob_center": [
+   456,
+   287
+  ]
+ },
+ "set6": {
+  "src": "research/ux-round2/assets/src/set6.webp",
+  "zoom": 0.2835,
+  "center": [
+   510,
+   323
+  ],
+  "h": 660,
+  "mob_zoom": 0.31,
+  "mob_h": 680,
+  "mob_center": [
+   510,
+   333
+  ],
+  "points": [
+   {
+    "pos": "TL",
+    "a": [
+     271,
+     158
+    ],
+    "ex": 40
+   },
+   {
+    "pos": "TR",
+    "a": [
+     866,
+     325
+    ],
+    "ex": 984
+   },
+   {
+    "pos": "BL",
+    "a": [
+     404,
+     493
+    ],
+    "ex": 40
+   },
+   {
+    "pos": "BR",
+    "a": [
+     765,
+     429
+    ],
+    "ex": 984
+   }
+  ]
+ },
+ "roast": {
+  "src": "research/ux-round2/assets/src/roast-top.webp",
+  "zoom": 0.25,
+  "center": [
+   484,
+   337
+  ],
+  "h": 640,
+  "mob_zoom": 0.265,
+  "mob_h": 600,
+  "mob_center": [
+   482,
+   307
+  ],
+  "points": [
+   {
+    "pos": "TL",
+    "a": [
+     368,
+     216
+    ],
+    "ex": 40
+   },
+   {
+    "pos": "TR",
+    "a": [
+     650,
+     204
+    ],
+    "ex": 984
+   },
+   {
+    "pos": "BL",
+    "a": [
+     248,
+     528
+    ],
+    "ex": 40
+   },
+   {
+    "pos": "BR",
+    "a": [
+     890,
+     384
+    ],
+    "ex": 984
+   }
+  ]
+ }
+}
