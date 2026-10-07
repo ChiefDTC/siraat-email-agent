@@ -22,3 +22,20 @@ def manage_preferences_link(): return '#preferences'
 def web_view(label='View in browser'): return mark_safe('<a href="#" style="color:#BDB8B0;">%s</a>' % label)
 @register.simple_tag
 def web_view_link(): return '#webview'
+# Klaviyo-datumtag en -filters (help.klaviyo.com "Date variables in templates reference"; urgency-upgrade 7 okt 2026):
+# {% today '%Y-%m-%d' as today %}{{ today|days_later:2|format_date_string|date:'D' }}
+import datetime as _dt
+@register.simple_tag
+def today(fmt='%Y-%m-%d'): return _dt.datetime.now().strftime(fmt)
+@register.filter
+def days_later(v, n):
+    for f in ('%Y-%m-%d', '%Y-%m-%dT%H:%M:%S', '%m-%d-%Y'):
+        try: return (_dt.datetime.strptime(str(v), f) + _dt.timedelta(days=int(n))).strftime(f)
+        except ValueError: pass
+    return ''
+@register.filter
+def format_date_string(v):
+    for f in ('%Y-%m-%d', '%Y-%m-%dT%H:%M:%S', '%m-%d-%Y'):
+        try: return _dt.datetime.strptime(str(v), f)
+        except ValueError: pass
+    return ''

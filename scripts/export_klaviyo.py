@@ -211,6 +211,9 @@ def main():
     inv=inventory(); ms=mails(); have={m[1] for m in ms}
     rows=[]; up_total=set()
     if LIVE: os.makedirs(os.path.join(EXP,'live'),exist_ok=True); tlog=open(os.path.join(EXP,'live','templates.csv'),'a')
+    retired=[m for m in ms if m[1] not in inv]
+    for flow,mid,src in retired: print('%-14s %-22s niet in de v4-inventaris (sectie 5): overgeslagen, niet in het manifest'%(flow,mid))
+    ms=[m for m in ms if m[1] in inv]
     for flow,mid,src in ms:
         fname=FLOWNAME_OVERRIDE.get((flow,mid),FLOWS[flow][0]); tname='v4 · %s · %s'%(fname,mid)
         a,b,p=meta(src); B=[];W=[]; imgs=[]; kb=0

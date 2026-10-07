@@ -24,7 +24,7 @@ Niets in dit document is al in Klaviyo of Shopify aangemaakt. Geen live wijzigin
 
 | # | Flow (naam in Klaviyo) | Soort | Trigger (metric-ID) | Vervangt | Mails | `utm_campaign` |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | v4 · Checkout abandonment | verkoop | Checkout Started (RfMvni) | Y2TmNB, Tsg2tV | c1, c2, c2-acc, c3-p, c3-s, c3-acc, c4-us, c4-int (+ nocode) | v4-checkout |
+| 1 | v4 · Checkout abandonment | verkoop | Checkout Started (RfMvni) | Y2TmNB, Tsg2tV | c1, c2, c2-acc, c3-p, c3-s, c3-acc, c4 (+ nocode; land in de template) | v4-checkout |
 | 2 | v4 · Cart abandonment | verkoop | Added to Cart (QXcV8K) | SwkMyn, TBWngE | k1, k1-acc, k2-new, k2-returning, k3 (+ nocode) | v4-cart |
 | 3 | v4 · Browse abandonment | verkoop | Viewed Product, Klaviyo onsite (XNtYMB) | Wj6x6V, TyEjuQ | b1, b1-acc, b2-clicked, b2-notclicked (+ nocode) | v4-browse |
 | 4 | v4 · Welcome | verkoop | Toegevoegd aan lijst Uw8eZG | SiaNLu, T2SmtR | w0, w1-a, w1-b, w2, w3, w4-us, w4-int, w5 | v4-welcome |
@@ -105,7 +105,7 @@ CONDITIONAL SPLIT "Cooldown?"
 | `utm_source` | `klaviyo` |
 | `utm_medium` | `email` |
 | `utm_campaign` | flow-slug uit 1.1 (`v4-checkout` enz.); oud pad in T01: `old-<flow>` via Klaviyo custom tracking params |
-| `utm_content` | `<mailid>-<blok>`; mail-ID zonder koppelteken: `c1`, `c2`, `c2acc`, `c3p`, `c3s`, `c3acc`, `c4us`, `c4int`, `k1`, `k1acc`, `k2new`, `k2ret`, `k3`, `b1`, `b1acc`, `b2c`, `b2n`, `w0`, `w1a`, `w1b`, `w2`, `w3`, `w4us`, `w4int`, `w5`, `p1first`, `p1rep`, `p2`, `p2safe`, `p3pan`, `p3set`, `p3next`, `p3apron`, `p3acc`, `r1pan`, `r1set`, `r1acc`, `r2`, `r2vip`, `a1`, `a2`, `s1`, `s2`, `v1`, `v2`, `n1`, `n2`, `u1`. Blokken: `codebar`, `logo`, `nav-*`, `hero`, `cart`, `product`, `prod-<kort>`, `cta1..3`, `offer`, `giftcard`, `gifts`, `features`, `reviews`, `compare`, `size-*`, `tier1..3`, `report`, `warranty`, `ps`, `set12`, `ebook`, `guide`, `ft-*`. |
+| `utm_content` | `<mailid>-<blok>`; mail-ID zonder koppelteken: `c1`, `c2`, `c2acc`, `c3p`, `c3s`, `c3acc`, `c4`, `c4nocode` (was `c4us`, `c4int`), `k1`, `k1acc`, `k2new`, `k2ret`, `k3`, `b1`, `b1acc`, `b2c`, `b2n`, `w0`, `w1a`, `w1b`, `w2`, `w3`, `w4us`, `w4int`, `w5`, `p1first`, `p1rep`, `p2`, `p2safe`, `p3pan`, `p3set`, `p3next`, `p3apron`, `p3acc`, `r1pan`, `r1set`, `r1acc`, `r2`, `r2vip`, `a1`, `a2`, `s1`, `s2`, `v1`, `v2`, `n1`, `n2`, `u1`. Blokken: `codebar`, `logo`, `nav-*`, `hero`, `cart`, `product`, `prod-<kort>`, `cta1..3`, `offer`, `giftcard`, `gifts`, `features`, `reviews`, `compare`, `size-*`, `tier1..3`, `report`, `warranty`, `ps`, `set12`, `ebook`, `guide`, `ft-*`. |
 | `utm_term` | testvariant `<testid>-<a|b>` (`t02-b`, `t04-a`), anders weglaten |
 
 - Klaviyo per bericht: `add_tracking_params: true`, `custom_tracking_params` = source, medium, campaign. `utm_content` en `utm_term` hard in de HTML via `build_template.py` (voorstel 04-utm §5.2, nog niet gebouwd).
@@ -478,10 +478,8 @@ Status: **gebouwd** = HTML en preview klaar, hero lokaal in `assets/`, upload na
 | c3-s | checkout/c3-s.html | Checkout | 4K | set of ≥ $300 | Your set, plus four gifts | Your set, 10% lighter | gebouwd, copy-ronde |
 | c3-p | checkout/c3-p.html | Checkout | 4K | Pan Pro < $250 | One pan, or three for $349? | The math on the pan in your cart | gebouwd, copy-ronde |
 | c3-acc | checkout/c3-acc.html | Checkout | 4A | accessoire, nieuw | Most kitchens start with the pan | The pan 100,000+ people cook on | gebouwd, preview 91 (inkorten) |
-| c4-us | checkout/c4-us.html | Checkout | 6 | US, code (T02-A) | 10% off your cart, for 48 hours | Last reminder: your cart, 4 gifts and 10% off | gebouwd, copy-ronde |
-| c4-int | checkout/c4-int.html | Checkout | 6 | INT, code | 10% off your cart, for 48 hours | Last reminder: your cart, 4 gifts and 10% off | gebouwd, copy-ronde |
-| c4-us-nocode | | Checkout | 6 | US, T02-B / cooldown | (Last reminder: your cart and 4 gifts) | | te bouwen |
-| c4-int-nocode | | Checkout | 6 | INT, T02-B / cooldown | idem | | te bouwen |
+| c4 | checkout/c4.html | Checkout | 6 | code (T02-A), land in de template | Last chance: your own 10% ends in 48 hours | "They honored the warranty" | gebouwd 7 okt (samengevoegd uit c4-us en c4-int, urgency-upgrade), deadline-tegels |
+| c4-nocode | checkout/c4-nocode.html | Checkout | 6 | T02-B / cooldown, land in de template | Your cart and $70 in gifts, one last time | | gebouwd 7 okt (samengevoegd uit c4-us-nocode en c4-int-nocode) |
 | k1 | cart/k1.html | Cart | 1 | kookgerei | One pass with a damp cloth. | Your pan is still in your cart (+10% off) | gebouwd, copy-ronde |
 | k1-acc | cart/k1-acc.html | Cart | 1 | accessoire | Picked it out? It's still here. | "Such beautiful quality" | gebouwd |
 | k2-new | cart/k2-new.html | Cart | 2K | nieuw | The pan you keep replacing is the expensive one | What a pan really costs per year (now 10% less) | gebouwd, copy-ronde |
@@ -538,3 +536,8 @@ Gebouwd met `scripts/build_flow_checkout.py` via de Flows API. Afwijkingen van d
 - Land: splits (US, land gezet = INT, geen land: trigger split op Customer Locale en-US). De code-router staat daardoor vier keer; berichten met "(geen land)" in de naam.
 - Update profile property weigert de API. Cooldown via terugval 1.4: codemails heten "CODE · ...", split = Received Email where Campaign Name contains "CODE ·" in de laatste 30 dagen. Alle andere flows moeten hun codemails ook zo noemen. v3_arm wordt niet gezet; T01-arm is af te lezen aan de berichtnamen (C1.. tegen Old · ..).
 - Post-purchase-uitsluiting gebruikt nu RL3TU6; omzetten naar de v4 · Post-purchase-flow zodra die bestaat.
+
+### Bouwnotitie C4 vereenvoudigd (7 okt 2026, urgency-upgrade)
+
+C4 heeft geen landsplit meer (advies `research/build-v4/country-split-review.md`, eigenaar bevestigde: INT is duties paid, de 12-delige set is alleen US). Twee templates: `checkout/c4.html` (code, T02-A) en `checkout/c4-nocode.html` (T02-B en cooldown). De template kiest zelf: **US** als `person.Country` "United States" of "US" is, of als er geen profielland is en `event.extra.presentment_currency` USD is (of leeg); anders **INT** (INT-hero, "duties paid" in friction reducers en offer-note, `icons-int` in plaats van de set-kaart). `person.Country` is de documentatievorm van Klaviyo (help "Message personalization reference"); nog niet getest op een echt profiel: bij de eerste preview controleren met een profiel met land "US" en een met "Netherlands". Werkt het niet, dan valt elke ontvanger zonder land terug op de valuta (de oude USCOND['checkout']).
+Stap 5K-6K en 5A-6A in de flow worden: dag 5 09:00, code-router (cooldown, T02) en dan c4 of c4-nocode. De oude bestanden c4-us, c4-int, c4-us-nocode, c4-int-nocode blijven staan maar zijn uit deze inventaris en uit export/QA. Flow Y6yj2z en `scripts/build_flow_checkout.py` moeten nog worden aangepast (andere agent): 3 landsplits en 6 van de 8 router-splits eruit, manifest-ID's c4 en c4-nocode.

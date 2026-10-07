@@ -27,7 +27,18 @@ DEF={'codebar':{'text':'EXTRA 10% OFF YOUR ORDER &middot; CODE','code':'HI10'},
  'compare':{'pad':'34px 44px 6px 44px','eyebrow':'THE DIFFERENCE','headline':'Titanium vs. coated nonstick','cap':'compare-cap-panpro.png','colA':'Siraat Titanium','colB':'Coated nonstick','note':'','ib1':'cross','ib2':'cross','ib3':'cross','ib4':'cross','ib5':'cross'},
  'closerlook':{'pad':'34px 44px 6px 44px','eyebrow':'UP CLOSE','headline':'Take a closer look.'},
  'productcard':{'pad':'0 44px 10px 44px','pill':'','note':'','was':'','link':'Shop now'},
- 'cart':{'pad':'24px 44px 6px 44px','title':'STILL IN YOUR CART','line':'<b>HI10</b> takes an extra 10% off, applied with the button below.'}}
+ 'cart':{'pad':'24px 44px 6px 44px','title':'STILL IN YOUR CART','line':'<b>HI10</b> takes an extra 10% off, applied with the button below.'},
+ 'deadline':{'pad':'18px 44px 6px 44px','label':'YOUR OWN CODE RUNS OUT','amount':'48','unit':'HOURS','note':''},
+ 'ugc':{'pad':'28px 44px 6px 44px','eyebrow':'IN THEIR WORDS','headline':'From their kitchens','foot':'Verified reviews. Join 100,000+ happy customers.'}}
+DEF['offer'].update({'days':'','amount':'','unit':'HOURS'})
+# Persoonlijke deadline (urgency-upgrade 7 okt 2026): {{DATE:<dagen>:<Django-datumformaat>[:upper]}} wordt de Klaviyo-tag
+# {% today '%Y-%m-%d' as today %}{{ today|days_later:N|format_date_string|date:'FMT' }} (help.klaviyo.com, date variables reference).
+# Alleen gebruiken bij een unieke code die echt vervalt (C4/K3/B2 48 uur, R2 72 uur, P3 en V1 14 dagen, N2 7 dagen).
+def date_macro(x):
+    def rep(m):
+        n,fmt,up=m.group(1),m.group(2),m.group(3)
+        return "{%% today '%%Y-%%m-%%d' as today %%}{{ today|days_later:%s|format_date_string|date:'%s'%s }}"%(n,fmt,'|upper' if up else '')
+    return re.sub(r"\{\{DATE:(\d+):([^:}']+)(:upper)?\}\}",rep,x)
 # US-voorwaarde per trigger (dezelfde als de bestaande mails): Placed Order = verzendland, Checkout = presentment currency, Added to Cart = $currency, Viewed Product = '$' in prijs
 USCOND={'post-purchase':"event.extra.shipping_address.country_code == 'US'",'winback':"event.extra.shipping_address.country_code == 'US'",'vip':"event.extra.shipping_address.country_code == 'US'",'anniversary':"event.extra.shipping_address.country_code == 'US'",
  'checkout':"event.extra.presentment_currency == 'USD' or not event.extra.presentment_currency",'cart':"event|lookup:'$currency' == 'USD'",'browse':"'$' in event.Price"}
@@ -56,11 +67,17 @@ def blk(m):
             if us=='price': ph=wrap(ph)
             else: ph,nh=wrap(ph+nh),''
         kv['pricehtml']=ph+nh
-    if name=='offer' and kv['deadline']: kv['deadline']=open(os.path.join(B,'deadline.html')).read().replace('[[text]]',kv['deadline'])
+    if name in ('deadline','offer') and kv.get('days'):
+        d=kv['days']; kv['dday']='{{DATE:%s:D:upper}}'%d; kv['ddate']='{{DATE:%s:M j:upper}}'%d
+    if name=='offer':
+        if kv['deadline'] and kv['days']: kv['deadline']=open(os.path.join(B,'deadline-offer.html')).read().replace('[[text]]',kv['deadline'])
+        elif kv['deadline']: kv['deadline']=open(os.path.join(B,'deadline-line.html')).read().replace('[[text]]',kv['deadline'])
+        for x in ('days','amount','unit','dday','ddate'): kv.setdefault(x,'')
     for k,v in kv.items(): t=t.replace('[['+k+']]',v)
     left=re.findall(r'\[\[\w+\]\]',t)
     if left: sys.exit('blok %s mist %s'%(name,left))
     return t
 h=re.sub(r'\{\{BLOCK:([\w-]+)((?:\s+\w+="[^"]*")*)\s*\}\}',blk,h)
+h=date_macro(h)
 h=h.replace('</style>',open(os.path.join(B,'_style.css')).read()+'</style>',1)
 open(sys.argv[4],'w').write(h)

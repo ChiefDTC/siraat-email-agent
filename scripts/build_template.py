@@ -26,7 +26,18 @@ DEF={'codebar':{'text':'EXTRA 10% OFF YOUR ORDER &middot; CODE','code':'HI10'},
  'compare':{'pad':'34px 44px 6px 44px','eyebrow':'THE DIFFERENCE','headline':'Titanium vs. coated nonstick','cap':'compare-cap-panpro.png','colA':'Siraat Titanium','colB':'Coated nonstick','note':'','ib1':'cross','ib2':'cross','ib3':'cross','ib4':'cross','ib5':'cross'},
  'closerlook':{'pad':'34px 44px 6px 44px','eyebrow':'UP CLOSE','headline':'Take a closer look.'},
  'productcard':{'pad':'0 44px 10px 44px','pill':'','note':'','was':'','link':'Shop now'},
- 'cart':{'pad':'24px 44px 6px 44px','title':'STILL IN YOUR CART','line':'<b>HI10</b> takes an extra 10% off, applied with the button below.'}}
+ 'cart':{'pad':'24px 44px 6px 44px','title':'STILL IN YOUR CART','line':'<b>HI10</b> takes an extra 10% off, applied with the button below.'},
+ 'deadline':{'pad':'18px 44px 6px 44px','label':'YOUR OWN CODE RUNS OUT','amount':'48','unit':'HOURS','note':''},
+ 'ugc':{'pad':'28px 44px 6px 44px','eyebrow':'IN THEIR WORDS','headline':'From their kitchens','foot':'Verified reviews. Join 100,000+ happy customers.'}}
+DEF['offer'].update({'days':'','amount':'','unit':'HOURS'})
+# Persoonlijke deadline (urgency-upgrade 7 okt 2026): {{DATE:<dagen>:<Django-datumformaat>[:upper]}} wordt de Klaviyo-tag
+# {% today '%Y-%m-%d' as today %}{{ today|days_later:N|format_date_string|date:'FMT' }} (help.klaviyo.com, date variables reference).
+# Alleen gebruiken bij een unieke code die echt vervalt (C4/K3/B2 48 uur, R2 72 uur, P3 en V1 14 dagen, N2 7 dagen).
+def date_macro(x):
+    def rep(m):
+        n,fmt,up=m.group(1),m.group(2),m.group(3)
+        return "{%% today '%%Y-%%m-%%d' as today %%}{{ today|days_later:%s|format_date_string|date:'%s'%s }}"%(n,fmt,'|upper' if up else '')
+    return re.sub(r"\{\{DATE:(\d+):([^:}']+)(:upper)?\}\}",rep,x)
 # US-voorwaarde per trigger (dezelfde als de bestaande mails): Placed Order = verzendland, Checkout = presentment currency, Added to Cart = $currency, Viewed Product = '$' in prijs
 USCOND={'post-purchase':"event.extra.shipping_address.country_code == 'US'",'winback':"event.extra.shipping_address.country_code == 'US'",'vip':"event.extra.shipping_address.country_code == 'US'",'anniversary':"event.extra.shipping_address.country_code == 'US'",
  'checkout':"event.extra.presentment_currency == 'USD' or not event.extra.presentment_currency",'cart':"event|lookup:'$currency' == 'USD'",'browse':"'$' in event.Price"}
@@ -55,12 +66,18 @@ def blk(m):
             if us=='price': ph=wrap(ph)
             else: ph,nh=wrap(ph+nh),''
         kv['pricehtml']=ph+nh
-    if name=='offer' and kv['deadline']: kv['deadline']=open(os.path.join(B,'deadline.html')).read().replace('[[text]]',kv['deadline'])
+    if name in ('deadline','offer') and kv.get('days'):
+        d=kv['days']; kv['dday']='{{DATE:%s:D:upper}}'%d; kv['ddate']='{{DATE:%s:M j:upper}}'%d
+    if name=='offer':
+        if kv['deadline'] and kv['days']: kv['deadline']=open(os.path.join(B,'deadline-offer.html')).read().replace('[[text]]',kv['deadline'])
+        elif kv['deadline']: kv['deadline']=open(os.path.join(B,'deadline-line.html')).read().replace('[[text]]',kv['deadline'])
+        for x in ('days','amount','unit','dday','ddate'): kv.setdefault(x,'')
     for k,v in kv.items(): t=t.replace('[['+k+']]',v)
     left=re.findall(r'\[\[\w+\]\]',t)
     if left: sys.exit('blok %s mist %s'%(name,left))
     return t
 h=re.sub(r'\{\{BLOCK:([\w-]+)((?:\s+\w+="[^"]*")*)\s*\}\}',blk,h)
+h=date_macro(h)
 h=h.replace('</style>',open(os.path.join(B,'_style.css')).read()+'</style>',1)
 su=dict(l.split() for l in open(os.path.join(SH,'klaviyo-urls.txt')) if l.strip()) if os.path.exists(os.path.join(SH,'klaviyo-urls.txt')) else {}
 if OPT.get('--shared-urls'): su.update(dict(l.split() for l in open(OPT['--shared-urls']) if l.strip()))
@@ -99,7 +116,7 @@ k=add_utm(k)
 # <!--{% if ... %}-->. Django/Klaviyo verwerkt tags ook binnen commentaar (gerenderd blijft alleen <!----> over),
 # de browser en de Klaviyo-code-editor tonen ze niet en "foster-parenten" ze dus niet boven de tabel.
 # Alleen besturingstags; uitvoertags (coupon_code, unsubscribe, web_view ...) en tags in attributen, <title>, <style> en bestaande commentaren blijven staan.
-CTRL=('if','elif','else','endif','for','empty','endfor','with','endwith','comment','endcomment','ifchanged','endifchanged','spaceless','endspaceless','autoescape','endautoescape','filter','endfilter')
+CTRL=('today','if','elif','else','endif','for','empty','endfor','with','endwith','comment','endcomment','ifchanged','endifchanged','spaceless','endspaceless','autoescape','endautoescape','filter','endfilter')
 def wrap_ctrl(x):
     toks=[]
     x=re.sub(r'\{%.*?%\}|\{\{.*?\}\}',lambda m:(toks.append(m.group(0)),'\x00%d\x00'%(len(toks)-1))[1],x,flags=re.S)
@@ -118,6 +135,14 @@ elif OPT.get('--out'): sys.exit('nog {{IMG}}/{{SHARED}} zonder URL: '+', '.join(
 if OPT.get('--no-preview'): sys.exit(0)
 p=h.replace('{{IMG}}',os.path.basename(assets.rstrip('/'))).replace('{{SHARED}}',os.path.relpath(SH,os.path.dirname(os.path.abspath(src))))
 p=re.sub(r"\{% coupon_code [^%]*%\}",'SRT-K7Q2M',p)
+# Preview: Klaviyo-datumtag als voorbeelddatum (vandaag + N dagen, Django-datumformaat naar strftime)
+import datetime as _dt
+def _djdate(n,fmt,up):
+    d=_dt.date.today()+_dt.timedelta(days=int(n)); M={'D':'%a','l':'%A','M':'%b','F':'%B','d':'%d','Y':'%Y','y':'%y','m':'%m','n':str(d.month),'j':str(d.day)}
+    s=''.join(d.strftime(M[c]) if c in M and M[c].startswith('%') else M.get(c,c) for c in fmt)
+    return s.upper() if up else s
+p=re.sub(r"\{% today [^%]*%\}",'',p)
+p=re.sub(r"\{\{ today\|days_later:(\d+)\|format_date_string\|date:'([^']*)'(\|upper)? \}\}",lambda m:_djdate(m.group(1),m.group(2),m.group(3)),p)
 m=re.search(r'\{% for item in event.extra.line_items %\}\{% if (?:forloop.counter <= 3|item.line_price > 0) %\}(.*?)\{% endif %\}\{% endfor %\}',p,re.S)
 if m:
     r=re.sub(r"\{% if item.product.images.0.thumb_src %\}.*?\{% endif %\}|\{\{ item.product.images.0.src[^}]*\}\}",os.path.basename(assets.rstrip('/'))+'/cart-fallback.jpg',m.group(1),flags=re.S)

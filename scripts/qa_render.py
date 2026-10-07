@@ -27,7 +27,7 @@ FLOWS=['anniversary','browse','cart','checkout','post-purchase','site','sunset',
 
 # ---------- a. allowlists ----------
 # Klaviyo-tags (Klaviyo-documentatie "template tags"). Alles daarbuiten geeft in de editor "Invalid template tag".
-KL_TAGS={'coupon_code','unsubscribe','unsubscribe_link','manage_preferences','manage_preferences_link','web_view','web_view_link'}
+KL_TAGS={'today','coupon_code','unsubscribe','unsubscribe_link','manage_preferences','manage_preferences_link','web_view','web_view_link'}
 # Ingebouwde Django-tags die Klaviyo verwerkt. Niet: load, include, extends, block, url, csrf_token, debug (bestaan niet in Klaviyo).
 DJANGO_TAGS={'if','elif','else','endif','for','empty','endfor','with','endwith','firstof','cycle','resetcycle','now','comment','endcomment',
  'spaceless','endspaceless','autoescape','endautoescape','filter','endfilter','ifchanged','endifchanged','regroup','templatetag',
@@ -37,7 +37,7 @@ DJANGO_FILTERS={'add','addslashes','capfirst','center','cut','date','default','d
  'length_is','linebreaks','linebreaksbr','linenumbers','ljust','lower','make_list','phone2numeric','pluralize','pprint','random','rjust',
  'safe','safeseq','slice','slugify','stringformat','striptags','time','timesince','timeuntil','title','truncatechars','truncatechars_html',
  'truncatewords','truncatewords_html','unordered_list','upper','urlencode','urlize','urlizetrunc','wordcount','wordwrap','yesno'}
-KL_FILTERS={'lookup','currency_format','missing_product_image','trim_slash','days_since','format_date_string','base64_encode','hash_md5',
+KL_FILTERS={'lookup','days_later','currency_format','missing_product_image','trim_slash','days_since','format_date_string','base64_encode','hash_md5',
  'hash_sha1','hash_sha256','titlecase','split','multiply','divide','round','percentage','ceil','floor','strip'}
 # Django-filters die we gebruiken maar waarvan Klaviyo-ondersteuning niet in de eigen documentatie is bevestigd: waarschuwing, geen fout.
 TWIJFEL={'cut':'Django-filter; in Klaviyo niet zelf bevestigd (browse: event.URL|cut). Controleer één keer met Preview in Klaviyo.',
@@ -60,9 +60,21 @@ def mails():
         for s in sorted(glob.glob(os.path.join(V,f,'*.html'))):
             if re.search(r'-preview|\.klaviyo\.html$',s): continue
             out.append((f,os.path.basename(s)[:-5],s))
+    # alleen mails uit de v4-inventaris (sectie 5 van v4-flow-system.md); vervangen bestanden (c4-us, c4-int ...) blijven staan maar tellen niet mee
+    inv=inventory(); out=[m for m in out if m[1] in inv]
     if OPT.get('--only'):
         want=set(OPT['--only'].split(',')); out=[m for m in out if m[0]+'/'+m[1] in want]
     return out
+
+def inventory():
+    t=open(os.path.join(ROOT,'klaviyo','flows','v4-flow-system.md')).read(); t=t[t.index('## 5. Mail-inventaris'):]
+    ids=set()
+    for line in t.split('\n'):
+        if not line.startswith('| '): continue
+        c=line.split('|')[1].strip()
+        if c.startswith('p3-*-nocode'): ids|={'p3-%s-nocode'%x for x in ('set','pan','next','apron','accessory')}; continue
+        ids|={x.strip() for x in c.split(',')}
+    return ids
 
 def build(flow,src,tmp):
     """Klaviyo-versie via build_template.py --out --no-preview; beelden als file:// zodat de browser ze laadt (CDN = zelfde bestand)."""

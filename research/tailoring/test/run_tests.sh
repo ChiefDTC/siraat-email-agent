@@ -12,7 +12,8 @@ t(){ f=$1; s=$2; shift 2; n=$(basename $f)
 t checkout/c1 co_apron '!One pan. Nothing'; t checkout/c1 co_pan 'One pan. Nothing'; t checkout/c1 co_set6 'One pan. Nothing'
 t checkout/c2-acc co_apron 'Heavy 16-oz canvas' '!Pure titanium, non-porous'; t checkout/c2-acc co_board 'Pure titanium, non-porous' '!16-oz'; t checkout/c2-acc co_giftcard 'Sent by email'
 t checkout/c3-acc co_apron 'An apron does want'; t checkout/c3-acc co_mill '!An apron does want'
-t checkout/c4-us co_apron '!12-piece set'; t checkout/c4-us co_pizza '12-piece set'
+t checkout/c4 co_apron '!12-piece set' '!Duties paid'; t checkout/c4 co_pizza '12-piece set' 'YOUR CODE RUNS OUT' '!{{'; t checkout/c4 co_pan_eur '!12-piece set' 'Duties paid' 'NO IMPORT'
+t checkout/c4-nocode co_pan '12-piece set' '!Duties paid' '!YOUR CODE RUNS OUT'; t checkout/c4-nocode co_pan_eur '!12-piece set' 'duties paid'
 t cart/k1 atc_lid_eur '!$39.00'; t cart/k1 atc_pan '$134.00'
 t cart/k1-acc atc_apron 'Heavy 16-oz canvas' '$49.00'; t cart/k1-acc atc_lid_eur '304 stainless' '!$39'
 t browse/b1 vp_set6 'Get 10% off this set' 'THE SET YOU VIEWED'; t browse/b1 vp_pan 'Get 10% off this pan'
@@ -26,7 +27,7 @@ t winback/r1-pan po_panlid_us '!Stainless Steel Lid'; t winback/r1-pan po_pan_us
 t winback/r1-acc po_board_us '$120.60'; t winback/r1-acc po_board '!$120.60'
 # Strenger op tags (QA-poort 2026-10-07): kltags.py mag alleen Klaviyo-tags kennen, en alle 61 mails moeten de allowlist,
 # de Django-render op alle varianten en de ruwe-HTML-structuur halen (scripts/qa_render.py --static, zonder browser).
-python3 -c "import re,sys;sys.path.insert(0,'../../../scripts');t=set(re.findall(r'def (\w+)\(',open('kltags.py').read()))-{'lookup'};A={'coupon_code','unsubscribe','unsubscribe_link','manage_preferences','manage_preferences_link','web_view','web_view_link'};sys.exit(0 if t==A else 1)" && echo "ok   kltags.py = Klaviyo-allowlist" || { echo "FOUT kltags.py wijkt af van de Klaviyo-allowlist"; fail=1; }
+python3 -c "import re,sys;sys.path.insert(0,'../../../scripts');t=set(re.findall(r'def (\w+)\(',open('kltags.py').read()))-{'lookup','days_later','format_date_string'};A={'today','coupon_code','unsubscribe','unsubscribe_link','manage_preferences','manage_preferences_link','web_view','web_view_link'};sys.exit(0 if t==A else 1)" && echo "ok   kltags.py = Klaviyo-allowlist" || { echo "FOUT kltags.py wijkt af van de Klaviyo-allowlist"; fail=1; }
 python3 -I -c "import sys;sys.argv=['q'];sys.path.insert(0,'$PWD/../../../scripts');import qa_render as q;f=q.tags_filters('{% manage_preferences_url %}{% unsubscribe_url %}{{ x|bogus }}')[0];sys.exit(0 if len(f)==3 else 1)" && echo "ok   allowlist weigert manage_preferences_url, unsubscribe_url, |bogus" || { echo "FOUT allowlist laat foute tags door"; fail=1; }
 (cd /tmp && python3 -I "$OLDPWD/../../../scripts/qa_render.py" --static >/dev/null) && echo "ok   qa_render.py --static: alle mails groen" || { echo "FOUT qa_render.py --static (zie exports/qa/render-report.md)"; fail=1; }
 exit $fail
