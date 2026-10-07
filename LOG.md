@@ -41,3 +41,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 **Cijfers week 30 sep tot 6 okt (campagnes)**
 - Founder-notes: 1,3 procent klik (Founder Note Sale 47.616 mails $4.624; Prime Sale INT 73.409 mails $9.662).
 - Homestead-beeldmails: 0,3 tot 0,6 procent klik (Warehouse Clearance 116.433 mails $11.827; Sale Launch 4 Gifts 111.629 mails $2.822, open 20,5 procent).
+- 2026-10-07 · Checkout-onderzoek geschreven (research/2026-10-07-checkout-abandonment.md): drie overlappende flows, helft krijgt 1 mail, 10%-codes stapelen op sale. Voorstel: 4 mails in 72 uur, merk plus korting in dollars. Welcome flow ontleed: 100%-split is dood hout, open-filters laten 8.000 mensen per maand mail 3 tot 5 overslaan, kopers krijgen niets. Overzicht van alle live flows in README gezet. Failure to launch: 107.520 mails, $3.608, 490 uitschrijvingen.
