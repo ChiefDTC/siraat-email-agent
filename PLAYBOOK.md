@@ -122,3 +122,11 @@ Bron: research/ux-2026-10-07 (00-samenvatting, 01-ux-audit deel D). Referentiema
 - **Aanbodblok** `{{BLOCK:offer}}` (espresso) met optioneel `deadline="..."` alleen bij een unieke verlopende code (`{% coupon_code 'NAAM' %}`). Geen "final call", "reserved", "expires tonight" zonder echte deadline.
 - Gedeelde beelden staan in `klaviyo/templates/partials/shared/` en heten in de bron `{{SHARED}}/bestand`. CDN-links in `partials/shared/klaviyo-urls.txt`.
 - Hero-foto's per flow in `content/media/hero-register/<flow>.csv`, nooit dubbel over flowpaden.
+
+## 12. Bouwronde v4 (vanaf 7 oktober 2026)
+
+- Bindend plan: klaviyo/flows/v4-flow-system.md. Copy volgt de skill siraat-direct-response en research/copy/05-siraat-copy-playbook.md.
+- Nieuwe blokken naast die van h11: {{BLOCK:compare}} (vergelijkingstabel, rijen alleen uit research/ux-round2/comparisons.md), {{BLOCK:closerlook}} (callout-anatomie, img=panpro|roast|set6), {{BLOCK:productcard}} (kaart met sticker). Stickers via scripts/make_sticker.py en scripts/place_sticker.py.
+- Hero: het aanbod staat altijd in de aanbodbalk en de codebalk; de kop draagt het idee van de mail.
+- Onder elke primaire knop een friction reducer. UTM per blok volgens research/testing/04-utm.md.
+- Reviews alleen letterlijk uit Trustpilot (reviews-positive-usable.csv); Okendo/Loox niet tot de herkomst duidelijk is.
