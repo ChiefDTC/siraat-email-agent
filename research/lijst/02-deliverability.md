@@ -131,7 +131,28 @@ Voorbeeld: "Sunday Recipe Day | 30 Days Engaged" (4 oktober) ging naar de volled
 
 ## 6. Aandeel nooit-betrokken profielen dat nog mail krijgt
 
-{{NOOIT}}
+Drie manieren van meten, van ruim naar streng:
+
+| Meting | Uitkomst | Bron |
+|---|---|---|
+| Klaviyo-definitie "Engaged 90 Days" (sitebezoek, niet-machinale open of menselijke klik in 90 dagen) | 89.759 betrokken van circa 167.000 profielen die in de week van 28 september mail kregen: **circa 77.000 (46 procent) niet betrokken** | Segment `VKxqyA`, Received Email uniek per week |
+| Menselijke klik (Bot Click = false) in de laatste 90 dagen | 22.888 unieke klikkers: **circa 86 procent van de ontvangers klikte 90 dagen niet** | Clicked Email-events 8 juli tot 6 oktober |
+| Cohorten januari tot en met augustus, minstens 45 dagen oud: geen klik en geen order sinds aanmelding, niet uitgeschreven en geen spamklacht | **45,6 procent van alle aanmelders**, 55,4 procent van de Alia-aanmelders, oplopend van 49 procent (april) naar 60,1 procent (augustus) | Zie 01-cohorten en `cohorten.csv` |
+
+**Waar de klachten vandaan komen (1 juli tot 6 oktober):**
+
+| | Spamklachten | Uitschrijvingen |
+|---|---|---|
+| Totaal (events) | 2.646 | 27.369 |
+| Van profielen zonder menselijke klik in de 90 dagen ervoor | **81,8%** | 75,0% |
+| Idem, ook zonder order | 74,9% | 67,5% |
+| Van aanmelders jonger dan 30 dagen | 29,7% | 38,2% |
+| Van aanmelders jonger dan 60 dagen | **50,6%** | 54,0% |
+| Uit campagnes / uit flows | 59% / 41% | 61% / 39% |
+
+Methode van uitschrijven (1 juli tot 6 oktober): one-click 13.230 (48 procent), link in de mail 12.979 (47 procent), via spamklacht 1.119 (4 procent).
+
+Conclusie: de klachten komen bijna volledig van mensen die niet klikken, en de helft van nieuwe aanmelders in hun eerste twee maanden. Precies die groep krijgt sinds september de meeste extra campagnes. Kanttekening: bounce-onderdrukking is in de cohortmeting niet afgetrokken (het effect is klein, hard bounce 0,04 procent per week), en opens tellen bewust niet mee (Apple Mail Privacy).
 
 ## 7. Wat de API niet laat zien
 
