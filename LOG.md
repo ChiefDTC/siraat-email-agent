@@ -52,3 +52,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 2026-10-07 · C2: getekende lagen vervangen door fotorealistische doorsnede (Higgsfield gpt_image_2_5 met shoot-foto P11-C als referentie, labels in Inter via scripts/label_anatomy.py). Mobiel: aparte uitsnede plus lagen als live tekst. Template Yn7nyJ bijgewerkt.
 - 2026-10-07 · C2: hero met kop en subregel exact gecentreerd (scripts/make_hero.py), knop Return to my cart direct onder de hero, build-script voor templates. Opbouw vastgelegd in PLAYBOOK hoofdstuk 10.
 - 2026-10-07 · Vaste header en footer als partials (monogram, Built for Life, Non-Toxic Cookware, navigatie, social, legal). C2 bijgewerkt (template Yn7nyJ).
+- 2026-10-07 · Officieel logo (monogram + SIRAAT) als lockup in brand/logo/lockup, in header en footer van alle templates. Merkregels vastgezet in CLAUDE.md.
