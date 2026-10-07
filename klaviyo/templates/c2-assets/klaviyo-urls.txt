@@ -5,3 +5,7 @@ cart-fallback.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/c8aa5064-213
 anatomy.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/0f182cc7-f976-4813-bd92-84c7189eee3b.jpeg
 anatomy-mobile.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/4511b6e8-de10-4d08-9ac6-fd631150b183.jpeg
 hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/df9ba57d-f014-4222-9614-5adf68364bcd.jpeg
+header-brand.png https://cdn.klaviyomail.com/company/TdtTzz/images/26026cc4-ddc6-4a08-b386-eb84e0c5203f.png
+footer-brand.png https://cdn.klaviyomail.com/company/TdtTzz/images/a8147e34-e187-4926-9437-df437c637bc7.png
+fb.png https://cdn.klaviyomail.com/company/TdtTzz/images/17c00632-f9db-4dcd-a27e-bf0adc4987da.png
+ig.png https://cdn.klaviyomail.com/company/TdtTzz/images/6b905e47-7bf9-4aec-a63b-0538ecc6bd60.png

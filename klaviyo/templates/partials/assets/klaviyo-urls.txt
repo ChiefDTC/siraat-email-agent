@@ -1,0 +1,4 @@
+header-brand.png https://cdn.klaviyomail.com/company/TdtTzz/images/26026cc4-ddc6-4a08-b386-eb84e0c5203f.png
+footer-brand.png https://cdn.klaviyomail.com/company/TdtTzz/images/a8147e34-e187-4926-9437-df437c637bc7.png
+fb.png https://cdn.klaviyomail.com/company/TdtTzz/images/17c00632-f9db-4dcd-a27e-bf0adc4987da.png
+ig.png https://cdn.klaviyomail.com/company/TdtTzz/images/6b905e47-7bf9-4aec-a63b-0538ecc6bd60.png

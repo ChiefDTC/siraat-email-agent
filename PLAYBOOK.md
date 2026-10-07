@@ -104,3 +104,5 @@ Let op: de brand guidelines (site) gebruiken Inter voor koppen en Terracotta #C7
 - Direct onder de hero de primaire knop (in checkout en cart: "Return to my cart"). Dezelfde knop nog één keer onderaan.
 - HTML en preview bouwen met `scripts/build_template.py`; beelden in de Klaviyo-bibliotheek, links in `<assets>/klaviyo-urls.txt`.
 - Beelden met labels krijgen op mobiel een aparte versie zonder labels plus live tekst eronder.
+- Header en footer zijn vast en komen uit `klaviyo/templates/partials/` (header.html, footer.html). In elke bron-template staan alleen `{{HEADER}}` en `{{FOOTER}}`; `scripts/build_template.py` vult ze in. Header: monogram + "Built for Life" (TT Ramillas, PNG) en navigatie Cookware, Sets, About (live tekst, verborgen op mobiel). Footer: donker #282828, monogram + "Built for Life / Non-Toxic Cookware", vier navigatieregels, Facebook en Instagram, claims-regel, unsubscribe, voorkeuren, webversie, adres.
+- Wijzig je header of footer, dan in de partial, en alle templates opnieuw bouwen.

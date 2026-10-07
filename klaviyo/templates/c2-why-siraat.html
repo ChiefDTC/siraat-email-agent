@@ -20,6 +20,7 @@
     .stack{display:block!important;width:100%!important;}
     .stackpad{padding:0 0 14px 0!important;}
     .h2{font-size:30px!important;line-height:34px!important;}
+    .navhide{display:none!important;}
     .desk{display:none!important;max-height:0!important;overflow:hidden!important;}
     .mob{display:block!important;max-height:none!important;overflow:visible!important;}
   }
@@ -31,10 +32,7 @@
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
-<!-- LOGO -->
-<tr><td align="center" style="padding:24px 0 20px 0;">
-  <a href="https://siraatskitchen.com"><img src="{{IMG}}/logo.png" width="150" alt="Siraat's Kitchen" style="width:150px;height:auto;"></a>
-</td></tr>
+{{HEADER}}
 
 <!-- HERO: shoot photo + TT Ramillas headline baked in -->
 <tr><td style="padding:0;">
@@ -191,12 +189,7 @@
   Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
 </td></tr>
 
-<!-- FOOTER -->
-<tr><td align="center" class="pad" style="padding:18px 44px 30px 44px;border-top:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:18px;color:#9A948B;">
-  Siraat's Kitchen &middot; Free shipping on all orders &middot; 30-day returns &middot; 75-year warranty<br>
-  {% unsubscribe 'Unsubscribe' %} &middot; <a href="{% manage_preferences_url %}" style="color:#9A948B;">Manage preferences</a><br>
-  {{ organization.name }}, {{ organization.full_address }}
-</td></tr>
+{{FOOTER}}
 
 </table>
 </td></tr>
