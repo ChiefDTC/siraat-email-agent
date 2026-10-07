@@ -1,0 +1,1569 @@
+{
+ "data": {
+  "type": "flow",
+  "attributes": {
+   "name": "v4 · Browse abandonment",
+   "definition": {
+    "triggers": [
+     {
+      "type": "metric",
+      "id": "XNtYMB",
+      "trigger_filter": null
+     }
+    ],
+    "profile_filter": {
+     "condition_groups": [
+      {
+       "conditions": [
+        {
+         "type": "profile-metric",
+         "metric_id": "QXcV8K",
+         "measurement": "count",
+         "measurement_filter": {
+          "type": "numeric",
+          "operator": "equals",
+          "value": 0
+         },
+         "timeframe_filter": {
+          "type": "date",
+          "operator": "flow-start"
+         },
+         "metric_filters": null
+        }
+       ]
+      },
+      {
+       "conditions": [
+        {
+         "type": "profile-metric",
+         "metric_id": "RfMvni",
+         "measurement": "count",
+         "measurement_filter": {
+          "type": "numeric",
+          "operator": "equals",
+          "value": 0
+         },
+         "timeframe_filter": {
+          "type": "date",
+          "operator": "flow-start"
+         },
+         "metric_filters": null
+        }
+       ]
+      },
+      {
+       "conditions": [
+        {
+         "type": "profile-metric",
+         "metric_id": "RSNxYV",
+         "measurement": "count",
+         "measurement_filter": {
+          "type": "numeric",
+          "operator": "equals",
+          "value": 0
+         },
+         "timeframe_filter": {
+          "type": "date",
+          "operator": "flow-start"
+         },
+         "metric_filters": null
+        }
+       ]
+      },
+      {
+       "conditions": [
+        {
+         "type": "profile-metric",
+         "metric_id": "YkRM4Q",
+         "measurement": "count",
+         "measurement_filter": {
+          "type": "numeric",
+          "operator": "equals",
+          "value": 0
+         },
+         "timeframe_filter": {
+          "type": "date",
+          "operator": "in-the-last",
+          "unit": "day",
+          "quantity": 7
+         },
+         "metric_filters": [
+          {
+           "property": "$flow",
+           "filter": {
+            "type": "string",
+            "operator": "equals",
+            "value": "FLOW?cart"
+           }
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "conditions": [
+        {
+         "type": "profile-metric",
+         "metric_id": "YkRM4Q",
+         "measurement": "count",
+         "measurement_filter": {
+          "type": "numeric",
+          "operator": "equals",
+          "value": 0
+         },
+         "timeframe_filter": {
+          "type": "date",
+          "operator": "in-the-last",
+          "unit": "day",
+          "quantity": 7
+         },
+         "metric_filters": [
+          {
+           "property": "$flow",
+           "filter": {
+            "type": "string",
+            "operator": "equals",
+            "value": "FLOW?checkout"
+           }
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "conditions": [
+        {
+         "type": "profile-metric",
+         "metric_id": "YkRM4Q",
+         "measurement": "count",
+         "measurement_filter": {
+          "type": "numeric",
+          "operator": "equals",
+          "value": 0
+         },
+         "timeframe_filter": {
+          "type": "date",
+          "operator": "in-the-last",
+          "unit": "day",
+          "quantity": 7
+         },
+         "metric_filters": [
+          {
+           "property": "$flow",
+           "filter": {
+            "type": "string",
+            "operator": "equals",
+            "value": "FLOW?welcome"
+           }
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "conditions": [
+        {
+         "type": "profile-not-in-flow",
+         "timeframe_filter": {
+          "type": "date",
+          "operator": "in-the-last",
+          "unit": "day",
+          "quantity": 7
+         }
+        }
+       ]
+      }
+     ]
+    },
+    "actions": [
+     {
+      "temporary_id": "a001",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Your own 10%, for the next 48 hours",
+        "preview_text": "A personal code, on top of the sale. It ends 48 hours after this email.",
+        "template_id": "TPL?v4 · Browse abandonment · b2-clicked",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-browse"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "QXcV8K",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "CODE · B2-CLICKED · pan"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a002",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "\"I ordered one pan to try it out\"",
+        "preview_text": "Sunny C. started with one. Your first order comes with 4 gifts too.",
+        "template_id": "TPL?v4 · Browse abandonment · b2-clicked-nocode",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-browse"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "QXcV8K",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "B2-CLICKED · pan nocode · cooldown"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a003",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "\"I ordered one pan to try it out\"",
+        "preview_text": "Sunny C. started with one. Your first order comes with 4 gifts too.",
+        "template_id": "TPL?v4 · Browse abandonment · b2-clicked-nocode",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-browse"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "QXcV8K",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "B2-CLICKED · pan nocode · T02-B"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a004",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-sample",
+            "percentage": 50
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "a001",
+       "next_if_false": "a003"
+      }
+     },
+     {
+      "temporary_id": "a005",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "YkRM4Q",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "greater-than",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 30
+            },
+            "metric_filters": [
+             {
+              "property": "Campaign Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "CODE ·"
+              }
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "a002",
+       "next_if_false": "a004"
+      }
+     },
+     {
+      "temporary_id": "a006",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Week one, in their words",
+        "preview_text": "The first egg, the second pan, the fourth. And HI10 takes 10% off.",
+        "template_id": "TPL?v4 · Browse abandonment · b2-notclicked",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-browse"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "QXcV8K",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "B2-NOTCLICKED"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a007",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "W247h8",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "greater-than",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "flow-start"
+            },
+            "metric_filters": [
+             {
+              "property": "Campaign Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "B1 · T05a"
+              }
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "a005",
+       "next_if_false": "a006"
+      }
+     },
+     {
+      "temporary_id": "a008",
+      "type": "time-delay",
+      "data": {
+       "unit": "days",
+       "value": 2,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": "09:00:00"
+      },
+      "links": {
+       "next": "a007"
+      }
+     },
+     {
+      "temporary_id": "a009",
+      "type": "ab-test",
+      "data": {
+       "main_action": {
+        "temporary_id": "a009m",
+        "type": "send-email",
+        "data": {
+         "message": {
+          "from_email": "send@siraatskitchen.com",
+          "from_label": "Siraat's Kitchen",
+          "reply_to_email": "support@siraatskitchen.com",
+          "cc_email": null,
+          "bcc_email": null,
+          "subject_line": "Lab-tested: nothing on this pan to scratch off",
+          "preview_text": "Metal utensils welcome. No coating, and a lab report to prove it.",
+          "template_id": "TPL?v4 · Browse abandonment · b1",
+          "smart_sending_enabled": false,
+          "transactional": false,
+          "add_tracking_params": true,
+          "custom_tracking_params": [
+           {
+            "param": "utm_source",
+            "value": "klaviyo"
+           },
+           {
+            "param": "utm_medium",
+            "value": "email"
+           },
+           {
+            "param": "utm_campaign",
+            "value": "v4-browse"
+           }
+          ],
+          "additional_filters": {
+           "condition_groups": [
+            {
+             "conditions": [
+              {
+               "type": "profile-metric",
+               "metric_id": "RSNxYV",
+               "measurement": "count",
+               "measurement_filter": {
+                "type": "numeric",
+                "operator": "equals",
+                "value": 0
+               },
+               "timeframe_filter": {
+                "type": "date",
+                "operator": "flow-start"
+               },
+               "metric_filters": null
+              }
+             ]
+            }
+           ]
+          },
+          "name": "B1"
+         },
+         "status": "draft"
+        },
+        "links": {
+         "next": null
+        }
+       },
+       "current_experiment": {
+        "name": "T05a · B1-onderwerp (authority tegen social proof)",
+        "variations": [
+         {
+          "temporary_id": "a009v0",
+          "type": "send-email",
+          "data": {
+           "message": {
+            "from_email": "send@siraatskitchen.com",
+            "from_label": "Siraat's Kitchen",
+            "reply_to_email": "support@siraatskitchen.com",
+            "cc_email": null,
+            "bcc_email": null,
+            "subject_line": "Lab-tested: nothing on this pan to scratch off",
+            "preview_text": "Metal utensils welcome. No coating, and a lab report to prove it.",
+            "template_id": "TPL?v4 · Browse abandonment · b1",
+            "smart_sending_enabled": false,
+            "transactional": false,
+            "add_tracking_params": true,
+            "custom_tracking_params": [
+             {
+              "param": "utm_source",
+              "value": "klaviyo"
+             },
+             {
+              "param": "utm_medium",
+              "value": "email"
+             },
+             {
+              "param": "utm_campaign",
+              "value": "v4-browse"
+             }
+            ],
+            "additional_filters": {
+             "condition_groups": [
+              {
+               "conditions": [
+                {
+                 "type": "profile-metric",
+                 "metric_id": "RSNxYV",
+                 "measurement": "count",
+                 "measurement_filter": {
+                  "type": "numeric",
+                  "operator": "equals",
+                  "value": 0
+                 },
+                 "timeframe_filter": {
+                  "type": "date",
+                  "operator": "flow-start"
+                 },
+                 "metric_filters": null
+                }
+               ]
+              }
+             ]
+            },
+            "name": "B1 · T05a-A"
+           },
+           "status": "draft"
+          },
+          "links": {
+           "next": null
+          }
+         },
+         {
+          "temporary_id": "a009v1",
+          "type": "send-email",
+          "data": {
+           "message": {
+            "from_email": "send@siraatskitchen.com",
+            "from_label": "Siraat's Kitchen",
+            "reply_to_email": "support@siraatskitchen.com",
+            "cc_email": null,
+            "bcc_email": null,
+            "subject_line": "100,000+ happy customers cook on this pan",
+            "preview_text": "Metal utensils welcome. No coating, and a lab report to prove it.",
+            "template_id": "TPL?v4 · Browse abandonment · b1",
+            "smart_sending_enabled": false,
+            "transactional": false,
+            "add_tracking_params": true,
+            "custom_tracking_params": [
+             {
+              "param": "utm_source",
+              "value": "klaviyo"
+             },
+             {
+              "param": "utm_medium",
+              "value": "email"
+             },
+             {
+              "param": "utm_campaign",
+              "value": "v4-browse"
+             }
+            ],
+            "additional_filters": {
+             "condition_groups": [
+              {
+               "conditions": [
+                {
+                 "type": "profile-metric",
+                 "metric_id": "RSNxYV",
+                 "measurement": "count",
+                 "measurement_filter": {
+                  "type": "numeric",
+                  "operator": "equals",
+                  "value": 0
+                 },
+                 "timeframe_filter": {
+                  "type": "date",
+                  "operator": "flow-start"
+                 },
+                 "metric_filters": null
+                }
+               ]
+              }
+             ]
+            },
+            "name": "B1 · T05a-B"
+           },
+           "status": "draft"
+          },
+          "links": {
+           "next": null
+          }
+         }
+        ],
+        "allocations": {
+         "a009v0": 0.5,
+         "a009v1": 0.5
+        },
+        "winner_metric": "unique-clicks",
+        "automatic_winner_selection_settings": {
+         "enabled": false,
+         "automatic_end_date": null,
+         "automatic_end_statistical_certainty": false
+        }
+       }
+      },
+      "links": {
+       "next": "a008"
+      }
+     },
+     {
+      "temporary_id": "a010",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Your own 10%, for the next 48 hours",
+        "preview_text": "A personal code, on top of the sale. It ends 48 hours after this email.",
+        "template_id": "TPL?v4 · Browse abandonment · b2-clicked",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-browse"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "QXcV8K",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "CODE · B2-CLICKED · acc"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a011",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "\"I ordered one pan to try it out\"",
+        "preview_text": "Sunny C. started with one. Your first order comes with 4 gifts too.",
+        "template_id": "TPL?v4 · Browse abandonment · b2-clicked-nocode",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-browse"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "QXcV8K",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "B2-CLICKED · acc nocode · cooldown"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a012",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "\"I ordered one pan to try it out\"",
+        "preview_text": "Sunny C. started with one. Your first order comes with 4 gifts too.",
+        "template_id": "TPL?v4 · Browse abandonment · b2-clicked-nocode",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-browse"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "QXcV8K",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "B2-CLICKED · acc nocode · T02-B"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a013",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-sample",
+            "percentage": 50
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "a010",
+       "next_if_false": "a012"
+      }
+     },
+     {
+      "temporary_id": "a014",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "YkRM4Q",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "greater-than",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 30
+            },
+            "metric_filters": [
+             {
+              "property": "Campaign Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "CODE ·"
+              }
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "a011",
+       "next_if_false": "a013"
+      }
+     },
+     {
+      "temporary_id": "a015",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "W247h8",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "greater-than",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "flow-start"
+            },
+            "metric_filters": [
+             {
+              "property": "Campaign Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "B1-ACC"
+              }
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "a014",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "a016",
+      "type": "time-delay",
+      "data": {
+       "unit": "days",
+       "value": 2,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": "09:00:00"
+      },
+      "links": {
+       "next": "a015"
+      }
+     },
+     {
+      "temporary_id": "a017",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Looked twice? Here's the detail.",
+        "preview_text": "What it's made of, how it lasts, and 10% off with HI10.",
+        "template_id": "TPL?v4 · Browse abandonment · b1-acc",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-browse"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "B1-ACC"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a016"
+      }
+     },
+     {
+      "temporary_id": "a018",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "greater-than",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 1
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "Hammer"
+              }
+             }
+            ]
+           },
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "greater-than",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 1
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "Pan"
+              }
+             }
+            ]
+           },
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "greater-than",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 1
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "Pot"
+              }
+             }
+            ]
+           },
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "greater-than",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 1
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "ookware"
+              }
+             }
+            ]
+           },
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "greater-than",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 1
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "Everything"
+              }
+             }
+            ]
+           },
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "greater-than",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 1
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "fanne"
+              }
+             }
+            ]
+           },
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "greater-than",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 1
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "Prep Bundle"
+              }
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "a009",
+       "next_if_false": "a017"
+      }
+     },
+     {
+      "temporary_id": "a019",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 1,
+       "secondary_value": null,
+       "timezone": "profile"
+      },
+      "links": {
+       "next": "a018"
+      }
+     },
+     {
+      "temporary_id": "a020",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Hi {{ first_name|default:'' }}, we saw you looking...",
+        "preview_text": "Upgrade your kitchen kit",
+        "template_id": "X9w6vN",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "old-browse"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "Old · Browse 1"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a021",
+      "type": "time-delay",
+      "data": {
+       "unit": "minutes",
+       "value": 10,
+       "secondary_value": null,
+       "timezone": "profile"
+      },
+      "links": {
+       "next": "a020"
+      }
+     },
+     {
+      "temporary_id": "a022",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-sample",
+            "percentage": 50
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "a019",
+       "next_if_false": "a021"
+      }
+     }
+    ],
+    "entry_action_id": "a022",
+    "reentry_criteria": {
+     "duration": 7,
+     "unit": "day"
+    }
+   }
+  }
+ }
+}

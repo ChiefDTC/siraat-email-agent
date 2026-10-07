@@ -1,0 +1,551 @@
+{
+ "data": {
+  "type": "flow",
+  "attributes": {
+   "name": "v4 · Site abandonment",
+   "definition": {
+    "triggers": [
+     {
+      "type": "metric",
+      "id": "UdCdLD",
+      "trigger_filter": null
+     }
+    ],
+    "profile_filter": {
+     "condition_groups": [
+      {
+       "conditions": [
+        {
+         "type": "profile-metric",
+         "metric_id": "XNtYMB",
+         "measurement": "count",
+         "measurement_filter": {
+          "type": "numeric",
+          "operator": "equals",
+          "value": 0
+         },
+         "timeframe_filter": {
+          "type": "date",
+          "operator": "flow-start"
+         },
+         "metric_filters": null
+        }
+       ]
+      },
+      {
+       "conditions": [
+        {
+         "type": "profile-metric",
+         "metric_id": "QXcV8K",
+         "measurement": "count",
+         "measurement_filter": {
+          "type": "numeric",
+          "operator": "equals",
+          "value": 0
+         },
+         "timeframe_filter": {
+          "type": "date",
+          "operator": "flow-start"
+         },
+         "metric_filters": null
+        }
+       ]
+      },
+      {
+       "conditions": [
+        {
+         "type": "profile-metric",
+         "metric_id": "RfMvni",
+         "measurement": "count",
+         "measurement_filter": {
+          "type": "numeric",
+          "operator": "equals",
+          "value": 0
+         },
+         "timeframe_filter": {
+          "type": "date",
+          "operator": "flow-start"
+         },
+         "metric_filters": null
+        }
+       ]
+      },
+      {
+       "conditions": [
+        {
+         "type": "profile-metric",
+         "metric_id": "RSNxYV",
+         "measurement": "count",
+         "measurement_filter": {
+          "type": "numeric",
+          "operator": "equals",
+          "value": 0
+         },
+         "timeframe_filter": {
+          "type": "date",
+          "operator": "flow-start"
+         },
+         "metric_filters": null
+        }
+       ]
+      },
+      {
+       "conditions": [
+        {
+         "type": "profile-metric",
+         "metric_id": "RSNxYV",
+         "measurement": "count",
+         "measurement_filter": {
+          "type": "numeric",
+          "operator": "equals",
+          "value": 0
+         },
+         "timeframe_filter": {
+          "type": "date",
+          "operator": "in-the-last",
+          "unit": "day",
+          "quantity": 30
+         },
+         "metric_filters": null
+        }
+       ]
+      },
+      {
+       "conditions": [
+        {
+         "type": "profile-metric",
+         "metric_id": "YkRM4Q",
+         "measurement": "count",
+         "measurement_filter": {
+          "type": "numeric",
+          "operator": "equals",
+          "value": 0
+         },
+         "timeframe_filter": {
+          "type": "date",
+          "operator": "in-the-last",
+          "unit": "day",
+          "quantity": 7
+         },
+         "metric_filters": [
+          {
+           "property": "$flow",
+           "filter": {
+            "type": "string",
+            "operator": "equals",
+            "value": "FLOW?browse"
+           }
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "conditions": [
+        {
+         "type": "profile-metric",
+         "metric_id": "YkRM4Q",
+         "measurement": "count",
+         "measurement_filter": {
+          "type": "numeric",
+          "operator": "equals",
+          "value": 0
+         },
+         "timeframe_filter": {
+          "type": "date",
+          "operator": "in-the-last",
+          "unit": "day",
+          "quantity": 7
+         },
+         "metric_filters": [
+          {
+           "property": "$flow",
+           "filter": {
+            "type": "string",
+            "operator": "equals",
+            "value": "FLOW?cart"
+           }
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "conditions": [
+        {
+         "type": "profile-metric",
+         "metric_id": "YkRM4Q",
+         "measurement": "count",
+         "measurement_filter": {
+          "type": "numeric",
+          "operator": "equals",
+          "value": 0
+         },
+         "timeframe_filter": {
+          "type": "date",
+          "operator": "in-the-last",
+          "unit": "day",
+          "quantity": 7
+         },
+         "metric_filters": [
+          {
+           "property": "$flow",
+           "filter": {
+            "type": "string",
+            "operator": "equals",
+            "value": "FLOW?checkout"
+           }
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "conditions": [
+        {
+         "type": "profile-metric",
+         "metric_id": "YkRM4Q",
+         "measurement": "count",
+         "measurement_filter": {
+          "type": "numeric",
+          "operator": "equals",
+          "value": 0
+         },
+         "timeframe_filter": {
+          "type": "date",
+          "operator": "in-the-last",
+          "unit": "day",
+          "quantity": 7
+         },
+         "metric_filters": [
+          {
+           "property": "$flow",
+           "filter": {
+            "type": "string",
+            "operator": "equals",
+            "value": "FLOW?postpurchase"
+           }
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "conditions": [
+        {
+         "type": "profile-metric",
+         "metric_id": "YkRM4Q",
+         "measurement": "count",
+         "measurement_filter": {
+          "type": "numeric",
+          "operator": "equals",
+          "value": 0
+         },
+         "timeframe_filter": {
+          "type": "date",
+          "operator": "in-the-last",
+          "unit": "day",
+          "quantity": 10
+         },
+         "metric_filters": [
+          {
+           "property": "$flow",
+           "filter": {
+            "type": "string",
+            "operator": "equals",
+            "value": "FLOW?welcome"
+           }
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "conditions": [
+        {
+         "type": "profile-not-in-flow",
+         "timeframe_filter": {
+          "type": "date",
+          "operator": "in-the-last",
+          "unit": "day",
+          "quantity": 14
+         }
+        }
+       ]
+      }
+     ]
+    },
+    "actions": [
+     {
+      "temporary_id": "a001",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Where 100,000+ people started",
+        "preview_text": "Most kitchens start with the 11-inch pan. Some go straight to three. Here's how to choose.",
+        "template_id": "TPL?v4 · Site abandonment · a2",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-site"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "XNtYMB",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "QXcV8K",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RfMvni",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "A2"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a002",
+      "type": "time-delay",
+      "data": {
+       "unit": "days",
+       "value": 2,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": "09:00:00"
+      },
+      "links": {
+       "next": "a001"
+      }
+     },
+     {
+      "temporary_id": "a003",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Not sure which pan? Start here.",
+        "preview_text": "Four sizes, one titanium cooking surface. Here is how to pick yours in 30 seconds.",
+        "template_id": "TPL?v4 · Site abandonment · a1",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-site"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "XNtYMB",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "QXcV8K",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RfMvni",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "A1"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a002"
+      }
+     },
+     {
+      "temporary_id": "a004",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 2,
+       "secondary_value": null,
+       "timezone": "profile"
+      },
+      "links": {
+       "next": "a003"
+      }
+     }
+    ],
+    "entry_action_id": "a004",
+    "reentry_criteria": {
+     "duration": 14,
+     "unit": "day"
+    }
+   }
+  }
+ }
+}

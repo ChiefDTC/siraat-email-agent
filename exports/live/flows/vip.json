@@ -1,0 +1,464 @@
+{
+ "data": {
+  "type": "flow",
+  "attributes": {
+   "name": "v4 · VIP",
+   "definition": {
+    "triggers": [
+     {
+      "type": "metric",
+      "id": "RSNxYV",
+      "trigger_filter": null
+     }
+    ],
+    "profile_filter": {
+     "condition_groups": [
+      {
+       "conditions": [
+        {
+         "type": "profile-metric",
+         "metric_id": "RSNxYV",
+         "measurement": "count",
+         "measurement_filter": {
+          "type": "numeric",
+          "operator": "equals",
+          "value": 2
+         },
+         "timeframe_filter": {
+          "type": "date",
+          "operator": "alltime"
+         },
+         "metric_filters": null
+        }
+       ]
+      },
+      {
+       "conditions": [
+        {
+         "type": "profile-not-in-flow",
+         "timeframe_filter": {
+          "type": "date",
+          "operator": "alltime"
+         }
+        }
+       ]
+      }
+     ]
+    },
+    "actions": [
+     {
+      "temporary_id": "a001",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Benjamin at Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "A question from Benjamin",
+        "preview_text": "You've ordered twice. I'd love to know what you want us to make next.",
+        "template_id": "TPL?v4 · VIP · v2",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-vip"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "Xg6cwn",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "V2"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a002",
+      "type": "time-delay",
+      "data": {
+       "unit": "days",
+       "value": 10,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": "09:00:00"
+      },
+      "links": {
+       "next": "a001"
+      }
+     },
+     {
+      "temporary_id": "a003",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Twice is a habit. Here's 15% off.",
+        "preview_text": "You've ordered twice. This personal 15% code is yours for 14 days.",
+        "template_id": "TPL?v4 · VIP · v1",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-vip"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "Xg6cwn",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 14
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "CODE · V1"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a002"
+      }
+     },
+     {
+      "temporary_id": "a004",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Benjamin at Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "A question from Benjamin",
+        "preview_text": "You've ordered twice. I'd love to know what you want us to make next.",
+        "template_id": "TPL?v4 · VIP · v2",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-vip"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "Xg6cwn",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "V2"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a005",
+      "type": "time-delay",
+      "data": {
+       "unit": "days",
+       "value": 10,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": "09:00:00"
+      },
+      "links": {
+       "next": "a004"
+      }
+     },
+     {
+      "temporary_id": "a006",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Twice is a habit. Thank you.",
+        "preview_text": "You came back for a second order. A thank you from Benjamin, and HI10 still works.",
+        "template_id": "TPL?v4 · VIP · v1-nocode",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-vip"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "Xg6cwn",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 14
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "V1 nocode · cooldown"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a005"
+      }
+     },
+     {
+      "temporary_id": "a007",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "YkRM4Q",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "greater-than",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 30
+            },
+            "metric_filters": [
+             {
+              "property": "Campaign Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "CODE ·"
+              }
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "a006",
+       "next_if_false": "a003"
+      }
+     },
+     {
+      "temporary_id": "a008",
+      "type": "time-delay",
+      "data": {
+       "unit": "days",
+       "value": 30,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": "09:00:00"
+      },
+      "links": {
+       "next": "a007"
+      }
+     }
+    ],
+    "entry_action_id": "a008"
+   }
+  }
+ }
+}

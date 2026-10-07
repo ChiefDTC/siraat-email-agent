@@ -1,0 +1,1509 @@
+{
+ "data": {
+  "type": "flow",
+  "attributes": {
+   "name": "v4 · Winback",
+   "definition": {
+    "triggers": [
+     {
+      "type": "metric",
+      "id": "RSNxYV",
+      "trigger_filter": null
+     }
+    ],
+    "profile_filter": null,
+    "actions": [
+     {
+      "temporary_id": "a001",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "For our regulars: 15% for 72 hours",
+        "preview_text": "You've ordered more than once. This 15% code is yours for 72 hours.",
+        "template_id": "TPL?v4 · Winback · r2-vip",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-winback"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "CODE · R2-VIP"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a002",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "You came back. Thank you.",
+        "preview_text": "You have ordered more than once. A thank you, and 4 gifts with every order.",
+        "template_id": "TPL?v4 · Winback · r2-vip-nocode",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-winback"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "R2-VIP nocode · cooldown"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a003",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "You came back. Thank you.",
+        "preview_text": "You have ordered more than once. A thank you, and 4 gifts with every order.",
+        "template_id": "TPL?v4 · Winback · r2-vip-nocode",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-winback"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "R2-VIP nocode · T02-B"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a004",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-sample",
+            "percentage": 50
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "a001",
+       "next_if_false": "a003"
+      }
+     },
+     {
+      "temporary_id": "a005",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "YkRM4Q",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "greater-than",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 30
+            },
+            "metric_filters": [
+             {
+              "property": "Campaign Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "CODE ·"
+              }
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "a002",
+       "next_if_false": "a004"
+      }
+     },
+     {
+      "temporary_id": "a006",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "10% off your next piece, for 72 hours",
+        "preview_text": "Your own code, applied with one tap. It ends 72 hours after this email.",
+        "template_id": "TPL?v4 · Winback · r2",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-winback"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "CODE · R2"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a007",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Ready for pan number two?",
+        "preview_text": "If one pan is always busy, this is for the second. Free shipping and 4 gifts.",
+        "template_id": "TPL?v4 · Winback · r2-nocode",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-winback"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "R2 nocode · cooldown"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a008",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Ready for pan number two?",
+        "preview_text": "If one pan is always busy, this is for the second. Free shipping and 4 gifts.",
+        "template_id": "TPL?v4 · Winback · r2-nocode",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-winback"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "R2 nocode · T02-B"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a009",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-sample",
+            "percentage": 50
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "a006",
+       "next_if_false": "a008"
+      }
+     },
+     {
+      "temporary_id": "a010",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "YkRM4Q",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "greater-than",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 30
+            },
+            "metric_filters": [
+             {
+              "property": "Campaign Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "CODE ·"
+              }
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "a007",
+       "next_if_false": "a009"
+      }
+     },
+     {
+      "temporary_id": "a011",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "RSNxYV",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "greater-than-or-equal",
+             "value": 2
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "alltime"
+            },
+            "metric_filters": null
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "a005",
+       "next_if_false": "a010"
+      }
+     },
+     {
+      "temporary_id": "a012",
+      "type": "time-delay",
+      "data": {
+       "unit": "days",
+       "value": 30,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": "09:00:00"
+      },
+      "links": {
+       "next": "a011"
+      }
+     },
+     {
+      "temporary_id": "a013",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Ready for the pan?",
+        "preview_text": "You started with us the other way round. Here's the pan most kitchens start with.",
+        "template_id": "TPL?v4 · Winback · r1-acc",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-winback"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "YkRM4Q",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 7
+             },
+             "metric_filters": [
+              {
+               "property": "$flow",
+               "filter": {
+                "type": "string",
+                "operator": "equals",
+                "value": "FLOW?postpurchase"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "YkRM4Q",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 7
+             },
+             "metric_filters": [
+              {
+               "property": "$flow",
+               "filter": {
+                "type": "string",
+                "operator": "equals",
+                "value": "FLOW?vip"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "alltime"
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "name": "R1-ACC"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a012"
+      }
+     },
+     {
+      "temporary_id": "a014",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "How's your pan doing?",
+        "preview_text": "Six weeks with your pan. Here is what owners add next, with HI10 and 4 gifts.",
+        "template_id": "TPL?v4 · Winback · r1-pan",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-winback"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "YkRM4Q",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 7
+             },
+             "metric_filters": [
+              {
+               "property": "$flow",
+               "filter": {
+                "type": "string",
+                "operator": "equals",
+                "value": "FLOW?postpurchase"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "YkRM4Q",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 7
+             },
+             "metric_filters": [
+              {
+               "property": "$flow",
+               "filter": {
+                "type": "string",
+                "operator": "equals",
+                "value": "FLOW?vip"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 46
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "alltime"
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "name": "R1-PAN · eigenaar"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a013"
+      }
+     },
+     {
+      "temporary_id": "a015",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "How's your pan doing?",
+        "preview_text": "Six weeks with your pan. Here is what owners add next, with HI10 and 4 gifts.",
+        "template_id": "TPL?v4 · Winback · r1-pan",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-winback"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "YkRM4Q",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 7
+             },
+             "metric_filters": [
+              {
+               "property": "$flow",
+               "filter": {
+                "type": "string",
+                "operator": "equals",
+                "value": "FLOW?postpurchase"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "YkRM4Q",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 7
+             },
+             "metric_filters": [
+              {
+               "property": "$flow",
+               "filter": {
+                "type": "string",
+                "operator": "equals",
+                "value": "FLOW?vip"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 46
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 46
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 46
+             },
+             "metric_filters": [
+              {
+               "property": "$value",
+               "filter": {
+                "type": "numeric",
+                "operator": "greater-than-or-equal",
+                "value": 300
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "name": "R1-PAN · kook"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a014"
+      }
+     },
+     {
+      "temporary_id": "a016",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "The shapes a set leaves out",
+        "preview_text": "The flat one, the deep one, the board and the tools. HI10 takes 10% off.",
+        "template_id": "TPL?v4 · Winback · r1-set",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-winback"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "YkRM4Q",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 7
+             },
+             "metric_filters": [
+              {
+               "property": "$flow",
+               "filter": {
+                "type": "string",
+                "operator": "equals",
+                "value": "FLOW?postpurchase"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "YkRM4Q",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 7
+             },
+             "metric_filters": [
+              {
+               "property": "$flow",
+               "filter": {
+                "type": "string",
+                "operator": "equals",
+                "value": "FLOW?vip"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 46
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 46
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            },
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 46
+             },
+             "metric_filters": [
+              {
+               "property": "$value",
+               "filter": {
+                "type": "numeric",
+                "operator": "greater-than-or-equal",
+                "value": 300
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "name": "R1-SET"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a015"
+      }
+     },
+     {
+      "temporary_id": "a017",
+      "type": "time-delay",
+      "data": {
+       "unit": "days",
+       "value": 45,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": "09:00:00"
+      },
+      "links": {
+       "next": "a016"
+      }
+     }
+    ],
+    "entry_action_id": "a017"
+   }
+  }
+ }
+}

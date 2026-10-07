@@ -1,0 +1,217 @@
+{
+ "data": {
+  "type": "flow",
+  "attributes": {
+   "name": "v4 · Post-purchase · levering",
+   "definition": {
+    "triggers": [
+     {
+      "type": "metric",
+      "id": "VcUF33",
+      "trigger_filter": null
+     }
+    ],
+    "profile_filter": {
+     "condition_groups": [
+      {
+       "conditions": [
+        {
+         "type": "profile-metric",
+         "metric_id": "RSNxYV",
+         "measurement": "count",
+         "measurement_filter": {
+          "type": "numeric",
+          "operator": "greater-than",
+          "value": 0
+         },
+         "timeframe_filter": {
+          "type": "date",
+          "operator": "in-the-last",
+          "unit": "day",
+          "quantity": 30
+         },
+         "metric_filters": [
+          {
+           "property": "Items",
+           "filter": {
+            "type": "list",
+            "operator": "contains-any",
+            "value": [
+             "Titanium Hammered Pan Pro Standard",
+             "Titanium Hammered Pan Pro Large",
+             "Titanium Hammered Pan Pro Small",
+             "Titanium Hammered Pan Pro Mini",
+             "Titanium Pan Pro",
+             "Titanium Hammered Deep Pan Pro",
+             "Titanium Hammered Wok Pan Pro",
+             "Titanium Hammered Crêpe Pan Pro",
+             "Titanium Hammered Pizza Steel",
+             "Titanium Hammered Roasting Pan",
+             "2 Litre Titanium Hammered Pot With Lid",
+             "3 Litre Titanium Hammered Pot With Lid",
+             "7,5 Litre Titanium Hammered Pot With Lid",
+             "Pot Set With Lids 6-Pcs",
+             "Titanium Hammered Pan Pro With Lid",
+             "Titanium Hammered Pan Pro & Utensil Set",
+             "Titanium Cook & Prep Bundle",
+             "Titanium Hammered Pan Set With Lids | 6-Pcs",
+             "Titanium Hammered Cookware Set | 12-Pcs",
+             "Titanium Hammered Cookware Set Pro",
+             "Titanium Hammered Complete Edition",
+             "Titanium Hammered – Complete Edition",
+             "Full Hammered Pro Edition",
+             "The Just Everything Bundle | 34-Pcs",
+             "2 Pans + 2 Lids",
+             "Titanium Hammered Pan Pro Duo",
+             "Titanium Hammered Pro Duo",
+             "Titanium Hammered Pan Pro Kit",
+             "12 pcs cookware set",
+             "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+            ]
+           }
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "conditions": [
+        {
+         "type": "profile-not-in-flow",
+         "timeframe_filter": {
+          "type": "date",
+          "operator": "in-the-last",
+          "unit": "day",
+          "quantity": 30
+         }
+        }
+       ]
+      },
+      {
+       "conditions": [
+        {
+         "type": "profile-metric",
+         "metric_id": "YkRM4Q",
+         "measurement": "count",
+         "measurement_filter": {
+          "type": "numeric",
+          "operator": "equals",
+          "value": 0
+         },
+         "timeframe_filter": {
+          "type": "date",
+          "operator": "in-the-last",
+          "unit": "day",
+          "quantity": 30
+         },
+         "metric_filters": [
+          {
+           "property": "$flow",
+           "filter": {
+            "type": "string",
+            "operator": "equals",
+            "value": "FLOW?postpurchase"
+           }
+          },
+          {
+           "property": "Campaign Name",
+           "filter": {
+            "type": "string",
+            "operator": "contains",
+            "value": "P2-SAFE"
+           }
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    "actions": [
+     {
+      "temporary_id": "a001",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "If you can do an egg, you can do anything",
+        "preview_text": "Medium on titanium works like high on a normal pan. The chef's five steps.",
+        "template_id": "TPL?v4 · Post-purchase · levering · p2",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-postpurchase"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "Xg6cwn",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 30
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "P2"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a002",
+      "type": "time-delay",
+      "data": {
+       "unit": "days",
+       "value": 1,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": "09:00:00"
+      },
+      "links": {
+       "next": "a001"
+      }
+     }
+    ],
+    "entry_action_id": "a002",
+    "reentry_criteria": {
+     "duration": 30,
+     "unit": "day"
+    }
+   }
+  }
+ }
+}

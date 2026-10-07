@@ -1,0 +1,491 @@
+{
+ "data": {
+  "type": "flow",
+  "attributes": {
+   "name": "v4 · Anniversary",
+   "definition": {
+    "triggers": [
+     {
+      "type": "metric",
+      "id": "RSNxYV",
+      "trigger_filter": null
+     }
+    ],
+    "profile_filter": {
+     "condition_groups": [
+      {
+       "conditions": [
+        {
+         "type": "profile-metric",
+         "metric_id": "RSNxYV",
+         "measurement": "count",
+         "measurement_filter": {
+          "type": "numeric",
+          "operator": "equals",
+          "value": 1
+         },
+         "timeframe_filter": {
+          "type": "date",
+          "operator": "alltime"
+         },
+         "metric_filters": null
+        }
+       ]
+      },
+      {
+       "conditions": [
+        {
+         "type": "profile-metric",
+         "metric_id": "RSNxYV",
+         "measurement": "count",
+         "measurement_filter": {
+          "type": "numeric",
+          "operator": "greater-than",
+          "value": 0
+         },
+         "timeframe_filter": {
+          "type": "date",
+          "operator": "alltime"
+         },
+         "metric_filters": [
+          {
+           "property": "Items",
+           "filter": {
+            "type": "list",
+            "operator": "contains-any",
+            "value": [
+             "Titanium Hammered Pan Pro Standard",
+             "Titanium Hammered Pan Pro Large",
+             "Titanium Hammered Pan Pro Small",
+             "Titanium Hammered Pan Pro Mini",
+             "Titanium Pan Pro",
+             "Titanium Hammered Deep Pan Pro",
+             "Titanium Hammered Wok Pan Pro",
+             "Titanium Hammered Crêpe Pan Pro",
+             "Titanium Hammered Pizza Steel",
+             "Titanium Hammered Roasting Pan",
+             "2 Litre Titanium Hammered Pot With Lid",
+             "3 Litre Titanium Hammered Pot With Lid",
+             "7,5 Litre Titanium Hammered Pot With Lid",
+             "Pot Set With Lids 6-Pcs",
+             "Titanium Hammered Pan Pro With Lid",
+             "Titanium Hammered Pan Pro & Utensil Set",
+             "Titanium Cook & Prep Bundle",
+             "Titanium Hammered Pan Set With Lids | 6-Pcs",
+             "Titanium Hammered Cookware Set | 12-Pcs",
+             "Titanium Hammered Cookware Set Pro",
+             "Titanium Hammered Complete Edition",
+             "Titanium Hammered – Complete Edition",
+             "Full Hammered Pro Edition",
+             "The Just Everything Bundle | 34-Pcs",
+             "2 Pans + 2 Lids",
+             "Titanium Hammered Pan Pro Duo",
+             "Titanium Hammered Pro Duo",
+             "Titanium Hammered Pan Pro Kit",
+             "12 pcs cookware set",
+             "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+            ]
+           }
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "conditions": [
+        {
+         "type": "profile-not-in-flow",
+         "timeframe_filter": {
+          "type": "date",
+          "operator": "alltime"
+         }
+        }
+       ]
+      }
+     ]
+    },
+    "actions": [
+     {
+      "temporary_id": "a001",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "One year ago this week",
+        "preview_text": "A year ago you placed your first order. Here's 10% off, yours for 7 days.",
+        "template_id": "TPL?v4 · Anniversary · n2",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-anniversary"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "Xg6cwn",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 14
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "CODE · N2"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a002",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "One year ago this week",
+        "preview_text": "A year ago this week you placed your first order. 74 years left on your warranty.",
+        "template_id": "TPL?v4 · Anniversary · n2-nocode",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-anniversary"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "Xg6cwn",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 14
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "N2 nocode · cooldown"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a003",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "YkRM4Q",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "greater-than",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 30
+            },
+            "metric_filters": [
+             {
+              "property": "Campaign Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "CODE ·"
+              }
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "a002",
+       "next_if_false": "a001"
+      }
+     },
+     {
+      "temporary_id": "a004",
+      "type": "time-delay",
+      "data": {
+       "unit": "days",
+       "value": 183,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": "09:00:00"
+      },
+      "links": {
+       "next": "a003"
+      }
+     },
+     {
+      "temporary_id": "a005",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "How's your pan at six months?",
+        "preview_text": "A brown tint, a bit of sticking, a loose handle. The three short answers.",
+        "template_id": "TPL?v4 · Anniversary · n1",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-anniversary"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "Xg6cwn",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "YkRM4Q",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 14
+             },
+             "metric_filters": [
+              {
+               "property": "$flow",
+               "filter": {
+                "type": "string",
+                "operator": "equals",
+                "value": "FLOW?vip"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "YkRM4Q",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 14
+             },
+             "metric_filters": [
+              {
+               "property": "$flow",
+               "filter": {
+                "type": "string",
+                "operator": "equals",
+                "value": "FLOW?winback"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "YzvjGf",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 14
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "N1"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a004"
+      }
+     },
+     {
+      "temporary_id": "a006",
+      "type": "time-delay",
+      "data": {
+       "unit": "days",
+       "value": 182,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": "09:00:00"
+      },
+      "links": {
+       "next": "a005"
+      }
+     }
+    ],
+    "entry_action_id": "a006"
+   }
+  }
+ }
+}

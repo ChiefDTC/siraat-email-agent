@@ -1,0 +1,5891 @@
+{
+ "data": {
+  "type": "flow",
+  "attributes": {
+   "name": "v4 · Post-purchase",
+   "definition": {
+    "triggers": [
+     {
+      "type": "metric",
+      "id": "RSNxYV",
+      "trigger_filter": null
+     }
+    ],
+    "profile_filter": {
+     "condition_groups": [
+      {
+       "conditions": [
+        {
+         "type": "profile-not-in-flow",
+         "timeframe_filter": {
+          "type": "date",
+          "operator": "in-the-last",
+          "unit": "day",
+          "quantity": 30
+         }
+        }
+       ]
+      }
+     ]
+    },
+    "actions": [
+     {
+      "temporary_id": "a001",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Now meet the pan",
+        "preview_text": "Your thank-you code takes 10% off the Pan Pro. It ends 14 days after this email.",
+        "template_id": "TPL?v4 · Post-purchase · p3-accessory",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-postpurchase"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "Xg6cwn",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 30
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "E-Gift Card"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "alltime"
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Siraat Signature Apron - Azure",
+                 "Siraat Signature Apron - Moss",
+                 "Siraat Signature Apron - Ember",
+                 "Siraat Signature Apron - Oak"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "name": "CODE · P3-ACCESSORY · acc"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a002",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "An apron deserves a pan",
+        "preview_text": "Here is 10% off the pan it was made for, for you or for them.",
+        "template_id": "TPL?v4 · Post-purchase · p3-apron",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-postpurchase"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "Xg6cwn",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 30
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "E-Gift Card"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "alltime"
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Siraat Signature Apron - Azure",
+                 "Siraat Signature Apron - Moss",
+                 "Siraat Signature Apron - Ember",
+                 "Siraat Signature Apron - Oak"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "name": "CODE · P3-APRON"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a001"
+      }
+     },
+     {
+      "temporary_id": "a003",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "What goes next to your pan",
+        "preview_text": "The board or the lid that matches your order, 10% off with your own code.",
+        "template_id": "TPL?v4 · Post-purchase · p3-next",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-postpurchase"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "Xg6cwn",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 30
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "E-Gift Card"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "alltime"
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "name": "CODE · P3-NEXT · eigenaar"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a002"
+      }
+     },
+     {
+      "temporary_id": "a004",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Now meet the pan",
+        "preview_text": "Your thank-you code takes 10% off the Pan Pro. It ends 14 days after this email.",
+        "template_id": "TPL?v4 · Post-purchase · p3-accessory",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-postpurchase"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "Xg6cwn",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 30
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "$value",
+               "filter": {
+                "type": "numeric",
+                "operator": "greater-than-or-equal",
+                "value": 300
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Stainless Steel Lid",
+                 "Titanium Hammered Pan Pro With Lid"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "name": "CODE · P3-ACCESSORY · kook"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a003"
+      }
+     },
+     {
+      "temporary_id": "a005",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Which lid fits your pan?",
+        "preview_text": "The lid in your pan's size, plus the board. 10% off with your own code.",
+        "template_id": "TPL?v4 · Post-purchase · p3-pan",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-postpurchase"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "Xg6cwn",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 30
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "$value",
+               "filter": {
+                "type": "numeric",
+                "operator": "greater-than-or-equal",
+                "value": 300
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Stainless Steel Lid",
+                 "Titanium Hammered Pan Pro With Lid"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "name": "CODE · P3-PAN"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a004"
+      }
+     },
+     {
+      "temporary_id": "a006",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "What goes next to your pan",
+        "preview_text": "The board or the lid that matches your order, 10% off with your own code.",
+        "template_id": "TPL?v4 · Post-purchase · p3-next",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-postpurchase"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "Xg6cwn",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 30
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "$value",
+               "filter": {
+                "type": "numeric",
+                "operator": "greater-than-or-equal",
+                "value": 300
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Stainless Steel Lid",
+                 "Titanium Hammered Pan Pro With Lid"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "name": "CODE · P3-NEXT · deksel"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a005"
+      }
+     },
+     {
+      "temporary_id": "a007",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "The pan your set is missing",
+        "preview_text": "Crepe or wok, 10% off with your own code. It ends 14 days after this email.",
+        "template_id": "TPL?v4 · Post-purchase · p3-set",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-postpurchase"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "Xg6cwn",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 30
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            },
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "$value",
+               "filter": {
+                "type": "numeric",
+                "operator": "greater-than-or-equal",
+                "value": 300
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "name": "CODE · P3-SET"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a006"
+      }
+     },
+     {
+      "temporary_id": "a008",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Now meet the pan",
+        "preview_text": "The original hammered titanium pan. Free shipping and 4 gifts with every order.",
+        "template_id": "TPL?v4 · Post-purchase · p3-accessory-nocode",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-postpurchase"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "Xg6cwn",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 30
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "E-Gift Card"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "alltime"
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Siraat Signature Apron - Azure",
+                 "Siraat Signature Apron - Moss",
+                 "Siraat Signature Apron - Ember",
+                 "Siraat Signature Apron - Oak"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "name": "P3-ACCESSORY · acc nocode · T02-B"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a009",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "An apron deserves a pan",
+        "preview_text": "The pan it was made for, for you or for them. 4 gifts with every order.",
+        "template_id": "TPL?v4 · Post-purchase · p3-apron-nocode",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-postpurchase"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "Xg6cwn",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 30
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "E-Gift Card"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "alltime"
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Siraat Signature Apron - Azure",
+                 "Siraat Signature Apron - Moss",
+                 "Siraat Signature Apron - Ember",
+                 "Siraat Signature Apron - Oak"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "name": "P3-APRON nocode · T02-B"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a008"
+      }
+     },
+     {
+      "temporary_id": "a010",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "What goes next to your pan",
+        "preview_text": "The board or the lid that matches your order. 4 gifts with every order.",
+        "template_id": "TPL?v4 · Post-purchase · p3-next-nocode",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-postpurchase"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "Xg6cwn",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 30
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "E-Gift Card"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "alltime"
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "name": "P3-NEXT · eigenaar nocode · T02-B"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a009"
+      }
+     },
+     {
+      "temporary_id": "a011",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Now meet the pan",
+        "preview_text": "The original hammered titanium pan. Free shipping and 4 gifts with every order.",
+        "template_id": "TPL?v4 · Post-purchase · p3-accessory-nocode",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-postpurchase"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "Xg6cwn",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 30
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "$value",
+               "filter": {
+                "type": "numeric",
+                "operator": "greater-than-or-equal",
+                "value": 300
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Stainless Steel Lid",
+                 "Titanium Hammered Pan Pro With Lid"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "name": "P3-ACCESSORY · kook nocode · T02-B"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a010"
+      }
+     },
+     {
+      "temporary_id": "a012",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Which lid fits your pan?",
+        "preview_text": "The lid in your pan's size, plus the board. 4 gifts with every order.",
+        "template_id": "TPL?v4 · Post-purchase · p3-pan-nocode",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-postpurchase"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "Xg6cwn",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 30
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "$value",
+               "filter": {
+                "type": "numeric",
+                "operator": "greater-than-or-equal",
+                "value": 300
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Stainless Steel Lid",
+                 "Titanium Hammered Pan Pro With Lid"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "name": "P3-PAN nocode · T02-B"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a011"
+      }
+     },
+     {
+      "temporary_id": "a013",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "What goes next to your pan",
+        "preview_text": "The board or the lid that matches your order. 4 gifts with every order.",
+        "template_id": "TPL?v4 · Post-purchase · p3-next-nocode",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-postpurchase"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "Xg6cwn",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 30
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "$value",
+               "filter": {
+                "type": "numeric",
+                "operator": "greater-than-or-equal",
+                "value": 300
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Stainless Steel Lid",
+                 "Titanium Hammered Pan Pro With Lid"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "name": "P3-NEXT · deksel nocode · T02-B"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a012"
+      }
+     },
+     {
+      "temporary_id": "a014",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "The pan your set is missing",
+        "preview_text": "Crepe or wok: the two shapes a set doesn't cover. 4 gifts with every order.",
+        "template_id": "TPL?v4 · Post-purchase · p3-set-nocode",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-postpurchase"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "Xg6cwn",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 30
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            },
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "$value",
+               "filter": {
+                "type": "numeric",
+                "operator": "greater-than-or-equal",
+                "value": 300
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "name": "P3-SET nocode · T02-B"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a013"
+      }
+     },
+     {
+      "temporary_id": "a015",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-sample",
+            "percentage": 50
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "a007",
+       "next_if_false": "a014"
+      }
+     },
+     {
+      "temporary_id": "a016",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Now meet the pan",
+        "preview_text": "The original hammered titanium pan. Free shipping and 4 gifts with every order.",
+        "template_id": "TPL?v4 · Post-purchase · p3-accessory-nocode",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-postpurchase"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "Xg6cwn",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 30
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "E-Gift Card"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "alltime"
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Siraat Signature Apron - Azure",
+                 "Siraat Signature Apron - Moss",
+                 "Siraat Signature Apron - Ember",
+                 "Siraat Signature Apron - Oak"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "name": "P3-ACCESSORY · acc nocode · cooldown"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "a017",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "An apron deserves a pan",
+        "preview_text": "The pan it was made for, for you or for them. 4 gifts with every order.",
+        "template_id": "TPL?v4 · Post-purchase · p3-apron-nocode",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-postpurchase"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "Xg6cwn",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 30
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "E-Gift Card"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "alltime"
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Siraat Signature Apron - Azure",
+                 "Siraat Signature Apron - Moss",
+                 "Siraat Signature Apron - Ember",
+                 "Siraat Signature Apron - Oak"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "name": "P3-APRON nocode · cooldown"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a016"
+      }
+     },
+     {
+      "temporary_id": "a018",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "What goes next to your pan",
+        "preview_text": "The board or the lid that matches your order. 4 gifts with every order.",
+        "template_id": "TPL?v4 · Post-purchase · p3-next-nocode",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-postpurchase"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "Xg6cwn",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 30
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "E-Gift Card"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "alltime"
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "name": "P3-NEXT · eigenaar nocode · cooldown"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a017"
+      }
+     },
+     {
+      "temporary_id": "a019",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Now meet the pan",
+        "preview_text": "The original hammered titanium pan. Free shipping and 4 gifts with every order.",
+        "template_id": "TPL?v4 · Post-purchase · p3-accessory-nocode",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-postpurchase"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "Xg6cwn",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 30
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "$value",
+               "filter": {
+                "type": "numeric",
+                "operator": "greater-than-or-equal",
+                "value": 300
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Stainless Steel Lid",
+                 "Titanium Hammered Pan Pro With Lid"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "name": "P3-ACCESSORY · kook nocode · cooldown"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a018"
+      }
+     },
+     {
+      "temporary_id": "a020",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Which lid fits your pan?",
+        "preview_text": "The lid in your pan's size, plus the board. 4 gifts with every order.",
+        "template_id": "TPL?v4 · Post-purchase · p3-pan-nocode",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-postpurchase"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "Xg6cwn",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 30
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "$value",
+               "filter": {
+                "type": "numeric",
+                "operator": "greater-than-or-equal",
+                "value": 300
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Stainless Steel Lid",
+                 "Titanium Hammered Pan Pro With Lid"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "name": "P3-PAN nocode · cooldown"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a019"
+      }
+     },
+     {
+      "temporary_id": "a021",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "What goes next to your pan",
+        "preview_text": "The board or the lid that matches your order. 4 gifts with every order.",
+        "template_id": "TPL?v4 · Post-purchase · p3-next-nocode",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-postpurchase"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "Xg6cwn",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 30
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "$value",
+               "filter": {
+                "type": "numeric",
+                "operator": "greater-than-or-equal",
+                "value": 300
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Stainless Steel Lid",
+                 "Titanium Hammered Pan Pro With Lid"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "name": "P3-NEXT · deksel nocode · cooldown"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a020"
+      }
+     },
+     {
+      "temporary_id": "a022",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "The pan your set is missing",
+        "preview_text": "Crepe or wok: the two shapes a set doesn't cover. 4 gifts with every order.",
+        "template_id": "TPL?v4 · Post-purchase · p3-set-nocode",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-postpurchase"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "Xg6cwn",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 30
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            },
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 21
+             },
+             "metric_filters": [
+              {
+               "property": "$value",
+               "filter": {
+                "type": "numeric",
+                "operator": "greater-than-or-equal",
+                "value": 300
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "name": "P3-SET nocode · cooldown"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a021"
+      }
+     },
+     {
+      "temporary_id": "a023",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "YkRM4Q",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "greater-than",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 30
+            },
+            "metric_filters": [
+             {
+              "property": "Campaign Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "CODE ·"
+              }
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "a022",
+       "next_if_false": "a015"
+      }
+     },
+     {
+      "temporary_id": "a024",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "RSNxYV",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 2
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "alltime"
+            },
+            "metric_filters": null
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": null,
+       "next_if_false": "a023"
+      }
+     },
+     {
+      "temporary_id": "a025",
+      "type": "time-delay",
+      "data": {
+       "unit": "days",
+       "value": 4,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": "09:00:00"
+      },
+      "links": {
+       "next": "a024"
+      }
+     },
+     {
+      "temporary_id": "a026",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "When your pan arrives: the first egg",
+        "preview_text": "Heat first, then oil, then the egg. Keep this for your first cook.",
+        "template_id": "TPL?v4 · Post-purchase · p2-safe",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-postpurchase"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 17
+             },
+             "metric_filters": [
+              {
+               "property": "Items",
+               "filter": {
+                "type": "list",
+                "operator": "contains-any",
+                "value": [
+                 "Titanium Hammered Pan Pro Standard",
+                 "Titanium Hammered Pan Pro Large",
+                 "Titanium Hammered Pan Pro Small",
+                 "Titanium Hammered Pan Pro Mini",
+                 "Titanium Pan Pro",
+                 "Titanium Hammered Deep Pan Pro",
+                 "Titanium Hammered Wok Pan Pro",
+                 "Titanium Hammered Crêpe Pan Pro",
+                 "Titanium Hammered Pizza Steel",
+                 "Titanium Hammered Roasting Pan",
+                 "2 Litre Titanium Hammered Pot With Lid",
+                 "3 Litre Titanium Hammered Pot With Lid",
+                 "7,5 Litre Titanium Hammered Pot With Lid",
+                 "Pot Set With Lids 6-Pcs",
+                 "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro & Utensil Set",
+                 "Titanium Cook & Prep Bundle",
+                 "Titanium Hammered Pan Set With Lids | 6-Pcs",
+                 "Titanium Hammered Cookware Set | 12-Pcs",
+                 "Titanium Hammered Cookware Set Pro",
+                 "Titanium Hammered Complete Edition",
+                 "Titanium Hammered – Complete Edition",
+                 "Full Hammered Pro Edition",
+                 "The Just Everything Bundle | 34-Pcs",
+                 "2 Pans + 2 Lids",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "12 pcs cookware set",
+                 "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "VcUF33",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "Xg6cwn",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 30
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "P2-SAFE"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a025"
+      }
+     },
+     {
+      "temporary_id": "a027",
+      "type": "time-delay",
+      "data": {
+       "unit": "days",
+       "value": 16,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": "09:00:00"
+      },
+      "links": {
+       "next": "a026"
+      }
+     },
+     {
+      "temporary_id": "a028",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Good to see you again",
+        "preview_text": "Your order is in. Same careful packing, same 4 gifts.",
+        "template_id": "TPL?v4 · Post-purchase · p1-repeat",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-postpurchase"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 1
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "alltime"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "P1-REPEAT"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a027"
+      }
+     },
+     {
+      "temporary_id": "a029",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Good call. Here's what's coming.",
+        "preview_text": "Order confirmed. Your 4 gifts, your e-book and the one tip that matters.",
+        "template_id": "TPL?v4 · Post-purchase · p1-first",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": true,
+        "custom_tracking_params": [
+         {
+          "param": "utm_source",
+          "value": "klaviyo"
+         },
+         {
+          "param": "utm_medium",
+          "value": "email"
+         },
+         {
+          "param": "utm_campaign",
+          "value": "v4-postpurchase"
+         }
+        ],
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 1
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "alltime"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "P1-FIRST"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "a028"
+      }
+     },
+     {
+      "temporary_id": "a030",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 1,
+       "secondary_value": null,
+       "timezone": "profile"
+      },
+      "links": {
+       "next": "a029"
+      }
+     }
+    ],
+    "entry_action_id": "a030",
+    "reentry_criteria": {
+     "duration": 30,
+     "unit": "day"
+    }
+   }
+  }
+ }
+}
