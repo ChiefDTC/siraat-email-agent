@@ -9,7 +9,6 @@ compare-cap-plain.png https://cdn.klaviyomail.com/company/TdtTzz/images/3d02b673
 gift-ebook.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/3fab7ff2-1993-48d2-8567-d9f3d0ce04dd.jpeg
 gift-filter.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/a6aec8e7-f289-424e-ab60-689f1ae85c39.jpeg
 gift-mystery.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/c97cf7a9-cccf-4472-a592-d49747b6d6a7.jpeg
-gift-shipping.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/e091b826-c2d4-4431-b253-4ccb16db0901.jpeg
 icon-check.png https://cdn.klaviyomail.com/company/TdtTzz/images/6d715e47-cf75-4606-a1d2-63d4dd4717c7.png
 icon-cross.png https://cdn.klaviyomail.com/company/TdtTzz/images/8819b4d3-7a7c-4f6f-82d7-70b6ce6971d8.png
 icon-customers-100k.png https://cdn.klaviyomail.com/company/TdtTzz/images/c2ae0306-f0fa-48e5-817c-6b41e95f16aa.png
@@ -45,3 +44,4 @@ sticker-bestseller.png https://cdn.klaviyomail.com/company/TdtTzz/images/c1e8229
 sticker-new.png https://cdn.klaviyomail.com/company/TdtTzz/images/472dcef0-b6fd-463b-ab3c-01c81461aee5.png
 sticker-save305.png https://cdn.klaviyomail.com/company/TdtTzz/images/4cd2bed4-42e4-4c1d-89d8-ef42d659b328.png
 sticker-save587.png https://cdn.klaviyomail.com/company/TdtTzz/images/06da4c3a-19c9-4400-9aca-dc0ab4c2fd97.png
+gift-shipping.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/fc1878e8-1cc0-4699-8f62-1110afb1750e.jpeg
