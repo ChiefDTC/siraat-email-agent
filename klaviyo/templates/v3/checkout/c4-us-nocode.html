@@ -58,7 +58,7 @@
     <tr><td width="58" valign="top" style="padding:20px 0 16px 20px;border-bottom:1px solid #ECE7DD;"><img src="{{SHARED}}/icon-returns-30-day.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
       <td valign="top" style="padding:18px 20px 16px 14px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Changed your mind?</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Send it back unused within 30 days of delivery for a full refund.</div></td></tr>
     <tr><td width="58" valign="top" style="padding:20px 0 16px 20px;"><img src="{{SHARED}}/icon-warranty-75-year.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
-      <td valign="top" style="padding:18px 20px 16px 14px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Something wrong with it?</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">If it arrives damaged or with a defect, you choose a refund or a new one, and we pay the shipping.{% if 'Hammer' in event.Items|join:',' or 'Pan' in event.Items|join:',' or 'Pot' in event.Items|join:',' or 'ookware' in event.Items|join:',' or 'Everything' in event.Items|join:',' or 'fanne' in event.Items|join:',' or 'Prep Bundle' in event.Items|join:',' %} After that, the 75-year warranty covers dents, a warped base, and a loose handle or rivet.{% endif %} A few photos is all it takes.</div></td></tr>
+      <td valign="top" style="padding:18px 20px 16px 14px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Something wrong with it?</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Damaged or defective on arrival? You choose a refund or a new one, and we pay the shipping.{% if 'Hammer' in event.Items|join:',' or 'Pan' in event.Items|join:',' or 'Pot' in event.Items|join:',' or 'ookware' in event.Items|join:',' or 'Everything' in event.Items|join:',' or 'fanne' in event.Items|join:',' or 'Prep Bundle' in event.Items|join:',' %} After that, the 75-year warranty covers dents, a warped base, and a loose handle or rivet.{% endif %}</div></td></tr>
   </table>
 </td></tr>
 
@@ -70,8 +70,7 @@
 
 <!-- ALTERNATIEF (alleen US, alleen bij kookgerei): 12-delige set -->
 {% if 'Hammer' in event.Items|join:',' or 'Pan' in event.Items|join:',' or 'Pot' in event.Items|join:',' or 'ookware' in event.Items|join:',' or 'Everything' in event.Items|join:',' or 'fanne' in event.Items|join:',' or 'Prep Bundle' in event.Items|join:',' %}
-<tr><td class="pad" style="padding:30px 44px 12px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">COOKING FOR A FULL HOUSE?</td></tr>
-{{BLOCK:productcard pad="0 44px 6px 44px" img="card-set12-save587.jpg" alt="Siraat Titanium Hammered Cookware Set, 12 pieces: three pans, three pots and six lids" pill="US ONLY" name="The 12-piece set" sub="3 pans, 3 pots, 6 lids. The same 4 gifts." was="$1,186" now="$599" note="" link="See the 12-piece set" url="https://siraatskitchen.com/products/titanium-hammered-cookware-set?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4usnocode-set12"}}
+{{BLOCK:productcard pad="26px 44px 6px 44px" img="card-set12-save587.jpg" alt="Siraat Titanium Hammered Cookware Set, 12 pieces: three pans, three pots and six lids" pill="US ONLY" name="The 12-piece set" sub="For a full house: 3 pans, 3 pots, 6 lids. The same 4 gifts." was="$1,186" now="$599" note="" link="See the 12-piece set" url="https://siraatskitchen.com/products/titanium-hammered-cookware-set?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4usnocode-set12"}}
 {% endif %}
 
 {{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/cart?ref=email' }}&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4usnocode-cta3" pad="26px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
@@ -79,7 +78,7 @@
 {{BLOCK:icons}}
 
 <!-- SIGN-OFF -->
-<tr><td class="pad" style="padding:24px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+<tr><td class="pad" style="padding:22px 44px 22px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
   Hi {{ first_name|default:'there' }}, this is the last email about your cart. A question first? Reply and tell me.<br><br>
   Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
 </td></tr>

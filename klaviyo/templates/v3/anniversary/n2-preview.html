@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: One year ago this week | SUBJECT_B: Happy first year. Here's 10% off. | PREVIEW: A year ago you placed your first order. Here's an anniversary gift: 10% off for 7 days. | SEND: Step 1, 183 dagen na N1 (dag 365 na de eerste Placed Order), 10:00 lokale tijd. | FILTERS: Message: Refunded Order = 0 sinds flow-start; profiel-eigenschap last_flow_code_at niet in de laatste 30 dagen (anders split naar een variant zonder code, zie v3-new-flows.md); Placed Order = 0 in de laatste 14 dagen. Na de mail: Update profile property last_flow_code_at = vandaag, last_flow_code_pool = SK_ANNIV10_7D. Offer: unieke Klaviyo-coupon SK_ANNIV10_7D (10%, 7 dagen na toewijzing, 1 gebruik, alleen one-time purchase). -->
+<!-- SUBJECT_A: One year ago this week | SUBJECT_B: Happy first year. Here's 10% off. | SUBJECTS (5 types): C+B 'What a year on titanium looks like' / SPEC 'A year on titanium. 74 years to go.' / Q 'How many eggs in a year?' / STORY '"It's now my favorite go-to cookware"' / OFFER 'Happy first year. Here's 10% off.' | PREVIEW: A year ago you placed your first order. Here's 10% off, yours for 7 days. | SEND: stap 2, wacht 183 dagen na N1 (dag 365), tot 09:00 lokaal | FILTERS: v4 Anniversary stap 2, code-router zonder cooldown = deze mail met unieke coupon SK_ANNIV10_7D (10%, 7 dagen na toewijzing, 1 gebruik, alleen one-time purchase); eerste 4 weken 100% code, daarna stratum in T02. Daarna Update profile property last_flow_code_at = vandaag, last_flow_code_pool = SK_ANNIV10_7D. Verzendfilter: Refunded Order zero since start; Placed Order zero in 14 dagen. Prijzen alleen bij verzendland US. Berichtnaam begint met CODE. | UTM: utm_campaign=v4-anniversary, utm_content=<mail>-<blok>, utm_term=t02-a; bij /discount/CODE?redirect=<pad> staan de UTM-parameters gecodeerd (%3F, %3D, %26) achter het pad binnen redirect -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -41,10 +41,22 @@
     .rv{display:block!important;width:100%!important;box-sizing:border-box!important;}
     .rvsp{display:block!important;width:100%!important;height:12px!important;font-size:0!important;line-height:0!important;}
   }
+  /* research/ux-round2 blokken (compare, closerlook, productcard) */
+  @media only screen and (max-width:620px){
+    .cmp-h{font-size:15px!important;line-height:20px!important;padding:0 8px 12px 8px!important;}
+    .cmp-c{padding:0 8px 0 12px!important;height:68px!important;}
+    .cmp-t{font-size:14px!important;line-height:19px!important;}
+    .pc-i{width:132px!important;}
+    .pc-img{width:132px!important;}
+    .pc-t{padding:12px 14px 12px 12px!important;}
+    .pc-n{font-size:16px!important;line-height:21px!important;}
+    .pc-s{font-size:13px!important;line-height:18px!important;}
+  }
 </style>
 </head>
+
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">A year ago you placed your first order. Here's an anniversary gift: 10% off for 7 days.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">A year ago you placed your first order. Here's 10% off, yours for 7 days.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
@@ -68,31 +80,31 @@
 </td></tr>
 
 
-<!-- HERO (1:1 met aanbodbalk) -->
+<!-- HERO 1:1 met aanbodbalk (make_hero.py --offer) -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/collections/all"><img src="assets/n2-hero.jpg" width="600" alt="One year ago: happy first year together. Your anniversary gift is 10% off for 7 days, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-anniversary%26utm_content%3Dn2-hero%26utm_term%3Dt02-a"><img src="assets/n2-hero.jpg" width="600" alt="One year ago this week: a year on titanium, 74 years left on your warranty. Your anniversary 10% for 7 days, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
 <!-- BLOCK cta: primaire knop, 340 px desktop, volle breedte mobiel -->
 <tr><td align="center" class="pad" style="padding:22px 44px 4px 44px;">
   <table role="presentation" class="btnw" width="340" cellpadding="0" cellspacing="0" border="0" style="width:340px;"><tr>
     <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:3px;">
-      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/collections/all" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Claim my anniversary 10%</center></v:roundrect><![endif]-->
-      <!--[if !mso]><!--><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/collections/all" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Claim my anniversary 10% &rarr;</a><!--<![endif]-->
+      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-anniversary%26utm_content%3Dn2-cta1%26utm_term%3Dt02-a" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Claim my anniversary 10%</center></v:roundrect><![endif]-->
+      <!--[if !mso]><!--><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-anniversary%26utm_content%3Dn2-cta1%26utm_term%3Dt02-a" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Claim my anniversary 10% &rarr;</a><!--<![endif]-->
     </td>
   </tr></table>
-  <div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>Applied automatically, on top of the sale. One use, just for you.</div>
+  <div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>One use, already applied. Free shipping. 4 gifts with every order.</div>
 </td></tr>
 
 
 <tr><td class="pad" style="padding:26px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;color:#282828;">
-  <p style="margin:0 0 18px 0;">Hi Sarah,</p>
-  <p style="margin:0 0 18px 0;">A year ago this week you placed your first order with us. A year of eggs, searing and Sunday breakfasts, we hope. Your 75-year warranty has 74 to go.</p>
-  <p style="margin:0 0 18px 0;">To say thank you, here is an anniversary gift: 10% off your next piece, on top of the sale. A personal code, one use, good for 7 days.</p>
+  <p style="margin:0 0 16px 0;">Hi Sarah,</p>
+  <p style="margin:0 0 16px 0;">A year ago this week your first Siraat order was on its way. A year of eggs, sears and Sunday breakfasts, I hope. Nothing has worn off, because there was nothing on it to wear off. Your 75-year warranty has 74 to go.</p>
+  <p style="margin:0 0 0px 0;">To say thank you: 10% off your next piece, on top of the sale. Your own code, one use, good for 7 days. Made for you, so it has an end date. After that, the regular sale price applies.</p>
 </td></tr>
 
 <!-- BLOCK offer: aanbodblok, code als live tekst -->
-<tr><td class="pad" style="padding:12px 44px 6px 44px;">
+<tr><td class="pad" style="padding:22px 44px 6px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#321E1D" style="background:#321E1D;">
     <tr><td align="center" style="padding:30px 26px 8px 26px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#D9CFC7;">YOUR ANNIVERSARY GIFT</td></tr>
     <tr><td align="center" class="h2" style="padding:0 26px 16px 26px;font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#FFFFFF;">10% off, for one week</td></tr>
@@ -100,56 +112,58 @@
       <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" class="offer-code" style="border:2px dashed #FFFFFF;padding:12px 30px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:32px;line-height:36px;letter-spacing:6px;font-weight:600;color:#FFFFFF;">SRT-K7Q2M</td></tr></table>
     </td></tr>
     <tr><td align="center" style="padding:14px 26px 0 26px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#EDE6E0;">Applied automatically with the button. One code per order.</td></tr>
-    <tr><td align="center" style="padding:14px 26px 0 26px;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:8px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;font-weight:600;color:#AC3B19;"><img src="../../partials/shared/icon-deadline.png" width="18" height="18" alt="" style="display:inline-block;vertical-align:-4px;width:18px;height:18px;">&nbsp; Valid for 7 days from this email</td></tr></table></td></tr>
+    <tr><td align="center" style="padding:14px 26px 0 26px;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:8px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;font-weight:600;color:#AC3B19;"><img src="../../partials/shared/icon-deadline.png" width="18" height="18" alt="" style="display:inline-block;vertical-align:-4px;width:18px;height:18px;">&nbsp; Ends 7 days after this email</td></tr></table></td></tr>
 
     <tr><td align="center" style="padding:20px 26px 30px 26px;">
       <table role="presentation" class="btnw" width="320" cellpadding="0" cellspacing="0" border="0" style="width:320px;"><tr>
-        <td align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border-radius:3px;"><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/collections/all" style="display:block;padding:18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#321E1D;text-decoration:none;text-transform:uppercase;">Claim my 10% &rarr;</a></td>
+        <td align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border-radius:3px;"><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-anniversary%26utm_content%3Dn2-offer%26utm_term%3Dt02-a" style="display:block;padding:18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#321E1D;text-decoration:none;text-transform:uppercase;">Claim my 10% &rarr;</a></td>
       </tr></table>
     </td></tr>
   </table>
 </td></tr>
 
 
-<!-- PRODUCTEN -->
-<tr><td class="pad" style="padding:30px 44px 6px 44px;">
+<!-- PRODUCTEN: lijst, prijzen alleen bij verzendland US -->
+<tr><td class="pad" style="padding:26px 44px 6px 44px;">
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">FOR YEAR TWO</div>
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 16px 0;">What to cook on next</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;">
+  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 16px 0;">What fits what you have</div>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;border-bottom:0;">
+
     <tr>
-      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/titanium-hammered-pan-set-with-lids-6-pcs"><img src="assets/p-set6.jpg" width="114" alt="Pan Set With Lids, 6 pcs" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
+      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/stainless-steel-lid%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-anniversary%26utm_content%3Dn2-prod-lid%26utm_term%3Dt02-a"><img src="assets/p-lid.jpg" width="114" alt="Stainless Steel Lid" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
+      <td valign="middle" style="padding:14px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;">
+        <div style="font-size:10px;line-height:14px;letter-spacing:1.5px;font-weight:600;color:#AC3B19;padding-bottom:3px;">FITS YOUR PAN</div><div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Stainless Steel Lid</div>
+        <div class="pcd" style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">304 stainless steel. Match the diameter of the pan you own.</div>
+        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">$59&nbsp; <span style="color:#AC3B19;white-space:nowrap;">$53.10 with your code</span></div>
+        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/stainless-steel-lid%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-anniversary%26utm_content%3Dn2-prod-lid%26utm_term%3Dt02-a" style="color:#AC3B19;font-weight:600;text-decoration:underline;">Find my size &rarr;</a></div>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-anniversary%26utm_content%3Dn2-prod-panpro%26utm_term%3Dt02-a"><img src="assets/p-panpro.jpg" width="114" alt="Titanium Hammered Pan Pro, 11 inch" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
+      <td valign="middle" style="padding:14px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;">
+        <div style="font-size:10px;line-height:14px;letter-spacing:1.5px;font-weight:600;color:#AC3B19;padding-bottom:3px;">A SECOND PAN</div><div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Pan Pro 11&Prime;</div>
+        <div class="pcd" style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">So eggs and dinner can share the stove.</div>
+        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">$134&nbsp; <span style="color:#AC3B19;white-space:nowrap;">$120.60 with your code</span></div>
+        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-anniversary%26utm_content%3Dn2-prod-panpro%26utm_term%3Dt02-a" style="color:#AC3B19;font-weight:600;text-decoration:underline;">Shop the pan &rarr;</a></div>
+      </td>
+    </tr>
+    <tr>
+      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/titanium-hammered-pan-set-with-lids-6-pcs-bday-sale%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-anniversary%26utm_content%3Dn2-prod-set6%26utm_term%3Dt02-a"><img src="assets/p-set6.jpg" width="114" alt="Titanium Hammered Pan Set With Lids, 6 pieces" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
       <td valign="middle" style="padding:14px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;">
         <div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Pan Set With Lids, 6 pcs</div>
-        <div class="pcd" style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">Three hammered pans, three stainless steel lids.</div>
+        <div class="pcd" style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">Three pans, three lids. About $116 a pan.</div>
         <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">$349&nbsp; <span style="color:#AC3B19;white-space:nowrap;">$314.10 with your code</span></div>
-        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/titanium-hammered-pan-set-with-lids-6-pcs" style="color:#AC3B19;font-weight:600;text-decoration:underline;">Shop the set &rarr;</a></div>
+        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/titanium-hammered-pan-set-with-lids-6-pcs-bday-sale%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-anniversary%26utm_content%3Dn2-prod-set6%26utm_term%3Dt02-a" style="color:#AC3B19;font-weight:600;text-decoration:underline;">Shop the set &rarr;</a></div>
       </td>
     </tr>
     <tr>
-      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern"><img src="assets/p-panpro.jpg" width="114" alt="Titanium Hammered Pan Pro, 11&Prime;" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
+      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/siraat-pure-titanium-utensils-bundle%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-anniversary%26utm_content%3Dn2-prod-utensils%26utm_term%3Dt02-a"><img src="assets/p-utensils.jpg" width="114" alt="Titanium Utensil Set" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
       <td valign="middle" style="padding:14px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;">
-        <div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Titanium Hammered Pan Pro, 11&Prime;</div>
-        <div class="pcd" style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">A second pan, so eggs and dinner can share the stove.</div>
-        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">$134&nbsp; <span style="color:#AC3B19;white-space:nowrap;">$120.60 with your code</span></div>
-        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern" style="color:#AC3B19;font-weight:600;text-decoration:underline;">Shop the pan &rarr;</a></div>
-      </td>
-    </tr>
-    <tr>
-      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/stainless-steel-lid"><img src="assets/p-lid.jpg" width="114" alt="Stainless Steel Lid" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
-      <td valign="middle" style="padding:14px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;">
-        <div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Stainless Steel Lid</div>
-        <div class="pcd" style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">304 stainless steel, made to fit your Siraat pan.</div>
-        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">$59&nbsp; <span style="color:#AC3B19;white-space:nowrap;">$53.10 with your code</span></div>
-        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/stainless-steel-lid" style="color:#AC3B19;font-weight:600;text-decoration:underline;">Find your lid &rarr;</a></div>
-      </td>
-    </tr>
-    <tr>
-      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;"><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/siraat-pure-titanium-utensils-bundle"><img src="assets/p-utensils.jpg" width="114" alt="Titanium Utensil Set" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
-      <td valign="middle" style="padding:14px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
         <div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Titanium Utensil Set</div>
         <div class="pcd" style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">Titanium tools for a titanium pan.</div>
         <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">$149&nbsp; <span style="color:#AC3B19;white-space:nowrap;">$134.10 with your code</span></div>
-        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/siraat-pure-titanium-utensils-bundle" style="color:#AC3B19;font-weight:600;text-decoration:underline;">Shop the utensils &rarr;</a></div>
+        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/siraat-pure-titanium-utensils-bundle%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-anniversary%26utm_content%3Dn2-prod-utensils%26utm_term%3Dt02-a" style="color:#AC3B19;font-weight:600;text-decoration:underline;">Shop the utensils &rarr;</a></div>
       </td>
     </tr>
   </table>
@@ -158,7 +172,7 @@
 <!-- BLOCK gifts: vier gifts met beeld en waarde, gelijke hoogte, 2x2 op mobiel -->
 <tr><td class="pad" style="padding:30px 44px 6px 44px;">
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">WITH EVERY ORDER</div>
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 18px 0;">$70 in gifts, on us</div>
+  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 18px 0;">$70 in gifts, included</div>
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
     <td class="g2" width="50%" valign="top" style="padding:0 5px 0 0;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
@@ -191,7 +205,7 @@
       </tr></table>
     </td>
   </tr></table>
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#727272;text-align:center;padding-top:14px;">Plus a chance to win a $450 PFAS water filter. Nothing to add: it all comes with your order.</div>
+  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#727272;text-align:center;padding-top:14px;">Plus a chance to win a $450 PFAS water filter. It all comes with your order.</div>
 </td></tr>
 
 
@@ -200,14 +214,14 @@
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
     <td class="rv" width="48%" valign="top" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:20px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;">
       <div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;My son bought me the wok for Christmas and he already had the whole set. Great to cook with.&rdquo;</div>
-      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Pam B. &middot; Verified buyer</div>
+      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;I purchased their titanium wok a few months ago and it performs exactly as expected. It's now my favorite go-to cookware.&rdquo;</div>
+      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Caliann &middot; Verified buyer</div>
     </td>
     <td class="rvsp" width="14" style="font-size:0;line-height:0;">&nbsp;</td>
     <td class="rv" width="48%" valign="top" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:20px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;">
       <div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;Great to know no chemicals are being released into our food when cooking with this pan!&rdquo;</div>
-      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Beverley S. &middot; Verified buyer</div>
+      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;I am on my 4th pan from Siraat... I even gifted one to my son, and he says it's the best pan he owns.&rdquo;</div>
+      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Tammy &middot; Verified buyer</div>
     </td>
   </tr></table>
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;text-align:center;padding-top:14px;"><img src="../../partials/shared/icon-customers-100k.png" width="18" height="18" alt="" style="display:inline-block;vertical-align:-4px;width:18px;height:18px;">&nbsp; Join 100,000+ happy customers</div>
@@ -228,11 +242,11 @@
 
 
 <!-- BLOCK cta: primaire knop, 340 px desktop, volle breedte mobiel -->
-<tr><td align="center" class="pad" style="padding:26px 44px 6px 44px;">
+<tr><td align="center" class="pad" style="padding:24px 44px 4px 44px;">
   <table role="presentation" class="btnw" width="340" cellpadding="0" cellspacing="0" border="0" style="width:340px;"><tr>
     <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:3px;">
-      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/collections/all" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Claim my anniversary 10%</center></v:roundrect><![endif]-->
-      <!--[if !mso]><!--><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/collections/all" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Claim my anniversary 10% &rarr;</a><!--<![endif]-->
+      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-anniversary%26utm_content%3Dn2-cta2%26utm_term%3Dt02-a" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Claim my anniversary 10%</center></v:roundrect><![endif]-->
+      <!--[if !mso]><!--><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-anniversary%26utm_content%3Dn2-cta2%26utm_term%3Dt02-a" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Claim my anniversary 10% &rarr;</a><!--<![endif]-->
     </td>
   </tr></table>
   
