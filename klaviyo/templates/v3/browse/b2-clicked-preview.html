@@ -80,26 +80,26 @@
 
 <!-- HERO 4:3 met aanbodbalk (make_hero.py --offer --ratio=4:3) -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/x%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2c-hero%26utm_term%3Dt02-a"><img src="assets/b2-clicked-hero.jpg" width="600" alt="Your code, 48 hours. Your own 10%, for 48 hours, then the regular sale price again. Plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=#%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2c-hero%26utm_term%3Dt02-a"><img src="assets/b2-clicked-hero.jpg" width="600" alt="Your code, 48 hours. Your own 10%, for 48 hours, then the regular sale price again. Plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
 <!-- PRODUCTKAART Viewed Product (XNtYMB): Name, ImageURL, Price (tekst), URL. Prijs alleen met $ (QA A18); ankerprijs $439 alleen bij Pan Pro Standard voor $134. -->
 <tr><td class="pad" style="padding:22px 44px 4px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-    <tr><td colspan="3" style="padding:16px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">THE PAN YOU VIEWED</td></tr>
+    <tr><td colspan="3" style="padding:16px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">{% if 'Hammer' in event.Name or 'Pan' in event.Name or 'Pot' in event.Name or 'ookware' in event.Name or 'Everything' in event.Name or 'fanne' in event.Name or 'Prep Bundle' in event.Name %}THE {% if 'Set' in event.Name or 'Edition' in event.Name or 'Bundle' in event.Name or 'Duo' in event.Name or 'Kit' in event.Name %}SET{% else %}PAN{% endif %} YOU VIEWED{% else %}YOU LOOKED AT{% endif %}</td></tr>
     <tr>
       <td width="104" valign="middle" style="padding:12px 0 12px 16px;">
-        <a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/x%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2c-product%26utm_term%3Dt02-a"><img src="../../../../content/products/titanium-hammered-pan-pro/img/packshot-1.jpg?v=1" width="88" alt="Titanium Hammered Pan Pro Standard" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;"></a>
+        <a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=#%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2c-product%26utm_term%3Dt02-a"><img src="https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-40a5-9ad7-523bdddc54d4.webp?v=1781682831&width=600" width="88" alt="#" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;"></a>
       </td>
       <td valign="middle" style="padding:12px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
-        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">Titanium Hammered Pan Pro Standard</div>
-        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">Pure titanium cooking surface</div>
+        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">#</div>
+        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">{% if 'Hammer' in event.Name or 'Pan' in event.Name or 'Pot' in event.Name or 'ookware' in event.Name or 'Everything' in event.Name or 'fanne' in event.Name or 'Prep Bundle' in event.Name %}Pure titanium cooking surface{% elif 'Board' in event.Name or 'Utensil' in event.Name or 'Chopsticks' in event.Name %}Pure titanium{% else %}From Siraat&rsquo;s Kitchen{% endif %}</div>
       </td>
-      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;white-space:nowrap;"><div style="font-size:13px;line-height:17px;color:#9A948B;text-decoration:line-through;font-weight:400;">$439</div>$134</td>
+      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;white-space:nowrap;">{% if 'Pan Pro Standard' in event.Name and event.Price|slice:':4' == '$134' %}<div style="font-size:13px;line-height:17px;color:#9A948B;text-decoration:line-through;font-weight:400;">$439</div>{% endif %}{% if '$' in event.Price %}#{% endif %}</td>
     </tr>
     <tr><td colspan="3" style="padding:0 16px 16px 16px;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:11px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">
-        <img src="../../partials/shared/icon-discount-tag.png" width="20" height="20" alt="" style="display:inline-block;vertical-align:-5px;width:20px;height:20px;">&nbsp; Your own code: <b>$120.60</b>, applied with the button below.
+        <img src="../../partials/shared/icon-discount-tag.png" width="20" height="20" alt="" style="display:inline-block;vertical-align:-5px;width:20px;height:20px;">&nbsp; {% if 'Pan Pro Standard' in event.Name and event.Price|slice:':4' == '$134' %}Your own code: <b>$120.60</b>, applied with the button below.{% else %}Your own code takes 10% off this price, applied with the button below.{% endif %}
       </td></tr></table>
     </td></tr>
   </table>
@@ -109,8 +109,8 @@
 <tr><td align="center" class="pad" style="padding:16px 44px 4px 44px;">
   <table role="presentation" class="btnw" width="340" cellpadding="0" cellspacing="0" border="0" style="width:340px;"><tr>
     <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:3px;">
-      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/x%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2c-cta1%26utm_term%3Dt02-a" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Claim my 10%</center></v:roundrect><![endif]-->
-      <!--[if !mso]><!--><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/x%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2c-cta1%26utm_term%3Dt02-a" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Claim my 10% &rarr;</a><!--<![endif]-->
+      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=#%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2c-cta1%26utm_term%3Dt02-a" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Claim my 10%</center></v:roundrect><![endif]-->
+      <!--[if !mso]><!--><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=#%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2c-cta1%26utm_term%3Dt02-a" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Claim my 10% &rarr;</a><!--<![endif]-->
     </td>
   </tr></table>
   <div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>One use, already applied. 30-day returns. 100,000+ happy customers.</div>
@@ -118,7 +118,7 @@
 
 
 <!-- OPENER (live tekst) -->
-<tr><td class="pad lead" style="padding:22px 44px 2px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;"><p style="margin:0 0 12px 0;">You went back to look at the Titanium Hammered Pan Pro Standard. So here&rsquo;s a personal code: 10% off, on top of the sale price.</p><p style="margin:0 0 0 0;">It&rsquo;s made for you, so it has an end date, 48 hours after this email. After that, the regular sale price applies.</p></td></tr>
+<tr><td class="pad lead" style="padding:22px 44px 2px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;"><p style="margin:0 0 12px 0;">You went back to look at the #. So here&rsquo;s a personal code: 10% off, on top of the sale price.</p><p style="margin:0 0 0 0;">It&rsquo;s made for you, so it has an end date, 48 hours after this email. After that, the regular sale price applies.</p></td></tr>
 
 <!-- BLOCK offer: aanbodblok, code als live tekst -->
 <tr><td class="pad" style="padding:26px 44px 6px 44px;">
@@ -133,31 +133,71 @@
 
     <tr><td align="center" style="padding:20px 26px 30px 26px;">
       <table role="presentation" class="btnw" width="320" cellpadding="0" cellspacing="0" border="0" style="width:320px;"><tr>
-        <td align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border-radius:3px;"><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/x%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2c-offer%26utm_term%3Dt02-a" style="display:block;padding:18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#321E1D;text-decoration:none;text-transform:uppercase;">Claim my 10% &rarr;</a></td>
+        <td align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border-radius:3px;"><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=#%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2c-offer%26utm_term%3Dt02-a" style="display:block;padding:18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#321E1D;text-decoration:none;text-transform:uppercase;">Claim my 10% &rarr;</a></td>
       </tr></table>
     </td></tr>
   </table>
 </td></tr>
 
 
-
+{% if 'Hammer' in event.Name or 'Pan' in event.Name or 'Pot' in event.Name or 'ookware' in event.Name or 'Everything' in event.Name or 'fanne' in event.Name or 'Prep Bundle' in event.Name %}
 <!-- VALUE STACK in plaats van het gifts-blok bij kookgerei (zelfde vier gifts met waarde); bedragen alleen bij Pan Pro Standard 11" voor $134. Anders: gifts-blok. -->
 <tr><td class="pad" style="padding:30px 44px 6px 44px;">
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">WHAT YOU GET</div>
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 16px 0;">One pan. Plus all this.</div>
+  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 16px 0;">{% if 'Set' in event.Name or 'Edition' in event.Name or 'Bundle' in event.Name or 'Duo' in event.Name or 'Kit' in event.Name %}One set.{% else %}One pan.{% endif %} Plus all this.</div>
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-    <tr><td style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">Pan Pro, 11&Prime;</td><td align="right" style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#727272;white-space:nowrap;"><span style="text-decoration:line-through;color:#9A948B;">$439</span>&nbsp; <b style="color:#282828;">$134</b></td></tr>
+    {% if 'Pan Pro Standard' in event.Name and event.Price|slice:':4' == '$134' %}<tr><td style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">Pan Pro, 11&Prime;</td><td align="right" style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#727272;white-space:nowrap;"><span style="text-decoration:line-through;color:#9A948B;">$439</span>&nbsp; <b style="color:#282828;">$134</b></td></tr>{% endif %}
     <tr><td style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">Free shipping</td><td align="right" style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#727272;white-space:nowrap;">$15 value</td></tr>
     <tr><td style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">Plastic-Free Home e-book</td><td align="right" style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#727272;white-space:nowrap;">$30 value</td></tr>
     <tr><td style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">Mystery gift in the box</td><td align="right" style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#727272;white-space:nowrap;">$25 value</td></tr>
     <tr><td style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">75-year warranty</td><td align="right" style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#727272;white-space:nowrap;">Included</td></tr>
     <tr><td style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">30-day returns</td><td align="right" style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#727272;white-space:nowrap;">Included</td></tr>
-    <tr><td style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">Your own code: extra 10% off</td><td align="right" style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#AC3B19;white-space:nowrap;">&minus;$13.40</td></tr>
-    <tr><td style="padding:14px 18px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;">Value $509</td><td align="right" style="padding:14px 18px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:18px;font-weight:600;color:#AC3B19;white-space:nowrap;">Your price $120.60</td></tr>
+    {% if 'Pan Pro Standard' in event.Name and event.Price|slice:':4' == '$134' %}<tr><td style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">Your own code: extra 10% off</td><td align="right" style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#AC3B19;white-space:nowrap;">&minus;$13.40</td></tr>{% else %}<tr><td style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">Your own code: extra 10% off</td><td align="right" style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#AC3B19;white-space:nowrap;">on top of the sale</td></tr>{% endif %}
+    {% if 'Pan Pro Standard' in event.Name and event.Price|slice:':4' == '$134' %}<tr><td style="padding:14px 18px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;">Value $509</td><td align="right" style="padding:14px 18px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:18px;font-weight:600;color:#AC3B19;white-space:nowrap;">Your price $120.60</td></tr>{% endif %}
   </table>
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;text-align:center;padding-top:10px;">Plus a chance to win a $450 PFAS water filter with your order. Not counted in the value.</div>
 </td></tr>
+{% else %}
+<!-- BLOCK gifts: vier gifts met beeld en waarde, gelijke hoogte, 2x2 op mobiel -->
+<tr><td class="pad" style="padding:30px 44px 6px 44px;">
+  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">WITH EVERY ORDER</div>
+  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 18px 0;">$70 in gifts, in the box</div>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+    <td class="g2" width="50%" valign="top" style="padding:0 5px 0 0;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td width="50%" valign="top" align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:10px 6px 14px 6px;font-family:Inter,Arial,Helvetica,sans-serif;">
+          <img src="../../partials/shared/gift-shipping.jpg" width="110" alt="Free shipping" style="width:110px;height:110px;margin:0 auto;">
+          <div style="font-size:13px;line-height:17px;font-weight:600;color:#282828;padding-top:6px;height:34px;">Free<br>shipping</div>
+          <div style="font-size:12px;line-height:16px;font-weight:600;color:#AC3B19;">$15 value</div>
+        </td>
+        <td width="10" style="font-size:0;line-height:0;">&nbsp;</td>
+        <td width="50%" valign="top" align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:10px 6px 14px 6px;font-family:Inter,Arial,Helvetica,sans-serif;">
+          <img src="../../partials/shared/gift-ebook.jpg" width="110" alt="Plastic-Free Home e-book" style="width:110px;height:110px;margin:0 auto;">
+          <div style="font-size:13px;line-height:17px;font-weight:600;color:#282828;padding-top:6px;height:34px;">Plastic-Free<br>Home e-book</div>
+          <div style="font-size:12px;line-height:16px;font-weight:600;color:#AC3B19;">$30 value</div>
+        </td>
+      </tr></table>
+    </td>
+    <td class="g2" width="50%" valign="top" style="padding:0 0 0 5px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td width="50%" valign="top" align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:10px 6px 14px 6px;font-family:Inter,Arial,Helvetica,sans-serif;">
+          <img src="../../partials/shared/gift-mystery.jpg" width="110" alt="Mystery gift" style="width:110px;height:110px;margin:0 auto;">
+          <div style="font-size:13px;line-height:17px;font-weight:600;color:#282828;padding-top:6px;height:34px;">Mystery gift<br>in the box</div>
+          <div style="font-size:12px;line-height:16px;font-weight:600;color:#AC3B19;">$25 value</div>
+        </td>
+        <td width="10" style="font-size:0;line-height:0;">&nbsp;</td>
+        <td width="50%" valign="top" align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:10px 6px 14px 6px;font-family:Inter,Arial,Helvetica,sans-serif;">
+          <img src="../../partials/shared/gift-filter.jpg" width="110" alt="Chance to win a PFAS water filter" style="width:110px;height:110px;margin:0 auto;">
+          <div style="font-size:13px;line-height:17px;font-weight:600;color:#282828;padding-top:6px;height:34px;">Win a PFAS<br>water filter</div>
+          <div style="font-size:12px;line-height:16px;font-weight:600;color:#AC3B19;">$450 value</div>
+        </td>
+      </tr></table>
+    </td>
+  </tr></table>
+  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#727272;text-align:center;padding-top:14px;">Plus a chance to win a $450 PFAS water filter.</div>
+</td></tr>
 
+{% endif %}
 
 <!-- BLOCK reviews: twee kaarten, gelijke hoogte (achtergrond op de kolomcel) -->
 <tr><td class="pad" style="padding:28px 44px 6px 44px;">
@@ -182,15 +222,15 @@
 <tr><td align="center" class="pad" style="padding:26px 44px 6px 44px;">
   <table role="presentation" class="btnw" width="340" cellpadding="0" cellspacing="0" border="0" style="width:340px;"><tr>
     <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:3px;">
-      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/x%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2c-cta2%26utm_term%3Dt02-a" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Claim my 10%</center></v:roundrect><![endif]-->
-      <!--[if !mso]><!--><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/x%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2c-cta2%26utm_term%3Dt02-a" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Claim my 10% &rarr;</a><!--<![endif]-->
+      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=#%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2c-cta2%26utm_term%3Dt02-a" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Claim my 10%</center></v:roundrect><![endif]-->
+      <!--[if !mso]><!--><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=#%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2c-cta2%26utm_term%3Dt02-a" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Claim my 10% &rarr;</a><!--<![endif]-->
     </td>
   </tr></table>
   <div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>One use, already applied. 30-day returns. 100,000+ happy customers.</div>
 </td></tr>
 
 
-
+{% if 'Hammer' in event.Name or 'Pan' in event.Name or 'Pot' in event.Name or 'ookware' in event.Name or 'Everything' in event.Name or 'fanne' in event.Name or 'Prep Bundle' in event.Name %}
 <!-- BLOCK icons: vier feiten met iconen, nooit levertijd -->
 <tr><td class="pad" style="padding:22px 44px 6px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
@@ -203,7 +243,19 @@
   </table>
 </td></tr>
 
-
+{% else %}
+<!-- ICONEN voor accessoires: zonder 75-year warranty (open punt 3.27: geldt de garantie winkelbreed?) -->
+<tr><td class="pad" style="padding:22px 44px 6px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
+    <tr>
+      <td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;"><img src="../../partials/shared/icon-free-shipping.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">FREE<br>SHIPPING</div></td>
+      <td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;border-left:1px solid #ECE7DD;"><img src="../../partials/shared/icon-returns-30-day.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">30-DAY<br>RETURNS</div></td>
+      <td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;border-left:1px solid #ECE7DD;"><img src="../../partials/shared/icon-gift.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">4 GIFTS<br>INCLUDED</div></td>
+      <td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;border-left:1px solid #ECE7DD;"><img src="../../partials/shared/icon-customers-100k.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">100,000+<br>CUSTOMERS</div></td>
+    </tr>
+  </table>
+</td></tr>
+{% endif %}
 
 <!-- SIGN-OFF -->
 <tr><td class="pad" style="padding:26px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
@@ -229,7 +281,7 @@
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:19px;color:#BDB8B0;text-align:center;">
     Free shipping on all orders &middot; 30-day returns &middot; 75-year warranty<br><br>
     <a href="#" style="color:#BDB8B0;">Unsubscribe</a> &nbsp;|&nbsp; <a href="#" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; <a href="#" style="color:#BDB8B0;">View in browser</a><br>
-    Siraat&#x27;s Kitchen &middot; [address]
+    Siraat's Kitchen &middot; [address]
   </div>
 </td></tr>
 
