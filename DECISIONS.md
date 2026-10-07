@@ -20,3 +20,5 @@ Bijwerken bij elk nieuw besluit. Datum per regel.
 | 2026-10-07 | Prijzen per markt, verzendbeleid en levertijden komen uit Shopify (catalog, markets, shipping policy) en staan in content/facts/. | Zelf bijhouden, niet aan Floris vragen. |
 | 2026-10-07 | Foto's van verpakking en vaatwasstrips: niet beschikbaar, zelf maken (Higgsfield flash-stijl met echte productfoto als referentie, regel: geen letters). | |
 | 2026-10-07 | Pop-up tekst: staat in Klaviyo (forms). Zelf bekijken zodra forms:read werkt. | |
+| 2026-10-07 | Klaviyo-sleutel heeft nu volledige leestoegang (campaigns, lists, forms, flows). | Dagelijkse Slack-update kan campagnes meenemen. |
+| 2026-10-07 | Feit: de pop-up is geen Klaviyo-form maar Alia ("Card Game", campagne "US \| Evergreen"). Profielen komen binnen met $source "Alia sign-up". Alle 35 Klaviyo-forms staan op draft. | Wat de pop-up belooft staat in Alia, niet in Klaviyo. W1 moet aansluiten op de Card Game-belofte. Floris: screenshot van de Alia-kaart of Alia-toegang. |
