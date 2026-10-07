@@ -1,7 +1,7 @@
 # 01 · Direct response research, vertaald naar Siraat
 
 Datum: 7 oktober 2026. Opdracht van Floris: haal inspiratie uit de "Direct Response Copy Skill" en maak die bruikbaar voor onze flows.
-Bronnen: `research/copy/direct-response-copy-skill.md` (volledig gelezen), `research/copy/influence-based-copywriting.md` (Cialdini in copy), `research/copy/social-proof-copywriting.md` (Daniel Doan, 9 vormen), PLAYBOOK, DECISIONS, `klaviyo/flows/v3-flow-system.md`, `research/ux-2026-10-07/*`, `content/facts/facts.csv` en `claims.csv`, `content/reviews/*`, `content/hooks/*`, `brand/proof/README.md`, `baselines/README.md`, de 31 v3-templates. Eigen onderzoek: WebSearch (4 zoekopdrachten, WebFetch van de bronpagina's werd door de proxy geblokkeerd, dus cijfers uit zoekresultaten staan gemarkeerd) en Email Love (9 calls, 10 mails bekeken).
+Bronnen: `research/copy/direct-response-copy-skill.md` (volledig gelezen), `research/copy/influence-based-copywriting.md` (Cialdini in copy), `research/copy/social-proof-copywriting.md` (Daniel Doan, 9 vormen), `research/copy/offers-skill.md` (Hormozi, uitgewerkt in `06-offer-design.md`), PLAYBOOK, DECISIONS, `klaviyo/flows/v3-flow-system.md`, `research/ux-2026-10-07/*`, `content/facts/facts.csv` en `claims.csv`, `content/reviews/*`, `content/hooks/*`, `brand/proof/README.md`, `baselines/README.md`, de 31 v3-templates. Eigen onderzoek: WebSearch (4 zoekopdrachten, WebFetch van de bronpagina's werd door de proxy geblokkeerd, dus cijfers uit zoekresultaten staan gemarkeerd) en Email Love (9 calls, 10 mails bekeken).
 
 Taal: notities Nederlands, copy Engels. Geen gedachtestreepjes.
 
