@@ -1,0 +1,321 @@
+bron,id,flow_of_publiek,naam,verzonden,onderwerp,preview,ontvangers,open_rate,click_rate,conversion_rate,omzet_per_ontvanger,open_index,klik_index
+campagne,01K4JC07BJ4RB8ZVEJ9NHMJ2EC,30d,9/13 Healthy Habits Start in the Kitchen | 30 Days Engaged,2025-10-08,Healthier Habits Start Here,"Small Changes, Big Results",6888,0.6702,0.01,0.0014,0.172,1.01,1.0
+campagne,01K7252RHCG2W54TX2ZHT0BC25,90d,10/11 Review Focus | 90 Days Engaged,2025-10-11,Cooking Up a Storm,See What’s Being Said,9303,0.6152,0.0072,0.0003,0.166,0.98,0.7
+campagne,01K778WHE14DYM1DFTSAS64F0D,90d,10/13 The Green Clean Guide | 90 Days Engaged,2025-10-13,"Hey {{ first_name|default:'there' }}, say hello to....",The Green Clean Guide!,10444,0.6345,0.0094,0.0006,0.138,1.01,0.91
+campagne,01K72BQG0ESYJ4PAX77Z6JAMBX,30d,10/16 World Food Day | Engaged 30 Days,2025-10-16,Happy World Food Day 🥗,Show Us Your Food!,6621,0.6787,0.0069,0.0004,0.079,1.02,0.7
+campagne,01K72ACFDE657BDV28Z0MDC8MV,90d,10/18 The Why behind Siraat’s Kitchen | 90 Days Engaged,2025-10-18,Your Health is Our Why,Because Your Health Matters,10218,0.6324,0.0112,0.0011,0.268,1.01,1.09
+campagne,01K7W8NNPRYZE2ZNCBQYXGFYVG,90d,[Follow-up] 10/18 The Why behind Siraat’s Kitchen | 90 Days Engaged,2025-10-20,Your Health Matters the Most,Because Your Health Matters,2596,0.3942,0.0085,0.0012,0.117,0.63,0.82
+campagne,01K7W3QFM6W3G50Q3E5TX3J70T,30d,10/21 Tools That Make Life Easier | 30 Days Engaged,2025-10-21,"Hey {{ first_name|default:'there' }}, tools you can’t do without",Add these to your kitchen,6669,0.6736,0.0135,0.0009,0.124,1.01,1.35
+campagne,01K7W4F9BBS74DTNRKEK1E3G2T,30d,10/23 Educational Content | Engaged 30 Days,2025-10-23,Cookware Built to Last,Cook with us for Life,6134,0.6595,0.0148,0.0013,0.295,0.99,1.49
+campagne,01K83ZWN9SSAQMEPC2Y10WTXGZ,30d,[Follow-up] 10/21 Tools That Make Life Easier | 30 Days Engaged,2025-10-24,Elevate Daily Life with These Essentials,Add these to your kitchen,2063,0.2986,0.0082,0.0,0.0,0.45,0.83
+campagne,01K7W5AHJW9VVZ2AKVQ2H47YWM,90d,10/26 Our Fall Favorites: Staff Picks | 90 Days Engaged,2025-10-26,Staff Pick’s,Our 3 Kitchen Favorites,9880,0.628,0.0127,0.0011,0.293,1.0,1.23
+campagne,01K868RJJF2B8RFDAWQY2KQRW6,90d,10/28 Halloween Sale | 90 Days Engaged,2025-10-28,Cooking Up Spooky Savings! 👻,Halloween Sale Starts Now,9894,0.6299,0.0114,0.001,0.142,1.0,1.11
+campagne,01K8690KW6QTE2ZRMFHNHDGPR9,30d,10/31 Happy Halloween | 30 Days Engaged,2025-10-31,Have a Spooktacular Halloween,10% Off Ends at Midnight,6747,0.6475,0.0099,0.0013,0.206,0.97,1.0
+campagne,01K8K5QGFE41BKS8MPP22G7K1C,90d,11/2 Review Focused | 90 Days Engaged,2025-11-02,Start Your 5 Star Wishlist,See What’s Loved & Why,9943,0.6069,0.0077,0.0009,0.21,1.11,0.51
+campagne,01K8X7RVDG8P91KTV9H6QVSJM5,90d,11/3 Early Access Teaser | 90 Days Engaged,2025-11-03,"Hey {{ first_name|default:'there' }}, Important info inside",VIP rewards incoming,10754,0.6114,0.0067,0.0016,0.3,1.11,0.45
+campagne,01K8K60KM396K39ACQ5CE30MJE,90d,11/4 VIP Early Access - 42% off sitewide | 90 Days Engaged,2025-11-04,"Hey {{ first_name|default:'there' }}, Your Savings Start Now",VIP Black Friday Savings Inside,12388,0.5491,0.0225,0.0019,0.389,1.0,1.49
+campagne,01K8X79SMWTSA1NZBQ7FTKQNBT,30d,11/6 Special Offer | 30 Days Engaged,2025-11-06,"Hey {{ first_name|default:'there' }}, We’ve got gifts for you!",Claim Yours Now,7545,0.5821,0.0252,0.0032,0.716,1.01,1.42
+campagne,01K981E9JMSZR1K8VETN2N2WBD,90d,[Follow-up] 11/4 VIP Early Access - 42% off sitewide | 90 Days Engaged,2025-11-07,VIP Black Friday Savings Start Now,VIP Black Friday Savings Inside,4562,0.3693,0.0208,0.0011,0.238,0.67,1.38
+campagne,01K9D687AAF7H5M68KY2MNGKCH,30d,[Follow-up] 11/6 Special Offer | 30 Days Engaged,2025-11-08,Bonus Offer + VIP BF Special Inside,Claim Yours Now,2606,0.4323,0.0146,0.0,0.0,0.75,0.82
+campagne,01K8XB5NNKJG2MNW0YQN6CMT5K,90d,11/9 Educational Campaign | 90 Days Engaged,2025-11-09,Swap to Healthier Options,Cook Without the “extras”,9762,0.6261,0.0081,0.0011,0.181,1.14,0.54
+campagne,01K8XBVPDCZBY9XAG2WVRNPSZN,30d,11/11 Black Friday Sale | 30 Days Engaged,2025-11-11,Black Friday Sale On Now,Our Biggest Sale Ever 🔥,9015,0.6093,0.0395,0.0032,0.636,1.06,2.23
+campagne,01K9MXDWW5816H9XN54TMDABMY,90d,[Follow-up] 11/9 Educational Campaign | 90 Days Engaged,2025-11-12,Swap to Healthier Tools,Cook Without the “extras”,2925,0.291,0.0096,0.0007,0.088,0.53,0.64
+campagne,01K9F9YJEPD10CVG8WWHAMXRT3,90d,11/13 Titanium Pan Pro Special Offer | 90 Days Engaged,2025-11-13,"{{ first_name|default:'Hey' }}, Get 3 Free Gifts",One Pan + 3 Free Gifts,11999,0.5879,0.0206,0.0018,0.315,1.07,1.37
+campagne,01K9T27F0NV2J30TCT81FEY3HP,30d,[Follow-up] 11/11 Black Friday Sale | 30 Days Engaged,2025-11-14,Huge Sitewide Savings!,Our Biggest Sale Ever 🔥,2300,0.3358,0.0191,0.0026,0.415,0.58,1.08
+campagne,01K9FFA94F21Y6N8ETYR14MHVA,90d,11/15 Don’t Miss Out | 90 Days Engaged,2025-11-15,Stock Alert 🚨,42% Off & Going Fast,11479,0.5936,0.0159,0.0015,0.329,1.08,1.05
+campagne,01K9XN8DPAS0CS9KRK7R97F6JR,90d,11/16 10 Day 10% off Special Offer | 90 Days Engaged,2025-11-16,Bonus Bundle Savings,Add an Extra 10% Off,15664,0.5486,0.0173,0.0017,0.334,1.0,1.15
+campagne,01K9XPGWGBBHM4E6T9VJR0DYQ1,30d,11/18 FAQ’s: Let’s Talk about “How to use Titanium Pans” | 30 Days Engaged,2025-11-18,Prep Matters,Unlock Titanium’s Non-Stick Power,12638,0.5555,0.013,0.0009,0.149,0.97,0.73
+campagne,01KA6Y7S0ZZ1QX0321XY778HJ4,90d,[Follow-up] 11/16 10 Day 10% off Special Offer | 90 Days Engaged,2025-11-19,Special Bundle Offer,Enjoy Extra 10% Off,22900,0.5221,0.0167,0.0014,0.33,0.95,1.11
+campagne,01KA7WSQM3GH2F86XEM39K19HS,90d,11/20 Feature Bundle | 90 Days Engaged,2025-11-20,Stack Your Savings,Bundles Of Savings,18760,0.5156,0.0101,0.001,0.174,0.94,0.67
+campagne,01KADR6R1P4A3PM6HQ2XPEPKRY,180d,11/21 One Pot Wonders for Busy Weeknights | 180 Days Engaged,2025-11-21,Ready for a FlavorfuI Dinner?,,21584,0.4734,0.0053,0.0011,0.305,0.85,0.4
+campagne,01KADNDWR15CQQ7TSM8W7B3B1A,180d,11/22 Low in Stock Items | 180 Days Engaged,2025-11-22,Warehouse Update,We’re running on these items,17326,0.559,0.0207,0.0023,0.514,1.0,1.56
+campagne,01KAH7VPG441XM0AR5YD7WP5GR,90d,[Follow-up] 11/20 Feature Bundle | 90 Days Engaged,2025-11-23,Fire Up Your Savings,Bundles Of Savings,5292,0.2903,0.0091,0.0006,0.188,0.53,0.6
+campagne,01K9F8ZGV7FD4K8KVCM3AFZG9Q,30d,11/24 48 Hours Left [Plain text] | Engaged 30 Days,2025-11-24,"A note from James,",A reminder,12920,0.5243,0.0151,0.0026,0.533,0.91,0.85
+campagne,01KAWY09XFJMQ73ZT9NG6MS9ZA,30d,Clone 11/25 10 Days 10 % Off Special Offer Ends Tonight | 30 Days Engaged,2025-11-25,"Hey {{ first_name|default:'there' }}, 52% 0ff BundIes Ends Tonight",Shop This 0ffer Now,35768,0.3274,0.0172,0.0014,0.406,0.57,0.97
+campagne,01KADQ400MRCEZ4XK41W2ZZB44,90d,11/21 Staff Picks | 90 Days Engaged,2025-11-26,The Top 3 Kitchen Favorites,Staff Pick’s ver.,37584,0.5083,0.0142,0.0014,0.315,0.93,0.95
+campagne,01KADNZSYEHN514BAX9SMM9GM4,180d,11/27 Thanks Giving | 180 Days Engaged,2025-11-27,Happy Thanksgiving,A Note for Youu,27378,0.6177,0.0099,0.0012,0.238,1.11,0.75
+campagne,01KAGP6P5A74M1F2M7G3DAER4B,180d,11/28 [8 AM] Black Friday + 62% Off Sitewide | 180 Days Engaged,2025-11-28,62% 0ff Cookware!,Our Hottest BIack Friday Ever,30704,0.4005,0.0284,0.0028,0.59,0.72,2.14
+campagne,01KAGPEBD4P62E1RGBXW8WHDQR,90d,11/28 [12 PM] Highlight Bestsellers | 90 Days Engaged,2025-11-28,62% Off these BestseIIers,Cook with Extra Savings,27011,0.5705,0.0234,0.0027,0.64,1.04,1.55
+campagne,01KADPETZF03WNY3RJVPN7NMPY,30d,11/28 [7 PM] Plain text reminder | Engaged 30 Days,2025-11-28,Don’t Iet this burn,Bigger SaIe Ever on Now,28491,0.6087,0.0183,0.0029,0.651,1.06,1.03
+campagne,01KAX1R0SH8Y1ESSRKFGNR6XWF,30d,11/29 [10 AM]: Black Friday Sale Extension | 30 Days Engaged,2025-11-29,Black Weekends,62% Off Ends Tomorrow Night,26325,0.5957,0.018,0.0023,0.509,1.04,1.01
+campagne,01KB7VQ9ETNPVK4RD0BP6YWBWP,other,11/29 Last Push for Abandoned Orders | 30 Days Abandoned Cart or Checkout,2025-11-29,I Just Got Fired for Doing This,,12069,0.5709,0.0153,0.0048,0.77,1.43,2.82
+campagne,01KAZWK9Q7NEF5Z72WB2WBJRPS,30d,11/29 [5 PM]: Bestsellers | 30 Days Engaged,2025-11-29,62% Off this Top Trio,See Our Black Friday Bestsellers,28479,0.5672,0.0179,0.0022,0.434,0.99,1.01
+campagne,01KAZXA5MTR7CZPRNKTGP7XM3V,180d,11/30 Black Friday Weekend Extension 120 Days Engaged,2025-11-30,The Timer’s Started,62% Off Ends In 24hrs,28132,0.5722,0.0133,0.0025,0.56,1.02,1.0
+campagne,01KAGPNQWPJFWTFFPSNMR6AMY4,30d,11/30 [4 PM] 8 Hours Left (Plain text) | Engaged 30 Days,2025-11-30,Time’s ticking,"{{ first_name|default:'Hey' }}, don’t misss this",11045,0.6043,0.0176,0.0029,0.58,1.05,0.99
+campagne,01KBB9R6405VT7EZKVA6ZEHQZQ,30d,Clone 11/30 [5 PM] 8 Hours Left (Plain text) | Engaged 30 Days,2025-11-30,Time’s ticking,"{{ first_name|default:'Hey' }}, don’t misss this",25526,0.6104,0.015,0.0016,0.4,1.06,0.85
+campagne,01KBBA2J54PG90FX8ZRC4ACB1T,30d,Clone 12/1 [AM]: Cyber Monday - 42% Sitewide Off + 5% Off | 30 Days Engaged,2025-12-01,Trim the Fat,Cook Up Huge Savings,27899,0.54,0.009,0.0008,0.151,1.0,1.02
+campagne,01KB025BR8TETNDTD35DEXVX4G,30d,12/1 [PM]: Cyber Monday | 30 Days Engaged,2025-12-01,Cyber Monday Specials!,Serving Savings,20799,0.5824,0.0099,0.0014,0.255,1.08,1.12
+campagne,01KBF8KP2X20D49C9WVTGW96QV,30d,Clone 12/1 [PM]: Cyber Monday | 30 Days Engaged (2nd December Resend),2025-12-02,This Cyber Monday Deal is Ending Soon!,Don't Miss Out,29591,0.5458,0.0113,0.0017,0.355,1.01,1.29
+campagne,01KB6W2S7WXQ4KXYFJJ466XYTP,180d,12/3 Cyber Monday Extension + 5% Off [VIP5] | 120 Days Engaged,2025-12-03,One Last Call,Last Chance to Cook with Savings,24776,0.5378,0.0091,0.001,0.191,0.98,0.78
+campagne,01KB44F1P0ZDC9KTJARE8WKRH9,other,12/4 Slight Delay On Carriers | Buyers in BFCM,2025-12-03,Your cookware is on the move,Just a quick heads-up,6637,0.8112,0.0411,0.0011,0.163,2.03,7.55
+campagne,01KBHK12ECQ13FZX6TYNPW4ZWX,30d,12/6 The Perfect Gift this Christmas | 30 Days Engaged Variation A,2025-12-06,Gift Practical this Season,Your 2026 Gift Guide,29278,0.5278,0.0073,0.001,0.18,0.98,0.83
+campagne,01KBJ4E2AWJZS5BNG8K153YT5K,90d,12/9 Bundle Highlight - Shop now for Christmas | Engaged 90 Days,2025-12-09,Better For Your Budget,Great For Gifting,27222,0.5918,0.0063,0.0004,0.099,0.98,0.73
+campagne,01KBJ4QSN3YW7D0CT1D5CRY7ST,30d,12/11 FAQ’s | Engaged 30 Days,2025-12-11,Non-sticking not happening?,Unlock Non-Stick Naturally,35628,0.6336,0.015,0.0011,0.249,1.17,1.71
+campagne,01KBQG369SCD12WTS6X1NCS55Y,30d,12/14 Titanium Pans for Holiday | 30 Days Engaged,2025-12-14,’Tis the Season for Food,Holiday Food Prep Minus the Stress,30531,0.5019,0.0064,0.0002,0.047,0.93,0.73
+campagne,01KBYERPHFSD5RGQ3R1DFM2NKM,90d,"12/16 No gift, No Problem! | 90 Days Engaged",2025-12-16,Gift Something That Lasts,"{{ first_name|default:'Hey' }}, Give Better for Them this Season",38943,0.6193,0.0117,0.0008,0.172,1.02,1.36
+campagne,01KBXSK6S1XX8AMD0Z69TKFDH2,30d,12/19 Bestsellers + reviews | 30 Days Engaged,2025-12-19,"Hey {{ first_name|default:'there' }}, Meet Our Top 5",See What Made the Cut,25617,0.6125,0.0063,0.0005,0.117,1.13,0.72
+campagne,01KBXSW1HYYTB909VAKRQT65VQ,30d,12/21 Hammered Deep Pan Pro | 30 Days Engaged,2025-12-21,One Pan. So Many Servings,Deep Pan Benefits,25392,0.6216,0.0088,0.0004,0.09,1.15,1.0
+campagne,01KCH59P001QG0E0SC18KFDT0N,30d,12/23 Christmas Recipe | 30 Days Engaged,2025-12-23,A Winter Warming Drink,Cheers to a New Recipe,44312,0.5245,0.0061,0.0004,0.084,0.97,0.69
+campagne,01KC1N0VZQ19C7E5WYNJ68HNQ4,90d,12/25 Christmas | 90 Days Engaged,2025-12-25,"Hey {{ first_name|default:'there' }}, A note from us",Seasons Greetings,37335,0.6194,0.0085,0.0006,0.106,1.02,0.99
+campagne,01KCM07M8HMWN0YJWFD2CZHHKT,90d,12/26 Boxing Day | 90 Days Engaged,2025-12-26,Hip Hip Hooray!,Our Boxing Day Sale Starts Now,34697,0.5018,0.0086,0.0008,0.138,0.83,1.01
+campagne,01KDJSJZREJ69A2PPYS7PJCE0D,other,Review Email | Placed Order in the Last 3 Months (clone),2025-12-28,How was your experience?  😁 😃 😔 😫,,11926,0.5748,0.0425,0.0013,0.385,1.44,7.8
+campagne,01KCM0EYR22BCR1VK715F0QWTB,30d,12/29 Sitewide Sale Reminder | 30 Days Engaged,2025-12-29,Boxing Day Sale Reminder,Get it while it’s hot!,31076,0.505,0.0132,0.0006,0.122,0.94,1.5
+campagne,01KCM0NR3R6HYTAVFR5TH1AR9N,30d,12/31 New Year’s Eve 52% Off Ends Tonight | 30 Days Engaged,2025-12-31,The Countdown Has Begun,Last Call for 2025 Savings,31204,0.4913,0.0087,0.0006,0.115,0.91,0.99
+campagne,01KCXZ0YMD1PRNQ5VPV6E8745X,90d,1/1 New Year’s Greeting | 90 Days Engaged,2026-01-01,"{{ first_name|default:'Hey there' }}, Happy New Year 🥂",A note from our founder.,45358,0.5191,0.0056,0.0006,0.089,1.08,0.97
+campagne,01KDJR9XXFHHB8S7JN3XZGZRAM,30d,"1/3 New Year, New Part of the Kitchen | 30 Days Engaged",2026-01-03,We’re Starting with a Bang!,"New Year, New Pan!",39613,0.5464,0.0125,0.0014,0.241,0.99,1.35
+campagne,01KCXZBF400SX6DZMVZ89XRVRP,30d,1/5 New Kitchen Goals | 30 Days Engaged,2026-01-05,New Year. New Kitchen,Upgrade Your Cooking Kit,29666,0.492,0.0061,0.0004,0.094,0.89,0.66
+campagne,01KDY7K63TQHMDW6S9KGV0HQP2,30d,1/7 Best-Sellers of 2025 | 30 Days Engaged,2026-01-07,The Best of 2025,Start 2026 with Our Top Sellers,26960,0.5808,0.0118,0.0008,0.203,1.05,1.28
+campagne,01KDY7S3V90REQ3S14V8WWSAZ0,30d,1/9 Pan Problem No More | 30 Days Engaged,2026-01-09,Get UnStuck,Ditch Scrubbing Stuck On Food,26184,0.5696,0.0073,0.0005,0.096,1.03,0.79
+campagne,01KE6W45YHT25HH66FCFMEHKMJ,30d,1/11 Sunday Meal Prep Made Easy | 30 Days Engaged,2026-01-11,Free Recipe Inside,Sunday Meal Prep Made Easy,34753,0.596,0.0097,0.0014,0.241,1.08,1.05
+campagne,01KE6W8R02AVFSBWW5S2RKVVKF,30d,1/14 How to Store + Care for Your Kitchen Tools | 30 Days Engaged,2026-01-14,FAQ Care Tips,Get a Lifetime of Use From Siraats,35208,0.5852,0.0181,0.0019,0.396,1.06,1.96
+campagne,01KECM62K2WA4AEDC8QBB7DWJE,30d,1/17 Bestsellers + reviews | 30 Days Engaged,2026-01-17,Our 5 Top Picks,The Best Cookware,27349,0.5578,0.0107,0.0009,0.193,1.01,1.15
+campagne,01KECMBK5DYEJ8MXYGNG1GYD0X,90d,1/19 Breakfast Idea | 90 Days Engaged,2026-01-19,Breakfast Made Easy,A Healthy Way to Start Your Day,52002,0.4792,0.0058,0.0007,0.128,1.0,1.0
+campagne,01KFDSP762HQMZTKE3M05XAKDH,30d,1/23 Customer Favorites | 30 Days Engaged,2026-01-23,Our Three Most Loved & Why,See Why these Top the List,37432,0.5347,0.0088,0.0006,0.117,0.97,0.95
+campagne,01KFB63PE3J4NPT75KTERQ8R7D,30d,1/25 Product Feature + Recipe Drop | 30 Days Engaged,2026-01-25,Bon Appetite! French Crepe Perfection,Your Free Crepe Recipe’s Inside,43471,0.5355,0.0068,0.0011,0.154,0.97,0.73
+campagne,01KFB6CAJ8EPVAZ5BR2Z7JYY0J,90d,1/27 Healthy Habits Start Here | 90 Days Engaged,2026-01-27,You Are What You Eat,Cook Plastic & Toxin Free,61687,0.4533,0.0063,0.001,0.17,0.95,1.1
+campagne,01KFB6HS4XT6J3GKDA2RQF0ZSS,30d,1/30 Pay Day Pick thats Worth Every Cent | 30 Days Engaged,2026-01-30,"Buy once, Use Forever",The Best Pay Day Picks,33725,0.5242,0.0087,0.0006,0.099,0.95,0.94
+campagne,01KFNR5NXPHRC0GGZ1K7A1YZ4E,30d,2/1 Tools to Fall in Love With | 30 Days Engaged,2026-02-01,Kitchenware You’ll Adore,Tools You’ll Fall in Love With,35695,0.5324,0.0094,0.0007,0.133,1.0,1.08
+campagne,01KFNRAH0FM6PYMK21Z19FGQ8E,30d,02/02 Golden Cutting Board | 30 Days Engaged,2026-02-02,We’ve Gone Golden,Turn Your Kitchen Golden,42810,0.5422,0.0097,0.0014,0.247,1.02,1.12
+campagne,01KFX6VW0KH6E7FX4WPCAC36GN,30d,2/4 Basic tools that have Big impacts | 30 Days Engaged,2026-02-04,Get the Basics Right,Basic Tools =  Big Impact,34727,0.4975,0.0057,0.0006,0.123,0.94,0.66
+campagne,01KFX7800VW2N1RCKCV238S1K5,90d,2/6 Soup Weekend Cooking Idea | 90 Days Engagd,2026-02-06,Warm Up With a Bowl of Soup,Free Green Goddess Soup Recipe,62642,0.4419,0.0049,0.0008,0.189,0.98,1.0
+campagne,01KFX7HANGQGJHKHME97DNQRBE,30d,2/8 Valentine’s Gifting Made Simple | 30 Days Engaged,2026-02-08,Warning: Only For Lovers of Cooking,Valentine’s Day Gift Ideas,39615,0.5104,0.0103,0.0011,0.166,0.96,1.18
+campagne,01KG2GJ253GQ6E80XS8VQG24D5,30d,2/11 Review Focus | 30 Days Engaged,2026-02-11,5 Starts From 100k Happy Customer,See the Difference Siraats Makes,39324,0.5018,0.008,0.0008,0.156,0.95,0.92
+campagne,01KH8R47YS023N6AWXRWZENY08,30d,2/12 Warehouse Clearance Sale Launch | 30 Days Engaged,2026-02-12,Warehouse Sale Alert,80% Off Our Big 4,38026,0.5322,0.0358,0.004,0.533,1.0,4.11
+campagne,01KG2GNFWENJXFEBNJTHMWJWTF,30d,2/13 Valentine Recipe Drop | 30 Days Engaged,2026-02-13,Valentine’s Day Dessert,Creamy Chocolate Mousse Recipe Inside,30786,0.5296,0.0033,0.0006,0.142,1.0,0.38
+campagne,01KG2GS79WATEG2W1XAVSE58CG,90d,2/14 Happy Valentines | 90 Days Engaged,2026-02-14,"A note from James, Siraat’s Founder",Happy Valentine’s Day,58642,0.4582,0.0034,0.0006,0.105,1.02,0.68
+campagne,01KH91RBRYTE9BNYFBVP5NBJ34,30d,2/16 Product Review | Engaged 30 Days,2026-02-16,Hello 80% Off!,Save on Better for you Cookware,31066,0.5303,0.0288,0.0019,0.226,1.0,3.3
+campagne,01KGMRK3PPAY99XDEMS3HJ3M35,30d,2/17 Bundle Feature | 30 Days Engaged,2026-02-17,Bring on Bundles of Savings,Our Best Bundles,30305,0.5144,0.0068,0.0008,0.153,0.97,0.78
+campagne,01KHNXYA2VMH0P3AZEB66SJHRA,other,"Campaign Feb 17, 2026, 9:51 PM",2026-02-19,Ramadan Mubarak,Wishing you a meaningful fast,2976,0.4474,0.0014,0.0,0.0,1.01,0.64
+campagne,01KH3XSA5C4T040VNQJHNW0R74,30d,2/20 Non-Stick Pan Wearing Off | 30 Days Engaged,2026-02-20,Non-Stick That’ll Stay,No “worn out sticky” bits,30602,0.5356,0.0076,0.0007,0.198,1.01,0.88
+campagne,01KH51CRC3ZW8R2HQF704J8X9T,30d,2/22 New Members of the Kitchen | 30 Days Engaged,2026-02-22,Hot New Arrivals!,Meet Your New Kitchen Kit,36820,0.5362,0.0126,0.0008,0.111,1.01,1.45
+campagne,01KH91XXFNP6CSC8FQWVF4SFWE,other,2/23 Ultra Savings on Siraat’s Utensils | Utensil Non-Buyers,2026-02-23,The Ultimate Utensil Deal,4 Utensils For $69,64824,0.4411,0.004,0.0007,0.094,1.0,1.9
+campagne,01KH51GJKWMNNDTZW8YXZRNT37,90d,2/25 Customer Stories | 90 Days Engaged,2026-02-25,Rumour has it…,See what’s being said,56603,0.4513,0.0051,0.0004,0.058,1.0,1.03
+campagne,01KH92H46YEVV1VSAB2EPZWT6E,other,2/26 Utensils Bundle Reviews | Utensil Non-Buyers,2026-02-26,We’ve Cooked Up a Huge Offer,4 Utensils For $74,59911,0.4203,0.0021,0.0003,0.057,0.95,1.0
+campagne,01KHKHVEQZJND7JQ3JC1HP98KN,30d,2/27 Pay Day Pick | 30 Days Engaged,2026-02-27,Payday Picks!,The Best Value Kitchen Tools,32612,0.5296,0.0063,0.0004,0.049,1.0,0.73
+campagne,01KHXTS0W5A3107AGQF03DEPEN,30d,3/1 March Reset: Cook Smarter This Spring | 30 Days Engaged,2026-03-01,"Small Changes, Big Differences",Kitchen Tweaks for Better Health,32861,0.531,0.0061,0.0006,0.106,0.98,0.78
+campagne,01KHXTY8WCY4QADQ51YTED398N,30d,3/3 Salt & Pepper Mills | 30 Days Engaged,2026-03-03,Shake it Up!,Hello New Arrivals,36492,0.5427,0.0086,0.0008,0.114,1.01,1.1
+campagne,01KHXV6BTYQ711A194CQ5C22GD,other,3/3 Ramadan + Free Mystery Gift | Muslims Subscribers,2026-03-03,Our gift to you 🎁,Celebrate Ramadan with us,3312,0.4382,0.0051,0.0,0.0,1.0,1.0
+campagne,01KJAT4CZJ7P0889JYTQBKV4QM,30d,3/5 Product Launch | 30 Days Engaged,2026-03-05,New Kitchen Kit!,Small Tools = Big Help,40153,0.5442,0.008,0.0009,0.146,1.01,1.03
+campagne,01KHXVENBEKAZX6CKWEQX3ADX8,90d,3/5 Pandication | 90 Days Engaged,2026-03-07,Us vs Others,Why Titanium Hits Differently,60445,0.4189,0.0048,0.0004,0.059,0.95,0.9
+campagne,01KJATBMK640TB9W3DMHDX3708,90d,3/8 International Women’s Day | 90 Days Engaged,2026-03-08,Happy International Women’s Day,Celebrating Women Who Inspire Us Everyday,66203,0.4387,0.0053,0.0004,0.06,1.0,1.0
+campagne,01KJD3YE8WWV2PJHV9WSPF9V6A,30d,3/11 Pan Spotlight (For Regular Subscribers) | 30 Days Engaged,2026-03-11,Pan’s You’ll Love,Meet the last pans you’ll ever buy,32518,0.5375,0.0069,0.0008,0.12,1.0,0.88
+campagne,01KJD448KZTCRVHXH9WSE956PW,other,3/11 Product Review | Muslims Subscribers,2026-03-11,Enjoy Itfar with Most-Loved,See What Gets 5 Stars Reviews,3587,0.4121,0.0036,0.0003,0.009,0.94,0.71
+campagne,01KJVP3X2XW6B4ZGHNC84AETE6,30d,3/14 Saturday Simple Recipes | 30 Days Engaged,2026-03-14,Eggs Done Differently,Free Recipe Inside,42138,0.556,0.0071,0.0009,0.147,1.03,0.91
+campagne,01KJVPHHSSNPQEEGJFY0FB2TKH,90d,3/17 Pandication Part 2 | 90 Days Engaged,2026-03-17,Titanium Vs Stainless Steel,See how they compare,57807,0.4451,0.0062,0.0006,0.12,1.01,1.16
+campagne,01KJVPXDCGBCFBZ250QKFQ5ZGB,other,3/19 Tools That Last Beyond the Trend | Muslims Subscribers),2026-03-19,Tools that Last,+ Mystery Gift Ends Tonight,3427,0.3709,0.0035,0.0003,0.226,0.85,0.68
+campagne,01KM6NGWKGYQ3S2V971TDJF4V5,other,TRIVET GIVEAWAY USA,2026-03-20,$14 → $15 back (read this),Plus a chance to win a $500 cookware set. 48 hours only.,14271,0.7029,0.0067,0.0008,0.091,1.6,1.31
+campagne,01KK0FBDRCRPMB0FM6NGDY2YTE,30d,3/22 Best Bundles to get Started with | 30 Days Engaged,2026-03-22,Best Bundles for Budgets,Cook Better for You & Your Budget,32802,0.5392,0.0096,0.0007,0.163,1.0,1.23
+campagne,01KKH59X222V9YSDHXD5Q34ZYV,30d,3/25 Accessories Featuring | Engaged 30 Days,2026-03-25,Your Must Have Accessories,Small Additions make Big Differences,35110,0.5565,0.0059,0.0006,0.098,1.03,0.76
+campagne,01KKH5EN9N86X739HZGKFXJECC,30d,3/27 Pay Day Picks | Engaged 30 Days,2026-03-27,Payday Picks,5 X 5 Star Kitchen Picks,21351,0.5212,0.0091,0.0008,0.174,0.97,1.15
+campagne,01KMQNRA5VTD4AMBC15SV7PA6C,other,3/27 Pay Day Picks Campaign Non-Receiver,2026-03-27,Payday Picks,5 X 5 Star Kitchen Picks,27003,0.726,0.0085,0.001,0.167,1.66,1.65
+campagne,01KKTCE1DBH6K6PWCT0H7ZDK2H,30d,3/30 March Wrap-Up | 30 Days Engaged,2026-03-30,March Wrapped & Ready to Go,Bestsellers & Bundles for You,35752,0.5391,0.0078,0.0004,0.08,1.0,1.0
+campagne,01KN2CKHSKZ9W8RWP3CAWBZKEZ,90d,4/1 Easter Sale Launch | Engaged 90 Days,2026-04-01,Eggcellent News!,Easter Sunday Sale On Now!,63221,0.4508,0.0104,0.001,0.203,0.98,1.92
+campagne,01KN4WDY7835KXNFWRZR4KVB86,30d,4/3 Product Review | 30 Days Engaged,2026-04-03,Eggcellent Savings. Excellent Reviews,Save on 5 Star Cookware,35409,0.576,0.0121,0.0011,0.269,1.01,1.58
+campagne,01KN4KCS1PRCDEZT2VJZPGX3Z3,30d,4/5 Product Featuring | 30 Days Engaged,2026-04-05,Make Cooking a Breeze,Eggcellent Bundle on Sale Now,34962,0.5762,0.009,0.0005,0.126,1.01,1.16
+campagne,01KN4KP4ZKJDE0JAWGX85W2RWB,30d,4/7 Pandication Part 3 | 30 Days Engaged,2026-04-07,Titanium Vs Cast Iron,Which Suits You Best?,34759,0.5795,0.0085,0.0009,0.211,1.02,1.1
+campagne,01KN4KTJZYB5Q4J32GJZ4KD3PP,90d,4/9 Pan Featuring | 90 Days Engaged,2026-04-09,March’s Top Pick’s,As Voted by Cooks Around the Country,64780,0.4319,0.0054,0.0007,0.137,0.94,1.0
+campagne,01KNS8X742H86TRAHP1Q101TE5,30d,4/11 Saturday Simple Recipes | 30 Days Engaged,2026-04-11,Your Weekend Breakfast,Full Recipe Inside,43608,0.5461,0.0074,0.0008,0.155,0.96,0.96
+campagne,01KNZWNA6W69S6DGNWBXWEHG6M,30d,4/13 Accessory Featuring | 30 Days Engaged,2026-04-13,Better for You Accessories,"Small Accessories, Easier Cooking",37065,0.5696,0.0072,0.0003,0.046,1.0,0.93
+campagne,01KNVPQZQ9MCX4X0NKDHAA012H,30d,4/15 Why Quality Cookware Matters | 30 Days Engaged,2026-04-15,"Buy Once, Use for a Lifetime",Quality Pay’s Off,35904,0.5685,0.0082,0.0006,0.123,1.0,1.06
+campagne,01KP58NG4Y7W0ZEAQDR29KZH6H,30d,4/17 Tools That Last | 30 Days Engaged,2026-04-17,"Buy Once,",Cook for a Lifetime.,35803,0.5658,0.0077,0.001,0.272,0.99,1.0
+campagne,01KP58VKQV198976TXY1AMG4SS,90d,4/19 Best Bundles | 90 Days Engaged,2026-04-19,Best Budget Bundles,Save with our Top 3 Bundles,63317,0.4605,0.0089,0.0009,0.231,1.0,1.64
+campagne,01KPDQD56113NS6S4FQ8CTXA0R,90d,4/22 Earth Day | 90 Days Engaged,2026-04-22,Earth Day Pick’s,"Better For You, Your Budget & The Planet",62438,0.459,0.0046,0.0004,0.078,1.0,0.86
+campagne,01KPDRSWMAX5EPT62GXYF4K1P6,30d,4/24 Pay Day Picks | 30 Days Engaged,2026-04-24,Payday Picks,Made to Last a Lifetime,33676,0.5754,0.0071,0.0007,0.147,1.01,0.92
+campagne,01KPDRZEPF83XT49MTV9KAG9N4,90d,4/27 Spring Kitchen | 90 Days Engaged,2026-04-27,Spring Cooking Essentials,Healthy Kitchen Start Here,61951,0.4592,0.0049,0.0004,0.085,1.0,0.9
+campagne,01KPR54C5AV0NS2TQ1JW5SNRT3,30d,4/29 Product + Review | 30 Days Engaged,2026-04-29,Customer Favorite for Everyday Cooking,Our Top 3 Trio for April,33950,0.5699,0.0071,0.0007,0.168,1.0,0.92
+campagne,01KPTRPXW8VXYNKG58Q9ZN4YBF,30d,5/1 Weekends Recipe Drop + Product Featuring | 30 Days Engaged,2026-05-01,Free Recipe Inside,Chef Vladdy’s Din Tai Fung Style Cabbage,40484,0.5524,0.0089,0.0007,0.144,1.02,1.21
+campagne,01KQ7GHENJQ6FYBY9QYC2HD8Z1,90d,5/3 Mother’s Day Sale Launch | 90 Days Engaged,2026-05-03,Cook Up a Perfect Mother’s Day Mother’s Day,Sale Starts Now,61953,0.4505,0.004,0.0004,0.103,1.0,0.99
+campagne,01KQ7GP6R0SZKPSMNVBYBBDY9D,30d,5/5 Cinco de Mayo | 30 Days Engaged,2026-05-05,¡Feliz Cinco de Mayo!,Cook up a Celebration,34084,0.503,0.0044,0.0005,0.084,0.93,0.6
+campagne,01KPTS1STT1TYNB3RMXY6PEQG6,30d,5/7 Resend Bundle Campaign | 30 Days Engaged,2026-05-07,Best Budget Bundles,Save with our Top 3 Bundles,32330,0.5774,0.0076,0.0006,0.158,1.07,1.03
+campagne,01KQFJBCD9SQZXC8VH9967PPSB,other,5/9 Confit Byaldi Recipe Drop (Ratatouille) | Non-Buyers last push 15% Off,2026-05-09,Unlock Memorie’s,A Recipe to Remember,53961,0.4787,0.0027,0.0003,0.047,1.2,0.5
+campagne,01KQFK09JPV60JKCYJGTNNGNJJ,30d,5/10 Mother’s Day | 30 Days Engaged,2026-05-10,Happy Mother’s Day,Celebrating Mother’s Day with 15% Off,60417,0.4505,0.0052,0.0006,0.14,0.83,0.7
+campagne,01KRC2BJ06CDCG5678YSYYFCBS,30d,5/12 Pandication Part 4 | Engaged 30 Days,2026-05-12,Ceramic VS Titanium,How Do They Compare?,39917,0.5779,0.0098,0.0008,0.193,1.07,1.32
+campagne,01KRBM919YS34XBADT42DGD5GB,30d,5/14 Apron Highlight | 30 Days Engaged,2026-05-14,Stay Splash Safe,Spotlight on our Aprons,46034,0.5623,0.0072,0.001,0.166,1.04,0.97
+campagne,01KRBMTA5A9F2NVCC597GM5VJ2,90d,5/16 Refreshment Recipe Drop + Accessory Featuring | 90 Days Engaged,2026-05-16,Drink In a Summer’s Delight,Free Refreshing Recipe Inside,67742,0.4582,0.003,0.0004,0.088,1.02,0.75
+campagne,01KRP46HQDXWW9GKKVMTQ4SPDA,90d,5/19 Accessories Best Use For + Memorial Day Sale Launch | 90 Days Engaged,2026-05-19,Accessories that make Cooking Easy,Get Our Top Picks,70715,0.4582,0.0041,0.0004,0.077,1.02,1.02
+campagne,01KS2TBZ3SJ15TR4MFF7APXBG4,30d,5/21 MEMORIAL DAY SALE ON REMINDER | 30 Days Engaged,2026-05-21,Memorial Day Savings on Now,Cook Better with Extra Savings,45067,0.5277,0.0071,0.0004,0.11,0.97,0.96
+campagne,01KRP4PT72QEZM04H6AMFX3XCJ,30d,5/22 Pan Cleaning Tips | 30 Days Engaged,2026-05-22,Cleaning Between Cooking,Tips for a Quick Clean,51076,0.5463,0.0157,0.0006,0.123,1.01,2.13
+campagne,01KS2WG45NA7MHKE36YKTCWMZQ,90d,5/24 MEMORIAL DAY WEEKEND SALE ON REMINDER [review campaign] | 90 Days Engaged,2026-05-24,Used & Loved by Thousands,Cook Better for You with 10% Off,70430,0.4475,0.004,0.0002,0.057,1.0,1.01
+campagne,01KS82K9KXQ7H5Z724EY88QZ94,30d,5/25 Memorial Day Greeting | 30 Days Engaged,2026-05-25,Happy Memorial Day,Claim Your Free Gift Now,44345,0.4891,0.0058,0.0003,0.066,0.9,0.78
+campagne,01KS82SP53VS0ZP2PBYNG0QSEJ,90d,5/27 Review Highlight | 90 Days Engaged,2026-05-27,Buy 2 Get 1 Free,Shop 5 Star Cookware with a Bonus,74443,0.4392,0.0078,0.0003,0.101,0.98,1.94
+campagne,01KSFVQJ17V70TPW7Z8V9XW9AS,30d,5/28 48 Hours Reminder | 30 Days Engaged,2026-05-28,Bonus Offer Ends Soon,Buy 2 Get a Free Gift,44657,0.5374,0.0082,0.0006,0.113,0.99,1.11
+campagne,01KSFVYBB1ACDM37VB3CN55DW2,90d,5/29 Pay Day Picks | 90 Days Engaged,2026-05-29,Top 3 Payday Picks,Buy One Get a Free Gift,74074,0.4297,0.003,0.0004,0.078,0.96,0.76
+campagne,01KSQWKSZVXDPY0FWNVDVXZRHY,90d,6/1 Email Idea: June Kickoff | 90 Days Engaged,2026-06-01,Stay Hydrated this Summer,Drink In Our Pineapple Coconut Water Recipe,75908,0.4357,0.0031,0.0003,0.058,1.0,0.66
+campagne,01KSQWTH5RPD17Y313R67K4Q3J,90d,6/4 The #1 Reason Cooking Feels Harder Than It Should | 90 Days Engaged,2026-06-04,Cook without the Long Clean-up,Make Cooking Easier on Yourself,69258,0.4,0.0038,0.0002,0.055,0.92,0.79
+campagne,01KT1M5Y0WJEMV38NVM87931YF,90d,6/6 Instagram Recipe Drop | 90 Days Engaged,2026-06-06,Dinner Sorter,Chicken & Creamy Mushroom Recipe Inside,85083,0.4318,0.0046,0.0004,0.091,1.0,0.97
+campagne,01KT1MBGEHBCH99WZ0ZPHJWQTQ,30d,6/9 New Bundle Spotlight | 30 Days Engaged,2026-06-09,New Bundle Just Landed,Meet Our Biggest Bundle,47067,0.5405,0.0118,0.0004,0.148,1.02,2.14
+campagne,01KTMZZ3CV86M5RF3MRB5SX1HC,90d,6/13 Founder (POV) Recommendation | 90 Days Engaged,2026-06-13,What I Use,See Our Founder’s Must-Haves,73006,0.445,0.0049,0.0003,0.044,1.03,1.03
+campagne,01KTPQCDGPPXKT4BJM96DM2M3J,90d,6/15 Father’s Day Sale Launch | 90 Days Engaged,2026-06-15,Don’t Worry We Haven’t Forgotten,Father’s Day Special Offer Inside,80850,0.3994,0.0046,0.0005,0.108,0.92,0.97
+campagne,01KTPQV1VA7ZWKD5BST886VJEB,30d,6/18 Bundle Highlight | 30 Days Engaged,2026-06-18,Top Rated for a Reason,See Our Most Popular Bundle & Save,46557,0.5229,0.0049,0.0003,0.068,0.99,0.89
+campagne,01KTPQMQPWSMPPSQ8W9TGT9PE0,other,6/16 Pizza Steel Back In Stock | US Subscribers,2026-06-19,"The Perfect Slice, Every Time",Pizza Steel’s Are Back!,40893,0.3639,0.0033,0.0003,0.082,0.91,0.6
+campagne,01KTYCMDW8VBQYS19YVG688055,90d,6/20 Father’s Day Sale Reminder | 90 Days Engaged,2026-06-20,48hrs Left,Father’s Day Savings End Soon,70525,0.4151,0.0054,0.0004,0.105,0.96,1.14
+campagne,01KTYD2WYMWA175FZ0DXMNC68G,30d,6/21 Bestsellers Spotlight | 30 Days Engaged,2026-06-21,Our Top 5,Get Them for 10% Off,44617,0.5531,0.0061,0.0008,0.155,1.05,1.11
+campagne,01KV5X9JM7FYMQQ937ZSDQ8YFP,30d,6/24 Review Highlight | 30 Days Engaged,2026-06-24,More Than Just Great Cookware,Why We’re Loved,45960,0.5353,0.0036,0.0002,0.069,1.01,0.66
+campagne,01KVY78ERX8KG2SW0XNH6QGB9S,90d,6/25 Prime Day | 90 Days Engaged,2026-06-25,Siraat Prime Time Savings!,Shop up to 56% Off for a Limited Time Only,76683,0.4653,0.0079,0.0004,0.097,1.07,1.66
+campagne,01KV8EFQEZD9NYBCFZQTAH3C3Z,30d,6/26 Pay Day Picks | 30 Days Engaged,2026-06-26,Payday Picks,June’s Bestsellers,3502,0.4727,0.0087,0.0012,0.319,0.89,1.57
+campagne,01KVYA2PRG8S0T94AVZZDV4A71,30d,6/27 Independence Day Sale Teaser | 30 Days Engaged,2026-06-27,We’re Cooking Up Something Special,Get Your Wish Lists Ready,47053,0.376,0.0048,0.0005,0.11,0.71,0.86
+campagne,01KW1S5BRNHFJQV09CN6X5CHKA,other,6/29 Independence Day Sale Launch | US Subscribers,2026-06-29,Independence Day Sale Starts Now,Cook with Huge Savings,42214,0.361,0.0063,0.0008,0.163,0.9,1.15
+campagne,01KV8EKTTQ82VTG738CTFYQ45R,90d,6/30 June Wrap-Up: What You Might’ve Missed | 90 Days Engaged,2026-06-30,June Wrap-Up,"Recipes, Resources & More",71591,0.4375,0.0054,0.0004,0.091,1.01,1.13
+campagne,01KW1SAQ1JC2DD0MTEKRD3R2KC,other,7/1 July Reset + Independence Sale Reminder | US Subscribers,2026-07-01,July Re-Set,Upgrade Your Kitchen & Save,38188,0.3264,0.0032,0.0003,0.084,0.85,0.63
+campagne,01KW1SFZDZPKKPYHP75VKCBZPR,other,7/3 48 Hours Left | US Subscribers,2026-07-03,48hrs Left,Your Extra 15% Off Ends Soon,38204,0.3436,0.0043,0.0006,0.12,0.89,0.83
+campagne,01KWG8DN2PCJ75Z0GCWQ15KKKS,other,7/6 Independence Day Sale | US Subscribers,2026-07-06,Last Call for Over 50% Off,Independence Day Sale Ends Tonight,42522,0.3163,0.006,0.0007,0.152,0.82,1.17
+campagne,01KWG9QV93NMJB2VAA5N642Q67,30d,7/9 Most Underrated Kitchen Upgrade | 30 Days Engaged,2026-07-09,"Little Changes, Big Difference",Cooking Utensils that Make Cooking Easier,47455,0.5265,0.0073,0.0005,0.082,0.94,1.04
+campagne,01KWHVY6M3WPKPS81CATTEGJBP,other,7/12 Pan Cost Comparison Part 1 | AU Subscribers,2026-07-12,Pan Cost Comparisons,What’s Cookware really costing you?,4760,0.4004,0.0048,0.0002,0.082,1.04,0.94
+campagne,01KWHW56DF0956NQP753P6BQ57,other,7/12 Pan Cost Comparison Part 1 | Singapore Subscribers,2026-07-12,Pan Cost Comparisons,What’s Cookware really costing you?,1474,0.4565,0.0054,0.0,0.0,1.18,1.06
+campagne,01KWHWA2638SA807KST5G9D0BR,other,7/12 Pan Cost Comparison Part 1 | US Subscribers,2026-07-12,Pan Cost Comparisons,What’s Cookware really costing you?,39428,0.3915,0.0032,0.0003,0.05,1.01,0.62
+campagne,01KWHWF6R8MHJA5P3VD8B7W7DZ,other,7/12 Pan Cost Comparison Part 1 | GB Subscribers,2026-07-12,Pan Cost Comparisons,What’s Cookware really costing you?,5860,0.4509,0.0044,0.0002,0.025,1.17,0.86
+campagne,01KWW3E5NKSPDB372HDHNYJHT1,30d,7/15 Meals You Can Make at Home | 30 Days Engaged,2026-07-15,Easy Skillet Lasagne Recipe Inside,"Gluten-Free, Protein Rich & Absolutely Delicious",46245,0.5569,0.0049,0.0004,0.065,1.0,0.7
+campagne,01KXGC7X9998FBHH2BJBHMEVV4,other,7/17 Why Food Sticks (And How to Fix It) | Highly Engaged,2026-07-17,Why Food Sticks,And how to fix it,3801,0.6146,0.0718,0.0026,0.457,1.59,13.97
+campagne,01KWY0W13AFG7PWYBWW7M3P7JG,30d,7/19 What Our Customers Wish They Bought Sooner | 30 Days Engaged,2026-07-19,What Customers Wish They Bought Sooner,See the Can’t Live Without List,46233,0.5574,0.0071,0.0005,0.116,1.0,1.0
+campagne,01KXNS9J3HPBRSSF5YHFT46CME,other,7/21 How to Cook More Without Spending More Time | Highly Engaged,2026-07-21,Get Out of the Kitchen Quicker,Easy Clean Cookware,1940,0.533,0.0314,0.0036,1.101,1.38,6.12
+campagne,01KY2WVZP589SM8V54YG472ZZZ,other,"Campaign Jul 22, 2026, 1:51 AM",2026-07-22,Mark Your Calendars,July 24th Something Special is Coming,43635,0.3871,0.0038,0.0003,0.032,1.0,0.73
+campagne,01KXGD52605261VX0JD8DMG1VQ,30d,7/24 Pay Day Picks: Kitchen Upgrades That Last | 30 Days Engaged,2026-07-24,Payday Picks,Cook with our Value Bundles,26295,0.5826,0.0071,0.0006,0.164,1.05,1.01
+campagne,01KY58NH4SSWACZXJ5087XZ4QA,other,7/24 Flash Sale Launch | US Only,2026-07-24,IT'S HERE!!!!,Cook with an Extra Special Offer,43452,0.3842,0.0067,0.0008,0.112,1.0,1.3
+campagne,01KYA3F1Q5G22W0RPBBHERHDRE,other,7/24 Founder to Customer | US ONLY,2026-07-24,Just for our BIRTHDAY I'm doing this once. Then never again!,Our accountant called me twice this morning. I didn't pick up.,46027,0.3842,0.0095,0.0011,0.233,1.0,1.85
+campagne,01KYCM14S4MQMV8YPEGCN361QP,other,7/24 FOUNDER LAST HOURS LAST STOCK,2026-07-25,63% OFF Almost gone. I'm losing my mind.,,28864,0.3626,0.0064,0.0006,0.11,0.94,1.24
+campagne,01KY58T7RX6EYJV068WC2HSH2X,other,7/26 Review + Flash Sale Reminder | US Only,2026-07-26,5 Star Cookware on Sale,Flash Savings On Now,42054,0.3767,0.003,0.0004,0.065,0.98,0.58
+campagne,01KYFQ7SR5NCKT4GTB8CYF96DD,other,7/26 FOUNDER OOPS WE GOT A LITTLE | US ONLY,2026-07-26,The sale ended. Then this happened.,,1479,0.4824,0.0158,0.0007,0.087,1.25,3.08
+campagne,01KYFXY1Z91ZT0EYR2CH0PYJ6D,other,7/26 FOUNDER OOPS WE GOT A LITTLE | US ONLY (clone),2026-07-26,The sale ended. Then this happened.,,46257,0.3966,0.007,0.0006,0.145,1.03,1.36
+campagne,01KXNSS79PPG1QZH3MHGV4VSDK,30d,7/27 Healthy Habits Start Here | 30 Days Engaged (Non-US),2026-07-27,You Are What You Eat,Cook Plastic & Toxin Free,25883,0.5914,0.0054,0.0005,0.105,1.06,0.77
+campagne,01KY58ZH3SZ71KSREC30FHZS33,other,7/28 Flash Sale Ends Tonight | US Only,2026-07-28,Last Call for Flash Savings,Sale Ends At Midnight Tonight,42437,0.3668,0.0022,0.0001,0.018,0.95,0.42
+campagne,01KYJ5VQQ9MWH1S49XKYEJRSK9,other,7/28 Flash Sale Ends Tonight | Text Based | US Only,2026-07-28,LAST CALL🚨!!!,FLASH SALE ENDS AT MIDNIGHT,45673,0.3783,0.0042,0.0006,0.105,0.98,0.82
+campagne,01KXNSFG5BV37XCF5DP5QGCD08,90d,7/30 July Wrap-Up: Recipe Drop | 90 Days Engaged (Non-US),2026-07-30,New Weeknight Favorite Landed,Garlic Butter Cheesesteak Sandwich Recipe Inside,50357,0.4651,0.0029,0.0006,0.157,1.01,0.45
+campagne,01KYT3B8919MEVZ7AX58Z946HT,other,8/1 Anniversary Sale Countdown (Regular Subscribers),2026-08-01,We’re warming up something big 👀!!!,Mark the date,31725,0.5063,0.0021,0.0004,0.062,1.03,0.38
+campagne,01KYT2ZMK1WR8NBKRTEJCGTTDE,other,8/1 Anniversary Sale Countdown (US Subscribers),2026-08-01,We’re warming up something big 👀!!!,Mark the date,43748,0.3745,0.0011,0.0002,0.052,0.77,0.21
+campagne,01KYW7RABJH4F0CZSFC33SK5FP,other,8/3 Anniverary Offer Launch (Regular Subscribers),2026-08-03,🎂 Our Birthday Sale Starts Now,Shop Huge Savings on This Set,22152,0.5818,0.0171,0.0008,0.177,1.19,3.2
+campagne,01KYW7E0TYPYPF4YG7PDQYM3B9,other,8/3 Anniverary Offer Launch (US Subscribers),2026-08-03,"Hey {{ first_name|default:'there' }}, IT’S HERE!!!",Shop Our Birthday Offer Now 🥳,18418,0.5476,0.0091,0.0007,0.171,1.12,1.7
+campagne,01KYW5GKHK3C79HAXWW61T1KBH,other,8/5 The 1 Habit That Makes Cooking Easier + Anniversary Offer Reminder (Regular Subscribers),2026-08-05,This You? 🧑‍🍳,Cook for the best with this 1 tip,48060,0.4859,0.0058,0.0004,0.078,0.99,1.09
+campagne,01KYW3XYG76KT4C8D5S58QV94P,other,8/5 The 1 Habit That Makes Cooking Easier + Anniversary Offer Reminder (US Only),2026-08-05,There’s 1 Habit that makes cooking easier,🥘 Cook Better with this Tip,43838,0.3717,0.002,0.0002,0.067,0.76,0.38
+campagne,01KYWESB8YRC7XJHQZ213NSGNS,other,8/6 EMAIL: Single Pan Non-Buyers/ Viewed Pans but Non-Buyers (US Only),2026-08-06,What 41% Off Really Looks Like 👀,$$$ Birthday Savings On Now 🥳,15201,0.3539,0.0023,0.0003,0.1,0.72,0.43
+campagne,01KYWHN0VSQYN6BDAZ46W8Y054,other,8/8 6 Pcs Bundle Feature (Regular Subscribers),2026-08-08,One Set. Zero Coatings. Huge Savings,Your Kitchen (and savings account) NEED This,47729,0.4623,0.0056,0.0003,0.059,0.94,1.04
+campagne,01KYWHE304E291MZS2AFYHTQX4,other,8/8 12 Pcs Bundle Feature (US Subscribers),2026-08-08,One Set. Every Pan You’ll Ever Need + A Free Gift 🎁,"12 Pieces, $487 in Savings, and a Free Pan",15086,0.3457,0.006,0.0001,0.046,0.71,1.12
+campagne,01KZBF1VCK33J53Z34NA4RJF7M,other,E1 The Story,2026-08-08,FINALLY!! no more dishwasher pods,,31987,0.493,0.004,0.0007,0.123,1.01,0.74
+campagne,01KZNSNPWXT12SPXJXN0N40A90,other,10/8 Dishwasher Sheets Founder to Customer,2026-08-10,What I found under my own sink,,84203,0.5231,0.0065,0.0004,0.07,1.07,1.21
+campagne,01KZE5XEJDAHCBNDHRK2GTEV4J,90d,8/11 Pan Cost Comparison Part 2 | Engaged 90 Days,2026-08-11,Steel VS Siraat,What’ll Really Cost Your More $$$,55141,0.3995,0.003,0.0002,0.065,0.87,0.46
+campagne,01KZE6CMTD8SHB916RBQPV8GJS,30d,8/13 Customer Story: From Frustration to Simplicity | Engaged 30 Days,2026-08-13,He was skeptical,But Eggs Changed Everything 🍳,40415,0.5767,0.0054,0.0006,0.106,1.03,1.0
+campagne,01KZP3F1PRK121M5VR2XYC3446,other,8/16 Why Your Kitchen Feels Messy (It’s Not You) + Kitchen Arrangement Tips (US),2026-08-16,If Cooking Always Feels like Chore 😓,"It’s Not Just You, Read This ⬇️",18711,0.5432,0.0048,0.0005,0.159,1.11,0.89
+campagne,01KZP3Q2K94QCZD1Z5KTAS6NHN,other,8/16 Why Your Kitchen Feels Messy (It’s Not You) + Kitchen Arrangement Tips (Non-US),2026-08-16,If Cooking Always Feels like Chore 😓,"It’s Not Just You, Read This ⬇️",23176,0.6077,0.0053,0.0006,0.158,1.24,0.99
+campagne,01KZZFVYXRDSMTSSZBGVXGMWJ3,other,8/19 72 Hours Reminder | US Only,2026-08-19,Don’t Miss Out! 🍳💸,Cook with Huge Savings 🧑‍🍳,18723,0.5372,0.0052,0.0002,0.117,1.1,0.98
+campagne,01KZZG7WXGPAC8V9RP95CWAC9N,other,8/19 72 Hours Reminder | Non- US Only,2026-08-19,Don’t Miss Out! 🍳💸,📢 Last Call For $$$ Savings!  📢,24250,0.5823,0.0077,0.0007,0.223,1.19,1.44
+campagne,01M00F6Y23C0CT5W4WVESB6WXQ,other,8/21 Biggest Savings Bundle + Last Chance Reminder | US Subscribers Only,2026-08-21,📢 LAST CALL! 📢,This Offer Ends Tonight ! ⏰,46421,0.3454,0.0033,0.0002,0.047,0.71,0.62
+campagne,01M00FGVXF4XW7HB267D7RB6N1,other,8/21 Biggest Savings Bundle + Last Chance Reminder | Regular Subscribers Only,2026-08-21,📢 LAST CALL! 📢,This Offer Ends Tonight ! ⏰,46406,0.4692,0.0065,0.0004,0.1,0.96,1.21
+campagne,01M07G66W70DMFNXEQNYJ4WEBD,30d,8/23 Sunday Recipe Day | 30 Days Engaged,2026-08-23,ONE POT CACIO E PEPE 🍝,Sunday Recipe Drop 🧑‍🍳,48880,0.561,0.0073,0.0004,0.083,1.0,1.35
+campagne,01M0T7S2DYN8RTNG72RNACJPXZ,30d,8/26 Customer Review | 30 Days Engaged,2026-08-26,They said WHAT about us??,5 Star Cookware that’s got people talking,44129,0.5313,0.0052,0.0003,0.051,0.95,0.95
+campagne,01M0T8MQTN8P1K9ZX4CC4XKDQF,90d,8/28 Founder’s Pay Day Recommendation | 90 Days Engaged,2026-08-28,Payday Picks for Every Budget,Make Your $$$ Cook Longer,44227,0.5107,0.0065,0.0007,0.197,1.11,1.0
+campagne,01M1AVKSM8MZHS7J92R5K4KE5C,other,8/31 Labor Day Sale Launch | US Only,2026-08-31,Savings Starts NOW 💵,Cook with an Extra 15% Off,19020,0.4733,0.0054,0.0005,0.095,0.97,1.01
+campagne,01M1KH09FERDQ6344QW2E7X51R,other,AU-01 - vr 4 sept 08:00 AEST - Father's Day Sale Ends Sunday (AU+NZ),2026-09-03,FATHER'S DAY IS SUNDAY,"A note from me, a gift for you, and a price I probably shouldn't have set.",16169,0.3382,0.0087,0.0003,0.075,0.95,1.28
+campagne,01M1KH0BM0ACV6HJPGM8NEY62G,other,INTL-01 - vr 4 sept 10:00 GMT - Siraat Birthday Sale,2026-09-03,IT'S OUR BIRTHDAY,"A note from me, a gift for you, and a price I probably shouldn't have set.",52514,0.4288,0.0199,0.0007,0.125,1.21,2.93
+campagne,01M1KH06D48AJ6PFHFZ2XYZ8KB,other,US-01 - do 3 sept 09:00 ET - Labor Day Sale Live,2026-09-04,THE LABOR DAY IS COMING CLOSER,"A note from me, a gift for you, and a price I probably shouldn't have set.",56147,0.3424,0.0047,0.0002,0.042,0.97,0.7
+campagne,01M1S8GBJVQKEZSRNJNNQHAJA4,other,09/05 Dishwasher Plastic on your plates,2026-09-05,There's plastic on your dinner plate right now,,37760,0.3993,0.0078,0.0007,0.102,1.13,1.15
+campagne,01M1SAA4GMCXPXX9N37EDJ297C,other,09/05 September is hard,2026-09-05,I did something I shouldn't have,,92779,0.3105,0.0074,0.0005,0.128,0.88,1.09
+campagne,01M1Y1CABVTN655WT4G03X3W1R,other,09/07 Labour Day Sale Variation A,2026-09-07,144 years. That's how long people have fought for this day.,,53278,0.3047,0.0033,0.0004,0.107,0.86,0.49
+campagne,01M20Y966R2A123HWBGSZ4N1NW,other,09/08 US EXCLUSION SALE DAY,2026-09-08,"50% OFF, 4 Free Gifts, Last Hours. Then Nothing.",,71263,0.3284,0.0083,0.0004,0.097,0.93,1.22
+campagne,01M25W72VDRV3QCPDKFDVK5QH5,other,HS // Siraats Kitchen // September Email 1: Warehouse Clearance Sale // 09.11.2026,2026-09-11,Warehouse Clearance Sale: Up to 58% Off,New stock lands this fall and we need to make some room,124437,0.365,0.0124,0.0005,0.124,1.03,1.82
+campagne,01M28T4C7M6CWXASD6SX59KPST,other,HS // Siraats Kitchen // September Email 2: Warehouse Clearance Sale - Bundle Spotlight (US ONLY) // 09.12.2026 Variation A,2026-09-12,A whole kitchen set up in one easy click,Shop bestselling bundles and save up to 50% now →,21957,0.4122,0.0069,0.0004,0.058,1.16,1.02
+campagne,01M29105KBPGAWDF4TA4HNJG78,other,HS // Siraats Kitchen // September Email 2: Warehouse Clearance Sale - Bundle Spotlight (INT ONLY) // 09.12.2026 Variation A,2026-09-12,A whole kitchen set up in one easy click,Shop bestselling bundles and save up to 50% now →,18293,0.4409,0.0087,0.0002,0.07,1.24,1.28
+campagne,01M28T633PKFRBPXXC6P16QV4P,other,HS // Siraats Kitchen // September Email 3: Dishwasher-Safe & Easy Cleanup // 09.13.2026,2026-09-13,Non-toxic cookware AND dishwasher safe?,,63695,0.4683,0.0068,0.0003,0.049,1.32,1.0
+campagne,01M28VYFZ3BJ9Z6MKJQNZ3T09D,other,HS // Siraats Kitchen // September Email 4: Accessory Push // 09.13.2026 // A Variation A,2026-09-13,Your kitchen is *almost* ready,Grab the accessories you’ll need this season,5006,0.4566,0.0134,0.0004,0.012,1.29,1.97
+campagne,01M2G9HRDKA4EV6NY0EDQTGN0X,other,HS // Email 5: Warehouse Clearance Sale - Don't Miss It // 09.15.2026,2026-09-15,"Still here (for now), still up to 50% off",The Warehouse Clearance Sale is still going on now,139449,0.3395,0.0068,0.0002,0.073,0.96,1.0
+campagne,01M2P13MWTW8ZXEZ498TR0AY7K,other,HS // Siraats Kitchen // September Email 6: Sweater Weather: Fall Kitchen Refresh // 09.17.2026,2026-09-17,"So long, summer ☀️",Hello comfort cooking 🍂,125188,0.3576,0.0037,0.0002,0.054,1.01,0.55
+campagne,01M2R5586TZ3XT3NVY4F5H3NH4,other,HS // Siraats Kitchen // September Email 7: Net New Dishwasher Focus // 09.18.2026,2026-09-18,"Put it in the dishwasher. Yes, really.",We know. Everyone asks twice.,53240,0.4393,0.0062,0.0004,0.092,1.24,0.91
+campagne,01M2R57909EX76108B3XGBD4GF,other,HS // Siraats Kitchen // September Email 8: Roasting Pan Teaser // 09.19.2026,2026-09-19,Something's coming to your oven 👀,Be first to shop →,41217,0.4053,0.0076,0.0002,0.027,1.14,1.12
+campagne,01M2TR54JXH1HH2D6N5MW9RXME,other,HS // Siraats Kitchen // September Email 9: Roasting Pan Launch // 09.21.2026,2026-09-21,NEW IN: Titanium Hammered Roasting Pan,Your new oven-to-table go-to,61616,0.3361,0.004,0.0002,0.046,0.95,0.59
+campagne,01M32SYVGJ3NX4364BP2DKG4ZR,other,HS // Siraats Kitchen // September Email 10: Fall Menu // 09.22.2026,2026-09-22,Seasonal cooking done better,Fall recipes hit different in titanium,30262,0.4165,0.004,0.0003,0.054,1.18,0.58
+campagne,01M3BPBZNDZV3RR0D8JCV1BW0M,other,Hammered Pan Pro 50% + 4 gifts,2026-09-25,I can't do this a third time,I shouldn't be sending this email.,69858,0.3509,0.0083,0.0006,0.116,0.99,1.22
+campagne,01M32TQ60WGKAQN9GA875H7ZNW,other,HS // Siraats Kitchen // September Email 12: Roasting Pan Follow-Up // 09.25.2026,2026-09-25,Be part of the roasting revolution 👀,Beautiful. Lightweight. Non-toxic. NEW IN.,62238,0.3262,0.0022,0.0002,0.033,0.92,0.32
+campagne,01M3D04HRHY2294K6R7XFB5STQ,other,HS // Siraats Kitchen // September Email 13: This Week's Bestsellers // 09.26.2026 // A Variation A,2026-09-26,What everyone’s buying this week 👀,Check out the latest bestsellers →,48519,0.4382,0.005,0.0004,0.071,1.24,0.73
+campagne,01M3PBKJVC43FRGN94B19XDPDJ,other,09/05 September is hard | Resend to Non-Openers,2026-09-29,I did something I shouldn't have,,17336,0.0976,0.0035,0.0002,0.039,0.28,0.51
+campagne,01M37R84Q6NGHV5KRDZGNNVYVW,other,HS // Siraats Kitchen // September Email 14: Join SMS Ahead of BFCM - US Only // 09.29.2026,2026-09-29,Shop Black Friday before anyone else,Find out how →,77295,0.3206,0.0046,0.0001,0.025,0.9,0.68
+campagne,01M3Q7VP66EKJP54PBPD5JPH4R,other,HS // Siraats Kitchen // September Email 15: Warehouse Clearance Sale - Final Hours // 09.30.2026 // Variation A,2026-09-30,Up to 50% off storewide ends tonight,"When it’s gone, it’s gone.",116433,0.3374,0.0064,0.0005,0.102,0.95,0.95
+campagne,01M3T40K7MP2M9K8YG1PX7MMQ3,other,Founder Note Sale - Why is it getting difficult for us,2026-10-01,Why is it getting difficult for us?,,47616,0.4623,0.013,0.0003,0.097,1.34,3.02
+campagne,01M3YCE1GMVY6QV8DMY7FANG33,other,Prime Sale - US - Founder Note,2026-10-02,Up to 70% off. Our biggest sale ever,Safe for your family. Lowest prices we've ever had.,66134,0.3451,0.004,0.0002,0.075,1.0,0.92
+campagne,01M352GC7NPDAJNVREK4SDXT9R,other,HS // Siraats Kitchen // September Email 11: Holiday Gift Guide Teaser // 10.03.2026 // US,2026-10-03,Our holiday gift guide drops soon!,Be the first to see it →,77364,0.3105,0.0028,0.0002,0.034,0.9,0.65
+campagne,01M3ZFTHRHJJX03KSV7T8EK61N,other,Prime Sale - INT (ex US) - Founder Note,2026-10-03,"{{ first_name|default:'Hey' }}, 70% OFF + 4 GIFTS",I care about your family,73409,0.376,0.0137,0.0007,0.142,1.09,3.17
+campagne,01M41XKX527RQQCQMWJT728B83,other,6-piece set $349 - US - Lids on us,2026-10-03,"{{ first_name|default:'Hey' }}, free lids (this won't last)",3 pans + 3 lids for $349. Before the sale ends.,66218,0.3775,0.0037,0.0003,0.097,1.09,0.86
+campagne,01M4347DC5WJXTGE6RNYKWMENX,30d,Sunday Recipe Day | 30 Days Engaged,2026-10-04,ONE POT CACIO E PEPE 🍝,Sunday Recipe Drop 🧑‍🍳,134477,0.3226,0.0028,0.0002,0.047,0.59,0.34
+campagne,01M46WPGW5G1E42HD176KC8W18,other,HS // Siraats Kitchen // October Email 2: Sale Launch - 4 Gifts With Every Order // 10.06.2026,2026-10-06,4 FREE gifts + Up to 70% off 🎁,$70+ in gifts on every order,111629,0.3139,0.0043,0.0002,0.041,0.91,1.0
+campagne,01M48ZK7EARRH9KKYA953KGW0C,other,ALI FOUNDER EMAIL PRIME Variation A,2026-10-06,PRIME SALE 70% off our #1 pan (ends tonight),,45413,0.2625,0.0093,0.0004,0.073,0.76,2.15
+flow,R3K3ii,EB | Browse Abandonment | 4/25/25,Email #1,2025-04-28,"Hi {{ first_name|default:'' }}, we saw you looking...",Upgrade your kitchen kit ,10435,0.5409,0.036,0.0128,2.704,1.12,1.4
+flow,V686dE,EB | Browse Abandonment | 4/25/25,Copy of Email #1,2025-04-28,"Hi {{ first_name|default:'' }}, we saw you looking...",Upgrade your kitchen kit ,10165,0.5258,0.0328,0.0083,1.98,1.09,1.28
+flow,SxLVBL,EB | Post Purchase Flow | 5/5/25,Email #1,2025-04-30,We’ve got your order!,We’re cooking up your order,42917,0.6361,0.0666,0.0024,0.448,0.94,1.0
+flow,Xdqhbc,EB | Post Purchase Flow | 5/5/25,Email #2,2025-04-30,Cooking just got healthier,A note from James,40254,0.6069,0.0337,0.0023,0.312,0.9,0.51
+flow,SiYJF8,EB | Post Purchase Flow | 5/5/25,Email #1,2025-05-01,We’ve got your order!,We’re cooking up your order,4985,0.6776,0.0845,0.0044,0.644,1.0,1.27
+flow,TPa6Vu,EB | Post Purchase Flow | 5/5/25,Email #3,2025-05-01,Easy Cooking + Easy Cleaning,The best (and easiest) ways to care for your cookware,25346,0.6936,0.0664,0.0018,0.419,1.02,1.0
+flow,TDM6cH,EB | Post Purchase Flow | 5/5/25,Email #4,2025-05-01,We’ve got a quick question for you!,How’s it going?,13975,0.6761,0.0925,0.0034,0.763,1.0,1.39
+flow,XWQLLB,EB | Customer Winback | 5/8/25,Email #2,2025-05-07,We Cut a Deal for You,Cook Healthier with 10% Off,18662,0.4202,0.0065,0.0009,0.114,0.87,0.25
+flow,XWCtEj,EB | Checkout Abandonment | 5/13/25,Email #1,2025-05-12,Don’t leave these hanging,You’re a click away from better kitchen tools,2844,0.5265,0.0527,0.0315,7.368,1.1,1.47
+flow,R5rVtV,EB | Checkout Abandonment | 5/13/25,Email #2,2025-05-13,Join the Happy Chef Club,Upgrade your kitchen kit now,4920,0.459,0.0234,0.0072,1.451,0.96,0.65
+flow,R9eFKw,EB | Checkout Abandonment | 5/13/25,Email #3,2025-05-13,Your Order with a Special Extra Bonus,See Inside for Details,4394,0.4783,0.0358,0.0062,1.472,1.0,1.0
+flow,TdxnHR,EB | Sunset Flow | 5/15/25,Email #1,2025-05-15,"Hi {{ first_name }}, it’s been a while",It’s been lonely without you  ,34225,0.1176,0.0042,0.0002,0.043,0.24,0.16
+flow,UyjuhX,EB | Sunset Flow | 5/15/25,Email #2,2025-05-15,"Hi {{ first_name }},  are you Staying or Going?",Let us know if you want to stick around.    ,30325,0.0569,0.0043,0.0001,0.019,0.12,0.17
+flow,U473Qm,EB | Welcome Flow | Updated 02.03.26,Eb [DG] | Email #1 (FLOW Updated 5/31/25),2025-05-31,"{{ first_name|default:'Hey' }}, Thanks For Joining Us",It’s great to have you here ,196267,0.4841,0.0307,0.0122,2.727,0.99,1.85
+flow,V427ZY,EB | Welcome Flow | Updated 02.03.26,EB [DG] | Email #2,2025-05-31,A Note from Benjamin,"{{ first_name|default:'Hey' }}, Thanks for joining us",178126,0.4916,0.0262,0.0034,0.728,1.01,1.58
+flow,Rs6ATL,EB | Welcome Flow | Updated 02.03.26,EB [DG] | Email #3,2025-05-31,Straight from the kitchen,Hot off the line ,94567,0.629,0.0205,0.0029,0.665,1.29,1.24
+flow,SrZF5p,EB | Welcome Flow | Updated 02.03.26,EB [DG] | Email #4,2025-05-31,Cook with the Best,Serving Up Our Bestsellers ,83424,0.6507,0.0154,0.0019,0.396,1.33,0.93
+flow,XUgzX9,EB | Welcome Flow | Updated 02.03.26,EB [DG] | Email #5,2025-05-31,The ultimate showdown,Which will you choose?,82422,0.6491,0.0134,0.0024,0.544,1.33,0.81
+flow,TRfJSK,EB | Welcome Flow | Updated 02.03.26,EB [DG] Quiz Email For Non-Buyers | 7/2/25,2025-07-02,"Hey {{ first_name|default:'there' }}, We've got questions",How well will you be?,2509,0.4229,0.0177,0.0032,0.711,0.87,1.07
+flow,URatk6,EB | Cart Abandonment | 2/03/26,Copy of Email #1,2025-08-15,"Hi {{ first_name }}, we saved these for you",Get Cooking Now,31000,0.4601,0.0296,0.0094,2.551,0.92,1.79
+flow,SY7jud,EB | Cart Abandonment | 2/03/26,Email #2,2025-08-15,"Hi {{ first_name }}, getting cooking with 10% off",Claim Your Special Offer Now,56364,0.4098,0.0153,0.0034,0.671,0.82,0.93
+flow,STu58P,EB | Cart Abandonment | 2/03/26,Email #3,2025-08-15,Last Call for 10% Off!,Your discount ends tonight,19345,0.5412,0.0171,0.0048,1.165,1.09,1.04
+flow,UBgGhU,EB | Cart Abandonment | 2/03/26,Copy of Email #3,2025-08-15,Last Call for 10% Off!,Your discount ends in 48 hours,19371,0.5362,0.0159,0.0044,0.954,1.08,0.96
+flow,S6wMyn,EB | Failure to launch,Bestsellers + Product Reviews,2025-09-29,Kitchen Confidential,See What Chefs Love,113684,0.3676,0.006,0.0003,0.076,1.02,1.4
+flow,RifeeX,EB | Failure to launch,FAQ's,2025-09-29,Unlocking the Non-Stick Effect,Cook Stick Free Everytime,113387,0.3667,0.0042,0.0003,0.048,1.02,0.98
+flow,Yc3GHP,EB | Failure to launch,Quiz,2025-09-29,"Hey {{ first_name|default:'there' }}, We've got questions",How well will you be?,1531,0.4251,0.0072,0.0007,0.215,1.18,1.69
+flow,RgzVJY,EB | Failure to launch,Micro-Plastic Free,2025-09-29,Cook Better = Feel Better,Ditch the Micro-Plastics,106232,0.3601,0.0032,0.0003,0.061,1.0,0.74
+flow,SmQwfi,EB | Failure to launch,Review Focus,2025-09-29,"What our customers really think,",Real reviews inside,100921,0.3586,0.0035,0.0003,0.062,1.0,0.82
+flow,XtL9Mq,EB | E-Book,Email 2: E-Book Reminder,2025-10-07,Open Your Mystery Gift 🎁,Your Green Clean Guide Awaits,12054,0.1751,0.0709,0.0002,0.02,1.0,1.0
+flow,SYVjE3,EB | Cart Abandonment | 8/15/25 - Triple Pixel,Email #2,2025-11-06,"Hi {{ first_name }}, getting cooking with 10% off",Claim Your Special Offer Now,5688,0.4606,0.0239,0.0048,1.106,1.0,1.17
+flow,Shh2G2,EB | Cart Abandonment | 8/15/25 - Triple Pixel,Email #3,2025-11-06,Last Call for 10% Off!,Your discount ends tonight,2439,0.4645,0.0204,0.0054,1.011,1.01,1.0
+flow,REfY5p,EB | Cart Abandonment | 8/15/25 - Triple Pixel,Copy of Email #3,2025-11-06,Last Call for 10% Off!,Your discount ends in 48 hours,2401,0.4562,0.0186,0.0051,1.027,0.99,0.91
+flow,QRYqKY,EB | Checkout Abandonment | 5/13/25 - Triple Pixel,Email #2,2025-11-06,Join the Happy Chef Club,Upgrade your kitchen kit now,1257,0.4947,0.034,0.0073,1.635,1.02,1.0
+flow,Xk3DPT,EB | Checkout Abandonment | 5/13/25 - Triple Pixel,Email #3,2025-11-06,Your Order with a Special Extra Bonus,See Inside for Details,1596,0.4856,0.0384,0.0045,1.402,1.0,1.13
+flow,UhzF6a,EB | Checkout Abandonment | 5/13/25 - Triple Pixel,Email #4,2025-11-06,We Can’t Keep these Forever,Cart & Discount Expires Tonight,1620,0.4608,0.0251,0.005,0.856,0.95,0.74
+flow,SvpV7D,EB | E-Book,Copy of The Green Clean Guide Email,2025-11-15,Your Mystery Gift Is Here,Your mystery gift is ready - enjoy your Siraat e-book,50040,0.6197,0.0871,0.0021,0.387,3.54,1.23
+flow,T3yLrn,EB | Post Purchase Flow | 5/5/25,Slight Delay,2025-11-18,Thank you for your Patience!,Message from Siraat's Team,10916,0.7737,0.0274,0.0011,0.197,1.14,0.41
+flow,YjAsnx,EB | E-Book,Email 3: Last Reminder about the E-Book,2025-12-09,"Hey {{ first_name|default:'there' }}, Don’t Forget Your Gift",Open It Now,8347,0.1341,0.0404,0.0006,0.138,0.77,0.57
+flow,Y7wqBq,EB | DEC 25 | Browse Abandonment,Email #1,2025-12-12,"Hi {{ first_name|default:'' }}, we saw you looking...",Upgrade your kitchen kit ,59675,0.4555,0.0288,0.0041,0.847,0.94,1.12
+flow,RpzC3U,EB | DEC 25 | Checkout Abandonment,Email #1,2025-12-12,Don’t leave these hanging,You’re a click away from better kitchen tools,8921,0.4501,0.0368,0.022,5.358,1.09,1.51
+flow,Yjpp3E,EB | DEC 25 | Checkout Abandonment,Email #2,2025-12-12,Join the Happy Chef Club,Upgrade your kitchen kit now,14780,0.3926,0.0152,0.0048,0.939,0.95,0.62
+flow,SRuuaP,EB | DEC 25 | Checkout Abandonment,Email #3,2025-12-12,Your Order with a Special Extra Bonus,See Inside for Details,13701,0.4219,0.0288,0.0059,1.412,1.02,1.18
+flow,S9QbcN,EB | DEC 25 | Checkout Abandonment,Email #4,2025-12-12,We Can’t Keep these Forever,Cart & Discount Expires Tonight,13341,0.3753,0.0191,0.0041,0.949,0.91,0.78
+flow,RZ4Urm,EB | DEC 25 | Checkout Abandonment,Copy of Email #1,2025-12-12,Don’t leave these hanging,You’re a click away from better kitchen tools,8239,0.4395,0.0351,0.0187,4.593,1.07,1.44
+flow,XjBNHW,EB | DEC 25 | Checkout Abandonment | Triple Pixel,Email #2,2025-12-12,Join the Happy Chef Club,Upgrade your kitchen kit now,11597,0.4374,0.0224,0.004,0.917,0.91,0.87
+flow,TE8MmA,EB | DEC 25 | Checkout Abandonment | Triple Pixel,Email #3,2025-12-12,Your Order with a Special Extra Bonus,See Inside for Details,10684,0.4662,0.0383,0.0046,0.971,0.97,1.49
+flow,TdinRN,FREE E-GUIDE FLOW,Email #2,2025-12-29,"That ""soap"" by your sink isn't soap",Page 6 explains what it actually is.,2203,0.4536,0.0182,0.0005,0.071,1.0,1.4
+flow,XihFY3,FREE E-GUIDE FLOW,Copy of Email #2,2025-12-29,The warning label most people ignore,What's really in your oven cleaner.,2138,0.4596,0.0155,0.0028,0.673,1.01,1.19
+flow,RPUh4i,FREE E-GUIDE FLOW,Copy of Copy of Email #2,2025-12-29,Pages 27-29,Don't skip this section.,2081,0.4743,0.013,0.0,0.0,1.05,1.0
+flow,UZ9ghq,FREE E-GUIDE FLOW,Copy of Copy of Copy of Email #2,2025-12-29,Why we made this guide,It started with a question about cookware.,1997,0.4279,0.0076,0.0,0.0,0.94,0.58
+flow,R8ge3L,FREE E-GUIDE FLOW,Copy of Copy of Copy of Copy of Copy of Copy of Email #2,2025-12-29,Did you find it?,A question + one last thing.,1692,0.4003,0.0053,0.0,0.0,0.88,0.41
+flow,SfeWhr,Trustpilot 4 emojis FLOW - 7JAN,How was your experience?,2026-01-07,How was your experience?,,41221,0.5169,0.0419,0.003,0.599,1.07,1.63
+flow,X4Pk75,EB | Pan Education,Pan Education | Email 2,2026-03-12,The #1 mistake that makes titanium stick 🔥,It's simpler than you think,10142,0.5775,0.0693,0.0021,0.417,1.06,1.72
+flow,RzJb6Z,EB | Pan Education,Pan Education | Email 3,2026-03-12,Why your pan is changing color (and why that's a good thing),The golden tones are pure titanium at work,9820,0.5363,0.0249,0.0021,0.251,0.99,0.62
+flow,UUvqBa,EB | Post Purchase Flow | 5/5/25,Plain Text | No Movement on Tracking,2026-03-12,A quick note about your tracking update,,6945,0.7291,0.0236,0.0014,0.229,1.08,0.36
+flow,XtJ7me,EB | Pan Education,Pan Education | Email 4,2026-03-16,The right way to clean your titanium pan,Keep it performing like new in 2 minutes,9537,0.5283,0.0319,0.0022,0.267,0.97,0.79
+flow,XXRDsv,EB | Pan Education,Pan Education | Email 5,2026-03-16,5 things that will shorten your pan's life,Avoid these and your pan will last forever,9970,0.5426,0.0402,0.0024,0.392,1.0,1.0
+flow,TiT2Ni,EB | Pan Education,Pan Education | Email 6,2026-03-18,It’s been over a week cooking with real titanium,Time to level up your cooking,9682,0.5049,0.0207,0.0021,0.392,0.93,0.51
+flow,UJMq2j,EB | Pan Education,FLOW: Cutting Board Education | Email 1,2026-04-06,Your New Cutting Boards Almost Here,Get Prepped with Our Care Tips ,1349,0.6597,0.0619,0.0037,0.358,1.22,1.54
+flow,QTNBVJ,EB | Pan Education,FLOW: Cutting Board Education | Email 2,2026-04-06,Quick Cutting Board FAQs,Cook for a Lifetime,1304,0.6097,0.0739,0.0054,1.114,1.12,1.84
+flow,SPaYdU,EB | Post Purchase Flow | 4/6/2026,Post Purchase Flow | 1st time buyer | Multiple Purchase,2026-04-06,We’ve Got Your Order,Thank You For Cooking with Us ,23080,0.64,0.078,0.002,0.391,0.99,0.96
+flow,U98PFG,EB | Post Purchase Flow | 4/6/2026,Post Purchase Flow | 2nd time buyers,2026-04-06,Welcome Back,Thank You For Dropping By Again,2435,0.6565,0.049,0.0053,0.832,1.01,0.6
+flow,UwgBb7,EB | Post Purchase Flow | 4/6/2026,Post Purchase Flow | Purchased other collection,2026-04-06,We’ve Got Your Order,Thank You For Cooking with Us ,4608,0.663,0.0682,0.0033,0.709,1.02,0.84
+flow,QUeA2U,EB | Post Purchase Flow | 4/6/2026,Post Purchase Flow | Founder's Note,2026-04-06,A note from Benjamin,Behind the scenes,27370,0.5935,0.084,0.0012,0.202,0.92,1.04
+flow,Y6xS2a,EB | Post Purchase Flow | 4/6/2026,Post Purchase Flow | 100 Day-Trial,2026-04-06,100 Days to Try Us Out,We Know You’ll Love It ,26677,0.5426,0.0321,0.0008,0.133,0.84,0.4
+flow,Y8Nn9B,EB | Post Purchase Flow | 4/6/2026,Post Purchase Flow | IT'S ON ITS WAY,2026-04-06,Your Package Is On Its Way,Track It Here ,26209,0.7104,0.331,0.0018,0.322,1.1,4.08
+flow,XaMN6w,EB | Post Purchase Flow | 4/6/2026,Post Purchase Flow | GET READY TO COOK,2026-04-06,Unlocking the Non-Stick,Plus Other Care Tips ,19320,0.5538,0.0781,0.002,0.335,0.85,0.96
+flow,X6wxL3,EB | Post Purchase Flow | 4/6/2026,Copy of Post Purchase Flow | Founder's Note,2026-04-06,A note from Benjamin,Behind the scenes,4498,0.6247,0.0904,0.002,0.321,0.96,1.11
+flow,Tse2up,EB | Post Purchase Flow | 4/6/2026,Copy of Post Purchase Flow | IT'S ON ITS WAY,2026-04-06,Your Package Is On Its Way,Track It Here ,4280,0.7284,0.336,0.0035,0.562,1.12,4.14
+flow,Xg94tJ,EB | Post Purchase Flow | 4/6/2026,Copy of Post Purchase Flow | IT'S ON ITS WAY,2026-04-06,Your Package Is On It’s Way,Track It Here ,2353,0.6591,0.2585,0.0034,0.379,1.02,3.19
+flow,XtYsPr,FREE E - GUIDE,E-Guide Flow,2026-05-18,Your E-Guide Is Ready,Natural cleaning tips & DIY recipes for a toxin-free home,26156,0.607,0.0732,0.0017,0.281,1.26,2.85
+flow,RA3fUx,EB | Failure to launch,Titanium Vs Stainless Steel,2026-06-09,Titanium Vs Stainless Steel,See how they compare,50653,0.3581,0.0044,0.0002,0.043,1.0,1.02
+flow,U6PsqR,EB | Failure to launch,Healthy Habits Start Here,2026-06-09,You Are What You Eat,Cook Plastic & Toxin Free,49796,0.3565,0.0036,0.0002,0.041,0.99,0.85
+flow,S5P3Wn,EB | Failure to launch,Ceramic VS Titanium,2026-06-09,Ceramic VS Titanium,How Do They Compare?,46844,0.3484,0.0046,0.0002,0.039,0.97,1.07
+flow,RxYqFv,EB | Welcome Flow | Updated 02.03.26,EB | Welcome Email | Additional 2,2026-06-25,See Why We Are Top Rated,Great Food Starts With Quality Cookware,39524,0.3845,0.0091,0.0007,0.171,0.79,0.55
+flow,X99646,EB | Welcome Flow | Updated 02.03.26,EB | Welcome Email | Additional 3,2026-06-25,Last Call for an Extra 10% Off,Your Extra Discount Expires Tonight,38944,0.3676,0.0093,0.0013,0.247,0.75,0.56
+flow,R4g5Wr,EB | DEC 25 | Checkout Abandonment,New AB Checkout 1,2026-07-15,Don’t leave these hanging,You’re a click away from better kitchen tools,2394,0.4674,0.0403,0.0235,7.831,1.13,1.65
+flow,U3byfW,EB | DEC 25 | Checkout Abandonment,New AB Checkout 3,2026-07-15,We’ve cooked something for you!,See Inside for Details ,1441,0.4118,0.0244,0.0091,2.388,1.0,1.0
+flow,SZuXUJ,EB | DEC 25 | Checkout Abandonment,New AB Checkout 4,2026-07-15,One Click to Cooking Better for Life,Checkout Your Cart ,1059,0.3532,0.0133,0.0019,0.435,0.86,0.54
+flow,Xbtxpg,EB | DEC 25 | Checkout Abandonment,New AB Checkout 5,2026-07-15,We Can’t Keep these Forever,Your Cart & Discount Expires Tonight,1322,0.3875,0.0167,0.0076,1.246,0.94,0.69
+flow,Y3G6Km,Mystery Gift Reveal - Sheets,Mystery Gift 1/4 - The reveal,2026-08-14,Let's reveal your mystery gift,,4958,0.5666,0.0,0.001,0.092,1.1,0.0
+flow,U6yi6c,Mystery Gift Reveal - Sheets,Why no cookware brand sells these,2026-08-14,Why no cookware brand sells these,,4898,0.5087,0.0,0.0012,0.215,0.98,0.0
+flow,SynbCN,Mystery Gift Reveal - Sheets,"Alright, here's the offer",2026-08-14,"Alright, here's the offer",,4772,0.525,0.0271,0.0021,0.316,1.02,3.9
+flow,SpGUYn,Mystery Gift Reveal - Sheets,Last one from me about the sheets,2026-08-14,Last one from me about the sheets,,4613,0.4816,0.0139,0.0022,0.279,0.93,2.0

@@ -15,9 +15,16 @@ Controles per mail:
     alle beelden laden, hoogte op 390 px <= 3.600 px (P2 en P2-safe uitgezonderd)
  e. ruwe HTML (zoals de Klaviyo-code-editor hem toont, zonder Django): geen tekst in tabelcontext (foster-parenting),
     geen zichtbare {% buiten de hoofdtabel of vlak voor een tabel, hoofdtabel 600 px, hero op volle breedte
+ f. inbox en deliverability (scripts/inbox_checks.py), alleen waarschuwingen: Gmail-clipping (geschatte verzonden grootte),
+    spamsignalen in onderwerp/preview/body, linkverkorters en domeinen, alt-teksten, Outlook (VML-knoppen, mso-hide,
+    width-attribuut, max-width), dark mode (donker logo op transparant), dubbele regels in Klaviyo's plain-text-versie.
+    Browsermetingen (dark-mode-simulatie, contrast, tap targets, lettergrootte): python3 -I scripts/qa_inbox.py
 """
 import sys,os,re,glob,json,subprocess,tempfile,shutil,html as H
 from html.parser import HTMLParser
+try:   # inbox- en deliverability-waarschuwingen (scripts/inbox_checks.py, research/deliverability/01-inbox-check.md); nooit FOUT
+    sys.path.insert(0,os.path.dirname(os.path.abspath(__file__))); import inbox_checks as IC
+except Exception: IC=None
 ROOT=os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)),'..'))
 V=os.path.join(ROOT,'klaviyo','templates','v3'); SH=os.path.join(ROOT,'klaviyo','templates','partials','shared')
 BT=os.path.join(ROOT,'scripts','build_template.py'); TEST=os.path.join(ROOT,'research','tailoring','test')
@@ -174,19 +181,23 @@ def main():
         for f in used: used_all.setdefault(f,set()).add(key)
         e['F']+=['ruwe HTML, tekst in tabelcontext (foster-parenting): '+b for b in foster(k)]
         if F: continue
+        rendered=[]
         for i,(var,label) in enumerate(VARIANTS[flow]):
             try:
                 ctx=context(var); r=engine().from_string(k).render(ctx)
                 r0=engine().from_string(unwrap(k)).render(context(var))
                 if norm(r)!=norm(r0): e['F'].append('%s: gerenderde uitkomst wijkt af met <!--{%% %%}--> (moet identiek zijn)'%var)
             except Exception as ex: e['F'].append('%s: rendering faalt: %s'%(var,str(ex)[:200])); continue
-            e['variants'].append(var)
+            e['variants'].append(var); rendered.append(r)
             e['F']+=['%s: %s'%(var,x) for x in after_render(r)]
             e['F']+=['%s: gerenderd, tekst in tabelcontext: %s'%(var,b) for b in foster(r)]
             rp=os.path.join(tmp,'%s-%s-%s.html'%(flow,mid,var)); open(rp,'w').write(r)
             for w,dev in ((600,'desktop'),(390,'mobile')):
                 shot=os.path.join(SHOTS,'%s-%s-%s-rendered.jpg'%(flow,mid,dev)) if i==0 else None
                 jobs.append(dict(key='%s|%s|%d|r'%(key,var,w),html=rp,width=w,shot=shot,raw=False))
+        if IC and rendered:
+            try: e['W']+=IC.warnings(src,k,rendered)
+            except Exception as ex: e['W'].append('inbox-checks faalden: %s'%str(ex)[:120])
         for w,dev in ((600,'desktop'),(390,'mobile')):
             jobs.append(dict(key='%s|raw|%d|x'%(key,w),html=rawp,width=w,shot=os.path.join(SHOTS,'%s-%s-%s-raw.jpg'%(flow,mid,dev)),raw=True))
         print('%-14s %-22s statisch %s'%(flow,mid,'ok' if not e['F'] else '%d FOUT'%len(e['F'])),flush=True)

@@ -50,6 +50,8 @@ BREAKEVEN = 0.20        # codelift die 10% korting terugverdient bij 60% marge (
 FREEZE = (dt.date(2026, 11, 20), dt.date(2026, 12, 6))  # BFCM, inclusief
 GO_LIVE = dt.date(2026, 10, 8)
 PHASE1_END = dt.date(2026, 11, 19)
+CONTENT_END = dt.date(2027, 1, 15)   # T04, T05a: lopen door na BFCM (BFCM-dagen tellen niet)
+T02_END = dt.date(2027, 1, 31)       # T02: fase 1 + fase 2
 OBSOLETE = {"Y6yj2z"}
 RNG = np.random.default_rng(20261008)
 
@@ -146,15 +148,15 @@ LIVE_TESTS = [
           "entry_b": r"^W0$|^W1( · T04-[AB])?$"},
      ]},
     {"id": "T02", "title": "Unieke code tegen geen code in de laatste mail (gepoold)", "unit": "message",
-     "rule": "code", "a": "CODE", "b": "geen code (T02-B)", "primary": "rpr", "planned_end": None,
+     "rule": "code", "a": "CODE", "b": "geen code (T02-B)", "primary": "rpr", "planned_end": T02_END,
      "dynamic": {"arm_a": r"^CODE · (?!V1$|N2$)(?P<s>.+)$", "arm_b": r"^(?P<s>.+) nocode · T02-B$"},
      "window": 7, "strata": []},
     {"id": "T04", "title": "W1: HI10 als code-blok (A) tegen gift card (B)", "unit": "message", "rule": "content_rpr",
-     "a": "W1-A code-blok", "b": "W1-B gift card", "primary": "rpr", "planned_end": PHASE1_END, "strata": [
+     "a": "W1-A code-blok", "b": "W1-B gift card", "primary": "rpr", "planned_end": CONTENT_END, "strata": [
          {"key": "w1", "flow": "v4 · Welcome", "window": WELCOME_W,
           "arm_a": r"^W1 · T04-A$", "arm_b": r"^W1 · T04-B$", "main": r"^W1$"}]},
     {"id": "T05a", "title": "B1-onderwerp: authority (A) tegen social proof (B)", "unit": "message",
-     "rule": "subject", "a": "authority", "b": "social proof", "primary": "click", "planned_end": PHASE1_END,
+     "rule": "subject", "a": "authority", "b": "social proof", "primary": "click", "planned_end": CONTENT_END,
      "strata": [{"key": "b1", "flow": "v4 · Browse abandonment", "window": 7,
                  "arm_a": r"^B1 · T05a-A$", "arm_b": r"^B1 · T05a-B$", "main": r"^B1$"}]},
 ]
@@ -186,9 +188,9 @@ DRY_TESTS = [
 ]
 DRY_FLOWS = ["Y2TmNB", "Tsg2tV", "SwkMyn", "TBWngE", "TyEjuQ", "Wj6x6V", "SiaNLu"]
 
-# Geplande n per arm (uit --plan, 7 okt 2026; zie research/testing/06-meetplan-v4.md). Sleutel test of test/stratum.
-PLANNED_N = {"T01/welcome": 7700, "T01/browse": 23500, "T01/checkout": 3550, "T01/cart": 8100,
-             "T02": 19500, "T04": 8200, "T05a": 14400}
+# Geplande n per arm bij de gekozen MDE (uit --plan, 7 okt 2026; zie research/testing/06-meetplan-v4.md). Sleutel test of test/stratum.
+PLANNED_N = {"T01/welcome": 17235, "T01/browse": 50320, "T01/checkout": 2553, "T01/cart": 5583,
+             "T02": 44461, "T04": 10944, "T05a": 13628}
 
 
 # ---------------------------------------------------------------- aggregatie
@@ -373,27 +375,41 @@ def cohort(tests_strata, since, until):
 
 # ---------------------------------------------------------------- beslisregel (05-beslisregels.md)
 def verdict(test, s, a, b, days_run, planned, weekly_b):
+    ctx = {}
+    st, why = _verdict(test, s, a, b, days_run, planned, weekly_b, ctx)
+    return st, why + ctx.get("note", "")
+
+
+def _verdict(test, s, a, b, days_run, planned, weekly_b, ctx):
     rule, pr = test["rule"], s.get(test["primary"] if test["primary"] != "rpr" else "rpr", {})
     conv_key = "cohort" if "cohort" in s else "conv"
     na, nb = a["n"], b["n"]
-    guard = []
+    guard, warn = [], []
     if min(na, nb) >= 1000:
-        ua, ub = a["unsubscribe_uniques"] / na, b["unsubscribe_uniques"] / nb
-        if ub > max(0.01, 1.5 * ua):
-            guard.append(f"uitschrijving B {ub:.2%} (A {ua:.2%})")
-        if ua > max(0.01, 1.5 * ub):
-            guard.append(f"uitschrijving A {ua:.2%} (B {ub:.2%})")
-        for lab, arm in (("A", a), ("B", b)):
-            if arm["spam_complaints"] / arm["n"] > 0.001:
-                guard.append(f"spam {lab} {arm['spam_complaints'] / arm['n']:.3%}")
+        # Per ontvanger (1 mail): absolute grens plus relatief. Per instromer (heel pad, ander aantal mails):
+        # alleen relatief tegen de andere arm (01-meetkader §1.3, 05-beslisregels).
+        absolute = test["unit"] == "message"
+        for lab, x, y in (("B", b, a), ("A", a, b)):
+            ux, uy = x["unsubscribe_uniques"] / x["n"], y["unsubscribe_uniques"] / y["n"]
+            if ux > 2 * uy and ux > 0.002 and x["unsubscribe_uniques"] >= 10:
+                guard.append(f"uitschrijving {lab} {ux:.2%} is meer dan 2x de andere arm ({uy:.2%})")
+            elif ux > 1.5 * uy and ux > 0.002 or (absolute and ux > 0.01):
+                warn.append(f"uitschrijving {lab} {ux:.2%} (andere arm {uy:.2%})")
+            sx, sy = x["spam_complaints"] / x["n"], y["spam_complaints"] / y["n"]
+            if sx > 2 * sy and sx > (0.001 if absolute else 0.0005) and x["spam_complaints"] >= 5:
+                guard.append(f"spam {lab} {sx:.3%} is meer dan 2x de andere arm ({sy:.3%})")
+            elif absolute and sx > 0.001:
+                warn.append(f"spam {lab} {sx:.3%} boven 0,10% (bezorgbaarheid, geen testbeslissing)")
     p_srm = srm_p(na, nb)
     if p_srm is not None and p_srm < 0.01 and min(na, nb) > 0:
-        guard.append(f"SRM p={p_srm:.4f}")
+        guard.append(f"verdeling {int(na)}/{int(nb)} wijkt af van 50/50 (SRM p={p_srm:.4f}): test ongeldig tot de oorzaak bekend is")
     if min(na, nb) == 0:
         return "GEEN DATA", "Een arm heeft geen verzendingen: split, A/B-start of berichtnamen controleren."
     if guard:
-        return "STOP / ONDERZOEK", "Guardrail: " + "; ".join(guard) + ". Arm met de overschrijding stoppen als dit na een week nog zo is."
-    conv_min = min(a["conversion_uniques"], b["conversion_uniques"])
+        return "STOP / ONDERZOEK", "Guardrail: " + "; ".join(guard) + "."
+    ctx["note"] = (" Let op: " + "; ".join(warn) + ".") if warn else ""
+    ev = "clicks_unique" if rule == "subject" else "conversion_uniques"
+    conv_min = min(a[ev], b[ev])
     reached = planned and min(na, nb) >= planned
     horizon = reached or (test.get("planned_end") and TODAY > test["planned_end"])
     p = pr.get("p_b", 0.5)
@@ -401,9 +417,10 @@ def verdict(test, s, a, b, days_run, planned, weekly_b):
     prog = f"{min(na, nb) / planned:.0%} van n" if planned else "geen geplande n"
     eta = ""
     if planned and weekly_b > 0 and not reached:
-        eta = f", n gehaald rond {TODAY + dt.timedelta(weeks=(planned - min(na, nb)) / weekly_b):%d %b}"
+        eta = f", n gehaald rond {nl_date(TODAY + dt.timedelta(weeks=(planned - min(na, nb)) / weekly_b))}"
     if days_run < 14 or conv_min < 30:
-        return "NIET KIJKEN", f"Minder dan 14 dagen of minder dan 30 conversies per arm ({prog}{eta})."
+        what = "kliks" if rule == "subject" else "conversies"
+        return "NIET KIJKEN", f"Minder dan 14 dagen of minder dan 30 {what} per arm ({prog}{eta})."
     if rule == "oldnew":
         if p >= 0.99 and pc >= 0.9:
             return "STOP: v4 WINT", "P(v4 beter) >= 99%: oud pad mag eruit, v4 naar 100%."
@@ -445,6 +462,13 @@ def verdict(test, s, a, b, days_run, planned, weekly_b):
 
 
 # ---------------------------------------------------------------- rapport
+MAANDEN = ["jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"]
+
+
+def nl_date(d):
+    return f"{d.day} {MAANDEN[d.month - 1]} {d.year}"
+
+
 def fmt_pct(x, d=2):
     return "" if x is None else f"{x * 100:.{d}f}%"
 
@@ -485,7 +509,7 @@ def run_report():
     md.append(f"Gegenereerd door `scripts/test_report.py`{' --dry-run' if DRY else ''}{' --cohort' if COHORT else ''}. "
               f"Venster {since} tot {until} (UTC, verzenddatum), {days_run} dagen data. "
               f"Klaviyo flow-series-report, conversion metric Placed Order (RSNxYV). "
-              f"BFCM-bevriezing {FREEZE[0]:%d %b} t/m {FREEZE[1]:%d %b} telt niet mee. "
+              f"BFCM-bevriezing {nl_date(FREEZE[0])} t/m {nl_date(FREEZE[1])} telt niet mee. "
               f"Beslisregels: `research/testing/05-beslisregels.md`.\n")
     if DRY:
         md.append("**Proef.** De v4-flows staan nog niet live. Arm A en B zijn hier bestaande splits in de oude flows, "
@@ -532,9 +556,10 @@ def run_report():
                 x = arms[arm]
                 n = x["n"]
                 names = "; ".join(sorted({m["name"] for m in st["msgs"][arm]}))[:80] or "(geen)"
+                mdn = names.replace("|", "\\|")
                 coh_txt = (f"{x['cohort_buyers']}/{int(x['cohort_n'])} = {fmt_pct(x['cohort_buyers'] / x['cohort_n'])}"
                            if COHORT and x.get("cohort_n") else "")
-                md.append(f"| {st['key']} | {lab} | {names} | {int(n)} | ${x['conversion_value']:,.0f} | "
+                md.append(f"| {st['key']} | {lab} | {mdn} | {int(n)} | ${x['conversion_value']:,.0f} | "
                           f"{'' if not n else '$%.2f' % (x['conversion_value'] / n)} | "
                           f"{'' if not n else fmt_pct(min(1, x['conversion_uniques'] / n))} | {coh_txt} | "
                           f"{'' if not n else fmt_pct(x['clicks_unique'] / n)} | "
@@ -560,6 +585,9 @@ def run_report():
                     md.append(f"| {st['key']} | hoofdbericht | {st['main_msgs'][0]['name']} | {int(mn)} | | | | | | | | |")
                     summary.append((test["id"], st["key"], "LET OP",
                                     f"{int(mn)} verzendingen op het hoofdbericht zonder variant: A/B-test niet gestart?"))
+            if not (a["n"] > 0 and b["n"] > 0):
+                summary.append((test["id"], st["key"], "GEEN DATA",
+                                "Een arm heeft geen verzendingen: split, A/B-start of berichtnamen controleren."))
             if a["n"] > 0 and b["n"] > 0:
                 da, db = draws_for(a, fallback_aov), draws_for(b, fallback_aov)
                 w = a["n"] + b["n"]
@@ -583,7 +611,8 @@ def run_report():
         for key, da, db, a, b in evals:
             s = summarize(da, db)
             if test["rule"] == "code":
-                s["p_breakeven"] = float(np.mean(da["conv"] / np.maximum(db["conv"], 1e-12) - 1 > BREAKEVEN))
+                be = 0.33 if "VIP" in key else BREAKEVEN   # 15% code: breakeven +33% (01 §1.4)
+                s["p_breakeven"] = float(np.mean(da["conv"] / np.maximum(db["conv"], 1e-12) - 1 > be))
             planned = PLANNED_N.get(f"{test['id']}/{key}", PLANNED_N.get(test["id"]))
             if test["id"] == "T02" and key != "gepoold" and len(per_stratum) > 1:
                 planned = None
@@ -645,6 +674,17 @@ def n_per_arm(p1, mde, z_a=1.96, z_b=0.84):
     pb = (p1 + p2) / 2
     return math.ceil((z_a * math.sqrt(2 * pb * (1 - pb)) + z_b * math.sqrt(p1 * (1 - p1) + p2 * (1 - p2))) ** 2
                      / (p2 - p1) ** 2)
+
+
+def mde_for(p1, n):
+    lo, hi = 0.001, 20.0
+    for _ in range(60):
+        mid = (lo + hi) / 2
+        if n_per_arm(p1, mid) > n:
+            lo = mid
+        else:
+            hi = mid
+    return hi
 
 
 def run_plan():
@@ -722,18 +762,20 @@ def run_plan():
               "Per arm per week = instroom in die arm. T04 en T05a lopen alleen in de v4-arm van T01 (50%), "
               "T05a alleen bij kookgerei (aanname 85% van de browse-instroom), W1 niet bij bestaande klanten "
               "(aanname 5%). Weken tot 19 november vanaf 8 oktober: 6.\n",
-              "| Test | Per arm/wk | Basis | Metric | n/arm +20% | +30% | +50% | Weken bij gekozen MDE (conv. / RPR) | Gekozen MDE | Haalbaar voor 19 nov? |",
-              "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |"]
+              "| Test | Per arm/wk | Basis | Metric | n/arm +20% | +30% | +50% | Weken bij gekozen MDE (conv. / RPR) | Gekozen MDE | Aantoonbaar na 6 wk (conv. / RPR) | Na 12 wk (conv. / RPR) |",
+              "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |"]
     for name, per_arm, p1, metric, mde in tests:
         ns = {m: n_per_arm(p1, m) for m in (0.2, 0.3, 0.5)}
         n_conv = ns[mde]
         wk_conv, wk_rpr = n_conv / per_arm, n_conv * (1 + CV_ORDER ** 2) / per_arm
-        ok = "ja" if wk_conv <= 6 else ("alleen conv." if wk_conv <= 6 < wk_rpr else "nee")
-        if "klik" in metric:
+        klik = "klik" in metric
+        if klik:
             wk_rpr = float("nan")
-            ok = "ja" if wk_conv <= 6 else "nee"
+        m6c, m6r = mde_for(p1, 6 * per_arm), mde_for(p1, 6 * per_arm / (1 + CV_ORDER ** 2))
+        m12c, m12r = mde_for(p1, 12 * per_arm), mde_for(p1, 12 * per_arm / (1 + CV_ORDER ** 2))
         lines.append(f"| {name} | {per_arm:,.0f} | {p1:.2%} | {metric} | {ns[0.2]:,} | {ns[0.3]:,} | {ns[0.5]:,} | "
-                     f"{wk_conv:.1f} / {'-' if math.isnan(wk_rpr) else f'{wk_rpr:.1f}'} | +{mde:.0%} | {ok} |")
+                     f"{wk_conv:.1f} / {'-' if math.isnan(wk_rpr) else f'{wk_rpr:.1f}'} | +{mde:.0%} | "
+                     f"+{m6c:.0%}{'' if klik else f' / +{m6r:.0%}'} | +{m12c:.0%}{'' if klik else f' / +{m12r:.0%}'} |")
     os.makedirs(OUT, exist_ok=True)
     path = os.path.join(OUT, f"plan-{TODAY}.md")
     open(path, "w").write("\n".join(lines) + "\n")

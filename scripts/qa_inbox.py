@@ -65,7 +65,7 @@ def main():
         e.update(subj_a=sa or m.get('onderwerp_a', ''), subj_b=sb or m.get('onderwerp_b', ''), preview=pv or m.get('preview', ''))
         e['warn'] = I.warnings(src, k, [x[1] for x in rs])
         body = I.visible_text(r0); e['body_chars'] = len(body); e['body_excl'] = body.count('!')
-        pt = I.plain_text(r0); e['plain_chars'] = len(pt); e['plain_dupes'] = I.plain_dupes(pt)
+        pt = I.plain_text(r0); e['plain_chars'] = len(pt); e['plain_dupes'] = I.plain_dupes(r0)
         e['plain_django'] = bool(re.search(r'\{[%{]', pt))
         if key == 'checkout/c1' or key == 'welcome/w2': e['plain_sample'] = pt[:1800]
         e['imgs_tag'] = len(re.findall(r'<img\b', I.strip_hidden(re.sub(r'<head.*?</head>', '', r0, flags=re.S))))

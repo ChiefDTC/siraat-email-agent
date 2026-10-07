@@ -105,13 +105,20 @@ def plain_text(r):
     return '\n'.join(out).strip()
 
 
-def plain_dupes(pt):
-    """Regels (langer dan 25 tekens, geen link) die meer dan één keer in de tekstversie staan."""
+def _lines(pt):
     seen = {}
     for l in pt.split('\n'):
         k = re.sub(r'\s*\(https?://[^)]*\)', '', l).strip()
         if len(k) > 25: seen[k] = seen.get(k, 0) + 1
-    return {k: v for k, v in seen.items() if v > 1}
+    return seen
+
+
+def plain_dupes(r):
+    """Regels (langer dan 25 tekens) die in de automatische tekstversie vaker staan dan in de zichtbare mail:
+    dubbel door verborgen desk/mob-varianten (CSS telt niet in plain text). Bewuste herhaling (friction reducer
+    onder elke knop) telt niet mee."""
+    full = _lines(plain_text(r)); vis = _lines(plain_text(strip_hidden(r)))
+    return {k: v for k, v in full.items() if v > vis.get(k, 0) and v > 1}
 
 
 def spam_hits(text, where):
@@ -199,11 +206,12 @@ def warnings(src, k, renders):
     nohide = [m.group(0)[:80] for m in re.finditer(r'<(?!div style="display:none;font-size:1px)[a-z]+\b[^>]*style="[^"]*display:\s*none(?![^"]*mso-hide:\s*all)[^"]*"[^>]*>', k)]
     if nohide: W.append('outlook: %d verborgen element(en) zonder mso-hide:all (Outlook kan ze tonen): %s' % (len(nohide), nohide[0]))
     if re.search(r'<div style="display:none;font-size:1px(?![^"]*mso-hide)', k): W.append('outlook: preheader zonder mso-hide:all')
-    btn = 0
-    for m in re.finditer(r'<a\b[^>]*style="[^"]*display:\s*block[^"]*padding[^"]*"[^>]*>', k):
+    btn = []
+    for m in re.finditer(r'<a\b[^>]*style="[^"]*display:\s*block[^"]*padding[^"]*"[^>]*>(.*?)</a>', k, re.S):
         td = k.rfind('<td', 0, m.start())
-        if 'v:roundrect' not in k[td:m.start()] and re.search(r'bgcolor="#|background:#', k[td:m.start()]): btn += 1
-    if btn: W.append('outlook: %d knop(pen) zonder VML-fallback (padding op <a> valt weg in Outlook: lage knop, alleen de tekst klikbaar)' % btn)
+        if 'v:roundrect' not in k[td:m.start()] and re.search(r'bgcolor="#|background:#', k[td:m.start()]):
+            btn.append(re.sub(r'\s+', ' ', H.unescape(re.sub(r'<[^>]+>', '', m.group(1)))).strip()[:40])
+    if btn: W.append('outlook: %d knop(pen) zonder VML-fallback (padding op <a> valt weg in Outlook: lage knop, alleen de tekst klikbaar): %s' % (len(btn), ', '.join('"%s"' % b for b in btn)))
     if re.search(r'background-image|\bbackground="', k) and 'v:rect' not in k: W.append('outlook: achtergrondafbeelding zonder VML (v:rect)')
     for m in re.finditer(r'<(div|table)\b[^>]*style="[^"]*max-width:\s*(\d+)px[^"]*"[^>]*>', k):
         if m.group(1) == 'div' or not re.search(r'\bwidth="\d+%?"', m.group(0)):
@@ -215,6 +223,6 @@ def warnings(src, k, renders):
         if info and info[0] and info[1] < 0.25 and not dm:
             W.append('dark mode: %s is donker op transparant en heeft geen dark-mode-variant (onleesbaar op donkere achtergrond)' % os.path.basename(p))
     # plain-text
-    dup = plain_dupes(plain_text(r))
+    dup = plain_dupes(r)
     if dup: W.append('plain-text: %d regel(s) dubbel in Klaviyo\'s automatische tekstversie (verborgen desk/mob-varianten), bijv. "%s"' % (len(dup), list(dup)[0][:60]))
     return sorted(set(W))
