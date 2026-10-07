@@ -93,7 +93,7 @@ Wat ontbreekt en de founder-mail nu generiek maakt (W2 leest als een persbericht
 Knoppen zijn al ik-vorm ("Complete my order", "Claim my 10% + gifts"): goed. Wat ontbreekt is de regel eronder: risk reversal + social proof + gemak. Baymard (via zoekresultaten, [Retail Boss samenvatting](https://retailboss.co/10-reasons-for-abandonment-during-checkout-in-the-u-s)): 39 procent haakt af op extra kosten, 19 procent vertrouwt de site niet, 15 tot 18 procent op het retourbeleid. Onze drie friction-feiten raken precies die drie: free shipping, 100,000+ happy customers, 30-day returns. Standaardregel:
 > Free shipping. 30-day returns. 100,000+ happy customers.
 
-Per flow een variant in `04-rewrites.md`. Let op: "30-day returns" geldt voor ongebruikte producten (facts.csv). Nooit "risk-free" of "money-back" zeggen (oude 100-dagenbelofte; 100 van 154 lage reviews gaan over retour of de trial).
+Per flow een variant in `04-rewrites.md`. Let op: "30-day returns" geldt voor ongebruikte producten ("not cooked with, washed or seasoned"), en de retourzending is voor rekening van de klant (refund policy in `content/facts/site-pages-and-policies.md`). Dus nooit "free returns" of "free 30-day returns"; dat staat nu wel in W2 en W5. Nooit "risk-free" of "money-back" zeggen (oude 100-dagenbelofte; 100 van 154 lage reviews gaan over retour of de trial).
 
 ### 1.10 AI-tells en onze eigen tics
 Uit de skill: em dashes, "delve", "unlock", "game-changer", "seamless", hedging, alle alinea's even lang, drieslag-opsommingen, geen "I". Gecontroleerd in de 31 templates: 0 em dashes (goed). Wel onze eigen tics die als sjabloon gaan voelen:
@@ -188,7 +188,7 @@ Selectie op het verhaalpatroon (probleem, oplossing, waarom deze pan, emotie). A
 | 8 | R220 | Carole, 12 jul 2026 | 60 jaar koken, "a ton of pans" > deed onderzoek > beste ooit; moeders metalen spatel werkt weer | Metal utensil safe, ervaring | B1, R1-pan |
 | 9 | R466 | James, 9 mei 2026, Wok | Chef-vriend gebruikt hem > had eerder een no-brand titanium pan > dacht "another scam" > "it's real titanium" > kocht ook deep pan en wok | Echtheid, origineel vs look-alikes | C2, W3, R1, R2 |
 | 10 | R407 | Emma, 21 mei 2026, Mini | Sceptisch > "wow it definitely is non stick" > klantenservice hielp met maat > wil hem doorgeven aan haar zoon | Maatadvies, erfstuk, garantie-gevoel | W4, K3 |
-| 11 | R438 | David H., 14 mei 2026, Pan Pro (4 sterren) | Zocht "specifically for PFAS free cookware" > website overtuigde > "better than my current non-stick" | PFAS, bewijs | W3, C2 |
+| 11 | R438 | David H., 14 mei 2026, Pan Pro (4 sterren: niet in het 5-sterren-reviewblok, wel als onderwerpregel of losse quote met 4 sterren) | Zocht "specifically for PFAS free cookware" > website overtuigde > "better than my current non-stick" | PFAS, bewijs | W3, C2 |
 | 12 | R577 | Thomas D., 11 apr 2026 | "Makes all of our others "non stick" seem really sticky." | Release vergeleken | W1, C1 |
 | 13 | R240 | Brandon W., 6 jul 2026 | Handvat werd los > stuurde een foto > "they honored the warranty" | 75-year warranty is echt | K3, C4, R2 |
 | 14 | R143 | Sandi R., 4 aug 2026 | Eerste keer, "needed just a thin covering of oil" > "cleaned up beautifully" | Eerlijke verwachting (olie) | P2, W0 |

@@ -19,7 +19,7 @@ Criteria:
 3. **Reviews zijn bijna allemaal "great pan".** Van de 55 reviewquotes in de mails (50 in reviewblokken, 5 losse kaarten) zijn er ongeveer 8 een verhaal (Marilyn, Tammy, Chetan, Sandi, Aggie, Steven T., Brandon W., Gwen). De rest is "cooks good and cleans good", service-lof of "performs as described". Proof staat bovendien altijd onderaan, nooit naast de claim.
 4. **Sjabloon-afsluiting.** "Just reply. A real person reads every email." staat in 13 mails bijna letterlijk; in de rest een variant. Na de tweede mail leest het als een footer.
 5. **Geen friction reducer onder de knoppen.** Alleen "Your 10% is applied automatically." Dat is gemak, geen risk reversal en geen social proof.
-6. **Claims die niet mogen** (zie 01 §7): 0.5 mm-laagdiktes in C2 (alt), "high heat" in C1, "handle stays cool" in B2-clicked en P3-pan, "Pure titanium surface" zonder "cooking" in W1 en W4.
+6. **Claims die niet mogen** (zie 01 §7): 0.5 mm-laagdiktes in C2 (alt), "high heat" in C1, "handle stays cool" in B2-clicked en P3-pan, "Pure titanium surface" zonder "cooking" in W1 en W4, en "Free 30-day returns" in W2 en W5 (refund policy: retourzending van ongebruikte producten is voor rekening van de klant).
 7. **Goed**: geen em dashes, geen nep-urgentie meer, unieke codes met echte termijn, Light Labs met nummer, de drie vragen, "Honest note" in B1, de eerlijke afsluiting in C4 ("After 48 hours your code stops working and the regular sale price applies.").
 
 ## Scoretabel
