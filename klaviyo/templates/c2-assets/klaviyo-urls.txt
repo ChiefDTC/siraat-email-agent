@@ -1,0 +1,7 @@
+logo.png https://cdn.klaviyomail.com/company/TdtTzz/images/ebead5cb-ada1-43bd-9e30-d569170b4a2f.png
+certificate.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/5703d8d3-6a43-4bb9-a94b-d1d711c72858.jpeg
+egg-slide.gif https://cdn.klaviyomail.com/company/TdtTzz/images/07f73a5a-5ff1-4a2d-b4bf-87ea92cd122c.gif
+cart-fallback.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/c8aa5064-2138-49d5-9169-62134ebe560a.jpeg
+anatomy.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/0f182cc7-f976-4813-bd92-84c7189eee3b.jpeg
+anatomy-mobile.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/4511b6e8-de10-4d08-9ac6-fd631150b183.jpeg
+hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/df9ba57d-f014-4222-9614-5adf68364bcd.jpeg

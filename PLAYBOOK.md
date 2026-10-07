@@ -97,3 +97,10 @@ Let op: de brand guidelines (site) gebruiken Inter voor koppen en Terracotta #C7
 - Cloud-sessies in "Auto"-modus blokkeren wijzigingen aan live flows, ook met mondeling akkoord. Voor bouwwerk aan live flows: gewone modus en één keer "Allow".
 - Klaviyo-API-key zit als credential in de omgeving (header Authorization: Klaviyo-API-Key, host a.klaviyo.com). Scopes: flows full, templates read, metrics read, segments read. Voor campagnes en profielen is een aparte key nodig.
 - Routines (geplande taken) uit een sessie krijgen geen connectors mee. Routines die Slack of Klaviyo-MCP nodig hebben, worden in de claude.ai Routines-UI aangemaakt met de prompt uit `ROUTINES.md`.
+
+## 10. Vaste opbouw van een flow-mail (vanaf 7 oktober 2026)
+
+- Hero 1200x1200 via `scripts/make_hero.py`: kop in TT Ramillas en subregel als blok exact in het midden van het beeld, label bovenin gecentreerd. Altijd een shoot-foto of geverifieerde Shopify-foto, nooit twee keer dezelfde in één flow.
+- Direct onder de hero de primaire knop (in checkout en cart: "Return to my cart"). Dezelfde knop nog één keer onderaan.
+- HTML en preview bouwen met `scripts/build_template.py`; beelden in de Klaviyo-bibliotheek, links in `<assets>/klaviyo-urls.txt`.
+- Beelden met labels krijgen op mobiel een aparte versie zonder labels plus live tekst eronder.
