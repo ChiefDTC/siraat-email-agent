@@ -1,0 +1,811 @@
+{
+ "checkout": {
+  "title": "Checkout abandonment",
+  "sub": "v4. Vervangt Y2TmNB en Tsg2tV. Baseline: $2,36 per ontvanger. Tests fase 1: T01, T02.",
+  "trigger": [
+   "Checkout Started (RfMvni), trigger filter $value > 0",
+   "Placed Order = 0 sinds start",
+   "Niet in deze flow in 14 dagen (herinstap 14 dagen)",
+   "Geen mail uit v4 · Post-purchase in 7 dagen",
+   "Smart sending uit"
+  ],
+  "seq": [
+   {
+    "t": "split",
+    "v": "T01 · random sample 50%",
+    "note": "Ja = v4-pad (v3_arm = new). Nee = oud pad (v3_arm = old), tot 20 nov."
+   },
+   {
+    "t": "delay",
+    "v": "30 min"
+   },
+   {
+    "t": "email",
+    "id": "c1"
+   },
+   {
+    "t": "split",
+    "v": "TS · Items bevat kookgerei of set?",
+    "note": "Ja = dit pad. Nee = accessoire-pad (onder)."
+   },
+   {
+    "t": "delay",
+    "v": "1 dag (24 uur na C1)"
+   },
+   {
+    "t": "split",
+    "v": "CS · Ooit gekocht?",
+    "rows": [
+     [
+      "Nee · nieuw",
+      "c2"
+     ]
+    ],
+    "note": "Ja = C2 overslaan"
+   },
+   {
+    "t": "delay",
+    "v": "2 dagen, tot 09:00 (dag 3)"
+   },
+   {
+    "t": "split",
+    "v": "TS · Set-titel of $value ≥ 300? Anders Pan Pro en < $250?",
+    "rows": [
+     [
+      "Set of ≥ $300",
+      "c3-s"
+     ],
+     [
+      "Pan Pro < $250",
+      "c3-p"
+     ]
+    ],
+    "note": "Anders geen C3 (pizza, roasting, pot, wok/deep/crêpe, 2 pannen < $300)"
+   },
+   {
+    "t": "delay",
+    "v": "2 dagen, tot 09:00 (dag 5)"
+   },
+   {
+    "t": "split",
+    "v": "CS · Land = US (terugval Customer Locale en-US)?",
+    "rows": [
+     [
+      "Ja · US",
+      "c4-us"
+     ],
+     [
+      "Nee · INT",
+      "c4-int"
+     ]
+    ]
+   },
+   {
+    "t": "split",
+    "v": "Code-router C4_10_48H (per land) · cooldown? dan A/B T02",
+    "rows": [
+     [
+      "A · unieke code",
+      "c4-us"
+     ],
+     [
+      "B · zonder code (ook cooldown)",
+      "c4-us-nocode"
+     ]
+    ],
+    "note": "last_flow_code_at in 30 dagen = B. Na A: update last_flow_code_at."
+   },
+   {
+    "t": "end",
+    "v": "Einde dag 7. Code 48 uur."
+   }
+  ],
+  "lane": {
+   "after": 3,
+   "label": "Accessoire-pad · Items bevat geen kookgerei of set",
+   "items": [
+    {
+     "t": "delay",
+     "v": "1 dag (24 uur na C1)"
+    },
+    {
+     "t": "email",
+     "id": "c2-acc"
+    },
+    {
+     "t": "delay",
+     "v": "2 dagen, tot 09:00 (dag 3)"
+    },
+    {
+     "t": "split",
+     "v": "CS · Ooit gekocht?",
+     "rows": [
+      [
+       "Nee · nieuw",
+       "c3-acc"
+      ]
+     ],
+     "note": "Ja = C3-acc overslaan"
+    },
+    {
+     "t": "delay",
+     "v": "2 dagen, tot 09:00 (dag 5)"
+    },
+    {
+     "t": "split",
+     "v": "CS · Land = US?",
+     "rows": [
+      [
+       "Ja · US",
+       "c4-us"
+      ],
+      [
+       "Nee · INT",
+       "c4-int"
+      ]
+     ],
+     "note": "Code-router zoals boven; 12-pcs-blok verbergt zich"
+    },
+    {
+     "t": "end",
+     "v": "Einde dag 7"
+    }
+   ]
+  }
+ },
+ "cart": {
+  "title": "Cart abandonment",
+  "sub": "v4. Vervangt SwkMyn en TBWngE. Baseline: $1,47 per ontvanger. Tests fase 1: T01, T02.",
+  "trigger": [
+   "Added to Cart (QXcV8K), Price > 0, Product Name zonder Mystery Gift / E-Book / Free Shipping / Giveaway",
+   "Checkout Started = 0 sinds start",
+   "Placed Order = 0 sinds start",
+   "Geen mail uit v4 · Checkout in 7 dagen",
+   "Niet in deze flow in 14 dagen"
+  ],
+  "seq": [
+   {
+    "t": "split",
+    "v": "T01 · random sample 50%",
+    "note": "Ja = v4-pad (v3_arm = new). Nee = oud pad (v3_arm = old), tot 20 nov."
+   },
+   {
+    "t": "delay",
+    "v": "30 min"
+   },
+   {
+    "t": "split",
+    "v": "CS · Added to Cart met kookwoord in Product Name, laatste 1 dag?",
+    "note": "Ja = dit pad. Nee = accessoire-pad (onder)."
+   },
+   {
+    "t": "email",
+    "id": "k1"
+   },
+   {
+    "t": "delay",
+    "v": "1 dag (24 uur na K1)"
+   },
+   {
+    "t": "split",
+    "v": "CS · Ooit gekocht?",
+    "rows": [
+     [
+      "Nee · nieuw",
+      "k2-new"
+     ],
+     [
+      "Ja · terugkerend",
+      "k2-returning"
+     ]
+    ]
+   },
+   {
+    "t": "delay",
+    "v": "2 dagen, tot 09:00 (dag 3)"
+   },
+   {
+    "t": "split",
+    "v": "Code-router K3_10_48H · cooldown? dan A/B T02",
+    "rows": [
+     [
+      "A · unieke code",
+      "k3"
+     ],
+     [
+      "B · zonder code (ook cooldown)",
+      "k3-nocode"
+     ]
+    ],
+    "note": "last_flow_code_at in 30 dagen = B. Na A: update last_flow_code_at."
+   },
+   {
+    "t": "end",
+    "v": "Einde"
+   }
+  ],
+  "lane": {
+   "after": 2,
+   "label": "Accessoire-pad · geen kookgerei in de cart",
+   "items": [
+    {
+     "t": "email",
+     "id": "k1-acc"
+    },
+    {
+     "t": "delay",
+     "v": "3 dagen, tot 09:00 (dag 3)"
+    },
+    {
+     "t": "split",
+     "v": "Code-router K3_10_48H · cooldown? dan A/B T02",
+     "rows": [
+      [
+       "A · unieke code",
+       "k3"
+      ],
+      [
+       "B · zonder code (ook cooldown)",
+       "k3-nocode"
+      ]
+     ],
+     "note": "last_flow_code_at in 30 dagen = B. Na A: update last_flow_code_at."
+    },
+    {
+     "t": "end",
+     "v": "Einde"
+    }
+   ]
+  }
+ },
+ "browse": {
+  "title": "Browse abandonment",
+  "sub": "v4. Vervangt Wj6x6V en TyEjuQ. Baseline: $0,97 per ontvanger. Tests fase 1: T01, T05a (onderwerp B1).",
+  "trigger": [
+   "Viewed Product (XNtYMB)",
+   "Added to Cart, Checkout Started, Placed Order = 0 sinds start",
+   "Geen mail uit v4 · Cart of Checkout in 7 dagen",
+   "Geen mail uit v4 · Welcome in 7 dagen",
+   "Herinstap na 7 dagen"
+  ],
+  "seq": [
+   {
+    "t": "split",
+    "v": "T01 · random sample 50%",
+    "note": "Ja = v4-pad (v3_arm = new). Nee = oud pad (v3_arm = old), tot 20 nov."
+   },
+   {
+    "t": "delay",
+    "v": "1 uur"
+   },
+   {
+    "t": "split",
+    "v": "TS · Name bevat kookwoord?",
+    "note": "Ja = dit pad. Nee = accessoire-pad (onder)."
+   },
+   {
+    "t": "email",
+    "id": "b1"
+   },
+   {
+    "t": "delay",
+    "v": "2 dagen, tot 09:00"
+   },
+   {
+    "t": "split",
+    "v": "CS · Klikte B1 sinds start?",
+    "rows": [
+     [
+      "Ja · code-router B2_10_48H",
+      "b2-clicked"
+     ],
+     [
+      "Ja · T02-B of cooldown",
+      "b2-clicked-nocode"
+     ],
+     [
+      "Nee",
+      "b2-notclicked"
+     ]
+    ]
+   },
+   {
+    "t": "end",
+    "v": "Einde dag 3"
+   }
+  ],
+  "lane": {
+   "after": 2,
+   "label": "Accessoire-pad · Name zonder kookwoord",
+   "items": [
+    {
+     "t": "email",
+     "id": "b1-acc"
+    },
+    {
+     "t": "delay",
+     "v": "2 dagen, tot 09:00"
+    },
+    {
+     "t": "split",
+     "v": "CS · Klikte B1-acc sinds start?",
+     "rows": [
+      [
+       "Ja · code-router",
+       "b2-clicked"
+      ]
+     ],
+     "note": "Nee = einde"
+    },
+    {
+     "t": "end",
+     "v": "Einde"
+    }
+   ]
+  }
+ },
+ "welcome": {
+  "title": "Welcome",
+  "sub": "v4. Vervangt SiaNLu en Failure to launch T2SmtR. Baseline: $0,70 per ontvanger. Tests fase 1: T01, T04.",
+  "trigger": [
+   "Toegevoegd aan lijst Uw8eZG (Alia Card Game)",
+   "E-mail bevat niet test@",
+   "Nooit eerder in deze flow",
+   "Elke mail: geen order sinds start, geen checkout- of cart-mail in 24 uur (overslaan)"
+  ],
+  "lane": {
+   "after": 3,
+   "label": "Split A2 · Ooit gekocht vóór inschrijving? JA = klant",
+   "items": [
+    {
+     "t": "email",
+     "id": "w0"
+    },
+    {
+     "t": "end",
+     "v": "Einde, post-purchase neemt over"
+    }
+   ]
+  },
+  "seq": [
+   {
+    "t": "split",
+    "v": "T01 · random sample 50%",
+    "note": "Ja = v4-pad (v3_arm = new). Nee = oud pad (v3_arm = old), tot 20 nov."
+   },
+   {
+    "t": "delay",
+    "v": "20 min"
+   },
+   {
+    "t": "split",
+    "v": "Split A1 · Order sinds start?",
+    "note": "Ja = einde (kocht tijdens inschrijving), post-purchase neemt over"
+   },
+   {
+    "t": "split",
+    "v": "Split A2 · Ooit gekocht?",
+    "note": "Nee = prospect (dit pad). Ja = W0 (pad onder)."
+   },
+   {
+    "t": "split",
+    "v": "A/B T04 · HI10 als code of als gift card",
+    "rows": [
+     [
+      "A · code",
+      "w1-a"
+     ],
+     [
+      "B · gift card",
+      "w1-b"
+     ]
+    ]
+   },
+   {
+    "t": "delay",
+    "v": "1 dag, tot 09:00"
+   },
+   {
+    "t": "email",
+    "id": "w2"
+   },
+   {
+    "t": "delay",
+    "v": "2 dagen, tot 09:00 (dag 3)"
+   },
+   {
+    "t": "email",
+    "id": "w3"
+   },
+   {
+    "t": "delay",
+    "v": "3 dagen, tot 09:00 (dag 6)"
+   },
+   {
+    "t": "split",
+    "v": "Split B · Land = United States?",
+    "rows": [
+     [
+      "Ja · US",
+      "w4-us"
+     ],
+     [
+      "Nee · internationaal",
+      "w4-int"
+     ]
+    ]
+   },
+   {
+    "t": "delay",
+    "v": "4 dagen, tot 09:00 (dag 10)"
+   },
+   {
+    "t": "email",
+    "id": "w5"
+   },
+   {
+    "t": "end",
+    "v": "Einde dag 14. 14 dagen geen campagnes."
+   }
+  ]
+ },
+ "post-purchase": {
+  "title": "Post-purchase",
+  "sub": "v4. Vervangt RL3TU6. P2 bij levering via hulpflow. Review XzHrez blijft (levering + 14). Baseline: $0,31 per ontvanger.",
+  "trigger": [
+   "Placed Order (RSNxYV)",
+   "Niet in deze flow in 30 dagen",
+   "Geen smart sending",
+   "Geen T01: voor/na-vergelijking"
+  ],
+  "seq": [
+   {
+    "t": "delay",
+    "v": "1 uur"
+   },
+   {
+    "t": "split",
+    "v": "CS · Eerste order?",
+    "rows": [
+     [
+      "Ja · eerste",
+      "p1-first"
+     ],
+     [
+      "Nee · herhaal",
+      "p1-repeat"
+     ]
+    ]
+   },
+   {
+    "t": "delay",
+    "v": "16 dagen, tot 09:00"
+   },
+   {
+    "t": "split",
+    "v": "TS kookgerei · CS Delivered Shipment sinds start?",
+    "rows": [
+     [
+      "Kookgerei, geen levering bekend",
+      "p2-safe"
+     ]
+    ],
+    "note": "Geleverd = P2 al via hulpflow. Accessoire = geen P2."
+   },
+   {
+    "t": "delay",
+    "v": "4 dagen, tot 09:00 (dag 20)"
+   },
+   {
+    "t": "split",
+    "v": "CS · 2e order (Placed Order = 2)?",
+    "note": "Ja = einde, VIP V1 neemt over"
+   },
+   {
+    "t": "split",
+    "v": "P3-router · kookgerei (TS) of accessoire",
+    "rows": [
+     [
+      "Set of ≥ $300",
+      "p3-set"
+     ],
+     [
+      "Deksel in order, of eigenaar met accessoire",
+      "p3-next"
+     ],
+     [
+      "Pan Pro, wok, deep, crêpe",
+      "p3-pan"
+     ],
+     [
+      "Alleen schort, nooit kookgerei",
+      "p3-apron"
+     ],
+     [
+      "Pizza, roasting, pot, of ander accessoire",
+      "p3-accessory"
+     ]
+    ],
+    "note": "E-Gift Card = geen P3. Elke tak via code-router P3_THANKYOU_10_14D (A/B T02, -nocode)."
+   },
+   {
+    "t": "note",
+    "v": "Review · live flow XzHrez, levering + 14 dagen, ongewijzigd"
+   },
+   {
+    "t": "end",
+    "v": "Einde"
+   }
+  ]
+ },
+ "post-purchase-levering": {
+  "title": "Post-purchase · levering",
+  "sub": "v4 hulpflow. P2 op levering + 1 dag.",
+  "trigger": [
+   "Delivered Shipment (VcUF33)",
+   "Placed Order met kookgerei in de laatste 30 dagen",
+   "Niet in deze flow in 30 dagen",
+   "Geen P2-safe ontvangen in 30 dagen"
+  ],
+  "seq": [
+   {
+    "t": "delay",
+    "v": "1 dag, tot 09:00"
+   },
+   {
+    "t": "email",
+    "id": "p2"
+   },
+   {
+    "t": "end",
+    "v": "Einde"
+   }
+  ]
+ },
+ "winback": {
+  "title": "Winback",
+  "sub": "v4. Vervangt UEfh4h. Baseline: $0,20 per ontvanger. Test: T02 op R2.",
+  "trigger": [
+   "Placed Order (RSNxYV), daarna wachten",
+   "Placed Order = 0 sinds start (per mail)",
+   "Geen herinstapgrens: elke order herstart de klok",
+   "R1: geen post-purchase- of VIP-mail in 7 dagen"
+  ],
+  "seq": [
+   {
+    "t": "delay",
+    "v": "45 dagen, tot 09:00"
+   },
+   {
+    "t": "split",
+    "v": "R1-router · kookgerei, set of accessoire",
+    "rows": [
+     [
+      "Set of ≥ $300",
+      "r1-set"
+     ],
+     [
+      "Pan, of eerder kookgerei",
+      "r1-pan"
+     ],
+     [
+      "Nooit kookgerei",
+      "r1-acc"
+     ]
+    ]
+   },
+   {
+    "t": "delay",
+    "v": "30 dagen, tot 09:00 (dag 75)"
+   },
+   {
+    "t": "split",
+    "v": "CS · VIP (2+ orders)? dan code-router",
+    "rows": [
+     [
+      "Nee · R2_10_72H",
+      "r2"
+     ],
+     [
+      "Nee · T02-B of cooldown",
+      "r2-nocode"
+     ],
+     [
+      "Ja · R2_VIP_15_72H",
+      "r2-vip"
+     ],
+     [
+      "Ja · T02-B of cooldown",
+      "r2-vip-nocode"
+     ]
+    ]
+   },
+   {
+    "t": "end",
+    "v": "Einde dag 90"
+   }
+  ]
+ },
+ "site": {
+  "title": "Site abandonment",
+  "sub": "v4, nieuw. Bekende bezoekers zonder productview. Verwacht $2.200 tot $5.400 per maand.",
+  "trigger": [
+   "Active on Site (UdCdLD)",
+   "Viewed Product, Added to Cart, Checkout Started, Placed Order = 0 sinds start",
+   "Geen order in 30 dagen",
+   "Geen mail uit browse, cart, checkout, post-purchase in 7 dagen; welcome in 10 dagen",
+   "Herinstap na 14 dagen"
+  ],
+  "seq": [
+   {
+    "t": "delay",
+    "v": "2 uur"
+   },
+   {
+    "t": "email",
+    "id": "a1"
+   },
+   {
+    "t": "delay",
+    "v": "2 dagen, tot 09:00"
+   },
+   {
+    "t": "email",
+    "id": "a2"
+   },
+   {
+    "t": "end",
+    "v": "Einde. Productview = naar browse."
+   }
+  ]
+ },
+ "sunset": {
+  "title": "Sunset",
+  "sub": "v4, vervangt S7V4a7. Doel: deliverability.",
+  "trigger": [
+   "Segment v4 · Sunset · unengaged 120d",
+   "Geen klik (geen bot) en geen sitebezoek in 120 dagen, geen order in 180, 8+ mails ontvangen",
+   "Niet in deze flow in 180 dagen",
+   "Geen welcome- of post-purchase-mail in 30 dagen"
+  ],
+  "seq": [
+   {
+    "t": "delay",
+    "v": "1 dag, tot 09:00"
+   },
+   {
+    "t": "email",
+    "id": "s1"
+   },
+   {
+    "t": "delay",
+    "v": "4 dagen, tot 09:00"
+   },
+   {
+    "t": "email",
+    "id": "s2"
+   },
+   {
+    "t": "delay",
+    "v": "3 dagen"
+   },
+   {
+    "t": "split",
+    "v": "CS · Klik, sitebezoek of order sinds start?",
+    "note": "Ja = sunset_status kept. Nee = sunset_status suppressed, sunset_at = vandaag."
+   },
+   {
+    "t": "end",
+    "v": "Einde. Segment suppressed wekelijks onderdrukken."
+   }
+  ]
+ },
+ "vip": {
+  "title": "VIP",
+  "sub": "v4, nieuw. Van 2 naar 3 orders. Eerste 4 weken zonder test, daarna stratum in T02.",
+  "trigger": [
+   "Placed Order (RSNxYV)",
+   "Placed Order = 2 over all time",
+   "Nooit eerder in deze flow"
+  ],
+  "seq": [
+   {
+    "t": "delay",
+    "v": "30 dagen, tot 09:00"
+   },
+   {
+    "t": "split",
+    "v": "Code-router SK_REGULARS15_14D",
+    "rows": [
+     [
+      "Code (15%, 14 dagen)",
+      "v1"
+     ],
+     [
+      "Cooldown (HI10)",
+      "v1-nocode"
+     ]
+    ],
+    "note": "Na code: last_flow_code_at, siraat_regular = true"
+   },
+   {
+    "t": "delay",
+    "v": "10 dagen, tot 09:00"
+   },
+   {
+    "t": "email",
+    "id": "v2"
+   },
+   {
+    "t": "end",
+    "v": "Einde. Winback R1 slaat over, R2-VIP op dag 75."
+   }
+  ]
+ },
+ "anniversary": {
+  "title": "Anniversary",
+  "sub": "v4, nieuw. Eerste order met kookgerei, 6 en 12 maanden.",
+  "trigger": [
+   "Placed Order (RSNxYV), Items bevat kookgerei of set",
+   "Placed Order = 1 over all time",
+   "Nooit eerder in deze flow"
+  ],
+  "seq": [
+   {
+    "t": "delay",
+    "v": "182 dagen, tot 09:00"
+   },
+   {
+    "t": "email",
+    "id": "n1"
+   },
+   {
+    "t": "delay",
+    "v": "183 dagen, tot 09:00 (dag 365)"
+   },
+   {
+    "t": "split",
+    "v": "Code-router SK_ANNIV10_7D",
+    "rows": [
+     [
+      "Code (10%, 7 dagen)",
+      "n2"
+     ],
+     [
+      "Cooldown of T02-B",
+      "n2-nocode"
+     ]
+    ]
+   },
+   {
+    "t": "end",
+    "v": "Einde"
+   }
+  ]
+ },
+ "ugc": {
+  "title": "UGC first egg",
+  "sub": "v4, nieuw. Klantfoto's plus 15% via Gorgias. Alleen orders met Delivered Shipment (36%).",
+  "trigger": [
+   "Delivered Shipment (VcUF33)",
+   "Placed Order = 1 over all time",
+   "Heeft kookgerei gekocht",
+   "Nooit eerder in deze flow",
+   "Backorder-uitsluiting zoals XzHrez"
+  ],
+  "seq": [
+   {
+    "t": "delay",
+    "v": "4 dagen, tot 09:00"
+   },
+   {
+    "t": "email",
+    "id": "u1"
+   },
+   {
+    "t": "end",
+    "v": "Einde. Foto via reply, Gorgias stuurt UGC15-code."
+   }
+  ]
+ }
+}

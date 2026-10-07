@@ -120,5 +120,15 @@ Aanwezig: Shop Pay, Apple Pay, Google Pay, Shop Pay Installments (US, sinds maar
 39. De AI-flitsbeelden voor 16 hero's: akkoord? Dan mag PLAYBOOK ook AI-beelden in deze stijl toestaan.
 40. Unieke codes aanmaken in Klaviyo (C4, K3, B2, P3, R2, R2-VIP, V1, N2): gedaan of zal ik je erdoorheen loodsen?
 
+### G. Definitief flowplan v4 (klaviyo/flows/v4-flow-system.md)
+41. C1 en K1 na 30 minuten in plaats van 1 uur (data: na 15 minuten koopt bijna niemand meer vanzelf). Akkoord?
+42. C2 en K2: "1 dag later" (kan 's nachts vallen) of altijd "wacht tot 09:00"? Advies: 09:00.
+43. HI10 in de vroege mails laten staan bij livegang en in fase 2 testen met en zonder HI10 (test T03)? Advies: ja.
+44. Geen aparte HI10-tak voor lijstleden in de laatste mails (anders gaat er bijna geen unieke code meer uit). Akkoord?
+45. Hoe lang blijft de $349 BDAY-listing van de 6-delige set live? Acht mails linken ernaar.
+46. Stuurt Shopify al een verzendmail met tracking? Zo niet, dan voegen we P1b toe.
+47. Anniversary-flow: ook een eenmalige mail voor klanten die hun eerste jaar al voorbij zijn?
+48. Welcome in fase 3: holdout-test en een unieke welkomstcode van 10 dagen testen?
+
 ### Al beantwoord (7 okt)
 6-delige set in mails $349 · gifts "with every order" · e-book link /products/e · compare-at Pan Pro $439 klopt · unieke codes akkoord, max 1 keer per persoon · Affirm en Shop Pay zijn actief.
