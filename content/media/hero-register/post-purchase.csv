@@ -5,3 +5,5 @@ p2,content/media/chef-video/still-egg-close.jpg (uitsnede boven de ondertitel: a
 p3-pan,content/media/chef-video/still-dishwasher.jpg (uitsnede zonder ondertitel en zonder HEAT ON MEDIUM: assets/src/still-dishwasher-crop.jpg),klaviyo/templates/v3/post-purchase/assets/p3-pan-hero.jpg
 p3-set,https://cdn.shopify.com/s/files/1/0907/0877/1156/files/1.9.png (kopie: assets/src/1.9.png),klaviyo/templates/v3/post-purchase/assets/p3-set-hero.jpg
 p3-accessory,content/media/chef-video/still-steak.jpg (rechterhelft zonder ondertitel: assets/src/still-steak-crop.jpg),klaviyo/templates/v3/post-purchase/assets/p3-accessory-hero.jpg
+p3-next,https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Photo_Tossing_Vegetables_in_Pan_Pro.jpg (kopie: klaviyo/templates/v3/post-purchase/assets/src/Photo_Tossing_Vegetables_in_Pan_Pro.jpg),klaviyo/templates/v3/post-purchase/assets/p3-next-hero.jpg
+p3-apron,https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Photo_Salmon_Cooking_with_Herbs_in_Pan_Pro.jpg (kopie: klaviyo/templates/v3/post-purchase/assets/src/Photo_Salmon_Cooking_with_Herbs_in_Pan_Pro.jpg),klaviyo/templates/v3/post-purchase/assets/p3-apron-hero.jpg
