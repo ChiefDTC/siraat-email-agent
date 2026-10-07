@@ -78,3 +78,14 @@ Bijwerken zodra een map of database verandert.
 - Marketing Calendar 2026 Hub (Notion)
 - Homestead Content Calendar (Sheet)
 - Trustpilot Reputation Management sheet
+
+## 7. Content-databases (7 oktober 2026, map `content/`)
+
+| Database | Bestand | Inhoud |
+| --- | --- | --- |
+| Reviews | content/reviews/reviews.csv, reviews-positive.csv (431, 4 en 5 sterren), reviews-positive-usable.csv (271), objections.csv, summary.md | Trustpilot via Gorgias, 180 dagen. Alleen positieve in mails. |
+| Claims en feiten | content/facts/claims.csv (41), facts.csv (50), products.csv (90), summary.md | Goedgekeurde claims met Floris' overrides, productprijzen, conflicten site vs helpdesk. |
+| Hooks en video | content/hooks/hooks.csv (69), angles.md, videos.csv (162), videos-summary.md | Adnova-prestaties, Notion-concepten, concurrenten, Drive-video's met GIF-kandidaten. |
+| Bewijs | brand/proof/ (Light Labs certificaat, README met rapportnummer en chef-script) | Report 25895, Pan Pro Medium, 30 okt 2025. Publieke pagina /pages/third-party-testing. |
+| Media uit chef-video | content/media/chef-video/ (5 GIF's onder 1,2 MB, 11 stills 1200px) | Ei glijdt, watertest, olie, steak, regenboogtint. Bron: care-use-video op Shopify CDN. |
+| Foto-index | content/assets/ (volgt, agent draait) | Alle afbeeldingen Drive, Shopify, Figma met categorie. |
