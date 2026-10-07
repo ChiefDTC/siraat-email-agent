@@ -3,6 +3,7 @@
 Gebruik:
   python3 -I scripts/export_klaviyo.py                      dry-run (standaard), alle mails
   python3 -I scripts/export_klaviyo.py --only=checkout/c1   dry-run voor een of meer mails (komma's)
+  (--update: bestaande templates krijgen de nieuwe HTML via PATCH)
   python3 -I scripts/export_klaviyo.py --live --i-am-sure   live: beelden uploaden, klaviyo-urls.txt aanvullen,
                                                             .klaviyo.html bouwen, templates aanmaken (POST /api/templates)
 
@@ -225,7 +226,11 @@ def main():
         status='klaar' if not B else 'blokkade: '+'; '.join(B)
         if LIVE and not B:
             try:
-                tid=template_exists(tname) or create_template(tname,k,a,p)
+                tid=template_exists(tname)
+                if tid and '--update' in OPT:
+                    code,res=api('PATCH','/api/templates/'+tid,body={'data':{'type':'template','id':tid,'attributes':{'html':k}}})
+                    if code!=200: raise RuntimeError('update %s: %s %s'%(tid,code,str(res)[:200]))
+                tid=tid or create_template(tname,k,a,p)
                 tlog.write('%s,%s,%s\n'%(time.strftime('%Y-%m-%d %H:%M'),tname,tid)); tlog.flush(); status='klaar · template %s'%tid
             except Exception as e: status='blokkade: '+str(e)
         rows.append(dict(flow=flow,id=mid,templatenaam=tname,onderwerp_a=a,onderwerp_b=b,preview=p,aantal_beelden=len(imgs),

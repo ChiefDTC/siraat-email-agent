@@ -12,6 +12,6 @@ def unsubscribe(label='Unsubscribe'): return mark_safe('<a href="#" style="color
 @register.simple_tag
 def web_view(label='View in browser'): return mark_safe('<a href="#" style="color:#BDB8B0;">%s</a>' % label)
 @register.simple_tag
-def manage_preferences_url(): return '#'
+def manage_preferences_link(): return '#'
 @register.simple_tag
-def unsubscribe_url(): return '#'
+def unsubscribe_link(): return '#'
