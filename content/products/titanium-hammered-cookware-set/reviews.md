@@ -6,7 +6,7 @@ Bron: content/reviews/reviews.csv (Trustpilot via Gorgias, geverifieerd = naam p
 
 > Our pots and pans are beautiful. They clean up very well and look brand new after every cleaning. They heat evenly and are great to cook with. My pots arrived later than my pans. I was concerned when the pots were backordered and reached out to customer service. They were responsive and made sure I was satisfied when my pots finally arrived a few weeks later as promised. I received a free metal spatula as a gift. It works great and does not scratch the pans. I will probably order additional cooking utensils.
 
-Waarom: Noemt pots and pans, pots kwamen later (backorder) en support loste het op. Mini-case voor de splitlevering. Laatste zin over gratis spatel is afgekapt in de bron.
+Waarom: Noemt pots and pans, pots kwamen later (backorder) en support loste het op. Mini-case voor de splitlevering. Noemt ook de gratis metalen spatel die niet krast.
 
 ## R530 · Lauren W. · 2026-04-21 · 5 sterren
 
