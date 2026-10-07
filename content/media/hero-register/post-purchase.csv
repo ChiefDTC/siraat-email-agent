@@ -1,9 +1,10 @@
 mail,bronfoto,hero
-p1-first,https://cdn.shopify.com/s/files/1/0907/0877/1156/files/7d6b1b9a-3941-4c2d-be71-dd21dba9cb58.jpg (kopie: klaviyo/templates/v3/post-purchase/assets/src/7d6b1b9a-3941-4c2d-be71-dd21dba9cb58.jpg),klaviyo/templates/v3/post-purchase/assets/p1-first-hero.jpg
-p1-repeat,https://cdn.shopify.com/s/files/1/0907/0877/1156/files/chopstickssiraat.webp (kopie: assets/src/chopstickssiraat.webp),klaviyo/templates/v3/post-purchase/assets/p1-repeat-hero.jpg
-p2,content/media/chef-video/still-egg-close.jpg (uitsnede boven de ondertitel: assets/src/still-egg-close-crop.jpg),klaviyo/templates/v3/post-purchase/assets/p2-hero.jpg
-p3-pan,content/media/chef-video/still-dishwasher.jpg (uitsnede zonder ondertitel en zonder HEAT ON MEDIUM: assets/src/still-dishwasher-crop.jpg),klaviyo/templates/v3/post-purchase/assets/p3-pan-hero.jpg
-p3-set,https://cdn.shopify.com/s/files/1/0907/0877/1156/files/1.9.png (kopie: assets/src/1.9.png),klaviyo/templates/v3/post-purchase/assets/p3-set-hero.jpg
-p3-accessory,content/media/chef-video/still-steak.jpg (rechterhelft zonder ondertitel: assets/src/still-steak-crop.jpg),klaviyo/templates/v3/post-purchase/assets/p3-accessory-hero.jpg
-p3-next,https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Photo_Tossing_Vegetables_in_Pan_Pro.jpg (kopie: klaviyo/templates/v3/post-purchase/assets/src/Photo_Tossing_Vegetables_in_Pan_Pro.jpg),klaviyo/templates/v3/post-purchase/assets/p3-next-hero.jpg
-p3-apron,https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Photo_Salmon_Cooking_with_Herbs_in_Pan_Pro.jpg (kopie: klaviyo/templates/v3/post-purchase/assets/src/Photo_Salmon_Cooking_with_Herbs_in_Pan_Pro.jpg),klaviyo/templates/v3/post-purchase/assets/p3-apron-hero.jpg
+p1-first,content/media/ai-flash/pan-trophy-1x1-01.jpg (v4; was Shopify 7d6b1b9a-...jpg),klaviyo/templates/v3/post-purchase/assets/p1-first-hero.jpg
+p1-repeat,content/media/ai-flash/friends-greeting-1x1-01.jpg (v4; was chopstickssiraat.webp),klaviyo/templates/v3/post-purchase/assets/p1-repeat-hero.jpg
+p2,content/media/ai-flash/egg-plate-1x1-01.jpg (v4; was still-egg-close-crop.jpg),klaviyo/templates/v3/post-purchase/assets/p2-hero.jpg
+p2-safe,content/media/chef-video/still-egg-close.jpg (uitsnede boven de ondertitel: klaviyo/templates/v3/post-purchase/assets/src/still-egg-close-crop.jpg; vrijgekomen van p2),klaviyo/templates/v3/post-purchase/assets/p2-safe-hero.jpg
+p3-pan,content/media/ai-flash/lid-steam-1x1-01.jpg (v4; was still-dishwasher-crop.jpg),klaviyo/templates/v3/post-purchase/assets/p3-pan-hero.jpg + p3-pan-nocode-hero.jpg (zelfde beeld andere aanbodbalk)
+p3-set,content/media/ai-flash/crepe-flip-1x1-01.jpg (v4; was 1.9.png),klaviyo/templates/v3/post-purchase/assets/p3-set-hero.jpg + p3-set-nocode-hero.jpg
+p3-accessory,content/media/ai-flash/pan-reflection-1x1-01.jpg (v4; was still-steak-crop.jpg),klaviyo/templates/v3/post-purchase/assets/p3-accessory-hero.jpg + p3-accessory-nocode-hero.jpg
+p3-next,https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Photo_Tossing_Vegetables_in_Pan_Pro.jpg (kopie: klaviyo/templates/v3/post-purchase/assets/src/Photo_Tossing_Vegetables_in_Pan_Pro.jpg),klaviyo/templates/v3/post-purchase/assets/p3-next-hero.jpg + p3-next-nocode-hero.jpg
+p3-apron,https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Photo_Salmon_Cooking_with_Herbs_in_Pan_Pro.jpg (kopie: klaviyo/templates/v3/post-purchase/assets/src/Photo_Salmon_Cooking_with_Herbs_in_Pan_Pro.jpg),klaviyo/templates/v3/post-purchase/assets/p3-apron-hero.jpg + p3-apron-nocode-hero.jpg

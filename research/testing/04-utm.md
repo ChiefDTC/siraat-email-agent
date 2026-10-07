@@ -8,7 +8,7 @@ Datum: 7 oktober 2026. Doel: in Shopify en GA4 zien welke flow, welke mail, welk
 | --- | --- | --- |
 | `utm_source` | altijd `klaviyo` | `klaviyo` |
 | `utm_medium` | altijd `email` (later `sms` voor SMS-flows) | `email` |
-| `utm_campaign` | flow-slug (tabel §2), nooit de Klaviyo-flownaam met datum | `v3-checkout` |
+| `utm_campaign` | flow-slug (tabel §2), nooit de Klaviyo-flownaam met datum | `v4-checkout` |
 | `utm_content` | `<mailid>-<blok>` (tabel §3 en §4) | `c4us-offer` |
 | `utm_term` | testvariant: `<testid>-<a|b>`, of weglaten buiten een test | `t02-b` |
 
@@ -22,18 +22,18 @@ Regels:
 
 | Flow | `utm_campaign` | Opmerking |
 | --- | --- | --- |
-| Welcome v3 | `v3-welcome` | |
-| Checkout abandonment v3 | `v3-checkout` | |
-| Cart abandonment v3 | `v3-cart` | |
-| Browse abandonment v3 | `v3-browse` | |
-| Post-purchase v3 | `v3-postpurchase` | |
-| Winback v3 | `v3-winback` | |
+| Welcome v3 | `v4-welcome` | |
+| Checkout abandonment v3 | `v4-checkout` | |
+| Cart abandonment v3 | `v4-cart` | |
+| Browse abandonment v3 | `v4-browse` | |
+| Post-purchase v3 | `v4-postpurchase` | |
+| Winback v3 | `v4-winback` | |
 | Review request (XzHrez) | `review` | Ongewijzigd laten tot de flow herbouwd wordt |
-| Anniversary (n1, n2) | `v3-anniversary` | Nieuwe flow (parallelle bouw) |
-| Site abandonment / keuzehulp (a1, a2) | `v3-site` | Nieuwe flow (parallelle bouw) |
-| Sunset (s1, s2) | `v3-sunset` | s1 gebruikt nu `utm_campaign=sunse...`: gelijktrekken |
-| UGC (u1) | `v3-ugc` | |
-| VIP (v1, v2) | `v3-vip` | |
+| Anniversary (n1, n2) | `v4-anniversary` | Nieuwe flow (parallelle bouw) |
+| Site abandonment / keuzehulp (a1, a2) | `v4-site` | Nieuwe flow (parallelle bouw) |
+| Sunset (s1, s2) | `v4-sunset` | s1 gebruikt nu `utm_campaign=sunse...`: gelijktrekken |
+| UGC (u1) | `v4-ugc` | |
+| VIP (v1, v2) | `v4-vip` | |
 | Oud pad tijdens T01 | `old-<flow>` (bijv. `old-checkout`) | Via Klaviyo-instelling van de oude berichten (custom tracking params), templates niet aanpassen |
 
 ## 3. Mail-ID's
@@ -98,7 +98,7 @@ Gezien op 7 oktober in de live checkoutflow Y2TmNB: `add_tracking_params: true`,
 **a) Gewone productlink**
 
 ```
-https://siraatskitchen.com/products/stainless-steel-lid?utm_source=klaviyo&utm_medium=email&utm_campaign=v3-postpurchase&utm_content=p3pan-prod-lid&utm_term=t02-a
+https://siraatskitchen.com/products/stainless-steel-lid?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3pan-prod-lid&utm_term=t02-a
 ```
 
 **b) Kortingslink via `/discount/<code>?redirect=<pad>`** (HI10 en unieke codes; het grootste deel van de v3-links)
@@ -114,7 +114,7 @@ Te verifiëren bij de eerste test: landt GA4 met de UTM's (DebugView), en blijft
 
 **c) Checkout-link** (C1 t/m C4: `{{ event.extra.responsive_checkout_url }}&discount=...`)
 
-UTM's achteraan toevoegen: `...&discount=CODE&utm_source=klaviyo&utm_medium=email&utm_campaign=v3-checkout&utm_content=c4us-cta1&utm_term=t02-a`. De fallback-URL in C4 (`https://siraatskitchen.com/checkout?utm_source=klaviyo&discount=...`) aanvullen met de overige vier. Checkout-pagina's tellen in Shopify mee als landingspagina; in GA4 alleen als de checkout-tracking (Shopify customer events) aanstaat. Controleren.
+UTM's achteraan toevoegen: `...&discount=CODE&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4us-cta1&utm_term=t02-a`. De fallback-URL in C4 (`https://siraatskitchen.com/checkout?utm_source=klaviyo&discount=...`) aanvullen met de overige vier. Checkout-pagina's tellen in Shopify mee als landingspagina; in GA4 alleen als de checkout-tracking (Shopify customer events) aanstaat. Controleren.
 
 ### 5.4 Cart-links
 

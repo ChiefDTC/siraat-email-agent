@@ -24,18 +24,18 @@ Niets in dit document is al in Klaviyo of Shopify aangemaakt. Geen live wijzigin
 
 | # | Flow (naam in Klaviyo) | Soort | Trigger (metric-ID) | Vervangt | Mails | `utm_campaign` |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | v4 · Checkout abandonment | verkoop | Checkout Started (RfMvni) | Y2TmNB, Tsg2tV | c1, c2, c2-acc, c3-p, c3-s, c3-acc, c4-us, c4-int (+ nocode) | v3-checkout |
-| 2 | v4 · Cart abandonment | verkoop | Added to Cart (QXcV8K) | SwkMyn, TBWngE | k1, k1-acc, k2-new, k2-returning, k3 (+ nocode) | v3-cart |
-| 3 | v4 · Browse abandonment | verkoop | Viewed Product, Klaviyo onsite (XNtYMB) | Wj6x6V, TyEjuQ | b1, b1-acc, b2-clicked, b2-notclicked (+ nocode) | v3-browse |
-| 4 | v4 · Welcome | verkoop | Toegevoegd aan lijst Uw8eZG | SiaNLu, T2SmtR | w0, w1-a, w1-b, w2, w3, w4-us, w4-int, w5 | v3-welcome |
-| 5 | v4 · Post-purchase | klant | Placed Order (RSNxYV) | RL3TU6 | p1-first, p1-repeat, p2-safe, p3-set, p3-pan, p3-next, p3-apron, p3-accessory (+ nocode) | v3-postpurchase |
-| 5b | v4 · Post-purchase · levering | klant (hulpflow) | Delivered Shipment (VcUF33) | (P2-deel van RL3TU6) | p2 | v3-postpurchase |
-| 6 | v4 · Winback | verkoop | Placed Order (RSNxYV), dan wachten | UEfh4h | r1-pan, r1-set, r1-acc, r2, r2-vip (+ nocode) | v3-winback |
-| 7 | v4 · Site abandonment | verkoop (nieuw) | Active on Site (UdCdLD) | draft UEqeEm (niet gebruiken) | a1, a2 | v3-site |
-| 8 | v4 · Sunset | onderhoud (nieuw) | Segment "v4 · Sunset · unengaged 120d" | S7V4a7 | s1, s2 | v3-sunset |
-| 9 | v4 · VIP | klant (nieuw) | Placed Order (RSNxYV), 2e order | | v1, v2 (+ v1-nocode) | v3-vip |
-| 10 | v4 · Anniversary | klant (nieuw) | Placed Order (RSNxYV), 1e order met kookgerei | | n1, n2 (+ n2-nocode) | v3-anniversary |
-| 11 | v4 · UGC first egg | klant (nieuw) | Delivered Shipment (VcUF33) | | u1 | v3-ugc |
+| 1 | v4 · Checkout abandonment | verkoop | Checkout Started (RfMvni) | Y2TmNB, Tsg2tV | c1, c2, c2-acc, c3-p, c3-s, c3-acc, c4-us, c4-int (+ nocode) | v4-checkout |
+| 2 | v4 · Cart abandonment | verkoop | Added to Cart (QXcV8K) | SwkMyn, TBWngE | k1, k1-acc, k2-new, k2-returning, k3 (+ nocode) | v4-cart |
+| 3 | v4 · Browse abandonment | verkoop | Viewed Product, Klaviyo onsite (XNtYMB) | Wj6x6V, TyEjuQ | b1, b1-acc, b2-clicked, b2-notclicked (+ nocode) | v4-browse |
+| 4 | v4 · Welcome | verkoop | Toegevoegd aan lijst Uw8eZG | SiaNLu, T2SmtR | w0, w1-a, w1-b, w2, w3, w4-us, w4-int, w5 | v4-welcome |
+| 5 | v4 · Post-purchase | klant | Placed Order (RSNxYV) | RL3TU6 | p1-first, p1-repeat, p2-safe, p3-set, p3-pan, p3-next, p3-apron, p3-accessory (+ nocode) | v4-postpurchase |
+| 5b | v4 · Post-purchase · levering | klant (hulpflow) | Delivered Shipment (VcUF33) | (P2-deel van RL3TU6) | p2 | v4-postpurchase |
+| 6 | v4 · Winback | verkoop | Placed Order (RSNxYV), dan wachten | UEfh4h | r1-pan, r1-set, r1-acc, r2, r2-vip (+ nocode) | v4-winback |
+| 7 | v4 · Site abandonment | verkoop (nieuw) | Active on Site (UdCdLD) | draft UEqeEm (niet gebruiken) | a1, a2 | v4-site |
+| 8 | v4 · Sunset | onderhoud (nieuw) | Segment "v4 · Sunset · unengaged 120d" | S7V4a7 | s1, s2 | v4-sunset |
+| 9 | v4 · VIP | klant (nieuw) | Placed Order (RSNxYV), 2e order | | v1, v2 (+ v1-nocode) | v4-vip |
+| 10 | v4 · Anniversary | klant (nieuw) | Placed Order (RSNxYV), 1e order met kookgerei | | n1, n2 (+ n2-nocode) | v4-anniversary |
+| 11 | v4 · UGC first egg | klant (nieuw) | Delivered Shipment (VcUF33) | | u1 | v4-ugc |
 | (blijft) | Review request XzHrez | klant | live, ongewijzigd (levering + 14 dagen) | Vixr6X (uit op 12 okt) | review | review |
 
 De `utm_campaign`-slugs blijven `v3-*` zoals in `research/testing/04-utm.md`, zodat de rapportage en `results.csv` niet breken.
@@ -104,7 +104,7 @@ CONDITIONAL SPLIT "Cooldown?"
 | --- | --- |
 | `utm_source` | `klaviyo` |
 | `utm_medium` | `email` |
-| `utm_campaign` | flow-slug uit 1.1 (`v3-checkout` enz.); oud pad in T01: `old-<flow>` via Klaviyo custom tracking params |
+| `utm_campaign` | flow-slug uit 1.1 (`v4-checkout` enz.); oud pad in T01: `old-<flow>` via Klaviyo custom tracking params |
 | `utm_content` | `<mailid>-<blok>`; mail-ID zonder koppelteken: `c1`, `c2`, `c2acc`, `c3p`, `c3s`, `c3acc`, `c4us`, `c4int`, `k1`, `k1acc`, `k2new`, `k2ret`, `k3`, `b1`, `b1acc`, `b2c`, `b2n`, `w0`, `w1a`, `w1b`, `w2`, `w3`, `w4us`, `w4int`, `w5`, `p1first`, `p1rep`, `p2`, `p2safe`, `p3pan`, `p3set`, `p3next`, `p3apron`, `p3acc`, `r1pan`, `r1set`, `r1acc`, `r2`, `r2vip`, `a1`, `a2`, `s1`, `s2`, `v1`, `v2`, `n1`, `n2`, `u1`. Blokken: `codebar`, `logo`, `nav-*`, `hero`, `cart`, `product`, `prod-<kort>`, `cta1..3`, `offer`, `giftcard`, `gifts`, `features`, `reviews`, `compare`, `size-*`, `tier1..3`, `report`, `warranty`, `ps`, `set12`, `ebook`, `guide`, `ft-*`. |
 | `utm_term` | testvariant `<testid>-<a|b>` (`t02-b`, `t04-a`), anders weglaten |
 
@@ -519,7 +519,7 @@ Status: **gebouwd** = HTML en preview klaar, hero lokaal in `assets/`, upload na
 | r2-nocode, r2-vip-nocode | | Winback | 2 | T02-B / cooldown | | | te bouwen |
 | a1 | site/a1.html | Site | 1 | | Not sure which pan? Start here. | The question we get most: which size? | gebouwd |
 | a2 | site/a2.html | Site | 2 | | Where 100,000+ people started | The pan most kitchens start with | gebouwd |
-| s1 | sunset/s1.html | Sunset | 1 | | Should we keep writing to you? | Still want our emails? One tap. | gebouwd (s1 `utm_campaign` gelijktrekken naar v3-sunset) |
+| s1 | sunset/s1.html | Sunset | 1 | | Should we keep writing to you? | Still want our emails? One tap. | gebouwd (s1 `utm_campaign` gelijktrekken naar v4-sunset) |
 | s2 | sunset/s2.html | Sunset | 2 | | Last email from me (unless you tap) | Should I stop writing? | gebouwd, .klaviyo.html klaar |
 | v1 | vip/v1.html | VIP | 1 | code | Twice is a habit. Here's 15% off. | For our regulars: 15% off your next piece | gebouwd |
 | v1-nocode | | VIP | 1 | cooldown / T02-B | | | te bouwen (HI10-variant) |
