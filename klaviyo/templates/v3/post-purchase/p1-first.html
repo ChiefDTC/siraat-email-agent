@@ -47,7 +47,7 @@
 
 <!-- INTRO -->
 <tr><td class="pad" style="padding:26px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">
-  <p style="margin:0;">Hi {{ first_name|default:'there' }}, your order is confirmed. Thank you for choosing a pan with a pure titanium cooking surface and no coatings: nothing to peel, nothing to replace.</p>
+  <p style="margin:0;">Hi {{ first_name|default:'there' }}, your order is confirmed. {% if 'Pan' in event.Items|join:',' or 'Pot' in event.Items|join:',' or 'Pizza Steel' in event.Items|join:',' or 'ookware' in event.Items|join:',' or 'Everything' in event.Items|join:',' or 'Pfanne' in event.Items|join:',' %}Thank you for choosing a pan with a pure titanium cooking surface and no coatings: nothing to peel, nothing to replace.{% else %}Thank you for ordering from us. Here is what is in the box and what happens next.{% endif %}</p>
 </td></tr>
 
 <!-- ORDER (Placed Order line items) -->
