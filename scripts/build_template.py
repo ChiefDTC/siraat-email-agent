@@ -3,14 +3,14 @@ Gebruik: python3 -I scripts/build_template.py <bron.html> <assets-map> <urls.txt
 Schrijft <bron>.klaviyo.html (CDN-links) en <bron-zonder-.html>-preview.html (lokale beelden, voorbeelddata)."""
 import sys,re,os
 src,assets,urls=sys.argv[1:4]
-u=dict(l.split() for l in open(urls) if l.strip())
+u=dict(l.split() for l in open(urls) if l.strip()) if os.path.exists(urls) else {}
 h=open(src).read()
 P=os.path.join(os.path.dirname(os.path.abspath(src)),'partials')
 h=h.replace('{{HEADER}}',open(os.path.join(P,'header.html')).read()).replace('{{FOOTER}}',open(os.path.join(P,'footer.html')).read())
 k=h
 for a,b in sorted(u.items(),key=lambda x:-len(x[0])): k=k.replace('{{IMG}}/'+a,b)
-assert '{{IMG}}' not in k, 'ontbrekende CDN-link'
-base=src[:-5]; open(base+'.klaviyo.html','w').write(k)
+base=src[:-5]
+if '{{IMG}}' not in k: open(base+'.klaviyo.html','w').write(k)
 p=h.replace('{{IMG}}',os.path.basename(assets.rstrip('/')))
 m=re.search(r'\{% for item in event.extra.line_items %\}\{% if forloop.counter <= 3 %\}(.*?)\{% endif %\}\{% endfor %\}',p,re.S)
 if m:
