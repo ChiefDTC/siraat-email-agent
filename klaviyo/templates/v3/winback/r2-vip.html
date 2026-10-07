@@ -38,7 +38,7 @@
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
-{{BLOCK:codebar text="YOUR 15% CODE &middot; 72 HOURS &middot;" code="{% coupon_code 'R2_VIP_15_72H' %}"}}
+{{BLOCK:codebar text="YOUR 15% &middot; ENDS {{DATE:3:D:upper}} {{DATE:3:M j:upper}} &middot;" code="{% coupon_code 'R2_VIP_15_72H' %}"}}
 
 {{HEADER}}
 
@@ -53,7 +53,7 @@
   <p style="margin:0 0 0px 0;">Hi {{ first_name|default:'there' }}, you have ordered from us more than once. That is the reason for this code: 15% off, on top of the sale, for 72 hours. Yours alone, applied with the button.</p>
 </td></tr>
 
-{{BLOCK:offer pad="22px 44px 6px 44px" eyebrow="YOUR THANK-YOU CODE" headline="15% off, for our regulars" code="{% coupon_code 'R2_VIP_15_72H' %}" note="A thank you, so it has an end date. After that, the regular sale price applies. Plus $70 in gifts with every order." deadline="Ends 72 hours after this email" label="Claim my 15%" url="https://siraatskitchen.com/discount/{% coupon_code 'R2_VIP_15_72H' %}?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-winback%26utm_content%3Dr2vip-offer%26utm_term%3Dt02-a"}}
+{{BLOCK:offer pad="22px 44px 6px 44px" eyebrow="HERE IS YOUR 15%" headline="15% off, for our regulars" code="{% coupon_code 'R2_VIP_15_72H' %}" note="A thank you, so it has an end date. After that, the regular sale price applies. Plus $70 in gifts with every order." deadline="YOUR CODE RUNS OUT" days="3" amount="72" unit="HOURS" label="Claim my 15%" url="https://siraatskitchen.com/discount/{% coupon_code 'R2_VIP_15_72H' %}?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-winback%26utm_content%3Dr2vip-offer%26utm_term%3Dt02-a"}}
 
 <!-- PRODUCTEN: lijst, prijzen alleen bij verzendland US -->
 <tr><td class="pad" style="padding:26px 44px 6px 44px;">
@@ -107,7 +107,8 @@
 <!-- SIGN-OFF -->
 <tr><td class="pad" style="padding:24px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
   What should we make next? Reply and tell us. Every reply reaches our team.<br><br>
-  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
+  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span><br><br>
+  <span style="color:#727272;">P.S. Your code runs out on the morning of {{DATE:3:l, F j}}. A thank you has an end date, so it stays a thank you.</span>
 </td></tr>
 
 {{FOOTER}}

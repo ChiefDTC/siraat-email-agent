@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: Your own 10% code, for 48 hours | SUBJECT_B: What if it's not for you? (reserve; cart runs no subject test in phase 1) | SUBJECTS (5 types): C+B 'The last email about your cart (and a code)' / SPEC '75-year warranty, 30-day returns, 10% less' / Q 'What if it's not for you?' / STORY '"I returned my pans, unused, and received a refund"' / OFFER 'Your own 10% code, for 48 hours' | PREVIEW: Applied to your cart with one tap. It ends 48 hours after this email. | SEND: path K: 2 days after K2, until 09:00 (day 3); path ACCESSOIRE: 3 days after K1-acc, until 09:00. Code-router (v4 1.4): cooldown last_flow_code_at in last 30 days = no, then T02 A/B 50/50, this is arm A; then Update profile property last_flow_code_at = today, last_flow_code_pool = K3_10_48H | COUPON: K3_10_48H (Shopify unique, 10%, one use per customer, expires 48 hours after assignment) | FILTERS: Trigger: Added to Cart (QXcV8K) with Price greater than 0 and Product Name doesn't contain Mystery Gift, E-Book, Free Shipping, Giveaway. Flow: Checkout Started = 0 since flow start; Placed Order = 0 since flow start; Received Email where Flow = 'v4 · Checkout abandonment' = 0 in the last 7 days; not in this flow in the last 14 days. Message: Checkout Started = 0 and Placed Order = 0 since flow start | UTM: utm_content=k3-<blok>, utm_term=t02-a -->
+<!-- SUBJECT_A: Last chance: your own 10% ends in 48 hours | SUBJECT_B: What if it's not for you? (reserve; cart runs no subject test in phase 1) | SUBJECTS (5 types): C+B 'The last email about your cart (and a code)' / SPEC '75-year warranty, 30-day returns, 10% less' / Q 'What if it's not for you?' / STORY '"I returned my pans, unused, and received a refund"' / OFFER 'Your own 10% code, for 48 hours' | PREVIEW: Your code is already applied to your cart. It runs out 48 hours after this email. | SEND: path K: 2 days after K2, until 09:00 (day 3); path ACCESSOIRE: 3 days after K1-acc, until 09:00. Code-router (v4 1.4): cooldown last_flow_code_at in last 30 days = no, then T02 A/B 50/50, this is arm A; then Update profile property last_flow_code_at = today, last_flow_code_pool = K3_10_48H | COUPON: K3_10_48H (Shopify unique, 10%, one use per customer, expires 48 hours after assignment) | FILTERS: Trigger: Added to Cart (QXcV8K) with Price greater than 0 and Product Name doesn't contain Mystery Gift, E-Book, Free Shipping, Giveaway. Flow: Checkout Started = 0 since flow start; Placed Order = 0 since flow start; Received Email where Flow = 'v4 · Checkout abandonment' = 0 in the last 7 days; not in this flow in the last 14 days. Message: Checkout Started = 0 and Placed Order = 0 since flow start | UTM: utm_content=k3-<blok>, utm_term=t02-a -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -30,13 +30,13 @@
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Applied to your cart with one tap. It ends 48 hours after this email.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Your code is already applied to your cart. It runs out 48 hours after this email.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
 
-{{BLOCK:codebar text="YOUR OWN 10% CODE &middot;" code="{% coupon_code 'K3_10_48H' %}"}}
+{{BLOCK:codebar text="YOUR 10% &middot; ENDS {{DATE:2:D:upper}} {{DATE:2:M j:upper}} &middot;" code="{% coupon_code 'K3_10_48H' %}"}}
 
 {{HEADER}}
 
@@ -69,10 +69,7 @@
 
 {{BLOCK:cta label="Finish my order" url="https://siraatskitchen.com/discount/{% coupon_code 'K3_10_48H' %}?redirect=/cart%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk3-cta1%26utm_term%3Dt02-a" pad="16px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>One use, already applied. 30-day returns. 100,000+ happy customers.</div>"}}
 
-<!-- OPENER (live tekst) -->
-<tr><td class="pad lead" style="padding:22px 44px 2px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;"><p style="margin:0 0 0 0;">This is the last email about your cart, so here&rsquo;s everything that protects you if you order. And your own code takes 10% off for the next 48 hours.</p></td></tr>
-
-{{BLOCK:offer pad="26px 44px 6px 44px" eyebrow="YOUR OWN CODE" headline="10% off your cart" code="{% coupon_code 'K3_10_48H' %}" note="Made for you, so it has an end date. After that, the regular sale price applies. One code per order." deadline="Ends 48 hours after this email" label="Finish my order" url="https://siraatskitchen.com/discount/{% coupon_code 'K3_10_48H' %}?redirect=/cart%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk3-offer%26utm_term%3Dt02-a"}}
+{{BLOCK:offer pad="26px 44px 6px 44px" eyebrow="HERE IS YOUR 10%" headline="Last chance for your code" code="{% coupon_code 'K3_10_48H' %}" note="Made for you, so it has an end date. Then the regular sale price applies. One code per order." deadline="YOUR CODE RUNS OUT" days="2" amount="48" unit="HOURS" label="Use my 10% now" url="https://siraatskitchen.com/discount/{% coupon_code 'K3_10_48H' %}?redirect=/cart%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk3-offer%26utm_term%3Dt02-a"}}
 
 <!-- TWEE BELOFTES (06-offer-design 3; refund policy: retourzending ongebruikt product voor de klant). Garantiezin alleen bij kookgerei (open punt 3.27). -->
 <tr><td class="pad" style="padding:30px 44px 6px 44px;">
@@ -80,15 +77,14 @@
   <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 16px 0;">Two promises.</div>
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
     <tr><td width="58" valign="top" style="padding:20px 0 16px 20px;border-bottom:1px solid #ECE7DD;"><img src="{{SHARED}}/icon-returns-30-day.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
-      <td valign="top" style="padding:18px 20px 16px 14px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Changed your mind?</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Send it back unused within 30 days of delivery for a full refund.</div></td></tr>
+      <td valign="top" style="padding:18px 20px 16px 14px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Changed your mind?</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Send it back unused within 30 days of delivery for a full refund.</div><div style="font-size:14px;line-height:21px;color:#282828;font-style:italic;padding-top:10px;"><span style="font-style:normal;color:#AC3B19;letter-spacing:1px;">&#9733;&#9733;&#9733;&#9733;&#9733;</span><br>&ldquo;I returned my pans, unused, and received a refund, no questions asked. Easy return procedure.&rdquo;<div style="font-style:normal;font-size:12px;line-height:17px;font-weight:600;color:#727272;padding-top:3px;">Steven T. &middot; Verified buyer</div></div></td></tr>
     <tr><td width="58" valign="top" style="padding:20px 0 16px 20px;"><img src="{{SHARED}}/icon-warranty-75-year.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
-      <td valign="top" style="padding:18px 20px 16px 14px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Something wrong with it?</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">If it arrives damaged or with a defect, you choose a refund or a new one, and we pay the shipping.{% if 'Hammer' in event|lookup:'Product Name' or 'Pan' in event|lookup:'Product Name' or 'Pot' in event|lookup:'Product Name' or 'ookware' in event|lookup:'Product Name' or 'Everything' in event|lookup:'Product Name' or 'fanne' in event|lookup:'Product Name' or 'Prep Bundle' in event|lookup:'Product Name' %} After that, the 75-year warranty covers dents, a warped base, a loose handle or rivet, and a lid that no longer fits.{% endif %}</div></td></tr>
+      <td valign="top" style="padding:18px 20px 16px 14px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Something wrong with it?</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">If it arrives damaged or with a defect, you choose a refund or a new one, and we pay the shipping.{% if 'Hammer' in event|lookup:'Product Name' or 'Pan' in event|lookup:'Product Name' or 'Pot' in event|lookup:'Product Name' or 'ookware' in event|lookup:'Product Name' or 'Everything' in event|lookup:'Product Name' or 'fanne' in event|lookup:'Product Name' or 'Prep Bundle' in event|lookup:'Product Name' %} After that, the 75-year warranty covers dents, a warped base, a loose handle or rivet, and a lid that no longer fits.{% endif %}</div><div style="font-size:14px;line-height:21px;color:#282828;font-style:italic;padding-top:10px;"><span style="font-style:normal;color:#AC3B19;letter-spacing:1px;">&#9733;&#9733;&#9733;&#9733;&#9733;</span><br>&ldquo;Siraat replaced a pan free of charge... I just sent them the picture and they honored the warranty.&rdquo;<div style="font-style:normal;font-size:12px;line-height:17px;font-weight:600;color:#727272;padding-top:3px;">Brandon W. &middot; Verified buyer</div></div></td></tr>
   </table>
 </td></tr>
 
-{{BLOCK:reviews q1="I returned my pans, unused, and received a refund, no questions asked. Easy return procedure." n1="Steven T." q2="Siraat replaced a pan free of charge... I just sent them the picture and they honored the warranty." n2="Brandon W." pad="28px 44px 6px 44px"}}
 
-{{BLOCK:gifts headline="$70 in gifts, in the box" note="Plus a chance to win a $450 PFAS water filter."}}
+{{BLOCK:gifts eyebrow="STILL ATTACHED TO YOUR CART" headline="$70 in gifts, in the box" note="Plus a chance to win a $450 PFAS water filter."}}
 
 {{BLOCK:cta label="Finish my order" url="https://siraatskitchen.com/discount/{% coupon_code 'K3_10_48H' %}?redirect=/cart%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk3-cta2%26utm_term%3Dt02-a" pad="26px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>One use, already applied. 30-day returns. 100,000+ happy customers.</div>"}}
 
@@ -96,7 +92,8 @@
 <!-- SIGN-OFF -->
 <tr><td class="pad" style="padding:26px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
   Questions about size or your cooktop? Reply and our team will help.<br><br>
-  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
+  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span><br><br>
+  <span style="color:#727272;">P.S. Your code runs out on the morning of {{DATE:2:l, F j}}. This is the last email about your cart, so after that it goes back to the regular sale price.</span>
 </td></tr>
 
 

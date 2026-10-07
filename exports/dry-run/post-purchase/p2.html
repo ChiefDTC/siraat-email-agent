@@ -46,6 +46,13 @@
     .pc-n{font-size:16px!important;line-height:21px!important;}
     .pc-s{font-size:13px!important;line-height:18px!important;}
   }
+  /* urgency-upgrade 7 okt 2026: ugc (reviewkaarten met beeld) en deadline-tegels */
+  @media only screen and (max-width:620px){
+    .ug-desk{display:none!important;max-height:0!important;overflow:hidden!important;}
+    .ug-mob{display:block!important;max-height:none!important;overflow:visible!important;}
+    .dl-t{width:84px!important;}
+    .dl-n{font-size:22px!important;line-height:26px!important;}
+  }
 </style>
 <!--[if mso]><style>body,table,td,div,p,a,span{font-family:Arial,Helvetica,sans-serif!important;}</style><![endif]-->
 </head>
@@ -81,7 +88,7 @@
 </td></tr>
 
 <tr><td class="pad" style="padding:26px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">
-  <p style="margin:0;">Hi {{ first_name|default:'there' }}, your pan has arrived. Before the first egg, one thing to know: there is no coating on it, so the release comes from heat and timing, not chemicals.</p><p style="margin:14px 0 0 0;">Cold metal grabs your food. Hot metal lets it go. Here is the chef's first cook, step by step.</p>
+  <p style="margin:0;">Hi {{ first_name|default:'there' }}, your pan has arrived. You may be wondering whether it keeps its promises. The first egg will tell you, and before it, one thing to know: there is no coating on it, so the release comes from heat and timing, not chemicals.</p><p style="margin:14px 0 0 0;">Cold metal grabs your food. Hot metal lets it go. Here is the chef's first cook, step by step.</p>
 </td></tr>
 <tr><td class="pad" style="padding:22px 44px 4px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
@@ -177,7 +184,7 @@
 </td></tr>
 
 <tr><td class="pad" style="padding:24px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;text-align:center;">
-  <b>Made your first egg?</b> Send us a photo. We would like to show the next first-timers what it looks like, with your first name, and only if you say yes.
+  <b>After the egg, a steak.</b> Same rule: heat the pan first, then let the steak release on its own before you turn it.<br><br><b>Made your first egg?</b> Send us a photo. We would like to show the next first-timers what it looks like, with your first name, and only if you say yes.
 </td></tr>
 <tr><td align="center" class="pad" style="padding:20px 44px 4px 44px;">
   <table role="presentation" class="btnw" width="340" cellpadding="0" cellspacing="0" border="0" style="width:340px;"><tr>

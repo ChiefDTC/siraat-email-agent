@@ -9,10 +9,10 @@ t(){ f=$1; s=$2; shift 2; n=$(basename $f)
     python3 -c "import re,sys,html;t=html.unescape(re.sub(r'<[^>]+>','|',open('out/${n}_$s.html').read()));sys.exit(0 if sys.argv[1] in t else 1)" "$k"; got=$((1-$?))
     [ $got = $want ] && echo "ok   $f $s: $( [ $want = 1 ] && echo bevat || echo mist ) '$k'" || { echo "FOUT $f $s: '$k'"; fail=1; }
   done; }
-t checkout/c1 co_apron '!One pan. Nothing'; t checkout/c1 co_pan 'One pan. Nothing'; t checkout/c1 co_set6 'One pan. Nothing'
+t checkout/c1 co_apron '!No PFAS. No coating'; t checkout/c1 co_pan 'No PFAS. No coating' 'Beverley S.' 'Shop Pay Installments'; t checkout/c1 co_set6 'No PFAS. No coating'; t checkout/c1 co_pan_eur '!Shop Pay Installments'
 t checkout/c2-acc co_apron 'Heavy 16-oz canvas' '!Pure titanium, non-porous'; t checkout/c2-acc co_board 'Pure titanium, non-porous' '!16-oz'; t checkout/c2-acc co_giftcard 'Sent by email'
 t checkout/c3-acc co_apron 'An apron does want'; t checkout/c3-acc co_mill '!An apron does want'
-t checkout/c4 co_apron '!12-piece set' '!Duties paid'; t checkout/c4 co_pizza '12-piece set' 'YOUR CODE RUNS OUT' '!{{'; t checkout/c4 co_pan_eur '!12-piece set' 'Duties paid' 'NO IMPORT'
+t checkout/c4 co_apron '!12-piece set' '!Duties paid'; t checkout/c4 co_pizza '!12-piece set' 'YOUR CODE RUNS OUT' '!{{'; t checkout/c4 co_pan_eur '!12-piece set' 'Duties paid' 'duties are paid'; t checkout/c4 co_pan '!Duties paid' 'HOURS'
 t checkout/c4-nocode co_pan '12-piece set' '!Duties paid' '!YOUR CODE RUNS OUT'; t checkout/c4-nocode co_pan_eur '!12-piece set' 'duties paid'
 t cart/k1 atc_lid_eur '!$39.00'; t cart/k1 atc_pan '$134.00'
 t cart/k1-acc atc_apron 'Heavy 16-oz canvas' '$49.00'; t cart/k1-acc atc_lid_eur '304 stainless' '!$39'

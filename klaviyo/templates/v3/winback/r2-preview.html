@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: 10% off your next piece, for 72 hours | SUBJECT_B: Ready for pan number two? | SUBJECTS (5 types): C+B 'A code for your second pan' / SPEC '10% off your next piece, for 72 hours' / Q 'Ready for pan number two?' / STORY '"I am on my 4th pan from Siraat"' / OFFER 'Your personal code, plus $70 in gifts' (principetest Sca tegen Com zodra er een testplek is) | PREVIEW: Your own code, applied with one tap. It ends 72 hours after this email. | SEND: dag 75: wacht 30 dagen na R1, tot 09:00 lokaal | FILTERS: v4 Winback stap 2, tak niet-VIP, code-router zonder cooldown en T02-A = deze mail met unieke coupon R2_10_72H (10%, 72 uur na toewijzing, 1 gebruik, 1 per klant, alleen one-time purchase); daarna Update profile property last_flow_code_at = vandaag, last_flow_code_pool = R2_10_72H. Verzendfilter: Placed Order zero times since starting this flow. Alleen versturen zolang de sale live is. Prijzen alleen bij verzendland US. Berichtnaam begint met CODE. | UTM: utm_campaign=v4-winback, utm_content=<mail>-<blok>, utm_term=t02-a; bij /discount/CODE?redirect=<pad> staan de UTM-parameters gecodeerd (%3F, %3D, %26) achter het pad binnen redirect -->
+<!-- SUBJECT_A: Here is your 10%, for the next 72 hours | SUBJECT_B: Ready for pan number two? | SUBJECTS (5 types): C+B 'A code for your second pan' / SPEC '10% off your next piece, for 72 hours' / Q 'Ready for pan number two?' / STORY '"I am on my 4th pan from Siraat"' / OFFER 'Your personal code, plus $70 in gifts' (principetest Sca tegen Com zodra er een testplek is) | PREVIEW: Your own code, applied with one tap. It ends 72 hours after this email. | SEND: dag 75: wacht 30 dagen na R1, tot 09:00 lokaal | FILTERS: v4 Winback stap 2, tak niet-VIP, code-router zonder cooldown en T02-A = deze mail met unieke coupon R2_10_72H (10%, 72 uur na toewijzing, 1 gebruik, 1 per klant, alleen one-time purchase); daarna Update profile property last_flow_code_at = vandaag, last_flow_code_pool = R2_10_72H. Verzendfilter: Placed Order zero times since starting this flow. Alleen versturen zolang de sale live is. Prijzen alleen bij verzendland US. Berichtnaam begint met CODE. | UTM: utm_campaign=v4-winback, utm_content=<mail>-<blok>, utm_term=t02-a; bij /discount/CODE?redirect=<pad> staan de UTM-parameters gecodeerd (%3F, %3D, %26) achter het pad binnen redirect -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -53,6 +53,13 @@
     .pc-n{font-size:16px!important;line-height:21px!important;}
     .pc-s{font-size:13px!important;line-height:18px!important;}
   }
+  /* urgency-upgrade 7 okt 2026: ugc (reviewkaarten met beeld) en deadline-tegels */
+  @media only screen and (max-width:620px){
+    .ug-desk{display:none!important;max-height:0!important;overflow:hidden!important;}
+    .ug-mob{display:block!important;max-height:none!important;overflow:visible!important;}
+    .dl-t{width:84px!important;}
+    .dl-n{font-size:22px!important;line-height:26px!important;}
+  }
 </style>
 </head>
 
@@ -63,8 +70,8 @@
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
 <!-- BLOCK codebar: aanbod boven de header, live tekst -->
-<tr><td align="center" class="codebar" bgcolor="#282828" style="background:#282828;padding:11px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;letter-spacing:1.5px;font-weight:600;color:#FFFFFF;">
-  YOUR 10% CODE &middot; 72 HOURS &middot;&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;">SRT-K7Q2M</span>
+<tr><td align="center" class="codebar" bgcolor="#282828" style="background:#282828;overflow-wrap:anywhere;padding:11px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;letter-spacing:1.5px;font-weight:600;color:#FFFFFF;">
+  YOUR 10% &middot; ENDS SAT OCT 10 &middot;&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;word-break:break-all;">SRT-K7Q2M</span>
 </td></tr>
 
 
@@ -105,17 +112,26 @@
 <!-- BLOCK offer: aanbodblok, code als live tekst -->
 <tr><td class="pad" style="padding:22px 44px 6px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#321E1D" style="background:#321E1D;">
-    <tr><td align="center" style="padding:30px 26px 8px 26px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#D9CFC7;">YOUR PERSONAL CODE</td></tr>
+    <tr><td align="center" style="padding:30px 26px 8px 26px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#D9CFC7;">HERE IS YOUR 10%</td></tr>
     <tr><td align="center" class="h2" style="padding:0 26px 16px 26px;font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#FFFFFF;">10% off your next piece</td></tr>
     <tr><td align="center" style="padding:0 26px;">
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" class="offer-code" style="border:2px dashed #FFFFFF;padding:12px 30px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:32px;line-height:36px;letter-spacing:6px;font-weight:600;color:#FFFFFF;">SRT-K7Q2M</td></tr></table>
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" class="offer-code" style="border:2px dashed #FFFFFF;padding:12px 30px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:32px;line-height:36px;letter-spacing:6px;font-weight:600;color:#FFFFFF;word-break:break-all;">SRT-K7Q2M</td></tr></table>
     </td></tr>
     <tr><td align="center" style="padding:14px 26px 0 26px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#EDE6E0;">Made for you, so it has an end date. After that, the regular sale price applies. Plus $70 in gifts with every order.</td></tr>
-    <tr><td align="center" style="padding:14px 26px 0 26px;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:8px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;font-weight:600;color:#AC3B19;"><img src="../../partials/shared/icon-deadline.png" width="18" height="18" alt="" style="display:inline-block;vertical-align:-4px;width:18px;height:18px;">&nbsp; Ends 72 hours after this email</td></tr></table></td></tr>
+    <tr><td align="center" style="padding:18px 26px 0 26px;">
+      <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#D9CFC7;padding-bottom:8px;">YOUR CODE RUNS OUT</div>
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td class="dl-t" width="92" align="center" bgcolor="#4A3533" style="background:#4A3533;border:1px solid #6A5451;border-radius:4px;padding:9px 4px 8px 4px;font-family:Inter,Arial,Helvetica,sans-serif;"><div class="dl-n" style="word-break:break-all;font-size:26px;line-height:30px;font-weight:600;color:#FFFFFF;">72</div><div style="font-size:10px;line-height:13px;letter-spacing:1.5px;font-weight:600;color:#D9CFC7;">HOURS</div></td>
+        <td width="8" style="font-size:0;line-height:0;">&nbsp;</td>
+        <td class="dl-t" width="92" align="center" bgcolor="#4A3533" style="background:#4A3533;border:1px solid #6A5451;border-radius:4px;padding:9px 4px 8px 4px;font-family:Inter,Arial,Helvetica,sans-serif;"><div class="dl-n" style="word-break:break-all;font-size:26px;line-height:30px;font-weight:600;color:#FFFFFF;">SAT</div><div style="font-size:10px;line-height:13px;letter-spacing:1.5px;font-weight:600;color:#D9CFC7;">DAY</div></td>
+        <td width="8" style="font-size:0;line-height:0;">&nbsp;</td>
+        <td class="dl-t" width="92" align="center" bgcolor="#4A3533" style="background:#4A3533;border:1px solid #6A5451;border-radius:4px;padding:9px 4px 8px 4px;font-family:Inter,Arial,Helvetica,sans-serif;"><div class="dl-n" style="word-break:break-all;font-size:26px;line-height:30px;font-weight:600;color:#FFFFFF;">OCT 10</div><div style="font-size:10px;line-height:13px;letter-spacing:1.5px;font-weight:600;color:#D9CFC7;">DATE</div></td>
+      </tr></table>
+    </td></tr>
 
     <tr><td align="center" style="padding:20px 26px 30px 26px;">
       <table role="presentation" class="btnw" width="320" cellpadding="0" cellspacing="0" border="0" style="width:320px;"><tr>
-        <td align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border-radius:3px;"><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-winback%26utm_content%3Dr2-offer%26utm_term%3Dt02-a" style="display:block;padding:18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#321E1D;text-decoration:none;text-transform:uppercase;">Shop with my 10% &rarr;</a></td>
+        <td align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border-radius:3px;"><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-winback%26utm_content%3Dr2-offer%26utm_term%3Dt02-a" style="display:block;padding:18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#321E1D;text-decoration:none;text-transform:uppercase;">Use my 10% now &rarr;</a></td>
       </tr></table>
     </td></tr>
   </table>
@@ -166,22 +182,71 @@
   </div>
 </td></tr>
 
-<!-- BLOCK reviews: twee kaarten, gelijke hoogte (achtergrond op de kolomcel) -->
+<!-- BLOCK ugc (urgency-upgrade 7 okt 2026): drie reviewkaarten met beeld, sterren, quote, naam en "Verified buyer".
+     img1..3 = bestand in partials/shared, 328 px breed (2x). Regel: een klantfoto (ugc-cust-*.jpg) alleen bij de review van die klant;
+     zolang er geen echte klantfoto's zijn (Okendo-pannen 0 foto's, Loox-foto's alleen bij 1 tot 4 sterren) een productfoto van het product
+     uit de review (ugc-prod-*.jpg) met het product als bijschrift c1..3. Nooit een AI-beeld of shootfoto als klantfoto.
+     Quotes letterlijk uit content/reviews/reviews.csv, 5 sterren, max ~95 tekens. Desktop drie kolommen, mobiel drie rijen (beeld links). -->
 <tr><td class="pad" style="padding:28px 44px 6px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-    <td class="rv" width="48%" valign="top" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:20px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;">
-      <div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;This is my second purchase of Siraat frying pans in just a couple of weeks too, and I must say, they are the best!&rdquo;</div>
-      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Don J. &middot; Verified buyer</div>
-    </td>
-    <td class="rvsp" width="14" style="font-size:0;line-height:0;">&nbsp;</td>
-    <td class="rv" width="48%" valign="top" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:20px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;">
-      <div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;I am on my 4th pan from Siraat... I even gifted one to my son, and he says it's the best pan he owns.&rdquo;</div>
-      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Tammy &middot; Verified buyer</div>
-    </td>
+  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">IN THEIR WORDS</div>
+  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 16px 0;">Why they came back</div>
+  <div class="ug-desk">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;"><tr>
+      <td class="ug-c" width="164" valign="top" bgcolor="#FFFFFF" style="width:164px;background:#FFFFFF;border:1px solid #ECE7DD;padding:0;font-family:Inter,Arial,Helvetica,sans-serif;">
+        <img src="../../partials/shared/ugc-prod-panpro.jpg" width="164" alt="Titanium Hammered Pan Pro, product photo" style="display:block;width:164px;height:auto;">
+        <div style="padding:12px 12px 14px 12px;">
+          <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div style="font-size:14px;line-height:20px;color:#282828;padding:7px 0 10px 0;">&ldquo;This is my second purchase of Siraat frying pans in just a couple of weeks too, and I must say, they are the best!&rdquo;</div>
+          <div style="font-size:12px;line-height:16px;font-weight:600;color:#282828;">Don J.</div>
+          <div style="font-size:11px;line-height:15px;color:#727272;padding-top:2px;">Verified buyer &middot; Pan Pro</div>
+        </div>
+      </td>
+      <td width="10" style="width:10px;font-size:0;line-height:0;">&nbsp;</td>
+      <td class="ug-c" width="164" valign="top" bgcolor="#FFFFFF" style="width:164px;background:#FFFFFF;border:1px solid #ECE7DD;padding:0;font-family:Inter,Arial,Helvetica,sans-serif;">
+        <img src="../../partials/shared/ugc-prod-panpro-b.jpg" width="164" alt="Titanium Hammered Pan Pro, product photo" style="display:block;width:164px;height:auto;">
+        <div style="padding:12px 12px 14px 12px;">
+          <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div style="font-size:14px;line-height:20px;color:#282828;padding:7px 0 10px 0;">&ldquo;I am on my 4th pan from Siraat... I even gifted one to my son, and he says it's the best pan he owns.&rdquo;</div>
+          <div style="font-size:12px;line-height:16px;font-weight:600;color:#282828;">Tammy</div>
+          <div style="font-size:11px;line-height:15px;color:#727272;padding-top:2px;">Verified buyer &middot; Pan Pro</div>
+        </div>
+      </td>
+      <td width="10" style="width:10px;font-size:0;line-height:0;">&nbsp;</td>
+      <td class="ug-c" width="164" valign="top" bgcolor="#FFFFFF" style="width:164px;background:#FFFFFF;border:1px solid #ECE7DD;padding:0;font-family:Inter,Arial,Helvetica,sans-serif;">
+        <img src="../../partials/shared/ugc-prod-panpro-c.jpg" width="164" alt="Titanium Hammered Pan Pro, product photo" style="display:block;width:164px;height:auto;">
+        <div style="padding:12px 12px 14px 12px;">
+          <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div style="font-size:14px;line-height:20px;color:#282828;padding:7px 0 10px 0;">&ldquo;I like the pan. Cooks the best steaks.&rdquo;</div>
+          <div style="font-size:12px;line-height:16px;font-weight:600;color:#282828;">Beverly G.</div>
+          <div style="font-size:11px;line-height:15px;color:#727272;padding-top:2px;">Verified buyer &middot; Pan Pro</div>
+        </div>
+      </td>
   </tr></table>
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;text-align:center;padding-top:14px;"><img src="../../partials/shared/icon-customers-100k.png" width="18" height="18" alt="" style="display:inline-block;vertical-align:-4px;width:18px;height:18px;">&nbsp; Join 100,000+ happy customers</div>
+  </div>
+  <!--[if !mso]><!--><div class="ug-mob" style="display:none;max-height:0;overflow:hidden;mso-hide:all;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;background:#FFFFFF;border:1px solid #ECE7DD;margin-top:0;"><tr>
+      <td width="96" valign="top" style="width:96px;padding:0;"><img src="../../partials/shared/ugc-prod-panpro.jpg" width="96" alt="Titanium Hammered Pan Pro, product photo" style="display:block;width:96px;height:auto;"></td>
+      <td valign="top" style="padding:10px 12px 10px 12px;font-family:Inter,Arial,Helvetica,sans-serif;">
+        <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div style="font-size:14px;line-height:20px;color:#282828;padding:4px 0 6px 0;">&ldquo;This is my second purchase of Siraat frying pans in just a couple of weeks too, and I must say, they are the best!&rdquo;</div>
+        <div style="font-size:12px;line-height:16px;color:#727272;"><b style="color:#282828;font-weight:600;">Don J.</b> &middot; Verified buyer &middot; Pan Pro</div>
+      </td></tr></table>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;background:#FFFFFF;border:1px solid #ECE7DD;margin-top:10px;"><tr>
+      <td width="96" valign="top" style="width:96px;padding:0;"><img src="../../partials/shared/ugc-prod-panpro-b.jpg" width="96" alt="Titanium Hammered Pan Pro, product photo" style="display:block;width:96px;height:auto;"></td>
+      <td valign="top" style="padding:10px 12px 10px 12px;font-family:Inter,Arial,Helvetica,sans-serif;">
+        <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div style="font-size:14px;line-height:20px;color:#282828;padding:4px 0 6px 0;">&ldquo;I am on my 4th pan from Siraat... I even gifted one to my son, and he says it's the best pan he owns.&rdquo;</div>
+        <div style="font-size:12px;line-height:16px;color:#727272;"><b style="color:#282828;font-weight:600;">Tammy</b> &middot; Verified buyer &middot; Pan Pro</div>
+      </td></tr></table>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;background:#FFFFFF;border:1px solid #ECE7DD;margin-top:10px;"><tr>
+      <td width="96" valign="top" style="width:96px;padding:0;"><img src="../../partials/shared/ugc-prod-panpro-c.jpg" width="96" alt="Titanium Hammered Pan Pro, product photo" style="display:block;width:96px;height:auto;"></td>
+      <td valign="top" style="padding:10px 12px 10px 12px;font-family:Inter,Arial,Helvetica,sans-serif;">
+        <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div style="font-size:14px;line-height:20px;color:#282828;padding:4px 0 6px 0;">&ldquo;I like the pan. Cooks the best steaks.&rdquo;</div>
+        <div style="font-size:12px;line-height:16px;color:#727272;"><b style="color:#282828;font-weight:600;">Beverly G.</b> &middot; Verified buyer &middot; Pan Pro</div>
+      </td></tr></table>
+  </div><!--<![endif]-->
+  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;text-align:center;padding-top:14px;"><img src="../../partials/shared/icon-customers-100k.png" width="18" height="18" alt="" style="display:inline-block;vertical-align:-4px;width:18px;height:18px;">&nbsp; Verified reviews. Join 100,000+ happy customers.</div>
 </td></tr>
 
 
@@ -201,7 +266,8 @@
 <!-- SIGN-OFF -->
 <tr><td class="pad" style="padding:24px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
   Which size goes with the pan you have? Reply with the one you own, and our team will tell you.<br><br>
-  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
+  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span><br><br>
+  <span style="color:#727272;">P.S. Your code runs out on the morning of Saturday, October 10. Your $70 in gifts come with the order either way.</span>
 </td></tr>
 
 <!-- FOOTER (vast, uit partials/footer.html) -->
@@ -220,7 +286,7 @@
   </tr></table>
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:19px;color:#BDB8B0;text-align:center;">
     Free shipping on all orders &middot; 30-day returns &middot; 75-year warranty<br><br>
-    <a href="#" style="color:#BDB8B0;">Unsubscribe</a> &nbsp;|&nbsp; <a href="#" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; <a href="#" style="color:#BDB8B0;">View in browser</a><br>
+    <a href="#" style="color:#BDB8B0;">Unsubscribe</a> &nbsp;|&nbsp; <a href="#preferences" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; <a href="#" style="color:#BDB8B0;">View in browser</a><br>
     Siraat&#x27;s Kitchen &middot; [address]
   </div>
 </td></tr>

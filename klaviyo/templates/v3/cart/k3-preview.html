@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: Your own 10% code, for 48 hours | SUBJECT_B: What if it's not for you? (reserve; cart runs no subject test in phase 1) | SUBJECTS (5 types): C+B 'The last email about your cart (and a code)' / SPEC '75-year warranty, 30-day returns, 10% less' / Q 'What if it's not for you?' / STORY '"I returned my pans, unused, and received a refund"' / OFFER 'Your own 10% code, for 48 hours' | PREVIEW: Applied to your cart with one tap. It ends 48 hours after this email. | SEND: path K: 2 days after K2, until 09:00 (day 3); path ACCESSOIRE: 3 days after K1-acc, until 09:00. Code-router (v4 1.4): cooldown last_flow_code_at in last 30 days = no, then T02 A/B 50/50, this is arm A; then Update profile property last_flow_code_at = today, last_flow_code_pool = K3_10_48H | COUPON: K3_10_48H (Shopify unique, 10%, one use per customer, expires 48 hours after assignment) | FILTERS: Trigger: Added to Cart (QXcV8K) with Price greater than 0 and Product Name doesn't contain Mystery Gift, E-Book, Free Shipping, Giveaway. Flow: Checkout Started = 0 since flow start; Placed Order = 0 since flow start; Received Email where Flow = 'v4 · Checkout abandonment' = 0 in the last 7 days; not in this flow in the last 14 days. Message: Checkout Started = 0 and Placed Order = 0 since flow start | UTM: utm_content=k3-<blok>, utm_term=t02-a -->
+<!-- SUBJECT_A: Last chance: your own 10% ends in 48 hours | SUBJECT_B: What if it's not for you? (reserve; cart runs no subject test in phase 1) | SUBJECTS (5 types): C+B 'The last email about your cart (and a code)' / SPEC '75-year warranty, 30-day returns, 10% less' / Q 'What if it's not for you?' / STORY '"I returned my pans, unused, and received a refund"' / OFFER 'Your own 10% code, for 48 hours' | PREVIEW: Your code is already applied to your cart. It runs out 48 hours after this email. | SEND: path K: 2 days after K2, until 09:00 (day 3); path ACCESSOIRE: 3 days after K1-acc, until 09:00. Code-router (v4 1.4): cooldown last_flow_code_at in last 30 days = no, then T02 A/B 50/50, this is arm A; then Update profile property last_flow_code_at = today, last_flow_code_pool = K3_10_48H | COUPON: K3_10_48H (Shopify unique, 10%, one use per customer, expires 48 hours after assignment) | FILTERS: Trigger: Added to Cart (QXcV8K) with Price greater than 0 and Product Name doesn't contain Mystery Gift, E-Book, Free Shipping, Giveaway. Flow: Checkout Started = 0 since flow start; Placed Order = 0 since flow start; Received Email where Flow = 'v4 · Checkout abandonment' = 0 in the last 7 days; not in this flow in the last 14 days. Message: Checkout Started = 0 and Placed Order = 0 since flow start | UTM: utm_content=k3-<blok>, utm_term=t02-a -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -51,18 +51,25 @@
     .pc-n{font-size:16px!important;line-height:21px!important;}
     .pc-s{font-size:13px!important;line-height:18px!important;}
   }
+  /* urgency-upgrade 7 okt 2026: ugc (reviewkaarten met beeld) en deadline-tegels */
+  @media only screen and (max-width:620px){
+    .ug-desk{display:none!important;max-height:0!important;overflow:hidden!important;}
+    .ug-mob{display:block!important;max-height:none!important;overflow:visible!important;}
+    .dl-t{width:84px!important;}
+    .dl-n{font-size:22px!important;line-height:26px!important;}
+  }
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Applied to your cart with one tap. It ends 48 hours after this email.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Your code is already applied to your cart. It runs out 48 hours after this email.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
 
 <!-- BLOCK codebar: aanbod boven de header, live tekst -->
-<tr><td align="center" class="codebar" bgcolor="#282828" style="background:#282828;padding:11px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;letter-spacing:1.5px;font-weight:600;color:#FFFFFF;">
-  YOUR OWN 10% CODE &middot;&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;">SRT-K7Q2M</span>
+<tr><td align="center" class="codebar" bgcolor="#282828" style="background:#282828;overflow-wrap:anywhere;padding:11px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;letter-spacing:1.5px;font-weight:600;color:#FFFFFF;">
+  YOUR 10% &middot; ENDS FRI OCT 9 &middot;&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;word-break:break-all;">SRT-K7Q2M</span>
 </td></tr>
 
 
@@ -93,10 +100,10 @@
         <a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/cart%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk3-product%26utm_term%3Dt02-a"><img src="/home/user/siraat-email-agent/content/products/titanium-hammered-pan-pro/img/packshot-1.jpg?v=1&width=200" width="88" alt="Titanium Hammered Pan Pro Standard" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;"></a>
       </td>
       <td valign="middle" style="padding:12px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
-        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">Titanium Hammered Pan Pro Standard</div>
-        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">Qty 1</div>
+        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;word-break:break-word;">Titanium Hammered Pan Pro Standard</div>
+        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;word-break:break-word;">Qty 1</div>
       </td>
-      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;white-space:nowrap;"><div style="font-size:13px;line-height:17px;color:#9A948B;text-decoration:line-through;font-weight:400;">$439</div>$134.00</td>
+      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;"><div style="font-size:13px;line-height:17px;color:#9A948B;text-decoration:line-through;font-weight:400;">$439</div>$134.00</td>
     </tr>
     <tr><td colspan="3" style="padding:0 16px 16px 16px;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:11px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">
@@ -118,23 +125,29 @@
 </td></tr>
 
 
-<!-- OPENER (live tekst) -->
-<tr><td class="pad lead" style="padding:22px 44px 2px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;"><p style="margin:0 0 0 0;">This is the last email about your cart, so here&rsquo;s everything that protects you if you order. And your own code takes 10% off for the next 48 hours.</p></td></tr>
-
 <!-- BLOCK offer: aanbodblok, code als live tekst -->
 <tr><td class="pad" style="padding:26px 44px 6px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#321E1D" style="background:#321E1D;">
-    <tr><td align="center" style="padding:30px 26px 8px 26px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#D9CFC7;">YOUR OWN CODE</td></tr>
-    <tr><td align="center" class="h2" style="padding:0 26px 16px 26px;font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#FFFFFF;">10% off your cart</td></tr>
+    <tr><td align="center" style="padding:30px 26px 8px 26px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#D9CFC7;">HERE IS YOUR 10%</td></tr>
+    <tr><td align="center" class="h2" style="padding:0 26px 16px 26px;font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#FFFFFF;">Last chance for your code</td></tr>
     <tr><td align="center" style="padding:0 26px;">
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" class="offer-code" style="border:2px dashed #FFFFFF;padding:12px 30px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:32px;line-height:36px;letter-spacing:6px;font-weight:600;color:#FFFFFF;">SRT-K7Q2M</td></tr></table>
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" class="offer-code" style="border:2px dashed #FFFFFF;padding:12px 30px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:32px;line-height:36px;letter-spacing:6px;font-weight:600;color:#FFFFFF;word-break:break-all;">SRT-K7Q2M</td></tr></table>
     </td></tr>
-    <tr><td align="center" style="padding:14px 26px 0 26px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#EDE6E0;">Made for you, so it has an end date. After that, the regular sale price applies. One code per order.</td></tr>
-    <tr><td align="center" style="padding:14px 26px 0 26px;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:8px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;font-weight:600;color:#AC3B19;"><img src="../../partials/shared/icon-deadline.png" width="18" height="18" alt="" style="display:inline-block;vertical-align:-4px;width:18px;height:18px;">&nbsp; Ends 48 hours after this email</td></tr></table></td></tr>
+    <tr><td align="center" style="padding:14px 26px 0 26px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#EDE6E0;">Made for you, so it has an end date. Then the regular sale price applies. One code per order.</td></tr>
+    <tr><td align="center" style="padding:18px 26px 0 26px;">
+      <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#D9CFC7;padding-bottom:8px;">YOUR CODE RUNS OUT</div>
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td class="dl-t" width="92" align="center" bgcolor="#4A3533" style="background:#4A3533;border:1px solid #6A5451;border-radius:4px;padding:9px 4px 8px 4px;font-family:Inter,Arial,Helvetica,sans-serif;"><div class="dl-n" style="word-break:break-all;font-size:26px;line-height:30px;font-weight:600;color:#FFFFFF;">48</div><div style="font-size:10px;line-height:13px;letter-spacing:1.5px;font-weight:600;color:#D9CFC7;">HOURS</div></td>
+        <td width="8" style="font-size:0;line-height:0;">&nbsp;</td>
+        <td class="dl-t" width="92" align="center" bgcolor="#4A3533" style="background:#4A3533;border:1px solid #6A5451;border-radius:4px;padding:9px 4px 8px 4px;font-family:Inter,Arial,Helvetica,sans-serif;"><div class="dl-n" style="word-break:break-all;font-size:26px;line-height:30px;font-weight:600;color:#FFFFFF;">FRI</div><div style="font-size:10px;line-height:13px;letter-spacing:1.5px;font-weight:600;color:#D9CFC7;">DAY</div></td>
+        <td width="8" style="font-size:0;line-height:0;">&nbsp;</td>
+        <td class="dl-t" width="92" align="center" bgcolor="#4A3533" style="background:#4A3533;border:1px solid #6A5451;border-radius:4px;padding:9px 4px 8px 4px;font-family:Inter,Arial,Helvetica,sans-serif;"><div class="dl-n" style="word-break:break-all;font-size:26px;line-height:30px;font-weight:600;color:#FFFFFF;">OCT 9</div><div style="font-size:10px;line-height:13px;letter-spacing:1.5px;font-weight:600;color:#D9CFC7;">DATE</div></td>
+      </tr></table>
+    </td></tr>
 
     <tr><td align="center" style="padding:20px 26px 30px 26px;">
       <table role="presentation" class="btnw" width="320" cellpadding="0" cellspacing="0" border="0" style="width:320px;"><tr>
-        <td align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border-radius:3px;"><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/cart%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk3-offer%26utm_term%3Dt02-a" style="display:block;padding:18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#321E1D;text-decoration:none;text-transform:uppercase;">Finish my order &rarr;</a></td>
+        <td align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border-radius:3px;"><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/cart%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk3-offer%26utm_term%3Dt02-a" style="display:block;padding:18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#321E1D;text-decoration:none;text-transform:uppercase;">Use my 10% now &rarr;</a></td>
       </tr></table>
     </td></tr>
   </table>
@@ -147,34 +160,16 @@
   <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 16px 0;">Two promises.</div>
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
     <tr><td width="58" valign="top" style="padding:20px 0 16px 20px;border-bottom:1px solid #ECE7DD;"><img src="../../partials/shared/icon-returns-30-day.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
-      <td valign="top" style="padding:18px 20px 16px 14px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Changed your mind?</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Send it back unused within 30 days of delivery for a full refund.</div></td></tr>
+      <td valign="top" style="padding:18px 20px 16px 14px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Changed your mind?</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Send it back unused within 30 days of delivery for a full refund.</div><div style="font-size:14px;line-height:21px;color:#282828;font-style:italic;padding-top:10px;"><span style="font-style:normal;color:#AC3B19;letter-spacing:1px;">&#9733;&#9733;&#9733;&#9733;&#9733;</span><br>&ldquo;I returned my pans, unused, and received a refund, no questions asked. Easy return procedure.&rdquo;<div style="font-style:normal;font-size:12px;line-height:17px;font-weight:600;color:#727272;padding-top:3px;">Steven T. &middot; Verified buyer</div></div></td></tr>
     <tr><td width="58" valign="top" style="padding:20px 0 16px 20px;"><img src="../../partials/shared/icon-warranty-75-year.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
-      <td valign="top" style="padding:18px 20px 16px 14px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Something wrong with it?</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">If it arrives damaged or with a defect, you choose a refund or a new one, and we pay the shipping. After that, the 75-year warranty covers dents, a warped base, a loose handle or rivet, and a lid that no longer fits.</div></td></tr>
+      <td valign="top" style="padding:18px 20px 16px 14px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Something wrong with it?</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">If it arrives damaged or with a defect, you choose a refund or a new one, and we pay the shipping. After that, the 75-year warranty covers dents, a warped base, a loose handle or rivet, and a lid that no longer fits.</div><div style="font-size:14px;line-height:21px;color:#282828;font-style:italic;padding-top:10px;"><span style="font-style:normal;color:#AC3B19;letter-spacing:1px;">&#9733;&#9733;&#9733;&#9733;&#9733;</span><br>&ldquo;Siraat replaced a pan free of charge... I just sent them the picture and they honored the warranty.&rdquo;<div style="font-style:normal;font-size:12px;line-height:17px;font-weight:600;color:#727272;padding-top:3px;">Brandon W. &middot; Verified buyer</div></div></td></tr>
   </table>
-</td></tr>
-
-<!-- BLOCK reviews: twee kaarten, gelijke hoogte (achtergrond op de kolomcel) -->
-<tr><td class="pad" style="padding:28px 44px 6px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-    <td class="rv" width="48%" valign="top" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:20px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;">
-      <div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;I returned my pans, unused, and received a refund, no questions asked. Easy return procedure.&rdquo;</div>
-      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Steven T. &middot; Verified buyer</div>
-    </td>
-    <td class="rvsp" width="14" style="font-size:0;line-height:0;">&nbsp;</td>
-    <td class="rv" width="48%" valign="top" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:20px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;">
-      <div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;Siraat replaced a pan free of charge... I just sent them the picture and they honored the warranty.&rdquo;</div>
-      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Brandon W. &middot; Verified buyer</div>
-    </td>
-  </tr></table>
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;text-align:center;padding-top:14px;"><img src="../../partials/shared/icon-customers-100k.png" width="18" height="18" alt="" style="display:inline-block;vertical-align:-4px;width:18px;height:18px;">&nbsp; Join 100,000+ happy customers</div>
 </td></tr>
 
 
 <!-- BLOCK gifts: vier gifts met beeld en waarde, gelijke hoogte, 2x2 op mobiel -->
 <tr><td class="pad" style="padding:30px 44px 6px 44px;">
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">WITH EVERY ORDER</div>
+  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">STILL ATTACHED TO YOUR CART</div>
   <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 18px 0;">$70 in gifts, in the box</div>
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
     <td class="g2" width="50%" valign="top" style="padding:0 5px 0 0;">
@@ -228,7 +223,8 @@
 <!-- SIGN-OFF -->
 <tr><td class="pad" style="padding:26px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
   Questions about size or your cooktop? Reply and our team will help.<br><br>
-  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
+  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span><br><br>
+  <span style="color:#727272;">P.S. Your code runs out on the morning of Friday, October 9. This is the last email about your cart, so after that it goes back to the regular sale price.</span>
 </td></tr>
 
 
@@ -248,7 +244,7 @@
   </tr></table>
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:19px;color:#BDB8B0;text-align:center;">
     Free shipping on all orders &middot; 30-day returns &middot; 75-year warranty<br><br>
-    <a href="#" style="color:#BDB8B0;">Unsubscribe</a> &nbsp;|&nbsp; <a href="#" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; <a href="#" style="color:#BDB8B0;">View in browser</a><br>
+    <a href="#" style="color:#BDB8B0;">Unsubscribe</a> &nbsp;|&nbsp; <a href="#preferences" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; <a href="#" style="color:#BDB8B0;">View in browser</a><br>
     Siraat&#x27;s Kitchen &middot; [address]
   </div>
 </td></tr>

@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: Your own 10%, for the next 48 hours | SUBJECT_B: "I ordered one pan to try it out" (reserve; browse tests only T05a in phase 1) | SUBJECTS (5 types): C+B 'A code for the one you went back to' / SPEC '10% off what you looked at, for 48 hours' / Q 'Still thinking it over?' / STORY '"I ordered one pan to try it out"' / OFFER 'Your own 10%, for the next 48 hours' | PREVIEW: A personal code, on top of the sale. It ends 48 hours after this email. | SEND: path K: 2 days after B1, until 09:00, CS Clicked Email $message = B1 since flow start = yes; path A: 2 days after B1-acc, CS clicked B1-acc = yes. Code-router (v4 1.4): cooldown = no, T02 arm A; then Update profile property last_flow_code_at = today, last_flow_code_pool = B2_10_48H | COUPON: B2_10_48H (Shopify unique, 10%, one use per customer, expires 48 hours after assignment) | FILTERS: Trigger: Viewed Product (XNtYMB, Klaviyo onsite; not V48nhq). Flow: Added to Cart = 0, Checkout Started = 0, Placed Order = 0 since flow start; Received Email where Flow = 'v4 · Cart abandonment' = 0 in the last 7 days; idem 'v4 · Checkout abandonment'; idem 'v4 · Welcome' = 0 in the last 7 days; not in this flow in the last 7 days. Message: Placed Order = 0 since flow start; plus Added to Cart = 0 since flow start | UTM: utm_content=b2c-<blok>, utm_term=t02-a -->
+<!-- SUBJECT_A: Here is your 10%, for the next 48 hours | SUBJECT_B: "I ordered one pan to try it out" (reserve; browse tests only T05a in phase 1) | SUBJECTS (5 types): C+B 'A code for the one you went back to' / SPEC '10% off what you looked at, for 48 hours' / Q 'Still thinking it over?' / STORY '"I ordered one pan to try it out"' / OFFER 'Your own 10%, for the next 48 hours' | PREVIEW: A personal code, on top of the sale, already applied. It runs out in 48 hours. | SEND: path K: 2 days after B1, until 09:00, CS Clicked Email $message = B1 since flow start = yes; path A: 2 days after B1-acc, CS clicked B1-acc = yes. Code-router (v4 1.4): cooldown = no, T02 arm A; then Update profile property last_flow_code_at = today, last_flow_code_pool = B2_10_48H | COUPON: B2_10_48H (Shopify unique, 10%, one use per customer, expires 48 hours after assignment) | FILTERS: Trigger: Viewed Product (XNtYMB, Klaviyo onsite; not V48nhq). Flow: Added to Cart = 0, Checkout Started = 0, Placed Order = 0 since flow start; Received Email where Flow = 'v4 · Cart abandonment' = 0 in the last 7 days; idem 'v4 · Checkout abandonment'; idem 'v4 · Welcome' = 0 in the last 7 days; not in this flow in the last 7 days. Message: Placed Order = 0 since flow start; plus Added to Cart = 0 since flow start | UTM: utm_content=b2c-<blok>, utm_term=t02-a -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -51,18 +51,25 @@
     .pc-n{font-size:16px!important;line-height:21px!important;}
     .pc-s{font-size:13px!important;line-height:18px!important;}
   }
+  /* urgency-upgrade 7 okt 2026: ugc (reviewkaarten met beeld) en deadline-tegels */
+  @media only screen and (max-width:620px){
+    .ug-desk{display:none!important;max-height:0!important;overflow:hidden!important;}
+    .ug-mob{display:block!important;max-height:none!important;overflow:visible!important;}
+    .dl-t{width:84px!important;}
+    .dl-n{font-size:22px!important;line-height:26px!important;}
+  }
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">A personal code, on top of the sale. It ends 48 hours after this email.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">A personal code, on top of the sale, already applied. It runs out in 48 hours.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
 
 <!-- BLOCK codebar: aanbod boven de header, live tekst -->
-<tr><td align="center" class="codebar" bgcolor="#282828" style="background:#282828;padding:11px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;letter-spacing:1.5px;font-weight:600;color:#FFFFFF;">
-  YOUR OWN 10% CODE &middot;&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;">SRT-K7Q2M</span>
+<tr><td align="center" class="codebar" bgcolor="#282828" style="background:#282828;overflow-wrap:anywhere;padding:11px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;letter-spacing:1.5px;font-weight:600;color:#FFFFFF;">
+  YOUR 10% &middot; ENDS FRI OCT 9 &middot;&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;word-break:break-all;">SRT-K7Q2M</span>
 </td></tr>
 
 
@@ -96,7 +103,7 @@
         <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">Titanium Hammered Pan Pro Standard</div>
         <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">Pure titanium cooking surface</div>
       </td>
-      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;white-space:nowrap;"><div style="font-size:13px;line-height:17px;color:#9A948B;text-decoration:line-through;font-weight:400;">$439</div>$134</td>
+      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;"><div style="font-size:13px;line-height:17px;color:#9A948B;text-decoration:line-through;font-weight:400;">$439</div>$134</td>
     </tr>
     <tr><td colspan="3" style="padding:0 16px 16px 16px;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:11px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">
@@ -124,17 +131,26 @@
 <!-- BLOCK offer: aanbodblok, code als live tekst -->
 <tr><td class="pad" style="padding:26px 44px 6px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#321E1D" style="background:#321E1D;">
-    <tr><td align="center" style="padding:30px 26px 8px 26px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#D9CFC7;">YOUR OWN CODE</td></tr>
+    <tr><td align="center" style="padding:30px 26px 8px 26px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#D9CFC7;">HERE IS YOUR 10%</td></tr>
     <tr><td align="center" class="h2" style="padding:0 26px 16px 26px;font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#FFFFFF;">10% off, on top of the sale</td></tr>
     <tr><td align="center" style="padding:0 26px;">
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" class="offer-code" style="border:2px dashed #FFFFFF;padding:12px 30px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:32px;line-height:36px;letter-spacing:6px;font-weight:600;color:#FFFFFF;">SRT-K7Q2M</td></tr></table>
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" class="offer-code" style="border:2px dashed #FFFFFF;padding:12px 30px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:32px;line-height:36px;letter-spacing:6px;font-weight:600;color:#FFFFFF;word-break:break-all;">SRT-K7Q2M</td></tr></table>
     </td></tr>
     <tr><td align="center" style="padding:14px 26px 0 26px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#EDE6E0;">One use, already applied with the button. One code per order.</td></tr>
-    <tr><td align="center" style="padding:14px 26px 0 26px;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:8px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;font-weight:600;color:#AC3B19;"><img src="../../partials/shared/icon-deadline.png" width="18" height="18" alt="" style="display:inline-block;vertical-align:-4px;width:18px;height:18px;">&nbsp; Ends 48 hours after this email</td></tr></table></td></tr>
+    <tr><td align="center" style="padding:18px 26px 0 26px;">
+      <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#D9CFC7;padding-bottom:8px;">YOUR CODE RUNS OUT</div>
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td class="dl-t" width="92" align="center" bgcolor="#4A3533" style="background:#4A3533;border:1px solid #6A5451;border-radius:4px;padding:9px 4px 8px 4px;font-family:Inter,Arial,Helvetica,sans-serif;"><div class="dl-n" style="word-break:break-all;font-size:26px;line-height:30px;font-weight:600;color:#FFFFFF;">48</div><div style="font-size:10px;line-height:13px;letter-spacing:1.5px;font-weight:600;color:#D9CFC7;">HOURS</div></td>
+        <td width="8" style="font-size:0;line-height:0;">&nbsp;</td>
+        <td class="dl-t" width="92" align="center" bgcolor="#4A3533" style="background:#4A3533;border:1px solid #6A5451;border-radius:4px;padding:9px 4px 8px 4px;font-family:Inter,Arial,Helvetica,sans-serif;"><div class="dl-n" style="word-break:break-all;font-size:26px;line-height:30px;font-weight:600;color:#FFFFFF;">FRI</div><div style="font-size:10px;line-height:13px;letter-spacing:1.5px;font-weight:600;color:#D9CFC7;">DAY</div></td>
+        <td width="8" style="font-size:0;line-height:0;">&nbsp;</td>
+        <td class="dl-t" width="92" align="center" bgcolor="#4A3533" style="background:#4A3533;border:1px solid #6A5451;border-radius:4px;padding:9px 4px 8px 4px;font-family:Inter,Arial,Helvetica,sans-serif;"><div class="dl-n" style="word-break:break-all;font-size:26px;line-height:30px;font-weight:600;color:#FFFFFF;">OCT 9</div><div style="font-size:10px;line-height:13px;letter-spacing:1.5px;font-weight:600;color:#D9CFC7;">DATE</div></td>
+      </tr></table>
+    </td></tr>
 
     <tr><td align="center" style="padding:20px 26px 30px 26px;">
       <table role="presentation" class="btnw" width="320" cellpadding="0" cellspacing="0" border="0" style="width:320px;"><tr>
-        <td align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border-radius:3px;"><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/x%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2c-offer%26utm_term%3Dt02-a" style="display:block;padding:18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#321E1D;text-decoration:none;text-transform:uppercase;">Claim my 10% &rarr;</a></td>
+        <td align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border-radius:3px;"><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/x%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2c-offer%26utm_term%3Dt02-a" style="display:block;padding:18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#321E1D;text-decoration:none;text-transform:uppercase;">Use my 10% now &rarr;</a></td>
       </tr></table>
     </td></tr>
   </table>
@@ -209,7 +225,8 @@
 <!-- SIGN-OFF -->
 <tr><td class="pad" style="padding:26px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
   A question before you decide? Reply and ask.<br><br>
-  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
+  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span><br><br>
+  <span style="color:#727272;">P.S. Your code runs out on the morning of Friday, October 9. After that, the regular sale price applies.</span>
 </td></tr>
 
 
@@ -229,7 +246,7 @@
   </tr></table>
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:19px;color:#BDB8B0;text-align:center;">
     Free shipping on all orders &middot; 30-day returns &middot; 75-year warranty<br><br>
-    <a href="#" style="color:#BDB8B0;">Unsubscribe</a> &nbsp;|&nbsp; <a href="#" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; <a href="#" style="color:#BDB8B0;">View in browser</a><br>
+    <a href="#" style="color:#BDB8B0;">Unsubscribe</a> &nbsp;|&nbsp; <a href="#preferences" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; <a href="#" style="color:#BDB8B0;">View in browser</a><br>
     Siraat&#x27;s Kitchen &middot; [address]
   </div>
 </td></tr>

@@ -51,6 +51,13 @@
     .pc-n{font-size:16px!important;line-height:21px!important;}
     .pc-s{font-size:13px!important;line-height:18px!important;}
   }
+  /* urgency-upgrade 7 okt 2026: ugc (reviewkaarten met beeld) en deadline-tegels */
+  @media only screen and (max-width:620px){
+    .ug-desk{display:none!important;max-height:0!important;overflow:hidden!important;}
+    .ug-mob{display:block!important;max-height:none!important;overflow:visible!important;}
+    .dl-t{width:84px!important;}
+    .dl-n{font-size:22px!important;line-height:26px!important;}
+  }
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
@@ -60,8 +67,8 @@
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
 <!-- BLOCK codebar: aanbod boven de header, live tekst -->
-<tr><td align="center" class="codebar" bgcolor="#282828" style="background:#282828;padding:11px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;letter-spacing:1.5px;font-weight:600;color:#FFFFFF;">
-  EXTRA 10% OFF YOUR ORDER &middot; CODE&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;">HI10</span>
+<tr><td align="center" class="codebar" bgcolor="#282828" style="background:#282828;overflow-wrap:anywhere;padding:11px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;letter-spacing:1.5px;font-weight:600;color:#FFFFFF;">
+  EXTRA 10% OFF YOUR ORDER &middot; CODE&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;word-break:break-all;">HI10</span>
 </td></tr>
 
 
@@ -96,7 +103,7 @@
         <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">Titanium Hammered Pan Pro Standard</div>
         <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">Qty 1</div>
       </td>
-      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;white-space:nowrap;">$134.00</td>
+      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;">$134.00</td>
     </tr>
     
     <tr><td colspan="3" style="padding:0 16px 16px 16px;">
@@ -141,7 +148,7 @@
   </tr></table>
 </td></tr>
 
-<tr><td class="pad" style="padding:18px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">Same titanium cooking surface on all three, one 75-year warranty for all six pieces, and the same 4 gifts. And the longer math: say a good coated pan lasts 5 years. Over the 75 years our warranty runs, that is 15 pans. Or one.</td></tr>
+<tr><td class="pad" style="padding:18px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">Same titanium cooking surface on all three, one 75-year warranty for all six pieces, and the same 4 gifts. And the longer math: say a good coated pan lasts 5 years. Over the 75 years our warranty runs, that is 15 pans. Or one. Prefer to pay over time? Shop Pay Installments and Affirm are at checkout.</td></tr>
 
 <!-- BLOCK productcard (research/ux-round2): productkaart met sticker in het beeld (scripts/place_sticker.py).
      Beeld 200 px desktop, 132 px mobiel. Optionele pill als live tekst: pill="BEST SELLER" (leeg = geen).
@@ -236,7 +243,7 @@
 
 <!-- SIGN-OFF -->
 <tr><td class="pad" style="padding:22px 44px 22px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  Hi Sarah, cooking for one or two? Then one pan is the right call. Reply if you are unsure, and our team will tell you honestly.<br><br>
+  Hi Sarah, cooking for 2 to 4? Then one 11-inch pan is the right call. Reply if you are unsure, and our team will tell you honestly.<br><br>
   Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
 </td></tr>
 
@@ -256,7 +263,7 @@
   </tr></table>
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:19px;color:#BDB8B0;text-align:center;">
     Free shipping on all orders &middot; 30-day returns &middot; 75-year warranty<br><br>
-    <a href="#" style="color:#BDB8B0;">Unsubscribe</a> &nbsp;|&nbsp; <a href="#" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; <a href="#" style="color:#BDB8B0;">View in browser</a><br>
+    <a href="#" style="color:#BDB8B0;">Unsubscribe</a> &nbsp;|&nbsp; <a href="#preferences" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; <a href="#" style="color:#BDB8B0;">View in browser</a><br>
     Siraat&#x27;s Kitchen &middot; [address]
   </div>
 </td></tr>

@@ -26,7 +26,7 @@ DEF={'codebar':{'text':'EXTRA 10% OFF YOUR ORDER &middot; CODE','code':'HI10'},
  'compare':{'pad':'34px 44px 6px 44px','eyebrow':'THE DIFFERENCE','headline':'Titanium vs. coated nonstick','cap':'compare-cap-panpro.png','colA':'Siraat Titanium','colB':'Coated nonstick','note':'','ib1':'cross','ib2':'cross','ib3':'cross','ib4':'cross','ib5':'cross'},
  'closerlook':{'pad':'34px 44px 6px 44px','eyebrow':'UP CLOSE','headline':'Take a closer look.'},
  'productcard':{'pad':'0 44px 10px 44px','pill':'','note':'','was':'','link':'Shop now'},
- 'cart':{'pad':'24px 44px 6px 44px','title':'STILL IN YOUR CART','line':'<b>HI10</b> takes an extra 10% off, applied with the button below.'},
+ 'cart':{'pad':'24px 44px 6px 44px','title':'STILL IN YOUR CART','line':'<b>HI10</b> takes an extra 10% off, and your <b>$70 in gifts</b> are still attached to this cart.'},
  'deadline':{'pad':'18px 44px 6px 44px','label':'YOUR OWN CODE RUNS OUT','amount':'48','unit':'HOURS','note':''},
  'ugc':{'pad':'28px 44px 6px 44px','eyebrow':'IN THEIR WORDS','headline':'From their kitchens','foot':'Verified reviews. Join 100,000+ happy customers.'}}
 DEF['offer'].update({'days':'','amount':'','unit':'HOURS'})

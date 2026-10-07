@@ -53,6 +53,13 @@
     .pc-n{font-size:16px!important;line-height:21px!important;}
     .pc-s{font-size:13px!important;line-height:18px!important;}
   }
+  /* urgency-upgrade 7 okt 2026: ugc (reviewkaarten met beeld) en deadline-tegels */
+  @media only screen and (max-width:620px){
+    .ug-desk{display:none!important;max-height:0!important;overflow:hidden!important;}
+    .ug-mob{display:block!important;max-height:none!important;overflow:visible!important;}
+    .dl-t{width:84px!important;}
+    .dl-n{font-size:22px!important;line-height:26px!important;}
+  }
 </style>
 </head>
 
@@ -63,8 +70,8 @@
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
 <!-- BLOCK codebar: aanbod boven de header, live tekst -->
-<tr><td align="center" class="codebar" bgcolor="#282828" style="background:#282828;padding:11px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;letter-spacing:1.5px;font-weight:600;color:#FFFFFF;">
-  YOUR 15% CODE &middot; 14 DAYS &middot;&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;">SRT-K7Q2M</span>
+<tr><td align="center" class="codebar" bgcolor="#282828" style="background:#282828;overflow-wrap:anywhere;padding:11px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;letter-spacing:1.5px;font-weight:600;color:#FFFFFF;">
+  YOUR 15% &middot; ENDS WED OCT 21 &middot;&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;word-break:break-all;">SRT-K7Q2M</span>
 </td></tr>
 
 
@@ -107,13 +114,22 @@
 <!-- BLOCK offer: aanbodblok, code als live tekst -->
 <tr><td class="pad" style="padding:22px 44px 6px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#321E1D" style="background:#321E1D;">
-    <tr><td align="center" style="padding:30px 26px 8px 26px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#D9CFC7;">YOUR THANK-YOU CODE</td></tr>
+    <tr><td align="center" style="padding:30px 26px 8px 26px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#D9CFC7;">HERE IS YOUR 15%</td></tr>
     <tr><td align="center" class="h2" style="padding:0 26px 16px 26px;font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#FFFFFF;">15% off, for our regulars</td></tr>
     <tr><td align="center" style="padding:0 26px;">
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" class="offer-code" style="border:2px dashed #FFFFFF;padding:12px 30px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:32px;line-height:36px;letter-spacing:6px;font-weight:600;color:#FFFFFF;">SRT-K7Q2M</td></tr></table>
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" class="offer-code" style="border:2px dashed #FFFFFF;padding:12px 30px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:32px;line-height:36px;letter-spacing:6px;font-weight:600;color:#FFFFFF;word-break:break-all;">SRT-K7Q2M</td></tr></table>
     </td></tr>
     <tr><td align="center" style="padding:14px 26px 0 26px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#EDE6E0;">Made for you, so it has an end date. After that, the regular sale price applies. Plus $70 in gifts with every order.</td></tr>
-    <tr><td align="center" style="padding:14px 26px 0 26px;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:8px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;font-weight:600;color:#AC3B19;"><img src="../../partials/shared/icon-deadline.png" width="18" height="18" alt="" style="display:inline-block;vertical-align:-4px;width:18px;height:18px;">&nbsp; Ends 14 days after this email</td></tr></table></td></tr>
+    <tr><td align="center" style="padding:18px 26px 0 26px;">
+      <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#D9CFC7;padding-bottom:8px;">YOUR CODE RUNS OUT</div>
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td class="dl-t" width="92" align="center" bgcolor="#4A3533" style="background:#4A3533;border:1px solid #6A5451;border-radius:4px;padding:9px 4px 8px 4px;font-family:Inter,Arial,Helvetica,sans-serif;"><div class="dl-n" style="word-break:break-all;font-size:26px;line-height:30px;font-weight:600;color:#FFFFFF;">14</div><div style="font-size:10px;line-height:13px;letter-spacing:1.5px;font-weight:600;color:#D9CFC7;">DAYS</div></td>
+        <td width="8" style="font-size:0;line-height:0;">&nbsp;</td>
+        <td class="dl-t" width="92" align="center" bgcolor="#4A3533" style="background:#4A3533;border:1px solid #6A5451;border-radius:4px;padding:9px 4px 8px 4px;font-family:Inter,Arial,Helvetica,sans-serif;"><div class="dl-n" style="word-break:break-all;font-size:26px;line-height:30px;font-weight:600;color:#FFFFFF;">WED</div><div style="font-size:10px;line-height:13px;letter-spacing:1.5px;font-weight:600;color:#D9CFC7;">DAY</div></td>
+        <td width="8" style="font-size:0;line-height:0;">&nbsp;</td>
+        <td class="dl-t" width="92" align="center" bgcolor="#4A3533" style="background:#4A3533;border:1px solid #6A5451;border-radius:4px;padding:9px 4px 8px 4px;font-family:Inter,Arial,Helvetica,sans-serif;"><div class="dl-n" style="word-break:break-all;font-size:26px;line-height:30px;font-weight:600;color:#FFFFFF;">OCT 21</div><div style="font-size:10px;line-height:13px;letter-spacing:1.5px;font-weight:600;color:#D9CFC7;">DATE</div></td>
+      </tr></table>
+    </td></tr>
 
     <tr><td align="center" style="padding:20px 26px 30px 26px;">
       <table role="presentation" class="btnw" width="320" cellpadding="0" cellspacing="0" border="0" style="width:320px;"><tr>
@@ -197,7 +213,8 @@
 <!-- SIGN-OFF -->
 <tr><td class="pad" style="padding:24px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
   One request: hit reply and tell us which pan you reach for most. Every reply reaches our team.<br><br>
-  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
+  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span><br><br>
+  <span style="color:#727272;">P.S. Your code runs out on the morning of Wednesday, October 21. Two weeks, so there is time to pick the right piece.</span>
 </td></tr>
 
 <!-- FOOTER (vast, uit partials/footer.html) -->
@@ -216,7 +233,7 @@
   </tr></table>
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:19px;color:#BDB8B0;text-align:center;">
     Free shipping on all orders &middot; 30-day returns &middot; 75-year warranty<br><br>
-    <a href="#" style="color:#BDB8B0;">Unsubscribe</a> &nbsp;|&nbsp; <a href="#" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; <a href="#" style="color:#BDB8B0;">View in browser</a><br>
+    <a href="#" style="color:#BDB8B0;">Unsubscribe</a> &nbsp;|&nbsp; <a href="#preferences" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; <a href="#" style="color:#BDB8B0;">View in browser</a><br>
     Siraat&#x27;s Kitchen &middot; [address]
   </div>
 </td></tr>
