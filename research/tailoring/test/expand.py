@@ -1,9 +1,12 @@
 # Automatisch afgeleid van scripts/build_template.py (blokexpansie). Opnieuw maken: python3 <scratch>/mkexpand.py (kopieert build_template t/m de _style.css-regel)
 """Bouwt Klaviyo-HTML en een lokale preview uit een bron-template met {{IMG}}.
 Gebruik: python3 -I scripts/build_template.py <bron.html> <assets-map> <urls.txt>
-Schrijft <bron>.klaviyo.html (CDN-links) en <bron-zonder-.html>-preview.html (lokale beelden, voorbeelddata)."""
+Schrijft <bron>.klaviyo.html (CDN-links) en <bron-zonder-.html>-preview.html (lokale beelden, voorbeelddata).
+Opties (voor scripts/export_klaviyo.py): --out=<pad> (Klaviyo-versie elders), --shared-urls=<bestand> (extra 'bestand url' voor {{SHARED}}), --no-preview.
+De Klaviyo-versie krijgt UTM's op elke siraatskitchen.com-link zonder UTM (header, footer): utm_content=<mail>-logo|nav-*|ft-*, campaign uit de mail zelf (04-utm.md 5.2)."""
 import sys,re,os
-src,assets,urls=sys.argv[1:4]
+OPT={a.split('=',1)[0]:(a.split('=',1)[1] if '=' in a else '1') for a in sys.argv[1:] if a.startswith('--')}
+src,assets,urls=[a for a in sys.argv[1:] if not a.startswith('--')][:3]
 u=dict(l.split() for l in open(urls) if l.strip()) if os.path.exists(urls) else {}
 h=open(src).read()
 P=os.path.join(os.path.dirname(os.path.abspath(src)),'partials')

@@ -83,13 +83,16 @@ def add_utm(x):
     camp=re.findall(r'utm_campaign(?:=|%3D)([\w-]+)',x); cont=re.findall(r'utm_content(?:=|%3D)([a-z0-9]+)-',x)
     if not camp or not cont: return x
     camp=max(set(camp),key=camp.count); mid=max(set(cont),key=cont.count)
+    ft=re.sub(r'<!--(?![\[<>]).*?-->\n?','',open(os.path.join(P,'footer.html')).read(),flags=re.S).strip()[:80]
+    fpos=x.find(ft) if ft else -1
     def fix(m):
         url=m.group(2)
         if 'utm_' in url or not re.match(r'https://(www\.)?siraatskitchen\.com',url): return m.group(0)
         path=re.sub(r'https://(www\.)?siraatskitchen\.com','',url).strip('/')
         blk='logo' if not path else re.sub(r'[^a-z0-9]+','-',path.split('/')[-1].lower())
-        pre='nav-' if m.start()<x.find('<!-- FOOTER') or ('ft-' not in blk and x.find('#282828',m.start())==-1) else ''
-        return '%s%s%sutm_source=klaviyo&utm_medium=email&utm_campaign=%s&utm_content=%s-%s%s"'%(m.group(1),url if path else url.rstrip('/')+'/', '&' if '?' in url else '?',camp,mid,blk,'')
+        blk=('ft-' if 0<=fpos<=m.start() else ('' if blk=='logo' else 'nav-'))+blk
+        u=url if path else url.rstrip('/')+'/'
+        return '%s%s%sutm_source=klaviyo&utm_medium=email&utm_campaign=%s&utm_content=%s-%s"'%(m.group(1),u,'&' if '?' in u else '?',camp,mid,blk)
     return re.sub(r'(href=")([^"{}]+)"',fix,x)
 k=add_utm(k)
 if '{{IMG}}' not in k and '{{SHARED}}' not in k: open(OPT.get('--out',base+'.klaviyo.html'),'w').write(k)
