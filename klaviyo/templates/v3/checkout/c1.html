@@ -51,7 +51,9 @@
 
 {{BLOCK:gifts}}
 
+{% if 'Pan' in event.Items|join:',' or 'Pot' in event.Items|join:',' or 'Pizza Steel' in event.Items|join:',' or 'ookware' in event.Items|join:',' or 'Everything' in event.Items|join:',' or 'Pfanne' in event.Items|join:',' %}
 {{BLOCK:features eyebrow="WHY 100,000+ PEOPLE SWITCHED" headline="One pan. Nothing to wear off." i1="no-coating" t1="No coating. Ever." d1="Pure titanium cooking surface. There is nothing to scratch, flake or end up in your food." i2="pfas-tested" t2="Lab tested, not just claimed" d2="Light Labs report no. 25895: 31 PFAS compounds tested, every one below detection." i3="metal-utensil-safe" t3="Metal utensils, high heat, dishwasher" d3="Sear, scrape and clean it the way you like. The 75-year warranty covers the rest."}}
+{% endif %}
 
 {{BLOCK:reviews q1="One of the best pans I've ever used and so impressed with how easy it is to clean" n1="Carol E." q2="I really like the no stick effect. It's going to become my #1 go to frying pan" n2="Adele M."}}
 
