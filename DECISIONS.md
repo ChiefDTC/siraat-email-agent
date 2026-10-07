@@ -30,3 +30,8 @@ Bijwerken bij elk nieuw besluit. Datum per regel.
 | 2026-10-07 | Trustpilot-incentive (gift card voor review): Floris accepteert het risico. | Geen actie. In mails nooit "unsolicited" of "independent". |
 | 2026-10-07 | Geen maximale korting vastgelegd. | Winback en checkout mogen een extra aanbod testen. |
 | 2026-10-07 | Trustpilot mag volledig gescraped worden (trustpilot.com/review/siraatskitchen.com). | Netwerkinstelling: www.trustpilot.com moet nog toegevoegd aan Allowed domains. |
+| 2026-10-07 | 6-delige set = $349 (bevestigd door Floris). | Alle mails rekenen met $349. |
+| 2026-10-07 | Gifts gelden voor "every order" (niet alleen de Hammered Pan). | Gift-blok en welcome aangepast. |
+| 2026-10-07 | E-book link: https://siraatskitchen.com/products/e (The Green Clean E-Guide). | P1-knoppen en hero. |
+| 2026-10-07 | Compare-at Pan Pro $439 tegenover $134 klopt. | Doorgestreepte prijs mag. |
+| 2026-10-07 | Unieke codes (C4, K3, B2, P3, R2, R2-VIP) akkoord. Elke code maximaal 1 keer per persoon te gebruiken. | Aanmaken als Shopify dynamic coupon in Klaviyo, "one use per customer". |
