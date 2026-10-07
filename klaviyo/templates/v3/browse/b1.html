@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: 10% off the pan you looked at | SUBJECT_B: The pan with nothing to scratch off | PREVIEW: Code HI10 takes another 10% off, plus $70 in gifts. Metal utensils welcome. | SEND: 4 hours after Viewed Product (step 0) | FILTERS: Flow: Viewed Product; Added to Cart = 0, Checkout Started = 0, Placed Order = 0 since flow start; not in cart or checkout flow last 7 days; not in this flow last 7 days. Message: Placed Order = 0 since flow start -->
+<!-- SUBJECT_A: Lab-tested: nothing on this pan to scratch off | SUBJECT_B: 100,000+ happy customers cook on this pan | TEST: T05a (phase 1), A = authority, B = social proof, one variable, same preview; winner on unique clicks, then revenue per recipient | SUBJECTS (5 types): C+B 'What a metal spatula does to the pan you looked at' / SPEC 'No coating, so nothing to scratch off' / Q 'What does your spatula do to your pan?' / STORY '"I'm so glad I never got rid of it"' / OFFER '10% off the pan you looked at' | PREVIEW: Metal utensils welcome. No coating, and a lab report to prove it. | SEND: 1 hour after Viewed Product (step 1, v4 3.4), path KOOKGEREI: TS Name contains Hammer OR Pan OR Pot OR ookware OR Everything OR fanne OR Prep Bundle = yes | FILTERS: Trigger: Viewed Product (XNtYMB, Klaviyo onsite; not V48nhq). Flow: Added to Cart = 0, Checkout Started = 0, Placed Order = 0 since flow start; Received Email where Flow = 'v4 · Cart abandonment' = 0 in the last 7 days; idem 'v4 · Checkout abandonment'; idem 'v4 · Welcome' = 0 in the last 7 days; not in this flow in the last 7 days. Message: Placed Order = 0 since flow start | UTM: utm_campaign=v4-browse, utm_content=b1-<blok>; UTM's url-encoded inside redirect after the product path -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
-<title>10% off the pan you looked at</title>
+<title>Nothing on it to scratch off.</title>
 <!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
@@ -25,14 +25,16 @@
     .desk{display:none!important;max-height:0!important;overflow:hidden!important;}
     .mob{display:block!important;max-height:none!important;overflow:visible!important;}
     .center{text-align:center!important;}
+    .lead{font-size:16px!important;line-height:25px!important;}
   }
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Code HI10 takes another 10% off, plus $70 in gifts. Metal utensils welcome.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Metal utensils welcome. No coating, and a lab report to prove it.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
+
 
 {{BLOCK:codebar}}
 
@@ -40,58 +42,57 @@
 
 <!-- HERO 4:3 met aanbodbalk (make_hero.py --offer --ratio=4:3) -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}"><img src="{{IMG}}/b1-hero.jpg" width="600" alt="10% off the pan you looked at: extra 10% off with code HI10, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db1-hero"><img src="{{IMG}}/b1-hero.jpg" width="600" alt="What you looked at. Nothing on it to scratch off: metal spatulas welcome. Extra 10% off with code HI10, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
-<!-- PRODUCTKAART inline, stijl BLOCK:cart. Event: Viewed Product (metric XNtYMB): Name, ImageURL, Price (tekst met $), URL -->
+<!-- PRODUCTKAART Viewed Product (XNtYMB): Name, ImageURL, Price (tekst), URL. Prijs alleen met $ (QA A18); ankerprijs $439 alleen bij Pan Pro Standard voor $134. -->
 <tr><td class="pad" style="padding:22px 44px 4px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
     <tr><td colspan="3" style="padding:16px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">{% if 'Set' in event.Name or 'Edition' in event.Name or 'Bundle' in event.Name or 'Duo' in event.Name or 'Kit' in event.Name %}THE SET YOU VIEWED{% else %}THE PAN YOU VIEWED{% endif %}</td></tr>
     <tr>
       <td width="104" valign="middle" style="padding:12px 0 12px 16px;">
-        <a href="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}"><img src="{{ event.ImageURL|default:'https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-40a5-9ad7-523bdddc54d4.webp?v=1781682831&width=600' }}" width="88" alt="{{ event.Name|default:'Titanium Hammered Pan Pro' }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;"></a>
+        <a href="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db1-product"><img src="{% if event.ImageURL %}{{ event.ImageURL }}{% else %}https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-40a5-9ad7-523bdddc54d4.webp?v=1781682831&width=600{% endif %}" width="88" alt="{{ event.Name|default:'Titanium Hammered Pan Pro' }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;"></a>
       </td>
       <td valign="middle" style="padding:12px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
         <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">{{ event.Name|default:'Titanium Hammered Pan Pro' }}</div>
-        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">Pure titanium cooking surface</div>
+        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">Titanium cooking surface, no coating</div>
       </td>
-      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;white-space:nowrap;">{% if event.Price %}{{ event.Price }}{% endif %}</td>
+      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;white-space:nowrap;">{% if 'Pan Pro Standard' in event.Name and event.Price|slice:':4' == '$134' %}<div style="font-size:13px;line-height:17px;color:#9A948B;text-decoration:line-through;font-weight:400;">$439</div>{% endif %}{% if '$' in event.Price %}{{ event.Price }}{% endif %}</td>
     </tr>
     <tr><td colspan="3" style="padding:0 16px 16px 16px;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:11px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">
-        <img src="{{SHARED}}/icon-discount-tag.png" width="20" height="20" alt="" style="display:inline-block;vertical-align:-5px;width:20px;height:20px;">&nbsp; <b>HI10</b> takes an extra 10% off this price, applied with the button below.
+        <img src="{{SHARED}}/icon-discount-tag.png" width="20" height="20" alt="" style="display:inline-block;vertical-align:-5px;width:20px;height:20px;">&nbsp; {% if 'Pan Pro Standard' in event.Name and event.Price|slice:':4' == '$134' %}With <b>HI10</b> it&rsquo;s <b>$120.60</b>, applied with the button below.{% else %}<b>HI10</b> takes an extra 10% off this price, applied with the button below.{% endif %}
       </td></tr></table>
     </td></tr>
   </table>
 </td></tr>
 
-{{BLOCK:cta label="Get 10% off this {% if 'Set' in event.Name or 'Edition' in event.Name or 'Bundle' in event.Name or 'Duo' in event.Name or 'Kit' in event.Name %}set{% else %}pan{% endif %}" url="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}" pad="16px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>Your 10% is applied automatically.</div>"}}
+{{BLOCK:cta label="Get 10% off this {% if 'Set' in event.Name or 'Edition' in event.Name or 'Bundle' in event.Name or 'Duo' in event.Name or 'Kit' in event.Name %}set{% else %}pan{% endif %}" url="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db1-cta1" pad="16px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
 
-{{BLOCK:gifts}}
+<!-- OPENER (live tekst) -->
+<tr><td class="pad lead" style="padding:22px 44px 2px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;"><p style="margin:0 0 12px 0;">Most pans are a metal body with a coating on top. The coating does the nonstick work, and it&rsquo;s also the part that scratches and wears.</p><p style="margin:0 0 0 0;">This one has a titanium cooking surface and no coating. So go ahead, use the metal spatula.</p></td></tr>
 
-<!-- VERGELIJKING: coated pan tegen Siraat (inline) -->
-<tr><td class="pad" style="padding:30px 44px 6px 44px;">
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">WHY IT IS DIFFERENT</div>
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 16px 0;">Nothing to scratch off.</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;">
-    <tr><td width="34%" style="padding:12px 14px;font-size:11px;letter-spacing:1.5px;font-weight:600;color:#727272;">&nbsp;</td><td width="30%" style="padding:12px 10px;font-size:11px;letter-spacing:1.5px;font-weight:600;color:#727272;">COATED PAN</td><td style="padding:12px 14px;font-size:11px;letter-spacing:1.5px;font-weight:600;color:#AC3B19;">SIRAAT</td></tr>
-    <tr><td style="padding:12px 14px;border-top:1px solid #ECE7DD;font-size:13px;line-height:18px;color:#727272;">Cooking surface</td><td style="padding:12px 10px;border-top:1px solid #ECE7DD;font-size:13px;line-height:18px;color:#727272;">A coating</td><td style="padding:12px 14px;border-top:1px solid #ECE7DD;font-size:13px;line-height:18px;font-weight:600;color:#282828;">Pure titanium</td></tr>
-    <tr><td style="padding:12px 14px;border-top:1px solid #ECE7DD;font-size:13px;line-height:18px;color:#727272;">Metal utensils</td><td style="padding:12px 10px;border-top:1px solid #ECE7DD;font-size:13px;line-height:18px;color:#727272;">Best avoided</td><td style="padding:12px 14px;border-top:1px solid #ECE7DD;font-size:13px;line-height:18px;font-weight:600;color:#282828;">Metal utensil safe</td></tr>
-    <tr><td style="padding:12px 14px;border-top:1px solid #ECE7DD;font-size:13px;line-height:18px;color:#727272;">When it wears</td><td style="padding:12px 10px;border-top:1px solid #ECE7DD;font-size:13px;line-height:18px;color:#727272;">Time for a new pan</td><td style="padding:12px 14px;border-top:1px solid #ECE7DD;font-size:13px;line-height:18px;font-weight:600;color:#282828;">Nothing to wear off</td></tr>
-    <tr><td style="padding:12px 14px;border-top:1px solid #ECE7DD;font-size:13px;line-height:18px;color:#727272;">Lab report you can read</td><td style="padding:12px 10px;border-top:1px solid #ECE7DD;font-size:13px;line-height:18px;color:#727272;">Not always</td><td style="padding:12px 14px;border-top:1px solid #ECE7DD;font-size:13px;line-height:18px;font-weight:600;color:#282828;">No. 25895</td></tr>
-  </table>
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;text-align:center;padding-top:12px;">Honest note: a metal spatula can leave fine marks over time. They are cosmetic; the pan cooks the same.</div>
+{{BLOCK:compare pad="30px 44px 6px 44px" eyebrow="THE DIFFERENCE" headline="Titanium vs. coated nonstick" a1="Titanium cooking surface" b1="A PTFE or ceramic coating" a2="No coating to wear off" b2="Coating wears with use" a3="Metal utensils welcome" b3="Wood or silicone advised" a4="Tested by Light Labs" b4="Testing varies by brand" a5="Dishwasher safe" b5="Hand wash advised" note="Honest note: a metal spatula can leave fine marks over time. They are cosmetic, and the pan cooks the same."}}
+
+<tr><td class="pad" style="padding:6px 44px 2px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#282828;text-align:center;">
+  <img src="{{SHARED}}/icon-pfas-tested.png" width="20" height="20" alt="" style="display:inline-block;vertical-align:-5px;width:20px;height:20px;">&nbsp; Light Labs report no. 25895: 31 PFAS compounds tested, every one below the detection limit. <a href="https://siraatskitchen.com/pages/third-party-testing?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-browse&utm_content=b1-report" style="color:#AC3B19;">Read it yourself &rarr;</a>
 </td></tr>
 
-{{BLOCK:cta label="Get 10% off this {% if 'Set' in event.Name or 'Edition' in event.Name or 'Bundle' in event.Name or 'Duo' in event.Name or 'Kit' in event.Name %}set{% else %}pan{% endif %}" url="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}" pad="26px 44px 6px 44px"}}
+{{BLOCK:cta label="Get 10% off this {% if 'Set' in event.Name or 'Edition' in event.Name or 'Bundle' in event.Name or 'Duo' in event.Name or 'Kit' in event.Name %}set{% else %}pan{% endif %}" url="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db1-cta2" pad="26px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
 
-{{BLOCK:reviews q1="The first non stick pan that actually works without standing on one leg..." n1="Chris C." q2="The BEST non-stick, not cast Iron Frying pan I own. Period" n2="Stevens W."}}
+{{BLOCK:reviews q1="I've had an old, metal spatula that was my mother's... I can use it with confidence on my pans now." n1="Carole" q2="This pan is fantastic. Makes all of our others &quot;non stick&quot; seem really sticky." n2="Thomas D." pad="28px 44px 6px 44px"}}
 
-{{BLOCK:cta label="Get 10% off this {% if 'Set' in event.Name or 'Edition' in event.Name or 'Bundle' in event.Name or 'Duo' in event.Name or 'Kit' in event.Name %}set{% else %}pan{% endif %}" url="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}" pad="26px 44px 6px 44px"}}
+{{BLOCK:gifts headline="$70 in gifts, in the box" note="Plus a chance to win a $450 PFAS water filter."}}
+
+{{BLOCK:cta label="Get 10% off this {% if 'Set' in event.Name or 'Edition' in event.Name or 'Bundle' in event.Name or 'Duo' in event.Name or 'Kit' in event.Name %}set{% else %}pan{% endif %}" url="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db1-cta3" pad="26px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
 
 {{BLOCK:icons pad="22px 44px 6px 44px"}}
 
-<tr><td class="pad" style="padding:16px 44px 26px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;text-align:center;">Tested free from PFAS by Light Labs: 31 PFAS compounds below detection, report no. 25895. <a href="https://siraatskitchen.com/pages/third-party-testing" style="color:#727272;">See the report</a>.</td></tr>
+<!-- SIGN-OFF -->
+<tr><td class="pad" style="padding:26px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+  Hi {{ first_name|default:'there' }}, wondering if it works on your stove? Reply and ask.<br><br>
+  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
+</td></tr>
 
 
 {{FOOTER}}

@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: Looked twice? Here's the detail. | SUBJECT_B: What it's made of (in two lines) | SUBJECTS (5 types): curiosity+benefit 'What it is made of, in two lines' / specificity '16-oz canvas. 304 steel. Pure titanium.' / question 'Buying it for someone?' / story '"The recipient loves it"' / offer '10% off the piece you looked at' | PREVIEW: What it is made of, how it lasts, and 10% off with HI10. | SEND: 4 hours after Viewed Product, ACCESSORY path (Viewed Product Name contains none of the cookware words) | FILTERS: as B1 -->
+<!-- SUBJECT_A: Looked twice? Here's the detail. | SUBJECT_B: What it's made of, in two lines (reserve) | SUBJECTS (5 types): C+B 'What it's made of, in two lines' / SPEC '16-oz canvas. 304 steel. Pure titanium.' / Q 'Buying it for someone?' / STORY '"I purchased this as a gift and the recipient loves it!"' / OFFER '10% off the piece you looked at' | PREVIEW: What it's made of, how it lasts, and 10% off with HI10. | SEND: 1 hour after Viewed Product (step 1), path ACCESSOIRE (Name contains none of the cookware words). Next: 2 days until 09:00, CS clicked B1-acc: yes = code-router to b2-clicked / b2-clicked-nocode, no = end | FILTERS: Trigger: Viewed Product (XNtYMB, Klaviyo onsite; not V48nhq). Flow: Added to Cart = 0, Checkout Started = 0, Placed Order = 0 since flow start; Received Email where Flow = 'v4 · Cart abandonment' = 0 in the last 7 days; idem 'v4 · Checkout abandonment'; idem 'v4 · Welcome' = 0 in the last 7 days; not in this flow in the last 7 days. Message: Placed Order = 0 since flow start | UTM: utm_content=b1acc-<blok> -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
-<title>Looked twice?</title>
+<title>Looked twice? Here is the detail.</title>
 <!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
@@ -25,38 +25,39 @@
     .desk{display:none!important;max-height:0!important;overflow:hidden!important;}
     .mob{display:block!important;max-height:none!important;overflow:visible!important;}
     .center{text-align:center!important;}
+    .lead{font-size:16px!important;line-height:25px!important;}
   }
 </style>
-<style>@media only screen and (max-width:620px){.pimg{width:112px!important;}.pimg img{width:100px!important;height:100px!important;}.pcd{display:none!important;}.pim{width:96px!important;padding:14px 0 14px 12px!important;}.pim img{width:88px!important;height:88px!important;}}</style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">What it is made of, how it lasts, and 10% off with HI10.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">What it&rsquo;s made of, how it lasts, and 10% off with HI10.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
+
 
 {{BLOCK:codebar}}
 
 {{HEADER}}
 
-<!-- HERO met aanbodbalk (make_hero.py --offer) -->
+<!-- HERO 4:3 met aanbodbalk (make_hero.py --offer --ratio=4:3) -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/collections/all' }}"><img src="{{IMG}}/b1acc-hero.jpg" width="600" alt="You had a look. Looked twice? Here is the detail. Extra 10% off with HI10, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/collections/all' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db1acc-hero"><img src="{{IMG}}/b1acc-hero.jpg" width="600" alt="You had a look. Looked twice? Here is the detail. Extra 10% off with HI10, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
-<!-- PRODUCTKAART Viewed Product (XNtYMB): Name, ImageURL, Price (tekst), URL -->
+<!-- PRODUCTKAART Viewed Product (XNtYMB): Name, ImageURL, Price (tekst), URL. Prijs alleen met $ (QA A18); ankerprijs $439 alleen bij Pan Pro Standard voor $134. -->
 <tr><td class="pad" style="padding:22px 44px 4px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
     <tr><td colspan="3" style="padding:16px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">YOU LOOKED AT</td></tr>
     <tr>
       <td width="104" valign="middle" style="padding:12px 0 12px 16px;">
-        <a href="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/collections/all' }}"><img src="{{ event.ImageURL|default:'{{IMG}}/cart-fallback.jpg' }}" width="88" alt="{{ event.Name|default:'Your item' }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;"></a>
+        <a href="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/collections/all' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db1acc-product"><img src="{% if event.ImageURL %}{{ event.ImageURL }}{% else %}{{IMG}}/cart-fallback.jpg{% endif %}" width="88" alt="{{ event.Name|default:'Your item' }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;"></a>
       </td>
       <td valign="middle" style="padding:12px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
         <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">{{ event.Name|default:'Your item' }}</div>
         <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">{% if 'Apron' in event.Name %}16-oz canvas, adjustable{% elif 'Cutting Board' in event.Name %}Pure titanium, anti-microbial{% elif 'Lid' in event.Name %}304 stainless steel, sized to your pan{% elif 'Mill' in event.Name %}12 grind settings{% elif 'Utensil' in event.Name %}Pure titanium tools{% elif 'Gift Card' in event.Name %}Delivered by email{% elif 'Dishwasher Sheets' in event.Name %}Plastic-free, phosphate-free{% else %}From Siraat&rsquo;s Kitchen{% endif %}</div>
       </td>
-      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;white-space:nowrap;">{% if '$' in event.Price %}{{ event.Price }}{% endif %}</td>
+      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;white-space:nowrap;">{% if 'Pan Pro Standard' in event.Name and event.Price|slice:':4' == '$134' %}<div style="font-size:13px;line-height:17px;color:#9A948B;text-decoration:line-through;font-weight:400;">$439</div>{% endif %}{% if '$' in event.Price %}{{ event.Price }}{% endif %}</td>
     </tr>
     <tr><td colspan="3" style="padding:0 16px 16px 16px;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:11px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">
@@ -66,10 +67,13 @@
   </table>
 </td></tr>
 
-{{BLOCK:cta label="Get 10% off this piece" url="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/collections/all' }}" pad="16px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
+{{BLOCK:cta label="Get 10% off this piece" url="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/collections/all' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db1acc-cta1" pad="16px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
 
-<!-- FEITEN PER PRODUCT (dynamisch op event.Name) -->
-<tr><td class="pad" style="padding:28px 44px 6px 44px;">
+<!-- OPENER (live tekst) -->
+<tr><td class="pad lead" style="padding:22px 44px 2px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;"><p style="margin:0 0 0 0;">You looked twice, so here&rsquo;s the detail. What it&rsquo;s made of, in two lines, and why it sits next to our pans.</p></td></tr>
+
+<!-- FEITEN PER PRODUCT (dynamisch op het productveld) -->
+<tr><td class="pad" style="padding:26px 44px 6px 44px;">
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">THE DETAIL</div>
   <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 16px 0;">What it is made of</div>
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;border-bottom:0;">
@@ -84,13 +88,15 @@
   </table>
 </td></tr>
 
-{{BLOCK:gifts}}
+{{BLOCK:cta label="Get 10% off this piece" url="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/collections/all' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db1acc-cta2" pad="26px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
 
-{{BLOCK:reviews q1="Great price, easy ordering and delivery was fast. I purchased this as a gift and the recipient loves it!" n1="Denise H." q2="The Siraat mill is all metal, grinds great and is easy to load. Highly recommend!" n2="Vs A."}}
+{{BLOCK:gifts headline="$70 in gifts, in the box" note="Plus a chance to win a $450 PFAS water filter."}}
 
-{{BLOCK:cta label="Get 10% off this piece" url="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/collections/all' }}" pad="26px 44px 6px 44px"}}
+{{BLOCK:reviews q1="...I purchased this as a gift and the recipient loves it!" n1="Denise H." q2="The Siraat mill is all metal, grinds great and is easy to load. Highly recommend!" n2="Vs A." pad="28px 44px 6px 44px"}}
 
-<!-- ICONEN voor accessoires: zonder 75-year warranty (geldt voor kookgerei) -->
+{{BLOCK:cta label="Get 10% off this piece" url="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/collections/all' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db1acc-cta3" pad="26px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
+
+<!-- ICONEN voor accessoires: zonder 75-year warranty (open punt 3.27: geldt de garantie winkelbreed?) -->
 <tr><td class="pad" style="padding:22px 44px 6px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
     <tr>
@@ -103,10 +109,11 @@
 </td></tr>
 
 <!-- SIGN-OFF -->
-<tr><td class="pad" style="padding:24px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  Hi {{ first_name|default:'there' }}, buying for someone else? Reply with who it is for and I will tell you honestly what they would use most.<br><br>
+<tr><td class="pad" style="padding:26px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+  Hi {{ first_name|default:'there' }}, buying for someone else? Reply with who it&rsquo;s for and I&rsquo;ll tell you honestly what they would use most.<br><br>
   Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
 </td></tr>
+
 
 {{FOOTER}}
 
