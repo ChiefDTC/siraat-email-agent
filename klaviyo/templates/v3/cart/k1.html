@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: One pass with a damp cloth. | SUBJECT_B: About cleaning the pan in your cart | PREVIEW: No scrubbing. That is the whole trick. | SEND: 1 hour after Added to Cart (step 0) | FILTERS: Flow: Added to Cart; Checkout Started = 0 since flow start; Placed Order = 0 since flow start; not in checkout flow last 7 days; not in this flow last 14 days. Message: Placed Order = 0 since flow start -->
+<!-- SUBJECT_A: One pass with a damp cloth. | SUBJECT_B: Your pan is still in your cart (+10% off) | PREVIEW: No scrubbing. Code HI10 takes an extra 10% off, plus $70 in gifts. | SEND: 1 hour after Added to Cart (step 0) | FILTERS: Flow: Added to Cart; Checkout Started = 0 since flow start; Placed Order = 0 since flow start; not in checkout flow last 7 days; not in this flow last 14 days. Message: Placed Order = 0 since flow start -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
-<title>One wipe. No scrubbing.</title>
+<title>One wipe. 10% off.</title>
 <!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
@@ -24,150 +24,67 @@
     .navhide{display:none!important;}
     .desk{display:none!important;max-height:0!important;overflow:hidden!important;}
     .mob{display:block!important;max-height:none!important;overflow:visible!important;}
-    .bx{box-sizing:border-box!important;}
-    .bx2{border-left:0!important;border-top:1px solid #ECE7DD!important;}
+    .center{text-align:center!important;}
   }
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">No scrubbing. That is the whole trick.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">No scrubbing. Code HI10 takes an extra 10% off, plus $70 in gifts.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
+{{BLOCK:codebar}}
+
 {{HEADER}}
 
-<!-- HERO: HP shoot P12-A Wipe Clean + TT Ramillas headline -->
+<!-- HERO 4:3 met aanbodbalk (make_hero.py --offer --ratio=4:3) -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/cart"><img src="{{IMG}}/k1-hero.jpg" width="600" alt="One wipe. No scrubbing. Warm water, a soft sponge, done." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://siraatskitchen.com/discount/HI10?redirect=/cart"><img src="{{IMG}}/k1-hero.jpg" width="600" alt="Still in your cart. One wipe, 10% off: extra 10% off with code HI10, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
-<!-- CTA under hero -->
-<tr><td align="center" style="padding:24px 44px 4px 44px;">
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-    <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:2px;">
-      <a href="https://siraatskitchen.com/cart" style="display:inline-block;padding:16px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:16px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;">RETURN TO MY CART</a>
-    </td>
-  </tr></table>
-</td></tr>
-
-<!-- INTRO -->
-<tr><td class="pad" style="padding:30px 44px 6px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;color:#282828;">
-  <p style="margin:0 0 14px 0;">Hi {{ first_name|default:'there' }},</p>
-  <p style="margin:0 0 14px 0;">{{ event.ProductName|default:'Titanium Hammered Pan Pro' }} is still in your cart. Before you decide, one question we get a lot: is it a pain to clean?</p>
-  <p style="margin:0;">It is not. There is no coating on a Siraat pan, so there is nothing to baby and nothing to protect. Let it cool, rinse with warm water, one pass with a soft sponge. One customer, Thomas H., put it simply: cleanup in 30 seconds.</p>
-</td></tr>
-
-<!-- CARD: cleanup, the siraat way -->
-<tr><td class="pad" style="padding:22px 44px 8px 44px;">
+<!-- PRODUCTKAART inline, stijl BLOCK:cart. Event: Added to Cart (Shopify, metric QXcV8K): Product Name, ImageURL, Price (getal), Quantity -->
+<tr><td class="pad" style="padding:22px 44px 4px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-    <tr><td style="padding:20px 22px 6px 22px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:1.5px;font-weight:600;color:#AC3B19;">CLEANUP, THE SIRAAT WAY</td></tr>
-    <tr><td style="padding:0 22px;">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td width="44" valign="top" style="padding:14px 0;font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:34px;line-height:34px;color:#AC3B19;">1</td>
-          <td valign="top" style="padding:14px 0;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Let the pan cool first</div>
-            <div style="font-size:14px;line-height:21px;color:#727272;padding-top:4px;">Cold water on a hot pan is hard on any metal. Give it a few minutes.</div>
-          </td>
-        </tr>
-        <tr>
-          <td width="44" valign="top" style="padding:14px 0;font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:34px;line-height:34px;color:#AC3B19;">2</td>
-          <td valign="top" style="padding:14px 0;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Warm water and a soft sponge</div>
-            <div style="font-size:14px;line-height:21px;color:#727272;padding-top:4px;">Food lets go of the titanium surface easily. It is dishwasher safe too, if you prefer.</div>
-          </td>
-        </tr>
-        <tr>
-          <td width="44" valign="top" style="padding:14px 0 18px 0;font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:34px;line-height:34px;color:#AC3B19;">3</td>
-          <td valign="top" style="padding:14px 0 18px 0;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">A rainbow tint is not a stain</div>
-            <div style="font-size:14px;line-height:21px;color:#727272;padding-top:4px;">That is heat patina, normal on titanium. A paste of baking soda and water lifts dark buildup in a minute.</div>
-          </td>
-        </tr>
-      </table>
+    <tr><td colspan="3" style="padding:16px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">STILL IN YOUR CART</td></tr>
+    <tr>
+      <td width="104" valign="middle" style="padding:12px 0 12px 16px;">
+        <a href="https://siraatskitchen.com/discount/HI10?redirect=/cart"><img src="{{ event.ImageURL|default:'https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-40a5-9ad7-523bdddc54d4.webp?v=1781682831&width=600' }}" width="88" alt="{{ event|lookup:'Product Name'|default:'Titanium Hammered Pan Pro' }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;"></a>
+      </td>
+      <td valign="middle" style="padding:12px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
+        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">{{ event|lookup:'Product Name'|default:'Titanium Hammered Pan Pro' }}</div>
+        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">Qty {{ event.Quantity|default:1|floatformat:0 }}</div>
+      </td>
+      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;white-space:nowrap;">{% if event.Price %}${{ event.Price|floatformat:2 }}{% endif %}</td>
+    </tr>
+    <tr><td colspan="3" style="padding:0 16px 16px 16px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:11px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">
+        <img src="{{SHARED}}/icon-discount-tag.png" width="20" height="20" alt="" style="display:inline-block;vertical-align:-5px;width:20px;height:20px;">&nbsp; <b>HI10</b> takes an extra 10% off, applied with the button below.
+      </td></tr></table>
     </td></tr>
   </table>
 </td></tr>
 
-<!-- GIF: chef video, subtitles cropped -->
-<tr><td class="pad" style="padding:26px 44px 6px 44px;">
-  <img src="{{IMG}}/tint.gif" width="512" alt="Our chef showing the heat tint on a used Siraat pan" style="width:100%;max-width:512px;height:auto;">
-</td></tr>
-<tr><td class="pad" style="padding:10px 44px 6px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#727272;text-align:center;">
-  Our chef on the tint you may see after high heat. It is cosmetic. The pan cooks the same.
-</td></tr>
+{{BLOCK:cta label="Finish my order" url="https://siraatskitchen.com/discount/HI10?redirect=/cart" pad="16px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>Your 10% is applied automatically.</div>"}}
 
-<!-- REVIEWS: R263; R129 -->
-<tr><td class="pad" style="padding:24px 44px 6px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="">
-    <tr>
-      <td class="stack stackpad" width="50%" valign="top" style="padding:0 7px 0 0;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-          <tr><td style="padding:18px 18px 16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <div style="font-size:14px;line-height:21px;color:#282828;padding:8px 0 10px 0;">&ldquo;One of the best pans I&rsquo;ve ever used and so impressed with how easy it is to clean&rdquo;</div>
-            <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Carol E., verified buyer</div>
-          </td></tr>
-        </table>
-      </td>
-      <td class="stack stackpad" width="50%" valign="top" style="padding:0 0 0 7px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-          <tr><td style="padding:18px 18px 16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <div style="font-size:14px;line-height:21px;color:#282828;padding:8px 0 10px 0;">&ldquo;Cooks without sticking or burning and clean with just a wipe. Healthier choice for our family too.&rdquo;</div>
-            <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Tracey C., verified buyer</div>
-          </td></tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;text-align:center;padding-top:14px;">Join 100,000+ happy customers.</div>
-</td></tr>
+{{BLOCK:gifts}}
 
-<!-- CART BLOCK: Added to Cart event (ProductName, ImageURL, Price) -->
-<tr><td class="pad" style="padding:30px 44px 6px 44px;">
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:34px;line-height:38px;color:#282828;text-align:center;padding-bottom:14px;">Still in your cart</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-    <tr>
-      <td width="136" valign="middle" style="padding:16px 0 16px 16px;">
-        <a href="https://siraatskitchen.com/cart"><img src="{{ event.ImageURL|default:'https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-40a5-9ad7-523bdddc54d4.webp?v=1781682831&width=600' }}" width="120" alt="{{ event.ProductName|default:'Titanium Hammered Pan Pro' }}" style="width:120px;height:120px;object-fit:cover;background:#F8F7F2;"></a>
-      </td>
-      <td valign="middle" style="padding:16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;">
-        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">{{ event.ProductName|default:'Titanium Hammered Pan Pro' }}</div>
-        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">Pure titanium cooking surface &middot; No coatings</div>
-        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">{% if event.Price %}${{ event.Price|floatformat:2 }}{% endif %}</div>
-        <div style="font-size:13px;line-height:20px;padding-top:6px;"><a href="https://siraatskitchen.com/cart" style="color:#AC3B19;font-weight:600;text-decoration:none;">Return to my cart &rarr;</a></div>
-      </td>
-    </tr>
-  </table>
-</td></tr>
+{{BLOCK:features eyebrow="CLEANUP, THE SIRAAT WAY" headline="One wipe. No scrubbing." i1="no-coating" t1="Nothing to scrub off" d1="No coating on the cooking surface, so food lets go. Let it cool, then warm water and a soft sponge." i2="dishwasher-safe" t2="Dishwasher safe" d2="Prefer the machine? Go ahead. The pan cooks the same afterwards." i3="induction-ready" t3="A rainbow tint is not a stain" d3="That is heat patina, normal on titanium. Baking soda and water lifts dark buildup in a minute."}}
 
-<!-- CTA -->
-<tr><td align="center" style="padding:22px 44px 8px 44px;">
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-    <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:2px;">
-      <a href="https://siraatskitchen.com/cart" style="display:inline-block;padding:16px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:16px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;">RETURN TO MY CART</a>
-    </td>
-  </tr></table>
-</td></tr>
+{{BLOCK:cta label="Finish my order" url="https://siraatskitchen.com/discount/HI10?redirect=/cart" pad="26px 44px 6px 44px"}}
 
-<!-- TRUST ROW -->
-<tr><td class="pad" style="padding:22px 44px 6px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #ECE7DD;border-bottom:1px solid #ECE7DD;">
-    <tr>
-      <td width="33%" align="center" style="padding:16px 4px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;">30-DAY<br>RETURNS</td>
-      <td width="34%" align="center" style="padding:16px 4px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;border-left:1px solid #ECE7DD;border-right:1px solid #ECE7DD;">75-YEAR<br>WARRANTY</td>
-      <td width="33%" align="center" style="padding:16px 4px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;">FREE<br>SHIPPING</td>
-    </tr>
-  </table>
-</td></tr>
+{{BLOCK:reviews q1="I love my new pan. It looks good, cooks good and cleans good too. Would highly recommend" n1="Nicola" q2="The product is amazing. Easy clean and dishwasher safe. I use all my items daily..." n2="Mel"}}
+
+{{BLOCK:cta label="Finish my order" url="https://siraatskitchen.com/discount/HI10?redirect=/cart" pad="26px 44px 6px 44px"}}
+
+{{BLOCK:icons pad="22px 44px 6px 44px"}}
 
 <!-- SIGN-OFF -->
-<tr><td class="pad" style="padding:22px 44px 26px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  Questions about cleaning, induction or how to cook on titanium? Just reply. A real person reads every email.<br><br>
+<tr><td class="pad" style="padding:24px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+  Hi {{ first_name|default:'there' }}, questions about cleaning, induction or sizes? Just reply. A real person reads every email.<br><br>
   Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
 </td></tr>
+
 
 {{FOOTER}}
 

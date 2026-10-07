@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: 10% off the pan you looked at | SUBJECT_B: Still thinking it over? | PREVIEW: Code HI10 takes 10% off, on top of the current sale. | SEND: 2 days after B1 (step 1), split: clicked B1 = yes | FILTERS: Flow: Viewed Product; Added to Cart = 0, Checkout Started = 0, Placed Order = 0 since flow start; not in cart or checkout flow last 7 days; not in this flow last 7 days. Message: Placed Order = 0 since flow start -->
+<!-- SUBJECT_A: 10% off the pan you looked at (48 hours) | SUBJECT_B: Still thinking it over? Here is 10%. | PREVIEW: A personal code, on top of the sale. It expires 48 hours after this email. | SEND: 2 days after B1 (step 1), split: clicked B1 = yes. Coupon B2_10_48H (unique, 10%, expires 2 days after assignment) | FILTERS: Flow: Viewed Product; Added to Cart = 0, Checkout Started = 0, Placed Order = 0 since flow start; not in cart or checkout flow last 7 days; not in this flow last 7 days. Message: Placed Order = 0 since flow start -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
-<title>Still thinking it over?</title>
+<title>10% off, 48 hours</title>
 <!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
@@ -24,135 +24,63 @@
     .navhide{display:none!important;}
     .desk{display:none!important;max-height:0!important;overflow:hidden!important;}
     .mob{display:block!important;max-height:none!important;overflow:visible!important;}
-    .bx{box-sizing:border-box!important;}
-    .bx2{border-left:0!important;border-top:1px solid #ECE7DD!important;}
+    .center{text-align:center!important;}
   }
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Code HI10 takes 10% off, on top of the current sale.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">A personal code, on top of the sale. It expires 48 hours after this email.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
+{{BLOCK:codebar text="YOUR PERSONAL 10% CODE &middot;" code="{% coupon_code 'B2_10_48H' %}"}}
+
 {{HEADER}}
 
-<!-- HERO: HP shoot P09-A Pan Lid + TT Ramillas headline -->
+<!-- HERO 4:3 met aanbodbalk (make_hero.py --offer --ratio=4:3) -->
 <tr><td style="padding:0;">
-  <a href="{{ event.URL|default:'https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}"><img src="{{IMG}}/b2-clicked-hero.jpg" width="600" alt="Still thinking it over? Use code HI10 at checkout for 10% off on top of the sale." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://siraatskitchen.com/discount/{% coupon_code 'B2_10_48H' %}?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}"><img src="{{IMG}}/b2-clicked-hero.jpg" width="600" alt="10% off for 48 hours. Your personal 10% code expires 48 hours after this email, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
-<!-- CTA under hero (viewed product) -->
-<tr><td align="center" style="padding:24px 44px 4px 44px;">
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-    <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:2px;">
-      <a href="{{ event.URL|default:'https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}" style="display:inline-block;padding:16px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:16px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;">SEE THE PAN</a>
-    </td>
-  </tr></table>
-</td></tr>
-
-<!-- INTRO -->
-<tr><td class="pad" style="padding:30px 44px 6px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;color:#282828;">
-  <p style="margin:0 0 14px 0;">Hi {{ first_name|default:'there' }},</p>
-  <p style="margin:0;">You took another look at {{ event.ProductName|default:'your Siraat pan' }}. If you are still weighing it up, here is a small nudge.</p>
-</td></tr>
-
-<!-- OFFER: HI10 code block -->
-<tr><td class="pad" style="padding:22px 44px 8px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px dashed #AC3B19;">
-    <tr><td align="center" style="padding:22px 22px 6px 22px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:1.5px;font-weight:600;color:#AC3B19;">10% OFF, ON TOP OF THE SALE</td></tr>
-    <tr><td align="center" style="padding:4px 22px 4px 22px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:34px;line-height:42px;letter-spacing:6px;font-weight:600;color:#282828;">HI10</td></tr>
-    <tr><td align="center" style="padding:0 22px 22px 22px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#727272;">Enter it at checkout. Works on one-time purchases.</td></tr>
-  </table>
-</td></tr>
-
-<!-- PRODUCT BLOCK: Viewed Product event (ProductName, ImageURL, Price, URL) -->
-<tr><td class="pad" style="padding:30px 44px 6px 44px;">
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:34px;line-height:38px;color:#282828;text-align:center;padding-bottom:14px;">The pan you looked at</div>
+<!-- PRODUCTKAART inline, stijl BLOCK:cart. Event: Viewed Product (metric XNtYMB): Name, ImageURL, Price (tekst met $), URL -->
+<tr><td class="pad" style="padding:22px 44px 4px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
+    <tr><td colspan="3" style="padding:16px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">THE PAN YOU VIEWED</td></tr>
     <tr>
-      <td width="136" valign="middle" style="padding:16px 0 16px 16px;">
-        <a href="{{ event.URL|default:'https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}"><img src="{{ event.ImageURL|default:'https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-40a5-9ad7-523bdddc54d4.webp?v=1781682831&width=600' }}" width="120" alt="{{ event.ProductName|default:'Titanium Hammered Pan Pro' }}" style="width:120px;height:120px;object-fit:cover;background:#F8F7F2;"></a>
+      <td width="104" valign="middle" style="padding:12px 0 12px 16px;">
+        <a href="https://siraatskitchen.com/discount/{% coupon_code 'B2_10_48H' %}?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}"><img src="{{ event.ImageURL|default:'https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-40a5-9ad7-523bdddc54d4.webp?v=1781682831&width=600' }}" width="88" alt="{{ event.Name|default:'Titanium Hammered Pan Pro' }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;"></a>
       </td>
-      <td valign="middle" style="padding:16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;">
-        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">{{ event.ProductName|default:'Titanium Hammered Pan Pro' }}</div>
-        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">Pure titanium cooking surface &middot; No coatings</div>
-        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">{% if event.Price %}${{ event.Price|floatformat:2 }}{% endif %}</div>
-        <div style="font-size:13px;line-height:20px;padding-top:6px;"><a href="{{ event.URL|default:'https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}" style="color:#AC3B19;font-weight:600;text-decoration:none;">See the pan &rarr;</a></div>
+      <td valign="middle" style="padding:12px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
+        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">{{ event.Name|default:'Titanium Hammered Pan Pro' }}</div>
+        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">Pure titanium cooking surface</div>
       </td>
+      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;white-space:nowrap;">{% if event.Price %}{{ event.Price }}{% endif %}</td>
     </tr>
-  </table>
-</td></tr>
-
-<!-- GIF: chef video, subtitles cropped -->
-<tr><td class="pad" style="padding:26px 44px 6px 44px;">
-  <img src="{{IMG}}/water-test.gif" width="512" alt="The water test: a drop of water dancing across a hot Siraat pan" style="width:100%;max-width:512px;height:auto;">
-</td></tr>
-<tr><td class="pad" style="padding:10px 44px 6px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#727272;text-align:center;">
-  Your first cook, in one move: medium heat, two minutes, then a drop of water. When it dances, the pan is ready.
-</td></tr>
-
-<!-- REVIEWS: R056; R144; R028 -->
-<tr><td class="pad" style="padding:24px 44px 6px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="">
-    <tr>
-      <td class="stack stackpad" width="50%" valign="top" style="padding:0 7px 0 0;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-          <tr><td style="padding:18px 18px 16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <div style="font-size:14px;line-height:21px;color:#282828;padding:8px 0 10px 0;">&ldquo;I love the product, it is light, non-stick, cooks evenly and is easy to clean!&rdquo;</div>
-            <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Stacey K., verified buyer</div>
-          </td></tr>
-        </table>
-      </td>
-      <td class="stack stackpad" width="50%" valign="top" style="padding:0 0 0 7px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-          <tr><td style="padding:18px 18px 16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <div style="font-size:14px;line-height:21px;color:#282828;padding:8px 0 10px 0;">&ldquo;amazing pan, completely non stick as advertised and the handle stays cool!&rdquo;</div>
-            <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Nina G., verified buyer</div>
-          </td></tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="padding-top:14px;">
-    <tr><td valign="top">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-          <tr><td style="padding:18px 18px 16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <div style="font-size:14px;line-height:21px;color:#282828;padding:8px 0 10px 0;">&ldquo;My wife&rsquo;s favorite pans. Money well spent.&rdquo;</div>
-            <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Carlos C., verified buyer</div>
-          </td></tr>
-        </table>
+    <tr><td colspan="3" style="padding:0 16px 16px 16px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:11px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">
+        <img src="{{SHARED}}/icon-discount-tag.png" width="20" height="20" alt="" style="display:inline-block;vertical-align:-5px;width:20px;height:20px;">&nbsp; Your personal code takes 10% off this price, applied with the button below.
+      </td></tr></table>
     </td></tr>
   </table>
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;text-align:center;padding-top:14px;">Join 100,000+ happy customers.</div>
 </td></tr>
 
-<!-- CTA -->
-<tr><td align="center" style="padding:22px 44px 8px 44px;">
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-    <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:2px;">
-      <a href="{{ event.URL|default:'https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}" style="display:inline-block;padding:16px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:16px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;">USE HI10 NOW</a>
-    </td>
-  </tr></table>
-</td></tr>
+{{BLOCK:cta label="Claim my 10%" url="https://siraatskitchen.com/discount/{% coupon_code 'B2_10_48H' %}?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}" pad="16px 44px 4px 44px"}}
 
-<!-- TRUST ROW -->
-<tr><td class="pad" style="padding:22px 44px 6px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #ECE7DD;border-bottom:1px solid #ECE7DD;">
-    <tr>
-      <td width="33%" align="center" style="padding:16px 4px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;">30-DAY<br>RETURNS</td>
-      <td width="34%" align="center" style="padding:16px 4px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;border-left:1px solid #ECE7DD;border-right:1px solid #ECE7DD;">75-YEAR<br>WARRANTY</td>
-      <td width="33%" align="center" style="padding:16px 4px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;">FREE<br>SHIPPING</td>
-    </tr>
-  </table>
-</td></tr>
+{{BLOCK:offer eyebrow="YOUR PERSONAL CODE" headline="10% off, on top of the sale" code="{% coupon_code 'B2_10_48H' %}" note="Applied automatically with the button. One use, just for you." deadline="Expires 48 hours after this email" label="Claim my 10%" url="https://siraatskitchen.com/discount/{% coupon_code 'B2_10_48H' %}?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}"}}
 
-<tr><td class="pad" style="padding:14px 44px 20px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;text-align:center;">
-  HI10 gives 10% off one-time purchase products, on top of the current sale price.
-</td></tr>
+{{BLOCK:gifts}}
+
+{{BLOCK:features eyebrow="WHAT YOU ARE BUYING" headline="One pan. Nothing to wear off." i1="no-coating" t1="No coating. Ever." d1="Pure titanium cooking surface. Nothing to flake off." i2="pfas-tested" t2="Lab tested, not just claimed" d2="Light Labs no. 25895: 31 PFAS below detection." i3="induction-ready" t3="Every cooktop, metal utensils" d3="Gas, electric, induction. Dishwasher safe."}}
+
+{{BLOCK:reviews q1="I love the product, it is light, non-stick, cooks evenly and is easy to clean!" n1="Stacey K." q2="amazing pan, completely non stick as advertised and the handle stays cool!" n2="Nina G."}}
+
+{{BLOCK:cta label="Claim my 10%" url="https://siraatskitchen.com/discount/{% coupon_code 'B2_10_48H' %}?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}" pad="26px 44px 6px 44px"}}
+
+{{BLOCK:icons pad="22px 44px 6px 44px"}}
+
+<tr><td class="pad" style="padding:16px 44px 26px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;text-align:center;">10% off one-time purchase products, on top of the sale price. One code per order.</td></tr>
+
 
 {{FOOTER}}
 

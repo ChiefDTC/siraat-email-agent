@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: Good call. Here's what's coming. | SUBJECT_B: You bought a pan from an ad. Good call. | PREVIEW: Order confirmed. What is in the box, your 4 gifts, and when it ships. | SEND: Placed Order + 1 hour (quiet hours 21:00 to 08:00 local) | FILTERS: Flow 'Post-purchase v3' (trigger Placed Order); flow filter: not in this flow in the last 30 days; split A = Placed Order count is 1 over all time (first order). Repeat buyers get p1-repeat. -->
+<!-- SUBJECT_A: Good call. Here's what's coming. | SUBJECT_B: Your order is in, with 4 gifts | PREVIEW: Order confirmed. Your 4 gifts, your e-book download and what happens next. | SEND: Placed Order + 1 hour (quiet hours 21:00 to 08:00 local) | FILTERS: Flow 'Post-purchase v3' (trigger Placed Order); flow filter: not in this flow in the last 30 days; split A = Placed Order count is 1 over all time (first order). Repeat buyers get p1-repeat. -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
-<title>Good call. Here's what's coming.</title>
+<title>Good call. 4 gifts coming.</title>
 <!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
@@ -24,13 +24,26 @@
     .navhide{display:none!important;}
     .desk{display:none!important;max-height:0!important;overflow:hidden!important;}
     .mob{display:block!important;max-height:none!important;overflow:visible!important;}
-    .tile{box-sizing:border-box!important;border-left:0!important;}
-    .tile + .tile{border-top:1px solid #ECE7DD!important;}
+    .center{text-align:center!important;}
+    .pimg{width:112px!important;}
+    .pimg img{width:100px!important;height:100px!important;}
+  }
+  /* blocks (partials/blocks, ingevoegd door build_template.py) */
+  @media only screen and (max-width:620px){
+    .btnw{width:100%!important;min-width:0!important;}
+    .btnw a{display:block!important;}
+    .g2{display:block!important;width:100%!important;padding:0 0 10px 0!important;}
+    .ic{padding:14px 2px!important;}
+    .ic div{font-size:10px!important;letter-spacing:.6px!important;}
+    .codebar{font-size:11px!important;letter-spacing:1px!important;}
+    .offer-code{font-size:26px!important;letter-spacing:4px!important;}
+    .rv{display:block!important;width:100%!important;box-sizing:border-box!important;}
+    .rvsp{display:block!important;width:100%!important;height:12px!important;font-size:0!important;line-height:0!important;}
   }
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Order confirmed. What is in the box, your 4 gifts, and when it ships.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Order confirmed. Your 4 gifts, your e-book download and what happens next.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
@@ -48,200 +61,178 @@
 </td></tr>
 
 
-<!-- HERO: shoot photo + TT Ramillas headline baked in -->
+<!-- HERO 1:1 (make_hero.py) -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/pages/care-use"><img src="assets/hero-p1-first.jpg" width="600" alt="Good call. Here's what's coming. Your order, your 4 gifts, and what happens next." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://siraatskitchen.com/pages/faq"><img src="assets/p1-first-hero.jpg" width="600" alt="Order confirmed. Good call, 4 gifts coming: free shipping, a mystery gift, the Plastic-Free Home e-book and a chance to win a PFAS water filter." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
-<!-- CTA -->
-<tr><td align="center" style="padding:24px 44px 4px 44px;">
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-    <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:2px;">
-      <a href="https://siraatskitchen.com/pages/care-use" style="display:inline-block;padding:16px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:16px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;">WATCH THE COOK GUIDE</a>
+<!-- BLOCK cta: primaire knop, 340 px desktop, volle breedte mobiel -->
+<tr><td align="center" class="pad" style="padding:20px 44px 4px 44px;">
+  <table role="presentation" class="btnw" width="340" cellpadding="0" cellspacing="0" border="0" style="width:340px;"><tr>
+    <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:3px;">
+      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/pages/faq" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Download your e-book</center></v:roundrect><![endif]-->
+      <!--[if !mso]><!--><a href="https://siraatskitchen.com/pages/faq" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Download your e-book &rarr;</a><!--<![endif]-->
     </td>
   </tr></table>
+  <div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>Your Plastic-Free Home e-book, free with your order.</div>
 </td></tr>
+
 
 <!-- INTRO -->
-<tr><td class="pad" style="padding:30px 44px 6px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;color:#282828;">
-  <p style="margin:0 0 14px 0;">Hi Sarah,</p>
-  <p style="margin:0 0 14px 0;">Your order is confirmed. Thank you for trusting us with your kitchen.</p>
-  <p style="margin:0;">Every Siraat pan has a pure titanium cooking surface and no coatings, so there is nothing to peel, flake or replace. It is the original hammered titanium pan, and it is on its way to you. Here is exactly what happens next, so nothing comes as a surprise.</p>
+<tr><td class="pad" style="padding:26px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">
+  <p style="margin:0;">Hi Sarah, your order is confirmed. Thank you for choosing a pan with a pure titanium cooking surface and no coatings: nothing to peel, nothing to replace.</p>
 </td></tr>
 
-<!-- ORDER BLOCK (Placed Order line items) -->
-<tr><td class="pad" style="padding:30px 44px 6px 44px;">
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:34px;line-height:38px;color:#282828;text-align:center;">In your order</div>
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;text-align:center;padding:6px 0 14px 0;">Order #1042</div>
+<!-- ORDER (Placed Order line items) -->
+<tr><td class="pad" style="padding:26px 44px 4px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
+    <tr><td colspan="3" style="padding:16px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">ORDER #1042</td></tr>
     
     <tr>
-      <td width="112" valign="middle" style="padding:14px 0 14px 14px;">
-        <img src="assets/cart-fallback.jpg" width="96" alt="Titanium Hammered Pan Pro, 11"" style="width:96px;height:96px;object-fit:cover;background:#F8F7F2;">
+      <td width="104" valign="top" style="padding:12px 0 12px 16px;">
+        <img src="assets/cart-fallback.jpg" width="88" alt="Titanium Hammered Pan Pro, 11"" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;">
       </td>
-      <td valign="middle" style="padding:14px 16px;font-family:Inter,Arial,Helvetica,sans-serif;">
+      <td valign="middle" style="padding:12px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
         <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">Titanium Hammered Pan Pro, 11"</div>
         <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">Qty 1</div>
       </td>
-      <td align="right" valign="middle" style="padding:14px 16px 14px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;white-space:nowrap;">$134.00</td>
+      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;white-space:nowrap;">$134.00</td>
     </tr>
     
-  </table>
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;text-align:center;padding-top:10px;">Full order details are in your Shopify confirmation email.</div>
-</td></tr>
-
-<!-- GIFTS -->
-<tr><td class="pad" style="padding:34px 44px 0 44px;">
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:34px;line-height:38px;color:#282828;text-align:center;">Your 4 gifts</div>
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#727272;text-align:center;padding:8px 0 18px 0;">Included with your order, at no cost.</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-    <tr>
-      <td class="stack stackpad" width="50%" valign="top" style="padding:0 7px 14px 0;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-          <tr><td style="padding:18px 18px 16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:30px;line-height:30px;color:#AC3B19;">1</div>
-            <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:8px;">Free shipping</div>
-            <div style="font-size:14px;line-height:21px;color:#727272;padding-top:4px;">Already applied. No shipping costs, wherever you are.</div>
-          </td></tr>
-        </table>
-      </td>
-      <td class="stack stackpad" width="50%" valign="top" style="padding:0 0 14px 7px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-          <tr><td style="padding:18px 18px 16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:30px;line-height:30px;color:#AC3B19;">2</div>
-            <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:8px;">A mystery gift</div>
-            <div style="font-size:14px;line-height:21px;color:#727272;padding-top:4px;">Packed in the box with your order. We will not spoil it.</div>
-          </td></tr>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td class="stack stackpad" width="50%" valign="top" style="padding:0 7px 14px 0;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-          <tr><td style="padding:18px 18px 16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:30px;line-height:30px;color:#AC3B19;">3</div>
-            <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:8px;">The Plastic-Free Home e-book</div>
-            <div style="font-size:14px;line-height:21px;color:#727272;padding-top:4px;">A practical, digital guide to a cleaner kitchen.</div>
-          </td></tr>
-        </table>
-      </td>
-      <td class="stack stackpad" width="50%" valign="top" style="padding:0 0 14px 7px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-          <tr><td style="padding:18px 18px 16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:30px;line-height:30px;color:#AC3B19;">4</div>
-            <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:8px;">A chance to win</div>
-            <div style="font-size:14px;line-height:21px;color:#727272;padding-top:4px;">Your order is entered in our weekly draw for a PFAS water filter.</div>
-          </td></tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#9A948B;text-align:center;padding-top:2px;">Gifts as shown at checkout. The e-book and the draw entry are digital, so nothing extra to wait for.</div>
-</td></tr>
-
-<tr><td class="pad" style="padding:34px 44px 6px 44px;">
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:34px;line-height:38px;color:#282828;text-align:center;">What happens next</div>
-</td></tr>
-
-<tr><td class="pad" style="padding:22px 44px 8px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-    <tr><td style="padding:20px 22px 6px 22px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:1.5px;font-weight:600;color:#AC3B19;">FROM ORDER TO FIRST EGG</td></tr>
-    <tr><td style="padding:0 22px;">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td width="44" valign="top" style="padding:14px 0 14px 0;font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:34px;line-height:34px;color:#AC3B19;">1</td>
-          <td valign="top" style="padding:14px 0 14px 0;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Within 1 business day: we pack it</div>
-            <div style="font-size:14px;line-height:21px;color:#727272;padding-top:4px;">Every order is quality-checked, packed and handed to the courier.</div>
-          </td>
-        </tr>
-        <tr>
-          <td width="44" valign="top" style="padding:14px 0 14px 0;font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:34px;line-height:34px;color:#AC3B19;">2</td>
-          <td valign="top" style="padding:14px 0 14px 0;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Then: your tracking email</div>
-            <div style="font-size:14px;line-height:21px;color:#727272;padding-top:4px;">Tracking can take 24 to 72 hours to show movement after dispatch. That is normal.</div>
-          </td>
-        </tr>
-        <tr>
-          <td width="44" valign="top" style="padding:14px 0 14px 0;font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:34px;line-height:34px;color:#AC3B19;">3</td>
-          <td valign="top" style="padding:14px 0 14px 0;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">6 to 10 days: on its way to you</div>
-            <div style="font-size:14px;line-height:21px;color:#727272;padding-top:4px;">For the US and most countries. Sets and lids sometimes travel in separate parcels, so if one box arrives alone, the rest is on its way.</div>
-          </td>
-        </tr>
-        <tr>
-          <td width="44" valign="top" style="padding:14px 0 18px 0;font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:34px;line-height:34px;color:#AC3B19;">4</td>
-          <td valign="top" style="padding:14px 0 18px 0;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">The day after it arrives: your first cook</div>
-            <div style="font-size:14px;line-height:21px;color:#727272;padding-top:4px;">We send you the chef&rsquo;s guide. Two minutes of reading, then breakfast.</div>
-          </td>
-        </tr>
-      </table>
+    <tr><td colspan="3" style="padding:0 16px 16px 16px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:11px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">
+        <img src="assets/icon-tracking-email.png" width="20" height="20" alt="" style="display:inline-block;vertical-align:-5px;width:20px;height:20px;">&nbsp; <b>Tracking link by email</b> as soon as it ships.
+      </td></tr></table>
     </td></tr>
+  </table>
+</td></tr>
+
+<!-- BLOCK gifts: vier gifts met beeld en waarde, gelijke hoogte, 2x2 op mobiel -->
+<tr><td class="pad" style="padding:30px 44px 6px 44px;">
+  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">IN YOUR ORDER</div>
+  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 18px 0;">Your 4 gifts are on the way</div>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+    <td class="g2" width="50%" valign="top" style="padding:0 5px 0 0;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td width="50%" valign="top" align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:10px 6px 14px 6px;font-family:Inter,Arial,Helvetica,sans-serif;">
+          <img src="../../partials/shared/gift-shipping.jpg" width="110" alt="Free shipping" style="width:110px;height:110px;margin:0 auto;">
+          <div style="font-size:13px;line-height:17px;font-weight:600;color:#282828;padding-top:6px;height:34px;">Free<br>shipping</div>
+          <div style="font-size:12px;line-height:16px;font-weight:600;color:#AC3B19;">$15 value</div>
+        </td>
+        <td width="10" style="font-size:0;line-height:0;">&nbsp;</td>
+        <td width="50%" valign="top" align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:10px 6px 14px 6px;font-family:Inter,Arial,Helvetica,sans-serif;">
+          <img src="../../partials/shared/gift-ebook.jpg" width="110" alt="Plastic-Free Home e-book" style="width:110px;height:110px;margin:0 auto;">
+          <div style="font-size:13px;line-height:17px;font-weight:600;color:#282828;padding-top:6px;height:34px;">Plastic-Free<br>Home e-book</div>
+          <div style="font-size:12px;line-height:16px;font-weight:600;color:#AC3B19;">$30 value</div>
+        </td>
+      </tr></table>
+    </td>
+    <td class="g2" width="50%" valign="top" style="padding:0 0 0 5px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td width="50%" valign="top" align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:10px 6px 14px 6px;font-family:Inter,Arial,Helvetica,sans-serif;">
+          <img src="../../partials/shared/gift-mystery.jpg" width="110" alt="Mystery gift" style="width:110px;height:110px;margin:0 auto;">
+          <div style="font-size:13px;line-height:17px;font-weight:600;color:#282828;padding-top:6px;height:34px;">Mystery gift<br>in the box</div>
+          <div style="font-size:12px;line-height:16px;font-weight:600;color:#AC3B19;">$25 value</div>
+        </td>
+        <td width="10" style="font-size:0;line-height:0;">&nbsp;</td>
+        <td width="50%" valign="top" align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:10px 6px 14px 6px;font-family:Inter,Arial,Helvetica,sans-serif;">
+          <img src="../../partials/shared/gift-filter.jpg" width="110" alt="Chance to win a PFAS water filter" style="width:110px;height:110px;margin:0 auto;">
+          <div style="font-size:13px;line-height:17px;font-weight:600;color:#282828;padding-top:6px;height:34px;">Win a PFAS<br>water filter</div>
+          <div style="font-size:12px;line-height:16px;font-weight:600;color:#AC3B19;">$450 value</div>
+        </td>
+      </tr></table>
+    </td>
+  </tr></table>
+  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#727272;text-align:center;padding-top:14px;">The e-book is yours right now. The mystery gift travels in the box, and your order is entered in the draw for a $450 PFAS water filter.</div>
+</td></tr>
+
+
+<!-- BLOCK cta: primaire knop, 340 px desktop, volle breedte mobiel -->
+<tr><td align="center" class="pad" style="padding:22px 44px 4px 44px;">
+  <table role="presentation" class="btnw" width="340" cellpadding="0" cellspacing="0" border="0" style="width:340px;"><tr>
+    <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:3px;">
+      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/pages/faq" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Download your e-book</center></v:roundrect><![endif]-->
+      <!--[if !mso]><!--><a href="https://siraatskitchen.com/pages/faq" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Download your e-book &rarr;</a><!--<![endif]-->
+    </td>
+  </tr></table>
+  
+</td></tr>
+
+<tr><td class="pad" style="padding:30px 44px 14px 44px;">
+  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">WHAT HAPPENS NEXT</div>
+  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding-top:6px;">From order to first egg</div>
+</td></tr>
+<tr><td class="pad" style="padding:0 44px 6px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
+    <tr><td width="58" valign="top" style="padding:18px 0 14px 20px;"><img src="assets/icon-package.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
+      <td valign="top" style="padding:16px 20px 14px 14px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">We pack and check it</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Checked by hand before it leaves us.</div></td></tr>
+    <tr><td width="58" valign="top" style="padding:18px 0 14px 20px;"><img src="assets/icon-tracking-email.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
+      <td valign="top" style="padding:16px 20px 14px 14px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Tracking link by email</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">It lands in your inbox as soon as your order ships.</div></td></tr>
+    <tr><td width="58" valign="top" style="padding:18px 0 14px 20px;"><img src="../../partials/shared/icon-free-shipping.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
+      <td valign="top" style="padding:16px 20px 14px 14px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Free shipping, tracked to your door</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Sets and lids can travel in separate parcels.</div></td></tr>
+    <tr><td width="58" valign="top" style="padding:18px 0 18px 20px;"><img src="assets/icon-egg.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
+      <td valign="top" style="padding:16px 20px 18px 14px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">The day after delivery: your first cook</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">We send you the chef's guide. Then breakfast.</div></td></tr>
   </table>
 </td></tr>
 
 <!-- NOTE -->
-<tr><td class="pad" style="padding:26px 44px 6px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#ECE7DD;">
-    <tr><td style="padding:22px 24px;font-family:Inter,Arial,Helvetica,sans-serif;">
+<tr><td class="pad" style="padding:24px 44px 4px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#ECE7DD;" bgcolor="#ECE7DD">
+    <tr><td style="padding:20px 22px;font-family:Inter,Arial,Helvetica,sans-serif;">
       <div style="font-size:11px;line-height:14px;letter-spacing:1.5px;font-weight:600;color:#AC3B19;">BEFORE IT ARRIVES</div>
-      <div style="font-size:17px;line-height:24px;font-weight:600;color:#282828;padding-top:8px;">One thing our chef tells everyone</div>
-      <div style="font-size:15px;line-height:23px;color:#282828;padding-top:6px;">There is no coating, so the release comes from heat, not chemistry. Medium heat for 2 to 3 minutes, a drop of water to test, then a thin layer of oil. Cold metal grabs your food. Hot metal lets it go.</div>
+      <div style="font-size:17px;line-height:24px;font-weight:600;color:#282828;padding-top:6px;">One thing our chef tells everyone</div>
+      <div style="font-size:15px;line-height:23px;color:#282828;padding-top:6px;">There is no coating, so the release comes from heat, not chemistry. Medium heat for 2 to 3 minutes, a drop of water to test, then a thin layer of oil.</div>
     </td></tr>
   </table>
 </td></tr>
 
-<!-- REVIEWS -->
+<!-- BLOCK reviews: twee kaarten, gelijke hoogte (achtergrond op de kolomcel) -->
 <tr><td class="pad" style="padding:28px 44px 6px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-    <tr>
-      <td class="stack stackpad" width="50%" valign="top" style="padding:0 7px 0 0;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-          <tr><td style="padding:18px 18px 16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <div style="font-size:14px;line-height:21px;color:#282828;padding:8px 0 10px 0;">&ldquo;When my frying pan arrived, it was packed beautifully and using it, was such a pleasure. Nothing stuck to the pan, despite very little oil.&rdquo;</div>
-            <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Anne L., verified buyer</div>
-          </td></tr>
-        </table>
-      </td>
-      <td class="stack stackpad" width="50%" valign="top" style="padding:0 0 0 7px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-          <tr><td style="padding:18px 18px 16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <div style="font-size:14px;line-height:21px;color:#282828;padding:8px 0 10px 0;">&ldquo;The packaging was really nice. And we use it everyday, the product is very durable, light weight, and easy to clean.&rdquo;</div>
-            <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Galit W., verified buyer</div>
-          </td></tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;text-align:center;padding-top:14px;">Welcome to 100,000+ happy customers.</div>
-</td></tr>
-
-<!-- CTA -->
-<tr><td align="center" style="padding:26px 44px 8px 44px;">
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-    <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:2px;">
-      <a href="https://siraatskitchen.com/pages/care-use" style="display:inline-block;padding:16px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:16px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;">WATCH THE COOK GUIDE</a>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+    <td class="rv" width="48%" valign="top" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:20px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;I love my new pan. It looks good, cooks good and cleans good too. Would highly recommend&rdquo;</div>
+      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Nicola &middot; Verified buyer</div>
+    </td>
+    <td class="rvsp" width="14" style="font-size:0;line-height:0;">&nbsp;</td>
+    <td class="rv" width="48%" valign="top" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:20px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;My item arrived on time as indicated. Well packaged so no damage. Very happy with my frypan.&rdquo;</div>
+      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Bonnie &middot; Verified buyer</div>
     </td>
   </tr></table>
+  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;text-align:center;padding-top:14px;"><img src="../../partials/shared/icon-customers-100k.png" width="18" height="18" alt="" style="display:inline-block;vertical-align:-4px;width:18px;height:18px;">&nbsp; Join 100,000+ happy customers</div>
 </td></tr>
 
-<!-- TRUST ROW -->
+
+<!-- BLOCK cta: primaire knop, 340 px desktop, volle breedte mobiel -->
+<tr><td align="center" class="pad" style="padding:26px 44px 4px 44px;">
+  <table role="presentation" class="btnw" width="340" cellpadding="0" cellspacing="0" border="0" style="width:340px;"><tr>
+    <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:3px;">
+      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/pages/faq" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Download your e-book</center></v:roundrect><![endif]-->
+      <!--[if !mso]><!--><a href="https://siraatskitchen.com/pages/faq" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Download your e-book &rarr;</a><!--<![endif]-->
+    </td>
+  </tr></table>
+  
+</td></tr>
+
+
+<!-- BLOCK icons: vier feiten met iconen, nooit levertijd -->
 <tr><td class="pad" style="padding:22px 44px 6px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #ECE7DD;border-bottom:1px solid #ECE7DD;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
     <tr>
-      <td width="33%" align="center" style="padding:16px 4px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;">30-DAY<br>RETURNS</td>
-      <td width="34%" align="center" style="padding:16px 4px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;border-left:1px solid #ECE7DD;border-right:1px solid #ECE7DD;">75-YEAR<br>WARRANTY</td>
-      <td width="33%" align="center" style="padding:16px 4px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;">FREE<br>SHIPPING</td>
+      <td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;"><img src="../../partials/shared/icon-free-shipping.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">FREE<br>SHIPPING</div></td>
+      <td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;border-left:1px solid #ECE7DD;"><img src="../../partials/shared/icon-returns-30-day.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">30-DAY<br>RETURNS</div></td>
+      <td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;border-left:1px solid #ECE7DD;"><img src="../../partials/shared/icon-warranty-75-year.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">75-YEAR<br>WARRANTY</div></td>
+      <td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;border-left:1px solid #ECE7DD;"><img src="../../partials/shared/icon-pfas-tested.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">PFAS<br>LAB TESTED</div></td>
     </tr>
   </table>
 </td></tr>
 
+
 <!-- SIGN-OFF -->
-<tr><td class="pad" style="padding:22px 44px 26px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  Something not right with your order, an address to change or a question about which lid fits? Just reply to this email. A real person reads every one.<br><br>
+<tr><td class="pad" style="padding:24px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+  An address to change, or a question about which lid fits? Just reply to this email. A real person reads every one.<br><br>
   Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
 </td></tr>
 

@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: We need to publicly apologize. | SUBJECT_B: New since your last order | PREVIEW: We said it was the last pan you would ever need. Then we kept making new ones. | SEND: 60 days after Placed Order, 10:00 local time | FILTERS: Flow 'Winback v3' (trigger Placed Order, re-entry after 90 days); send filter: Placed Order = 0 since flow start; not in post-purchase in the last 14 days; split on last order Items: pan buyer (no Set) = this email. -->
+<!-- SUBJECT_A: New since your last order | SUBJECT_B: Two months with your pan: what is new (+10%) | PREVIEW: The lid that fits your pan, a new 2-pan bundle and 10% off with HI10. Plus $70 in gifts. | SEND: 60 days after Placed Order, 10:00 local time | FILTERS: Flow 'Winback v3' (trigger Placed Order, re-entry after 90 days); send filter: Placed Order = 0 since flow start; not in post-purchase in the last 14 days; split on last order Items: pan buyer (no Set) = this email. Offer: HI10 (public code, no unique code in R1). -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -24,16 +24,36 @@
     .navhide{display:none!important;}
     .desk{display:none!important;max-height:0!important;overflow:hidden!important;}
     .mob{display:block!important;max-height:none!important;overflow:visible!important;}
-    .tile{box-sizing:border-box!important;border-left:0!important;}
-    .tile + .tile{border-top:1px solid #ECE7DD!important;}
+    .center{text-align:center!important;}
+    .pcd{display:none!important;}
+    .pim{width:96px!important;padding:14px 0 14px 12px!important;}
+    .pim img{width:88px!important;height:88px!important;}
+  }
+  /* blocks (partials/blocks, ingevoegd door build_template.py) */
+  @media only screen and (max-width:620px){
+    .btnw{width:100%!important;min-width:0!important;}
+    .btnw a{display:block!important;}
+    .g2{display:block!important;width:100%!important;padding:0 0 10px 0!important;}
+    .ic{padding:14px 2px!important;}
+    .ic div{font-size:10px!important;letter-spacing:.6px!important;}
+    .codebar{font-size:11px!important;letter-spacing:1px!important;}
+    .offer-code{font-size:26px!important;letter-spacing:4px!important;}
+    .rv{display:block!important;width:100%!important;box-sizing:border-box!important;}
+    .rvsp{display:block!important;width:100%!important;height:12px!important;font-size:0!important;line-height:0!important;}
   }
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">We said it was the last pan you would ever need. Then we kept making new ones.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">The lid that fits your pan, a new 2-pan bundle and 10% off with HI10. Plus $70 in gifts.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
+
+<!-- BLOCK codebar: aanbod boven de header, live tekst -->
+<tr><td align="center" class="codebar" bgcolor="#282828" style="background:#282828;padding:11px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;letter-spacing:1.5px;font-weight:600;color:#FFFFFF;">
+  EXTRA 10% OFF YOUR ORDER &middot; CODE&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;">HI10</span>
+</td></tr>
+
 
 <!-- HEADER (vast, uit partials/header.html) -->
 <tr><td style="padding:18px 36px;background:#F8F7F2;border-bottom:1px solid #ECE7DD;" class="pad">
@@ -48,132 +68,171 @@
 </td></tr>
 
 
-<!-- HERO: shoot photo + TT Ramillas headline baked in -->
+<!-- HERO 1:1 met aanbodbalk (make_hero.py --offer) -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/collections/all"><img src="assets/hero-r1-pan.jpg" width="600" alt="New since your last order. Two pans, two lids, and a few new shapes." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://siraatskitchen.com/discount/HI10?redirect=/collections/all"><img src="assets/r1-pan-hero.jpg" width="600" alt="New since your last order: new pans and 10% off for you. Extra 10% off with code HI10, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
-<!-- CTA -->
-<tr><td align="center" style="padding:24px 44px 4px 44px;">
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-    <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:2px;">
-      <a href="https://siraatskitchen.com/collections/all" style="display:inline-block;padding:16px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:16px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;">SEE WHAT'S NEW</a>
+<!-- BLOCK cta: primaire knop, 340 px desktop, volle breedte mobiel -->
+<tr><td align="center" class="pad" style="padding:22px 44px 4px 44px;">
+  <table role="presentation" class="btnw" width="340" cellpadding="0" cellspacing="0" border="0" style="width:340px;"><tr>
+    <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:3px;">
+      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/discount/HI10?redirect=/collections/all" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Shop with my 10%</center></v:roundrect><![endif]-->
+      <!--[if !mso]><!--><a href="https://siraatskitchen.com/discount/HI10?redirect=/collections/all" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Shop with my 10% &rarr;</a><!--<![endif]-->
     </td>
   </tr></table>
+  <div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>HI10 is applied automatically. Plus $70 in gifts.</div>
 </td></tr>
+
 
 <!-- INTRO -->
-<tr><td class="pad" style="padding:30px 44px 6px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;color:#282828;">
-  <p style="margin:0 0 14px 0;">Hi Sarah,</p>
-  <p style="margin:0 0 14px 0;">We need to publicly apologize.</p>
-  <p style="margin:0 0 14px 0;">When you bought your pan, we told you it would be the last pan you ever needed. That part is still true. It comes with a 75-year warranty.</p>
-  <p style="margin:0;">What we did not mention is that we would keep making new ones. So, two months later, here is what you missed, and which one makes sense next to the pan you already own.</p>
+<tr><td class="pad" style="padding:26px 44px 2px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;text-align:center;">
+  <p style="margin:0 0 0px 0;">Hi Sarah, two months with your pan. Here is what is new, and what pan owners add next. Same pure titanium cooking surface, same 75-year warranty.</p>
 </td></tr>
 
-<!-- PRODUCTS -->
-<tr><td class="pad" style="padding:34px 44px 6px 44px;">
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:34px;line-height:38px;color:#282828;text-align:center;">Which pan next?</div>
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#727272;text-align:center;padding-top:8px;">Same pure titanium cooking surface as yours. Same 75-year warranty.</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:18px;">
+<!-- PRODUCTEN: lijst met prijs en prijs na code -->
+<tr><td class="pad" style="padding:30px 44px 6px 44px;">
+  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">NEW SINCE YOUR LAST ORDER</div>
+  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 16px 0;">What goes next to your pan</div>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;">
     <tr>
-      <td class="stack stackpad" width="33%" valign="top" style="padding:0 6px 0 0;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-          <tr><td style="padding:0;"><a href="https://siraatskitchen.com/products/2-pans-and-2-lids"><img src="assets/p-2p2l.jpg" width="260" alt="2 Pans + 2 Lids" style="width:100%;height:auto;"></a></td></tr>
-          <tr><td style="padding:14px 16px 16px 16px;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">2 Pans + 2 Lids</div>
-            <div style="font-size:13px;line-height:19px;color:#727272;padding-top:4px;">Our newest bundle. Two hammered pans with matching lids, for when one pan is always busy.</div>
-            <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:8px;">$199</div>
-            <div style="font-size:13px;line-height:20px;padding-top:8px;"><a href="https://siraatskitchen.com/products/2-pans-and-2-lids" style="color:#AC3B19;font-weight:600;text-decoration:none;">See the bundle &rarr;</a></div>
-          </td></tr>
-        </table>
+      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/stainless-steel-lid"><img src="assets/p-lid.jpg" width="114" alt="Stainless Steel Lid" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
+      <td valign="middle" style="padding:14px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;">
+        <div style="font-size:10px;line-height:14px;letter-spacing:1.5px;font-weight:600;color:#AC3B19;padding-bottom:3px;">FOR YOUR PAN</div><div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Stainless Steel Lid</div>
+        <div class="pcd" style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">Fits the Pan Pro you already own. Steam, simmer, no splatter.</div>
+        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">$59&nbsp; <span style="color:#AC3B19;white-space:nowrap;">$53.10 with HI10</span></div>
+        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/stainless-steel-lid" style="color:#AC3B19;font-weight:600;text-decoration:underline;">Find my size &rarr;</a></div>
       </td>
-      <td class="stack stackpad" width="33%" valign="top" style="padding:0 3px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-          <tr><td style="padding:0;"><a href="https://siraatskitchen.com/products/titanium-hammered-wok-pan-pro"><img src="assets/p-wok.jpg" width="260" alt="Wok Pan Pro" style="width:100%;height:auto;"></a></td></tr>
-          <tr><td style="padding:14px 16px 16px 16px;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">Wok Pan Pro</div>
-            <div style="font-size:13px;line-height:19px;color:#727272;padding-top:4px;">9 cm deep. Stir-fry, fried rice and big batches without spilling.</div>
-            <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:8px;">From $119</div>
-            <div style="font-size:13px;line-height:20px;padding-top:8px;"><a href="https://siraatskitchen.com/products/titanium-hammered-wok-pan-pro" style="color:#AC3B19;font-weight:600;text-decoration:none;">See the wok &rarr;</a></div>
-          </td></tr>
-        </table>
+    </tr>
+    <tr>
+      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/2-pans-and-2-lids"><img src="assets/p-2p2l.jpg" width="114" alt="2 Pans + 2 Lids" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
+      <td valign="middle" style="padding:14px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;">
+        <div style="font-size:10px;line-height:14px;letter-spacing:1.5px;font-weight:600;color:#AC3B19;padding-bottom:3px;">NEW</div><div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">2 Pans + 2 Lids</div>
+        <div class="pcd" style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">Two hammered pans with matching lids, for when one is always busy.</div>
+        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">$199&nbsp; <span style="color:#AC3B19;white-space:nowrap;">$179.10 with HI10</span></div>
+        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/2-pans-and-2-lids" style="color:#AC3B19;font-weight:600;text-decoration:underline;">See the bundle &rarr;</a></div>
       </td>
-      <td class="stack stackpad" width="33%" valign="top" style="padding:0 0 0 6px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-          <tr><td style="padding:0;"><a href="https://siraatskitchen.com/products/titanium-hammered-crepe-pan-pro"><img src="assets/p-crepe.jpg" width="260" alt="Crepe Pan Pro" style="width:100%;height:auto;"></a></td></tr>
-          <tr><td style="padding:14px 16px 16px 16px;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">Crepe Pan Pro</div>
-            <div style="font-size:13px;line-height:19px;color:#727272;padding-top:4px;">Flat and wide for crepes, pancakes and tortillas.</div>
-            <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:8px;">$139</div>
-            <div style="font-size:13px;line-height:20px;padding-top:8px;"><a href="https://siraatskitchen.com/products/titanium-hammered-crepe-pan-pro" style="color:#AC3B19;font-weight:600;text-decoration:none;">See the crepe pan &rarr;</a></div>
-          </td></tr>
-        </table>
+    </tr>
+    <tr>
+      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-wok-pan-pro"><img src="assets/p-wok.jpg" width="114" alt="Wok Pan Pro" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
+      <td valign="middle" style="padding:14px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;">
+        <div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Wok Pan Pro</div>
+        <div class="pcd" style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">9 cm deep. Stir-fry, fried rice and big batches without spilling.</div>
+        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">From $119&nbsp; <span style="color:#AC3B19;white-space:nowrap;">from $107.10 with HI10</span></div>
+        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-wok-pan-pro" style="color:#AC3B19;font-weight:600;text-decoration:underline;">See the wok &rarr;</a></div>
+      </td>
+    </tr>
+    <tr>
+      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-crepe-pan-pro"><img src="assets/p-crepe.jpg" width="114" alt="Crepe Pan Pro" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
+      <td valign="middle" style="padding:14px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
+        <div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Crepe Pan Pro</div>
+        <div class="pcd" style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">Flat and wide for crepes, pancakes, eggs and tortillas.</div>
+        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">$139&nbsp; <span style="color:#AC3B19;white-space:nowrap;">$125.10 with HI10</span></div>
+        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-crepe-pan-pro" style="color:#AC3B19;font-weight:600;text-decoration:underline;">See the crepe pan &rarr;</a></div>
       </td>
     </tr>
   </table>
 </td></tr>
 
-<!-- NOTE -->
-<tr><td class="pad" style="padding:26px 44px 6px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#ECE7DD;">
-    <tr><td style="padding:22px 24px;font-family:Inter,Arial,Helvetica,sans-serif;">
-      <div style="font-size:11px;line-height:14px;letter-spacing:1.5px;font-weight:600;color:#AC3B19;">STILL COOKING WITHOUT A LID?</div>
-      <div style="font-size:17px;line-height:24px;font-weight:600;color:#282828;padding-top:8px;">The stainless lid fits the Pan Pro you already have</div>
-      <div style="font-size:15px;line-height:23px;color:#282828;padding-top:6px;">Steam, splatter control and dinner kept warm. $59. <a href="https://siraatskitchen.com/products/stainless-steel-lid" style="color:#AC3B19;font-weight:600;text-decoration:none;">Choose your size &rarr;</a></div>
-    </td></tr>
-  </table>
-</td></tr>
-
-<!-- REVIEWS -->
-<tr><td class="pad" style="padding:28px 44px 6px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-    <tr>
-      <td class="stack stackpad" width="50%" valign="top" style="padding:0 7px 0 0;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-          <tr><td style="padding:18px 18px 16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <div style="font-size:14px;line-height:21px;color:#282828;padding:8px 0 10px 0;">&ldquo;My son bought me the wok for Christmas and he already had the whole set. Great to cook with.&rdquo;</div>
-            <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Pam B., verified buyer</div>
-          </td></tr>
-        </table>
-      </td>
-      <td class="stack stackpad" width="50%" valign="top" style="padding:0 0 0 7px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-          <tr><td style="padding:18px 18px 16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <div style="font-size:14px;line-height:21px;color:#282828;padding:8px 0 10px 0;">&ldquo;I just bought a frying pan and I have to say it is a game changer! Super easy to fry vegetables or meat, love it! I will certainly buy another one!&rdquo;</div>
-            <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Marianne M., verified buyer</div>
-          </td></tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;text-align:center;padding-top:14px;">Join 100,000+ happy customers.</div>
-</td></tr>
-
-<!-- CTA -->
-<tr><td align="center" style="padding:26px 44px 8px 44px;">
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-    <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:2px;">
-      <a href="https://siraatskitchen.com/collections/all" style="display:inline-block;padding:16px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:16px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;">SEE WHAT'S NEW</a>
+<!-- BLOCK cta: primaire knop, 340 px desktop, volle breedte mobiel -->
+<tr><td align="center" class="pad" style="padding:24px 44px 4px 44px;">
+  <table role="presentation" class="btnw" width="340" cellpadding="0" cellspacing="0" border="0" style="width:340px;"><tr>
+    <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:3px;">
+      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/discount/HI10?redirect=/collections/all" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Shop with my 10%</center></v:roundrect><![endif]-->
+      <!--[if !mso]><!--><a href="https://siraatskitchen.com/discount/HI10?redirect=/collections/all" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Shop with my 10% &rarr;</a><!--<![endif]-->
     </td>
   </tr></table>
+  
 </td></tr>
 
-<!-- TRUST ROW -->
+
+<!-- BLOCK gifts: vier gifts met beeld en waarde, gelijke hoogte, 2x2 op mobiel -->
+<tr><td class="pad" style="padding:30px 44px 6px 44px;">
+  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">WITH EVERY ORDER</div>
+  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 18px 0;">$70 in gifts, on us</div>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+    <td class="g2" width="50%" valign="top" style="padding:0 5px 0 0;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td width="50%" valign="top" align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:10px 6px 14px 6px;font-family:Inter,Arial,Helvetica,sans-serif;">
+          <img src="../../partials/shared/gift-shipping.jpg" width="110" alt="Free shipping" style="width:110px;height:110px;margin:0 auto;">
+          <div style="font-size:13px;line-height:17px;font-weight:600;color:#282828;padding-top:6px;height:34px;">Free<br>shipping</div>
+          <div style="font-size:12px;line-height:16px;font-weight:600;color:#AC3B19;">$15 value</div>
+        </td>
+        <td width="10" style="font-size:0;line-height:0;">&nbsp;</td>
+        <td width="50%" valign="top" align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:10px 6px 14px 6px;font-family:Inter,Arial,Helvetica,sans-serif;">
+          <img src="../../partials/shared/gift-ebook.jpg" width="110" alt="Plastic-Free Home e-book" style="width:110px;height:110px;margin:0 auto;">
+          <div style="font-size:13px;line-height:17px;font-weight:600;color:#282828;padding-top:6px;height:34px;">Plastic-Free<br>Home e-book</div>
+          <div style="font-size:12px;line-height:16px;font-weight:600;color:#AC3B19;">$30 value</div>
+        </td>
+      </tr></table>
+    </td>
+    <td class="g2" width="50%" valign="top" style="padding:0 0 0 5px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td width="50%" valign="top" align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:10px 6px 14px 6px;font-family:Inter,Arial,Helvetica,sans-serif;">
+          <img src="../../partials/shared/gift-mystery.jpg" width="110" alt="Mystery gift" style="width:110px;height:110px;margin:0 auto;">
+          <div style="font-size:13px;line-height:17px;font-weight:600;color:#282828;padding-top:6px;height:34px;">Mystery gift<br>in the box</div>
+          <div style="font-size:12px;line-height:16px;font-weight:600;color:#AC3B19;">$25 value</div>
+        </td>
+        <td width="10" style="font-size:0;line-height:0;">&nbsp;</td>
+        <td width="50%" valign="top" align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:10px 6px 14px 6px;font-family:Inter,Arial,Helvetica,sans-serif;">
+          <img src="../../partials/shared/gift-filter.jpg" width="110" alt="Chance to win a PFAS water filter" style="width:110px;height:110px;margin:0 auto;">
+          <div style="font-size:13px;line-height:17px;font-weight:600;color:#282828;padding-top:6px;height:34px;">Win a PFAS<br>water filter</div>
+          <div style="font-size:12px;line-height:16px;font-weight:600;color:#AC3B19;">$450 value</div>
+        </td>
+      </tr></table>
+    </td>
+  </tr></table>
+  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#727272;text-align:center;padding-top:14px;">Plus a chance to win a $450 PFAS water filter.</div>
+</td></tr>
+
+
+<!-- BLOCK reviews: twee kaarten, gelijke hoogte (achtergrond op de kolomcel) -->
+<tr><td class="pad" style="padding:28px 44px 6px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+    <td class="rv" width="48%" valign="top" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:20px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;This is the best crepe pan that I have used that works like a non-stick but gives crispy output like a cast iron pan.&rdquo;</div>
+      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Chetan G. &middot; Verified buyer</div>
+    </td>
+    <td class="rvsp" width="14" style="font-size:0;line-height:0;">&nbsp;</td>
+    <td class="rv" width="48%" valign="top" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:20px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;The pans are great- the food slips right out with only a little oil. I would order additional pans from this company&rdquo;</div>
+      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Marlene &middot; Verified buyer</div>
+    </td>
+  </tr></table>
+  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;text-align:center;padding-top:14px;"><img src="../../partials/shared/icon-customers-100k.png" width="18" height="18" alt="" style="display:inline-block;vertical-align:-4px;width:18px;height:18px;">&nbsp; Join 100,000+ happy customers</div>
+</td></tr>
+
+
+<!-- BLOCK icons: vier feiten met iconen, nooit levertijd -->
 <tr><td class="pad" style="padding:22px 44px 6px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #ECE7DD;border-bottom:1px solid #ECE7DD;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
     <tr>
-      <td width="33%" align="center" style="padding:16px 4px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;">30-DAY<br>RETURNS</td>
-      <td width="34%" align="center" style="padding:16px 4px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;border-left:1px solid #ECE7DD;border-right:1px solid #ECE7DD;">75-YEAR<br>WARRANTY</td>
-      <td width="33%" align="center" style="padding:16px 4px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;">FREE<br>SHIPPING</td>
+      <td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;"><img src="../../partials/shared/icon-free-shipping.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">FREE<br>SHIPPING</div></td>
+      <td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;border-left:1px solid #ECE7DD;"><img src="../../partials/shared/icon-returns-30-day.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">30-DAY<br>RETURNS</div></td>
+      <td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;border-left:1px solid #ECE7DD;"><img src="../../partials/shared/icon-warranty-75-year.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">75-YEAR<br>WARRANTY</div></td>
+      <td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;border-left:1px solid #ECE7DD;"><img src="../../partials/shared/icon-pfas-tested.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">PFAS<br>LAB TESTED</div></td>
     </tr>
   </table>
 </td></tr>
 
+
+<!-- BLOCK cta: primaire knop, 340 px desktop, volle breedte mobiel -->
+<tr><td align="center" class="pad" style="padding:24px 44px 4px 44px;">
+  <table role="presentation" class="btnw" width="340" cellpadding="0" cellspacing="0" border="0" style="width:340px;"><tr>
+    <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:3px;">
+      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/discount/HI10?redirect=/collections/all" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Shop with my 10%</center></v:roundrect><![endif]-->
+      <!--[if !mso]><!--><a href="https://siraatskitchen.com/discount/HI10?redirect=/collections/all" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Shop with my 10% &rarr;</a><!--<![endif]-->
+    </td>
+  </tr></table>
+  
+</td></tr>
+
+
 <!-- SIGN-OFF -->
-<tr><td class="pad" style="padding:22px 44px 26px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  How is the first pan doing? Reply and tell us, good or bad. And if anything ever goes wrong with it, it is covered for 75 years.<br><br>
+<tr><td class="pad" style="padding:24px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+  How is the first pan doing? Reply and tell us, good or bad. Not sure which lid size fits? Send a photo of your pan and we will tell you.<br><br>
   Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
 </td></tr>
 

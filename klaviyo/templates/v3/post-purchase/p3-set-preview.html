@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: Two weeks with your set | SUBJECT_B: The one pan your set doesn't have | PREVIEW: How to keep it shining, and the shape that is not in the box. | SEND: 14 days after Placed Order, 10:00 local time | FILTERS: Flow 'Post-purchase v3' (trigger Placed Order); flow filter: not in this flow in the last 30 days; split on Placed Order: value of $300 or more, or Items contains 'Set' = this email; send filter: no refund in the last 30 days. -->
+<!-- SUBJECT_A: The pan your set is missing (10% off) | SUBJECT_B: Two weeks with your set. Your thank-you code inside | PREVIEW: Crepe or wok, 10% off with your own code. It expires 14 days after this email. | SEND: 14 days after Placed Order, 10:00 local time | FILTERS: Flow 'Post-purchase v3' (trigger Placed Order); flow filter: not in this flow in the last 30 days; split on Placed Order: value of $300 or more, or Items contains 'Set' = this email; send filter: no refund in the last 30 days. Coupon: P3_THANKYOU_10_14D (unique, 10%, expires 14 days after assignment). -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
-<title>Two weeks with your set</title>
+<title>The pan your set is missing</title>
 <!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
@@ -24,16 +24,35 @@
     .navhide{display:none!important;}
     .desk{display:none!important;max-height:0!important;overflow:hidden!important;}
     .mob{display:block!important;max-height:none!important;overflow:visible!important;}
-    .tile{box-sizing:border-box!important;border-left:0!important;}
-    .tile + .tile{border-top:1px solid #ECE7DD!important;}
+    .center{text-align:center!important;}
+    .pimg{width:112px!important;}
+    .pimg img{width:100px!important;height:100px!important;}
+  }
+  /* blocks (partials/blocks, ingevoegd door build_template.py) */
+  @media only screen and (max-width:620px){
+    .btnw{width:100%!important;min-width:0!important;}
+    .btnw a{display:block!important;}
+    .g2{display:block!important;width:100%!important;padding:0 0 10px 0!important;}
+    .ic{padding:14px 2px!important;}
+    .ic div{font-size:10px!important;letter-spacing:.6px!important;}
+    .codebar{font-size:11px!important;letter-spacing:1px!important;}
+    .offer-code{font-size:26px!important;letter-spacing:4px!important;}
+    .rv{display:block!important;width:100%!important;box-sizing:border-box!important;}
+    .rvsp{display:block!important;width:100%!important;height:12px!important;font-size:0!important;line-height:0!important;}
   }
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">How to keep it shining, and the shape that is not in the box.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Crepe or wok, 10% off with your own code. It expires 14 days after this email.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
+
+<!-- BLOCK codebar: aanbod boven de header, live tekst -->
+<tr><td align="center" class="codebar" bgcolor="#282828" style="background:#282828;padding:11px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;letter-spacing:1.5px;font-weight:600;color:#FFFFFF;">
+  YOUR THANK-YOU CODE &middot; 10% OFF&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;">SRT-K7Q2M</span>
+</td></tr>
+
 
 <!-- HEADER (vast, uit partials/header.html) -->
 <tr><td style="padding:18px 36px;background:#F8F7F2;border-bottom:1px solid #ECE7DD;" class="pad">
@@ -48,125 +67,134 @@
 </td></tr>
 
 
-<!-- HERO: shoot photo + TT Ramillas headline baked in -->
+<!-- HERO 1:1 (make_hero.py) -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/products/dishwashing-detergent-sheets-fresh-lemon"><img src="assets/hero-p3-set.jpg" width="600" alt="Two weeks with your set. Keep it shining, and the one pan it is missing." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/titanium-hammered-crepe-pan-pro"><img src="assets/p3-set-hero.jpg" width="600" alt="The pan your set is missing. Crepe or wok, 10% off: your thank-you code expires 14 days after this email." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
-<!-- CTA -->
-<tr><td align="center" style="padding:24px 44px 4px 44px;">
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-    <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:2px;">
-      <a href="https://siraatskitchen.com/products/dishwashing-detergent-sheets-fresh-lemon" style="display:inline-block;padding:16px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:16px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;">SHOP DISHWASHER SHEETS</a>
-    </td>
-  </tr></table>
-</td></tr>
-
-<!-- INTRO -->
-<tr><td class="pad" style="padding:30px 44px 6px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;color:#282828;">
-  <p style="margin:0 0 14px 0;">Hi Sarah,</p>
-  <p style="margin:0;">Two weeks with your set. Around now, set owners ask us two things: what to wash it with, and which pan the set does not include. Here are both answers.</p>
-</td></tr>
-
-<!-- FEATURE PRODUCT -->
-<tr><td class="pad" style="padding:30px 44px 6px 44px;">
+<!-- PRODUCT -->
+<tr><td class="pad" style="padding:22px 44px 4px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
     <tr>
-      <td class="stack" width="46%" valign="middle" style="padding:0;"><a href="https://siraatskitchen.com/products/dishwashing-detergent-sheets-fresh-lemon"><img src="assets/p-sheets.jpg" width="236" alt="Plastic-Free Dishwasher Sheets" style="width:100%;height:auto;"></a></td>
-      <td class="stack tile" valign="middle" style="padding:20px 22px 22px 22px;font-family:Inter,Arial,Helvetica,sans-serif;">
-        <div style="font-size:11px;line-height:14px;letter-spacing:1.5px;font-weight:600;color:#AC3B19;">FOR THE DISHWASHER</div>
-        <div style="font-size:18px;line-height:24px;font-weight:600;color:#282828;padding-top:8px;">Plastic-Free Dishwasher Sheets</div>
-        <div style="font-size:14px;line-height:21px;color:#727272;padding-top:6px;">If your mystery gift was a pack of these, you have already met them. One sheet, one cycle, no plastic pod.</div>
-        <div style="font-size:14px;line-height:22px;color:#282828;padding-top:4px;"><span style="color:#AC3B19;">&#10003;</span>&nbsp; Fresh lemon</div><div style="font-size:14px;line-height:22px;color:#282828;padding-top:4px;"><span style="color:#AC3B19;">&#10003;</span>&nbsp; Phosphate-free and chlorine-free</div><div style="font-size:14px;line-height:22px;color:#282828;padding-top:4px;"><span style="color:#AC3B19;">&#10003;</span>&nbsp; Delivered monthly if you subscribe</div>
-        <div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;padding-top:12px;">$25 <span style="font-weight:400;color:#9A948B;text-decoration:line-through;">$60</span> &nbsp;<span style="font-size:13px;font-weight:600;color:#AC3B19;">or 20% off on subscription</span></div>
-        <div style="font-size:13px;line-height:20px;padding-top:8px;"><a href="https://siraatskitchen.com/products/dishwashing-detergent-sheets-fresh-lemon" style="color:#AC3B19;font-weight:600;text-decoration:none;">Get the sheets &rarr;</a></div>
+      <td class="pimg" width="196" valign="top" style="padding:14px 0 14px 14px;"><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/titanium-hammered-crepe-pan-pro"><img src="assets/p-crepe.jpg" width="180" alt="Titanium Hammered Crepe Pan Pro" style="width:180px;height:180px;"></a></td>
+      <td valign="top" style="padding:16px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
+        <div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">NOT IN ANY SET</div>
+        <div style="font-size:17px;line-height:23px;font-weight:600;color:#282828;padding-top:6px;">Titanium Hammered Crepe Pan Pro</div>
+        <div style="font-size:14px;line-height:21px;color:#727272;padding-top:4px;">Flat and wide for crepes, pancakes and tortillas. Same pure titanium cooking surface as your set.</div>
+        <div style="font-size:17px;line-height:24px;font-weight:600;color:#282828;padding-top:8px;"><span style="color:#AC3B19;">$125.10</span> <span style="font-weight:400;color:#9A948B;text-decoration:line-through;">$139</span> <span style="font-size:12px;font-weight:600;color:#727272;">with your code</span></div>
+        <div style="font-size:14px;line-height:20px;font-weight:600;padding-top:6px;"><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/titanium-hammered-crepe-pan-pro" style="color:#AC3B19;text-decoration:none;">See the crepe pan &rarr;</a></div>
       </td>
     </tr>
   </table>
 </td></tr>
 
-<!-- PRODUCTS -->
-<tr><td class="pad" style="padding:34px 44px 6px 44px;">
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:34px;line-height:38px;color:#282828;text-align:center;">The pan your set is missing</div>
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#727272;text-align:center;padding-top:8px;">Same pure titanium cooking surface as your set. Same 75-year warranty.</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:18px;">
-    <tr>
-      <td class="stack stackpad" width="50%" valign="top" style="padding:0 7px 0 0;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-          <tr><td style="padding:0;"><a href="https://siraatskitchen.com/products/titanium-hammered-crepe-pan-pro"><img src="assets/p-crepe.jpg" width="260" alt="Titanium Hammered Crepe Pan Pro" style="width:100%;height:auto;"></a></td></tr>
-          <tr><td style="padding:14px 16px 16px 16px;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">Titanium Hammered Crepe Pan Pro</div>
-            <div style="font-size:13px;line-height:19px;color:#727272;padding-top:4px;">Flat and wide for crepes, pancakes and tortillas.</div>
-            <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:8px;">$139</div>
-            <div style="font-size:13px;line-height:20px;padding-top:8px;"><a href="https://siraatskitchen.com/products/titanium-hammered-crepe-pan-pro" style="color:#AC3B19;font-weight:600;text-decoration:none;">See the crepe pan &rarr;</a></div>
-          </td></tr>
-        </table>
-      </td>
-      <td class="stack stackpad" width="50%" valign="top" style="padding:0 0 0 7px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-          <tr><td style="padding:0;"><a href="https://siraatskitchen.com/products/titanium-hammered-wok-pan-pro"><img src="assets/p-wok.jpg" width="260" alt="Titanium Hammered Wok Pan Pro" style="width:100%;height:auto;"></a></td></tr>
-          <tr><td style="padding:14px 16px 16px 16px;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">Titanium Hammered Wok Pan Pro</div>
-            <div style="font-size:13px;line-height:19px;color:#727272;padding-top:4px;">9 cm deep for stir-fry and big batches. Already have it? The crepe pan is your missing shape.</div>
-            <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:8px;">From $119</div>
-            <div style="font-size:13px;line-height:20px;padding-top:8px;"><a href="https://siraatskitchen.com/products/titanium-hammered-wok-pan-pro" style="color:#AC3B19;font-weight:600;text-decoration:none;">See the wok &rarr;</a></div>
-          </td></tr>
-        </table>
-      </td>
-    </tr>
+<!-- BLOCK cta: primaire knop, 340 px desktop, volle breedte mobiel -->
+<tr><td align="center" class="pad" style="padding:18px 44px 4px 44px;">
+  <table role="presentation" class="btnw" width="340" cellpadding="0" cellspacing="0" border="0" style="width:340px;"><tr>
+    <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:3px;">
+      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/titanium-hammered-crepe-pan-pro" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Add the crepe pan, 10% off</center></v:roundrect><![endif]-->
+      <!--[if !mso]><!--><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/titanium-hammered-crepe-pan-pro" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Add the crepe pan, 10% off &rarr;</a><!--<![endif]-->
+    </td>
+  </tr></table>
+  <div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>Your code is applied automatically.</div>
+</td></tr>
+
+
+<!-- INTRO -->
+<tr><td class="pad" style="padding:24px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">
+  <p style="margin:0;">Hi Sarah, two weeks with your set. Around now, set owners ask us which shape the set does not include. Two answers, both 10% off with your own thank-you code.</p>
+</td></tr>
+
+<!-- BLOCK offer: aanbodblok, code als live tekst -->
+<tr><td class="pad" style="padding:26px 44px 6px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#321E1D" style="background:#321E1D;">
+    <tr><td align="center" style="padding:30px 26px 8px 26px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#D9CFC7;">YOUR THANK-YOU CODE</td></tr>
+    <tr><td align="center" class="h2" style="padding:0 26px 16px 26px;font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#FFFFFF;">10% off, for set owners</td></tr>
+    <tr><td align="center" style="padding:0 26px;">
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" class="offer-code" style="border:2px dashed #FFFFFF;padding:12px 30px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:32px;line-height:36px;letter-spacing:6px;font-weight:600;color:#FFFFFF;">SRT-K7Q2M</td></tr></table>
+    </td></tr>
+    <tr><td align="center" style="padding:14px 26px 0 26px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#EDE6E0;">Applied automatically with the button. Or enter it at checkout. One code per order, not valid on subscriptions.</td></tr>
+    <tr><td align="center" style="padding:14px 26px 0 26px;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:8px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;font-weight:600;color:#AC3B19;"><img src="../../partials/shared/icon-deadline.png" width="18" height="18" alt="" style="display:inline-block;vertical-align:-4px;width:18px;height:18px;">&nbsp; Expires 14 days after this email</td></tr></table></td></tr>
+
+    <tr><td align="center" style="padding:20px 26px 30px 26px;">
+      <table role="presentation" class="btnw" width="320" cellpadding="0" cellspacing="0" border="0" style="width:320px;"><tr>
+        <td align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border-radius:3px;"><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/titanium-hammered-crepe-pan-pro" style="display:block;padding:18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#321E1D;text-decoration:none;text-transform:uppercase;">Add the crepe pan, 10% off &rarr;</a></td>
+      </tr></table>
+    </td></tr>
   </table>
 </td></tr>
 
-<!-- REVIEWS -->
-<tr><td class="pad" style="padding:28px 44px 6px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-    <tr>
-      <td class="stack stackpad" width="50%" valign="top" style="padding:0 7px 0 0;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-          <tr><td style="padding:18px 18px 16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <div style="font-size:14px;line-height:21px;color:#282828;padding:8px 0 10px 0;">&ldquo;This is the best crepe pan that I have used that works like a non-stick but gives crispy output like a cast iron pan.&rdquo;</div>
-            <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Chetan G., verified buyer</div>
-          </td></tr>
-        </table>
-      </td>
-      <td class="stack stackpad" width="50%" valign="top" style="padding:0 0 0 7px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-          <tr><td style="padding:18px 18px 16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <div style="font-size:14px;line-height:21px;color:#282828;padding:8px 0 10px 0;">&ldquo;I purchased their titanium wok a few months ago and it performs exactly as expected. It's now my favorite go-to cookware.&rdquo;</div>
-            <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Caliann, verified buyer</div>
-          </td></tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;text-align:center;padding-top:14px;">Join 100,000+ happy customers.</div>
+<tr><td class="pad" style="padding:28px 44px 12px 44px;">
+  
+  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding-top:6px;">Or the other missing shape</div>
 </td></tr>
-
-<!-- CTA -->
-<tr><td align="center" style="padding:26px 44px 8px 44px;">
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-    <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:2px;">
-      <a href="https://siraatskitchen.com/products/dishwashing-detergent-sheets-fresh-lemon" style="display:inline-block;padding:16px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:16px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;">SHOP DISHWASHER SHEETS</a>
+<tr><td class="pad" style="padding:12px 44px 4px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+    <td width="48%" valign="top" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:12px 12px 16px 12px;font-family:Inter,Arial,Helvetica,sans-serif;">
+      <a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/titanium-hammered-wok-pan-pro"><img src="assets/p-wok.jpg" width="232" alt="Titanium Hammered Wok Pan Pro" style="width:100%;max-width:232px;height:auto;margin:0 auto;"></a>
+      <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:10px;">Wok Pan Pro</div>
+      <div style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">9 cm deep for stir-fry and big batches.</div>
+      <div style="font-size:15px;line-height:22px;font-weight:600;color:#282828;padding-top:6px;">From <span style="color:#AC3B19;">$107.10</span> <span style="font-weight:400;color:#9A948B;text-decoration:line-through;">$119</span></div>
+      <div style="font-size:13px;line-height:19px;font-weight:600;padding-top:6px;"><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/titanium-hammered-wok-pan-pro" style="color:#AC3B19;text-decoration:none;">See the wok &rarr;</a></div>
+    </td>
+    <td width="12" style="font-size:0;line-height:0;">&nbsp;</td>
+    <td width="48%" valign="top" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:12px 12px 16px 12px;font-family:Inter,Arial,Helvetica,sans-serif;">
+      <a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/dishwashing-detergent-sheets-fresh-lemon"><img src="assets/p-sheets.jpg" width="232" alt="Plastic-Free Dishwasher Sheets" style="width:100%;max-width:232px;height:auto;margin:0 auto;"></a>
+      <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:10px;">Dishwasher Sheets</div>
+      <div style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">Your mystery gift? One sheet per cycle, no plastic pod.</div>
+      <div style="font-size:15px;line-height:22px;font-weight:600;color:#282828;padding-top:6px;"><span style="color:#AC3B19;">$22.50</span> <span style="font-weight:400;color:#9A948B;text-decoration:line-through;">$25</span></div>
+      <div style="font-size:13px;line-height:19px;font-weight:600;padding-top:6px;"><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/dishwashing-detergent-sheets-fresh-lemon" style="color:#AC3B19;text-decoration:none;">Get the sheets &rarr;</a></div>
     </td>
   </tr></table>
 </td></tr>
 
-<!-- TRUST ROW -->
+<!-- BLOCK reviews: twee kaarten, gelijke hoogte (achtergrond op de kolomcel) -->
+<tr><td class="pad" style="padding:28px 44px 6px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+    <td class="rv" width="48%" valign="top" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:20px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;This is the best crepe pan that I have used that works like a non-stick but gives crispy output like a cast iron pan.&rdquo;</div>
+      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Chetan G. &middot; Verified buyer</div>
+    </td>
+    <td class="rvsp" width="14" style="font-size:0;line-height:0;">&nbsp;</td>
+    <td class="rv" width="48%" valign="top" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:20px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;My son bought me the wok for Christmas and he already had the whole set. Great to cook with&rdquo;</div>
+      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Pam B. &middot; Verified buyer</div>
+    </td>
+  </tr></table>
+  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;text-align:center;padding-top:14px;"><img src="../../partials/shared/icon-customers-100k.png" width="18" height="18" alt="" style="display:inline-block;vertical-align:-4px;width:18px;height:18px;">&nbsp; Join 100,000+ happy customers</div>
+</td></tr>
+
+
+<!-- BLOCK cta: primaire knop, 340 px desktop, volle breedte mobiel -->
+<tr><td align="center" class="pad" style="padding:26px 44px 4px 44px;">
+  <table role="presentation" class="btnw" width="340" cellpadding="0" cellspacing="0" border="0" style="width:340px;"><tr>
+    <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:3px;">
+      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/titanium-hammered-crepe-pan-pro" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Add the crepe pan, 10% off</center></v:roundrect><![endif]-->
+      <!--[if !mso]><!--><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/titanium-hammered-crepe-pan-pro" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Add the crepe pan, 10% off &rarr;</a><!--<![endif]-->
+    </td>
+  </tr></table>
+  
+</td></tr>
+
+
+<!-- BLOCK icons: vier feiten met iconen, nooit levertijd -->
 <tr><td class="pad" style="padding:22px 44px 6px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #ECE7DD;border-bottom:1px solid #ECE7DD;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
     <tr>
-      <td width="33%" align="center" style="padding:16px 4px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;">30-DAY<br>RETURNS</td>
-      <td width="34%" align="center" style="padding:16px 4px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;border-left:1px solid #ECE7DD;border-right:1px solid #ECE7DD;">75-YEAR<br>WARRANTY</td>
-      <td width="33%" align="center" style="padding:16px 4px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;">FREE<br>SHIPPING</td>
+      <td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;"><img src="../../partials/shared/icon-free-shipping.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">FREE<br>SHIPPING</div></td>
+      <td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;border-left:1px solid #ECE7DD;"><img src="../../partials/shared/icon-returns-30-day.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">30-DAY<br>RETURNS</div></td>
+      <td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;border-left:1px solid #ECE7DD;"><img src="../../partials/shared/icon-warranty-75-year.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">75-YEAR<br>WARRANTY</div></td>
+      <td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;border-left:1px solid #ECE7DD;"><img src="../../partials/shared/icon-pfas-tested.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">PFAS<br>LAB TESTED</div></td>
     </tr>
   </table>
 </td></tr>
 
+
 <!-- SIGN-OFF -->
-<tr><td class="pad" style="padding:22px 44px 26px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  A part of your set that arrived separately and has not shown up yet? Reply with your order number and we will track it down for you.<br><br>
+<tr><td class="pad" style="padding:24px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+  Already have the crepe pan and the wok? Reply and tell us what you cook most. We will point you to the right next piece.<br><br>
   Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
 </td></tr>
 
