@@ -182,7 +182,7 @@ Belangrijkste gat: Klaviyo-templates zien alleen het **trigger-event**. Wat iema
 
 Volgorde = verwachte winst (volume per week uit v4/tailoring x hoe sterk het patroon is). Alle blokken gebruiken velden die in de echte events bestaan; Django-condities zoals in tailoring 03-routing (getest in `research/tailoring/test`). Copy in de blokken is een voorbeeld binnen de claims (siraat-direct-response), de herschrijf-agent maakt hem af. Variant-ID's van de deksel (Chrome) komen uit Shopify, 7 okt 2026: Mini 20 cm `53294486421844`, Small 26 cm `52401107206484`, Standard 28 cm `52401107239252`, Large 30 cm `52401107272020`.
 
-| # | Mail (volume/week) | Blok | Data | Fallback | Waarom de meeste winst |
+| # | Mail (ontvangers/week, schatting) | Blok | Data | Fallback | Waarom de meeste winst |
 | --- | --- | --- | --- | --- | --- |
 | 1 | **P3-pan** (~500) | Hoofdkaart "Your [maat] takes the [cm] lid" met directe variantlink | `event.Items` (maat) | Huidige tekst "Pick the same diameter as your pan" + link naar de deksel-PDP | 24% koopt de deksel er al bij; 22% van de herhalers zonder deksel koopt hem bij order 2, mediaan 24 dagen (P3 valt op dag 20). Eén klik minder (maat al gekozen) |
 | 2 | **R1-pan** (~900) | Hoofdkaart "tweede maat" + rij deksel/vorm | `event.Items` (maat, deksel ja/nee) | Deep Pan Pro (13%) en de deksel-regel | 2e order = 2e maat: Standard → Mini 19%, Small → Mini 33%, Mini → Standard 20%, Large → deksel 21% / Small 15%. R1 valt op dag 45, 57% van de herhalers koopt binnen 45 dagen |
@@ -197,7 +197,7 @@ Niet personaliseren (weinig winst of al gedaan): C1 tot C4 (checkout heeft geen 
 
 ### 4.1 P3-pan · deksel in de juiste maat
 
-Plaats: vervangt de hoofdkaart "The one thing your pan is missing". Volgorde in de if-keten = meest verkochte maat eerst; bij twee pannen wint de eerste die matcht (de tweede maat staat in de rij eronder als "and for your [maat]"... alleen als je die wilt bouwen; anders weglaten).
+Plaats: vervangt de hoofdkaart "The one thing your pan is missing". Volgorde in de if-keten = meest verkochte maat eerst; bij twee pannen wint de eerste die matcht.
 
 ```django
 {% with items=event.Items|join:',' %}
@@ -265,7 +265,7 @@ P3-next bij twee pannen en één deksel in de order: tekst "One lid, two pans? A
 {% if 'Pan Pro' in pn and 'Lid' not in pn and 'Deep' not in pn and 'Wok' not in pn and 'Cr' not in pn %}
 <!-- blok k2-lidline -->
 <div style="font-size:14px;line-height:21px;color:#4A4A4A;padding-top:8px;">
-  Most people add the lid: your {% if 'Standard' in pn %}Standard takes the 28 cm{% elif 'Large' in pn %}Large takes the 30 cm{% elif 'Small' in pn %}Small takes the 26 cm{% elif 'Mini' in pn %}Mini takes the 20 cm{% else %}pan takes the lid in the same diameter{% endif %}
+  Often added: the lid. Your {% if 'Standard' in pn %}Standard takes the 28 cm{% elif 'Large' in pn %}Large takes the 30 cm{% elif 'Small' in pn %}Small takes the 26 cm{% elif 'Mini' in pn %}Mini takes the 20 cm{% else %}pan takes the lid in the same diameter{% endif %}
   {% if event.Price and event|lookup:'$currency' == 'USD' %}($59){% endif %}.
   <a href="https://siraatskitchen.com/products/stainless-steel-lid?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-cart&utm_content=k2new-lidline">Add the lid</a>
 </div>
@@ -273,7 +273,7 @@ P3-next bij twee pannen en één deksel in de order: tekst "One lid, two pans? A
 {% endwith %}
 ```
 
-"Most people add the lid" mag niet: 24% is geen meerderheid. Feitelijke formulering: "Often added: the lid." Fallback: regel verdwijnt (geen `else`).
+Niet "most people add the lid": 24% is geen meerderheid. Fallback: regel verdwijnt (geen `else`).
 
 ### 4.5 B2-clicked en B2-notclicked · vaak samen gekozen
 
