@@ -1,0 +1,219 @@
+{
+ "b1": {
+  "flow": "browse",
+  "png": "klaviyo/templates/v3/browse/previews/b1-desktop.png",
+  "w": 700,
+  "h": 2695,
+  "meta": "The pan with nothing to scratch off | SUBJECT_B: What a metal spatula does to your pan | PREVIEW: Metal utensils, no coating. Here is why that matters. | SEND: 4 hours after Viewed Product (step 0) | FILTERS: Flow: Viewed Product; Added to Cart = 0, Checkout Started = 0, Placed Order = 0 since flow start; not in cart or checkout flow last 7 days; not in this flow last 7 days. Message: Placed Order = 0 since flow start"
+ },
+ "b2-clicked": {
+  "flow": "browse",
+  "png": "klaviyo/templates/v3/browse/previews/b2-clicked-desktop.png",
+  "w": 700,
+  "h": 2716,
+  "meta": "10% off the pan you looked at | SUBJECT_B: Still thinking it over? | PREVIEW: Code HI10 takes 10% off, on top of the current sale. | SEND: 2 days after B1 (step 1), split: clicked B1 = yes | FILTERS: Flow: Viewed Product; Added to Cart = 0, Checkout Started = 0, Placed Order = 0 since flow start; not in cart or checkout flow last 7 days; not in this flow last 7 days. Message: Placed Order = 0 since flow start"
+ },
+ "b2-notclicked": {
+  "flow": "browse",
+  "png": "klaviyo/templates/v3/browse/previews/b2-notclicked-desktop.png",
+  "w": 700,
+  "h": 2805,
+  "meta": "Week one, in their words | SUBJECT_B: What people wrote after the first egg | PREVIEW: The first egg, the second pan, the fourth. | SEND: 2 days after B1 (step 1), split: clicked B1 = no | FILTERS: Flow: Viewed Product; Added to Cart = 0, Checkout Started = 0, Placed Order = 0 since flow start; not in cart or checkout flow last 7 days; not in this flow last 7 days. Message: Placed Order = 0 since flow start"
+ },
+ "k1": {
+  "flow": "cart",
+  "png": "klaviyo/templates/v3/cart/previews/k1-desktop.png",
+  "w": 700,
+  "h": 3062,
+  "meta": "One pass with a damp cloth. | SUBJECT_B: About cleaning the pan in your cart | PREVIEW: No scrubbing. That is the whole trick. | SEND: 1 hour after Added to Cart (step 0) | FILTERS: Flow: Added to Cart; Checkout Started = 0 since flow start; Placed Order = 0 since flow start; not in checkout flow last 7 days; not in this flow last 14 days. Message: Placed Order = 0 since flow start"
+ },
+ "k2-new": {
+  "flow": "cart",
+  "png": "klaviyo/templates/v3/cart/previews/k2-new-desktop.png",
+  "w": 700,
+  "h": 3126,
+  "meta": "The pan you keep replacing is the expensive one | SUBJECT_B: What a pan really costs per year | PREVIEW: A coated pan lasts a few years. This one is covered for 75. | SEND: 1 day after K1 (step 1), split: Placed Order over all time = 0 (first-time visitor) | FILTERS: Flow: Added to Cart; Checkout Started = 0 since flow start; Placed Order = 0 since flow start; not in checkout flow last 7 days; not in this flow last 14 days. Message: Placed Order = 0 since flow start"
+ },
+ "k2-returning": {
+  "flow": "cart",
+  "png": "klaviyo/templates/v3/cart/previews/k2-returning-desktop.png",
+  "w": 700,
+  "h": 2336,
+  "meta": "Adding to your Siraat kitchen? | SUBJECT_B: Picking up where you left off | PREVIEW: You know how it cooks. Here is the one you picked. | SEND: 1 day after K1 (step 1), split: Placed Order over all time > 0 (returning customer, short version) | FILTERS: Flow: Added to Cart; Checkout Started = 0 since flow start; Placed Order = 0 since flow start; not in checkout flow last 7 days; not in this flow last 14 days. Message: Placed Order = 0 since flow start"
+ },
+ "k3": {
+  "flow": "cart",
+  "png": "klaviyo/templates/v3/cart/previews/k3-desktop.png",
+  "w": 700,
+  "h": 2750,
+  "meta": "Covered for 75 years. Returnable for 30 days. | SUBJECT_B: The last note about your cart | PREVIEW: Not for you? Send it back unused within 30 days. Return shipping is on us. | SEND: 1 day after K2 (step 2, last) | FILTERS: Flow: Added to Cart; Checkout Started = 0 since flow start; Placed Order = 0 since flow start; not in checkout flow last 7 days; not in this flow last 14 days. Message: Placed Order = 0 since flow start"
+ },
+ "c1": {
+  "flow": "checkout",
+  "png": "klaviyo/templates/v3/checkout/previews/c1-desktop.png",
+  "w": 700,
+  "h": 2646,
+  "meta": "Forgetting something? | SUBJECT_B: Your pan is still here | PREVIEW: Your cart is saved. Free shipping, 30-day returns and a 75-year warranty. | SEND: Step 0, 1 hour after Checkout Started | FILTERS: Flow: Placed Order = 0 since starting this flow, not in this flow in last 14 days, not in post-purchase in last 7 days. Message: Placed Order = 0 since starting this flow"
+ },
+ "c2": {
+  "flow": "checkout",
+  "png": "klaviyo/templates/v3/checkout/previews/c2-desktop.png",
+  "w": 700,
+  "h": 3919,
+  "meta": "Why Siraat? | SUBJECT_B: Need a second opinion on that pan? | PREVIEW: Well, how much time do you have? Three questions to ask any titanium brand. | SEND: Step 1, wait until day 2 at 09:00 | FILTERS: Message: Placed Order = 0 since starting this flow"
+ },
+ "c3-p": {
+  "flow": "checkout",
+  "png": "klaviyo/templates/v3/checkout/previews/c3-p-desktop.png",
+  "w": 700,
+  "h": 3094,
+  "meta": "Your cart is still at today's price | SUBJECT_B: One pan, or three for $349? | PREVIEW: Three hammered pans and three lids. About $116 a pan, lid included. | SEND: Step 2, 1 day after C2 | FILTERS: Message: Placed Order = 0 since starting this flow. Conditional split: Checkout Started value < 300 (branch P, pan buyers)"
+ },
+ "c3-s": {
+  "flow": "checkout",
+  "png": "klaviyo/templates/v3/checkout/previews/c3-s-desktop.png",
+  "w": 700,
+  "h": 3414,
+  "meta": "Your cart is still at today's price | SUBJECT_B: Your set, plus four gifts | PREVIEW: Same price as when you left it, with free shipping and a mystery gift in the box. | SEND: Step 2, 1 day after C2 | FILTERS: Message: Placed Order = 0 since starting this flow. Conditional split: Checkout Started value >= 300 (branch S, set buyers)"
+ },
+ "c4-int": {
+  "flow": "checkout",
+  "png": "klaviyo/templates/v3/checkout/previews/c4-int-desktop.png",
+  "w": 700,
+  "h": 2893,
+  "meta": "Final call: your cart and your gifts | SUBJECT_B: Your four gifts are still waiting | PREVIEW: Free shipping, an e-book, a mystery gift and a chance to win a PFAS water purifier. | SEND: Step 3, 1 day after C3 (last email) | FILTERS: Message: Placed Order = 0 since starting this flow. Conditional split: Location country is not United States (branch INT)"
+ },
+ "c4-us": {
+  "flow": "checkout",
+  "png": "klaviyo/templates/v3/checkout/previews/c4-us-desktop.png",
+  "w": 700,
+  "h": 3248,
+  "meta": "Final call: your cart and your gifts | SUBJECT_B: Your four gifts are still waiting | PREVIEW: Free shipping, an e-book, a mystery gift and a chance to win a PFAS water purifier. | SEND: Step 3, 1 day after C3 (last email) | FILTERS: Message: Placed Order = 0 since starting this flow. Conditional split: Location country = United States (branch US)"
+ },
+ "p1-first": {
+  "flow": "post-purchase",
+  "png": "klaviyo/templates/v3/post-purchase/previews/p1-first-desktop.png",
+  "w": 700,
+  "h": 3728,
+  "meta": "Good call. Here's what's coming. | SUBJECT_B: You bought a pan from an ad. Good call. | PREVIEW: Order confirmed. What is in the box, your 4 gifts, and when it ships. | SEND: Placed Order + 1 hour (quiet hours 21:00 to 08:00 local) | FILTERS: Flow 'Post-purchase v3' (trigger Placed Order); flow filter: not in this flow in the last 30 days; split A = Placed Order count is 1 over all time (first order). Repeat buyers get p1-repeat."
+ },
+ "p1-repeat": {
+  "flow": "post-purchase",
+  "png": "klaviyo/templates/v3/post-purchase/previews/p1-repeat-desktop.png",
+  "w": 700,
+  "h": 2939,
+  "meta": "Good to see you again | SUBJECT_B: Round two. Here's what's coming. | PREVIEW: Your order is in. Same packing, same gifts, same 6 to 10 days. | SEND: Placed Order + 1 hour (quiet hours 21:00 to 08:00 local) | FILTERS: Flow 'Post-purchase v3' (trigger Placed Order); flow filter: not in this flow in the last 30 days; split A = Placed Order count greater than 1 over all time (repeat buyer). No brand explainer in this version."
+ },
+ "p2": {
+  "flow": "post-purchase",
+  "png": "klaviyo/templates/v3/post-purchase/previews/p2-desktop.png",
+  "w": 700,
+  "h": 3711,
+  "meta": "If you can do an egg, you can do anything | SUBJECT_B: First egg: heat first, then a thin layer of oil | PREVIEW: Medium on titanium works like high on a normal pan. The chef's five steps. | SEND: Delivered Shipment (VcUF33) + 1 day, 09:30 local time (conditional wait branch in the post-purchase flow) | FILTERS: Flow 'Post-purchase v3' (trigger Placed Order); flow filter: not in this flow in the last 30 days; send filters: no refund in the last 30 days, order fully fulfilled. Same email for first and repeat buyers."
+ },
+ "p3-accessory": {
+  "flow": "post-purchase",
+  "png": "klaviyo/templates/v3/post-purchase/previews/p3-accessory-desktop.png",
+  "w": 700,
+  "h": 3509,
+  "meta": "Now the pan it was made for | SUBJECT_B: The pan behind 100,000+ happy customers | PREVIEW: You started with an accessory. Most people start with the Pan Pro. Here is why. | SEND: 14 days after Placed Order, 10:00 local time | FILTERS: Flow 'Post-purchase v3' (trigger Placed Order); flow filter: not in this flow in the last 30 days; split on Placed Order Items: no pan and no set (board, utensils, sheets, mills, aprons only) = this email; send filter: no refund in the last 30 days."
+ },
+ "p3-pan": {
+  "flow": "post-purchase",
+  "png": "klaviyo/templates/v3/post-purchase/previews/p3-pan-desktop.png",
+  "w": 700,
+  "h": 3029,
+  "meta": "The one thing your pan is missing | SUBJECT_B: Which lid fits your pan? | PREVIEW: The lid that fits it, the board beside it, and a second pan for busy nights. | SEND: 14 days after Placed Order, 10:00 local time | FILTERS: Flow 'Post-purchase v3' (trigger Placed Order); flow filter: not in this flow in the last 30 days; split on Placed Order Items: contains a single pan (Pan Pro, Wok, Deep, Crepe) and no Set = this email; send filter: no refund in the last 30 days."
+ },
+ "p3-set": {
+  "flow": "post-purchase",
+  "png": "klaviyo/templates/v3/post-purchase/previews/p3-set-desktop.png",
+  "w": 700,
+  "h": 3107,
+  "meta": "Two weeks with your set | SUBJECT_B: The one pan your set doesn't have | PREVIEW: How to keep it shining, and the shape that is not in the box. | SEND: 14 days after Placed Order, 10:00 local time | FILTERS: Flow 'Post-purchase v3' (trigger Placed Order); flow filter: not in this flow in the last 30 days; split on Placed Order: value of $300 or more, or Items contains 'Set' = this email; send filter: no refund in the last 30 days."
+ },
+ "w0": {
+  "flow": "welcome",
+  "png": "klaviyo/templates/v3/welcome/previews/w0-desktop.png",
+  "w": 700,
+  "h": 3433,
+  "meta": "Thank you. Now the first egg. | SUBJECT_B: Before your pan arrives: three steps | PREVIEW: Cold metal grabs your food, hot metal lets it go. | SEND: 10 min after signup, buyers path (Split A: Placed Order > 0 ever). Then end of flow; post-purchase takes over | FILTERS: Flow: list Uw8eZG, email not contains test@, never in this flow. No offer, no HI10"
+ },
+ "w1-a": {
+  "flow": "welcome",
+  "png": "klaviyo/templates/v3/welcome/previews/w1-a-desktop.png",
+  "w": 700,
+  "h": 3306,
+  "meta": "Welcome. 10% on top of the sale, no catch. | SUBJECT_B: The original hammered titanium pan, plus 10% | PREVIEW: Your giveaway entry is in. Plus 10% on top of the sale with HI10. | SEND: 10 min after signup, prospect path. A/B test 50/50: w1-a (HI10 as code block) vs w1-b (HI10 as welcome gift card), winner on placed order rate, then unique clicks | FILTERS: Flow: list Uw8eZG (Alia Card Game), email not contains test@, never in this flow, re-entry never. Split A: Placed Order = 0 ever (prospect path). Send filter: Placed Order = 0 since flow start"
+ },
+ "w1-b": {
+  "flow": "welcome",
+  "png": "klaviyo/templates/v3/welcome/previews/w1-b-desktop.png",
+  "w": 700,
+  "h": 3421,
+  "meta": "Welcome. 10% on top of the sale, no catch. | SUBJECT_B: The original hammered titanium pan, plus 10% | PREVIEW: Your giveaway entry is in. Plus 10% on top of the sale with HI10. | SEND: 10 min after signup, prospect path. A/B test 50/50: w1-a (HI10 as code block) vs w1-b (HI10 as welcome gift card), winner on placed order rate, then unique clicks. Same subjects as w1-a so the offer framing is the only variable | FILTERS: Flow: list Uw8eZG (Alia Card Game), email not contains test@, never in this flow, re-entry never. Split A: Placed Order = 0 ever (prospect path). Send filter: Placed Order = 0 since flow start"
+ },
+ "w2": {
+  "flow": "welcome",
+  "png": "klaviyo/templates/v3/welcome/previews/w2-desktop.png",
+  "w": 700,
+  "h": 1726,
+  "meta": "Why I started Siraat's Kitchen | SUBJECT_B: The pan nobody else was making | PREVIEW: First orders shipped December 20, 2024. Here is why. | SEND: Day 1, 10:00 local time (wait until day 1 at 10:00 after W1). From name 'Benjamin at Siraat's Kitchen', reply-to a read inbox | FILTERS: Flow: list Uw8eZG (Alia Card Game), email not contains test@, never in this flow, re-entry never. Split A: Placed Order = 0 ever (prospect path). Send filter: Placed Order = 0 since flow start"
+ },
+ "w3": {
+  "flow": "welcome",
+  "png": "klaviyo/templates/v3/welcome/previews/w3-desktop.png",
+  "w": 700,
+  "h": 3929,
+  "meta": "Has your cookware actually been tested? | SUBJECT_B: Three questions to ask any titanium pan brand | PREVIEW: Report no. 25895. An ISO/IEC 17025-accredited lab. Here is what it says. | SEND: Day 3, 10:00 local time | FILTERS: Flow: list Uw8eZG (Alia Card Game), email not contains test@, never in this flow, re-entry never. Split A: Placed Order = 0 ever (prospect path). Send filter: Placed Order = 0 since flow start"
+ },
+ "w4-int": {
+  "flow": "welcome",
+  "png": "klaviyo/templates/v3/welcome/previews/w4-int-desktop.png",
+  "w": 700,
+  "h": 3693,
+  "meta": "Three ways to start | SUBJECT_B: One pan, or the whole kitchen | PREVIEW: A first piece, the Pan Pro, or a full set. Free shipping, duties paid. | SEND: Day 6, 10:00 local time. Split B: Location country = United States (no branch, all other countries) | FILTERS: Flow: list Uw8eZG (Alia Card Game), email not contains test@, never in this flow, re-entry never. Split A: Placed Order = 0 ever (prospect path). Send filter: Placed Order = 0 since flow start"
+ },
+ "w4-us": {
+  "flow": "welcome",
+  "png": "klaviyo/templates/v3/welcome/previews/w4-us-desktop.png",
+  "w": 700,
+  "h": 3980,
+  "meta": "Three ways to start | SUBJECT_B: Under $80, one pan, or the whole kitchen | PREVIEW: A first piece under $80, the Pan Pro at $134, or a set from $349. | SEND: Day 6, 10:00 local time. Split B: Location country = United States (yes branch) | FILTERS: Flow: list Uw8eZG (Alia Card Game), email not contains test@, never in this flow, re-entry never. Split A: Placed Order = 0 ever (prospect path). Send filter: Placed Order = 0 since flow start"
+ },
+ "w5": {
+  "flow": "welcome",
+  "png": "klaviyo/templates/v3/welcome/previews/w5-desktop.png",
+  "w": 700,
+  "h": 3867,
+  "meta": "In their words (and your 10% is still here) | SUBJECT_B: What 100,000+ happy customers found out | PREVIEW: Tammy is on her fourth pan. Marilyn gave her nonstick pans away. | SEND: Day 9, 10:00 local time. Last mail of the flow; day 10 end, non-buyers go to campaigns | FILTERS: Flow: list Uw8eZG (Alia Card Game), email not contains test@, never in this flow, re-entry never. Split A: Placed Order = 0 ever (prospect path). Send filter: Placed Order = 0 since flow start"
+ },
+ "r1-pan": {
+  "flow": "winback",
+  "png": "klaviyo/templates/v3/winback/previews/r1-pan-desktop.png",
+  "w": 700,
+  "h": 2875,
+  "meta": "We need to publicly apologize. | SUBJECT_B: New since your last order | PREVIEW: We said it was the last pan you would ever need. Then we kept making new ones. | SEND: 60 days after Placed Order, 10:00 local time | FILTERS: Flow 'Winback v3' (trigger Placed Order, re-entry after 90 days); send filter: Placed Order = 0 since flow start; not in post-purchase in the last 14 days; split on last order Items: pan buyer (no Set) = this email."
+ },
+ "r1-set": {
+  "flow": "winback",
+  "png": "klaviyo/templates/v3/winback/previews/r1-set-desktop.png",
+  "w": 700,
+  "h": 2621,
+  "meta": "New since your last order | SUBJECT_B: What your set doesn't have yet | PREVIEW: Two months with your set. Here is what joined the line since. | SEND: 60 days after Placed Order, 10:00 local time | FILTERS: Flow 'Winback v3' (trigger Placed Order, re-entry after 90 days); send filter: Placed Order = 0 since flow start; not in post-purchase in the last 14 days; split on last order: value of $300 or more, or Items contains 'Set' = this email."
+ },
+ "r2": {
+  "flow": "winback",
+  "png": "klaviyo/templates/v3/winback/previews/r2-desktop.png",
+  "w": 700,
+  "h": 3347,
+  "meta": "Up to 50% off. What's the catch? | SUBJECT_B: Your next piece: up to 50% off, with 4 gifts | PREVIEW: No catch. Free shipping, 4 gifts, 30-day returns and a 75-year warranty. | SEND: 30 days after R1 (day 90 after Placed Order), 10:00 local time. Only while the 'up to 50% off + 4 gifts' offer is live. | FILTERS: Flow 'Winback v3' (trigger Placed Order, re-entry after 90 days); send filter: Placed Order = 0 since flow start; split: Placed Order count less than 2 over all time = this email (VIPs get r2-vip)."
+ },
+ "r2-vip": {
+  "flow": "winback",
+  "png": "klaviyo/templates/v3/winback/previews/r2-vip-desktop.png",
+  "w": 700,
+  "h": 3661,
+  "meta": "A thank you: 10% on top of the sale | SUBJECT_B: For our regulars: HI10 on top of up to 50% off | PREVIEW: You have ordered more than once. Here is 10% extra on top of the sale price. | SEND: 30 days after R1 (day 90 after Placed Order), 10:00 local time. Only while the 'up to 50% off + 4 gifts' offer is live. | FILTERS: Flow 'Winback v3' (trigger Placed Order, re-entry after 90 days); send filter: Placed Order = 0 since flow start; split: Placed Order count 2 or more over all time (VIP) = this email."
+ }
+}

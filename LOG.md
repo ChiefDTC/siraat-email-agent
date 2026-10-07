@@ -53,3 +53,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 2026-10-07 · C2: hero met kop en subregel exact gecentreerd (scripts/make_hero.py), knop Return to my cart direct onder de hero, build-script voor templates. Opbouw vastgelegd in PLAYBOOK hoofdstuk 10.
 - 2026-10-07 · Vaste header en footer als partials (monogram, Built for Life, Non-Toxic Cookware, navigatie, social, legal). C2 bijgewerkt (template Yn7nyJ).
 - 2026-10-07 · Officieel logo (monogram + SIRAAT) als lockup in brand/logo/lockup, in header en footer van alle templates. Merkregels vastgezet in CLAUDE.md.
+- 2026-10-07 · Flow System v3 compleet: 31 mails in 6 flows gebouwd (klaviyo/templates/v3) en in Figma vFxoMn3Oqw1jf5t21uv4sJ met per flow trigger, filters, wachttijden, splits en de volledige mail onder elke stap, plus overzichtspagina. Nog niet live; templates nog niet in Klaviyo.
