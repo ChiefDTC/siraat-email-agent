@@ -110,3 +110,13 @@ If any answer is no, rewrite that part.
 4. Write 5 subject lines, preview, hero (label, `Line1|Line2`, subline), opener, body, button, friction reducer.
 5. Run the test in section 10. Then `grep -c $'\u2014' <file>` must return 0.
 6. Do not change email HTML or anything in Klaviyo, Shopify or Figma without Floris's go-ahead.
+
+## 12. Klantbegrip (enquête okt 2026)
+Bron: post-purchase-enquête (22,160 antwoorden), uitgewerkt in `.agents/product-marketing.md` (klantprofiel, bezwaren, klanttaal) en `research/survey/01-klantbegrip.md` (per flow). Lees die eerst bij elke nieuwe mail.
+- The reason they buy is non-toxic / PFAS-free (68 to 76% on every question; 60% were already searching for it). Lead with that, proved by report no. 25895. "Nothing to wear off" is the second reason, not the first.
+- The one real objection is price (27% almost stopped, 55% of open doubts). Answer with value over time ("15 coated pans, or one") and payment options in the US, not only with a code.
+- Next doubts: size (15%) and "does titanium really work" (15%). After purchase they still wonder "whether it keeps its promises": name that doubt, then teach the first cook.
+- They compared stainless steel (41%), ceramic, cast iron. Compare by category, never by brand.
+- First cook: eggs (36%). Favourite meal: steak (22%). One in five buys as a gift.
+- Use their words: "non-toxic", "no coatings", "peeling", "flake off", "doesn't last". Survey quotes are anonymous: never give them a name. Named quotes only from real reviews (section 7).
+- Do not adopt from the survey report: "no oil, nothing sticks", "your old pan is toxic" as a headline, "microplastics" as our claim.
