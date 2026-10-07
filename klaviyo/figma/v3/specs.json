@@ -1,0 +1,23 @@
+{
+"checkout":{"title":"Checkout abandonment","sub":"Vervangt Y2TmNB en Tsg2tV. Baseline: $2,36 per ontvanger.",
+ "trigger":["Checkout Started (RfMvni)","Flow-filter: Placed Order = 0 sinds start","Niet in deze flow in 14 dagen","Niet in post-purchase in 7 dagen","Herinstap na 14 dagen"],
+ "seq":[{"t":"delay","v":"1 uur"},{"t":"email","id":"c1"},{"t":"delay","v":"tot dag 2, 09:00"},{"t":"email","id":"c2"},{"t":"delay","v":"1 dag"},
+ {"t":"split","v":"Cart-waarde ≥ $300?","rows":[["Ja · set-koper","c3-s"],["Nee · pan-koper","c3-p"]]},{"t":"delay","v":"1 dag"},
+ {"t":"split","v":"Land = United States?","rows":[["Ja · US","c4-us"],["Nee · internationaal","c4-int"]]},{"t":"end","v":"Einde. 14 dagen geen browse of welcome."}]},
+"cart":{"title":"Cart abandonment","sub":"Vervangt SwkMyn en TBWngE. Baseline: $1,47 per ontvanger.",
+ "trigger":["Added to Cart (QXcV8K)","Checkout Started = 0 sinds start","Placed Order = 0 sinds start","Niet in checkout-flow in 7 dagen","Niet in deze flow in 14 dagen"],
+ "seq":[{"t":"delay","v":"1 uur"},{"t":"email","id":"k1"},{"t":"delay","v":"1 dag"},{"t":"split","v":"Eerder gekocht?","rows":[["Nee · nieuw","k2-new"],["Ja · terugkerend","k2-returning"]]},{"t":"delay","v":"1 dag"},{"t":"email","id":"k3"},{"t":"end","v":"Einde"}]},
+"browse":{"title":"Browse abandonment","sub":"Vervangt Wj6x6V en TyEjuQ. Baseline: $0,97 per ontvanger.",
+ "trigger":["Viewed Product","Added to Cart = 0 sinds start","Checkout Started = 0 sinds start","Placed Order = 0 sinds start","Niet in cart of checkout in 7 dagen","Herinstap na 7 dagen"],
+ "seq":[{"t":"delay","v":"4 uur"},{"t":"email","id":"b1"},{"t":"delay","v":"2 dagen"},{"t":"split","v":"Klikte op B1?","rows":[["Ja","b2-clicked"],["Nee","b2-notclicked"]]},{"t":"end","v":"Einde"}]},
+"welcome":{"title":"Welcome","sub":"Vervangt SiaNLu en Failure to launch T2SmtR. Baseline: $2,53 per nieuwe inschrijver.",
+ "trigger":["Toegevoegd aan lijst Uw8eZG (Alia Card Game, kans op order refund)","E-mail bevat niet test@","Nooit eerder in deze flow","Smart sending uit, quiet hours 21-08"],
+ "lane":{"after":0,"label":"Split A · Placed Order > 0 ooit? JA = klant","items":[{"t":"delay","v":"10 min"},{"t":"email","id":"w0"},{"t":"end","v":"Einde, post-purchase neemt over"}]},
+ "seq":[{"t":"split","v":"Split A · Placed Order > 0 ooit?","note":"Nee = prospect (dit pad). Ja = klant (pad onder)."},{"t":"delay","v":"10 min"},{"t":"split","v":"A/B-test W1: HI10 als code of als gift card","rows":[["A · code","w1-a"],["B · gift card","w1-b"]]},{"t":"delay","v":"tot dag 1, 10:00"},{"t":"email","id":"w2"},{"t":"delay","v":"tot dag 3, 10:00"},{"t":"email","id":"w3"},{"t":"delay","v":"tot dag 6, 10:00"},{"t":"split","v":"Split B · Land = United States?","rows":[["Ja · US","w4-us"],["Nee · internationaal","w4-int"]]},{"t":"delay","v":"tot dag 9, 10:00"},{"t":"email","id":"w5"},{"t":"end","v":"Einde dag 10. Naar campagnes."}]},
+"post-purchase":{"title":"Post-purchase","sub":"Vervangt RL3TU6. Review-flow XzHrez blijft. Baseline: $0,31 per ontvanger.",
+ "trigger":["Placed Order (RSNxYV)","Niet in deze flow in 30 dagen","Geen smart sending"],
+ "seq":[{"t":"split","v":"Eerste order?","rows":[["Ja · eerste","p1-first"],["Nee · herhaal","p1-repeat"]]},{"t":"delay","v":"wacht op Delivered Shipment + 1 dag"},{"t":"email","id":"p2"},{"t":"delay","v":"tot 14 dagen na order"},{"t":"split","v":"Wat is gekocht?","rows":[["Pan","p3-pan"],["Set","p3-set"],["Accessoire","p3-accessory"]]},{"t":"delay","v":"30 dagen na levering"},{"t":"note","v":"P4 · review request (live flow XzHrez, ongewijzigd)"},{"t":"end","v":"Einde"}]},
+"winback":{"title":"Winback","sub":"Vervangt UEfh4h. Baseline: $0,20 per ontvanger.",
+ "trigger":["Placed Order, daarna wachten","Placed Order = 0 sinds start (per stap)","Herinstap na 90 dagen"],
+ "seq":[{"t":"delay","v":"60 dagen zonder nieuwe order"},{"t":"split","v":"Wat is gekocht?","rows":[["Pan","r1-pan"],["Set","r1-set"]]},{"t":"delay","v":"30 dagen"},{"t":"split","v":"VIP (2+ orders)?","rows":[["Nee","r2"],["Ja · VIP","r2-vip"]]},{"t":"end","v":"Einde"}]}
+}
