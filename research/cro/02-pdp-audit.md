@@ -12,7 +12,7 @@ Bevindingen op elke pannen-PDP (Standard, Large, Small, Mini, Deep, 6-set, 12-se
 | Wat staat er | Waarom het kost | Oordeel |
 |---|---|---|
 | Countdown "PRIME SALE · ends in 02 HRS 42 MIN 5x SEC" in de balk en in de koopbox; home: "Discounts already applied, for a few hours only" | Elke nieuwe sessie, minuten na elkaar, op elk profiel, startte op 02:42:5x. Het is een timer die per bezoeker opnieuw begint. Een terugkerende bezoeker (2,7 keer zoveel waard, zie 01) ziet de "laatste uren" elke dag opnieuw. FTC-risico (nep-urgentie) en vertrouwensverlies bij precies de koper die twijfelt | Weg, of een echte einddatum die voor iedereen gelijk is |
-| "High demand — few units left" | Standard heeft 1.098 op voorraad, Large 624 | Nep-schaarste, weg |
+| "High demand, few units left" | Standard heeft 1.098 op voorraad, Large 624 | Nep-schaarste, weg |
 | "Delivery From Your Local Warehouse · Fast & free shipping" en "Free Express Shipping · from the US" (Pan Pro, sets), "from local warehouse" (Deep, Pizza, Roasting, Apron) | Tickets: "goods are shipped directly from Ningbo China, inconsistent with" (93501949), "I have also discovered that you ship these products from China ... merchant misrepresentation. I have contacted my bank" (85587094). Dit is de directe bron van annuleringen en chargebacks | Vervangen door wat waar is per markt ("Free shipping, duties included, tracked") |
 | "RISK-FREE PURCHASE: Cook on your pan at home for 30 days, and if it isn't the best pan you've owned, return it for a full refund" | Refund policy: "Products that have been used cannot be returned for a refund ... Return shipping for unused products is the customer's responsibility". Badge eronder: "30-Day Returns · free returns". Klanten citeren dit: "your advertisement says 30 day return hassle free" (87109409), "On the website, it says free returns" (88045707) | De PDP belooft een gebruikstest met gratis retour, het beleid niet. Eén van de twee aanpassen (zie 03) |
 | Overview: "This pan is crafted to be indestructible, built to last a lifetime" | Verboden (DECISIONS: 75-year warranty, nooit lifetime) | Weg |
@@ -135,7 +135,7 @@ Belang: $4.109 (21 orders). Als landing: 1.557 sessies, CR 0,77 procent. Lanceer
 
 | Probleem | Detail | Fix |
 |---|---|---|
-| Oude beloftes | Live 7 okt: "100-day trial" en "Lifetime warranty" zijn weg (75-Year Warranty, 30-Day Returns). Wel nog "Free Express Shipping", "for a lifetime, not a season", "High demand — few units left" bij 270 op voorraad | Express en lifetime weg |
+| Oude beloftes | Live 7 okt: "100-day trial" en "Lifetime warranty" zijn weg (75-Year Warranty, 30-Day Returns). Wel nog "Free Express Shipping", "for a lifetime, not a season", "High demand, few units left" bij 270 op voorraad | Express en lifetime weg |
 | Oventemperatuur | 400°C / 750°F, terwijl de pannen 548°C zeggen | Eén lijn voor alles: "oven safe" |
 | Gorgias zegt "not available yet, do not recommend" | Terwijl hij ACTIVE is en verkoopt | Gorgias-guidance 8566447 bijwerken, anders zegt support "niet leverbaar" tegen kopers met twijfel |
 | Badge "LAUNCH SALE · SAVE $51" | Klopt ($250 naar $199) | Laten staan; dit is het voorbeeld voor alle andere badges |

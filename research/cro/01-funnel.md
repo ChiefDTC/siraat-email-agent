@@ -154,7 +154,7 @@ Bron: Triple Whale orders_table, Shopify-orders.
 
 787 orders per maand boven $350 brengen $500.000 op (47 procent van de omzet). In de checkout-data (Klaviyo) zit 23 procent van de geïdentificeerde checkouts boven $349; daarvan betaalde 70 procent (onder $100: 29 procent, $100 tot $199: 77 procent).
 
-Betaalmiddelen in de laatste 250 orders (Shopify): Shopify Payments 218 (bijna allemaal Shop Pay, daarna Apple Pay, 1 Google Pay), PayPal 24 (9,6 procent), Shop Cash 4, TikTok 2, **Affirm 1**. Geen Klarna, Afterpay of Shop Pay Installments te zien. Voor een winkel waar de helft van de omzet uit orders boven $350 komt, is dat een gat (zie 03).
+Betaalmiddelen in de laatste 250 orders (Shopify): Shopify Payments 218 (bijna allemaal Shop Pay, daarna Apple Pay, 1 Google Pay), PayPal 24 (9,6 procent), Shop Cash 4, TikTok 2, **Affirm 1**. Shop Pay Installments is actief in de VS (de live PDP toont "4 interest-free installments, or from $12.09/mo with Shop"). Klarna, Afterpay en Clearpay ontbreken; voor AU, UK, CA en NZ is er dus geen herkenbare BNPL, en Affirm werkt volgens een klant niet voor Canada (zie 03).
 
 ## 9. Waar lekt het meeste geld (dollars per maand)
 
@@ -165,10 +165,12 @@ Schattingen op basis van de cijfers hierboven, conservatief (lage kant) en reali
 | 1 | PDP naar winkelwagen (betaald verkeer) | 225.871 sessies landen op een PDP, 71 % stuitert, ATC 5,25 % | ATC +10 % relatief (5,25 naar 5,8 %) via claims, prijsanker, bewijs, maathulp; ATC-naar-order blijft 25,5 % | $55.000 tot $110.000 |
 | 2 | Checkout naar betaald | 3.739 verlaten checkouts ($867.000 winkelwaarde) | voltooiing 54,9 naar 58 % via betaalopties, duidelijke retour- en douanetekst, code-conflicten oplossen, recovery-link | $40.000 tot $70.000 |
 | 3 | Winkelwagen naar checkout | 9.557 winkelwagens zonder checkout | +3 procentpunt (46,5 naar 49,5 %) via schonere cart (gifts als één regel, besparing in dollars, BNPL-regel, geen prijssprong) | $35.000 tot $68.000 |
-| 4 | Geen BNPL voor $349+ | circa 1.900 checkouts per maand boven $349, 30 % niet betaald; Affirm vrijwel onzichtbaar | +5 procentpunt voltooiing op deze carts bij gemiddeld $550 | $30.000 tot $52.000 |
+| 4 | Geen BNPL buiten de VS en geen termijnregel in de winkelwagen | circa 1.900 checkouts per maand boven $349, 26 tot 37 % niet betaald; VS heeft Shop Pay Installments op de PDP, AU/UK/CA/NZ niets; Affirm werkt niet voor CA | Afterpay/Clearpay/Klarna voor niet-US, termijnregel in de cart bij $349+; +5 procentpunt op het niet-US deel en +2 op US | $15.000 tot $30.000 |
 | 5 | Europa en andere niet-kernmarkten | IT, DE, NL, CH, FR, SE: circa 35.000 sessies, CR 0,15 tot 0,8 %, 66 % verlaten checkout | CR naar 1,0 % door DDP echt waar te maken en de orderbevestiging te herschrijven, of deze landen uit de advertenties halen | $25.000 tot $50.000 (of evenveel minder verspilde advertentiekosten) |
 | 6 | Paid search op blog en content | 24.463 betaalde sessies op blog/content, bounce 64 tot 86 % | naar PDP of een koopbare vergelijkingspagina routeren, +0,5 procentpunt CR | $20.000 tot $40.000 |
 | 7 | Post-purchase upsell bereik | Aftersell toont een aanbod bij 2.247 van 5.125 orders (44 %), één funnel, stap 2 vrijwel ongebruikt | tweede funnel voor set- en accessoirekopers, stap 2 vullen | $15.000 tot $25.000 |
 | 8 | Kortingslek | $135.511 korting per maand; 99 %- en 100 %-codes actief zonder limiet; 30 %, 25 %, 20 %-codes van oude acties nog open | sluiten, codes uniek en eenmalig | $10.000 tot $20.000 marge, plus het risico dat een 100 %-code rondgaat |
 
 Samengevat: de grootste dollars zitten op de PDP van de Pan Pro (155.268 sessies, één pagina) en in de laatste twee stappen (winkelwagen en checkout). Mobiel en sitesnelheid zijn niet het probleem.
+
+Aanvulling na de visuele controle (7 okt, zie 02): op de PDP zelf staan drie dingen die lek 1 en lek 2 verklaren en die geen test nodig hebben om op te lossen: een countdown die per bezoeker op 02:42 begint, "High demand, few units left" bij meer dan 1.000 op voorraad, en "Delivery from your local warehouse / free express shipping from the US" terwijl pakketten uit China komen. De PDP belooft ook "cook on it for 30 days, full refund", het beleid zegt "used products cannot be returned". Dat is de bron van een deel van de 6 procent refunds en de chargebacks.
