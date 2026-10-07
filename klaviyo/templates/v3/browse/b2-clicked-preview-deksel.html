@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: 10% off the pan you looked at (48 hours) | SUBJECT_B: Still thinking it over? Here is 10%. | PREVIEW: A personal code, on top of the sale. It expires 48 hours after this email. | SEND: 2 days after B1 (step 1), split: clicked B1 = yes. Coupon B2_10_48H (unique, 10%, expires 2 days after assignment) | FILTERS: Flow: Viewed Product; Added to Cart = 0, Checkout Started = 0, Placed Order = 0 since flow start; not in cart or checkout flow last 7 days; not in this flow last 7 days. Message: Placed Order = 0 since flow start -->
+<!-- SUBJECT_A: Your own 10%, for the next 48 hours | SUBJECT_B: "I ordered one pan to try it out" (reserve; browse tests only T05a in phase 1) | SUBJECTS (5 types): C+B 'A code for the one you went back to' / SPEC '10% off what you looked at, for 48 hours' / Q 'Still thinking it over?' / STORY '"I ordered one pan to try it out"' / OFFER 'Your own 10%, for the next 48 hours' | PREVIEW: A personal code, on top of the sale. It ends 48 hours after this email. | SEND: path K: 2 days after B1, until 09:00, CS Clicked Email $message = B1 since flow start = yes; path A: 2 days after B1-acc, CS clicked B1-acc = yes. Code-router (v4 1.4): cooldown = no, T02 arm A; then Update profile property last_flow_code_at = today, last_flow_code_pool = B2_10_48H | COUPON: B2_10_48H (Shopify unique, 10%, one use per customer, expires 48 hours after assignment) | FILTERS: Trigger: Viewed Product (XNtYMB, Klaviyo onsite; not V48nhq). Flow: Added to Cart = 0, Checkout Started = 0, Placed Order = 0 since flow start; Received Email where Flow = 'v4 · Cart abandonment' = 0 in the last 7 days; idem 'v4 · Checkout abandonment'; idem 'v4 · Welcome' = 0 in the last 7 days; not in this flow in the last 7 days. Message: Placed Order = 0 since flow start; plus Added to Cart = 0 since flow start | UTM: utm_content=b2c-<blok>, utm_term=t02-a -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
-<title>10% off, 48 hours</title>
+<title>Your own 10%, for 48 hours.</title>
 <!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
@@ -25,6 +25,7 @@
     .desk{display:none!important;max-height:0!important;overflow:hidden!important;}
     .mob{display:block!important;max-height:none!important;overflow:visible!important;}
     .center{text-align:center!important;}
+    .lead{font-size:16px!important;line-height:25px!important;}
   }
   /* blocks (partials/blocks, ingevoegd door build_template.py) */
   @media only screen and (max-width:620px){
@@ -38,17 +39,29 @@
     .rv{display:block!important;width:100%!important;box-sizing:border-box!important;}
     .rvsp{display:block!important;width:100%!important;height:12px!important;font-size:0!important;line-height:0!important;}
   }
+  /* research/ux-round2 blokken (compare, closerlook, productcard) */
+  @media only screen and (max-width:620px){
+    .cmp-h{font-size:15px!important;line-height:20px!important;padding:0 8px 12px 8px!important;}
+    .cmp-c{padding:0 8px 0 12px!important;height:68px!important;}
+    .cmp-t{font-size:14px!important;line-height:19px!important;}
+    .pc-i{width:132px!important;}
+    .pc-img{width:132px!important;}
+    .pc-t{padding:12px 14px 12px 12px!important;}
+    .pc-n{font-size:16px!important;line-height:21px!important;}
+    .pc-s{font-size:13px!important;line-height:18px!important;}
+  }
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">A personal code, on top of the sale. It expires 48 hours after this email.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">A personal code, on top of the sale. It ends 48 hours after this email.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
+
 <!-- BLOCK codebar: aanbod boven de header, live tekst -->
 <tr><td align="center" class="codebar" bgcolor="#282828" style="background:#282828;padding:11px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;letter-spacing:1.5px;font-weight:600;color:#FFFFFF;">
-  YOUR PERSONAL 10% CODE &middot;&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;">SRT-K7Q2M</span>
+  YOUR OWN 10% CODE &middot;&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;">SRT-K7Q2M</span>
 </td></tr>
 
 
@@ -67,16 +80,16 @@
 
 <!-- HERO 4:3 met aanbodbalk (make_hero.py --offer --ratio=4:3) -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/x"><img src="assets/b2-clicked-hero.jpg" width="600" alt="10% off for 48 hours. Your personal 10% code expires 48 hours after this email, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/x%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2c-hero%26utm_term%3Dt02-a"><img src="assets/b2-clicked-hero.jpg" width="600" alt="Your code, 48 hours. Your own 10%, for 48 hours, then the regular sale price again. Plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
-<!-- PRODUCTKAART inline, stijl BLOCK:cart. Event: Viewed Product (metric XNtYMB): Name, ImageURL, Price (tekst met $), URL -->
+<!-- PRODUCTKAART Viewed Product (XNtYMB): Name, ImageURL, Price (tekst), URL. Prijs alleen met $ (QA A18); ankerprijs $439 alleen bij Pan Pro Standard voor $134. -->
 <tr><td class="pad" style="padding:22px 44px 4px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
     <tr><td colspan="3" style="padding:16px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">YOU LOOKED AT</td></tr>
     <tr>
       <td width="104" valign="middle" style="padding:12px 0 12px 16px;">
-        <a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/x"><img src="../../../../content/products/stainless-steel-lid/img/packshot-1.jpg?v=1" width="88" alt="Stainless Steel Lid" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;"></a>
+        <a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/x%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2c-product%26utm_term%3Dt02-a"><img src="../../../../content/products/stainless-steel-lid/img/packshot-1.jpg?v=1" width="88" alt="Stainless Steel Lid" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;"></a>
       </td>
       <td valign="middle" style="padding:12px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
         <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">Stainless Steel Lid</div>
@@ -86,7 +99,7 @@
     </tr>
     <tr><td colspan="3" style="padding:0 16px 16px 16px;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:11px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">
-        <img src="../../partials/shared/icon-discount-tag.png" width="20" height="20" alt="" style="display:inline-block;vertical-align:-5px;width:20px;height:20px;">&nbsp; Your personal code takes 10% off this price, applied with the button below.
+        <img src="../../partials/shared/icon-discount-tag.png" width="20" height="20" alt="" style="display:inline-block;vertical-align:-5px;width:20px;height:20px;">&nbsp; Your own code takes 10% off this price, applied with the button below.
       </td></tr></table>
     </td></tr>
   </table>
@@ -96,38 +109,42 @@
 <tr><td align="center" class="pad" style="padding:16px 44px 4px 44px;">
   <table role="presentation" class="btnw" width="340" cellpadding="0" cellspacing="0" border="0" style="width:340px;"><tr>
     <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:3px;">
-      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/x" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Claim my 10%</center></v:roundrect><![endif]-->
-      <!--[if !mso]><!--><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/x" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Claim my 10% &rarr;</a><!--<![endif]-->
+      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/x%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2c-cta1%26utm_term%3Dt02-a" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Claim my 10%</center></v:roundrect><![endif]-->
+      <!--[if !mso]><!--><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/x%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2c-cta1%26utm_term%3Dt02-a" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Claim my 10% &rarr;</a><!--<![endif]-->
     </td>
   </tr></table>
-  
+  <div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>One use, already applied. 30-day returns. 100,000+ happy customers.</div>
 </td></tr>
 
+
+<!-- OPENER (live tekst) -->
+<tr><td class="pad lead" style="padding:22px 44px 2px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;"><p style="margin:0 0 12px 0;">You went back to look at the Stainless Steel Lid. So here&rsquo;s a personal code: 10% off, on top of the sale price.</p><p style="margin:0 0 0 0;">It&rsquo;s made for you, so it has an end date, 48 hours after this email. After that, the regular sale price applies.</p></td></tr>
 
 <!-- BLOCK offer: aanbodblok, code als live tekst -->
 <tr><td class="pad" style="padding:26px 44px 6px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#321E1D" style="background:#321E1D;">
-    <tr><td align="center" style="padding:30px 26px 8px 26px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#D9CFC7;">YOUR PERSONAL CODE</td></tr>
+    <tr><td align="center" style="padding:30px 26px 8px 26px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#D9CFC7;">YOUR OWN CODE</td></tr>
     <tr><td align="center" class="h2" style="padding:0 26px 16px 26px;font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#FFFFFF;">10% off, on top of the sale</td></tr>
     <tr><td align="center" style="padding:0 26px;">
       <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" class="offer-code" style="border:2px dashed #FFFFFF;padding:12px 30px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:32px;line-height:36px;letter-spacing:6px;font-weight:600;color:#FFFFFF;">SRT-K7Q2M</td></tr></table>
     </td></tr>
-    <tr><td align="center" style="padding:14px 26px 0 26px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#EDE6E0;">Applied automatically with the button. One use, just for you.</td></tr>
-    <tr><td align="center" style="padding:14px 26px 0 26px;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:8px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;font-weight:600;color:#AC3B19;"><img src="../../partials/shared/icon-deadline.png" width="18" height="18" alt="" style="display:inline-block;vertical-align:-4px;width:18px;height:18px;">&nbsp; Expires 48 hours after this email</td></tr></table></td></tr>
+    <tr><td align="center" style="padding:14px 26px 0 26px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#EDE6E0;">One use, already applied with the button. One code per order.</td></tr>
+    <tr><td align="center" style="padding:14px 26px 0 26px;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:8px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;font-weight:600;color:#AC3B19;"><img src="../../partials/shared/icon-deadline.png" width="18" height="18" alt="" style="display:inline-block;vertical-align:-4px;width:18px;height:18px;">&nbsp; Ends 48 hours after this email</td></tr></table></td></tr>
 
     <tr><td align="center" style="padding:20px 26px 30px 26px;">
       <table role="presentation" class="btnw" width="320" cellpadding="0" cellspacing="0" border="0" style="width:320px;"><tr>
-        <td align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border-radius:3px;"><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/x" style="display:block;padding:18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#321E1D;text-decoration:none;text-transform:uppercase;">Claim my 10% &rarr;</a></td>
+        <td align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border-radius:3px;"><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/x%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2c-offer%26utm_term%3Dt02-a" style="display:block;padding:18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#321E1D;text-decoration:none;text-transform:uppercase;">Claim my 10% &rarr;</a></td>
       </tr></table>
     </td></tr>
   </table>
 </td></tr>
 
 
+
 <!-- BLOCK gifts: vier gifts met beeld en waarde, gelijke hoogte, 2x2 op mobiel -->
 <tr><td class="pad" style="padding:30px 44px 6px 44px;">
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">WITH EVERY ORDER</div>
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 18px 0;">$70 in gifts, on us</div>
+  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 18px 0;">$70 in gifts, in the box</div>
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
     <td class="g2" width="50%" valign="top" style="padding:0 5px 0 0;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
@@ -160,9 +177,8 @@
       </tr></table>
     </td>
   </tr></table>
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#727272;text-align:center;padding-top:14px;">Plus a chance to win a $450 PFAS water filter. Nothing to add: it all comes with your order.</div>
+  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#727272;text-align:center;padding-top:14px;">Plus a chance to win a $450 PFAS water filter.</div>
 </td></tr>
-
 
 
 
@@ -171,14 +187,14 @@
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
     <td class="rv" width="48%" valign="top" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:20px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;">
       <div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;I love the product, it is light, non-stick, cooks evenly and is easy to clean!&rdquo;</div>
-      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Stacey K. &middot; Verified buyer</div>
+      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;I ordered one pan to try it out... I am so happy with this pan that I'm ordering the set.&rdquo;</div>
+      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Sunny C. &middot; Verified buyer</div>
     </td>
     <td class="rvsp" width="14" style="font-size:0;line-height:0;">&nbsp;</td>
     <td class="rv" width="48%" valign="top" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:20px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;">
       <div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;amazing pan, completely non stick as advertised and the handle stays cool!&rdquo;</div>
-      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Nina G. &middot; Verified buyer</div>
+      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;...I honestly thought this might be another scam. But it's real titanium.&rdquo;</div>
+      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">James &middot; Verified buyer</div>
     </td>
   </tr></table>
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;text-align:center;padding-top:14px;"><img src="../../partials/shared/icon-customers-100k.png" width="18" height="18" alt="" style="display:inline-block;vertical-align:-4px;width:18px;height:18px;">&nbsp; Join 100,000+ happy customers</div>
@@ -189,11 +205,11 @@
 <tr><td align="center" class="pad" style="padding:26px 44px 6px 44px;">
   <table role="presentation" class="btnw" width="340" cellpadding="0" cellspacing="0" border="0" style="width:340px;"><tr>
     <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:3px;">
-      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/x" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Claim my 10%</center></v:roundrect><![endif]-->
-      <!--[if !mso]><!--><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/x" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Claim my 10% &rarr;</a><!--<![endif]-->
+      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/x%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2c-cta2%26utm_term%3Dt02-a" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Claim my 10%</center></v:roundrect><![endif]-->
+      <!--[if !mso]><!--><a href="https://siraatskitchen.com/discount/SRT-K7Q2M?redirect=/products/x%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2c-cta2%26utm_term%3Dt02-a" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Claim my 10% &rarr;</a><!--<![endif]-->
     </td>
   </tr></table>
-  
+  <div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;padding-top:10px;'>One use, already applied. 30-day returns. 100,000+ happy customers.</div>
 </td></tr>
 
 
@@ -210,7 +226,11 @@
 </td></tr>
 
 
-<tr><td class="pad" style="padding:16px 44px 26px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;text-align:center;">10% off one-time purchase products, on top of the sale price. One code per order.</td></tr>
+<!-- SIGN-OFF -->
+<tr><td class="pad" style="padding:26px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+  A question before you decide? Reply. I read them.<br><br>
+  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
+</td></tr>
 
 
 <!-- FOOTER (vast, uit partials/footer.html) -->
