@@ -56,8 +56,8 @@ Belang: $520.688 netto in 30 dagen (Standard $242.047, Large $184.988, Small $71
 
 | Probleem | Detail | Fix |
 |---|---|---|
-| Badge klopt niet | "50% OFF + FREE GIFTS" tegen werkelijk 69 tot 70 procent; Mini-badge "75-Year Warranty" | Badge uit compare-at berekenen |
-| Mini duurder dan Small | Mini 8 inch $129 (compare $180), Small 10 inch $127 (compare $419) | Mini onder Small prijzen of Mini-compare-at gelijktrekken. Een grotere pan voor minder geld ziet eruit als een fout en zet twijfel op alle prijzen |
+| Badge | Live 7 okt: "70% OFF + FREE GIFTS" op Standard, Large, Small en Mini: klopt nu met compare-at (69 tot 70 procent). De eerdere "50% OFF" uit content/products is verouderd | Zo laten, maar het anker zelf is het probleem (zie prijsanker) |
+| Mini-prijs | Opgelost: live $99 / $330 (was $129 / $180, duurder dan Small) | content/products en mails bijwerken naar $99 |
 | Verboden claims live | "Scientifically proven to retain more nutrients", "Ultra-Durable & Scratch-Resistant", "a lifetime of reliable use"; beeld-alt "Light Labs tested with 30 of 30 tests passed" (certificaat toont 31 stoffen) | Eraf. Vervangen door "No coatings · PFAS-free titanium cooking surface · Tested by Light Labs, report 25895 · 75-year warranty" |
 | Oventemperatuur | "Heat safe up to 548°C / 1000°F" terwijl de Roasting Pan 400°C zegt en claims.csv het getal op needs-proof heeft | "Oven safe" zonder getal tot er een bron is |
 | Laagdikte | 0.5 / 1 / 0.6 mm live, needs-proof in claims.csv | Laten staan als specificatie (niet als kop) zodra Floris bevestigt |
@@ -74,9 +74,9 @@ Belang: $103.612 (hoofdlisting) plus $30.592 (SB-listing $449) in 30 dagen, 381 
 
 | Probleem | Detail | Fix |
 |---|---|---|
-| Drie listings, drie prijzen | Hoofdlisting $399 (compare $1,384, 71 procent), BDAY unlisted $349 (compare $749, 53 procent), SB unlisted $449 | Eén listing, één prijs. Besluit Floris zegt $349. Mails linken nu deels naar de $399-pagina terwijl ze $349 noemen (QA-rapport A5): de klant ziet $50 meer dan beloofd en haakt af |
-| Badges | Hoofdlisting "WAREHOUSE CLEARANCE · 40% OFF" (werkelijk 71 procent), BDAY "45% OFF" (werkelijk 53 procent) | Badge uit compare-at |
-| Compare-at $1,384 | Bijna vier keer de prijs, voor drie pannen en drie deksels die los $134 + $139 + $127 + 3 x $59 = $577 kosten | Compare-at = som van de losse prijzen ($577). "Save $228 vs buying separately" is eerlijk, controleerbaar en sterker |
+| Twee listings, sinds vandaag één prijs | Live 7 okt: hoofdlisting én BDAY beide $349 / $749 ("PRIME SALE · 53% OFF", "SAVE $400"). SB-listing $449 bestaat nog. content/products noemde nog $399 / $1,384 | Mails mogen naar de hoofdlisting linken (QA-punt A5 vervalt zolang de prijs zo blijft). BDAY-listing op redirect zetten naar de hoofdlisting, zodat er één URL, één reviewteller en één voorraad is |
+| Badges en tekst | Badge nu "53% OFF" (klopt), maar de BDAY-tekst zegt "45% off for our birthday. The biggest discount we've ever done, and it won't get better than this." terwijl de gewone listing hetzelfde kost | BDAY-tekst weg |
+| Compare-at $749 | De set bevat Mini, Small, Large (geen Standard) + 3 deksels; los kost dat $99 + $127 + $139 + 3 x $59 = $542 | Compare-at = som van de losse prijzen ($542): "Save $193 vs buying separately" is eerlijk en controleerbaar. Testen tegen het huidige anker |
 | Voorraad -325 | Oververkocht; Gorgias mag hem alleen "when in stock" noemen | Levertijd eerlijk op de PDP zetten of doorverkopen stoppen; anders komen er annuleringen en chargebacks |
 | Inhoud | Standard 11 inch zit er niet in (whats_included) | Expliciet tonen: "Mini 8 inch, Small 10 inch, Large 12 inch + 3 matching lids". Wie de bestseller wil, mist hem anders pas bij levering |
 | Splitzending | Sets komen in meerdere pakketten | Eén regel "may arrive in 2 parcels, each tracked" |
@@ -90,7 +90,7 @@ Belang: $147.304 direct in 30 dagen plus $49.176 als post-purchase upsell (88 ke
 
 | Probleem | Detail | Fix |
 |---|---|---|
-| Badge | "41% OFF" tegen werkelijk 49 procent; mobiel menu "Save $487" tegen werkelijk $587 | Uit compare-at |
+| Badge | Live: "PRIME SALE · 49% OFF" en "SAVE $587" (klopt), maar lager op dezelfde pagina "You save $487" | Eén bedrag |
 | Potmaten | PDP "2-Qt, 3-Qt, 8-Qt", losse listings "2 L (2.1 qt), 3 L (3.2 qt), 7.5 L (7.9 qt)" | Eén set maten |
 | Levering | DECISIONS: "een aantal dagen"; voorraad -2; komt in twee delen (pannen eerst, potten 24 tot 48 uur later) | "Ships in 2 parcels within X days" bij de knop |
 | Amazon goedkoper met deksel | Ticket 86030773 | Uitleggen wat in de set zit tegenover een Amazon-listing (kopie of andere set?) of de Amazon-prijs gelijktrekken |
@@ -115,7 +115,7 @@ Belang: $58.749 direct (421 orders) plus $15.253 als PPU-downsell (215 keer). Al
 | Maten zonder specs | Varianten 20, 24, 26, 28, 30 cm; specs alleen voor 20, 24, 26 | Specs voor alle maten |
 | "Standard" betekent iets anders | Hier 24 cm, bij de koekenpan 28 cm | Maten op diameter noemen, niet op Standard/Large |
 | Geen 24 cm-deksel | Wie Standard koopt, kan geen passend deksel kopen | Deksel 24 cm toevoegen of melden "fits our 26 cm lid snugly" als dat klopt |
-| Badge "CLEARANCE SALE" | Bij een nieuw product met 69 procent korting op compare-at | Clearance laat het lijken op een uitloopmodel: testen tegen geen badge |
+| Badge | Live "PRIME SALE · 70% OFF" (klopt met compare-at); collectie "warehouse-clearance" zegt erboven "Everything left in the warehouse goes" | Clearance-framing van een kernproduct testen tegen geen clearance |
 | Waarom een deep pan | PDP verkoopt geen gebruiksmoment | "Sauté, braise, shallow-fry" met een beeld per toepassing |
 
 ## 6. Titanium Hammered Pizza Steel ($129)
@@ -125,7 +125,7 @@ Belang: $19.845 (140 orders). Als landing: 4.741 sessies, 84 procent bounce, CR 
 | Probleem | Detail | Fix |
 |---|---|---|
 | Diameter ontbreekt | "Will it fit my oven?" is de eerste vraag; nergens een maat | Diameter, dikte en gewicht toevoegen |
-| Badge "WAREHOUSE CLEARANCE" | Op een product dat gewoon verkoopt en 36 procent korting heeft | Badge weg of "36% off" |
+| Badge en hitte | Live "PRIME SALE · 36% OFF" (klopt); tekst "No coatings, no chemicals, nothing to chip, peel or degrade, even at 1000°F" en "Heat-safe to 1000°F" | Getal weg |
 | Hittegetal | PDP noemt pizza-oven-hitte zonder bron | "Safe in home ovens and pizza ovens" zonder getal |
 | Cross-sell | Wordt vaak met de 12-set gekocht | Op de set-PDP aanbieden als gift of bundel |
 
@@ -135,7 +135,7 @@ Belang: $4.109 (21 orders). Als landing: 1.557 sessies, CR 0,77 procent. Lanceer
 
 | Probleem | Detail | Fix |
 |---|---|---|
-| Oude beloftes live | "100-day trial · Lifetime warranty · Free express shipping" en "covered for life" | Vervangen door "Free 30-day returns · 75-year warranty · Free shipping" |
+| Oude beloftes | Live 7 okt: "100-day trial" en "Lifetime warranty" zijn weg (75-Year Warranty, 30-Day Returns). Wel nog "Free Express Shipping", "for a lifetime, not a season", "High demand — few units left" bij 270 op voorraad | Express en lifetime weg |
 | Oventemperatuur | 400°C / 750°F, terwijl de pannen 548°C zeggen | Eén lijn voor alles: "oven safe" |
 | Gorgias zegt "not available yet, do not recommend" | Terwijl hij ACTIVE is en verkoopt | Gorgias-guidance 8566447 bijwerken, anders zegt support "niet leverbaar" tegen kopers met twijfel |
 | Badge "LAUNCH SALE · SAVE $51" | Klopt ($250 naar $199) | Laten staan; dit is het voorbeeld voor alle andere badges |
@@ -146,7 +146,7 @@ Belang: verkoopt vooral als gift (Oak 272 orders en Ember 265 in 90 dagen voor g
 
 | Probleem | Detail | Fix |
 |---|---|---|
-| Badge | "WAREHOUSE CLEARANCE · 30% OFF" tegen werkelijk 39 procent | Uit compare-at |
+| Badge | Live $54 / $100 met "PRIME SALE · 46% OFF" (klopt), maar onderaan "Built to last a lifetime" en "Wear it in your kitchen for 30 days ... return it for a full refund" | Lifetime weg; retourtekst gelijk aan beleid |
 | PVC-coating en PU-leer | Botst met "no coatings / plastic-free" als hij naast de pannen staat | Niet in de gift-stack noemen met "plastic-free"; op de PDP eerlijk "water-repellent coated canvas" |
 | Maattabel | Afmetingen staan er (84 x 74 cm, banden 102 cm) | Ook in inches, en "one size, adjustable" boven de vouw |
 | Rol | Verkoopt bijna alleen als toevoeging | Als checkout-upsell of cart-add-on tonen, niet als landing |
