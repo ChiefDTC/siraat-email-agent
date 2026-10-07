@@ -15,7 +15,7 @@ It is urgent: could you review it as our expert eyes and send your verdict withi
 7. What would you put live first, and what is missing before we can launch this ourselves?
 
 Figma v4: https://www.figma.com/design/ahGP2wWoVIif8ETXcBq1Dj
-Overview attached: "Flow System v4: review brief for Homestead".
+Full brief (every flow, delay, split and test): https://claude.ai/artifact/FqiA6PR2WJaREH2pG8dJwc
 
 Thank you,
 Floris
