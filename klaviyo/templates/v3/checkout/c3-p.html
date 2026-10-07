@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: Your cart is still at today's price | SUBJECT_B: One pan, or three for $349? | PREVIEW: Three hammered pans and three lids. About $116 a pan, lid included. | SEND: Step 2, 1 day after C2 | FILTERS: Message: Placed Order = 0 since starting this flow. Conditional split: Checkout Started value < 300 (branch P, pan buyers) -->
+<!-- SUBJECT_A: One pan, or three for $349? | SUBJECT_B: The math on the pan in your cart | PREVIEW: Three pans and three lids, about $116 a pan. HI10 takes another 10% off. | SEND: Step 2, 1 day after C2 | FILTERS: Message: Placed Order = 0 since starting this flow. Conditional split: Checkout Started value < 300 (branch P, pan buyers) -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -29,160 +29,73 @@
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Three hammered pans and three lids. About $116 a pan, lid included.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Three pans and three lids, about $116 a pan. HI10 takes another 10% off.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
+{{BLOCK:codebar}}
+
 {{HEADER}}
 
-<!-- HERO: shoot photo + TT Ramillas headline baked in -->
+<!-- HERO 4:3 met aanbodbalk (P022-A_GasRange, square) -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/products/titanium-hammered-pan-set-with-lids-6-pcs-bday-sale"><img src="{{IMG}}/c3p-hero.jpg" width="600" alt="Make it three. Three pans and three lids for $349." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-pan-set-with-lids-6-pcs-bday-sale"><img src="{{IMG}}/c3p-hero.jpg" width="600" alt="Make it three. Three pans and three lids for $349, plus an extra 10% off with code HI10." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
-<!-- CTA under hero -->
-<tr><td align="center" style="padding:24px 44px 4px 44px;">
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-    <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:2px;">
-      <a href="https://siraatskitchen.com/products/titanium-hammered-pan-set-with-lids-6-pcs-bday-sale" style="display:inline-block;padding:16px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:16px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;">SEE THE 6-PIECE SET</a>
-    </td>
-  </tr></table>
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;padding-top:12px;"><a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/cart' }}" style="color:#727272;text-decoration:underline;">Or return to my cart</a></div>
-</td></tr>
+{{BLOCK:cart pad="22px 44px 4px 44px" title="IN YOUR CART NOW" line="<b>HI10</b> takes an extra 10% off, on your pan or on the set."}}
 
-<!-- INTRO -->
-<tr><td class="pad" style="padding:30px 44px 6px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;color:#282828;">
-  <p style="margin:0 0 14px 0;">Hi {{ first_name|default:'there' }},</p>
-  <p style="margin:0 0 14px 0;">Your pan is still in your cart, at today&rsquo;s price. If you already know you will cook on it every day, there is one more option worth a look before you check out.</p>
-  <p style="margin:0;">The 6-piece set: three hammered titanium pans, each with its own stainless steel lid, for $349.</p>
-</td></tr>
+{{BLOCK:cta label="Upgrade to the 6-piece set" url="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-pan-set-with-lids-6-pcs-bday-sale" pad="16px 44px 4px 44px"}}
+<!-- SECUNDAIRE ACTIE: tekstlink -->
+<tr><td align="center" style="padding:12px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;"><a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10" style="color:#282828;text-decoration:underline;">Keep my one pan and check out</a></td></tr>
 
-<!-- COMPARISON -->
-<tr><td class="pad" style="padding:34px 44px 6px 44px;">
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:34px;line-height:38px;color:#282828;text-align:center;">The math, plainly</div>
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#727272;text-align:center;padding-top:8px;">One pan with a lid, or three.</div>
-</td></tr>
-
-<!-- COMPARISON TABLE -->
-<tr><td class="pad" style="padding:16px 44px 8px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-    <tr>
-      <td class="stack stackpad" width="50%" valign="top" style="padding:0 7px 0 0;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-          <tr><td style="padding:20px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-size:11px;line-height:14px;letter-spacing:1.5px;font-weight:600;color:#727272;">ONE PAN PRO</div>
-            <div style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:40px;line-height:44px;color:#282828;padding-top:8px;">$186+</div>
-            <div style="font-size:14px;line-height:21px;color:#727272;padding-top:6px;">One pan from $127, plus a stainless steel lid at $59.</div>
-          </td></tr>
-        </table>
-      </td>
-      <td class="stack stackpad" width="50%" valign="top" style="padding:0 0 0 7px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:2px solid #AC3B19;">
-          <tr><td style="padding:19px 19px 17px 19px;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-size:11px;line-height:14px;letter-spacing:1.5px;font-weight:600;color:#AC3B19;">THE 6-PIECE SET</div>
-            <div style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:40px;line-height:44px;color:#282828;padding-top:8px;">$116</div>
-            <div style="font-size:14px;line-height:21px;color:#727272;padding-top:6px;">Per pan, lid included. Three pans and three lids for $349.</div>
-          </td></tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-</td></tr>
-
-<!-- PRODUCT CARD: 6-piece set -->
-<tr><td class="pad" style="padding:22px 44px 8px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-    <tr>
-      <td class="stack" width="46%" valign="middle" style="padding:0;">
-        <a href="https://siraatskitchen.com/products/titanium-hammered-pan-set-with-lids-6-pcs-bday-sale"><img src="{{IMG}}/set6.jpg" width="236" alt="Siraat Titanium Hammered Pan Set with Lids, 6 pieces: three hammered pans and three stainless steel lids" style="width:100%;max-width:512px;height:auto;"></a>
-      </td>
-      <td class="stack" valign="middle" style="box-sizing:border-box;padding:22px 22px 24px 22px;font-family:Inter,Arial,Helvetica,sans-serif;">
-        <div style="font-size:11px;line-height:14px;letter-spacing:1.5px;font-weight:600;color:#AC3B19;">THE 6-PIECE SET</div>
-        <div style="font-size:18px;line-height:24px;font-weight:600;color:#282828;padding-top:8px;">Titanium Hammered Pan Set With Lids</div>
-        <div style="font-size:14px;line-height:21px;color:#727272;padding-top:6px;">Three hammered pans with a pure titanium cooking surface and three stainless steel lids. No coatings. Gas, electric, induction and oven.</div>
-        <div style="font-size:20px;line-height:26px;font-weight:600;color:#282828;padding-top:12px;">$349</div>
-        <div style="font-size:13px;line-height:20px;padding-top:12px;"><a href="https://siraatskitchen.com/products/titanium-hammered-pan-set-with-lids-6-pcs-bday-sale" style="color:#AC3B19;font-weight:600;text-decoration:none;letter-spacing:1px;">SEE THE SET &rarr;</a></div>
-      </td>
-    </tr>
-  </table>
-</td></tr>
-
-<!-- PROOF LINE -->
-<tr><td class="pad" style="padding:14px 44px 6px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#727272;text-align:center;">
-  Same titanium surface as every Siraat pan, tested free from PFAS by Light Labs (report no. 25895). Same 75-year warranty on every piece.
-</td></tr>
-
-<!-- REVIEWS -->
-<tr><td class="pad" style="padding:26px 44px 6px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-    <tr>
-      <td class="stack stackpad" width="50%" valign="top" style="padding:0 7px 0 0;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-          <tr><td style="padding:18px 18px 16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <div style="font-size:14px;line-height:21px;color:#282828;padding:8px 0 10px 0;">&ldquo;Seriously the BEST pan ever!!! Wow. I&rsquo;m going to have to get the set!!!&rdquo;</div>
-            <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Sonya D., verified buyer</div>
-          </td></tr>
-        </table>
-      </td>
-      <td class="stack stackpad" width="50%" valign="top" style="padding:0 0 0 7px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-          <tr><td style="padding:18px 18px 16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;">
-            <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <div style="font-size:14px;line-height:21px;color:#282828;padding:8px 0 10px 0;">&ldquo;This is my first time purchasing a titanium pan, and I am thoroughly impressed with the results. The quality is noticeably superior to other pans I&rsquo;ve used.&rdquo;</div>
-            <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Jardier M., verified buyer</div>
-          </td></tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;text-align:center;padding-top:14px;">Join 100,000+ happy customers.</div>
-</td></tr>
-
-<!-- CART BLOCK (Klaviyo Checkout Started data) -->
+<!-- DE REKENSOM -->
 <tr><td class="pad" style="padding:30px 44px 6px 44px;">
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:34px;line-height:38px;color:#282828;text-align:center;padding-bottom:14px;">Or keep it simple</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-    {% for item in event.extra.line_items %}{% if forloop.counter <= 3 %}
-    <tr>
-      <td width="112" valign="middle" style="padding:14px 0 14px 14px;">
-        <img src="{{ item.product.images.0.src|default:'{{IMG}}/cart-fallback.jpg' }}" width="96" alt="{{ item.title }}" style="width:96px;height:96px;object-fit:cover;background:#F8F7F2;">
-      </td>
-      <td valign="middle" style="padding:14px 16px;font-family:Inter,Arial,Helvetica,sans-serif;">
-        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">{{ item.title }}</div>
-        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">Qty {{ item.quantity|floatformat:0 }}</div>
-      </td>
-      <td align="right" valign="middle" style="padding:14px 16px 14px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;white-space:nowrap;">${{ item.line_price|floatformat:2 }}</td>
-    </tr>
-    {% endif %}{% endfor %}
-  </table>
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;text-align:center;padding-top:12px;"><a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/cart' }}" style="color:#AC3B19;font-weight:600;text-decoration:none;">Return to my cart &rarr;</a></div>
+  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">THE MATH, PLAINLY</div>
+  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 16px 0;">One pan, or three</div>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+    <td width="48%" valign="top" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:18px 16px 16px 16px;font-family:Inter,Arial,Helvetica,sans-serif;">
+      <div style="font-size:11px;line-height:14px;letter-spacing:1.5px;font-weight:600;color:#727272;">ONE PAN + LID</div>
+      <div style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:40px;line-height:44px;color:#282828;padding-top:6px;">$154+</div>
+      <div style="font-size:13px;line-height:19px;color:#727272;padding-top:4px;">Pan Pro with a stainless steel lid.</div>
+    </td>
+    <td width="14" style="font-size:0;line-height:0;">&nbsp;</td>
+    <td width="48%" valign="top" bgcolor="#FFFFFF" style="background:#FFFFFF;border:2px solid #AC3B19;padding:17px 15px 15px 15px;font-family:Inter,Arial,Helvetica,sans-serif;">
+      <div style="font-size:11px;line-height:14px;letter-spacing:1.5px;font-weight:600;color:#AC3B19;">6-PIECE SET</div>
+      <div style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:40px;line-height:44px;color:#282828;padding-top:6px;">$116</div>
+      <div style="font-size:13px;line-height:19px;color:#727272;padding-top:4px;">A pan, lid included. $349 for three of each.</div>
+    </td>
+  </tr></table>
+  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#282828;text-align:center;padding-top:14px;"><img src="{{SHARED}}/icon-discount-tag.png" width="18" height="18" alt="" style="display:inline-block;vertical-align:-4px;width:18px;height:18px;">&nbsp; HI10 takes another 10% off either one.</div>
 </td></tr>
 
-<!-- CTA -->
-<tr><td align="center" style="padding:24px 44px 8px 44px;">
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-    <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:2px;">
-      <a href="https://siraatskitchen.com/products/titanium-hammered-pan-set-with-lids-6-pcs-bday-sale" style="display:inline-block;padding:16px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:16px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;">SEE THE 6-PIECE SET</a>
+<!-- SETKAART -->
+<tr><td class="pad" style="padding:22px 44px 6px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;"><tr>
+    <td width="42%" valign="middle" style="padding:0;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-pan-set-with-lids-6-pcs-bday-sale"><img src="{{IMG}}/set6.jpg" width="214" alt="Siraat Titanium Hammered Pan Set with Lids, 6 pieces: three hammered pans and three stainless steel lids" style="width:100%;max-width:214px;height:auto;"></a></td>
+    <td valign="middle" style="padding:16px 18px 16px 16px;font-family:Inter,Arial,Helvetica,sans-serif;">
+      <div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Titanium Hammered Pan Set With Lids</div>
+      <div style="font-size:13px;line-height:19px;color:#727272;padding-top:5px;">Three hammered pans, three stainless steel lids. Gas, electric, induction and oven.</div>
+      <div style="font-size:18px;line-height:24px;font-weight:600;color:#282828;padding-top:8px;">$349</div>
     </td>
   </tr></table>
 </td></tr>
 
-<!-- TRUST ROW -->
-<tr><td class="pad" style="padding:22px 44px 6px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #ECE7DD;border-bottom:1px solid #ECE7DD;">
-    <tr>
-      <td width="33%" align="center" style="padding:16px 4px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;">30-DAY<br>RETURNS</td>
-      <td width="34%" align="center" style="padding:16px 4px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;border-left:1px solid #ECE7DD;border-right:1px solid #ECE7DD;">75-YEAR<br>WARRANTY</td>
-      <td width="33%" align="center" style="padding:16px 4px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;">FREE<br>SHIPPING</td>
-    </tr>
-  </table>
-</td></tr>
+{{BLOCK:features eyebrow="SAME PAN, THREE TIMES" headline="Nothing to wear off, times three" i1="no-coating" t1="Pure titanium on every pan" d1="No coating to scratch or flake, so nothing to replace in a few years." i2="pfas-tested" t2="Lab tested: Light Labs report 25895" d2="31 PFAS compounds tested, every one below detection." i3="warranty-75-year" t3="One 75-year warranty for all six pieces" d3="Plus $70 in gifts with your order and 30-day returns."}}
+
+{{BLOCK:cta label="Upgrade to the 6-piece set" url="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-pan-set-with-lids-6-pcs-bday-sale" pad="22px 44px 4px 44px"}}
+
+{{BLOCK:reviews q1="Seriously the BEST pan ever!!! Wow. I'm going to have to get the set!!!" n1="Sonya D." q2="The pan is everything it said it was going to be. Absolutely love it!!" n2="Marijke P."}}
+
+{{BLOCK:cta label="Upgrade to the 6-piece set" url="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-pan-set-with-lids-6-pcs-bday-sale" pad="24px 44px 4px 44px"}}
+<!-- SECUNDAIRE ACTIE: tekstlink -->
+<tr><td align="center" style="padding:12px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;"><a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10" style="color:#282828;text-decoration:underline;">Keep my one pan and check out</a></td></tr>
+
+{{BLOCK:icons}}
 
 <!-- SIGN-OFF -->
-<tr><td class="pad" style="padding:22px 44px 26px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  Happy with one pan? That is a good start too. Your cart is saved, and if you have a question about sizes, just reply.<br><br>
+<tr><td class="pad" style="padding:22px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+  Hi {{ first_name|default:'there' }}, happy with one pan? That is a good start too. A question about sizes? Just reply.<br><br>
   Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
 </td></tr>
 
