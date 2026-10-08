@@ -45,8 +45,8 @@ Tag-allowlist: Django `autoescape, comment, cycle, elif, else, empty, endautoesc
 | checkout/c3-s | let op | co_pan, co_set6, co_apron, co_pan_eur | 2918 | 5 | ja | 0 |
 | checkout/c4-nocode | let op | co_pan, co_set6, co_apron, co_pan_eur | 3126 | 5 | ja | 0 |
 | checkout/c4 | let op | co_pan, co_set6, co_apron, co_pan_eur | 3552 | 13 | ja | 0 |
-| post-purchase/p1-first | let op | po_pan_us, po_set6, po_apron_us, po_deep | 4014 | 6 | ja | 0 |
-| post-purchase/p1-repeat | let op | po_pan_us, po_set6, po_apron_us, po_deep | 3077 | 6 | ja | 0 |
+| post-purchase/p1-first | let op | po_pan_us, po_set6, po_apron_us, po_deep | 4077 | 6 | ja | 0 |
+| post-purchase/p1-repeat | let op | po_pan_us, po_set6, po_apron_us, po_deep | 3117 | 6 | ja | 0 |
 | post-purchase/p2-safe | let op | po_pan_us, po_set6, po_apron_us, po_deep | 3854 | 2 | ja | 0 |
 | post-purchase/p2 | let op | po_pan_us, po_set6, po_apron_us, po_deep | 4186 | 2 | ja | 0 |
 | post-purchase/p3-accessory-nocode | groen | po_pan_us, po_set6, po_apron_us, po_deep | 2977 | 2 | ja | 0 |
@@ -122,12 +122,12 @@ Tag-allowlist: Django `autoescape, comment, cycle, elif, else, empty, endautoesc
 - let op checkout/c3-s: ruw 390 px (code-editor mobiel): tabel 564 px breed door lange Django-expressies; gerenderd in orde
 - let op checkout/c4-nocode: ruw 390 px (code-editor mobiel): tabel 564 px breed door lange Django-expressies; gerenderd in orde
 - let op checkout/c4: ruw 390 px (code-editor mobiel): tabel 564 px breed door lange Django-expressies; gerenderd in orde
-- let op post-purchase/p1-first: hoogte 4014 px op 390 px bij po_pan_us (geen verkoopmail of P2: langer toegestaan)
+- let op post-purchase/p1-first: hoogte 4077 px op 390 px bij po_pan_us (geen verkoopmail of P2: langer toegestaan)
 - let op post-purchase/p1-first: ruw 390 px (code-editor mobiel): tabel 564 px breed door lange Django-expressies; gerenderd in orde
 - let op post-purchase/p1-repeat: inbox: 3 uitroeptekens in de body
 - let op post-purchase/p1-repeat: ruw 390 px (code-editor mobiel): tabel 564 px breed door lange Django-expressies; gerenderd in orde
 - let op post-purchase/p2-safe: hoogte 3854 px op 390 px bij po_pan_us (geen verkoopmail of P2: langer toegestaan)
-- let op post-purchase/p2: hoogte 4186 px op 390 px bij po_pan_us (geen verkoopmail of P2: langer toegestaan)
+- let op post-purchase/p2: hoogte 4186 px op 390 px bij po_set6 (geen verkoopmail of P2: langer toegestaan)
 - let op post-purchase/p3-accessory: ruw 390 px (code-editor mobiel): tabel 515 px breed door lange Django-expressies; gerenderd in orde
 - let op post-purchase/p3-apron: ruw 390 px (code-editor mobiel): tabel 515 px breed door lange Django-expressies; gerenderd in orde
 - let op site/a1: outlook: preheader zonder mso-hide:all

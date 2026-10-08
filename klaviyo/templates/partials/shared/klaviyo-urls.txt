@@ -65,3 +65,5 @@ ugc-prod-set6.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/ad68689b-5e4
 ugc-prod-wok.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/9717b0f2-b2c5-462c-a6a4-d478e591f4dc.jpeg
 pc-large.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/37b4a972-db60-45f5-a457-bf9a93cef57d.jpeg
 pc-set6.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/65356ccd-ba85-461c-8dbf-db80336c15c0.jpeg
+logo-black-cream.png https://cdn.klaviyomail.com/company/TdtTzz/images/68a06000-e2d3-4858-86cb-92587411d958.png
+logo-white-dark.png https://cdn.klaviyomail.com/company/TdtTzz/images/c8e347f7-34c0-42d9-8ddc-32949f48155e.png

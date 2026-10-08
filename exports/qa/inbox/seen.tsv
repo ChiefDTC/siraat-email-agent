@@ -12,3 +12,14 @@
 1a11d15417c7f70e	vip	How's your pan doing?	exports/qa/inbox/vip-R1-PAN-2
 1a11d19b28ce8043	vip	You're a VIP. Here's 15% off.	exports/qa/inbox/vip-CODE-V1
 1a11d195bd782112	vip	A question from Benjamin	exports/qa/inbox/vip-V2
+1a11d1f76ddbff4d	vip	15% exclusive discount, 72 hours	exports/qa/inbox/vip-CODE-R2-VIP
+1a11d1d5046ce55e	welcome	No PFAS. Here's the paper. And 10%.	exports/qa/inbox/welcome-W1-A
+1a11d1d27246cb7b	welcomeabtb	No PFAS. Here's the paper. And 10%.	exports/qa/inbox/welcomeabtb-W1-B
+1a11d1d22fdb3c4c	welcomeint	No PFAS. Here's the paper. And 10%.	exports/qa/inbox/welcomeint-W1-A
+kXpJmGe-welcomeint	welcomeint	The pan nobody else was making	exports/qa/inbox/welcomeint-W2
+kXpJmGe-welcome	welcome	The pan nobody else was making	exports/qa/inbox/welcome-W2
+kW9GgsY-welcomeabtb	welcomeabtb	The pan nobody else was making	exports/qa/inbox/welcomeabtb-W2
+kTyYPD6-welcomeint	welcomeint	Has your cookware been tested?	exports/qa/inbox/welcomeint-W3
+kTyYPD6-welcome	welcome	Has your cookware been tested?	exports/qa/inbox/welcome-W3
+kXGenVh-welcomeabtb	welcomeabtb	Has your cookware been tested?	exports/qa/inbox/welcomeabtb-W3
+kV7wW7p-welcomeint	welcomeint	Who are you cooking for?	exports/qa/inbox/welcomeint-W4-INT
