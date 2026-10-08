@@ -63,7 +63,7 @@ def main():
         for piece in [p.strip() for p in r['snippet'].split('...') if p.strip()]:
             if re.sub(r'\s+', ' ', piece) not in tekst: bad.append('%s: niet letterlijk: %r' % (ref, piece[:60]))
         if len(r['snippet']) > 120: bad.append('%s: %d tekens' % (ref, len(r['snippet'])))
-        if '—' in r['snippet']: bad.append('%s: gedachtestreepje' % ref)
+        if '\u2014' in r['snippet']: bad.append('%s: gedachtestreepje' % ref)
         if not r['pillars']: bad.append('%s: geen pijler' % ref)
     for s, refs in sets.items():
         for ref in refs:
