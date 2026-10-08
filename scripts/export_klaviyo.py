@@ -117,6 +117,10 @@ def check(k,subj_a,subj_b,prev):
     B=[];W=[]
     for t in ('{{IMG}}','{{SHARED}}','[[','{{BLOCK','{{HEADER}}','{{FOOTER}}'):
         if t in k: B.append('restant %s'%t)
+    # open placeholders in zichtbare tekst (commentaar telt niet mee)
+    vis=re.sub(r'<!--(?!\{%).*?-->','',k,flags=re.S)
+    for m in re.findall(r'\[VRAAG[^\]]*\]|\bTODO\b|\bTBD\b|\bXXX\b|\[PLACEHOLDER[^\]]*\]',vis):
+        B.append('open placeholder: %s'%m[:60]); break
     for s in re.findall(r'\bsrc="([^"]*)"',k):
         for part in re.split(r'\{%[^%]*%\}',s):
             part=part.strip()
