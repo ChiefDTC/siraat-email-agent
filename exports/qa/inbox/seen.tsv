@@ -8,3 +8,7 @@
 1a11d0cdaac7da84	sunset	Should we keep writing to you?	exports/qa/inbox/sunset-S1
 1a11d1080360533e	sunsetkept	The pan we started with	exports/qa/inbox/sunsetkept-S4
 1a11d1142c7831ea	sunset	Last email from me (unless you tap)	exports/qa/inbox/sunset-S2
+1a11d17188b8dcad	order	Which lid fits your pan?	exports/qa/inbox/order-CODE-P3-PAN
+1a11d15417c7f70e	vip	How's your pan doing?	exports/qa/inbox/vip-R1-PAN-2
+1a11d19b28ce8043	vip	You're a VIP. Here's 15% off.	exports/qa/inbox/vip-CODE-V1
+1a11d195bd782112	vip	A question from Benjamin	exports/qa/inbox/vip-V2

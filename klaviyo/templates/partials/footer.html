@@ -1,6 +1,6 @@
 <!-- FOOTER (vast, uit partials/footer.html) -->
 <tr><td class="pad" style="padding:38px 40px 30px 40px;background:#282828;">
-  <a href="https://siraatskitchen.com"><img src="{{IMG}}/logo-white.png" width="190" alt="Siraat" style="width:190px;height:auto;"></a>
+  <a href="https://siraatskitchen.com"><img src="{{SHARED}}/logo-white-dark.png" width="190" alt="Siraat" style="display:block;width:190px;height:auto;border:0;"></a>
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;letter-spacing:2px;font-weight:600;color:#BDB8B0;padding-top:14px;">NON-TOXIC COOKWARE &middot; BUILT FOR LIFE</div>
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:28px;">
     <tr><td style="border-top:1px solid #5A5856;padding:15px 4px;"><a href="https://siraatskitchen.com/collections/pans" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;font-weight:600;color:#F2F2F2;text-decoration:none;">TITANIUM COOKWARE &nbsp;&rarr;</a></td></tr>
@@ -14,7 +14,7 @@
   </tr></table>
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:19px;color:#BDB8B0;text-align:center;">
     Free shipping on all orders &middot; 30-day returns &middot; 75-year warranty<br><br>
-    {% unsubscribe 'Unsubscribe' %} &nbsp;|&nbsp; <a href="{% manage_preferences_link %}" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; {% web_view 'View in browser' %}<br>
+    <a href="{% unsubscribe_link %}" style="color:#BDB8B0;">Unsubscribe</a> &nbsp;|&nbsp; <a href="{% manage_preferences_link %}" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; <a href="{% web_view_link %}" style="color:#BDB8B0;">View in browser</a><br>
     {{ organization.name }} &middot; {{ organization.full_address }}
   </div>
 </td></tr>

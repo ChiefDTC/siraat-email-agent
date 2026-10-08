@@ -1,0 +1,11 @@
+:envelope_with_arrow: *Nieuwe e-mail ontvangen:* vip/v1, lolagroothuis+vip (US), 8 okt 21:59
+Onderwerp: "You're a VIP. Here's 15% off." · <https://mail.google.com/mail/?authuser=lolagroothuis@gmail.com#all/thread-f:1878512983924965443|open in Gmail>
+*11 OK · 3 FOUT · 1 LET OP*
+
+:x: *Linktekst past bij bestemming*: [FOUT] "ABOUT" -> /pages/faq
+:x: *Afmelden en voorkeuren*: afmeldlink nauwelijks zichtbaar: "Unsubscribe" 2.4:1 (rgb(172,59,25) op rgb(40,40,40), light), "Unsubscribe" 2.4:1 (rgb(172,59,25) op rgb(40,40,40), light), "Unsubscribe" 2.4:1 (rgb(172,59,25) op rgb(40,40,40), dark)
+:x: *Dark mode*: dark 375 px: tekst met laag contrast "Unsubscribe" 2.4:1; dark 375 px: tekst met laag contrast "View in browser" 2.4:1; forced 375 px: logo ae4dfc27-1e05-481a-90b6-f6467bc3db78.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: lichte 
+:warning: *Links (status 200)*: 18 links, 15 unieke bestemmingen; sociale links niet te openen vanuit deze omgeving: Facebook (www.facebook.com), Instagram (www.instagram.com). Niet gecontroleerd: Manage preferences (manage.kmail-lists.com), Unsubscribe (manage.kmail-lists.com), View in brow
+:white_check_mark: Onderwerp, Preheader, Afzender, Grootte (Gmail-clip 102 KB), UTM, Beelden, Ongerenderde tags, Valuta en maat, Header, footer, logo, Em dash, Layout 375/600/1200 px
+
+Screenshots (375 licht, 375 dark, 600 licht) als bijlage in de thread; volledig rapport: `exports/qa/inbox/vip-CODE-V1/report.md`

@@ -11,7 +11,7 @@ def lookup(d, k):
 @register.simple_tag
 def coupon_code(name): return 'SRT-K7Q2M'
 @register.simple_tag
-def unsubscribe(label='Unsubscribe'): return mark_safe('<a href="#" style="color:#BDB8B0;">%s</a>' % label)
+def unsubscribe(label='Unsubscribe'): return mark_safe('<a href="#unsubscribe">%s</a>' % label)  # zoals Klaviyo: zonder kleur (04-inbox-qa, 2,4:1 op de footer)
 @register.simple_tag
 def unsubscribe_link(): return '#unsubscribe'
 @register.simple_tag
@@ -19,7 +19,7 @@ def manage_preferences(label='Manage preferences'): return mark_safe('<a href="#
 @register.simple_tag
 def manage_preferences_link(): return '#preferences'
 @register.simple_tag
-def web_view(label='View in browser'): return mark_safe('<a href="#" style="color:#BDB8B0;">%s</a>' % label)
+def web_view(label='View in browser'): return mark_safe('<a href="#webview">%s</a>' % label)  # zoals Klaviyo: zonder kleur
 @register.simple_tag
 def web_view_link(): return '#webview'
 # Klaviyo-datumtag en -filters (help.klaviyo.com "Date variables in templates reference"; urgency-upgrade 7 okt 2026):

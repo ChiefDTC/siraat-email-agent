@@ -60,3 +60,7 @@ Bijwerken bij elk nieuw besluit. Datum per regel.
 - HI10 op één keer per klant: gedaan in Shopify (appliesOncePerCustomer = true).
 - Claude mag campagnesegmenten via de API maken: "v4 · Welcome protection" aangemaakt (XdK77b). "v4 · Campagne-cap" weigert de API (filter "Flow niet gezet" ongeldig), in de UI zetten.
 - Livegang pas nadat alle testmails ontvangen en bekeken zijn.
+- Middle East delay-flow (SxN86d) mag uit. GOODFOOD blijft actief (affiliatecode), oude winback UEfh4h loopt door tot 14 december.
+- Mystery Gift = Plastic-Free Dishwasher Sheets (Shopify-product "Mystery Gift" 15785445622100, kloon sinds 22 sep). Trigger van WvRupU wijst nog naar oud product 15675410415956, daarom sinds 21 sep stil.
+- E-guide-download: https://delivery.shopifyapps.com/-/b3a2da5476fdac80/509b1c473bc15d58 (knop in P1).
+- Verwerkingstijd volgens Floris: verzonden binnen 1 werkdag (data 30 dagen: mediaan 77 uur tot fulfillment, nog naast elkaar leggen).

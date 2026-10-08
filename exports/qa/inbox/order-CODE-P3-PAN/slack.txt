@@ -1,0 +1,12 @@
+:envelope_with_arrow: *Nieuwe e-mail ontvangen:* post-purchase/p3-pan, lolagroothuis+order (US), 8 okt 21:56
+Onderwerp: "Which lid fits your pan?" · <https://mail.google.com/mail/?authuser=lolagroothuis@gmail.com#all/thread-f:1878512805145533613|open in Gmail>
+*10 OK · 3 FOUT · 2 LET OP*
+
+:x: *Linktekst past bij bestemming*: [FOUT] "ABOUT" -> /pages/faq
+:x: *Afmelden en voorkeuren*: afmeldlink nauwelijks zichtbaar: "Unsubscribe" 2.4:1 (rgb(172,59,25) op rgb(40,40,40), light), "Unsubscribe" 2.4:1 (rgb(172,59,25) op rgb(40,40,40), light), "Unsubscribe" 2.4:1 (rgb(172,59,25) op rgb(40,40,40), light)
+:x: *Dark mode*: dark 375 px: tekst met laag contrast "Unsubscribe" 2.4:1; dark 375 px: tekst met laag contrast "View in browser" 2.4:1; dark 600 px: tekst met laag contrast "Unsubscribe" 2.4:1; dark 600 px: tekst met laag contrast "View in browser" 2.4:1; forced 375 px: logo 
+:warning: *Links (status 200)*: 18 links, 15 unieke bestemmingen; sociale links niet te openen vanuit deze omgeving: Facebook (www.facebook.com), Instagram (www.instagram.com). Niet gecontroleerd: Manage preferences (manage.kmail-lists.com), Unsubscribe (manage.kmail-lists.com), View in brow
+:warning: *Valuta en maat*: markt US. cm in een US-mail: "pan: 20, 26, 28 or 30 cm. The"; cm in een US-mail: "″ Pan Pro takes the 28 cm lid."
+:white_check_mark: Onderwerp, Preheader, Afzender, Grootte (Gmail-clip 102 KB), UTM, Beelden, Ongerenderde tags, Header, footer, logo, Em dash, Layout 375/600/1200 px
+
+Screenshots (375 licht, 375 dark, 600 licht) als bijlage in de thread; volledig rapport: `exports/qa/inbox/order-CODE-P3-PAN/report.md`
