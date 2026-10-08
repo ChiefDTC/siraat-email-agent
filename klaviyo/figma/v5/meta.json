@@ -78,7 +78,7 @@
   "var": "atc_pan"
  },
  "cart/k3": {
-  "a": "We're removing your cart's 10%",
+  "a": "We're removing your discount",
   "b": "Last email: your cart and 10%",
   "p": "Already applied. In 48 hours we're removing the code from your cart.",
   "var": "atc_pan"
