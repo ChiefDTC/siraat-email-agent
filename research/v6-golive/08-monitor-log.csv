@@ -49,3 +49,4 @@ tijd_ams,alias,flow,mail,onderwerp,checks_ok,fouten
 2026-10-08 23:49,+set,TEST v5 Checkout,CODE · C4,"We're removing your discount in 48 hours",12,"code zonder einddatum; code werkt"
 2026-10-08 23:50,+welcomeint,TEST v5 Cart,CODE · K3 · pan,"We're removing your cart's 10%",12,"code zonder einddatum; LET OP € bij UK-profiel; code werkt"
 2026-10-08 23:55,(correctie codemails x8),-,P3/V1/R2-VIP/C4/K3,-,-,"unieke code breekt op 375 px over twee regels (.offer-code 26px/4px)"
+2026-10-09 00:21,(einde),-,-,-,-,"30 min geen nieuwe mail sinds 23:50; 47 v5-mails, 12 oude-flowmails; rapport 09-monitor-rapport.md"

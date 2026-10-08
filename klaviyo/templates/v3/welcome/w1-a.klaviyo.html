@@ -38,6 +38,16 @@
     .rv{display:block!important;width:100%!important;box-sizing:border-box!important;}
     .rvsp{display:block!important;width:100%!important;height:12px!important;font-size:0!important;line-height:0!important;}
   }
+  /* H3 (09-monitor-rapport): code van 13 tekens (CART-XXXXXXXX) op één regel op telefoons (gemeten op 320 en 375 px).
+     Niet in het 620-blok: de ruwe Klaviyo-weergave op 600 px toont de lange coupon_code-tag, die moet daar kunnen breken. */
+  @media only screen and (max-width:480px){
+    .offer-code{font-size:22px!important;letter-spacing:2px!important;white-space:nowrap!important;word-break:normal!important;padding:12px 14px!important;}
+    .offer-wrap{padding:0 8px!important;}
+    .cb-code{white-space:nowrap!important;word-break:normal!important;}
+  }
+  @media only screen and (max-width:360px){
+    .offer-code{font-size:20px!important;letter-spacing:1.5px!important;padding:12px 10px!important;}
+  }
   /* research/ux-round2 blokken (compare, closerlook, productcard) */
   @media only screen and (max-width:620px){
     .cmp-h{font-size:15px!important;line-height:20px!important;padding:0 8px 12px 8px!important;}
@@ -72,7 +82,7 @@
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
 <tr><td align="center" class="codebar" bgcolor="#282828" style="background:#282828;overflow-wrap:anywhere;padding:11px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;letter-spacing:1.5px;font-weight:600;color:#FFFFFF;">
-  YOUR WELCOME 10% &middot; CODE&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;word-break:break-all;">HI10</span>
+  YOUR WELCOME 10% &middot; CODE&nbsp; <span class="cb-code" style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;word-break:break-all;">HI10</span>
 </td></tr>
 
 
@@ -166,7 +176,7 @@
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#321E1D" style="background:#321E1D;">
     <tr><td align="center" style="padding:30px 26px 8px 26px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#D9CFC7;">YOUR WELCOME OFFER</td></tr>
     <tr><td align="center" class="h2" style="padding:0 26px 16px 26px;font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#FFFFFF;">10% on top of the sale</td></tr>
-    <tr><td align="center" style="padding:0 26px;">
+    <tr><td align="center" class="offer-wrap" style="padding:0 26px;">
       <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" class="offer-code" style="border:2px dashed #FFFFFF;padding:12px 30px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:32px;line-height:36px;letter-spacing:6px;font-weight:600;color:#FFFFFF;word-break:break-all;">HI10</td></tr></table>
     </td></tr>
     <tr><td align="center" style="padding:14px 26px 0 26px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#EDE6E0;"><!--{% with mpc=person.Country mpcc=person|lookup:'country_code' meu='AT|BE|BG|HR|CZ|EE|FI|FR|DE|GR|HU|IE|IT|LV|LU|NL|SK|SI|ES|Austria|Belgium|Bulgaria|Croatia|Czechia|Czech Republic|Estonia|Finland|France|Germany|Greece|Hungary|Ireland|Italy|Latvia|Luxembourg|Netherlands|Slovakia|Slovenia|Spain' mme='AE|SA|KW|BH|OM|QA|United Arab Emirates|Saudi Arabia|Kuwait|Bahrain|Oman|Qatar' %}--><!--{% if mpc == 'United States' or mpc == 'US' or not mpc and mpcc == 'US' or mpc == 'Canada' or mpc == 'CA' or not mpc and mpcc == 'CA' or mpc == 'United Kingdom' or mpc == 'GB' or mpc == 'UK' or not mpc and mpcc == 'GB' or mpc and mpc in meu or not mpc and mpcc and mpcc in meu or mpc == 'Australia' or mpc == 'AU' or not mpc and mpcc == 'AU' or mpc == 'New Zealand' or mpc == 'NZ' or not mpc and mpcc == 'NZ' or mpc == 'Singapore' or mpc == 'SG' or not mpc and mpcc == 'SG' %}-->Pan Pro <!--{% with mpc=person.Country mpcc=person|lookup:'country_code' meu='AT|BE|BG|HR|CZ|EE|FI|FR|DE|GR|HU|IE|IT|LV|LU|NL|SK|SI|ES|Austria|Belgium|Bulgaria|Croatia|Czechia|Czech Republic|Estonia|Finland|France|Germany|Greece|Hungary|Ireland|Italy|Latvia|Luxembourg|Netherlands|Slovakia|Slovenia|Spain' mme='AE|SA|KW|BH|OM|QA|United Arab Emirates|Saudi Arabia|Kuwait|Bahrain|Oman|Qatar' %}--><!--{% if mpc == 'United States' or mpc == 'US' or not mpc and mpcc == 'US' %}-->11&Prime;<!--{% elif mpc or mpcc %}-->28 cm<!--{% else %}-->28 cm (11&Prime;)<!--{% endif %}--><!--{% endwith %}-->: <!--{% with mpc=person.Country mpcc=person|lookup:'country_code' meu='AT|BE|BG|HR|CZ|EE|FI|FR|DE|GR|HU|IE|IT|LV|LU|NL|SK|SI|ES|Austria|Belgium|Bulgaria|Croatia|Czechia|Czech Republic|Estonia|Finland|France|Germany|Greece|Hungary|Ireland|Italy|Latvia|Luxembourg|Netherlands|Slovakia|Slovenia|Spain' mme='AE|SA|KW|BH|OM|QA|United Arab Emirates|Saudi Arabia|Kuwait|Bahrain|Oman|Qatar' %}--><!--{% if mpc == 'United States' or mpc == 'US' or not mpc and mpcc == 'US' %}-->$144<!--{% elif mpc == 'Canada' or mpc == 'CA' or not mpc and mpcc == 'CA' %}-->C$224<!--{% elif mpc == 'United Kingdom' or mpc == 'GB' or mpc == 'UK' or not mpc and mpcc == 'GB' %}-->£124<!--{% elif mpc and mpc in meu or not mpc and mpcc and mpcc in meu %}-->€139<!--{% elif mpc == 'Australia' or mpc == 'AU' or not mpc and mpcc == 'AU' %}-->A$224<!--{% elif mpc == 'New Zealand' or mpc == 'NZ' or not mpc and mpcc == 'NZ' %}-->NZ$274<!--{% elif mpc == 'Singapore' or mpc == 'SG' or not mpc and mpcc == 'SG' %}-->S$204<!--{% endif %}--><!--{% endwith %}-->, or <!--{% with mpc=person.Country mpcc=person|lookup:'country_code' meu='AT|BE|BG|HR|CZ|EE|FI|FR|DE|GR|HU|IE|IT|LV|LU|NL|SK|SI|ES|Austria|Belgium|Bulgaria|Croatia|Czechia|Czech Republic|Estonia|Finland|France|Germany|Greece|Hungary|Ireland|Italy|Latvia|Luxembourg|Netherlands|Slovakia|Slovenia|Spain' mme='AE|SA|KW|BH|OM|QA|United Arab Emirates|Saudi Arabia|Kuwait|Bahrain|Oman|Qatar' %}--><!--{% if mpc == 'United States' or mpc == 'US' or not mpc and mpcc == 'US' %}-->$129.60<!--{% elif mpc == 'Canada' or mpc == 'CA' or not mpc and mpcc == 'CA' %}-->C$201.60<!--{% elif mpc == 'United Kingdom' or mpc == 'GB' or mpc == 'UK' or not mpc and mpcc == 'GB' %}-->£111.60<!--{% elif mpc and mpc in meu or not mpc and mpcc and mpcc in meu %}-->€125.10<!--{% elif mpc == 'Australia' or mpc == 'AU' or not mpc and mpcc == 'AU' %}-->A$201.60<!--{% elif mpc == 'New Zealand' or mpc == 'NZ' or not mpc and mpcc == 'NZ' %}-->NZ$246.60<!--{% elif mpc == 'Singapore' or mpc == 'SG' or not mpc and mpcc == 'SG' %}-->S$183.60<!--{% endif %}--><!--{% endwith %}--> with HI10. <!--{% endif %}--><!--{% endwith %}-->Applied with the button.</td></tr>

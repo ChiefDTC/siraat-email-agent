@@ -1,6 +1,6 @@
 LIVE: JA, NA DEZE 9 FIXES
 
-# 09 · Monitor-rapport v5-testrun (8 oktober 2026, 21:35 tot 00:25 Amsterdam)
+# 09 · Monitor-rapport v5-testrun (8 oktober 2026, 21:35 tot 00:21 Amsterdam; laatste mail 23:50, daarna 30 minuten stil)
 
 Monitor-agent. Bewaakt: lolagroothuis@gmail.com en alle plus-aliassen. Per v5-mail gecontroleerd met `scripts/qa_inbox.py mail` (mail_checks: onderwerp, preheader, afzender, grootte, links, UTM, linktekst, beelden, tags, markt, header/footer, afmelden, em dash, layout 375/600/1200, dark mode) plus handmatig: inhoud, product, cross-sell, code en vervaldatum, rekensommen tegen de winkel, kortingscode in een echte winkelwagen (cart.js, niet afgerekend). Per mail één Slack-bericht in #claude-mail (plus twee correctieberichten). Log per mail: `research/v6-golive/08-monitor-log.csv`. Screenshots en rapport per mail: `exports/qa/inbox/<alias>-<mail>/` (375, 600, 1200 px licht, 375/600 dark, 375 geforceerd donker).
 
