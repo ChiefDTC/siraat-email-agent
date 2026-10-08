@@ -1,0 +1,10 @@
+:envelope_with_arrow: *Nieuwe e-mail ontvangen:* checkout/c2, lolagroothuis+pan (US), 8 okt 23:02
+Onderwerp: "Has the pan in your cart been tested?"
+*12 OK · 0 FOUT · 3 LET OP*
+
+:warning: *Links (status 200)*: 19 links, 12 unieke bestemmingen; sociale links niet te openen vanuit deze omgeving: Facebook (www.facebook.com), Instagram (www.instagram.com). Niet gecontroleerd: Complete my order → (siraatskitchen.com), Manage preferences (manage.kmail-lists.com), Tested, 
+:warning: *Afmelden en voorkeuren*: manage.kmail-lists.com niet te openen vanuit deze omgeving (egress), handmatig klikken
+:warning: *Dark mode*: forced 375 px: lichte blokken op donkere achtergrond (beeld met witte rand): Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-4, fc1878e8-1cc0-4699-8f62-1110afb1750e.jpeg, 3fab7ff2-1993-48d2-8567-d9f3d0ce04dd.jpeg, c97cf7a9-cccf-4472-a592-d49747b6d6a7.jpeg (+1
+:white_check_mark: Onderwerp, Preheader, Afzender, Grootte (Gmail-clip 102 KB), UTM, Linktekst past bij bestemming, Beelden, Ongerenderde tags, Valuta en maat, Header, footer, logo, Em dash, Layout 375/600/1200 px
+
+Screenshots (375 licht, 375 dark, 600 licht) als bijlage in de thread; volledig rapport: `exports/qa/inbox/pan-C2/report.md`

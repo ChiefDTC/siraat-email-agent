@@ -1,0 +1,11 @@
+:envelope_with_arrow: *Nieuwe e-mail ontvangen:* cart/k1, lolagroothuis+welcomeint (EU), 8 okt 23:14
+Onderwerp: "The hammered pattern: an easy wipe"
+*11 OK · 1 FOUT · 3 LET OP*
+
+:x: *Linktekst past bij bestemming*: [FOUT] "Finish my order →" -> /products/original-siraat-100-pure-titanium-pan-with-hammere
+:warning: *Links (status 200)*: 18 links, 12 unieke bestemmingen; sociale links niet te openen vanuit deze omgeving: Facebook (www.facebook.com), Instagram (www.instagram.com). Niet gecontroleerd: Manage preferences (manage.kmail-lists.com), Unsubscribe (manage.kmail-lists.com), View in brow
+:warning: *Afmelden en voorkeuren*: manage.kmail-lists.com niet te openen vanuit deze omgeving (egress), handmatig klikken
+:warning: *Dark mode*: forced 375 px: lichte blokken op donkere achtergrond (beeld met witte rand): Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-4, fc1878e8-1cc0-4699-8f62-1110afb1750e.jpeg, 3fab7ff2-1993-48d2-8567-d9f3d0ce04dd.jpeg, c97cf7a9-cccf-4472-a592-d49747b6d6a7.jpeg (+2
+:white_check_mark: Onderwerp, Preheader, Afzender, Grootte (Gmail-clip 102 KB), UTM, Beelden, Ongerenderde tags, Valuta en maat, Header, footer, logo, Em dash, Layout 375/600/1200 px
+
+Screenshots (375 licht, 375 dark, 600 licht) als bijlage in de thread; volledig rapport: `exports/qa/inbox/welcomeint-K1/report.md`

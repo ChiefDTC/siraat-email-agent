@@ -1,0 +1,12 @@
+:envelope_with_arrow: *Nieuwe e-mail ontvangen:* cart/k2-new, lolagroothuis+welcomeint (UK), 8 okt 23:19
+Onderwerp: "15 coated pans, or one"
+*10 OK · 2 FOUT · 3 LET OP*
+
+:x: *Linktekst past bij bestemming*: [FOUT] "Finish my order →" -> /products/original-siraat-100-pure-titanium-pan-with-hammere
+:x: *Valuta en maat*: markt UK (geen bedrag in eigen valuta gezien). EU-bedrag in een UK-mail: "L PENDING ON YOUR CART · €70 IN GIF"; EU-bedrag in een UK-mail: "Mystery gift in the box €25 value"; EU-bedrag in een UK-mail: "The Green Clean E-Guide €30 value"; EU-bedrag in een UK-ma
+:warning: *Links (status 200)*: 19 links, 13 unieke bestemmingen; sociale links niet te openen vanuit deze omgeving: Facebook (www.facebook.com), Instagram (www.instagram.com). Niet gecontroleerd: Manage preferences (manage.kmail-lists.com), Unsubscribe (manage.kmail-lists.com), View in brow
+:warning: *Afmelden en voorkeuren*: manage.kmail-lists.com niet te openen vanuit deze omgeving (egress), handmatig klikken
+:warning: *Dark mode*: forced 375 px: lichte blokken op donkere achtergrond (beeld met witte rand): Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-4, fc1878e8-1cc0-4699-8f62-1110afb1750e.jpeg, 3fab7ff2-1993-48d2-8567-d9f3d0ce04dd.jpeg, c97cf7a9-cccf-4472-a592-d49747b6d6a7.jpeg (+1
+:white_check_mark: Onderwerp, Preheader, Afzender, Grootte (Gmail-clip 102 KB), UTM, Beelden, Ongerenderde tags, Header, footer, logo, Em dash, Layout 375/600/1200 px
+
+Screenshots (375 licht, 375 dark, 600 licht) als bijlage in de thread; volledig rapport: `exports/qa/inbox/welcomeint-K2-NEW/report.md`
