@@ -711,7 +711,7 @@ def build_levering(f):
         [mtrig(DELIVERED)],
         groups([some(PLACED_ORDER, last_days(30), f_items(P2_TITELS))], [not_in_flow(last_days(30))],
                [zero(RECEIVED_EMAIL, last_days(30),
-                     f_str("$flow", "equals", f.flow_ref("postpurchase")) + f_str("Campaign Name", "contains", "P2-SAFE"))]),
+                     f_str("Campaign Name", "contains", "P2-SAFE"))]),
         entry, reentry=30)
 
 
@@ -1176,7 +1176,11 @@ def main():
                  f"Bouwvolgorde: {' > '.join(seq)}")
     for dep in f.deps - {ONLY}:
         fid = ctx.flow_ids.get(FLOW_NAMES[dep])
-        got = api("GET", f"flows/{fid}?fields[flow]=name").get("data", {}).get("attributes", {}).get("name") if fid else None
+        got = None
+        for _ in range(3) if fid else []:
+            got = api("GET", f"flows/{fid}?fields%5Bflow%5D=name").get("data", {}).get("attributes", {}).get("name")
+            if got: break
+            time.sleep(3)
         if fid and got != FLOW_NAMES[dep]:
             sys.exit(f"flows.csv: {fid} heet in Klaviyo '{got}', verwacht '{FLOW_NAMES[dep]}'.")
     existing, _ = get_all("flows?fields[flow]=name,status&filter=contains(name,%22v4%20%C2%B7%22)")

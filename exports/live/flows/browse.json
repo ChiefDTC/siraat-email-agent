@@ -93,7 +93,7 @@
            "filter": {
             "type": "string",
             "operator": "equals",
-            "value": "FLOW?cart"
+            "value": "UshtNX"
            }
           }
          ]
@@ -123,7 +123,7 @@
            "filter": {
             "type": "string",
             "operator": "equals",
-            "value": "FLOW?checkout"
+            "value": "SNwQWU"
            }
           }
          ]
@@ -153,7 +153,7 @@
            "filter": {
             "type": "string",
             "operator": "equals",
-            "value": "FLOW?welcome"
+            "value": "QWEdbK"
            }
           }
          ]
@@ -188,7 +188,7 @@
         "bcc_email": null,
         "subject_line": "Here is your 10%, for the next 48 hours",
         "preview_text": "A personal code, on top of the sale, already applied. It runs out in 48 hours.",
-        "template_id": "TPL?v4 · Browse abandonment · b2-clicked",
+        "template_id": "TwZq3f",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
@@ -268,7 +268,7 @@
         "bcc_email": null,
         "subject_line": "\"I ordered one pan to try it out\"",
         "preview_text": "Sunny C. started with one. Your first order comes with 4 gifts too.",
-        "template_id": "TPL?v4 · Browse abandonment · b2-clicked-nocode",
+        "template_id": "Uuxu3s",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
@@ -348,7 +348,7 @@
         "bcc_email": null,
         "subject_line": "\"I ordered one pan to try it out\"",
         "preview_text": "Sunny C. started with one. Your first order comes with 4 gifts too.",
-        "template_id": "TPL?v4 · Browse abandonment · b2-clicked-nocode",
+        "template_id": "Uuxu3s",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
@@ -494,7 +494,7 @@
         "bcc_email": null,
         "subject_line": "Week one, in their words",
         "preview_text": "The first egg, the second pan, the fourth. And HI10 takes 10% off.",
-        "template_id": "TPL?v4 · Browse abandonment · b2-notclicked",
+        "template_id": "TEeUzw",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
@@ -634,7 +634,7 @@
           "bcc_email": null,
           "subject_line": "Lab-tested: nothing here to wear off",
           "preview_text": "Metal utensils welcome. No coating, and a lab report to prove it.",
-          "template_id": "TPL?v4 · Browse abandonment · b1",
+          "template_id": "VwGNp3",
           "smart_sending_enabled": false,
           "transactional": false,
           "add_tracking_params": true,
@@ -698,7 +698,7 @@
             "bcc_email": null,
             "subject_line": "Lab-tested: nothing here to wear off",
             "preview_text": "Metal utensils welcome. No coating, and a lab report to prove it.",
-            "template_id": "TPL?v4 · Browse abandonment · b1",
+            "template_id": "VwGNp3",
             "smart_sending_enabled": false,
             "transactional": false,
             "add_tracking_params": true,
@@ -759,7 +759,7 @@
             "bcc_email": null,
             "subject_line": "100,000+ happy customers cook on this pan",
             "preview_text": "Metal utensils welcome. No coating, and a lab report to prove it.",
-            "template_id": "TPL?v4 · Browse abandonment · b1",
+            "template_id": "VwGNp3",
             "smart_sending_enabled": false,
             "transactional": false,
             "add_tracking_params": true,
@@ -837,7 +837,7 @@
         "bcc_email": null,
         "subject_line": "Here is your 10%, for the next 48 hours",
         "preview_text": "A personal code, on top of the sale, already applied. It runs out in 48 hours.",
-        "template_id": "TPL?v4 · Browse abandonment · b2-clicked",
+        "template_id": "TwZq3f",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
@@ -917,7 +917,7 @@
         "bcc_email": null,
         "subject_line": "\"I ordered one pan to try it out\"",
         "preview_text": "Sunny C. started with one. Your first order comes with 4 gifts too.",
-        "template_id": "TPL?v4 · Browse abandonment · b2-clicked-nocode",
+        "template_id": "Uuxu3s",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
@@ -997,7 +997,7 @@
         "bcc_email": null,
         "subject_line": "\"I ordered one pan to try it out\"",
         "preview_text": "Sunny C. started with one. Your first order comes with 4 gifts too.",
-        "template_id": "TPL?v4 · Browse abandonment · b2-clicked-nocode",
+        "template_id": "Uuxu3s",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
@@ -1199,7 +1199,7 @@
         "bcc_email": null,
         "subject_line": "Looked twice? Here's the detail.",
         "preview_text": "What it's made of, how it lasts, and 10% off with HI10.",
-        "template_id": "TPL?v4 · Browse abandonment · b1-acc",
+        "template_id": "TYaFUJ",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,

@@ -2,3 +2,8 @@ fb.png https://cdn.klaviyomail.com/company/TdtTzz/images/17c00632-f9db-4dcd-a27e
 ig.png https://cdn.klaviyomail.com/company/TdtTzz/images/6b905e47-7bf9-4aec-a63b-0538ecc6bd60.png
 logo-black.png https://cdn.klaviyomail.com/company/TdtTzz/images/ae4dfc27-1e05-481a-90b6-f6467bc3db78.png
 logo-white.png https://cdn.klaviyomail.com/company/TdtTzz/images/7027081c-350d-476e-85b6-25057ebaf65d.png
+a1-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/4a6d8ab4-e19a-4f1e-84ab-0a64ed30127d.jpeg
+p-panpro.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/590e1271-5dad-47a3-827f-0528d74ebce8.jpeg
+size-small.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/7e271ed6-a0b6-4032-9e8b-6f35c2754bf0.jpeg
+size-standard.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/56e4a1c5-5eba-45b8-bc83-b0792e9c44c1.jpeg
+a2-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/18f6a8d6-fc8a-4a69-be41-3352a14d2904.jpeg

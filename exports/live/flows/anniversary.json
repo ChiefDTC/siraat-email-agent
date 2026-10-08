@@ -141,7 +141,7 @@
         "bcc_email": null,
         "subject_line": "One year ago this week",
         "preview_text": "A year ago you placed your first order. Here's 10% off, yours for 7 days.",
-        "template_id": "TPL?v4 · Anniversary · n2",
+        "template_id": "WTpa8c",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
@@ -223,7 +223,7 @@
         "bcc_email": null,
         "subject_line": "One year ago this week",
         "preview_text": "A year ago this week you placed your first order. 74 years left on your warranty.",
-        "template_id": "TPL?v4 · Anniversary · n2-nocode",
+        "template_id": "RZT3F7",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
@@ -363,7 +363,7 @@
         "bcc_email": null,
         "subject_line": "How's your pan at six months?",
         "preview_text": "A brown tint, a bit of sticking, a loose handle. The three short answers.",
-        "template_id": "TPL?v4 · Anniversary · n1",
+        "template_id": "QX8tha",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
@@ -425,7 +425,7 @@
                "filter": {
                 "type": "string",
                 "operator": "equals",
-                "value": "FLOW?vip"
+                "value": "URcvwu"
                }
               }
              ]
@@ -455,7 +455,7 @@
                "filter": {
                 "type": "string",
                 "operator": "equals",
-                "value": "FLOW?winback"
+                "value": "SLRQPi"
                }
               }
              ]

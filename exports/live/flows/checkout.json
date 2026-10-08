@@ -85,7 +85,7 @@
            "filter": {
             "type": "string",
             "operator": "equals",
-            "value": "FLOW?postpurchase|RL3TU6"
+            "value": "VSqzNN"
            }
           }
          ]
@@ -107,7 +107,7 @@
         "bcc_email": null,
         "subject_line": "Your own 10% ends in 48 hours",
         "preview_text": "Your code is already applied, and your $70 in gifts are still attached.",
-        "template_id": "TPL?v4 · Checkout abandonment · c4",
+        "template_id": "UdzWU2",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
@@ -168,7 +168,7 @@
         "bcc_email": null,
         "subject_line": "Your cart and $70 in gifts, one last time",
         "preview_text": "Your $70 in gifts are still attached to your cart. Plus two promises.",
-        "template_id": "TPL?v4 · Checkout abandonment · c4-nocode",
+        "template_id": "SAqA6j",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
@@ -229,7 +229,7 @@
         "bcc_email": null,
         "subject_line": "Your cart and $70 in gifts, one last time",
         "preview_text": "Your $70 in gifts are still attached to your cart. Plus two promises.",
-        "template_id": "TPL?v4 · Checkout abandonment · c4-nocode",
+        "template_id": "SAqA6j",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,

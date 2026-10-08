@@ -7,7 +7,7 @@
     "triggers": [
      {
       "type": "segment",
-      "id": "SEG?v4 · Sunset · unengaged 120d"
+      "id": "WuHSm6"
      }
     ],
     "profile_filter": {
@@ -48,7 +48,7 @@
            "filter": {
             "type": "string",
             "operator": "equals",
-            "value": "FLOW?welcome"
+            "value": "QWEdbK"
            }
           }
          ]
@@ -78,7 +78,7 @@
            "filter": {
             "type": "string",
             "operator": "equals",
-            "value": "FLOW?postpurchase"
+            "value": "VSqzNN"
            }
           }
          ]
@@ -100,7 +100,7 @@
         "bcc_email": null,
         "subject_line": "Last email from me (unless you tap)",
         "preview_text": "One tap and you stay. Otherwise this is goodbye, and that's okay.",
-        "template_id": "TPL?v4 · Sunset · s2",
+        "template_id": "ScNNsY",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
@@ -213,7 +213,7 @@
         "bcc_email": null,
         "subject_line": "Should we keep writing to you?",
         "preview_text": "One tap keeps you on the list. No tap, and we'll stop writing in about a week.",
-        "template_id": "TPL?v4 · Sunset · s1",
+        "template_id": "VvayeT",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,

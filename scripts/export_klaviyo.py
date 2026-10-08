@@ -235,7 +235,11 @@ def main():
             else:
                 out=os.path.join(DRY,flow,mid+'.html'); k=build(src,flow,imgs,out,True)
             kb=len(k.encode())/1024
-            b2,w2=check(k,a,b,p); B+=b2; W+=w2
+            b2,w2=check(k,a,b,p)
+            # --allow-placeholder=w2,...: alleen voor Draft-flows; placeholder wordt waarschuwing
+            if mid in OPT.get('--allow-placeholder','').split(','):
+                w2+=[x for x in b2 if x.startswith('open placeholder')]; b2=[x for x in b2 if not x.startswith('open placeholder')]
+            B+=b2; W+=w2
         except Exception as e: B.append(str(e))
         todo=[('shared/' if i[0]=='SHARED' else flow+'/assets/')+i[1] for i in imgs if not i[3]]
         up_total.update(todo)

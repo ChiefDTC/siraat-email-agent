@@ -124,14 +124,6 @@
          },
          "metric_filters": [
           {
-           "property": "$flow",
-           "filter": {
-            "type": "string",
-            "operator": "equals",
-            "value": "FLOW?postpurchase"
-           }
-          },
-          {
            "property": "Campaign Name",
            "filter": {
             "type": "string",
@@ -158,7 +150,7 @@
         "bcc_email": null,
         "subject_line": "If you can do an egg, you can do anything",
         "preview_text": "Medium on titanium works like high on a normal pan. The chef's five steps.",
-        "template_id": "TPL?v4 · Post-purchase · levering · p2",
+        "template_id": "T7nCfp",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,

@@ -33,15 +33,15 @@ Tag-allowlist: Django `autoescape, comment, cycle, elif, else, empty, endautoesc
 | browse/b2-notclicked | let op | vp_pan, vp_set6, vp_apron | 3343 | 5 |
 | cart/k1-acc | let op | atc_pan, atc_apron, atc_lid_eur | 3398 | 6 |
 | cart/k1 | let op | atc_pan, atc_apron, atc_lid_eur | 3578 | 6 |
-| cart/k2-new | let op | atc_pan, atc_apron, atc_lid_eur | 3330 | 6 |
+| cart/k2-new | let op | atc_pan, atc_apron, atc_lid_eur | 3288 | 6 |
 | cart/k2-returning | let op | atc_pan, atc_apron, atc_lid_eur | 3492 | 6 |
 | cart/k3-nocode | let op | atc_pan, atc_apron, atc_lid_eur | 3385 | 6 |
 | cart/k3 | let op | atc_pan, atc_apron, atc_lid_eur | 3523 | 13 |
-| checkout/c1 | let op | co_pan, co_set6, co_apron, co_pan_eur | 3684 | 7 |
+| checkout/c1 | let op | co_pan, co_set6, co_apron, co_pan_eur | 3628 | 7 |
 | checkout/c2-acc | let op | co_pan, co_set6, co_apron, co_pan_eur | 3276 | 7 |
 | checkout/c2 | let op | co_pan, co_set6, co_apron, co_pan_eur | 3578 | 7 |
 | checkout/c3-acc | let op | co_pan, co_set6, co_apron, co_pan_eur | 3440 | 7 |
-| checkout/c3-p | let op | co_pan, co_set6, co_apron, co_pan_eur | 3575 | 7 |
+| checkout/c3-p | let op | co_pan, co_set6, co_apron, co_pan_eur | 3527 | 7 |
 | checkout/c3-s | let op | co_pan, co_set6, co_apron, co_pan_eur | 3589 | 7 |
 | checkout/c4-nocode | let op | co_pan, co_set6, co_apron, co_pan_eur | 3438 | 7 |
 | checkout/c4 | let op | co_pan, co_set6, co_apron, co_pan_eur | 3552 | 14 |
@@ -154,7 +154,7 @@ Tag-allowlist: Django `autoescape, comment, cycle, elif, else, empty, endautoesc
 - let op cart/k3: outlook: 1 knop(pen) zonder VML-fallback (padding op <a> valt weg in Outlook: lage knop, alleen de tekst klikbaar): "Use my 10% now →"
 - let op cart/k3: outlook: preheader zonder mso-hide:all
 - let op checkout/c1: dark mode: logo-black.png is donker op transparant en heeft geen dark-mode-variant (onleesbaar op donkere achtergrond)
-- let op checkout/c1: hoogte 3684 px op 390 px (max ~3600) bij co_pan
+- let op checkout/c1: hoogte 3628 px op 390 px (max ~3600) bij co_pan
 - let op checkout/c1: outlook: preheader zonder mso-hide:all
 - let op checkout/c1: plain-text: 3 regel(s) dubbel in Klaviyo's automatische tekstversie (verborgen desk/mob-varianten), bijv. "“Great to know no chemicals are being released into our food"
 - let op checkout/c1: ruw 390 px (code-editor mobiel): tabel 564 px breed door lange Django-expressies; gerenderd in orde

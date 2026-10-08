@@ -25,7 +25,7 @@
         "bcc_email": null,
         "subject_line": "For our regulars: 15% for 72 hours",
         "preview_text": "You've ordered more than once. This 15% code is yours for 72 hours.",
-        "template_id": "TPL?v4 · Winback · r2-vip",
+        "template_id": "Xj8VQZ",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
@@ -86,7 +86,7 @@
         "bcc_email": null,
         "subject_line": "You came back. Thank you.",
         "preview_text": "You have ordered more than once. A thank you, and 4 gifts with every order.",
-        "template_id": "TPL?v4 · Winback · r2-vip-nocode",
+        "template_id": "VLAPnG",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
@@ -147,7 +147,7 @@
         "bcc_email": null,
         "subject_line": "You came back. Thank you.",
         "preview_text": "You have ordered more than once. A thank you, and 4 gifts with every order.",
-        "template_id": "TPL?v4 · Winback · r2-vip-nocode",
+        "template_id": "VLAPnG",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
@@ -274,7 +274,7 @@
         "bcc_email": null,
         "subject_line": "Here is your 10%, for the next 72 hours",
         "preview_text": "Your own code, applied with one tap. It ends 72 hours after this email.",
-        "template_id": "TPL?v4 · Winback · r2",
+        "template_id": "Yjhg45",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
@@ -335,7 +335,7 @@
         "bcc_email": null,
         "subject_line": "Ready for pan number two?",
         "preview_text": "If one pan is always busy, this is for the second. Free shipping and 4 gifts.",
-        "template_id": "TPL?v4 · Winback · r2-nocode",
+        "template_id": "TB3EhL",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
@@ -396,7 +396,7 @@
         "bcc_email": null,
         "subject_line": "Ready for pan number two?",
         "preview_text": "If one pan is always busy, this is for the second. Free shipping and 4 gifts.",
-        "template_id": "TPL?v4 · Winback · r2-nocode",
+        "template_id": "TB3EhL",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
@@ -570,7 +570,7 @@
         "bcc_email": null,
         "subject_line": "Ready for the pan?",
         "preview_text": "You started with us the other way round. Here's the pan most kitchens start with.",
-        "template_id": "TPL?v4 · Winback · r1-acc",
+        "template_id": "Wr3C7u",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
@@ -632,7 +632,7 @@
                "filter": {
                 "type": "string",
                 "operator": "equals",
-                "value": "FLOW?postpurchase"
+                "value": "VSqzNN"
                }
               }
              ]
@@ -662,7 +662,7 @@
                "filter": {
                 "type": "string",
                 "operator": "equals",
-                "value": "FLOW?vip"
+                "value": "URcvwu"
                }
               }
              ]
@@ -774,7 +774,7 @@
         "bcc_email": null,
         "subject_line": "How's your pan doing?",
         "preview_text": "Six weeks in. Here is what owners add next, with HI10 and 4 gifts.",
-        "template_id": "TPL?v4 · Winback · r1-pan",
+        "template_id": "RN2wJV",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
@@ -836,7 +836,7 @@
                "filter": {
                 "type": "string",
                 "operator": "equals",
-                "value": "FLOW?postpurchase"
+                "value": "VSqzNN"
                }
               }
              ]
@@ -866,7 +866,7 @@
                "filter": {
                 "type": "string",
                 "operator": "equals",
-                "value": "FLOW?vip"
+                "value": "URcvwu"
                }
               }
              ]
@@ -1063,7 +1063,7 @@
         "bcc_email": null,
         "subject_line": "How's your pan doing?",
         "preview_text": "Six weeks in. Here is what owners add next, with HI10 and 4 gifts.",
-        "template_id": "TPL?v4 · Winback · r1-pan",
+        "template_id": "RN2wJV",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
@@ -1125,7 +1125,7 @@
                "filter": {
                 "type": "string",
                 "operator": "equals",
-                "value": "FLOW?postpurchase"
+                "value": "VSqzNN"
                }
               }
              ]
@@ -1155,7 +1155,7 @@
                "filter": {
                 "type": "string",
                 "operator": "equals",
-                "value": "FLOW?vip"
+                "value": "URcvwu"
                }
               }
              ]
@@ -1349,7 +1349,7 @@
         "bcc_email": null,
         "subject_line": "The shapes a set leaves out",
         "preview_text": "The flat one, the deep one, the board and the tools. HI10 takes 10% off.",
-        "template_id": "TPL?v4 · Winback · r1-set",
+        "template_id": "TtN9Kv",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
@@ -1411,7 +1411,7 @@
                "filter": {
                 "type": "string",
                 "operator": "equals",
-                "value": "FLOW?postpurchase"
+                "value": "VSqzNN"
                }
               }
              ]
@@ -1441,7 +1441,7 @@
                "filter": {
                 "type": "string",
                 "operator": "equals",
-                "value": "FLOW?vip"
+                "value": "URcvwu"
                }
               }
              ]

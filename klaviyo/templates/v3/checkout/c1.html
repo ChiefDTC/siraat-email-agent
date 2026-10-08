@@ -52,7 +52,7 @@
 
 <!-- PRODUCTMATRIX (8 okt): over jouw product, met het bezwaar dat voor dat product het vaakst komt en een echte review van een koper (blocks/about.html) -->
 {{BLOCK:about src="event.Items|join:','" lead="YOUR" pad="24px 44px 4px 44px"}}
-{% if 'Pan' in event.Items|join:',' or 'Pot' in event.Items|join:',' or 'ookware' in event.Items|join:',' or 'Everything' in event.Items|join:',' or 'fanne' in event.Items|join:',' %}{% if person.Country == 'United States' or person.Country == 'US' or not person.Country and event.extra.presentment_currency == 'USD' or not person.Country and not event.extra.presentment_currency %}
+{% if 'Pan' in event.Items|join:',' or 'Pot' in event.Items|join:',' or 'ookware' in event.Items|join:',' or 'Everything' in event.Items|join:',' or 'fanne' in event.Items|join:',' %}{% if person.Country == 'United States' or person.Country == 'US' %}
 <tr><td class="pad" style="padding:14px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#727272;text-align:center;">Prefer to pay over time? Shop Pay Installments and Affirm are at checkout.</td></tr>
 {% endif %}{% endif %}
 

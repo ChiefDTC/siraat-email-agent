@@ -14,3 +14,8 @@ c4int-nocode-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/ae4aa8d1
 c4int-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/0e553162-97d5-4f48-a922-dfacd6c934c4.jpeg
 c4us-nocode-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/eec73e46-6bfa-4262-9414-653bc188fbdd.jpeg
 c4us-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/d08a2ebe-253f-4129-b423-3a12f33771b9.jpeg
+c1-hero-apron.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/27696a4a-4895-4872-9f87-95536e0183d6.jpeg
+c1-hero-pizza.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/1e38ac40-a7b9-40c8-8a98-e76f9cc1dba3.jpeg
+c1-hero-pot.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/0a4be16b-e590-42ef-b804-ea4f6db54190.jpeg
+c1-hero-set.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/e418dc0b-f998-4cde-bce9-571e7765ea7b.jpeg
+c2-hero-pfas.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/cd135b8a-15c1-4fef-ae54-021134c8b733.jpeg

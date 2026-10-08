@@ -51,7 +51,7 @@
         "bcc_email": null,
         "subject_line": "Tammy is on her fourth pan",
         "preview_text": "She gave one to her son, too. And your code HI10 still takes 10% off.",
-        "template_id": "TPL?v4 · Welcome · w5",
+        "template_id": "RngYXB",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
@@ -113,7 +113,7 @@
                "filter": {
                 "type": "string",
                 "operator": "equals",
-                "value": "FLOW?checkout"
+                "value": "SNwQWU"
                }
               }
              ]
@@ -143,7 +143,7 @@
                "filter": {
                 "type": "string",
                 "operator": "equals",
-                "value": "FLOW?cart"
+                "value": "UshtNX"
                }
               }
              ]
@@ -186,7 +186,7 @@
         "bcc_email": null,
         "subject_line": "Who are you cooking for?",
         "preview_text": "One, two, or a family? Pick your pan by that. Your 10% is already taken off.",
-        "template_id": "TPL?v4 · Welcome · w4-us",
+        "template_id": "QZ9Hpa",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
@@ -248,7 +248,7 @@
                "filter": {
                 "type": "string",
                 "operator": "equals",
-                "value": "FLOW?checkout"
+                "value": "SNwQWU"
                }
               }
              ]
@@ -278,7 +278,7 @@
                "filter": {
                 "type": "string",
                 "operator": "equals",
-                "value": "FLOW?cart"
+                "value": "UshtNX"
                }
               }
              ]
@@ -307,7 +307,7 @@
         "bcc_email": null,
         "subject_line": "Tammy is on her fourth pan",
         "preview_text": "She gave one to her son, too. And your code HI10 still takes 10% off.",
-        "template_id": "TPL?v4 · Welcome · w5",
+        "template_id": "RngYXB",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
@@ -369,7 +369,7 @@
                "filter": {
                 "type": "string",
                 "operator": "equals",
-                "value": "FLOW?checkout"
+                "value": "SNwQWU"
                }
               }
              ]
@@ -399,7 +399,7 @@
                "filter": {
                 "type": "string",
                 "operator": "equals",
-                "value": "FLOW?cart"
+                "value": "UshtNX"
                }
               }
              ]
@@ -442,7 +442,7 @@
         "bcc_email": null,
         "subject_line": "Who are you cooking for?",
         "preview_text": "One, two, or a family? Pick your pan by that. Free shipping, duties paid.",
-        "template_id": "TPL?v4 · Welcome · w4-int",
+        "template_id": "VGN577",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
@@ -504,7 +504,7 @@
                "filter": {
                 "type": "string",
                 "operator": "equals",
-                "value": "FLOW?checkout"
+                "value": "SNwQWU"
                }
               }
              ]
@@ -534,7 +534,7 @@
                "filter": {
                 "type": "string",
                 "operator": "equals",
-                "value": "FLOW?cart"
+                "value": "UshtNX"
                }
               }
              ]
@@ -613,7 +613,7 @@
         "bcc_email": null,
         "subject_line": "Has your cookware actually been tested?",
         "preview_text": "Ours has. Report no. 25895, from an ISO/IEC 17025-accredited lab.",
-        "template_id": "TPL?v4 · Welcome · w3",
+        "template_id": "SstjtH",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
@@ -675,7 +675,7 @@
                "filter": {
                 "type": "string",
                 "operator": "equals",
-                "value": "FLOW?checkout"
+                "value": "SNwQWU"
                }
               }
              ]
@@ -705,7 +705,7 @@
                "filter": {
                 "type": "string",
                 "operator": "equals",
-                "value": "FLOW?cart"
+                "value": "UshtNX"
                }
               }
              ]
@@ -748,7 +748,7 @@
         "bcc_email": null,
         "subject_line": "The pan nobody else was making",
         "preview_text": "It's Benjamin. I wanted to write to you myself. (Your 10% is in the P.S.)",
-        "template_id": "TPL?v4 · Welcome · w2",
+        "template_id": "Xa7FbE",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
@@ -810,7 +810,7 @@
                "filter": {
                 "type": "string",
                 "operator": "equals",
-                "value": "FLOW?checkout"
+                "value": "SNwQWU"
                }
               }
              ]
@@ -840,7 +840,7 @@
                "filter": {
                 "type": "string",
                 "operator": "equals",
-                "value": "FLOW?cart"
+                "value": "UshtNX"
                }
               }
              ]
@@ -887,7 +887,7 @@
           "bcc_email": null,
           "subject_line": "No PFAS, nothing to wear off, and your 10%",
           "preview_text": "Your Card Game entry is in. HI10 takes 10% off the sale price, with 4 gifts.",
-          "template_id": "TPL?v4 · Welcome · w1-a",
+          "template_id": "Wuunna",
           "smart_sending_enabled": false,
           "transactional": false,
           "add_tracking_params": true,
@@ -949,7 +949,7 @@
                  "filter": {
                   "type": "string",
                   "operator": "equals",
-                  "value": "FLOW?checkout"
+                  "value": "SNwQWU"
                  }
                 }
                ]
@@ -979,7 +979,7 @@
                  "filter": {
                   "type": "string",
                   "operator": "equals",
-                  "value": "FLOW?cart"
+                  "value": "UshtNX"
                  }
                 }
                ]
@@ -1011,7 +1011,7 @@
             "bcc_email": null,
             "subject_line": "No PFAS, nothing to wear off, and your 10%",
             "preview_text": "Your Card Game entry is in. HI10 takes 10% off the sale price, with 4 gifts.",
-            "template_id": "TPL?v4 · Welcome · w1-a",
+            "template_id": "Wuunna",
             "smart_sending_enabled": false,
             "transactional": false,
             "add_tracking_params": true,
@@ -1073,7 +1073,7 @@
                    "filter": {
                     "type": "string",
                     "operator": "equals",
-                    "value": "FLOW?checkout"
+                    "value": "SNwQWU"
                    }
                   }
                  ]
@@ -1103,7 +1103,7 @@
                    "filter": {
                     "type": "string",
                     "operator": "equals",
-                    "value": "FLOW?cart"
+                    "value": "UshtNX"
                    }
                   }
                  ]
@@ -1132,7 +1132,7 @@
             "bcc_email": null,
             "subject_line": "No PFAS, nothing to wear off, and your 10%",
             "preview_text": "Your Card Game entry is in. HI10 takes 10% off the sale price, with 4 gifts.",
-            "template_id": "TPL?v4 · Welcome · w1-b",
+            "template_id": "VwWimX",
             "smart_sending_enabled": false,
             "transactional": false,
             "add_tracking_params": true,
@@ -1194,7 +1194,7 @@
                    "filter": {
                     "type": "string",
                     "operator": "equals",
-                    "value": "FLOW?checkout"
+                    "value": "SNwQWU"
                    }
                   }
                  ]
@@ -1224,7 +1224,7 @@
                    "filter": {
                     "type": "string",
                     "operator": "equals",
-                    "value": "FLOW?cart"
+                    "value": "UshtNX"
                    }
                   }
                  ]
@@ -1270,7 +1270,7 @@
         "bcc_email": null,
         "subject_line": "Thank you. Now the first egg.",
         "preview_text": "Cold metal grabs your food, hot metal lets it go.",
-        "template_id": "TPL?v4 · Welcome · w0",
+        "template_id": "Ypywny",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
@@ -1332,7 +1332,7 @@
                "filter": {
                 "type": "string",
                 "operator": "equals",
-                "value": "FLOW?checkout"
+                "value": "SNwQWU"
                }
               }
              ]
@@ -1362,7 +1362,7 @@
                "filter": {
                 "type": "string",
                 "operator": "equals",
-                "value": "FLOW?cart"
+                "value": "UshtNX"
                }
               }
              ]

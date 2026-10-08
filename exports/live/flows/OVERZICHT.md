@@ -1,6 +1,6 @@
 # v4-flows · overzicht voor controle
 
-Gegenereerd door `scripts/build_flows.py` op 2026-10-08 09:48 (dry-run). Modus: W4 `split`, A/B `action`, T02 op V1/N2 `uit`. De JSON per flow staat ernaast (`<slug>.json`).
+Gegenereerd door `scripts/build_flows.py` op 2026-10-08 10:12 (dry-run). Modus: W4 `split`, A/B `action`, T02 op V1/N2 `uit`. De JSON per flow staat ernaast (`<slug>.json`).
 
 Leeswijzer: ⏱ wachttijd · ◆ split (JA/NEE) · 🔀 A/B-actie · ✉ mail (berichtnaam · template-ID · onderwerp). "standaard" = de verzendfilter die op elke mail van die flow staat (zie kop). Takken komen nooit samen: waar het plan een gedeeld vervolg heeft, staat het vervolg per tak apart.
 
@@ -8,81 +8,53 @@ Leeswijzer: ⏱ wachttijd · ◆ split (JA/NEE) · 🔀 A/B-actie · ✉ mail (b
 
 | # | Flow | Acties | Mails | Splits | A/B | Controle | Ontbrekend |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | v4 · Post-purchase (`postpurchase`) | 30 | 24 | 3 | 0 | OK | 13 |
-| 2 | v4 · Post-purchase · levering (`levering`) | 2 | 1 | 0 | 0 | OK | 1 |
-| 3 | v4 · Checkout abandonment (`checkout`) | 26 | 14 | 3 | 0 | OK | 2 |
-| 4 | v4 · Cart abandonment (`cart`) | 26 | 13 | 6 | 0 | OK | 6 |
-| 5 | v4 · Welcome (`welcome`) | 34 | 17 | 4 | 1 | OK | 8 |
-| 6 | v4 · Browse abandonment (`browse`) | 22 | 11 | 8 | 1 | OK | 5 |
-| 7 | v4 · VIP (`vip`) | 8 | 4 | 1 | 0 | OK | 3 |
-| 8 | v4 · Winback (`winback`) | 17 | 10 | 5 | 0 | OK | 7 |
-| 9 | v4 · Anniversary (`anniversary`) | 6 | 3 | 1 | 0 | OK | 3 |
-| 10 | v4 · Site abandonment (`site`) | 4 | 2 | 0 | 0 | OK | 2 |
-| 11 | v4 · Sunset (`sunset`) | 4 | 2 | 0 | 0 | OK | 3 |
-| 12 | v4 · UGC first egg (`ugc`) | 2 | 1 | 0 | 0 | OK | 1 |
+| 1 | v4 · Post-purchase (`postpurchase`) | 30 | 24 | 3 | 0 | OK | 0 |
+| 2 | v4 · Post-purchase · levering (`levering`) | 2 | 1 | 0 | 0 | OK | 0 |
+| 3 | v4 · Checkout abandonment (`checkout`) | 26 | 14 | 3 | 0 | OK | 0 |
+| 4 | v4 · Cart abandonment (`cart`) | 26 | 13 | 6 | 0 | OK | 0 |
+| 5 | v4 · Welcome (`welcome`) | 34 | 17 | 4 | 1 | OK | 0 |
+| 6 | v4 · Browse abandonment (`browse`) | 22 | 11 | 8 | 1 | OK | 0 |
+| 7 | v4 · VIP (`vip`) | 8 | 4 | 1 | 0 | OK | 0 |
+| 8 | v4 · Winback (`winback`) | 17 | 10 | 5 | 0 | OK | 0 |
+| 9 | v4 · Anniversary (`anniversary`) | 6 | 3 | 1 | 0 | OK | 0 |
+| 10 | v4 · Site abandonment (`site`) | 4 | 2 | 0 | 0 | OK | 0 |
+| 11 | v4 · Sunset (`sunset`) | 4 | 2 | 0 | 0 | OK | 0 |
+| 12 | v4 · UGC first egg (`ugc`) | 2 | 1 | 0 | 0 | OK | 0 |
 
 Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email where $flow = ..." naar flows die eerder in de lijst staan). Welcome staat vóór browse, omdat browse filtert op welcome-mails.
 
 ## Klaviyo-controle (GET)
 
+| Metric | Verwacht | In Klaviyo |
+| --- | --- | --- |
+| RfMvni | Checkout Started | Checkout Started |
+| QXcV8K | Added to Cart | Added to Cart |
+| XNtYMB | Viewed Product | Viewed Product |
+| RSNxYV | Placed Order | Placed Order |
+| VcUF33 | Delivered Shipment | Delivered Shipment |
+| UdCdLD | Active on Site | Active on Site |
+| YkRM4Q | Received Email | Received Email |
+| W247h8 | Clicked Email | Clicked Email |
+| WyrTym | Opened Email | Opened Email |
+| Xg6cwn | Refunded Order | Refunded Order |
+| YzvjGf | Opened Ticket | Opened Ticket |
+| VtEiZT | Fulfilled Order | Fulfilled Order |
+
+- Lijst Uw8eZG: Email List
+- Segment "v4 · Sunset · unengaged 120d": WuHSm6
+- Segment "v4 · Sunset · suppressed": **ONTBREEKT**
+- Segment "v4 · Welcome-bescherming": **ONTBREEKT**
+- Segment "v4 · Campagne-cap": **ONTBREEKT**
+- Segment "v4 · Heeft kookgerei": **ONTBREEKT**
+- Segment "v4 · VIP": **ONTBREEKT**
+- Segment "v4 · US": **ONTBREEKT**
+- Coupons in Klaviyo: **geen** (alle 8 pools ontbreken)
+- Bestaande v4-flows: QWEdbK v4 · Welcome (draft), SLRQPi v4 · Winback (draft), SNwQWU v4 · Checkout abandonment (draft), Spvjdq v4 · Site abandonment (draft), TKPEVE v4 · Browse abandonment (draft), URcvwu v4 · VIP (draft), UshtNX v4 · Cart abandonment (draft), VSqzNN v4 · Post-purchase (draft), WNDDGi v4 · Post-purchase · levering (draft), WXiUkJ v4 · UGC first egg (draft), YqCwrh v4 · Anniversary (draft)
 
 ### Templates die nog geëxporteerd moeten worden
 
-53 templates ontbreken in `exports/live/templates.csv`:
+0 templates ontbreken in `exports/live/templates.csv`:
 
-- `v4 · Anniversary · n1`
-- `v4 · Anniversary · n2`
-- `v4 · Anniversary · n2-nocode`
-- `v4 · Browse abandonment · b1`
-- `v4 · Browse abandonment · b1-acc`
-- `v4 · Browse abandonment · b2-clicked`
-- `v4 · Browse abandonment · b2-clicked-nocode`
-- `v4 · Browse abandonment · b2-notclicked`
-- `v4 · Cart abandonment · k1`
-- `v4 · Cart abandonment · k1-acc`
-- `v4 · Cart abandonment · k2-new`
-- `v4 · Cart abandonment · k2-returning`
-- `v4 · Cart abandonment · k3`
-- `v4 · Cart abandonment · k3-nocode`
-- `v4 · Checkout abandonment · c4`
-- `v4 · Checkout abandonment · c4-nocode`
-- `v4 · Post-purchase · levering · p2`
-- `v4 · Post-purchase · p1-first`
-- `v4 · Post-purchase · p1-repeat`
-- `v4 · Post-purchase · p2-safe`
-- `v4 · Post-purchase · p3-accessory`
-- `v4 · Post-purchase · p3-accessory-nocode`
-- `v4 · Post-purchase · p3-apron`
-- `v4 · Post-purchase · p3-apron-nocode`
-- `v4 · Post-purchase · p3-next`
-- `v4 · Post-purchase · p3-next-nocode`
-- `v4 · Post-purchase · p3-pan`
-- `v4 · Post-purchase · p3-pan-nocode`
-- `v4 · Post-purchase · p3-set`
-- `v4 · Post-purchase · p3-set-nocode`
-- `v4 · Site abandonment · a1`
-- `v4 · Site abandonment · a2`
-- `v4 · Sunset · s1`
-- `v4 · Sunset · s2`
-- `v4 · UGC first egg · u1`
-- `v4 · VIP · v1`
-- `v4 · VIP · v1-nocode`
-- `v4 · VIP · v2`
-- `v4 · Welcome · w0`
-- `v4 · Welcome · w1-a`
-- `v4 · Welcome · w1-b`
-- `v4 · Welcome · w2`
-- `v4 · Welcome · w3`
-- `v4 · Welcome · w4-int`
-- `v4 · Welcome · w4-us`
-- `v4 · Welcome · w5`
-- `v4 · Winback · r1-acc`
-- `v4 · Winback · r1-pan`
-- `v4 · Winback · r1-set`
-- `v4 · Winback · r2`
-- `v4 · Winback · r2-nocode`
-- `v4 · Winback · r2-vip`
-- `v4 · Winback · r2-vip-nocode`
 
 ### Coupons (plan 1.4 en 4.4)
 
@@ -108,12 +80,12 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
 - T02 in P3: één split, alle vijf P3-mails in beide armen (strata P3-pan, P3-set, P3-accessory, P3-next, P3-apron).
 
 - ⏱ wacht 1 uur
-- ✉ **P1-FIRST** · **ONTBREEKT** `v4 · Post-purchase · p1-first` · "Good call. Here's what's coming."
+- ✉ **P1-FIRST** · `UbyWKv` · "Good call. Here's what's coming."
   - filter: Placed Order = 1 over all time
-- ✉ **P1-REPEAT** · **ONTBREEKT** `v4 · Post-purchase · p1-repeat` · "Good to see you again"
+- ✉ **P1-REPEAT** · `VDtNSq` · "Good to see you again"
   - filter: Placed Order > 1 over all time
 - ⏱ wacht 16 dagen, tot 09:00
-- ✉ **P2-SAFE** · **ONTBREEKT** `v4 · Post-purchase · p2-safe` · "When your pan arrives: the first egg"
+- ✉ **P2-SAFE** · `Tmgphz` · "When your pan arrives: the first egg"
   - filter: Placed Order (Items contains-any P2_TITELS) > 0 in de laatste 17 dagen EN Delivered Shipment = 0 sinds flowstart EN Refunded Order = 0 in de laatste 30 dagen
 - ⏱ wacht 4 dagen, tot 09:00
 - ◆ split: Placed Order = 2 over all time
@@ -122,68 +94,67 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
   - NEE:
     - ◆ split: Received Email (Campaign Name contains CODE ·) > 0 in de laatste 30 dagen
       - JA:
-        - ✉ **P3-SET nocode · cooldown** · **ONTBREEKT** `v4 · Post-purchase · p3-set-nocode` · "The pan your set is missing"
+        - ✉ **P3-SET nocode · cooldown** · `QXBdhx` · "The pan your set is missing"
           - filter: Placed Order = 0 sinds flowstart EN Refunded Order = 0 in de laatste 30 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) > 0 in de laatste 21 dagen EN (Placed Order (Items contains-any SET_TITELS) > 0 in de laatste 21 dagen OF Placed Order ($value greater-than-or-equal 300) > 0 in de laatste 21 dagen)
-        - ✉ **P3-NEXT · deksel nocode · cooldown** · **ONTBREEKT** `v4 · Post-purchase · p3-next-nocode` · "What goes next to your pan"
+        - ✉ **P3-NEXT · deksel nocode · cooldown** · `RPULTY` · "What goes next to your pan"
           - filter: Placed Order = 0 sinds flowstart EN Refunded Order = 0 in de laatste 30 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) > 0 in de laatste 21 dagen EN Placed Order (Items contains-any SET_TITELS) = 0 in de laatste 21 dagen EN Placed Order ($value greater-than-or-equal 300) = 0 in de laatste 21 dagen EN Placed Order (Items contains-any DEKSEL_TITELS) > 0 in de laatste 21 dagen
-        - ✉ **P3-PAN nocode · cooldown** · **ONTBREEKT** `v4 · Post-purchase · p3-pan-nocode` · "Which lid fits your pan?"
+        - ✉ **P3-PAN nocode · cooldown** · `Yrdwwa` · "Which lid fits your pan?"
           - filter: Placed Order = 0 sinds flowstart EN Refunded Order = 0 in de laatste 30 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) > 0 in de laatste 21 dagen EN Placed Order (Items contains-any SET_TITELS) = 0 in de laatste 21 dagen EN Placed Order ($value greater-than-or-equal 300) = 0 in de laatste 21 dagen EN Placed Order (Items contains-any DEKSEL_TITELS) = 0 in de laatste 21 dagen EN Placed Order (Items contains-any PANPRO+VORM_TITELS) > 0 in de laatste 21 dagen
-        - ✉ **P3-ACCESSORY · kook nocode · cooldown** · **ONTBREEKT** `v4 · Post-purchase · p3-accessory-nocode` · "Now meet the pan"
+        - ✉ **P3-ACCESSORY · kook nocode · cooldown** · `SLRARP` · "Now meet the pan"
           - filter: Placed Order = 0 sinds flowstart EN Refunded Order = 0 in de laatste 30 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) > 0 in de laatste 21 dagen EN Placed Order (Items contains-any SET_TITELS) = 0 in de laatste 21 dagen EN Placed Order ($value greater-than-or-equal 300) = 0 in de laatste 21 dagen EN Placed Order (Items contains-any DEKSEL_TITELS) = 0 in de laatste 21 dagen EN Placed Order (Items contains-any PANPRO+VORM_TITELS) = 0 in de laatste 21 dagen
-        - ✉ **P3-NEXT · eigenaar nocode · cooldown** · **ONTBREEKT** `v4 · Post-purchase · p3-next-nocode` · "What goes next to your pan"
+        - ✉ **P3-NEXT · eigenaar nocode · cooldown** · `RPULTY` · "What goes next to your pan"
           - filter: Placed Order = 0 sinds flowstart EN Refunded Order = 0 in de laatste 30 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) = 0 in de laatste 21 dagen EN Placed Order (Items contains-any E-Gift Card) = 0 in de laatste 21 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) > 0 over all time
-        - ✉ **P3-APRON nocode · cooldown** · **ONTBREEKT** `v4 · Post-purchase · p3-apron-nocode` · "An apron deserves a pan"
+        - ✉ **P3-APRON nocode · cooldown** · `Yn22gV` · "An apron deserves a pan"
           - filter: Placed Order = 0 sinds flowstart EN Refunded Order = 0 in de laatste 30 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) = 0 in de laatste 21 dagen EN Placed Order (Items contains-any E-Gift Card) = 0 in de laatste 21 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) = 0 over all time EN Placed Order (Items contains-any SCHORT_TITELS) > 0 in de laatste 21 dagen
-        - ✉ **P3-ACCESSORY · acc nocode · cooldown** · **ONTBREEKT** `v4 · Post-purchase · p3-accessory-nocode` · "Now meet the pan"
+        - ✉ **P3-ACCESSORY · acc nocode · cooldown** · `SLRARP` · "Now meet the pan"
           - filter: Placed Order = 0 sinds flowstart EN Refunded Order = 0 in de laatste 30 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) = 0 in de laatste 21 dagen EN Placed Order (Items contains-any E-Gift Card) = 0 in de laatste 21 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) = 0 over all time EN Placed Order (Items contains-any SCHORT_TITELS) = 0 in de laatste 21 dagen
       - NEE:
         - ◆ split: random 50%
           - JA:
-            - ✉ **CODE · P3-SET** · **ONTBREEKT** `v4 · Post-purchase · p3-set` · "The pan your set is missing"
+            - ✉ **CODE · P3-SET** · `UYcw5P` · "The pan your set is missing"
               - filter: Placed Order = 0 sinds flowstart EN Refunded Order = 0 in de laatste 30 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) > 0 in de laatste 21 dagen EN (Placed Order (Items contains-any SET_TITELS) > 0 in de laatste 21 dagen OF Placed Order ($value greater-than-or-equal 300) > 0 in de laatste 21 dagen)
-            - ✉ **CODE · P3-NEXT · deksel** · **ONTBREEKT** `v4 · Post-purchase · p3-next` · "What goes next to your pan"
+            - ✉ **CODE · P3-NEXT · deksel** · `VHgz9Z` · "What goes next to your pan"
               - filter: Placed Order = 0 sinds flowstart EN Refunded Order = 0 in de laatste 30 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) > 0 in de laatste 21 dagen EN Placed Order (Items contains-any SET_TITELS) = 0 in de laatste 21 dagen EN Placed Order ($value greater-than-or-equal 300) = 0 in de laatste 21 dagen EN Placed Order (Items contains-any DEKSEL_TITELS) > 0 in de laatste 21 dagen
-            - ✉ **CODE · P3-PAN** · **ONTBREEKT** `v4 · Post-purchase · p3-pan` · "Which lid fits your pan?"
+            - ✉ **CODE · P3-PAN** · `VFfyZu` · "Which lid fits your pan?"
               - filter: Placed Order = 0 sinds flowstart EN Refunded Order = 0 in de laatste 30 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) > 0 in de laatste 21 dagen EN Placed Order (Items contains-any SET_TITELS) = 0 in de laatste 21 dagen EN Placed Order ($value greater-than-or-equal 300) = 0 in de laatste 21 dagen EN Placed Order (Items contains-any DEKSEL_TITELS) = 0 in de laatste 21 dagen EN Placed Order (Items contains-any PANPRO+VORM_TITELS) > 0 in de laatste 21 dagen
-            - ✉ **CODE · P3-ACCESSORY · kook** · **ONTBREEKT** `v4 · Post-purchase · p3-accessory` · "Now meet the pan"
+            - ✉ **CODE · P3-ACCESSORY · kook** · `YxgwXH` · "Now meet the pan"
               - filter: Placed Order = 0 sinds flowstart EN Refunded Order = 0 in de laatste 30 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) > 0 in de laatste 21 dagen EN Placed Order (Items contains-any SET_TITELS) = 0 in de laatste 21 dagen EN Placed Order ($value greater-than-or-equal 300) = 0 in de laatste 21 dagen EN Placed Order (Items contains-any DEKSEL_TITELS) = 0 in de laatste 21 dagen EN Placed Order (Items contains-any PANPRO+VORM_TITELS) = 0 in de laatste 21 dagen
-            - ✉ **CODE · P3-NEXT · eigenaar** · **ONTBREEKT** `v4 · Post-purchase · p3-next` · "What goes next to your pan"
+            - ✉ **CODE · P3-NEXT · eigenaar** · `VHgz9Z` · "What goes next to your pan"
               - filter: Placed Order = 0 sinds flowstart EN Refunded Order = 0 in de laatste 30 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) = 0 in de laatste 21 dagen EN Placed Order (Items contains-any E-Gift Card) = 0 in de laatste 21 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) > 0 over all time
-            - ✉ **CODE · P3-APRON** · **ONTBREEKT** `v4 · Post-purchase · p3-apron` · "An apron deserves a pan"
+            - ✉ **CODE · P3-APRON** · `UsDdSp` · "An apron deserves a pan"
               - filter: Placed Order = 0 sinds flowstart EN Refunded Order = 0 in de laatste 30 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) = 0 in de laatste 21 dagen EN Placed Order (Items contains-any E-Gift Card) = 0 in de laatste 21 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) = 0 over all time EN Placed Order (Items contains-any SCHORT_TITELS) > 0 in de laatste 21 dagen
-            - ✉ **CODE · P3-ACCESSORY · acc** · **ONTBREEKT** `v4 · Post-purchase · p3-accessory` · "Now meet the pan"
+            - ✉ **CODE · P3-ACCESSORY · acc** · `YxgwXH` · "Now meet the pan"
               - filter: Placed Order = 0 sinds flowstart EN Refunded Order = 0 in de laatste 30 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) = 0 in de laatste 21 dagen EN Placed Order (Items contains-any E-Gift Card) = 0 in de laatste 21 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) = 0 over all time EN Placed Order (Items contains-any SCHORT_TITELS) = 0 in de laatste 21 dagen
           - NEE:
-            - ✉ **P3-SET nocode · T02-B** · **ONTBREEKT** `v4 · Post-purchase · p3-set-nocode` · "The pan your set is missing"
+            - ✉ **P3-SET nocode · T02-B** · `QXBdhx` · "The pan your set is missing"
               - filter: Placed Order = 0 sinds flowstart EN Refunded Order = 0 in de laatste 30 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) > 0 in de laatste 21 dagen EN (Placed Order (Items contains-any SET_TITELS) > 0 in de laatste 21 dagen OF Placed Order ($value greater-than-or-equal 300) > 0 in de laatste 21 dagen)
-            - ✉ **P3-NEXT · deksel nocode · T02-B** · **ONTBREEKT** `v4 · Post-purchase · p3-next-nocode` · "What goes next to your pan"
+            - ✉ **P3-NEXT · deksel nocode · T02-B** · `RPULTY` · "What goes next to your pan"
               - filter: Placed Order = 0 sinds flowstart EN Refunded Order = 0 in de laatste 30 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) > 0 in de laatste 21 dagen EN Placed Order (Items contains-any SET_TITELS) = 0 in de laatste 21 dagen EN Placed Order ($value greater-than-or-equal 300) = 0 in de laatste 21 dagen EN Placed Order (Items contains-any DEKSEL_TITELS) > 0 in de laatste 21 dagen
-            - ✉ **P3-PAN nocode · T02-B** · **ONTBREEKT** `v4 · Post-purchase · p3-pan-nocode` · "Which lid fits your pan?"
+            - ✉ **P3-PAN nocode · T02-B** · `Yrdwwa` · "Which lid fits your pan?"
               - filter: Placed Order = 0 sinds flowstart EN Refunded Order = 0 in de laatste 30 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) > 0 in de laatste 21 dagen EN Placed Order (Items contains-any SET_TITELS) = 0 in de laatste 21 dagen EN Placed Order ($value greater-than-or-equal 300) = 0 in de laatste 21 dagen EN Placed Order (Items contains-any DEKSEL_TITELS) = 0 in de laatste 21 dagen EN Placed Order (Items contains-any PANPRO+VORM_TITELS) > 0 in de laatste 21 dagen
-            - ✉ **P3-ACCESSORY · kook nocode · T02-B** · **ONTBREEKT** `v4 · Post-purchase · p3-accessory-nocode` · "Now meet the pan"
+            - ✉ **P3-ACCESSORY · kook nocode · T02-B** · `SLRARP` · "Now meet the pan"
               - filter: Placed Order = 0 sinds flowstart EN Refunded Order = 0 in de laatste 30 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) > 0 in de laatste 21 dagen EN Placed Order (Items contains-any SET_TITELS) = 0 in de laatste 21 dagen EN Placed Order ($value greater-than-or-equal 300) = 0 in de laatste 21 dagen EN Placed Order (Items contains-any DEKSEL_TITELS) = 0 in de laatste 21 dagen EN Placed Order (Items contains-any PANPRO+VORM_TITELS) = 0 in de laatste 21 dagen
-            - ✉ **P3-NEXT · eigenaar nocode · T02-B** · **ONTBREEKT** `v4 · Post-purchase · p3-next-nocode` · "What goes next to your pan"
+            - ✉ **P3-NEXT · eigenaar nocode · T02-B** · `RPULTY` · "What goes next to your pan"
               - filter: Placed Order = 0 sinds flowstart EN Refunded Order = 0 in de laatste 30 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) = 0 in de laatste 21 dagen EN Placed Order (Items contains-any E-Gift Card) = 0 in de laatste 21 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) > 0 over all time
-            - ✉ **P3-APRON nocode · T02-B** · **ONTBREEKT** `v4 · Post-purchase · p3-apron-nocode` · "An apron deserves a pan"
+            - ✉ **P3-APRON nocode · T02-B** · `Yn22gV` · "An apron deserves a pan"
               - filter: Placed Order = 0 sinds flowstart EN Refunded Order = 0 in de laatste 30 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) = 0 in de laatste 21 dagen EN Placed Order (Items contains-any E-Gift Card) = 0 in de laatste 21 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) = 0 over all time EN Placed Order (Items contains-any SCHORT_TITELS) > 0 in de laatste 21 dagen
-            - ✉ **P3-ACCESSORY · acc nocode · T02-B** · **ONTBREEKT** `v4 · Post-purchase · p3-accessory-nocode` · "Now meet the pan"
+            - ✉ **P3-ACCESSORY · acc nocode · T02-B** · `SLRARP` · "Now meet the pan"
               - filter: Placed Order = 0 sinds flowstart EN Refunded Order = 0 in de laatste 30 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) = 0 in de laatste 21 dagen EN Placed Order (Items contains-any E-Gift Card) = 0 in de laatste 21 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) = 0 over all time EN Placed Order (Items contains-any SCHORT_TITELS) = 0 in de laatste 21 dagen
 
 ## v4 · Post-purchase · levering (`levering`, utm_campaign `v4-postpurchase`)
 
 - **Trigger**: Delivered Shipment
-- **Flowfilters**: Placed Order (Items contains-any P2_TITELS) > 0 in de laatste 30 dagen EN niet in deze flow in de laatste 30 dagen EN Received Email ($flow = v4 · Post-purchase en Campaign Name contains P2-SAFE) = 0 in de laatste 30 dagen
+- **Flowfilters**: Placed Order (Items contains-any P2_TITELS) > 0 in de laatste 30 dagen EN niet in deze flow in de laatste 30 dagen EN Received Email (Campaign Name contains P2-SAFE) = 0 in de laatste 30 dagen
 - **Herinstap**: 30 dagen
-- **Verwijst naar**: v4 · Post-purchase
 
 - ⏱ wacht 1 dagen, tot 09:00
-- ✉ **P2** · **ONTBREEKT** `v4 · Post-purchase · levering · p2` · "If you can do an egg, you can do anything"
+- ✉ **P2** · `T7nCfp` · "If you can do an egg, you can do anything"
   - filter: Refunded Order = 0 in de laatste 30 dagen
 
 ## v4 · Checkout abandonment (`checkout`, utm_campaign `v4-checkout`)
 
 - **Trigger**: Checkout Started · triggerfilter: event.$value greater-than 0
-- **Flowfilters**: Placed Order = 0 sinds flowstart EN niet in deze flow in de laatste 14 dagen EN Received Email ($flow = v4 · Post-purchase (zolang die geen ID heeft: RL3TU6)) = 0 in de laatste 7 dagen
+- **Flowfilters**: Placed Order = 0 sinds flowstart EN niet in deze flow in de laatste 14 dagen EN Received Email ($flow = v4 · Post-purchase (VSqzNN)) = 0 in de laatste 7 dagen
 - **Herinstap**: 14 dagen
 - **Standaard verzendfilter op elke v4-mail**: Placed Order = 0 sinds flowstart
 - **Verwijst naar**: v4 · Post-purchase
@@ -211,15 +182,15 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
     - ⏱ wacht 2 dagen, tot 09:00
     - ◆ split: Received Email (Campaign Name contains CODE ·) > 0 in de laatste 30 dagen
       - JA:
-        - ✉ **C4 nocode · cooldown** · **ONTBREEKT** `v4 · Checkout abandonment · c4-nocode` · "Your cart and $70 in gifts, one last time"
+        - ✉ **C4 nocode · cooldown** · `SAqA6j` · "Your cart and $70 in gifts, one last time"
           - filter: standaard
       - NEE:
         - ◆ split: random 50%
           - JA:
-            - ✉ **CODE · C4** · **ONTBREEKT** `v4 · Checkout abandonment · c4` · "Your own 10% ends in 48 hours"
+            - ✉ **CODE · C4** · `UdzWU2` · "Your own 10% ends in 48 hours"
               - filter: standaard
           - NEE:
-            - ✉ **C4 nocode · T02-B** · **ONTBREEKT** `v4 · Checkout abandonment · c4-nocode` · "Your cart and $70 in gifts, one last time"
+            - ✉ **C4 nocode · T02-B** · `SAqA6j` · "Your cart and $70 in gifts, one last time"
               - filter: standaard
   - NEE:
     - ⏱ wacht 10 minuten
@@ -241,7 +212,7 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
 ## v4 · Cart abandonment (`cart`, utm_campaign `v4-cart`)
 
 - **Trigger**: Added to Cart · triggerfilter: event.Price greater-than 0 EN event.Product Name not-contains Mystery Gift EN event.Product Name not-contains E-Book EN event.Product Name not-contains Free Shipping EN event.Product Name not-contains Giveaway
-- **Flowfilters**: Checkout Started = 0 sinds flowstart EN Placed Order = 0 sinds flowstart EN Received Email ($flow = v4 · Checkout abandonment) = 0 in de laatste 7 dagen EN niet in deze flow in de laatste 14 dagen
+- **Flowfilters**: Checkout Started = 0 sinds flowstart EN Placed Order = 0 sinds flowstart EN Received Email ($flow = v4 · Checkout abandonment (SNwQWU)) = 0 in de laatste 7 dagen EN niet in deze flow in de laatste 14 dagen
 - **Herinstap**: 14 dagen
 - **Standaard verzendfilter op elke v4-mail**: Checkout Started = 0 sinds flowstart EN Placed Order = 0 sinds flowstart
 - **Verwijst naar**: v4 · Checkout abandonment
@@ -253,41 +224,41 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
     - ⏱ wacht 30 minuten
     - ◆ split: (Added to Cart (Product Name contains Hammer) > 0 in de laatste 1 dagen OF Added to Cart (Product Name contains Pan) > 0 in de laatste 1 dagen OF Added to Cart (Product Name contains Pot) > 0 in de laatste 1 dagen OF Added to Cart (Product Name contains ookware) > 0 in de laatste 1 dagen OF Added to Cart (Product Name contains Everything) > 0 in de laatste 1 dagen OF Added to Cart (Product Name contains fanne) > 0 in de laatste 1 dagen OF Added to Cart (Product Name contains Prep Bundle) > 0 in de laatste 1 dagen)
       - JA:
-        - ✉ **K1** · **ONTBREEKT** `v4 · Cart abandonment · k1` · "Nothing on it to peel off"
+        - ✉ **K1** · `UnutzT` · "Nothing on it to peel off"
           - filter: standaard
         - ⏱ wacht 1 dagen
-        - ✉ **K2-RETURNING** · **ONTBREEKT** `v4 · Cart abandonment · k2-returning` · "Adding to your Siraat kitchen?"
+        - ✉ **K2-RETURNING** · `QTssZ3` · "Adding to your Siraat kitchen?"
           - filter: standaard EN Placed Order > 0 over all time
-        - ✉ **K2-NEW** · **ONTBREEKT** `v4 · Cart abandonment · k2-new` · "The pan you keep replacing is the expensive one"
+        - ✉ **K2-NEW** · `T72Ceu` · "The pan you keep replacing is the expensive one"
           - filter: standaard EN Placed Order = 0 over all time
         - ⏱ wacht 2 dagen, tot 09:00
         - ◆ split: Received Email (Campaign Name contains CODE ·) > 0 in de laatste 30 dagen
           - JA:
-            - ✉ **K3 · pan nocode · cooldown** · **ONTBREEKT** `v4 · Cart abandonment · k3-nocode` · "What if it's not for you?"
+            - ✉ **K3 · pan nocode · cooldown** · `TBpqmc` · "What if it's not for you?"
               - filter: standaard
           - NEE:
             - ◆ split: random 50%
               - JA:
-                - ✉ **CODE · K3 · pan** · **ONTBREEKT** `v4 · Cart abandonment · k3` · "Last chance: your own 10% ends in 48 hours"
+                - ✉ **CODE · K3 · pan** · `Rz5KNx` · "Last chance: your own 10% ends in 48 hours"
                   - filter: standaard
               - NEE:
-                - ✉ **K3 · pan nocode · T02-B** · **ONTBREEKT** `v4 · Cart abandonment · k3-nocode` · "What if it's not for you?"
+                - ✉ **K3 · pan nocode · T02-B** · `TBpqmc` · "What if it's not for you?"
                   - filter: standaard
       - NEE:
-        - ✉ **K1-ACC** · **ONTBREEKT** `v4 · Cart abandonment · k1-acc` · "Picked it out? It's still here."
+        - ✉ **K1-ACC** · `Yt7LFd` · "Picked it out? It's still here."
           - filter: standaard
         - ⏱ wacht 3 dagen, tot 09:00
         - ◆ split: Received Email (Campaign Name contains CODE ·) > 0 in de laatste 30 dagen
           - JA:
-            - ✉ **K3 · acc nocode · cooldown** · **ONTBREEKT** `v4 · Cart abandonment · k3-nocode` · "What if it's not for you?"
+            - ✉ **K3 · acc nocode · cooldown** · `TBpqmc` · "What if it's not for you?"
               - filter: standaard
           - NEE:
             - ◆ split: random 50%
               - JA:
-                - ✉ **CODE · K3 · acc** · **ONTBREEKT** `v4 · Cart abandonment · k3` · "Last chance: your own 10% ends in 48 hours"
+                - ✉ **CODE · K3 · acc** · `Rz5KNx` · "Last chance: your own 10% ends in 48 hours"
                   - filter: standaard
               - NEE:
-                - ✉ **K3 · acc nocode · T02-B** · **ONTBREEKT** `v4 · Cart abandonment · k3-nocode` · "What if it's not for you?"
+                - ✉ **K3 · acc nocode · T02-B** · `TBpqmc` · "What if it's not for you?"
                   - filter: standaard
   - NEE:
     - ⏱ wacht 15 minuten
@@ -305,7 +276,7 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
 - **Trigger**: lijst Uw8eZG
 - **Flowfilters**: email not-contains test@ EN niet in deze flow over all time
 - **Herinstap**: geen grens (alleen via flowfilter)
-- **Standaard verzendfilter op elke v4-mail**: Placed Order = 0 sinds flowstart EN Received Email ($flow = v4 · Checkout abandonment) = 0 in de laatste 1 dagen EN Received Email ($flow = v4 · Cart abandonment) = 0 in de laatste 1 dagen
+- **Standaard verzendfilter op elke v4-mail**: Placed Order = 0 sinds flowstart EN Received Email ($flow = v4 · Checkout abandonment (SNwQWU)) = 0 in de laatste 1 dagen EN Received Email ($flow = v4 · Cart abandonment (UshtNX)) = 0 in de laatste 1 dagen
 - **Verwijst naar**: v4 · Cart abandonment, v4 · Checkout abandonment
 - Oud pad uit SiaNLu (GET): wacht 5 minuten → YdWRjr "{{ first_name|default:'Hey' }}, Thanks For Joining Us" → wacht 1 dagen tot 10:00 → TicuGn "A Note from Benjamin" → wacht 1 dagen tot 10:00 → R8HSS3 "Hey {{ first_name|default:'there' }}, Save 10% On a Lifetime of Use" → wacht 1 dagen → SqPaYF "Straight from the kitchen" → wacht 2 dagen tot 10:00 → SCsFQT "Cook with the Best" → wacht 2 dagen tot 10:00 → WZkL9P "The ultimate showdown" → wacht 2 dagen tot 10:00 → Tkx4bs "See Why We Are Top Rated" → wacht 1 dagen → RqvU5g "Last Call for an Extra 10% Off"
 - W4-modus: split (landsplit w4-us/w4-int, US = United States of US).
@@ -320,33 +291,33 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
       - NEE:
         - ◆ split: Placed Order > 0 over all time
           - JA:
-            - ✉ **W0** · **ONTBREEKT** `v4 · Welcome · w0` · "Thank you. Now the first egg."
+            - ✉ **W0** · `Ypywny` · "Thank you. Now the first egg."
               - filter: standaard
           - NEE:
             - 🔀 A/B-actie **T04 · W1-A code-blok tegen W1-B gift card** (50/50, geen automatische winnaar, winnaar op unique-clicks)
-              - ✉ **W1 · T04-A** · **ONTBREEKT** `v4 · Welcome · w1-a` · "No PFAS, nothing to wear off, and your 10%"
+              - ✉ **W1 · T04-A** · `Wuunna` · "No PFAS, nothing to wear off, and your 10%"
                 - filter: standaard
-              - ✉ **W1 · T04-B** · **ONTBREEKT** `v4 · Welcome · w1-b` · "No PFAS, nothing to wear off, and your 10%"
+              - ✉ **W1 · T04-B** · `VwWimX` · "No PFAS, nothing to wear off, and your 10%"
                 - filter: standaard
             - ⏱ wacht 1 dagen, tot 09:00
-            - ✉ **W2** · **ONTBREEKT** `v4 · Welcome · w2` · "The pan nobody else was making" · afzender Benjamin at Siraat's Kitchen
+            - ✉ **W2** · `Xa7FbE` · "The pan nobody else was making" · afzender Benjamin at Siraat's Kitchen
               - filter: standaard
             - ⏱ wacht 2 dagen, tot 09:00
-            - ✉ **W3** · **ONTBREEKT** `v4 · Welcome · w3` · "Has your cookware actually been tested?"
+            - ✉ **W3** · `SstjtH` · "Has your cookware actually been tested?"
               - filter: standaard
             - ⏱ wacht 3 dagen, tot 09:00
             - ◆ split: (location['country'] equals United States OF location['country'] equals US)
               - JA:
-                - ✉ **W4-US** · **ONTBREEKT** `v4 · Welcome · w4-us` · "Who are you cooking for?"
+                - ✉ **W4-US** · `QZ9Hpa` · "Who are you cooking for?"
                   - filter: standaard
                 - ⏱ wacht 4 dagen, tot 09:00
-                - ✉ **W5** · **ONTBREEKT** `v4 · Welcome · w5` · "Tammy is on her fourth pan"
+                - ✉ **W5** · `RngYXB` · "Tammy is on her fourth pan"
                   - filter: standaard
               - NEE:
-                - ✉ **W4-INT** · **ONTBREEKT** `v4 · Welcome · w4-int` · "Who are you cooking for?"
+                - ✉ **W4-INT** · `VGN577` · "Who are you cooking for?"
                   - filter: standaard
                 - ⏱ wacht 4 dagen, tot 09:00
-                - ✉ **W5** · **ONTBREEKT** `v4 · Welcome · w5` · "Tammy is on her fourth pan"
+                - ✉ **W5** · `RngYXB` · "Tammy is on her fourth pan"
                   - filter: standaard
   - NEE:
     - ⏱ wacht 5 minuten
@@ -377,7 +348,7 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
 ## v4 · Browse abandonment (`browse`, utm_campaign `v4-browse`)
 
 - **Trigger**: Viewed Product
-- **Flowfilters**: Added to Cart = 0 sinds flowstart EN Checkout Started = 0 sinds flowstart EN Placed Order = 0 sinds flowstart EN Received Email ($flow = v4 · Cart abandonment) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · Checkout abandonment) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · Welcome) = 0 in de laatste 7 dagen EN niet in deze flow in de laatste 7 dagen
+- **Flowfilters**: Added to Cart = 0 sinds flowstart EN Checkout Started = 0 sinds flowstart EN Placed Order = 0 sinds flowstart EN Received Email ($flow = v4 · Cart abandonment (UshtNX)) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · Checkout abandonment (SNwQWU)) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · Welcome (QWEdbK)) = 0 in de laatste 7 dagen EN niet in deze flow in de laatste 7 dagen
 - **Herinstap**: 7 dagen
 - **Standaard verzendfilter op elke v4-mail**: Placed Order = 0 sinds flowstart
 - **Verwijst naar**: v4 · Cart abandonment, v4 · Checkout abandonment, v4 · Welcome
@@ -392,45 +363,45 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
     - ◆ split: (Viewed Product (Name contains Hammer) > 0 in de laatste 1 dagen OF Viewed Product (Name contains Pan) > 0 in de laatste 1 dagen OF Viewed Product (Name contains Pot) > 0 in de laatste 1 dagen OF Viewed Product (Name contains ookware) > 0 in de laatste 1 dagen OF Viewed Product (Name contains Everything) > 0 in de laatste 1 dagen OF Viewed Product (Name contains fanne) > 0 in de laatste 1 dagen OF Viewed Product (Name contains Prep Bundle) > 0 in de laatste 1 dagen)
       - JA:
         - 🔀 A/B-actie **T05a · B1-onderwerp (authority tegen social proof)** (50/50, geen automatische winnaar, winnaar op unique-clicks)
-          - ✉ **B1 · T05a-A** · **ONTBREEKT** `v4 · Browse abandonment · b1` · "Lab-tested: nothing here to wear off"
+          - ✉ **B1 · T05a-A** · `VwGNp3` · "Lab-tested: nothing here to wear off"
             - filter: standaard
-          - ✉ **B1 · T05a-B** · **ONTBREEKT** `v4 · Browse abandonment · b1` · "100,000+ happy customers cook on this pan"
+          - ✉ **B1 · T05a-B** · `VwGNp3` · "100,000+ happy customers cook on this pan"
             - filter: standaard
         - ⏱ wacht 2 dagen, tot 09:00
         - ◆ split: Clicked Email (Campaign Name contains B1 · T05a) > 0 sinds flowstart
           - JA:
             - ◆ split: Received Email (Campaign Name contains CODE ·) > 0 in de laatste 30 dagen
               - JA:
-                - ✉ **B2-CLICKED · pan nocode · cooldown** · **ONTBREEKT** `v4 · Browse abandonment · b2-clicked-nocode` · ""I ordered one pan to try it out""
+                - ✉ **B2-CLICKED · pan nocode · cooldown** · `Uuxu3s` · ""I ordered one pan to try it out""
                   - filter: standaard EN Added to Cart = 0 sinds flowstart
               - NEE:
                 - ◆ split: random 50%
                   - JA:
-                    - ✉ **CODE · B2-CLICKED · pan** · **ONTBREEKT** `v4 · Browse abandonment · b2-clicked` · "Here is your 10%, for the next 48 hours"
+                    - ✉ **CODE · B2-CLICKED · pan** · `TwZq3f` · "Here is your 10%, for the next 48 hours"
                       - filter: standaard EN Added to Cart = 0 sinds flowstart
                   - NEE:
-                    - ✉ **B2-CLICKED · pan nocode · T02-B** · **ONTBREEKT** `v4 · Browse abandonment · b2-clicked-nocode` · ""I ordered one pan to try it out""
+                    - ✉ **B2-CLICKED · pan nocode · T02-B** · `Uuxu3s` · ""I ordered one pan to try it out""
                       - filter: standaard EN Added to Cart = 0 sinds flowstart
           - NEE:
-            - ✉ **B2-NOTCLICKED** · **ONTBREEKT** `v4 · Browse abandonment · b2-notclicked` · "Week one, in their words"
+            - ✉ **B2-NOTCLICKED** · `TEeUzw` · "Week one, in their words"
               - filter: standaard EN Added to Cart = 0 sinds flowstart
       - NEE:
-        - ✉ **B1-ACC** · **ONTBREEKT** `v4 · Browse abandonment · b1-acc` · "Looked twice? Here's the detail."
+        - ✉ **B1-ACC** · `TYaFUJ` · "Looked twice? Here's the detail."
           - filter: standaard
         - ⏱ wacht 2 dagen, tot 09:00
         - ◆ split: Clicked Email (Campaign Name contains B1-ACC) > 0 sinds flowstart
           - JA:
             - ◆ split: Received Email (Campaign Name contains CODE ·) > 0 in de laatste 30 dagen
               - JA:
-                - ✉ **B2-CLICKED · acc nocode · cooldown** · **ONTBREEKT** `v4 · Browse abandonment · b2-clicked-nocode` · ""I ordered one pan to try it out""
+                - ✉ **B2-CLICKED · acc nocode · cooldown** · `Uuxu3s` · ""I ordered one pan to try it out""
                   - filter: standaard EN Added to Cart = 0 sinds flowstart
               - NEE:
                 - ◆ split: random 50%
                   - JA:
-                    - ✉ **CODE · B2-CLICKED · acc** · **ONTBREEKT** `v4 · Browse abandonment · b2-clicked` · "Here is your 10%, for the next 48 hours"
+                    - ✉ **CODE · B2-CLICKED · acc** · `TwZq3f` · "Here is your 10%, for the next 48 hours"
                       - filter: standaard EN Added to Cart = 0 sinds flowstart
                   - NEE:
-                    - ✉ **B2-CLICKED · acc nocode · T02-B** · **ONTBREEKT** `v4 · Browse abandonment · b2-clicked-nocode` · ""I ordered one pan to try it out""
+                    - ✉ **B2-CLICKED · acc nocode · T02-B** · `Uuxu3s` · ""I ordered one pan to try it out""
                       - filter: standaard EN Added to Cart = 0 sinds flowstart
           - NEE:
             - (einde)
@@ -451,16 +422,16 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
 - ⏱ wacht 30 dagen, tot 09:00
 - ◆ split: Received Email (Campaign Name contains CODE ·) > 0 in de laatste 30 dagen
   - JA:
-    - ✉ **V1 nocode · cooldown** · **ONTBREEKT** `v4 · VIP · v1-nocode` · "Twice is a habit. Thank you."
+    - ✉ **V1 nocode · cooldown** · `SthPxw` · "Twice is a habit. Thank you."
       - filter: Refunded Order = 0 sinds flowstart EN Placed Order = 0 in de laatste 14 dagen
     - ⏱ wacht 10 dagen, tot 09:00
-    - ✉ **V2** · **ONTBREEKT** `v4 · VIP · v2` · "A question from Benjamin" · afzender Benjamin at Siraat's Kitchen
+    - ✉ **V2** · `XXNYBe` · "A question from Benjamin" · afzender Benjamin at Siraat's Kitchen
       - filter: Placed Order = 0 sinds flowstart EN Refunded Order = 0 sinds flowstart
   - NEE:
-    - ✉ **CODE · V1** · **ONTBREEKT** `v4 · VIP · v1` · "Twice is a habit. Here's 15% off."
+    - ✉ **CODE · V1** · `Xw4sFp` · "Twice is a habit. Here's 15% off."
       - filter: Refunded Order = 0 sinds flowstart EN Placed Order = 0 in de laatste 14 dagen
     - ⏱ wacht 10 dagen, tot 09:00
-    - ✉ **V2** · **ONTBREEKT** `v4 · VIP · v2` · "A question from Benjamin" · afzender Benjamin at Siraat's Kitchen
+    - ✉ **V2** · `XXNYBe` · "A question from Benjamin" · afzender Benjamin at Siraat's Kitchen
       - filter: Placed Order = 0 sinds flowstart EN Refunded Order = 0 sinds flowstart
 
 ## v4 · Winback (`winback`, utm_campaign `v4-winback`)
@@ -474,41 +445,41 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
 - R1-router als verzendfilters op Placed Order in de laatste 46 dagen. R2 alleen zolang 'up to 50% off' live is.
 
 - ⏱ wacht 45 dagen, tot 09:00
-- ✉ **R1-SET** · **ONTBREEKT** `v4 · Winback · r1-set` · "The shapes a set leaves out"
-  - filter: standaard EN Received Email ($flow = v4 · Post-purchase) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · VIP) = 0 in de laatste 7 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) > 0 in de laatste 46 dagen EN (Placed Order (Items contains-any SET_TITELS) > 0 in de laatste 46 dagen OF Placed Order ($value greater-than-or-equal 300) > 0 in de laatste 46 dagen)
-- ✉ **R1-PAN · kook** · **ONTBREEKT** `v4 · Winback · r1-pan` · "How's your pan doing?"
-  - filter: standaard EN Received Email ($flow = v4 · Post-purchase) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · VIP) = 0 in de laatste 7 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) > 0 in de laatste 46 dagen EN Placed Order (Items contains-any SET_TITELS) = 0 in de laatste 46 dagen EN Placed Order ($value greater-than-or-equal 300) = 0 in de laatste 46 dagen
-- ✉ **R1-PAN · eigenaar** · **ONTBREEKT** `v4 · Winback · r1-pan` · "How's your pan doing?"
-  - filter: standaard EN Received Email ($flow = v4 · Post-purchase) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · VIP) = 0 in de laatste 7 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) = 0 in de laatste 46 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) > 0 over all time
-- ✉ **R1-ACC** · **ONTBREEKT** `v4 · Winback · r1-acc` · "Ready for the pan?"
-  - filter: standaard EN Received Email ($flow = v4 · Post-purchase) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · VIP) = 0 in de laatste 7 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) = 0 over all time
+- ✉ **R1-SET** · `TtN9Kv` · "The shapes a set leaves out"
+  - filter: standaard EN Received Email ($flow = v4 · Post-purchase (VSqzNN)) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · VIP (URcvwu)) = 0 in de laatste 7 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) > 0 in de laatste 46 dagen EN (Placed Order (Items contains-any SET_TITELS) > 0 in de laatste 46 dagen OF Placed Order ($value greater-than-or-equal 300) > 0 in de laatste 46 dagen)
+- ✉ **R1-PAN · kook** · `RN2wJV` · "How's your pan doing?"
+  - filter: standaard EN Received Email ($flow = v4 · Post-purchase (VSqzNN)) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · VIP (URcvwu)) = 0 in de laatste 7 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) > 0 in de laatste 46 dagen EN Placed Order (Items contains-any SET_TITELS) = 0 in de laatste 46 dagen EN Placed Order ($value greater-than-or-equal 300) = 0 in de laatste 46 dagen
+- ✉ **R1-PAN · eigenaar** · `RN2wJV` · "How's your pan doing?"
+  - filter: standaard EN Received Email ($flow = v4 · Post-purchase (VSqzNN)) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · VIP (URcvwu)) = 0 in de laatste 7 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) = 0 in de laatste 46 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) > 0 over all time
+- ✉ **R1-ACC** · `Wr3C7u` · "Ready for the pan?"
+  - filter: standaard EN Received Email ($flow = v4 · Post-purchase (VSqzNN)) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · VIP (URcvwu)) = 0 in de laatste 7 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) = 0 over all time
 - ⏱ wacht 30 dagen, tot 09:00
 - ◆ split: Placed Order ≥ 2 over all time
   - JA:
     - ◆ split: Received Email (Campaign Name contains CODE ·) > 0 in de laatste 30 dagen
       - JA:
-        - ✉ **R2-VIP nocode · cooldown** · **ONTBREEKT** `v4 · Winback · r2-vip-nocode` · "You came back. Thank you."
+        - ✉ **R2-VIP nocode · cooldown** · `VLAPnG` · "You came back. Thank you."
           - filter: standaard
       - NEE:
         - ◆ split: random 50%
           - JA:
-            - ✉ **CODE · R2-VIP** · **ONTBREEKT** `v4 · Winback · r2-vip` · "For our regulars: 15% for 72 hours"
+            - ✉ **CODE · R2-VIP** · `Xj8VQZ` · "For our regulars: 15% for 72 hours"
               - filter: standaard
           - NEE:
-            - ✉ **R2-VIP nocode · T02-B** · **ONTBREEKT** `v4 · Winback · r2-vip-nocode` · "You came back. Thank you."
+            - ✉ **R2-VIP nocode · T02-B** · `VLAPnG` · "You came back. Thank you."
               - filter: standaard
   - NEE:
     - ◆ split: Received Email (Campaign Name contains CODE ·) > 0 in de laatste 30 dagen
       - JA:
-        - ✉ **R2 nocode · cooldown** · **ONTBREEKT** `v4 · Winback · r2-nocode` · "Ready for pan number two?"
+        - ✉ **R2 nocode · cooldown** · `TB3EhL` · "Ready for pan number two?"
           - filter: standaard
       - NEE:
         - ◆ split: random 50%
           - JA:
-            - ✉ **CODE · R2** · **ONTBREEKT** `v4 · Winback · r2` · "Here is your 10%, for the next 72 hours"
+            - ✉ **CODE · R2** · `Yjhg45` · "Here is your 10%, for the next 72 hours"
               - filter: standaard
           - NEE:
-            - ✉ **R2 nocode · T02-B** · **ONTBREEKT** `v4 · Winback · r2-nocode` · "Ready for pan number two?"
+            - ✉ **R2 nocode · T02-B** · `TB3EhL` · "Ready for pan number two?"
               - filter: standaard
 
 ## v4 · Anniversary (`anniversary`, utm_campaign `v4-anniversary`)
@@ -522,46 +493,46 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
 - 182 en 183 dagen in één wachttijd (als Klaviyo weigert: --max-delay=91).
 
 - ⏱ wacht 182 dagen, tot 09:00
-- ✉ **N1** · **ONTBREEKT** `v4 · Anniversary · n1` · "How's your pan at six months?"
-  - filter: Refunded Order = 0 sinds flowstart EN Received Email ($flow = v4 · VIP) = 0 in de laatste 14 dagen EN Received Email ($flow = v4 · Winback) = 0 in de laatste 14 dagen EN Opened Ticket = 0 in de laatste 14 dagen
+- ✉ **N1** · `QX8tha` · "How's your pan at six months?"
+  - filter: Refunded Order = 0 sinds flowstart EN Received Email ($flow = v4 · VIP (URcvwu)) = 0 in de laatste 14 dagen EN Received Email ($flow = v4 · Winback (SLRQPi)) = 0 in de laatste 14 dagen EN Opened Ticket = 0 in de laatste 14 dagen
 - ⏱ wacht 183 dagen, tot 09:00
 - ◆ split: Received Email (Campaign Name contains CODE ·) > 0 in de laatste 30 dagen
   - JA:
-    - ✉ **N2 nocode · cooldown** · **ONTBREEKT** `v4 · Anniversary · n2-nocode` · "One year ago this week"
+    - ✉ **N2 nocode · cooldown** · `RZT3F7` · "One year ago this week"
       - filter: Refunded Order = 0 sinds flowstart EN Placed Order = 0 in de laatste 14 dagen
   - NEE:
-    - ✉ **CODE · N2** · **ONTBREEKT** `v4 · Anniversary · n2` · "One year ago this week"
+    - ✉ **CODE · N2** · `WTpa8c` · "One year ago this week"
       - filter: Refunded Order = 0 sinds flowstart EN Placed Order = 0 in de laatste 14 dagen
 
 ## v4 · Site abandonment (`site`, utm_campaign `v4-site`)
 
 - **Trigger**: Active on Site
-- **Flowfilters**: Viewed Product = 0 sinds flowstart EN Added to Cart = 0 sinds flowstart EN Checkout Started = 0 sinds flowstart EN Placed Order = 0 sinds flowstart EN Placed Order = 0 in de laatste 30 dagen EN Received Email ($flow = v4 · Browse abandonment) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · Cart abandonment) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · Checkout abandonment) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · Post-purchase) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · Welcome) = 0 in de laatste 10 dagen EN niet in deze flow in de laatste 14 dagen
+- **Flowfilters**: Viewed Product = 0 sinds flowstart EN Added to Cart = 0 sinds flowstart EN Checkout Started = 0 sinds flowstart EN Placed Order = 0 sinds flowstart EN Placed Order = 0 in de laatste 30 dagen EN Received Email ($flow = v4 · Browse abandonment (TKPEVE)) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · Cart abandonment (UshtNX)) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · Checkout abandonment (SNwQWU)) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · Post-purchase (VSqzNN)) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · Welcome (QWEdbK)) = 0 in de laatste 10 dagen EN niet in deze flow in de laatste 14 dagen
 - **Herinstap**: 14 dagen
 - **Standaard verzendfilter op elke v4-mail**: Viewed Product = 0 sinds flowstart EN Added to Cart = 0 sinds flowstart EN Checkout Started = 0 sinds flowstart EN Placed Order = 0 sinds flowstart
 - **Verwijst naar**: v4 · Browse abandonment, v4 · Cart abandonment, v4 · Checkout abandonment, v4 · Post-purchase, v4 · Welcome
 - 'Can receive email marketing' niet als filter: marketingmails gaan in Klaviyo nooit naar uitgeschreven profielen.
 
 - ⏱ wacht 2 uur
-- ✉ **A1** · **ONTBREEKT** `v4 · Site abandonment · a1` · "Not sure which pan? Start here."
+- ✉ **A1** · `SJBkFR` · "Not sure which pan? Start here."
   - filter: standaard
 - ⏱ wacht 2 dagen, tot 09:00
-- ✉ **A2** · **ONTBREEKT** `v4 · Site abandonment · a2` · "Where 100,000+ happy customers started"
+- ✉ **A2** · `SePNBv` · "Where 100,000+ happy customers started"
   - filter: standaard
 
 ## v4 · Sunset (`sunset`, utm_campaign `v4-sunset`)
 
-- **Trigger**: segment SEG?v4 · Sunset · unengaged 120d
-- **Flowfilters**: niet in deze flow in de laatste 180 dagen EN Received Email ($flow = v4 · Welcome) = 0 in de laatste 30 dagen EN Received Email ($flow = v4 · Post-purchase) = 0 in de laatste 30 dagen
+- **Trigger**: segment WuHSm6
+- **Flowfilters**: niet in deze flow in de laatste 180 dagen EN Received Email ($flow = v4 · Welcome (QWEdbK)) = 0 in de laatste 30 dagen EN Received Email ($flow = v4 · Post-purchase (VSqzNN)) = 0 in de laatste 30 dagen
 - **Herinstap**: 180 dagen
 - **Verwijst naar**: v4 · Post-purchase, v4 · Welcome
 - Stap 3 (update profile sunset_status) kan niet via de API. Vervanging: segment 'v4 · Sunset · suppressed' = in 'v4 · Sunset · unengaged 120d' EN Received Email waarvan Campaign Name 'SUNSET · S2' bevat, minstens 1 keer in 60 dagen EN 0 keer in de laatste 3 dagen. Wie klikt, de site bezoekt of koopt valt vanzelf uit het unengaged-segment.
 - Geen Opened Email-filter (3.16).
 
 - ⏱ wacht 1 dagen, tot 09:00
-- ✉ **SUNSET · S1** · **ONTBREEKT** `v4 · Sunset · s1` · "Should we keep writing to you?"
+- ✉ **SUNSET · S1** · `VvayeT` · "Should we keep writing to you?"
 - ⏱ wacht 4 dagen, tot 09:00
-- ✉ **SUNSET · S2** · **ONTBREEKT** `v4 · Sunset · s2` · "Last email from me (unless you tap)" · afzender Benjamin at Siraat's Kitchen
+- ✉ **SUNSET · S2** · `ScNNsY` · "Last email from me (unless you tap)" · afzender Benjamin at Siraat's Kitchen
   - filter: Clicked Email = 0 sinds flowstart EN Active on Site = 0 sinds flowstart EN Placed Order = 0 sinds flowstart
 
 ## v4 · UGC first egg (`ugc`, utm_campaign `v4-ugc`)
@@ -572,6 +543,6 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
 - Backorder-uitsluiting gelezen uit XzHrez (12-delige set). Reply-to support@ (Gorgias-macro UGC15).
 
 - ⏱ wacht 4 dagen, tot 09:00
-- ✉ **U1** · **ONTBREEKT** `v4 · UGC first egg · u1` · "Show us your first egg?"
+- ✉ **U1** · `WxV8CQ` · "Show us your first egg?"
   - filter: Opened Ticket = 0 sinds flowstart EN Refunded Order = 0 in de laatste 30 dagen EN Fulfilled Order > 0 in de laatste 60 dagen
 

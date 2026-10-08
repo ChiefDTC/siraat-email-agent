@@ -1,0 +1,13 @@
+cart-fallback.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/9c370826-f0d7-45de-8a41-a5e24df5d18a.jpeg
+fb.png https://cdn.klaviyomail.com/company/TdtTzz/images/17c00632-f9db-4dcd-a27e-bf0adc4987da.png
+ig.png https://cdn.klaviyomail.com/company/TdtTzz/images/6b905e47-7bf9-4aec-a63b-0538ecc6bd60.png
+k1acc-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/d8c74229-35d1-4dd5-b0f2-e7f1d54bdb98.jpeg
+logo-black.png https://cdn.klaviyomail.com/company/TdtTzz/images/ae4dfc27-1e05-481a-90b6-f6467bc3db78.png
+logo-white.png https://cdn.klaviyomail.com/company/TdtTzz/images/7027081c-350d-476e-85b6-25057ebaf65d.png
+k1-hero-pfas.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/0334d504-0034-4e81-928f-a414cfe50b01.jpeg
+k2-new-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/789ebfa1-d7ef-4731-aa39-1d3cf4102b3d.jpeg
+card-deeppan.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/887590a2-46ee-4666-9095-5efffbb49190.jpeg
+card-lid.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/212f7bc2-2a5a-4aa1-997d-0601086e4761.jpeg
+k2-returning-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/cceb7fd7-adf0-4cbb-acd4-e03dd89c9af7.jpeg
+k3-nocode-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/fb495fdf-ee41-401c-abbc-49e4887bcbdc.jpeg
+k3-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/9d8e27a1-37d2-48f4-93f2-64406e10261b.jpeg

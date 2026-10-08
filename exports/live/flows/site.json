@@ -133,7 +133,7 @@
            "filter": {
             "type": "string",
             "operator": "equals",
-            "value": "FLOW?browse"
+            "value": "TKPEVE"
            }
           }
          ]
@@ -163,7 +163,7 @@
            "filter": {
             "type": "string",
             "operator": "equals",
-            "value": "FLOW?cart"
+            "value": "UshtNX"
            }
           }
          ]
@@ -193,7 +193,7 @@
            "filter": {
             "type": "string",
             "operator": "equals",
-            "value": "FLOW?checkout"
+            "value": "SNwQWU"
            }
           }
          ]
@@ -223,7 +223,7 @@
            "filter": {
             "type": "string",
             "operator": "equals",
-            "value": "FLOW?postpurchase"
+            "value": "VSqzNN"
            }
           }
          ]
@@ -253,7 +253,7 @@
            "filter": {
             "type": "string",
             "operator": "equals",
-            "value": "FLOW?welcome"
+            "value": "QWEdbK"
            }
           }
          ]
@@ -288,7 +288,7 @@
         "bcc_email": null,
         "subject_line": "Where 100,000+ happy customers started",
         "preview_text": "Most kitchens start with the 11-inch pan. Some go straight to three. Here's how to choose.",
-        "template_id": "TPL?v4 · Site abandonment · a2",
+        "template_id": "SePNBv",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
@@ -420,7 +420,7 @@
         "bcc_email": null,
         "subject_line": "Not sure which pan? Start here.",
         "preview_text": "Four sizes, one titanium cooking surface. Here is how to pick yours in 30 seconds.",
-        "template_id": "TPL?v4 · Site abandonment · a1",
+        "template_id": "SJBkFR",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
