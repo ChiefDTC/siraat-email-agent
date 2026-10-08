@@ -30,11 +30,11 @@
 | COOKWARE | https://siraatskitchen.com/collections/pans?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-cart&utm_conte | direct | 200 |
 | SETS | https://siraatskitchen.com/collections/bundles?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-cart&utm_co | direct | 200 |
 | ABOUT | https://siraatskitchen.com/pages/about-us?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-cart&utm_content | direct | 200 |
-| Last email, 48 hours. Your 10% comes off soon: we' | https://siraatskitchen.com/discount/CART-9HSZSLHM?redirect=/products/original-siraat-100-pure-titanium-pan-wit | direct | 200 |
-| Titanium Hammered Pan Pro Standard | https://siraatskitchen.com/discount/CART-9HSZSLHM?redirect=/products/original-siraat-100-pure-titanium-pan-wit | direct | 200 |
-| Use my 10% now → | https://siraatskitchen.com/discount/CART-9HSZSLHM?redirect=/products/original-siraat-100-pure-titanium-pan-wit | direct | 200 |
-| Use my 10% now → | https://siraatskitchen.com/discount/CART-9HSZSLHM?redirect=/products/original-siraat-100-pure-titanium-pan-wit | direct | 200 |
-| Use my 10% now → | https://siraatskitchen.com/discount/CART-9HSZSLHM?redirect=/products/original-siraat-100-pure-titanium-pan-wit | direct | 200 |
+| Last email, 48 hours. Your 10% comes off soon: we' | https://siraatskitchen.com/discount/CART-XXXXXXXX?redirect=/products/original-siraat-100-pure-titanium-pan-wit | direct | 200 |
+| Titanium Hammered Pan Pro Standard | https://siraatskitchen.com/discount/CART-XXXXXXXX?redirect=/products/original-siraat-100-pure-titanium-pan-wit | direct | 200 |
+| Use my 10% now → | https://siraatskitchen.com/discount/CART-XXXXXXXX?redirect=/products/original-siraat-100-pure-titanium-pan-wit | direct | 200 |
+| Use my 10% now → | https://siraatskitchen.com/discount/CART-XXXXXXXX?redirect=/products/original-siraat-100-pure-titanium-pan-wit | direct | 200 |
+| Use my 10% now → | https://siraatskitchen.com/discount/CART-XXXXXXXX?redirect=/products/original-siraat-100-pure-titanium-pan-wit | direct | 200 |
 | Siraat | https://siraatskitchen.com/?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-cart&utm_content=k3-ft-logo&ut | direct | 200 |
 | TITANIUM COOKWARE → | https://siraatskitchen.com/collections/pans?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-cart&utm_conte | direct | 200 |
 | BUNDLES & SETS → | https://siraatskitchen.com/collections/bundles?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-cart&utm_co | direct | 200 |

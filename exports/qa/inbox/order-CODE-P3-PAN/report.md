@@ -30,10 +30,10 @@
 | COOKWARE | https://siraatskitchen.com/collections/pans?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&u | direct | 200 |
 | SETS | https://siraatskitchen.com/collections/bundles?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchas | direct | 200 |
 | ABOUT | https://siraatskitchen.com/pages/faq?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_cont | direct | 200 |
-| Fits your pan. The lid that fits: match it to your | https://siraatskitchen.com/discount/THX-8WSK78TC?redirect=/products/stainless-steel-lid%3Futm_source%3Dklaviyo | direct | 200 |
-| Add the lid, 10% off → | https://siraatskitchen.com/discount/THX-8WSK78TC?redirect=/products/stainless-steel-lid%3Futm_source%3Dklaviyo | direct | 200 |
-| Use my 10% code → | https://siraatskitchen.com/discount/THX-8WSK78TC?redirect=/products/stainless-steel-lid%3Futm_source%3Dklaviyo | direct | 200 |
-| Add the lid, 10% off → | https://siraatskitchen.com/discount/THX-8WSK78TC?redirect=/products/stainless-steel-lid%3Futm_source%3Dklaviyo | direct | 200 |
+| Fits your pan. The lid that fits: match it to your | https://siraatskitchen.com/discount/THX-XXXXXXXX?redirect=/products/stainless-steel-lid%3Futm_source%3Dklaviyo | direct | 200 |
+| Add the lid, 10% off → | https://siraatskitchen.com/discount/THX-XXXXXXXX?redirect=/products/stainless-steel-lid%3Futm_source%3Dklaviyo | direct | 200 |
+| Use my 10% code → | https://siraatskitchen.com/discount/THX-XXXXXXXX?redirect=/products/stainless-steel-lid%3Futm_source%3Dklaviyo | direct | 200 |
+| Add the lid, 10% off → | https://siraatskitchen.com/discount/THX-XXXXXXXX?redirect=/products/stainless-steel-lid%3Futm_source%3Dklaviyo | direct | 200 |
 | Siraat | https://siraatskitchen.com/?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3pan | direct | 200 |
 | TITANIUM COOKWARE → | https://siraatskitchen.com/collections/pans?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&u | direct | 200 |
 | BUNDLES & SETS → | https://siraatskitchen.com/collections/bundles?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchas | direct | 200 |

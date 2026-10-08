@@ -10,7 +10,7 @@ tijd_ams,alias,flow,mail,onderwerp,checks_ok,fouten
 2026-10-08 21:49,+sunsetkept,TEST v5 Sunset · kept,S4,"The pan we started with",11,"ABOUT->/pages/faq; Facebook oude URL; unsubscribe/web-view contrast 2.4:1; lockup onzichtbaar forced dark; footer SIRAATSKITCHEN"
 2026-10-08 21:50,+sunset,TEST v5 Sunset,S2,"Last email from me (unless you tap)",11,"ABOUT->/pages/faq; Facebook oude URL; unsubscribe/web-view contrast 2.4:1; lockup onzichtbaar forced dark; footer SIRAATSKITCHEN"
 2026-10-08 21:54,+vip,TEST v5 Winback,R1-PAN · kook (2e),"How's your pan doing?",11,"systeemfouten; cross-sell leeg; dubbele R1 = testartefact 4-min-wachttijd"
-2026-10-08 21:56,+order,TEST v5 Post-purchase,CODE · P3-PAN,"Which lid fits your pan?",10,"systeemfouten; cross-sell leeg; dekselknop zonder variant 28 cm; code THX-8WSK78TC werkt (10% in cart)"
+2026-10-08 21:56,+order,TEST v5 Post-purchase,CODE · P3-PAN,"Which lid fits your pan?",10,"systeemfouten; cross-sell leeg; dekselknop zonder variant 28 cm; code THX-XXXXXXXX werkt (10% in cart)"
 2026-10-08 21:59,+vip,TEST v5 VIP,V2,"A question from Benjamin",11,"systeemfouten; P.S. noemt HI10 na 15% VIP-code; kwam vóór V1"
 2026-10-08 21:59,+vip,TEST v5 VIP,CODE · V1,"You're a VIP. Here's 15% off.",11,"systeemfouten; cross-sell leeg; coupon REG vervalt 2027-10-08 i.p.v. 22 okt; code werkt (15% in cart)"
 2026-10-08 22:03,+welcomeabtb,TEST v5 Welcome,W1 variant B,"No PFAS. Here's the paper. And 10%.",11,"systeemfouten"

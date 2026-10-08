@@ -30,10 +30,10 @@
 | COOKWARE | https://siraatskitchen.com/collections/pans?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-vip&utm_conten | direct | 200 |
 | SETS | https://siraatskitchen.com/collections/bundles?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-vip&utm_con | direct | 200 |
 | ABOUT | https://siraatskitchen.com/pages/faq?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-vip&utm_content=v1-na | direct | 200 |
-| VIP, 15% exclusive. You're a VIP. Here's 15%: your | https://siraatskitchen.com/discount/REG-9QF27BZ4?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium | direct | 200 |
-| Get my 15% now → | https://siraatskitchen.com/discount/REG-9QF27BZ4?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium | direct | 200 |
-| Get my 15% now → | https://siraatskitchen.com/discount/REG-9QF27BZ4?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium | direct | 200 |
-| Get my 15% now → | https://siraatskitchen.com/discount/REG-9QF27BZ4?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium | direct | 200 |
+| VIP, 15% exclusive. You're a VIP. Here's 15%: your | https://siraatskitchen.com/discount/REG-XXXXXXXX?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium | direct | 200 |
+| Get my 15% now → | https://siraatskitchen.com/discount/REG-XXXXXXXX?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium | direct | 200 |
+| Get my 15% now → | https://siraatskitchen.com/discount/REG-XXXXXXXX?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium | direct | 200 |
+| Get my 15% now → | https://siraatskitchen.com/discount/REG-XXXXXXXX?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium | direct | 200 |
 | Siraat | https://siraatskitchen.com/?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-vip&utm_content=v1-ft-logo | direct | 200 |
 | TITANIUM COOKWARE → | https://siraatskitchen.com/collections/pans?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-vip&utm_conten | direct | 200 |
 | BUNDLES & SETS → | https://siraatskitchen.com/collections/bundles?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-vip&utm_con | direct | 200 |

@@ -30,10 +30,10 @@
 | COOKWARE | https://siraatskitchen.com/collections/pans?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-winback&utm_co | direct | 200 |
 | SETS | https://siraatskitchen.com/collections/bundles?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-winback&utm | direct | 200 |
 | ABOUT | https://siraatskitchen.com/pages/faq?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-winback&utm_content=r | direct | 200 |
-| For VIPs, 72 hours. You came back. Here is 15%: ex | https://siraatskitchen.com/discount/VIP-94RW7RJJ?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium | direct | 200 |
-| Get my 15% now → | https://siraatskitchen.com/discount/VIP-94RW7RJJ?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium | direct | 200 |
-| Get my 15% now → | https://siraatskitchen.com/discount/VIP-94RW7RJJ?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium | direct | 200 |
-| Get my 15% now → | https://siraatskitchen.com/discount/VIP-94RW7RJJ?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium | direct | 200 |
+| For VIPs, 72 hours. You came back. Here is 15%: ex | https://siraatskitchen.com/discount/VIP-XXXXXXXX?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium | direct | 200 |
+| Get my 15% now → | https://siraatskitchen.com/discount/VIP-XXXXXXXX?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium | direct | 200 |
+| Get my 15% now → | https://siraatskitchen.com/discount/VIP-XXXXXXXX?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium | direct | 200 |
+| Get my 15% now → | https://siraatskitchen.com/discount/VIP-XXXXXXXX?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium | direct | 200 |
 | Siraat | https://siraatskitchen.com/?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-winback&utm_content=r2vip-ft-l | direct | 200 |
 | TITANIUM COOKWARE → | https://siraatskitchen.com/collections/pans?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-winback&utm_co | direct | 200 |
 | BUNDLES & SETS → | https://siraatskitchen.com/collections/bundles?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-winback&utm | direct | 200 |
