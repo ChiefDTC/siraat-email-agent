@@ -7,11 +7,21 @@ Bouwt elke mail zoals scripts/qa_render.py (build_template.py, Django-render op 
  5. toegankelijkheid op 390 px: tekst < 14 px, tap targets < 44 px, contrast WCAG AA
 Gebruik (vanuit /tmp): python3 -I scripts/qa_inbox.py [--only=checkout/c1,...]
 Uitvoer: exports/qa/inbox-report.md, exports/qa/inbox-data.json, exports/qa/darkmode/<flow>-<id>.jpg (6 representatieve mails).
-Alleen meten; wijzigt geen templates. Exitcode altijd 0 (de poort is qa_render.py; deze checks staan daar als waarschuwing)."""
+Alleen meten; wijzigt geen templates. Exitcode altijd 0 (de poort is qa_render.py; deze checks staan daar als waarschuwing).
+
+Inbox-QA per ontvangen mail (testcheckouts, research/v6-golive/04-inbox-qa.md), controles in scripts/mail_checks.py:
+  python3 -I scripts/qa_inbox.py mail <bestand.json|.eml|.html> [--market=UK] [--alias=pan] [--out=map] [--no-net] [--no-browser]
+      bestand.json = uitvoer van mcp__Gmail__get_message (FULL_CONTENT). Schrijft <out>/report.md, result.json, slack.txt en
+      screenshots (375/600/1200 px licht, 375/600 px dark, 375 px geforceerd donker). Exitcode 1 bij FOUT.
+  python3 -I scripts/qa_inbox.py templates [--markets=US,UK] [--only=checkout/c1,...] [--shots=map]
+      alle mails uit de repo, gerenderd per markt (zelfde route als qa_render.py), dezelfde controles.
+      Uitvoer: exports/qa/inbox/templates-report.md en templates-data.json.
+  python3 -I scripts/qa_inbox.py slack <result.json>     print het Slack-bericht (niet versturen; dat doet de sessie na akkoord)"""
 import sys, os, re, json, csv, subprocess, tempfile, shutil
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import qa_render as Q
 import inbox_checks as I
+import mail_checks as MC
 
 ROOT = Q.ROOT; QA = Q.QA; DM = os.path.join(QA, 'darkmode')
 REPR = ['checkout/c1', 'browse/b1', 'welcome/w1-a', 'welcome/w2', 'post-purchase/p2', 'winback/r2-vip']
@@ -158,4 +168,236 @@ def report(D):
     print('Rapport: exports/qa/inbox-report.md, data: exports/qa/inbox-data.json, screenshots: exports/qa/darkmode/')
 
 
-if __name__ == '__main__': main()
+# ------------------------------------------------------------------ inbox-QA per mail (mail, templates, slack)
+ICON = {MC.OK: ':white_check_mark:', MC.FOUT: ':x:', MC.LETOP: ':warning:', MC.NVT: ':heavy_minus_sign:'}
+LABEL = {'onderwerp': 'Onderwerp', 'preheader': 'Preheader', 'afzender': 'Afzender', 'grootte': 'Grootte (Gmail-clip 102 KB)',
+         'links': 'Links (status 200)', 'utm': 'UTM', 'linktekst': 'Linktekst past bij bestemming', 'beelden': 'Beelden',
+         'tags': 'Ongerenderde tags', 'markt': 'Valuta en maat', 'header-footer': 'Header, footer, logo', 'afmelden': 'Afmelden en voorkeuren',
+         'em-dash': 'Em dash', 'layout': 'Layout 375/600/1200 px', 'dark-mode': 'Dark mode'}
+AMS = None
+
+
+def opts(args):
+    o = {}; pos = []
+    for a in args:
+        if a.startswith('--'): k, _, v = a[2:].partition('='); o[k] = v or '1'
+        else: pos.append(a)
+    return o, pos
+
+
+def manifest():
+    try: return {r['flow'] + '/' + r['id']: r for r in csv.DictReader(open(os.path.join(ROOT, 'exports', 'manifest.csv')))}
+    except Exception: return {}
+
+
+def which_mail(subject):
+    """flow/id uit de manifest op onderwerp (A of B); None als onbekend (bijv. campagne of oude flow)."""
+    n = MC._norm(subject)
+    for k, r in manifest().items():
+        if n and n in (MC._norm(r.get('onderwerp_a')), MC._norm(r.get('onderwerp_b'))): return k
+    return None
+
+
+def amsterdam(iso):
+    try:
+        from datetime import datetime
+        from zoneinfo import ZoneInfo
+        return datetime.fromisoformat(iso.replace('Z', '+00:00')).astimezone(ZoneInfo('Europe/Amsterdam')).strftime('%-d %b %H:%M')
+    except Exception: return iso or '?'
+
+
+def browser_run(jobs):
+    if not jobs: return {}
+    tmp = tempfile.mkdtemp(prefix='qa-mail-'); jf = os.path.join(tmp, 'jobs.json'); rf = os.path.join(tmp, 'res.json')
+    json.dump(jobs, open(jf, 'w'))
+    r = subprocess.run(['node', os.path.join(ROOT, 'scripts', 'qa_mail_shots.js'), jf, rf], capture_output=True, text=True)
+    if r.returncode or not os.path.exists(rf): print('browser faalt: ' + (r.stderr or r.stdout)[-400:]); return {}
+    res = json.load(open(rf)); shutil.rmtree(tmp, ignore_errors=True); return res
+
+
+MAIL_VIEWS = [(375, 'light'), (600, 'light'), (1200, 'light'), (375, 'dark'), (600, 'dark'), (375, 'forced')]
+
+
+def md_report(res, meta):
+    L = ['# Inbox-QA: %s' % meta['title'], '', '- Alias: %s (markt %s)' % (meta.get('alias') or '-', meta.get('market') or '?'),
+         '- Ontvangen: %s · afzender %s' % (meta.get('when') or '-', meta.get('sender') or '-'),
+         '- Gmail: %s' % (meta.get('url') or '-'), '', '| controle | status | details |', '|---|---|---|']
+    for k in MC.CHECKS:
+        if k in res: L.append('| %s | %s | %s |' % (LABEL[k], res[k]['status'], res[k]['detail'].replace('|', '/')))
+    L += ['', '## Links', '', '| tekst | bestemming | via | status |', '|---|---|---|---|']
+    for r in res.get('_links', []):
+        L.append('| %s | %s | %s | %s |' % ((r['text'] or '')[:50].replace('|', '/'), (r['dest'] or r['href'])[:110], r['via'], r['status']))
+    if meta.get('shots'): L += ['', '## Screenshots', ''] + ['- %s' % x for x in meta['shots']]
+    return '\n'.join(L) + '\n'
+
+
+def slack_text(res, meta):
+    c = MC.summary(res)
+    head = ':envelope_with_arrow: *Nieuwe e-mail ontvangen:* %s' % meta['title']
+    L = [head, '%s · %s · %s' % (('lolagroothuis+%s' % meta['alias']) if meta.get('alias') else (meta.get('to') or '?'),
+                                 'markt %s' % (meta.get('market') or '?'), meta.get('when') or '?'),
+         '*%d OK · %d FOUT · %d LET OP*%s' % (c[MC.OK], c[MC.FOUT], c[MC.LETOP], '  <%s|open in Gmail>' % meta['url'] if meta.get('url') else ''), '']
+    for st in (MC.FOUT, MC.LETOP):
+        for k in MC.CHECKS:
+            if k in res and res[k]['status'] == st: L.append('%s *%s*: %s' % (ICON[st], LABEL[k], res[k]['detail'][:260]))
+    oks = [LABEL[k] for k in MC.CHECKS if k in res and res[k]['status'] == MC.OK]
+    if oks: L.append('%s %s' % (ICON[MC.OK], ', '.join(oks)))
+    nv = [LABEL[k] for k in MC.CHECKS if k in res and res[k]['status'] == MC.NVT]
+    if nv: L.append('%s niet van toepassing: %s' % (ICON[MC.NVT], ', '.join(nv)))
+    if meta.get('shots'): L += ['', 'Screenshots (375 licht, 375 dark, 600 licht) als bijlage in de thread; volledig rapport: `%s`' % meta.get('report', '')]
+    return '\n'.join(L).replace('—', ',')
+
+
+def rel(p):
+    p = os.path.abspath(p); return os.path.relpath(p, ROOT) if p.startswith(ROOT + os.sep) else p
+
+
+def cmd_mail(args):
+    o, pos = opts(args)
+    if not pos: sys.exit('gebruik: qa_inbox.py mail <bestand> [--market=..] [--alias=..]')
+    m = MC.load(pos[0])
+    alias = o.get('alias') or MC.alias_of(m['to']); market = o.get('market') or MC.market_of_alias(alias)
+    fm = o.get('flow') or which_mail(m.get('subject') or '')
+    title = '%s "%s"' % (fm or 'onbekende mail (geen v5-onderwerp)', m.get('subject') or '')
+    stamp = (m.get('id') or os.path.basename(pos[0]).rsplit('.', 1)[0])
+    out = o.get('out') or os.path.join(QA, 'inbox', '%s-%s' % ((alias or 'mail'), stamp))
+    os.makedirs(os.path.join(out, 'shots'), exist_ok=True)
+    hp = os.path.join(out, 'mail.html'); open(hp, 'w').write(m['html'])
+    jobs = [] if 'no-browser' in o else [dict(key='%s|%d' % (md, w), html=hp, width=w, mode=md, net='no-net' not in o,
+                                              shot=os.path.join(out, 'shots', '%s-%d.jpg' % (md, w))) for w, md in MAIL_VIEWS]
+    B = browser_run(jobs)
+    res = MC.run_checks(m, market, kind='mail', browser={'jobs': list(B.values()), 'unsubContrast': sum((b.get('unsubContrast', []) for b in B.values()), [])} if B else None,
+                        skip_net='no-net' in o)
+    meta = dict(title=title, alias=alias, market=market, when=amsterdam(m.get('date') or ''), sender=m.get('sender'), url=m.get('url'),
+                to=', '.join(m['to']), shots=sorted(rel(j['shot']) for j in jobs), report=rel(os.path.join(out, 'report.md')))
+    json.dump({'meta': meta, 'result': res}, open(os.path.join(out, 'result.json'), 'w'), indent=1, default=str)
+    open(os.path.join(out, 'report.md'), 'w').write(md_report(res, meta))
+    st = slack_text(res, meta); open(os.path.join(out, 'slack.txt'), 'w').write(st)
+    print(st); print('\nRapport: %s' % rel(out))
+    sys.exit(1 if any(res[k]['status'] == MC.FOUT for k in MC.CHECKS if k in res) else 0)
+
+
+def cmd_slack(args):
+    o, pos = opts(args); d = json.load(open(pos[0])); print(slack_text(d['result'], d['meta']))
+
+
+def cdn_map(flow):
+    mp = {}
+    for f in (os.path.join(Q.V, flow, 'assets', 'klaviyo-urls.txt'), os.path.join(Q.SH, 'klaviyo-urls.txt')):
+        if os.path.exists(f):
+            for line in open(f):
+                parts = line.split()
+                if len(parts) >= 2: mp.setdefault(parts[0], parts[1])
+    return mp
+
+
+def cmd_templates(args):
+    import v5lib
+    sys.path.insert(0, os.path.join(ROOT, 'research', 'tailoring', 'test')); import v5checks as V5C
+    o, pos = opts(args)
+    markets = (o.get('markets') or 'US,UK').split(','); shots = o.get('shots')
+    if shots: os.makedirs(shots, exist_ok=True)
+    ms = Q.mails(); tmp = tempfile.mkdtemp(prefix='qa-inbox-tpl-'); man = manifest()
+    D = {}; jobs = []; cdn_todo = {}
+    for flow, mid, src in ms:
+        key = flow + '/' + mid
+        try: rawp, k = Q.build(flow, src, tmp)
+        except Exception as ex: D[key] = {'err': str(ex)[:200]}; continue
+        sa, sb, pv = I.meta(src); mf = man.get(key, {})
+        base = Q.VARIANTS[flow][0][0].partition('+')[0]
+        bev = {} if base == 'none' else json.load(open(os.path.join(Q.TEST, 'samples', base + '.json')))
+        cm = cdn_map(flow)
+        for mk in markets:
+            ev, person = V5C.market_ctx(v5lib.sig_of(flow), mk, bev)
+            ctx = {'event': ev, 'first_name': 'Sarah', 'person': person, 'organization': {'name': "Siraat's Kitchen", 'full_address': MC.REAL_ADDRESS}}
+            e = D.setdefault(key, {})[mk] = {}
+            try: r = Q.engine().from_string(k).render(ctx)
+            except Exception as ex: e['err'] = 'rendering faalt: %s' % str(ex)[:160]; continue
+            rp = os.path.join(tmp, '%s-%s-%s.html' % (flow, mid, mk)); open(rp, 'w').write(r)
+            e.update(html=rp, raw=k, subject=sa or mf.get('onderwerp_a', ''), preview=pv or mf.get('preview', ''))
+            for w, md in [(375, 'light'), (600, 'light'), (1200, 'light'), (375, 'dark'), (375, 'forced')]:
+                sh = os.path.join(shots, '%s-%s-%s-%s-%d.jpg' % (mk, flow, mid, md, w)) if shots and (w, md) in ((375, 'light'), (600, 'light'), (375, 'forced')) else None
+                jobs.append(dict(key='%s|%s|%s|%d' % (key, mk, md, w), html=rp, width=w, mode=md, net=False, shot=sh))
+        for nm in set(re.findall(r'src="file://[^"]*/([^"/]+)"', k)):
+            cdn_todo[nm] = cm.get(nm)
+        print('%-14s %-22s gebouwd' % (flow, mid), flush=True)
+    print('browser: %d metingen' % len(jobs), flush=True)
+    B = browser_run(jobs)
+    # CDN: staat elk beeld in de Klaviyo-bibliotheek en laadt het?
+    MC.prefetch([u for u in cdn_todo.values() if u], head=True)
+    cdn_bad = {nm: (MC.curl(u, head=True)[0] if u else 'niet in klaviyo-urls.txt') for nm, u in cdn_todo.items()}
+    cdn_bad = {nm: st for nm, st in cdn_bad.items() if st != 200}
+    R = {}
+    for key, per in D.items():
+        for mk, e in per.items() if isinstance(per, dict) and 'err' not in per else []:
+            if 'err' in e: R.setdefault(key, {})[mk] = {'tags': {'status': MC.FOUT, 'detail': e['err']}}; continue
+            html = open(e['html']).read()
+            bj = [B[j] for j in B if j.startswith('%s|%s|' % (key, mk))]
+            m = {'html': html, 'subject': e['subject'], 'preheader': MC.preheader(html) or e['preview'], 'plain': ''}
+            res = MC.run_checks(m, mk, kind='template', raw=e['raw'],
+                                browser={'jobs': bj, 'unsubContrast': sum((b.get('unsubContrast', []) for b in bj), [])})
+            used = set(re.findall(r'src="file://[^"]*/([^"/]+)"', html)); cb = {nm: cdn_bad[nm] for nm in used if nm in cdn_bad}
+            if cb:
+                res['beelden']['status'] = MC.FOUT
+                res['beelden']['detail'] += '; CDN-versie ontbreekt of laadt niet: ' + ', '.join('%s (%s)' % kv for kv in sorted(cb.items())[:5])
+            res.pop('_images', None)
+            res['_links'] = [{k2: v for k2, v in r.items() if k2 in ('text', 'dest', 'status')} for r in res['_links']]
+            R.setdefault(key, {})[mk] = res
+        if isinstance(per, dict) and 'err' in per: R[key] = {mk: {'tags': {'status': MC.FOUT, 'detail': per['err']}} for mk in markets}
+    shutil.rmtree(tmp, ignore_errors=True)
+    od = os.path.join(QA, 'inbox'); os.makedirs(od, exist_ok=True)
+    json.dump(R, open(os.path.join(od, 'templates-data.json'), 'w'), indent=1, default=str)
+    open(os.path.join(od, 'templates-report.md'), 'w').write(tpl_report(R, markets))
+    tot = sum(1 for k in R for mk in R[k] if any(R[k][mk].get(c, {}).get('status') == MC.FOUT for c in MC.CHECKS))
+    print('Templates: %d mails x %d markten, %d renders met FOUT. Rapport: exports/qa/inbox/templates-report.md' % (len(R), len(markets), tot))
+
+
+def tpl_report(R, markets):
+    # systematische punten: dezelfde detailregel in >= 80% van de renders
+    from collections import Counter
+    cnt = Counter(); n = 0
+    for k in R:
+        for mk in R[k]:
+            n += 1
+            for c in MC.CHECKS:
+                x = R[k][mk].get(c)
+                if x and x['status'] in (MC.FOUT, MC.LETOP):
+                    for part in x['detail'].split('; '): cnt[(c, x['status'], part)] += 1
+    common = {key for key, v in cnt.items() if v >= 0.8 * n and n > 2}
+    L = ['# Inbox-QA op alle templates (automatisch)', '', 'Gegenereerd door `python3 -I scripts/qa_inbox.py templates --markets=%s`. '
+         'Controles uit `scripts/mail_checks.py`; renders met Django op het eerste testevent per flow, markt via `v5checks.market_ctx`.' % ','.join(markets), '',
+         '## Systematisch (in vrijwel elke mail)', '']
+    for (c, st, part) in sorted(common): L.append('- %s %s: %s' % (st, LABEL[c], part))
+    L += ['', '## Overzicht', '', '| mail | ' + ' | '.join('%s FOUT / LET OP' % mk for mk in markets) + ' |', '|---|' + '---|' * len(markets)]
+    for k in R:
+        cells = []
+        for mk in markets:
+            x = R[k].get(mk, {})
+            f = [LABEL[c] for c in MC.CHECKS if x.get(c, {}).get('status') == MC.FOUT]
+            w = [LABEL[c] for c in MC.CHECKS if x.get(c, {}).get('status') == MC.LETOP]
+            cells.append('%s / %s' % (', '.join(f) or '-', ', '.join(w) or '-'))
+        L.append('| %s | %s |' % (k, ' | '.join(cells)))
+    L += ['', '## Details per mail (zonder de systematische punten)', '']
+    for k in R:
+        lines = []
+        for mk in markets:
+            x = R[k].get(mk, {})
+            for c in MC.CHECKS:
+                y = x.get(c)
+                if not y or y['status'] not in (MC.FOUT, MC.LETOP): continue
+                parts = [p for p in y['detail'].split('; ') if (c, y['status'], p) not in common]
+                parts = [p for p in parts if not re.match(r'^\d+ (links|beelden)', p)] or ([] if not parts else parts)
+                if parts: lines.append('- %s %s %s: %s' % (mk, y['status'], LABEL[c], '; '.join(parts)[:400]))
+        if lines: L += ['### ' + k, ''] + lines + ['']
+    return '\n'.join(L) + '\n'
+
+
+def dispatch():
+    if len(sys.argv) > 1 and sys.argv[1] in ('mail', 'templates', 'slack'):
+        cmd, args = sys.argv[1], sys.argv[2:]
+        {'mail': cmd_mail, 'templates': cmd_templates, 'slack': cmd_slack}[cmd](args)
+    else:
+        main()
+
+
+if __name__ == '__main__': dispatch()

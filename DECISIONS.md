@@ -54,3 +54,9 @@ Bijwerken bij elk nieuw besluit. Datum per regel.
 - Verzendtekst: buiten de US "Free shipping"; in de US "Free shipping from the US".
 - Gift-waarden per markt in lokale valuta (C$95/620, £55/350, €70/410, A$100/660, NZ$120/820, S$95/590); HK, Midden-Oosten, Noorwegen en rest: "4 free gifts" zonder bedrag.
 - Pro Duo ($199) = Mini + Standard + 2 deksels.
+
+## 8 oktober 2026 (avond, Floris)
+- Landen die in USD betalen zonder land op het profiel (zoals Noorwegen) krijgen de US-versie: akkoord.
+- HI10 op één keer per klant: gedaan in Shopify (appliesOncePerCustomer = true).
+- Claude mag campagnesegmenten via de API maken: "v4 · Welcome-bescherming" aangemaakt (XdK77b). "v4 · Campagne-cap" weigert de API (filter "Flow niet gezet" ongeldig), in de UI zetten.
+- Livegang pas nadat alle testmails ontvangen en bekeken zijn.

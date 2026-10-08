@@ -112,6 +112,8 @@ def add_utm(x):
     camp=re.findall(r'utm_campaign(?:=|%3D)([\w-]+)',x); cont=re.findall(r'utm_content(?:=|%3D)([a-z0-9]+)-',x)
     if not camp or not cont: return x
     camp=max(set(camp),key=camp.count); mid=max(set(cont),key=cont.count)
+    # utm_term (A/B-tak, bv. t02-a/t02-b bij k3 en k3-nocode) ook op header/footer, als de mail er precies één gebruikt (05-links.md)
+    terms=set(re.findall(r'utm_term(?:=|%3D)([\w-]+)',x)); term='&utm_term='+terms.pop() if len(terms)==1 else ''
     ft=re.sub(r'<!--(?![\[<>]).*?-->\n?','',open(os.path.join(P,'footer.html')).read(),flags=re.S).strip()[:80]
     fpos=x.find(ft) if ft else -1
     def fix(m):
@@ -121,7 +123,7 @@ def add_utm(x):
         blk='logo' if not path else re.sub(r'[^a-z0-9]+','-',path.split('/')[-1].lower())
         blk=('ft-' if 0<=fpos<=m.start() else ('' if blk=='logo' else 'nav-'))+blk
         u=url if path else url.rstrip('/')+'/'
-        return '%s%s%sutm_source=klaviyo&utm_medium=email&utm_campaign=%s&utm_content=%s-%s"'%(m.group(1),u,'&' if '?' in u else '?',camp,mid,blk)
+        return '%s%s%sutm_source=klaviyo&utm_medium=email&utm_campaign=%s&utm_content=%s-%s%s"'%(m.group(1),u,'&' if '?' in u else '?',camp,mid,blk,term)
     return re.sub(r'(href=")([^"{}]+)"',fix,x)
 k=add_utm(k)
 # QA-poort 2026-10-07 (qa_render.py): Django-logica in HTML-tekst (tussen <table>/<tr>/<td>) in een HTML-commentaar,
