@@ -266,6 +266,8 @@ def cmd_mail(args):
     jobs = [] if 'no-browser' in o else [dict(key='%s|%d' % (md, w), html=hp, width=w, mode=md, net='no-net' not in o,
                                               shot=os.path.join(out, 'shots', '%s-%d.jpg' % (md, w))) for w, md in MAIL_VIEWS]
     B = browser_run(jobs)
+    for j in jobs:
+        if j['key'] in B: B[j['key']]['shot'] = j['shot']
     res = MC.run_checks(m, market, kind='mail', browser={'jobs': list(B.values()), 'unsubContrast': sum((b.get('unsubContrast', []) for b in B.values()), [])} if B else None,
                         skip_net='no-net' in o)
     meta = dict(title=title, alias=alias, market=market, when=amsterdam(m.get('date') or ''), sender=m.get('sender'), url=m.get('url'),
@@ -295,9 +297,10 @@ def cmd_templates(args):
     import v5lib
     sys.path.insert(0, os.path.join(ROOT, 'research', 'tailoring', 'test')); import v5checks as V5C
     o, pos = opts(args)
-    markets = (o.get('markets') or 'US,UK').split(','); shots = o.get('shots')
-    if shots: os.makedirs(shots, exist_ok=True)
+    markets = (o.get('markets') or 'US,UK').split(',')
     ms = Q.mails(); tmp = tempfile.mkdtemp(prefix='qa-inbox-tpl-'); man = manifest()
+    shots = o.get('shots') or os.path.join(tmp, 'shots')   # zonder --shots: tijdelijk (nodig voor de pixelcontrole in dark mode)
+    os.makedirs(shots, exist_ok=True)
     D = {}; jobs = []; cdn_todo = {}
     for flow, mid, src in ms:
         key = flow + '/' + mid
@@ -316,13 +319,15 @@ def cmd_templates(args):
             rp = os.path.join(tmp, '%s-%s-%s.html' % (flow, mid, mk)); open(rp, 'w').write(r)
             e.update(html=rp, raw=k, subject=sa or mf.get('onderwerp_a', ''), preview=pv or mf.get('preview', ''))
             for w, md in [(375, 'light'), (600, 'light'), (1200, 'light'), (375, 'dark'), (375, 'forced')]:
-                sh = os.path.join(shots, '%s-%s-%s-%s-%d.jpg' % (mk, flow, mid, md, w)) if shots and (w, md) in ((375, 'light'), (600, 'light'), (375, 'forced')) else None
+                sh = os.path.join(shots, '%s-%s-%s-%s-%d.jpg' % (mk, flow, mid, md, w)) if (w, md) in ((375, 'light'), (600, 'light'), (375, 'dark'), (375, 'forced')) else None
                 jobs.append(dict(key='%s|%s|%s|%d' % (key, mk, md, w), html=rp, width=w, mode=md, net=False, shot=sh))
         for nm in set(re.findall(r'src="file://[^"]*/([^"/]+)"', k)):
             cdn_todo[nm] = cm.get(nm)
         print('%-14s %-22s gebouwd' % (flow, mid), flush=True)
     print('browser: %d metingen' % len(jobs), flush=True)
     B = browser_run(jobs)
+    for j in jobs:
+        if j['key'] in B: B[j['key']]['shot'] = j['shot']
     # CDN: staat elk beeld in de Klaviyo-bibliotheek en laadt het?
     MC.prefetch([u for u in cdn_todo.values() if u], head=True)
     cdn_bad = {nm: (MC.curl(u, head=True)[0] if u else 'niet in klaviyo-urls.txt') for nm, u in cdn_todo.items()}
@@ -352,22 +357,28 @@ def cmd_templates(args):
     print('Templates: %d mails x %d markten, %d renders met FOUT. Rapport: exports/qa/inbox/templates-report.md' % (len(R), len(markets), tot))
 
 
+def sysnorm(part):
+    """Detailregel zonder getallen en beeldlijsten, om dezelfde fout in veel mails als één systematisch punt te tellen."""
+    part = re.sub(r'(lichte blokken[^:]*):.*', r'\1', part)
+    return re.sub(r'\d+(?:\.\d+)?', '#', part)
+
+
 def tpl_report(R, markets):
     # systematische punten: dezelfde detailregel in >= 80% van de renders
     from collections import Counter
-    cnt = Counter(); n = 0
+    cnt = Counter(); n = 0; ex = {}
     for k in R:
         for mk in R[k]:
             n += 1
             for c in MC.CHECKS:
                 x = R[k][mk].get(c)
                 if x and x['status'] in (MC.FOUT, MC.LETOP):
-                    for part in x['detail'].split('; '): cnt[(c, x['status'], part)] += 1
-    common = {key for key, v in cnt.items() if v >= 0.8 * n and n > 2}
+                    for part in x['detail'].split('; '): cnt[(c, x['status'], sysnorm(part))] += 1; ex.setdefault((c, x['status'], sysnorm(part)), part)
+    common = {key for key, v in cnt.items() if v >= 0.6 * n and n > 2}
     L = ['# Inbox-QA op alle templates (automatisch)', '', 'Gegenereerd door `python3 -I scripts/qa_inbox.py templates --markets=%s`. '
          'Controles uit `scripts/mail_checks.py`; renders met Django op het eerste testevent per flow, markt via `v5checks.market_ctx`.' % ','.join(markets), '',
          '## Systematisch (in vrijwel elke mail)', '']
-    for (c, st, part) in sorted(common): L.append('- %s %s: %s' % (st, LABEL[c], part))
+    for key in sorted(common): L.append('- %s %s: %s (%d van %d renders)' % (key[1], LABEL[key[0]], ex[key], cnt[key], n))
     L += ['', '## Overzicht', '', '| mail | ' + ' | '.join('%s FOUT / LET OP' % mk for mk in markets) + ' |', '|---|' + '---|' * len(markets)]
     for k in R:
         cells = []
@@ -385,7 +396,7 @@ def tpl_report(R, markets):
             for c in MC.CHECKS:
                 y = x.get(c)
                 if not y or y['status'] not in (MC.FOUT, MC.LETOP): continue
-                parts = [p for p in y['detail'].split('; ') if (c, y['status'], p) not in common]
+                parts = [p for p in y['detail'].split('; ') if (c, y['status'], sysnorm(p)) not in common]
                 parts = [p for p in parts if not re.match(r'^\d+ (links|beelden)', p)] or ([] if not parts else parts)
                 if parts: lines.append('- %s %s %s: %s' % (mk, y['status'], LABEL[c], '; '.join(parts)[:400]))
         if lines: L += ['### ' + k, ''] + lines + ['']

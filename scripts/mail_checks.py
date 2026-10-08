@@ -57,7 +57,7 @@ ANCHOR_RULES = [
     (r'view in (your )?browser|web ?view', r'web-view|^#$|^#webview|klclick', FOUT),
     (r'facebook', r'facebook\.com', FOUT), (r'instagram', r'instagram\.com', FOUT), (r'tiktok', r'tiktok\.com', FOUT),
     (r'trustpilot|leave a review|write a review|rate', r'trustpilot\.com|/pages/your-experience|review', FOUT),
-    (r'return to (my )?cart|my cart|complete (my )?order|checkout|finish (my )?order', r'/cart|/checkouts?\b|checkout|recover', FOUT),
+    (r'return to (my )?cart|my cart|complete (my )?order|check ?out|finish (my )?order', r'/cart|/checkouts?\b|checkout|recover', FOUT),
     (r'accessor', r'/collections/accessor|/products/', LETOP),
     (r'bundles?|\bsets?\b', r'/collections/(bundles|sets)|set|bundle|/collections/', LETOP),
     (r'^(titanium )?cookware|\bpans\b', r'/collections/|/products/', LETOP),
@@ -442,7 +442,8 @@ def market_check(text, market):
                 if mk == 'US' and re.match(r'[ACSNZ]', t[max(0, mm.start() - 2):mm.start()][-1:] or ' '): continue
                 F.append('%s-bedrag in een %s-mail: "%s"' % (mk, market, t[max(0, mm.start() - 25):mm.end() + 8].strip()))
     if market == 'US':
-        for mm in re.finditer(r'\d+\s?cm\b(?!\s*\()', t): W.append('cm in een US-mail: "%s"' % t[max(0, mm.start() - 20):mm.end() + 5].strip())
+        for mm in re.finditer(r'(?<![(\d])(?<!\(\d)(?<!\(\d\d)\d+\s?cm\b(?!\s*\()(?!\))', t):   # "11″ (28 cm)" mag
+            W.append('cm in een US-mail: "%s"' % t[max(0, mm.start() - 20):mm.end() + 5].strip())
         if re.search(r'duties paid', t, re.I): W.append('"duties paid" in een US-mail')
     else:
         if re.search(r'from the US\b', t): F.append('"Free shipping from the US" in een %s-mail' % market)
@@ -514,12 +515,44 @@ def browser_checks(b):
         for c in job.get('cut', [])[:3]: lay.append('%s: %s' % (tag, c))
         for c in job.get('broken', [])[:3]: lay.append('%s: beeld laadt niet %s' % (tag, c))
         if job['mode'] != 'light':
-            for c in job.get('lowContrast', [])[:2]: dm.append('%s: "%s" %.1f:1' % (tag, c['t'][:30], c['ratio']))
+            for c in job.get('lowContrast', [])[:2]: dm.append('%s: tekst met laag contrast "%s" %.1f:1' % (tag, c['t'][:30], c['ratio']))
+        if job['mode'] != 'light' and job.get('shot') and os.path.exists(job['shot']):
+            for issue in shot_dark_issues(job['shot'], job.get('imgRects', [])): dm.append('%s: %s' % (tag, issue))
     lay = sorted(set(lay), key=lay.index); dm = sorted(set(dm), key=dm.index)
     widths = sorted({j['width'] for j in b.get('jobs', [])})
     L = R(FOUT, '; '.join(lay[:6])) if lay else R(OK, 'geen horizontaal scrollen of afgesneden beelden op %s px' % '/'.join(map(str, widths)))
-    D = R(LETOP, 'tekst met laag contrast: ' + '; '.join(dm[:4])) if dm else R(OK, 'leesbaar in prefers-color-scheme dark en geforceerde donkere modus')
+    hard = [x for x in dm if 'logo' in x and 'onzichtbaar' in x]
+    D = R(FOUT if hard else LETOP, '; '.join(dm[:5])) if dm else R(OK, 'leesbaar in prefers-color-scheme dark en geforceerde donkere modus')
     return L, D
+
+
+def _lum(p): return (0.2126 * p[0] + 0.7152 * p[1] + 0.0722 * p[2]) / 255
+
+
+def shot_dark_issues(shot, rects):
+    """Pixelcontrole op een screenshot in donkere modus: is het logo nog te zien, en staan er lichte blokken (beeld met witte
+    achtergrond) op een donkere pagina? Werkt ook voor geforceerde donkere modus, waar de DOM-kleuren niet veranderen."""
+    try:
+        from PIL import Image
+        im = Image.open(shot).convert('RGB')
+    except Exception: return []
+    out = []; blocks = []; W, Hh = im.size
+    for r in rects:
+        x0, y0, x1, y1 = max(0, r['x']), max(0, r['y']), min(W, r['x'] + r['w']), min(Hh, r['y'] + r['h'])
+        if x1 - x0 < 10 or y1 - y0 < 10: continue
+        crop = im.crop((x0, y0, x1, y1)); crop.thumbnail((200, 200)); px = list(crop.getdata()); L = sorted(_lum(p) for p in px)
+        if r['logo']:
+            lo, hi = L[len(L) // 20], L[-len(L) // 20 - 1]
+            cr = (hi + 0.05) / (lo + 0.05)
+            if cr < 3: out.append('logo %s onzichtbaar (contrast %.1f:1 tussen logo en achtergrond)' % (r['name'], cr))
+            continue
+        cw, ch = crop.size
+        edge = [crop.getpixel((i, 0)) for i in range(cw)] + [crop.getpixel((i, ch - 1)) for i in range(cw)] + [crop.getpixel((0, j)) for j in range(ch)] + [crop.getpixel((cw - 1, j)) for j in range(ch)]
+        el = sum(_lum(p) for p in edge) / len(edge)
+        ring = [im.getpixel((max(0, x0 - 6), min(Hh - 1, (y0 + y1) // 2))), im.getpixel((min(W - 1, x1 + 5), min(Hh - 1, (y0 + y1) // 2)))]
+        if el > 0.85 and sum(_lum(p) for p in ring) / 2 < 0.25: blocks.append(r['name'])
+    if blocks: out.append('lichte blokken op donkere achtergrond (beeld met witte rand): %s%s' % (', '.join(blocks[:4]), ' (+%d)' % (len(blocks) - 4) if len(blocks) > 4 else ''))
+    return out
 
 
 def summary(res):

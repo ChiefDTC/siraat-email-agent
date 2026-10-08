@@ -58,8 +58,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg"
    },
    "_links": [
     {
@@ -237,8 +237,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg"
    },
    "_links": [
     {
@@ -418,8 +418,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-set6.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg"
    },
    "_links": [
     {
@@ -607,8 +607,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-set6.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg"
    },
    "_links": [
     {
@@ -798,8 +798,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-set6.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg"
    },
    "_links": [
     {
@@ -992,8 +992,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-set6.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg"
    },
    "_links": [
     {
@@ -1188,8 +1188,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -1342,8 +1342,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -1498,8 +1498,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -1657,8 +1657,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -1818,8 +1818,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -1972,8 +1972,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -2128,8 +2128,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -2287,8 +2287,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -2448,8 +2448,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "LET OP",
-    "detail": "tekst met laag contrast: dark 375 px: \"Preheat on medium for 2 to 3 m\" 2.8:1"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -2602,8 +2602,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "LET OP",
-    "detail": "tekst met laag contrast: dark 375 px: \"Preheat on medium for 2 to 3 m\" 2.8:1"
+    "status": "FOUT",
+    "detail": "dark 375 px: tekst met laag contrast \"Preheat on medium for 2 to 3 m\" 2.8:1; forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg"
    },
    "_links": [
     {
@@ -2758,8 +2758,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -2912,8 +2912,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -3068,8 +3068,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -3222,8 +3222,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -3378,8 +3378,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -3537,8 +3537,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -3698,8 +3698,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -3872,8 +3872,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -4048,8 +4048,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -4202,8 +4202,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -4358,8 +4358,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -4517,8 +4517,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -4678,8 +4678,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "LET OP",
-    "detail": "tekst met laag contrast: dark 375 px: \"Light Labs report no. 25895: 3\" 2.8:1"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -4827,8 +4827,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "LET OP",
-    "detail": "tekst met laag contrast: dark 375 px: \"Light Labs report no. 25895: 3\" 2.8:1"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -4978,8 +4978,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -5127,8 +5127,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -5278,8 +5278,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -5437,8 +5437,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -5598,8 +5598,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: card-panpro-bestseller.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg"
    },
    "_links": [
     {
@@ -5757,8 +5757,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: card-panpro-bestseller.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg"
    },
    "_links": [
     {
@@ -5886,8 +5886,8 @@
     "detail": "14 shoplinks met UTM"
    },
    "linktekst": {
-    "status": "LET OP",
-    "detail": "[LET OP] \"Keep my one pan and check out\" -> /checkouts/sample/recover"
+    "status": "OK",
+    "detail": "ankerteksten passen bij hun bestemming"
    },
    "beelden": {
     "status": "OK",
@@ -5918,8 +5918,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -6045,8 +6045,8 @@
     "detail": "14 shoplinks met UTM"
    },
    "linktekst": {
-    "status": "LET OP",
-    "detail": "[LET OP] \"Keep my one pan and check out\" -> /checkouts/sample/recover"
+    "status": "OK",
+    "detail": "ankerteksten passen bij hun bestemming"
    },
    "beelden": {
     "status": "OK",
@@ -6077,8 +6077,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -6238,8 +6238,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -6387,8 +6387,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -6538,8 +6538,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -6687,8 +6687,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -6838,8 +6838,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -6992,8 +6992,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -7148,8 +7148,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -7302,8 +7302,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -7458,8 +7458,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -7607,8 +7607,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: packshot-1.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -7758,8 +7758,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond)"
    },
    "_links": [
     {
@@ -7912,8 +7912,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond)"
    },
    "_links": [
     {
@@ -8068,8 +8068,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond)"
    },
    "_links": [
     {
@@ -8222,8 +8222,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond)"
    },
    "_links": [
     {
@@ -8378,8 +8378,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg"
    },
    "_links": [
     {
@@ -8557,8 +8557,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg"
    },
    "_links": [
     {
@@ -8738,8 +8738,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg"
    },
    "_links": [
     {
@@ -8922,8 +8922,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg"
    },
    "_links": [
     {
@@ -9108,8 +9108,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg"
    },
    "_links": [
     {
@@ -9287,8 +9287,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg"
    },
    "_links": [
     {
@@ -9468,8 +9468,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg"
    },
    "_links": [
     {
@@ -9652,8 +9652,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg"
    },
    "_links": [
     {
@@ -9838,8 +9838,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg"
    },
    "_links": [
     {
@@ -10017,8 +10017,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg"
    },
    "_links": [
     {
@@ -10198,8 +10198,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg"
    },
    "_links": [
     {
@@ -10382,8 +10382,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg"
    },
    "_links": [
     {
@@ -10568,8 +10568,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg"
    },
    "_links": [
     {
@@ -10747,8 +10747,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg"
    },
    "_links": [
     {
@@ -10928,8 +10928,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg"
    },
    "_links": [
     {
@@ -11112,8 +11112,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg"
    },
    "_links": [
     {
@@ -11298,8 +11298,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg"
    },
    "_links": [
     {
@@ -11477,8 +11477,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg"
    },
    "_links": [
     {
@@ -11658,8 +11658,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg"
    },
    "_links": [
     {
@@ -11842,8 +11842,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg"
    },
    "_links": [
     {
@@ -12008,8 +12008,8 @@
     "detail": "geen ongerenderde tags of placeholders"
    },
    "markt": {
-    "status": "LET OP",
-    "detail": "markt US. cm in een US-mail: \"ELLER Standard 11\u2033 (28 cm) Fiv\"; cm in een US-mail: \"Pan Pro Large, 12\u2033 (30 cm) The\"; cm in een US-mail: \"Pan Pro Small, 10\u2033 (26 cm) Tit\"; cm in een US-mail: \"Pro Standard, 11\u2033 (28 cm) Tit\""
+    "status": "OK",
+    "detail": "markt US"
    },
    "header-footer": {
     "status": "OK",
@@ -12028,8 +12028,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: size-small.jpg; forced 375 px: licht blok op donkere achtergrond: size-standard.jpg; forced 375 px: licht blok op donkere achtergrond: pc-large.jpg"
    },
    "_links": [
     {
@@ -12227,8 +12227,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: size-small.jpg; forced 375 px: licht blok op donkere achtergrond: size-standard.jpg; forced 375 px: licht blok op donkere achtergrond: pc-large.jpg"
    },
    "_links": [
     {
@@ -12428,8 +12428,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: card-panpro-bestseller.jpg; forced 375 px: licht blok op donkere achtergrond: card-set6.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg"
    },
    "_links": [
     {
@@ -12597,8 +12597,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: card-panpro-bestseller.jpg; forced 375 px: licht blok op donkere achtergrond: card-set6.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg"
    },
    "_links": [
     {
@@ -12768,8 +12768,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond)"
    },
    "_links": [
     {
@@ -12922,8 +12922,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond)"
    },
    "_links": [
     {
@@ -13078,8 +13078,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond)"
    },
    "_links": [
     {
@@ -13232,8 +13232,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond)"
    },
    "_links": [
     {
@@ -13388,8 +13388,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond)"
    },
    "_links": [
     {
@@ -13552,8 +13552,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond)"
    },
    "_links": [
     {
@@ -13718,8 +13718,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond)"
    },
    "_links": [
     {
@@ -13867,8 +13867,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond)"
    },
    "_links": [
     {
@@ -14018,8 +14018,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond)"
    },
    "_links": [
     {
@@ -14177,8 +14177,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond)"
    },
    "_links": [
     {
@@ -14338,8 +14338,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-set6.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg"
    },
    "_links": [
     {
@@ -14527,8 +14527,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-set6.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg"
    },
    "_links": [
     {
@@ -14718,8 +14718,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-set6.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg"
    },
    "_links": [
     {
@@ -14912,8 +14912,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-set6.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg"
    },
    "_links": [
     {
@@ -15108,8 +15108,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond)"
    },
    "_links": [
     {
@@ -15247,8 +15247,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond)"
    },
    "_links": [
     {
@@ -15388,8 +15388,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg; forced 375 px: licht blok op donkere achtergrond: gift-filter.jpg"
    },
    "_links": [
     {
@@ -15542,8 +15542,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg; forced 375 px: licht blok op donkere achtergrond: gift-filter.jpg"
    },
    "_links": [
     {
@@ -15698,8 +15698,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "LET OP",
-    "detail": "tekst met laag contrast: dark 375 px: \"Light Labs report no. 25895: 3\" 2.8:1"
+    "status": "FOUT",
+    "detail": "dark 375 px: tekst met laag contrast \"Light Labs report no. 25895: 3\" 2.8:1; forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: compare-cap-panpro.png; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg"
    },
    "_links": [
     {
@@ -15857,8 +15857,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "LET OP",
-    "detail": "tekst met laag contrast: dark 375 px: \"Light Labs report no. 25895: 3\" 2.8:1"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: compare-cap-panpro.png; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg"
    },
    "_links": [
     {
@@ -16018,8 +16018,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "LET OP",
-    "detail": "tekst met laag contrast: dark 375 px: \"Light Labs report no. 25895: 3\" 2.8:1"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: compare-cap-panpro.png; forced 375 px: licht blok op donkere achtergrond: gift-card.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg"
    },
    "_links": [
     {
@@ -16177,8 +16177,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "LET OP",
-    "detail": "tekst met laag contrast: dark 375 px: \"Light Labs report no. 25895: 3\" 2.8:1"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: compare-cap-panpro.png; forced 375 px: licht blok op donkere achtergrond: gift-card.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg"
    },
    "_links": [
     {
@@ -16338,8 +16338,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg; forced 375 px: licht blok op donkere achtergrond: gift-filter.jpg"
    },
    "_links": [
     {
@@ -16482,8 +16482,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg; forced 375 px: licht blok op donkere achtergrond: gift-filter.jpg"
    },
    "_links": [
     {
@@ -16628,8 +16628,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg; forced 375 px: licht blok op donkere achtergrond: gift-filter.jpg"
    },
    "_links": [
     {
@@ -16792,8 +16792,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg; forced 375 px: licht blok op donkere achtergrond: gift-filter.jpg"
    },
    "_links": [
     {
@@ -16939,7 +16939,7 @@
    },
    "markt": {
     "status": "LET OP",
-    "detail": "markt US. \"duties paid\" in een US-mail; cm in een US-mail: \"ELLER Standard 11\u2033 (28 cm) Eve\"; cm in een US-mail: \"Pan Pro Large, 12\u2033 (30 cm) The\"; cm in een US-mail: \"Pan Pro Small, 10\u2033 (26 cm) Tit\""
+    "detail": "markt US. \"duties paid\" in een US-mail; cm in een US-mail: \"\u2605\u2605\u2605\u2605 \u201cPurchased the 30cm Tita\""
    },
    "header-footer": {
     "status": "OK",
@@ -16958,8 +16958,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-small.jpg; forced 375 px: licht blok op donkere achtergrond: pc-standard.jpg; forced 375 px: licht blok op donkere achtergrond: pc-large.jpg"
    },
    "_links": [
     {
@@ -17157,8 +17157,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-small.jpg; forced 375 px: licht blok op donkere achtergrond: pc-standard.jpg; forced 375 px: licht blok op donkere achtergrond: pc-large.jpg"
    },
    "_links": [
     {
@@ -17338,8 +17338,8 @@
     "detail": "geen ongerenderde tags of placeholders"
    },
    "markt": {
-    "status": "LET OP",
-    "detail": "markt US. cm in een US-mail: \"ELLER Standard 11\u2033 (28 cm) Eve\"; cm in een US-mail: \"Pan Pro Large, 12\u2033 (30 cm) The\"; cm in een US-mail: \"Pan Pro Small, 10\u2033 (26 cm) Tit\"; cm in een US-mail: \"Pro Standard, 11\u2033 (28 cm) Tit\""
+    "status": "OK",
+    "detail": "markt US"
    },
    "header-footer": {
     "status": "OK",
@@ -17358,8 +17358,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-small.jpg; forced 375 px: licht blok op donkere achtergrond: pc-standard.jpg; forced 375 px: licht blok op donkere achtergrond: pc-large.jpg"
    },
    "_links": [
     {
@@ -17567,8 +17567,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-small.jpg; forced 375 px: licht blok op donkere achtergrond: pc-standard.jpg; forced 375 px: licht blok op donkere achtergrond: pc-large.jpg"
    },
    "_links": [
     {
@@ -17768,8 +17768,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg; forced 375 px: licht blok op donkere achtergrond: gift-filter.jpg"
    },
    "_links": [
     {
@@ -17917,8 +17917,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg; forced 375 px: licht blok op donkere achtergrond: gift-ebook.jpg; forced 375 px: licht blok op donkere achtergrond: gift-mystery.jpg; forced 375 px: licht blok op donkere achtergrond: gift-filter.jpg"
    },
    "_links": [
     {
@@ -18068,8 +18068,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "LET OP",
-    "detail": "tekst met laag contrast: dark 375 px: \"Light Labs report no. 25895: 3\" 2.8:1"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: compare-cap-panpro.png; forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg"
    },
    "_links": [
     {
@@ -18247,8 +18247,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "LET OP",
-    "detail": "tekst met laag contrast: dark 375 px: \"Light Labs report no. 25895: 3\" 2.8:1"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: compare-cap-panpro.png; forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg"
    },
    "_links": [
     {
@@ -18428,8 +18428,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg"
    },
    "_links": [
     {
@@ -18607,8 +18607,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg"
    },
    "_links": [
     {
@@ -18788,8 +18788,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg"
    },
    "_links": [
     {
@@ -18967,8 +18967,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg; forced 375 px: licht blok op donkere achtergrond: gift-shipping.jpg"
    },
    "_links": [
     {
@@ -19148,8 +19148,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-set6.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg"
    },
    "_links": [
     {
@@ -19337,8 +19337,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-set6.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg"
    },
    "_links": [
     {
@@ -19528,8 +19528,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-set6.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg"
    },
    "_links": [
     {
@@ -19717,8 +19717,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-set6.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg"
    },
    "_links": [
     {
@@ -19908,8 +19908,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-set6.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg"
    },
    "_links": [
     {
@@ -20102,8 +20102,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-set6.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg"
    },
    "_links": [
     {
@@ -20298,8 +20298,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-set6.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg"
    },
    "_links": [
     {
@@ -20492,8 +20492,8 @@
     "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
    },
    "dark-mode": {
-    "status": "OK",
-    "detail": "leesbaar in prefers-color-scheme dark en geforceerde donkere modus"
+    "status": "FOUT",
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: licht blok op donkere achtergrond: pc-lid.jpg; forced 375 px: licht blok op donkere achtergrond: pc-mini.jpg; forced 375 px: licht blok op donkere achtergrond: pc-set6.jpg; forced 375 px: licht blok op donkere achtergrond: pc-board.jpg"
    },
    "_links": [
     {

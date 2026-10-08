@@ -1,3 +1,9 @@
 research/tailoring/test/pylib/
 __pycache__/
 exports/live/sync_owned_ledger.json.gz
+
+# UGC15-kortingscodes: nooit in de (publieke) repo
+research/v6-golive/ugc15-codes.csv
+
+# Testcode testrun: nooit in de (publieke) repo
+research/v6-golive/test-code.md

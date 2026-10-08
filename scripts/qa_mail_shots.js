@@ -40,6 +40,12 @@ const TRACK = /klclick\d?\.com|kmail-lists\.com|klaviyo\.com\/(o|l)\//;
           const vw = window.innerWidth, de = document.documentElement;
           const out = { vw, scrollWidth: Math.max(de.scrollWidth, document.body.scrollWidth), height: Math.max(de.scrollHeight, document.body.scrollHeight), cut: [], broken: [], unsubContrast: [], lowContrast: [] };
           const name = im => (im.getAttribute('src') || '').split('?')[0].split('/').pop().slice(0, 50);
+          out.imgRects = [];   // voor de pixelcontrole op de screenshot (logo zichtbaar, lichte blokken in donkere modus)
+          for (const im of document.images) {
+            const r = im.getBoundingClientRect(); if (r.width < 40 || r.height < 20 || !vis(im)) continue;
+            const src = im.getAttribute('src') || '', alt = (im.getAttribute('alt') || '').trim().toLowerCase();
+            out.imgRects.push({ name: name(im), logo: /logo|lockup/i.test(src) || alt === 'siraat', x: Math.round(r.left + scrollX), y: Math.round(r.top + scrollY), w: Math.round(r.width), h: Math.round(r.height) });
+          }
           for (const im of document.images) {
             const r = im.getBoundingClientRect();
             if (r.width < 3 || r.height < 3 || !vis(im)) continue;
