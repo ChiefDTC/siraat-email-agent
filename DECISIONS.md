@@ -36,3 +36,4 @@ Bijwerken bij elk nieuw besluit. Datum per regel.
 | 2026-10-07 | Compare-at Pan Pro $439 tegenover $134 klopt. | Doorgestreepte prijs mag. |
 | 2026-10-07 | Unieke codes (C4, K3, B2, P3, R2, R2-VIP) akkoord. Elke code maximaal 1 keer per persoon te gebruiken. | Aanmaken als Shopify dynamic coupon in Klaviyo, "one use per customer". |
 | 2026-10-07 | Betalen: Affirm en Shop Pay (incl. Shop Pay Installments in de US) zijn actief (bevestigd door Floris). | Termijnregel mag in US-mails na akkoord op de claim. |
+- 2026-10-08 · HI10 blijft automatisch toegepast in C1 t/m C3 (geen T03 in fase 1, checkout-volume te klein voor drie tests).
