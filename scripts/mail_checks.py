@@ -34,6 +34,8 @@ GMAIL_CLIP_KB = 102
 SENDER_DOMAIN = 'siraatskitchen.com'
 TRACK_HOSTS = re.compile(r'(^|\.)(klclick\d?\.com|klaviyomail\.com|kmail-lists\.com|klaviyo\.com)$')
 SOCIAL = re.compile(r'facebook\.com|instagram\.com|tiktok\.com|trustpilot\.com|youtube\.com')
+# Hosts die de proxy blokkeert en die bewust zonder UTM zijn (e-bookdownload in P1, besluit Floris 8 okt): niet volgen, wel melden als handmatig te controleren
+MANUAL = re.compile(r'(^|\.)delivery\.shopifyapps\.com$')
 REAL_ADDRESS = "2803 Philadelphia Pike Suite B #1567, Claymont, DE 19703"
 
 # Alias -> markt. Plus-adres lolagroothuis+<tag>@gmail.com. Een landcode in de tag wint (+uk-pan, +au, +us-set).
@@ -342,13 +344,14 @@ def run_checks(m, market=None, kind='mail', raw=None, browser=None, skip_net=Fal
         rows.append(row)
     dests = [r['dest'] for r in rows if r['dest'] and r['dest'].startswith('http') and not is_sample(r['dest'])]
     if not skip_net: prefetch([strip_utm(d) for d in dests])
-    bad = []; unknown = []; social = []
+    bad = []; unknown = []; social = []; manual = []
     for r in rows:
         d = r['dest']
         if not d or not d.startswith('http'):
             if r['via'] == 'tracking niet te volgen': unknown.append(r['text'] or r['href'][:60])
             continue
         if is_sample(d): r['status'] = 'voorbeeld'; continue
+        if MANUAL.search(urlparse(d).netloc): r['status'] = 'handmatig'; manual.append('%s (%s)' % (r['text'][:30], urlparse(d).netloc)); continue
         if skip_net: continue
         st, fin, nr, _ = curl(strip_utm(d)); r['status'] = st; r['final'] = fin
         if st == 429: unknown.append('%s (rate limit van de shop, later opnieuw)' % r['text'][:30]); continue
@@ -360,6 +363,7 @@ def run_checks(m, market=None, kind='mail', raw=None, browser=None, skip_net=Fal
     det = '%d links, %d unieke bestemmingen' % (len(rows), len({strip_utm(d) for d in dests}))
     if blocked: det += '; %d Klaviyo-trackinglinks niet te volgen vanuit deze omgeving (egress), bestemming uit de tekstversie' % blocked
     if social: det += '; sociale links niet te openen vanuit deze omgeving: ' + ', '.join(sorted(set(social)))
+    if manual: det += '; handmatig te controleren (proxy): ' + ', '.join(sorted(set(manual)))
     if bad: out['links'] = R(FOUT, det + '. ' + '; '.join(bad[:8]))
     elif unknown: out['links'] = R(LETOP, det + '. Niet gecontroleerd: ' + ', '.join(sorted(set(unknown))[:8]))
     else: out['links'] = R(OK if not skip_net else NVT, det)

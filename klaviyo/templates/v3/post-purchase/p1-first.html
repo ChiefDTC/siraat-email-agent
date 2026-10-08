@@ -32,9 +32,9 @@
 
 <!-- HERO 1:1 met aanbodbalk (make_hero.py --offer) -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/products/e?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1first-hero"><img src="{{IMG}}/p1-first-hero.jpg" width="600" alt="Order confirmed. Good call, here's what's next: your order, 4 gifts and one tip. Your 4 gifts are on the way." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://delivery.shopifyapps.com/-/b3a2da5476fdac80/509b1c473bc15d58"><img src="{{IMG}}/p1-first-hero.jpg" width="600" alt="Order confirmed. Good call, here's what's next: your order, 4 gifts and one tip. Your 4 gifts are on the way." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
-{{BLOCK:cta label="Download your e-book" url="https://siraatskitchen.com/products/e?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1first-cta1" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Included with every order. Questions? Reply and our team will help.</div>"}}
+{{BLOCK:cta label="Download your e-book" url="https://delivery.shopifyapps.com/-/b3a2da5476fdac80/509b1c473bc15d58" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Included with every order. Questions? Reply and our team will help.</div>"}}
 <tr><td class="pad" style="padding:26px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">
   <p style="margin:0;">Hi {{ first_name|default:'there' }}, {% with s=event.Items|join:','|lower %}{% if 'hammer' in s or 'pan' in s or 'pot' in s or 'ookware' in s or 'everything' in s or 'fanne' in s or 'prep bundle' in s %}your order is in. You chose no PFAS and nothing to peel off: a pure titanium cooking surface, no coatings, covered for 75 years. You may be wondering whether it keeps its promises. The first egg will tell you. Here is what happens next.{% else %}your order is confirmed. Thank you for ordering from us. Here is what happens next.{% endif %}{% endwith %}</p>
 </td></tr>
@@ -81,9 +81,9 @@
 <tr><td class="pad" style="padding:0 44px 6px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
     <tr><td width="58" valign="top" style="padding:18px 0 14px 20px;"><img src="{{IMG}}/icon-package.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
-      <td valign="top" style="padding:16px 20px 14px 14px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">We pack and check it</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Checked by hand before it leaves us.</div></td></tr>
+      <td valign="top" style="padding:16px 20px 14px 14px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">When to expect it</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Your order ships within 1 business day. {{IF:US}}Delivery then takes 6 to 10 days.{{ELSE}}Delivery then takes 6 to 10 days in most countries, 8 to 14 to Ireland and Denmark.{{ENDIF}}</div></td></tr>
     <tr><td width="58" valign="top" style="padding:18px 0 14px 20px;"><img src="{{IMG}}/icon-tracking-email.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
-      <td valign="top" style="padding:16px 20px 14px 14px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Tracking link by email</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">It lands in your inbox as soon as your order ships.</div></td></tr>
+      <td valign="top" style="padding:16px 20px 14px 14px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Tracking link by email</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">It lands in your inbox the moment your order ships. The first tracking update can take 24 to 72 hours to show.</div></td></tr>
     <tr><td width="58" valign="top" style="padding:18px 0 14px 20px;"><img src="{{SHARED}}/icon-free-shipping.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
       <td valign="top" style="padding:16px 20px 14px 14px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">{{SHIP}}</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Tracked to your door. Sets and lids can travel in separate parcels.</div></td></tr>
 {% with s=event.Items|join:','|lower %}{% if 'hammer' in s or 'pan' in s or 'pot' in s or 'ookware' in s or 'everything' in s or 'fanne' in s or 'prep bundle' in s %}    <tr><td width="58" valign="top" style="padding:18px 0 14px 20px;"><img src="{{IMG}}/icon-egg.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
@@ -91,7 +91,7 @@
   </table>
 </td></tr>
 {{BLOCK:gifts5 eyebrow="IN YOUR ORDER" headline="Your 4 gifts are on the way" note="The e-book is yours today. The mystery gift travels in the box, and your order is entered for a chance to win {{GIFTS:filterline}}."}}
-{{BLOCK:cta label="Download your e-book" url="https://siraatskitchen.com/products/e?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1first-cta2" pad="22px 44px 4px 44px" sub=""}}
+{{BLOCK:cta label="Download your e-book" url="https://delivery.shopifyapps.com/-/b3a2da5476fdac80/509b1c473bc15d58" pad="22px 44px 4px 44px" sub=""}}
 {{BLOCK:reviews3 set="p1-first"}}
 <!-- SIGN-OFF -->
 <tr><td class="pad" style="padding:24px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">

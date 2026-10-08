@@ -64,3 +64,4 @@ Bijwerken bij elk nieuw besluit. Datum per regel.
 - Mystery Gift = Plastic-Free Dishwasher Sheets (Shopify-product "Mystery Gift" 15785445622100, kloon sinds 22 sep). Trigger van WvRupU wijst nog naar oud product 15675410415956, daarom sinds 21 sep stil.
 - E-guide-download: https://delivery.shopifyapps.com/-/b3a2da5476fdac80/509b1c473bc15d58 (knop in P1).
 - Verwerkingstijd volgens Floris: verzonden binnen 1 werkdag (data 30 dagen: mediaan 77 uur tot fulfillment, nog naast elkaar leggen).
+- Geen eigen Klaviyo-verzendmail: bij fulfillment gaat automatisch een mail met tracking-URL (Floris).

@@ -32,15 +32,15 @@
 
 <!-- HERO 1:1 met aanbodbalk (make_hero.py --offer) -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/products/e?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1rep-hero"><img src="{{IMG}}/p1-repeat-hero.jpg" width="600" alt="Order confirmed. Good to see you again. Same packing, same 4 gifts on the way." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://delivery.shopifyapps.com/-/b3a2da5476fdac80/509b1c473bc15d58"><img src="{{IMG}}/p1-repeat-hero.jpg" width="600" alt="Order confirmed. Good to see you again. Same packing, same 4 gifts on the way." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 <!-- KNOP: nieuwe kok (kookgerei, nog geen kookgerei in bezit) krijgt de care-gids; wie al kookt het e-book -->
 {% with s=event.Items|join:','|lower oc=person|lookup:'siraat_owned_cats' no=person|lookup:'siraat_orders' %}{% if 'hammer' in s or 'pan' in s or 'pot' in s or 'ookware' in s or 'everything' in s or 'fanne' in s or 'prep bundle' in s %}{% if 'pan' not in oc and 'set' not in oc and 'pot' not in oc and not no >= 2 %}
 {{BLOCK:cta label="Read the care guide" url="https://siraatskitchen.com/pages/care-use?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1rep-cta1" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>New shape? Same rules: medium heat, the water test, a little oil.</div>"}}
 {% else %}
-{{BLOCK:cta label="Download your e-book" url="https://siraatskitchen.com/products/e?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1rep-cta1" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Included with every order. Questions? Reply and our team will help.</div>"}}
+{{BLOCK:cta label="Download your e-book" url="https://delivery.shopifyapps.com/-/b3a2da5476fdac80/509b1c473bc15d58" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Included with every order. Questions? Reply and our team will help.</div>"}}
 {% endif %}{% else %}
-{{BLOCK:cta label="Download your e-book" url="https://siraatskitchen.com/products/e?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1rep-cta1b" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Included with every order. Questions? Reply and our team will help.</div>"}}
+{{BLOCK:cta label="Download your e-book" url="https://delivery.shopifyapps.com/-/b3a2da5476fdac80/509b1c473bc15d58" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Included with every order. Questions? Reply and our team will help.</div>"}}
 {% endif %}{% endwith %}
 <tr><td class="pad" style="padding:26px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">
   <p style="margin:0;">Hi {{ first_name|default:'there' }}, thank you for coming back. Your order is in, and you know how this works, so I will keep it short.</p>
@@ -63,7 +63,7 @@
     {% endif %}{% endfor %}
     <tr><td colspan="3" style="padding:0 16px 16px 16px;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:11px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">
-        <img src="{{IMG}}/icon-tracking-email.png" width="20" height="20" alt="" style="display:inline-block;vertical-align:-5px;width:20px;height:20px;">&nbsp; <b>Tracking link by email</b> as soon as it ships.
+        <img src="{{IMG}}/icon-tracking-email.png" width="20" height="20" alt="" style="display:inline-block;vertical-align:-5px;width:20px;height:20px;">&nbsp; <b>When to expect it.</b> Your order ships within 1 business day. {{IF:US}}Delivery then takes 6 to 10 days.{{ELSE}}Delivery then takes 6 to 10 days in most countries, 8 to 14 to Ireland and Denmark.{{ENDIF}} Your tracking link arrives by email the moment it ships.
       </td></tr></table>
     </td></tr>
   </table>
