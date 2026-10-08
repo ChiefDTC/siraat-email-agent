@@ -1,0 +1,262 @@
+{
+ "meta": {
+  "title": "sunset/s1 \"Should we keep writing to you?\"",
+  "mail": "sunset/s1",
+  "subject": "Should we keep writing to you?",
+  "alias": "sunset",
+  "market": "US",
+  "when": "8 okt 21:45",
+  "sender": "send@siraatskitchen.com",
+  "url": "https://mail.google.com/mail/?authuser=lolagroothuis@gmail.com#all/thread-f:1a11d0cdaac7da84",
+  "to": "lolagroothuis+sunset@gmail.com",
+  "shots": [
+   "exports/qa/inbox/sunset-S1/shots/dark-375.jpg",
+   "exports/qa/inbox/sunset-S1/shots/dark-600.jpg",
+   "exports/qa/inbox/sunset-S1/shots/forced-375.jpg",
+   "exports/qa/inbox/sunset-S1/shots/light-1200.jpg",
+   "exports/qa/inbox/sunset-S1/shots/light-375.jpg",
+   "exports/qa/inbox/sunset-S1/shots/light-600.jpg"
+  ],
+  "report": "exports/qa/inbox/sunset-S1/report.md"
+ },
+ "result": {
+  "onderwerp": {
+   "status": "OK",
+   "detail": "\"Should we keep writing to you?\""
+  },
+  "preheader": {
+   "status": "OK",
+   "detail": "\"One tap keeps you on the list. No tap, and we'll stop writing in about a week.\""
+  },
+  "afzender": {
+   "status": "OK",
+   "detail": "send@siraatskitchen.com"
+  },
+  "grootte": {
+   "status": "OK",
+   "detail": "13.9 KB HTML (14.8 KB quoted-printable)"
+  },
+  "links": {
+   "status": "LET OP",
+   "detail": "18 links, 11 unieke bestemmingen; sociale links niet te openen vanuit deze omgeving: Facebook (www.facebook.com), Instagram (www.instagram.com). Niet gecontroleerd: Choose fewer emails (manage.kmail-lists.com), Manage preferences (manage.kmail-lists.com), Unsubscribe (manage.kmail-lists.com), Unsubscribe in one tap (manage.kmail-lists.com), View in browser (manage.kmail-lists.com)"
+  },
+  "utm": {
+   "status": "OK",
+   "detail": "11 shoplinks met UTM"
+  },
+  "linktekst": {
+   "status": "FOUT",
+   "detail": "[FOUT] \"ABOUT\" -> /pages/faq"
+  },
+  "beelden": {
+   "status": "OK",
+   "detail": "5 beelden, 196 KB totaal"
+  },
+  "tags": {
+   "status": "OK",
+   "detail": "geen ongerenderde tags of placeholders"
+  },
+  "markt": {
+   "status": "OK",
+   "detail": "markt US (geen bedrag in eigen valuta gezien)"
+  },
+  "header-footer": {
+   "status": "OK",
+   "detail": "header en footer uit de partials, logo = lockup (2)"
+  },
+  "afmelden": {
+   "status": "FOUT",
+   "detail": "afmeldlink nauwelijks zichtbaar: \"Unsubscribe\" 2.4:1 (rgb(172,59,25) op rgb(40,40,40), light), \"Unsubscribe\" 2.4:1 (rgb(172,59,25) op rgb(40,40,40), light), \"Unsubscribe\" 2.4:1 (rgb(172,59,25) op rgb(40,40,40), dark)"
+  },
+  "em-dash": {
+   "status": "OK",
+   "detail": "geen em dash"
+  },
+  "layout": {
+   "status": "OK",
+   "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
+  },
+  "dark-mode": {
+   "status": "FOUT",
+   "detail": "dark 375 px: tekst met laag contrast \"Unsubscribe\" 2.4:1; dark 375 px: tekst met laag contrast \"View in browser\" 2.4:1; forced 375 px: logo ae4dfc27-1e05-481a-90b6-f6467bc3db78.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond); dark 600 px: tekst met laag contrast \"Unsubscribe\" 2.4:1; dark 600 px: tekst met laag contrast \"View in browser\" 2.4:1"
+  },
+  "_links": [
+   {
+    "href": "https://siraatskitchen.com/?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-sunset&utm_content=s1-logo",
+    "text": "Siraat",
+    "dest": "https://siraatskitchen.com/?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-sunset&utm_content=s1-logo",
+    "status": 200,
+    "via": "direct",
+    "final": "https://siraatskitchen.com/"
+   },
+   {
+    "href": "https://siraatskitchen.com/collections/pans?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-sunset&utm_content=s1-nav-pans",
+    "text": "COOKWARE",
+    "dest": "https://siraatskitchen.com/collections/pans?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-sunset&utm_content=s1-nav-pans",
+    "status": 200,
+    "via": "direct",
+    "final": "https://siraatskitchen.com/collections/pans"
+   },
+   {
+    "href": "https://siraatskitchen.com/collections/bundles?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-sunset&utm_content=s1-nav-bundles",
+    "text": "SETS",
+    "dest": "https://siraatskitchen.com/collections/bundles?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-sunset&utm_content=s1-nav-bundles",
+    "status": 200,
+    "via": "direct",
+    "final": "https://siraatskitchen.com/collections/bundles"
+   },
+   {
+    "href": "https://siraatskitchen.com/pages/faq?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-sunset&utm_content=s1-nav-faq",
+    "text": "ABOUT",
+    "dest": "https://siraatskitchen.com/pages/faq?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-sunset&utm_content=s1-nav-faq",
+    "status": 200,
+    "via": "direct",
+    "final": "https://siraatskitchen.com/pages/faq"
+   },
+   {
+    "href": "https://siraatskitchen.com/?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-sunset&utm_content=s1-hero",
+    "text": "Quick question: still want our emails? One tap keeps you on the list.",
+    "dest": "https://siraatskitchen.com/?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-sunset&utm_content=s1-hero",
+    "status": 200,
+    "via": "direct",
+    "final": "https://siraatskitchen.com/"
+   },
+   {
+    "href": "https://siraatskitchen.com/?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-sunset&utm_content=s1-cta1",
+    "text": "Yes, keep me on the list \u2192",
+    "dest": "https://siraatskitchen.com/?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-sunset&utm_content=s1-cta1",
+    "status": 200,
+    "via": "direct",
+    "final": "https://siraatskitchen.com/"
+   },
+   {
+    "href": "https://manage.kmail-lists.com/subscriptions/update?a=TdtTzz",
+    "text": "Choose fewer emails",
+    "dest": "https://manage.kmail-lists.com/subscriptions/update?a=TdtTzz",
+    "status": 0,
+    "via": "direct",
+    "final": "https://manage.kmail-lists.com/subscriptions/update?a=TdtTzz"
+   },
+   {
+    "href": "https://manage.kmail-lists.com/subscriptions/unsubscribe?a=TdtTzz",
+    "text": "Unsubscribe in one tap",
+    "dest": "https://manage.kmail-lists.com/subscriptions/unsubscribe?a=TdtTzz",
+    "status": 0,
+    "via": "direct",
+    "final": "https://manage.kmail-lists.com/subscriptions/unsubscribe?a=TdtTzz"
+   },
+   {
+    "href": "https://siraatskitchen.com/?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-sunset&utm_content=s1-ft-logo",
+    "text": "Siraat",
+    "dest": "https://siraatskitchen.com/?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-sunset&utm_content=s1-ft-logo",
+    "status": 200,
+    "via": "direct",
+    "final": "https://siraatskitchen.com/"
+   },
+   {
+    "href": "https://siraatskitchen.com/collections/pans?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-sunset&utm_content=s1-ft-pans",
+    "text": "TITANIUM COOKWARE \u2192",
+    "dest": "https://siraatskitchen.com/collections/pans?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-sunset&utm_content=s1-ft-pans",
+    "status": 200,
+    "via": "direct",
+    "final": "https://siraatskitchen.com/collections/pans"
+   },
+   {
+    "href": "https://siraatskitchen.com/collections/bundles?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-sunset&utm_content=s1-ft-bundles",
+    "text": "BUNDLES & SETS \u2192",
+    "dest": "https://siraatskitchen.com/collections/bundles?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-sunset&utm_content=s1-ft-bundles",
+    "status": 200,
+    "via": "direct",
+    "final": "https://siraatskitchen.com/collections/bundles"
+   },
+   {
+    "href": "https://siraatskitchen.com/collections/accessories?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-sunset&utm_content=s1-ft-accessories",
+    "text": "ACCESSORIES \u2192",
+    "dest": "https://siraatskitchen.com/collections/accessories?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-sunset&utm_content=s1-ft-accessories",
+    "status": 200,
+    "via": "direct",
+    "final": "https://siraatskitchen.com/collections/accessories"
+   },
+   {
+    "href": "https://siraatskitchen.com/pages/third-party-testing?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-sunset&utm_content=s1-ft-third-party-testing",
+    "text": "LAB RESULTS \u2192",
+    "dest": "https://siraatskitchen.com/pages/third-party-testing?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-sunset&utm_content=s1-ft-third-party-testing",
+    "status": 200,
+    "via": "direct",
+    "final": "https://siraatskitchen.com/pages/third-party-testing"
+   },
+   {
+    "href": "https://www.facebook.com/siraatskitchen",
+    "text": "Facebook",
+    "dest": "https://www.facebook.com/siraatskitchen",
+    "status": 0,
+    "via": "direct",
+    "final": "https://www.facebook.com/siraatskitchen"
+   },
+   {
+    "href": "https://www.instagram.com/siraatskitchen",
+    "text": "Instagram",
+    "dest": "https://www.instagram.com/siraatskitchen",
+    "status": 0,
+    "via": "direct",
+    "final": "https://www.instagram.com/siraatskitchen"
+   },
+   {
+    "href": "https://manage.kmail-lists.com/subscriptions/unsubscribe?a=TdtTzz",
+    "text": "Unsubscribe",
+    "dest": "https://manage.kmail-lists.com/subscriptions/unsubscribe?a=TdtTzz",
+    "status": 0,
+    "via": "direct",
+    "final": "https://manage.kmail-lists.com/subscriptions/unsubscribe?a=TdtTzz"
+   },
+   {
+    "href": "https://manage.kmail-lists.com/subscriptions/update?a=TdtTzz",
+    "text": "Manage preferences",
+    "dest": "https://manage.kmail-lists.com/subscriptions/update?a=TdtTzz",
+    "status": 0,
+    "via": "direct",
+    "final": "https://manage.kmail-lists.com/subscriptions/update?a=TdtTzz"
+   },
+   {
+    "href": "https://manage.kmail-lists.com/subscriptions/web-view?a=TdtTzz",
+    "text": "View in browser",
+    "dest": "https://manage.kmail-lists.com/subscriptions/web-view?a=TdtTzz",
+    "status": 0,
+    "via": "direct",
+    "final": "https://manage.kmail-lists.com/subscriptions/web-view?a=TdtTzz"
+   }
+  ],
+  "_images": [
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/ae4dfc27-1e05-481a-90b6-f6467bc3db78.png",
+    "alt": "Siraat",
+    "w": 150,
+    "h": null
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/8df8df00-a0ef-40c5-94d1-ce3fcc3f7c08.jpeg",
+    "alt": "Quick question: still want our emails? One tap keeps you on the list.",
+    "w": 600,
+    "h": null
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/7027081c-350d-476e-85b6-25057ebaf65d.png",
+    "alt": "Siraat",
+    "w": 190,
+    "h": null
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/17c00632-f9db-4dcd-a27e-bf0adc4987da.png",
+    "alt": "Facebook",
+    "w": 32,
+    "h": null
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/6b905e47-7bf9-4aec-a63b-0538ecc6bd60.png",
+    "alt": "Instagram",
+    "w": 32,
+    "h": null
+   }
+  ]
+ }
+}

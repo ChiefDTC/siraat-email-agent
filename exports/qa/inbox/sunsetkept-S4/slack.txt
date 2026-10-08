@@ -1,0 +1,11 @@
+:envelope_with_arrow: *Nieuwe e-mail ontvangen:* sunset/s4-kept, lolagroothuis+sunsetkept (US), 8 okt 21:49
+Onderwerp: "The pan we started with" · <https://mail.google.com/mail/?authuser=lolagroothuis@gmail.com#all/thread-f:1a11d1080360533e|open in Gmail>
+*11 OK · 3 FOUT · 1 LET OP*
+
+:x: *Linktekst past bij bestemming*: [FOUT] "ABOUT" -> /pages/faq
+:x: *Afmelden en voorkeuren*: afmeldlink nauwelijks zichtbaar: "Unsubscribe" 2.4:1 (rgb(172,59,25) op rgb(40,40,40), light), "Unsubscribe" 2.4:1 (rgb(172,59,25) op rgb(40,40,40), light), "Unsubscribe" 2.4:1 (rgb(172,59,25) op rgb(40,40,40), dark)
+:x: *Dark mode*: dark 375 px: tekst met laag contrast "Unsubscribe" 2.4:1; dark 375 px: tekst met laag contrast "View in browser" 2.4:1; forced 375 px: logo ae4dfc27-1e05-481a-90b6-f6467bc3db78.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond); dark 600 px: tekst met
+:warning: *Links (status 200)*: 17 links, 11 unieke bestemmingen; sociale links niet te openen vanuit deze omgeving: Facebook (www.facebook.com), Instagram (www.instagram.com). Niet gecontroleerd: Choose fewer emails (manage.kmail-lists.com), Manage preferences (manage.kmail-lists.com), Unsu
+:white_check_mark: Onderwerp, Preheader, Afzender, Grootte (Gmail-clip 102 KB), UTM, Beelden, Ongerenderde tags, Valuta en maat, Header, footer, logo, Em dash, Layout 375/600/1200 px
+
+Screenshots (375 licht, 375 dark, 600 licht) als bijlage in de thread; volledig rapport: `exports/qa/inbox/sunsetkept-S4/report.md`

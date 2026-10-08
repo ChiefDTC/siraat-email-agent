@@ -4,3 +4,7 @@
 1a11d092aaaa7c3a	vip	How's your pan doing?	exports/qa/inbox/vip-R1-PAN
 1a11d0c6ecda7fac	order	When your pan arrives: the first egg	exports/qa/inbox/order-P2-SAFE
 1a11d0dd0368cf7b	vip	When your pan arrives: the first egg	exports/qa/inbox/vip-P2-SAFE
+1a11d0b9d89b122c	sunsetkept	You're staying. Thank you.	exports/qa/inbox/sunsetkept-S3
+1a11d0cdaac7da84	sunset	Should we keep writing to you?	exports/qa/inbox/sunset-S1
+1a11d1080360533e	sunsetkept	The pan we started with	exports/qa/inbox/sunsetkept-S4
+1a11d1142c7831ea	sunset	Last email from me (unless you tap)	exports/qa/inbox/sunset-S2
