@@ -499,35 +499,37 @@ Status: **gebouwd** = HTML en preview klaar, hero lokaal in `assets/`, upload na
 | w4-us | welcome/w4-us.html | Welcome | 6 | US | Start with the Pan Pro (10% off already applied) | Which pan should you start with? | gebouwd, copy-ronde |
 | w4-int | welcome/w4-int.html | Welcome | 6 | INT | Start with the Pan Pro (your 10% inside) | Which pan should you start with? | gebouwd, copy-ronde |
 | w5 | welcome/w5.html | Welcome | 7 | prospect | The last note about your 10% | What 100,000+ happy customers found out (and your 10%) | gebouwd, copy-ronde, B 54 (inkorten) |
-| p1-first | post-purchase/p1-first.html | Post-purchase | 1 | eerste order | Good call. Here's what's coming. | Your order is in, with 4 gifts | gebouwd, copy-ronde, e-book-link (3.21) |
-| p1-repeat | post-purchase/p1-repeat.html | Post-purchase | 1 | herhaalklant | Good to see you again | Round two. Here's what's coming. | gebouwd, copy-ronde |
-| p2 | post-purchase/p2.html | Post-purchase · levering | 1 | kookgerei, geleverd | If you can do an egg, you can do anything | First egg: heat first, then a thin layer of oil | gebouwd, copy-ronde, beeld 1,8 MB (QA A7) |
-| p2-safe | | Post-purchase | 2 | kookgerei, geen levering bekend dag 16 | (When your pan arrives: the first egg) | | te bouwen |
-| p3-set | post-purchase/p3-set.html | Post-purchase | 3K | set of ≥ $300 | The pan your set is missing (10% off) | Two weeks with your set. Your thank-you code inside | gebouwd, copy-ronde, B 51 (inkorten), USD-regel |
-| p3-next | post-purchase/p3-next.html | Post-purchase | 3K/3A | deksel in order, of eigenaar met accessoire | What goes next to your pan | Two weeks in. Your thank-you code inside. | gebouwd, preview 110 (inkorten) |
-| p3-pan | post-purchase/p3-pan.html | Post-purchase | 3K | pan zonder deksel | The one thing your pan is missing (10% off) | Which lid fits your pan? Your thank-you code inside | gebouwd, copy-ronde, B 51 en preview 100 (inkorten), USD-regel |
-| p3-apron | post-purchase/p3-apron.html | Post-purchase | 3A | schort, nooit kookgerei | An apron deserves a pan | Was the apron a gift? | gebouwd, preview 92 (inkorten) |
-| p3-accessory | post-purchase/p3-accessory.html | Post-purchase | 3K/3A | pizza/roasting/pot, of accessoire | Now meet the pan (10% off) | The pan behind 100,000+ happy customers, 10% off | gebouwd, copy-ronde, USD-regel |
-| p3-*-nocode (5) | | Post-purchase | 3 | T02-B / cooldown | | | te bouwen |
-| r1-pan | winback/r1-pan.html | Winback | 1 | pan of eerder kookgerei | New since your last order | Two months with your pan: what is new (+10%) | gebouwd, copy-ronde, USD-regel; "Two months" klopt niet meer bij dag 45 |
-| r1-set | winback/r1-set.html | Winback | 1 | set of ≥ $300 | New since your last order | What your set does not have yet (+10%) | gebouwd, copy-ronde, USD-regel |
-| r1-acc | winback/r1-acc.html | Winback | 1 | nooit kookgerei | Ready for the pan? | Still cooking on a coated pan? | gebouwd, preview 100 (inkorten), "Two months" in preview klopt niet bij dag 45 |
-| r2 | winback/r2.html | Winback | 2 | niet-VIP, code | 10% off your next piece (72 hours) | Your personal code, plus $70 in gifts | gebouwd, copy-ronde, preview 107 (inkorten) |
-| r2-vip | winback/r2-vip.html | Winback | 2 | VIP, code | A thank you: 15% off, just for you | For our regulars: 15% for 72 hours | gebouwd, copy-ronde |
-| r2-nocode, r2-vip-nocode | | Winback | 2 | T02-B / cooldown | | | te bouwen |
+| p1-first | post-purchase/p1-first.html | Post-purchase | 1 | eerste order | Good call. Here's what's coming. | The first egg will tell you | v5 herbouwd 8 okt (V5-STRICT, stap 2) |
+| p1-repeat | post-purchase/p1-repeat.html | Post-purchase | 1 | herhaalklant | Good to see you again | Round two. Here's what's coming. | v5 herbouwd 8 okt (V5-STRICT, stap 2) |
+| p2 | post-purchase/p2.html | Post-purchase · levering | 1 | kookgerei, geleverd | The mistake that makes titanium stick | Can you do an egg? Then anything. | v5 herbouwd 8 okt (V5-STRICT, stap 2) |
+| p2-safe | post-purchase/p2-safe.html | Post-purchase | 2 | kookgerei, geen levering bekend dag 16 | When your pan arrives: the first egg | Is your pan on the stove yet? | v5 herbouwd 8 okt (V5-STRICT, stap 2) |
+| p3-set | post-purchase/p3-set.html | Post-purchase | 3K | set of ≥ $300 | The pan your set is missing | What set owners add next, 10% off | v5 herbouwd 8 okt (V5-STRICT, stap 2) |
+| p3-next | post-purchase/p3-next.html | Post-purchase | 3K/3A | deksel in order, of eigenaar met accessoire | How is the pan treating you? | What goes next to your pan | v5 herbouwd 8 okt (V5-STRICT, stap 2) |
+| p3-pan | post-purchase/p3-pan.html | Post-purchase | 3K | pan zonder deksel | Which lid fits your pan? | Your thank-you 10% ends in 14 days | v5 herbouwd 8 okt (V5-STRICT, stap 2) |
+| p3-apron | post-purchase/p3-apron.html | Post-purchase | 3A | schort, nooit kookgerei | An apron deserves a pan | Was the apron a gift? | v5 herbouwd 8 okt (V5-STRICT, stap 2) |
+| p3-accessory | post-purchase/p3-accessory.html | Post-purchase | 3K/3A | pizza/roasting/pot, of accessoire | Now meet the pan | From the board to the pan | v5 herbouwd 8 okt (V5-STRICT, stap 2) |
+| p3-*-nocode (5) | post-purchase/p3-*-nocode.html | Post-purchase | 3 | T02-B / cooldown | zie bron | zie bron | v5 herbouwd 8 okt (V5-STRICT, stap 2) |
+| r1-pan | winback/r1-pan.html | Winback | 1 | pan of eerder kookgerei | How's your pan doing? | What pan owners add next | v5 herbouwd 8 okt (V5-STRICT, stap 2) |
+| r1-set | winback/r1-set.html | Winback | 1 | set of ≥ $300 | The shapes a set leaves out | Which pan do you reach for most? | v5 herbouwd 8 okt (V5-STRICT, stap 2) |
+| r1-acc | winback/r1-acc.html | Winback | 1 | nooit kookgerei | Ready for the pan? | Still cooking on a coated pan? | v5 herbouwd 8 okt (V5-STRICT, stap 2) |
+| r2 | winback/r2.html | Winback | 2 | niet-VIP, code | Your 10% expires in 72 hours | Ready for pan number two? | v5 herbouwd 8 okt (V5-STRICT, stap 2) |
+| r2-vip | winback/r2-vip.html | Winback | 2 | VIP, code | 15% exclusive discount, 72 hours | You came back. Here's 15%. | v5 herbouwd 8 okt (V5-STRICT, stap 2) |
+| r2-nocode, r2-vip-nocode | winback/r2-nocode.html, winback/r2-vip-nocode.html | Winback | 2 | T02-B / cooldown | Ready for pan number two? / You came back. Thank you. | | v5 herbouwd 8 okt (V5-STRICT, stap 2) |
 | a1 | site/a1.html | Site | 1 | | Not sure which pan? Start here. | The question we get most: which size? | gebouwd |
 | a2 | site/a2.html | Site | 2 | | Where 100,000+ people started | The pan most kitchens start with | gebouwd |
-| s1 | sunset/s1.html | Sunset | 1 | | Should we keep writing to you? | Still want our emails? One tap. | gebouwd (s1 `utm_campaign` gelijktrekken naar v4-sunset) |
-| s2 | sunset/s2.html | Sunset | 2 | | Last email from me (unless you tap) | Should I stop writing? | gebouwd, .klaviyo.html klaar |
-| v1 | vip/v1.html | VIP | 1 | code | Twice is a habit. Here's 15% off. | For our regulars: 15% off your next piece | gebouwd |
-| v1-nocode | | VIP | 1 | cooldown / T02-B | | | te bouwen (HI10-variant) |
-| v2 | vip/v2.html | VIP | 2 | | A question from Benjamin | What should we make next? | gebouwd, .klaviyo.html klaar |
-| n1 | anniversary/n1.html | Anniversary | 1 | | Six months on titanium: a quick check | Half a year with your pan. Three things worth knowing. | gebouwd, B 54 en preview 97 (inkorten) |
-| n2 | anniversary/n2.html | Anniversary | 2 | code | One year ago this week | Happy first year. Here's 10% off. | gebouwd |
-| n2-nocode | | Anniversary | 2 | cooldown / T02-B | | | te bouwen |
-| u1 | ugc/u1.html | UGC | 1 | | Show us your first egg? | Reply with a photo, get 15% off | gebouwd, preview 94 (inkorten) |
+| s1 | sunset/s1.html | Sunset | 1 | | Should we keep writing to you? | Still want our emails? One tap. | v5 herbouwd 8 okt (V5-STRICT, stap 2) |
+| s2 | sunset/s2.html | Sunset | 2 | | Last email from me (unless you tap) | Should I stop writing? | v5 herbouwd 8 okt (V5-STRICT, stap 2) |
+| s3-kept | sunset/s3-kept.html | Sunset · kept | 1 | menselijke klik op S1 of S2 (30 min) | You're staying. Thank you. | Got it, you're still on the list | v5 herbouwd 8 okt (V5-STRICT, stap 2); nieuwe flow v4 · Sunset · kept (research/v5/06-sunset-kept.md, flowsectie 6) |
+| s4-kept | sunset/s4-kept.html | Sunset · kept | 2 | dag 4, 09:00, geen order | The pan we started with | December 20, 2024 | v5 herbouwd 8 okt (V5-STRICT, stap 2); geen korting |
+| v1 | vip/v1.html | VIP | 1 | code | You're a VIP. Here's 15% off. | 15% off, exclusive to VIPs | v5 herbouwd 8 okt (V5-STRICT, stap 2) |
+| v1-nocode | vip/v1-nocode.html | VIP | 1 | T02-B (besluit 8 okt: VIP krijgt 15% ook na een ongebruikte code; cooldown niet meer hierheen) | You're a VIP. Thank you. | For our VIPs: a note from Benjamin | v5 herbouwd 8 okt (V5-STRICT, stap 2) |
+| v2 | vip/v2.html | VIP | 2 | | A question from Benjamin | What should we make next? | v5 herbouwd 8 okt (V5-STRICT, stap 2) |
+| n1 | anniversary/n1.html | Anniversary | 1 | | Six months in. Anything worn off? | How's your pan at six months? | v5 herbouwd 8 okt (V5-STRICT, stap 2) |
+| n2 | anniversary/n2.html | Anniversary | 2 | code | One year in. Here's 15% off. | A year on titanium. 74 to go. | v5 herbouwd 8 okt (V5-STRICT, stap 2); coupon SK_ANNIV15_7D (15%) in plaats van SK_ANNIV10_7D |
+| n2-nocode | anniversary/n2-nocode.html | Anniversary | 2 | cooldown / T02-B | One year ago this week | A year on titanium. 74 to go. | v5 herbouwd 8 okt (V5-STRICT, stap 2) |
+| u1 | ugc/u1.html | UGC | 1 | | Show us your first egg? | One photo, 15% off your next order | v5 herbouwd 8 okt (V5-STRICT, stap 2) |
 
-Totaal: 47 gebouwde mails (31 v3, 7 tailoring, 9 nieuwe flows), 14 te bouwen varianten (p2-safe, 12 `-nocode`, v1-nocode) plus 9 `-nohi10` voor fase 2. Onderwerp B wordt alleen gebruikt waar een onderwerptest loopt (W1 via T05b in fase 2, B1 via T05a); elders A.
+Totaal: 47 gebouwde mails (31 v3, 7 tailoring, 9 nieuwe flows) plus s3-kept en s4-kept (v5, 8 okt: vervolgflow v4 · Sunset · kept), 14 te bouwen varianten (p2-safe, 12 `-nocode`, v1-nocode) plus 9 `-nohi10` voor fase 2. Onderwerp B wordt alleen gebruikt waar een onderwerptest loopt (W1 via T05b in fase 2, B1 via T05a); elders A.
 
 ### Bouwnotitie 2.1 (7 okt 2026, Klaviyo-flow Y6yj2z, Draft)
 
