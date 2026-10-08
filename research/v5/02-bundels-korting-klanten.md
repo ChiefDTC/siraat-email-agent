@@ -6,11 +6,11 @@ Bronnen: `DECISIONS.md`, `research/v5/00-feedback-floris.md`, `klaviyo/flows/v4-
 
 ## Kort (voor Floris)
 
-1. **Brekend, vandaag:** de BDAY-listing van de 6-delige set (`...-6-pcs-bday-sale`, $349) staat sinds vanochtend op DRAFT en geeft een **404**. Acht templates linken ernaar en noemen $349: C3-P, W4-US, W4-INT, A2, R2, R2-nocode, R2-VIP (+nocode), N2 (+nocode). De fall sale zit op de hoofdlisting `titanium-hammered-pan-set-with-lids-6-pcs`: **$299, compare-at $598** (GBP 249, EUR 279, AUD 449, CAD 449, SGD 409, NZD 549, HKD 2.382). Fix: link naar de hoofdlisting, $349 wordt $299, rekensom opnieuw (sectie 1.3). Ook DECISIONS-regel "6-delige set = $349" bijwerken.
+1. **Brekend, vandaag:** de BDAY-listing van de 6-delige set (`...-6-pcs-bday-sale`, $349) staat sinds vanochtend op DRAFT en geeft een **404**. Tien templates linken ernaar en noemen $349: C3-P, W4-US, W4-INT, A2, R2, R2-nocode, R2-VIP (+nocode), N2 (+nocode). De fall sale zit op de hoofdlisting `titanium-hammered-pan-set-with-lids-6-pcs`: **$299, compare-at $598** (GBP 249, EUR 279, AUD 449, CAD 449, SGD 409, NZD 549, HKD 2.382). Fix: link naar de hoofdlisting, $349 wordt $299, rekensom opnieuw (sectie 1.3). Ook DECISIONS-regel "6-delige set = $349" bijwerken.
 2. **Bundels routen op product, niet op $value.** Nu krijgt alles in `SET_TITELS` of met $value ≥ $300 dezelfde C3-S ("a lid for every pan, all three"). Dat klopt alleen voor de 6-delige set. Voorstel: één C3-S-template met een bundelblok per bundel (inhoud, rekensom, volgende stap) via `event.Items`, plus een routeringsfix: starterbundels (Duo, Kit, 2+2) en losse pannen tussen $250 en $300 naar C3-P (upgrade naar de $299-set). Nu krijgt een cart van Small + Large los ($286) géén C3.
-3. **Kortingstiming:** [CIJFERS, sectie 2]. Advies cart: geen 10% in K1. K1 = cart + 4 gifts die verlopen + garantie; K2 (dag 1) bewijs en rekensom; 10% pas in K3 (dag 3, eigen code, 48 uur). Checkout volgt het besluit (HI10 in C1-C3), maar met gifts vooraan en HI10 als tweede regel.
+3. **Kortingstiming:** van de echte verlaters koopt 8,0% (checkout) en 4,5% (cart) binnen 72 uur, 69-76% daarvan al binnen 24 uur; **64-70% van die terugkomers gebruikt al een 10%-code** (vooral oude publieke codes). HI10 kostte 12 maanden $44.704 (Shopify), maar 84% daarvan in de eerste sessie, niet in verlatersflows. 10% in K1 kost ≈ $16k per jaar aan wie toch kocht, zonder enige historische meting dat het iets oplevert. Advies cart: geen 10% in K1. K1 = cart + 4 gifts die verlopen + garantie; K2 (dag 1) bewijs en rekensom; 10% pas in K3 (dag 3, eigen code, 48 uur). Checkout volgt het besluit (HI10 in C1-C3), maar met gifts vooraan en HI10 als tweede regel.
 4. **Bestaande klanten:** de template ziet alleen het trigger-event. Wat iemand eerder kocht kan alleen via (a) flowsplits/verzendfilters op Placed Order of **Ordered Product (XT7f8Z, met `Variant Name` = dekselmaat)** over all time, of (b) een profielveld (`siraat_owned`) dat een nachtelijke API-job vult (de flow-actie "Update profile property" kan niet via de API, wel in de UI). Ontwerp per geval in sectie 3.
-5. **Logica-check:** 31 fixes, waarvan 6 hoog (404-links, P3-SET biedt wok/crêpe aan wie ze al heeft, R2/N2 bieden de set of pan aan die net gekocht is, gift-waarden in USD aan INT, W0 "first egg" aan klanten van een jaar geleden, N1 care-video op dag 182). Sectie 4.
+5. **Logica-check:** 35 punten, waarvan 10 hoog: 404-links en $349 in 10 templates, C3-S één tekst voor alle sets, P3-SET biedt wok/crêpe aan wie ze al heeft, R2/N2 bieden de set of pan aan die net gekocht is, gift-waarden in USD aan internationale klanten (gifts-blok heeft geen landcheck), US-only producten in browse aan INT. Daarnaast o.a. W0 "first egg" aan klanten van lang geleden en N1 care-video op dag 182. Sectie 4.
 
 ---
 
@@ -137,13 +137,74 @@ Keten (volgorde telt, specifiek eerst; substrings die in alle kopieën van een t
 {% endwith %}
 ```
 
-Fallbacks: (1) geen match → algemeen blok; (2) twee bundels in één cart → de eerste in de keten wint (zelden: 0 van de bundels-orders in de steekproef had twee grote sets); (3) nieuwe bundel in Shopify → valt in de fallback tot de keten is bijgewerkt. Daarom: **bij elke nieuwe bundel in Shopify de titel toevoegen aan `content/facts/shopify-titles.csv`, de groepen in build_flows.py en deze keten** (checklist-regel in PLAYBOOK voorstellen). Vooraf testen met de bestaande Django-run (`research/tailoring/test/matrix.py`) met een sample per bundeltitel.
+Fallbacks: (1) geen match → algemeen blok; (2) twee bundels in één cart → de eerste in de keten wint; (3) nieuwe bundel in Shopify → valt in de fallback tot de keten is bijgewerkt. Daarom: **bij elke nieuwe bundel in Shopify de titel toevoegen aan `content/facts/shopify-titles.csv`, de groepen in build_flows.py en deze keten** (checklist-regel in PLAYBOOK voorstellen). Vooraf testen met de bestaande Django-run (`research/tailoring/test/matrix.py`) met een sample per bundeltitel.
 
 ---
 
 ## 2. Kortingstiming
 
-[WORDT INGEVULD]
+### 2.1 Data (Klaviyo-events, 12 maanden, eigen berekening)
+
+Methode zoals `research/timing/01-data.md`: episode = trigger zonder dezelfde trigger in de 7 dagen ervoor; **verlater** = geen order binnen 30 minuten (het moment van C1/K1); herstel = eerste Placed Order van hetzelfde profiel daarna. Cart-verlaters zonder Checkout Started binnen 30 minuten (die gaan naar de checkoutflow). Cohort 8 okt 2025 t/m 30 sep 2026. Script en uitvoer: scratchpad (`an.py`), niet in de repo (profiel-ID's).
+
+Belangrijk: de oude flows mailden in deze periode (mail 1 zonder code na 10-30 minuten; cart mail 2 met 10% op dag 2, checkout zonder code behalve één A/B-arm). Het is dus "natuurlijk plus oude mails", niet "zonder mail".
+
+| | Checkout-verlaters | Cart-verlaters (geen checkout) |
+| --- | --- | --- |
+| n episodes | 27.810 (4,6% eerder klant) | 63.038 (6,1% eerder klant) |
+| koopt binnen 24 uur | 1.688 (6,1%) | 1.956 (3,1%) |
+| binnen 48 uur | 2.019 (7,3%) | 2.467 (3,9%) |
+| binnen 72 uur | 2.230 (8,0%) | 2.829 (4,5%) |
+| binnen 7 dagen | 2.730 (9,8%) | 3.616 (5,7%) |
+| aandeel van de 72-uurskopers dat binnen 24 uur koopt | 76% | 69% |
+| **met een kortingscode** (72 uur) | **64%** | **70%** |
+| daarvan HI10 | 157 (7%) | 162 (6%) |
+| **zonder code, binnen 24 / 48 / 72 uur** | 609 / 723 / 792 (2,2% / 2,6% / 2,8% van de verlaters) | 585 / 732 / 840 (0,9% / 1,2% / 1,3%) |
+| AOV (72 uur) | $237 | $257 |
+| eerder-kopers: herstel 72 uur | 17,7% | 11,3% |
+
+Top-codes bij herstelde orders: BFEXTRA10, MOTHER10, HI10, PRIMETIME10, NYEXTRA10, COOKCLEAN10, VALENTINE10, THEGRUMPYCHEF, SIRAAT25. Twee derde van de verlaters die terugkomen gebruikt **al een 10%-code**, meestal een oude campagnecode die nog werkt (besluit 3.22 "lekkende codes").
+
+**HI10, 12 maanden** (Shopify ShopifyQL: 1.602 orders, $423.348 bruto, **$44.704 korting**; Klaviyo-events: 1.613 orders, $39.502). Waar HI10 gebruikt wordt, tegenover de eerste Checkout Started van die sessie:
+
+| Moment | Orders | Korting (Klaviyo) |
+| --- | --- | --- |
+| binnen 30 min na de eerste checkout (in de sessie, vóór enige verlatersmail) | 1.350 (84%), waarvan 80 herhaalklant | $33.077 |
+| 30 min tot 72 uur (verlater die terugkomt) | 209 (13%), waarvan 56 herhaalklant | $5.158 |
+| later | 54 (3%) | $1.267 |
+
+Lezing: HI10 is vooral de welkomstcode die mensen al hebben als ze afrekenen (popup/W1). In verlatersflows kost hij weinig, omdat de meeste terugkomers toch al een 10%-code invullen. Alle kortingen samen: $1,48 mln op 90.486 orders (8,1% van de omzet); HI10 is daarvan 3%.
+
+**Kosten van 10% in de eerste mail (bovengrens):** iedereen die zonder code binnen het venster kocht, krijgt nu 10%. Checkout (C1-C3, besloten): 792 orders x $237 x 10% = **≈ $18.800 per jaar**. Cart (K1-K2): 840 x $257 x 10% = **≈ $21.600 per jaar**, waarvan $15.700 in de eerste 24 uur (K1-venster). Breakeven bij 60% brutomarge: ≈ 110 extra cart-orders per jaar (+4% op de 2.829 herstelde orders). Dat is een lage lat, maar niemand heeft ooit gemeten dat een vroege code die haalt.
+
+**Historische flows met en zonder vroege code:**
+
+| Vergelijking | Zonder code | Met code | Bron |
+| --- | --- | --- | --- |
+| Cart mail 1 (15/30 min, geen code) tegen cart mail 2 (dag 2, kale 10%) | $2,43-2,66 per ontvanger, 0,92-0,97% conversie | $0,63, 0,31% | flow-messages-all.csv (SwkMyn) |
+| Cart mail 2 (kale 10%) tegen mail 3 (zelfde 10% met deadline 48 uur) | | $0,63 tegen $0,88-1,05 | idem: een deadline doet meer dan de korting zelf |
+| Checkout 16 jul t/m 6 okt 2026, gelijktijdige armen Y2TmNB: arm zonder code (4 mails) tegen arm met 10% in mail 3 en 5 | mails 2-4: 23 conversies, $4.754 op 2.138 instromers ($2,22) | mails 2-5: 28 conversies, $6.073 op 2.183 instromers ($2,78) | flow-values-report, eigen run; verschil niet significant (±10 conversies ruis) |
+| Checkout HKT (2024-25): mail 1 zonder code tegen mail 2 met 10% | $4,54 | $4,28 | kleine n |
+| Elke checkout-1, cart-1 en browse-1 in de geschiedenis | geen code; de best verdienende flowmails ooit | (nooit getest) | history §3 |
+
+Er is dus geen enkele historische meting van een code in mail 1 van checkout, cart of browse. Wel: gift- en deadline-framing wint op dezelfde positie van een kale korting.
+
+### 2.2 Advies per flow
+
+Regels: (1) de eerste mail verkoopt de cart, de gifts en de zekerheid (30-day returns, 75-year warranty), geen korting; (2) bewijs (Light Labs 25895, reviews op kwaliteit, levering en service) in de tweede; (3) de korting komt één keer, met een echte deadline, in de laatste mail; (4) uitzondering waar de eigenaar besliste.
+
+| Flow | Mail 1 | Mail 2 | Mail 3+ | Eerste korting | Waarom |
+| --- | --- | --- | --- | --- | --- |
+| **Checkout** (besluit: HI10 automatisch in C1-C3) | C1: cart + "4 gifts on hold" bovenaan, garantie en retour; HI10 als tweede regel onder de knop, niet in het onderwerp | C2 (dag 1): Light Labs-bewijs + review-mix; HI10 auto | C3 (dag 3): bundelblok/upgrade (sectie 1); C4 (dag 5): eigen code 48 uur, "your 10% expires" | C1 (besluit) | Respecteert het besluit. Het besluit kost ≈ $19k per jaar aan wie toch al kocht; omdat 64% al een code heeft is het effect klein. Wel: C4's eigen code voegt niets toe voor wie HI10 al heeft (beide 10%, HI10 vervalt nooit): C4 moet iets anders bieden dan nog eens 10% (gift-deadline, of 15% in fase 3: T10). |
+| **Cart** | K1 (30 min): "Your cart and 4 gifts are saved", eenvoudig voordeel (hammered pattern, one wipe), garantie, retour. **Geen HI10** | K2 (dag 1): rekensom of bundelblok, review-mix, eigenaar-variant. **Geen HI10** | K3 (dag 3): eigen code 10%, 48 uur, echte deadline | **K3, dag 3** | 69% van de cart-herstelorders valt in de eerste 24 uur; 30% daarvan betaalt nu de volle prijs. Een code in K1 geeft die weg zonder bewezen extra kopers, haalt de deadline van K3 onderuit (HI10 werkt altijd) en maakt T02 in cart onmeetbaar: "eigen code tegen geen code" in K3 zegt niets als iedereen in K1 al 10% kreeg. Historisch was cart 1 zonder code de beste cart-mail; de kale 10% de zwakste. |
+| **Browse** | B1 (1 uur): verhaal (het eerste hammered pan, 20 dec 2024), bewijs, product; **geen code** | B2-clicked (dag 2): eigen code 48 uur · B2-notclicked: geen code, ander verhaal ("why food sticks") | | B2-clicked | Laagste intentie, hoogste uitschrijving (1,42%); 10% aan iedereen die een pagina bekeek verspilt het meest. Wie klikte toont intentie: daar de code. |
+| **Welcome** | W1: HI10 (dat is de belofte van de inschrijving; blijft) | W2-W4: HI10 als herinnering, niet als hoofdboodschap; W3 bewijs | W5: "last note about your 10%" | W1 | De code is hier het aanbod zelf. 84% van het HI10-gebruik is in de eerste sessie. Geen extra korting bovenop. |
+| **Site abandonment** | A1: maatkeuze, geen code | A2: bestsellers + HI10 | | A2 | Zelfde logica als browse. |
+| **Winback / VIP / anniversary** | R1: geen code (nieuw product of volgende stap) | R2: eigen code 72 uur (10%, VIP 15%) | | R2 / V1 / N2 | Ongewijzigd; N2 naar 15% (Floris). |
+
+**Cart: voorstel aan Floris.** Optie A (advies): K1 en K2 zonder HI10 vanaf livegang; vraagt `-nohi10`-varianten van k1, k1-acc, k2-new, k2-returning (4 templates, codebalk en onderwerp B eruit). Optie B: als test: in cart T02 vervangen door T03 (K1/K2 met of zonder HI10, 50/50). Cart heeft ≈ 1.240 verlaters per week, twee keer zoveel als checkout; T02 in cart is met HI10 in K1 toch niet zinvol. Beslisregel: HI10 blijft alleen als de cohortconversie (7 dagen) aantoonbaar >= 4% hoger is.
+
+**Altijd, los van timing:** de lekkende publieke codes (BFEXTRA10 7.706 orders, MOTHER10, NYEXTRA10, ...) dichtzetten. Zolang twee derde van de terugkomers zelf een 10%-code vindt, meet geen enkele kortingstest iets en verliest elke deadline zijn kracht.
 
 ---
 
@@ -204,7 +265,7 @@ Ernst: **H** = fout of kapot, vóór livegang fixen · **M** = onlogisch, fixen 
 | 16 | K3 | Floris wil "we're removing your cart and discount"-urgentie | Alleen waar: de **code** vervalt na 48 uur (echt); de cart wordt niet verwijderd door Shopify (blijft tot de browser hem wist). Zin: "Your code expires Friday 9:00. After that, the cart stays, the 10% doesn't." | M |
 | 17 | K-mails | Cart-links naar PDP, niet naar de cart | Blijft (open punt productmatrix 3) | L |
 | 18 | B1 | HI10 vanaf mail 1 en "get 10% off this pan"-knop; Floris vraagt juist meer verhaal | Zie sectie 2: B1 zonder korting, verhaal + bewijs; 10% in B2 | M |
-| 19 | B1, B2-notclicked, B2-clicked-nocode | Roasting pan en 12-delig in de productrijen zonder landcheck? (grep: 6 vermeldingen "roasting", 3 "12-p" zonder `country`-conditie in het bestand) | Elke verwijzing naar 12-delig, potten, roasting en 34-delig binnen `{% if US %}`; Viewed Product heeft geen land, dus `person.Country`-regel uit C4 gebruiken | H |
+| 19 | B1, B2-notclicked, B2-clicked | Wie buiten de US de 12-delige set, de roasting pan, een pot of de 34-delige bundel bekeek, krijgt "Get 10% off this set/roasting pan" voor een product dat in zijn land niet te koop is (Viewed Product heeft geen land) | In de keten bij US-only producten `{% if person.Country == 'United States' or person.Country == 'US' %}` (regel uit C4); anders het alternatief tonen (12-delig → 6-delige set $299; roasting/pot → Deep Pan Pro) | H |
 | 20 | W0 | "Thank you. Now the first egg." aan iedereen die ooit kocht | Split op order in laatste 30 dagen (3.2 #6) | M |
 | 21 | W1-W5 | Bestaande klanten komen er niet in (W0-tak), maar wie tijdens de flow een cart-mail kreeg mist een W-mail (overslaan) en krijgt daarna W5 "last note about your 10%" zonder W1 gezien te hebben | Acceptabel; W5 opent met de code zelf | L |
 | 22 | W4-INT | 12-delig wordt in INT niet getoond (goed), maar de set-tegel linkt naar de 404 | zie 2 | H |
