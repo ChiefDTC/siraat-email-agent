@@ -7,3 +7,5 @@ p-panpro.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/590e1271-5dad-47a
 size-small.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/7e271ed6-a0b6-4032-9e8b-6f35c2754bf0.jpeg
 size-standard.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/56e4a1c5-5eba-45b8-bc83-b0792e9c44c1.jpeg
 a2-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/18f6a8d6-fc8a-4a69-be41-3352a14d2904.jpeg
+a1-hero-v5.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/25598ae1-f85a-4976-86cf-320880f4c049.jpeg
+a2-hero-v5.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/0b95dd4b-9e78-497f-a20c-819f109e5621.jpeg

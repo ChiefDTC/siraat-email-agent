@@ -19,3 +19,15 @@ c1-hero-pizza.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/1e38ac40-a7b
 c1-hero-pot.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/0a4be16b-e590-42ef-b804-ea4f6db54190.jpeg
 c1-hero-set.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/e418dc0b-f998-4cde-bce9-571e7765ea7b.jpeg
 c2-hero-pfas.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/cd135b8a-15c1-4fef-ae54-021134c8b733.jpeg
+c1-hero-apron-v5.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/0deb3eed-49f7-4a06-b006-27bae9acf124.jpeg
+c1-hero-pizza-v5.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/6f2e6cf1-5154-479c-967f-54eda0dfbeca.jpeg
+c1-hero-pot-v5.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/5186c204-dbc0-47d7-8e89-90759bca0d03.jpeg
+c1-hero-set-v5.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/64cc3aba-e405-4931-b7dd-2dc4215eea1d.jpeg
+c1-hero-v5.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/1d359772-2180-45ea-a1f8-1d735e733967.jpeg
+c2acc-hero-v5.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/e4120872-5b39-4fb7-836c-20ba1300b659.jpeg
+c2-hero-v5.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/f4475358-8399-4e71-b945-2d9ee077cbac.jpeg
+c3acc-hero-v5.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/f2215040-bd92-4ead-a881-43be3a149a8f.jpeg
+c3p-hero-v5.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/86855f21-2a68-400e-b5a8-dacd5ce66583.jpeg
+c3s-hero-v5.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/e24291cc-6352-44bd-aefa-0ee0e8669838.jpeg
+c4-nocode-hero-v5.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/0d02057b-d06f-4602-aade-37a3dea38950.jpeg
+c4-hero-v5.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/da338b14-cca6-4162-91a6-d4ba8691e4ce.jpeg

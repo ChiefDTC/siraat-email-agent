@@ -24,3 +24,7 @@ p3-next-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/416afee0-587a
 p3-pan-nocode-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/01d4a19a-29b7-4db1-9390-7d5e67667ed1.jpeg
 p3-pan-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/79f15939-4afa-48af-a0d1-40b8a26563f5.jpeg
 card-crepe.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/862ea15a-6f17-4c7d-8ea0-6aa197ed6187.jpeg
+p1-repeat-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/2dc9461d-5bac-4bad-b2e6-c79b96c14cd9.jpeg
+p2-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/15d8e6f9-779f-4447-991c-5e296d479f45.jpeg
+p3-set-nocode-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/4adda53c-5b6b-43b8-a565-2ae61a874f5f.jpeg
+p3-set-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/9f9c179b-3a90-4c9e-a2fe-66b46ac2188c.jpeg

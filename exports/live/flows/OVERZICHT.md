@@ -1,6 +1,6 @@
 # v4-flows · overzicht voor controle
 
-Gegenereerd door `scripts/build_flows.py` op 2026-10-08 15:42 (dry-run). Modus: W4 `split`, A/B `action`, T02 op V1/N2 `uit`. De JSON per flow staat ernaast (`<slug>.json`).
+Gegenereerd door `scripts/build_flows.py` op 2026-10-08 15:54 (dry-run). Modus: W4 `split`, A/B `action`, T02 op V1/N2 `uit`. De JSON per flow staat ernaast (`<slug>.json`).
 
 Leeswijzer: ⏱ wachttijd · ◆ split (JA/NEE) · 🔀 A/B-actie · ✉ mail (berichtnaam · template-ID · onderwerp). "standaard" = de verzendfilter die op elke mail van die flow staat (zie kop). Takken komen nooit samen: waar het plan een gedeeld vervolg heeft, staat het vervolg per tak apart.
 
@@ -19,7 +19,7 @@ Leeswijzer: ⏱ wachttijd · ◆ split (JA/NEE) · 🔀 A/B-actie · ✉ mail (b
 | 9 | v4 · Anniversary (`anniversary`) | 6 | 3 | 1 | 0 | OK | 0 |
 | 10 | v4 · Site abandonment (`site`) | 4 | 2 | 0 | 0 | OK | 0 |
 | 11 | v4 · Sunset (`sunset`) | 4 | 2 | 0 | 0 | OK | 0 |
-| 12 | v4 · Sunset · kept (`sunsetkept`) | 4 | 2 | 0 | 0 | OK | 2 |
+| 12 | v4 · Sunset · kept (`sunsetkept`) | 4 | 2 | 0 | 0 | OK | 0 |
 | 13 | v4 · UGC first egg (`ugc`) | 2 | 1 | 0 | 0 | OK | 0 |
 
 Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email where $flow = ..." naar flows die eerder in de lijst staan). Welcome staat vóór browse, omdat browse filtert op welcome-mails.
@@ -50,14 +50,12 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
 - Segment "v4 · VIP": **ONTBREEKT**
 - Segment "v4 · US": **ONTBREEKT**
 - Coupons in Klaviyo: **geen** (alle 8 pools ontbreken)
-- Bestaande v4-flows: QWEdbK v4 · Welcome (draft), SLRQPi v4 · Winback (draft), SNwQWU v4 · Checkout abandonment (draft), Spvjdq v4 · Site abandonment (draft), TKPEVE v4 · Browse abandonment (draft), URcvwu v4 · VIP (draft), UshtNX v4 · Cart abandonment (draft), VSqzNN v4 · Post-purchase (draft), Vhi3iH v4 · Sunset (draft), WNDDGi v4 · Post-purchase · levering (draft), WXiUkJ v4 · UGC first egg (draft), YqCwrh v4 · Anniversary (draft)
+- Bestaande v4-flows: QUBUQV v4 · Checkout abandonment (draft), T4a5Mk v4 · Welcome (draft), TZG9Mx v4 · Cart abandonment (draft), TbYQmX v4 · Sunset (draft), UyFc78 v4 · Winback (draft), VLGhbR v4 · Site abandonment (draft), VQ93sx v4 · Post-purchase · levering (draft), VTkxFL v4 · VIP (draft), WdRz5k v4 · Browse abandonment (draft), X3ySuU v4 · Post-purchase (draft), XbYT7T v4 · Anniversary (draft)
 
 ### Templates die nog geëxporteerd moeten worden
 
-2 templates ontbreken in `exports/live/templates.csv`:
+0 templates ontbreken in `exports/live/templates.csv`:
 
-- `v4 · Sunset · kept · s3-kept`
-- `v4 · Sunset · kept · s4-kept`
 
 ### Coupons (plan 1.4 en 4.4)
 
@@ -157,7 +155,7 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
 ## v4 · Checkout abandonment (`checkout`, utm_campaign `v4-checkout`)
 
 - **Trigger**: Checkout Started · triggerfilter: event.$value greater-than 0
-- **Flowfilters**: Placed Order = 0 sinds flowstart EN niet in deze flow in de laatste 14 dagen EN Received Email ($flow = v4 · Post-purchase (VSqzNN)) = 0 in de laatste 7 dagen
+- **Flowfilters**: Placed Order = 0 sinds flowstart EN niet in deze flow in de laatste 14 dagen EN Received Email ($flow = v4 · Post-purchase (X3ySuU)) = 0 in de laatste 7 dagen
 - **Herinstap**: 14 dagen
 - **Standaard verzendfilter op elke v4-mail**: Placed Order = 0 sinds flowstart
 - **Verwijst naar**: v4 · Post-purchase
@@ -216,7 +214,7 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
 ## v4 · Cart abandonment (`cart`, utm_campaign `v4-cart`)
 
 - **Trigger**: Added to Cart · triggerfilter: event.Price greater-than 0 EN event.Product Name not-contains Mystery Gift EN event.Product Name not-contains E-Book EN event.Product Name not-contains Free Shipping EN event.Product Name not-contains Giveaway
-- **Flowfilters**: Checkout Started = 0 sinds flowstart EN Placed Order = 0 sinds flowstart EN Received Email ($flow = v4 · Checkout abandonment (SNwQWU)) = 0 in de laatste 7 dagen EN niet in deze flow in de laatste 14 dagen
+- **Flowfilters**: Checkout Started = 0 sinds flowstart EN Placed Order = 0 sinds flowstart EN Received Email ($flow = v4 · Checkout abandonment (QUBUQV)) = 0 in de laatste 7 dagen EN niet in deze flow in de laatste 14 dagen
 - **Herinstap**: 14 dagen
 - **Standaard verzendfilter op elke v4-mail**: Checkout Started = 0 sinds flowstart EN Placed Order = 0 sinds flowstart
 - **Verwijst naar**: v4 · Checkout abandonment
@@ -280,7 +278,7 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
 - **Trigger**: lijst Uw8eZG
 - **Flowfilters**: email not-contains test@ EN niet in deze flow over all time
 - **Herinstap**: geen grens (alleen via flowfilter)
-- **Standaard verzendfilter op elke v4-mail**: Placed Order = 0 sinds flowstart EN Received Email ($flow = v4 · Checkout abandonment (SNwQWU)) = 0 in de laatste 1 dagen EN Received Email ($flow = v4 · Cart abandonment (UshtNX)) = 0 in de laatste 1 dagen
+- **Standaard verzendfilter op elke v4-mail**: Placed Order = 0 sinds flowstart EN Received Email ($flow = v4 · Checkout abandonment (QUBUQV)) = 0 in de laatste 1 dagen EN Received Email ($flow = v4 · Cart abandonment (TZG9Mx)) = 0 in de laatste 1 dagen
 - **Verwijst naar**: v4 · Cart abandonment, v4 · Checkout abandonment
 - Oud pad uit SiaNLu (GET): wacht 5 minuten → YdWRjr "{{ first_name|default:'Hey' }}, Thanks For Joining Us" → wacht 1 dagen tot 10:00 → TicuGn "A Note from Benjamin" → wacht 1 dagen tot 10:00 → R8HSS3 "Hey {{ first_name|default:'there' }}, Save 10% On a Lifetime of Use" → wacht 1 dagen → SqPaYF "Straight from the kitchen" → wacht 2 dagen tot 10:00 → SCsFQT "Cook with the Best" → wacht 2 dagen tot 10:00 → WZkL9P "The ultimate showdown" → wacht 2 dagen tot 10:00 → Tkx4bs "See Why We Are Top Rated" → wacht 1 dagen → RqvU5g "Last Call for an Extra 10% Off"
 - W4-modus: split (landsplit w4-us/w4-int, US = United States of US).
@@ -352,7 +350,7 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
 ## v4 · Browse abandonment (`browse`, utm_campaign `v4-browse`)
 
 - **Trigger**: Viewed Product
-- **Flowfilters**: Added to Cart = 0 sinds flowstart EN Checkout Started = 0 sinds flowstart EN Placed Order = 0 sinds flowstart EN Received Email ($flow = v4 · Cart abandonment (UshtNX)) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · Checkout abandonment (SNwQWU)) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · Welcome (QWEdbK)) = 0 in de laatste 7 dagen EN niet in deze flow in de laatste 7 dagen
+- **Flowfilters**: Added to Cart = 0 sinds flowstart EN Checkout Started = 0 sinds flowstart EN Placed Order = 0 sinds flowstart EN Received Email ($flow = v4 · Cart abandonment (TZG9Mx)) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · Checkout abandonment (QUBUQV)) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · Welcome (T4a5Mk)) = 0 in de laatste 7 dagen EN niet in deze flow in de laatste 7 dagen
 - **Herinstap**: 7 dagen
 - **Standaard verzendfilter op elke v4-mail**: Placed Order = 0 sinds flowstart
 - **Verwijst naar**: v4 · Cart abandonment, v4 · Checkout abandonment, v4 · Welcome
@@ -451,13 +449,13 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
 
 - ⏱ wacht 45 dagen, tot 09:00
 - ✉ **R1-SET** · `TtN9Kv` · "The shapes a set leaves out"
-  - filter: standaard EN Received Email ($flow = v4 · Post-purchase (VSqzNN)) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · VIP (URcvwu)) = 0 in de laatste 7 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) > 0 in de laatste 46 dagen EN (Placed Order (Items contains-any SET_TITELS) > 0 in de laatste 46 dagen OF Placed Order ($value greater-than-or-equal 300) > 0 in de laatste 46 dagen)
+  - filter: standaard EN Received Email ($flow = v4 · Post-purchase (X3ySuU)) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · VIP (VTkxFL)) = 0 in de laatste 7 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) > 0 in de laatste 46 dagen EN (Placed Order (Items contains-any SET_TITELS) > 0 in de laatste 46 dagen OF Placed Order ($value greater-than-or-equal 300) > 0 in de laatste 46 dagen)
 - ✉ **R1-PAN · kook** · `RN2wJV` · "How's your pan doing?"
-  - filter: standaard EN Received Email ($flow = v4 · Post-purchase (VSqzNN)) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · VIP (URcvwu)) = 0 in de laatste 7 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) > 0 in de laatste 46 dagen EN Placed Order (Items contains-any SET_TITELS) = 0 in de laatste 46 dagen EN Placed Order ($value greater-than-or-equal 300) = 0 in de laatste 46 dagen
+  - filter: standaard EN Received Email ($flow = v4 · Post-purchase (X3ySuU)) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · VIP (VTkxFL)) = 0 in de laatste 7 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) > 0 in de laatste 46 dagen EN Placed Order (Items contains-any SET_TITELS) = 0 in de laatste 46 dagen EN Placed Order ($value greater-than-or-equal 300) = 0 in de laatste 46 dagen
 - ✉ **R1-PAN · eigenaar** · `RN2wJV` · "How's your pan doing?"
-  - filter: standaard EN Received Email ($flow = v4 · Post-purchase (VSqzNN)) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · VIP (URcvwu)) = 0 in de laatste 7 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) = 0 in de laatste 46 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) > 0 over all time
+  - filter: standaard EN Received Email ($flow = v4 · Post-purchase (X3ySuU)) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · VIP (VTkxFL)) = 0 in de laatste 7 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) = 0 in de laatste 46 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) > 0 over all time
 - ✉ **R1-ACC** · `Wr3C7u` · "Ready for the pan?"
-  - filter: standaard EN Received Email ($flow = v4 · Post-purchase (VSqzNN)) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · VIP (URcvwu)) = 0 in de laatste 7 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) = 0 over all time
+  - filter: standaard EN Received Email ($flow = v4 · Post-purchase (X3ySuU)) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · VIP (VTkxFL)) = 0 in de laatste 7 dagen EN Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) = 0 over all time
 - ⏱ wacht 30 dagen, tot 09:00
 - ◆ split: Placed Order ≥ 2 over all time
   - JA:
@@ -499,7 +497,7 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
 
 - ⏱ wacht 182 dagen, tot 09:00
 - ✉ **N1** · `QX8tha` · "Six months in. Anything worn off?"
-  - filter: Refunded Order = 0 sinds flowstart EN Received Email ($flow = v4 · VIP (URcvwu)) = 0 in de laatste 14 dagen EN Received Email ($flow = v4 · Winback (SLRQPi)) = 0 in de laatste 14 dagen EN Opened Ticket = 0 in de laatste 14 dagen
+  - filter: Refunded Order = 0 sinds flowstart EN Received Email ($flow = v4 · VIP (VTkxFL)) = 0 in de laatste 14 dagen EN Received Email ($flow = v4 · Winback (UyFc78)) = 0 in de laatste 14 dagen EN Opened Ticket = 0 in de laatste 14 dagen
 - ⏱ wacht 183 dagen, tot 09:00
 - ◆ split: Received Email (Campaign Name contains CODE ·) > 0 in de laatste 30 dagen
   - JA:
@@ -512,7 +510,7 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
 ## v4 · Site abandonment (`site`, utm_campaign `v4-site`)
 
 - **Trigger**: Active on Site
-- **Flowfilters**: Viewed Product = 0 sinds flowstart EN Added to Cart = 0 sinds flowstart EN Checkout Started = 0 sinds flowstart EN Placed Order = 0 sinds flowstart EN Placed Order = 0 in de laatste 30 dagen EN Received Email ($flow = v4 · Browse abandonment (TKPEVE)) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · Cart abandonment (UshtNX)) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · Checkout abandonment (SNwQWU)) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · Post-purchase (VSqzNN)) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · Welcome (QWEdbK)) = 0 in de laatste 10 dagen EN niet in deze flow in de laatste 14 dagen
+- **Flowfilters**: Viewed Product = 0 sinds flowstart EN Added to Cart = 0 sinds flowstart EN Checkout Started = 0 sinds flowstart EN Placed Order = 0 sinds flowstart EN Placed Order = 0 in de laatste 30 dagen EN Received Email ($flow = v4 · Browse abandonment (WdRz5k)) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · Cart abandonment (TZG9Mx)) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · Checkout abandonment (QUBUQV)) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · Post-purchase (X3ySuU)) = 0 in de laatste 7 dagen EN Received Email ($flow = v4 · Welcome (T4a5Mk)) = 0 in de laatste 10 dagen EN niet in deze flow in de laatste 14 dagen
 - **Herinstap**: 14 dagen
 - **Standaard verzendfilter op elke v4-mail**: Viewed Product = 0 sinds flowstart EN Added to Cart = 0 sinds flowstart EN Checkout Started = 0 sinds flowstart EN Placed Order = 0 sinds flowstart
 - **Verwijst naar**: v4 · Browse abandonment, v4 · Cart abandonment, v4 · Checkout abandonment, v4 · Post-purchase, v4 · Welcome
@@ -528,7 +526,7 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
 ## v4 · Sunset (`sunset`, utm_campaign `v4-sunset`)
 
 - **Trigger**: segment WuHSm6
-- **Flowfilters**: niet in deze flow in de laatste 180 dagen EN Received Email ($flow = v4 · Welcome (QWEdbK)) = 0 in de laatste 30 dagen EN Received Email ($flow = v4 · Post-purchase (VSqzNN)) = 0 in de laatste 30 dagen
+- **Flowfilters**: niet in deze flow in de laatste 180 dagen EN Received Email ($flow = v4 · Welcome (T4a5Mk)) = 0 in de laatste 30 dagen EN Received Email ($flow = v4 · Post-purchase (X3ySuU)) = 0 in de laatste 30 dagen
 - **Herinstap**: 180 dagen
 - **Verwijst naar**: v4 · Post-purchase, v4 · Welcome
 - Stap 3 (update profile sunset_status) kan niet via de API. Vervanging: segment 'v4 · Sunset · suppressed' = in 'v4 · Sunset · unengaged 120d' EN Received Email waarvan Campaign Name 'SUNSET · S2' bevat, minstens 1 keer in 60 dagen EN 0 keer in de laatste 3 dagen. Wie klikt, de site bezoekt of koopt valt vanzelf uit het unengaged-segment.
@@ -544,7 +542,7 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
 
 ## v4 · Sunset · kept (`sunsetkept`, utm_campaign `v4-sunset-kept`)
 
-- **Trigger**: Clicked Email · triggerfilter: event.$flow equals Vhi3iH EN event.Bot Click equals False
+- **Trigger**: Clicked Email · triggerfilter: event.$flow equals TbYQmX EN event.Bot Click equals False
 - **Flowfilters**: niet in deze flow in de laatste 365 dagen
 - **Herinstap**: geen grens (alleen via flowfilter)
 - **Verwijst naar**: v4 · Cart abandonment, v4 · Checkout abandonment, v4 · Sunset
@@ -553,11 +551,11 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
 - Terugval als de triggerfilter $flow weigert: Campaign Name contains 'SUNSET · S'.
 
 - ⏱ wacht 30 minuten
-- ✉ **SUNSET-KEPT · S3** · **ONTBREEKT** `v4 · Sunset · kept · s3-kept` · "You're staying. Thank you." · afzender Benjamin at Siraat's Kitchen
+- ✉ **SUNSET-KEPT · S3** · `YwieFC` · "You're staying. Thank you." · afzender Benjamin at Siraat's Kitchen
   - filter: Placed Order = 0 sinds flowstart
 - ⏱ wacht 4 dagen, tot 09:00
-- ✉ **SUNSET-KEPT · S4** · **ONTBREEKT** `v4 · Sunset · kept · s4-kept` · "The pan we started with" · afzender Benjamin at Siraat's Kitchen
-  - filter: Placed Order = 0 sinds flowstart EN Received Email ($flow = v4 · Checkout abandonment (SNwQWU)) = 0 in de laatste 3 dagen EN Received Email ($flow = v4 · Cart abandonment (UshtNX)) = 0 in de laatste 3 dagen
+- ✉ **SUNSET-KEPT · S4** · `RSYuUV` · "The pan we started with" · afzender Benjamin at Siraat's Kitchen
+  - filter: Placed Order = 0 sinds flowstart EN Received Email ($flow = v4 · Checkout abandonment (QUBUQV)) = 0 in de laatste 3 dagen EN Received Email ($flow = v4 · Cart abandonment (TZG9Mx)) = 0 in de laatste 3 dagen
 
 ## v4 · UGC first egg (`ugc`, utm_campaign `v4-ugc`)
 

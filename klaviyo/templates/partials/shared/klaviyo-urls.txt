@@ -63,3 +63,5 @@ ugc-prod-panpro.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/cfb499b3-f
 ugc-prod-crepe.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/e4d5af1c-c859-4935-a21d-1e31d032e9d7.jpeg
 ugc-prod-set6.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/ad68689b-5e4b-42fd-8935-1ac809300b94.jpeg
 ugc-prod-wok.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/9717b0f2-b2c5-462c-a6a4-d478e591f4dc.jpeg
+pc-large.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/37b4a972-db60-45f5-a457-bf9a93cef57d.jpeg
+pc-set6.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/65356ccd-ba85-461c-8dbf-db80336c15c0.jpeg

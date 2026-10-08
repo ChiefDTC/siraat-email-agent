@@ -11,3 +11,10 @@ p-2p2l.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/f4150b0f-7bc3-4011-
 p-panpro.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/50742c8b-4072-4c7b-907f-1a61fd4091a2.jpeg
 p-set6.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/ca57e6f1-52ea-46d1-8dbf-6598e82fd57a.jpeg
 p-setpro.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/13fc99d0-a654-4d33-910f-2b159878f426.jpeg
+r1-acc-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/2e967795-b4e5-46a0-b672-c71696b6d24a.jpeg
+r1-pan-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/9408b761-41e7-48df-bb8c-b3997d4a4764.jpeg
+r1-set-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/f5a7576c-23c6-49d7-af9f-6a0e1efc94aa.jpeg
+r2-nocode-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/0796019a-298f-4a5e-bd64-6be849bae884.jpeg
+r2-vip-nocode-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/46b8ab1d-0454-4a8c-bc9b-9b2fceb0fbe0.jpeg
+r2-vip-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/e700f2a9-627c-4eb8-b123-08385edea7c7.jpeg
+r2-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/a76844c6-8d22-49c1-8376-125cea71fe8d.jpeg

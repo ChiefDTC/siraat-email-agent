@@ -12,3 +12,8 @@ w3-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/c298362a-a75b-4499
 w4-int-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/1644013f-efcf-4bd5-b095-99866afe31b6.jpeg
 w4-us-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/cefeb11f-493f-4619-9aa7-ef3b9da8ddd8.jpeg
 w5-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/6cc2950f-c01f-4ea3-a0a6-1c105e8826b3.jpeg
+w1-hero-v5.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/38aa0785-244a-427b-8fb1-3a520ae81371.jpeg
+w3-hero-v5.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/d9f29deb-4e6a-4549-b12c-d83858359184.jpeg
+w4-int-hero-v5.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/1c1765c0-aa3e-4d53-bd54-54c7f147f42d.jpeg
+w4-us-hero-v5.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/8e4b2f20-7aec-4dd7-9c8a-f706fe0ac196.jpeg
+w5-hero-v5.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/e6932c1e-8e18-422d-a9a3-6f7c67548851.jpeg

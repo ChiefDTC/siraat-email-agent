@@ -7,3 +7,6 @@ p-lid.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/2078f16a-d969-46eb-b
 p-wok.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/a50ccf62-5f6c-4174-91b1-0a9f2b887c70.jpeg
 p-panpro.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/beaff3e2-016f-42fc-94cb-9d38f5ee72cb.jpeg
 p-set6.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/714d97e1-028b-4e97-b356-cd9a90b3ad98.jpeg
+n1-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/3121b5dd-2bf5-4222-b559-b5aeb4c0c24e.jpeg
+n2-nocode-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/5bd044d8-c593-4f86-82ae-138a573ae22f.jpeg
+n2-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/668af624-8229-438f-8e32-8161864a6994.jpeg

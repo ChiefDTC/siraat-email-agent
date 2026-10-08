@@ -6,40 +6,8 @@
    "definition": {
     "triggers": [
      {
-      "type": "metric",
-      "id": "W247h8",
-      "trigger_filter": {
-       "condition_groups": [
-        {
-         "conditions": [
-          {
-           "type": "metric-property",
-           "metric_id": "W247h8",
-           "field": "$flow",
-           "filter": {
-            "type": "string",
-            "operator": "equals",
-            "value": "Vhi3iH"
-           }
-          }
-         ]
-        },
-        {
-         "conditions": [
-          {
-           "type": "metric-property",
-           "metric_id": "W247h8",
-           "field": "Bot Click",
-           "filter": {
-            "type": "boolean",
-            "operator": "equals",
-            "value": false
-           }
-          }
-         ]
-        }
-       ]
-      }
+      "type": "segment",
+      "id": "YxfuJT"
      }
     ],
     "profile_filter": {
@@ -72,7 +40,7 @@
         "bcc_email": null,
         "subject_line": "The pan we started with",
         "preview_text": "Why I'd still pick it today, and the paper that backs it up.",
-        "template_id": "TPL?v4 · Sunset · kept · s4-kept",
+        "template_id": "RSYuUV",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
@@ -134,7 +102,7 @@
                "filter": {
                 "type": "string",
                 "operator": "equals",
-                "value": "SNwQWU"
+                "value": "QUBUQV"
                }
               }
              ]
@@ -164,7 +132,7 @@
                "filter": {
                 "type": "string",
                 "operator": "equals",
-                "value": "UshtNX"
+                "value": "TZG9Mx"
                }
               }
              ]
@@ -207,7 +175,7 @@
         "bcc_email": null,
         "subject_line": "You're staying. Thank you.",
         "preview_text": "One quick tap so we only send what you came for.",
-        "template_id": "TPL?v4 · Sunset · kept · s3-kept",
+        "template_id": "YwieFC",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
