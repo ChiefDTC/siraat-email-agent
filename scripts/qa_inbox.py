@@ -247,7 +247,7 @@ def slack_text(res, meta):
     nv = [LABEL[k] for k in MC.CHECKS if k in res and res[k]['status'] == MC.NVT]
     if nv: L.append('%s niet van toepassing: %s' % (ICON[MC.NVT], ', '.join(nv)))
     if meta.get('shots'): L += ['', 'Screenshots (375 licht, 375 dark, 600 licht) als bijlage in de thread; volledig rapport: `%s`' % meta.get('report', '')]
-    return '\n'.join(L).replace('—', ',')
+    return '\n'.join(L).replace('\u2014', ',')
 
 
 def rel(p):

@@ -422,9 +422,9 @@ def run_checks(m, market=None, kind='mail', raw=None, browser=None, skip_net=Fal
     # em dash
     ed = []
     for nm, s in (('onderwerp', subj), ('preheader', pre), ('tekst', vis)):
-        for mm in re.finditer('—', s or ''): ed.append('%s: "%s"' % (nm, s[max(0, mm.start() - 30):mm.end() + 20].strip()))
+        for mm in re.finditer('\u2014', s or ''): ed.append('%s: "%s"' % (nm, s[max(0, mm.start() - 30):mm.end() + 20].strip()))
     for im in ims:
-        if '—' in (im['alt'] or ''): ed.append('alt: "%s"' % im['alt'][:60])
+        if '\u2014' in (im['alt'] or ''): ed.append('alt: "%s"' % im['alt'][:60])
     out['em-dash'] = R(FOUT, '%d keer; %s' % (len(ed), '; '.join(ed[:4]))) if ed else R(OK, 'geen em dash')
     # layout en dark mode (browser)
     out['layout'], out['dark-mode'] = browser_checks(browser)
