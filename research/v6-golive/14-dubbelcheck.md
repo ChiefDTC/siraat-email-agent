@@ -200,4 +200,30 @@ HI10: ACTIVE, appliesOncePerCustomer true. GOODFOOD (oude winback) en COOK10 (Ol
 
 ## D. Eerste echte activiteit sinds 22:29 UTC
 
-(wordt hieronder ingevuld na het meten)
+Gemeten van 22:37 tot 23:31 UTC, elke 5 minuten (`GET /api/events`, metrics Received Email YkRM4Q, Dropped Email RCULWK, Skipped Send X3wTrc, Bounced Email XDdu6P, Marked Email as Spam VQMAAk, Unsubscribed from Email Marketing YcWddQ, Coupon Assigned XUMYt7, Opened en Clicked Email).
+
+**Belangrijk om te weten: Received Email loopt in de API meer dan een uur achter.** Om 23:31 UTC was de nieuwste Received Email nog van 22:29:22. Opens, kliks, orders, SMS en afmeldingen komen wel direct binnen. Dat het versturen werkt, blijkt uit opens en een afmelding op mails die ná 22:29 uit de nieuwe flows zijn verstuurd:
+
+| Signaal na 22:29 | Flow | Bericht | Aantal |
+|---|---|---|---|
+| Opened Email | T4a5Mk (T01-oud-arm) | Old · Welcome 1 | 1 |
+| Opened Email | WdRz5k (T01-oud-arm) | Old · Browse 1 | 2 |
+| Afmelding (one-click) 23:00 | T4a5Mk | Old · Welcome 1 (message WCZQNi) | 1 |
+
+De v5-armen (W1 na 20 min, C1/K1 na 30 min, B1/P1 na 1 uur) hadden om 23:31 nog geen open of klik in de API; dat past bij de wachttijden en de kleine aantallen in het eerste uur. Niet als fout te tellen.
+
+| Metric sinds 22:29 | Aantal | Toelichting |
+|---|---|---|
+| Received Email | 2 | beide 22:29: YyaMjx (E-Guide) en Wj6x6V "Copy of Email #1" om 22:29:22, 3 seconden nadat Wj6x6V op Draft ging (22:29:19): mail die al in de wachtrij stond. Geen andere verzending uit een uitgezette flow gezien |
+| Bounced Email | 1 | 22:29:00, Y2TmNB (oud, vóór het uitzetten), hard bounce |
+| Dropped Email / Skipped Send | 0 / 0 | geen renderfouten of overgeslagen sends gemeld |
+| Marked as Spam | 0 | |
+| Unsubscribed | 8 | 1 uit v5-flow T4a5Mk (oude arm, zie boven); de rest uit campagnes (HS // Engaged 180 Days) en oude flowmails van vóór 22:29 |
+| Coupon Assigned | 0 | nog geen echte code uitgegeven (zie punt 1) |
+| Placed Order | 3 (22:30, 22:38, 22:55) | kopers zijn ingeschreven; hun P1 valt na 23:30 |
+
+**Oud en nieuw tegelijk**: in dit eerste uur niet waargenomen (behalve de ene Wj6x6V-mail uit de wachtrij). Wat structureel dubbel kan, staat in B2 (YyaMjx e-book, punt 3).
+
+**A/B zonder gestarte test**: bij de eerste W1- en B1-verzendingen in Received Email controleren dat Campaign Name "W1" / "B1" is (hoofdbericht, iedereen dezelfde variant). Lukt pas als de Received-achterstand weg is.
+
+**Vervolg**: deze sectie opnieuw draaien bij de 24-uurscontrole (03-draaiboek 6.2), via het 12-uursrapport (routine trig_017iU43jScAopEQivhUtENwr, 07:52 Amsterdam). Pas dan zijn T01-verdeling, bounces per v5-mail en dubbele ontvangers echt te meten.
