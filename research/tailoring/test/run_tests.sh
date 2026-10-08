@@ -25,13 +25,13 @@ t post-purchase/p3-pan po_deep_us 'same diameter as your pan'
 # v5 (integratie 8 okt): goes vervangen door xsell; prijzen Mini $99, Standard $144 (codeprijs $129.60); "A second Pan Pro" bewust weg (xsell toont Mini/Small)
 t post-purchase/p3-next po_panlid_us 'YOU HAVE THE LID' '$99' '!Stainless Steel Lid'; t post-purchase/p3-next po_deep 'MATCHED TO YOUR PAN' '!$53.10'
 t post-purchase/p3-apron po_apron_us '$129.60' '$144' '!Siraat Signature Apron'
-t winback/r1-pan po_panlid_us '!Stainless Steel Lid' 'Pan Pro Mini'; t winback/r1-pan po_pan_us 'Stainless Steel Lid, 28 cm'
+t winback/r1-pan po_panlid_us '!Stainless Steel Lid' 'Pan Pro Mini'; t winback/r1-pan po_pan_us 'Stainless Steel Lid, 11″' '!Stainless Steel Lid, 28 cm'
 t winback/r1-acc po_board_us '$129.60' '!Titanium Cutting Board'; t winback/r1-acc po_board '!$129.60' '!$144'
 # Productmatrix (8 okt 2026, research/tailoring/10-productmatrix.md): per productcategorie de hele route door elke flow,
 # met de verplichte blokken (about, cross-sell xsell zonder iets uit de order) en wat er niet mag staan (panuitleg bij een accessoire, "no coating" bij de schort ...)
 python3 mksamples.py >/dev/null && python3 -I matrix.py >/tmp/matrix-out.txt 2>&1 && echo "ok   productmatrix: $(tail -1 /tmp/matrix-out.txt)" || { cat /tmp/matrix-out.txt | grep FOUT | head -20; echo "FOUT productmatrix"; fail=1; }
 t checkout/c1 co_x_set6bday 'Your future pan vs a PFAS pan'; t checkout/c1 co_x_set12pizza 'Your future pan vs a PFAS pan'; t checkout/c1 co_x_stdbday 'Your future pan vs a PFAS pan'
-t winback/r1-pan po_x_panlidstd '!Stainless Steel Lid, 28 cm' 'Pan Pro Mini'
+t winback/r1-pan po_x_panlidstd '!Stainless Steel Lid, 11″' 'Pan Pro Mini'
 python3 -c "import sys;sys.path.insert(0,'../../../scripts');import build_flows as B;t=set(B.SET_TITELS)|set(B.KOOK_TITELS);need=['Titanium Hammered Pan Set With Lids | 6-Pcs (BDAY SALE)','Titanium Hammered Pot Set With Lids | 6-Pcs','Titanium Hammered Cookware Set | 12-Pcs | + FREE PIZZA STEEL'];sys.exit(0 if all(x in t for x in need) and 'Siraat Signature Apron (Azure)' in B.SCHORT_TITELS else 1)" && echo "ok   build_flows titellijsten bevatten de echte Shopify-titels (BDAY, Pot Set, FREE PIZZA STEEL, schort (Azure))" || { echo "FOUT titellijsten build_flows"; fail=1; }
 # Strenger op tags (QA-poort 2026-10-07): kltags.py mag alleen Klaviyo-tags kennen, en alle 61 mails moeten de allowlist,
 # de Django-render op alle varianten en de ruwe-HTML-structuur halen (scripts/qa_render.py --static, zonder browser).
