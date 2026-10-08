@@ -1,0 +1,867 @@
+{
+ "generated_from": "content/reviews/top.md + library.csv (scripts/make_review_blocks.py)",
+ "banned": {
+  "R017": "Marilyn B., zwak volgens Floris (8 okt 2026)"
+ },
+ "reviews": {
+  "R011": {
+   "name": "Lorraine",
+   "date": "2026-10-03",
+   "pillars": [
+    "K"
+   ],
+   "snippet": "We have purchased twice from Siraat... Expensive but definitely Value for money. Quality cookware!"
+  },
+  "R014": {
+   "name": "Caliann",
+   "date": "2026-10-01",
+   "pillars": [
+    "K",
+    "S"
+   ],
+   "snippet": "I purchased their titanium wok a few months ago and it performs exactly as expected."
+  },
+  "R018-S": {
+   "name": "Susan",
+   "date": "2026-09-28",
+   "pillars": [
+    "S"
+   ],
+   "snippet": "They were responsive and made sure I was satisfied when my pots finally arrived a few weeks later as promised."
+  },
+  "R025": {
+   "name": "Sunny C.",
+   "date": "2026-09-25",
+   "pillars": [
+    "K"
+   ],
+   "snippet": "I ordered one pan to try it out. I'm so glad I did. I am so happy with this pan that I'm ordering the set."
+  },
+  "R029": {
+   "name": "Jerry G.",
+   "date": "2026-09-24",
+   "pillars": [
+    "L",
+    "S"
+   ],
+   "snippet": "I emailed them and they got back to me in 10 minutes! Incredibly fast!... No automated service."
+  },
+  "R047": {
+   "name": "Lynda C.",
+   "date": "2026-09-14",
+   "pillars": [
+    "S"
+   ],
+   "snippet": "Your entire team is the best customer service I have EVER experienced, and I'm 74."
+  },
+  "R053": {
+   "name": "Rachel M.",
+   "date": "2026-09-14",
+   "pillars": [
+    "L",
+    "S"
+   ],
+   "snippet": "...they had been sent separately! Then they circled back and made sure everything had arrived!"
+  },
+  "R063": {
+   "name": "Maria",
+   "date": "2026-09-11",
+   "pillars": [
+    "S"
+   ],
+   "snippet": "I realized I ordered the wrong size... I received a quick reply with instructions"
+  },
+  "R064": {
+   "name": "WS",
+   "date": "2026-09-11",
+   "pillars": [
+    "K",
+    "S"
+   ],
+   "snippet": "I am very impressed with their customer service. They stand by their products 100%."
+  },
+  "R069": {
+   "name": "Aggie M.",
+   "date": "2026-09-06",
+   "pillars": [
+    "K"
+   ],
+   "snippet": "...let the pan heat up and did the water test. Then fried an egg which didn't stick to the pan."
+  },
+  "R082": {
+   "name": "Deanna V.",
+   "date": "2026-08-31",
+   "pillars": [
+    "K",
+    "L",
+    "S"
+   ],
+   "snippet": "Great company with great communication. Fast shipping. Beautiful products!"
+  },
+  "R088": {
+   "name": "Chetan G.",
+   "date": "2026-08-27",
+   "pillars": [
+    "K"
+   ],
+   "snippet": "This is the best crepe pan that I have used that works like a non-stick but gives crispy output like a cast iron pan."
+  },
+  "R101": {
+   "name": "Peter",
+   "date": "2026-08-21",
+   "pillars": [
+    "S"
+   ],
+   "snippet": "They got back to me straight away (on a Saturday) and the issue was resolved immediately with no fuss."
+  },
+  "R105": {
+   "name": "Shawn C.",
+   "date": "2026-08-19",
+   "pillars": [
+    "L",
+    "S"
+   ],
+   "snippet": "Phenomenal help experience... they found my order and responded very quickly."
+  },
+  "R112": {
+   "name": "Fabio P.",
+   "date": "2026-08-15",
+   "pillars": [
+    "K",
+    "L",
+    "S"
+   ],
+   "snippet": "The food does not stick, cooks perfectly and evenly... Excellent product and excellent service."
+  },
+  "R116": {
+   "name": "Zubes",
+   "date": "2026-08-14",
+   "pillars": [
+    "K",
+    "S"
+   ],
+   "snippet": "Great Product, been using it for months and holds up as advertised."
+  },
+  "R124": {
+   "name": "David A.",
+   "date": "2026-08-12",
+   "pillars": [
+    "K",
+    "S"
+   ],
+   "snippet": "I mistakenly ordered the wrong lid. The issue was quickly resolved via emails."
+  },
+  "R138": {
+   "name": "Tammy",
+   "date": "2026-08-04",
+   "pillars": [
+    "K"
+   ],
+   "snippet": "I am on my 4th pan from Siraat... I even gifted one to my son, and he says it's the best pan he owns."
+  },
+  "R143": {
+   "name": "Sandi R.",
+   "date": "2026-08-04",
+   "pillars": [
+    "K"
+   ],
+   "snippet": "Cooked eggs in the skillet and it definitely needed just a thin covering of oil, and it cleaned up beautifully."
+  },
+  "R148": {
+   "name": "Vince",
+   "date": "2026-08-03",
+   "pillars": [
+    "K",
+    "S"
+   ],
+   "snippet": "Outstanding customer service and communication. Very happy with the quality of the products!"
+  },
+  "R157": {
+   "name": "Robert H.",
+   "date": "2026-07-30",
+   "pillars": [
+    "K",
+    "L"
+   ],
+   "snippet": "Pans and lids arrived promptly and in good condition. Excellent quality..."
+  },
+  "R158": {
+   "name": "Denise H.",
+   "date": "2026-07-30",
+   "pillars": [
+    "L"
+   ],
+   "snippet": "Great price, easy ordering and delivery was fast. I purchased this as a gift and the recipient loves it!"
+  },
+  "R169": {
+   "name": "Michael G.",
+   "date": "2026-07-27",
+   "pillars": [
+    "K"
+   ],
+   "snippet": "The real test was my egg the next morning... the egg released completely and slid around the pan like it was non-stick."
+  },
+  "R169-S": {
+   "name": "Michael G.",
+   "date": "2026-07-27",
+   "pillars": [
+    "K"
+   ],
+   "snippet": "I was super skeptical but this is a now officially my favorite pan."
+  },
+  "R200": {
+   "name": "Deborah G.",
+   "date": "2026-07-18",
+   "pillars": [
+    "K",
+    "L"
+   ],
+   "snippet": "Quick delivery of a wonderful product. It comes beautifully boxed..."
+  },
+  "R213": {
+   "name": "Dion W.",
+   "date": "2026-07-14",
+   "pillars": [
+    "K",
+    "S"
+   ],
+   "snippet": "I have been using their products for a few months now and I'm so glad I made the choice."
+  },
+  "R216": {
+   "name": "Janet R.",
+   "date": "2026-07-13",
+   "pillars": [
+    "K",
+    "L"
+   ],
+   "snippet": "...Im giving you 5stars so far, for the prompt delivery, the excellent packaging and the quality freebies."
+  },
+  "R220": {
+   "name": "Carole",
+   "date": "2026-07-12",
+   "pillars": [
+    "K",
+    "S"
+   ],
+   "snippet": "I've been cooking for well over 60 years... This Siraat pan has been the absolute best I've ever used."
+  },
+  "R220-M": {
+   "name": "Carole",
+   "date": "2026-07-12",
+   "pillars": [
+    "K"
+   ],
+   "snippet": "I've had an old, metal spatula that was my mother's... I can use it with confidence on my pans now."
+  },
+  "R240": {
+   "name": "Brandon W.",
+   "date": "2026-07-06",
+   "pillars": [
+    "S"
+   ],
+   "snippet": "Siraat replaced a pan free of charge... I just sent them the picture and they honored the warranty."
+  },
+  "R241": {
+   "name": "David",
+   "date": "2026-07-06",
+   "pillars": [
+    "K"
+   ],
+   "snippet": "Bought the wok pan and the experience was amazing... I am considering buying more kitchenware from Siraat!"
+  },
+  "R256": {
+   "name": "DMZ",
+   "date": "2026-07-01",
+   "pillars": [
+    "K"
+   ],
+   "snippet": "Really well made, plastic free, salt and pepper grinders."
+  },
+  "R273": {
+   "name": "Steven T.",
+   "date": "2026-06-24",
+   "pillars": [
+    "S"
+   ],
+   "snippet": "Exceptional customer service. I returned my pans, unused, and received a refund, no questions asked."
+  },
+  "R316": {
+   "name": "Tina N.",
+   "date": "2026-06-15",
+   "pillars": [
+    "S"
+   ],
+   "snippet": "The situation was remedied so quickly! I don't think I've ever received such prompt and attentive service."
+  },
+  "R343": {
+   "name": "Astrid A.",
+   "date": "2026-06-07",
+   "pillars": [
+    "K",
+    "L"
+   ],
+   "snippet": "I received my titanium pan on time, carefully wrapped. It is beautiful."
+  },
+  "R371": {
+   "name": "Wai N.",
+   "date": "2026-05-30",
+   "pillars": [
+    "K",
+    "S"
+   ],
+   "snippet": "It takes time to get use of all the special quality... Tge customer service (Jen) is very helpful and patient"
+  },
+  "R380": {
+   "name": "Chris B.",
+   "date": "2026-05-29",
+   "pillars": [
+    "K",
+    "L",
+    "S"
+   ],
+   "snippet": "My order arrived ahead of schedule, updates were provided regularly and I even received an unexpected gift in the order!"
+  },
+  "R386": {
+   "name": "Sue M.",
+   "date": "2026-05-28",
+   "pillars": [
+    "K",
+    "S"
+   ],
+   "snippet": "They have restored my faith in customer service experiences..."
+  },
+  "R398": {
+   "name": "Fatima",
+   "date": "2026-05-24",
+   "pillars": [
+    "K"
+   ],
+   "snippet": "...I thought it was just marketing hype... I ended up buying the whole collection."
+  },
+  "R399": {
+   "name": "Anthony",
+   "date": "2026-05-23",
+   "pillars": [
+    "K",
+    "L",
+    "S"
+   ],
+   "snippet": "My deliveries were prompt and I live in Melbourne, Australia... I love their titanium cookware"
+  },
+  "R399-V": {
+   "name": "Anthony",
+   "date": "2026-05-23",
+   "pillars": [
+    "K"
+   ],
+   "snippet": "I love their titanium cookware and hopefully they will expand their product range."
+  },
+  "R407": {
+   "name": "Emma",
+   "date": "2026-05-21",
+   "pillars": [
+    "K",
+    "S"
+   ],
+   "snippet": "I followed instructions exactly and wow it definitely is non stick."
+  },
+  "R407-M": {
+   "name": "Emma",
+   "date": "2026-05-21",
+   "pillars": [
+    "S"
+   ],
+   "snippet": "...I contacted customer services and they directed me to the mini size"
+  },
+  "R411": {
+   "name": "Deb",
+   "date": "2026-05-19",
+   "pillars": [
+    "K"
+   ],
+   "snippet": "I purchased the hammered pro pan standard. It is beautiful and lightweight."
+  },
+  "R411-E": {
+   "name": "Deb",
+   "date": "2026-05-19",
+   "pillars": [
+    "K"
+   ],
+   "snippet": "I cooked perfect over easy eggs for the first time in a non coated pan."
+  },
+  "R434": {
+   "name": "Marcia H.",
+   "date": "2026-05-14",
+   "pillars": [
+    "K",
+    "L",
+    "S"
+   ],
+   "snippet": "I ordered two pans, received them quickly, well packaged. I have used one pan almost daily since it arrived."
+  },
+  "R466": {
+   "name": "James",
+   "date": "2026-05-09",
+   "pillars": [
+    "K"
+   ],
+   "snippet": "...I honestly thought this might be another scam. But it's real titanium."
+  },
+  "R473": {
+   "name": "Joanne W.",
+   "date": "2026-05-06",
+   "pillars": [
+    "K"
+   ],
+   "snippet": "It's a whole new way to cook. Lower heat lower gas bills better tasting food."
+  },
+  "R487": {
+   "name": "Dave",
+   "date": "2026-05-04",
+   "pillars": [
+    "K",
+    "S"
+   ],
+   "snippet": "These pans are amazing! So easy to clean and cook perfectly. Even the customer service is outstanding.."
+  },
+  "R490": {
+   "name": "Nagaraju P.",
+   "date": "2026-05-03",
+   "pillars": [
+    "K",
+    "S"
+   ],
+   "snippet": "The cutting board itself is awesome and exceeded my expectations."
+  },
+  "R492": {
+   "name": "Dawj",
+   "date": "2026-05-02",
+   "pillars": [
+    "K",
+    "L"
+   ],
+   "snippet": "Fast delivery, pan is great to cook with, you need little to no oil and whatever you cook does Not Stick."
+  },
+  "R516": {
+   "name": "Jackie H.",
+   "date": "2026-04-25",
+   "pillars": [
+    "K",
+    "L"
+   ],
+   "snippet": "My pan arrived much sooner than I imagined it would... So glad i made the investment."
+  },
+  "R518": {
+   "name": "Graham C.",
+   "date": "2026-04-24",
+   "pillars": [
+    "K"
+   ],
+   "snippet": "We cooked the best omelette we have ever eaten when we used the pan for the first time."
+  },
+  "R530": {
+   "name": "Lauren W.",
+   "date": "2026-04-21",
+   "pillars": [
+    "K",
+    "S"
+   ],
+   "snippet": "I ordered a full set of the titanium cookware... customer services were in touch the entire time."
+  },
+  "R542": {
+   "name": "Jibz C.",
+   "date": "2026-04-17",
+   "pillars": [
+    "K",
+    "S"
+   ],
+   "snippet": "We ordered almost all the pans and some in different sizes too. I've replaced all the pans and some pots in our kitchen."
+  },
+  "R547": {
+   "name": "Don J.",
+   "date": "2026-04-17",
+   "pillars": [
+    "K"
+   ],
+   "snippet": "This is my second purchase of Siraat frying pans in just a couple of weeks too, and I must say, they are the best!"
+  },
+  "R553": {
+   "name": "Fran G.",
+   "date": "2026-04-15",
+   "pillars": [
+    "K"
+   ],
+   "snippet": "I am so happy to throw away my old Teflon pans and replace with the new titanium ones."
+  },
+  "R554": {
+   "name": "Derek G.",
+   "date": "2026-04-15",
+   "pillars": [
+    "K"
+   ],
+   "snippet": "Purchased the 30cm Titanium Frying pan. Really happy with the product."
+  },
+  "R555": {
+   "name": "Gwen",
+   "date": "2026-04-15",
+   "pillars": [
+    "K"
+   ],
+   "snippet": "Awesome pan and peace of mind that I am not ingesting bits of toxins when I cook. Nice looking pan too!"
+  },
+  "R563": {
+   "name": "Louise T.",
+   "date": "2026-04-14",
+   "pillars": [
+    "K"
+   ],
+   "snippet": "A gift for my daughter who loves to cook... I can't wait to finish work, and go home to cook."
+  },
+  "R574": {
+   "name": "Margo",
+   "date": "2026-04-11",
+   "pillars": [
+    "K",
+    "L"
+   ],
+   "snippet": "Quick delivery. Brilliant pan. Heats up fast non stick."
+  },
+  "R577": {
+   "name": "Thomas D.",
+   "date": "2026-04-11",
+   "pillars": [
+    "K"
+   ],
+   "snippet": "This pan is fantastic. Makes all of our others \"non stick\" seem really sticky."
+  },
+  "R583": {
+   "name": "Scott Y.",
+   "date": "2026-04-10",
+   "pillars": [
+    "K",
+    "S"
+   ],
+   "snippet": "These hammered Titanium pans from Siraat have been the best we have owned yet... the last pans we ever have to purchase."
+  }
+ },
+ "sets": {
+  "n1": [
+   "R240",
+   "R014",
+   "R116"
+  ],
+  "n2-nocode": [
+   "R213",
+   "R064",
+   "R434"
+  ],
+  "n2": [
+   "R213",
+   "R064",
+   "R434"
+  ],
+  "b1-acc": [
+   "R487",
+   "R158",
+   "R148"
+  ],
+  "b1": [
+   "R220-M",
+   "R555",
+   "R574"
+  ],
+  "b2-clicked-nocode": [
+   "R025",
+   "R492",
+   "R386"
+  ],
+  "b2-clicked": [
+   "R577",
+   "R082",
+   "R240"
+  ],
+  "b2-notclicked": [
+   "R518",
+   "R516",
+   "R047"
+  ],
+  "k1-acc": [
+   "R158",
+   "R148",
+   "R256"
+  ],
+  "k1": [
+   "R518",
+   "R492",
+   "R487"
+  ],
+  "k2-new": [
+   "R583",
+   "R011",
+   "R434"
+  ],
+  "k2-returning": [
+   "R547",
+   "R101",
+   "R082"
+  ],
+  "k3-nocode": [
+   "R273",
+   "R343",
+   "R169-S"
+  ],
+  "k3": [
+   "R220",
+   "R029",
+   "R200"
+  ],
+  "c1": [
+   "R577",
+   "R516",
+   "R240"
+  ],
+  "c2-acc": [
+   "R158",
+   "R487",
+   "R256"
+  ],
+  "c2": [
+   "R466",
+   "R064",
+   "R434"
+  ],
+  "c3-acc": [
+   "R553",
+   "R082",
+   "R386"
+  ],
+  "c3-p": [
+   "R025",
+   "R018-S",
+   "R157"
+  ],
+  "c3-s": [
+   "R398",
+   "R530",
+   "R380"
+  ],
+  "c4-nocode": [
+   "R138",
+   "R273",
+   "R574"
+  ],
+  "c4": [
+   "R138",
+   "R273",
+   "R574"
+  ],
+  "p1-first": [
+   "R380",
+   "R143",
+   "R105"
+  ],
+  "p1-repeat": [
+   "R547",
+   "R053",
+   "R434"
+  ],
+  "p2-safe": [
+   "R169",
+   "R371",
+   "R411-E"
+  ],
+  "p2": [
+   "R169",
+   "R371",
+   "R411-E"
+  ],
+  "p3-accessory-nocode": [
+   "R553",
+   "R082",
+   "R487"
+  ],
+  "p3-accessory": [
+   "R553",
+   "R082",
+   "R487"
+  ],
+  "p3-apron-nocode": [
+   "R563",
+   "R200",
+   "R148"
+  ],
+  "p3-apron": [
+   "R563",
+   "R200",
+   "R148"
+  ],
+  "p3-next-nocode": [
+   "R490",
+   "R124",
+   "R216"
+  ],
+  "p3-next": [
+   "R490",
+   "R124",
+   "R216"
+  ],
+  "p3-pan-nocode": [
+   "R157",
+   "R124",
+   "R473"
+  ],
+  "p3-pan": [
+   "R157",
+   "R124",
+   "R473"
+  ],
+  "p3-set-nocode": [
+   "R088",
+   "R241",
+   "R014"
+  ],
+  "p3-set": [
+   "R088",
+   "R241",
+   "R014"
+  ],
+  "a1": [
+   "R473",
+   "R063",
+   "R516"
+  ],
+  "a2": [
+   "R411",
+   "R029",
+   "R434"
+  ],
+  "s1": [
+   "R518",
+   "R029"
+  ],
+  "s2": [
+   "R138",
+   "R316"
+  ],
+  "u1": [
+   "R518",
+   "R069",
+   "R082"
+  ],
+  "v1-nocode": [
+   "R138",
+   "R011",
+   "R082"
+  ],
+  "v1": [
+   "R138",
+   "R011",
+   "R082"
+  ],
+  "v2": [
+   "R399-V",
+   "R213",
+   "R047"
+  ],
+  "w0": [
+   "R169",
+   "R380",
+   "R316"
+  ],
+  "w1-a": [
+   "R583",
+   "R029",
+   "R492"
+  ],
+  "w1-b": [
+   "R583",
+   "R029",
+   "R492"
+  ],
+  "w2": [
+   "R220",
+   "R047",
+   "R158"
+  ],
+  "w3": [
+   "R466",
+   "R064",
+   "R434"
+  ],
+  "w4-int": [
+   "R554",
+   "R399",
+   "R407-M"
+  ],
+  "w4-us": [
+   "R473",
+   "R063",
+   "R516"
+  ],
+  "w5": [
+   "R563",
+   "R112",
+   "R082"
+  ],
+  "r1-acc": [
+   "R553",
+   "R516",
+   "R487"
+  ],
+  "r1-pan": [
+   "R547",
+   "R014",
+   "R434"
+  ],
+  "r1-set": [
+   "R088",
+   "R542",
+   "R018-S"
+  ],
+  "r2-nocode": [
+   "R138",
+   "R101",
+   "R082"
+  ],
+  "r2-vip-nocode": [
+   "R011",
+   "R213",
+   "R380"
+  ],
+  "r2-vip": [
+   "R011",
+   "R213",
+   "R380"
+  ],
+  "r2": [
+   "R138",
+   "R240",
+   "R574"
+  ],
+  "kls-pan": [
+   "R577",
+   "R516",
+   "R240"
+  ],
+  "kls-set": [
+   "R398",
+   "R157",
+   "R530"
+  ],
+  "kls-int": [
+   "R554",
+   "R399",
+   "R407-M"
+  ],
+  "kls-acc": [
+   "R490",
+   "R158",
+   "R148"
+  ],
+  "kls-owner": [
+   "R547",
+   "R082",
+   "R101"
+  ]
+ }
+}

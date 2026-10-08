@@ -1,0 +1,36 @@
+<!-- MARKET-SIGNAL: profile -->
+<!-- V5-DEMO: alle v5-bouwstenen in één mail, per flowtype gebouwd door research/tailoring/test/v5_blocks.py (niet voor Klaviyo). -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>v5 demo</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
+  body{margin:0;padding:0;background:#FFFFFF;}
+  table{border-collapse:collapse;}
+  img{border:0;display:block;}
+  @media only screen and (max-width:620px){ .w{width:100%!important;} .pad{padding-left:22px!important;padding-right:22px!important;} .h2{font-size:30px!important;line-height:34px!important;} }
+</style></head>
+<body style="margin:0;padding:0;background:#FFFFFF;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF"><tr><td align="center" style="padding:8px 0 32px 0;">
+<table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
+{{HEADER}}
+<tr><td class="pad" data-t="macros" style="padding:24px 44px;font-family:Inter,Arial,sans-serif;font-size:15px;line-height:23px;color:#282828;">
+<span data-t="size">Pan Pro {{SIZE:28}}</span> | <span data-t="sizeboth">Mini {{SIZE:20:both}}</span> |
+<span data-t="price">Pan Pro {{PRICE:standard}}</span> | <span data-t="was">{{WAS:standard}}</span> | <span data-t="code">{{PRICE:standard*0.9}}</span> | <span data-t="from">{{FROM:deep}}</span> |
+<span data-t="ship">{{SHIP}}</span> | <span data-t="fr">{{FRICTION}}</span> | <span data-t="frc">{{FRICTION:code}}</span> |
+<span data-t="gifts">{{GIFTS:total}}</span> | <span data-t="GIFTS">{{GIFTS:TOTAL}}</span> | <span data-t="filter">Win {{GIFTS:filterline}}</span> |
+<span data-t="if">{{IF:US}}MARKET-US{{ELIF:UK}}MARKET-UK{{ELIF:AU,NZ}}MARKET-AUNZ{{ELIF:CA}}MARKET-CA{{ELIF:SG}}MARKET-SG{{ELSE}}MARKET-OTHER{{ENDIF}}</span> |
+<span data-t="int">{{IF:INT}}KNOWN-INT{{ENDIF}}</span> | <span data-t="unknown">{{IF:UNKNOWN}}MARKET-UNKNOWN{{ENDIF}}</span> |
+<span data-t="usonly">{{USONLY}}The 12-piece set, {{PRICE:set12}}{{ELSEUS}}The 6-piece set{{/USONLY}}</span>
+</td></tr>
+{{BLOCK:gifts5}}
+{{BLOCK:gifts5 style="row" urgency="1"}}
+{{BLOCK:reviews3 set="c1"}}
+{{BLOCK:reviews3 set="s1" n="2"}}
+{{BLOCK:bundle}}
+{{BLOCK:xsell fall="1" pre="https://siraatskitchen.com/discount/HI10?redirect=/products/" post="%3Futm_source%3Dklaviyo"}}
+{{BLOCK:vs kind="pfas"}}
+{{BLOCK:vs kind="steel"}}
+{{BLOCK:vs kind="castiron"}}
+{{FOOTER}}
+</table></td></tr></table>
+</body></html>

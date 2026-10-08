@@ -35,60 +35,66 @@ ME_CUR = 'AED|SAR|KWD|BHD|OMR|QAR'
 NAMED = ['US', 'CA', 'UK', 'EU', 'AU', 'NZ', 'SG', 'HK', 'ME']
 PRICED = ['US', 'CA', 'UK', 'EU', 'AU', 'NZ', 'SG']          # vaste prijslijst in Shopify: bedragen mogen
 ISO = {'US': 'US', 'CA': 'CA', 'UK': 'GB', 'AU': 'AU', 'NZ': 'NZ', 'SG': 'SG', 'HK': 'HK'}
-PNAMES = {'US': ['United States', 'US', 'USA', 'United States of America'], 'CA': ['Canada', 'CA'],
+PNAMES = {'US': ['United States', 'US'], 'CA': ['Canada', 'CA'],
           'UK': ['United Kingdom', 'GB', 'UK'], 'AU': ['Australia', 'AU'], 'NZ': ['New Zealand', 'NZ'],
           'SG': ['Singapore', 'SG'], 'HK': ['Hong Kong', 'HK']}
 CUR = {'US': 'USD', 'CA': 'CAD', 'UK': 'GBP', 'EU': 'EUR', 'AU': 'AUD', 'NZ': 'NZD', 'SG': 'SGD', 'HK': 'HKD'}
 CAT_COUNTRY = {'US': 'US', 'CA': 'CA', 'UK': 'GB', 'EU': 'DE', 'AU': 'AU', 'NZ': 'NZ', 'SG': 'SG'}   # land in products.json
-SYM = {'US': '$', 'CA': 'C$', 'UK': '&pound;', 'EU': '&euro;', 'AU': 'A$', 'NZ': 'NZ$', 'SG': 'S$'}
+SYM = {'US': '$', 'CA': 'C$', 'UK': '\u00a3', 'EU': '\u20ac', 'AU': 'A$', 'NZ': 'NZ$', 'SG': 'S$'}
 
 FLOWSIG = {'post-purchase': 'order', 'winback': 'order', 'vip': 'order', 'anniversary': 'order',
            'checkout': 'checkout', 'cart': 'cart', 'browse': 'browse',
            'welcome': 'profile', 'site': 'profile', 'sunset': 'profile', 'ugc': 'profile'}
-PC = "person.Country|default:person.country_code"
-BIND = {'order': "mc=event.extra.shipping_address.country_code",
-        'cart': "mc=event|lookup:'_ip_country_code'",
-        'checkout': "mcur=event.extra.presentment_currency mpc=" + PC,
-        'profile': "mpc=" + PC,
-        'browse': "mpc=" + PC + " mpr=event.Price"}
+PC = "person.Country"          # Klaviyo-tag voor het profielland; tweede bron person.country_code (mpcc) bij profiel en browse
+# EU- en ME-lijsten één keer per {% with %} gebonden (meu, mme), zodat elke voorwaarde kort blijft
+_L = {'order': (EU_ISO, ME_ISO), 'cart': (EU_ISO, ME_ISO), 'checkout': (None, ME_CUR),
+      'profile': (EU_ISO + '|' + EU_NAMES, ME_ISO + '|' + ME_NAMES), 'browse': (EU_ISO + '|' + EU_NAMES, ME_ISO + '|' + ME_NAMES)}
+def _lists(sig):
+    eu, me = _L[sig]
+    return (" meu='%s'" % eu if eu else '') + " mme='%s'" % me
+BIND = {'order': "mc=event.extra.shipping_address.country_code" + _lists('order'),
+        'cart': "mc=event|lookup:'_ip_country_code'" + _lists('cart'),
+        'checkout': "mcur=event.extra.presentment_currency mpc=" + PC + "|default:'US'" + _lists('checkout'),
+        'profile': "mpc=" + PC + _lists('profile'),
+        'browse': "mpc=" + PC + " mpr=event.Price" + _lists('browse')}
 
 def sig_of(flow):
     if flow in BIND: return flow
     return FLOWSIG.get(flow, 'profile')
 
-def _prof(m):
-    """Profielland-voorwaarde voor markt m als lijst disjuncten (zonder haakjes: Django kent geen haakjes)."""
-    if m in PNAMES: return ["mpc == '%s'" % n for n in PNAMES[m]]
-    if m == 'EU': return ["mpc and mpc in '%s|%s'" % (EU_ISO, EU_NAMES)]
-    if m == 'ME': return ["mpc and mpc in '%s|%s'" % (ME_ISO, ME_NAMES)]
-    raise KeyError(m)
+def _prof(m, cc=True):
+    """Profielland-voorwaarde voor markt m als lijst disjuncten (zonder haakjes: Django kent geen haakjes).
+    cc=True: ook het eigen ISO-veld person.country_code (mpcc) als het land leeg is."""
+    if m in PNAMES: d = ["mpc == '%s'" % n for n in PNAMES[m]] + (["not mpc and mpcc == '%s'" % (ISO[m])] if cc else [])
+    elif m == 'EU': d = ["mpc and mpc in meu"] + (["not mpc and mpcc and mpcc in meu"] if cc else [])
+    elif m == 'ME': d = ["mpc and mpc in mme"] + (["not mpc and mpcc and mpcc in mme"] if cc else [])
+    else: raise KeyError(m)
+    return d
 
 def disj(m, sig):
     """Voorwaarde voor markt m als lijst disjuncten (elk een and-reeks), met de variabelen uit BIND[sig]."""
     if sig in ('order', 'cart'):
         if m in ISO: return ["mc == '%s'" % ISO[m]]
-        if m == 'EU': return ["mc and mc in '%s'" % EU_ISO]
-        if m == 'ME': return ["mc and mc in '%s'" % ME_ISO]
+        if m == 'EU': return ["mc and mc in meu"]
+        if m == 'ME': return ["mc and mc in mme"]
     if sig == 'profile':
         return _prof(m)
     if sig == 'browse':
         d = _prof(m)
-        if m == 'US': d = d + ["not mpc and '$' in mpr and '.' not in mpr"]
-        if m == 'UK': d = d + ["not mpc and '&pound;' in mpr", "not mpc and '£' in mpr"]
-        if m == 'EU': d = d + ["not mpc and '€' in mpr"]
+        if m == 'US': d = d + ["not mpc and not mpcc and '$' in mpr and '.' not in mpr"]
+        if m == 'UK': d = d + ["not mpc and not mpcc and '£' in mpr"]
+        if m == 'EU': d = d + ["not mpc and not mpcc and '€' in mpr"]
         return d
     if sig == 'checkout':
-        if m == 'US':
-            d = ["mcur == 'USD' and not mpc"] + ["mcur == 'USD' and " + x for x in _prof('US')]
-        elif m == 'ME':
-            d = ["mcur and mcur in '%s'" % ME_CUR]
-        else:
-            d = ["mcur == '%s'" % CUR[m]]
-        return d + ['not mcur and ' + x for x in _prof(m)]
+        # presentment_currency is er altijd (01-markten: 100%); USD telt alleen als US bij een US- of leeg profielland
+        # (mpc is in de checkout-binding standaard 'US', zie BIND)
+        if m == 'US': return ["mcur == 'USD' and " + x for x in _prof('US', cc=False)]
+        if m == 'ME': return ["mcur and mcur in mme"]
+        return ["mcur == '%s'" % CUR[m]]
     raise KeyError((m, sig))
 
 def known(sig):
-    return {'order': 'mc', 'cart': 'mc', 'checkout': 'mcur or mpc', 'profile': 'mpc', 'browse': 'mpc or mpr'}[sig]
+    return {'order': 'mc', 'cart': 'mc', 'checkout': 'mcur', 'profile': 'mpc or mpcc', 'browse': 'mpc or mpcc or mpr'}[sig]
 
 def cond(m, sig):
     if m == 'KNOWN': return known(sig)
@@ -372,7 +378,7 @@ def reviews3(kv, sig):
 VS = {  # rijen uit research/ux-round2/comparisons.md (A/B/C), PFAS-tabel volgens besluit 8 okt (direct "PFAS pan", geen gezondheidsclaim, geen merknamen)
  'pfas': ('Your future pan vs a PFAS pan', 'A PFAS pan',
           [('Pure titanium surface', 'PFAS coating on top', 'cross'), ('No coating to wear off', 'Coating wears with use', 'cross'),
-           ('Metal utensils welcome', 'Wood or silicone advised', 'cross'), ('Lab tested PFAS-free', 'PFAS is the coating', 'cross'),
+           ('Metal utensils welcome', 'Wood or silicone advised', 'cross'), ('Lab tested PFAS-free', 'PFAS in the coating', 'cross'),
            ('Dishwasher safe', 'Hand wash advised', 'cross')],
           'Light Labs report no. 25895: 31 PFAS compounds tested, all below detection.'),
  'steel': ('Your future pan vs stainless steel', 'Stainless steel',
@@ -477,32 +483,28 @@ XITEM = {
  'set6': ('The 6-piece set', 'Mini, Small and Large, each with its own lid.', 'set6', 'pc-set6.jpg', None),
 }
 LIDVAR = {'lid20': '53294486421844', 'lid26': '52401107206484', 'lid28': '52401107239252', 'lid30': '52401107272020'}
-# bezit: substrings in de huidige order (lowercase titels, xs) of sleutels in person.siraat_owned (lijst, xo; scripts/sync_owned.py)
-SETS_MINI = ['pan set with lids', '6-teilig', '12-pcs', '12 pcs', 'full hammered', '2 pans', 'pan pro duo', 'just everything']
-XOWN = {
- 'mini': (['pan pro mini'] + SETS_MINI, ['panpro_mini']),
- 'small': (['pan pro small', 'pan set with lids', '6-teilig', '12-pcs', '12 pcs', 'full hammered', 'pan pro kit', 'just everything'], ['panpro_small']),
- 'standard': (['pan pro standard', 'cookware set pro', 'complete edition', 'full hammered', '2 pans', 'pro duo', 'cook & prep', 'pan pro & utensil'], ['panpro_standard']),
- 'large': (['pan pro large', 'pan set with lids', '6-teilig', '12-pcs', '12 pcs', 'full hammered', 'just everything'], ['panpro_large']),
- 'deep': (['deep pan', 'cookware set pro', 'complete edition', 'wok & deep', 'just everything'], ['deep']),
- 'wok': (['wok', 'cookware set pro', 'complete edition', 'just everything'], ['wok']),
- 'crepe': (['crêpe', 'crepe', 'complete edition', 'just everything'], ['crepe']),
- 'lid20': (['pan pro mini&lid', 'pan set with lids', '6-teilig', '12-pcs', '12 pcs', 'full hammered', '2 pans', 'just everything'], ['lid_20']),
- 'lid26': (['pan pro small&lid', 'pan set with lids', '6-teilig', '12-pcs', '12 pcs', 'full hammered', 'pan pro kit', 'just everything'], ['lid_26']),
- 'lid28': (['pan pro standard&lid', 'full hammered', '2 pans'], ['lid_28']),
- 'lid30': (['pan pro large&lid', 'pan set with lids', '6-teilig', '12-pcs', '12 pcs', 'full hammered', 'just everything'], ['lid_30']),
- 'board': (['cutting board', 'cook & prep', 'just everything'], ['board']),
- 'utset': (['utensil', 'full hammered', 'just everything'], ['utensils']),
- 'apron': (['apron', 'just everything'], ['apron']),
- 'mill': (['mill', 'just everything'], ['mill']),
- 'set6': (['pan set with lids', '6-teilig', '12-pcs', '12 pcs', 'just everything'], ['set6', 'set12', 'everything']),
-}
-# categorie van de huidige order (eerste match wint; volgorde = prioriteit) en kandidaten (04-cross-sell.md 6.1, 3 per categorie)
+# Bezit: titel in de huidige order (xs = event-titels, lowercase) of sleutel in person.siraat_owned (xo, lijst uit
+# scripts/sync_owned.py, die bundels uitpakt). Sets in de huidige order tellen mee via hun inhoud (SETS_ALL enz.).
+SETS_ALL = ['pan set', 'teilig', '12-pcs', '12 pcs', 'full hammered', 'everyth']
+XOWN = {'mini': (['pan pro mini', '2 pans', 'pan pro duo'] + SETS_ALL, ['panpro_mini']),
+        'small': (['pan pro small', 'pan pro kit'] + SETS_ALL, ['panpro_small']),
+        'standard': (['pan pro standard', 'cookware set pro', 'complete edition', 'full hammered', '2 pans', 'pro duo', 'cook & prep', 'pan pro & utensil', 'everyth'], ['panpro_standard']),
+        'large': (['pan pro large'] + SETS_ALL, ['panpro_large']),
+        'deep': (['deep pan', 'cookware set pro', 'complete edition', 'everyth'], ['deep']),
+        'wok': (['wok', 'cookware set pro', 'complete edition', 'everyth'], ['wok']),
+        'crepe': (['crêpe', 'crepe', 'complete edition', 'everyth'], ['crepe']),
+        'lid20': (['lid', '2 pans'] + SETS_ALL, ['lid_20']), 'lid26': (['lid', 'pan pro kit'] + SETS_ALL, ['lid_26']),
+        'lid28': (['lid', 'full hammered', '2 pans'], ['lid_28']), 'lid30': (['lid'] + SETS_ALL, ['lid_30']),
+        'board': (['cutting board', 'cook & prep', 'everyth'], ['board']),
+        'utset': (['utensil', 'full hammered', 'everyth'], ['utensils']),
+        'apron': (['apron', 'everyth'], ['apron']), 'mill': (['mill', 'everyth'], ['mill']),
+        'set6': (SETS_ALL, ['set6', 'set12', 'everything'])}
+# Categorieën van de huidige order en hun kandidaten (04-cross-sell.md 6.1). Een kandidaat verschijnt als hij niet in bezit is en
+# hoort bij een categorie die in de order zit. Eén rij per product (geen dubbele rijen bij meer producten in de order).
 XCAT = [
- ('everything', ['just everything', '34-pcs'], []),
  ('set12', ['12-pcs', '12 pcs'], ['standard', 'utset', 'board']),
+ ('set6', ['pan set', 'teilig'], ['standard', 'utset', 'board']),
  ('pot', ['saucepan', 'pot with lid', 'pot set'], ['set6', 'standard', 'board']),
- ('set6', ['pan set with lids', '6-teilig'], ['standard', 'utset', 'board']),
  ('setmix', ['cookware set pro', 'complete edition', 'full hammered', 'pan pro duo', '2 pans', 'pro duo', 'pan pro kit', 'cook & prep', 'pan pro & utensil'], ['lid28', 'board', 'crepe']),
  ('standard', ['pan pro standard'], ['lid28', 'mini', 'board']),
  ('large', ['pan pro large'], ['lid30', 'small', 'board']),
@@ -518,95 +520,90 @@ XCAT = [
  ('utset', ['utensil'], ['board', 'mini', 'deep']),
  ('mill', ['mill'], ['board', 'apron', 'standard']),
  ('apron', ['apron'], ['mill', 'board', 'standard']),
+ ('other', ['sheets', 'detergent', 'gift card', 'bottle', 'straw', 'ice cube', 'trivet', 'chopstick', 'mat', 'sharpener', 'tote', 'wheel', 'grill'], ['standard', 'mini', 'board']),
 ]
-XDEFAULT = ['standard', 'mini', 'board']
-XHEAD = {'set12': 'Goes with your set', 'pot': 'Now the pans', 'set6': 'The one size your set does not have', 'setmix': 'Goes with your set',
-         'standard': 'What 11&Prime; owners add next', 'large': 'What Large owners add next', 'small': 'What Small owners add next',
+XORDER = ['lid28', 'lid30', 'lid26', 'lid20', 'standard', 'mini', 'small', 'large', 'set6', 'deep', 'wok', 'crepe', 'board', 'utset', 'mill', 'apron']
+XHEAD = {'set12': 'Goes with your set', 'set6': 'Goes with your set', 'pot': 'Now the pans', 'setmix': 'Goes with your set',
+         'standard': 'What Pan Pro owners add next', 'large': 'What Large owners add next', 'small': 'What Small owners add next',
          'mini': 'What Mini owners add next', 'deep': 'Goes with your deep pan', 'wok': 'Goes with your wok', 'crepe': 'Goes with your cr&ecirc;pe pan',
          'pizza': 'Goes with your pizza steel', 'roast': 'Goes with your roasting pan', 'board': 'Goes with your board', 'lid': 'Goes with your lid',
-         'utset': 'Goes with your utensils', 'mill': 'Goes with your mills', 'apron': 'Goes with your apron', '': 'Picked for your kitchen'}
+         'utset': 'Goes with your utensils', 'mill': 'Goes with your mills', 'apron': 'Goes with your apron', 'other': 'Picked for your kitchen', '': 'Picked for your kitchen'}
 
 def owned(tok):
     subs, keys = XOWN[tok]
-    a = [' and '.join("'%s' in xs" % x for x in s.split('&')) for s in subs]
-    return ' or '.join(a + ["'%s' in xo" % k for k in keys])
+    return ' or '.join(["'%s' in xs" % x for x in subs] + ["'%s' in xo" % k for k in keys])
+
+def owned_short(tok):
+    """Korte bezitstoets voor de terugvalregel (eigen titel of sleutel; sets via hun sleutels in siraat_owned)."""
+    subs, keys = XOWN[tok]
+    return ' or '.join(["'%s' in xs" % subs[0]] + ["'%s' in xo" % k for k in keys])
 
 def free(tok):
-    """'Niet in bezit' als and-reeks (Django kent geen haakjes; De Morgan)."""
     subs, keys = XOWN[tok]
-    parts = []
-    for s in subs:
-        bits = s.split('&')
-        if len(bits) == 1: parts.append("'%s' not in xs" % s)
-        else: parts.append(None)   # a&b: 'niet (a en b)' is een of-reeks; apart afgehandeld
-    return parts, keys
+    return ' and '.join(["'%s' not in xs" % x for x in subs] + ["'%s' not in xo" % k for k in keys])
 
-def free_test(tok):
-    """Geeft (open, close) om een blok alleen te tonen als tok niet in bezit is (geneste ifs voor a&b-termen)."""
-    return '{%% if %s %%}{%% else %%}' % owned(tok), '{% endif %}'
-
-def xrow(tok, kv, sig, prices, first):
+def xrow(tok, kv, sig, prices):
     name, sub, key, img, cm = XITEM[tok]
     pre, post = kv.get('pre', 'https://siraatskitchen.com/products/'), kv.get('post', '')
     h = handle(key)
     if tok in LIDVAR: h += ('%3Fvariant%3D' if 'redirect' in pre else '?variant=') + LIDVAR[tok]
-    if cm: name = name + ', ' + size_chain(sig, cm, bare=True)
+    if cm: name = name + ' ' + size_chain(sig, cm, bare=True)
     pr = ''
     if prices != 'none':
-        vals = price_vals(key, frm=True) if prices == 'local' else [x for x in price_vals(key, frm=True) if x[0] == 'US']
-        pr = chain(sig, vals, '', bare=True)
-        if pr: pr = ' <span style="font-size:13px;font-weight:600;color:#282828;white-space:nowrap;">' + pr + '</span>'
-    row = fill(tpl('xsell-row.html'), {'tok': tok, 'img': img, 'url': pre + h + post, 'name': name, 'sub': sub, 'price': pr,
-                                       'bt': '' if first else 'border-top:1px solid #ECE7DD;'}, 'xsell')
+        vals = price_vals(key, frm=True)
+        if prices != 'local': vals = [x for x in vals if x[0] == 'US']
+        pr = chain(sig, [(m, ' &middot; <b style="color:#282828;">%s</b>' % v) for m, v in vals], '', bare=True)
+    row = fill(tpl('xsell-row.html'), {'tok': tok, 'img': img, 'url': pre + h + post, 'name': name, 'sub': sub, 'price': pr}, 'xsell')
     if us_only(key): row = '{%% if %s %%}%s{%% endif %%}' % (cond('US', sig), row)
     return row
 
 def xsell(kv, sig, src):
     prices = kv.get('prices', 'local')
-    def rows(cands):
-        """Toont de eerste 2 vrije kandidaten (niet in de order, niet in siraat_owned)."""
-        if not cands: return ''
-        a = cands + [None] * (3 - len(cands))
-        o = lambda t: owned(t)
-        out = ''
-        # rij 1: a1 vrij
-        out += '{%% if %s %%}{%% else %%}%s{%% endif %%}' % (o(a[0]), xrow(a[0], kv, sig, prices, True))
-        # rij 2: a2 vrij (er staat hooguit één rij boven)
-        out += '{%% if %s %%}{%% else %%}%s{%% endif %%}' % (o(a[1]), xrow(a[1], kv, sig, prices, False))
-        # rij 3: a3 vrij en a1 of a2 in bezit
-        if a[2]: out += '{%% if %s %%}{%% else %%}{%% if %s or %s %%}%s{%% endif %%}{%% endif %%}' % (o(a[2]), o(a[0]), o(a[1]), xrow(a[2], kv, sig, prices, False))
-        return out
-    def allowned(cands):
-        return ' and '.join('%s' % ('(' + o + ')') for o in []) if False else None
-    branches = []
-    for cat, toks, cands in XCAT:
-        c = ' or '.join("'%s' in xs" % t for t in toks)
-        branches.append((c, cat, cands))
-    head = '{% if xs %}' + ''.join(('{%% if %s %%}' if i == 0 else '{%% elif %s %%}') % c + XHEAD.get(cat, XHEAD['']) for i, (c, cat, cands) in enumerate(branches)) + '{% else %}' + XHEAD[''] + '{% endif %}{% else %}' + XHEAD[''] + '{% endif %}'
-    body = ''.join(('{%% if %s %%}' if i == 0 else '{%% elif %s %%}') % c + '<!--xs:%s-->' % cat + rows(cands) for i, (c, cat, cands) in enumerate(branches)) + '{% else %}' + rows(XDEFAULT) + '{% endif %}'
-    # terugval: geen enkele rij (alles in bezit of 34-delig)
-    fb = ('<tr><td data-xs="none" style="padding:14px 16px;%sfont-size:14px;line-height:21px;color:#727272;text-align:center;">%s</td></tr>' %
+    fb = ('<tr><td colspan="2" data-xs="none" style="padding:14px 16px;border-top:1px solid #ECE7DD;%sfont-size:14px;line-height:21px;color:#727272;text-align:center;">%s</td></tr>' %
           (F, kv.get('fallback', 'Already have the full line-up? Reply and tell us what you cook most. We will point you to the right next piece.')))
-    allow = ''
-    for c, cat, cands in branches:
-        pass
-    # 'geen rij' = alle kandidaten van de categorie in bezit: per categorie testen
-    def none_cond(cands):
-        if not cands: return None
-        return cands
-    nb = ''.join(('{%% if %s %%}' if i == 0 else '{%% elif %s %%}') % c + (nested_all_owned(cands, fb) if cands else fb) for i, (c, cat, cands) in enumerate(branches)) + '{% else %}' + nested_all_owned(XDEFAULT, fb) + '{% endif %}'
-    fall = ''
-    if kv.get('fall') == '1':   # fall-sale-set als extra kaart, alleen als Mini, Small en Large alle drie niet in bezit zijn
-        fall = '{%% if %s %%}{%% elif %s %%}{%% elif %s %%}{%% else %%}%s{%% endif %%}' % (owned('mini'), owned('small'), owned('large'), xrow('set6', kv, sig, prices, False))
+    rel = {}
+    for cat, toks, cands in XCAT:
+        for t in cands: rel.setdefault(t, []).extend(toks)
+    rows = ''
+    for t in XORDER:
+        r = ' or '.join("'%s' in xs" % x for x in dict.fromkeys(rel.get(t, [])))
+        if t in ('standard', 'mini', 'board'): r = 'not xs or ' + r          # geen titels (bv. alleen een gift): de standaardrij
+        row = xrow(t, kv, sig, prices)
+        if t == 'set6' and kv.get('fall') == '1':   # fall-sale-set ook als Mini, Small en Large alle drie niet in bezit zijn
+            g = '{%% if %s %%}{%% if %s %%}%s{%% elif %s and %s and %s %%}%s{%% endif %%}{%% endif %%}' % (free(t), r, row, free('mini'), free('small'), free('large'), row)
+        elif r: g = '{%% if %s %%}{%% if %s %%}%s{%% endif %%}{%% endif %%}' % (free(t), r, row)
+        else: continue
+        rows += g
+    # terugval: alle kandidaten van de eerste categorie in bezit (of het 34-delige bundel): één regel in plaats van rijen
+    nb = ''
+    for i, (cat, toks, cands) in enumerate(XCAT):
+        c = ' or '.join("'%s' in xs" % t for t in toks)
+        inner = fb
+        for t in reversed(cands): inner = '{%% if %s %%}%s{%% endif %%}' % (owned_short(t), inner)
+        nb += ('{%% if %s %%}' if i == 0 else '{%% elif %s %%}') % c + inner
+    nb += '{% endif %}'
+    body = "{%% if 'everyth' in xs or '34-pcs' in xs %%}%s{%% else %%}%s%s{%% endif %%}" % (fb, rows, nb)
+    hb, hv = [], []
+    for cat, toks, cands in XCAT:
+        c = ' or '.join("'%s' in xs" % x for x in toks); t = XHEAD.get(cat, XHEAD[''])
+        if hb and hv[-1] == t: hb[-1] += ' or ' + c
+        else: hb.append(c); hv.append(t)
+    head = ''.join(('{%% if %s %%}' if i == 0 else '{%% elif %s %%}') % c + t for i, (c, t) in enumerate(zip(hb, hv))) + '{% else %}' + XHEAD[''] + '{% endif %}'
     d = {'pad': kv.get('pad', '28px 44px 4px 44px'), 'eyebrow': kv.get('eyebrow', 'OFTEN ADDED NEXT'), 'headline': kv.get('headline') or head,
-         'rows': body + fall + nb, 'note': kv.get('note', '')}
+         'rows': body, 'note': kv.get('note', '')}
     return ("{%% with xs=%s|lower xo=person|lookup:'siraat_owned' %%}" % src) + wopen(sig) + fill(tpl('xsell.html'), d, 'xsell') + WCLOSE + '{% endwith %}'
 
-def nested_all_owned(cands, fb):
-    """fb alleen als elke kandidaat in bezit is (geneste ifs = en)."""
-    out = fb
-    for t in reversed(cands): out = '{%% if %s %%}%s{%% endif %%}' % (owned(t), out)
+def _amp(subs):
+    """Titels met & komen via |join als &amp; binnen (autoescape): test beide vormen."""
+    out = []
+    for x in subs:
+        out.append(x)
+        if '&' in x and '&amp;' not in x: out.append(x.replace('&', '&amp;'))
     return out
+
+for _k, (_s, _keys) in list(XOWN.items()): XOWN[_k] = (_amp(_s), _keys)
+XCAT = [(c, _amp(t), cands) for c, t, cands in XCAT]
+BUNDLES = [(b[0], _amp(b[1])) + tuple(b[2:]) for b in BUNDLES]
 
 # ------------------------------------------------------------------ registratie
 SRC = {'checkout': "event.Items|join:','", 'order': "event.Items|join:','", 'cart': "event|lookup:'Product Name'", 'browse': 'event.Name',

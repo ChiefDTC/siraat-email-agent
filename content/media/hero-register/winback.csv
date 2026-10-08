@@ -1,6 +1,6 @@
 mail,bronfoto,hero
 r1-pan,klaviyo/templates/v3/winback/assets/src/IMG_1253.jpg (Shopify Files IMG_1253.jpg; penne in Pan Pro met deksel),klaviyo/templates/v3/winback/assets/r1-pan-hero.jpg
-r1-set,content/media/ai-flash/full-stove-1x1-01.jpg (AI-flitsbeeld, research/images/02-voorstel.md; vervangt Pan_LF_13.jpg),klaviyo/templates/v3/winback/assets/r1-set-hero.jpg
+r1-set,"content/media/ai-flash/full-stove-1x1-v5-2k.jpg (v5, goedgekeurd in research/v5/05-beeld-controle.md; hero via scripts/make_v5_images.py)", research/images/02-voorstel.md; vervangt Pan_LF_13.jpg),klaviyo/templates/v3/winback/assets/r1-set-hero.jpg
 r1-acc,https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Photo_Three_Pans_with_Vegetables_on_Stove_Pro.jpg (origineel 4037x2691: klaviyo/templates/v3/winback/assets/src/Photo_Three_Pans_with_Vegetables_on_Stove_Pro-orig.jpg; retina-ronde 7 okt),klaviyo/templates/v3/winback/assets/r1-acc-hero.jpg
 r2,"content/media/hp-shoot/square/P05-A_Stovetop_Pot_1920w_q82.jpg (retina-ronde 7 okt: vierkante versie 1280px, was 3:2-kopie met vierkante uitsnede 1067px)",klaviyo/templates/v3/winback/assets/r2-hero.jpg
 r2-nocode,content/media/hp-shoot/square/P05-A_Stovetop_Pot_1920w_q82.jpg (zelfde foto als r2: alternatieve tak van dezelfde stap),klaviyo/templates/v3/winback/assets/r2-nocode-hero.jpg

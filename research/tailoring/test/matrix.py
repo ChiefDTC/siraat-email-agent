@@ -64,7 +64,7 @@ def render(flow, mail, c):
     tpl = expanded(flow, mail)
     if tpl is None: return None
     ev = json.load(open(os.path.join(T, 'samples', '%s_x_%s.json' % (TRIG[flow], c))))
-    return tpl.render({'event': ev, 'first_name': 'Sarah', 'person': {}, 'organization': {'name': "Siraat's Kitchen", 'full_address': '[address]'}})
+    return tpl.render({'event': ev, 'first_name': 'Sarah', 'person': ev.pop('_person', {}), 'organization': {'name': "Siraat's Kitchen", 'full_address': '[address]'}})
 
 def text(h):
     h = re.sub(r'<style.*?</style>|<!--.*?-->', '', h, flags=re.S)

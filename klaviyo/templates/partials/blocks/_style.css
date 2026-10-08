@@ -29,3 +29,8 @@
     .dl-t{width:84px!important;}
     .dl-n{font-size:22px!important;line-height:26px!important;}
   }
+  /* v5-bouwstenen (8 okt 2026): gifts5-strook, reviews3 */
+  @media only screen and (max-width:620px){
+    .gm{padding:8px 2px 12px 2px!important;}
+    .gm img{width:52px!important;height:52px!important;}
+  }

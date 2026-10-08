@@ -1,9 +1,9 @@
 mail,bronfoto,hero
-w0,content/media/ai-flash/egg-crack-1x1-01.jpg (AI-flitsbeeld, research/images/02-voorstel.md; v4-bouw 7 okt 2026),klaviyo/templates/v3/welcome/assets/w0-hero.jpg
+w0,"content/media/ai-flash/egg-crack-1x1-v5-2k.jpg (v5, goedgekeurd in research/v5/05-beeld-controle.md; hero via scripts/make_v5_images.py)", research/images/02-voorstel.md; v4-bouw 7 okt 2026),klaviyo/templates/v3/welcome/assets/w0-hero.jpg
 w2,geen (tekstmail),
 w3,content/media/hp-shoot/square/P11-E_Hammered_1920w_q82.jpg (kop ongewijzigd: Tested. Not claimed.),klaviyo/templates/v3/welcome/assets/w3-hero.jpg
-w4-us,content/media/ai-flash/pasta-lift-1x1-01.jpg (AI-flitsbeeld; nieuwe kop v4: Who are you cooking for?),klaviyo/templates/v3/welcome/assets/w4-us-hero.jpg
-w4-int,content/media/ai-flash/two-sizes-1x1-01.jpg (AI-flitsbeeld; aanbodbalk zonder dollarbedrag: 4 GIFTS),klaviyo/templates/v3/welcome/assets/w4-int-hero.jpg
+w4-us,"content/media/ai-flash/pasta-lift-1x1-v5-2k.jpg (v5, goedgekeurd in research/v5/05-beeld-controle.md; hero via scripts/make_v5_images.py)",klaviyo/templates/v3/welcome/assets/w4-us-hero.jpg
+w4-int,"content/media/ai-flash/two-sizes-1x1-v5-2k.jpg (v5, goedgekeurd in research/v5/05-beeld-controle.md; hero via scripts/make_v5_images.py)",klaviyo/templates/v3/welcome/assets/w4-int-hero.jpg
 w5,content/media/hp-shoot/square/P09-A_Pan_Lid_1920w_q82.jpg (nieuwe kop v4: Skeptical first. Then the egg.),klaviyo/templates/v3/welcome/assets/w5-hero.jpg
 w1-a,"content/media/hp-shoot/square/P04-A_Stovetop_Pan_1920w_q82.jpg (urgency-upgrade 7 okt: nieuwe kop No PFAS.|Nothing to wear off., zelfde foto)",klaviyo/templates/v3/welcome/assets/w1-hero-pfas.jpg
 w1-b,idem w1-a (T04 test alleen het aanbodblok),klaviyo/templates/v3/welcome/assets/w1-hero-pfas.jpg

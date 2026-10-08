@@ -55,7 +55,7 @@ def main():
         json.dump(order_like('co_pan.json', t, p, im, None), open(os.path.join(S, 'co_x_%s.json' % c), 'w'), ensure_ascii=False)
         json.dump(order_like('po_pan_us.json', t, p, im, 'US'), open(os.path.join(S, 'po_x_%s.json' % c), 'w'), ensure_ascii=False)
         if c in EXTRA: n += 2; continue
-        json.dump({'Product Name': t, 'Price': p, 'Quantity': 1, 'ImageURL': im + '?v=1', 'URL': 'https://2d0add-d6.myshopify.com/products/x', '$currency': 'USD', '$value': p},
+        json.dump({'Product Name': t, 'Price': p, 'Quantity': 1, 'ImageURL': im + '?v=1', 'URL': 'https://2d0add-d6.myshopify.com/products/x', '$currency': 'USD', '_ip_country_code': 'US', '$value': p},
                   open(os.path.join(S, 'atc_x_%s.json' % c), 'w'), ensure_ascii=False)
         json.dump({'Name': t, 'Price': '$%d' % p, 'ImageURL': im + '?v=1', 'URL': 'https://siraatskitchen.com/products/x'},
                   open(os.path.join(S, 'vp_x_%s.json' % c), 'w'), ensure_ascii=False)

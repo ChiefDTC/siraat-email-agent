@@ -11,7 +11,8 @@ src, evf, out, img, shared = sys.argv[1:6]
 h = open(src).read()
 h = h.replace('{{IMG}}', img).replace('{{SHARED}}', shared)
 ev = json.load(open(evf))
-ctx = {'event': ev, 'first_name': 'Sarah', 'organization': {'name': "Siraat's Kitchen", 'full_address': '[address]'}, 'person': {}}
+person = json.load(open(sys.argv[6])) if len(sys.argv) > 6 else ev.pop('_person', {})   # profiel: 6e argument of '_person' in de sample (v5, 8 okt)
+ctx = {'event': ev, 'first_name': 'Sarah', 'organization': {'name': "Siraat's Kitchen", 'full_address': '[address]'}, 'person': person}
 t = engines['django'].from_string(h)
 open(out, 'w').write(t.render(ctx))
 print('ok', out)

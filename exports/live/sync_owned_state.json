@@ -14,21 +14,39 @@
    "errors": 0,
    "verify_fails": 0,
    "seconds": 117
+  },
+  {
+   "at": "2026-10-08T14:29:12+00:00",
+   "mode": "live",
+   "since": null,
+   "limit": null,
+   "events": {
+    "placed": 109321,
+    "cancel": 293,
+    "refund": 2252
+   },
+   "written": 98691,
+   "errors": 0,
+   "verify_fails": null,
+   "seconds": 1098
   }
  ],
  "last_run": {
-  "at": "2026-10-08T14:23:15+00:00",
+  "at": "2026-10-08T14:29:12+00:00",
   "mode": "live",
-  "since": "2026-09-08T00:00:00Z",
-  "limit": 50,
+  "since": null,
+  "limit": null,
   "events": {
-   "placed": 5208,
-   "cancel": 60,
-   "refund": 116
+   "placed": 109321,
+   "cancel": 293,
+   "refund": 2252
   },
-  "written": 50,
+  "written": 98691,
   "errors": 0,
-  "verify_fails": 0,
-  "seconds": 117
- }
+  "verify_fails": null,
+  "seconds": 1098
+ },
+ "cursor": "2026-10-08T14:39:12+00:00",
+ "full_history_done": true,
+ "last_success_at": "2026-10-08T14:29:12+00:00"
 }

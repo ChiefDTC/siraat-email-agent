@@ -15,6 +15,11 @@ Controles per mail:
     alle beelden laden, hoogte op 390 px <= 3.600 px (P2 en P2-safe uitgezonderd)
  e. ruwe HTML (zoals de Klaviyo-code-editor hem toont, zonder Django): geen tekst in tabelcontext (foster-parenting),
     geen zichtbare {% buiten de hoofdtabel of vlak voor een tabel, hoofdtabel 600 px, hero op volle breedte
+ g. v5-markten (8 okt 2026, research/tailoring/test/v5checks.py): elke mail ook gerenderd op US, UK, AU, CA, SG, EU en onbekend
+    (signaal per flowtype uit scripts/v5lib.py). Altijd FOUT: rendering faalt, Django-restanten, v5-blokken (gifts5, reviews3, bundle,
+    xsell) met USD of inch buiten de US of een US-only product buiten de US, gifts5 zonder de vier gift-beelden, cross-sell met een
+    product uit de order of uit person.siraat_owned. Mails met V5-STRICT in de topcomment: dezelfde regels voor de hele mail plus
+    geen R017 (Marilyn B.). Overige mails: dezelfde punten als waarschuwing (werklijst voor de flow-bouwers).
  f. inbox en deliverability (scripts/inbox_checks.py), alleen waarschuwingen: Gmail-clipping (geschatte verzonden grootte),
     spamsignalen in onderwerp/preview/body, linkverkorters en domeinen, alt-teksten, Outlook (VML-knoppen, mso-hide,
     width-attribuut, max-width), dark mode (donker logo op transparant), dubbele regels in Klaviyo's plain-text-versie.
@@ -26,6 +31,8 @@ try:   # inbox- en deliverability-waarschuwingen (scripts/inbox_checks.py, resea
     sys.path.insert(0,os.path.dirname(os.path.abspath(__file__))); import inbox_checks as IC
 except Exception: IC=None
 ROOT=os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)),'..'))
+sys.path.insert(0,os.path.join(ROOT,'research','tailoring','test')); import v5checks as V5C
+import v5lib
 V=os.path.join(ROOT,'klaviyo','templates','v3'); SH=os.path.join(ROOT,'klaviyo','templates','partials','shared')
 BT=os.path.join(ROOT,'scripts','build_template.py'); TEST=os.path.join(ROOT,'research','tailoring','test')
 QA=os.path.join(ROOT,'exports','qa'); SHOTS=os.path.join(QA,'shots')
@@ -165,6 +172,33 @@ def after_render(r):
         if re.search(r'\b%s="\s*"'%a,body): F.append('lege %s'%a)
     return F
 
+def v5_market(flow,mid,k,e):
+    """g. Rendert de mail per markt en geeft FOUT-regels terug; waarschuwingen gaan direct in e['W']."""
+    sig=v5lib.sig_of(flow); strict='V5-STRICT' in k[:3000]; F=[]; W={}
+    base,_,_=VARIANTS[flow][0][0].partition('+')
+    bev={} if base=='none' else json.load(open(os.path.join(TEST,'samples',base+'.json')))
+    tpl=engine().from_string(k)
+    for m in V5C.MARKETS:
+        ev,person=V5C.market_ctx(sig,m,bev)
+        ctx={'event':ev,'first_name':'Sarah','person':person,'organization':{'name':"Siraat's Kitchen",'full_address':'[address]'}}
+        try: r=tpl.render(ctx)
+        except Exception as ex: F.append('markt %s: rendering faalt: %s'%(m,str(ex)[:160])); continue
+        body=re.sub(r'<style.*?</style>','',r,flags=re.S)
+        for t in ('{%','%}','{{','}}'):
+            if t in body: F.append('markt %s: restant %s na rendering'%(m,t))
+        F+=['markt %s: v5-blok: %s'%(m,x) for x in V5C.market_problems(r,m,strict_scope=V5C.v5_parts(r))]
+        F+=['markt %s: %s'%(m,x) for x in V5C.gifts_problems(r) if 'gifts5' in x]
+        low=','.join(ev.get('Items') or [ev.get('Product Name','')]).lower()
+        for tok in V5C.xsell_shown(r):
+            if tok!='none' and any(x in low for x in v5lib.XOWN[tok][0]): F.append('markt %s: cross-sell toont %s uit de order'%(m,tok))
+        rest=V5C.market_problems(r,m)+([x for x in V5C.gifts_problems(r)]+V5C.review_problems(r))
+        if strict: F+=['markt %s (V5-STRICT): %s'%(m,x) for x in rest]
+        else:
+            for x in rest: W.setdefault(x.split(' (')[0].split(':')[0],[[],x.split(': ',1)[-1][:60]])[0].append(m)
+    for kind,(ms,ex) in W.items(): e['W'].append('v5-markt (nog niet V5-STRICT): %s bij %s, bv. "%s"'%(kind,','.join(sorted(set(ms))),ex))
+    e['v5']=sum(len(v[0]) for v in W.values())
+    return F
+
 def norm(x): return re.sub(r'\s+',' ',x.replace('<!---->','')).strip()
 
 def main():
@@ -195,6 +229,9 @@ def main():
             for w,dev in ((600,'desktop'),(390,'mobile')):
                 shot=os.path.join(SHOTS,'%s-%s-%s-rendered.jpg'%(flow,mid,dev)) if i==0 else None
                 jobs.append(dict(key='%s|%s|%d|r'%(key,var,w),html=rp,width=w,shot=shot,raw=False))
+        # g. v5-markten (statisch, zonder browser)
+        try: e['F']+=[x for x in v5_market(flow,mid,k,e)]
+        except Exception as ex: e['F'].append('v5-markten: %s'%str(ex)[:200])
         if IC and rendered:
             try: e['W']+=IC.warnings(src,k,rendered)
             except Exception as ex: e['W'].append('inbox-checks faalden: %s'%str(ex)[:120])
@@ -242,9 +279,9 @@ def main():
     for f in sorted(used_all):
         st='TWIJFEL' if f in TWIJFEL else ('Klaviyo' if f in KL_FILTERS else ('Django' if f in DJANGO_FILTERS else 'ONBEKEND'))
         L.append('| `%s` | %s | %d |'%(f,st,len(used_all[f])))
-    L+=['','## Per mail','','| mail | status | varianten | hoogte 390 px | zichtbare `{%`/`{{` in ruwe weergave |','|---|---|---|---|---|']
+    L+=['','## Per mail','','| mail | status | varianten | hoogte 390 px | zichtbare `{%`/`{{` in ruwe weergave | v5-marktpunten (US, UK, AU, CA, SG, EU, onbekend) |','|---|---|---|---|---|---|']
     for k in R:
-        e=R[k]; L.append('| %s | %s | %s | %s | %s |'%(k,'FOUT' if e['F'] else ('let op' if e['W'] else 'groen'),', '.join(e['variants']),e.get('h','-'),e.get('rawvisible','-')))
+        e=R[k]; L.append('| %s | %s | %s | %s | %s | %s |'%(k,'FOUT' if e['F'] else ('let op' if e['W'] else 'groen'),', '.join(e['variants']),e.get('h','-'),e.get('rawvisible','-'),e.get('v5','-')))
     L+=['','## Fouten en waarschuwingen','']
     for k in R:
         for x in R[k]['F']: L.append('- FOUT %s: %s'%(k,x))

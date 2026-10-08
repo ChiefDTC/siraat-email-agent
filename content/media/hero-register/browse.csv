@@ -1,6 +1,6 @@
 mail,bronfoto,hero
 b1-acc,https://cdn.shopify.com/s/files/1/0907/0877/1156/files/apronmossspaghetti.webp (kopie: klaviyo/templates/v3/browse/assets/src/apronmossspaghetti.webp; spaghetti opscheppen in Moss-schort),klaviyo/templates/v3/browse/assets/b1acc-hero.jpg
-b2-clicked,content/media/ai-flash/egg-slide-4x3-01.jpg (v4; research/images/02-voorstel.md),klaviyo/templates/v3/browse/assets/b2-clicked-hero.jpg
-b2-clicked-nocode,content/media/ai-flash/egg-slide-4x3-01.jpg (zelfde beeld als b2-clicked: A/B-variant van dezelfde plek, niemand krijgt beide),klaviyo/templates/v3/browse/assets/b2-clicked-nocode-hero.jpg
-b2-notclicked,content/media/ai-flash/sauce-taste-4x3-01.jpg (v4; research/images/02-voorstel.md),klaviyo/templates/v3/browse/assets/b2-notclicked-hero.jpg
+b2-clicked,"content/media/ai-flash/egg-slide-4x3-v5-2k.jpg (v5, goedgekeurd in research/v5/05-beeld-controle.md; hero via scripts/make_v5_images.py)",klaviyo/templates/v3/browse/assets/b2-clicked-hero.jpg
+b2-clicked-nocode,"content/media/ai-flash/egg-slide-4x3-v5-2k.jpg (v5, goedgekeurd in research/v5/05-beeld-controle.md; hero via scripts/make_v5_images.py)", niemand krijgt beide),klaviyo/templates/v3/browse/assets/b2-clicked-nocode-hero.jpg
+b2-notclicked,"content/media/ai-flash/sauce-taste-4x3-v5-2k.jpg (v5, goedgekeurd in research/v5/05-beeld-controle.md; hero via scripts/make_v5_images.py)",klaviyo/templates/v3/browse/assets/b2-notclicked-hero.jpg
 b1,content/media/hp-shoot/images/P09-B_Pan_Lid_1920w_q82.jpg (urgency-upgrade 7 okt: kop No PFAS.|No coating.),klaviyo/templates/v3/browse/assets/b1-hero-pfas.jpg

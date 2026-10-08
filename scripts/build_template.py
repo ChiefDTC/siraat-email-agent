@@ -38,11 +38,20 @@ def date_macro(x):
         n,fmt,up=m.group(1),m.group(2),m.group(3)
         return "{%% today '%%Y-%%m-%%d' as today %%}{{ today|days_later:%s|format_date_string|date:'%s'%s }}"%(n,fmt,'|upper' if up else '')
     return re.sub(r"\{\{DATE:(\d+):([^:}']+)(:upper)?\}\}",rep,x)
-# US-voorwaarde per trigger (dezelfde als de bestaande mails): Placed Order = verzendland, Checkout = presentment currency, Added to Cart = $currency, Viewed Product = '$' in prijs
-USCOND={'post-purchase':"event.extra.shipping_address.country_code == 'US'",'winback':"event.extra.shipping_address.country_code == 'US'",'vip':"event.extra.shipping_address.country_code == 'US'",'anniversary':"event.extra.shipping_address.country_code == 'US'",
- 'checkout':"event.extra.presentment_currency == 'USD' or not event.extra.presentment_currency",'cart':"event|lookup:'$currency' == 'USD'",'browse':"'$' in event.Price"}
+# v5-bouwstenen (8 okt 2026): markt-helper, macro's en generator-blokken staan in scripts/v5lib.py (PLAYBOOK h12 "v5-bouwstenen").
+# De flow volgt uit de map van de bron; een bron buiten v3/<flow>/ kan <!-- MARKET-SIGNAL: order|cart|checkout|browse|profile --> zetten.
+sys.path.insert(0,os.path.abspath(os.path.join(R,'..','..','..','scripts'))); import v5lib
+FLOW=os.path.basename(os.path.dirname(os.path.abspath(src)))
+_ms=re.search(r'<!-- MARKET-SIGNAL: (\w+) -->',h)
+if _ms: FLOW=_ms.group(1)
+# US-voorwaarde voor productcard us="1": dezelfde centrale markt-helper (checkout: presentment currency + profielland, cart: _ip_country_code,
+# browse: profielland met prijsnotatie als terugval, order: verzendland; de oude regel '$' in event.Price was ook waar voor AUD/CAD/SGD).
 def blk(m):
     name=m.group(1); kv=dict(DEF.get(name,{})); kv.update(dict(re.findall(r'(\w+)="([^"]*)"',m.group(2))))
+    if name=='vs': name='compare'; kv=dict(DEF['compare'],**v5lib.vs(kv))
+    elif name in v5lib.BLOCKS:
+        try: return v5lib.block(name,kv,FLOW)
+        except ValueError as e: sys.exit('blok %s: %s'%(name,e))
     fn='icons.html' if name=='icons-int' else name+'.html'
     t=open(os.path.join(B,fn)).read()
     if name=='compare':
@@ -60,9 +69,10 @@ def blk(m):
         ph=('<div style="padding-top:10px;font-size:16px;line-height:22px;">%s<b style="color:#AC3B19;font-weight:600;">%s</b></div>'%(('<span style="color:#9A948B;text-decoration:line-through;">%s</span>&nbsp; '%w) if w else '',now)) if (w or now) else ''
         nh=('<div style="font-size:12px;line-height:17px;color:#727272;">%s</div>'%note) if note else ''
         if us:  # us="1": prijsregel en note alleen voor US; us="price": alleen de prijsregel, note altijd zichtbaar
-            cond=cond or USCOND.get(os.path.basename(os.path.dirname(os.path.abspath(src))))
-            if not cond: sys.exit('productcard us="1": geen US-voorwaarde bekend voor deze flow, geef uscond="..."')
-            wrap=lambda x:('{%% if %s %%}%s{%% endif %%}'%(cond,x)) if x else ''
+            if cond: wrap=lambda x:('{%% if %s %%}%s{%% endif %%}'%(cond,x)) if x else ''
+            else:
+                if FLOW not in v5lib.FLOWSIG or v5lib.FLOWSIG[FLOW]=='profile': sys.exit('productcard us="1": geen event-signaal in deze flow, geef uscond="..."')
+                wo,c,wc=v5lib.us_cond(FLOW); wrap=lambda x:('%s{%% if %s %%}%s{%% endif %%}%s'%(wo,c,x,wc)) if x else ''
             if us=='price': ph=wrap(ph)
             else: ph,nh=wrap(ph+nh),''
         kv['pricehtml']=ph+nh
@@ -77,6 +87,8 @@ def blk(m):
     if left: sys.exit('blok %s mist %s'%(name,left))
     return t
 h=re.sub(r'\{\{BLOCK:([\w-]+)((?:\s+\w+="[^"]*")*)\s*\}\}',blk,h)
+try: h=v5lib.expand(h,FLOW)
+except ValueError as e: sys.exit('v5-macro: %s'%e)
 h=date_macro(h)
 h=h.replace('</style>',open(os.path.join(B,'_style.css')).read()+'</style>',1)
 su=dict(l.split() for l in open(os.path.join(SH,'klaviyo-urls.txt')) if l.strip()) if os.path.exists(os.path.join(SH,'klaviyo-urls.txt')) else {}

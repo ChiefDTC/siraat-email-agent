@@ -295,24 +295,32 @@ def bg(im):
     px = [im.getpixel(p) for p in ((2, 2), (im.width - 3, 2), (2, im.height - 3), (im.width - 3, im.height - 3))]
     return tuple(sum(c[i] for c in px) // 4 for i in range(3))
 
+# v5 (8 okt 2026): extra kaartbeelden voor het cross-sell-blok xsell (scripts/v5lib.py), gemaakt door scripts/make_v5_images.py.
+# Deze nooit weggooien bij het opruimen hieronder.
+V5_KEEP = {'large', 'set6', 'set12', 'pizza', 'roast'}
+
+def make_pc(k, src, out_dir=SH):
+    """Eén kaartbeeld pc-<k>.jpg (240x240) uit een kopie van de bronfoto; het origineel wordt nooit gewijzigd."""
+    im = Image.open(src).convert('RGB')
+    if k in CROP:
+        x0, y0, x1, y1 = CROP[k]; im = im.crop((int(im.width * x0), int(im.height * y0), int(im.width * x1), int(im.height * y1)))
+    else:   # inzoomen op het product: bounding box van alles wat afwijkt van de achtergrond, 8% marge, vierkant
+        b = bg(im); diff = ImageChops.difference(im, Image.new('RGB', im.size, b)).convert('L').point(lambda v: 255 if v > 24 else 0)
+        box = diff.getbbox() or (0, 0, im.width, im.height)
+        cx, cy = (box[0] + box[2]) / 2, (box[1] + box[3]) / 2; s = max(box[2] - box[0], box[3] - box[1]) * 1.08
+        s = max(s, min(im.size) * 0.35)
+        canvas = Image.new('RGB', (int(s), int(s)), b); canvas.paste(im, (int(s / 2 - cx), int(s / 2 - cy))); im = canvas
+    if min(im.size) < 240: sys.exit('beeld te klein voor 2x: %s %s' % (k, im.size))
+    im.resize((240, 240), Image.LANCZOS).save(os.path.join(out_dir, 'pc-%s.jpg' % k), quality=84, optimize=True, progressive=True)
+
 def write_images():
     used = {v[3] for v in ITEM.values()}   # alleen beelden die het goes-blok toont (about heeft geen beeld: de cart toont het product al)
     for f in os.listdir(SH):
-        if f.startswith('pc-') and f[3:-4] not in used: os.remove(os.path.join(SH, f))
+        if f.startswith('pc-') and f[3:-4] not in used and f[3:-4] not in V5_KEEP: os.remove(os.path.join(SH, f))
     for k, src in IMG.items():
         if k not in used: continue
         if not os.path.exists(src): sys.exit('beeld ontbreekt: %s (geef --dl=<map> met de CDN-kopieën)' % src)
-        im = Image.open(src).convert('RGB')
-        if k in CROP:
-            x0, y0, x1, y1 = CROP[k]; im = im.crop((int(im.width * x0), int(im.height * y0), int(im.width * x1), int(im.height * y1)))
-        else:   # inzoomen op het product: bounding box van alles wat afwijkt van de achtergrond, 8% marge, vierkant
-            b = bg(im); diff = ImageChops.difference(im, Image.new('RGB', im.size, b)).convert('L').point(lambda v: 255 if v > 24 else 0)
-            box = diff.getbbox() or (0, 0, im.width, im.height)
-            cx, cy = (box[0] + box[2]) / 2, (box[1] + box[3]) / 2; s = max(box[2] - box[0], box[3] - box[1]) * 1.08
-            s = max(s, min(im.size) * 0.35)
-            canvas = Image.new('RGB', (int(s), int(s)), b); canvas.paste(im, (int(s / 2 - cx), int(s / 2 - cy))); im = canvas
-        if min(im.size) < 240: sys.exit('beeld te klein voor 2x: %s %s' % (k, im.size))
-        im.resize((240, 240), Image.LANCZOS).save(os.path.join(SH, 'pc-%s.jpg' % k), quality=84, optimize=True, progressive=True)
+        make_pc(k, src)
 
 def load_reviews():
     return {r['id']: r for r in csv.DictReader(open(os.path.join(ROOT, 'content', 'reviews', 'reviews.csv')))}
