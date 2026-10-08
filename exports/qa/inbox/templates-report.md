@@ -67,7 +67,7 @@ Gegenereerd door `python3 -I scripts/qa_inbox.py templates --markets=US,UK`. Con
 | welcome/w5 | Dark mode / - | Dark mode / - |
 | winback/r1-acc | Dark mode / Valuta en maat | Dark mode / - |
 | winback/r1-pan | Dark mode / Valuta en maat | Dark mode / - |
-| winback/r1-set | Links (status 200), Dark mode / Valuta en maat | Links (status 200), Dark mode / - |
+| winback/r1-set | Dark mode / Valuta en maat | Dark mode / - |
 | winback/r2-nocode | Dark mode / Valuta en maat | Dark mode / - |
 | winback/r2-vip-nocode | Dark mode / Valuta en maat | Dark mode / - |
 | winback/r2-vip | Dark mode / Valuta en maat | Dark mode / - |
@@ -220,9 +220,7 @@ Gegenereerd door `python3 -I scripts/qa_inbox.py templates --markets=US,UK`. Con
 
 ### winback/r1-set
 
-- US FOUT Links (status 200): sociale links niet te openen vanuit deze omgeving: Facebook (www.facebook.com), Instagram (www.instagram.com). "Shop with my 10% →" -> https://siraatskitchen.com/discount/HI10?redirect=/collections/all%3Futm_source%3Dklaviyo% geeft 429
 - US LET OP Valuta en maat: markt US. cm in een US-mail: "tainless Steel Lid, 28 cm Fits"
-- UK FOUT Links (status 200): sociale links niet te openen vanuit deze omgeving: Facebook (www.facebook.com), Instagram (www.instagram.com). "Shop with my 10% →" -> https://siraatskitchen.com/discount/HI10?redirect=/collections/all%3Futm_source%3Dklaviyo% geeft 429
 
 ### winback/r2-nocode
 

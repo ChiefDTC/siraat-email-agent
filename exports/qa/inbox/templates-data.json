@@ -2449,7 +2449,7 @@
    },
    "dark-mode": {
     "status": "FOUT",
-    "detail": "dark 375 px: tekst met laag contrast \"Preheat on medium for 2 to 3 m\" 2.8:1; forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: lichte blokken op donkere achtergrond (beeld met witte rand): packshot-1.jpg, gift-shipping.jpg, gift-ebook.jpg, gift-mystery.jpg (+1)"
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: lichte blokken op donkere achtergrond (beeld met witte rand): packshot-1.jpg, gift-shipping.jpg, gift-ebook.jpg, gift-mystery.jpg (+1); dark 375 px: tekst met laag contrast \"Preheat on medium for 2 to 3 m\" 2.8:1"
    },
    "_links": [
     {
@@ -15699,7 +15699,7 @@
    },
    "dark-mode": {
     "status": "FOUT",
-    "detail": "dark 375 px: tekst met laag contrast \"Light Labs report no. 25895: 3\" 2.8:1; forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: lichte blokken op donkere achtergrond (beeld met witte rand): compare-cap-panpro.png, gift-shipping.jpg, gift-ebook.jpg, gift-mystery.jpg (+1)"
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: lichte blokken op donkere achtergrond (beeld met witte rand): compare-cap-panpro.png, gift-shipping.jpg, gift-ebook.jpg, gift-mystery.jpg (+1); dark 375 px: tekst met laag contrast \"Light Labs report no. 25895: 3\" 2.8:1"
    },
    "_links": [
     {
@@ -16019,7 +16019,7 @@
    },
    "dark-mode": {
     "status": "FOUT",
-    "detail": "dark 375 px: tekst met laag contrast \"Light Labs report no. 25895: 3\" 2.8:1; forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: lichte blokken op donkere achtergrond (beeld met witte rand): compare-cap-panpro.png, gift-card.jpg, gift-shipping.jpg, gift-ebook.jpg (+2)"
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: lichte blokken op donkere achtergrond (beeld met witte rand): compare-cap-panpro.png, gift-card.jpg, gift-shipping.jpg, gift-ebook.jpg (+2); dark 375 px: tekst met laag contrast \"Light Labs report no. 25895: 3\" 2.8:1"
    },
    "_links": [
     {
@@ -16178,7 +16178,7 @@
    },
    "dark-mode": {
     "status": "FOUT",
-    "detail": "dark 375 px: tekst met laag contrast \"Light Labs report no. 25895: 3\" 2.8:1; forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: lichte blokken op donkere achtergrond (beeld met witte rand): compare-cap-panpro.png, gift-card.jpg, gift-shipping.jpg, gift-ebook.jpg (+2)"
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: lichte blokken op donkere achtergrond (beeld met witte rand): compare-cap-panpro.png, gift-card.jpg, gift-shipping.jpg, gift-ebook.jpg (+2); dark 375 px: tekst met laag contrast \"Light Labs report no. 25895: 3\" 2.8:1"
    },
    "_links": [
     {
@@ -18069,7 +18069,7 @@
    },
    "dark-mode": {
     "status": "FOUT",
-    "detail": "dark 375 px: tekst met laag contrast \"Light Labs report no. 25895: 3\" 2.8:1; forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: lichte blokken op donkere achtergrond (beeld met witte rand): compare-cap-panpro.png, pc-lid.jpg, pc-mini.jpg, pc-board.jpg (+4)"
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: lichte blokken op donkere achtergrond (beeld met witte rand): compare-cap-panpro.png, pc-lid.jpg, pc-mini.jpg, pc-board.jpg (+4); dark 375 px: tekst met laag contrast \"Light Labs report no. 25895: 3\" 2.8:1"
    },
    "_links": [
     {
@@ -18248,7 +18248,7 @@
    },
    "dark-mode": {
     "status": "FOUT",
-    "detail": "dark 375 px: tekst met laag contrast \"Light Labs report no. 25895: 3\" 2.8:1; forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: lichte blokken op donkere achtergrond (beeld met witte rand): compare-cap-panpro.png, pc-lid.jpg, pc-mini.jpg, pc-board.jpg (+4)"
+    "detail": "forced 375 px: logo logo-black.png onzichtbaar (contrast 3.0:1 tussen logo en achtergrond); forced 375 px: lichte blokken op donkere achtergrond (beeld met witte rand): compare-cap-panpro.png, pc-lid.jpg, pc-mini.jpg, pc-board.jpg (+4); dark 375 px: tekst met laag contrast \"Light Labs report no. 25895: 3\" 2.8:1"
    },
    "_links": [
     {
@@ -18748,8 +18748,8 @@
     "detail": "24.4 KB HTML (25.7 KB quoted-printable, na tracking ~28 KB)"
    },
    "links": {
-    "status": "FOUT",
-    "detail": "23 links, 14 unieke bestemmingen; sociale links niet te openen vanuit deze omgeving: Facebook (www.facebook.com), Instagram (www.instagram.com). \"Shop with my 10% \u2192\" -> https://siraatskitchen.com/discount/HI10?redirect=/collections/all%3Futm_source%3Dklaviyo% geeft 429"
+    "status": "OK",
+    "detail": "23 links, 14 unieke bestemmingen; sociale links niet te openen vanuit deze omgeving: Facebook (www.facebook.com), Instagram (www.instagram.com)"
    },
    "utm": {
     "status": "OK",
@@ -18855,7 +18855,7 @@
     {
      "text": "Shop with my 10% \u2192",
      "dest": "https://siraatskitchen.com/discount/HI10?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-winback%26utm_content%3Dr1set-cta2",
-     "status": 429
+     "status": 200
     },
     {
      "text": "Siraat",
@@ -18927,8 +18927,8 @@
     "detail": "24.4 KB HTML (25.8 KB quoted-printable, na tracking ~28 KB)"
    },
    "links": {
-    "status": "FOUT",
-    "detail": "23 links, 14 unieke bestemmingen; sociale links niet te openen vanuit deze omgeving: Facebook (www.facebook.com), Instagram (www.instagram.com). \"Shop with my 10% \u2192\" -> https://siraatskitchen.com/discount/HI10?redirect=/collections/all%3Futm_source%3Dklaviyo% geeft 429"
+    "status": "OK",
+    "detail": "23 links, 14 unieke bestemmingen; sociale links niet te openen vanuit deze omgeving: Facebook (www.facebook.com), Instagram (www.instagram.com)"
    },
    "utm": {
     "status": "OK",
@@ -19034,7 +19034,7 @@
     {
      "text": "Shop with my 10% \u2192",
      "dest": "https://siraatskitchen.com/discount/HI10?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-winback%26utm_content%3Dr1set-cta2",
-     "status": 429
+     "status": 200
     },
     {
      "text": "Siraat",

@@ -203,7 +203,8 @@ def amsterdam(iso):
     try:
         from datetime import datetime
         from zoneinfo import ZoneInfo
-        return datetime.fromisoformat(iso.replace('Z', '+00:00')).astimezone(ZoneInfo('Europe/Amsterdam')).strftime('%-d %b %H:%M')
+        d = datetime.fromisoformat(iso.replace('Z', '+00:00')).astimezone(ZoneInfo('Europe/Amsterdam'))
+        return '%d %s %s' % (d.day, 'jan feb mrt apr mei jun jul aug sep okt nov dec'.split()[d.month - 1], d.strftime('%H:%M'))
     except Exception: return iso or '?'
 
 
@@ -234,10 +235,10 @@ def md_report(res, meta):
 
 def slack_text(res, meta):
     c = MC.summary(res)
-    head = ':envelope_with_arrow: *Nieuwe e-mail ontvangen:* %s' % meta['title']
-    L = [head, '%s · %s · %s' % (('lolagroothuis+%s' % meta['alias']) if meta.get('alias') else (meta.get('to') or '?'),
-                                 'markt %s' % (meta.get('market') or '?'), meta.get('when') or '?'),
-         '*%d OK · %d FOUT · %d LET OP*%s' % (c[MC.OK], c[MC.FOUT], c[MC.LETOP], '  <%s|open in Gmail>' % meta['url'] if meta.get('url') else ''), '']
+    who = ('lolagroothuis+%s' % meta['alias']) if meta.get('alias') else (meta.get('to') or '?')
+    L = [':envelope_with_arrow: *Nieuwe e-mail ontvangen:* %s, %s (%s), %s' % (meta.get('mail') or meta['title'].split(' "')[0], who, meta.get('market') or '?', meta.get('when') or '?'),
+         'Onderwerp: "%s"%s' % (meta.get('subject') or '', ' · <%s|open in Gmail>' % meta['url'] if meta.get('url') else ''),
+         '*%d OK · %d FOUT · %d LET OP*' % (c[MC.OK], c[MC.FOUT], c[MC.LETOP]), '']
     for st in (MC.FOUT, MC.LETOP):
         for k in MC.CHECKS:
             if k in res and res[k]['status'] == st: L.append('%s *%s*: %s' % (ICON[st], LABEL[k], res[k]['detail'][:260]))
@@ -271,7 +272,9 @@ def cmd_mail(args):
         if j['key'] in B: B[j['key']]['shot'] = j['shot']
     res = MC.run_checks(m, market, kind='mail', browser={'jobs': list(B.values()), 'unsubContrast': sum((b.get('unsubContrast', []) for b in B.values()), [])} if B else None,
                         skip_net='no-net' in o)
-    meta = dict(title=title, alias=alias, market=market, when=amsterdam(m.get('date') or ''), sender=m.get('sender'), url=m.get('url'),
+    if fm and res['header-footer']['status'] == MC.FOUT and 'header mist' in res['header-footer']['detail']:
+        title = 'geen v5-mail (onderwerp gelijk aan %s, maar zonder vaste header) "%s"' % (fm, m.get('subject') or '')
+    meta = dict(title=title, mail=title.split(' "')[0], subject=m.get('subject'), alias=alias, market=market, when=amsterdam(m.get('date') or ''), sender=m.get('sender'), url=m.get('url'),
                 to=', '.join(m['to']), shots=sorted(rel(j['shot']) for j in jobs), report=rel(os.path.join(out, 'report.md')))
     json.dump({'meta': meta, 'result': res}, open(os.path.join(out, 'result.json'), 'w'), indent=1, default=str)
     open(os.path.join(out, 'report.md'), 'w').write(md_report(res, meta))
@@ -364,10 +367,11 @@ def cmd_templates(args):
         if isinstance(per, dict) and 'err' in per: R[key] = {mk: {'tags': {'status': MC.FOUT, 'detail': per['err']}} for mk in markets}
     shutil.rmtree(tmp, ignore_errors=True)
     od = os.path.join(QA, 'inbox'); os.makedirs(od, exist_ok=True)
-    json.dump(R, open(os.path.join(od, 'templates-data.json'), 'w'), indent=1, default=str)
-    open(os.path.join(od, 'templates-report.md'), 'w').write(tpl_report(R, markets))
+    suf = '-only' if Q.OPT.get('--only') else ''   # een deelrun overschrijft het volledige rapport niet
+    json.dump(R, open(os.path.join(od, 'templates-data%s.json' % suf), 'w'), indent=1, default=str)
+    open(os.path.join(od, 'templates-report%s.md' % suf), 'w').write(tpl_report(R, markets))
     tot = sum(1 for k in R for mk in R[k] if any(R[k][mk].get(c, {}).get('status') == MC.FOUT for c in MC.CHECKS))
-    print('Templates: %d mails x %d markten, %d renders met FOUT. Rapport: exports/qa/inbox/templates-report.md' % (len(R), len(markets), tot))
+    print('Templates: %d mails x %d markten, %d renders met FOUT. Rapport: exports/qa/inbox/templates-report%s.md' % (len(R), len(markets), tot, suf))
 
 
 def sysnorm(part):
