@@ -217,6 +217,7 @@
      ]
     },
     "whats_in_the_box": [],
+    "whats_in_the_box_faq": [],
     "dimensions": [],
     "faq": [
      {
@@ -441,6 +442,9 @@
     "whats_in_the_box": [
      "• Titanium Hammered Pan, securely packaged in a special protective box",
      "• 5 Essential Guides – including care tips, first-time seasoning, and pro cooking techniques"
+    ],
+    "whats_in_the_box_faq": [
+     "The pan is sold on its own. A matching stainless steel lid is available separately if you’d like one — add it from the lid product page."
     ],
     "dimensions": [
      {
@@ -752,6 +756,7 @@
      ]
     },
     "whats_in_the_box": [],
+    "whats_in_the_box_faq": [],
     "dimensions": [],
     "faq": [
      {
@@ -942,6 +947,7 @@
      ]
     },
     "whats_in_the_box": [],
+    "whats_in_the_box_faq": [],
     "dimensions": [],
     "faq": [
      {
@@ -1134,6 +1140,7 @@
      ]
     },
     "whats_in_the_box": [],
+    "whats_in_the_box_faq": [],
     "dimensions": [
      {
       "cm": 40.0,
@@ -1648,6 +1655,7 @@
      ]
     },
     "whats_in_the_box": [],
+    "whats_in_the_box_faq": [],
     "dimensions": [],
     "faq": [
      {
@@ -1868,6 +1876,9 @@
      "• Hammered Pan Pro 28 cm / 11.0″",
      "• Titanium Flipper"
     ],
+    "whats_in_the_box_faq": [
+     "The pan is sold on its own. A matching stainless steel lid is available separately if you’d like one — add it from the lid product page."
+    ],
     "dimensions": [
      {
       "cm": 28.0,
@@ -1946,9 +1957,9 @@
      ],
      "sku": "DHOD5-XE456002",
      "weight_g": 1385,
-     "size_cm": null,
-     "size_in_exact": null,
-     "size_in_nominal": null,
+     "size_cm": 24.0,
+     "size_in_exact": 9.4,
+     "size_in_nominal": "9.5",
      "available": {
       "US": true,
       "CA": true,
@@ -2052,9 +2063,9 @@
      ],
      "sku": "DHOD5-XE454001",
      "weight_g": 1385,
-     "size_cm": null,
-     "size_in_exact": null,
-     "size_in_nominal": null,
+     "size_cm": 26.0,
+     "size_in_exact": 10.2,
+     "size_in_nominal": "10",
      "available": {
       "US": true,
       "CA": true,
@@ -2158,9 +2169,9 @@
      ],
      "sku": "DHOD5-XE455001",
      "weight_g": 1520,
-     "size_cm": null,
-     "size_in_exact": null,
-     "size_in_nominal": null,
+     "size_cm": 28.0,
+     "size_in_exact": 11.0,
+     "size_in_nominal": "11",
      "available": {
       "US": true,
       "CA": true,
@@ -2264,9 +2275,9 @@
      ],
      "sku": "DHOD5-XE456001",
      "weight_g": 1620,
-     "size_cm": null,
-     "size_in_exact": null,
-     "size_in_nominal": null,
+     "size_cm": 30.0,
+     "size_in_exact": 11.8,
+     "size_in_nominal": "12",
      "available": {
       "US": true,
       "CA": true,
@@ -2419,6 +2430,9 @@
      "• Titanium Hammered Pan – securely packaged in a custom protective box",
      "• 5 Essential Guides – including care tips, first-time seasoning, and pro cooking techniques"
     ],
+    "whats_in_the_box_faq": [
+     "The pan is sold on its own. A matching stainless steel lid is available separately if you’d like one — add it from the lid product page."
+    ],
     "dimensions": [
      {
       "cm": 26.0,
@@ -2506,9 +2520,9 @@
      ],
      "sku": "DHOD5-XE452001",
      "weight_g": 1100,
-     "size_cm": null,
-     "size_in_exact": null,
-     "size_in_nominal": null,
+     "size_cm": 20.0,
+     "size_in_exact": 7.9,
+     "size_in_nominal": "8",
      "available": {
       "US": true,
       "CA": true,
@@ -2612,9 +2626,9 @@
      ],
      "sku": "DHOD5-XE453001",
      "weight_g": 1250,
-     "size_cm": null,
-     "size_in_exact": null,
-     "size_in_nominal": null,
+     "size_cm": 24.0,
+     "size_in_exact": 9.4,
+     "size_in_nominal": "9.5",
      "available": {
       "US": true,
       "CA": true,
@@ -2718,9 +2732,9 @@
      ],
      "sku": "DHOD5-XE582001",
      "weight_g": 1400,
-     "size_cm": null,
-     "size_in_exact": null,
-     "size_in_nominal": null,
+     "size_cm": 26.0,
+     "size_in_exact": 10.2,
+     "size_in_nominal": "10",
      "available": {
       "US": true,
       "CA": true,
@@ -3088,6 +3102,9 @@
      "• Titanium Hammered Pan – securely packaged in a custom protective box",
      "• 5 Essential Guides – including care tips, first-time seasoning, and pro cooking techniques"
     ],
+    "whats_in_the_box_faq": [
+     "The pan is sold on its own. A matching stainless steel lid is available separately if you’d like one — add it from the lid product page."
+    ],
     "dimensions": [
      {
       "cm": 20.0,
@@ -3336,6 +3353,9 @@
      "• Titanium Flipper",
      "• Titanium Ladle",
      "• 5 Essential Guides – including care tips, first-time seasoning, and pro cooking techniques"
+    ],
+    "whats_in_the_box_faq": [
+     "The pan is sold on its own. A matching stainless steel lid is available separately if you’d like one — add it from the lid product page."
     ],
     "dimensions": [
      {
@@ -3870,6 +3890,7 @@
      ]
     },
     "whats_in_the_box": [],
+    "whats_in_the_box_faq": [],
     "dimensions": [],
     "faq": [
      {
@@ -3931,9 +3952,9 @@
      ],
      "sku": null,
      "weight_g": 2400,
-     "size_cm": 26.0,
-     "size_in_exact": 10.2,
-     "size_in_nominal": "10",
+     "size_cm": null,
+     "size_in_exact": null,
+     "size_in_nominal": null,
      "available": {
       "US": true,
       "CA": true,
@@ -4085,6 +4106,9 @@
      "Titanium Hammered Pans (26 cm / 10.2″) – securely packaged in a special protective box",
      "Pure stainless steel lid with three precision steam vents – releases just the right amount of steam",
      "1 Pure Titanium Flipper – lightweight, durable and safe for all surfaces"
+    ],
+    "whats_in_the_box_faq": [
+     "The pan is sold on its own. A matching stainless steel lid is available separately if you’d like one — add it from the lid product page."
     ],
     "dimensions": [
      {
@@ -4640,6 +4664,7 @@
      ]
     },
     "whats_in_the_box": [],
+    "whats_in_the_box_faq": [],
     "dimensions": [
      {
       "cm": 20.0,
@@ -4955,6 +4980,7 @@
      ]
     },
     "whats_in_the_box": [],
+    "whats_in_the_box_faq": [],
     "dimensions": [],
     "faq": [
      {
@@ -5179,6 +5205,9 @@
      "• Titanium Crêpe Pan – securely packaged in a special protective box",
      "• 5 Essential Guides – including care tips, first-time seasoning, and pro cooking techniques"
     ],
+    "whats_in_the_box_faq": [
+     "The pan is sold on its own. A matching stainless steel lid is available separately if you’d like one — add it from the lid product page."
+    ],
     "dimensions": [
      {
       "cm": 28.0,
@@ -5398,6 +5427,9 @@
      "Titanium Hammered Pan Pro (28cm / 11,0\")",
      "Titanium Cutting Board V2 - Size L (39×28 cm / 15″×11″),",
      "Titanium Cook & Prep Bundle L (39x28cm / 15″ x 11\") / 28CM (11,0\")"
+    ],
+    "whats_in_the_box_faq": [
+     "The pan is sold on its own. A matching stainless steel lid is available separately if you’d like one — add it from the lid product page."
     ],
     "dimensions": [
      {
@@ -5635,6 +5667,9 @@
     "whats_in_the_box": [
      "• Titanium Hammered Pan, securely packaged in a special protective box",
      "• 5 Essential Guides – including care tips, first-time seasoning, and pro cooking techniques"
+    ],
+    "whats_in_the_box_faq": [
+     "The pan is sold on its own. A matching stainless steel lid is available separately if you’d like one — add it from the lid product page."
     ],
     "dimensions": [
      {
@@ -6052,6 +6087,7 @@
      ]
     },
     "whats_in_the_box": [],
+    "whats_in_the_box_faq": [],
     "dimensions": [],
     "faq": [
      {
@@ -6279,6 +6315,7 @@
      "Size L (39×28 cm / 15″×11″)",
      "Size XL (46×30 cm / 18″×12″)"
     ],
+    "whats_in_the_box_faq": [],
     "dimensions": [
      {
       "cm": 20.0,
@@ -6536,6 +6573,9 @@
      "• Titanium Hammered Crêpe Pan Pro 30cm / 11,8\" - Height: 3.5 cm / 1.4\"",
      "• 5 Essential Guides – including care tips, first-time seasoning, and pro cooking techniques"
     ],
+    "whats_in_the_box_faq": [
+     "The pan is sold on its own. A matching stainless steel lid is available separately if you’d like one — add it from the lid product page."
+    ],
     "dimensions": [
      {
       "cm": 28.0,
@@ -6773,6 +6813,7 @@
      ]
     },
     "whats_in_the_box": [],
+    "whats_in_the_box_faq": [],
     "dimensions": [],
     "faq": [
      {
@@ -7214,6 +7255,9 @@
      "Premium 304 Stainless Steel Lid",
      "5 Essential Guides – including care tips, first-time seasoning, and pro cooking techniques"
     ],
+    "whats_in_the_box_faq": [
+     "The pan is sold on its own. A matching stainless steel lid is available separately if you’d like one — add it from the lid product page."
+    ],
     "dimensions": [
      {
       "cm": 26.0,
@@ -7411,9 +7455,9 @@
      ],
      "sku": "DHOD5-UQ521001",
      "weight_g": 750,
-     "size_cm": null,
-     "size_in_exact": null,
-     "size_in_nominal": null,
+     "size_cm": 26.0,
+     "size_in_exact": 10.2,
+     "size_in_nominal": "10",
      "available": {
       "US": true,
       "CA": true,
@@ -7518,9 +7562,9 @@
      ],
      "sku": "DHOD5-UQ521002",
      "weight_g": 825,
-     "size_cm": null,
-     "size_in_exact": null,
-     "size_in_nominal": null,
+     "size_cm": 28.0,
+     "size_in_exact": 11.0,
+     "size_in_nominal": "11",
      "available": {
       "US": true,
       "CA": true,
@@ -7625,9 +7669,9 @@
      ],
      "sku": "DHOD5-UQ521003",
      "weight_g": 971,
-     "size_cm": null,
-     "size_in_exact": null,
-     "size_in_nominal": null,
+     "size_cm": 30.0,
+     "size_in_exact": 11.8,
+     "size_in_nominal": "12",
      "available": {
       "US": true,
       "CA": true,
@@ -7745,6 +7789,7 @@
      ]
     },
     "whats_in_the_box": [],
+    "whats_in_the_box_faq": [],
     "dimensions": [],
     "faq": [
      {
@@ -7926,6 +7971,7 @@
      ]
     },
     "whats_in_the_box": [],
+    "whats_in_the_box_faq": [],
     "dimensions": [],
     "faq": [
      {
@@ -8094,6 +8140,7 @@
     "badge": "🍁 FALL SALE",
     "sections": {},
     "whats_in_the_box": [],
+    "whats_in_the_box_faq": [],
     "dimensions": [],
     "faq": [
      {
@@ -8597,6 +8644,7 @@
      ]
     },
     "whats_in_the_box": [],
+    "whats_in_the_box_faq": [],
     "dimensions": [],
     "faq": [
      {
@@ -8662,9 +8710,9 @@
      ],
      "sku": null,
      "weight_g": 2530,
-     "size_cm": 28.0,
-     "size_in_exact": 11.0,
-     "size_in_nominal": "11",
+     "size_cm": null,
+     "size_in_exact": null,
+     "size_in_nominal": null,
      "available": {
       "US": true,
       "CA": true,
@@ -8821,6 +8869,9 @@
     "whats_in_the_box": [
      "Titanium Hammered Pan Pro 28 cm / 11.0″",
      "Flipper, Spatula, Scooper & Laddle (complete utensil set)"
+    ],
+    "whats_in_the_box_faq": [
+     "The pan is sold on its own. A matching stainless steel lid is available separately if you’d like one — add it from the lid product page."
     ],
     "dimensions": [
      {
@@ -9026,6 +9077,7 @@
      ]
     },
     "whats_in_the_box": [],
+    "whats_in_the_box_faq": [],
     "dimensions": [],
     "faq": [
      {
@@ -9087,9 +9139,9 @@
      ],
      "sku": null,
      "weight_g": 8600,
-     "size_cm": 26.0,
-     "size_in_exact": 10.2,
-     "size_in_nominal": "10",
+     "size_cm": null,
+     "size_in_exact": null,
+     "size_in_nominal": null,
      "available": {
       "US": false,
       "CA": true,
@@ -9253,6 +9305,9 @@
      "1 Scooper",
      "1 Laddle"
     ],
+    "whats_in_the_box_faq": [
+     "The pan is sold on its own. A matching stainless steel lid is available separately if you’d like one — add it from the lid product page."
+    ],
     "dimensions": [
      {
       "cm": 26.0,
@@ -9343,9 +9398,9 @@
      ],
      "sku": "52743208075604",
      "weight_g": 0,
-     "size_cm": 30.0,
-     "size_in_exact": 11.8,
-     "size_in_nominal": "12",
+     "size_cm": null,
+     "size_in_exact": null,
+     "size_in_nominal": null,
      "available": {
       "US": true,
       "CA": true,
@@ -9497,6 +9552,9 @@
     "whats_in_the_box": [
      "Hammered Pan Pro Mini : 20cm / 7.8\" - Height: 6cm / 2.3\"",
      "Hammered Pan Pro Standard : 28 cm / 11″ – Height: 6.3 cm / 2.5″"
+    ],
+    "whats_in_the_box_faq": [
+     "The pan is sold on its own. A matching stainless steel lid is available separately if you’d like one — add it from the lid product page."
     ],
     "dimensions": [
      {
@@ -9748,6 +9806,9 @@
      "Titanium Hammered Pan – securely packaged in a special protective box",
      "5 Essential Guides – including care tips, first-time seasoning, and pro cooking techniques"
     ],
+    "whats_in_the_box_faq": [
+     "The pan is sold on its own. A matching stainless steel lid is available separately if you’d like one — add it from the lid product page."
+    ],
     "dimensions": [
      {
       "cm": 30.0,
@@ -9982,6 +10043,9 @@
      "Titanium Hammered Pan – securely packaged in a special protective box",
      "5 Essential Guides – including care tips, first-time seasoning, and pro cooking techniques"
     ],
+    "whats_in_the_box_faq": [
+     "The pan is sold on its own. A matching stainless steel lid is available separately if you’d like one — add it from the lid product page."
+    ],
     "dimensions": [
      {
       "cm": 26.0,
@@ -10177,6 +10241,7 @@
      ]
     },
     "whats_in_the_box": [],
+    "whats_in_the_box_faq": [],
     "dimensions": [],
     "faq": [
      {
@@ -10389,6 +10454,7 @@
      ]
     },
     "whats_in_the_box": [],
+    "whats_in_the_box_faq": [],
     "dimensions": [],
     "faq": [
      {
@@ -10601,6 +10667,7 @@
      ]
     },
     "whats_in_the_box": [],
+    "whats_in_the_box_faq": [],
     "dimensions": [
      {
       "cm": 23.0,
@@ -10799,6 +10866,7 @@
     "whats_in_the_box": [
      "1 × Siraat Signature Apron"
     ],
+    "whats_in_the_box_faq": [],
     "dimensions": [],
     "faq": [
      {
@@ -11009,6 +11077,7 @@
     "whats_in_the_box": [
      "1 × Siraat Signature Apron"
     ],
+    "whats_in_the_box_faq": [],
     "dimensions": [],
     "faq": [
      {
@@ -11218,6 +11287,7 @@
     "whats_in_the_box": [
      "1 × Siraat Signature Apron"
     ],
+    "whats_in_the_box_faq": [],
     "dimensions": [],
     "faq": [
      {
@@ -11428,6 +11498,7 @@
     "whats_in_the_box": [
      "1 × Siraat Signature Apron"
     ],
+    "whats_in_the_box_faq": [],
     "dimensions": [],
     "faq": [
      {
@@ -11612,6 +11683,7 @@
      ]
     },
     "whats_in_the_box": [],
+    "whats_in_the_box_faq": [],
     "dimensions": [],
     "faq": [
      {
@@ -11790,6 +11862,7 @@
      ]
     },
     "whats_in_the_box": [],
+    "whats_in_the_box_faq": [],
     "dimensions": [],
     "faq": [
      {
@@ -11985,6 +12058,7 @@
      ]
     },
     "whats_in_the_box": [],
+    "whats_in_the_box_faq": [],
     "dimensions": [
      {
       "cm": 20.0,
@@ -12178,6 +12252,7 @@
      ]
     },
     "whats_in_the_box": [],
+    "whats_in_the_box_faq": [],
     "dimensions": [],
     "faq": [
      {
@@ -12396,6 +12471,7 @@
      "• Instruction & care card",
      "• Premium recyclable packaging"
     ],
+    "whats_in_the_box_faq": [],
     "dimensions": [],
     "faq": [
      {
@@ -12613,6 +12689,7 @@
      "• Instruction & care card",
      "• Premium recyclable packaging"
     ],
+    "whats_in_the_box_faq": [],
     "dimensions": [],
     "faq": [
      {
@@ -12832,6 +12909,7 @@
      "• Instruction & care cards",
      "• Premium recyclable packaging"
     ],
+    "whats_in_the_box_faq": [],
     "dimensions": [],
     "faq": [
      {
@@ -13023,6 +13101,7 @@
      ]
     },
     "whats_in_the_box": [],
+    "whats_in_the_box_faq": [],
     "dimensions": [],
     "faq": [
      {
@@ -13200,6 +13279,7 @@
     "whats_in_the_box": [
      "1 × Siraat Signature Apron"
     ],
+    "whats_in_the_box_faq": [],
     "dimensions": [],
     "faq": [
      {
@@ -13345,6 +13425,7 @@
      ]
     },
     "whats_in_the_box": [],
+    "whats_in_the_box_faq": [],
     "dimensions": [],
     "faq": []
    },
@@ -13465,6 +13546,7 @@
      ]
     },
     "whats_in_the_box": [],
+    "whats_in_the_box_faq": [],
     "dimensions": [],
     "faq": []
    },
@@ -13585,6 +13667,7 @@
      ]
     },
     "whats_in_the_box": [],
+    "whats_in_the_box_faq": [],
     "dimensions": [],
     "faq": []
    },
@@ -13759,6 +13842,9 @@
      ]
     },
     "whats_in_the_box": [
+     "Three hammered pans (Pan Pro Mini 8\", Small 10\", Large 12\"), each with a matching fitted stainless steel lid. Care and use guides are included in the box. Utensils, boards, and props shown in photos are not included."
+    ],
+    "whats_in_the_box_faq": [
      "Three hammered pans (Pan Pro Mini 8\", Small 10\", Large 12\"), each with a matching fitted stainless steel lid. Care and use guides are included in the box. Utensils, boards, and props shown in photos are not included."
     ],
     "dimensions": [],
@@ -13956,6 +14042,7 @@
     "whats_in_the_box": [
      "Per pack: 30 sheets — up to 60 washes — in a zip-tear paper envelope, with the dosing guide printed on the back."
     ],
+    "whats_in_the_box_faq": [],
     "dimensions": [],
     "faq": [
      {
@@ -14097,6 +14184,9 @@
      ]
     },
     "whats_in_the_box": [
+     "Three pans (Pan Pro Mini 8\", Small 10\", Large 12\"), three pots (2-Qt and 3-Qt Saucepans and an 8-Qt Stock Pot), and six fitted lids — one for every pan and pot. Care and use guides are included in the box. Utensils, boards, and props shown in photos are not included."
+    ],
+    "whats_in_the_box_faq": [
      "Three pans (Pan Pro Mini 8\", Small 10\", Large 12\"), three pots (2-Qt and 3-Qt Saucepans and an 8-Qt Stock Pot), and six fitted lids — one for every pan and pot. Care and use guides are included in the box. Utensils, boards, and props shown in photos are not included."
     ],
     "dimensions": [],
@@ -14287,6 +14377,7 @@
      "• Titanium Hammered Pan, securely packaged in a special protective box",
      "• 5 Essential Guides – including care tips, first-time seasoning, and pro cooking techniques"
     ],
+    "whats_in_the_box_faq": [],
     "dimensions": [
      {
       "cm": 28.0,
@@ -14485,6 +14576,7 @@
      "Titanium Hammered Pan – securely packaged in a special protective box",
      "5 Essential Guides – including care tips, first-time seasoning, and pro cooking techniques"
     ],
+    "whats_in_the_box_faq": [],
     "dimensions": [
      {
       "cm": 30.0,
@@ -14633,6 +14725,9 @@
      ]
     },
     "whats_in_the_box": [
+     "Yes. A fitted roasting rack (33.5 × 23.5 × 10 cm / 13.2″ × 9.3″ × 3.9″) is included. It lifts your roast off the base so hot air circulates and the skin crisps evenly all round."
+    ],
+    "whats_in_the_box_faq": [
      "Yes. A fitted roasting rack (33.5 × 23.5 × 10 cm / 13.2″ × 9.3″ × 3.9″) is included. It lifts your roast off the base so hot air circulates and the skin crisps evenly all round."
     ],
     "dimensions": [],
@@ -14860,6 +14955,9 @@
      "• Titanium Hammered Pan, securely packaged in a special protective box",
      "• 5 Essential Guides – including care tips, first-time seasoning, and pro cooking techniques"
     ],
+    "whats_in_the_box_faq": [
+     "The pan is sold on its own. A matching stainless steel lid is available separately if you’d like one — add it from the lid product page."
+    ],
     "dimensions": [
      {
       "cm": 28.0,
@@ -15054,6 +15152,7 @@
      ]
     },
     "whats_in_the_box": [],
+    "whats_in_the_box_faq": [],
     "dimensions": [],
     "faq": [
      {
@@ -15239,6 +15338,7 @@
      ]
     },
     "whats_in_the_box": [],
+    "whats_in_the_box_faq": [],
     "dimensions": [],
     "faq": [
      {
@@ -15423,6 +15523,7 @@
      ]
     },
     "whats_in_the_box": [],
+    "whats_in_the_box_faq": [],
     "dimensions": [],
     "faq": [
      {
@@ -15607,6 +15708,7 @@
      ]
     },
     "whats_in_the_box": [],
+    "whats_in_the_box_faq": [],
     "dimensions": [],
     "faq": [
      {
@@ -15743,7 +15845,14 @@
       "✖️ Heavy Metals"
      ]
     },
-    "whats_in_the_box": [],
+    "whats_in_the_box": [
+     "An 8\" Mini pan for eggs, sauces and sides, and an 11\" Standard pan, our best-seller, for everyday meals and a solo batch cook. Each pan comes with its own fitted stainless steel lid.",
+     "Yes. Both pans come with their own fitted stainless steel lid, so you get 2 pans and 2 lids in one box."
+    ],
+    "whats_in_the_box_faq": [
+     "An 8\" Mini pan for eggs, sauces and sides, and an 11\" Standard pan, our best-seller, for everyday meals and a solo batch cook. Each pan comes with its own fitted stainless steel lid.",
+     "Yes. Both pans come with their own fitted stainless steel lid, so you get 2 pans and 2 lids in one box."
+    ],
     "dimensions": [],
     "faq": [
      {
@@ -15933,6 +16042,9 @@
      "Salt Mill & Pepper Mill",
      "For the Chef",
      "4 Siraat Signature Aprons (Oak, Ember, Moss, Azure)"
+    ],
+    "whats_in_the_box_faq": [
+     "The pan is sold on its own. A matching stainless steel lid is available separately if you’d like one — add it from the lid product page."
     ],
     "dimensions": [],
     "faq": [

@@ -37,3 +37,13 @@ Bijwerken bij elk nieuw besluit. Datum per regel.
 | 2026-10-07 | Unieke codes (C4, K3, B2, P3, R2, R2-VIP) akkoord. Elke code maximaal 1 keer per persoon te gebruiken. | Aanmaken als Shopify dynamic coupon in Klaviyo, "one use per customer". |
 | 2026-10-07 | Betalen: Affirm en Shop Pay (incl. Shop Pay Installments in de US) zijn actief (bevestigd door Floris). | Termijnregel mag in US-mails na akkoord op de claim. |
 - 2026-10-08 · HI10 blijft automatisch toegepast in C1 t/m C3 (geen T03 in fase 1, checkout-volume te klein voor drie tests).
+
+## 8 okt 2026 · Besluiten Floris voor v5
+- Alle links naar de $349-listing (bday-sale, Draft, was nooit officieel) gaan naar de hoofdlisting van de 6-delige set, fall sale $299. Regel "6-delige set = $349" vervalt.
+- Gifts-urgentie: "your 4 gifts end when the fall sale ends" (fall sale loopt heel oktober). Geen andere einddatum noemen.
+- Fall-set mag "Buy 2, get 4 free" heten, met daarbij "six pieces" (6 stuks voor $299).
+- Laatste codemails (C4, K3, B2, R2): "we're removing your discount" (niet "your cart"); dat is waar, de unieke code vervalt.
+- Anniversary wordt 15%: Floris maakt coupon SK_ANNIV15_7D aan.
+- VIP krijgt 15%, ook vlak na een eerdere code als die niet gebruikt is.
+- Prijzen: Pan Pro Standard $144, Large $149 (officiële listings). Pro Duo $199 = 2 pannen + 2 deksels.
+- Vergelijking mag direct "a PFAS pan / PFAS-coated pan" noemen (geen gezondheidsclaim, geen merknamen).

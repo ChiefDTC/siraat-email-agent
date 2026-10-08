@@ -51,3 +51,6 @@ Algemeen: honderdduizenden mensen gaan dit zien; alles moet tip-top. Vanaf vanda
 
 ## Agents gevraagd
 reviews (3 pijlers), bundels/segmenten, direct response + urgentie, valuta/markten/beschikbaarheid, maten cm/inch + alle productinfo van de site in de repo, bestaande-klant-herkenning/tailoring per accessoire, kortingstiming, verhaallijnen/variatie, cross-sell, AI-beelden (maken + controleren + implementeren), logica-check, sunset keep-me-on-list flow.
+
+## Besluiten 8 okt (zie DECISIONS.md)
+$349-links naar $299-hoofdlisting · gifts "end when the fall sale ends" · "Buy 2, get 4 free" + "six pieces" · "we're removing your discount" · anniversary 15% (SK_ANNIV15_7D) · VIP 15% ook na ongebruikte code · Standard $144, Large $149, Pro Duo $199 · direct "PFAS pan" in vergelijkingen.
