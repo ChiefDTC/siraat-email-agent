@@ -1,13 +1,14 @@
-<!-- SUBJECT_A: The pan you keep replacing is the expensive one | SUBJECT_B: How many pans have you thrown out since 2020? (reserve) | SUBJECTS (5 types): C+B 'Why the $30 pan costs more' / SPEC '15 pans or 1: the real price of a coated pan' / Q 'How many pans have you thrown out since 2020?' / STORY '"All claimed to be nonstick. All failed"' / OFFER 'The pan in your cart, 10% less with HI10' | PREVIEW: Even if a coated pan lasted 5 years, that's 15 pans in 75. Here's the math. | SEND: 1 day after K1 (24 hours, no time of day, v4 3.5), CS HEEFT_GEKOCHT (Placed Order at least once over all time) = no | FILTERS: Trigger: Added to Cart (QXcV8K) with Price greater than 0 and Product Name doesn't contain Mystery Gift, E-Book, Free Shipping, Giveaway. Flow: Checkout Started = 0 since flow start; Placed Order = 0 since flow start; Received Email where Flow = 'v4 · Checkout abandonment' = 0 in the last 7 days; not in this flow in the last 14 days. Message: Checkout Started = 0 and Placed Order = 0 since flow start | UTM: utm_content=k2new-<blok> -->
+<!-- V5-STRICT | SUBJECT_A: 15 coated pans, or one | SUBJECT_B: The pan you keep replacing | SUBJECTS (5 types): curiosity+benefit 'Why the cheap pan costs more' / specificity '15 coated pans, or one' / question 'How many pans have you thrown out?' / story '"The last pans we ever have to purchase"' / offer 'Your cart, still saved' | A/B: specificity (A) vs story (B); cart draait in fase 1 geen onderwerptest | PREVIEW: Say a coated pan lasts 5 years. Our warranty runs 75. Here's the math. | SEND: 1 day after K1 (24 hours, no time of day, v4 3.5), CS HEEFT_GEKOCHT (Placed Order at least once over all time) = no | FILTERS: Trigger: Added to Cart (QXcV8K) with Price greater than 0 and Product Name doesn't contain Mystery Gift, E-Book, Free Shipping, Giveaway. Flow: Checkout Started = 0 since flow start; Placed Order = 0 since flow start; Received Email where Flow = 'v4 · Checkout abandonment' = 0 in the last 7 days; not in this flow in the last 14 days. Message: Checkout Started = 0 and Placed Order = 0 since flow start | UTM: utm_content=k2new-<blok> | V5 (8 okt 2026, research/v5/03-copy-spec.md sectie 4 + DECISIONS 8 okt): alle bedragen, maten en verzendregels via de markt-macro's; hero zonder HI10 en zonder bedrag in het beeld (-v5.jpg); gifts via gifts5, reviews via reviews3 (drie pijlers); friction reducer alleen onder de eerste en laatste knop. Besluit 8 okt: geen HI10 in K1 en K2 (geen code in links, geen codebalk met HI10); de eerste korting is K3. Verhaalstap S8; vergelijkingstabel coated weg (herhaling 5), de som in aantallen; set of bundel: bundelblok. -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
 <meta charset="utf-8">
+<meta name="x-siraat-build" content="V5-STRICT">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
-<title>15 pans, or one.</title>
+<title>The real price</title>
 <!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
@@ -26,99 +27,78 @@
     .mob{display:block!important;max-height:none!important;overflow:visible!important;}
     .center{text-align:center!important;}
     .lead{font-size:16px!important;line-height:25px!important;}
+    .vs td{font-size:13px!important;}
   }
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Even if a coated pan lasted 5 years, that&rsquo;s 15 pans in 75. Here&rsquo;s the math.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;">Say a coated pan lasts 5 years. Our warranty runs 75. Here's the math.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
-
-{{BLOCK:codebar}}
+{{BLOCK:codebar text="STILL PENDING ON YOUR CART &middot;" code="{{GIFTS:TOTAL}}"}}
 
 {{HEADER}}
 
-<!-- HERO 4:3 met aanbodbalk (make_hero.py --offer --ratio=4:3) -->
+<!-- HERO 4:3 (P11-A Hammered, echte foto; marktneutraal) -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://2d0add-d6.myshopify.com'|cut:'https://siraatskitchen.com'|default:'/cart' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk2new-hero"><img src="{{IMG}}/k2-new-hero.jpg" width="600" alt="The real price. 15 pans, or one: the math on the pan in your cart. Extra 10% off with code HI10, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://siraatskitchen.com{{ event.URL|cut:'https://2d0add-d6.myshopify.com'|cut:'https://siraatskitchen.com'|default:'/cart' }}?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-cart&utm_content=k2new-hero"><img src="{{IMG}}/k2-new-hero-v5.jpg" width="600" alt="The real price. 15 coated pans, or one. Covered for 75 years, nothing to wear off. 4 gifts pending." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
-
-<!-- PRODUCTKAART Added to Cart (QXcV8K): 'Product Name', ImageURL, Price (getal), Quantity, $currency. Prijs alleen bij USD; ankerprijs $439 alleen bij Pan Pro Standard 11" voor $134 in USD. -->
+<!-- PRODUCTKAART Added to Cart: 'Product Name', ImageURL, Price, Quantity, $currency. Prijs alleen bij USD. -->
 <tr><td class="pad" style="padding:22px 44px 4px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
     <tr><td colspan="3" style="padding:16px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">STILL IN YOUR CART</td></tr>
     <tr>
       <td width="104" valign="middle" style="padding:12px 0 12px 16px;">
-        <a href="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://2d0add-d6.myshopify.com'|cut:'https://siraatskitchen.com'|default:'/cart' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk2new-product"><img src="{% if event.ImageURL %}{{ event.ImageURL }}&width=200{% else %}https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-40a5-9ad7-523bdddc54d4.webp?v=1781682831&width=200{% endif %}" width="88" alt="{{ event|lookup:'Product Name'|default:'Titanium Hammered Pan Pro' }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;"></a>
+        <a href="https://siraatskitchen.com{{ event.URL|cut:'https://2d0add-d6.myshopify.com'|cut:'https://siraatskitchen.com'|default:'/cart' }}?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-cart&utm_content=k2new-product"><img src="{% if event.ImageURL %}{{ event.ImageURL }}&width=200{% else %}{{IMG}}/cart-fallback.jpg{% endif %}" width="88" alt="{{ event|lookup:'Product Name'|default:'Your item' }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;"></a>
       </td>
       <td valign="middle" style="padding:12px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
-        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;word-break:break-word;">{{ event|lookup:'Product Name'|default:'Titanium Hammered Pan Pro' }}</div>
+        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;word-break:break-word;">{{ event|lookup:'Product Name'|default:'Your item' }}</div>
         <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;word-break:break-word;">Qty {{ event.Quantity|default:1|floatformat:0 }}</div>
       </td>
-      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;">{% if 'Pan Pro Standard' in event|lookup:'Product Name' and event.Price == 134 and event.Quantity == 1 and event|lookup:'$currency' == 'USD' %}<div style="font-size:13px;line-height:17px;color:#9A948B;text-decoration:line-through;font-weight:400;">$439</div>{% endif %}{% if event.Price and event|lookup:'$currency' == 'USD' %}${{ event.Price|floatformat:2 }}{% endif %}</td>
+      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;">{{IF:US}}{% if event.Price and event|lookup:'$currency' == 'USD' %}${{ event.Price|floatformat:2 }}{% endif %}{{ENDIF}}</td>
     </tr>
     <tr><td colspan="3" style="padding:0 16px 16px 16px;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:11px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">
-        <img src="{{SHARED}}/icon-discount-tag.png" width="20" height="20" alt="" style="display:inline-block;vertical-align:-5px;width:20px;height:20px;">&nbsp; {% if 'Pan Pro Standard' in event|lookup:'Product Name' and event.Price == 134 and event.Quantity == 1 and event|lookup:'$currency' == 'USD' %}With <b>HI10</b> it&rsquo;s <b>$120.60</b>, applied with the button below.{% else %}<b>HI10</b> takes an extra 10% off, applied with the button below.{% endif %}
+        <img src="{{SHARED}}/icon-check.png" width="20" height="20" alt="" style="display:inline-block;vertical-align:-5px;width:20px;height:20px;">&nbsp; Saved exactly as you left it.
       </td></tr></table>
     </td></tr>
   </table>
 </td></tr>
+{{BLOCK:cta label="Finish my order" url="https://siraatskitchen.com{{ event.URL|cut:'https://2d0add-d6.myshopify.com'|cut:'https://siraatskitchen.com'|default:'/cart' }}?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-cart&utm_content=k2new-cta1" pad="16px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
 
-{{BLOCK:cta label="Finish my order" url="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://2d0add-d6.myshopify.com'|cut:'https://siraatskitchen.com'|default:'/cart' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk2new-cta1" pad="16px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
+{{BLOCK:gifts5 style="row" urgency="1" line="Your cart is saved, with {{GIFTS:total}} still pending."}}
 
-{% if 'Hammered Pan Pro' in event|lookup:'Product Name' %}
-<!-- DE SOM: 15 gecoate pannen tegen 1 (dollars alleen bij USD) -->
+<!-- Set of bundel in de cart: het bundelblok (02-bundels, logica-check 15); pan: de som; overig kookgerei (pot, pizza steel, roasting pan): de garantie in een zin -->
+{% if 'Set' in event|lookup:'Product Name' or 'Pcs' in event|lookup:'Product Name' or 'Bundle' in event|lookup:'Product Name' or 'Duo' in event|lookup:'Product Name' or ' Kit' in event|lookup:'Product Name' or 'Edition' in event|lookup:'Product Name' or 'Collection' in event|lookup:'Product Name' %}
+<tr><td class="pad lead" style="padding:26px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">A set is one decision for every pan on your stove. Here's what's in the box.</td></tr>
+{{BLOCK:bundle pad="18px 44px 6px 44px"}}
+{% elif 'Pan' in event|lookup:'Product Name' or 'Wok' in event|lookup:'Product Name' %}
+<!-- DE SOM (S8): 15 gecoate pannen tegen 1, in aantallen (marktneutraal, geen bedragen) -->
 <tr><td class="pad" style="padding:30px 44px 6px 44px;">
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">THE MATH</div>
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 8px 0;">The pan you keep replacing is the expensive one.</div><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;text-align:center;padding:0 0 16px 0;">Say a good coated pan lasts 5 years. That&rsquo;s a generous guess. Over the 75 years our warranty runs, that&rsquo;s 15 pans.</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-    {% if event|lookup:'$currency' == 'USD' %}<tr><td valign="middle" style="padding:16px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:15px;line-height:21px;font-weight:600;color:#727272;">15 coated pans at $30</div><div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">And you are still cooking on a coating.</div></td>
-        <td align="right" valign="middle" style="padding:16px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:20px;font-weight:600;color:#727272;white-space:nowrap;">$450</td></tr>
-    <tr><td valign="middle" style="padding:16px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">1 Siraat Pan Pro, 11&Prime;</div><div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">Nothing on it to wear off.</div></td>
-        <td align="right" valign="middle" style="padding:16px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:20px;font-weight:600;color:#AC3B19;white-space:nowrap;">$134</td></tr>{% else %}<tr><td valign="middle" style="padding:16px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:15px;line-height:21px;font-weight:600;color:#727272;">Coated pans in 75 years</div><div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">If a good one lasts 5 years.</div></td>
-        <td align="right" valign="middle" style="padding:16px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:20px;font-weight:600;color:#727272;white-space:nowrap;">15</td></tr>
-    <tr><td valign="middle" style="padding:16px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">Siraat pans in 75 years</div><div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">Nothing on it to wear off.</div></td>
-        <td align="right" valign="middle" style="padding:16px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:20px;font-weight:600;color:#AC3B19;white-space:nowrap;">1</td></tr>{% endif %}
-    <tr><td colspan="2" style="padding:14px 18px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#282828;">Covered for 75 years against dents, a warped base, and a loose handle or rivet. With <b>HI10</b>, another 10% off today.{% if person.Country == 'United States' or person.Country == 'US' %} Prefer to pay over time? Shop Pay Installments and Affirm are at checkout.{% endif %}</td></tr>
+  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 8px 0;">The pan you keep replacing is the expensive one.</div>
+  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;text-align:center;padding:0 0 16px 0;">Say a good coated pan lasts 5 years. That&rsquo;s a generous guess. Over the 75 years our warranty runs, that&rsquo;s 15 pans. Or one.</div>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;">
+    <tr><td valign="middle" style="padding:16px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:15px;line-height:21px;font-weight:600;color:#727272;">Coated pans in 75 years</div><div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">If a good one lasts 5 years.</div></td><td align="right" valign="middle" style="padding:16px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:22px;font-weight:600;color:#727272;white-space:nowrap;">15</td></tr>
+    <tr><td valign="middle" style="padding:16px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">Siraat pans in 75 years</div><div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">No coating, so nothing to wear off.</div></td><td align="right" valign="middle" style="padding:16px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:22px;font-weight:600;color:#AC3B19;white-space:nowrap;">1</td></tr>
+    <tr><td colspan="2" style="padding:14px 18px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#282828;">Covered for 75 years against dents, a warped base, and a loose handle or rivet. <a href="https://siraatskitchen.com/pages/warranty?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-cart&utm_content=k2new-warranty" style="color:#AC3B19;">What the warranty covers</a></td></tr>
   </table>
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;text-align:center;padding-top:10px;">Based on the Pan Pro 11&Prime; at $134 and a $30 coated pan every 5 years. <a href="https://siraatskitchen.com/pages/warranty?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-cart&utm_content=k2new-warranty" style="color:#727272;">What the warranty covers &rarr;</a></div>
 </td></tr>
-
-{{BLOCK:compare pad="34px 44px 6px 44px" eyebrow="WHY ONE IS ENOUGH" headline="Titanium vs. coated nonstick" a1="Titanium cooking surface" b1="A PTFE or ceramic coating" a2="No coating to wear off" b2="Coating wears with use" a3="Metal utensils welcome" b3="Wood or silicone advised" a4="Tested by Light Labs" b4="Testing varies by brand" a5="Dishwasher safe" b5="Hand wash advised" note="Light Labs report no. 25895: 31 PFAS compounds tested, all below detection."}}
 {% else %}
-<!-- PRODUCTMATRIX (8 okt): de rekensom gaat over de Pan Pro 11"; bij elk ander product: dit product en wat erbij hoort -->
-{{BLOCK:about src="event|lookup:'Product Name'" lead="YOUR" pad="30px 44px 6px 44px"}}
-{{BLOCK:goes src="event|lookup:'Product Name'" pad="30px 44px 4px 44px" pre="https://siraatskitchen.com/discount/HI10?redirect=/products/" post="%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk2new-goes" note="HI10 takes 10% off these too."}}
+<tr><td class="pad lead" style="padding:26px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">Covered for 75 years against dents, a warped base, and a loose handle or rivet. There's no coating on it, so there's nothing to wear off.</td></tr>
 {% endif %}
 
-{{BLOCK:cta label="Finish my order" url="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://2d0add-d6.myshopify.com'|cut:'https://siraatskitchen.com'|default:'/cart' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk2new-cta2" pad="26px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
+{{BLOCK:reviews3 set="k2-new" pad="28px 44px 6px 44px"}}
 
-<!-- CASE: een klant van begin tot eind (R583, Scott Y., Trustpilot, ingekort met ...) -->
-<tr><td class="pad" style="padding:28px 44px 6px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-    <td class="rv" width="100%" valign="top" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:20px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;">
-      <div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;padding-bottom:8px;">ONE CUSTOMER, START TO FINISH</div><div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;My wife and I have gone through many different pans. Teflon coated ceramic coated, all claimed to be nonstick. All failed... These hammered Titanium pans from Siraat have been the best we have owned yet. We suspect they will be the last pans we ever have to purchase.&rdquo;</div>
-      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Scott Y. &middot; Verified buyer &middot; Crepe Pan Pro</div>
-    </td>
-  </tr></table>
-</td></tr>
-
-<!-- GIFTS als regel (lengte; het volledige gifts-blok staat in K1 en K3) -->
-<tr><td class="pad" style="padding:22px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#282828;text-align:center;"><img src="{{SHARED}}/icon-gift.png" width="20" height="20" alt="" style="display:inline-block;vertical-align:-4px;width:20px;height:20px;">&nbsp; <b>$70 in gifts</b> with every order, plus a chance to win a $450 PFAS water filter.</td></tr>
-
-{{BLOCK:cta label="Finish my order" url="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://2d0add-d6.myshopify.com'|cut:'https://siraatskitchen.com'|default:'/cart' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk2new-cta3" pad="26px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
-
-
+{{BLOCK:cta label="Finish my order" url="https://siraatskitchen.com{{ event.URL|cut:'https://2d0add-d6.myshopify.com'|cut:'https://siraatskitchen.com'|default:'/cart' }}?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-cart&utm_content=k2new-cta2" pad="24px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
 <!-- SIGN-OFF -->
-<tr><td class="pad" style="padding:26px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  Not sure which size fits your stove? Reply and our team will help.<br><br>
-  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
+<tr><td class="pad" style="padding:22px 44px 24px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+  Not sure which size fits your stove? Reply and we'll help you pick.<br><br>
+  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span><br><br>
+  <span style="color:#727272;">P.S. {% if person.Country == 'United States' or person.Country == 'US' %}Prefer to pay over time? Shop Pay Installments and Affirm are at checkout.{% else %}{{SHIP}}, and 30 days to change your mind.{% endif %}</span>
 </td></tr>
-
 
 {{FOOTER}}
 

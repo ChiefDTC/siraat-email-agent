@@ -1,8 +1,9 @@
-<!-- SUBJECT_A: Good to see you again | SUBJECT_B: Round two. Here's what's coming. | PREVIEW: Your order is in. Same careful packing, same 4 gifts. | SEND: Placed Order + 1 hour, realtime (also in the evening) | FILTERS: Flow 'v4 · Post-purchase' (trigger Placed Order RSNxYV); flow filter: not in this flow in the last 30 days; CS: Placed Order equals 1 over all time = NO branch (repeat buyer). No coupon, no code bar. | SUBJECTS (5 types): C+B 'Round two. Here's what's coming.' / SPEC 'Same careful packing, same 4 gifts' / Q 'Which pan did you add this time?' / STORY '"I am on my 4th pan from Siraat"' / OFFER 'Same 4 gifts, on the way' | A/B: liking vs curiosity (only if a test slot is free; otherwise A) | UTM: utm_content=p1rep-<block> -->
+<!-- V5-STRICT (v5 stap 2, 8 okt 2026): logica: care-gids en kookuitleg alleen als er kookgerei in de order zit en het profiel nog geen kookgerei bezit (person|lookup siraat_owned_cats) en minder dan 2 eerdere orders heeft (siraat_orders); anders e-book als knop. Hero zonder US-only steelpan (uitsnede friends-greeting v5). Tammy eruit, Don J. blijft (reviews3 set p1-repeat), gifts5, prijzen alleen US | SUBJECT_A: Good to see you again | SUBJECT_B: Round two. Here's what's coming. | PREVIEW: Your order is in. Same careful packing, same 4 gifts. | SEND: Placed Order + 1 hour, realtime (also in the evening) | FILTERS: Flow 'v4 · Post-purchase' (trigger Placed Order RSNxYV); flow filter: not in this flow in the last 30 days; CS: Placed Order equals 1 over all time = NO branch (repeat buyer). No coupon, no code bar. | SUBJECTS (5 types): C+B 'Round two. Here's what's coming.' / SPEC 'Same careful packing, same 4 gifts' / Q 'Which pan did you add this time?' / STORY '"I am on my 4th pan from Siraat"' / OFFER 'Same 4 gifts, on the way' | A/B: liking vs curiosity (only if a test slot is free; otherwise A) | UTM: utm_content=p1rep-<block> -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
 <meta charset="utf-8">
+<meta name="siraat-qa" content="V5-STRICT">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
@@ -19,29 +20,33 @@
     .w{width:100%!important;}
     .pad{padding-left:22px!important;padding-right:22px!important;}
     .h2{font-size:30px!important;line-height:34px!important;}
-    .desk{display:none!important;max-height:0!important;overflow:hidden!important;}
-    .mob{display:block!important;max-height:none!important;overflow:visible!important;}
     .stepimg{width:100%!important;}
   }
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Your order is in. Same careful packing, same 4 gifts.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;mso-hide:all;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Your order is in. Same careful packing, same 4 gifts.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
-
 {{HEADER}}
 
 <!-- HERO 1:1 met aanbodbalk (make_hero.py --offer) -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/pages/care-use?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1rep-hero"><img src="{{IMG}}/p1-repeat-hero.jpg" width="600" alt="Order confirmed. Good to see you again. Same packing, same 4 gifts on the way." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://siraatskitchen.com/products/e?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1rep-hero"><img src="{{IMG}}/p1-repeat-hero.jpg" width="600" alt="Order confirmed. Good to see you again. Same packing, same 4 gifts on the way." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
+<!-- KNOP: nieuwe kok (kookgerei, nog geen kookgerei in bezit) krijgt de care-gids; wie al kookt het e-book -->
+{% with s=event.Items|join:','|lower oc=person|lookup:'siraat_owned_cats' no=person|lookup:'siraat_orders' %}{% if 'hammer' in s or 'pan' in s or 'pot' in s or 'ookware' in s or 'everything' in s or 'fanne' in s or 'prep bundle' in s %}{% if 'pan' not in oc and 'set' not in oc and 'pot' not in oc and not no >= 2 %}
 {{BLOCK:cta label="Read the care guide" url="https://siraatskitchen.com/pages/care-use?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1rep-cta1" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>New shape? Same rules: medium heat, the water test, a little oil.</div>"}}
+{% else %}
+{{BLOCK:cta label="Download your e-book" url="https://siraatskitchen.com/products/e?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1rep-cta1" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Included with every order. Questions? Reply and our team will help.</div>"}}
+{% endif %}{% else %}
+{{BLOCK:cta label="Download your e-book" url="https://siraatskitchen.com/products/e?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1rep-cta1b" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Included with every order. Questions? Reply and our team will help.</div>"}}
+{% endif %}{% endwith %}
 <tr><td class="pad" style="padding:26px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">
   <p style="margin:0;">Hi {{ first_name|default:'there' }}, thank you for coming back. Your order is in, and you know how this works, so I will keep it short.</p>
 </td></tr>
-<!-- ORDER (Placed Order line items; alleen regels met prijs, prijs alleen in USD) -->
+<!-- ORDER (Placed Order line items; alleen regels met prijs; bedrag alleen bij verzendland US, v5) -->
 <tr><td class="pad" style="padding:24px 44px 4px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
     <tr><td colspan="3" style="padding:16px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">ORDER {{ event.extra.name }}</td></tr>
@@ -54,7 +59,7 @@
         <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">{{ item.title }}</div>
         <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">Qty {{ item.quantity|floatformat:0 }}</div>
       </td>
-      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;">{% if event.extra.presentment_currency == 'USD' or not event.extra.presentment_currency %}${{ item.line_price|floatformat:2 }}{% endif %}</td>
+      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;">{{USONLY}}${{ item.line_price|floatformat:2 }}{{/USONLY}}</td>
     </tr>
     {% endif %}{% endfor %}
     <tr><td colspan="3" style="padding:0 16px 16px 16px;">
@@ -64,13 +69,15 @@
     </td></tr>
   </table>
 </td></tr>
-{{BLOCK:gifts eyebrow="IN YOUR ORDER" headline="Same 4 gifts, on the way" note="Your order is in the PFAS water filter draw again. Lost the e-book? <a href='https://siraatskitchen.com/products/e?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1rep-ebook' style='color:#AC3B19;'>Download it here</a>."}}
-{{BLOCK:reviews q1="I am on my 4th pan from Siraat... I even gifted one to my son, and he says it's the best pan he owns." n1="Tammy" q2="This is my second purchase of Siraat frying pans in just a couple of weeks too, and I must say, they are the best!" n2="Don J."}}
-{{BLOCK:cta label="Read the care guide" url="https://siraatskitchen.com/pages/care-use?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1rep-cta2" pad="24px 44px 4px 44px" sub=""}}
+<!-- EEN DEKSEL-REGEL (04-cross-sell 5: P1/P2 hoogstens een regel in de maat van de pan, geen code, geen prijs; niet als er al een deksel in de order of in siraat_owned zit) -->
+{% with s=event.Items|join:','|lower ow=person|lookup:'siraat_owned' %}{% if 'lid' not in s and 'set' not in s and 'duo' not in s and 'kit' not in s %}{% if 'pan pro standard' in s and 'lid_28' not in ow %}<tr><td class="pad" style="padding:16px 44px 4px 44px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:13px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#282828;"><div style="font-size:11px;line-height:14px;letter-spacing:1.5px;font-weight:600;color:#AC3B19;padding-bottom:4px;">ONE SIZE NOTE</div>{{IF:US}}Your 11&Prime; Pan Pro takes the 28 cm lid.{{ELSE}}Your Pan Pro takes the 28 cm lid, same diameter.{{ENDIF}} Steams, melts, stops the splatter. <a href="https://siraatskitchen.com/products/stainless-steel-lid?variant=52401107239252&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1rep-lidline" style="color:#AC3B19;font-weight:600;white-space:nowrap;">Add the 28 cm lid</a></td></tr></table></td></tr>{% elif 'pan pro large' in s and 'lid_30' not in ow %}<tr><td class="pad" style="padding:16px 44px 4px 44px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:13px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#282828;"><div style="font-size:11px;line-height:14px;letter-spacing:1.5px;font-weight:600;color:#AC3B19;padding-bottom:4px;">ONE SIZE NOTE</div>{{IF:US}}Your 12&Prime; Pan Pro takes the 30 cm lid.{{ELSE}}Your Pan Pro takes the 30 cm lid, same diameter.{{ENDIF}} Steams, melts, stops the splatter. <a href="https://siraatskitchen.com/products/stainless-steel-lid?variant=52401107272020&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1rep-lidline" style="color:#AC3B19;font-weight:600;white-space:nowrap;">Add the 30 cm lid</a></td></tr></table></td></tr>{% elif 'pan pro small' in s and 'lid_26' not in ow %}<tr><td class="pad" style="padding:16px 44px 4px 44px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:13px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#282828;"><div style="font-size:11px;line-height:14px;letter-spacing:1.5px;font-weight:600;color:#AC3B19;padding-bottom:4px;">ONE SIZE NOTE</div>{{IF:US}}Your 10&Prime; Pan Pro takes the 26 cm lid.{{ELSE}}Your Pan Pro takes the 26 cm lid, same diameter.{{ENDIF}} Steams, melts, stops the splatter. <a href="https://siraatskitchen.com/products/stainless-steel-lid?variant=52401107206484&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1rep-lidline" style="color:#AC3B19;font-weight:600;white-space:nowrap;">Add the 26 cm lid</a></td></tr></table></td></tr>{% elif 'pan pro mini' in s and 'lid_20' not in ow %}<tr><td class="pad" style="padding:16px 44px 4px 44px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:13px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#282828;"><div style="font-size:11px;line-height:14px;letter-spacing:1.5px;font-weight:600;color:#AC3B19;padding-bottom:4px;">ONE SIZE NOTE</div>{{IF:US}}Your 8&Prime; Pan Pro takes the 20 cm lid.{{ELSE}}Your Pan Pro takes the 20 cm lid, same diameter.{{ENDIF}} Steams, melts, stops the splatter. <a href="https://siraatskitchen.com/products/stainless-steel-lid?variant=53294486421844&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1rep-lidline" style="color:#AC3B19;font-weight:600;white-space:nowrap;">Add the 20 cm lid</a></td></tr></table></td></tr>{% endif %}{% endif %}{% endwith %}
+{{BLOCK:gifts5 eyebrow="IN YOUR ORDER" headline="Same 4 gifts, on the way" note="Your order is entered for a chance to win {{GIFTS:filterline}} again. Lost the e-book? It is one click away."}}
+{{BLOCK:reviews3 set="p1-repeat"}}
 <!-- SIGN-OFF -->
 <tr><td class="pad" style="padding:24px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  Anything to change on this order? Reply to this email and a person on our team picks it up. New size in this order? Reply with the pan and our team will tell you which lid fits.<br><br>
-  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
+  Anything to change on this order? Reply to this email and our team picks it up.<br><br>
+  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span><br><br>
+  <span style="color:#727272;">P.S. New size in this order? Reply and we'll tell you which lid fits.</span>
 </td></tr>
 
 {{FOOTER}}

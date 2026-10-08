@@ -1,8 +1,9 @@
-<!-- SUBJECT_A: A question from Benjamin | SUBJECT_B: What should we make next? | SUBJECTS (5 types): C+B 'One line from you decides what we make' / SPEC 'Two orders in. One question.' / Q 'What should we make next?' / STORY 'You know our pans better than most' / OFFER n.v.t. (geen nieuwe code) | PREVIEW: You've ordered twice. I'd love to know what you want us to make next. | SEND: stap 2, wacht 10 dagen na V1, tot 09:00 lokaal. Afzender 'Benjamin at Siraat's Kitchen', reply-to support@siraatskitchen.com | FILTERS: Verzendfilter: Placed Order zero since start; Refunded Order zero since start. Tekstmail zonder hero en zonder codebalk; geen coupon-tag (een tweede tag maakt een nieuwe code). P.S. op profieleigenschap last_flow_code_pool: SK_REGULARS15_14D = verwijzing naar de 15%-code, anders HI10. | UTM: utm_campaign=v4-vip, utm_content=<mail>-<blok>; bij /discount/CODE?redirect=<pad> staan de UTM-parameters gecodeerd (%3F, %3D, %26) achter het pad binnen redirect -->
+<!-- V5-STRICT (v5 stap 2, 8 okt 2026): alleen v5: P.S. zoekterm "You're a VIP" in plaats van "Twice is a habit", friction reducer via FRICTION-macro (US: from the US, elders duties paid) | SUBJECT_A: A question from Benjamin | SUBJECT_B: What should we make next? | SUBJECTS (5 types): C+B 'One line from you decides what we make' / SPEC 'Two orders in. One question.' / Q 'What should we make next?' / STORY 'You know our pans better than most' / OFFER n.v.t. (geen nieuwe code) | PREVIEW: You've ordered twice. I'd love to know what you want us to make next. | SEND: stap 2, wacht 10 dagen na V1, tot 09:00 lokaal. Afzender 'Benjamin at Siraat's Kitchen', reply-to support@siraatskitchen.com | FILTERS: Verzendfilter: Placed Order zero since start; Refunded Order zero since start. Tekstmail zonder hero en zonder codebalk; geen coupon-tag (een tweede tag maakt een nieuwe code). P.S. op profieleigenschap last_flow_code_pool: SK_REGULARS15_14D = verwijzing naar de 15%-code, anders HI10. | UTM: utm_campaign=v4-vip, utm_content=<mail>-<blok>; bij /discount/CODE?redirect=<pad> staan de UTM-parameters gecodeerd (%3F, %3D, %26) achter het pad binnen redirect -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
 <meta charset="utf-8">
+<meta name="siraat-qa" content="V5-STRICT">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
@@ -33,7 +34,7 @@
 </head>
 
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">You've ordered twice. I'd love to know what you want us to make next.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;mso-hide:all;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">You've ordered twice. I'd love to know what you want us to make next.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
@@ -50,10 +51,10 @@
 </td></tr>
 
 <tr><td class="pad" style="padding:22px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-{% if person|lookup:'last_flow_code_pool' == 'SK_REGULARS15_14D' %}  <p style="margin:0 0 0px 0;"><b>P.S.</b> Your 15% code from last week still works for a few more days. Can&rsquo;t find it? Search your inbox for &ldquo;Twice is a habit&rdquo;, or reply and we&rsquo;ll send it again.</p>{% else %}  <p style="margin:0 0 0px 0;"><b>P.S.</b> HI10 still takes an extra 10% off your next order, and every order comes with four gifts.</p>{% endif %}
+{% if person|lookup:'last_flow_code_pool' == 'SK_REGULARS15_14D' %}  <p style="margin:0 0 0px 0;"><b>P.S.</b> Your 15% code from last week still works for a few more days. Can&rsquo;t find it? Search your inbox for &ldquo;You&rsquo;re a VIP&rdquo;, or reply and we&rsquo;ll send it again.</p>{% else %}  <p style="margin:0 0 0px 0;"><b>P.S.</b> HI10 still takes an extra 10% off your next order, and every order comes with four gifts.</p>{% endif %}
 </td></tr>
 
-{{BLOCK:cta label="Take me to the shop" url="https://siraatskitchen.com/collections/all?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-vip&utm_content=v2-cta1" pad="26px 44px 34px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
+{{BLOCK:cta label="Take me to the shop" url="https://siraatskitchen.com/collections/all?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-vip&utm_content=v2-cta1" pad="26px 44px 34px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
 
 {{FOOTER}}
 

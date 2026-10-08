@@ -1,8 +1,9 @@
-<!-- SUBJECT_A: An apron deserves a pan | SUBJECT_B: Was the apron a gift? | PREVIEW: The pan it was made for, for you or for them. 4 gifts with every order. | SEND: Placed Order + 20 days, until 09:00 local (flow step 3, decision 3.9) | FILTERS: Flow 'v4 · Post-purchase' step 3: CS R0 Placed Order equals 2 over all time = end (VIP takes over); router 3K/3A (v4 2.5). Send filters: Placed Order zero times since starting this flow; Refunded Order (Xg6cwn) zero times in 30 days. Code-router: cooldown (last_flow_code_at in last 30 days) or T02 arm B = this template. No coupon; gifts, draw and 30-day returns carry the offer. | SUBJECTS (5 types): C+B 'What the apron was made for' / SPEC '$134, covered for 75 years, 10% off' / Q 'Was the apron a gift?' / STORY '"I even gifted one to my son"' / OFFER 'Your 10% code, for 14 days' | A/B: curiosity vs question | UTM: utm_content=p3apron-<block>, utm_term=t02-b (T02 arm B); discount links carry the UTMs URL-encoded inside redirect -->
+<!-- V5-STRICT (v5 stap 2, 8 okt 2026): cadeauperspectief, prijzen per markt via macro (Standard $144), cross-sell via xsell (molens, plank), Tammy weg, geen "no coating" naast de schort | SUBJECT_A: An apron deserves a pan | SUBJECT_B: Was the apron a gift? | PREVIEW: The pan it was made for, for you or for them. 4 gifts with every order. | SEND: Placed Order + 20 days, until 09:00 local (flow step 3, decision 3.9) | FILTERS: Flow 'v4 · Post-purchase' step 3: CS R0 Placed Order equals 2 over all time = end (VIP takes over); router 3K/3A (v4 2.5). Send filters: Placed Order zero times since starting this flow; Refunded Order (Xg6cwn) zero times in 30 days. Code-router: cooldown (last_flow_code_at in last 30 days) or T02 arm B = this template. No coupon; gifts, draw and 30-day returns carry the offer. | SUBJECTS (5 types): C+B 'What the apron was made for' / SPEC '$134, covered for 75 years, 10% off' / Q 'Was the apron a gift?' / STORY '"I even gifted one to my son"' / OFFER 'Your 10% code, for 14 days' | A/B: curiosity vs question | UTM: utm_content=p3apron-<block>, utm_term=t02-b (T02 arm B); discount links carry the UTMs URL-encoded inside redirect -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
 <meta charset="utf-8">
+<meta name="siraat-qa" content="V5-STRICT">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
@@ -19,42 +20,34 @@
     .w{width:100%!important;}
     .pad{padding-left:22px!important;padding-right:22px!important;}
     .h2{font-size:30px!important;line-height:34px!important;}
-    .desk{display:none!important;max-height:0!important;overflow:hidden!important;}
-    .mob{display:block!important;max-height:none!important;overflow:visible!important;}
     .stepimg{width:100%!important;}
   }
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">The pan it was made for, for you or for them. 4 gifts with every order.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;mso-hide:all;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">The pan it was made for, for you or for them. 4 gifts with every order.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
-<!-- GIFTBALK (nocode: geen code, wel het vaste aanbod) -->
-<tr><td align="center" class="codebar" bgcolor="#282828" style="background:#282828;padding:11px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;letter-spacing:1.5px;font-weight:600;color:#FFFFFF;">FREE SHIPPING &middot; 4 GIFTS WITH EVERY ORDER</td></tr>
 {{HEADER}}
 
 <!-- HERO 1:1 met aanbodbalk (make_hero.py --offer) -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3apron-hero&utm_term=t02-b"><img src="{{IMG}}/p3-apron-nocode-hero.jpg" width="600" alt="Thank you. An apron deserves a pan, for you or for them. Free shipping and 4 gifts with every order." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3apronnc-hero"><img src="{{IMG}}/p3-apron-nocode-hero.jpg" width="600" alt="Thank you. An apron deserves a pan, for you or for them. Free shipping and 4 gifts with every order." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
-{{BLOCK:productcard pad="22px 44px 4px 44px" img="card-panpro-bestseller.jpg" alt="Titanium Hammered Pan Pro, best seller" pill="" name="Titanium Hammered Pan Pro" sub="Tested free from PFAS by Light Labs, report no. 25895. Most people start with the 11&Prime;." was="$439" now="$134" note="" us="1" link="Choose your size" url="https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3apron-prod-panpro&utm_term=t02-b"}}
-{{BLOCK:cta label="Get the Pan Pro" url="https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3apron-cta1&utm_term=t02-b" pad="18px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
-<tr><td class="pad" style="padding:24px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  <p style="margin:0;">Hi {{ first_name|default:'there' }}, a few weeks ago you ordered a Siraat apron. Maybe for you, maybe as a gift. Either way, thank you.</p><p style="margin:14px 0 0 0;">The apron is the easy part. What we are known for is the pan: the original hammered titanium pan, tested free from PFAS by Light Labs (report no. 25895) and covered for 75 years.</p>
+{{BLOCK:cta label="Get the Pan Pro" url="https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3apronnc-cta1" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
+<tr><td class="pad" style="padding:24px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">
+  <p style="margin:0 0 14px 0;">Hi {{ first_name|default:'there' }}, an apron is half of a kitchen. The other half is on the stove. If the apron was a gift, the pan is the piece they will reach for every day. If it was for you, same answer.</p><p style="margin:0 0 14px 0;">The Pan Pro has a pure titanium cooking surface, tested free from PFAS by Light Labs (report no. 25895), and it is covered for 75 years.</p><p style="margin:0 0 0px 0;">Every order comes with 4 gifts.{{IF:PRICED}} The Pan Pro {{SIZE:28}} is {{PRICE:standard}}.{{ENDIF}}</p>
 </td></tr>
-{{BLOCK:gifts eyebrow="WITH EVERY ORDER" headline="4 gifts, this order too" note="Included with every order, this one too."}}
-<tr><td class="pad" style="padding:24px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  Was the apron a gift, and you are not sure which size they would pick? An <a href='https://siraatskitchen.com/products/e-gift-card?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3apron-giftcard&utm_term=t02-b' style='color:#AC3B19;'>e-gift card</a> arrives by email and lets them choose.
-</td></tr>
-{{BLOCK:cta label="Get the Pan Pro" url="https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3apron-cta2&utm_term=t02-b" pad="24px 44px 4px 44px" sub=""}}
-{{BLOCK:reviews q1="I am on my 4th pan from Siraat... I even gifted one to my son, and he says it's the best pan he owns." n1="Tammy" q2="...It comes beautifully boxed, and the apron, bottle and spatula are such lovely gifts." n2="Deborah G."}}
-{{BLOCK:cta label="Get the Pan Pro" url="https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3apron-cta3&utm_term=t02-b" pad="26px 44px 4px 44px" sub=""}}
-{{BLOCK:icons}}
+{{BLOCK:xsell pre="https://siraatskitchen.com/products/" post="?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3apronnc-xs" pad="26px 44px 4px 44px" note="{% if 'pan pro small' in xs %}{% if 'pan pro mini' not in xs and 'panpro_mini' not in xo %}One in three Small owners comes back for the Mini. {% endif %}{% elif 'pan pro standard' in xs %}{% if 'pan pro mini' not in xs and 'panpro_mini' not in xo %}One in five Pan Pro owners comes back for the Mini. {% endif %}{% elif 'pan pro large' in xs %}{% if 'lid' not in xs and 'lid_30' not in xo %}One in five Large owners adds the lid next. {% endif %}{% elif 'pan pro mini' in xs %}{% if 'pan pro standard' not in xs and 'panpro_standard' not in xo %}One in four Mini owners comes back for the Pan Pro. {% endif %}{% elif 'deep pan' in xs and 'wok' not in xs and 'wok' not in xo %}The deep pan and the wok are the pair most often bought together. {% endif %}Every order comes with 4 gifts."}}
+{{BLOCK:gifts5 style="row" line="Your next order comes with {{GIFTS:total}} too." urgency="1" pad="22px 44px 6px 44px"}}
+{{BLOCK:reviews3 set="p3-apron" n="2"}}
+{{BLOCK:cta label="Get the Pan Pro" url="https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3apronnc-cta2" pad="24px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
 <!-- SIGN-OFF -->
 <tr><td class="pad" style="padding:24px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  If the apron was a gift, I hope it landed well. If it is yours, reply with what you cook most and our team will tell you which pan size fits.<br><br>
-  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
+  Was it a gift and do they need another size? Reply to this email and our team will help.<br><br>
+  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span><br><br>
+  <span style="color:#727272;">P.S. A gift card works too, if they'd rather pick.</span>
 </td></tr>
 
 {{FOOTER}}

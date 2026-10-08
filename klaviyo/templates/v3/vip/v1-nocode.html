@@ -1,13 +1,14 @@
-<!-- SUBJECT_A: Twice is a habit. Thank you. | SUBJECT_B: For our regulars: a note from Benjamin | SUBJECTS (5 types): C+B 'What our regulars add next' / SPEC 'Two orders in. HI10 still works.' / Q 'Which pan do you reach for most?' / STORY '"I am on my 4th pan from Siraat"' / OFFER 'Twice is a habit. Thank you.' | PREVIEW: You came back for a second order. A thank you from Benjamin, and HI10 still works. | SEND: stap 1, wacht 30 dagen na de 2e Placed Order, tot 09:00 lokaal | FILTERS: v4 VIP, flowfilters: Placed Order equals 2 over all time, has not been in this flow, can receive email marketing. Verzendfilter: Refunded Order zero since start; Placed Order zero in the last 14 days. Code-router: cooldown (last_flow_code_at in 30 dagen) of later T02-B = deze mail met HI10 (geen unieke code, geen deadline). Update profile property siraat_regular = true. Prijzen alleen bij verzendland US. | UTM: utm_campaign=v4-vip, utm_content=<mail>-<blok>, utm_term=t02-b; bij /discount/CODE?redirect=<pad> staan de UTM-parameters gecodeerd (%3F, %3D, %26) achter het pad binnen redirect -->
+<!-- V5-STRICT (v5 stap 2, 8 okt 2026): alleen nog voor T02-B (geen code); besluit 8 okt: VIP krijgt 15% ook vlak na een ongebruikte code, dus cooldown-profielen horen naar v1 (flowwijziging). "Twice is a habit" weg, cross-sell via xsell, geen care-video | SUBJECT_A: You're a VIP. Thank you. | SUBJECT_B: For our VIPs: a note from Benjamin | SUBJECTS (5 types): C+B 'What our regulars add next' / SPEC 'Two orders in. HI10 still works.' / Q 'Which pan do you reach for most?' / STORY '"I am on my 4th pan from Siraat"' / OFFER 'Twice is a habit. Thank you.' | PREVIEW: Two orders makes you a VIP. A thank you, and 4 gifts with every order. | SEND: stap 1, wacht 30 dagen na de 2e Placed Order, tot 09:00 lokaal | FILTERS: v4 VIP, flowfilters: Placed Order equals 2 over all time, has not been in this flow, can receive email marketing. Verzendfilter: Refunded Order zero since start; Placed Order zero in the last 14 days. Code-router: cooldown (last_flow_code_at in 30 dagen) of later T02-B = deze mail met HI10 (geen unieke code, geen deadline). Update profile property siraat_regular = true. Prijzen alleen bij verzendland US. | UTM: utm_campaign=v4-vip, utm_content=<mail>-<blok>, utm_term=t02-b; bij /discount/CODE?redirect=<pad> staan de UTM-parameters gecodeerd (%3F, %3D, %26) achter het pad binnen redirect -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
 <meta charset="utf-8">
+<meta name="siraat-qa" content="V5-STRICT">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
-<title>Twice is a habit. Thank you.</title>
+<title>You're a VIP. Thank you.</title>
 <!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
@@ -18,59 +19,35 @@
   @media only screen and (max-width:620px){
     .w{width:100%!important;}
     .pad{padding-left:22px!important;padding-right:22px!important;}
-    .stack{display:block!important;width:100%!important;}
-    .stackpad{padding:0 0 14px 0!important;}
     .h2{font-size:30px!important;line-height:34px!important;}
-    .navhide{display:none!important;}
-    .desk{display:none!important;max-height:0!important;overflow:hidden!important;}
-    .mob{display:block!important;max-height:none!important;overflow:visible!important;}
-    .center{text-align:center!important;}
-    .pcd{display:none!important;}
-    .pim{width:96px!important;padding:14px 0 14px 12px!important;}
-    .pim img{width:88px!important;height:88px!important;}
+    .stepimg{width:100%!important;}
   }
 </style>
 </head>
-
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">You came back for a second order. A thank you from Benjamin, and HI10 still works.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;mso-hide:all;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Two orders makes you a VIP. A thank you, and 4 gifts with every order.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
-
-{{BLOCK:codebar}}
-
 {{HEADER}}
 
 <!-- HERO 1:1 met aanbodbalk (make_hero.py --offer) -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/discount/HI10?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-vip%26utm_content%3Dv1-hero%26utm_term%3Dt02-b"><img src="{{IMG}}/v1-nocode-hero.jpg" width="600" alt="For our regulars: twice is a habit. Thank you for coming back. Extra 10% off with code HI10, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://siraatskitchen.com/collections/all?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-vip&utm_content=v1nc-hero"><img src="{{IMG}}/v1-nocode-hero.jpg" width="600" alt="VIP. You're a VIP. Thank you. 4 gifts with every order." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
-
-{{BLOCK:cta label="Shop with my 10%" url="https://siraatskitchen.com/discount/HI10?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-vip%26utm_content%3Dv1-cta1%26utm_term%3Dt02-b" pad="22px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
-
-<tr><td class="pad" style="padding:26px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;color:#282828;">
-  <p style="margin:0 0 16px 0;">Hi {{ first_name|default:'there' }},</p>
-  <p style="margin:0 0 16px 0;">It's Benjamin. You've now ordered from us twice. Most people stop at one order, so a second one tells me the first earned its place in your kitchen.</p>
-  <p style="margin:0 0 0px 0;">Thank you. HI10 still takes an extra 10% off your next piece, on top of the sale, and every order comes with four gifts. When you're ready, it's there.</p>
+{{BLOCK:cta label="Shop with my 4 gifts" url="https://siraatskitchen.com/collections/all?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-vip&utm_content=v1nc-cta1" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
+<tr><td class="pad" style="padding:24px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">
+  <p style="margin:0 0 14px 0;">Hi {{ first_name|default:'there' }}, you're a VIP customer now. Out of 100,000+ happy customers, you are one of the people who came back for a second order, and that is not something I take for granted.</p><p style="margin:0 0 0px 0;">So, thank you. Here is what VIPs add next, picked from what is not in your kitchen yet. Every order comes with 4 gifts.</p>
 </td></tr>
-
-{{BLOCK:offer pad="22px 44px 6px 44px" eyebrow="YOUR CODE" headline="10% off your next piece" code="HI10" note="Applied automatically with the button. Or enter it at checkout." deadline="" label="Shop with my 10%" url="https://siraatskitchen.com/discount/HI10?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-vip%26utm_content%3Dv1-offer%26utm_term%3Dt02-b"}}
-
-<!-- PRODUCTMATRIX (8 okt): volgende stap op basis van wat in deze tweede order zat (kooppatronen derde order: deksel 21%, Mini 15%) -->
-{{BLOCK:goes src="event.Items|join:','" pad="30px 44px 6px 44px" pre="https://siraatskitchen.com/discount/HI10?redirect=/products/" post="%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-vip%26utm_content%3Dv1nocode-goes" note="HI10 takes 10% off these too."}}
-
-{{BLOCK:gifts pad="30px 44px 6px 44px" eyebrow="WITH EVERY ORDER" headline="$70 in gifts, included" note="All four come with every order, nothing to add."}}
-
-{{BLOCK:reviews pad="28px 44px 6px 44px" q1="I am on my 4th pan from Siraat... I even gifted one to my son, and he says it's the best pan he owns." n1="Tammy" q2="I provided a few photos and received a replacement at no cost. Very happy with their titanium pans. I have two." n2="Arthur D."}}
-
-
-{{BLOCK:cta label="Shop with my 10%" url="https://siraatskitchen.com/discount/HI10?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-vip%26utm_content%3Dv1-cta2%26utm_term%3Dt02-b" pad="24px 44px 4px 44px"}}
-
+{{BLOCK:xsell pre="https://siraatskitchen.com/products/" post="?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-vip&utm_content=v1nc-xs" pad="26px 44px 4px 44px" eyebrow="FOR YOUR NEXT ORDER" headline="Picked for your kitchen" fall="1" note="Nothing you already own. Every order comes with 4 gifts."}}
+{{BLOCK:gifts5 style="row" line="Your next order comes with {{GIFTS:total}}." urgency="1" pad="22px 44px 6px 44px"}}
+{{BLOCK:reviews3 ids="R011,R082,R064"}}
+{{BLOCK:cta label="Shop with my 4 gifts" url="https://siraatskitchen.com/collections/all?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-vip&utm_content=v1nc-cta2" pad="24px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
 <!-- SIGN-OFF -->
 <tr><td class="pad" style="padding:24px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  One request: hit reply and tell us which pan you reach for most. Every reply reaches our team.<br><br>
-  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
+  Already have it all? Reply and we will help you pick the next piece.<br><br>
+  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span><br><br>
+  <span style="color:#727272;">P.S. Which pan do you reach for most? Reply and tell me.</span>
 </td></tr>
 
 {{FOOTER}}

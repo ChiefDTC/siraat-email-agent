@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: Thank you. Now the first egg. | SUBJECT_B: 2 to 3 minutes on medium. Then the egg. | PREVIEW: Cold metal grabs your food, hot metal lets it go. | SEND: v4 Welcome step 2: after the 20-minute wait and CS A1 (no order since start), CS A2 = Placed Order at least once over all time (already a customer) -> w0 -> end of flow. Subject A only (v4 3.19). | FILTERS: Flow: list Uw8eZG (Alia Card Game), email does not contain test@, has not been in this flow over all time, re-entry never. No offer, no HI10, no codebar (customer mail). utm_campaign v4-welcome -->
+<!-- V5-STRICT | SUBJECT_A: Thank you. Now the first egg. | SUBJECT_B: 2 to 3 minutes on medium. Then the egg. | PREVIEW: Cold metal grabs your food, hot metal lets it go. | SEND: v4 Welcome step 2: after the 20-minute wait and CS A1 (no order since start), CS A2 = Placed Order at least once over all time (already a customer) -> w0 -> end of flow. Subject A only (v4 3.19). | FILTERS: Flow: list Uw8eZG (Alia Card Game), email does not contain test@, has not been in this flow over all time, re-entry never. No offer, no HI10, no codebar (customer mail). utm_campaign v4-welcome | V5: opener zonder "nothing on it to wear off" (herhaling 8), review via reviews3 (set w0), deksel met {{PRICE:lid}}, gifts5-strook voor de volgende order | MARKT: profiel-helper (person.Country, dan person.country_code) -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -7,6 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
+<meta name="x-siraat-qa" content="V5-STRICT">
 <title>Thank you. Now the first egg.</title>
 <!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
 <style>
@@ -45,7 +46,7 @@
 {{BLOCK:cta label="Watch the cook guide" url="https://siraatskitchen.com/pages/care-use?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-welcome&utm_content=w0-cta1" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Two and a half minutes, straight from our chef.</div>"}}
 
 <!-- INTRO -->
-<tr><td class="pad" style="padding:24px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;color:#282828;text-align:left;"><p style="margin:0 0 14px 0;">Hi {{ first_name|default:'there' }}, thank you. You chose a pan with nothing on it to wear off. That also means it cooks a little differently from a coated pan.</p><p style="margin:0 0 14px 0;">Three steps, and your first egg slides.</p></td></tr>
+<tr><td class="pad" style="padding:24px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;color:#282828;text-align:left;"><p style="margin:0 0 14px 0;">Hi {{ first_name|default:'there' }}, thank you. You chose a pan with no coating. That means it cooks a little differently from a coated pan.</p><p style="margin:0 0 14px 0;">Three steps, and your first egg slides.</p></td></tr>
 
 <!-- ALIA CARD GAME: deelname in één regel -->
 <tr><td class="pad" align="center" style="padding:0 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;text-align:center;">
@@ -92,21 +93,17 @@
   </tr></table>
 </td></tr>
 
-<!-- REVIEW (R069 Aggie M., Trustpilot) -->
-<tr><td class="pad" style="padding:20px 44px 6px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;"><tr><td style="padding:20px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;">
-    <div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-    <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;I followed the instructions; let the pan heat up and did the water test. Then fried an egg which didn&rsquo;t stick to the pan. Easy clean up.&rdquo;</div>
-    <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Aggie M. &middot; Verified buyer</div>
-  </td></tr></table>
-</td></tr>
+<!-- REVIEWS (v5): drie pijlers, set w0 -->
+{{BLOCK:reviews3 set="w0" n="2" pad="22px 44px 6px 44px"}}
 
 {{BLOCK:cta label="Watch the cook guide" url="https://siraatskitchen.com/pages/care-use?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-welcome&utm_content=w0-cta2" pad="22px 44px 4px 44px" sub=""}}
 
 <!-- ZACHTE CROSS-SELL: deksel -->
 <tr><td class="pad" align="center" style="padding:16px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#727272;text-align:center;">
-  Simmering or steaming? <a href="https://siraatskitchen.com/products/stainless-steel-lid?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-welcome&utm_content=w0-prod-lid" style="color:#AC3B19;font-weight:600;">The stainless steel lid for your pan, $59 &rarr;</a>
+  Simmering or steaming? <a href="https://siraatskitchen.com/products/stainless-steel-lid?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-welcome&utm_content=w0-prod-lid" style="color:#AC3B19;font-weight:600;">The stainless steel lid for your pan{{IF:PRICED}}, {{PRICE:lid}}{{ENDIF}} &rarr;</a>
 </td></tr>
+
+{{BLOCK:gifts5 style="row" pad="22px 44px 0 44px" line="Your next order comes with {{GIFTS:total}} too."}}
 
 <!-- SIGN-OFF -->
 <tr><td class="pad" style="padding:22px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">

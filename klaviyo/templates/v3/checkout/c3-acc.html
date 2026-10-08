@@ -1,13 +1,14 @@
-<!-- SUBJECT_A: Most kitchens start with the pan | SUBJECT_B: The pan 100,000+ happy customers cook on | SUBJECTS (5 types): curiosity+benefit 'The one thing missing next to your cart' / specificity '$134, covered for 75 years' / question 'Still cooking on a coated pan?' / story '"I am on my 4th pan from Siraat"' / offer 'HI10 works on the pan too' | A/B: commitment (A) vs social proof (B); v4 3.19: alleen A | PREVIEW: Your cart is saved. Still cooking on a coated pan? Here is the one change worth making. | SEND: v4 2.1 stap 4A: wait 2 days until 09:00 (day 3, 09:00), ACCESSORY path, only new customers (CS HEEFT_GEKOCHT = no). Existing customers skip to C4. | FILTERS: Message: Placed Order = 0 since starting this flow -->
+<!-- V5-STRICT | SUBJECT_A: The pan we made after the board | SUBJECT_B: Still cooking on a coated pan? | SUBJECTS (5 types): curiosity+benefit 'The pan we made after the board' / specificity 'Report no. 25895, covered for 75 years' / question 'Still cooking on a coated pan?' / story '"Lower heat lower gas bills better tasting food"' / offer 'HI10 works on the pan too' | A/B: story (A) vs vraag (B); v4 3.19: alleen A | PREVIEW: We started with cutting boards too. Then the pan, because you cook in a pan. | SEND: v4 2.1 stap 4A: wait 2 days until 09:00 (day 3, 09:00), ACCESSORY path, only new customers (CS HEEFT_GEKOCHT = no). Existing customers skip to C4. | FILTERS: Message: Placed Order = 0 since starting this flow | V5 (8 okt 2026, research/v5/03-copy-spec.md sectie 3 + DECISIONS 8 okt): alle bedragen, maten en verzendregels via de markt-macro's; hero zonder HI10 en zonder bedrag in het beeld (marktneutraal, -v5.jpg); gifts via gifts5, reviews via reviews3 (drie pijlers); friction reducer alleen onder de eerste en laatste knop. Verhaalstap S2 (van plank naar pan). Eigenaar-check in de template (siraat_owned) als vangnet naast de flow-split. Geen coated-vergelijking (zit in C1). -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
 <meta charset="utf-8">
+<meta name="x-siraat-build" content="V5-STRICT">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
-<title>Most kitchens start with the pan</title>
+<title>From the board to the pan</title>
 <!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
@@ -25,56 +26,72 @@
     .desk{display:none!important;max-height:0!important;overflow:hidden!important;}
     .mob{display:block!important;max-height:none!important;overflow:visible!important;}
     .center{text-align:center!important;}
+    .lead{font-size:16px!important;line-height:25px!important;}
     .vs td{font-size:13px!important;}
   }
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Your cart is saved. Still cooking on a coated pan? Here is the one change worth making.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;">We started with cutting boards too. Then the pan, because you cook in a pan.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
-{{BLOCK:codebar}}
+{{BLOCK:codebar text="STILL PENDING ON YOUR CART &middot;" code="{{GIFTS:TOTAL}}"}}
 
 {{HEADER}}
 
-<!-- HERO 4:3 met aanbodbalk (make_hero.py --offer --ratio=4:3, bron: content/media/hero-register/checkout.csv) -->
+<!-- HERO 4:3 (apron lifestyle, marktneutraal; geen "no coating" naast de schort) -->
 <tr><td style="padding:0;">
-  <a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c3acc-hero"><img src="{{IMG}}/c3acc-hero.jpg" width="600" alt="Most kitchens start with the pan. No coating, covered for 75 years. Extra 10% off with code HI10, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c3acc-hero"><img src="{{IMG}}/c3acc-hero-v5.jpg" width="600" alt="Where we started. From the board to the pan. Tested PFAS-free, covered for 75 years. 4 gifts pending." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
-{{BLOCK:cart pad="22px 44px 4px 44px" line="<b>HI10</b> takes an extra 10% off, on your cart or on the pan."}}
-
-{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c3acc-cta1" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
-
-<tr><td class="pad" style="padding:30px 44px 4px 44px;">
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">WHAT GOES WITH IT</div>
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 0 0;">The pan behind the name</div>
+<!-- CART (kopie van blocks/cart.html, prijs alleen bij USD) -->
+<tr><td class="pad" style="padding:22px 44px 4px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
+    <tr><td colspan="3" style="padding:16px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">STILL IN YOUR CART</td></tr>
+    {% for item in event.extra.line_items %}{% if item.line_price > 0 %}
+    <tr>
+      <td width="104" valign="middle" style="padding:12px 0 12px 16px;">
+        <img src="{% if item.product.images.0.thumb_src %}{{ item.product.images.0.thumb_src }}{% else %}{{IMG}}/cart-fallback.jpg{% endif %}" width="88" alt="{{ item.title }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;">
+      </td>
+      <td valign="middle" style="padding:12px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
+        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">{{ item.title }}</div>
+        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">Qty {{ item.quantity|floatformat:0 }}</div>
+      </td>
+      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;">{% if event.extra.presentment_currency == 'USD' %}${{ item.line_price|floatformat:2 }}{% endif %}</td>
+    </tr>
+    {% endif %}{% endfor %}
+    <tr><td colspan="3" style="padding:0 16px 16px 16px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:11px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">
+        <img src="{{SHARED}}/icon-discount-tag.png" width="20" height="20" alt="" style="display:inline-block;vertical-align:-5px;width:20px;height:20px;">&nbsp; HI10 is already applied, on your cart or on the pan.
+      </td></tr></table>
+    </td></tr>
+  </table>
 </td></tr>
 
-<tr><td class="pad" style="padding:14px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">Most people start with one of our pans and add the rest later. You started next to it, which is fine.{% if 'Apron' in event.Items|join:',' %} An apron does want something to cook in, though.{% endif %}<br><br>If you still cook on a coated pan, this is the one change worth making. {% if 'Apron' in event.Items|join:',' %}The Pan Pro has a pure titanium cooking surface, tested free from PFAS by Light Labs (report no. 25895), and a 75-year warranty.{% else %}The Pan Pro has a pure titanium cooking surface with no coatings, so there is nothing on it to wear off. That is why it carries a 75-year warranty.{% endif %}</td></tr>
 
-{% if event.extra.presentment_currency == 'USD' or not event.extra.presentment_currency %}
-{{BLOCK:productcard pad="20px 44px 6px 44px" img="card-panpro-save305.jpg" alt="Titanium Hammered Pan Pro, Standard 11 inch" pill="BEST SELLER" name="The Pan Pro, 11&Prime;" sub="Tested free from PFAS by Light Labs, report no. 25895." was="$439" now="$134" note="$120.60 with HI10" link="Add the Pan Pro" url="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-checkout%26utm_content%3Dc3acc-prod-panpro"}}
+{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c3acc-cta1" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
+
+<!-- BESTAANDE EIGENAAR (siraat_owned bevat een pan): geen pan-pitch, geen productkaart. Nieuwe klant: S2 als Benjamin + Pan Pro-kaart -->
+{% with own=person|lookup:'siraat_owned' %}{% if 'panpro' in own or 'pan_original' in own or 'deep' in own or 'wok' in own or 'crepe' in own %}
+<tr><td class="pad lead" style="padding:26px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">You already cook on one of our pans, so there's nothing new to tell you about it. Your cart is saved, HI10 is applied, and the 4 gifts ship with it.</td></tr>
 {% else %}
-{{BLOCK:productcard pad="20px 44px 6px 44px" img="card-panpro-bestseller.jpg" alt="Titanium Hammered Pan Pro, Standard 11 inch" pill="" name="The Pan Pro, 11&Prime;" sub="Tested free from PFAS by Light Labs, report no. 25895." now="" note="HI10 takes an extra 10% off." link="Add the Pan Pro" url="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-checkout%26utm_content%3Dc3acc-prod-panpro"}}
-{% endif %}
+<tr><td class="pad lead" style="padding:26px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">We started with titanium cutting boards. Then we made the pan. A board is nice, but in the end you cook in a pan.<br><br>If you still cook on a coated pan, this is the one change worth making: titanium, tested free from PFAS by Light Labs (report no. 25895), and covered for 75 years.</td></tr>
 
-{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c3acc-cta2" pad="26px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
+{{BLOCK:productcard pad="20px 44px 6px 44px" img="card-panpro-bestseller.jpg" alt="Titanium Hammered Pan Pro" pill="" name="The Pan Pro, {{SIZE:28}}" sub="Tested free from PFAS by Light Labs, report no. 25895." now="{{PRICE:standard}}" note="{{IF:PRICED}}{{PRICE:standard*0.9}} with HI10{{ENDIF}}" link="Add the Pan Pro" url="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-checkout%26utm_content%3Dc3acc-prod-panpro"}}
+{% endif %}{% endwith %}
 
-{{BLOCK:reviews q1="I am on my 4th pan from Siraat... I even gifted one to my son, and he says it's the best pan he owns." n1="Tammy" q2="These pans are amazing! So easy to clean and cook perfectly. Even the customer service is outstanding.." n2="Dave"}}
+{{BLOCK:gifts5 style="row" urgency="1" line="Your {{GIFTS:total}} are still pending on this cart."}}
 
-{{BLOCK:gifts headline="$70 in gifts, included" note="The filter is a chance to win. Everything else comes with every order."}}
+{{BLOCK:reviews3 ids="R473,R082,R386" pad="26px 44px 6px 44px"}}
 
-{{BLOCK:icons}}
-
-{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c3acc-cta3" pad="24px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
-
+{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c3acc-cta2" pad="24px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
 <!-- SIGN-OFF -->
-<tr><td class="pad" style="padding:22px 44px 22px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  Hi {{ first_name|default:'there' }}, happy with what is in your cart? Then that is all you need. If you are curious about the pan, reply and ask me anything.<br><br>
-  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
+<tr><td class="pad" style="padding:22px 44px 24px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+  Hi {{ first_name|default:'there' }}, questions about the pan, or about what's in your cart? Reply and ask.<br><br>
+  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span><br><br>
+  <span style="color:#727272;">P.S. Happy with what's in your cart? Then that's all you need.</span>
 </td></tr>
 
 {{FOOTER}}

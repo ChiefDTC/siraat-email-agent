@@ -1,8 +1,9 @@
-<!-- SUBJECT_A: Something stop you at checkout? | SUBJECT_B: Your cart, plus 4 gifts, still saved | SUBJECTS (5 types): curiosity+benefit 'The one question people ask at this step. Answered.' / specificity 'Your titanium pan is saved, exactly as you left it' / question 'Something stop you at checkout?' / story '"I only need the new one."' / offer 'Your cart, plus 4 gifts, still saved' | A/B: liking (question) vs reciprocity (offer). v4 T12: in fase 1 geen C1-onderwerptest, alleen A versturen. PREVIEW B: Free shipping, a mystery gift, the e-book and HI10 on top. One tap back. | PREVIEW: Saved exactly as you left it. Free shipping, and HI10 takes 10% more. | SEND: v4 2.1 stap 1: 30 minutes after Checkout Started (T01 v4-pad) | FILTERS: Flow: Placed Order = 0 since starting this flow, not in this flow in last 14 days, Received Email from v4 Post-purchase zero times in last 7 days; trigger filter $value > 0. Message: Placed Order = 0 since starting this flow -->
+<!-- V5-STRICT | SUBJECT_A: Your cart + 4 gifts are still pending | SUBJECT_B: We kept your cart (and 4 gifts) | SUBJECTS (5 types): curiosity+benefit 'What ships with your cart the moment you order' / specificity 'Your cart + 4 gifts are still pending' / question 'Something stop you at checkout?' / story '"So glad i made the investment"' / offer 'We kept your cart (and 4 gifts)' | A/B: verlies (pending) vs bezit (kept, historische winnaar); v4 T12: in fase 1 geen C1-onderwerptest, alleen A versturen | PREVIEW: They ship the moment you place the order. One tap left. | SEND: v4 2.1 stap 1: 30 minutes after Checkout Started (T01 v4-pad) | FILTERS: Flow: Placed Order = 0 since starting this flow, not in this flow in last 14 days, Received Email from v4 Post-purchase zero times in last 7 days; trigger filter $value > 0 | FILTERS: Message: Placed Order = 0 since starting this flow | V5 (8 okt 2026, research/v5/03-copy-spec.md sectie 3 + DECISIONS 8 okt): alle bedragen, maten en verzendregels via de markt-macro's; hero zonder HI10 en zonder bedrag in het beeld (marktneutraal, -v5.jpg); gifts via gifts5, reviews via reviews3 (drie pijlers); friction reducer alleen onder de eerste en laatste knop. HI10 automatisch in de links (DECISIONS 2026-10-08), niet vooraan: alleen de regel onder de cart. goes-blok weg (cross-sell in mail 1 leidt af). -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
 <meta charset="utf-8">
+<meta name="x-siraat-build" content="V5-STRICT">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
@@ -25,57 +26,80 @@
     .desk{display:none!important;max-height:0!important;overflow:hidden!important;}
     .mob{display:block!important;max-height:none!important;overflow:visible!important;}
     .center{text-align:center!important;}
+    .lead{font-size:16px!important;line-height:25px!important;}
     .vs td{font-size:13px!important;}
   }
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Saved exactly as you left it. Free shipping, and HI10 takes 10% more.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;">They ship the moment you place the order. One tap left.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
-{{BLOCK:codebar}}
+{{BLOCK:codebar text="STILL PENDING ON YOUR CART &middot;" code="{{GIFTS:TOTAL}}"}}
 
 {{HEADER}}
 
-<!-- HERO 4:3 met aanbodbalk (make_hero.py --offer --ratio=4:3, bron: content/media/hero-register/checkout.csv). Productmatrix 8 okt: eigen hero voor set, pot, pizza steel en schort via het pick-blok -->
+<!-- HERO 4:3 (make_hero.py, v5 marktneutraal: geen HI10 en geen bedrag in het beeld). Eigen hero voor set, pot, pizza steel en schort via het pick-blok -->
 <tr><td style="padding:0;">
-  <a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-hero"><img src="{{BLOCK:pick src="event.Items|join:','" set="{{IMG}}/c1-hero-set.jpg" pot="{{IMG}}/c1-hero-pot.jpg" pizza="{{IMG}}/c1-hero-pizza.jpg" apron="{{IMG}}/c1-hero-apron.jpg" dflt="{{IMG}}/c1-hero.jpg"}}" width="600" alt="{{BLOCK:pick src="event.Items|join:','" set="Your set is saved: the whole kitchen, right where you left it." pot="Your pot is saved, right where you left it." pizza="Your pizza steel is saved: a crisp base, no coating." apron="Your apron is saved, ready when you are." dflt="Your cart is saved, right where you left it."}} Extra 10% off with code HI10, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-hero"><img src="{{BLOCK:pick src="event.Items|join:','" set="{{IMG}}/c1-hero-set-v5.jpg" pot="{{IMG}}/c1-hero-pot-v5.jpg" pizza="{{IMG}}/c1-hero-pizza-v5.jpg" apron="{{IMG}}/c1-hero-apron-v5.jpg" dflt="{{IMG}}/c1-hero-v5.jpg"}}" width="600" alt="{{BLOCK:pick src="event.Items|join:','" set="Still pending: your set, plus 4 gifts." pot="Still pending: your cart, plus 4 gifts." pizza="Still pending: your cart, plus 4 gifts." apron="Still pending: your cart, plus 4 gifts." dflt="Still pending: your cart, plus 4 gifts."}} Saved at the last step, one tap left. 4 gifts pending, free shipping." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
-{{BLOCK:cart pad="22px 44px 4px 44px" line="<b>HI10</b> takes an extra 10% off, and your <b>$70 in gifts</b> are still attached to this cart."}}
+<!-- CART (kopie van blocks/cart.html, prijs alleen bij USD) -->
+<tr><td class="pad" style="padding:22px 44px 4px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
+    <tr><td colspan="3" style="padding:16px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">STILL IN YOUR CART</td></tr>
+    {% for item in event.extra.line_items %}{% if item.line_price > 0 %}
+    <tr>
+      <td width="104" valign="middle" style="padding:12px 0 12px 16px;">
+        <img src="{% if item.product.images.0.thumb_src %}{{ item.product.images.0.thumb_src }}{% else %}{{IMG}}/cart-fallback.jpg{% endif %}" width="88" alt="{{ item.title }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;">
+      </td>
+      <td valign="middle" style="padding:12px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
+        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">{{ item.title }}</div>
+        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">Qty {{ item.quantity|floatformat:0 }}</div>
+      </td>
+      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;">{% if event.extra.presentment_currency == 'USD' %}${{ item.line_price|floatformat:2 }}{% endif %}</td>
+    </tr>
+    {% endif %}{% endfor %}
+    <tr><td colspan="3" style="padding:0 16px 16px 16px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:11px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">
+        <img src="{{SHARED}}/icon-discount-tag.png" width="20" height="20" alt="" style="display:inline-block;vertical-align:-5px;width:20px;height:20px;">&nbsp; Your extra 10% is already applied with the button below.
+      </td></tr></table>
+    </td></tr>
+  </table>
+</td></tr>
 
-{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-cta1" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
 
+{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-cta1" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
 
+{{BLOCK:gifts5 style="row" urgency="1" line="Your cart is waiting, with {{GIFTS:total}} still pending."}}
 
-<!-- PRODUCTMATRIX (8 okt): over jouw product, met het bezwaar dat voor dat product het vaakst komt en een echte review van een koper (blocks/about.html) -->
-{{BLOCK:about src="event.Items|join:','" lead="YOUR" pad="24px 44px 4px 44px"}}
-{% if 'Pan' in event.Items|join:',' or 'Pot' in event.Items|join:',' or 'ookware' in event.Items|join:',' or 'Everything' in event.Items|join:',' or 'fanne' in event.Items|join:',' %}{% if person.Country == 'United States' or person.Country == 'US' %}
-<tr><td class="pad" style="padding:14px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#727272;text-align:center;">Prefer to pay over time? Shop Pay Installments and Affirm are at checkout.</td></tr>
-{% endif %}{% endif %}
+<tr><td class="pad lead" style="padding:24px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">You got to the last step. Your cart is saved, and the four gifts above are attached to it. They ship the moment you place the order, together with everything in your cart.</td></tr>
 
-{{BLOCK:gifts headline="$70 in gifts, included" note="The filter is a chance to win. The rest comes with every order."}}
-
-
-
-{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-cta2" pad="26px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
-
-{{BLOCK:goes src="event.Items|join:','" pad="28px 44px 4px 44px" pre="https://siraatskitchen.com/discount/HI10?redirect=/products/" post="%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-checkout%26utm_content%3Dc1-goes" note="HI10 takes 10% off these too. Add one before you check out."}}
-
-{% if 'Hammered Pan Pro' in event.Items|join:',' %}
-{{BLOCK:ugc headline="Why they kept it" img1="ugc-prod-panpro.jpg" alt1="Titanium Hammered Pan Pro, product photo" q1="Great to know no chemicals are being released into our food when cooking with this pan!" n1="Beverley S." c1="Pan Pro" img2="ugc-prod-panpro-b.jpg" alt2="Titanium Hammered Pan Pro, product photo" q2="Was sceptical but the pan arrived just as described and works perfectly" n2="Avril" c2="Pan Pro" img3="ugc-prod-panpro-c.jpg" alt3="Titanium Hammered Pan Pro, product photo" q3="...non-toxic and so much lighter than my old cast iron pans." n3="Tammy" c3="Pan Pro"}}
-{% else %}
-{{BLOCK:reviews q1="Outstanding customer service and communication. Very happy with the quality of the products!" n1="Vince" q2="Excellent customer service who followed up right through to check the shipment was delivered. Good honest seller." n2="Becki"}}
+<!-- EEN DIRECTE VERGELIJKING (Floris 8 okt: "your future pan vs a PFAS pan"), alleen bij een pan of set; bij een accessoire het productblok (about, marktveilig voor accessoires) -->
+{% if 'Pan' in event.Items|join:',' or 'ookware' in event.Items|join:',' or 'Everything' in event.Items|join:',' or 'fanne' in event.Items|join:',' or 'Wok' in event.Items|join:',' %}
+<tr><td class="pad lead" style="padding:12px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">Your next pan, next to a PFAS pan. No coating to wear off, and no PFAS: Light Labs tested it, report no. 25895.</td></tr>
+{{BLOCK:vs kind="pfas" pad="22px 44px 6px 44px"}}
+{% if person.Country == 'United States' or person.Country == 'US' %}
+<tr><td class="pad" style="padding:12px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#727272;text-align:center;">Prefer to pay over time? Shop Pay Installments and Affirm are at checkout.</td></tr>
+{% endif %}
+{% elif 'Apron' in event.Items|join:',' or 'Cutting Board' in event.Items|join:',' or 'Lid' in event.Items|join:',' or 'Mill' in event.Items|join:',' or 'Utensil' in event.Items|join:',' or 'Dishwasher Sheets' in event.Items|join:',' %}
+{{BLOCK:about src="event.Items|join:','" lead="YOUR" pad="22px 44px 6px 44px"}}
 {% endif %}
 
-{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-cta3" pad="24px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
+{% if 'Apron' in event.Items|join:',' or 'Cutting Board' in event.Items|join:',' or 'Lid' in event.Items|join:',' or 'Mill' in event.Items|join:',' or 'Utensil' in event.Items|join:',' or 'Dishwasher Sheets' in event.Items|join:',' %}
+{{BLOCK:reviews3 ids="R158,R148,R316" pad="28px 44px 6px 44px"}}
+{% else %}
+{{BLOCK:reviews3 ids="R577,R516,R047" pad="28px 44px 6px 44px"}}
+{% endif %}
 
+{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-cta2" pad="24px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
 <!-- SIGN-OFF -->
-<tr><td class="pad" style="padding:22px 44px 22px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  Hi {{ first_name|default:'there' }}, if something stopped you, I would like to know what it was. Reply and our team will help.<br><br>
-  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
+<tr><td class="pad" style="padding:22px 44px 24px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+  Hi {{ first_name|default:'there' }}, if something stopped you at checkout, I'd like to know what it was. Just hit reply.<br><br>
+  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span><br><br>
+  <span style="color:#727272;">P.S. {% if 'Hammer' in event.Items|join:',' or 'Pan' in event.Items|join:',' or 'Pot' in event.Items|join:',' or 'ookware' in event.Items|join:',' or 'Everything' in event.Items|join:',' or 'fanne' in event.Items|join:',' or 'Prep Bundle' in event.Items|join:',' %}Cooking for 2 to 4? The {{SIZE:28}} pan is the one most people pick. Between two sizes? Reply and we'll tell you which.{% else %}Buying it as a gift? The 4 gifts ship with it either way.{% endif %}</span>
 </td></tr>
 
 {{FOOTER}}

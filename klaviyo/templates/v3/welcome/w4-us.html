@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: Who are you cooking for? | SUBJECT_B: Start with the Pan Pro (10% off already applied) | PREVIEW: One, two, or a family? Pick your pan by that. Your 10% is already taken off. | SEND: v4 Welcome step 6: wait 3 days, until 09:00 (day 6). CS B Location country equals United States: YES branch. Subject A only (v4 3.19) | FILTERS: Flow: list Uw8eZG (Alia Card Game, $source Alia sign-up), email does not contain test@, has not been in this flow over all time, re-entry never. Prospect path: CS A1 Placed Order = 0 since flow start (after 20 min), CS A2 Placed Order = 0 over all time. Send filter on this email: Placed Order zero times since starting this flow AND Received Email where Flow = v4 Checkout abandonment zero times in the last 1 day AND idem v4 Cart abandonment (skip, not exit). Smart sending off -->
+<!-- V5-STRICT | SUBJECT_A: Who are you cooking for? | SUBJECT_B: Count your eggs, pick your pan | SUBJECTS (5 types): C+B 'The size most people get right the first time' / SPEC 'Four sizes, one surface' / Q 'Who are you cooking for?' / STORY '"I realized I ordered the wrong size..."' / OFFER 'Your 10%, on the size that fits' | PREVIEW: One, two, or a family? Pick your pan by that. Your 10% is already off. | VERHAALSTAP: commitment: de maatkeuze. Fall-set als middelste stap ("Buy 2, get 4 free", six pieces). Geen Tammy (herhaling 9) | SEND: v4 Welcome step 6: wait 3 days, until 09:00 (day 6). CS B Location country equals United States: YES branch | FILTERS: Flow: list Uw8eZG (Alia Card Game, $source Alia sign-up), email does not contain test@, has not been in this flow over all time, re-entry never. Prospect path: CS A1 Placed Order = 0 since flow start (after 20 min), CS A2 Placed Order = 0 over all time. Send filter: Placed Order zero times since starting this flow AND Received Email where Flow = v4 Checkout abandonment zero times in the last 1 day AND idem v4 Cart abandonment (skip, not exit) | MARKT: profiel-helper (scripts/v5lib.py): person.Country, dan person.country_code; onbekend = geen bedragen, maten in cm met inch; de flowsplitsing stuurt hier alleen US, de macro's maken de mail ook voor andere markten juist | UTM: utm_campaign=v4-welcome, utm_content=w4us-<blok> -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -7,6 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
+<meta name="x-siraat-qa" content="V5-STRICT">
 <title>Who are you cooking for?</title>
 <!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
 <style>
@@ -18,19 +19,18 @@
   @media only screen and (max-width:620px){
     .w{width:100%!important;}
     .pad{padding-left:22px!important;padding-right:22px!important;}
-    .stack{display:block!important;width:100%!important;}
-    .stackpad{padding:0 0 14px 0!important;}
     .h2{font-size:30px!important;line-height:34px!important;}
     .navhide{display:none!important;}
-    .desk{display:none!important;max-height:0!important;overflow:hidden!important;}
-    .mob{display:block!important;max-height:none!important;overflow:visible!important;}
-    .center{text-align:center!important;}
-    .cs-q{font-size:15px!important;line-height:22px!important;}
+    .lead{font-size:16px!important;line-height:25px!important;}
+    .pim{width:96px!important;padding:14px 0 14px 12px!important;}
+    .pim img{width:88px!important;height:88px!important;}
+    .cs-q{font-size:18px!important;line-height:24px!important;}
+    .pf-i{width:44px!important;padding-left:14px!important;}
   }
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">One, two, or a family? Pick your pan by that. Your 10% is already taken off.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">One, two, or a family? Pick your pan by that. Your 10% is already off.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
@@ -39,55 +39,78 @@
 
 {{HEADER}}
 
-<!-- HERO 1:1, aanbod in de aanbodbalk; de kop draagt het idee -->
+<!-- HERO (v5, scripts/make_hero.py, aanbodbalk zonder valutabedrag: geldt in elke markt) -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw4us-hero"><img src="{{IMG}}/w4-us-hero.jpg" width="600" alt="Who are you cooking for? Pick your size. Your 10% is applied. 10% off with code HI10, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw4us-hero"><img src="{{IMG}}/w4-us-hero-v5.jpg" width="600" alt="Who are you cooking for? Pick your size. Your 10% is applied. 10% off with code HI10, plus 4 free gifts." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
-{{BLOCK:cta label="Claim my 10% + gifts" url="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw4us-cta1" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
+{{BLOCK:cta label="Claim my 10% + gifts" url="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw4us-cta1" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
 
-<!-- OPENER -->
-<tr><td class="pad" style="padding:26px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;color:#282828;text-align:center;"><p style="margin:0 0 14px 0;">You know why there is nothing on our pans. Now, which one? Pick it by who you cook for, not by what looks biggest.</p></td></tr>
+<tr><td class="pad lead" style="padding:22px 44px 2px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;"><p style="margin:0 0 0px 0;">Hi {{ first_name|default:'there' }}, you know why there is nothing on our pans. Now, which one? Pick it by who you cook for, not by what looks biggest.</p></td></tr>
 
-
-<!-- MAATKIEZER (commitment: kies je maat) -->
-<tr><td class="pad" style="padding:34px 44px 6px 44px;">
+<!-- MAATKIEZER (v5): maten via {{SIZE}} (US inch met cm, elders cm, onbekend cm met inch), prijzen via {{PRICE}} per markt; zonder prijslijst alleen "10% off with HI10" -->
+<tr><td class="pad" style="padding:26px 44px 6px 44px;">
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">WHICH SIZE?</div>
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 16px 0;">Pick it by who you cook for.</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-    <tr><td valign="middle" style="padding:14px 8px 14px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-pan-pro-mini%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw4us-size-mini" style="text-decoration:none;"><div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">Mini 8&Prime; (20 cm)</div><div style="font-size:14px;line-height:20px;color:#727272;padding-top:2px;">Eggs and omelettes for one</div></a></td>
-      <td width="96" align="right" valign="middle" style="padding:14px 18px 14px 6px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-pan-pro-mini%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw4us-size-mini" style="text-decoration:none;"><div style="font-size:13px;line-height:18px;color:#727272;">$129</div><div style="font-size:15px;line-height:20px;font-weight:600;color:#AC3B19;white-space:nowrap;">$116.10</div><div style="font-size:11px;line-height:14px;color:#727272;">with HI10</div></a></td></tr>
-    <tr><td valign="middle" style="padding:14px 8px 14px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-pan-pro-small%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw4us-size-small" style="text-decoration:none;"><div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">Small 10&Prime; (26 cm)</div><div style="font-size:14px;line-height:20px;color:#727272;padding-top:2px;">Breakfast and sides for two</div></a></td>
-      <td width="96" align="right" valign="middle" style="padding:14px 18px 14px 6px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-pan-pro-small%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw4us-size-small" style="text-decoration:none;"><div style="font-size:13px;line-height:18px;color:#727272;">$127</div><div style="font-size:15px;line-height:20px;font-weight:600;color:#AC3B19;white-space:nowrap;">$114.30</div><div style="font-size:11px;line-height:14px;color:#727272;">with HI10</div></a></td></tr>
-    <tr><td valign="middle" style="padding:14px 8px 14px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw4us-size-standard" style="text-decoration:none;"><div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">Standard 11&Prime; (28 cm) &nbsp;<span style="display:inline-block;background:#AC3B19;color:#FFFFFF;font-size:10px;line-height:14px;letter-spacing:1.4px;font-weight:600;padding:2px 8px;border-radius:10px;vertical-align:1px;">BEST SELLER</span></div><div style="font-size:14px;line-height:20px;color:#727272;padding-top:2px;">Everyday cooking for 2 to 4</div></a></td>
-      <td width="96" align="right" valign="middle" style="padding:14px 18px 14px 6px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw4us-size-standard" style="text-decoration:none;"><div style="font-size:13px;line-height:18px;color:#727272;">$134</div><div style="font-size:15px;line-height:20px;font-weight:600;color:#AC3B19;white-space:nowrap;">$120.60</div><div style="font-size:11px;line-height:14px;color:#727272;">with HI10</div></a></td></tr>
-    <tr><td valign="middle" style="padding:14px 8px 14px 18px;font-family:Inter,Arial,Helvetica,sans-serif;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-pan-pro-large%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw4us-size-large" style="text-decoration:none;"><div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">Large 12&Prime; (30 cm)</div><div style="font-size:14px;line-height:20px;color:#727272;padding-top:2px;">A family, or two steaks</div></a></td>
-      <td width="96" align="right" valign="middle" style="padding:14px 18px 14px 6px;font-family:Inter,Arial,Helvetica,sans-serif;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-pan-pro-large%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw4us-size-large" style="text-decoration:none;"><div style="font-size:13px;line-height:18px;color:#727272;">$139</div><div style="font-size:15px;line-height:20px;font-weight:600;color:#AC3B19;white-space:nowrap;">$125.10</div><div style="font-size:11px;line-height:14px;color:#727272;">with HI10</div></a></td></tr>
+  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 16px 0;">Pick it by who you cook for</div>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;">
+    <tr>
+      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-pan-pro-mini%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw4us-size-mini"><img src="{{SHARED}}/pc-mini.jpg" width="114" alt="Titanium Hammered Pan Pro Mini, {{SIZE:20:both}}" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
+      <td valign="middle" style="padding:14px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;">
+        <div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Mini {{SIZE:20:both}}</div>
+        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">Eggs and omelettes for one.</div>
+        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;overflow-wrap:anywhere;word-break:break-word;">{{IF:PRICED}}{{PRICE:mini}}&nbsp; <span style="color:#AC3B19;">{{PRICE:mini*0.9}} with HI10</span>{{ELSE}}<span style="color:#AC3B19;">10% off with HI10</span>{{ENDIF}}</div>
+        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-pan-pro-mini%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw4us-size-mini" style="color:#AC3B19;font-weight:600;text-decoration:underline;">Pick the Mini &rarr;</a></div>
+      </td>
+    </tr>
+    <tr>
+      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-pan-pro-small%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw4us-size-small"><img src="{{SHARED}}/pc-small.jpg" width="114" alt="Titanium Hammered Pan Pro Small, {{SIZE:26:both}}" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
+      <td valign="middle" style="padding:14px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;">
+        <div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Small {{SIZE:26:both}}</div>
+        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">Breakfast and sides for two.</div>
+        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;overflow-wrap:anywhere;word-break:break-word;">{{IF:PRICED}}{{PRICE:small}}&nbsp; <span style="color:#AC3B19;">{{PRICE:small*0.9}} with HI10</span>{{ELSE}}<span style="color:#AC3B19;">10% off with HI10</span>{{ENDIF}}</div>
+        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-pan-pro-small%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw4us-size-small" style="color:#AC3B19;font-weight:600;text-decoration:underline;">Pick the Small &rarr;</a></div>
+      </td>
+    </tr>
+    <tr>
+      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;background:#FBF6F1;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw4us-size-standard"><img src="{{SHARED}}/pc-standard.jpg" width="114" alt="Titanium Hammered Pan Pro Standard, {{SIZE:28:both}}" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
+      <td valign="middle" style="padding:14px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;background:#FBF6F1;">
+        <div style="padding-bottom:5px;"><span style="display:inline-block;background:#AC3B19;color:#FFFFFF;font-size:10px;line-height:14px;letter-spacing:1.4px;font-weight:600;padding:3px 9px;border-radius:10px;">BEST SELLER</span></div><div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Standard {{SIZE:28:both}}</div>
+        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">Everyday cooking for 2 to 4.</div>
+        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;overflow-wrap:anywhere;word-break:break-word;">{{IF:PRICED}}{{PRICE:standard}}&nbsp; <span style="color:#AC3B19;">{{PRICE:standard*0.9}} with HI10</span>{{ELSE}}<span style="color:#AC3B19;">10% off with HI10</span>{{ENDIF}}</div>
+        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw4us-size-standard" style="color:#AC3B19;font-weight:600;text-decoration:underline;">Pick the Standard &rarr;</a></div>
+      </td>
+    </tr>
+    <tr>
+      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-pan-pro-large%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw4us-size-large"><img src="{{SHARED}}/pc-large.jpg" width="114" alt="Titanium Hammered Pan Pro Large, {{SIZE:30:both}}" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
+      <td valign="middle" style="padding:14px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
+        <div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Large {{SIZE:30:both}}</div>
+        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">A family, or two steaks at once.</div>
+        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;overflow-wrap:anywhere;word-break:break-word;">{{IF:PRICED}}{{PRICE:large}}&nbsp; <span style="color:#AC3B19;">{{PRICE:large*0.9}} with HI10</span>{{ELSE}}<span style="color:#AC3B19;">10% off with HI10</span>{{ENDIF}}</div>
+        <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-pan-pro-large%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw4us-size-large" style="color:#AC3B19;font-weight:600;text-decoration:underline;">Pick the Large &rarr;</a></div>
+      </td>
+    </tr>
   </table>
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;text-align:center;padding-top:10px;">Your 10% already taken off. Most people pick the Standard.</div>
+  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:22px;color:#727272;padding-top:12px;text-align:center;">Your 10% comes off at checkout with the button. Most people pick the Standard.</div>
 </td></tr>
 
-<!-- AANBODKAARTJE: hetzelfde in elke welcome-mail -->
-{{BLOCK:offer pad="30px 44px 6px 44px" eyebrow="YOUR WELCOME OFFER" headline="10% on top of the sale" code="HI10" note="Plus $70 in gifts with every order." label="Claim my 10% + gifts" url="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw4us-offer"}}
+{{BLOCK:productcard pad="14px 44px 6px 44px" img="card-set6.jpg" alt="The 6-piece set: Mini, Small and Large pans with three lids" pill="FALL SALE" name="The 6-piece set" sub="Buy 2, get 4 free: Mini, Small and Large, each with its own lid. Six pieces." now="<span style=\'word-break:break-all;\'>{{PRICE:set6}}</span>" was="<span style=\'word-break:break-all;\'>{{WAS:set6}}</span>" link="See the 6-piece set" url="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-pan-set-with-lids-6-pcs%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw4us-set6"}}
 
-<!-- DRIE MANIEREN OM TE STARTEN: productkaarten met sticker -->
-<tr><td class="pad" style="padding:30px 44px 14px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">THREE WAYS TO START</td></tr>
+{{USONLY}}
+{{BLOCK:productcard pad="0 44px 6px 44px" img="card-set12-save587.jpg" alt="The 12-piece set: pans, pots and lids" name="The 12-piece set" sub="Pans, pots and lids. A whole kitchen, one decision." now="{{PRICE:set12}}" was="{{WAS:set12}}" link="See the 12-piece set" url="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-cookware-set%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw4us-set12"}}
+{{/USONLY}}
 
-{{BLOCK:productcard img="card-panpro-save305.jpg" name="The Pan Pro, 11&Prime;" sub="The one most people pick." now="$134" was="$439" pill="BEST SELLER" note="$120.60 with HI10" url="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw4us-tier1" link="Get the pan" alt="The Pan Pro, 11 inch"}}
-{{BLOCK:productcard img="card-set6.jpg" name="The 6-piece set" sub="Three pans plus three lids." now="$349" was="" pill="" note="$314.10 with HI10, about $105 a pan" url="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-pan-set-with-lids-6-pcs-bday-sale%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw4us-tier2" link="Get the set" alt="The 6-piece set"}}
-{{BLOCK:productcard img="card-set12-save587.jpg" name="The 12-piece set" sub="Pans, pots and lids. US only." now="$599" was="$1,186" pill="" note="$539.10 with HI10" url="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-cookware-set%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw4us-tier3" link="Get the set" alt="The 12-piece set"}}
+{{BLOCK:gifts5 style="row" pad="18px 44px 4px 44px" line="Every order comes with {{GIFTS:total}}."}}
 
-{{BLOCK:reviews pad="24px 44px 6px 44px" q1="I wanted to get something I can pass down to my son as my mum passed her amazing quality pots to me." n1="Emma" q2="I am on my 4th pan from Siraat... I even gifted one to my son, and he says it's the best pan he owns." n2="Tammy"}}
+{{BLOCK:reviews3 set="w4-us" n="2" pad="24px 44px 6px 44px"}}
 
-{{BLOCK:cta label="Claim my 10% + gifts" url="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw4us-cta2" pad="24px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
-
-{{BLOCK:icons}}
+{{BLOCK:cta label="Claim my 10% + gifts" url="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw4us-cta2" pad="24px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
 
 <!-- SIGN-OFF -->
-<tr><td class="pad" style="padding:22px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  Still not sure? Reply with what you cook most and who for. We&rsquo;ll tell you which size.<br><br>
-  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
+<tr><td class="pad" style="padding:26px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+  Still not sure? Reply with what you cook most and who for. Our team will tell you which size.<br><br>
+  Benjamin<br><span style="color:#727272;">Founder, Siraat&rsquo;s Kitchen</span>
 </td></tr>
+
 {{FOOTER}}
 
 </table>

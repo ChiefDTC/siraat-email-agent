@@ -1,13 +1,14 @@
-<!-- SUBJECT_A: Yours, or a gift? Both work. | SUBJECT_B: "Such lovely gifts" | SUBJECTS (5 types): curiosity+benefit 'The part of your order that comes with 4 gifts' / specificity 'Free shipping, 4 gifts, 30 days to decide' / question 'Yours, or a gift?' / story '"Such lovely gifts"' / offer '10% off what is in your cart' | A/B: liking (question) vs social proof (story); v4 3.19: alleen A. PREVIEW B: Deborah thought so too. Here is what comes in the box. | PREVIEW: What it is made of, how to look after it, and 10% off with HI10. | SEND: v4 2.1 stap 3A: wait 1 day (24 hours after C1), ACCESSORY path (TS T1: Items contains none of KOOK_TITELS + SET_TITELS) | FILTERS: Message: Placed Order = 0 since starting this flow -->
+<!-- V5-STRICT | SUBJECT_A: Yours, or a gift? Both work. | SUBJECT_B: Your 4 gifts are still pending | SUBJECTS (5 types): curiosity+benefit 'The part of your order that comes with 4 gifts' / specificity 'Free shipping, 4 gifts, 30 days to decide' / question 'Yours, or a gift? Both work.' / story '"Such lovely gifts"' / offer 'Your 4 gifts are still pending' | A/B: liking (vraag) vs reciprocity (gifts pending); v4 3.19: alleen A | PREVIEW: Free shipping, 30 days to return it unused, and 4 gifts that ship with it. | SEND: v4 2.1 stap 3A: wait 1 day (24 hours after C1), ACCESSORY path (TS T1: Items contains none of KOOK_TITELS + SET_TITELS) | FILTERS: Message: Placed Order = 0 since starting this flow | V5 (8 okt 2026, research/v5/03-copy-spec.md sectie 3 + DECISIONS 8 okt): alle bedragen, maten en verzendregels via de markt-macro's; hero zonder HI10 en zonder bedrag in het beeld (marktneutraal, -v5.jpg); gifts via gifts5, reviews via reviews3 (drie pijlers); friction reducer alleen onder de eerste en laatste knop. Bestaande eigenaar (person|lookup:'siraat_owned' bevat panpro, pan_original, deep, wok of crepe): geen merkverhaal of panuitleg. -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
 <meta charset="utf-8">
+<meta name="x-siraat-build" content="V5-STRICT">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
-<title>Yours, or a gift?</title>
+<title>Still in your cart</title>
 <!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
@@ -25,75 +26,80 @@
     .desk{display:none!important;max-height:0!important;overflow:hidden!important;}
     .mob{display:block!important;max-height:none!important;overflow:visible!important;}
     .center{text-align:center!important;}
+    .lead{font-size:16px!important;line-height:25px!important;}
     .vs td{font-size:13px!important;}
   }
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">What it is made of, how to look after it, and 10% off with HI10.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;">Free shipping, 30 days to return it unused, and 4 gifts that ship with it.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
-{{BLOCK:codebar}}
+{{BLOCK:codebar text="STILL PENDING ON YOUR CART &middot;" code="{{GIFTS:TOTAL}}"}}
 
 {{HEADER}}
 
-<!-- HERO 4:3 met aanbodbalk (make_hero.py --offer --ratio=4:3, bron: content/media/hero-register/checkout.csv) -->
+<!-- HERO 4:3 (Apron_Ember, marktneutraal) -->
 <tr><td style="padding:0;">
-  <a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c2acc-hero"><img src="{{IMG}}/c2acc-hero.jpg" width="600" alt="Still in your cart. Yours, or a gift? Both work. Extra 10% off with code HI10, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c2acc-hero"><img src="{{IMG}}/c2acc-hero-v5.jpg" width="600" alt="Still in your cart. Yours, or a gift? Both work. 4 gifts ship with it, either way." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
-{{BLOCK:cart pad="22px 44px 4px 44px"}}
-
-{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c2acc-cta1" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
-
-<!-- FEITEN PER PRODUCT (dynamisch op event.Items|join:',') -->
-<tr><td class="pad" style="padding:28px 44px 6px 44px;">
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">WHAT YOU PICKED</div>
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 16px 0;">The short version</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;border-bottom:0;">
-    {% if 'Apron' in event.Items|join:',' %}<tr><td style="padding:16px 20px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Siraat Signature Apron</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Heavy 16-oz canvas with a water-repellent finish, adjustable straps and a front pocket. Wipe it down, or hand wash cold.</div></td></tr>{% endif %}
-    {% if 'Cutting Board' in event.Items|join:',' %}<tr><td style="padding:16px 20px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Titanium Cutting Board</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Pure titanium, non-porous, so it does not soak up juices or smells. Anti-microbial, and dishwasher safe.</div></td></tr>{% endif %}
-    {% if 'Lid' in event.Items|join:',' %}<tr><td style="padding:16px 20px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Stainless Steel Lid</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">304 stainless steel. Match it to your pan&rsquo;s diameter: 20, 26, 28 or 30 cm. One lid fits every Siraat pan of that size.</div></td></tr>{% endif %}
-    {% if 'Mill' in event.Items|join:',' %}<tr><td style="padding:16px 20px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Salt and Pepper Mill</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">A heavy metal body with a knurled grip and 12 numbered grind settings, from fine to coarse.</div></td></tr>{% endif %}
-    {% if 'Utensil' in event.Items|join:',' or 'Chopsticks' in event.Items|join:',' %}<tr><td style="padding:16px 20px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Titanium Utensils</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Titanium tools that are light in the hand and safe on every Siraat pan.</div></td></tr>{% endif %}
-    {% if 'Gift Card' in event.Items|join:',' %}<tr><td style="padding:16px 20px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">E-Gift Card</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Sent by email, so it cannot get stuck in the mail. They choose the pan and the size.</div></td></tr>{% endif %}
-    {% if 'Dishwasher Sheets' in event.Items|join:',' %}<tr><td style="padding:16px 20px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Dishwasher Sheets</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">One pre-dosed sheet per load. No plastic pod, phosphate-free.</div></td></tr>{% endif %}
+<!-- CART (kopie van blocks/cart.html, prijs alleen bij USD) -->
+<tr><td class="pad" style="padding:22px 44px 4px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
+    <tr><td colspan="3" style="padding:16px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">STILL IN YOUR CART</td></tr>
+    {% for item in event.extra.line_items %}{% if item.line_price > 0 %}
+    <tr>
+      <td width="104" valign="middle" style="padding:12px 0 12px 16px;">
+        <img src="{% if item.product.images.0.thumb_src %}{{ item.product.images.0.thumb_src }}{% else %}{{IMG}}/cart-fallback.jpg{% endif %}" width="88" alt="{{ item.title }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;">
+      </td>
+      <td valign="middle" style="padding:12px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
+        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">{{ item.title }}</div>
+        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">Qty {{ item.quantity|floatformat:0 }}</div>
+      </td>
+      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;">{% if event.extra.presentment_currency == 'USD' %}${{ item.line_price|floatformat:2 }}{% endif %}</td>
+    </tr>
+    {% endif %}{% endfor %}
+    <tr><td colspan="3" style="padding:0 16px 16px 16px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:11px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">
+        <img src="{{SHARED}}/icon-discount-tag.png" width="20" height="20" alt="" style="display:inline-block;vertical-align:-5px;width:20px;height:20px;">&nbsp; HI10 takes an extra 10% off, already applied with the button below.
+      </td></tr></table>
+    </td></tr>
   </table>
 </td></tr>
+
+
+{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c2acc-cta1" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
+
+{{BLOCK:gifts5 style="row" urgency="1" line="Yours or a gift: {{GIFTS:total}} ship with it."}}
+
+<!-- BESTAANDE EIGENAAR (person.siraat_owned bevat een pan, 02-bundels sectie 3): geen merkverhaal en geen panuitleg; nieuwe klant: S2 kort -->
+{% with own=person|lookup:'siraat_owned' %}{% if 'panpro' in own or 'pan_original' in own or 'deep' in own or 'wok' in own or 'crepe' in own %}
+<tr><td class="pad lead" style="padding:24px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">You already cook on one of our pans, so you know how we make things. This one gets the same care, and it ships free with the same 4 gifts.</td></tr>
+{% else %}
+<tr><td class="pad lead" style="padding:24px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">Siraat started with a titanium cutting board, before there was a pan. The small things still get the same care as the big ones. Here's the short version of what you picked.</td></tr>
+{% endif %}{% endwith %}
+<!-- PRODUCTBLOK (about): alleen bij een accessoire en niet bij de e-gift card (die noemt USD-bedragen) -->
+{% if 'Pan' not in event.Items|join:',' and 'Pot' not in event.Items|join:',' and 'Hammer' not in event.Items|join:',' and 'Gift Card' not in event.Items|join:',' %}
+{{BLOCK:about src="event.Items|join:','" lead="YOUR" pad="22px 44px 6px 44px"}}
+{% endif %}
 
 <tr><td class="pad" style="padding:30px 44px 4px 44px;">
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">IF IT IS A GIFT</div>
   <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 0 0;">Easy to give. Easy to return.</div>
 </td></tr>
+<tr><td class="pad lead" style="padding:12px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">{{SHIP}}, to their door or to yours. Wrong color or size? Unused items can go back within 30 days of delivery.</td></tr>
 
-<tr><td class="pad" style="padding:12px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">Shipping is free and tracked, to their door or to yours. Wrong color or size? Unused items can go back within 30 days of delivery. And four gifts come with the order.</td></tr>
+{{BLOCK:reviews3 ids="R200,R148,R256" pad="26px 44px 6px 44px"}}
 
-{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c2acc-cta2" pad="26px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
-
-{{BLOCK:reviews q1="...It comes beautifully boxed, and the apron, bottle and spatula are such lovely gifts." n1="Deborah G." q2="Great price, easy ordering... I purchased this as a gift and the recipient loves it!" n2="Denise H."}}
-
-{{BLOCK:gifts headline="$70 in gifts, included" note="The filter is a chance to win. Everything else comes with every order."}}
-
-<!-- ICONEN voor accessoires: zonder 75-year warranty (geldt voor kookgerei) -->
-<tr><td class="pad" style="padding:22px 44px 6px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-    <tr>
-      <td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;"><img src="{{SHARED}}/icon-free-shipping.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">FREE<br>SHIPPING</div></td>
-      <td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;border-left:1px solid #ECE7DD;"><img src="{{SHARED}}/icon-returns-30-day.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">30-DAY<br>RETURNS</div></td>
-      <td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;border-left:1px solid #ECE7DD;"><img src="{{SHARED}}/icon-gift.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">4 GIFTS<br>INCLUDED</div></td>
-      <td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;border-left:1px solid #ECE7DD;"><img src="{{SHARED}}/icon-customers-100k.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">100,000+<br>CUSTOMERS</div></td>
-    </tr>
-  </table>
-</td></tr>
-
-{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c2acc-cta3" pad="24px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
-
+{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c2acc-cta2" pad="24px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
 <!-- SIGN-OFF -->
-<tr><td class="pad" style="padding:22px 44px 22px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  Hi {{ first_name|default:'there' }}, not sure about a color or a size? Reply and tell us who it is for. We will help you pick.<br><br>
-  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
+<tr><td class="pad" style="padding:22px 44px 24px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+  Hi {{ first_name|default:'there' }}, thank you for picking something of ours.<br><br>
+  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span><br><br>
+  <span style="color:#727272;">P.S. Not sure about a size or a color? Reply with who it's for, and we'll help you pick.</span>
 </td></tr>
 
 {{FOOTER}}

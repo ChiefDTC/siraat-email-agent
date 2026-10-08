@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: Here is your 10%, for the next 48 hours | SUBJECT_B: "I ordered one pan to try it out" (reserve; browse tests only T05a in phase 1) | SUBJECTS (5 types): C+B 'A code for the one you went back to' / SPEC '10% off what you looked at, for 48 hours' / Q 'Still thinking it over?' / STORY '"I ordered one pan to try it out"' / OFFER 'Your own 10%, for the next 48 hours' | PREVIEW: A personal code, on top of the sale, already applied. It runs out in 48 hours. | SEND: path K: 2 days after B1, until 09:00, CS Clicked Email $message = B1 since flow start = yes; path A: 2 days after B1-acc, CS clicked B1-acc = yes. Code-router (v4 1.4): cooldown = no, T02 arm A; then Update profile property last_flow_code_at = today, last_flow_code_pool = B2_10_48H | COUPON: B2_10_48H (Shopify unique, 10%, one use per customer, expires 48 hours after assignment) | FILTERS: Trigger: Viewed Product (XNtYMB, Klaviyo onsite; not V48nhq). Flow: Added to Cart = 0, Checkout Started = 0, Placed Order = 0 since flow start; Received Email where Flow = 'v4 · Cart abandonment' = 0 in the last 7 days; idem 'v4 · Checkout abandonment'; idem 'v4 · Welcome' = 0 in the last 7 days; not in this flow in the last 7 days. Message: Placed Order = 0 since flow start; plus Added to Cart = 0 since flow start | UTM: utm_content=b2c-<blok>, utm_term=t02-a -->
+<!-- V5-STRICT | SUBJECT_A: Your own 10% expires in 48 hours | SUBJECT_B: A code for the pan you went back to | SUBJECTS (5 types): C+B 'We made you a code. It ends soon.' / SPEC 'Your 10% expires in 48 hours' / Q 'Still thinking it over?' / STORY 'December 20, 2024' / OFFER 'Your own 10% expires in 48 hours' | PREVIEW: Already applied. On {day} morning, we remove it. | VERHAALSTAP: S5 + S7 (eerste pan 20 december 2024, 100,000+ klanten), urgentie U1/U2: eigen code verloopt, "we are removing your discount" (besluit 8 okt) | SEND: path K: 2 days after B1, until 09:00, CS Clicked Email $message = B1 since flow start = yes; path A: 2 days after B1-acc, CS clicked B1-acc = yes. Code-router (v4 1.4): cooldown = no, T02 arm A; then Update profile property last_flow_code_at = today, last_flow_code_pool = B2_10_48H | COUPON: B2_10_48H (Shopify unique, 10%, one use per customer, expires 48 hours after assignment) | FILTERS: Trigger: Viewed Product (XNtYMB, Klaviyo onsite; not V48nhq). Flow: Added to Cart = 0, Checkout Started = 0, Placed Order = 0 since flow start; Received Email where Flow = 'v4 · Cart abandonment' = 0 in the last 7 days; idem 'v4 · Checkout abandonment'; idem 'v4 · Welcome' = 0 in the last 7 days; not in this flow in the last 7 days. Message: Placed Order = 0 since flow start; plus Added to Cart = 0 since flow start | MARKT: browse-helper (scripts/v5lib.py): person.Country, dan person.country_code, dan de prijsnotatie in event.Price; prijzen, maten, gifts en verzendregels via macro's | UTM: utm_content=b2c-<blok>, utm_term=t02-a -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -7,7 +7,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
-<title>Your own 10%, for 48 hours.</title>
+<meta name="x-siraat-qa" content="V5-STRICT">
+<title>Your own 10% expires soon</title>
 <!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
@@ -18,110 +19,75 @@
   @media only screen and (max-width:620px){
     .w{width:100%!important;}
     .pad{padding-left:22px!important;padding-right:22px!important;}
-    .stack{display:block!important;width:100%!important;}
-    .stackpad{padding:0 0 14px 0!important;}
     .h2{font-size:30px!important;line-height:34px!important;}
     .navhide{display:none!important;}
-    .desk{display:none!important;max-height:0!important;overflow:hidden!important;}
-    .mob{display:block!important;max-height:none!important;overflow:visible!important;}
-    .center{text-align:center!important;}
     .lead{font-size:16px!important;line-height:25px!important;}
+    .pim{width:96px!important;padding:14px 0 14px 12px!important;}
+    .pim img{width:88px!important;height:88px!important;}
+    .cs-q{font-size:18px!important;line-height:24px!important;}
+    .pf-i{width:44px!important;padding-left:14px!important;}
   }
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">A personal code, on top of the sale, already applied. It runs out in 48 hours.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Already applied. On {{DATE:2:l}} morning, we remove it.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
-
-{{BLOCK:codebar text="YOUR 10% &middot; ENDS {{DATE:2:D:upper}} {{DATE:2:M j:upper}} &middot;" code="{% coupon_code 'B2_10_48H' %}"}}
+{{BLOCK:codebar text="YOUR 10% EXPIRES {{DATE:2:D:upper}} {{DATE:2:M j:upper}} &middot;" code="{% coupon_code 'B2_10_48H' %}"}}
 
 {{HEADER}}
 
-<!-- HERO 4:3 met aanbodbalk (make_hero.py --offer --ratio=4:3) -->
+<!-- HERO (v5, scripts/make_hero.py, aanbodbalk zonder valutabedrag: geldt in elke markt) -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/discount/{% coupon_code 'B2_10_48H' %}?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2c-hero%26utm_term%3Dt02-a"><img src="{{IMG}}/b2-clicked-hero.jpg" width="600" alt="Your code, 48 hours. Your own 10%, for 48 hours, then the regular sale price again. Plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://siraatskitchen.com/discount/{% coupon_code 'B2_10_48H' %}?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2c-hero%26utm_term%3Dt02-a"><img src="{{IMG}}/b2-clicked-hero-v5.jpg" width="600" alt="Your code, 48 hours. Your own 10% expires soon, then the regular sale price is back." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
-<!-- PRODUCTKAART Viewed Product (XNtYMB): Name, ImageURL, Price (tekst), URL. Prijs alleen met $ (QA A18); ankerprijs $439 alleen bij Pan Pro Standard voor $134. -->
+<!-- PRODUCTKAART Viewed Product: naam, beeld, prijs. Markt (v5): prijs alleen waar de notatie eenduidig is (US, UK, EU via de browse-helper); AUD/CAD/SGD/NZD staan ook als "$" in event.Price en krijgen dus geen bedrag. Geen doorgestreepte prijs (compare-at van de Pan Pro is niet bevestigd). -->
 <tr><td class="pad" style="padding:22px 44px 4px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-    <tr><td colspan="3" style="padding:16px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">{% if 'Hammer' in event.Name or 'Pan' in event.Name or 'Pot' in event.Name or 'ookware' in event.Name or 'Everything' in event.Name or 'fanne' in event.Name or 'Prep Bundle' in event.Name %}THE {{BLOCK:label src="event.Name" dflt="PAN"}} YOU VIEWED{% else %}YOU LOOKED AT{% endif %}</td></tr>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;">
+    <tr><td colspan="3" style="padding:16px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-transform:uppercase;overflow-wrap:anywhere;word-break:break-word;">{% if 'Hammer' in event.Name or 'Pan' in event.Name or 'Pot' in event.Name or 'ookware' in event.Name or 'Everything' in event.Name or 'fanne' in event.Name or 'Prep Bundle' in event.Name %}THE {% with s=event.Name %}{% if 'Pan Pro Standard' in s or 'Titanium Pan Pro' in s or 'Frying Pan' in s %}PAN PRO {{SIZE:28}}{% elif 'Pan Pro Large' in s %}PAN PRO {{SIZE:30}}{% elif 'Pan Pro Small' in s %}PAN PRO {{SIZE:26}}{% else %}{{BLOCK:label src="event.Name" dflt="PAN"}}{% endif %}{% endwith %} YOU VIEWED{% else %}YOU LOOKED AT{% endif %}</td></tr>
     <tr>
-      <td width="104" valign="middle" style="padding:12px 0 12px 16px;">
-        <a href="https://siraatskitchen.com/discount/{% coupon_code 'B2_10_48H' %}?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2c-product%26utm_term%3Dt02-a"><img src="{% if event.ImageURL %}{{ event.ImageURL }}{% else %}https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-40a5-9ad7-523bdddc54d4.webp?v=1781682831&width=600{% endif %}" width="88" alt="{{ event.Name|default:'Titanium Hammered Pan Pro' }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;"></a>
-      </td>
+      <td width="104" valign="middle" style="padding:12px 0 12px 16px;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'B2_10_48H' %}?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2c-product%26utm_term%3Dt02-a"><img src="{% if event.ImageURL %}{{ event.ImageURL }}{% else %}https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-40a5-9ad7-523bdddc54d4.webp?v=1781682831&width=600{% endif %}" width="88" alt="{{ event.Name|default:'Titanium Hammered Pan Pro' }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;"></a></td>
       <td valign="middle" style="padding:12px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
         <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">{{ event.Name|default:'Titanium Hammered Pan Pro' }}</div>
-        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">{% if 'Hammer' in event.Name or 'Pan' in event.Name or 'Pot' in event.Name or 'ookware' in event.Name or 'Everything' in event.Name or 'fanne' in event.Name or 'Prep Bundle' in event.Name %}Pure titanium cooking surface{% elif 'Board' in event.Name or 'Utensil' in event.Name or 'Chopsticks' in event.Name %}Pure titanium{% else %}From Siraat&rsquo;s Kitchen{% endif %}</div>
+        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">{% if 'Hammer' in event.Name or 'Pan' in event.Name or 'Pot' in event.Name or 'ookware' in event.Name or 'Everything' in event.Name or 'fanne' in event.Name or 'Prep Bundle' in event.Name %}Pure titanium cooking surface, no coatings{% elif 'Apron' in event.Name %}16-oz canvas, adjustable{% elif 'Cutting Board' in event.Name %}Pure titanium, anti-microbial{% elif 'Lid' in event.Name %}Stainless steel, sized to your pan{% elif 'Mill' in event.Name %}All-metal, 12 grind settings{% elif 'Utensil' in event.Name or 'Chopsticks' in event.Name %}Pure titanium tools{% elif 'Gift Card' in event.Name %}Delivered by email{% elif 'Dishwasher Sheets' in event.Name or 'Detergent' in event.Name %}Plastic-free, phosphate-free{% else %}From Siraat&rsquo;s Kitchen{% endif %}</div>
       </td>
-      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;">{% if 'Pan Pro Standard' in event.Name and event.Price|slice:':4' == '$134' %}<div style="font-size:13px;line-height:17px;color:#9A948B;text-decoration:line-through;font-weight:400;">$439</div>{% endif %}{% if '$' in event.Price %}{{ event.Price }}{% endif %}</td>
+      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;">{{IF:US}}{{ event.Price }}{{ELIF:UK,EU}}{% if '£' in event.Price or '€' in event.Price %}{{ event.Price }}{% endif %}{{ENDIF}}</td>
     </tr>
     <tr><td colspan="3" style="padding:0 16px 16px 16px;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:11px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">
-        <img src="{{SHARED}}/icon-discount-tag.png" width="20" height="20" alt="" style="display:inline-block;vertical-align:-5px;width:20px;height:20px;">&nbsp; {% if 'Pan Pro Standard' in event.Name and event.Price|slice:':4' == '$134' %}Your own code: <b>$120.60</b>, applied with the button below.{% else %}Your own code takes 10% off this price, applied with the button below.{% endif %}
+        <img src="{{SHARED}}/icon-discount-tag.png" width="20" height="20" alt="" style="display:inline-block;vertical-align:-5px;width:20px;height:20px;">&nbsp; Your own code takes 10% off this price. Already applied with the button.
       </td></tr></table>
     </td></tr>
   </table>
 </td></tr>
 
-{{BLOCK:cta label="Claim my 10%" url="https://siraatskitchen.com/discount/{% coupon_code 'B2_10_48H' %}?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2c-cta1%26utm_term%3Dt02-a" pad="16px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>One use, already applied. 30-day returns. 100,000+ happy customers.</div>"}}
+{{BLOCK:cta label="Use my 10% now" url="https://siraatskitchen.com/discount/{% coupon_code 'B2_10_48H' %}?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2c-cta1%26utm_term%3Dt02-a" pad="16px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION:code}}</div>"}}
 
-<!-- OPENER (live tekst) -->
-<tr><td class="pad lead" style="padding:22px 44px 2px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;"><p style="margin:0 0 12px 0;">You went back to look at the {{ event.Name|default:'Titanium Hammered Pan Pro' }}. So here&rsquo;s a personal code: 10% off, on top of the sale price.</p><p style="margin:0 0 0 0;">It&rsquo;s made for you, so it has an end date, 48 hours after this email. After that, the regular sale price applies.</p></td></tr>
+<tr><td class="pad lead" style="padding:22px 44px 2px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;"><p style="margin:0 0 14px 0;">You went back to the {{ event.Name|default:'Titanium Hammered Pan Pro' }}, so we made you a code: 10% off, on top of the sale price, already applied with the button.</p><p style="margin:0 0 0px 0;"><b>It is made for you, so it has an end date. On the morning of {{DATE:2:l, F j}} we&rsquo;re removing your discount,</b> and the regular sale price applies again.</p></td></tr>
 
-{{BLOCK:offer pad="26px 44px 6px 44px" eyebrow="HERE IS YOUR 10%" headline="10% off, on top of the sale" code="{% coupon_code 'B2_10_48H' %}" note="One use, already applied with the button. One code per order." deadline="YOUR CODE RUNS OUT" days="2" amount="48" unit="HOURS" label="Use my 10% now" url="https://siraatskitchen.com/discount/{% coupon_code 'B2_10_48H' %}?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2c-offer%26utm_term%3Dt02-a"}}
+{{BLOCK:offer pad="22px 44px 6px 44px" eyebrow="YOUR OWN 10%" headline="Your own 10%, for 48 hours" code="{% coupon_code 'B2_10_48H' %}" note="One use, already applied with the button. Then we remove it." deadline="YOUR 10% EXPIRES" days="2" amount="48" unit="HOURS" label="Use my 10% now" url="https://siraatskitchen.com/discount/{% coupon_code 'B2_10_48H' %}?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2c-offer%26utm_term%3Dt02-a"}}
 
+<!-- VERHAALSTAP S5 + S7: kookgerei met "One pan." (productmatrix), accessoires zonder panuitleg -->
 {% if 'Hammer' in event.Name or 'Pan' in event.Name or 'Pot' in event.Name or 'ookware' in event.Name or 'Everything' in event.Name or 'fanne' in event.Name or 'Prep Bundle' in event.Name %}
-<!-- VALUE STACK in plaats van het gifts-blok bij kookgerei (zelfde vier gifts met waarde); bedragen alleen bij Pan Pro Standard 11" voor $134. Anders: gifts-blok. -->
-<tr><td class="pad" style="padding:30px 44px 6px 44px;">
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">WHAT YOU GET</div>
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 16px 0;">One {{BLOCK:noun src="event.Name" dflt="pan"}}. Plus all this.</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-    {% if 'Pan Pro Standard' in event.Name and event.Price|slice:':4' == '$134' %}<tr><td style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">Pan Pro, 11&Prime;</td><td align="right" style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#727272;white-space:nowrap;"><span style="text-decoration:line-through;color:#9A948B;">$439</span>&nbsp; <b style="color:#282828;">$134</b></td></tr>{% endif %}
-    <tr><td style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">Free shipping</td><td align="right" style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#727272;white-space:nowrap;">$15 value</td></tr>
-    <tr><td style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">The Green Clean E-Guide</td><td align="right" style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#727272;white-space:nowrap;">$30 value</td></tr>
-    <tr><td style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">Mystery gift in the box</td><td align="right" style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#727272;white-space:nowrap;">$25 value</td></tr>
-    <tr><td style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">75-year warranty</td><td align="right" style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#727272;white-space:nowrap;">Included</td></tr>
-    <tr><td style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">30-day returns</td><td align="right" style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#727272;white-space:nowrap;">Included</td></tr>
-    {% if 'Pan Pro Standard' in event.Name and event.Price|slice:':4' == '$134' %}<tr><td style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">Your own code: extra 10% off</td><td align="right" style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#AC3B19;white-space:nowrap;">&minus;$13.40</td></tr>{% else %}<tr><td style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">Your own code: extra 10% off</td><td align="right" style="padding:12px 18px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#AC3B19;white-space:nowrap;">on top of the sale</td></tr>{% endif %}
-    {% if 'Pan Pro Standard' in event.Name and event.Price|slice:':4' == '$134' %}<tr><td style="padding:14px 18px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;">Value $509</td><td align="right" style="padding:14px 18px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:18px;font-weight:600;color:#AC3B19;white-space:nowrap;">Your price $120.60</td></tr>{% endif %}
-  </table>
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;text-align:center;padding-top:10px;">Plus a chance to win a $450 PFAS water filter with every order. Not counted in the value.</div>
-</td></tr>
+<tr><td class="pad lead" style="padding:24px 44px 2px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;"><p style="margin:0 0 0px 0;"><b>One pan. That is how we started.</b> We shipped the first hammered titanium pan on December 20, 2024. A little over a year later, 100,000+ people cook on them, and most of them started with exactly one.</p></td></tr>
 {% else %}
-{{BLOCK:gifts headline="$70 in gifts, in the box" note="Plus a chance to win a $450 PFAS water filter."}}
+<tr><td class="pad lead" style="padding:24px 44px 2px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;"><p style="margin:0 0 0px 0;"><b>We started small too.</b> Our first orders shipped on December 20, 2024. A little over a year later, 100,000+ happy customers have ordered from us, and most of them started with one piece.</p></td></tr>
 {% endif %}
 
-{{BLOCK:reviews q1="I ordered one pan to try it out... I am so happy with this pan that I'm ordering the set." n1="Sunny C." q2="...I honestly thought this might be another scam. But it's real titanium." n2="James" pad="28px 44px 6px 44px"}}
+{{BLOCK:gifts5 style="row" urgency="1" pad="20px 44px 4px 44px" line="Your code works with {{GIFTS:total}} on top."}}
 
-{{BLOCK:cta label="Claim my 10%" url="https://siraatskitchen.com/discount/{% coupon_code 'B2_10_48H' %}?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2c-cta2%26utm_term%3Dt02-a" pad="26px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>One use, already applied. 30-day returns. 100,000+ happy customers.</div>"}}
+{{BLOCK:reviews3 set="b2-clicked" pad="24px 44px 6px 44px"}}
 
-{% if 'Hammer' in event.Name or 'Pan' in event.Name or 'Pot' in event.Name or 'ookware' in event.Name or 'Everything' in event.Name or 'fanne' in event.Name or 'Prep Bundle' in event.Name %}
-{{BLOCK:icons pad="22px 44px 6px 44px"}}
-{% else %}
-<!-- ICONEN voor accessoires: zonder 75-year warranty (open punt 3.27: geldt de garantie winkelbreed?) -->
-<tr><td class="pad" style="padding:22px 44px 6px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-    <tr>
-      <td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;"><img src="{{SHARED}}/icon-free-shipping.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">FREE<br>SHIPPING</div></td>
-      <td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;border-left:1px solid #ECE7DD;"><img src="{{SHARED}}/icon-returns-30-day.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">30-DAY<br>RETURNS</div></td>
-      <td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;border-left:1px solid #ECE7DD;"><img src="{{SHARED}}/icon-gift.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">4 GIFTS<br>INCLUDED</div></td>
-      <td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;border-left:1px solid #ECE7DD;"><img src="{{SHARED}}/icon-customers-100k.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">100,000+<br>CUSTOMERS</div></td>
-    </tr>
-  </table>
-</td></tr>
-{% endif %}
+{{BLOCK:cta label="Use my 10% now" url="https://siraatskitchen.com/discount/{% coupon_code 'B2_10_48H' %}?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2c-cta2%26utm_term%3Dt02-a" pad="24px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION:code}}</div>"}}
 
 <!-- SIGN-OFF -->
 <tr><td class="pad" style="padding:26px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  A question before you decide? Reply and ask.<br><br>
-  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span><br><br>
-  <span style="color:#727272;">P.S. Your code runs out on the morning of {{DATE:2:l, F j}}. After that, the regular sale price applies.</span>
+  A question before you decide? Reply and our team will help.<br><br>
+  Benjamin<br><span style="color:#727272;">Founder, Siraat&rsquo;s Kitchen</span><br><br><span style="color:#727272;">P.S. Your code expires on the morning of {{DATE:2:l, F j}}. After that we remove it, and the regular sale price applies.</span>
 </td></tr>
-
 
 {{FOOTER}}
 

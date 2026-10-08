@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: The pan nobody else was making | SUBJECT_B: December 20, 2024 | PREVIEW: It's Benjamin. I wanted to write to you myself. (Your 10% is in the P.S.) | SEND: v4 Welcome step 4: wait 1 day, until 09:00 (day 1). From name 'Benjamin at Siraat's Kitchen', reply-to a read inbox (support@siraatskitchen.com). Subject A only (v4 3.19). Benjamin story filled 8 Oct 2026 (Floris) | FILTERS: Flow: list Uw8eZG (Alia Card Game, $source Alia sign-up), email does not contain test@, has not been in this flow over all time, re-entry never. Prospect path: CS A1 Placed Order = 0 since flow start (after 20 min), CS A2 Placed Order = 0 over all time. Send filter on this email: Placed Order zero times since starting this flow AND Received Email where Flow = v4 Checkout abandonment zero times in the last 1 day AND idem v4 Cart abandonment (skip, not exit). Smart sending off -->
+<!-- V5-STRICT | SUBJECT_A: The pan nobody else was making | SUBJECT_B: December 20, 2024 | PREVIEW: It's Benjamin. I wanted to write to you myself. (Your 10% is in the P.S.) | SEND: v4 Welcome step 4: wait 1 day, until 09:00 (day 1). From name 'Benjamin at Siraat's Kitchen', reply-to a read inbox (support@siraatskitchen.com). Subject A only (v4 3.19). Benjamin story filled 8 Oct 2026 (Floris) | FILTERS: Flow: list Uw8eZG (Alia Card Game, $source Alia sign-up), email does not contain test@, has not been in this flow over all time, re-entry never. Prospect path: CS A1 Placed Order = 0 since flow start (after 20 min), CS A2 Placed Order = 0 over all time. Send filter on this email: Placed Order zero times since starting this flow AND Received Email where Flow = v4 Checkout abandonment zero times in the last 1 day AND idem v4 Cart abandonment (skip, not exit). Smart sending off | MARKT: profiel-helper (scripts/v5lib.py): person.Country, dan person.country_code; onbekend = geen bedragen, maten in cm met inch; v5: alleen gifts5-strook en {{FRICTION}} toegevoegd, tekst van Benjamin ongewijzigd -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -7,6 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
+<meta name="x-siraat-qa" content="V5-STRICT">
 <title>A note from Benjamin</title>
 <!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
 <style>
@@ -43,7 +44,9 @@
 <!-- AANBODKAARTJE: hetzelfde in elke welcome-mail -->
 {{BLOCK:offer pad="6px 44px 0 44px" eyebrow="YOUR WELCOME OFFER" headline="10% on top of the sale" code="HI10" note="Plus 4 gifts with every order. Applied with the button." label="Claim my 10% + gifts" url="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw2-offer"}}
 
-<tr><td class="pad" align="center" style="padding:10px 44px 34px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;text-align:center;">Free shipping. 30-day returns. 100,000+ happy customers.</td></tr>
+<tr><td class="pad" align="center" style="padding:10px 44px 6px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;text-align:center;">{{FRICTION}}</td></tr>
+
+{{BLOCK:gifts5 style="row" pad="14px 44px 34px 44px" line="Every order comes with {{GIFTS:total}}."}}
 {{FOOTER}}
 
 </table>

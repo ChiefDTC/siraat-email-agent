@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: Has your cookware actually been tested? | SUBJECT_B: Report no. 25895: what it says | PREVIEW: Ours has. Report no. 25895, from an ISO/IEC 17025-accredited lab. | SEND: v4 Welcome step 5: wait 2 days, until 09:00 (day 3). Subject A only in phase 1 (v4 3.19); B (specificity) for a later test | FILTERS: Flow: list Uw8eZG (Alia Card Game, $source Alia sign-up), email does not contain test@, has not been in this flow over all time, re-entry never. Prospect path: CS A1 Placed Order = 0 since flow start (after 20 min), CS A2 Placed Order = 0 over all time. Send filter on this email: Placed Order zero times since starting this flow AND Received Email where Flow = v4 Checkout abandonment zero times in the last 1 day AND idem v4 Cart abandonment (skip, not exit). Smart sending off -->
+<!-- V5-STRICT | SUBJECT_A: Has your cookware been tested? | SUBJECT_B: Skeptical? Good. Here's the proof. | SUBJECTS (5 types): C+B 'Six things to check before you buy a pan' / SPEC 'Report no. 25895, 31 PFAS, 75 years' / Q 'Has your cookware been tested?' / STORY '"I honestly thought this might be another scam"' / OFFER 'Your 10%, after the proof' | PREVIEW: Six things you can check yourself, before you buy. | VERHAALSTAP: S6 + S8 als bewijsladder: zes dingen om zelf te controleren (Floris: veel meer zekerheid). Andere titaniummerken: "Ask any titanium brand for these six. Us included." Geen "Every pan says non-toxic" (herhaling 3) | SEND: v4 Welcome step 5: wait 2 days, until 09:00 (day 3). Subject A only in phase 1 | FILTERS: Flow: list Uw8eZG (Alia Card Game, $source Alia sign-up), email does not contain test@, has not been in this flow over all time, re-entry never. Prospect path: CS A1 Placed Order = 0 since flow start (after 20 min), CS A2 Placed Order = 0 over all time. Send filter: Placed Order zero times since starting this flow AND Received Email where Flow = v4 Checkout abandonment zero times in the last 1 day AND idem v4 Cart abandonment (skip, not exit) | MARKT: profiel-helper (scripts/v5lib.py): person.Country, dan person.country_code; onbekend = geen bedragen, maten in cm met inch | UTM: utm_campaign=v4-welcome, utm_content=w3-<blok> -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -7,7 +7,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
-<title>Has your cookware actually been tested?</title>
+<meta name="x-siraat-qa" content="V5-STRICT">
+<title>Don't take our word for it</title>
 <!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
@@ -18,19 +19,18 @@
   @media only screen and (max-width:620px){
     .w{width:100%!important;}
     .pad{padding-left:22px!important;padding-right:22px!important;}
-    .stack{display:block!important;width:100%!important;}
-    .stackpad{padding:0 0 14px 0!important;}
     .h2{font-size:30px!important;line-height:34px!important;}
     .navhide{display:none!important;}
-    .desk{display:none!important;max-height:0!important;overflow:hidden!important;}
-    .mob{display:block!important;max-height:none!important;overflow:visible!important;}
-    .center{text-align:center!important;}
-    .cs-q{font-size:15px!important;line-height:22px!important;}
+    .lead{font-size:16px!important;line-height:25px!important;}
+    .pim{width:96px!important;padding:14px 0 14px 12px!important;}
+    .pim img{width:88px!important;height:88px!important;}
+    .cs-q{font-size:18px!important;line-height:24px!important;}
+    .pf-i{width:44px!important;padding-left:14px!important;}
   }
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Ours has. Report no. 25895, from an ISO/IEC 17025-accredited lab.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Six things you can check yourself, before you buy.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
@@ -39,40 +39,42 @@
 
 {{HEADER}}
 
-<!-- HERO 1:1, aanbod in de aanbodbalk; de kop draagt het idee -->
+<!-- HERO (v5, scripts/make_hero.py, aanbodbalk zonder valutabedrag: geldt in elke markt) -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw3-hero"><img src="{{IMG}}/w3-hero.jpg" width="600" alt="Tested. Not claimed. Light Labs report no. 25895: 31 PFAS tested, every one below detection. 10% off with code HI10, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw3-hero"><img src="{{IMG}}/w3-hero-v5.jpg" width="600" alt="Skeptical first: don't take our word for it. Six things you can check yourself. 10% off with code HI10, plus 4 free gifts." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
-{{BLOCK:cta label="Claim my 10% + gifts" url="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw3-cta1" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div><div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;padding-top:10px;'><a href='https://siraatskitchen.com/pages/third-party-testing?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-welcome&utm_content=w3-report' style='color:#AC3B19;font-weight:600;text-decoration:underline;'>Or read the lab report first &rarr;</a></div>"}}
+{{BLOCK:cta label="Claim my 10% + gifts" url="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw3-cta1" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
 
-<!-- OPENER -->
-<tr><td class="pad" style="padding:26px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;color:#282828;text-align:center;"><p style="margin:0 0 14px 0;">Every pan says non-toxic. Few can show you the paper. Three questions to ask any brand, us included. If one answer is no, keep looking.</p></td></tr>
+<tr><td class="pad lead" style="padding:22px 44px 2px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;"><p style="margin:0 0 14px 0;">Hi {{ first_name|default:'there' }}, skeptical is the right way to buy cookware. So here is everything you can check yourself, without taking our word for any of it.</p><p style="margin:0 0 0px 0;">Ask any titanium brand for these six. Us included.</p></td></tr>
 
-<!-- DE DRIE VRAGEN (chef-video, DECISIONS 1 okt) -->
-{{BLOCK:features pad="12px 44px 6px 44px" eyebrow="THE THREE QUESTIONS" headline="Ask any titanium brand." i1="pfas-tested" t1="1. A lab report?" d1="Yes. Light Labs (ISO/IEC 17025-accredited) tested 31 PFAS. All below detection." i2="original-since-2024" t2="2. A numbered certificate?" d2="Yes. Report no. 25895, October 30, 2025. Same surface on every pan." i3="warranty-75-year" t3="3. A warranty that outlasts you?" d3="Yes. Covered for 75 years. No coating to fail."}}
-
-<!-- CERTIFICAAT: lees het zelf -->
-<tr><td class="pad" style="padding:14px 44px 0 44px;">
-  <a href="https://siraatskitchen.com/pages/third-party-testing?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-welcome&utm_content=w3-report"><img src="{{IMG}}/certificate.jpg" width="512" alt="Light Labs Certificate of Analysis for Siraat's Kitchen, Titanium Hammered Pan Pro, report no. 25895" style="width:100%;max-width:512px;height:auto;border:1px solid #ECE7DD;"></a>
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;text-align:center;padding-top:10px;">The certificate, with the lab&rsquo;s name and the report number. <a href="https://siraatskitchen.com/pages/third-party-testing?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-welcome&utm_content=w3-report" style="color:#AC3B19;font-weight:600;">Read it yourself &rarr;</a></div>
+<!-- BEWIJSLADDER (v5, W3 "skeptical first"): zes regels, elk zelf te controleren -->
+<tr><td class="pad" style="padding:22px 44px 6px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;">
+    <tr><td class="pf-i" width="58" valign="top" style="padding:16px 0 14px 18px;border-bottom:1px solid #ECE7DD;"><img src="{{SHARED}}/icon-pfas-tested.png" width="32" height="32" alt="" style="width:32px;height:32px;"></td><td valign="top" style="padding:14px 18px 14px 12px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;"><div style="font-size:11px;line-height:14px;letter-spacing:1.6px;font-weight:600;color:#AC3B19;">1 OF 6</div><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;padding-top:2px;">A lab report, not a promise</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:2px;">Light Labs, an ISO/IEC 17025-accredited lab. Not our own kitchen test.</div></td></tr>
+    <tr><td class="pf-i" width="58" valign="top" style="padding:16px 0 14px 18px;border-bottom:1px solid #ECE7DD;"><img src="{{SHARED}}/icon-original-since-2024.png" width="32" height="32" alt="" style="width:32px;height:32px;"></td><td valign="top" style="padding:14px 18px 14px 12px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;"><div style="font-size:11px;line-height:14px;letter-spacing:1.6px;font-weight:600;color:#AC3B19;">2 OF 6</div><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;padding-top:2px;">A report number you can look up</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:2px;">No. 25895, dated October 30, 2025. <a href="https://siraatskitchen.com/pages/third-party-testing?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-welcome&utm_content=w3-proof" style="color:#AC3B19;">Read it yourself &rarr;</a></div></td></tr>
+    <tr><td class="pf-i" width="58" valign="top" style="padding:16px 0 14px 18px;border-bottom:1px solid #ECE7DD;"><img src="{{SHARED}}/icon-no-coating.png" width="32" height="32" alt="" style="width:32px;height:32px;"></td><td valign="top" style="padding:14px 18px 14px 12px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;"><div style="font-size:11px;line-height:14px;letter-spacing:1.6px;font-weight:600;color:#AC3B19;">3 OF 6</div><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;padding-top:2px;">31 PFAS compounds tested</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:2px;">Every one below the detection limit. Tested on the Pan Pro; every pan has the same titanium cooking surface.</div></td></tr>
+    <tr><td class="pf-i" width="58" valign="top" style="padding:16px 0 14px 18px;border-bottom:1px solid #ECE7DD;"><img src="{{SHARED}}/icon-warranty-75-year.png" width="32" height="32" alt="" style="width:32px;height:32px;"></td><td valign="top" style="padding:14px 18px 14px 12px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;"><div style="font-size:11px;line-height:14px;letter-spacing:1.6px;font-weight:600;color:#AC3B19;">4 OF 6</div><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;padding-top:2px;">A warranty that outlasts you</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:2px;">75 years against defects. We can offer it because there is no coating to wear off.</div></td></tr>
+    <tr><td class="pf-i" width="58" valign="top" style="padding:16px 0 14px 18px;border-bottom:1px solid #ECE7DD;"><img src="{{SHARED}}/icon-returns-30-day.png" width="32" height="32" alt="" style="width:32px;height:32px;"></td><td valign="top" style="padding:14px 18px 14px 12px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;"><div style="font-size:11px;line-height:14px;letter-spacing:1.6px;font-weight:600;color:#AC3B19;">5 OF 6</div><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;padding-top:2px;">30 days to change your mind</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:2px;">Unused pans can go back within 30 days of delivery.</div></td></tr>
+    <tr><td class="pf-i" width="58" valign="top" style="padding:16px 0 14px 18px;"><img src="{{SHARED}}/icon-customers-100k.png" width="32" height="32" alt="" style="width:32px;height:32px;"></td><td valign="top" style="padding:14px 18px 14px 12px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:11px;line-height:14px;letter-spacing:1.6px;font-weight:600;color:#AC3B19;">6 OF 6</div><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;padding-top:2px;">100,000+ happy customers</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:2px;">Since our first orders shipped on December 20, 2024.</div></td></tr>
+  </table>
 </td></tr>
 
+<tr><td class="pad" style="padding:20px 44px 4px 44px;"><a href="https://siraatskitchen.com/pages/third-party-testing?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-welcome&utm_content=w3-certificate"><img src="{{IMG}}/certificate.jpg" width="512" alt="Light Labs Certificate of Analysis for Siraat's Kitchen, Titanium Hammered Pan Pro, report no. 25895" style="width:100%;max-width:512px;height:auto;margin:0 auto;border:1px solid #ECE7DD;"></a></td></tr>
+<tr><td class="pad" style="padding:8px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;text-align:center;">The certificate, with the lab&rsquo;s name and the report number. <a href="https://siraatskitchen.com/pages/third-party-testing?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-welcome&utm_content=w3-report" style="color:#AC3B19;">Read the report first &rarr;</a></td></tr>
 
-<!-- AANBODKAARTJE: hetzelfde in elke welcome-mail -->
-{{BLOCK:offer pad="30px 44px 6px 44px" eyebrow="YOUR WELCOME OFFER" headline="10% on top of the sale" code="HI10" note="Plus $70 in gifts with every order. Applied with the button." label="Claim my 10% + gifts" url="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw3-offer"}}
+{{BLOCK:reviews3 set="w3" eyebrow="SKEPTICS, IN THEIR WORDS" pad="26px 44px 6px 44px"}}
 
-{{BLOCK:reviews pad="30px 44px 6px 44px" q1="...I honestly thought this might be another scam. But it's real titanium." n1="James" q2="Awesome pan and peace of mind that I am not ingesting bits of toxins when I cook." n2="Gwen"}}
+{{BLOCK:gifts5 style="row" pad="18px 44px 4px 44px" line="Every order comes with {{GIFTS:total}}."}}
 
-{{BLOCK:cta label="Claim my 10% + gifts" url="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw3-cta2" pad="24px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
-
-{{BLOCK:icons}}
+{{BLOCK:cta label="Claim my 10% + gifts" url="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw3-cta2" pad="24px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
 
 <!-- SIGN-OFF -->
-<tr><td class="pad" style="padding:22px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  Want the full report as a PDF? Just reply.<br><br>
-  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
+<tr><td class="pad" style="padding:26px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+  Want the full report as a PDF? Reply and we&rsquo;ll send it.<br><br>
+  Benjamin<br><span style="color:#727272;">Founder, Siraat&rsquo;s Kitchen</span>
 </td></tr>
+
 {{FOOTER}}
 
 </table>

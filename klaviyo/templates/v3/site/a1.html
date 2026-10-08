@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: Not sure which pan? Start here. | SUBJECT_B: Four eggs or five? | PREVIEW: Four sizes, one titanium cooking surface. Here is how to pick yours in 30 seconds. | SEND: v4 · Site abandonment, stap 1: 2 uur na Active on Site (UdCdLD), realtime (ook 's avonds). Geen test in de eerste 4 weken: alleen SUBJECT_A; B staat klaar voor later (principe: herkenning tegen nieuwsgierigheid). | FILTERS: Flow: can receive email marketing; Viewed Product, Added to Cart, Checkout Started en Placed Order zero times since starting this flow; Placed Order zero times in the last 30 days; Received Email where Flow = "v4 · Browse abandonment" / "v4 · Cart abandonment" / "v4 · Checkout abandonment" / "v4 · Post-purchase" zero times in the last 7 days; Received Email where Flow = "v4 · Welcome" zero times in the last 10 days; has not been in this flow in the last 14 days. Message: Viewed Product, Added to Cart, Checkout Started, Placed Order zero times since starting this flow. Coupon: HI10 (publiek), geen unieke code, geen -nocode-variant. UTM: utm_campaign=v4-site, utm_content=a1-<blok>, binnen redirect gecodeerd. -->
+<!-- V5-STRICT | SUBJECT_A: Four eggs or five? | SUBJECT_B: Not sure which pan? Start here. | SUBJECTS (5 types): C+B 'The 30-second way to pick your pan' / SPEC 'Four sizes, one surface' / Q 'Four eggs or five?' / STORY '"I realized I ordered the wrong size..."' / OFFER '10% off the pan that fits' | PREVIEW: Four sizes, one titanium surface. Pick yours in 30 seconds. | VERHAALSTAP: de maatregel (tel je eieren); geen titanium-tegen-coating (zat al in welcome/browse), geen "nothing to wear off" | SEND: v4 · Site abandonment, stap 1: 2 uur na Active on Site (UdCdLD), realtime. Geen test in de eerste 4 weken: alleen SUBJECT_A | FILTERS: zie topcomment v4: can receive email marketing; Viewed Product, Added to Cart, Checkout Started en Placed Order zero times since starting this flow; Placed Order zero times in the last 30 days | MARKT: profiel-helper (scripts/v5lib.py): person.Country, dan person.country_code; onbekend = geen bedragen, maten in cm met inch | UTM: utm_campaign=v4-site, utm_content=a1-<blok> -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -7,7 +7,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
-<title>Which pan is yours?</title>
+<meta name="x-siraat-qa" content="V5-STRICT">
+<title>Four eggs or five?</title>
 <!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
@@ -18,22 +19,18 @@
   @media only screen and (max-width:620px){
     .w{width:100%!important;}
     .pad{padding-left:22px!important;padding-right:22px!important;}
-    .stack{display:block!important;width:100%!important;}
-    .stackpad{padding:0 0 14px 0!important;}
     .h2{font-size:30px!important;line-height:34px!important;}
     .navhide{display:none!important;}
-    .desk{display:none!important;max-height:0!important;overflow:hidden!important;}
-    .mob{display:block!important;max-height:none!important;overflow:visible!important;}
-    .center{text-align:center!important;}
-    .pcd{display:none!important;}
+    .lead{font-size:16px!important;line-height:25px!important;}
     .pim{width:96px!important;padding:14px 0 14px 12px!important;}
     .pim img{width:88px!important;height:88px!important;}
+    .cs-q{font-size:18px!important;line-height:24px!important;}
+    .pf-i{width:44px!important;padding-left:14px!important;}
   }
 </style>
 </head>
-
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Four sizes, one titanium cooking surface. Here is how to pick yours in 30 seconds.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Four sizes, one titanium surface. Pick yours in 30 seconds.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
@@ -42,77 +39,72 @@
 
 {{HEADER}}
 
-<!-- HERO (4:3 met aanbodbalk) -->
+<!-- HERO (v5, scripts/make_hero.py, aanbodbalk zonder valutabedrag: geldt in elke markt) -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/discount/HI10?redirect=/collections/pans%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-site%26utm_content%3Da1-hero"><img src="{{IMG}}/a1-hero.jpg" width="600" alt="Which size? Four eggs or five? How to pick your pan in 30 seconds. Extra 10% off with code HI10, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://siraatskitchen.com/discount/HI10?redirect=/collections/pans%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-site%26utm_content%3Da1-hero"><img src="{{IMG}}/a1-hero-v5.jpg" width="600" alt="Which size? Four eggs or five? How to pick your pan in 30 seconds. Extra 10% off with code HI10, plus 4 free gifts." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
-{{BLOCK:cta label="Get 10% off my pan" url="https://siraatskitchen.com/discount/HI10?redirect=/collections/pans%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-site%26utm_content%3Da1-cta1" pad="22px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
+{{BLOCK:cta label="Get 10% off my pan" url="https://siraatskitchen.com/discount/HI10?redirect=/collections/pans%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-site%26utm_content%3Da1-cta1" pad="22px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
 
-<tr><td class="pad" style="padding:24px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;color:#282828;">
-  <p style="margin:0 0 6px 0;">Hi {{ first_name|default:'there' }}, not sure which pan to pick? You&rsquo;re in good company. Here is the shortcut: count the eggs you fry on a busy morning. Four? The Small. Five, or dinner for three? The Standard 11&Prime;.</p>
-</td></tr>
+<tr><td class="pad lead" style="padding:22px 44px 2px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;"><p style="margin:0 0 14px 0;">Hi {{ first_name|default:'there' }}, picking a size is where most people stall. Here is the shortcut: count the eggs you fry on a busy morning.</p><p style="margin:0 0 0px 0;"><b>Four? The Small. Five, or dinner for three? The Standard {{SIZE:28}}.</b> That one is our best seller for a reason.</p></td></tr>
 
-<!-- MAATKIEZER -->
-<tr><td class="pad" style="padding:26px 44px 6px 44px;">
+<!-- MAATKIEZER (v5): maten via {{SIZE}} (US inch met cm, elders cm, onbekend cm met inch), prijzen via {{PRICE}} per markt; zonder prijslijst alleen "10% off with HI10" -->
+<tr><td class="pad" style="padding:30px 44px 6px 44px;">
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">FOUR SIZES, ONE SURFACE</div>
   <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 16px 0;">Count your eggs</div>
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;">
     <tr>
-      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-pan-pro-mini%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-site%26utm_content%3Da1-size-mini"><img src="{{IMG}}/p-panpro.jpg" width="114" alt="Titanium Hammered Pan Pro Mini 8&Prime; (20 cm)" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
+      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-pan-pro-mini%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-site%26utm_content%3Da1-size-mini"><img src="{{SHARED}}/pc-mini.jpg" width="114" alt="Titanium Hammered Pan Pro Mini, {{SIZE:20:both}}" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
       <td valign="middle" style="padding:14px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;">
-        <div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Mini 8&Prime; (20 cm)</div>
-        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">One or two eggs. For one.</div>
-        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">$129&nbsp; <span style="color:#AC3B19;white-space:nowrap;">$116.10 with HI10</span></div>
+        <div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Mini {{SIZE:20:both}}</div>
+        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">One or two eggs. Breakfast for one.</div>
+        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;overflow-wrap:anywhere;word-break:break-word;">{{IF:PRICED}}{{PRICE:mini}}&nbsp; <span style="color:#AC3B19;">{{PRICE:mini*0.9}} with HI10</span>{{ELSE}}<span style="color:#AC3B19;">10% off with HI10</span>{{ENDIF}}</div>
         <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-pan-pro-mini%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-site%26utm_content%3Da1-size-mini" style="color:#AC3B19;font-weight:600;text-decoration:underline;">Pick the Mini &rarr;</a></div>
       </td>
     </tr>
     <tr>
-      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-pan-pro-small%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-site%26utm_content%3Da1-size-small"><img src="{{IMG}}/size-small.jpg" width="114" alt="Small 10&Prime; (26 cm) with four fried eggs" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
+      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-pan-pro-small%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-site%26utm_content%3Da1-size-small"><img src="{{IMG}}/size-small.jpg" width="114" alt="Titanium Hammered Pan Pro Small, {{SIZE:26:both}}" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
       <td valign="middle" style="padding:14px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;">
-        <div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Small 10&Prime; (26 cm)</div>
+        <div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Small {{SIZE:26:both}}</div>
         <div style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">Four eggs. Dinner for two.</div>
-        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">$127&nbsp; <span style="color:#AC3B19;white-space:nowrap;">$114.30 with HI10</span></div>
+        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;overflow-wrap:anywhere;word-break:break-word;">{{IF:PRICED}}{{PRICE:small}}&nbsp; <span style="color:#AC3B19;">{{PRICE:small*0.9}} with HI10</span>{{ELSE}}<span style="color:#AC3B19;">10% off with HI10</span>{{ENDIF}}</div>
         <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-pan-pro-small%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-site%26utm_content%3Da1-size-small" style="color:#AC3B19;font-weight:600;text-decoration:underline;">Pick the Small &rarr;</a></div>
       </td>
     </tr>
     <tr>
-      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;background:#FBF6F1;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-site%26utm_content%3Da1-size-standard"><img src="{{IMG}}/size-standard.jpg" width="114" alt="Standard 11&Prime; (28 cm) with five fried eggs" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
+      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;border-bottom:1px solid #ECE7DD;background:#FBF6F1;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-site%26utm_content%3Da1-size-standard"><img src="{{IMG}}/size-standard.jpg" width="114" alt="Titanium Hammered Pan Pro Standard, {{SIZE:28:both}}" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
       <td valign="middle" style="padding:14px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;background:#FBF6F1;">
-        <div style="padding-bottom:5px;"><span style="display:inline-block;background:#AC3B19;color:#FFFFFF;font-size:10px;line-height:14px;letter-spacing:1.4px;font-weight:600;padding:3px 9px;border-radius:10px;">BEST SELLER</span></div>
-        <div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Standard 11&Prime; (28 cm)</div>
+        <div style="padding-bottom:5px;"><span style="display:inline-block;background:#AC3B19;color:#FFFFFF;font-size:10px;line-height:14px;letter-spacing:1.4px;font-weight:600;padding:3px 9px;border-radius:10px;">BEST SELLER</span></div><div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Standard {{SIZE:28:both}}</div>
         <div style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">Five eggs. Cooking for 2 to 4.</div>
-        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;"><span style="color:#9A948B;font-weight:400;text-decoration:line-through;">$439</span> $134&nbsp; <span style="color:#AC3B19;white-space:nowrap;">$120.60 with HI10</span></div>
+        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;overflow-wrap:anywhere;word-break:break-word;">{{IF:PRICED}}{{PRICE:standard}}&nbsp; <span style="color:#AC3B19;">{{PRICE:standard*0.9}} with HI10</span>{{ELSE}}<span style="color:#AC3B19;">10% off with HI10</span>{{ENDIF}}</div>
         <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-site%26utm_content%3Da1-size-standard" style="color:#AC3B19;font-weight:600;text-decoration:underline;">Pick the Standard &rarr;</a></div>
       </td>
     </tr>
     <tr>
-      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-pan-pro-large%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-site%26utm_content%3Da1-size-large"><img src="{{IMG}}/p-panpro.jpg" width="114" alt="Titanium Hammered Pan Pro Large 12&Prime; (30 cm)" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
+      <td class="pim" width="128" valign="top" style="padding:14px 0 14px 14px;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-pan-pro-large%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-site%26utm_content%3Da1-size-large"><img src="{{SHARED}}/pc-large.jpg" width="114" alt="Titanium Hammered Pan Pro Large, {{SIZE:30:both}}" style="width:114px;height:114px;background:#F8F7F2;"></a></td>
       <td valign="middle" style="padding:14px 16px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
-        <div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Large 12&Prime; (30 cm)</div>
-        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">Two steaks side by side.</div>
-        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;">$139&nbsp; <span style="color:#AC3B19;white-space:nowrap;">$125.10 with HI10</span></div>
+        <div style="font-size:16px;line-height:21px;font-weight:600;color:#282828;">Large {{SIZE:30:both}}</div>
+        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:3px;">Two steaks side by side. A family.</div>
+        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;padding-top:6px;overflow-wrap:anywhere;word-break:break-word;">{{IF:PRICED}}{{PRICE:large}}&nbsp; <span style="color:#AC3B19;">{{PRICE:large*0.9}} with HI10</span>{{ELSE}}<span style="color:#AC3B19;">10% off with HI10</span>{{ENDIF}}</div>
         <div style="font-size:13px;line-height:18px;padding-top:6px;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-pan-pro-large%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-site%26utm_content%3Da1-size-large" style="color:#AC3B19;font-weight:600;text-decoration:underline;">Pick the Large &rarr;</a></div>
       </td>
     </tr>
   </table>
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;padding-top:18px;"><b>Every size is the same pan, scaled.</b> A pure titanium cooking surface, no coating to wear off, an aluminum core for even heat, and a base that works on induction. Lids are sold separately, by diameter.</div>
+  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:22px;color:#727272;padding-top:12px;text-align:center;">Every size has the same titanium cooking surface. Lids are sold separately, by diameter.</div>
 </td></tr>
 
-{{BLOCK:cta label="Get 10% off my pan" url="https://siraatskitchen.com/discount/HI10?redirect=/collections/pans%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-site%26utm_content%3Da1-cta2" pad="24px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
+{{BLOCK:productcard pad="14px 44px 6px 44px" img="card-set6.jpg" alt="The 6-piece set: Mini, Small and Large pans with three lids" name="Cooking for a family?" sub="Buy 2, get 4 free. All three sizes, each with its own lid." now="<span style='word-break:break-all;'>{{PRICE:set6}}</span>" was="<span style='word-break:break-all;'>{{WAS:set6}}</span>" link="See the 6-piece set" url="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-pan-set-with-lids-6-pcs%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-site%26utm_content%3Da1-set6"}}
 
-{{BLOCK:gifts eyebrow="WITH EVERY ORDER, ANY SIZE" headline="$70 in gifts, any size" pad="30px 44px 6px 44px" note="Nothing to add. It all comes with every order."}}
+{{BLOCK:gifts5 style="row" pad="18px 44px 4px 44px" line="Every order comes with {{GIFTS:total}}."}}
 
-{{BLOCK:reviews q1="I cooked perfect over easy eggs for the first time in a non coated pan." n1="Deb, Standard 11&Prime;" q2="I order the large skillet and so far im impressed. Good quality." n2="Robert E., Large 12&Prime;"}}
+{{BLOCK:reviews3 set="a1" n="2" pad="24px 44px 6px 44px"}}
 
-{{BLOCK:icons}}
-
-{{BLOCK:cta label="Get 10% off my pan" url="https://siraatskitchen.com/discount/HI10?redirect=/collections/pans%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-site%26utm_content%3Da1-cta3" pad="26px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
+{{BLOCK:cta label="Get 10% off my pan" url="https://siraatskitchen.com/discount/HI10?redirect=/collections/pans%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-site%26utm_content%3Da1-cta2" pad="24px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
 
 <!-- SIGN-OFF -->
-<tr><td class="pad" style="padding:24px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  Still between two sizes? Reply with what you cook most and for how many. We&rsquo;ll tell you which one fits.<br><br>
-  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
+<tr><td class="pad" style="padding:26px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+  Still between two sizes? Reply with what you cook most and for how many. Our team will tell you which one fits.<br><br>
+  Benjamin<br><span style="color:#727272;">Founder, Siraat&rsquo;s Kitchen</span>
 </td></tr>
 
 {{FOOTER}}

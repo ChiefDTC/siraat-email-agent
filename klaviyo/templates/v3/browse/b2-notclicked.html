@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: Week one, in their words | SUBJECT_B: The first egg, the fourth pan, the last coated pan (reserve; T08 length test in phase 2) | SUBJECTS (5 types): C+B 'What people wrote after their first week' / SPEC 'The first egg, the fourth pan, the last coated pan' / Q 'What happens in week one?' / STORY 'Week one, in their words' / OFFER 'In their words, and 10% off with HI10' | PREVIEW: The first egg, the second pan, the fourth. And HI10 takes 10% off. | SEND: 2 days after B1, until 09:00, CS Clicked Email $message = B1 since flow start = no | FILTERS: Trigger: Viewed Product (XNtYMB, Klaviyo onsite; not V48nhq). Flow: Added to Cart = 0, Checkout Started = 0, Placed Order = 0 since flow start; Received Email where Flow = 'v4 · Cart abandonment' = 0 in the last 7 days; idem 'v4 · Checkout abandonment'; idem 'v4 · Welcome' = 0 in the last 7 days; not in this flow in the last 7 days. Message: Placed Order = 0 since flow start; plus Added to Cart = 0 since flow start | UTM: utm_content=b2n-<blok> -->
+<!-- V5-STRICT | SUBJECT_A: Skeptical? So were they. | SUBJECT_B: Week one, in their words | SUBJECTS (5 types): C+B 'What two skeptics wrote after week one' / SPEC 'Her 4th pan. His first doubt.' / Q 'Skeptical? So were they.' / STORY '"I honestly thought this might be another scam"' / OFFER 'In their words, and 10% off with HI10' | PREVIEW: One thought it was a scam. One is on her fourth pan. | VERHAALSTAP: S10 (sceptici): James (twijfel) en Tammy (vierde pan, lichter dan gietijzer). Vergelijking van deze flow: gietijzer (vs kind=castiron) | SEND: 2 days after B1, until 09:00, CS Clicked Email $message = B1 since flow start = no | FILTERS: Trigger: Viewed Product (XNtYMB, Klaviyo onsite; not V48nhq). Flow: Added to Cart = 0, Checkout Started = 0, Placed Order = 0 since flow start; Received Email where Flow = 'v4 · Cart abandonment' = 0 in the last 7 days; idem 'v4 · Checkout abandonment'; idem 'v4 · Welcome' = 0 in the last 7 days; not in this flow in the last 7 days. Message: Placed Order = 0 since flow start | MARKT: browse-helper (scripts/v5lib.py): person.Country, dan person.country_code, dan de prijsnotatie in event.Price; prijzen, maten, gifts en verzendregels via macro's | UTM: utm_content=b2n-<blok> -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -7,7 +7,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
-<title>In their words.</title>
+<meta name="x-siraat-qa" content="V5-STRICT">
+<title>Skeptical? So were they.</title>
 <!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
@@ -18,105 +19,82 @@
   @media only screen and (max-width:620px){
     .w{width:100%!important;}
     .pad{padding-left:22px!important;padding-right:22px!important;}
-    .stack{display:block!important;width:100%!important;}
-    .stackpad{padding:0 0 14px 0!important;}
     .h2{font-size:30px!important;line-height:34px!important;}
     .navhide{display:none!important;}
-    .desk{display:none!important;max-height:0!important;overflow:hidden!important;}
-    .mob{display:block!important;max-height:none!important;overflow:visible!important;}
-    .center{text-align:center!important;}
     .lead{font-size:16px!important;line-height:25px!important;}
+    .pim{width:96px!important;padding:14px 0 14px 12px!important;}
+    .pim img{width:88px!important;height:88px!important;}
+    .cs-q{font-size:18px!important;line-height:24px!important;}
+    .pf-i{width:44px!important;padding-left:14px!important;}
   }
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">The first egg, the second pan, the fourth. And HI10 takes 10% off.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">One thought it was a scam. One is on her fourth pan.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
-
 
 {{BLOCK:codebar}}
 
 {{HEADER}}
 
-<!-- HERO 4:3 met aanbodbalk (make_hero.py --offer --ratio=4:3) -->
+<!-- HERO (v5, scripts/make_hero.py, aanbodbalk zonder valutabedrag: geldt in elke markt) -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2n-hero"><img src="{{IMG}}/b2-notclicked-hero.jpg" width="600" alt="100,000+ happy customers. In their words, from skeptics to fourth-pan owners. Extra 10% off with code HI10, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2n-hero"><img src="{{IMG}}/b2-notclicked-hero-v5.jpg" width="600" alt="In their words. Skeptical? So were they. From the first doubt to the fourth pan. Extra 10% off with code HI10, plus 4 free gifts." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
-<!-- PRODUCTKAART Viewed Product (XNtYMB): Name, ImageURL, Price (tekst), URL. Prijs alleen met $ (QA A18); ankerprijs $439 alleen bij Pan Pro Standard voor $134. -->
+<!-- PRODUCTKAART Viewed Product: naam, beeld, prijs. Markt (v5): prijs alleen waar de notatie eenduidig is (US, UK, EU via de browse-helper); AUD/CAD/SGD/NZD staan ook als "$" in event.Price en krijgen dus geen bedrag. Geen doorgestreepte prijs (compare-at van de Pan Pro is niet bevestigd). -->
 <tr><td class="pad" style="padding:22px 44px 4px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-    <tr><td colspan="3" style="padding:16px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">THE {{BLOCK:label src="event.Name" dflt="PAN"}} YOU VIEWED</td></tr>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;">
+    <tr><td colspan="3" style="padding:16px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-transform:uppercase;overflow-wrap:anywhere;word-break:break-word;">{% if 'Hammer' in event.Name or 'Pan' in event.Name or 'Pot' in event.Name or 'ookware' in event.Name or 'Everything' in event.Name or 'fanne' in event.Name or 'Prep Bundle' in event.Name %}THE {% with s=event.Name %}{% if 'Pan Pro Standard' in s or 'Titanium Pan Pro' in s or 'Frying Pan' in s %}PAN PRO {{SIZE:28}}{% elif 'Pan Pro Large' in s %}PAN PRO {{SIZE:30}}{% elif 'Pan Pro Small' in s %}PAN PRO {{SIZE:26}}{% else %}{{BLOCK:label src="event.Name" dflt="PAN"}}{% endif %}{% endwith %} YOU VIEWED{% else %}YOU LOOKED AT{% endif %}</td></tr>
     <tr>
-      <td width="104" valign="middle" style="padding:12px 0 12px 16px;">
-        <a href="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2n-product"><img src="{% if event.ImageURL %}{{ event.ImageURL }}{% else %}https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-40a5-9ad7-523bdddc54d4.webp?v=1781682831&width=600{% endif %}" width="88" alt="{{ event.Name|default:'Titanium Hammered Pan Pro' }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;"></a>
-      </td>
+      <td width="104" valign="middle" style="padding:12px 0 12px 16px;"><a href="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2n-product"><img src="{% if event.ImageURL %}{{ event.ImageURL }}{% else %}https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-40a5-9ad7-523bdddc54d4.webp?v=1781682831&width=600{% endif %}" width="88" alt="{{ event.Name|default:'Titanium Hammered Pan Pro' }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;"></a></td>
       <td valign="middle" style="padding:12px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
         <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">{{ event.Name|default:'Titanium Hammered Pan Pro' }}</div>
-        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">Titanium cooking surface, no coating</div>
+        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">{% if 'Hammer' in event.Name or 'Pan' in event.Name or 'Pot' in event.Name or 'ookware' in event.Name or 'Everything' in event.Name or 'fanne' in event.Name or 'Prep Bundle' in event.Name %}Pure titanium cooking surface, no coatings{% elif 'Apron' in event.Name %}16-oz canvas, adjustable{% elif 'Cutting Board' in event.Name %}Pure titanium, anti-microbial{% elif 'Lid' in event.Name %}Stainless steel, sized to your pan{% elif 'Mill' in event.Name %}All-metal, 12 grind settings{% elif 'Utensil' in event.Name or 'Chopsticks' in event.Name %}Pure titanium tools{% elif 'Gift Card' in event.Name %}Delivered by email{% elif 'Dishwasher Sheets' in event.Name or 'Detergent' in event.Name %}Plastic-free, phosphate-free{% else %}From Siraat&rsquo;s Kitchen{% endif %}</div>
       </td>
-      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;">{% if 'Pan Pro Standard' in event.Name and event.Price|slice:':4' == '$134' %}<div style="font-size:13px;line-height:17px;color:#9A948B;text-decoration:line-through;font-weight:400;">$439</div>{% endif %}{% if '$' in event.Price %}{{ event.Price }}{% endif %}</td>
+      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;">{{IF:US}}{{ event.Price }}{{ELIF:UK,EU}}{% if '£' in event.Price or '€' in event.Price %}{{ event.Price }}{% endif %}{{ENDIF}}</td>
     </tr>
     <tr><td colspan="3" style="padding:0 16px 16px 16px;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:11px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">
-        <img src="{{SHARED}}/icon-discount-tag.png" width="20" height="20" alt="" style="display:inline-block;vertical-align:-5px;width:20px;height:20px;">&nbsp; {% if 'Pan Pro Standard' in event.Name and event.Price|slice:':4' == '$134' %}With <b>HI10</b> it&rsquo;s <b>$120.60</b>, applied with the button below.{% else %}<b>HI10</b> takes an extra 10% off this price, applied with the button below.{% endif %}
+        <img src="{{SHARED}}/icon-discount-tag.png" width="20" height="20" alt="" style="display:inline-block;vertical-align:-5px;width:20px;height:20px;">&nbsp; <b>HI10</b> takes an extra 10% off this price. Already applied with the button.
       </td></tr></table>
     </td></tr>
   </table>
 </td></tr>
 
-{{BLOCK:cta label="Get 10% off this {% with s=event.Name %}{% if '12-Pcs' in s or '12 pcs' in s or 'Everything' in s or 'Cookware Set Pro' in s or 'Complete Edition' in s or 'Full Hammered' in s %}set{% elif 'Pot' in s %}pot{% elif '6-Pcs' in s or '6-teilig' in s or '2 Pans' in s or 'Pro Duo' in s or 'Pan Pro Kit' in s %}set{% elif 'Pan Pro Standard' in s or 'Titanium Pan Pro' in s or 'Frying Pan' in s or 'Pan Pro Large' in s or 'Pan Pro Small' in s or 'Pan Pro Mini' in s %}pan{% elif 'Deep Pan' in s %}deep pan{% elif 'Wok' in s %}wok{% elif 'pe Pan' in s %}cr&ecirc;pe pan{% elif 'Pizza Steel' in s %}pizza steel{% elif 'Roasting' in s %}roasting pan{% elif 'Hammered Pan Pro' in s or 'Cook & Prep' in s %}pan{% elif 'Cutting Board' in s %}board{% elif 'Lid' in s %}lid{% elif 'Mill' in s %}mills{% elif 'Utensil' in s or 'Chopsticks' in s %}utensils{% elif 'Apron' in s %}apron{% elif 'Dishwasher Sheets' in s or 'Detergent' in s %}sheets{% elif 'Gift Card' in s %}gift card{% else %}pan{% endif %}{% endwith %}" url="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2n-cta1" pad="16px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
+{{BLOCK:cta label="Get 10% off this {% with s=event.Name %}{% if '12-Pcs' in s or '12 pcs' in s or 'Everything' in s or 'Cookware Set Pro' in s or 'Complete Edition' in s or 'Full Hammered' in s or '2 Pans' in s or 'Pro Duo' in s or 'Pan Pro Kit' in s or 'Wok ' in s and ' Deep' in s %}set{% elif 'Pot' in s %}pot{% elif '6-Pcs' in s or '6-teilig' in s %}set{% elif 'Pan Pro Standard' in s or 'Titanium Pan Pro' in s or 'Frying Pan' in s or 'Pan Pro Large' in s or 'Pan Pro Small' in s or 'Pan Pro Mini' in s %}pan{% elif 'Deep Pan' in s %}deep pan{% elif 'Wok' in s %}wok{% elif 'pe Pan' in s %}cr&ecirc;pe pan{% elif 'Pizza Steel' in s %}pizza steel{% elif 'Roasting' in s %}roasting pan{% elif 'Hammered Pan Pro' in s or 'Cook ' in s and ' Prep' in s %}pan{% elif 'Titanium Cutting Board' in s %}board{% elif 'Lid' in s %}lid{% elif 'Mill' in s %}mills{% elif 'Utensil' in s or 'Chopsticks' in s %}utensils{% elif 'Apron' in s %}apron{% elif 'Dishwasher Sheets' in s or 'Detergent' in s %}sheets{% elif 'Gift Card' in s %}gift card{% else %}pan{% endif %}{% endwith %}" url="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2n-cta1" pad="16px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
 
-<!-- VIER VERHALEN (Trustpilot, letterlijk, ingekort met ...) -->
-<tr><td class="pad" style="padding:26px 44px 6px 44px;">
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">FOUR PEOPLE, FOUR FIRST WEEKS</div>
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 18px 0;">Their words, not ours.</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-    <td class="rv" width="48%" valign="top" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:20px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;">
-      <div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;padding-bottom:8px;">THE FIRST EGG</div><div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;I followed your directions, made scrambled eggs and they came out of the pan perfectly... I only need the new one.&rdquo;</div>
-      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Marilyn B. &middot; Verified buyer</div>
-    </td>
-    <td class="rvsp" width="14" style="font-size:0;line-height:0;">&nbsp;</td>
-    <td class="rv" width="48%" valign="top" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:20px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;">
-      <div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;padding-bottom:8px;">THE FOURTH PAN</div><div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;I am on my 4th pan from Siraat... I even gifted one to my son, and he says it's the best pan he owns.&rdquo;</div>
-      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Tammy &middot; Verified buyer</div>
-    </td>
-  </tr></table>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:14px;"><tr>
-    <td class="rv" width="48%" valign="top" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:20px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;">
-      <div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;padding-bottom:8px;">THE DOUBTER</div><div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;...I honestly thought this might be another scam. But it's real titanium.&rdquo;</div>
-      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">James &middot; Verified buyer</div>
-    </td>
-    <td class="rvsp" width="14" style="font-size:0;line-height:0;">&nbsp;</td>
-    <td class="rv" width="48%" valign="top" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:20px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;">
-      <div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;padding-bottom:8px;">THE NEXT PAN</div><div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;I ordered one pan to try it out. I'm so glad I did. I am so happy with this pan that I'm ordering the set.&rdquo;</div>
-      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Sunny C. &middot; Verified buyer</div>
-    </td>
-  </tr></table>
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;text-align:center;padding-top:14px;"><img src="{{SHARED}}/icon-customers-100k.png" width="18" height="18" alt="" style="display:inline-block;vertical-align:-4px;width:18px;height:18px;">&nbsp; Join 100,000+ happy customers</div>
+<tr><td class="pad lead" style="padding:22px 44px 14px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;"><p style="margin:0 0 0px 0;">Most people look at a titanium pan twice before they buy. These two did more than that.</p></td></tr>
+
+<tr><td class="pad" style="padding:0 44px 12px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;">
+    <tr><td style="padding:16px 22px 0 22px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">THE DOUBT</div><div class="cs-q" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:20px;line-height:26px;color:#282828;padding-top:4px;">&ldquo;...I honestly thought this might be another scam. But it&rsquo;s real titanium.&rdquo;</div></td></tr>
+    <tr><td style="padding:12px 22px 16px 22px;font-family:Inter,Arial,Helvetica,sans-serif;"><span style="font-family:Arial,Helvetica,sans-serif;font-size:13px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>&nbsp; <span style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">James &middot; Verified buyer</span></td></tr>
+  </table>
 </td></tr>
 
-{{BLOCK:cta label="Get 10% off this {% with s=event.Name %}{% if '12-Pcs' in s or '12 pcs' in s or 'Everything' in s or 'Cookware Set Pro' in s or 'Complete Edition' in s or 'Full Hammered' in s %}set{% elif 'Pot' in s %}pot{% elif '6-Pcs' in s or '6-teilig' in s or '2 Pans' in s or 'Pro Duo' in s or 'Pan Pro Kit' in s %}set{% elif 'Pan Pro Standard' in s or 'Titanium Pan Pro' in s or 'Frying Pan' in s or 'Pan Pro Large' in s or 'Pan Pro Small' in s or 'Pan Pro Mini' in s %}pan{% elif 'Deep Pan' in s %}deep pan{% elif 'Wok' in s %}wok{% elif 'pe Pan' in s %}cr&ecirc;pe pan{% elif 'Pizza Steel' in s %}pizza steel{% elif 'Roasting' in s %}roasting pan{% elif 'Hammered Pan Pro' in s or 'Cook & Prep' in s %}pan{% elif 'Cutting Board' in s %}board{% elif 'Lid' in s %}lid{% elif 'Mill' in s %}mills{% elif 'Utensil' in s or 'Chopsticks' in s %}utensils{% elif 'Apron' in s %}apron{% elif 'Dishwasher Sheets' in s or 'Detergent' in s %}sheets{% elif 'Gift Card' in s %}gift card{% else %}pan{% endif %}{% endwith %}" url="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2n-cta2" pad="26px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
+<tr><td class="pad" style="padding:0 44px 4px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;">
+    <tr><td style="padding:16px 22px 0 22px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">THE FOURTH PAN</div><div class="cs-q" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:20px;line-height:26px;color:#282828;padding-top:4px;">&ldquo;I am on my 4th pan from Siraat. I love the fact that they are non-toxic and so much lighter than my old cast iron pans.&rdquo;</div></td></tr>
+    <tr><td style="padding:12px 22px 16px 22px;font-family:Inter,Arial,Helvetica,sans-serif;"><span style="font-family:Arial,Helvetica,sans-serif;font-size:13px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>&nbsp; <span style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Tammy &middot; Verified buyer</span></td></tr>
+  </table>
+</td></tr>
 
+{{BLOCK:vs kind="castiron" pad="26px 44px 6px 44px" headline="Your future pan vs cast iron"}}
 
-{{BLOCK:gifts headline="$70 in gifts, in the box" note="Plus a chance to win a $450 PFAS water filter."}}
+{{BLOCK:gifts5 style="row" pad="18px 44px 4px 44px" line="Every order comes with {{GIFTS:total}}."}}
 
-{{BLOCK:cta label="Get 10% off this {% with s=event.Name %}{% if '12-Pcs' in s or '12 pcs' in s or 'Everything' in s or 'Cookware Set Pro' in s or 'Complete Edition' in s or 'Full Hammered' in s %}set{% elif 'Pot' in s %}pot{% elif '6-Pcs' in s or '6-teilig' in s or '2 Pans' in s or 'Pro Duo' in s or 'Pan Pro Kit' in s %}set{% elif 'Pan Pro Standard' in s or 'Titanium Pan Pro' in s or 'Frying Pan' in s or 'Pan Pro Large' in s or 'Pan Pro Small' in s or 'Pan Pro Mini' in s %}pan{% elif 'Deep Pan' in s %}deep pan{% elif 'Wok' in s %}wok{% elif 'pe Pan' in s %}cr&ecirc;pe pan{% elif 'Pizza Steel' in s %}pizza steel{% elif 'Roasting' in s %}roasting pan{% elif 'Hammered Pan Pro' in s or 'Cook & Prep' in s %}pan{% elif 'Cutting Board' in s %}board{% elif 'Lid' in s %}lid{% elif 'Mill' in s %}mills{% elif 'Utensil' in s or 'Chopsticks' in s %}utensils{% elif 'Apron' in s %}apron{% elif 'Dishwasher Sheets' in s or 'Detergent' in s %}sheets{% elif 'Gift Card' in s %}gift card{% else %}pan{% endif %}{% endwith %}" url="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2n-cta3" pad="26px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
+{{BLOCK:reviews3 set="b2-notclicked" n="2" pad="24px 44px 6px 44px"}}
 
-{{BLOCK:icons pad="22px 44px 6px 44px"}}
+{{BLOCK:cta label="Get 10% off this {% with s=event.Name %}{% if '12-Pcs' in s or '12 pcs' in s or 'Everything' in s or 'Cookware Set Pro' in s or 'Complete Edition' in s or 'Full Hammered' in s or '2 Pans' in s or 'Pro Duo' in s or 'Pan Pro Kit' in s or 'Wok ' in s and ' Deep' in s %}set{% elif 'Pot' in s %}pot{% elif '6-Pcs' in s or '6-teilig' in s %}set{% elif 'Pan Pro Standard' in s or 'Titanium Pan Pro' in s or 'Frying Pan' in s or 'Pan Pro Large' in s or 'Pan Pro Small' in s or 'Pan Pro Mini' in s %}pan{% elif 'Deep Pan' in s %}deep pan{% elif 'Wok' in s %}wok{% elif 'pe Pan' in s %}cr&ecirc;pe pan{% elif 'Pizza Steel' in s %}pizza steel{% elif 'Roasting' in s %}roasting pan{% elif 'Hammered Pan Pro' in s or 'Cook ' in s and ' Prep' in s %}pan{% elif 'Titanium Cutting Board' in s %}board{% elif 'Lid' in s %}lid{% elif 'Mill' in s %}mills{% elif 'Utensil' in s or 'Chopsticks' in s %}utensils{% elif 'Apron' in s %}apron{% elif 'Dishwasher Sheets' in s or 'Detergent' in s %}sheets{% elif 'Gift Card' in s %}gift card{% else %}pan{% endif %}{% endwith %}" url="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Db2n-cta2" pad="24px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
 
 <!-- SIGN-OFF -->
 <tr><td class="pad" style="padding:26px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  Still deciding? Reply with what you cook most. We&rsquo;ll tell you honestly whether a Siraat pan fits.<br><br>
-  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
+  Still deciding? Reply with what you cook most, and our team will tell you honestly if this is the right pan.<br><br>
+  Benjamin<br><span style="color:#727272;">Founder, Siraat&rsquo;s Kitchen</span>
 </td></tr>
-
 
 {{FOOTER}}
 

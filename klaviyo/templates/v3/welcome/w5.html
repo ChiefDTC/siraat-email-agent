@@ -1,4 +1,4 @@
-<!-- SUBJECT_A: Tammy is on her fourth pan | SUBJECT_B: The last note about your 10% | PREVIEW: She gave one to her son, too. And your code HI10 still takes 10% off. | SEND: v4 Welcome step 7: wait 4 days, until 09:00 (day 10). Last email of the series (true); flow ends day 14, then campaigns (segment v4 Welcome-bescherming). HI10, no deadline (besluit A). Subject A only (v4 3.19) | FILTERS: Flow: list Uw8eZG (Alia Card Game, $source Alia sign-up), email does not contain test@, has not been in this flow over all time, re-entry never. Prospect path: CS A1 Placed Order = 0 since flow start (after 20 min), CS A2 Placed Order = 0 over all time. Send filter on this email: Placed Order zero times since starting this flow AND Received Email where Flow = v4 Checkout abandonment zero times in the last 1 day AND idem v4 Cart abandonment (skip, not exit). Smart sending off | LATER (not built): unique code only with besluit B (T09) -->
+<!-- V5-STRICT | SUBJECT_A: Tammy is on her fourth pan | SUBJECT_B: The last note about your 10% | SUBJECTS (5 types): C+B 'Three skeptics, one year later' / SPEC 'Her 4th pan' / Q 'What would it take to convince you?' / STORY 'Tammy is on her fourth pan' / OFFER 'The last note about your 10%' | PREVIEW: Three customers, two promises, and the last time we mention HI10. | VERHAALSTAP: S10 (drie klanten) + de twee beloftes als volledig blok (Floris: zekerheid). Laatste welcome-mail (U8, waar); HI10 zonder deadline (U9). Fran G. eruit (noemt een merknaam) | SEND: v4 Welcome step 7: wait 4 days, until 09:00 (day 10). Last email of the series (true) | FILTERS: Flow: list Uw8eZG (Alia Card Game, $source Alia sign-up), email does not contain test@, has not been in this flow over all time, re-entry never. Prospect path: CS A1 Placed Order = 0 since flow start (after 20 min), CS A2 Placed Order = 0 over all time. Send filter: Placed Order zero times since starting this flow AND Received Email where Flow = v4 Checkout abandonment zero times in the last 1 day AND idem v4 Cart abandonment (skip, not exit) | MARKT: profiel-helper (scripts/v5lib.py): person.Country, dan person.country_code; onbekend = geen bedragen, maten in cm met inch | UTM: utm_campaign=v4-welcome, utm_content=w5-<blok> -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -7,6 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
+<meta name="x-siraat-qa" content="V5-STRICT">
 <title>Tammy is on her fourth pan</title>
 <!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
 <style>
@@ -18,19 +19,18 @@
   @media only screen and (max-width:620px){
     .w{width:100%!important;}
     .pad{padding-left:22px!important;padding-right:22px!important;}
-    .stack{display:block!important;width:100%!important;}
-    .stackpad{padding:0 0 14px 0!important;}
     .h2{font-size:30px!important;line-height:34px!important;}
     .navhide{display:none!important;}
-    .desk{display:none!important;max-height:0!important;overflow:hidden!important;}
-    .mob{display:block!important;max-height:none!important;overflow:visible!important;}
-    .center{text-align:center!important;}
-    .cs-q{font-size:15px!important;line-height:22px!important;}
+    .lead{font-size:16px!important;line-height:25px!important;}
+    .pim{width:96px!important;padding:14px 0 14px 12px!important;}
+    .pim img{width:88px!important;height:88px!important;}
+    .cs-q{font-size:18px!important;line-height:24px!important;}
+    .pf-i{width:44px!important;padding-left:14px!important;}
   }
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">She gave one to her son, too. And your code HI10 still takes 10% off.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Three customers, two promises, and the last time we mention HI10.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
@@ -39,55 +39,57 @@
 
 {{HEADER}}
 
-<!-- HERO 1:1, aanbod in de aanbodbalk; de kop draagt het idee -->
+<!-- HERO (v5, scripts/make_hero.py, aanbodbalk zonder valutabedrag: geldt in elke markt) -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw5-hero"><img src="{{IMG}}/w5-hero.jpg" width="600" alt="Skeptical first. Then the egg. Last welcome email: code HI10 still takes 10% off on top of the sale, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw5-hero"><img src="{{IMG}}/w5-hero-v5.jpg" width="600" alt="In their words: then the egg, then pan four. Three customers, in their own words. HI10 still takes 10% off, plus 4 free gifts." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
-{{BLOCK:cta label="Claim my 10% + gifts" url="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw5-cta1" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
+{{BLOCK:cta label="Claim my 10% + gifts" url="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw5-cta1" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
 
-<!-- OPENER -->
-<tr><td class="pad" style="padding:26px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;color:#282828;text-align:center;"><p style="margin:0 0 14px 0;">The last email in our welcome series, so I&rsquo;ll let three customers talk. Each started where you might be now: a little skeptical.</p></td></tr>
-
-<!-- REVIEWS ALS MINI CASE STUDIES (Trustpilot, letterlijk, alleen ingekort met ...) -->
-<tr><td style="padding:22px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr>
+<tr><td class="pad lead" style="padding:22px 44px 14px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;"><p style="margin:0 0 0px 0;">This is the last email in our welcome series, so I&rsquo;ll let three customers talk. Each started where you might be now: a little skeptical.</p></td></tr>
 
 <tr><td class="pad" style="padding:0 44px 12px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-    <tr><td style="padding:16px 22px 0 22px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">BEFORE</div><div class="cs-q" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:20px;line-height:26px;color:#282828;padding-top:4px;">&ldquo;My wife had badgered me to get a traditional non-stick but I don't want the forever chemicals.&rdquo;</div></td></tr><tr><td style="padding:14px 22px 0 22px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">THE TEST</div><div class="cs-q" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:20px;line-height:26px;color:#282828;padding-top:4px;">&ldquo;The real test was my egg the next morning... after a very light nudge, the egg released completely...&rdquo;</div></td></tr><tr><td style="padding:14px 22px 0 22px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">NOW</div><div class="cs-q" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:20px;line-height:26px;color:#282828;padding-top:4px;">&ldquo;I was super skeptical but this is a now officially my favorite pan.&rdquo;</div></td></tr>
-    <tr><td style="padding:14px 22px 18px 22px;font-family:Inter,Arial,Helvetica,sans-serif;"><span style="font-family:Arial,Helvetica,sans-serif;font-size:13px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>&nbsp; <span style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Michael G. &middot; Pan Pro &middot; Verified buyer</span></td></tr>
+    <tr><td style="padding:16px 22px 0 22px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">BEFORE</div><div class="cs-q" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:20px;line-height:26px;color:#282828;padding-top:4px;">&ldquo;My wife had badgered me to get a traditional non-stick but I don't want the forever chemicals.&rdquo;</div></td></tr><tr><td style="padding:12px 22px 0 22px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">THE TEST</div><div class="cs-q" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:20px;line-height:26px;color:#282828;padding-top:4px;">&ldquo;The real test was my egg the next morning... the egg released completely and slid around the pan like it was non-stick.&rdquo;</div></td></tr><tr><td style="padding:12px 22px 0 22px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">NOW</div><div class="cs-q" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:20px;line-height:26px;color:#282828;padding-top:4px;">&ldquo;I was super skeptical but this is a now officially my favorite pan.&rdquo;</div></td></tr>
+    <tr><td style="padding:12px 22px 16px 22px;font-family:Inter,Arial,Helvetica,sans-serif;"><span style="font-family:Arial,Helvetica,sans-serif;font-size:13px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>&nbsp; <span style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Michael G. &middot; Pan Pro &middot; Verified buyer</span></td></tr>
   </table>
 </td></tr>
 
 <tr><td class="pad" style="padding:0 44px 12px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-    <tr><td style="padding:16px 22px 0 22px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">THE SWITCH</div><div class="cs-q" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:20px;line-height:26px;color:#282828;padding-top:4px;">&ldquo;I am so happy to throw away my old Teflon pans and replace with the new titanium ones.&rdquo;</div></td></tr><tr><td style="padding:14px 22px 0 22px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">NOW</div><div class="cs-q" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:20px;line-height:26px;color:#282828;padding-top:4px;">&ldquo;...are non stick and are easy to clean. I love my new frypans.&rdquo;</div></td></tr>
-    <tr><td style="padding:14px 22px 18px 22px;font-family:Inter,Arial,Helvetica,sans-serif;"><span style="font-family:Arial,Helvetica,sans-serif;font-size:13px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>&nbsp; <span style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Fran G. &middot; Pan Pro &middot; Verified buyer</span></td></tr>
+    <tr><td style="padding:16px 22px 0 22px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">WHY</div><div class="cs-q" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:20px;line-height:26px;color:#282828;padding-top:4px;">&ldquo;Awesome pan and peace of mind that I am not ingesting bits of toxins when I cook. Nice looking pan too!&rdquo;</div></td></tr>
+    <tr><td style="padding:12px 22px 16px 22px;font-family:Inter,Arial,Helvetica,sans-serif;"><span style="font-family:Arial,Helvetica,sans-serif;font-size:13px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>&nbsp; <span style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Gwen &middot; Pan Pro &middot; Verified buyer</span></td></tr>
   </table>
 </td></tr>
 
-<tr><td class="pad" style="padding:0 44px 12px 44px;">
+<tr><td class="pad" style="padding:0 44px 4px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-    <tr><td style="padding:16px 22px 0 22px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">HOW MANY</div><div class="cs-q" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:20px;line-height:26px;color:#282828;padding-top:4px;">&ldquo;I am on my 4th pan from Siraat.&rdquo;</div></td></tr><tr><td style="padding:14px 22px 0 22px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">AND HER SON</div><div class="cs-q" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:20px;line-height:26px;color:#282828;padding-top:4px;">&ldquo;I even gifted one to my son, and he says it's the best pan he owns.&rdquo;</div></td></tr>
-    <tr><td style="padding:14px 22px 18px 22px;font-family:Inter,Arial,Helvetica,sans-serif;"><span style="font-family:Arial,Helvetica,sans-serif;font-size:13px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>&nbsp; <span style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Tammy &middot; Pan Pro &middot; Verified buyer</span></td></tr>
+    <tr><td style="padding:16px 22px 0 22px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">HOW MANY</div><div class="cs-q" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:20px;line-height:26px;color:#282828;padding-top:4px;">&ldquo;I am on my 4th pan from Siraat.&rdquo;</div></td></tr><tr><td style="padding:12px 22px 0 22px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">AND HER SON</div><div class="cs-q" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:20px;line-height:26px;color:#282828;padding-top:4px;">&ldquo;I even gifted one to my son, and he says it's the best pan he owns.&rdquo;</div></td></tr>
+    <tr><td style="padding:12px 22px 16px 22px;font-family:Inter,Arial,Helvetica,sans-serif;"><span style="font-family:Arial,Helvetica,sans-serif;font-size:13px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>&nbsp; <span style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Tammy &middot; Pan Pro &middot; Verified buyer</span></td></tr>
   </table>
 </td></tr>
 
-<!-- AANBODKAARTJE: hetzelfde in elke welcome-mail -->
-{{BLOCK:offer pad="24px 44px 6px 44px" eyebrow="STILL YOURS" headline="10% on top of the sale" code="HI10" note="The last time we mention it in this series." label="Claim my 10% + gifts" url="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw5-offer"}}
+<tr><td class="pad" style="padding:28px 44px 0 44px;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">TWO PROMISES</div><div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 0 0;">If it&rsquo;s not for you</div></td></tr>
 
-{{BLOCK:gifts pad="30px 44px 6px 44px" eyebrow="WITH EVERY ORDER" headline="$70 in gifts, included" note="Three gifts in every order, plus a chance to win the filter."}}
+<tr><td class="pad" style="padding:14px 44px 4px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;">
+    <tr><td class="pf-i" width="58" valign="top" style="padding:16px 0 14px 18px;border-bottom:1px solid #ECE7DD;"><img src="{{SHARED}}/icon-returns-30-day.png" width="32" height="32" alt="" style="width:32px;height:32px;"></td><td valign="top" style="padding:14px 18px 14px 12px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">You change your mind</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:2px;">Unused pans can go back within 30 days of delivery, for a full refund.</div></td></tr>
+    <tr><td class="pf-i" width="58" valign="top" style="padding:16px 0 14px 18px;"><img src="{{SHARED}}/icon-warranty-75-year.png" width="32" height="32" alt="" style="width:32px;height:32px;"></td><td valign="top" style="padding:14px 18px 14px 12px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Something is wrong with it</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:2px;">Damaged or defective within 30 days? We refund or replace it and pay the shipping. After that, every pan is covered for 75 years.</div></td></tr>
+  </table>
+</td></tr>
 
-{{BLOCK:productcard pad="22px 44px 6px 44px" img="card-panpro-save305.jpg" name="The Pan Pro, 11&Prime;" sub="Where most people start." now="$134" was="$439" pill="BEST SELLER" note="$120.60 with HI10" url="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw5-prod-panpro" link="Get the pan" alt="The Pan Pro, 11 inch, save $305"}}
+{{BLOCK:reviews3 ids="R273,R082" pad="16px 44px 6px 44px"}}
 
-{{BLOCK:cta label="Claim my 10% + gifts" url="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw5-cta2" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
+{{BLOCK:offer pad="22px 44px 6px 44px" eyebrow="STILL YOURS" headline="10% on top of the sale" code="HI10" note="{{IF:PRICED}}Pan Pro {{SIZE:28}}: {{PRICE:standard*0.9}} with HI10.{{ENDIF}} The last time we mention it in this series." label="Claim my 10% + gifts" url="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw5-offer"}}
 
+{{BLOCK:gifts5 style="row" pad="18px 44px 4px 44px" line="Every order comes with {{GIFTS:total}}."}}
 
 <!-- SIGN-OFF -->
-<tr><td class="pad" style="padding:22px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  Not for you? Unused pans can go back within 30 days. Damaged or defective in that time? We refund or replace it and pay the shipping. After that, every pan is covered for 75 years.<br><br>
-  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
+<tr><td class="pad" style="padding:26px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+  Thank you for reading along these ten days.<br><br>
+  Benjamin<br><span style="color:#727272;">Founder, Siraat&rsquo;s Kitchen</span><br><br><span style="color:#727272;">P.S. This is the last welcome email. HI10 keeps working, but we won&rsquo;t bring it up again.</span>
 </td></tr>
+
 {{FOOTER}}
 
 </table>

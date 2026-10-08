@@ -1,13 +1,14 @@
-<!-- SUBJECT_A: $70 in gifts ship with your set | SUBJECT_B: "I've replaced all the pans..." | SUBJECTS (5 types): curiosity+benefit 'What ships in the box with your set' / specificity '$70 in gifts ship with your set' / question 'Is a set the right first step?' / story '"I've replaced all the pans..."' / offer 'Your set, 4 gifts, and 10% on top' | A/B: reciprocity (A) vs social proof (B); v4 3.19: alleen A. PREVIEW B: One decision, every pan on your stove done. And HI10 takes 10% more. | PREVIEW: Free shipping, a mystery gift, the e-book and a chance at a PFAS water filter. | SEND: v4 2.1 stap 4K: wait 2 days until 09:00 (day 3, 09:00); TS T2a Items contains any of SET_TITELS, or TS T2b $value >= 300 | FILTERS: Message: Placed Order = 0 since starting this flow -->
+<!-- V5-STRICT | SUBJECT_A: What's in the box with your set | SUBJECT_B: "I ended up buying the whole collection" | SUBJECTS (5 types): curiosity+benefit 'What's in the box with your set' / specificity 'One 75-year warranty for every piece' / question 'Is a set the right first step?' / story '"I ended up buying the whole collection"' / offer 'Your set, 4 gifts, and 10% on top' | A/B: curiosity (A) vs social proof (B); v4 3.19: alleen A | PREVIEW: Every piece, the same tested titanium surface. Plus 4 gifts pending. | SEND: v4 2.1 stap 4K: wait 2 days until 09:00 (day 3, 09:00); TS T2a Items contains any of SET_TITELS. V5-ROUTING (Floris 8 okt): op product, niet op $value: T2b ($value >= 300) vervalt, losse pannen 250-300 naar C3-P; flow-wijziging voor de hoofdsessie | FILTERS: Message: Placed Order = 0 since starting this flow | V5 (8 okt 2026, research/v5/03-copy-spec.md sectie 3 + DECISIONS 8 okt): alle bedragen, maten en verzendregels via de markt-macro's; hero zonder HI10 en zonder bedrag in het beeld (marktneutraal, -v5.jpg); gifts via gifts5, reviews via reviews3 (drie pijlers); friction reducer alleen onder de eerste en laatste knop. Bundelblok per bundel (6-delig fall sale "Buy 2, get 4 free", 12-delig US, Complete Edition, Set Pro, Duo, Kit ...), algemene tekst als fallback. -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
 <meta charset="utf-8">
+<meta name="x-siraat-build" content="V5-STRICT">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
-<title>Every pan, one decision</title>
+<title>What's in the box</title>
 <!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
@@ -25,51 +26,67 @@
     .desk{display:none!important;max-height:0!important;overflow:hidden!important;}
     .mob{display:block!important;max-height:none!important;overflow:visible!important;}
     .center{text-align:center!important;}
+    .lead{font-size:16px!important;line-height:25px!important;}
     .vs td{font-size:13px!important;}
   }
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Free shipping, a mystery gift, the e-book and a chance at a PFAS water filter.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;">Every piece, the same tested titanium surface. Plus 4 gifts pending.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
-{{BLOCK:codebar}}
+{{BLOCK:codebar text="STILL PENDING ON YOUR CART &middot;" code="{{GIFTS:TOTAL}}"}}
 
 {{HEADER}}
 
-<!-- HERO 4:3 met aanbodbalk (make_hero.py --offer --ratio=4:3, bron: content/media/hero-register/checkout.csv) -->
+<!-- HERO 4:3 (P02-A GasRange, marktneutraal) -->
 <tr><td style="padding:0;">
-  <a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c3s-hero"><img src="{{IMG}}/c3s-hero.jpg" width="600" alt="Every pan, one decision. One 75-year warranty covers it all. Extra 10% off with code HI10, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c3s-hero"><img src="{{IMG}}/c3s-hero-v5.jpg" width="600" alt="What's in the box. Every pan, one decision. One 75-year warranty for every piece. 4 gifts pending." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
-{{BLOCK:cart pad="22px 44px 4px 44px" title="YOUR SET, STILL IN YOUR CART" line="<b>HI10</b> takes an extra 10% off your set, applied with the button below."}}
+<!-- CART (kopie van blocks/cart.html, prijs alleen bij USD) -->
+<tr><td class="pad" style="padding:22px 44px 4px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
+    <tr><td colspan="3" style="padding:16px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">YOUR SET, STILL IN YOUR CART</td></tr>
+    {% for item in event.extra.line_items %}{% if item.line_price > 0 %}
+    <tr>
+      <td width="104" valign="middle" style="padding:12px 0 12px 16px;">
+        <img src="{% if item.product.images.0.thumb_src %}{{ item.product.images.0.thumb_src }}{% else %}{{IMG}}/cart-fallback.jpg{% endif %}" width="88" alt="{{ item.title }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;">
+      </td>
+      <td valign="middle" style="padding:12px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
+        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">{{ item.title }}</div>
+        <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">Qty {{ item.quantity|floatformat:0 }}</div>
+      </td>
+      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;">{% if event.extra.presentment_currency == 'USD' %}${{ item.line_price|floatformat:2 }}{% endif %}</td>
+    </tr>
+    {% endif %}{% endfor %}
+    <tr><td colspan="3" style="padding:0 16px 16px 16px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:11px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">
+        <img src="{{SHARED}}/icon-discount-tag.png" width="20" height="20" alt="" style="display:inline-block;vertical-align:-5px;width:20px;height:20px;">&nbsp; HI10 is already applied to your set.
+      </td></tr></table>
+    </td></tr>
+  </table>
+</td></tr>
 
-{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c3s-cta1" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
 
-<tr><td class="pad" style="padding:28px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">A set is a bigger decision than one pan. Here is what it settles: every pan on your stove gets the same titanium cooking surface and the same 75-year warranty. You make this choice once.</td></tr>
+{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c3s-cta1" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
+<tr><td class="pad lead" style="padding:26px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">We tested the pan for six months before the first one shipped. Every piece in your set has that same titanium cooking surface, and one 75-year warranty covers all of it.</td></tr>
 
-<!-- 6-delige set in de cart: closer look; andere sets of carts vanaf $300: wat een set regelt -->
-{% if '6-Pcs' in event.Items|join:',' %}
-{{BLOCK:closerlook pad="30px 44px 6px 44px" eyebrow="WHAT IS IN THE BOX" headline="Take a closer look." img="set6" alt="The Siraat 6-piece set from above: three hammered titanium pans and three stainless steel lids" h1="304 STAINLESS LIDS" d1="A lid for every pan." h2="OVEN SAFE" d2="Every pan goes stovetop to oven." h3="TITANIUM SURFACE" d3="The same titanium cooking surface on all three." h4="LAB TESTED" d4="Light Labs report no. 25895."}}
-{% else %}
-{{BLOCK:features eyebrow="WHAT A SET SETTLES" headline="Every piece, covered" i1="no-coating" t1="No coating on any piece" d1="A titanium cooking surface on every pan, so there is nothing to flake off in a few years." i2="induction-ready" t2="Every burner, and the oven" d2="Gas, electric, ceramic and induction. Oven, dishwasher and metal utensil safe." i3="warranty-75-year" t3="One 75-year warranty" d3="Every piece covered. Tested free from PFAS by Light Labs, report no. 25895."}}
-{% endif %}
+<!-- BUNDEL (02-bundels 1.3): what's in the box per bundel, gekozen op het product in de cart (event.Items), niet op $value -->
+{{BLOCK:bundle pad="20px 44px 6px 44px"}}
 
-{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c3s-cta2" pad="26px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
+{{BLOCK:gifts5 style="row" urgency="1" line="Your {{GIFTS:total}} ship with your set."}}
 
-{{BLOCK:gifts eyebrow="WITH YOUR SET" headline="$70 in gifts, included" note="The filter is a chance to win. Everything else comes with every order."}}
+{{BLOCK:reviews3 set="c3-s" pad="26px 44px 6px 44px"}}
 
-{{BLOCK:reviews q1="I ordered a full set of the titanium cookware... All of it works as stated. It's also super lightweight. Easy to clean." n1="Lauren W." q2="We ordered almost all the pans and some in different sizes too. I've replaced all the pans and some pots in our kitchen." n2="Jibz C."}}
-
-
-{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c3s-cta3" pad="24px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
-
+{{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c3s-cta2" pad="24px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
 <!-- SIGN-OFF -->
-<tr><td class="pad" style="padding:22px 44px 22px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  Hi {{ first_name|default:'there' }}, not sure which pieces you need? Reply with what you cook in a normal week and our team will help.<br><br>
-  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
+<tr><td class="pad" style="padding:22px 44px 24px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+  Hi {{ first_name|default:'there' }}, a set is a bigger decision than one pan. The good news: you only make it once.<br><br>
+  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span><br><br>
+  <span style="color:#727272;">P.S. Not sure which pieces you need? Reply with what you cook in a normal week.</span>
 </td></tr>
 
 {{FOOTER}}

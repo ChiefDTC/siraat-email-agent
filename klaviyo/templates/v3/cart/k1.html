@@ -1,13 +1,14 @@
-<!-- SUBJECT_A: Nothing on it to peel off | SUBJECT_B: How long do you scrub a pan? (reserve; cart runs no subject test in phase 1, v4 3.19) | SUBJECTS (5 types): C+B 'The cleanup trick for the pan in your cart' / SPEC 'One pass with a damp cloth.' / Q 'How long do you scrub a pan?' / STORY '"Cleaning the pan afterwards was so easy"' / OFFER 'Your cart and 4 gifts, saved' | PREVIEW: No scrubbing. That's the whole trick. And 4 gifts ship with every order. | SEND: 30 minutes after Added to Cart (step 1), path KOOKGEREI: CS Added to Cart where Product Name contains Hammer OR Pan OR Pot OR ookware OR Everything OR fanne OR Prep Bundle, at least once in the last 1 day = yes | FILTERS: Trigger: Added to Cart (QXcV8K) with Price greater than 0 and Product Name doesn't contain Mystery Gift, E-Book, Free Shipping, Giveaway. Flow: Checkout Started = 0 since flow start; Placed Order = 0 since flow start; Received Email where Flow = 'v4 · Checkout abandonment' = 0 in the last 7 days; not in this flow in the last 14 days. Message: Checkout Started = 0 and Placed Order = 0 since flow start | UTM: utm_campaign=v4-cart, utm_content=k1-<blok>; UTM's url-encoded inside redirect -->
+<!-- V5-STRICT | SUBJECT_A: The hammered pattern: an easy wipe | SUBJECT_B: We saved your cart (and 4 gifts) | SUBJECTS (5 types): curiosity+benefit 'The hammered pattern: an easy wipe' / specificity 'One wipe with a soft sponge' / question 'How long do you scrub a pan?' / story '"So easy to clean and cook perfectly"' / offer 'We saved your cart (and 4 gifts)' | A/B: mechanisme (A) vs bezit (B, historische cart-1-winnaar); cart draait in fase 1 geen onderwerptest (v4 3.19) | PREVIEW: Less food touches the metal, so cleanup is a quick wipe. Your cart is saved. | SEND: 30 minutes after Added to Cart (step 1), path KOOKGEREI: CS Added to Cart where Product Name contains Hammer OR Pan OR Pot OR ookware OR Everything OR fanne OR Prep Bundle, at least once in the last 1 day = yes | FILTERS: Trigger: Added to Cart (QXcV8K) with Price greater than 0 and Product Name doesn't contain Mystery Gift, E-Book, Free Shipping, Giveaway. Flow: Checkout Started = 0 since flow start; Placed Order = 0 since flow start; Received Email where Flow = 'v4 · Checkout abandonment' = 0 in the last 7 days; not in this flow in the last 14 days. Message: Checkout Started = 0 and Placed Order = 0 since flow start | UTM: utm_campaign=v4-cart, utm_content=k1-<blok> | V5 (8 okt 2026, research/v5/03-copy-spec.md sectie 4 + DECISIONS 8 okt): alle bedragen, maten en verzendregels via de markt-macro's; hero zonder HI10 en zonder bedrag in het beeld (-v5.jpg); gifts via gifts5, reviews via reviews3 (drie pijlers); friction reducer alleen onder de eerste en laatste knop. Besluit 8 okt: geen HI10 in K1 en K2 (geen code in links, geen codebalk met HI10); de eerste korting is K3. Verhaalstap S3 (hammered pattern, easy wipe); vergelijking RVS alleen hier. -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
 <meta charset="utf-8">
+<meta name="x-siraat-build" content="V5-STRICT">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
-<title>One wipe. No scrubbing.</title>
+<title>Still in your cart</title>
 <!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
@@ -26,74 +27,68 @@
     .mob{display:block!important;max-height:none!important;overflow:visible!important;}
     .center{text-align:center!important;}
     .lead{font-size:16px!important;line-height:25px!important;}
+    .vs td{font-size:13px!important;}
   }
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">No scrubbing. That&rsquo;s the whole trick. And 4 gifts ship with every order.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;">Less food touches the metal, so cleanup is a quick wipe. Your cart is saved.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
-
-{{BLOCK:codebar}}
+{{BLOCK:codebar text="STILL PENDING ON YOUR CART &middot;" code="{{GIFTS:TOTAL}}"}}
 
 {{HEADER}}
 
-<!-- HERO 4:3 met aanbodbalk (make_hero.py --offer --ratio=4:3) -->
+<!-- HERO 4:3 (P12-A Wipe Clean; kop "easy wipe met het hammered pattern", Floris 8 okt) -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://2d0add-d6.myshopify.com'|cut:'https://siraatskitchen.com'|default:'/cart' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk1-hero"><img src="{{IMG}}/k1-hero-pfas.jpg" width="600" alt="Still in your cart. Nothing on it to peel off: no PFAS, Light Labs report no. 25895. Extra 10% off with code HI10, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://siraatskitchen.com{{ event.URL|cut:'https://2d0add-d6.myshopify.com'|cut:'https://siraatskitchen.com'|default:'/cart' }}?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-cart&utm_content=k1-hero"><img src="{{IMG}}/k1-hero-v5.jpg" width="600" alt="Still in your cart. Hammered for an easy wipe: less food touches the metal. No coating. 4 gifts pending, free shipping." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
-
-<!-- PRODUCTKAART Added to Cart (QXcV8K): 'Product Name', ImageURL, Price (getal), Quantity, $currency. Prijs alleen bij USD; ankerprijs $439 alleen bij Pan Pro Standard 11" voor $134 in USD. -->
+<!-- PRODUCTKAART Added to Cart: 'Product Name', ImageURL, Price, Quantity, $currency. Prijs alleen bij USD. -->
 <tr><td class="pad" style="padding:22px 44px 4px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
     <tr><td colspan="3" style="padding:16px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">STILL IN YOUR CART</td></tr>
     <tr>
       <td width="104" valign="middle" style="padding:12px 0 12px 16px;">
-        <a href="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://2d0add-d6.myshopify.com'|cut:'https://siraatskitchen.com'|default:'/cart' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk1-product"><img src="{% if event.ImageURL %}{{ event.ImageURL }}&width=200{% else %}https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-40a5-9ad7-523bdddc54d4.webp?v=1781682831&width=200{% endif %}" width="88" alt="{{ event|lookup:'Product Name'|default:'Titanium Hammered Pan Pro' }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;"></a>
+        <a href="https://siraatskitchen.com{{ event.URL|cut:'https://2d0add-d6.myshopify.com'|cut:'https://siraatskitchen.com'|default:'/cart' }}?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-cart&utm_content=k1-product"><img src="{% if event.ImageURL %}{{ event.ImageURL }}&width=200{% else %}{{IMG}}/cart-fallback.jpg{% endif %}" width="88" alt="{{ event|lookup:'Product Name'|default:'Your item' }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;"></a>
       </td>
       <td valign="middle" style="padding:12px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
-        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;word-break:break-word;">{{ event|lookup:'Product Name'|default:'Titanium Hammered Pan Pro' }}</div>
+        <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;word-break:break-word;">{{ event|lookup:'Product Name'|default:'Your item' }}</div>
         <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;word-break:break-word;">Qty {{ event.Quantity|default:1|floatformat:0 }}</div>
       </td>
-      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;">{% if 'Pan Pro Standard' in event|lookup:'Product Name' and event.Price == 134 and event.Quantity == 1 and event|lookup:'$currency' == 'USD' %}<div style="font-size:13px;line-height:17px;color:#9A948B;text-decoration:line-through;font-weight:400;">$439</div>{% endif %}{% if event.Price and event|lookup:'$currency' == 'USD' %}${{ event.Price|floatformat:2 }}{% endif %}</td>
+      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;">{{IF:US}}{% if event.Price and event|lookup:'$currency' == 'USD' %}${{ event.Price|floatformat:2 }}{% endif %}{{ENDIF}}</td>
     </tr>
     <tr><td colspan="3" style="padding:0 16px 16px 16px;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:11px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">
-        <img src="{{SHARED}}/icon-discount-tag.png" width="20" height="20" alt="" style="display:inline-block;vertical-align:-5px;width:20px;height:20px;">&nbsp; {% if 'Pan Pro Standard' in event|lookup:'Product Name' and event.Price == 134 and event.Quantity == 1 and event|lookup:'$currency' == 'USD' %}With <b>HI10</b> it&rsquo;s <b>$120.60</b>, applied with the button below.{% else %}<b>HI10</b> takes an extra 10% off, applied with the button below.{% endif %}
+        <img src="{{SHARED}}/icon-check.png" width="20" height="20" alt="" style="display:inline-block;vertical-align:-5px;width:20px;height:20px;">&nbsp; Saved exactly as you left it.
       </td></tr></table>
     </td></tr>
   </table>
 </td></tr>
+{{BLOCK:cta label="Finish my order" url="https://siraatskitchen.com{{ event.URL|cut:'https://2d0add-d6.myshopify.com'|cut:'https://siraatskitchen.com'|default:'/cart' }}?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-cart&utm_content=k1-cta1" pad="16px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
 
-{{BLOCK:cta label="Finish my order" url="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://2d0add-d6.myshopify.com'|cut:'https://siraatskitchen.com'|default:'/cart' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk1-cta1" pad="16px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
+{{BLOCK:gifts5 style="row" urgency="1" line="Your cart is saved, with {{GIFTS:total}} still pending."}}
 
-<!-- OPENER (live tekst) -->
-<tr><td class="pad lead" style="padding:22px 44px 2px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;"><p style="margin:0 0 12px 0;">No coating, so no PFAS and nothing to peel off (Light Labs, report no. 25895). Cleanup is one pass: let the {{BLOCK:noun src="event|lookup:'Product Name'" dflt="pan"}} cool, then warm water and a soft sponge. Prefer the dishwasher? That works too.</p><p style="margin:0 0 0 0;"><span style='font-size:14px;line-height:21px;color:#727272;'>One honest note: a rainbow tint can show up over time. That&rsquo;s heat patina, normal on titanium. Baking soda lifts it.</span></p></td></tr>
+<tr><td class="pad lead" style="padding:26px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">The hammered pattern is the point. Less food touches the metal, so it lets go, and cleanup is a quick wipe with a soft sponge. No coating, so no PFAS and nothing to peel off. Dishwasher? That works too.</td></tr>
 
-{{BLOCK:gifts headline="$70 in gifts, in the box" note="Plus a chance to win a $450 PFAS water filter."}}
-
+<!-- Pan Pro: closer look (hier is hij de verhaalstap) + een zin RVS; andere pannen en sets: de RVS-vergelijking (een vergelijking per flow: RVS alleen in K1) -->
 {% if 'Hammered Pan Pro' in event|lookup:'Product Name' %}
-{{BLOCK:closerlook pad="34px 44px 6px 44px" eyebrow="UP CLOSE" headline="Why one pass is enough." img="panpro" alt="The Titanium Hammered Pan Pro from above, with four numbered points" h1="TITANIUM SURFACE" d1="No coating, so nothing to scrub around." h2="DISHWASHER SAFE" d2="It cooks the same afterwards." h3="HAMMERED PATTERN" d3="Spreads the oil, so food lets go." h4="3-PLY BUILD" d4="Even heat, on every cooktop."}}
-{% else %}
-<!-- PRODUCTMATRIX (8 okt): geen Pan Pro-anatomie bij een wok, pizza steel, pot of set, maar dit product -->
-{{BLOCK:about src="event|lookup:'Product Name'" lead="YOUR" pad="30px 44px 6px 44px"}}
+{{BLOCK:closerlook pad="30px 44px 6px 44px" eyebrow="UP CLOSE" headline="Why one wipe is enough." img="panpro" alt="The Titanium Hammered Pan Pro from above, with four numbered points" h1="HAMMERED PATTERN" d1="Less food touches the metal, so it lets go." h2="TITANIUM SURFACE" d2="No coating, so nothing to scrub around." h3="DISHWASHER SAFE" d3="It cooks the same afterwards." h4="3-PLY BUILD" d4="Even heat, on every cooktop."}}
+<tr><td class="pad lead" style="padding:16px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">Stainless steel often needs a soak. This needs a sponge.</td></tr>
+{% elif 'Pan' in event|lookup:'Product Name' or 'Wok' in event|lookup:'Product Name' or 'ookware' in event|lookup:'Product Name' %}
+{{BLOCK:vs kind="steel" pad="30px 44px 6px 44px"}}
 {% endif %}
 
-{{BLOCK:cta label="Finish my order" url="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://2d0add-d6.myshopify.com'|cut:'https://siraatskitchen.com'|default:'/cart' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk1-cta2" pad="26px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
+{{BLOCK:reviews3 set="k1" pad="28px 44px 6px 44px"}}
 
-{{BLOCK:reviews q1="We cooked the best omelette we have ever eaten... Cleaning the pan afterwards was so easy." n1="Graham C." q2="I am so happy to throw away my old Teflon pans... They disperse the heat very well, are non stick and are easy to clean." n2="Fran G." pad="28px 44px 6px 44px"}}
-
-{{BLOCK:cta label="Finish my order" url="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://2d0add-d6.myshopify.com'|cut:'https://siraatskitchen.com'|default:'/cart' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk1-cta3" pad="26px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
-
-
+{{BLOCK:cta label="Finish my order" url="https://siraatskitchen.com{{ event.URL|cut:'https://2d0add-d6.myshopify.com'|cut:'https://siraatskitchen.com'|default:'/cart' }}?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-cart&utm_content=k1-cta2" pad="24px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
 <!-- SIGN-OFF -->
-<tr><td class="pad" style="padding:26px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+<tr><td class="pad" style="padding:22px 44px 24px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
   Cooking on induction, or not sure about the size? Reply and our team will help.<br><br>
-  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
+  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span><br><br>
+  <span style="color:#727272;">P.S. A rainbow tint can show up over time. That's heat patina, normal on titanium, and baking soda lifts it.</span>
 </td></tr>
-
 
 {{FOOTER}}
 
