@@ -91,3 +91,22 @@ def review_problems(rendered):
 
 def xsell_shown(rendered):
     return re.findall(r'data-xs="([\w-]+)"', rendered)
+
+def xsell_empty(rendered):
+    """09-monitor-rapport H2: een cross-sellblok (data-xsell="1") met kop maar zonder een enkele productrij of terugvalregel."""
+    F = []
+    parts = rendered.split('data-xsell="1"')[1:]
+    for i, p in enumerate(parts):
+        end = p.find('</table>')
+        if 'data-xs="' not in (p if end < 0 else p[:end]):
+            head = re.search(r'class="h2"[^>]*>(.*?)</div>', p, re.S)
+            F.append('cross-sellblok %d: kop "%s" zonder producten' % (i + 1, re.sub(r'\s+', ' ', re.sub(r'<!--.*?-->', '', H.unescape(head.group(1)), flags=re.S) if head else '?').strip()))
+    return F
+
+def lid_missing(rendered, mid, items):
+    """09-monitor-rapport H2: P1/P2-safe met een Pan Pro zonder deksel in de order moet de ONE SIZE NOTE tonen (ook zonder siraat_owned)."""
+    low = ','.join(items or []).lower()
+    if mid not in ('p1-first', 'p1-repeat', 'p2-safe'): return []
+    if not any(x in low for x in ('pan pro standard', 'pan pro large', 'pan pro small', 'pan pro mini')): return []
+    if any(x in low for x in ('lid', 'set', 'duo', 'kit')): return []
+    return [] if 'ONE SIZE NOTE' in rendered else ['dekselregel (ONE SIZE NOTE) ontbreekt bij een Pan Pro-order zonder deksel']

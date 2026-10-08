@@ -485,6 +485,7 @@ XITEM = {
 }
 LIDVAR = {'lid20': '53294486421844', 'lid26': '52401107206484', 'lid28': '52401107239252', 'lid30': '52401107272020'}
 # Bezit: titel in de huidige order (xs = event-titels, lowercase) of sleutel in person.siraat_owned (xo, lijst uit
+# (xo krijgt |default:'' : zonder sync ontbreekt de property en dan is 'x' not in xo in Klaviyo onwaar, 09-monitor-rapport H2)
 # scripts/sync_owned.py, die bundels uitpakt). Sets in de huidige order tellen mee via hun inhoud (SETS_ALL enz.).
 SETS_ALL = ['pan set', 'teilig', '12-pcs', '12 pcs', 'full hammered', 'everyth']
 XOWN = {'mini': (['pan pro mini', '2 pans', 'pan pro duo'] + SETS_ALL, ['panpro_mini']),
@@ -596,7 +597,7 @@ def xsell(kv, sig, src):
     head = ''.join(('{%% if %s %%}' if i == 0 else '{%% elif %s %%}') % c + t for i, (c, t) in enumerate(zip(hb, hv))) + '{% else %}' + XHEAD[''] + '{% endif %}'
     d = {'pad': kv.get('pad', '28px 44px 4px 44px'), 'eyebrow': kv.get('eyebrow', 'OFTEN ADDED NEXT'), 'headline': kv.get('headline') or head,
          'rows': body, 'note': kv.get('note', '')}
-    return ("{%% with xs=%s|lower xo=person|lookup:'siraat_owned' %%}" % src) + wopen(sig) + fill(tpl('xsell.html'), d, 'xsell') + WCLOSE + '{% endwith %}'
+    return ("{%% with xs=%s|lower xo=person|lookup:'siraat_owned'|default:'' %%}" % src) + wopen(sig) + fill(tpl('xsell.html'), d, 'xsell') + WCLOSE + '{% endwith %}'
 
 def _amp(subs):
     """Titels met & komen via |join als &amp; binnen (autoescape): test beide vormen."""

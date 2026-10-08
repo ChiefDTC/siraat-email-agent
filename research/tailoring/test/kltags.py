@@ -4,10 +4,26 @@
 from django import template
 from django.utils.safestring import mark_safe
 register = template.Library()
+class _Missing(object):
+    """Ontbrekende property zoals Klaviyo hem behandelt (09-monitor-rapport H2): rendert leeg en is onwaar, maar
+    `'x' in` / `'x' not in` <ontbrekend> is in een {% if %} altijd onwaar (Klaviyo sloot zo de hele cross-sell uit).
+    Daarom in templates altijd `person|lookup:'siraat_owned'|default:''`."""
+    def __str__(self): return ''
+    __html__ = __str__
+    def __bool__(self): return False
+    def __len__(self): return 0
+    def __contains__(self, x): raise TypeError('property ontbreekt')
+    def __iter__(self): raise TypeError('property ontbreekt')
+    def __lt__(self, o): raise TypeError('property ontbreekt')
+    __le__ = __gt__ = __ge__ = __lt__
+    def lower(self): return ''
+MISSING = _Missing()
 @register.filter
 def lookup(d, k):
-    try: return d.get(k, '')
-    except Exception: return ''
+    try:
+        v = d.get(k, MISSING)
+        return MISSING if v is None else v
+    except Exception: return MISSING
 @register.simple_tag
 def coupon_code(name): return 'SRT-K7Q2M'
 @register.simple_tag

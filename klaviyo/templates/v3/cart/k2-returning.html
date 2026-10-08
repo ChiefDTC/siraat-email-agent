@@ -72,7 +72,7 @@
 <tr><td class="pad lead" style="padding:26px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">You know how it works, so I'll keep this short. Tammy is on her fourth Siraat pan, and she gave one to her son. Most of our regulars started with one pan too.</td></tr>
 
 <!-- TAILORING (02-bundels 3.2): nooit aanbieden wat in person.siraat_owned of in de cart staat; prijzen per markt -->
-{% with own=person|lookup:'siraat_owned' %}{% if 'lid' not in own and 'Lid' not in event|lookup:'Product Name' or 'deep' not in own and 'Deep' not in event|lookup:'Product Name' %}
+{% with own=person|lookup:'siraat_owned'|default:'' %}{% if 'lid' not in own and 'Lid' not in event|lookup:'Product Name' or 'deep' not in own and 'Deep' not in event|lookup:'Product Name' %}
 <tr><td class="pad" style="padding:28px 44px 14px 44px;">
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">TO GO WITH IT</div>
   <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 0 0;">Often added to a second order</div>

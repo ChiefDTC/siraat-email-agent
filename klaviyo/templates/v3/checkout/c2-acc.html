@@ -53,7 +53,7 @@
 {{BLOCK:gifts5 style="row" urgency="1" line="Yours or a gift: {{GIFTS:total}} ship with it."}}
 
 <!-- BESTAANDE EIGENAAR (person.siraat_owned bevat een pan, 02-bundels sectie 3): geen merkverhaal en geen panuitleg; nieuwe klant: S2 kort -->
-{% with own=person|lookup:'siraat_owned' %}{% if 'panpro' in own or 'pan_original' in own or 'deep' in own or 'wok' in own or 'crepe' in own %}
+{% with own=person|lookup:'siraat_owned'|default:'' %}{% if 'panpro' in own or 'pan_original' in own or 'deep' in own or 'wok' in own or 'crepe' in own %}
 <tr><td class="pad lead" style="padding:24px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">You already cook on one of our pans, so you know how we make things. This one gets the same care, and it ships free with the same 4 gifts.</td></tr>
 {% else %}
 <tr><td class="pad lead" style="padding:24px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">Siraat started with a titanium cutting board, before there was a pan. The small things still get the same care as the big ones. Here's the short version of what you picked.</td></tr>

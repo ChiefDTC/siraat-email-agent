@@ -151,7 +151,8 @@ def engine():
 def context(var):
     name,_,extra=var.partition('+')
     ev={} if name=='none' else json.load(open(os.path.join(TEST,'samples',name+'.json')))
-    person={'last_flow_code_pool':'SK_REGULARS15_14D'} if extra=='pool' else {}
+    person={'last_flow_code_pool':'SK_REGULARS15_14D'} if extra=='pool' else {}   # bewust zonder siraat_owned/siraat_owned_cats/siraat_orders (H2)
+    assert not any(k.startswith('siraat_') for k in person)
     return {'event':ev,'first_name':'Sarah','person':person,'organization':{'name':"Siraat's Kitchen",'full_address':'[address]'}}
 
 def unwrap(x): return re.sub(r'<!--(\{%.*?%\})-->',r'\1',x,flags=re.S)
@@ -196,6 +197,8 @@ def v5_market(flow,mid,k,e,strict=False):
             if t in body: F.append('markt %s: restant %s na rendering'%(m,t))
         F+=['markt %s: v5-blok: %s'%(m,x) for x in V5C.market_problems(r,m,strict_scope=V5C.v5_parts(r))]
         F+=['markt %s: %s'%(m,x) for x in V5C.gifts_problems(r) if 'gifts5' in x]
+        F+=['markt %s: %s'%(m,x) for x in V5C.xsell_empty(r)]   # H2: profiel zonder siraat_owned mag geen lege cross-sell geven
+        F+=['markt %s: %s'%(m,x) for x in V5C.lid_missing(r,mid,ev.get('Items'))]
         low=','.join(ev.get('Items') or [ev.get('Product Name','')]).lower()
         for tok in V5C.xsell_shown(r):
             if tok!='none' and any(x in low for x in v5lib.XOWN[tok][0]): F.append('markt %s: cross-sell toont %s uit de order'%(m,tok))
@@ -232,6 +235,9 @@ def main():
             except Exception as ex: e['F'].append('%s: rendering faalt: %s'%(var,str(ex)[:200])); continue
             e['variants'].append(var); rendered.append(r)
             e['F']+=['%s: %s'%(var,x) for x in after_render(r)]
+            # H2 (09-monitor-rapport): het profiel in context() heeft GEEN siraat_owned (zoals een klant vóór de nachtelijke sync);
+            # de stub kltags.lookup geeft dan net als Klaviyo een ontbrekende waarde. Lege cross-sell of ontbrekende dekselregel = FOUT.
+            e['F']+=['%s (profiel zonder siraat_owned): %s'%(var,x) for x in V5C.xsell_empty(r)+V5C.lid_missing(r,mid,ctx['event'].get('Items'))]
             e['F']+=['%s: gerenderd, tekst in tabelcontext: %s'%(var,b) for b in foster(r)]
             rp=os.path.join(tmp,'%s-%s-%s.html'%(flow,mid,var)); open(rp,'w').write(r)
             for w,dev in ((600,'desktop'),(390,'mobile')):

@@ -51,7 +51,7 @@
 {{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c3acc-cta1" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
 
 <!-- BESTAANDE EIGENAAR (siraat_owned bevat een pan): geen pan-pitch, geen productkaart. Nieuwe klant: S2 als Benjamin + Pan Pro-kaart -->
-{% with own=person|lookup:'siraat_owned' %}{% if 'panpro' in own or 'pan_original' in own or 'deep' in own or 'wok' in own or 'crepe' in own %}
+{% with own=person|lookup:'siraat_owned'|default:'' %}{% if 'panpro' in own or 'pan_original' in own or 'deep' in own or 'wok' in own or 'crepe' in own %}
 <tr><td class="pad lead" style="padding:26px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">You already cook on one of our pans, so there's nothing new to tell you about it. Your cart is saved, HI10 is applied, and the 4 gifts ship with it.</td></tr>
 {% else %}
 <tr><td class="pad lead" style="padding:26px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">We started with titanium cutting boards. Then we made the pan. A board is nice, but in the end you cook in a pan.{% if 'Apron' in event.Items|join:',' %} An apron does want something to cook in, though.{% endif %}<br><br>If you still cook on a coated pan, this is the one change worth making: titanium, tested free from PFAS by Light Labs (report no. 25895), and covered for 75 years.</td></tr>

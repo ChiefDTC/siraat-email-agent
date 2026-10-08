@@ -7,7 +7,8 @@
     .ic{padding:14px 2px!important;}
     .ic div{font-size:10px!important;letter-spacing:.6px!important;}
     .codebar{font-size:11px!important;letter-spacing:1px!important;}
-    .offer-code{font-size:26px!important;letter-spacing:4px!important;}
+    .offer-code{font-size:22px!important;letter-spacing:2px!important;white-space:nowrap!important;word-break:normal!important;padding:12px 14px!important;}  /* H3 (09-monitor): 13 tekens (CART-XXXXXXXX) op één regel op 320 en 375 px */
+    .cb-code{white-space:nowrap!important;word-break:normal!important;}
     .rv{display:block!important;width:100%!important;box-sizing:border-box!important;}
     .rvsp{display:block!important;width:100%!important;height:12px!important;font-size:0!important;line-height:0!important;}
   }
