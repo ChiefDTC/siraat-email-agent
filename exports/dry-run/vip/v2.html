@@ -2,6 +2,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
 <meta charset="utf-8">
+<meta name="siraat-qa" content="V5-STRICT">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
@@ -69,7 +70,7 @@
 </head>
 
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">You've ordered twice. I'd love to know what you want us to make next.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;mso-hide:all;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">You've ordered twice. I'd love to know what you want us to make next.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
@@ -96,7 +97,7 @@
 </td></tr>
 
 <tr><td class="pad" style="padding:22px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-<!--{% if person|lookup:'last_flow_code_pool' == 'SK_REGULARS15_14D' %}-->  <p style="margin:0 0 0px 0;"><b>P.S.</b> Your 15% code from last week still works for a few more days. Can&rsquo;t find it? Search your inbox for &ldquo;Twice is a habit&rdquo;, or reply and we&rsquo;ll send it again.</p><!--{% else %}-->  <p style="margin:0 0 0px 0;"><b>P.S.</b> HI10 still takes an extra 10% off your next order, and every order comes with four gifts.</p><!--{% endif %}-->
+<!--{% if person|lookup:'last_flow_code_pool' == 'SK_REGULARS15_14D' %}-->  <p style="margin:0 0 0px 0;"><b>P.S.</b> Your 15% code from last week still works for a few more days. Can&rsquo;t find it? Search your inbox for &ldquo;You&rsquo;re a VIP&rdquo;, or reply and we&rsquo;ll send it again.</p><!--{% else %}-->  <p style="margin:0 0 0px 0;"><b>P.S.</b> HI10 still takes an extra 10% off your next order, and every order comes with four gifts.</p><!--{% endif %}-->
 </td></tr>
 
 <tr><td align="center" class="pad" style="padding:26px 44px 34px 44px;">
@@ -106,7 +107,7 @@
       <!--[if !mso]><!--><a href="https://siraatskitchen.com/collections/all?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-vip&utm_content=v2-cta1" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Take me to the shop &rarr;</a><!--<![endif]-->
     </td>
   </tr></table>
-  <div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>
+  <div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'><!--{% with mc=event.extra.shipping_address.country_code meu='AT|BE|BG|HR|CZ|EE|FI|FR|DE|GR|HU|IE|IT|LV|LU|NL|SK|SI|ES' mme='AE|SA|KW|BH|OM|QA' %}--><!--{% if mc == 'US' %}-->Free shipping from the US. 30-day returns. 100,000+ happy customers.<!--{% else %}-->Free shipping, duties paid. 30-day returns. 100,000+ happy customers.<!--{% endif %}--><!--{% endwith %}--></div>
 </td></tr>
 
 
