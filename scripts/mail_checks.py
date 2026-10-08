@@ -351,6 +351,7 @@ def run_checks(m, market=None, kind='mail', raw=None, browser=None, skip_net=Fal
         if is_sample(d): r['status'] = 'voorbeeld'; continue
         if skip_net: continue
         st, fin, nr, _ = curl(strip_utm(d)); r['status'] = st; r['final'] = fin
+        if st == 429: unknown.append('%s (rate limit van de shop, later opnieuw)' % r['text'][:30]); continue
         if st == 0:
             (social if SOCIAL.search(urlparse(d).netloc) else unknown).append('%s (%s)' % (r['text'][:30], urlparse(d).netloc))
         elif st != 200: bad.append('"%s" -> %s geeft %d' % (r['text'][:40], d[:90], st))

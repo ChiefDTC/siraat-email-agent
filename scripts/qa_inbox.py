@@ -16,6 +16,7 @@ Inbox-QA per ontvangen mail (testcheckouts, research/v6-golive/04-inbox-qa.md), 
   python3 -I scripts/qa_inbox.py templates [--markets=US,UK] [--only=checkout/c1,...] [--shots=map]
       alle mails uit de repo, gerenderd per markt (zelfde route als qa_render.py), dezelfde controles.
       Uitvoer: exports/qa/inbox/templates-report.md en templates-data.json.
+  python3 -I scripts/qa_inbox.py pending <id,id,...>     welke Gmail-ID's nog niet gecontroleerd zijn (exports/qa/inbox/seen.tsv)
   python3 -I scripts/qa_inbox.py slack <result.json>     print het Slack-bericht (niet versturen; dat doet de sessie na akkoord)"""
 import sys, os, re, json, csv, subprocess, tempfile, shutil
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -276,7 +277,19 @@ def cmd_mail(args):
     open(os.path.join(out, 'report.md'), 'w').write(md_report(res, meta))
     st = slack_text(res, meta); open(os.path.join(out, 'slack.txt'), 'w').write(st)
     print(st); print('\nRapport: %s' % rel(out))
+    if m.get('id'):
+        with open(SEEN, 'a') as f: f.write('%s\t%s\t%s\t%s\n' % (m['id'], alias or '-', m.get('subject') or '', rel(out)))
     sys.exit(1 if any(res[k]['status'] == MC.FOUT for k in MC.CHECKS if k in res) else 0)
+
+
+SEEN = os.path.join(QA, 'inbox', 'seen.tsv')
+
+
+def cmd_pending(args):
+    """Welke Gmail-ID's (komma's) zijn nog niet gecontroleerd? Voor de loop: alleen nieuwe mails ophalen en checken."""
+    seen = {l.split('\t')[0] for l in open(SEEN)} if os.path.exists(SEEN) else set()
+    ids = [x for a in args for x in a.split(',') if x and not x.startswith('--')]
+    print(' '.join(i for i in ids if i not in seen) or '(niets nieuw)')
 
 
 def cmd_slack(args):
@@ -404,9 +417,9 @@ def tpl_report(R, markets):
 
 
 def dispatch():
-    if len(sys.argv) > 1 and sys.argv[1] in ('mail', 'templates', 'slack'):
+    if len(sys.argv) > 1 and sys.argv[1] in ('mail', 'templates', 'slack', 'pending'):
         cmd, args = sys.argv[1], sys.argv[2:]
-        {'mail': cmd_mail, 'templates': cmd_templates, 'slack': cmd_slack}[cmd](args)
+        {'mail': cmd_mail, 'templates': cmd_templates, 'slack': cmd_slack, 'pending': cmd_pending}[cmd](args)
     else:
         main()
 
