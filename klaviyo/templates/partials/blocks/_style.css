@@ -7,13 +7,17 @@
     .ic{padding:14px 2px!important;}
     .ic div{font-size:10px!important;letter-spacing:.6px!important;}
     .codebar{font-size:11px!important;letter-spacing:1px!important;}
-    .offer-code{font-size:22px!important;letter-spacing:2px!important;white-space:nowrap!important;word-break:normal!important;padding:12px 14px!important;}  /* H3 (09-monitor): 13 tekens (CART-XXXXXXXX) op één regel op 320 en 375 px */
-    .cb-code{white-space:nowrap!important;word-break:normal!important;}
-    .offer-wrap{padding:0 8px!important;}
+    .offer-code{font-size:26px!important;letter-spacing:4px!important;}
     .rv{display:block!important;width:100%!important;box-sizing:border-box!important;}
     .rvsp{display:block!important;width:100%!important;height:12px!important;font-size:0!important;line-height:0!important;}
   }
-  /* H3: smalle telefoons (320 px) */
+  /* H3 (09-monitor-rapport): code van 13 tekens (CART-XXXXXXXX) op één regel op telefoons (gemeten op 320 en 375 px).
+     Niet in het 620-blok: de ruwe Klaviyo-weergave op 600 px toont de lange coupon_code-tag, die moet daar kunnen breken. */
+  @media only screen and (max-width:480px){
+    .offer-code{font-size:22px!important;letter-spacing:2px!important;white-space:nowrap!important;word-break:normal!important;padding:12px 14px!important;}
+    .offer-wrap{padding:0 8px!important;}
+    .cb-code{white-space:nowrap!important;word-break:normal!important;}
+  }
   @media only screen and (max-width:360px){
     .offer-code{font-size:20px!important;letter-spacing:1.5px!important;padding:12px 10px!important;}
   }
