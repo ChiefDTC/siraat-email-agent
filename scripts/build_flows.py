@@ -604,7 +604,9 @@ def build_browse(f):
     def pan_rest():
         b2c = f.router("b2-clicked", "b2-clicked-nocode", "B2-CLICKED · pan", b2_extra)
         b2n = f.mail("b2-notclicked", "B2-NOTCLICKED", None, b2_extra)
-        split = f.cs(clicked("B1 · T05a"), yes=b2c, no=b2n)
+        # 12-fixes (8 okt): Klaviyo hernoemt A/B-variaties ("B1 Test #1 ..."), dus niet op de berichtnaam maar op $flow = deze flow
+        # (B1 is de enige mail voor deze split). De API accepteert maar één metric_filter: Bot Click = false in de UI zetten.
+        split = f.cs(groups([some(CLICKED_EMAIL, FLOW_START, f_str("$flow", "equals", f.flow_ref("browse", "WdRz5k")))]), yes=b2c, no=b2n)
         return f.delay("days", 2, "09:00:00", split)
 
     _, sa, _, sb = f.tpl("b1")
@@ -618,7 +620,7 @@ def build_browse(f):
     old = f.old_path("TyEjuQ", [True], "old-browse", "Browse")
     entry = t01(f, new, old)
     f.notes += ["Kookgerei-split: Viewed Product waarvan Name een kookwoord bevat in de laatste 1 dag (plan: trigger split; nu CS met dezelfde uitkomst).",
-                "Klik-split: Clicked Email waarvan Campaign Name 'B1 · T05a' (of 'B1-ACC') bevat sinds flowstart; bij de eerste test controleren dat Campaign Name de berichtnaam is.",
+                "Klik-split na B1: Clicked Email waarvan $flow = deze flow sinds flowstart (Klaviyo hernoemt de A/B-variaties); na B1-ACC: Campaign Name bevat 'B1-ACC'. Bot Click = false in de UI toevoegen (API: maar één metric_filter).",
                 "Oud pad: TyEjuQ 10-minutenarm ($1,31 tegen $1,18 per ontvanger, research/timing/01-data.md)."]
     return f.definition(
         [mtrig(VIEWED_PRODUCT)],

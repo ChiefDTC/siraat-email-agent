@@ -1,6 +1,6 @@
 # v4-flows · overzicht voor controle
 
-Gegenereerd door `scripts/build_flows.py` op 2026-10-08 15:54 (dry-run). Modus: W4 `split`, A/B `action`, T02 op V1/N2 `uit`. De JSON per flow staat ernaast (`<slug>.json`).
+Gegenereerd door `scripts/build_flows.py` op 2026-10-08 20:33 (dry-run). Modus: W4 `split`, A/B `action`, T02 op V1/N2 `uit`. De JSON per flow staat ernaast (`<slug>.json`).
 
 Leeswijzer: ⏱ wachttijd · ◆ split (JA/NEE) · 🔀 A/B-actie · ✉ mail (berichtnaam · template-ID · onderwerp). "standaard" = de verzendfilter die op elke mail van die flow staat (zie kop). Takken komen nooit samen: waar het plan een gedeeld vervolg heeft, staat het vervolg per tak apart.
 
@@ -50,7 +50,7 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
 - Segment "v4 · VIP": **ONTBREEKT**
 - Segment "v4 · US": **ONTBREEKT**
 - Coupons in Klaviyo: **geen** (alle 8 pools ontbreken)
-- Bestaande v4-flows: QUBUQV v4 · Checkout abandonment (draft), T4a5Mk v4 · Welcome (draft), TZG9Mx v4 · Cart abandonment (draft), TbYQmX v4 · Sunset (draft), UyFc78 v4 · Winback (draft), VLGhbR v4 · Site abandonment (draft), VQ93sx v4 · Post-purchase · levering (draft), VTkxFL v4 · VIP (draft), WdRz5k v4 · Browse abandonment (draft), X3ySuU v4 · Post-purchase (draft), XbYT7T v4 · Anniversary (draft)
+- Bestaande v4-flows: QUBUQV v4 · Checkout abandonment (draft), T4a5Mk v4 · Welcome (draft), TZG9Mx v4 · Cart abandonment (draft), TbYQmX v4 · Sunset (draft), UyFc78 v4 · Winback (draft), VLGhbR v4 · Site abandonment (draft), VPixnJ v4 · UGC first egg (draft), VQ93sx v4 · Post-purchase · levering (draft), VTkxFL v4 · VIP (draft), WdRz5k v4 · Browse abandonment (draft), Wzz6xC v4 · Sunset · kept (draft), X3ySuU v4 · Post-purchase (draft), XbYT7T v4 · Anniversary (draft)
 
 ### Templates die nog geëxporteerd moeten worden
 
@@ -356,7 +356,7 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
 - **Verwijst naar**: v4 · Cart abandonment, v4 · Checkout abandonment, v4 · Welcome
 - Oud pad uit TyEjuQ (GET): wacht 10 minuten → X9w6vN "Hi {{ first_name|default:'' }}, we saw you looking..."
 - Kookgerei-split: Viewed Product waarvan Name een kookwoord bevat in de laatste 1 dag (plan: trigger split; nu CS met dezelfde uitkomst).
-- Klik-split: Clicked Email waarvan Campaign Name 'B1 · T05a' (of 'B1-ACC') bevat sinds flowstart; bij de eerste test controleren dat Campaign Name de berichtnaam is.
+- Klik-split na B1: Clicked Email waarvan $flow = deze flow sinds flowstart (Klaviyo hernoemt de A/B-variaties); na B1-ACC: Campaign Name bevat 'B1-ACC'. Bot Click = false in de UI toevoegen (API: maar één metric_filter).
 - Oud pad: TyEjuQ 10-minutenarm ($1,31 tegen $1,18 per ontvanger, research/timing/01-data.md).
 
 - ◆ split: random 50%
@@ -370,7 +370,7 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
           - ✉ **B1 · T05a-B** · `VwGNp3` · "Why I started making this pan"
             - filter: standaard
         - ⏱ wacht 2 dagen, tot 09:00
-        - ◆ split: Clicked Email (Campaign Name contains B1 · T05a) > 0 sinds flowstart
+        - ◆ split: Clicked Email ($flow = v4 · Browse abandonment (WdRz5k)) > 0 sinds flowstart
           - JA:
             - ◆ split: Received Email (Campaign Name contains CODE ·) > 0 in de laatste 30 dagen
               - JA:

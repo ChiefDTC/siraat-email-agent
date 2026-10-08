@@ -6,8 +6,40 @@
    "definition": {
     "triggers": [
      {
-      "type": "segment",
-      "id": "YxfuJT"
+      "type": "metric",
+      "id": "W247h8",
+      "trigger_filter": {
+       "condition_groups": [
+        {
+         "conditions": [
+          {
+           "type": "metric-property",
+           "metric_id": "W247h8",
+           "field": "$flow",
+           "filter": {
+            "type": "string",
+            "operator": "equals",
+            "value": "TbYQmX"
+           }
+          }
+         ]
+        },
+        {
+         "conditions": [
+          {
+           "type": "metric-property",
+           "metric_id": "W247h8",
+           "field": "Bot Click",
+           "filter": {
+            "type": "boolean",
+            "operator": "equals",
+            "value": false
+           }
+          }
+         ]
+        }
+       ]
+      }
      }
     ],
     "profile_filter": {

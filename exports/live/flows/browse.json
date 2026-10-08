@@ -187,7 +187,7 @@
         "cc_email": null,
         "bcc_email": null,
         "subject_line": "Your own 10% expires in 48 hours",
-        "preview_text": "Already applied. On {day} morning, we remove it.",
+        "preview_text": "Already applied. In 48 hours we remove it.",
         "template_id": "TwZq3f",
         "smart_sending_enabled": false,
         "transactional": false,
@@ -585,11 +585,11 @@
             },
             "metric_filters": [
              {
-              "property": "Campaign Name",
+              "property": "$flow",
               "filter": {
                "type": "string",
-               "operator": "contains",
-               "value": "B1 · T05a"
+               "operator": "equals",
+               "value": "WdRz5k"
               }
              }
             ]
@@ -836,7 +836,7 @@
         "cc_email": null,
         "bcc_email": null,
         "subject_line": "Your own 10% expires in 48 hours",
-        "preview_text": "Already applied. On {day} morning, we remove it.",
+        "preview_text": "Already applied. In 48 hours we remove it.",
         "template_id": "TwZq3f",
         "smart_sending_enabled": false,
         "transactional": false,
