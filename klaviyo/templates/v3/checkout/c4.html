@@ -73,7 +73,7 @@
 
 {{BLOCK:cta label="Use my 10% now" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/checkout?ref=email' }}&discount={% coupon_code 'C4_10_48H' %}&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4-cta1" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION:code}}</div>"}}
 
-{{BLOCK:offer eyebrow="YOUR OWN 10%" headline="Your 10% runs out" code="{% coupon_code 'C4_10_48H' %}" note="Made for you, so it has an end date. It's already applied with the button. On the morning of {{DATE:2:l, F j}} we're removing your discount, and the regular sale price applies. {{SHIP}}." deadline="WE'RE REMOVING YOUR DISCOUNT" days="2" amount="48" unit="HOURS" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/checkout?ref=email' }}&discount={% coupon_code 'C4_10_48H' %}&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4-offer" label="Use my 10% now"}}
+{{BLOCK:offer eyebrow="YOUR OWN 10%" headline="Already on your cart" code="{% coupon_code 'C4_10_48H' %}" note="Made for you, so it has an end date. It's already applied with the button. On the morning of {{DATE:2:l, F j}} we're removing your discount, and the regular sale price applies. {{SHIP}}." deadline="WE'RE REMOVING YOUR DISCOUNT" days="2" amount="48" unit="HOURS" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/checkout?ref=email' }}&discount={% coupon_code 'C4_10_48H' %}&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4-offer" label="Use my 10% now"}}
 
 <!-- TWEE BELOFTES (06-offer-design 3; retourzending ongebruikt product is voor de klant). Garantiezin alleen bij kookgerei. -->
 <tr><td class="pad" style="padding:28px 44px 6px 44px;">
@@ -87,7 +87,7 @@
   </table>
 </td></tr>
 
-{{BLOCK:reviews3 ids="R273,R240,R574" pad="20px 44px 6px 44px"}}
+{{BLOCK:reviews3 ids="R273,R240,R574" pillars="S,S,L" pad="20px 44px 6px 44px"}}
 
 {{BLOCK:gifts5 style="row" line="Your {{GIFTS:total}} are still pending on this cart."}}
 

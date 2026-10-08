@@ -1,8 +1,8 @@
 mail,bronfoto,hero
-r1-pan,klaviyo/templates/v3/winback/assets/src/IMG_1253.jpg (Shopify Files IMG_1253.jpg; penne in Pan Pro met deksel),klaviyo/templates/v3/winback/assets/r1-pan-hero.jpg
-r1-set,"content/media/ai-flash/full-stove-1x1-v5-2k.jpg (v5, goedgekeurd in research/v5/05-beeld-controle.md; hero via scripts/make_v5_images.py)", research/images/02-voorstel.md; vervangt Pan_LF_13.jpg),klaviyo/templates/v3/winback/assets/r1-set-hero.jpg
-r1-acc,https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Photo_Three_Pans_with_Vegetables_on_Stove_Pro.jpg (origineel 4037x2691: klaviyo/templates/v3/winback/assets/src/Photo_Three_Pans_with_Vegetables_on_Stove_Pro-orig.jpg; retina-ronde 7 okt),klaviyo/templates/v3/winback/assets/r1-acc-hero.jpg
-r2,"content/media/hp-shoot/square/P05-A_Stovetop_Pot_1920w_q82.jpg (retina-ronde 7 okt: vierkante versie 1280px, was 3:2-kopie met vierkante uitsnede 1067px)",klaviyo/templates/v3/winback/assets/r2-hero.jpg
-r2-nocode,content/media/hp-shoot/square/P05-A_Stovetop_Pot_1920w_q82.jpg (zelfde foto als r2: alternatieve tak van dezelfde stap),klaviyo/templates/v3/winback/assets/r2-nocode-hero.jpg
-r2-vip,klaviyo/templates/v3/winback/assets/src/26742171-a9cc-444c-b302-054f0c100c5d.jpg (Shopify Files; utensils + deksel + trivet op zwart),klaviyo/templates/v3/winback/assets/r2-vip-hero.jpg
-r2-vip-nocode,klaviyo/templates/v3/winback/assets/src/26742171-a9cc-444c-b302-054f0c100c5d.jpg (zelfde foto als r2-vip: alternatieve tak),klaviyo/templates/v3/winback/assets/r2-vip-nocode-hero.jpg
+r1-pan,klaviyo/templates/v3/winback/assets/src/IMG_1253.jpg (Shopify Files IMG_1253.jpg; penne in Pan Pro met deksel; v5 stap 2: aanbodbalk zonder USD),klaviyo/templates/v3/winback/assets/r1-pan-hero.jpg
+r1-set,"klaviyo/templates/v3/winback/assets/src/Pan_LF_13.jpg (v5 stap 2, 8 okt: echte foto pannen, wok, planken en utensils; vervangt full-stove-v5 met US-only potten)", research/images/02-voorstel.md; vervangt Pan_LF_13.jpg),klaviyo/templates/v3/winback/assets/r1-set-hero.jpg
+r1-acc,klaviyo/templates/v3/winback/assets/src/Photo_Three_Pans_with_Vegetables_on_Stove_Pro-orig.jpg (v5 stap 2: aanbodbalk zonder USD),klaviyo/templates/v3/winback/assets/r1-acc-hero.jpg
+r2,"content/media/hp-shoot/square/P11-D_Handle_1920w_q82.jpg (v5 stap 2, 8 okt: vervangt P05-A Stovetop Pot, een US-only pot)",klaviyo/templates/v3/winback/assets/r2-hero.jpg
+r2-nocode,content/media/hp-shoot/square/P11-D_Handle_1920w_q82.jpg (zelfde foto als r2: alternatieve tak),klaviyo/templates/v3/winback/assets/r2-nocode-hero.jpg
+r2-vip,"klaviyo/templates/v3/winback/assets/src/26742171-a9cc-444c-b302-054f0c100c5d.jpg (Shopify Files; utensils + deksel + trivet; v5 stap 2: 15% exclusive, balk zonder USD)",klaviyo/templates/v3/winback/assets/r2-vip-hero.jpg
+r2-vip-nocode,klaviyo/templates/v3/winback/assets/src/26742171-a9cc-444c-b302-054f0c100c5d.jpg (zelfde foto als r2-vip: alternatieve tak; v5 stap 2),klaviyo/templates/v3/winback/assets/r2-vip-nocode-hero.jpg

@@ -94,8 +94,10 @@ def checks(c, flow, mail, h, tx):
     if c in KOOK | SET and 'you started with an accessory' in low: F.append('kookgerei aangesproken als accessoire')
     if c in ('pot', 'pizza', 'roast') and flow in ('winback', 'anniversary', 'post-purchase') and 'your pan ' in low.split('\n', 1)[-1].replace('your pan pro', '').replace('?', ' ') + ' ':
         F.append('"your pan" bij een %s' % c)
-    need_about = {'c1'} | ({'k1', 'k2-new'} if c in KOOK | SET and c not in PANPRO else set()) | ({'k1-acc', 'b1-acc'} if c in ACC else set())
-    need_goes = ({'c1', 'r1-pan', 'v1', 'v1-nocode'} | ({'k2-new'} if c not in PANPRO else set())) if c != 'giftcard' else set()
+    # v5 (8 okt): about en goes zijn niet marktveilig (inch, USD): C1 alleen about bij accessoires, K1/K2-new geen about, C1/K2-new geen goes (03-copy-spec 3 en 4);
+    # e-gift card krijgt geen about (noemt USD-bedragen)
+    need_about = ({'c1', 'k1-acc', 'b1-acc'} if c in ACC - {'giftcard'} else set()) | ({'b1-acc'} if c == 'giftcard' else set())
+    need_goes = {'r1-pan', 'v1', 'v1-nocode'} if c != 'giftcard' else set()
     need_goes1 = {'p3-pan', 'p3-pan-nocode', 'p3-set', 'p3-set-nocode'}
     if mail in need_about and 'data-about="%s"' % ('standard' if c == 'panpro' else c) not in h: F.append('geen productblok data-about="%s"' % c)
     if (mail in need_goes or mail in need_goes1) and 'data-goes="%s"' % c not in h: F.append('geen goes-blok data-goes="%s"' % c)
@@ -103,17 +105,16 @@ def checks(c, flow, mail, h, tx):
 
 # eigen productregels per categorie: wat moet de klant zien (tekst) in de eerste mail van de flow
 MUST = {
- ('apron', 'c1'): ['16-oz canvas', 'Adjustable', 'ABOUT YOUR APRON', 'Machine washable?', 'Deborah G.', 'Salt & Pepper Mill Set'],
- ('pizza', 'c1'): ['ABOUT YOUR PIZZA STEEL', 'Sergio C.', 'Goes with your pizza steel'],
- ('set12', 'c1'): ['ABOUT YOUR 12-PIECE SET', 'Why two parcels?', 'Lauren W.', 'Siraat Signature Apron'],
- ('pot', 'c1'): ['ABOUT YOUR POT'], ('standard', 'c1'): ['Pan Pro Mini', 'Stainless Steel Lid, 28 cm', 'Shop Pay Installments'],
+ ('apron', 'c1'): ['16-oz canvas', 'Adjustable', 'ABOUT YOUR APRON', 'Machine washable?', 'Deborah G.'],
+ ('set12', 'c1'): ['Your future pan vs a PFAS pan'], ('standard', 'c1'): ['Your future pan vs a PFAS pan', 'Shop Pay Installments'],
+ ('set6', 'c3-s'): ['Buy 2, get 4 free', 'Six pieces for'], ('standard', 'c3-p'): ['Buy 2, get 4 free'],
  ('small', 'p3-pan'): ['One in three Small owners comes back for the Mini'], ('mini', 'p3-pan'): ['Pan Pro 11'],
  ('board', 'k1-acc'): ['ABOUT YOUR CUTTING BOARD', 'Knife marks?'], ('pot', 'r1-pan'): ['your pot'], ('wok', 'r1-pan'): ['Deep Pan Pro'],
  ('pizza', 'p3-accessory'): ['your pizza steel'], ('apron', 'b1-acc'): ['ABOUT THE APRON'],
 }
 # en wat er niet mag staan
-MUSTNOT = {('apron', 'c1'): ['Titanium vs. coated'], ('wok', 'r1-pan'): ['Wok Pan Pro'], ('standard', 'p3-pan'): ['Titanium Cutting Board'],
- ('pizza', 'k1'): ['Why one pass is enough'], ('pot', 'k2-new'): ['15 coated pans']}
+MUSTNOT = {('apron', 'c1'): ['Titanium vs. coated', 'Your future pan'], ('pizza', 'c1'): ['Your future pan'], ('pot', 'c1'): ['Your future pan'], ('wok', 'r1-pan'): ['Wok Pan Pro'], ('standard', 'p3-pan'): ['Titanium Cutting Board'],
+ ('pizza', 'k1'): ['Why one pass is enough', 'Why one wipe is enough'], ('pot', 'k2-new'): ['15 coated pans']}
 
 def main():
     only = OPT.get('--only'); cats = only.split(',') if only else list(CATS)

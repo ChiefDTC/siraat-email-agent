@@ -84,6 +84,8 @@
 <!-- PRODUCTBLOK (about): alleen bij een accessoire en niet bij de e-gift card (die noemt USD-bedragen) -->
 {% if 'Pan' not in event.Items|join:',' and 'Pot' not in event.Items|join:',' and 'Hammer' not in event.Items|join:',' and 'Gift Card' not in event.Items|join:',' %}
 {{BLOCK:about src="event.Items|join:','" lead="YOUR" pad="22px 44px 6px 44px"}}
+{% elif 'Gift Card' in event.Items|join:',' %}
+<tr><td class="pad lead" style="padding:14px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">Sent by email, so it can't get stuck in the mail. They pick the pan and the size.</td></tr>
 {% endif %}
 
 <tr><td class="pad" style="padding:30px 44px 4px 44px;">

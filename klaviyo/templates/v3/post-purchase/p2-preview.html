@@ -1,8 +1,9 @@
-<!-- SUBJECT_A: If you can do an egg, you can do anything | SUBJECT_B: The one mistake that makes titanium stick | PREVIEW: Medium on titanium works like high on a normal pan. The chef's five steps. | SEND: Delivered Shipment (VcUF33) + 1 day, until 09:00 local | FILTERS: Helper flow 'v4 · Post-purchase · levering' (trigger Delivered Shipment VcUF33); flow filters: Placed Order where Items contains any of KOOK_TITELS + SET_TITELS at least once in the last 30 days; not in this flow in the last 30 days; Received Email from 'v4 · Post-purchase' message P2-safe zero times in 30 days. Send filter: Refunded Order (Xg6cwn) zero times in 30 days. No coupon, no code bar, no upsell. | SUBJECTS (5 types): C+B 'The one mistake that makes titanium stick' / SPEC '2 to 3 minutes on medium. Then the egg.' / Q 'Made your first egg yet?' / STORY 'If you can do an egg, you can do anything' (chef quote) / OFFER 'Your 5-step guide from our chef' | A/B: story (chef) vs curiosity+benefit, only if a test slot is free | UTM: utm_content=p2-<block> -->
+<!-- V5-STRICT (v5 stap 2, 8 okt 2026): Floris: goed, alleen v5: reviews3 set p2 (drie pijlers), een deksel-regel alleen als siraat_owned een Pan Pro zonder deksel in die maat toont (levering heeft geen Items), onderwerpen volgens 03-copy-spec | SUBJECT_A: The mistake that makes titanium stick | SUBJECT_B: Can you do an egg? Then anything. | PREVIEW: Medium on titanium works like high on a normal pan. The chef's five steps. | SEND: Delivered Shipment (VcUF33) + 1 day, until 09:00 local | FILTERS: Helper flow 'v4 · Post-purchase · levering' (trigger Delivered Shipment VcUF33); flow filters: Placed Order where Items contains any of KOOK_TITELS + SET_TITELS at least once in the last 30 days; not in this flow in the last 30 days; Received Email from 'v4 · Post-purchase' message P2-safe zero times in 30 days. Send filter: Refunded Order (Xg6cwn) zero times in 30 days. No coupon, no code bar, no upsell. | SUBJECTS (5 types): C+B 'The one mistake that makes titanium stick' / SPEC '2 to 3 minutes on medium. Then the egg.' / Q 'Made your first egg yet?' / STORY 'If you can do an egg, you can do anything' (chef quote) / OFFER 'Your 5-step guide from our chef' | A/B: story (chef) vs curiosity+benefit, only if a test slot is free | UTM: utm_content=p2-<block> -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
 <meta charset="utf-8">
+<meta name="siraat-qa" content="V5-STRICT">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
@@ -54,10 +55,15 @@
     .dl-t{width:84px!important;}
     .dl-n{font-size:22px!important;line-height:26px!important;}
   }
+  /* v5-bouwstenen (8 okt 2026): gifts5-strook, reviews3 */
+  @media only screen and (max-width:620px){
+    .gm{padding:8px 2px 12px 2px!important;}
+    .gm img{width:52px!important;height:52px!important;}
+  }
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Medium on titanium works like high on a normal pan. The chef's five steps.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;mso-hide:all;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Medium on titanium works like high on a normal pan. The chef's five steps.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
@@ -146,6 +152,8 @@
     </td></tr>
   </table>
 </td></tr>
+<!-- EEN DEKSEL-REGEL (04-cross-sell 5: P1/P2 hoogstens een regel in de maat van de pan, geen code, geen prijs; niet als er al een deksel in de order of in siraat_owned zit) -->
+
 <!-- BLOCK cta: primaire knop, 340 px desktop, volle breedte mobiel -->
 <tr><td align="center" class="pad" style="padding:24px 44px 4px 44px;">
   <table role="presentation" class="btnw" width="340" cellpadding="0" cellspacing="0" border="0" style="width:340px;"><tr>
@@ -171,20 +179,23 @@
   </table>
 </td></tr>
 
-<!-- BLOCK reviews: twee kaarten, gelijke hoogte (achtergrond op de kolomcel) -->
-<tr><td class="pad" style="padding:28px 44px 6px 44px;">
+<!-- BLOCK reviews3 (v5, scripts/v5lib.py + content/reviews/sets.json uit scripts/make_review_blocks.py): 2 of 3 echte Trustpilot-reviews, letterlijk, met sterren, naam, Verified buyer en pijler (On quality / On delivery / On service). Desktop naast elkaar, mobiel onder elkaar. -->
+<tr><td class="pad" data-reviews3="1" style="padding:28px 44px 6px 44px;">
+  
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-    <td class="rv" width="48%" valign="top" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:20px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;">
-      <div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;...let the pan heat up and did the water test. Then fried an egg which didn't stick to the pan.&rdquo;</div>
-      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Aggie M. &middot; Verified buyer</div>
+    <td class="rv" width="48%" valign="top" bgcolor="#FFFFFF" data-rev="R169" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:18px 16px 16px 16px;font-family:Inter,Arial,Helvetica,sans-serif;">
+      <div style="font-size:11px;line-height:14px;letter-spacing:1.6px;font-weight:600;color:#AC3B19;text-transform:uppercase;">On quality</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;color:#AC3B19;padding-top:6px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div style="font-size:14px;line-height:21px;color:#282828;padding:8px 0 10px 0;">&ldquo;The real test was my egg the next morning... the egg released completely and slid around the pan like it was non-stick.&rdquo;</div>
+      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Michael G. &middot; Verified buyer</div>
     </td>
-    <td class="rvsp" width="14" style="font-size:0;line-height:0;">&nbsp;</td>
-    <td class="rv" width="48%" valign="top" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:20px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;">
-      <div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;...Once you follow the process of heating and using a Titanium pan then you will be satified.&rdquo;</div>
-      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Derek G. &middot; Verified buyer</div>
+<td class="rvsp" width="12" style="font-size:0;line-height:0;">&nbsp;</td><td class="rv" width="48%" valign="top" bgcolor="#FFFFFF" data-rev="R371" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:18px 16px 16px 16px;font-family:Inter,Arial,Helvetica,sans-serif;">
+      <div style="font-size:11px;line-height:14px;letter-spacing:1.6px;font-weight:600;color:#AC3B19;text-transform:uppercase;">On service</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;color:#AC3B19;padding-top:6px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div style="font-size:14px;line-height:21px;color:#282828;padding:8px 0 10px 0;">&ldquo;It takes time to get use of all the special quality... Tge customer service (Jen) is very helpful and patient&rdquo;</div>
+      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Wai N. &middot; Verified buyer</div>
     </td>
+
   </tr></table>
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;text-align:center;padding-top:14px;"><img src="../../partials/shared/icon-customers-100k.png" width="18" height="18" alt="" style="display:inline-block;vertical-align:-4px;width:18px;height:18px;">&nbsp; Join 100,000+ happy customers</div>
 </td></tr>

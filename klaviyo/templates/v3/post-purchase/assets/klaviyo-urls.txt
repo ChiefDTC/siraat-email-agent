@@ -7,12 +7,10 @@ icon-egg.png https://cdn.klaviyomail.com/company/TdtTzz/images/38ac8276-0524-43e
 icon-package.png https://cdn.klaviyomail.com/company/TdtTzz/images/af7dc4a4-6e5a-4ecf-844b-e8816266248a.png
 icon-tracking-email.png https://cdn.klaviyomail.com/company/TdtTzz/images/4ad62800-446f-4305-b02b-1095324d3555.png
 p1-first-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/b964b4e0-1829-4170-b9ab-6b90ec922ecc.jpeg
-p1-repeat-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/e4d70ef5-6379-4d97-b2b2-62fa4904bb7f.jpeg
 egg-slide-lite.gif https://cdn.klaviyomail.com/company/TdtTzz/images/6953bf24-21e9-4d5f-88a8-161f7e1b6db7.gif
 oil-shimmer-still.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/2a1e58a2-173e-4f49-9aaf-e09bc5df7db2.jpeg
 p2-safe-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/51c6e266-df02-40c1-8fa0-92c7d8f4557e.jpeg
 water-test-still.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/e9f13dd0-1599-4a5d-baca-ba196f7b6915.jpeg
-p2-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/4d4684ae-5bc0-404c-b40c-c62a8462c49b.jpeg
 p3-accessory-nocode-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/ac0b875b-b68e-4674-acc0-09befa5de795.jpeg
 p3-accessory-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/61b97d91-586f-4869-8a78-55ccb3e9b86e.jpeg
 p3-apron-nocode-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/f4c374c0-ea0a-453c-b15d-083af852d873.jpeg
@@ -26,5 +24,3 @@ p3-next-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/416afee0-587a
 p3-pan-nocode-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/01d4a19a-29b7-4db1-9390-7d5e67667ed1.jpeg
 p3-pan-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/79f15939-4afa-48af-a0d1-40b8a26563f5.jpeg
 card-crepe.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/862ea15a-6f17-4c7d-8ea0-6aa197ed6187.jpeg
-p3-set-nocode-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/e7e11bd8-c9be-4805-9c81-5e9c5ab09e9c.jpeg
-p3-set-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/fe345149-3df4-4181-ab76-741130504e45.jpeg

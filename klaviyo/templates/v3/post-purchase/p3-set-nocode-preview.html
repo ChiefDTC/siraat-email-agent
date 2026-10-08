@@ -1,8 +1,9 @@
-<!-- SUBJECT_A: The pan your set is missing | SUBJECT_B: "Works like a non-stick but gives crispy output" | PREVIEW: Crepe or wok: the two shapes a set doesn't cover. 4 gifts with every order. | SEND: Placed Order + 20 days, until 09:00 local (flow step 3, decision 3.9) | FILTERS: Flow 'v4 · Post-purchase' step 3: CS R0 Placed Order equals 2 over all time = end (VIP takes over); router 3K/3A (v4 2.5). Send filters: Placed Order zero times since starting this flow; Refunded Order (Xg6cwn) zero times in 30 days. Code-router: cooldown (last_flow_code_at in last 30 days) or T02 arm B = this template. No coupon; gifts, draw and 30-day returns carry the offer. | SUBJECTS (5 types): C+B 'The pan your set is missing' / SPEC 'The crepe pan: $125.10 with your thank-you code' / Q 'Crepes or stir-fry?' / STORY '"Works like a non-stick but gives crispy output"' / OFFER 'Two weeks with your set. Your thank-you code inside' | A/B: curiosity+benefit (Com) vs customer quote (SP) | UTM: utm_content=p3set-<block>, utm_term=t02-b (T02 arm B); discount links carry the UTMs URL-encoded inside redirect -->
+<!-- V5-STRICT (v5 stap 2, 8 okt 2026): cross-sell via xsell (6-delig: Pan Pro 28 cm, utensils, plank; Complete Edition en Set Pro: deksel, plank, cr&ecirc;pe; nooit wat de set al bevat), "medium heat, water test" weg, hero-sub aangepast (geen cr&ecirc;pe/wok meer als belofte) | SUBJECT_A: The pan your set is missing | SUBJECT_B: What set owners add next | PREVIEW: What set owners add next. 4 gifts with every order. | SEND: Placed Order + 20 days, until 09:00 local (flow step 3, decision 3.9) | FILTERS: Flow 'v4 · Post-purchase' step 3: CS R0 Placed Order equals 2 over all time = end (VIP takes over); router 3K/3A (v4 2.5). Send filters: Placed Order zero times since starting this flow; Refunded Order (Xg6cwn) zero times in 30 days. Code-router: cooldown (last_flow_code_at in last 30 days) or T02 arm B = this template. No coupon; gifts, draw and 30-day returns carry the offer. | SUBJECTS (5 types): C+B 'The pan your set is missing' / SPEC 'The crepe pan: $125.10 with your thank-you code' / Q 'Crepes or stir-fry?' / STORY '"Works like a non-stick but gives crispy output"' / OFFER 'Two weeks with your set. Your thank-you code inside' | A/B: curiosity+benefit (Com) vs customer quote (SP) | UTM: utm_content=p3set-<block>, utm_term=t02-b (T02 arm B); discount links carry the UTMs URL-encoded inside redirect -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
 <meta charset="utf-8">
+<meta name="siraat-qa" content="V5-STRICT">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="color-scheme" content="light">
@@ -19,8 +20,6 @@
     .w{width:100%!important;}
     .pad{padding-left:22px!important;padding-right:22px!important;}
     .h2{font-size:30px!important;line-height:34px!important;}
-    .desk{display:none!important;max-height:0!important;overflow:hidden!important;}
-    .mob{display:block!important;max-height:none!important;overflow:visible!important;}
     .stepimg{width:100%!important;}
   }
   /* blocks (partials/blocks, ingevoegd door build_template.py) */
@@ -54,15 +53,18 @@
     .dl-t{width:84px!important;}
     .dl-n{font-size:22px!important;line-height:26px!important;}
   }
+  /* v5-bouwstenen (8 okt 2026): gifts5-strook, reviews3 */
+  @media only screen and (max-width:620px){
+    .gm{padding:8px 2px 12px 2px!important;}
+    .gm img{width:52px!important;height:52px!important;}
+  }
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Crepe or wok: the two shapes a set doesn't cover. 4 gifts with every order.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;mso-hide:all;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">What set owners add next. 4 gifts with every order.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
-<!-- GIFTBALK (nocode: geen code, wel het vaste aanbod) -->
-<tr><td align="center" class="codebar" bgcolor="#282828" style="background:#282828;padding:11px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;letter-spacing:1.5px;font-weight:600;color:#FFFFFF;">FREE SHIPPING &middot; 4 GIFTS WITH EVERY ORDER</td></tr>
 <!-- HEADER (vast, uit partials/header.html) -->
 <tr><td style="padding:18px 36px;background:#F8F7F2;border-bottom:1px solid #ECE7DD;" class="pad">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
@@ -78,159 +80,91 @@
 
 <!-- HERO 1:1 met aanbodbalk (make_hero.py --offer) -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/products/titanium-hammered-crepe-pan-pro?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3set-hero&utm_term=t02-b"><img src="assets/p3-set-nocode-hero.jpg" width="600" alt="For set owners. The pan your set is missing: flat for crepes, deep for stir-fry. Free shipping and 4 gifts with every order." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://siraatskitchen.com/collections/all?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3setnc-hero"><img src="assets/p3-set-nocode-hero.jpg" width="600" alt="For set owners. The pan your set is missing: what set owners add next. 4 gifts with every order, 30-day returns." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
-<!-- BLOCK productcard (research/ux-round2): productkaart met sticker in het beeld (scripts/place_sticker.py).
-     Beeld 200 px desktop, 132 px mobiel. Optionele pill als live tekst: pill="BEST SELLER" (leeg = geen).
-     img="card-x.jpg" = gedeeld beeld uit partials/shared; img met de IMG-variabele ervoor (dubbele accolades, zie PLAYBOOK 12) = eigen beeld uit de assets-map van de flow.
-     was="$439" alleen bij een echte compare-at uit Shopify (PLAYBOOK 12). now leeg en was leeg = geen prijsregel.
-     us="1" zet prijsregel en note binnen een if-tag op de US-voorwaarde van de trigger (build_template.py, USCOND), us="price" alleen de prijsregel; uscond="..." overschrijft de voorwaarde. -->
-<tr><td class="pad" style="padding:22px 44px 4px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;"><tr>
-    <td width="200" class="pc-i" valign="middle" style="width:200px;padding:0;"><a href="https://siraatskitchen.com/products/titanium-hammered-crepe-pan-pro?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3set-prod-crepe&utm_term=t02-b"><img src="assets/card-crepe.jpg" width="200" alt="Titanium Hammered Crêpe Pan Pro" class="pc-img" style="display:block;width:200px;height:auto;"></a></td>
-    <td valign="middle" class="pc-t" style="padding:16px 20px 16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;"><a href="https://siraatskitchen.com/products/titanium-hammered-crepe-pan-pro?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3set-prod-crepe&utm_term=t02-b" style="text-decoration:none;">
-      <div style="padding-bottom:8px;"><span style="display:inline-block;background:#AC3B19;color:#FFFFFF;font-size:10px;line-height:14px;letter-spacing:1.4px;font-weight:600;padding:3px 9px;border-radius:10px;">THE FLAT ONE</span></div>
-      <div class="pc-n" style="font-size:18px;line-height:24px;font-weight:600;color:#282828;">Crêpe Pan Pro</div>
-      <div class="pc-s" style="font-size:14px;line-height:20px;color:#727272;padding-top:3px;">Flat and wide, 11&Prime; (28 cm). Crêpes, pancakes, eggs, tortillas.</div>
-      
-      <div style="padding-top:10px;font-size:13px;line-height:16px;letter-spacing:1.5px;font-weight:600;color:#282828;text-transform:uppercase;"><span style="border-bottom:1px solid #282828;padding-bottom:2px;">See the crêpe pan</span> &rarr;</div>
-    </a></td>
-  </tr></table>
-</td></tr>
-
 <!-- BLOCK cta: primaire knop, 340 px desktop, volle breedte mobiel -->
-<tr><td align="center" class="pad" style="padding:18px 44px 4px 44px;">
+<tr><td align="center" class="pad" style="padding:20px 44px 4px 44px;">
   <table role="presentation" class="btnw" width="340" cellpadding="0" cellspacing="0" border="0" style="width:340px;"><tr>
     <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:3px;">
-      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/products/titanium-hammered-crepe-pan-pro?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3set-cta1&utm_term=t02-b" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Add the crêpe pan</center></v:roundrect><![endif]-->
-      <!--[if !mso]><!--><a href="https://siraatskitchen.com/products/titanium-hammered-crepe-pan-pro?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3set-cta1&utm_term=t02-b" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Add the crêpe pan &rarr;</a><!--<![endif]-->
+      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/collections/all?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3setnc-cta1" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">See what fits my set</center></v:roundrect><![endif]-->
+      <!--[if !mso]><!--><a href="https://siraatskitchen.com/collections/all?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3setnc-cta1" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">See what fits my set &rarr;</a><!--<![endif]-->
     </td>
   </tr></table>
-  <div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>
+  <div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping, duties paid. 30-day returns. 100,000+ happy customers.</div>
 </td></tr>
 
 <tr><td class="pad" style="padding:24px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">
-  <p style="margin:0;">Hi Sarah, your set has had a few weeks on the stove now. There are two shapes a set does not cover: the flat one and the deep one.</p><p style="margin:14px 0 0 0;">Both have the same titanium cooking surface as your set, and the same rules: medium heat, the water test, a thin layer of oil.</p>
+  <p style="margin:0 0 14px 0;">Hi Sarah, a few weeks with your set by now. A set covers most of the cooking, and still, set owners come back for the same few things: the one size a set leaves out, the board and the tools.</p><p style="margin:0 0 0px 0;">Here they are, matched to the set you have, so nothing repeats what is already in your kitchen. Every order comes with 4 gifts.</p>
 </td></tr>
-<!-- BLOCK gifts: vier gifts met beeld en waarde, gelijke hoogte, 2x2 op mobiel -->
-<tr><td class="pad" style="padding:30px 44px 6px 44px;">
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">WITH EVERY ORDER</div>
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 18px 0;">4 gifts, this order too</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-    <td class="g2" width="50%" valign="top" style="padding:0 5px 0 0;">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-        <td width="50%" valign="top" align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:10px 6px 14px 6px;font-family:Inter,Arial,Helvetica,sans-serif;">
-          <img src="../../partials/shared/gift-shipping.jpg" width="110" alt="Free shipping" style="width:110px;height:110px;margin:0 auto;">
-          <div style="font-size:13px;line-height:17px;font-weight:600;color:#282828;padding-top:6px;height:34px;">Free<br>shipping</div>
-          <div style="font-size:12px;line-height:16px;font-weight:600;color:#AC3B19;">$15 value</div>
-        </td>
-        <td width="10" style="font-size:0;line-height:0;">&nbsp;</td>
-        <td width="50%" valign="top" align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:10px 6px 14px 6px;font-family:Inter,Arial,Helvetica,sans-serif;">
-          <img src="../../partials/shared/gift-ebook.jpg" width="110" alt="The Green Clean E-Guide" style="width:110px;height:110px;margin:0 auto;">
-          <div style="font-size:13px;line-height:17px;font-weight:600;color:#282828;padding-top:6px;height:34px;">The Green Clean<br>E-Guide</div>
-          <div style="font-size:12px;line-height:16px;font-weight:600;color:#AC3B19;">$30 value</div>
-        </td>
-      </tr></table>
-    </td>
-    <td class="g2" width="50%" valign="top" style="padding:0 0 0 5px;">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-        <td width="50%" valign="top" align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:10px 6px 14px 6px;font-family:Inter,Arial,Helvetica,sans-serif;">
-          <img src="../../partials/shared/gift-mystery.jpg" width="110" alt="Mystery gift" style="width:110px;height:110px;margin:0 auto;">
-          <div style="font-size:13px;line-height:17px;font-weight:600;color:#282828;padding-top:6px;height:34px;">Mystery gift<br>in the box</div>
-          <div style="font-size:12px;line-height:16px;font-weight:600;color:#AC3B19;">$25 value</div>
-        </td>
-        <td width="10" style="font-size:0;line-height:0;">&nbsp;</td>
-        <td width="50%" valign="top" align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:10px 6px 14px 6px;font-family:Inter,Arial,Helvetica,sans-serif;">
-          <img src="../../partials/shared/gift-filter.jpg" width="110" alt="Chance to win a PFAS water filter" style="width:110px;height:110px;margin:0 auto;">
-          <div style="font-size:13px;line-height:17px;font-weight:600;color:#282828;padding-top:6px;height:34px;">Win a PFAS<br>water filter</div>
-          <div style="font-size:12px;line-height:16px;font-weight:600;color:#AC3B19;">$450 value</div>
-        </td>
-      </tr></table>
-    </td>
-  </tr></table>
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#727272;text-align:center;padding-top:14px;">Included with every order, this one too.</div>
+<!-- BLOCK xsell (v5, scripts/v5lib.py): cross-sell op kooppatronen (research/v5/04-cross-sell.md). Nooit iets uit de huidige order of uit person.siraat_owned; US-only alleen in de US; prijzen per markt uit de catalogus; echte productfoto's pc-*.jpg. -->
+<tr><td class="pad" data-xsell="1" style="padding:26px 44px 4px 44px;">
+  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">WHAT SET OWNERS ADD NEXT</div>
+  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:32px;line-height:36px;color:#282828;text-align:center;padding:6px 0 4px 0;">Goes with your set</div>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;background:#FFFFFF;border:1px solid #ECE7DD;border-top:0;margin-top:10px;">
+    <tr data-xs="standard"><td width="76" style="padding:12px 0 12px 14px;border-top:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3setnc-xs"><img src="../../partials/shared/pc-standard.jpg" width="64" height="64" alt="" style="width:64px;height:64px;"></a></td><td style="padding:12px;border-top:1px solid #ECE7DD;font-family:Inter,Arial,sans-serif;font-size:13px;line-height:18px;color:#727272;"><a href="https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3setnc-xs" style="text-decoration:none;color:#727272;"><b style="font-size:15px;line-height:20px;color:#282828;">Pan Pro 28 cm (11&Prime;)</b><br>The size most kitchens start with. <b style="color:#AC3B19;white-space:nowrap;">See it&nbsp;&rarr;</b></a></td></tr>
+<tr data-xs="board"><td width="76" style="padding:12px 0 12px 14px;border-top:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/products/titanium-cutting-board-v2?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3setnc-xs"><img src="../../partials/shared/pc-board.jpg" width="64" height="64" alt="" style="width:64px;height:64px;"></a></td><td style="padding:12px;border-top:1px solid #ECE7DD;font-family:Inter,Arial,sans-serif;font-size:13px;line-height:18px;color:#727272;"><a href="https://siraatskitchen.com/products/titanium-cutting-board-v2?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3setnc-xs" style="text-decoration:none;color:#727272;"><b style="font-size:15px;line-height:20px;color:#282828;">Titanium Cutting Board</b><br>Non-porous titanium, anti-microbial. Four sizes. <b style="color:#AC3B19;white-space:nowrap;">See it&nbsp;&rarr;</b></a></td></tr>
+<tr data-xs="utset"><td width="76" style="padding:12px 0 12px 14px;border-top:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/products/siraat-pure-titanium-utensils-bundle?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3setnc-xs"><img src="../../partials/shared/pc-utensil.jpg" width="64" height="64" alt="" style="width:64px;height:64px;"></a></td><td style="padding:12px;border-top:1px solid #ECE7DD;font-family:Inter,Arial,sans-serif;font-size:13px;line-height:18px;color:#727272;"><a href="https://siraatskitchen.com/products/siraat-pure-titanium-utensils-bundle?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3setnc-xs" style="text-decoration:none;color:#727272;"><b style="font-size:15px;line-height:20px;color:#282828;">Titanium Utensil Set</b><br>Titanium tools, made for your pans. <b style="color:#AC3B19;white-space:nowrap;">See it&nbsp;&rarr;</b></a></td></tr>
+
+  </table>
+  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;text-align:center;padding-top:8px;">Every order comes with 4 gifts.</div>
 </td></tr>
 
-<!-- BLOCK productcard (research/ux-round2): productkaart met sticker in het beeld (scripts/place_sticker.py).
-     Beeld 200 px desktop, 132 px mobiel. Optionele pill als live tekst: pill="BEST SELLER" (leeg = geen).
-     img="card-x.jpg" = gedeeld beeld uit partials/shared; img met de IMG-variabele ervoor (dubbele accolades, zie PLAYBOOK 12) = eigen beeld uit de assets-map van de flow.
-     was="$439" alleen bij een echte compare-at uit Shopify (PLAYBOOK 12). now leeg en was leeg = geen prijsregel.
-     us="1" zet prijsregel en note binnen een if-tag op de US-voorwaarde van de trigger (build_template.py, USCOND), us="price" alleen de prijsregel; uscond="..." overschrijft de voorwaarde. -->
-<tr><td class="pad" style="padding:16px 44px 4px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;"><tr>
-    <td width="200" class="pc-i" valign="middle" style="width:200px;padding:0;"><a href="https://siraatskitchen.com/products/titanium-hammered-wok-pan-pro?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3set-prod-wok&utm_term=t02-b"><img src="assets/card-wok.jpg" width="200" alt="Titanium Hammered Wok Pan Pro" class="pc-img" style="display:block;width:200px;height:auto;"></a></td>
-    <td valign="middle" class="pc-t" style="padding:16px 20px 16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;"><a href="https://siraatskitchen.com/products/titanium-hammered-wok-pan-pro?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3set-prod-wok&utm_term=t02-b" style="text-decoration:none;">
-      <div style="padding-bottom:8px;"><span style="display:inline-block;background:#AC3B19;color:#FFFFFF;font-size:10px;line-height:14px;letter-spacing:1.4px;font-weight:600;padding:3px 9px;border-radius:10px;">OR THE DEEP ONE</span></div>
-      <div class="pc-n" style="font-size:18px;line-height:24px;font-weight:600;color:#282828;">Wok Pan Pro</div>
-      <div class="pc-s" style="font-size:14px;line-height:20px;color:#727272;padding-top:3px;">Up to 9 cm (3.5&Prime;) deep. Toss a family-size stir-fry without spilling.</div>
-      
-      <div style="padding-top:10px;font-size:13px;line-height:16px;letter-spacing:1.5px;font-weight:600;color:#282828;text-transform:uppercase;"><span style="border-bottom:1px solid #282828;padding-bottom:2px;">See the wok</span> &rarr;</div>
-    </a></td>
+<!-- BLOCK gifts5 style="row" (v5): compacte strook met de vier gift-beelden, voor direct onder de cart. Waarde per markt, of zonder bedrag. -->
+<tr><td class="pad" data-gifts5="row" style="padding:22px 44px 6px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;background:#FFFFFF;border:1px solid #ECE7DD;">
+    <tr><td colspan="4" style="padding:14px 12px 4px 12px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;font-weight:600;color:#282828;text-align:center;">Your next order comes with 4 free gifts too.</td></tr>
+    <tr><td class="gm" width="25%" valign="top" align="center" data-gift="gift-shipping.jpg" style="padding:8px 4px 14px 4px;font-family:Inter,Arial,Helvetica,sans-serif;"><img src="../../partials/shared/gift-shipping.jpg" width="64" alt="Free shipping" style="width:64px;height:64px;margin:0 auto;"><div style="font-size:11px;line-height:14px;font-weight:600;color:#282828;padding-top:4px;">Free<br>shipping</div><div style="font-size:11px;line-height:14px;font-weight:600;color:#AC3B19;padding-top:2px;">Included</div></td>
+<td class="gm" width="25%" valign="top" align="center" data-gift="gift-ebook.jpg" style="padding:8px 4px 14px 4px;font-family:Inter,Arial,Helvetica,sans-serif;"><img src="../../partials/shared/gift-ebook.jpg" width="64" alt="The Green Clean E-Guide" style="width:64px;height:64px;margin:0 auto;"><div style="font-size:11px;line-height:14px;font-weight:600;color:#282828;padding-top:4px;">The Green Clean<br>E-Guide</div><div style="font-size:11px;line-height:14px;font-weight:600;color:#AC3B19;padding-top:2px;">Included</div></td>
+<td class="gm" width="25%" valign="top" align="center" data-gift="gift-mystery.jpg" style="padding:8px 4px 14px 4px;font-family:Inter,Arial,Helvetica,sans-serif;"><img src="../../partials/shared/gift-mystery.jpg" width="64" alt="Mystery gift" style="width:64px;height:64px;margin:0 auto;"><div style="font-size:11px;line-height:14px;font-weight:600;color:#282828;padding-top:4px;">Mystery gift<br>in the box</div><div style="font-size:11px;line-height:14px;font-weight:600;color:#AC3B19;padding-top:2px;">Included</div></td>
+<td class="gm" width="25%" valign="top" align="center" data-gift="gift-filter.jpg" style="padding:8px 4px 14px 4px;font-family:Inter,Arial,Helvetica,sans-serif;"><img src="../../partials/shared/gift-filter.jpg" width="64" alt="Chance to win a PFAS water filter" style="width:64px;height:64px;margin:0 auto;"><div style="font-size:11px;line-height:14px;font-weight:600;color:#282828;padding-top:4px;">Win a PFAS<br>water filter</div><div style="font-size:11px;line-height:14px;font-weight:600;color:#AC3B19;padding-top:2px;">Chance to win</div></td>
+</tr>
+  </table>
+  <div data-gifts-urgency="1" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;font-weight:600;color:#AC3B19;text-align:center;padding-top:10px;">Your 4 gifts end when the fall sale ends.</div>
+</td></tr>
+
+<!-- BLOCK reviews3 (v5, scripts/v5lib.py + content/reviews/sets.json uit scripts/make_review_blocks.py): 2 of 3 echte Trustpilot-reviews, letterlijk, met sterren, naam, Verified buyer en pijler (On quality / On delivery / On service). Desktop naast elkaar, mobiel onder elkaar. -->
+<tr><td class="pad" data-reviews3="1" style="padding:28px 44px 6px 44px;">
+  
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+    <td class="rv" width="31%" valign="top" bgcolor="#FFFFFF" data-rev="R542" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:18px 16px 16px 16px;font-family:Inter,Arial,Helvetica,sans-serif;">
+      <div style="font-size:11px;line-height:14px;letter-spacing:1.6px;font-weight:600;color:#AC3B19;text-transform:uppercase;">On quality</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;color:#AC3B19;padding-top:6px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div style="font-size:14px;line-height:21px;color:#282828;padding:8px 0 10px 0;">&ldquo;We ordered almost all the pans and some in different sizes too. I've replaced all the pans and some pots in our kitchen.&rdquo;</div>
+      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Jibz C. &middot; Verified buyer</div>
+    </td>
+<td class="rvsp" width="12" style="font-size:0;line-height:0;">&nbsp;</td><td class="rv" width="31%" valign="top" bgcolor="#FFFFFF" data-rev="R157" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:18px 16px 16px 16px;font-family:Inter,Arial,Helvetica,sans-serif;">
+      <div style="font-size:11px;line-height:14px;letter-spacing:1.6px;font-weight:600;color:#AC3B19;text-transform:uppercase;">On delivery</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;color:#AC3B19;padding-top:6px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div style="font-size:14px;line-height:21px;color:#282828;padding:8px 0 10px 0;">&ldquo;Pans and lids arrived promptly and in good condition. Excellent quality...&rdquo;</div>
+      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Robert H. &middot; Verified buyer</div>
+    </td>
+<td class="rvsp" width="12" style="font-size:0;line-height:0;">&nbsp;</td><td class="rv" width="31%" valign="top" bgcolor="#FFFFFF" data-rev="R082" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:18px 16px 16px 16px;font-family:Inter,Arial,Helvetica,sans-serif;">
+      <div style="font-size:11px;line-height:14px;letter-spacing:1.6px;font-weight:600;color:#AC3B19;text-transform:uppercase;">On service</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;color:#AC3B19;padding-top:6px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div style="font-size:14px;line-height:21px;color:#282828;padding:8px 0 10px 0;">&ldquo;Great company with great communication. Fast shipping. Beautiful products!&rdquo;</div>
+      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Deanna V. &middot; Verified buyer</div>
+    </td>
+
   </tr></table>
+  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;text-align:center;padding-top:14px;"><img src="../../partials/shared/icon-customers-100k.png" width="18" height="18" alt="" style="display:inline-block;vertical-align:-4px;width:18px;height:18px;">&nbsp; Join 100,000+ happy customers</div>
 </td></tr>
 
 <!-- BLOCK cta: primaire knop, 340 px desktop, volle breedte mobiel -->
 <tr><td align="center" class="pad" style="padding:24px 44px 4px 44px;">
   <table role="presentation" class="btnw" width="340" cellpadding="0" cellspacing="0" border="0" style="width:340px;"><tr>
     <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:3px;">
-      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/products/titanium-hammered-crepe-pan-pro?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3set-cta2&utm_term=t02-b" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Add the crêpe pan</center></v:roundrect><![endif]-->
-      <!--[if !mso]><!--><a href="https://siraatskitchen.com/products/titanium-hammered-crepe-pan-pro?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3set-cta2&utm_term=t02-b" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Add the crêpe pan &rarr;</a><!--<![endif]-->
+      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/collections/all?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3setnc-cta2" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">See what fits my set</center></v:roundrect><![endif]-->
+      <!--[if !mso]><!--><a href="https://siraatskitchen.com/collections/all?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3setnc-cta2" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">See what fits my set &rarr;</a><!--<![endif]-->
     </td>
   </tr></table>
-  
-</td></tr>
-
-<!-- PRODUCTMATRIX (8 okt): setkopers nemen als tweede aankoop het vaakst een snijplank (29%) -->
-<!-- BLOCK goes1 (gegenereerd door scripts/make_product_blocks.py, niet met de hand wijzigen). Zoals goes, alleen de eerste rij (voor mails waar de tweede rij, vaak het deksel, al als hoofdkaart staat). -->
-
-<tr><td class="pad" data-goes="set6" style="padding:26px 44px 4px 44px;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">OFTEN ADDED NEXT</div><div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:32px;line-height:36px;color:#282828;text-align:center;padding:6px 0 4px 0;">Goes with your set</div><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;text-align:center;">Three in ten set owners add a board next.</div><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;background:#FFFFFF;border:1px solid #ECE7DD;margin-top:10px;"><tr><td width="76" valign="middle" style="width:76px;padding:12px 0 12px 14px;"><img src="../../partials/shared/pc-board.jpg" width="64" height="64" alt="" style="width:64px;height:64px;"></td><td valign="middle" style="padding:12px 12px 12px 12px;font-family:Inter,Arial,Helvetica,sans-serif;"><a href="https://siraatskitchen.com/products/titanium-cutting-board-v2?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3set-goes&utm_term=t02-b" style="text-decoration:none;color:#282828;"><span style="font-size:15px;line-height:20px;font-weight:600;color:#282828;">Titanium Cutting Board</span><br><span style="font-size:13px;line-height:18px;color:#727272;">Non-porous titanium, anti-microbial. Four sizes.</span> <span style="font-size:13px;font-weight:600;color:#AC3B19;white-space:nowrap;">See it&nbsp;&rarr;</span></a></td></tr></table><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;text-align:center;padding-top:8px;">Free shipping and 4 gifts with every order.</div></td></tr>
-
-
-<!-- BLOCK reviews: twee kaarten, gelijke hoogte (achtergrond op de kolomcel) -->
-<tr><td class="pad" style="padding:28px 44px 6px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-    <td class="rv" width="48%" valign="top" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:20px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;">
-      <div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;This is the best crepe pan that I have used that works like a non-stick but gives crispy output like a cast iron pan.&rdquo;</div>
-      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Chetan G. &middot; Verified buyer</div>
-    </td>
-    <td class="rvsp" width="14" style="font-size:0;line-height:0;">&nbsp;</td>
-    <td class="rv" width="48%" valign="top" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:20px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;">
-      <div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;My son bought me the wok for Christmas and he already had the whole set. Great to cook with&rdquo;</div>
-      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Pam B. &middot; Verified buyer</div>
-    </td>
-  </tr></table>
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;text-align:center;padding-top:14px;"><img src="../../partials/shared/icon-customers-100k.png" width="18" height="18" alt="" style="display:inline-block;vertical-align:-4px;width:18px;height:18px;">&nbsp; Join 100,000+ happy customers</div>
-</td></tr>
-
-<!-- BLOCK cta: primaire knop, 340 px desktop, volle breedte mobiel -->
-<tr><td align="center" class="pad" style="padding:26px 44px 4px 44px;">
-  <table role="presentation" class="btnw" width="340" cellpadding="0" cellspacing="0" border="0" style="width:340px;"><tr>
-    <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:3px;">
-      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/products/titanium-hammered-crepe-pan-pro?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3set-cta3&utm_term=t02-b" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Add the crêpe pan</center></v:roundrect><![endif]-->
-      <!--[if !mso]><!--><a href="https://siraatskitchen.com/products/titanium-hammered-crepe-pan-pro?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3set-cta3&utm_term=t02-b" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Add the crêpe pan &rarr;</a><!--<![endif]-->
-    </td>
-  </tr></table>
-  
-</td></tr>
-
-<!-- BLOCK icons: vier feiten met iconen, nooit levertijd -->
-<tr><td class="pad" style="padding:22px 44px 6px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
-    <tr>
-      <td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;"><img src="../../partials/shared/icon-free-shipping.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">FREE<br>SHIPPING</div></td>
-      <td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;border-left:1px solid #ECE7DD;"><img src="../../partials/shared/icon-returns-30-day.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">30-DAY<br>RETURNS</div></td>
-      <td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;border-left:1px solid #ECE7DD;"><img src="../../partials/shared/icon-warranty-75-year.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">75-YEAR<br>WARRANTY</div></td>
-      <td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;border-left:1px solid #ECE7DD;"><img src="../../partials/shared/icon-pfas-tested.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">PFAS<br>LAB TESTED</div></td>
-    </tr>
-  </table>
+  <div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping, duties paid. 30-day returns. 100,000+ happy customers.</div>
 </td></tr>
 
 <!-- SIGN-OFF -->
 <tr><td class="pad" style="padding:24px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  Already have the crêpe pan and the wok? Reply and tell us what you cook most. Our team will point you to the right next piece.<br><br>
-  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
+  Questions about what fits your set? Reply to this email and our team will help.<br><br>
+  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span><br><br>
+  <span style="color:#727272;">P.S. Already have it all? Reply with what you cook most.</span>
 </td></tr>
 
 <!-- FOOTER (vast, uit partials/footer.html) -->

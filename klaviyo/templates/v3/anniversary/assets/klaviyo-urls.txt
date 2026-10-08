@@ -2,11 +2,8 @@ fb.png https://cdn.klaviyomail.com/company/TdtTzz/images/17c00632-f9db-4dcd-a27e
 ig.png https://cdn.klaviyomail.com/company/TdtTzz/images/6b905e47-7bf9-4aec-a63b-0538ecc6bd60.png
 logo-black.png https://cdn.klaviyomail.com/company/TdtTzz/images/ae4dfc27-1e05-481a-90b6-f6467bc3db78.png
 logo-white.png https://cdn.klaviyomail.com/company/TdtTzz/images/7027081c-350d-476e-85b6-25057ebaf65d.png
-n1-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/97f73663-79fd-4351-9149-455ef83cc76f.jpeg
 p-board.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/edb44635-2b7e-40f3-8d7b-5f07e930089b.jpeg
 p-lid.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/2078f16a-d969-46eb-bf09-0a70663febea.jpeg
 p-wok.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/a50ccf62-5f6c-4174-91b1-0a9f2b887c70.jpeg
-n2-nocode-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/c06c08a6-4608-4085-8587-b4647fc863bc.jpeg
 p-panpro.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/beaff3e2-016f-42fc-94cb-9d38f5ee72cb.jpeg
 p-set6.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/714d97e1-028b-4e97-b356-cd9a90b3ad98.jpeg
-n2-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/1ab2ecc6-74bb-4b4c-a39d-63b3b698f1ee.jpeg
