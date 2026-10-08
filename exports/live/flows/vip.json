@@ -150,8 +150,8 @@
         "reply_to_email": "support@siraatskitchen.com",
         "cc_email": null,
         "bcc_email": null,
-        "subject_line": "Twice is a habit. Here's 15% off.",
-        "preview_text": "You've ordered twice. This personal 15% code is yours for 14 days.",
+        "subject_line": "You're a VIP. Here's 15% off.",
+        "preview_text": "Two orders makes you a VIP. Your own 15% code, for 14 days.",
         "template_id": "Xw4sFp",
         "smart_sending_enabled": false,
         "transactional": false,
@@ -326,8 +326,8 @@
         "reply_to_email": "support@siraatskitchen.com",
         "cc_email": null,
         "bcc_email": null,
-        "subject_line": "Twice is a habit. Thank you.",
-        "preview_text": "You came back for a second order. A thank you from Benjamin, and HI10 still works.",
+        "subject_line": "You're a VIP. Thank you.",
+        "preview_text": "Two orders makes you a VIP. A thank you, and 4 gifts with every order.",
         "template_id": "SthPxw",
         "smart_sending_enabled": false,
         "transactional": false,
@@ -428,6 +428,36 @@
                "type": "string",
                "operator": "contains",
                "value": "CODE ·"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "RSNxYV",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "greater-than",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 45
+            },
+            "metric_filters": [
+             {
+              "property": "Discount Codes",
+              "filter": {
+               "type": "list",
+               "operator": "length-greater-than",
+               "value": 0
               }
              }
             ]

@@ -36,8 +36,8 @@ if LIVE and '--i-am-sure' not in OPT: sys.exit('--live vraagt ook --i-am-sure (e
 FLOWS={'checkout':('Checkout abandonment','v4-checkout'),'cart':('Cart abandonment','v4-cart'),'browse':('Browse abandonment','v4-browse'),
  'welcome':('Welcome','v4-welcome'),'post-purchase':('Post-purchase','v4-postpurchase'),'winback':('Winback','v4-winback'),
  'site':('Site abandonment','v4-site'),'sunset':('Sunset','v4-sunset'),'vip':('VIP','v4-vip'),'anniversary':('Anniversary','v4-anniversary'),'ugc':('UGC first egg','v4-ugc')}
-FLOWNAME_OVERRIDE={('post-purchase','p2'):'Post-purchase · levering'}
-POOLS={'C4_10_48H','K3_10_48H','B2_10_48H','P3_THANKYOU_10_14D','R2_10_72H','R2_VIP_15_72H','SK_REGULARS15_14D','SK_ANNIV10_7D'}  # v4 4.4
+FLOWNAME_OVERRIDE={('post-purchase','p2'):'Post-purchase · levering',('sunset','s3-kept'):'Sunset · kept',('sunset','s4-kept'):'Sunset · kept'}  # kept: eigen flow v4 · Sunset · kept (research/v5/06)
+POOLS={'C4_10_48H','K3_10_48H','B2_10_48H','P3_THANKYOU_10_14D','R2_10_72H','R2_VIP_15_72H','SK_REGULARS15_14D','SK_ANNIV15_7D'}  # v4 4.4; anniversary 15% (DECISIONS 8 okt: SK_ANNIV15_7D vervangt SK_ANNIV10_7D)
 PLACEHOLDER='https://cdn.klaviyomail.com/company/TdtTzz/images/DRYRUN-%s-%s'
 MAXKB=100
 

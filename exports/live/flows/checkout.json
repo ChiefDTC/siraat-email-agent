@@ -105,8 +105,8 @@
         "reply_to_email": "support@siraatskitchen.com",
         "cc_email": null,
         "bcc_email": null,
-        "subject_line": "Your own 10% ends in 48 hours",
-        "preview_text": "Your code is already applied, and your $70 in gifts are still attached.",
+        "subject_line": "We're removing your discount in 48 hours",
+        "preview_text": "Already applied to your cart. In 48 hours we're removing it.",
         "template_id": "UdzWU2",
         "smart_sending_enabled": false,
         "transactional": false,
@@ -166,8 +166,8 @@
         "reply_to_email": "support@siraatskitchen.com",
         "cc_email": null,
         "bcc_email": null,
-        "subject_line": "Your cart and $70 in gifts, one last time",
-        "preview_text": "Your $70 in gifts are still attached to your cart. Plus two promises.",
+        "subject_line": "Last email about your cart",
+        "preview_text": "4 gifts still pending, two promises, and then we stop reminding you.",
         "template_id": "SAqA6j",
         "smart_sending_enabled": false,
         "transactional": false,
@@ -227,8 +227,8 @@
         "reply_to_email": "support@siraatskitchen.com",
         "cc_email": null,
         "bcc_email": null,
-        "subject_line": "Your cart and $70 in gifts, one last time",
-        "preview_text": "Your $70 in gifts are still attached to your cart. Plus two promises.",
+        "subject_line": "Last email about your cart",
+        "preview_text": "4 gifts still pending, two promises, and then we stop reminding you.",
         "template_id": "SAqA6j",
         "smart_sending_enabled": false,
         "transactional": false,
@@ -368,8 +368,8 @@
         "reply_to_email": "support@siraatskitchen.com",
         "cc_email": null,
         "bcc_email": null,
-        "subject_line": "Most kitchens start with the pan",
-        "preview_text": "Your cart is saved. Still cooking on a coated pan? Here is the one change worth making.",
+        "subject_line": "The pan we made after the board",
+        "preview_text": "We started with cutting boards too. Then the pan, because you cook in a pan.",
         "template_id": "SL7UKX",
         "smart_sending_enabled": false,
         "transactional": false,
@@ -533,8 +533,8 @@
         "reply_to_email": "support@siraatskitchen.com",
         "cc_email": null,
         "bcc_email": null,
-        "subject_line": "One pan, or three for $349?",
-        "preview_text": "Three hammered pans and three lids. About $116 a pan, lid included.",
+        "subject_line": "One pan, or three?",
+        "preview_text": "Most of our 100,000+ customers start with one. This month, buy 2 and get 4 pieces free.",
         "template_id": "W75UJK",
         "smart_sending_enabled": false,
         "transactional": false,
@@ -619,7 +619,11 @@
                  "Titanium Hammered Pan Pro Standard With Lid",
                  "Titanium Hammered Pan Pro Large With Lid",
                  "Holiday Sale Exclusive | Titanium Hammered Pan Pro",
-                 "Titanium Hammered Frying Pan, 11\""
+                 "Titanium Hammered Frying Pan, 11\"",
+                 "Titanium Hammered Pan Pro Duo",
+                 "Titanium Hammered Pro Duo",
+                 "Titanium Hammered Pan Pro Kit",
+                 "2 Pans + 2 Lids"
                 ]
                }
               }
@@ -650,7 +654,7 @@
                "filter": {
                 "type": "numeric",
                 "operator": "less-than",
-                "value": 250
+                "value": 300
                }
               }
              ]
@@ -692,45 +696,11 @@
                  "Titanium Hammered – Complete Edition",
                  "Full Hammered Pro Edition",
                  "The Just Everything Bundle | 34-Pcs",
-                 "2 Pans + 2 Lids",
-                 "Titanium Hammered Pan Pro Duo",
-                 "Titanium Hammered Pro Duo",
-                 "Titanium Hammered Pan Pro Kit",
                  "Titanium Hammered Wok & Deep Pan Pro",
                  "Titanium Hammered Wok & Deep Pan Set",
                  "12 pcs cookware set",
                  "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
                 ]
-               }
-              }
-             ]
-            }
-           ]
-          },
-          {
-           "conditions": [
-            {
-             "type": "profile-metric",
-             "metric_id": "RfMvni",
-             "measurement": "count",
-             "measurement_filter": {
-              "type": "numeric",
-              "operator": "equals",
-              "value": 0
-             },
-             "timeframe_filter": {
-              "type": "date",
-              "operator": "in-the-last",
-              "unit": "day",
-              "quantity": 4
-             },
-             "metric_filters": [
-              {
-               "property": "$value",
-               "filter": {
-                "type": "numeric",
-                "operator": "greater-than-or-equal",
-                "value": 300
                }
               }
              ]
@@ -757,8 +727,8 @@
         "reply_to_email": "support@siraatskitchen.com",
         "cc_email": null,
         "bcc_email": null,
-        "subject_line": "$70 in gifts ship with your set",
-        "preview_text": "Free shipping, a mystery gift, the e-book and a chance at a PFAS water filter.",
+        "subject_line": "What's in the box with your set",
+        "preview_text": "Every piece, the same tested titanium surface. Plus 4 gifts pending.",
         "template_id": "Veb75W",
         "smart_sending_enabled": false,
         "transactional": false,
@@ -833,41 +803,11 @@
                  "Titanium Hammered – Complete Edition",
                  "Full Hammered Pro Edition",
                  "The Just Everything Bundle | 34-Pcs",
-                 "2 Pans + 2 Lids",
-                 "Titanium Hammered Pan Pro Duo",
-                 "Titanium Hammered Pro Duo",
-                 "Titanium Hammered Pan Pro Kit",
                  "Titanium Hammered Wok & Deep Pan Pro",
                  "Titanium Hammered Wok & Deep Pan Set",
                  "12 pcs cookware set",
                  "Titanium-Hammerpfannenset mit Deckel | 6-teilig"
                 ]
-               }
-              }
-             ]
-            },
-            {
-             "type": "profile-metric",
-             "metric_id": "RfMvni",
-             "measurement": "count",
-             "measurement_filter": {
-              "type": "numeric",
-              "operator": "greater-than",
-              "value": 0
-             },
-             "timeframe_filter": {
-              "type": "date",
-              "operator": "in-the-last",
-              "unit": "day",
-              "quantity": 4
-             },
-             "metric_filters": [
-              {
-               "property": "$value",
-               "filter": {
-                "type": "numeric",
-                "operator": "greater-than-or-equal",
-                "value": 300
                }
               }
              ]
@@ -909,7 +849,7 @@
         "cc_email": null,
         "bcc_email": null,
         "subject_line": "Yours, or a gift? Both work.",
-        "preview_text": "What it is made of, how to look after it, and 10% off with HI10.",
+        "preview_text": "Free shipping, 30 days to return it unused, and 4 gifts that ship with it.",
         "template_id": "QZH3pZ",
         "smart_sending_enabled": false,
         "transactional": false,
@@ -1054,8 +994,8 @@
         "reply_to_email": "support@siraatskitchen.com",
         "cc_email": null,
         "bcc_email": null,
-        "subject_line": "Has the pan in your cart actually been tested?",
-        "preview_text": "Ours has. Light Labs tested it for 31 PFAS compounds. Every one below detection.",
+        "subject_line": "Has the pan in your cart been tested?",
+        "preview_text": "Two years ago I started reading about PFAS. Report no. 25895 is the answer.",
         "template_id": "Syf9Si",
         "smart_sending_enabled": false,
         "transactional": false,
@@ -1232,8 +1172,8 @@
         "reply_to_email": "support@siraatskitchen.com",
         "cc_email": null,
         "bcc_email": null,
-        "subject_line": "Something stop you at checkout?",
-        "preview_text": "Saved exactly as you left it. Free shipping, and HI10 takes 10% more.",
+        "subject_line": "Your cart + 4 gifts are still pending",
+        "preview_text": "They ship the moment you place the order. One tap left.",
         "template_id": "U8Ngv8",
         "smart_sending_enabled": false,
         "transactional": false,

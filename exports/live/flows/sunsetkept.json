@@ -2,12 +2,44 @@
  "data": {
   "type": "flow",
   "attributes": {
-   "name": "v4 · Sunset",
+   "name": "v4 · Sunset · kept",
    "definition": {
     "triggers": [
      {
-      "type": "segment",
-      "id": "WuHSm6"
+      "type": "metric",
+      "id": "W247h8",
+      "trigger_filter": {
+       "condition_groups": [
+        {
+         "conditions": [
+          {
+           "type": "metric-property",
+           "metric_id": "W247h8",
+           "field": "$flow",
+           "filter": {
+            "type": "string",
+            "operator": "equals",
+            "value": "Vhi3iH"
+           }
+          }
+         ]
+        },
+        {
+         "conditions": [
+          {
+           "type": "metric-property",
+           "metric_id": "W247h8",
+           "field": "Bot Click",
+           "filter": {
+            "type": "boolean",
+            "operator": "equals",
+            "value": false
+           }
+          }
+         ]
+        }
+       ]
+      }
      }
     ],
     "profile_filter": {
@@ -20,68 +52,8 @@
           "type": "date",
           "operator": "in-the-last",
           "unit": "day",
-          "quantity": 180
+          "quantity": 365
          }
-        }
-       ]
-      },
-      {
-       "conditions": [
-        {
-         "type": "profile-metric",
-         "metric_id": "YkRM4Q",
-         "measurement": "count",
-         "measurement_filter": {
-          "type": "numeric",
-          "operator": "equals",
-          "value": 0
-         },
-         "timeframe_filter": {
-          "type": "date",
-          "operator": "in-the-last",
-          "unit": "day",
-          "quantity": 30
-         },
-         "metric_filters": [
-          {
-           "property": "$flow",
-           "filter": {
-            "type": "string",
-            "operator": "equals",
-            "value": "QWEdbK"
-           }
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "conditions": [
-        {
-         "type": "profile-metric",
-         "metric_id": "YkRM4Q",
-         "measurement": "count",
-         "measurement_filter": {
-          "type": "numeric",
-          "operator": "equals",
-          "value": 0
-         },
-         "timeframe_filter": {
-          "type": "date",
-          "operator": "in-the-last",
-          "unit": "day",
-          "quantity": 30
-         },
-         "metric_filters": [
-          {
-           "property": "$flow",
-           "filter": {
-            "type": "string",
-            "operator": "equals",
-            "value": "VSqzNN"
-           }
-          }
-         ]
         }
        ]
       }
@@ -98,9 +70,9 @@
         "reply_to_email": "support@siraatskitchen.com",
         "cc_email": null,
         "bcc_email": null,
-        "subject_line": "Last email from me (unless you tap)",
-        "preview_text": "One tap and you stay. Otherwise this is goodbye, and that's okay.",
-        "template_id": "ScNNsY",
+        "subject_line": "The pan we started with",
+        "preview_text": "Why I'd still pick it today, and the paper that backs it up.",
+        "template_id": "TPL?v4 · Sunset · kept · s4-kept",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
@@ -115,58 +87,11 @@
          },
          {
           "param": "utm_campaign",
-          "value": "v4-sunset"
+          "value": "v4-sunset-kept"
          }
         ],
         "additional_filters": {
          "condition_groups": [
-          {
-           "conditions": [
-            {
-             "type": "profile-metric",
-             "metric_id": "W247h8",
-             "measurement": "count",
-             "measurement_filter": {
-              "type": "numeric",
-              "operator": "equals",
-              "value": 0
-             },
-             "timeframe_filter": {
-              "type": "date",
-              "operator": "flow-start"
-             },
-             "metric_filters": [
-              {
-               "property": "Bot Click",
-               "filter": {
-                "type": "boolean",
-                "operator": "equals",
-                "value": false
-               }
-              }
-             ]
-            }
-           ]
-          },
-          {
-           "conditions": [
-            {
-             "type": "profile-metric",
-             "metric_id": "UdCdLD",
-             "measurement": "count",
-             "measurement_filter": {
-              "type": "numeric",
-              "operator": "equals",
-              "value": 0
-             },
-             "timeframe_filter": {
-              "type": "date",
-              "operator": "flow-start"
-             },
-             "metric_filters": null
-            }
-           ]
-          },
           {
            "conditions": [
             {
@@ -185,10 +110,70 @@
              "metric_filters": null
             }
            ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "YkRM4Q",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 3
+             },
+             "metric_filters": [
+              {
+               "property": "$flow",
+               "filter": {
+                "type": "string",
+                "operator": "equals",
+                "value": "SNwQWU"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "YkRM4Q",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 3
+             },
+             "metric_filters": [
+              {
+               "property": "$flow",
+               "filter": {
+                "type": "string",
+                "operator": "equals",
+                "value": "UshtNX"
+               }
+              }
+             ]
+            }
+           ]
           }
          ]
         },
-        "name": "SUNSET · S2"
+        "name": "SUNSET-KEPT · S4"
        },
        "status": "draft"
       },
@@ -216,13 +201,13 @@
       "data": {
        "message": {
         "from_email": "send@siraatskitchen.com",
-        "from_label": "Siraat's Kitchen",
+        "from_label": "Benjamin at Siraat's Kitchen",
         "reply_to_email": "support@siraatskitchen.com",
         "cc_email": null,
         "bcc_email": null,
-        "subject_line": "Should we keep writing to you?",
-        "preview_text": "One tap keeps you on the list. No tap, and we'll stop writing in about a week.",
-        "template_id": "VvayeT",
+        "subject_line": "You're staying. Thank you.",
+        "preview_text": "One quick tap so we only send what you came for.",
+        "template_id": "TPL?v4 · Sunset · kept · s3-kept",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": true,
@@ -237,11 +222,33 @@
          },
          {
           "param": "utm_campaign",
-          "value": "v4-sunset"
+          "value": "v4-sunset-kept"
          }
         ],
-        "additional_filters": null,
-        "name": "SUNSET · S1"
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "flow-start"
+             },
+             "metric_filters": null
+            }
+           ]
+          }
+         ]
+        },
+        "name": "SUNSET-KEPT · S3"
        },
        "status": "draft"
       },
@@ -253,22 +260,17 @@
       "temporary_id": "a004",
       "type": "time-delay",
       "data": {
-       "unit": "days",
-       "value": 1,
+       "unit": "minutes",
+       "value": 30,
        "secondary_value": null,
-       "timezone": "profile",
-       "delay_until_time": "09:00:00"
+       "timezone": "profile"
       },
       "links": {
        "next": "a003"
       }
      }
     ],
-    "entry_action_id": "a004",
-    "reentry_criteria": {
-     "duration": 180,
-     "unit": "day"
-    }
+    "entry_action_id": "a004"
    }
   }
  }

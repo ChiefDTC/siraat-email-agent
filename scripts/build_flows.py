@@ -20,7 +20,11 @@ Draaien (vanuit /tmp, met `python3 -I`):
                        XzHrez) of als 50/50 random-split met gedupliceerd vervolg (terugval).
   --t02-new            ook V1 en N2 in T02 (na de eerste 4 weken). Standaard 100% code bij geen cooldown.
   --max-delay=N        lange wachttijden (anniversary 182/183 dagen) opknippen in stukken van max N dagen.
-  --offline            geen API-calls; gebruikt de cache in exports/live/flows/_bron/.
+  --offline            geen API-calls; gebruikt de cache in exports/live/flows/_bron/ (sunset-segment: bekend ID WuHSm6).
+  --vip-cooldown=codes|discounts|none|old
+                       VIP V1 (besluit 8 okt): cooldown alleen als er ook een order MET code was (standaard `codes`:
+                       Placed Order waarvan "Discount Codes" niet leeg is). `discounts`: Total Discounts > 0.
+                       `none`: altijd V1 (15%). `old`: oude cooldown (alleen Received CODE-mail in 30 dagen).
 
 Lessen uit de checkout-bouw (Bouwnotitie 2.1): geen samenkomende takken (strikt een boom), categorie
 als verzendfilter op de mail, geen update-profile (cooldown via berichtnaam "CODE · ..."), geen
@@ -48,6 +52,7 @@ W4_MODE = opt("w4", "split")
 AB_MODE = opt("ab", "action")
 T02_NEW = "--t02-new" in ARGS
 MAX_DELAY = int(opt("max-delay", "0") or 0)
+VIP_COOLDOWN = opt("vip-cooldown", "codes")  # codes | discounts | none | old (zie build_vip)
 ONLY = opt("only")
 
 # ---------------------------------------------------------------- ID's (plan 1.1)
@@ -57,6 +62,7 @@ RECEIVED_EMAIL, CLICKED_EMAIL, OPENED_EMAIL = "YkRM4Q", "W247h8", "WyrTym"
 REFUNDED, OPENED_TICKET, FULFILLED = "Xg6cwn", "YzvjGf", "VtEiZT"
 WELCOME_LIST = "Uw8eZG"
 SUNSET_SEGMENT = "v4 · Sunset · unengaged 120d"
+KNOWN_SEGMENT_IDS = {SUNSET_SEGMENT: "WuHSm6"}  # terugval voor --offline (aangemaakt 8 okt, LOG)
 OLD_POSTPURCHASE = "RL3TU6"
 OBSOLETE_FLOW_IDS = {"Y6yj2z"}  # eerste checkout-draft (landsplit), wordt vervangen; nooit naar verwijzen
 
@@ -107,6 +113,9 @@ SET_TITELS = [
     "Titanium Hammered Wok & Deep Pan Pro", "Titanium Hammered Wok & Deep Pan Set",
     "12 pcs cookware set", "Titanium-Hammerpfannenset mit Deckel | 6-teilig",
 ]
+# v5 (8 okt, research/v5/02 1.3): starterbundels gaan in checkout naar C3-P (upgrade naar de $299-set), niet naar C3-S.
+STARTER_TITELS = ["Titanium Hammered Pan Pro Duo", "Titanium Hammered Pro Duo", "Titanium Hammered Pan Pro Kit", "2 Pans + 2 Lids"]
+GROOT_SET_TITELS = [t for t in SET_TITELS if t not in STARTER_TITELS]
 DEKSEL_TITELS = ["Stainless Steel Lid", "Stainless Steel Lid (S)", "Titanium Hammered Pan Pro With Lid",
                  "Titanium Hammered Pan Pro Mini With Lid", "Titanium Hammered Pan Pro Small With Lid",
                  "Titanium Hammered Pan Pro Standard With Lid", "Titanium Hammered Pan Pro Large With Lid"]
@@ -122,7 +131,8 @@ BACKORDER_FALLBACK = ["Titanium Hammered Cookware Set | 12-Pcs",
                       "Titanium Hammered Cookware Set | 12-Pcs | + FREE PIZZA STEEL (EXCLUSIVE)"]
 TITLE_SETS = {tuple(KOOK): "KOOK_TITELS+SET_TITELS", tuple(SET_TITELS): "SET_TITELS",
               tuple(PANPRO_TITELS + VORM_TITELS): "PANPRO+VORM_TITELS", tuple(PANPRO_TITELS): "PANPRO_TITELS",
-              tuple(DEKSEL_TITELS): "DEKSEL_TITELS", tuple(SCHORT_TITELS): "SCHORT_TITELS",
+              tuple(DEKSEL_TITELS): "DEKSEL_TITELS", tuple(GROOT_SET_TITELS): "GROOT_SET_TITELS (sets zonder starterbundels)",
+              tuple(PANPRO_TITELS + STARTER_TITELS): "PANPRO_TITELS+STARTER_TITELS", tuple(SCHORT_TITELS): "SCHORT_TITELS",
               tuple(EGIFT_TITELS): "E-Gift Card", tuple(P2_TITELS): "P2_TITELS", tuple(BACKORDER_FALLBACK): "12-pcs (backorder)"}
 
 
@@ -198,7 +208,7 @@ SUBJECT_FALLBACK = {"c4": "c4-us", "c4-nocode": "c4-us-nocode", "w4": "w4-us"}
 
 FLOWMAP = {"checkout": "checkout", "cart": "cart", "browse": "browse", "welcome": "welcome",
            "postpurchase": "post-purchase", "levering": "post-purchase", "winback": "winback", "site": "site",
-           "sunset": "sunset", "vip": "vip", "anniversary": "anniversary", "ugc": "ugc"}
+           "sunset": "sunset", "vip": "vip", "anniversary": "anniversary", "ugc": "ugc", "sunsetkept": "sunset"}
 
 
 def topcomment(folder, mid):
@@ -270,6 +280,7 @@ def groups(*gs):
 NO_ORDER_SINCE_START = zero(PLACED_ORDER, FLOW_START)
 HEEFT_GEKOCHT = some(PLACED_ORDER, ALLTIME)
 NIEUWE_KLANT = zero(PLACED_ORDER, ALLTIME)
+NOT_BOT = [{"property": "Bot Click", "filter": {"type": "boolean", "operator": "equals", "value": False}}]
 COOLDOWN = some(RECEIVED_EMAIL, last_days(30), f_str("Campaign Name", "contains", CODE))
 COUNTRY_US_ANY = [  # "US" en "United States" komen allebei voor (country-split-review)
     {"type": "profile-property", "property": "location['country']",
@@ -410,15 +421,20 @@ class Flow:
         self.actions.append({"temporary_id": aid, "type": "ab-test", "data": data, "links": {"next": nxt}})
         return aid
 
-    def router(self, code_mid, nocode_mid, label, filter_groups=(), nxt_factory=lambda: None, t02=True, **kw):
+    def router(self, code_mid, nocode_mid, label, filter_groups=(), nxt_factory=lambda: None, t02=True, cooldown=None, **kw):
         """Code-router (plan 1.4, vereenvoudigd volgens country-split-review): cooldown-split, dan T02 50/50.
         Codemail heet "CODE · <label>". Elke tak krijgt een eigen kopie van het vervolg."""
         code = self.mail(code_mid, f"{CODE} {label}", nxt_factory(), filter_groups, **kw)
+        if cooldown is False:  # geen cooldown-tak (VIP --vip-cooldown=none)
+            if t02:
+                b = self.mail(nocode_mid, f"{label} nocode · T02-B", nxt_factory(), filter_groups, **kw)
+                return self.cs(groups([sample(50)]), yes=code, no=b)
+            return code
         cd = self.mail(nocode_mid, f"{label} nocode · cooldown", nxt_factory(), filter_groups, **kw)
         if t02:
             b = self.mail(nocode_mid, f"{label} nocode · T02-B", nxt_factory(), filter_groups, **kw)
             code = self.cs(groups([sample(50)]), yes=code, no=b)
-        return self.cs(groups([COOLDOWN]), yes=cd, no=code)
+        return self.cs(cooldown or groups([COOLDOWN]), yes=cd, no=code)
 
     def chain(self, steps, nxt=None):
         """steps: lijst van functies nxt -> action_id, van boven naar beneden."""
@@ -490,11 +506,12 @@ FLOW_NAMES = {
     "checkout": "v4 · Checkout abandonment", "cart": "v4 · Cart abandonment",
     "browse": "v4 · Browse abandonment", "welcome": "v4 · Welcome", "winback": "v4 · Winback",
     "site": "v4 · Site abandonment", "sunset": "v4 · Sunset", "vip": "v4 · VIP",
-    "anniversary": "v4 · Anniversary", "ugc": "v4 · UGC first egg",
+    "anniversary": "v4 · Anniversary", "ugc": "v4 · UGC first egg", "sunsetkept": "v4 · Sunset · kept",
 }
 UTM = {"postpurchase": "v4-postpurchase", "levering": "v4-postpurchase", "checkout": "v4-checkout",
        "cart": "v4-cart", "browse": "v4-browse", "welcome": "v4-welcome", "winback": "v4-winback",
-       "site": "v4-site", "sunset": "v4-sunset", "vip": "v4-vip", "anniversary": "v4-anniversary", "ugc": "v4-ugc"}
+       "site": "v4-site", "sunset": "v4-sunset", "vip": "v4-vip", "anniversary": "v4-anniversary", "ugc": "v4-ugc",
+       "sunsetkept": "v4-sunset-kept"}
 
 
 def po(op, v, tf, filt=None):
@@ -513,11 +530,12 @@ def build_checkout(f):
     d5 = lambda nxt: f.delay("days", 2, "09:00:00", nxt)
     # dag 3: C3-S, C3-P of C3-ACC als verzendfilter (hoogstens één komt door)
     c3acc = lambda nxt: f.mail("c3-acc", "C3-ACC", nxt, [[csm("equals", 0, 4, f_items(KOOK))], [NIEUWE_KLANT]])
+    # v5 (8 okt, integratie): C3-S alleen op set-titels (de $value >= 300-route vervalt); C3-P: Pan Pro of starterbundel,
+    # waarde onder $300 (drempel 250 -> 300) en geen grote set. Wok/deep/pizza/roast/pot alleen of >= $300 zonder set: geen C3.
     c3p = lambda nxt: f.mail("c3-p", "C3-P", nxt, [
-        [csm("greater-than", 0, 4, f_items(PANPRO_TITELS))], [csm("greater-than", 0, 4, f_value("less-than", 250))],
-        [csm("equals", 0, 4, f_items(SET_TITELS))], [csm("equals", 0, 4, f_value("greater-than-or-equal", 300))]])
-    c3s = lambda nxt: f.mail("c3-s", "C3-S", nxt, [[csm("greater-than", 0, 4, f_items(SET_TITELS)),
-                                                     csm("greater-than", 0, 4, f_value("greater-than-or-equal", 300))]])
+        [csm("greater-than", 0, 4, f_items(PANPRO_TITELS + STARTER_TITELS))], [csm("greater-than", 0, 4, f_value("less-than", 300))],
+        [csm("equals", 0, 4, f_items(GROOT_SET_TITELS))]])
+    c3s = lambda nxt: f.mail("c3-s", "C3-S", nxt, [[csm("greater-than", 0, 4, f_items(GROOT_SET_TITELS))]])
     d3 = lambda nxt: f.delay("days", 2, "09:00:00", nxt)
     c2acc = lambda nxt: f.mail("c2-acc", "C2-ACC", nxt, [[csm("equals", 0, 2, f_items(KOOK))]])
     c2 = lambda nxt: f.mail("c2", "C2", nxt, [[csm("greater-than", 0, 2, f_items(KOOK))], [NIEUWE_KLANT]])
@@ -528,7 +546,8 @@ def build_checkout(f):
     old = f.old_path("Y2TmNB", [False], "old-checkout", "Checkout")
     entry = t01(f, new, old)
     f.notes += ["Landsplit vervallen (country-split-review): C4 is één template `c4` / `c4-nocode`, land via {% if %} in de template.",
-                "Categorie (C2/C2-ACC, C3-S/C3-P/C3-ACC) als verzendfilter op Checkout Started in de laatste 2/4 dagen (Bouwnotitie 2.1)."]
+                "Categorie (C2/C2-ACC, C3-S/C3-P/C3-ACC) als verzendfilter op Checkout Started in de laatste 2/4 dagen (Bouwnotitie 2.1).",
+                "v5: C3-S = grote set in de checkout (GROOT_SET_TITELS); C3-P = Pan Pro of starterbundel (Pro Duo, Kit, 2 Pans + 2 Lids) onder $300 zonder grote set. Geen $value-route naar C3-S meer."]
     return f.definition(
         [mtrig(CHECKOUT_STARTED, groups([{"type": "metric-property", "metric_id": CHECKOUT_STARTED, "field": "$value",
                                           "filter": {"type": "numeric", "operator": "greater-than", "value": 0}}]))],
@@ -767,7 +786,7 @@ def build_site(f):
 
 # ---------------------------------------------------------------- 2.8 Sunset
 def build_sunset(f):
-    seg = f.ctx.segment_ids.get(SUNSET_SEGMENT)
+    seg = f.ctx.segment_ids.get(SUNSET_SEGMENT) or (KNOWN_SEGMENT_IDS[SUNSET_SEGMENT] if OFFLINE else None)
     if not seg:
         f.missing_templates.add(f"SEGMENT {SUNSET_SEGMENT}")
         seg = f"SEG?{SUNSET_SEGMENT}"
@@ -775,18 +794,49 @@ def build_sunset(f):
         lambda n: f.delay("days", 1, "09:00:00", n),
         lambda n: f.mail("s1", "SUNSET · S1", n),
         lambda n: f.delay("days", 4, "09:00:00", n),
-        lambda n: f.mail("s2", "SUNSET · S2", n, [[zero(CLICKED_EMAIL, FLOW_START)], [zero(ACTIVE_ON_SITE, FLOW_START)],
+        lambda n: f.mail("s2", "SUNSET · S2", n, [[zero(CLICKED_EMAIL, FLOW_START, NOT_BOT)], [zero(ACTIVE_ON_SITE, FLOW_START)],
                                                   [NO_ORDER_SINCE_START]], label=FROM_BENJAMIN),
     ])
     f.notes += ["Stap 3 (update profile sunset_status) kan niet via de API. Vervanging: segment 'v4 · Sunset · suppressed' = "
                 "in 'v4 · Sunset · unengaged 120d' EN Received Email waarvan Campaign Name 'SUNSET · S2' bevat, minstens 1 keer in 60 dagen "
                 "EN 0 keer in de laatste 3 dagen. Wie klikt, de site bezoekt of koopt valt vanzelf uit het unengaged-segment.",
-                "Geen Opened Email-filter (3.16)."]
+                "Geen Opened Email-filter (3.16).",
+                "S2-filter telt alleen menselijke klikken (Clicked Email waarvan Bot Click = false, research/v5/06 fix 3); een scannerklik "
+                "slaat S2 niet meer over. Segment WuHSm6 zelf wordt in de hoofdsessie bijgewerkt (research/v5/08-integratie.md).",
+                "Vervolg voor wie klikt: aparte flow 'v4 · Sunset · kept' (sunsetkept)."]
     return f.definition(
         [{"type": "segment", "id": seg}],
         groups([not_in_flow(last_days(180))], [f.received_from("welcome", days=30)],
                [f.received_from("postpurchase", days=30)]),
         entry, reentry=180)
+
+
+# ---------------------------------------------------------------- 2.8b Sunset · kept (research/v5/06-sunset-kept.md sectie 6)
+KEPT = "SUNSET-KEPT ·"  # berichtnamen: bevat bewust niet "SUNSET · S" (suppressed-segment) en niet "CODE ·" (cooldown)
+
+
+def kept_prop(field, ftype, op, value):
+    return {"type": "metric-property", "metric_id": CLICKED_EMAIL, "field": field,
+            "filter": {"type": ftype, "operator": op, "value": value}}
+
+
+def build_sunset_kept(f):
+    """Instap: menselijke klik (Bot Click false) op S1 of S2 van v4 · Sunset. 30 minuten later S3, dag 4 09:00 S4.
+    Geen samenkomende takken (lineair), geen update-profile, geen coupon."""
+    trig = groups([kept_prop("$flow", "string", "equals", f.flow_ref("sunset"))],
+                  [kept_prop("Bot Click", "boolean", "equals", False)])
+    s4f = [[NO_ORDER_SINCE_START], [f.received_from("checkout", days=3)], [f.received_from("cart", days=3)]]
+    entry = f.chain([
+        lambda n: f.delay("minutes", 30, None, n),
+        lambda n: f.mail("s3-kept", f"{KEPT} S3", n, [[NO_ORDER_SINCE_START]], label=FROM_BENJAMIN),
+        lambda n: f.delay("days", 4, "09:00:00", n),
+        lambda n: f.mail("s4-kept", f"{KEPT} S4", n, s4f, label=FROM_BENJAMIN),
+    ])
+    f.notes += ["'Kept' zonder update-profile: segment 'v4 · Sunset · kept' = Clicked Email (Bot Click false) where $flow = "
+                "v4 · Sunset, minstens 1 keer in de laatste 180 dagen. Keuze in S3: Clicked Email waarvan URL het pad bevat.",
+                "Geen korting en geen coupon (06-sunset-kept, 4). Klik op S1 en S2 geeft één instap (flowfilter 365 dagen).",
+                "Terugval als de triggerfilter $flow weigert: Campaign Name contains 'SUNSET · S'."]
+    return f.definition([mtrig(CLICKED_EMAIL, trig)], groups([not_in_flow(last_days(365))]), entry)
 
 
 # ---------------------------------------------------------------- 2.9 VIP
@@ -797,8 +847,22 @@ def build_vip(f):
         return f.delay("days", 10, "09:00:00",
                        f.mail("v2", "V2", None, [[NO_ORDER_SINCE_START], [zero(REFUNDED, FLOW_START)]], label=FROM_BENJAMIN))
 
-    entry = f.delay("days", 30, "09:00:00", f.router("v1", "v1-nocode", "V1", v1f, nxt_factory=v2, t02=T02_NEW))
-    f.notes += [f"T02 op V1: {'aan' if T02_NEW else 'uit (eerste 4 weken 100% code zonder cooldown; daarna --t02-new)'}.",
+    # Besluit 8 okt: VIP krijgt 15%, ook vlak na een eerdere code als die NIET gebruikt is. De cooldown-tak (v1-nocode)
+    # alleen als er een CODE-mail in 30 dagen was EN de order (de 2e order, de trigger, 30 dagen geleden) een kortingscode had.
+    # De flowfilter Placed Order = 2 all time + de verzendfilter Placed Order 0 in 14 dagen maken "laatste 45 dagen" = de trigger-order.
+    used = {"codes": [{"property": "Discount Codes", "filter": {"type": "list", "operator": "length-greater-than", "value": 0}}],
+            "discounts": [{"property": "Total Discounts", "filter": {"type": "numeric", "operator": "greater-than", "value": 0}}]}
+    if VIP_COOLDOWN in used:
+        cd, cdtxt = groups([COOLDOWN], [some(PLACED_ORDER, last_days(45), used[VIP_COOLDOWN])]), (
+            f"cooldown = CODE-mail in 30 dagen EN Placed Order in 45 dagen met {'Discount Codes niet leeg' if VIP_COOLDOWN == 'codes' else 'Total Discounts > 0'}")
+    elif VIP_COOLDOWN == "none":
+        cd, cdtxt = False, "geen cooldown: iedereen V1 (15%)"
+    else:
+        cd, cdtxt = None, "oude cooldown (alleen CODE-mail in 30 dagen)"
+    entry = f.delay("days", 30, "09:00:00", f.router("v1", "v1-nocode", "V1", v1f, nxt_factory=v2, t02=T02_NEW, cooldown=cd))
+    f.notes += [f"V1-cooldown (--vip-cooldown={VIP_COOLDOWN}): {cdtxt}. Onbevestigd in de API: de list-operator 'length-greater-than' op "
+                "'Discount Codes'. Weigert Klaviyo de POST, dan opnieuw met --vip-cooldown=discounts, en anders --vip-cooldown=none.",
+                f"T02 op V1: {'aan' if T02_NEW else 'uit (eerste 4 weken 100% code zonder cooldown; daarna --t02-new)'}.",
                 "siraat_regular = true (update profile) kan niet via de API; segment 'v4 · VIP' = Placed Order minstens 2 keer.",
                 "Flowfilter Placed Order = 2 over all time geldt bij elke stap: een 3e order vóór dag 30 haalt iemand uit de flow."]
     return f.definition([mtrig(PLACED_ORDER)],
@@ -850,9 +914,9 @@ def build_ugc(f):
 BUILDERS = {"postpurchase": build_postpurchase, "levering": build_levering, "checkout": build_checkout,
             "cart": build_cart, "browse": build_browse, "welcome": build_welcome, "winback": build_winback,
             "site": build_site, "sunset": build_sunset, "vip": build_vip, "anniversary": build_anniversary,
-            "ugc": build_ugc}
+            "ugc": build_ugc, "sunsetkept": build_sunset_kept}
 PREFERRED = ["postpurchase", "levering", "checkout", "cart", "browse", "welcome", "vip", "winback",
-             "anniversary", "site", "sunset", "ugc"]
+             "anniversary", "site", "sunset", "sunsetkept", "ugc"]
 
 
 # ================================================================ controles
@@ -1041,7 +1105,7 @@ def klaviyo_check(ctx):
 COUPONS = [("C4_10_48H", "10%", "48 uur", "c4 (checkout)"), ("K3_10_48H", "10%", "48 uur", "k3 (cart)"),
            ("B2_10_48H", "10%", "48 uur", "b2-clicked (browse)"), ("P3_THANKYOU_10_14D", "10%", "14 dagen", "p3-* (post-purchase)"),
            ("R2_10_72H", "10%", "72 uur", "r2 (winback)"), ("R2_VIP_15_72H", "15%", "72 uur", "r2-vip (winback)"),
-           ("SK_REGULARS15_14D", "15%", "14 dagen", "v1 (VIP)"), ("SK_ANNIV10_7D", "10%", "7 dagen", "n2 (anniversary)")]
+           ("SK_REGULARS15_14D", "15%", "14 dagen", "v1 (VIP)"), ("SK_ANNIV15_7D", "15%", "7 dagen", "n2 (anniversary, besluit 8 okt)")]
 
 
 def order(deps):

@@ -133,6 +133,28 @@ def main():
                         ok('$99' in re.sub(r'\s+', ' ', C.text(h)) and '$59' in C.text(h), '%s xsell Standard: prijzen Mini $99 en deksel $59' % sig)
                     if m == 'UK' and titles == ['Titanium Hammered Pan Pro Standard'] and own is None:
                         ok('£109' in C.text(h), '%s xsell UK: Mini £109' % sig)
+                    # links (integratie 8 okt): een deksel-variant met code-link mag nooit twee keer ? of %3F krijgen
+                    for href in re.findall(r'href="([^"]*)"', h):
+                        q = href.split('redirect=', 1)[-1] if 'redirect=' in href else href
+                        ok(q.upper().count('%3F') + q.count('?') <= 1, '%s/%s xsell link met dubbele query: %s' % (sig, m, href[:140]))
+        # mpcc (integratie 8 okt): profielland alleen in het eigen veld country_code (zonder person.Country) telt ook
+        if sig in ('browse', 'profile'):
+            for m in C.MARKETS:
+                if m == 'XX': continue
+                ev, p = C.market_ctx(sig, m, items_ev(sig, ['Titanium Hammered Pan Pro Standard']))
+                p.pop('Country', None); p['country_code'] = C.ISO[m]
+                if sig == 'browse': ev.pop('Price', None)
+                h = tpl.render({'event': ev, 'person': p, 'first_name': 'Sarah', 'organization': {'name': "Siraat's Kitchen", 'full_address': '[address]'}})
+                for k in ('size', 'ship', 'gifts'):
+                    want = EXP[k].get(m, EXP[k].get('*')); got = span(h, k)
+                    ok(got == want, '%s/%s alleen country_code: macro %s kreeg %r, verwacht %r' % (sig, m, k, got, want))
+    # xsell-links zonder code (pre = /products/, post = ?utm...): deksel-variant sluit met & aan
+    import v5lib
+    for pre, post in (('https://siraatskitchen.com/products/', '?utm_source=klaviyo&utm_medium=email'),
+                      ('https://siraatskitchen.com/discount/HI10?redirect=/products/', '%3Futm_source%3Dklaviyo%26utm_medium%3Demail')):
+        row = v5lib.xrow('lid28', {'pre': pre, 'post': post}, 'order', 'none')
+        href = re.search(r'href="([^"]*)"', row).group(1); q = href.split('redirect=', 1)[-1]
+        ok(q.upper().count('%3F') + q.count('?') == 1 and ('variant' in q) and ('utm_source' in q), 'xsell deksel-link %s' % href)
     print('v5-bouwstenen: %d ok, %d FOUT' % (OK[0], len(FAIL)))
     for f in FAIL[:60]: print('FOUT', f)
     sys.exit(1 if FAIL else 0)

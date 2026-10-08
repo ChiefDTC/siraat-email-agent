@@ -6,18 +6,19 @@ import json, os, copy
 H = os.path.dirname(os.path.abspath(__file__)); S = os.path.join(H, 'samples')
 P = '/home/user/siraat-email-agent/content/products/'
 # cat: (titel, prijs, beeld)
+# prijzen v5 (DECISIONS 8 okt, content/catalog/products.json): Mini $99, Small $137, Standard $144, Large $149, fall-sale-set $299
 CATS = {
- 'mini':     ('Titanium Hammered Pan Pro Mini', 129, 'titanium-hammered-pan-pro'),
- 'small':    ('Titanium Hammered Pan Pro Small', 127, 'titanium-hammered-pan-pro'),
- 'standard': ('Titanium Hammered Pan Pro Standard', 134, 'titanium-hammered-pan-pro'),
- 'large':    ('Titanium Hammered Pan Pro Large', 139, 'titanium-hammered-pan-pro'),
+ 'mini':     ('Titanium Hammered Pan Pro Mini', 99, 'titanium-hammered-pan-pro'),
+ 'small':    ('Titanium Hammered Pan Pro Small', 137, 'titanium-hammered-pan-pro'),
+ 'standard': ('Titanium Hammered Pan Pro Standard', 144, 'titanium-hammered-pan-pro'),
+ 'large':    ('Titanium Hammered Pan Pro Large', 149, 'titanium-hammered-pan-pro'),
  'deep':     ('Titanium Hammered Deep Pan Pro', 139, 'titanium-hammered-deep-pan-pro'),
  'wok':      ('Titanium Hammered Wok Pan Pro', 139, 'titanium-hammered-wok-pan-pro'),
  'crepe':    ('Titanium Hammered Crêpe Pan Pro', 139, 'titanium-hammered-crepe-pan-pro'),
  'pizza':    ('Titanium Hammered Pizza Steel', 129, 'titanium-hammered-pizza-steel'),
  'roast':    ('Titanium Hammered Roasting Pan', 199, 'titanium-hammered-roasting-pan'),
  'pot':      ('3 Litre Titanium Hammered Pot With Lid', 179, 'titanium-hammered-cookware-set'),
- 'set6':     ('Titanium Hammered Pan Set With Lids | 6-Pcs', 349, 'titanium-hammered-pan-set-with-lids-6-pcs'),
+ 'set6':     ('Titanium Hammered Pan Set With Lids | 6-Pcs', 299, 'titanium-hammered-pan-set-with-lids-6-pcs'),
  'set12':    ('Titanium Hammered Cookware Set | 12-Pcs', 599, 'titanium-hammered-cookware-set'),
  'setbig':   ('Titanium Hammered Cookware Set Pro', 479, 'titanium-hammered-cookware-set-pro'),
  'setall':   ('The Just Everything Bundle | 34-Pcs', 1499, 'full-hammered-pro-edition'),

@@ -19,7 +19,8 @@ Controles per mail:
     (signaal per flowtype uit scripts/v5lib.py). Altijd FOUT: rendering faalt, Django-restanten, v5-blokken (gifts5, reviews3, bundle,
     xsell) met USD of inch buiten de US of een US-only product buiten de US, gifts5 zonder de vier gift-beelden, cross-sell met een
     product uit de order of uit person.siraat_owned. Mails met V5-STRICT in de topcomment: dezelfde regels voor de hele mail plus
-    geen R017 (Marilyn B.). Overige mails: dezelfde punten als waarschuwing (werklijst voor de flow-bouwers).
+    geen R017 (Marilyn B.). V5-STRICT wordt uit de topcomment van de BRON gelezen (build_template.py stript die); een
+    <meta name="x-siraat-qa|x-siraat-build|siraat-qa"> in de gebouwde mail is altijd FOUT (mag niet naar klanten). Overige mails: dezelfde punten als waarschuwing (werklijst voor de flow-bouwers).
  f. inbox en deliverability (scripts/inbox_checks.py), alleen waarschuwingen: Gmail-clipping (geschatte verzonden grootte),
     spamsignalen in onderwerp/preview/body, linkverkorters en domeinen, alt-teksten, Outlook (VML-knoppen, mso-hide,
     width-attribuut, max-width), dark mode (donker logo op transparant), dubbele regels in Klaviyo's plain-text-versie.
@@ -172,9 +173,16 @@ def after_render(r):
         if re.search(r'\b%s="\s*"'%a,body): F.append('lege %s'%a)
     return F
 
-def v5_market(flow,mid,k,e):
+QA_META=re.compile(r'<meta\s+name="(?:x-siraat-qa|x-siraat-build|siraat-qa)"[^>]*>',re.I)
+
+def is_strict(src):
+    """V5-STRICT staat in de topcomment van de BRON (build_template.py stript die comment uit de Klaviyo-versie)."""
+    m=re.match(r'\s*<!--(.*?)-->',open(src).read(),re.S)
+    return bool(m and 'V5-STRICT' in m.group(1))
+
+def v5_market(flow,mid,k,e,strict=False):
     """g. Rendert de mail per markt en geeft FOUT-regels terug; waarschuwingen gaan direct in e['W']."""
-    sig=v5lib.sig_of(flow); strict='V5-STRICT' in k[:3000]; F=[]; W={}
+    sig=v5lib.sig_of(flow); F=[]; W={}
     base,_,_=VARIANTS[flow][0][0].partition('+')
     bev={} if base=='none' else json.load(open(os.path.join(TEST,'samples',base+'.json')))
     tpl=engine().from_string(k)
@@ -230,14 +238,16 @@ def main():
                 shot=os.path.join(SHOTS,'%s-%s-%s-rendered.jpg'%(flow,mid,dev)) if i==0 else None
                 jobs.append(dict(key='%s|%s|%d|r'%(key,var,w),html=rp,width=w,shot=shot,raw=False))
         # g. v5-markten (statisch, zonder browser)
-        try: e['F']+=[x for x in v5_market(flow,mid,k,e)]
+        e['strict']=is_strict(src)
+        if QA_META.search(k): e['F'].append('tijdelijke QA-markering <meta name="x-siraat-qa/x-siraat-build/siraat-qa"> in de mail: mag niet naar klanten (V5-STRICT hoort in de topcomment van de bron)')
+        try: e['F']+=[x for x in v5_market(flow,mid,k,e,e['strict'])]
         except Exception as ex: e['F'].append('v5-markten: %s'%str(ex)[:200])
         if IC and rendered:
             try: e['W']+=IC.warnings(src,k,rendered)
             except Exception as ex: e['W'].append('inbox-checks faalden: %s'%str(ex)[:120])
         for w,dev in ((600,'desktop'),(390,'mobile')):
             jobs.append(dict(key='%s|raw|%d|x'%(key,w),html=rawp,width=w,shot=os.path.join(SHOTS,'%s-%s-%s-raw.jpg'%(flow,mid,dev)),raw=True))
-        print('%-14s %-22s statisch %s'%(flow,mid,'ok' if not e['F'] else '%d FOUT'%len(e['F'])),flush=True)
+        print('%-14s %-22s statisch %s%s'%(flow,mid,'ok' if not e['F'] else '%d FOUT'%len(e['F']),' (V5-STRICT)' if e.get('strict') else ''),flush=True)
     M={}
     if browser and jobs:
         jf=os.path.join(tmp,'jobs.json'); rf=os.path.join(tmp,'res.json'); json.dump(jobs,open(jf,'w'))
@@ -279,9 +289,9 @@ def main():
     for f in sorted(used_all):
         st='TWIJFEL' if f in TWIJFEL else ('Klaviyo' if f in KL_FILTERS else ('Django' if f in DJANGO_FILTERS else 'ONBEKEND'))
         L.append('| `%s` | %s | %d |'%(f,st,len(used_all[f])))
-    L+=['','## Per mail','','| mail | status | varianten | hoogte 390 px | zichtbare `{%`/`{{` in ruwe weergave | v5-marktpunten (US, UK, AU, CA, SG, EU, onbekend) |','|---|---|---|---|---|---|']
+    L+=['','## Per mail','','| mail | status | varianten | hoogte 390 px | zichtbare `{%`/`{{` in ruwe weergave | V5-STRICT | v5-marktpunten (US, UK, AU, CA, SG, EU, onbekend) |','|---|---|---|---|---|---|---|']
     for k in R:
-        e=R[k]; L.append('| %s | %s | %s | %s | %s | %s |'%(k,'FOUT' if e['F'] else ('let op' if e['W'] else 'groen'),', '.join(e['variants']),e.get('h','-'),e.get('rawvisible','-'),e.get('v5','-')))
+        e=R[k]; L.append('| %s | %s | %s | %s | %s | %s | %s |'%(k,'FOUT' if e['F'] else ('let op' if e['W'] else 'groen'),', '.join(e['variants']),e.get('h','-'),e.get('rawvisible','-'),'ja' if e.get('strict') else 'nee',e.get('v5','-')))
     L+=['','## Fouten en waarschuwingen','']
     for k in R:
         for x in R[k]['F']: L.append('- FOUT %s: %s'%(k,x))

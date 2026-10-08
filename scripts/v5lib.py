@@ -46,6 +46,7 @@ FLOWSIG = {'post-purchase': 'order', 'winback': 'order', 'vip': 'order', 'annive
            'checkout': 'checkout', 'cart': 'cart', 'browse': 'browse',
            'welcome': 'profile', 'site': 'profile', 'sunset': 'profile', 'ugc': 'profile'}
 PC = "person.Country"          # Klaviyo-tag voor het profielland; tweede bron person.country_code (mpcc) bij profiel en browse
+PCC = "person|lookup:'country_code'"   # eigen ISO-veld (47 tot 72% gevuld, 01-markten.md sectie 4); gebonden als mpcc (integratie 8 okt)
 # EU- en ME-lijsten één keer per {% with %} gebonden (meu, mme), zodat elke voorwaarde kort blijft
 _L = {'order': (EU_ISO, ME_ISO), 'cart': (EU_ISO, ME_ISO), 'checkout': (None, ME_CUR),
       'profile': (EU_ISO + '|' + EU_NAMES, ME_ISO + '|' + ME_NAMES), 'browse': (EU_ISO + '|' + EU_NAMES, ME_ISO + '|' + ME_NAMES)}
@@ -55,8 +56,8 @@ def _lists(sig):
 BIND = {'order': "mc=event.extra.shipping_address.country_code" + _lists('order'),
         'cart': "mc=event|lookup:'_ip_country_code'" + _lists('cart'),
         'checkout': "mcur=event.extra.presentment_currency mpc=" + PC + "|default:'US'" + _lists('checkout'),
-        'profile': "mpc=" + PC + _lists('profile'),
-        'browse': "mpc=" + PC + " mpr=event.Price" + _lists('browse')}
+        'profile': "mpc=" + PC + " mpcc=" + PCC + _lists('profile'),
+        'browse': "mpc=" + PC + " mpcc=" + PCC + " mpr=event.Price" + _lists('browse')}
 
 def sig_of(flow):
     if flow in BIND: return flow
@@ -198,7 +199,7 @@ def price_vals(key, mult=1.0, field='price', frm=False):
     return out
 
 # ------------------------------------------------------------------ teksten per markt
-SIZE_IN = {20: '8', 24: '9.5', 26: '10', 28: '11', 30: '12'}
+SIZE_IN = {6: '2.4', 9: '3.5', 20: '8', 24: '9.5', 26: '10', 28: '11', 30: '12'}   # 6 en 9: zijhoogte deep pan en wok (about-blok)
 def size_txt(cm, mode=''):
     i = SIZE_IN.get(int(cm), '%g' % (int(cm) / 2.54))
     us = '%s&Prime; (%s cm)' % (i, cm) if mode == 'both' else '%s&Prime;' % i
@@ -546,7 +547,11 @@ def xrow(tok, kv, sig, prices):
     name, sub, key, img, cm = XITEM[tok]
     pre, post = kv.get('pre', 'https://siraatskitchen.com/products/'), kv.get('post', '')
     h = handle(key)
-    if tok in LIDVAR: h += ('%3Fvariant%3D' if 'redirect' in pre else '?variant=') + LIDVAR[tok]
+    if tok in LIDVAR:
+        h += ('%3Fvariant%3D' if 'redirect' in pre else '?variant=') + LIDVAR[tok]
+        # de link heeft nu al een query: de UTM-staart sluit aan met & (gecodeerd %26), nooit een tweede ? (%3F)
+        if post.upper().startswith('%3F'): post = '%26' + post[3:]
+        elif post.startswith('?'): post = '&' + post[1:]
     if cm: name = name + ' ' + size_chain(sig, cm, bare=True)
     pr = ''
     if prices != 'none':

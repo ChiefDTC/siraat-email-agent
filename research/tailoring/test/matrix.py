@@ -7,6 +7,7 @@ import sys, os, re, json, subprocess, html as H
 T = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.abspath(os.path.join(T, '..', '..', '..'))
 V = os.path.join(ROOT, 'klaviyo', 'templates', 'v3'); SH = os.path.join(ROOT, 'klaviyo', 'templates', 'partials', 'shared')
 sys.path.insert(0, os.path.join(T, 'pylib')); sys.path.insert(0, T)
+sys.path.insert(0, os.path.join(ROOT, 'scripts')); import v5lib
 import django
 from django.conf import settings
 settings.configure(TEMPLATES=[{'BACKEND': 'django.template.backends.django.DjangoTemplates', 'OPTIONS': {'libraries': {'kl': 'kltags'}, 'builtins': ['kltags']}}])
@@ -24,7 +25,8 @@ def route(c):
     t, price, _ = CATS[c]; kook = c in KOOK or c in SET
     r = {}
     if kook:
-        c3 = 'c3-s' if (c in SET or price >= 300) else ('c3-p' if c in PANPRO and price < 250 else None)
+        # v5 (build_flows.py, integratie 8 okt): C3-S alleen bij een (grote) set, C3-P bij Pan Pro of starterbundel onder $300
+        c3 = 'c3-s' if c in SET else ('c3-p' if c in PANPRO and price < 300 else None)
         r['checkout'] = ['c1', 'c2'] + ([c3] if c3 else []) + ['c4', 'c4-nocode']
     else:
         r['checkout'] = ['c1', 'c2-acc', 'c3-acc', 'c4', 'c4-nocode']
@@ -97,11 +99,18 @@ def checks(c, flow, mail, h, tx):
     # v5 (8 okt): about en goes zijn niet marktveilig (inch, USD): C1 alleen about bij accessoires, K1/K2-new geen about, C1/K2-new geen goes (03-copy-spec 3 en 4);
     # e-gift card krijgt geen about (noemt USD-bedragen)
     need_about = ({'c1', 'k1-acc', 'b1-acc'} if c in ACC - {'giftcard'} else set()) | ({'b1-acc'} if c == 'giftcard' else set())
-    need_goes = {'r1-pan', 'v1', 'v1-nocode'} if c != 'giftcard' else set()
-    need_goes1 = {'p3-pan', 'p3-pan-nocode', 'p3-set', 'p3-set-nocode'}
     if mail in need_about and 'data-about="%s"' % ('standard' if c == 'panpro' else c) not in h: F.append('geen productblok data-about="%s"' % c)
-    if (mail in need_goes or mail in need_goes1) and 'data-goes="%s"' % c not in h: F.append('geen goes-blok data-goes="%s"' % c)
+    # v5: goes/goes1 zijn vervangen door het cross-sell-blok xsell (scripts/v5lib.py): in elke order-flowmail met cross-sell
+    # moet het blok er staan, en het mag nooit iets aanbieden wat in de order zit (sets via hun inhoud, v5lib.XOWN)
+    if mail in NEED_XSELL:
+        if 'data-xsell="1"' not in h: F.append('geen cross-sell-blok data-xsell')
+        order = (CATS[c][0]).lower()
+        for tok in re.findall(r'data-xs="(\w+)"', h):
+            if tok != 'none' and any(x in order for x in v5lib.XOWN[tok][0]): F.append('cross-sell biedt %s aan uit de order' % tok)
     return F
+
+NEED_XSELL = {'n1', 'n2', 'n2-nocode', 'v1', 'v1-nocode', 'r1-acc', 'r1-pan', 'r1-set', 'r2', 'r2-nocode', 'r2-vip', 'r2-vip-nocode'} | \
+    {'p3-%s%s' % (x, y) for x in ('pan', 'set', 'next', 'apron', 'accessory') for y in ('', '-nocode')}
 
 # eigen productregels per categorie: wat moet de klant zien (tekst) in de eerste mail van de flow
 MUST = {
@@ -113,7 +122,7 @@ MUST = {
  ('pizza', 'p3-accessory'): ['your pizza steel'], ('apron', 'b1-acc'): ['ABOUT THE APRON'],
 }
 # en wat er niet mag staan
-MUSTNOT = {('apron', 'c1'): ['Titanium vs. coated', 'Your future pan'], ('pizza', 'c1'): ['Your future pan'], ('pot', 'c1'): ['Your future pan'], ('wok', 'r1-pan'): ['Wok Pan Pro'], ('standard', 'p3-pan'): ['Titanium Cutting Board'],
+MUSTNOT = {('apron', 'c1'): ['Titanium vs. coated', 'Your future pan'], ('pizza', 'c1'): ['Your future pan'], ('pot', 'c1'): ['Your future pan'], ('wok', 'r1-pan'): ['Wok Pan Pro'],
  ('pizza', 'k1'): ['Why one pass is enough', 'Why one wipe is enough'], ('pot', 'k2-new'): ['15 coated pans']}
 
 def main():
