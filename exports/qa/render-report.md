@@ -127,7 +127,7 @@ Tag-allowlist: Django `autoescape, comment, cycle, elif, else, empty, endautoesc
 - let op post-purchase/p1-repeat: inbox: 3 uitroeptekens in de body
 - let op post-purchase/p1-repeat: ruw 390 px (code-editor mobiel): tabel 564 px breed door lange Django-expressies; gerenderd in orde
 - let op post-purchase/p2-safe: hoogte 3854 px op 390 px bij po_pan_us (geen verkoopmail of P2: langer toegestaan)
-- let op post-purchase/p2: hoogte 4186 px op 390 px bij po_set6 (geen verkoopmail of P2: langer toegestaan)
+- let op post-purchase/p2: hoogte 4186 px op 390 px bij po_pan_us (geen verkoopmail of P2: langer toegestaan)
 - let op post-purchase/p3-accessory: ruw 390 px (code-editor mobiel): tabel 515 px breed door lange Django-expressies; gerenderd in orde
 - let op post-purchase/p3-apron: ruw 390 px (code-editor mobiel): tabel 515 px breed door lange Django-expressies; gerenderd in orde
 - let op site/a1: outlook: preheader zonder mso-hide:all

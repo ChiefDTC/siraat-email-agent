@@ -28,3 +28,7 @@ tijd_ams,alias,flow,mail,onderwerp,checks_ok,fouten
 2026-10-08 22:31,(correctie W1 x3),TEST v5 Welcome,W1 A/B,"No PFAS. Here's the paper. And 10%.",-,"codebalk 'YOUR WELCOME 10%%' (dubbel procentteken) in WVXPLp/Y7nEEf"
 2026-10-08 22:34,+welcomeabtb,TEST v5 Welcome,W4-US,"Who are you cooking for?",11,"systeemfouten (TEST-welcome oude templates; Draft-flows inmiddels bijgewerkt)"
 2026-10-08 22:38,+pan,TEST v5 Checkout,C1,"Your cart + 4 gifts are still pending",12,"geen FOUT; LET OP 20 min vertraging; recover-link naar shop.app"
+2026-10-08 22:44,+set,TEST v5 Checkout,C1,"Your cart + 4 gifts are still pending",12,"geen FOUT; event bevat Pan Pro Standard i.p.v. set (set-tak niet getest)"
+2026-10-08 22:44,+welcomeint,TEST v5 Welcome,W5,"Tammy is on her fourth pan",11,"systeemfouten (oude TEST-welcome-templates)"
+2026-10-08 22:55,+welcome,TEST v5 Site,A1,"Four eggs or five?",12,"geen FOUT; LET OP site-mail tijdens welcome-reeks"
+2026-10-08 22:59,+uk,TEST v5 Checkout,C1,"Your cart + 4 gifts are still pending",12,"geen FOUT; UK correct; vertraging 39 min"

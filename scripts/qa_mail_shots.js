@@ -1,9 +1,13 @@
 // Browsermetingen en screenshots voor scripts/qa_inbox.py (subcommando's mail en templates). Niet los gebruiken.
 // Gebruik: node scripts/qa_mail_shots.js <jobs.json> <resultaat.json>
-// jobs: [{key, html, width, mode: light|dark|forced, shot (pad of null), net (bool: beelden van internet laden)}]
+// jobs: [{key, html, width, mode: light|dark|forced|apple, shot (pad of null), net (bool: beelden van internet laden)}]
 //   light   gewone weergave
-//   dark    prefers-color-scheme: dark (Apple Mail, iOS Mail, Outlook Mac)
-//   forced  Chromium auto-dark (WebContentsForceDark), benadering van Gmail-app en Outlook die kleuren zelf omkeren
+//   dark    prefers-color-scheme: dark (Apple Mail, iOS Mail, Outlook Mac), alleen de eigen CSS van de mail
+//   forced  geforceerde inversie: Chromium auto-dark (WebContentsForceDark) NA het weghalen van color-scheme (meta's en :root).
+//           Benadering van clients die zelf omkeren en 'light only' negeren (Gmail-app bij niet-Google-accounts, Outlook.com/-apps,
+//           Outlook Windows). Sinds de mails 'light only' melden (13-darkmode.md, 8 okt 2026) zou auto-dark ze anders altijd licht laten.
+//   apple   wat Apple Mail (en Outlook Mac, Android-webviews die color-scheme volgen) doet: prefers-color-scheme: dark plus auto-dark
+//           die de color-scheme-verklaring van de mail WEL volgt. Met 'light only' blijft de mail licht; zonder verklaring wordt hij donker.
 // Meet: horizontaal scrollen, afgesneden/vervormde/uitstekende beelden, beelden die niet laden, contrast van de afmeldlink,
 // en in donkere modi tekst met contrast < 3:1.
 const { chromium } = require('/opt/node-tools/node_modules/playwright');
@@ -19,7 +23,7 @@ const TRACK = /klclick\d?\.com|kmail-lists\.com|klaviyo\.com\/(o|l)\//;
   async function worker() {
     while (i < jobs.length) {
       const j = jobs[i++];
-      const b = j.mode === 'forced' ? forced : normal;
+      const b = (j.mode === 'forced' || j.mode === 'apple') ? forced : normal;
       const ctx = await b.newContext({ colorScheme: j.mode === 'light' ? 'light' : 'dark', viewport: { width: j.width, height: 900 } });
       await ctx.route(/^https?:/, r => (j.net && !TRACK.test(r.request().url()) && r.request().resourceType() === 'image') ? r.continue() : r.abort());
       const p = await ctx.newPage();
@@ -27,6 +31,12 @@ const TRACK = /klclick\d?\.com|kmail-lists\.com|klaviyo\.com\/(o|l)\//;
         const url = j.html.startsWith('http') ? j.html : 'file://' + path.resolve(j.html);
         await p.goto(url, { waitUntil: 'load', timeout: 45000 });
         await p.evaluate(() => Promise.all([...document.images].map(im => im.complete ? 0 : new Promise(r => { im.onload = im.onerror = r; setTimeout(r, 8000); }))));
+        if (j.mode === 'forced') await p.evaluate(() => {   // de echte inversie negeert de light-only-verklaring: verklaring weg, auto-dark doet de rest
+          document.querySelectorAll('meta[name="color-scheme"],meta[name="supported-color-schemes"]').forEach(m => m.remove());
+          const st = document.createElement('style'); st.textContent = ':root,html,body{color-scheme:normal!important;}'; document.head.appendChild(st);
+          document.documentElement.style.setProperty('color-scheme', 'normal', 'important');
+          return new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+        });
         const m = await p.evaluate((mode) => {
           const parse = c => { const m = c && c.match(/rgba?\(([^)]+)\)/); if (!m) return null; const v = m[1].split(/[ ,/]+/).filter(Boolean).map(Number); return [v[0], v[1], v[2], v.length > 3 ? v[3] : 1]; };
           const lin = c => { c /= 255; return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4); };
@@ -65,7 +75,7 @@ const TRACK = /klclick\d?\.com|kmail-lists\.com|klaviyo\.com\/(o|l)\//;
           }
           for (const a of document.querySelectorAll('a[href]')) {
             const t = (a.innerText || '').replace(/\s+/g, ' ').trim(); const h = a.getAttribute('href') || '';
-            if (mode === 'forced' || !/unsubscribe|preferences|afmelden/i.test(t + ' ' + h) || !vis(a) || !t) continue;
+            if (mode === 'forced' || mode === 'apple' || !/unsubscribe|preferences|afmelden/i.test(t + ' ' + h) || !vis(a) || !t) continue;
             const fg = parse(getComputedStyle(a).color), bg = bgOf(a);
             out.unsubContrast.push({ t, ratio: +ratio(fg, bg).toFixed(2), fg: css(fg), bg: css(bg), mode });
           }

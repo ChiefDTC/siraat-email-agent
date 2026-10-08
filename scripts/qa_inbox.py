@@ -217,7 +217,7 @@ def browser_run(jobs):
     res = json.load(open(rf)); shutil.rmtree(tmp, ignore_errors=True); return res
 
 
-MAIL_VIEWS = [(375, 'light'), (600, 'light'), (1200, 'light'), (375, 'dark'), (600, 'dark'), (375, 'forced')]
+MAIL_VIEWS = [(375, 'light'), (600, 'light'), (1200, 'light'), (375, 'dark'), (600, 'dark'), (375, 'forced'), (375, 'apple')]
 
 
 def md_report(res, meta):
@@ -334,8 +334,8 @@ def cmd_templates(args):
             except Exception as ex: e['err'] = 'rendering faalt: %s' % str(ex)[:160]; continue
             rp = os.path.join(tmp, '%s-%s-%s.html' % (flow, mid, mk)); open(rp, 'w').write(r)
             e.update(html=rp, raw=k, subject=sa or mf.get('onderwerp_a', ''), preview=pv or mf.get('preview', ''))
-            for w, md in [(375, 'light'), (600, 'light'), (1200, 'light'), (375, 'dark'), (375, 'forced')]:
-                sh = os.path.join(shots, '%s-%s-%s-%s-%d.jpg' % (mk, flow, mid, md, w)) if (w, md) in ((375, 'light'), (600, 'light'), (375, 'dark'), (375, 'forced')) else None
+            for w, md in [(375, 'light'), (600, 'light'), (1200, 'light'), (375, 'dark'), (375, 'forced'), (375, 'apple')]:
+                sh = os.path.join(shots, '%s-%s-%s-%s-%d.jpg' % (mk, flow, mid, md, w)) if (w, md) in ((375, 'light'), (600, 'light'), (375, 'dark'), (375, 'forced'), (375, 'apple')) else None
                 jobs.append(dict(key='%s|%s|%s|%d' % (key, mk, md, w), html=rp, width=w, mode=md, net=False, shot=sh))
         for nm in set(re.findall(r'src="file://[^"]*/([^"/]+)"', k)):
             cdn_todo[nm] = cm.get(nm)

@@ -106,6 +106,17 @@ def head_fix(x):
         x=x.replace('<style>','<!--[if !mso]><!--><style>'+imp.group(0).strip()+'</style><!--<![endif]-->\n<style>',1)
     return x.replace('</head>',MSO+'</head>',1)
 k=head_fix(k)
+# Dark mode stap 1 (research/v6-golive/13-darkmode.md, 8 okt 2026): de mail is alleen licht. 'light only' i.p.v. 'light' of 'light dark':
+# Apple Mail, Outlook Mac, Android-webviews en (gemeld sept 2026) de Gmail-apps keren dan niet om. In lichte modus verandert er niets.
+# Eigen <style>-blok voor :root, zodat een client die :root niet snapt alleen dat blok weggooit. Stap 2 (Outlook [data-og*]) pas na een echte testmail.
+LIGHT_ONLY='<style>:root{color-scheme:light only;supported-color-schemes:light only;}</style>\n'
+def light_only(x):
+    for n in ('color-scheme','supported-color-schemes'):
+        x,c=re.subn(r'<meta name="%s" content="[^"]*"\s*/?>'%n,'<meta name="%s" content="light only">'%n,x)
+        if not c: x=x.replace('</head>','<meta name="%s" content="light only">\n</head>'%n,1)
+    x=re.sub(r'(color-scheme\s*:\s*)light(?:\s+dark)?(\s*[;}])',r'\1light only\2',x)
+    return x.replace('</head>',LIGHT_ONLY+'</head>',1) if LIGHT_ONLY not in x else x
+k=light_only(k)
 k=re.sub(r'<!--(?![\[<>]).*?-->\n?','',k,flags=re.S)
 # UTM op siraatskitchen.com-links zonder UTM (header/footer-partials); prefix en campaign uit de eigen links van de mail
 def add_utm(x):
@@ -148,6 +159,7 @@ if '{{IMG}}' not in k and '{{SHARED}}' not in k: open(OPT.get('--out',base+'.kla
 elif OPT.get('--out'): sys.exit('nog {{IMG}}/{{SHARED}} zonder URL: '+', '.join(sorted(set(re.findall(r'\{\{(?:IMG|SHARED)\}\}/([\w.-]+)',k)))))
 if OPT.get('--no-preview'): sys.exit(0)
 p=h.replace('{{IMG}}',os.path.basename(assets.rstrip('/'))).replace('{{SHARED}}',os.path.relpath(SH,os.path.dirname(os.path.abspath(src))))
+p=light_only(p)
 p=re.sub(r"\{% coupon_code [^%]*%\}",'SRT-K7Q2M',p)
 # Preview: Klaviyo-datumtag als voorbeelddatum (vandaag + N dagen, Django-datumformaat naar strftime)
 import datetime as _dt
