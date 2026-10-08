@@ -1,0 +1,12 @@
+:envelope_with_arrow: *Nieuwe e-mail ontvangen:* post-purchase/p2-safe, lolagroothuis+order (US), 8 okt 21:45
+Onderwerp: "When your pan arrives: the first egg" · <https://mail.google.com/mail/?authuser=lolagroothuis@gmail.com#all/thread-f:1a11d0c6ecda7fac|open in Gmail>
+*10 OK · 3 FOUT · 2 LET OP*
+
+:x: *Linktekst past bij bestemming*: [FOUT] "ABOUT" -> /pages/faq
+:x: *Afmelden en voorkeuren*: afmeldlink nauwelijks zichtbaar: "Unsubscribe" 2.4:1 (rgb(172,59,25) op rgb(40,40,40), dark), "Unsubscribe" 2.4:1 (rgb(172,59,25) op rgb(40,40,40), light), "Unsubscribe" 2.4:1 (rgb(172,59,25) op rgb(40,40,40), light)
+:x: *Dark mode*: dark 375 px: tekst met laag contrast "Unsubscribe" 2.4:1; dark 375 px: tekst met laag contrast "View in browser" 2.4:1; forced 375 px: logo ae4dfc27-1e05-481a-90b6-f6467bc3db78.png onzichtbaar (contrast 2.8:1 tussen logo en achtergrond); dark 600 px: tekst met
+:warning: *Links (status 200)*: 17 links, 12 unieke bestemmingen; sociale links niet te openen vanuit deze omgeving: Facebook (www.facebook.com), Instagram (www.instagram.com). Niet gecontroleerd: Manage preferences (manage.kmail-lists.com), Unsubscribe (manage.kmail-lists.com), View in brow
+:warning: *Beelden*: 9 beelden, 889 KB totaal; zwaar (>300 KB): 6953bf24-21e9-4d5f-88a8-161f7e1b6db7.gif 559 KB
+:white_check_mark: Onderwerp, Preheader, Afzender, Grootte (Gmail-clip 102 KB), UTM, Ongerenderde tags, Valuta en maat, Header, footer, logo, Em dash, Layout 375/600/1200 px
+
+Screenshots (375 licht, 375 dark, 600 licht) als bijlage in de thread; volledig rapport: `exports/qa/inbox/order-P2-SAFE/report.md`
