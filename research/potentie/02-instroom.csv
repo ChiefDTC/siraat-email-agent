@@ -1,0 +1,22 @@
+stroom,metric_id,maat,venster_365d_totaal,per_dag_365d,venster_90d_totaal,per_dag_90d,bron,opmerking
+Inschrijvers Email List,SCvkku (List=Email List Uw8eZG),events,234576,642.7,57697,641.1,Klaviyo metric aggregates US/Eastern,laatste 30 d 607/dag; ~20% koopt binnen 10 min (timing 6)
+Inschrijvers BFCM-lijst,SCvkku (List=EB [DG] BFCM 2025),events,45396,124.4,0,0,Klaviyo metric aggregates,39.133 in nov 2025; vermoedelijk geen welcome (SiaNLu nov 2.416 uniek)
+Inschrijvers SMS List,SCvkku (List=SMS List),events,8538,23.4,4382,48.7,Klaviyo metric aggregates,7,6% van e-mailinschrijvers in 90 d
+Uitschrijvingen e-mail,YcWddQ,events,91882,251.7,,,Klaviyo metric aggregates,sep 2026 9.744 (325/dag)
+Checkout Started,RfMvni,unieke profielen (som per dag),118807,325.5,26018,289.1,Klaviyo metric aggregates,26,1% koopt niet binnen 15 min (timing 1b)
+Added to Cart,QXcV8K,unieke profielen (som per dag),127955,350.6,25488,283.2,Klaviyo metric aggregates,47% van de events is automatische gift
+Viewed Product (onsite),XNtYMB,unieke profielen (som per dag),433002,1186.3,100409,1115.7,Klaviyo metric aggregates,
+Viewed Product (Triple Pixel),V48nhq,unieke profielen (som per dag),349482,957.5,81305,903.4,Klaviyo metric aggregates,
+Active on Site,UdCdLD,unieke profielen (som per dag),543009,1487.7,128428,1427.0,Klaviyo metric aggregates,geen flow op deze trigger
+Online store visitors,Shopify sessions,bezoekers (som per maand),4129000,11312,,,ShopifyQL sessions,Klaviyo herkent ~13% (Active on Site / bezoekers)
+Sessies,Shopify sessions,sessies,5277915,14460,,,ShopifyQL sessions,conversie 1,2-1,7%
+Placed Order,RSNxYV,orders,90475,247.9,18115,201.3,Klaviyo metric aggregates,Shopify 90.134
+Placed Order,RSNxYV,omzet USD,18339806,50246,3843477,42705,Klaviyo metric aggregates,Shopify total_sales 19.410.282
+E-mail-geattribueerd,RSNxYV ($attributed_channel=email),omzet USD,3126778,8567,,,Klaviyo metric aggregates,17,0% van de omzet
+Flow-geattribueerd,flow-values-report last_365_days,omzet USD,1944434,5327,,,Klaviyo reporting API,10,6% van de omzet; nov 2025 6,2%
+SMS-geattribueerd,RSNxYV ($attributed_channel=sms),omzet USD,15855,43,,,Klaviyo metric aggregates,15.373 SMS verzonden sinds mrt 2026
+Back in Stock aanmeldingen,T4dnSM,events,261,0.7,,,Klaviyo metric aggregates,pas sinds juli 2026
+Recharge-abonnementen gestart,WPwuMk,events,25,0.1,,,Klaviyo metric aggregates,vaatwasstrips
+Nieuwe klanten,Shopify sales,klanten,80912,221.7,,,ShopifyQL,terugkerend 7.487
+Orders US,Shopify sales (shipping_country),orders,40852,111.9,12037,133.7,ShopifyQL,45% van orders (365 d); 66% laatste 90 d; AOV $218 (365 d) en $230 (90 d)
+Orders internationaal,Shopify sales (shipping_country),orders,49282,135.0,,,ShopifyQL,AOV $217 (365 d)
