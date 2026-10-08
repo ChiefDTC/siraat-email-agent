@@ -39,9 +39,9 @@
 
 {{HEADER}}
 
-<!-- HERO 4:3 met aanbodbalk (make_hero.py --offer --ratio=4:3, bron: content/media/hero-register/checkout.csv) -->
+<!-- HERO 4:3 met aanbodbalk (make_hero.py --offer --ratio=4:3, bron: content/media/hero-register/checkout.csv). Productmatrix 8 okt: eigen hero voor set, pot, pizza steel en schort via het pick-blok -->
 <tr><td style="padding:0;">
-  <a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-hero"><img src="{{IMG}}/c1-hero.jpg" width="600" alt="Your cart is saved, right where you left it. Extra 10% off with code HI10, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-hero"><img src="{{BLOCK:pick src="event.Items|join:','" set="{{IMG}}/c1-hero-set.jpg" pot="{{IMG}}/c1-hero-pot.jpg" pizza="{{IMG}}/c1-hero-pizza.jpg" apron="{{IMG}}/c1-hero-apron.jpg" dflt="{{IMG}}/c1-hero.jpg"}}" width="600" alt="{{BLOCK:pick src="event.Items|join:','" set="Your set is saved: the whole kitchen, right where you left it." pot="Your pot is saved, right where you left it." pizza="Your pizza steel is saved: a crisp base, no coating." apron="Your apron is saved, ready when you are." dflt="Your cart is saved, right where you left it."}} Extra 10% off with code HI10, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
 {{BLOCK:cart pad="22px 44px 4px 44px" line="<b>HI10</b> takes an extra 10% off, and your <b>$70 in gifts</b> are still attached to this cart."}}
@@ -50,23 +50,21 @@
 
 
 
-<!-- EEN TWIJFEL WEG: kookgerei krijgt maat en kookplaat, accessoires verzending en retour -->
-{% if 'Hammer' in event.Items|join:',' or 'Pan' in event.Items|join:',' or 'Pot' in event.Items|join:',' or 'ookware' in event.Items|join:',' or 'Everything' in event.Items|join:',' or 'fanne' in event.Items|join:',' or 'Prep Bundle' in event.Items|join:',' %}
-<tr><td class="pad" style="padding:26px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">Something stopped you? Most questions here are about size, stove and price. The 11-inch is our best seller, for cooking for 2 to 4, and works on every stove.{% if person.Country == 'United States' or person.Country == 'US' or not person.Country and event.extra.presentment_currency == 'USD' or not person.Country and not event.extra.presentment_currency %} Prefer to pay over time? Shop Pay Installments and Affirm are at checkout.{% endif %}</td></tr>
-{% else %}
-<tr><td class="pad" style="padding:26px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">Something stopped you? Most questions at this step are about shipping and returns. Shipping is free, and anything unused can go back within 30 days of delivery.</td></tr>
-{% endif %}
-
+<!-- PRODUCTMATRIX (8 okt): over jouw product, met het bezwaar dat voor dat product het vaakst komt en een echte review van een koper (blocks/about.html) -->
+{{BLOCK:about src="event.Items|join:','" lead="YOUR" pad="24px 44px 4px 44px"}}
+{% if 'Pan' in event.Items|join:',' or 'Pot' in event.Items|join:',' or 'ookware' in event.Items|join:',' or 'Everything' in event.Items|join:',' or 'fanne' in event.Items|join:',' %}{% if person.Country == 'United States' or person.Country == 'US' or not person.Country and event.extra.presentment_currency == 'USD' or not person.Country and not event.extra.presentment_currency %}
+<tr><td class="pad" style="padding:14px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#727272;text-align:center;">Prefer to pay over time? Shop Pay Installments and Affirm are at checkout.</td></tr>
+{% endif %}{% endif %}
 
 {{BLOCK:gifts headline="$70 in gifts, included" note="The filter is a chance to win. The rest comes with every order."}}
 
-{% if 'Hammer' in event.Items|join:',' or 'Pan' in event.Items|join:',' or 'Pot' in event.Items|join:',' or 'ookware' in event.Items|join:',' or 'Everything' in event.Items|join:',' or 'fanne' in event.Items|join:',' or 'Prep Bundle' in event.Items|join:',' %}
-{{BLOCK:compare eyebrow="THE DIFFERENCE" headline="No PFAS. No coating." a1="Titanium cooking surface" b1="A PTFE or ceramic coating" a2="No coating to wear off" b2="Coating wears with use" a3="Metal utensils welcome" b3="Wood or silicone advised" a4="Tested by Light Labs" b4="Testing varies by brand" a5="Dishwasher safe" b5="Hand wash advised" note="Light Labs report no. 25895: 31 PFAS tested, all below detection."}}
-{% endif %}
+
 
 {{BLOCK:cta label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-cta2" pad="26px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
 
-{% if 'Hammer' in event.Items|join:',' or 'Pan' in event.Items|join:',' or 'Pot' in event.Items|join:',' or 'ookware' in event.Items|join:',' or 'Everything' in event.Items|join:',' or 'fanne' in event.Items|join:',' or 'Prep Bundle' in event.Items|join:',' %}
+{{BLOCK:goes src="event.Items|join:','" pad="28px 44px 4px 44px" pre="https://siraatskitchen.com/discount/HI10?redirect=/products/" post="%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-checkout%26utm_content%3Dc1-goes" note="HI10 takes 10% off these too. Add one before you check out."}}
+
+{% if 'Hammered Pan Pro' in event.Items|join:',' %}
 {{BLOCK:ugc headline="Why they kept it" img1="ugc-prod-panpro.jpg" alt1="Titanium Hammered Pan Pro, product photo" q1="Great to know no chemicals are being released into our food when cooking with this pan!" n1="Beverley S." c1="Pan Pro" img2="ugc-prod-panpro-b.jpg" alt2="Titanium Hammered Pan Pro, product photo" q2="Was sceptical but the pan arrived just as described and works perfectly" n2="Avril" c2="Pan Pro" img3="ugc-prod-panpro-c.jpg" alt3="Titanium Hammered Pan Pro, product photo" q3="...non-toxic and so much lighter than my old cast iron pans." n3="Tammy" c3="Pan Pro"}}
 {% else %}
 {{BLOCK:reviews q1="Outstanding customer service and communication. Very happy with the quality of the products!" n1="Vince" q2="Excellent customer service who followed up right through to check the shipment was delivered. Good honest seller." n2="Becki"}}

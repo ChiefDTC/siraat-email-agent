@@ -1,0 +1,317 @@
+"""Productblokken voor de flows (productmatrix, research/tailoring/10-productmatrix.md).
+
+Schrijft drie blokken in klaviyo/templates/partials/blocks/ en de productbeelden in partials/shared/:
+  about.html   {{BLOCK:about src="<expr>" lead="YOUR" pad="..."}}
+               "About your <product>": beeld, kop, 3 feiten, het meest gestelde bezwaar met antwoord, 1 echte review.
+  goes.html    {{BLOCK:goes src="<expr>" lead="YOUR" pad="..." pre="<url tot /products/>" post="<rest van de url>" note="..."}}
+               "Goes with your <product>": 2 rijen op basis van de echte kooppatronen (research/personalisatie/01-voorstel.md 2.1-2.2).
+               Link per rij = pre + handle + post (zo kan een mail HI10 of een eigen code in de link zetten).
+  noun.html    {{BLOCK:noun src="<expr>" dflt="pan"}}  inline: pan / wok / pizza steel / pot / set / apron ...
+  pick.html    {{BLOCK:pick src="<expr>" set="..." pot="..." pizza="..." apron="..." dflt="..."}}  inline keuze per groep
+               (zelfde volgorde als about), bijvoorbeeld een productspecifieke hero: src="{{BLOCK:pick ... set="{{IMG}}/c1-hero-set.jpg" ...}}".
+<expr> is de string waarin gezocht wordt: event.Items|join:',' (Checkout Started, Placed Order), event|lookup:'Product Name'
+(Added to Cart), event.Name (Viewed Product). Volgorde van de keten = prioriteit bij meer producten in de cart: set, pot,
+Pan Pro per maat, vorm, overig kookgerei, accessoires. Elk blok heeft data-about / data-goes = categorie (voor de tests).
+Geen prijzen in deze blokken (55% van de orders is internationaal; prijzen alleen waar de template dat al per land regelt).
+Reviews: letterlijk uit content/reviews/reviews.csv (Trustpilot), het script controleert dat elke quote echt in die review staat.
+Beelden: kopieën van content/products/*/img (en enkele Shopify-CDN-kopieën in scratch), originelen nooit gewijzigd.
+Gebruik: python3 -I scripts/make_product_blocks.py [--dl=<map met gedownloade CDN-beelden>]"""
+import os, sys, csv, re
+from PIL import Image, ImageChops
+ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
+B = os.path.join(ROOT, 'klaviyo', 'templates', 'partials', 'blocks'); SH = os.path.join(ROOT, 'klaviyo', 'templates', 'partials', 'shared')
+P = os.path.join(ROOT, 'content', 'products')
+OPT = {a.split('=', 1)[0]: a.split('=', 1)[1] for a in sys.argv[1:] if a.startswith('--') and '=' in a}
+
+# ---------- categorieën: (key, voorwaarde-tokens, noun, label, beeld) ----------
+# tokens: lijst substrings, OR. Volgorde = prioriteit.
+CATS = [
+ ('set12',    ['12-Pcs', '12 pcs'], 'set', '12-PIECE SET'),
+ ('setall',   ['Everything'], 'set', 'JUST EVERYTHING BUNDLE'),
+ ('setbig',   ['Cookware Set Pro', 'Complete Edition', 'Full Hammered'], 'set', 'SET'),
+ ('pot',      ['Pot'], 'pot', 'POT'),
+ ('set6',     ['6-Pcs', '6-teilig', '2 Pans', 'Pro Duo', 'Pan Pro Kit'], 'set', '6-PIECE SET'),
+ ('standard', ['Pan Pro Standard', 'Titanium Pan Pro'], 'pan', 'PAN PRO 11&Prime;'),
+ ('large',    ['Pan Pro Large'], 'pan', 'PAN PRO 12&Prime;'),
+ ('small',    ['Pan Pro Small'], 'pan', 'PAN PRO 10&Prime;'),
+ ('mini',     ['Pan Pro Mini'], 'pan', 'PAN PRO MINI'),
+ ('deep',     ['Deep Pan'], 'deep pan', 'DEEP PAN'),
+ ('wok',      ['Wok'], 'wok', 'WOK'),
+ ('crepe',    ['pe Pan'], 'cr&ecirc;pe pan', 'CR&Ecirc;PE PAN'),
+ ('pizza',    ['Pizza Steel'], 'pizza steel', 'PIZZA STEEL'),
+ ('roast',    ['Roasting'], 'roasting pan', 'ROASTING PAN'),
+ ('panpro',   ['Hammered Pan Pro'], 'pan', 'PAN PRO'),
+ ('board',    ['Cutting Board'], 'board', 'CUTTING BOARD'),
+ ('lid',      ['Lid'], 'lid', 'LID'),
+ ('mill',     ['Mill'], 'mills', 'MILLS'),
+ ('utensil',  ['Utensil', 'Chopsticks'], 'utensils', 'UTENSILS'),
+ ('apron',    ['Apron'], 'apron', 'APRON'),
+ ('sheets',   ['Dishwasher Sheets', 'Detergent'], 'sheets', 'DISHWASHER SHEETS'),
+ ('giftcard', ['Gift Card'], 'gift card', 'GIFT CARD'),
+]
+KEY = {c[0]: c for c in CATS}
+
+# ---------- beelden (240x240, getoond op 96 of 64 px) ----------
+DL = OPT.get('--dl', '')
+IMG = {
+ 'standard': P + '/titanium-hammered-pan-pro/img/packshot-1.jpg', 'large': P + '/titanium-hammered-pan-pro/img/packshot-2.jpg',
+ 'small': P + '/titanium-hammered-pan-pro/img/packshot-3.jpg', 'mini': P + '/titanium-hammered-pan-pro/img/packshot-3.jpg',
+ 'panpro': P + '/titanium-hammered-pan-pro/img/packshot-1.jpg',
+ 'deep': P + '/titanium-hammered-deep-pan-pro/img/packshot-3.jpg', 'wok': P + '/titanium-hammered-wok-pan-pro/img/packshot-3.jpg',
+ 'crepe': P + '/titanium-hammered-crepe-pan-pro/img/packshot-2.jpg', 'pizza': P + '/titanium-hammered-pizza-steel/img/packshot-1.jpg',
+ 'roast': P + '/titanium-hammered-roasting-pan/img/packshot-1.jpg', 'lid': P + '/stainless-steel-lid/img/packshot-1.jpg',
+ 'board': P + '/titanium-cutting-board-v2/img/packshot-2.jpg', 'mill': P + '/salt-pepper-mill-set/img/packshot-1.jpg',
+ 'apron': P + '/siraat-signature-apron/img/packshot-1.jpg', 'sheets': P + '/dishwashing-detergent-sheets-fresh-lemon/img/packshot-1.jpg',
+ 'giftcard': P + '/e-gift-card/img/image-1.jpg', 'set6': P + '/titanium-hammered-pan-set-with-lids-6-pcs/img/packshot-1.jpg',
+ 'set12': P + '/titanium-hammered-cookware-set/img/packshot-1.jpg', 'setbig': P + '/titanium-hammered-cookware-set-pro/img/packshot-1.jpg',
+ 'setall': DL + '/TitaniumHammeredPanPro_18.webp', 'pot': DL + '/6PCSSet08_1_3.webp', 'utensil': DL + '/Utensils05-V2_1.webp',
+}
+CROP = {'giftcard': (0.26, 0.17, 0.74, 0.65)}   # alleen het monogram van de kaart, zonder kersttekst
+
+# ---------- inhoud per categorie ----------
+# head, 3 feiten, bezwaar (vraag, antwoord), review-id + quote (letterlijk, mag op een hele zin of met ... ingekort), productlabel
+A = {
+ 'standard': ("The size most kitchens start with.",
+   ["11&Prime; (28 cm): everyday cooking for 2 to 4.", "Gas, electric, ceramic and induction.", "No coating. Tested free from PFAS by Light Labs, report no. 25895."],
+   ("Will eggs stick?", "Not once it is hot. Medium heat for 2 to 3 minutes, the water drop test, then a thin layer of oil."),
+   ('R411', "I purchased the hammered pro pan standard. It is beautiful and lightweight.", 'Pan Pro 11&Prime;')),
+ 'large': ("Room for the whole family.",
+   ["12&Prime; (30 cm): family dinners, batch cooking, several steaks at once.", "Gas, electric, ceramic and induction.", "No coating. Tested free from PFAS by Light Labs, report no. 25895."],
+   ("Which lid fits?", "The 30 cm Stainless Steel Lid. One in five Large owners adds it next."),
+   ('R473', "I saved up and bought the large fry pan. It's a whole new way to cook.", 'Pan Pro 12&Prime;')),
+ 'small': ("Dinner for two, done right.",
+   ["10&Prime; (26 cm): the right size for two.", "Gas, electric, ceramic and induction.", "No coating. Tested free from PFAS by Light Labs, report no. 25895."],
+   ("Is 10&Prime; big enough?", "For two, yes. Cooking for 3 or more most nights? The 11&Prime; is the better pick."),
+   ('R401', "Now I can cook knowing I have the top of the line cookware...", 'Pan Pro 10&Prime;')),
+ 'mini': ("The one you grab for breakfast.",
+   ["8&Prime; (20 cm): eggs, an omelette, a portion for one.", "The same titanium cooking surface as the bigger sizes.", "Gas, electric, ceramic and induction."],
+   ("Too small to be useful?", "It is the pan owners buy most as their second one, for the quick jobs."),
+   ('R324', "I ordered a 2nd smaller pan because of this experience.", 'Pan Pro Mini')),
+ 'panpro': ("The original hammered titanium pan.",
+   ["Four sizes, from 8&Prime; to 12&Prime;.", "Gas, electric, ceramic and induction.", "No coating. Tested free from PFAS by Light Labs, report no. 25895."],
+   ("Will eggs stick?", "Not once it is hot. Medium heat for 2 to 3 minutes, the water drop test, then a thin layer of oil."),
+   ('R473', "I saved up and bought the large fry pan. It's a whole new way to cook.", 'Pan Pro')),
+ 'deep': ("Sears like a skillet, holds like a saut&eacute; pan.",
+   ["Higher sides, about 2.4&Prime; (6 cm), for sauces, pasta and one-pan dinners.", "The same titanium cooking surface as the Pan Pro.", "Gas, electric, ceramic and induction."],
+   ("Is there a lid for it?", "Match the diameter: the 20, 26, 28 and 30 cm lids fit. There is no lid for the 24 cm yet."),
+   ('R562', "The Deep Pan Pro is my 'go to' favourite because I like to cook big meals", 'Deep Pan Pro')),
+ 'wok': ("Toss it. Nothing spills.",
+   ["Deep, flared walls, up to 3.5&Prime; (9 cm).", "The same titanium cooking surface as the Pan Pro.", "Gas, electric, ceramic and induction."],
+   ("Metal spatula?", "Yes. There is no coating on it to scratch."),
+   ('R014', "Also, I purchased their titanium wok a few months ago and it performs exactly as expected.", 'Wok Pan Pro')),
+ 'crepe': ("A low rim, so the spatula slides under.",
+   ["Flat and wide: cr&ecirc;pes, pancakes, eggs and tortillas.", "The same titanium cooking surface as the Pan Pro.", "Gas, electric, ceramic and induction."],
+   ("Will cr&ecirc;pes stick?", "Heat it first on medium, then a few drops of oil. The first one is the test."),
+   ('R088', "This is the best crepe pan that I have used that works like a non-stick but gives crispy output like a cast iron pan.", 'Cr&ecirc;pe Pan Pro')),
+ 'pizza': ("A crisp base, without a coating.",
+   ["Hammered surface: air gets under the dough, so it releases.", "No coating and no seasoning: nothing to burn off or keep up.", "Two side handles. Home oven, pizza oven or grill."],
+   ("Dishwasher?", "Yes. Let it cool first, or use warm water and a little soap."),
+   ('R048', "Have used my pizza stone a couple of times and it has made an excellent crust.", 'Pizza Steel')),
+ 'roast': ("Sear, roast and make the gravy in one pan.",
+   ["Fitted rack included, for crisp skin all the way round.", "Stovetop to oven, induction too.", "14 x 10.6&Prime;, 2.8&Prime; deep. Pan and rack go in the dishwasher."],
+   ("Will a turkey fit?", "Check the size above against your bird. Unused, it can go back within 30 days of delivery."),
+   None),
+ 'pot': ("Soups, sauces and pasta, on titanium.",
+   ["Comes with its own stainless steel lid.", "The same hammered titanium cooking surface as the pans, no coating.", "Gas, electric, ceramic and induction. Oven and dishwasher safe."],
+   ("Same warranty as the pans?", "Yes. Every pot is covered for 75 years."),
+   ('R018', "Our pots and pans are beautiful. They clean up very well and look brand new after every cleaning.", 'pots and pans')),
+ 'set6': ("Three pans, three lids, one decision.",
+   ["Pan Pro 8&Prime;, 10&Prime; and 12&Prime;, each with its own lid.", "Every pan: tested free from PFAS by Light Labs.", "One 75-year warranty covers every piece."],
+   ("Pans and lids in one box?", "They can travel in separate parcels, each with its own tracking."),
+   ('R025', "I ordered one pan to try it out. I'm so glad I did. I am so happy with this pan that I'm ordering the set.", 'set')),
+ 'set12': ("A complete PFAS-free kitchen.",
+   ["Three pans and three pots, six lids.", "Every piece: induction ready, oven and dishwasher safe.", "One 75-year warranty for the whole set."],
+   ("Why two parcels?", "Pans and pots can travel separately, each with its own tracking. Nothing is missing."),
+   ('R530', "I ordered a full set of the titanium cookware. It arrived in phases. All of it works as stated.", 'full set')),
+ 'setbig': ("Every pan you need, one surface.",
+   ["The same titanium cooking surface on every piece.", "Gas, electric, ceramic and induction.", "One 75-year warranty covers the set."],
+   ("What if I do not use every piece?", "Unused pieces can go back within 30 days of delivery."),
+   ('R398', "I ended up buying the whole collection. The food turned out much better cooked and juicier.", 'collection')),
+ 'setall': ("The whole kitchen, in one order.",
+   ["Pans, pots, a roasting pan and the tools, one titanium cooking surface.", "Pieces travel in separate parcels, each tracked.", "One 75-year warranty covers it all."],
+   ("What if I do not use every piece?", "Unused pieces can go back within 30 days of delivery."),
+   ('R398', "I ended up buying the whole collection. The food turned out much better cooked and juicier.", 'collection')),
+ 'board': ("Nothing soaks in.",
+   ["Pure titanium, non-porous: no juices or smells soak in.", "Anti-microbial, with a juice groove.", "Kind to knives: knife steel is harder than titanium."],
+   ("Knife marks?", "Every board shows them. On titanium they are surface lines, not grooves that hold bacteria."),
+   ('R490', "The cutting board itself is awesome and exceeded my expectations.", 'Cutting Board')),
+ 'lid': ("Sized to your pan.",
+   ["304 stainless steel, with three steam vents.", "20, 26, 28 or 30 cm.", "One lid fits every Siraat pan of that diameter."],
+   ("Which size?", "Match the diameter: Mini 20 cm, Small 26 cm, Standard 28 cm, Large 30 cm."),
+   ('R157', "Pans and lids arrived promptly and in good condition. Excellent quality and we look forward to using them for a long time.", 'pans and lids')),
+ 'mill': ("Heavy, metal, and easy to fill.",
+   ["All-metal body with a knurled grip.", "12 numbered settings, from fine to coarse.", "A wide opening, so refilling is quick."],
+   ("Which salt?", "Sea salt, Himalayan or rock salt."),
+   ('R256', "Really well made, plastic free, salt and pepper grinders.", 'Mill Set')),
+ 'utensil': ("Made for your pans.",
+   ["Titanium tools, light in the hand.", "Safe on every Siraat pan.", "Metal on titanium is fine: there is no coating to damage."],
+   ("Will they mark my pan?", "Any marks are cosmetic. There is no coating to scrape off."),
+   ('R018', "I received a free metal spatula as a gift. It works great and does not scratch the pans.", 'spatula')),
+ 'apron': ("Made for the cook who stays at the stove.",
+   ["Heavy 16-oz canvas with a water-repellent finish.", "Adjustable neck and waist straps, one size fits most.", "A real front pocket. Four colors: Azure, Moss, Ember, Oak."],
+   ("Machine washable?", "Wipe it down, or hand wash cold and let it air dry."),
+   ('R200', "It comes beautifully boxed, and the apron, bottle and spatula are such lovely gifts.", 'gift box')),
+ 'sheets': ("One sheet, one load.",
+   ["Pre-dosed: no measuring, no plastic pod.", "Phosphate-free and bleach-free.", "Tear one in half for a light load, or for washing up by hand."],
+   ("How many washes?", "30 sheets, up to 60 washes when you tear them in half."),
+   None),
+ 'giftcard': ("They pick the pan and the size.",
+   ["Sent by email, so it cannot get stuck in the mail.", "$25 to $200.", "Spend it on anything in the shop."],
+   ("Can it be combined with a code?", "Yes. It works as payment, and one discount code still applies."),
+   None),
+}
+
+# ---------- cross-sell: wat erbij hoort ----------
+# item: (naam, regel, handle, beeld)
+ITEM = {
+ 'mini': ("Pan Pro Mini 8&Prime;", "The breakfast pan: eggs and small portions.", 'titanium-hammered-pan-pro-mini', 'mini'),
+ 'small': ("Pan Pro Small 10&Prime;", "Dinner for two.", 'titanium-hammered-pan-pro-small', 'small'),
+ 'standard': ("Pan Pro 11&Prime;", "The size most kitchens start with.", 'original-siraat-100-pure-titanium-pan-with-hammered-pattern', 'standard'),
+ 'deep': ("Deep Pan Pro", "Higher sides for sauces, pasta and one-pan dinners.", 'titanium-hammered-deep-pan-pro', 'deep'),
+ 'wok': ("Wok Pan Pro", "Up to 3.5&Prime; deep, to toss without spilling.", 'titanium-hammered-wok-pan-pro', 'wok'),
+ 'crepe': ("Cr&ecirc;pe Pan Pro", "Flat and wide: cr&ecirc;pes, pancakes, tortillas.", 'titanium-hammered-crepe-pan-pro', 'crepe'),
+ 'lid20': ("Stainless Steel Lid, 20 cm", "Fits your 8&Prime; Mini.", 'stainless-steel-lid', 'lid'),
+ 'lid26': ("Stainless Steel Lid, 26 cm", "Fits your 10&Prime; Small.", 'stainless-steel-lid', 'lid'),
+ 'lid28': ("Stainless Steel Lid, 28 cm", "Fits your 11&Prime; Pan Pro.", 'stainless-steel-lid', 'lid'),
+ 'lid30': ("Stainless Steel Lid, 30 cm", "Fits your 12&Prime; Large.", 'stainless-steel-lid', 'lid'),
+ 'lid': ("Stainless Steel Lid", "Match the diameter of your pan.", 'stainless-steel-lid', 'lid'),
+ 'board': ("Titanium Cutting Board", "Non-porous titanium, anti-microbial. Four sizes.", 'titanium-cutting-board-v2', 'board'),
+ 'boardL': ("Titanium Cutting Board", "The Large takes a whole pizza or a roast.", 'titanium-cutting-board-v2', 'board'),
+ 'apron': ("Siraat Signature Apron", "16-oz canvas, adjustable, four colors.", 'siraat-signature-apron-moss', 'apron'),
+ 'mill': ("Salt &amp; Pepper Mill Set", "All-metal, 12 grind settings. A matching pair.", 'salt-pepper-mill-set', 'mill'),
+ 'utensil': ("Titanium Utensil Set", "Titanium tools, made for your pans.", 'siraat-pure-titanium-utensils-bundle', 'utensil'),
+ 'sheets': ("Dishwasher Sheets", "One pre-dosed sheet per load, no plastic pod.", 'dishwashing-detergent-sheets-fresh-lemon', 'sheets'),
+}
+# per categorie: (kop, datazin of '', [items]); bron kooppatronen: personalisatie 2.1 en 2.2, cross-sell.md per product
+G = {
+ 'mini':     ("What Mini owners add next", "One in five Mini owners comes back for the 11&Prime;.", ['standard', 'lid20']),
+ 'small':    ("What Small owners add next", "One in three Small owners comes back for the Mini.", ['mini', 'lid26']),
+ 'standard': ("What 11&Prime; owners add next", "One in five adds the Mini, one in five the lid.", ['mini', 'lid28']),
+ 'large':    ("What Large owners add next", "One in five Large owners adds the lid next.", ['lid30', 'small']),
+ 'panpro':   ("What Pan Pro owners add next", "The second order is most often a smaller size or a lid.", ['mini', 'lid']),
+ 'deep':     ("Goes with your deep pan", "The deep pan and the wok are the pair most often bought together.", ['wok', 'lid']),
+ 'wok':      ("Goes with your wok", "The wok and the deep pan are the pair most often bought together.", ['deep', 'crepe']),
+ 'crepe':    ("Goes with your cr&ecirc;pe pan", "", ['standard', 'wok']),
+ 'pizza':    ("Goes with your pizza steel", "", ['boardL', 'standard']),
+ 'roast':    ("Goes with your roasting pan", "", ['boardL', 'standard']),
+ 'pot':      ("Goes with your pot", "", ['standard', 'deep']),
+ 'set6':     ("Goes with your set", "Three in ten set owners add a board next.", ['board', 'apron']),
+ 'set12':    ("Goes with your set", "Three in ten set owners add a board next.", ['board', 'apron']),
+ 'setbig':   ("Goes with your set", "Three in ten set owners add a board next.", ['board', 'apron']),
+ 'setall':   ("Goes with your bundle", "", ['mill', 'sheets']),
+ 'board':    ("Goes with your board", "One in five board owners adds the 11&Prime; pan.", ['standard', 'utensil']),
+ 'lid':      ("Goes with your lid", "", ['mini', 'board']),
+ 'mill':     ("Goes with your mills", "", ['apron', 'board']),
+ 'utensil':  ("Goes with your utensils", "", ['standard', 'board']),
+ 'apron':    ("Goes with your apron", "", ['mill', 'standard']),
+ 'sheets':   ("Goes with your sheets", "", ['standard', 'board']),
+}
+
+F = "font-family:Inter,Arial,Helvetica,sans-serif;"
+SERIF = "font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;"
+
+def cond(tokens):
+    return ' or '.join("'%s' in [[src]]" % t.replace("'", "\\'") for t in tokens)
+
+def chain(body):
+    out = []
+    for i, (k, toks, noun, label) in enumerate(CATS):
+        b = body(k)
+        if b is None: continue
+        out.append(('{%% if %s %%}' if not out else '{%% elif %s %%}') % cond(toks) + b)
+    return out
+
+def about(k):
+    if k not in A: return None
+    head, facts, (q, a), rv = A[k]; label = KEY[k][3]
+    fr = ''.join('<tr><td width="22" valign="top" style="width:22px;padding:2px 0 5px 0;"><img src="{{SHARED}}/icon-check.png" width="16" height="16" alt="" style="width:16px;height:16px;"></td>'
+                 '<td valign="top" style="padding:0 0 5px 6px;%sfont-size:14px;line-height:19px;color:#282828;">%s</td></tr>' % (F, f) for f in facts)
+    review = ''
+    if rv:
+        rid, quote, prod = rv; name = REV[rid]['name']
+        review = ('<tr><td colspan="2" style="padding:0 18px 18px 18px;%s"><div style="border-top:1px solid #ECE7DD;padding-top:14px;">'
+                  '<div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>'
+                  '<div style="font-size:15px;line-height:22px;color:#282828;padding:6px 0 6px 0;">&ldquo;%s&rdquo;</div>'
+                  '<div style="font-size:12px;line-height:16px;color:#727272;"><b style="color:#282828;font-weight:600;">%s</b> &middot; Verified buyer &middot; %s</div></div></td></tr>') % (F, quote, name, prod)
+    return ('<tr><td class="pad" data-about="%s" style="padding:[[pad]];">'
+            '<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%%;background:#FFFFFF;border:1px solid #ECE7DD;">'
+            '<tr><td colspan="2" style="padding:18px 18px 0 18px;%sfont-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">ABOUT [[lead]] %s</td></tr>'
+            '<tr><td colspan="2" style="padding:6px 18px 0 18px;%sfont-size:26px;line-height:29px;color:#282828;">%s</td></tr>'
+            '<tr><td width="90" valign="top" style="width:90px;padding:12px 0 8px 18px;"><img src="{{SHARED}}/pc-%s.jpg" width="72" height="72" alt="%s" style="width:72px;height:72px;"></td>'
+            '<td valign="top" style="padding:12px 16px 4px 10px;"><table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0">%s</table></td></tr>'
+            '<tr><td colspan="2" style="padding:0 18px 16px 18px;"><table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:11px 14px;%sfont-size:14px;line-height:20px;color:#282828;"><b>%s</b> %s</td></tr></table></td></tr>'
+            '%s</table></td></tr>\n') % (k, F, label, SERIF, head, k, re.sub('&[a-zA-Z]+;', '', label.title()), fr, F, q, a, review)
+
+def goes(k):
+    if k not in G: return None
+    head, stat, items = G[k]
+    rows = []
+    for i, it in enumerate(items):
+        name, line, handle, im = ITEM[it]
+        rows.append(('<tr><td width="76" valign="middle" style="width:76px;padding:12px 0 12px 14px;%s"><a href="[[pre]]%s[[post]]"><img src="{{SHARED}}/pc-%s.jpg" width="64" height="64" alt="%s" style="width:64px;height:64px;"></a></td>'
+                     '<td valign="middle" style="padding:12px 10px 12px 12px;%s"><a href="[[pre]]%s[[post]]" style="text-decoration:none;color:#282828;"><div style="font-size:15px;line-height:20px;font-weight:600;color:#282828;">%s</div>'
+                     '<div style="font-size:13px;line-height:18px;color:#727272;padding-top:2px;">%s</div></a></td>'
+                     '<td width="62" align="right" valign="middle" style="width:62px;padding:12px 14px 12px 0;%sfont-size:13px;line-height:18px;font-weight:600;"><a href="[[pre]]%s[[post]]" style="color:#AC3B19;text-decoration:none;">See it&nbsp;&rarr;</a></td></tr>')
+                    % ('border-top:1px solid #ECE7DD;' if i else '', handle, im, re.sub('&[a-zA-Z]+;', '', name), F, handle, name, line, F, handle))
+    return ('<tr><td class="pad" data-goes="%s" style="padding:[[pad]];">'
+            '<div style="%sfont-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">OFTEN ADDED NEXT</div>'
+            '<div class="h2" style="%sfont-size:32px;line-height:36px;color:#282828;text-align:center;padding:6px 0 4px 0;">%s</div>'
+            '%s'
+            '<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%%;background:#FFFFFF;border:1px solid #ECE7DD;margin-top:10px;">%s</table>'
+            '<div style="%sfont-size:12px;line-height:18px;color:#727272;text-align:center;padding-top:8px;">[[note]]</div></td></tr>\n') % (k, F, SERIF, head,
+            ('<div style="%sfont-size:13px;line-height:19px;color:#727272;text-align:center;padding-bottom:2px;">%s</div>' % (F, stat)) if stat else '', ''.join(rows), F)
+
+def write_blocks():
+    hdr = lambda n, u: '<!-- BLOCK %s (gegenereerd door scripts/make_product_blocks.py, niet met de hand wijzigen). %s -->\n' % (n, u)
+    a = hdr('about', 'Params: src (Django-expressie), lead (YOUR/THE), pad.') + ''.join(chain(about)) + '{% endif %}\n'
+    g = hdr('goes', 'Params: src, pad, pre, post (link = pre + handle + post), note (regel onder de rijen, mag leeg). Geen gift card.') + ''.join(chain(goes)) + '{% endif %}\n'
+    n = '{%% if %s %%}' % cond(CATS[0][1]) + CATS[0][2]
+    for k, toks, noun, label in CATS[1:]: n += '{%% elif %s %%}%s' % (cond(toks), noun)
+    n += '{% else %}[[dflt]]{% endif %}'
+    open(os.path.join(B, 'about.html'), 'w').write(a)
+    open(os.path.join(B, 'goes.html'), 'w').write(g)
+    open(os.path.join(B, 'noun.html'), 'w').write(n)   # inline, geen commentaarregel (komt midden in een zin)
+    grp = lambda k: 'set' if k.startswith('set') else (k if k in ('pot', 'pizza', 'apron') else 'dflt')
+    pk = ''.join(('{%% if %s %%}' if i == 0 else '{%% elif %s %%}') % cond(toks) + '[[%s]]' % grp(k) for i, (k, toks, noun, label) in enumerate(CATS))
+    open(os.path.join(B, 'pick.html'), 'w').write(pk + '{% else %}[[dflt]]{% endif %}')
+
+def bg(im):
+    px = [im.getpixel(p) for p in ((2, 2), (im.width - 3, 2), (2, im.height - 3), (im.width - 3, im.height - 3))]
+    return tuple(sum(c[i] for c in px) // 4 for i in range(3))
+
+def write_images():
+    for k, src in IMG.items():
+        if not os.path.exists(src): sys.exit('beeld ontbreekt: %s (geef --dl=<map> met de CDN-kopieën)' % src)
+        im = Image.open(src).convert('RGB')
+        if k in CROP:
+            x0, y0, x1, y1 = CROP[k]; im = im.crop((int(im.width * x0), int(im.height * y0), int(im.width * x1), int(im.height * y1)))
+        else:   # inzoomen op het product: bounding box van alles wat afwijkt van de achtergrond, 8% marge, vierkant
+            b = bg(im); diff = ImageChops.difference(im, Image.new('RGB', im.size, b)).convert('L').point(lambda v: 255 if v > 24 else 0)
+            box = diff.getbbox() or (0, 0, im.width, im.height)
+            cx, cy = (box[0] + box[2]) / 2, (box[1] + box[3]) / 2; s = max(box[2] - box[0], box[3] - box[1]) * 1.08
+            s = max(s, min(im.size) * 0.35)
+            canvas = Image.new('RGB', (int(s), int(s)), b); canvas.paste(im, (int(s / 2 - cx), int(s / 2 - cy))); im = canvas
+        if min(im.size) < 240: sys.exit('beeld te klein voor 2x: %s %s' % (k, im.size))
+        im.resize((240, 240), Image.LANCZOS).save(os.path.join(SH, 'pc-%s.jpg' % k), quality=84, optimize=True, progressive=True)
+
+def load_reviews():
+    return {r['id']: r for r in csv.DictReader(open(os.path.join(ROOT, 'content', 'reviews', 'reviews.csv')))}
+
+def check_quotes():
+    bad = []
+    for k, v in A.items():
+        if not v[3]: continue
+        rid, q, _ = v[3]; r = REV.get(rid)
+        if not r: bad.append('%s: review %s bestaat niet' % (k, rid)); continue
+        if r['stars'] != '5': bad.append('%s: %s heeft %s sterren' % (k, rid, r['stars']))
+        core = q[:-3] if q.endswith('...') else q
+        if core not in r['quote']: bad.append('%s: quote niet letterlijk in %s' % (k, rid))
+        if len(q) > 125: bad.append('%s: quote %d tekens (max ~120)' % (k, len(q)))
+    for k, v in list(A.items()) + list(G.items()):
+        if '—' in repr(v): bad.append('%s: gedachtestreepje' % k)
+    if bad: sys.exit('\n'.join(bad))
+
+REV = load_reviews()
+if __name__ == '__main__':
+    check_quotes(); write_blocks(); write_images()
+    print('ok: about.html, goes.html, noun.html en %d beelden pc-*.jpg' % len(IMG))
