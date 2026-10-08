@@ -32,3 +32,4 @@ tijd_ams,alias,flow,mail,onderwerp,checks_ok,fouten
 2026-10-08 22:44,+welcomeint,TEST v5 Welcome,W5,"Tammy is on her fourth pan",11,"systeemfouten (oude TEST-welcome-templates)"
 2026-10-08 22:55,+welcome,TEST v5 Site,A1,"Four eggs or five?",12,"geen FOUT; LET OP site-mail tijdens welcome-reeks"
 2026-10-08 22:59,+uk,TEST v5 Checkout,C1,"Your cart + 4 gifts are still pending",12,"geen FOUT; UK correct; vertraging 39 min"
+2026-10-08 23:01,+welcome,TEST v5 Welcome,W5,"Tammy is on her fourth pan",11,"systeemfouten (oude TEST-welcome-templates); LET OP typfout in reviewcitaat"
