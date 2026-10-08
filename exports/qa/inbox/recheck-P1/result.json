@@ -1,0 +1,320 @@
+{
+ "meta": {
+  "title": "post-purchase/p1-first \"Good call. Here's what's coming.\"",
+  "mail": "post-purchase/p1-first",
+  "subject": "Good call. Here's what's coming.",
+  "alias": "order",
+  "market": "US",
+  "when": "8 okt 21:40",
+  "sender": "send@siraatskitchen.com",
+  "url": "",
+  "to": "lolagroothuis+order@gmail.com",
+  "shots": [
+   "exports/qa/inbox/recheck-P1/shots/dark-375.jpg",
+   "exports/qa/inbox/recheck-P1/shots/dark-600.jpg",
+   "exports/qa/inbox/recheck-P1/shots/forced-375.jpg",
+   "exports/qa/inbox/recheck-P1/shots/light-1200.jpg",
+   "exports/qa/inbox/recheck-P1/shots/light-375.jpg",
+   "exports/qa/inbox/recheck-P1/shots/light-600.jpg"
+  ],
+  "report": "exports/qa/inbox/recheck-P1/report.md"
+ },
+ "result": {
+  "onderwerp": {
+   "status": "OK",
+   "detail": "\"Good call. Here's what's coming.\""
+  },
+  "preheader": {
+   "status": "OK",
+   "detail": "\"Order confirmed. Your 4 gifts, your e-book and the one tip that matters.\""
+  },
+  "afzender": {
+   "status": "OK",
+   "detail": "send@siraatskitchen.com"
+  },
+  "grootte": {
+   "status": "OK",
+   "detail": "25.8 KB HTML (27.5 KB quoted-printable)"
+  },
+  "links": {
+   "status": "LET OP",
+   "detail": "17 links, 12 unieke bestemmingen; sociale links niet te openen vanuit deze omgeving: Facebook (www.facebook.com), Instagram (www.instagram.com); handmatig te controleren (proxy): Download your e-book \u2192 (delivery.shopifyapps.com), Order confirmed. Good call, he (delivery.shopifyapps.com). Niet gecontroleerd: Manage preferences (manage.kmail-lists.com), Unsubscribe (manage.kmail-lists.com), View in browser (manage.kmail-lists.com)"
+  },
+  "utm": {
+   "status": "OK",
+   "detail": "9 shoplinks met UTM"
+  },
+  "linktekst": {
+   "status": "OK",
+   "detail": "ankerteksten passen bij hun bestemming"
+  },
+  "beelden": {
+   "status": "OK",
+   "detail": "16 beelden, 284 KB totaal"
+  },
+  "tags": {
+   "status": "OK",
+   "detail": "geen ongerenderde tags of placeholders"
+  },
+  "markt": {
+   "status": "OK",
+   "detail": "markt US"
+  },
+  "header-footer": {
+   "status": "OK",
+   "detail": "header en footer uit de partials, logo = lockup (2)"
+  },
+  "afmelden": {
+   "status": "LET OP",
+   "detail": "manage.kmail-lists.com niet te openen vanuit deze omgeving (egress), handmatig klikken"
+  },
+  "em-dash": {
+   "status": "OK",
+   "detail": "geen em dash"
+  },
+  "layout": {
+   "status": "OK",
+   "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
+  },
+  "dark-mode": {
+   "status": "LET OP",
+   "detail": "forced 375 px: lichte blokken op donkere achtergrond (beeld met witte rand): Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-4, fc1878e8-1cc0-4699-8f62-1110afb1750e.jpeg, 3fab7ff2-1993-48d2-8567-d9f3d0ce04dd.jpeg, c97cf7a9-cccf-4472-a592-d49747b6d6a7.jpeg (+1)"
+  },
+  "_links": [
+   {
+    "href": "https://siraatskitchen.com/?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1first-logo",
+    "text": "Siraat",
+    "dest": "https://siraatskitchen.com/?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1first-logo",
+    "status": 200,
+    "via": "direct",
+    "final": "https://siraatskitchen.com/"
+   },
+   {
+    "href": "https://siraatskitchen.com/collections/pans?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1first-nav-pans",
+    "text": "COOKWARE",
+    "dest": "https://siraatskitchen.com/collections/pans?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1first-nav-pans",
+    "status": 200,
+    "via": "direct",
+    "final": "https://siraatskitchen.com/collections/pans"
+   },
+   {
+    "href": "https://siraatskitchen.com/collections/bundles?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1first-nav-bundles",
+    "text": "SETS",
+    "dest": "https://siraatskitchen.com/collections/bundles?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1first-nav-bundles",
+    "status": 200,
+    "via": "direct",
+    "final": "https://siraatskitchen.com/collections/bundles"
+   },
+   {
+    "href": "https://siraatskitchen.com/pages/about-us?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1first-nav-about-us",
+    "text": "ABOUT",
+    "dest": "https://siraatskitchen.com/pages/about-us?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1first-nav-about-us",
+    "status": 200,
+    "via": "direct",
+    "final": "https://siraatskitchen.com/pages/about-us"
+   },
+   {
+    "href": "https://delivery.shopifyapps.com/-/b3a2da5476fdac80/509b1c473bc15d58",
+    "text": "Order confirmed. Good call, here's what's next: your order, 4 gifts and one tip.",
+    "dest": "https://delivery.shopifyapps.com/-/b3a2da5476fdac80/509b1c473bc15d58",
+    "status": "handmatig",
+    "via": "direct",
+    "final": null
+   },
+   {
+    "href": "https://delivery.shopifyapps.com/-/b3a2da5476fdac80/509b1c473bc15d58",
+    "text": "Download your e-book \u2192",
+    "dest": "https://delivery.shopifyapps.com/-/b3a2da5476fdac80/509b1c473bc15d58",
+    "status": "handmatig",
+    "via": "direct",
+    "final": null
+   },
+   {
+    "href": "https://delivery.shopifyapps.com/-/b3a2da5476fdac80/509b1c473bc15d58",
+    "text": "Download your e-book \u2192",
+    "dest": "https://delivery.shopifyapps.com/-/b3a2da5476fdac80/509b1c473bc15d58",
+    "status": "handmatig",
+    "via": "direct",
+    "final": null
+   },
+   {
+    "href": "https://siraatskitchen.com/?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1first-ft-logo",
+    "text": "Siraat",
+    "dest": "https://siraatskitchen.com/?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1first-ft-logo",
+    "status": 200,
+    "via": "direct",
+    "final": "https://siraatskitchen.com/"
+   },
+   {
+    "href": "https://siraatskitchen.com/collections/pans?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1first-ft-pans",
+    "text": "TITANIUM COOKWARE \u2192",
+    "dest": "https://siraatskitchen.com/collections/pans?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1first-ft-pans",
+    "status": 200,
+    "via": "direct",
+    "final": "https://siraatskitchen.com/collections/pans"
+   },
+   {
+    "href": "https://siraatskitchen.com/collections/bundles?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1first-ft-bundles",
+    "text": "BUNDLES & SETS \u2192",
+    "dest": "https://siraatskitchen.com/collections/bundles?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1first-ft-bundles",
+    "status": 200,
+    "via": "direct",
+    "final": "https://siraatskitchen.com/collections/bundles"
+   },
+   {
+    "href": "https://siraatskitchen.com/collections/accessories?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1first-ft-accessories",
+    "text": "ACCESSORIES \u2192",
+    "dest": "https://siraatskitchen.com/collections/accessories?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1first-ft-accessories",
+    "status": 200,
+    "via": "direct",
+    "final": "https://siraatskitchen.com/collections/accessories"
+   },
+   {
+    "href": "https://siraatskitchen.com/pages/third-party-testing?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1first-ft-third-party-testing",
+    "text": "LAB RESULTS \u2192",
+    "dest": "https://siraatskitchen.com/pages/third-party-testing?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p1first-ft-third-party-testing",
+    "status": 200,
+    "via": "direct",
+    "final": "https://siraatskitchen.com/pages/third-party-testing"
+   },
+   {
+    "href": "https://www.facebook.com/people/SiraatsKitchen/61567176126958/",
+    "text": "Facebook",
+    "dest": "https://www.facebook.com/people/SiraatsKitchen/61567176126958/",
+    "status": 0,
+    "via": "direct",
+    "final": "https://www.facebook.com/people/SiraatsKitchen/61567176126958/"
+   },
+   {
+    "href": "https://www.instagram.com/siraatskitchen",
+    "text": "Instagram",
+    "dest": "https://www.instagram.com/siraatskitchen",
+    "status": 0,
+    "via": "direct",
+    "final": "https://www.instagram.com/siraatskitchen"
+   },
+   {
+    "href": "https://manage.kmail-lists.com/subscriptions/unsubscribe?a=TdtTzz",
+    "text": "Unsubscribe",
+    "dest": "https://manage.kmail-lists.com/subscriptions/unsubscribe?a=TdtTzz",
+    "status": 0,
+    "via": "direct",
+    "final": "https://manage.kmail-lists.com/subscriptions/unsubscribe?a=TdtTzz"
+   },
+   {
+    "href": "https://manage.kmail-lists.com/subscriptions/update?a=TdtTzz",
+    "text": "Manage preferences",
+    "dest": "https://manage.kmail-lists.com/subscriptions/update?a=TdtTzz",
+    "status": 0,
+    "via": "direct",
+    "final": "https://manage.kmail-lists.com/subscriptions/update?a=TdtTzz"
+   },
+   {
+    "href": "https://manage.kmail-lists.com/subscriptions/web-view?a=TdtTzz",
+    "text": "View in browser",
+    "dest": "https://manage.kmail-lists.com/subscriptions/web-view?a=TdtTzz",
+    "status": 0,
+    "via": "direct",
+    "final": "https://manage.kmail-lists.com/subscriptions/web-view?a=TdtTzz"
+   }
+  ],
+  "_images": [
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/68a06000-e2d3-4858-86cb-92587411d958.png",
+    "alt": "Siraat",
+    "w": 150,
+    "h": null
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/b964b4e0-1829-4170-b9ab-6b90ec922ecc.jpeg",
+    "alt": "Order confirmed. Good call, here's what's next: your order, 4 gifts and one tip. Your 4 gifts are on the way.",
+    "w": 600,
+    "h": null
+   },
+   {
+    "src": "https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-40a5-9ad7-523bdddc54d4_x240.webp?v=1781682831",
+    "alt": "Titanium Hammered Pan Pro Standard",
+    "w": 88,
+    "h": null
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/4ad62800-446f-4305-b02b-1095324d3555.png",
+    "alt": "",
+    "w": 20,
+    "h": 20
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/af7dc4a4-6e5a-4ecf-844b-e8816266248a.png",
+    "alt": "",
+    "w": 36,
+    "h": 36
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/4ad62800-446f-4305-b02b-1095324d3555.png",
+    "alt": "",
+    "w": 36,
+    "h": 36
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/97d97db1-3ff1-4112-b062-fc0af390ce4b.png",
+    "alt": "",
+    "w": 36,
+    "h": 36
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/38ac8276-0524-43e9-b55c-aa302f443109.png",
+    "alt": "",
+    "w": 36,
+    "h": 36
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/fc1878e8-1cc0-4699-8f62-1110afb1750e.jpeg",
+    "alt": "Free shipping",
+    "w": 110,
+    "h": null
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/3fab7ff2-1993-48d2-8567-d9f3d0ce04dd.jpeg",
+    "alt": "The Green Clean E-Guide",
+    "w": 110,
+    "h": null
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/c97cf7a9-cccf-4472-a592-d49747b6d6a7.jpeg",
+    "alt": "Mystery gift",
+    "w": 110,
+    "h": null
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/a6aec8e7-f289-424e-ab60-689f1ae85c39.jpeg",
+    "alt": "Chance to win a PFAS water filter",
+    "w": 110,
+    "h": null
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/c2ae0306-f0fa-48e5-817c-6b41e95f16aa.png",
+    "alt": "",
+    "w": 18,
+    "h": 18
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/c8e347f7-34c0-42d9-8ddc-32949f48155e.png",
+    "alt": "Siraat",
+    "w": 190,
+    "h": null
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/17c00632-f9db-4dcd-a27e-bf0adc4987da.png",
+    "alt": "Facebook",
+    "w": 32,
+    "h": null
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/6b905e47-7bf9-4aec-a63b-0538ecc6bd60.png",
+    "alt": "Instagram",
+    "w": 32,
+    "h": null
+   }
+  ]
+ }
+}

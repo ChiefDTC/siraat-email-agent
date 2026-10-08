@@ -1,0 +1,362 @@
+{
+ "meta": {
+  "title": "checkout/c1 \"Your cart + 4 gifts are still pending\"",
+  "mail": "checkout/c1",
+  "subject": "Your cart + 4 gifts are still pending",
+  "alias": "pan",
+  "market": "US",
+  "when": "8 okt 22:38",
+  "sender": "send@siraatskitchen.com",
+  "url": "",
+  "to": "lolagroothuis+pan@gmail.com",
+  "shots": [
+   "exports/qa/inbox/pan-C1/shots/dark-375.jpg",
+   "exports/qa/inbox/pan-C1/shots/dark-600.jpg",
+   "exports/qa/inbox/pan-C1/shots/forced-375.jpg",
+   "exports/qa/inbox/pan-C1/shots/light-1200.jpg",
+   "exports/qa/inbox/pan-C1/shots/light-375.jpg",
+   "exports/qa/inbox/pan-C1/shots/light-600.jpg"
+  ],
+  "report": "exports/qa/inbox/pan-C1/report.md"
+ },
+ "result": {
+  "onderwerp": {
+   "status": "OK",
+   "detail": "\"Your cart + 4 gifts are still pending\""
+  },
+  "preheader": {
+   "status": "OK",
+   "detail": "\"They ship the moment you place the order. One tap left.\""
+  },
+  "afzender": {
+   "status": "OK",
+   "detail": "send@siraatskitchen.com"
+  },
+  "grootte": {
+   "status": "OK",
+   "detail": "31.7 KB HTML (33.9 KB quoted-printable)"
+  },
+  "links": {
+   "status": "LET OP",
+   "detail": "17 links, 12 unieke bestemmingen; sociale links niet te openen vanuit deze omgeving: Facebook (www.facebook.com), Instagram (www.instagram.com). Niet gecontroleerd: Complete my order \u2192 (siraatskitchen.com), Manage preferences (manage.kmail-lists.com), Still pending: your cart, plus (siraatskitchen.com), Unsubscribe (manage.kmail-lists.com), View in browser (manage.kmail-lists.com)"
+  },
+  "utm": {
+   "status": "OK",
+   "detail": "12 shoplinks met UTM"
+  },
+  "linktekst": {
+   "status": "OK",
+   "detail": "ankerteksten passen bij hun bestemming"
+  },
+  "beelden": {
+   "status": "OK",
+   "detail": "23 beelden, 327 KB totaal"
+  },
+  "tags": {
+   "status": "OK",
+   "detail": "geen ongerenderde tags of placeholders"
+  },
+  "markt": {
+   "status": "OK",
+   "detail": "markt US"
+  },
+  "header-footer": {
+   "status": "OK",
+   "detail": "header en footer uit de partials, logo = lockup (2)"
+  },
+  "afmelden": {
+   "status": "LET OP",
+   "detail": "manage.kmail-lists.com niet te openen vanuit deze omgeving (egress), handmatig klikken"
+  },
+  "em-dash": {
+   "status": "OK",
+   "detail": "geen em dash"
+  },
+  "layout": {
+   "status": "OK",
+   "detail": "geen horizontaal scrollen of afgesneden beelden op 375/600/1200 px"
+  },
+  "dark-mode": {
+   "status": "LET OP",
+   "detail": "forced 375 px: lichte blokken op donkere achtergrond (beeld met witte rand): Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-4, fc1878e8-1cc0-4699-8f62-1110afb1750e.jpeg, 3fab7ff2-1993-48d2-8567-d9f3d0ce04dd.jpeg, c97cf7a9-cccf-4472-a592-d49747b6d6a7.jpeg (+1)"
+  },
+  "_links": [
+   {
+    "href": "https://siraatskitchen.com/?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-logo",
+    "text": "Siraat",
+    "dest": "https://siraatskitchen.com/?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-logo",
+    "status": 200,
+    "via": "direct",
+    "final": "https://siraatskitchen.com/"
+   },
+   {
+    "href": "https://siraatskitchen.com/collections/pans?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-nav-pans",
+    "text": "COOKWARE",
+    "dest": "https://siraatskitchen.com/collections/pans?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-nav-pans",
+    "status": 200,
+    "via": "direct",
+    "final": "https://siraatskitchen.com/collections/pans"
+   },
+   {
+    "href": "https://siraatskitchen.com/collections/bundles?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-nav-bundles",
+    "text": "SETS",
+    "dest": "https://siraatskitchen.com/collections/bundles?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-nav-bundles",
+    "status": 200,
+    "via": "direct",
+    "final": "https://siraatskitchen.com/collections/bundles"
+   },
+   {
+    "href": "https://siraatskitchen.com/pages/about-us?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-nav-about-us",
+    "text": "ABOUT",
+    "dest": "https://siraatskitchen.com/pages/about-us?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-nav-about-us",
+    "status": 200,
+    "via": "direct",
+    "final": "https://siraatskitchen.com/pages/about-us"
+   },
+   {
+    "href": "https://siraatskitchen.com/90708771156/checkouts/ac/hWNHkGljXR224jwg9dY4RT8w/recover?key=30c007c18176f3bc2cc92d8e91c89828&locale=en-US&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-hero",
+    "text": "Still pending: your cart, plus 4 gifts. Saved at the last step, one tap left. 4 ",
+    "dest": "https://siraatskitchen.com/90708771156/checkouts/ac/hWNHkGljXR224jwg9dY4RT8w/recover?key=30c007c18176f3bc2cc92d8e91c89828&locale=en-US&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-hero",
+    "status": 0,
+    "via": "direct",
+    "final": "https://shop.app/checkout/90708771156/cn/hWNHkGljXR224jwg9dY4RT8w/en-us/shoppay?_mcs=3.AMPS&_r=AQABrYFPHoL79nIvRJtEBPWWd6PgExaiY9oLJL7e3de3nE5y7J64&discount_code=HI10&redirect_source=checkout_universal_redirect&shop_pay_token=eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaWQ6XC9cL3Nob3BpZnlcL1Nob3BcLzkwNzA4NzcxMTU2IiwibmJmIjoxNzkxNDkyMzYwLCJzZXNzaW9uX3Rva2VuIjoiQUFFQmNVdmZPU0lYVFBYd2RXaS1EcDBlQUNkU1NuRkZxR25jR2tvMHlNdVc1ZXd4T1dmX3FfNzZySUtxdm5RUDVMcGFHeXFVYzFFb2lkMFdOcGxsTWd1OG04alpmd1luLW9aWGRwOXpJTElIcWN5aXRDYXpodkU3Zl9GdmR6aFBvc3VBWDNNR3pRUGtQbGp2RGtoeDZsUEpqNHdfNmtSeVNfZW5uNnkzeHRvZlpaRlhvaHhYNTBGd3FJS2tHaWphYXp4RUZBaXYxeklDM2FyN25WMVgwSDFaNWRROFBtZnVCcC1WZTJDLVdnIiwiZXhwIjoxNzkxNDk1OTYwLCJsYW5kaW5nX3BhZ2UiOiJcLzkwNzA4NzcxMTU2XC9jaGVja291dHNcL2FjXC9oV05Ia0dsalhSMjI0andnOWRZNFJUOHdcL3JlY292ZXI_a2V5PTMwYzAwN2MxODE3NmYzYmMyY2M5MmQ4ZTkxYzg5ODI4JmxvY2FsZT1lbi1VUyZkaXNjb3VudD1ISTEwIiwib3JpZ19yZWZlcnJlciI6IiIsIm1lcmNoYW50X2NvbnNlbnQiOiIzLkFNUFMifQ.n0zGxGGNN5-NI5IG_qmYa9WxGimLR7cVXSBmyMm-IC4&tracking_unique=6d989ff0-9134-40b4-a4e1-a24f87a18c23&tracking_visit=908ab6d5-698c-483a-88f3-a6acaeaab0c3&ur_back_url=https%3A%2F%2Fsiraatskitchen.com%2Fcheckouts%2Fcn%2FhWNHkGljXR224jwg9dY4RT8w%2Fen-us%3F_r%3DAQAB3dXNHiDUaEq-FL9xfS3jzbGzK9R2aw0Qkjh1Gmu8ok7ZQfJe%26auto_redirect%3Dfalse%26discount%3DHI10%26edge_redirect%3Dtrue%26skip_shop_pay%3Dtrue&ur_verify=lvNAjuYeRtCKV3E7l8WxKMcBNHk%3D"
+   },
+   {
+    "href": "https://siraatskitchen.com/90708771156/checkouts/ac/hWNHkGljXR224jwg9dY4RT8w/recover?key=30c007c18176f3bc2cc92d8e91c89828&locale=en-US&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-cta1",
+    "text": "Complete my order \u2192",
+    "dest": "https://siraatskitchen.com/90708771156/checkouts/ac/hWNHkGljXR224jwg9dY4RT8w/recover?key=30c007c18176f3bc2cc92d8e91c89828&locale=en-US&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-cta1",
+    "status": 0,
+    "via": "direct",
+    "final": "https://shop.app/checkout/90708771156/cn/hWNHkGljXR224jwg9dY4RT8w/en-us/shoppay?_mcs=3.AMPS&_r=AQABrYFPHoL79nIvRJtEBPWWd6PgExaiY9oLJL7e3de3nE5y7J64&discount_code=HI10&redirect_source=checkout_universal_redirect&shop_pay_token=eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaWQ6XC9cL3Nob3BpZnlcL1Nob3BcLzkwNzA4NzcxMTU2IiwibmJmIjoxNzkxNDkyMzYwLCJzZXNzaW9uX3Rva2VuIjoiQUFFQmNVdmZPU0lYVFBYd2RXaS1EcDBlQUNkU1NuRkZxR25jR2tvMHlNdVc1ZXd4T1dmX3FfNzZySUtxdm5RUDVMcGFHeXFVYzFFb2lkMFdOcGxsTWd1OG04alpmd1luLW9aWGRwOXpJTElIcWN5aXRDYXpodkU3Zl9GdmR6aFBvc3VBWDNNR3pRUGtQbGp2RGtoeDZsUEpqNHdfNmtSeVNfZW5uNnkzeHRvZlpaRlhvaHhYNTBGd3FJS2tHaWphYXp4RUZBaXYxeklDM2FyN25WMVgwSDFaNWRROFBtZnVCcC1WZTJDLVdnIiwiZXhwIjoxNzkxNDk1OTYwLCJsYW5kaW5nX3BhZ2UiOiJcLzkwNzA4NzcxMTU2XC9jaGVja291dHNcL2FjXC9oV05Ia0dsalhSMjI0andnOWRZNFJUOHdcL3JlY292ZXI_a2V5PTMwYzAwN2MxODE3NmYzYmMyY2M5MmQ4ZTkxYzg5ODI4JmxvY2FsZT1lbi1VUyZkaXNjb3VudD1ISTEwIiwib3JpZ19yZWZlcnJlciI6IiIsIm1lcmNoYW50X2NvbnNlbnQiOiIzLkFNUFMifQ.n0zGxGGNN5-NI5IG_qmYa9WxGimLR7cVXSBmyMm-IC4&tracking_unique=6d989ff0-9134-40b4-a4e1-a24f87a18c23&tracking_visit=908ab6d5-698c-483a-88f3-a6acaeaab0c3&ur_back_url=https%3A%2F%2Fsiraatskitchen.com%2Fcheckouts%2Fcn%2FhWNHkGljXR224jwg9dY4RT8w%2Fen-us%3F_r%3DAQAB3dXNHiDUaEq-FL9xfS3jzbGzK9R2aw0Qkjh1Gmu8ok7ZQfJe%26auto_redirect%3Dfalse%26discount%3DHI10%26edge_redirect%3Dtrue%26skip_shop_pay%3Dtrue&ur_verify=lvNAjuYeRtCKV3E7l8WxKMcBNHk%3D"
+   },
+   {
+    "href": "https://siraatskitchen.com/90708771156/checkouts/ac/hWNHkGljXR224jwg9dY4RT8w/recover?key=30c007c18176f3bc2cc92d8e91c89828&locale=en-US&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-cta2",
+    "text": "Complete my order \u2192",
+    "dest": "https://siraatskitchen.com/90708771156/checkouts/ac/hWNHkGljXR224jwg9dY4RT8w/recover?key=30c007c18176f3bc2cc92d8e91c89828&locale=en-US&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-cta2",
+    "status": 0,
+    "via": "direct",
+    "final": "https://shop.app/checkout/90708771156/cn/hWNHkGljXR224jwg9dY4RT8w/en-us/shoppay?_mcs=3.AMPS&_r=AQABrYFPHoL79nIvRJtEBPWWd6PgExaiY9oLJL7e3de3nE5y7J64&discount_code=HI10&redirect_source=checkout_universal_redirect&shop_pay_token=eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaWQ6XC9cL3Nob3BpZnlcL1Nob3BcLzkwNzA4NzcxMTU2IiwibmJmIjoxNzkxNDkyMzYwLCJzZXNzaW9uX3Rva2VuIjoiQUFFQmNVdmZPU0lYVFBYd2RXaS1EcDBlQUNkU1NuRkZxR25jR2tvMHlNdVc1ZXd4T1dmX3FfNzZySUtxdm5RUDVMcGFHeXFVYzFFb2lkMFdOcGxsTWd1OG04alpmd1luLW9aWGRwOXpJTElIcWN5aXRDYXpodkU3Zl9GdmR6aFBvc3VBWDNNR3pRUGtQbGp2RGtoeDZsUEpqNHdfNmtSeVNfZW5uNnkzeHRvZlpaRlhvaHhYNTBGd3FJS2tHaWphYXp4RUZBaXYxeklDM2FyN25WMVgwSDFaNWRROFBtZnVCcC1WZTJDLVdnIiwiZXhwIjoxNzkxNDk1OTYwLCJsYW5kaW5nX3BhZ2UiOiJcLzkwNzA4NzcxMTU2XC9jaGVja291dHNcL2FjXC9oV05Ia0dsalhSMjI0andnOWRZNFJUOHdcL3JlY292ZXI_a2V5PTMwYzAwN2MxODE3NmYzYmMyY2M5MmQ4ZTkxYzg5ODI4JmxvY2FsZT1lbi1VUyZkaXNjb3VudD1ISTEwIiwib3JpZ19yZWZlcnJlciI6IiIsIm1lcmNoYW50X2NvbnNlbnQiOiIzLkFNUFMifQ.n0zGxGGNN5-NI5IG_qmYa9WxGimLR7cVXSBmyMm-IC4&tracking_unique=6d989ff0-9134-40b4-a4e1-a24f87a18c23&tracking_visit=908ab6d5-698c-483a-88f3-a6acaeaab0c3&ur_back_url=https%3A%2F%2Fsiraatskitchen.com%2Fcheckouts%2Fcn%2FhWNHkGljXR224jwg9dY4RT8w%2Fen-us%3F_r%3DAQAB3dXNHiDUaEq-FL9xfS3jzbGzK9R2aw0Qkjh1Gmu8ok7ZQfJe%26auto_redirect%3Dfalse%26discount%3DHI10%26edge_redirect%3Dtrue%26skip_shop_pay%3Dtrue&ur_verify=lvNAjuYeRtCKV3E7l8WxKMcBNHk%3D"
+   },
+   {
+    "href": "https://siraatskitchen.com/?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-ft-logo",
+    "text": "Siraat",
+    "dest": "https://siraatskitchen.com/?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-ft-logo",
+    "status": 200,
+    "via": "direct",
+    "final": "https://siraatskitchen.com/"
+   },
+   {
+    "href": "https://siraatskitchen.com/collections/pans?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-ft-pans",
+    "text": "TITANIUM COOKWARE \u2192",
+    "dest": "https://siraatskitchen.com/collections/pans?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-ft-pans",
+    "status": 200,
+    "via": "direct",
+    "final": "https://siraatskitchen.com/collections/pans"
+   },
+   {
+    "href": "https://siraatskitchen.com/collections/bundles?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-ft-bundles",
+    "text": "BUNDLES & SETS \u2192",
+    "dest": "https://siraatskitchen.com/collections/bundles?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-ft-bundles",
+    "status": 200,
+    "via": "direct",
+    "final": "https://siraatskitchen.com/collections/bundles"
+   },
+   {
+    "href": "https://siraatskitchen.com/collections/accessories?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-ft-accessories",
+    "text": "ACCESSORIES \u2192",
+    "dest": "https://siraatskitchen.com/collections/accessories?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-ft-accessories",
+    "status": 200,
+    "via": "direct",
+    "final": "https://siraatskitchen.com/collections/accessories"
+   },
+   {
+    "href": "https://siraatskitchen.com/pages/third-party-testing?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-ft-third-party-testing",
+    "text": "LAB RESULTS \u2192",
+    "dest": "https://siraatskitchen.com/pages/third-party-testing?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-ft-third-party-testing",
+    "status": 200,
+    "via": "direct",
+    "final": "https://siraatskitchen.com/pages/third-party-testing"
+   },
+   {
+    "href": "https://www.facebook.com/people/SiraatsKitchen/61567176126958/",
+    "text": "Facebook",
+    "dest": "https://www.facebook.com/people/SiraatsKitchen/61567176126958/",
+    "status": 0,
+    "via": "direct",
+    "final": "https://www.facebook.com/people/SiraatsKitchen/61567176126958/"
+   },
+   {
+    "href": "https://www.instagram.com/siraatskitchen",
+    "text": "Instagram",
+    "dest": "https://www.instagram.com/siraatskitchen",
+    "status": 0,
+    "via": "direct",
+    "final": "https://www.instagram.com/siraatskitchen"
+   },
+   {
+    "href": "https://manage.kmail-lists.com/subscriptions/unsubscribe?a=TdtTzz",
+    "text": "Unsubscribe",
+    "dest": "https://manage.kmail-lists.com/subscriptions/unsubscribe?a=TdtTzz",
+    "status": 0,
+    "via": "direct",
+    "final": "https://manage.kmail-lists.com/subscriptions/unsubscribe?a=TdtTzz"
+   },
+   {
+    "href": "https://manage.kmail-lists.com/subscriptions/update?a=TdtTzz",
+    "text": "Manage preferences",
+    "dest": "https://manage.kmail-lists.com/subscriptions/update?a=TdtTzz",
+    "status": 0,
+    "via": "direct",
+    "final": "https://manage.kmail-lists.com/subscriptions/update?a=TdtTzz"
+   },
+   {
+    "href": "https://manage.kmail-lists.com/subscriptions/web-view?a=TdtTzz",
+    "text": "View in browser",
+    "dest": "https://manage.kmail-lists.com/subscriptions/web-view?a=TdtTzz",
+    "status": 0,
+    "via": "direct",
+    "final": "https://manage.kmail-lists.com/subscriptions/web-view?a=TdtTzz"
+   }
+  ],
+  "_images": [
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/68a06000-e2d3-4858-86cb-92587411d958.png",
+    "alt": "Siraat",
+    "w": 150,
+    "h": null
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/1d359772-2180-45ea-a1f8-1d735e733967.jpeg",
+    "alt": "Still pending: your cart, plus 4 gifts. Saved at the last step, one tap left. 4 gifts pending, free shipping.",
+    "w": 600,
+    "h": null
+   },
+   {
+    "src": "https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-40a5-9ad7-523bdddc54d4_x240.webp?v=1781682831",
+    "alt": "Titanium Hammered Pan Pro Standard",
+    "w": 88,
+    "h": null
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/d9a8b8cc-8cf5-4ffd-a959-e3703f800dea.png",
+    "alt": "",
+    "w": 20,
+    "h": 20
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/fc1878e8-1cc0-4699-8f62-1110afb1750e.jpeg",
+    "alt": "Free shipping",
+    "w": 64,
+    "h": null
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/3fab7ff2-1993-48d2-8567-d9f3d0ce04dd.jpeg",
+    "alt": "The Green Clean E-Guide",
+    "w": 64,
+    "h": null
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/c97cf7a9-cccf-4472-a592-d49747b6d6a7.jpeg",
+    "alt": "Mystery gift",
+    "w": 64,
+    "h": null
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/a6aec8e7-f289-424e-ab60-689f1ae85c39.jpeg",
+    "alt": "Chance to win a PFAS water filter",
+    "w": 64,
+    "h": null
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/adf1c2fa-cd6b-44ff-b2d8-38a2b2a69928.png",
+    "alt": "",
+    "w": 512,
+    "h": null
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/6d715e47-cf75-4606-a1d2-63d4dd4717c7.png",
+    "alt": "Yes:",
+    "w": 16,
+    "h": 16
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/8819b4d3-7a7c-4f6f-82d7-70b6ce6971d8.png",
+    "alt": "No:",
+    "w": 16,
+    "h": 16
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/6d715e47-cf75-4606-a1d2-63d4dd4717c7.png",
+    "alt": "Yes:",
+    "w": 16,
+    "h": 16
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/8819b4d3-7a7c-4f6f-82d7-70b6ce6971d8.png",
+    "alt": "No:",
+    "w": 16,
+    "h": 16
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/6d715e47-cf75-4606-a1d2-63d4dd4717c7.png",
+    "alt": "Yes:",
+    "w": 16,
+    "h": 16
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/8819b4d3-7a7c-4f6f-82d7-70b6ce6971d8.png",
+    "alt": "No:",
+    "w": 16,
+    "h": 16
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/6d715e47-cf75-4606-a1d2-63d4dd4717c7.png",
+    "alt": "Yes:",
+    "w": 16,
+    "h": 16
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/8819b4d3-7a7c-4f6f-82d7-70b6ce6971d8.png",
+    "alt": "No:",
+    "w": 16,
+    "h": 16
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/6d715e47-cf75-4606-a1d2-63d4dd4717c7.png",
+    "alt": "Yes:",
+    "w": 16,
+    "h": 16
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/8819b4d3-7a7c-4f6f-82d7-70b6ce6971d8.png",
+    "alt": "No:",
+    "w": 16,
+    "h": 16
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/c2ae0306-f0fa-48e5-817c-6b41e95f16aa.png",
+    "alt": "",
+    "w": 18,
+    "h": 18
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/c8e347f7-34c0-42d9-8ddc-32949f48155e.png",
+    "alt": "Siraat",
+    "w": 190,
+    "h": null
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/17c00632-f9db-4dcd-a27e-bf0adc4987da.png",
+    "alt": "Facebook",
+    "w": 32,
+    "h": null
+   },
+   {
+    "src": "https://cdn.klaviyomail.com/company/TdtTzz/images/6b905e47-7bf9-4aec-a63b-0538ecc6bd60.png",
+    "alt": "Instagram",
+    "w": 32,
+    "h": null
+   }
+  ]
+ }
+}

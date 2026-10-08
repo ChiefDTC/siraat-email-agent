@@ -24,3 +24,7 @@ kTyYPD6-welcome	welcome	Has your cookware been tested?	exports/qa/inbox/welcome-
 kXGenVh-welcomeabtb	welcomeabtb	Has your cookware been tested?	exports/qa/inbox/welcomeabtb-W3
 kV7wW7p-welcomeint	welcomeint	Who are you cooking for?	exports/qa/inbox/welcomeint-W4-INT
 kVJxYJ2-welcome	welcome	Who are you cooking for?	exports/qa/inbox/welcome-W4-US
+kWgVLZf-welcomeabtb	welcomeabtb	Who are you cooking for?	exports/qa/inbox/welcomeabtb-W4-US
+kV7ScfR-pan	pan	Your cart + 4 gifts are still pending	exports/qa/inbox/pan-C1
+t-p1-new	order	Good call. Here's what's coming.	exports/qa/inbox/recheck-P1
+t-r1-new	vip	How's your pan doing?	exports/qa/inbox/recheck-R1

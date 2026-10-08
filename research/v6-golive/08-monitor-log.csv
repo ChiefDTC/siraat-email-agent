@@ -24,3 +24,7 @@ tijd_ams,alias,flow,mail,onderwerp,checks_ok,fouten
 2026-10-08 22:14,+welcome,TEST v5 Welcome,W3,"Has your cookware been tested?",11,"systeemfouten"
 2026-10-08 22:15,+welcomeabtb,TEST v5 Welcome,W3,"Has your cookware been tested?",11,"systeemfouten"
 2026-10-08 22:23,+welcomeint,TEST v5 Welcome,W4-INT,"Who are you cooking for?",11,"systeemfouten; LET OP doorgestreepte £498 bij set"
+2026-10-08 22:30,+welcome,TEST v5 Welcome,W4-US,"Who are you cooking for?",11,"systeemfouten; LET OP doorgestreepte $598/$1186; vertraging 16 min"
+2026-10-08 22:31,(correctie W1 x3),TEST v5 Welcome,W1 A/B,"No PFAS. Here's the paper. And 10%.",-,"codebalk 'YOUR WELCOME 10%%' (dubbel procentteken) in WVXPLp/Y7nEEf"
+2026-10-08 22:34,+welcomeabtb,TEST v5 Welcome,W4-US,"Who are you cooking for?",11,"systeemfouten (TEST-welcome oude templates; Draft-flows inmiddels bijgewerkt)"
+2026-10-08 22:38,+pan,TEST v5 Checkout,C1,"Your cart + 4 gifts are still pending",12,"geen FOUT; LET OP 20 min vertraging; recover-link naar shop.app"
