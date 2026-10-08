@@ -47,3 +47,10 @@ Bijwerken bij elk nieuw besluit. Datum per regel.
 - VIP krijgt 15%, ook vlak na een eerdere code als die niet gebruikt is.
 - Prijzen: Pan Pro Standard $144, Large $149 (officiële listings). Pro Duo $199 = 2 pannen + 2 deksels.
 - Vergelijking mag direct "a PFAS pan / PFAS-coated pan" noemen (geen gezondheidsclaim, geen merknamen).
+- Cart: geen HI10 in K1 en K2; eerste korting pas in K3 (unieke 10% met deadline). Advies agent, akkoord Floris.
+- Nachtelijk script `siraat_owned` (wat een klant bezit, uit Shopify naar Klaviyo-profiel) mag; moet dagelijks draaien en gecontroleerd worden.
+- Coupon SK_ANNIV15_7D aangemaakt door Floris (anniversary 15%).
+- Alle markten, ook Canada: "duties paid".
+- Verzendtekst: buiten de US "Free shipping"; in de US "Free shipping from the US".
+- Gift-waarden per markt in lokale valuta (C$95/620, £55/350, €70/410, A$100/660, NZ$120/820, S$95/590); HK, Midden-Oosten, Noorwegen en rest: "4 free gifts" zonder bedrag.
+- Pro Duo ($199) = Mini + Standard + 2 deksels.
