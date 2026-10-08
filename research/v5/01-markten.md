@@ -10,7 +10,7 @@ Opdracht: `research/v5/00-feedback-floris.md`, sectie Checkout, punt "Internatio
 2. **US-only is nu hard bewezen** met `publishedInContext`: 12-delige set, de drie potten, Roasting Pan, "2 Pans + 2 Lids", "Just Everything Bundle 34-Pcs" en vier Shipbob-kopieën (Pan Pro Standard, Large, Mini, Lid (S)). Alle andere 55 actieve producten staan in elke markt.
 3. **Let op: de oude bewijsvoering klopte niet.** `/en-au/` en `/en-gb/` bestaan niet: geen enkele markt heeft een eigen submap (ook de Pan Pro geeft daar 404). De markt volgt uit geolocatie of de cookie. Het bewijs komt nu uit Shopify zelf en uit `.js` met `localization=AU` (12-delige set: 404, Pan Pro: 200).
 4. **Canada rekent duties in de checkout** (`ADD_DUTIES_AT_CHECKOUT`), alle andere markten niet. In 11 recente CA-orders stond wel 0 aan duties. "Duties paid" mag voor Canada pas na akkoord van Floris; tot dan alleen "Free shipping".
-5. **Gift-waarden in lokale valuta** zijn hieronder per valuta uitgerekend uit de echte Shopify-prijzen (de gift-producten hebben eigen compare-at per markt). Voorbeeld: $70 = A$100, £55, €65, C$95, S$90, NZ$125, HK$560.
+5. **Gift-waarden in lokale valuta** zijn hieronder per valuta uitgerekend uit de echte Shopify-prijzen (de gift-producten hebben eigen compare-at per markt). De drie gifts samen ($70) zijn: C$95, £55, €70, A$100, NZ$120, S$95, HK$560, AED 260. De filter ($450): C$620, £350, €410, A$660, NZ$820, S$590.
 6. **Het browse-signaal in `build_template.py` is fout.** `'$' in event.Price` is ook waar voor AUD, CAD, SGD, NZD en HKD (de site toont die als "$194.00"). Viewed Product heeft geen valuta- of IP-veld; het profielland moet hier leidend zijn.
 7. **`person.Country` bestaat waarschijnlijk niet.** In ruim 800 bekeken profielen staat geen eigenschap `Country`; het land staat in de locatie (`$country`, met "United States" en "US" door elkaar) en in een eigen veld `country_code` (ISO). C1 tot C4 vallen nu dus altijd terug op de valuta.
 8. **Ontwerp:** één set macro's in `build_template.py` (`{{IF:AU}}`, `{{GIFTS:...}}`, `{{SIZE:28}}`, `{{PRICE:...}}`, `{{USONLY}}`) met per flowtype het betrouwbaarste signaal en een neutrale terugval (geen bedrag, maat "28 cm (11″)").
@@ -183,7 +183,7 @@ Prijs / compare-at zoals Shopify ze in die markt toont. "geen" = geen compare-at
 | Roasting Pan (US only) | 199 / 250 | niet te koop | niet te koop | niet te koop | niet te koop | niet te koop | niet te koop | niet te koop | niet te koop |
 | Just Everything 34-Pcs (US only) | 1499 / 4342 | niet te koop | niet te koop | niet te koop | niet te koop | niet te koop | niet te koop | niet te koop | niet te koop |
 
-Valt op: de Standard ($144) is duurder dan de Large ($149 nee, $149 is duurder) en de Small ($137) duurder dan de Mini ($99); de mails rekenen nog met $127 / $134 / $139 en de 6-Pcs voor $349. De Wok- en Deep-varianten heten op de site "Mini 9″" en "Standard 9.4″", in Shopify "Mini 24CM" en "Standard 24CM".
+Valt op: US-prijzen op 8 okt zijn Mini $99, Small $137, Standard $144, Large $149 (compare-at steeds het dubbele, behalve Mini $330). De mails rekenen nog met $129 / $127 / $134 / $139 en de 6-Pcs voor $349. De fall sale-set (6-Pcs $299, compare-at $598) is Mini 8″ + Small 10″ + Large 12″ met drie deksels; de PDP noemt het "Buy 2 get 4 free": Small en Large betaald, Mini en drie deksels gratis. De Wok- en Deep-varianten heten op de site "Mini 9″" en "Standard 9.4″", in Shopify "Mini 24CM" en "Standard 24CM".
 
 ## 8. Logica: één helperblok in `build_template.py`
 
@@ -234,8 +234,8 @@ Uitklappen (voorbeeld voor de map `checkout`):
 {{SIZE:28}}
 => {% if event.extra.presentment_currency == 'USD' and (not person|lookup:'$country' or ...) %}11″{% elif event.extra.presentment_currency == 'CAD' or ... %}28 cm{% else %}28 cm (11″){% endif %}
 
-{{GIFTS:total|4 free gifts}} in gifts
-=> {% if <US> %}$70{% elif <CA> %}C$95{% elif <GB> %}£55{% elif <EU> %}€65{% elif <AU> %}A$100{% elif <NZ> %}NZ$125{% elif <SG> %}S$90{% elif <HK> %}HK$560{% else %}4 free gifts{% endif %}
+{{GIFTS:total|4 free gifts}}
+=> {% if <US> %}$70 in gifts{% elif <CA> %}C$95 in gifts{% elif <GB> %}£55 in gifts{% elif <EU> %}€70 in gifts{% elif <AU> %}A$100 in gifts{% elif <NZ> %}NZ$120 in gifts{% elif <SG> %}S$95 in gifts{% else %}4 free gifts{% endif %}
 ```
 
 Afspraken voor de bouw:
@@ -259,8 +259,8 @@ Grep over `klaviyo/templates/v3/**` en `klaviyo/templates/partials/**` (bronbest
 
 Grootste brokken (ongeguard, ziet iedereen):
 - **Gift-bedragen** "$70 in gifts", "$15 / $25 / $30 / $450 value": `partials/blocks/gifts.html` (vier waarden), `DEF['gifts']`, `DEF['cart']` en `codebar`-aanroepen in vrijwel elke flow. Eén macro `{{GIFTS:...}}` lost het grootste deel op.
-- **6-Pcs $349 en "About $116 a pan"**: c3-p, c3-s, a2, w4-us/int, r1-set; prijs is nu $299 (fall sale).
-- **Pan Pro-prijzen** "$134", "$439", "$120.60 with HI10" in w1-a, w4-us, w5, a2, k2-new ("Based on the Pan Pro 11″ at $134"), deels al achter een US-voorwaarde.
+- **6-Pcs $349 en "About $116 a pan"**: c3-p, a1, a2, w4-us, n2, n2-nocode, r2, r2-nocode, r2-vip, r2-vip-nocode; prijs is nu $299 (fall sale).
+- **Pan Pro-prijzen** "$134", "$439", "$120.60 with HI10" in 28 bronbestanden (alle browse- en cart-mails, w1-a/b, w4-us, w5, a1, a2, c3-acc, p3-accessory/apron, n2, r1-acc, r1-set, r2), deels al achter een US-voorwaarde; de prijs is nu $144.
 - **Inch-maten** (11″, 8″, 10″, 12″, "11-inch") in a1, a2, w4-int (de INT-variant!), w1-a/b, c3-p, p3-pan, p3-set, p3-accessory, n2, r2, en de blokken `about`, `goes`, `goes1`, `label`. w4-int en a1 zetten wel cm tussen haakjes.
 - **US-only** ongeguard: de set-kaart in `c4-us` en `c4-us-nocode` (oude US-tak, vervalt met de samenvoeging), "pots" in de review-quote van c3-s, en de woorden "pot", "Roasting" in `about`/`goes`/`label`/`noun`-blokken (alleen zichtbaar als de klant dat product zelf had, dus US).
 - **Duties** in `c4-int` en `c4-int-nocode` zonder voorwaarde (ok voor INT, maar fout voor Canada zolang dat niet bevestigd is).
@@ -337,4 +337,5 @@ Volledige lijst per bestand (regelnummer, wat, status, tekst):
 2. **"Free Express Shipping from the US"** op elke PDP, ook voor AU/UK. Klopt dat voor alle markten (en wat is "local warehouse")?
 3. **Noorwegen** rekent in USD (geen valuta-instelling) en valt dubbel in RoW; **Germany/Netherlands** zijn aparte markten zonder catalogus naast EURO. Bewust?
 4. **Fall sale 6-Pcs $299**: in de mails staat nog $349 en "About $116 a pan" (zie lijst). DECISIONS zegt $349; de site zegt nu $299 / compare-at $598 ("Buy 2 get 4 free"). Welke prijs geldt tot wanneer?
-5. **Mini $99, Standard $144, Large $139, Small $127** (US, 8 okt): de Standard is duurder dan de Large en de mails noemen $134. Prijzen in mails moeten uit de catalogus komen, niet uit de copy.
+5. **Pan Pro-prijzen zijn veranderd** (US, 8 okt): Mini $99, Small $137, Standard $144, Large $149; de mails noemen $129/$127/$134/$139. Prijzen in mails moeten voortaan uit `content/catalog/products.json` komen, niet uit de copy.
+6. **Gift-waarden in Shopify** zijn per markt niet consequent omgerekend (free shipping £10 tegenover $15, e-book £25 tegenover $30) en de mystery gift en filter hebben geen compare-at. Mogen we de tabel in sectie 6 gebruiken, of zet Floris eigen waarden per markt?
