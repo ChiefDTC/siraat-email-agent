@@ -65,3 +65,4 @@ Bijwerken bij elk nieuw besluit. Datum per regel.
 - E-guide-download: https://delivery.shopifyapps.com/-/b3a2da5476fdac80/509b1c473bc15d58 (knop in P1).
 - Verwerkingstijd volgens Floris: verzonden binnen 1 werkdag (data 30 dagen: mediaan 77 uur tot fulfillment, nog naast elkaar leggen).
 - Geen eigen Klaviyo-verzendmail: bij fulfillment gaat automatisch een mail met tracking-URL (Floris).
+- Klaviyo default opt-in voor API-inschrijvingen op Single opt-in gezet (Floris, 8 okt 22:35). Shopify-sync naar Email List (single opt-in) gecontroleerd.

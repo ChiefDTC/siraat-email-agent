@@ -161,6 +161,7 @@ def check(k,subj_a,subj_b,prev):
         if re.search(r'siraatskitchen\.com',a) and 'utm_source' not in a and not a.startswith('mailto'):
             B.append('link zonder UTM: %s'%a[:80])
     if '\u2014' in k or '&mdash;' in k: B.append('gedachtestreepje (em dash)')
+    if '%%' in re.sub(r'\{%.*?%\}','',k,flags=re.S): B.append('dubbel procentteken %% in de mail (12-fixes: W1-codebalk)')
     return sorted(set(B)),sorted(set(W))
 
 # ---------- live (alleen met --live --i-am-sure) ----------
