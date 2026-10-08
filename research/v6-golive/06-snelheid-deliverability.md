@@ -194,7 +194,7 @@ Voorstel voor de bestaande 75k: per direct uitsluiten van alle campagnes (exclus
 
 - Nu: 2,3 tot 2,9 mails per ontvanger per week, piek 4,4 (week van 28 sep: 740.725 mails aan 167.058 mensen), waarvan ~90% campagnes. Eerste week oktober tot nu 1,8.
 - Met de flows erbij (scenario's uit 01-inbox-check §6): actieve shopper zonder aankoop 8 tot 9 in 7 dagen (6 flowmails plus 3 campagnes), oude T01-arm met T2SmtR tot 10. Uitschrijving springt van 0,98% naar 1,60% bij 3 naar 4 mails per week (timing-onderzoek).
-- Flowfilters zijn goed (checkout wijkt voor post-purchase, cart voor checkout, browse voor cart/checkout/welcome, site voor alles, sunset voor welcome/post-purchase). Wat ontbreekt zit aan de campagnekant: de segmenten "v4 · Campagne-cap" en "v4 · Welcome-bescherming" uit GO-LIVE stap 3 bestaan niet (gecontroleerd in de segmentenlijst). De laatste Homestead-campagne (8 okt, "October Email 1") gaat naar "HS // Engaged 180 Days Email" met Smart Sending aan: goed, maar zonder die twee uitsluitingen.
+- Flowfilters zijn goed (checkout wijkt voor post-purchase, cart voor checkout, browse voor cart/checkout/welcome, site voor alles, sunset voor welcome/post-purchase). Wat ontbreekt zit aan de campagnekant: de segmenten "v4 · Campagne-cap" en "v4 · Welcome protection" uit GO-LIVE stap 3 bestaan niet (gecontroleerd in de segmentenlijst). De laatste Homestead-campagne (8 okt, "October Email 1") gaat naar "HS // Engaged 180 Days Email" met Smart Sending aan: goed, maar zonder die twee uitsluitingen.
 - Smart Sending stond in 8 van 29 campagnes van de laatste 30 dagen uit (o.a. Sunday Recipe Day 4 okt, Prime Sale US/INT 2-3 okt, Founder Note Sale 30 sep, Resend to Non-Openers 29 sep).
 
 ### 4c. Smart Sending in flows: ORANJE
@@ -221,7 +221,7 @@ Van 1,08 mln open-events in 30 dagen heeft 86% geen e-mailclient (machine-opens:
 | 2 | Floris | Op Sunset TbYQmX, Sunset · kept Wzz6xC en Welcome T4a5Mk **geen** "Add past profiles" bij het live zetten | Klaviyo, flow-instellingen |
 | 3 | Floris | Beslissen over de vier oude naflows (OVERZICHT-V5 zegt uit, GO-LIVE zegt aan) en over het winback-gat (UEfh4h tot eind november laten lopen of niet) | Klaviyo, flows TSUnLs, YyaMjx, YcXbHx, WvRupU, UEfh4h |
 | 4 | Floris + Homestead | WuHSm6 uitsluiten bij elke campagne vanaf de eerste na livegang; Smart Sending altijd aan | Klaviyo, campagne > Recipients |
-| 5 | Floris (UI) | Segmenten aanmaken: "v4 · Campagne-cap" (Received Email ≥ 3 in 7 dagen, flows meegeteld) en "v4 · Welcome-bescherming" (lid Uw8eZG < 14 dagen, geen order); bij elke campagne uitsluiten | Klaviyo, Segments; GO-LIVE stap 3 |
+| 5 | Floris (UI) | Segmenten aanmaken: "v4 · Campagne-cap" (Received Email ≥ 3 in 7 dagen, flows meegeteld) en "v4 · Welcome protection" (lid Uw8eZG < 14 dagen, geen order); bij elke campagne uitsluiten | Klaviyo, Segments; GO-LIVE stap 3 |
 | 6 | Claude, testronde | Eén mail per groep in Gmail en Apple Mail: preview niet dubbel, `List-Unsubscribe=One-Click` aanwezig, DKIM `d=siraatskitchen.com` pass, beelden laden; een AU-testprofiel voor de tijdzone | Gmail "Show original" |
 
 ### Na livegang

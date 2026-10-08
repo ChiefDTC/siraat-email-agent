@@ -145,7 +145,7 @@ Na livegang van groep B, als de oude naflows blijven zoals GO-LIVE zegt: P1 (+1 
 | Uw8eZG | Email List (lijst) | 215.028 | Alle inschrijvingen (Alia, enz.) | Trigger Welcome, oude SiaNLu en T2SmtR |
 | XY4NVp | Sunset Segment (oud) | 17.394 | Marketing toegestaan · ooit menselijk geklikt of geopend · ooit actief op site · 0 klikken in 100 dagen · 0 opens ... (oude definitie) | Trigger oude sunset S7V4a7 (live) |
 | (geen) | v4 · Sunset · suppressed | **ontbreekt** | Plan: in WuHSm6 en S2 ontvangen 3 tot 60 dagen geleden | Wekelijkse suppressie (bevinding 8) |
-| (geen) | v4 · Welcome-bescherming | **ontbreekt** | Plan: lid van Uw8eZG minder dan 14 dagen en 0 orders in 14 dagen | Uitsluiting campagnes |
+| (geen) | v4 · Welcome protection | **ontbreekt** | Plan: lid van Uw8eZG minder dan 14 dagen en 0 orders in 14 dagen | Uitsluiting campagnes |
 | (geen) | v4 · Campagne-cap | **ontbreekt** | Plan: minstens 3 campagnemails in 7 dagen | Uitsluiting campagnes |
 | (geen) | v4 · Heeft kookgerei, v4 · VIP, v4 · US | ontbreken | Rapportage | Geen flow hangt ervan af |
 
@@ -200,7 +200,7 @@ Via API kan het niet zonder de flow opnieuw te bouwen (flowacties zijn niet te P
 ### 8. BELANGRIJK · Ontbrekende segmenten
 **Wat en bewijs**: in de lijst van 59 segmenten staan alleen WuHSm6 en YxfuJT met "v4". Ontbreken:
 - **v4 · Sunset · suppressed**: zonder dit segment heeft S2 ("Last email from me (unless you tap)") geen gevolg; er wordt niemand onderdrukt.
-- **v4 · Welcome-bescherming** en **v4 · Campagne-cap**: GO-LIVE stap 3 zegt "vóór de eerste campagne na livegang". Zonder deze krijgen nieuwe inschrijvers naast W1 t/m W5 ook alle Homestead-campagnes.
+- **v4 · Welcome protection** en **v4 · Campagne-cap**: GO-LIVE stap 3 zegt "vóór de eerste campagne na livegang". Zonder deze krijgen nieuwe inschrijvers naast W1 t/m W5 ook alle Homestead-campagnes.
 **Fix (UI, Lists & Segments > Create segment)**:
 - Suppressed: *If someone is in segment* "v4 · Sunset · unengaged 120d" AND *What someone has done* Received Email where Campaign Name contains "SUNSET · S2" at least once in the last 60 days AND Received Email where Campaign Name contains "SUNSET · S2" zero times in the last 3 days. Wekelijks: segment openen > Manage > Suppress all.
 - Welcome-bescherming: *If someone is in list* Email List, added in the last 14 days AND Placed Order zero times in the last 14 days. Bij elke campagne uitsluiten.

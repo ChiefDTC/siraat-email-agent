@@ -48,7 +48,7 @@ Nodig voor de flows:
 
 Nodig voor campagnes (geen flow hangt ervan af, wel vóór de eerste campagne na livegang):
 
-- [ ] **v4 · Welcome-bescherming**: Uw8eZG-lid sinds minder dan 14 dagen en Placed Order 0 keer in 14 dagen. Uitsluiten bij elke campagne.
+- [ ] **v4 · Welcome protection**: Uw8eZG-lid sinds minder dan 14 dagen en Placed Order 0 keer in 14 dagen. Uitsluiten bij elke campagne.
 - [ ] **v4 · Campagne-cap**: Received Email waarvan Flow niet gezet is, minstens 3 keer in 7 dagen. Uitsluiten bij elke campagne.
 
 Rapportage (mag later): v4 · Heeft kookgerei, v4 · VIP, v4 · US. T01-cohorten kunnen niet op `v3_arm` (wordt niet gezet); gebruik per flow "Received Email waarvan $flow = <v4-flow> en Campaign Name bevat 'Old ·'" (oud pad) tegen "... bevat niet 'Old ·'" (nieuw pad), plus Placed Order in 7 dagen (welcome 14).

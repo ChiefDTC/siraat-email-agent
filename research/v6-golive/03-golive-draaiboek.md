@@ -91,7 +91,7 @@ Wie bij een probleem beslist: **Floris**. Wie de rollback uitvoert: **Floris** (
 
 **Homestead-afspraak** (F, vóór 14:00):
 - [ ] Wie verstuurt de campagnes vanaf vandaag? Afspraak schriftelijk (mail of Slack).
-- [ ] Homestead sluit bij elke campagne uit: "v4 · Welcome-bescherming" (in welcomelijst sinds minder dan 14 dagen, geen order) en "v4 · Campagne-cap" (minstens 3 niet-flowmails in 7 dagen). Deze twee segmenten bestaan nog niet: Floris maakt ze, of geeft Claude het "ga" om ze via de API te maken (definities in `exports/GO-LIVE.md` stap 3).
+- [ ] Homestead sluit bij elke campagne uit: "v4 · Welcome protection" (in welcomelijst sinds minder dan 14 dagen, geen order) en "v4 · Campagne-cap" (minstens 3 niet-flowmails in 7 dagen). Deze twee segmenten bestaan nog niet: Floris maakt ze, of geeft Claude het "ga" om ze via de API te maken (definities in `exports/GO-LIVE.md` stap 3).
 - [ ] Homestead plant tussen 9 en 12 oktober geen campagne met een eigen 10%-code die de T02-meting vervuilt.
 
 **Open vraag compare-at $288** (F beslist, zie sectie 8):

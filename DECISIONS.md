@@ -58,5 +58,5 @@ Bijwerken bij elk nieuw besluit. Datum per regel.
 ## 8 oktober 2026 (avond, Floris)
 - Landen die in USD betalen zonder land op het profiel (zoals Noorwegen) krijgen de US-versie: akkoord.
 - HI10 op één keer per klant: gedaan in Shopify (appliesOncePerCustomer = true).
-- Claude mag campagnesegmenten via de API maken: "v4 · Welcome-bescherming" aangemaakt (XdK77b). "v4 · Campagne-cap" weigert de API (filter "Flow niet gezet" ongeldig), in de UI zetten.
+- Claude mag campagnesegmenten via de API maken: "v4 · Welcome protection" aangemaakt (XdK77b). "v4 · Campagne-cap" weigert de API (filter "Flow niet gezet" ongeldig), in de UI zetten.
 - Livegang pas nadat alle testmails ontvangen en bekeken zijn.
