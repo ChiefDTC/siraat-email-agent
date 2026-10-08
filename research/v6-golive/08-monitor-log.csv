@@ -44,3 +44,8 @@ tijd_ams,alias,flow,mail,onderwerp,checks_ok,fouten
 2026-10-08 23:17,+pan,TEST v5 Checkout,C3-P,"One pan, or three?",12,"geen FOUT; rekensom $562/$269.10 klopt; LET OP doorgestreepte $598"
 2026-10-08 23:18,+set,TEST v5 Checkout,C3-P,"One pan, or three?",12,"geen FOUT (event = pan, C3-S niet getest)"
 2026-10-08 23:19,+welcomeint,TEST v5 Cart,K2-NEW,"15 coated pans, or one",12,"warranty-link naar pagina met 'lifetime'; LET OP € bij UK-profiel"
+2026-10-08 23:46,+uk,TEST v5 Checkout,CODE · C4,"We're removing your discount in 48 hours",12,"code zonder einddatum (mail: za 10 okt); code werkt; LET OP code pas na ~2 min actief"
+2026-10-08 23:47,+pan,TEST v5 Checkout,CODE · C4,"We're removing your discount in 48 hours",12,"code zonder einddatum; code werkt"
+2026-10-08 23:49,+set,TEST v5 Checkout,CODE · C4,"We're removing your discount in 48 hours",12,"code zonder einddatum; code werkt"
+2026-10-08 23:50,+welcomeint,TEST v5 Cart,CODE · K3 · pan,"We're removing your cart's 10%",12,"code zonder einddatum; LET OP € bij UK-profiel; code werkt"
+2026-10-08 23:55,(correctie codemails x8),-,P3/V1/R2-VIP/C4/K3,-,-,"unieke code breekt op 375 px over twee regels (.offer-code 26px/4px)"
