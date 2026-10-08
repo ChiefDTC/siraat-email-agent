@@ -51,6 +51,13 @@
     .pc-n{font-size:16px!important;line-height:21px!important;}
     .pc-s{font-size:13px!important;line-height:18px!important;}
   }
+  /* urgency-upgrade 7 okt 2026: ugc (reviewkaarten met beeld) en deadline-tegels */
+  @media only screen and (max-width:620px){
+    .ug-desk{display:none!important;max-height:0!important;overflow:hidden!important;}
+    .ug-mob{display:block!important;max-height:none!important;overflow:visible!important;}
+    .dl-t{width:84px!important;}
+    .dl-n{font-size:22px!important;line-height:26px!important;}
+  }
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
@@ -61,8 +68,8 @@
 
 
 <!-- BLOCK codebar: aanbod boven de header, live tekst -->
-<tr><td align="center" class="codebar" bgcolor="#282828" style="background:#282828;padding:11px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;letter-spacing:1.5px;font-weight:600;color:#FFFFFF;">
-  EXTRA 10% OFF YOUR ORDER &middot; CODE&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;">HI10</span>
+<tr><td align="center" class="codebar" bgcolor="#282828" style="background:#282828;overflow-wrap:anywhere;padding:11px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;letter-spacing:1.5px;font-weight:600;color:#FFFFFF;">
+  EXTRA 10% OFF YOUR ORDER &middot; CODE&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;word-break:break-all;">HI10</span>
 </td></tr>
 
 
@@ -96,7 +103,7 @@
         <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">Siraat Signature Apron (Oak)</div>
         <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">16-oz canvas, adjustable</div>
       </td>
-      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;white-space:nowrap;">$49</td>
+      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;">$49</td>
     </tr>
     <tr><td colspan="3" style="padding:0 16px 16px 16px;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:11px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">
@@ -121,15 +128,12 @@
 <!-- OPENER (live tekst) -->
 <tr><td class="pad lead" style="padding:22px 44px 2px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;"><p style="margin:0 0 0 0;">You looked twice, so here&rsquo;s the detail. What it&rsquo;s made of, in two lines, and why it sits next to our pans.</p></td></tr>
 
-<!-- FEITEN PER PRODUCT (dynamisch op het productveld) -->
-<tr><td class="pad" style="padding:26px 44px 6px 44px;">
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">THE DETAIL</div>
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 16px 0;">What it is made of</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;border-bottom:0;">
-    <tr><td style="padding:16px 20px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Siraat Signature Apron</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Heavy 16-oz canvas with a water-repellent finish, adjustable straps and a front pocket. Wipe it down, or hand wash cold.</div></td></tr>
-    
-  </table>
-</td></tr>
+<!-- PRODUCTMATRIX (8 okt): over dit product, 3 feiten, het meest gestelde bezwaar en een echte review (blocks/about.html) -->
+<!-- BLOCK about (gegenereerd door scripts/make_product_blocks.py, niet met de hand wijzigen). Params: src (Django-expressie), lead (YOUR/THE), pad. -->
+
+<tr><td class="pad" data-about="apron" style="padding:26px 44px 6px 44px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;background:#FFFFFF;border:1px solid #ECE7DD;"><tr><td style="padding:18px 18px 0 18px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">ABOUT THE APRON</td></tr><tr><td style="padding:6px 18px 0 18px;font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:26px;line-height:29px;color:#282828;">Made for the cook who stays at the stove.</td></tr><tr><td style="padding:12px 18px 8px 18px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#282828;"><span style="color:#AC3B19;font-weight:600;">&#10003;</span>&nbsp; Heavy 16-oz canvas with a water-repellent finish.<br><span style="color:#AC3B19;font-weight:600;">&#10003;</span>&nbsp; Adjustable neck and waist straps, one size fits most.<br><span style="color:#AC3B19;font-weight:600;">&#10003;</span>&nbsp; A real front pocket. Four colors: Azure, Moss, Ember, Oak.</td></tr><tr><td style="padding:6px 18px 16px 18px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:11px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;"><b>Machine washable?</b> Wipe it down, or hand wash cold and let it air dry.</td></tr></table></td></tr><tr><td style="padding:0 18px 18px 18px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="border-top:1px solid #ECE7DD;padding-top:14px;"><div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div style="font-size:15px;line-height:22px;color:#282828;padding:6px 0 6px 0;">&ldquo;It comes beautifully boxed, and the apron, bottle and spatula are such lovely gifts.&rdquo;</div><div style="font-size:12px;line-height:16px;color:#727272;"><b style="color:#282828;font-weight:600;">Deborah G.</b> &middot; Verified buyer &middot; gift box</div></div></td></tr></table></td></tr>
+
+
 
 <!-- BLOCK cta: primaire knop, 340 px desktop, volle breedte mobiel -->
 <tr><td align="center" class="pad" style="padding:26px 44px 6px 44px;">
@@ -157,8 +161,8 @@
         </td>
         <td width="10" style="font-size:0;line-height:0;">&nbsp;</td>
         <td width="50%" valign="top" align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:10px 6px 14px 6px;font-family:Inter,Arial,Helvetica,sans-serif;">
-          <img src="../../partials/shared/gift-ebook.jpg" width="110" alt="Plastic-Free Home e-book" style="width:110px;height:110px;margin:0 auto;">
-          <div style="font-size:13px;line-height:17px;font-weight:600;color:#282828;padding-top:6px;height:34px;">Plastic-Free<br>Home e-book</div>
+          <img src="../../partials/shared/gift-ebook.jpg" width="110" alt="The Green Clean E-Guide" style="width:110px;height:110px;margin:0 auto;">
+          <div style="font-size:13px;line-height:17px;font-weight:600;color:#282828;padding-top:6px;height:34px;">The Green Clean<br>E-Guide</div>
           <div style="font-size:12px;line-height:16px;font-weight:600;color:#AC3B19;">$30 value</div>
         </td>
       </tr></table>
@@ -194,8 +198,8 @@
     <td class="rvsp" width="14" style="font-size:0;line-height:0;">&nbsp;</td>
     <td class="rv" width="48%" valign="top" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:20px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;">
       <div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;The Siraat mill is all metal, grinds great and is easy to load. Highly recommend!&rdquo;</div>
-      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Vs A. &middot; Verified buyer</div>
+      <div style="font-size:15px;line-height:22px;color:#282828;padding:9px 0 12px 0;">&ldquo;Outstanding customer service and communication. Very happy with the quality of the products!&rdquo;</div>
+      <div style="font-size:12px;line-height:16px;font-weight:600;color:#727272;">Vince &middot; Verified buyer</div>
     </td>
   </tr></table>
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;text-align:center;padding-top:14px;"><img src="../../partials/shared/icon-customers-100k.png" width="18" height="18" alt="" style="display:inline-block;vertical-align:-4px;width:18px;height:18px;">&nbsp; Join 100,000+ happy customers</div>
@@ -249,7 +253,7 @@
   </tr></table>
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:19px;color:#BDB8B0;text-align:center;">
     Free shipping on all orders &middot; 30-day returns &middot; 75-year warranty<br><br>
-    <a href="#" style="color:#BDB8B0;">Unsubscribe</a> &nbsp;|&nbsp; <a href="#" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; <a href="#" style="color:#BDB8B0;">View in browser</a><br>
+    <a href="#" style="color:#BDB8B0;">Unsubscribe</a> &nbsp;|&nbsp; <a href="#preferences" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; <a href="#" style="color:#BDB8B0;">View in browser</a><br>
     Siraat&#x27;s Kitchen &middot; [address]
   </div>
 </td></tr>

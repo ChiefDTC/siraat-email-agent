@@ -15,7 +15,7 @@ from django.template import engines
 from mksamples import CATS
 OPT = {a.split('=', 1)[0]: (a.split('=', 1)[1] if '=' in a else '1') for a in sys.argv[1:] if a.startswith('--')}
 
-SET = {'set6', 'set12', 'setbig'}; PANPRO = {'mini', 'small', 'standard', 'large'}; FORM = {'deep', 'wok', 'crepe'}
+SET = {'set6', 'set12', 'setbig', 'setall'}; PANPRO = {'mini', 'small', 'standard', 'large'}; FORM = {'deep', 'wok', 'crepe'}
 KOOK = PANPRO | FORM | {'pizza', 'roast', 'pot'}
 ACC = {'lid', 'apron', 'board', 'utensil', 'mill', 'sheets', 'giftcard'}
 
@@ -38,7 +38,8 @@ def route(c):
     elif c == 'giftcard': p3 = None
     elif c == 'apron': p3 = 'p3-apron'
     else: p3 = 'p3-accessory'
-    r['post-purchase'] = ['p1-first'] + (['p2'] if kook else []) + ([p3, p3 + '-nocode'] if p3 else [])
+    p2 = c in PANPRO | FORM | SET          # build_flows.py P2_TITELS: geen eerste-ei-gids bij alleen pizza steel, roasting pan of pot
+    r['post-purchase'] = ['p1-first'] + (['p2'] if p2 else []) + ([p3, p3 + '-nocode'] if p3 else [])
     r['winback'] = (['r1-set'] if (c in SET or price >= 300) else ['r1-pan']) if kook else ['r1-acc']
     r['winback'] += ['r2', 'r2-nocode']
     r['vip'] = ['v1', 'v1-nocode', 'v2']
@@ -82,29 +83,37 @@ NAME = {'mini': 'Mini', 'small': 'Small', 'standard': 'Standard', 'large': 'Larg
 ABOUT_FLOWS = {'checkout': 'c1', 'cart': None, 'browse': None, 'post-purchase': None, 'winback': None}
 
 def checks(c, flow, mail, h, tx):
-    """Geeft een lijst fouten voor deze cel."""
+    """Fouten voor deze cel (productmatrix 10-productmatrix.md, sectie Na)."""
     F = []; low = tx.lower()
     if c in ACC:
         for p in PAN_TALK:
             if p.lower() in low: F.append('panuitleg "%s" bij %s' % (p, c))
-        if c == 'apron' and 'no coating' in low and 'apron' in low:
-            # claims.md schort: nooit naast "No coatings"
-            i = low.find('no coating'); j = low.find('apron')
-            if abs(i - j) < 400: F.append('"no coating" vlak bij de schort (PVC-coating, claims.md)')
-    # "about your X"-blok in de eerste mail van checkout, cart, browse en P3/R1
-    first = {'checkout': ['c1'], 'cart': ['k1', 'k1-acc'], 'browse': ['b1', 'b1-acc'], 'post-purchase': ['p3-pan', 'p3-set', 'p3-next', 'p3-apron', 'p3-accessory'],
-             'winback': ['r1-pan', 'r1-set', 'r1-acc']}.get(flow, [])
-    if mail in first:
-        if 'data-about="%s"' % c not in h: F.append('geen productblok data-about="%s"' % c)
-    if mail in first and flow in ('checkout', 'post-purchase', 'winback', 'cart', 'browse'):
-        if 'data-goes="' not in h and c != 'giftcard': F.append('geen "goes with"-blok')
+    if c == 'apron':   # claims.md schort: PVC-coating, nooit naast "no coating(s)"
+        for m in __import__('re').finditer('no coating', low):
+            if 'apron' in low[max(0, m.start() - 300):m.start() + 300]: F.append('"no coating" vlak bij de schort'); break
+    if c in KOOK | SET and 'you started with an accessory' in low: F.append('kookgerei aangesproken als accessoire')
+    if c in ('pot', 'pizza', 'roast') and flow in ('winback', 'anniversary', 'post-purchase') and 'your pan ' in low.split('\n', 1)[-1].replace('your pan pro', '').replace('?', ' ') + ' ':
+        F.append('"your pan" bij een %s' % c)
+    need_about = {'c1'} | ({'k1', 'k2-new'} if c in KOOK | SET and c not in PANPRO else set()) | ({'k1-acc', 'b1-acc'} if c in ACC else set())
+    need_goes = ({'c1', 'r1-pan', 'v1', 'v1-nocode'} | ({'k2-new'} if c not in PANPRO else set())) if c != 'giftcard' else set()
+    need_goes1 = {'p3-pan', 'p3-pan-nocode', 'p3-set', 'p3-set-nocode'}
+    if mail in need_about and 'data-about="%s"' % ('standard' if c == 'panpro' else c) not in h: F.append('geen productblok data-about="%s"' % c)
+    if (mail in need_goes or mail in need_goes1) and 'data-goes="%s"' % c not in h: F.append('geen goes-blok data-goes="%s"' % c)
     return F
 
 # eigen productregels per categorie: wat moet de klant zien (tekst) in de eerste mail van de flow
 MUST = {
- ('apron', 'c1'): ['16-oz canvas', 'adjustable'], ('pizza', 'c1'): ['pizza'], ('set12', 'c1'): ['12'], ('pot', 'c1'): ['pot'],
- ('board', 'k1-acc'): ['board'], ('mini', 'p3-pan'): ['Mini'], ('pot', 'r1-pan'): ['pot'],
+ ('apron', 'c1'): ['16-oz canvas', 'Adjustable', 'ABOUT YOUR APRON', 'Machine washable?', 'Deborah G.', 'Salt & Pepper Mill Set'],
+ ('pizza', 'c1'): ['ABOUT YOUR PIZZA STEEL', 'Sergio C.', 'Goes with your pizza steel'],
+ ('set12', 'c1'): ['ABOUT YOUR 12-PIECE SET', 'Why two parcels?', 'Lauren W.', 'Siraat Signature Apron'],
+ ('pot', 'c1'): ['ABOUT YOUR POT'], ('standard', 'c1'): ['Pan Pro Mini', 'Stainless Steel Lid, 28 cm', 'Shop Pay Installments'],
+ ('small', 'p3-pan'): ['One in three Small owners comes back for the Mini'], ('mini', 'p3-pan'): ['Pan Pro 11'],
+ ('board', 'k1-acc'): ['ABOUT YOUR CUTTING BOARD', 'Knife marks?'], ('pot', 'r1-pan'): ['your pot'], ('wok', 'r1-pan'): ['Deep Pan Pro'],
+ ('pizza', 'p3-accessory'): ['your pizza steel'], ('apron', 'b1-acc'): ['ABOUT THE APRON'],
 }
+# en wat er niet mag staan
+MUSTNOT = {('apron', 'c1'): ['Titanium vs. coated'], ('wok', 'r1-pan'): ['Wok Pan Pro'], ('standard', 'p3-pan'): ['Titanium Cutting Board'],
+ ('pizza', 'k1'): ['Why one pass is enough'], ('pot', 'k2-new'): ['15 coated pans']}
 
 def main():
     only = OPT.get('--only'); cats = only.split(',') if only else list(CATS)
@@ -118,6 +127,8 @@ def main():
                 F = checks(c, flow, m, h, tx)
                 for w in MUST.get((c, m), []):
                     if w.lower() not in tx.lower(): F.append('mist "%s"' % w)
+                for w in MUSTNOT.get((c, m), []):
+                    if w.lower() in tx.lower(): F.append('bevat "%s"' % w)
                 rows.append((c, flow, m, 'ok' if not F else 'FOUT', F))
                 if dump:
                     d = os.path.join(dump, c); os.makedirs(d, exist_ok=True)

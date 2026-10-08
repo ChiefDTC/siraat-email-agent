@@ -42,7 +42,7 @@
 
 <!-- HERO 4:3 met aanbodbalk (make_hero.py --offer --ratio=4:3) -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/discount/HI10?redirect=/cart%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk1acc-hero"><img src="{{IMG}}/k1acc-hero.jpg" width="600" alt="Still in your cart. Picked it out? It is still here. Extra 10% off with HI10, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://2d0add-d6.myshopify.com'|cut:'https://siraatskitchen.com'|default:'/cart' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk1acc-hero"><img src="{{IMG}}/k1acc-hero.jpg" width="600" alt="Still in your cart. Picked it out? It is still here. Extra 10% off with HI10, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
 <!-- PRODUCTKAART Added to Cart (QXcV8K): 'Product Name', ImageURL, Price (getal), Quantity, $currency. Prijs alleen bij USD; ankerprijs $439 alleen bij Pan Pro Standard 11" voor $134 in USD. -->
@@ -51,7 +51,7 @@
     <tr><td colspan="3" style="padding:16px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">STILL IN YOUR CART</td></tr>
     <tr>
       <td width="104" valign="middle" style="padding:12px 0 12px 16px;">
-        <a href="https://siraatskitchen.com/discount/HI10?redirect=/cart%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk1acc-product"><img src="{% if event.ImageURL %}{{ event.ImageURL }}&width=200{% else %}{{IMG}}/cart-fallback.jpg{% endif %}" width="88" alt="{{ event|lookup:'Product Name'|default:'Your item' }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;"></a>
+        <a href="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://2d0add-d6.myshopify.com'|cut:'https://siraatskitchen.com'|default:'/cart' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk1acc-product"><img src="{% if event.ImageURL %}{{ event.ImageURL }}&width=200{% else %}{{IMG}}/cart-fallback.jpg{% endif %}" width="88" alt="{{ event|lookup:'Product Name'|default:'Your item' }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;"></a>
       </td>
       <td valign="middle" style="padding:12px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
         <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;word-break:break-word;">{{ event|lookup:'Product Name'|default:'Your item' }}</div>
@@ -67,34 +67,21 @@
   </table>
 </td></tr>
 
-{{BLOCK:cta label="Finish my order" url="https://siraatskitchen.com/discount/HI10?redirect=/cart%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk1acc-cta1" pad="16px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
+{{BLOCK:cta label="Finish my order" url="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://2d0add-d6.myshopify.com'|cut:'https://siraatskitchen.com'|default:'/cart' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk1acc-cta1" pad="16px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
 
 <!-- OPENER (live tekst) -->
 <tr><td class="pad lead" style="padding:22px 44px 2px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;"><p style="margin:0 0 0 0;">You picked it out, and it&rsquo;s still in your cart. In case the question was what it&rsquo;s actually made of, here is the short version.</p></td></tr>
 
-<!-- FEITEN PER PRODUCT (dynamisch op het productveld) -->
-<tr><td class="pad" style="padding:26px 44px 6px 44px;">
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">WHAT YOU PICKED</div>
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 16px 0;">Made to last, in two lines</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;border-bottom:0;">
-    {% if 'Apron' in event|lookup:'Product Name' %}<tr><td style="padding:16px 20px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Siraat Signature Apron</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Heavy 16-oz canvas with a water-repellent finish, adjustable straps and a front pocket. Wipe it down, or hand wash cold.</div></td></tr>
-    {% elif 'Cutting Board' in event|lookup:'Product Name' %}<tr><td style="padding:16px 20px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Titanium Cutting Board</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Pure titanium, non-porous, so it does not soak up juices or smells. Anti-microbial, and dishwasher safe.</div></td></tr>
-    {% elif 'Lid' in event|lookup:'Product Name' %}<tr><td style="padding:16px 20px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Stainless Steel Lid</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">304 stainless steel. Match it to your pan&rsquo;s diameter: 20, 26, 28 or 30 cm. One lid fits every Siraat pan of that size.</div></td></tr>
-    {% elif 'Mill' in event|lookup:'Product Name' %}<tr><td style="padding:16px 20px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Salt and Pepper Mill</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">A heavy metal body with a knurled grip and 12 numbered grind settings, from fine to coarse.</div></td></tr>
-    {% elif 'Utensil' in event|lookup:'Product Name' or 'Chopsticks' in event|lookup:'Product Name' %}<tr><td style="padding:16px 20px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Titanium Utensils</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Titanium tools that are light in the hand and safe on every Siraat pan.</div></td></tr>
-    {% elif 'Gift Card' in event|lookup:'Product Name' %}<tr><td style="padding:16px 20px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">E-Gift Card</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Sent by email, so it cannot get stuck in the mail. They choose the pan and the size.</div></td></tr>
-    {% elif 'Dishwasher Sheets' in event|lookup:'Product Name' %}<tr><td style="padding:16px 20px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Dishwasher Sheets</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">One pre-dosed sheet per load. No plastic pod, phosphate-free.</div></td></tr>
-    {% else %}<tr><td style="padding:16px 20px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Made to sit next to the pans</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Chosen with the same rule as our cookware: materials we would put in our own kitchen.</div></td></tr>{% endif %}
-  </table>
-</td></tr>
+<!-- PRODUCTMATRIX (8 okt): over dit product, 3 feiten, het meest gestelde bezwaar en een echte review (blocks/about.html) -->
+{{BLOCK:about src="event|lookup:'Product Name'" lead="YOUR" pad="26px 44px 6px 44px"}}
 
-{{BLOCK:cta label="Finish my order" url="https://siraatskitchen.com/discount/HI10?redirect=/cart%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk1acc-cta2" pad="26px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
+{{BLOCK:cta label="Finish my order" url="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://2d0add-d6.myshopify.com'|cut:'https://siraatskitchen.com'|default:'/cart' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk1acc-cta2" pad="26px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
 
 {{BLOCK:gifts headline="$70 in gifts, in the box" note="Plus a chance to win a $450 PFAS water filter."}}
 
-{{BLOCK:reviews q1="The Siraat mill is all metal, grinds great and is easy to load. Highly recommend!" n1="Vs A." q2="...I purchased this as a gift and the recipient loves it!" n2="Denise H." pad="28px 44px 6px 44px"}}
+{{BLOCK:reviews q1="Outstanding customer service and communication. Very happy with the quality of the products!" n1="Vince" q2="...I purchased this as a gift and the recipient loves it!" n2="Denise H." pad="28px 44px 6px 44px"}}
 
-{{BLOCK:cta label="Finish my order" url="https://siraatskitchen.com/discount/HI10?redirect=/cart%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk1acc-cta3" pad="26px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
+{{BLOCK:cta label="Finish my order" url="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://2d0add-d6.myshopify.com'|cut:'https://siraatskitchen.com'|default:'/cart' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk1acc-cta3" pad="26px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>"}}
 
 <!-- ICONEN voor accessoires: zonder 75-year warranty (open punt 3.27: geldt de garantie winkelbreed?) -->
 <tr><td class="pad" style="padding:22px 44px 6px 44px;">

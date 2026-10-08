@@ -7,6 +7,7 @@ Schrijft drie blokken in klaviyo/templates/partials/blocks/ en de productbeelden
                "Goes with your <product>": 2 rijen op basis van de echte kooppatronen (research/personalisatie/01-voorstel.md 2.1-2.2).
                Link per rij = pre + handle + post (zo kan een mail HI10 of een eigen code in de link zetten).
   noun.html    {{BLOCK:noun src="<expr>" dflt="pan"}}  inline: pan / wok / pizza steel / pot / set / apron ...
+  label.html   {{BLOCK:label src="<expr>" dflt="PAN"}}  inline, hoofdletters: PAN PRO 11&Prime; / PIZZA STEEL / 12-PIECE SET ...
   pick.html    {{BLOCK:pick src="<expr>" set="..." pot="..." pizza="..." apron="..." dflt="..."}}  inline keuze per groep
                (zelfde volgorde als about), bijvoorbeeld een productspecifieke hero: src="{{BLOCK:pick ... set="{{IMG}}/c1-hero-set.jpg" ...}}".
 <expr> is de string waarin gezocht wordt: event.Items|join:',' (Checkout Started, Placed Order), event|lookup:'Product Name'
@@ -28,10 +29,10 @@ OPT = {a.split('=', 1)[0]: a.split('=', 1)[1] for a in sys.argv[1:] if a.startsw
 CATS = [
  ('set12',    ['12-Pcs', '12 pcs'], 'set', '12-PIECE SET'),
  ('setall',   ['Everything'], 'set', 'JUST EVERYTHING BUNDLE'),
- ('setbig',   ['Cookware Set Pro', 'Complete Edition', 'Full Hammered'], 'set', 'SET'),
+ ('setbig',   ['Cookware Set Pro', 'Complete Edition', 'Full Hammered', '2 Pans', 'Pro Duo', 'Pan Pro Kit', 'Wok & Deep'], 'set', 'SET'),
  ('pot',      ['Pot'], 'pot', 'POT'),
- ('set6',     ['6-Pcs', '6-teilig', '2 Pans', 'Pro Duo', 'Pan Pro Kit'], 'set', '6-PIECE SET'),
- ('standard', ['Pan Pro Standard', 'Titanium Pan Pro'], 'pan', 'PAN PRO 11&Prime;'),
+ ('set6',     ['6-Pcs', '6-teilig'], 'set', '6-PIECE SET'),
+ ('standard', ['Pan Pro Standard', 'Titanium Pan Pro', 'Frying Pan'], 'pan', 'PAN PRO 11&Prime;'),
  ('large',    ['Pan Pro Large'], 'pan', 'PAN PRO 12&Prime;'),
  ('small',    ['Pan Pro Small'], 'pan', 'PAN PRO 10&Prime;'),
  ('mini',     ['Pan Pro Mini'], 'pan', 'PAN PRO MINI'),
@@ -40,8 +41,8 @@ CATS = [
  ('crepe',    ['pe Pan'], 'cr&ecirc;pe pan', 'CR&Ecirc;PE PAN'),
  ('pizza',    ['Pizza Steel'], 'pizza steel', 'PIZZA STEEL'),
  ('roast',    ['Roasting'], 'roasting pan', 'ROASTING PAN'),
- ('panpro',   ['Hammered Pan Pro'], 'pan', 'PAN PRO'),
- ('board',    ['Cutting Board'], 'board', 'CUTTING BOARD'),
+ ('panpro',   ['Hammered Pan Pro', 'Cook & Prep'], 'pan', 'PAN PRO'),
+ ('board',    ['Titanium Cutting Board'], 'board', 'CUTTING BOARD'),
  ('lid',      ['Lid'], 'lid', 'LID'),
  ('mill',     ['Mill'], 'mills', 'MILLS'),
  ('utensil',  ['Utensil', 'Chopsticks'], 'utensils', 'UTENSILS'),
@@ -103,7 +104,7 @@ A = {
    ["Flat and wide: cr&ecirc;pes, pancakes, eggs and tortillas.", "The same titanium cooking surface as the Pan Pro.", "Gas, electric, ceramic and induction."],
    ("Will cr&ecirc;pes stick?", "Heat it first on medium, then a few drops of oil. The first one is the test."),
    ('R088', "This is the best crepe pan that I have used that works like a non-stick but gives crispy output like a cast iron pan.", 'Cr&ecirc;pe Pan Pro')),
- 'pizza': ("A crisp base, without a coating.",
+ 'pizza': ("Lift it in, bake, lift it out.",
    ["Hammered surface: air gets under the dough, so it releases.", "No coating and no seasoning: nothing to burn off or keep up.", "Two side handles. Home oven, pizza oven or grill."],
    ("Dishwasher?", "Yes. Let it cool first, or use warm water and a little soap."),
    ('R048', "Have used my pizza stone a couple of times and it has made an excellent crust.", 'Pizza Steel')),
@@ -186,8 +187,8 @@ ITEM = {
 G = {
  'mini':     ("What Mini owners add next", "One in five Mini owners comes back for the 11&Prime;.", ['standard', 'lid20']),
  'small':    ("What Small owners add next", "One in three Small owners comes back for the Mini.", ['mini', 'lid26']),
- 'standard': ("What 11&Prime; owners add next", "One in five adds the Mini, one in five the lid.", ['mini', 'lid28']),
- 'large':    ("What Large owners add next", "One in five Large owners adds the lid next.", ['lid30', 'small']),
+ 'standard': ("What 11&Prime; owners add next", "One in five 11&Prime; owners comes back for the Mini.", ['mini', 'lid28']),
+ 'large':    ("What Large owners add next", "One in five Large owners adds the lid, one in seven the 10&Prime;.", ['small', 'lid30']),
  'panpro':   ("What Pan Pro owners add next", "The second order is most often a smaller size or a lid.", ['mini', 'lid']),
  'deep':     ("Goes with your deep pan", "The deep pan and the wok are the pair most often bought together.", ['wok', 'lid']),
  'wok':      ("Goes with your wok", "The wok and the deep pan are the pair most often bought together.", ['deep', 'crepe']),
@@ -211,76 +212,95 @@ F = "font-family:Inter,Arial,Helvetica,sans-serif;"
 SERIF = "font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;"
 
 def cond(tokens):
-    return ' or '.join("'%s' in [[src]]" % t.replace("'", "\\'") for t in tokens)
+    """Voorwaarde op de variabele s ({% with s=[[src]] %} staat om elk blok, zodat de expressie maar één keer in de HTML staat).
+    Token 'A&B' = beide moeten erin staan."""
+    one = lambda t: ' and '.join("'%s' in s" % x.replace("'", "\\'") for x in t.split('&'))
+    return ' or '.join(one(t) for t in tokens)
 
-def chain(body):
-    out = []
-    for i, (k, toks, noun, label) in enumerate(CATS):
-        b = body(k)
-        if b is None: continue
-        out.append(('{%% if %s %%}' if not out else '{%% elif %s %%}') % cond(toks) + b)
-    return out
+# Alleen voor goes: Pan Pro met een deksel in dezelfde order krijgt geen deksel aangeboden (vooraan in de keten).
+GEXTRA = [('standard', ['Pan Pro Standard&Lid'], ['mini', 'board']), ('large', ['Pan Pro Large&Lid'], ['small', 'board']),
+          ('small', ['Pan Pro Small&Lid'], ['mini', 'board']), ('mini', ['Pan Pro Mini&Lid'], ['standard', 'board']),
+          ('panpro', ['Pan Pro With Lid'], ['mini', 'board'])]
 
-def about(k):
-    if k not in A: return None
-    head, facts, (q, a), rv = A[k]; label = KEY[k][3]
-    fr = ''.join('<tr><td width="22" valign="top" style="width:22px;padding:2px 0 5px 0;"><img src="{{SHARED}}/icon-check.png" width="16" height="16" alt="" style="width:16px;height:16px;"></td>'
-                 '<td valign="top" style="padding:0 0 5px 6px;%sfont-size:14px;line-height:19px;color:#282828;">%s</td></tr>' % (F, f) for f in facts)
-    review = ''
-    if rv:
-        rid, quote, prod = rv; name = REV[rid]['name']
-        review = ('<tr><td colspan="2" style="padding:0 18px 18px 18px;%s"><div style="border-top:1px solid #ECE7DD;padding-top:14px;">'
-                  '<div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>'
-                  '<div style="font-size:15px;line-height:22px;color:#282828;padding:6px 0 6px 0;">&ldquo;%s&rdquo;</div>'
-                  '<div style="font-size:12px;line-height:16px;color:#727272;"><b style="color:#282828;font-weight:600;">%s</b> &middot; Verified buyer &middot; %s</div></div></td></tr>') % (F, quote, name, prod)
-    return ('<tr><td class="pad" data-about="%s" style="padding:[[pad]];">'
-            '<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%%;background:#FFFFFF;border:1px solid #ECE7DD;">'
-            '<tr><td colspan="2" style="padding:18px 18px 0 18px;%sfont-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">ABOUT [[lead]] %s</td></tr>'
-            '<tr><td colspan="2" style="padding:6px 18px 0 18px;%sfont-size:26px;line-height:29px;color:#282828;">%s</td></tr>'
-            '<tr><td width="90" valign="top" style="width:90px;padding:12px 0 8px 18px;"><img src="{{SHARED}}/pc-%s.jpg" width="72" height="72" alt="%s" style="width:72px;height:72px;"></td>'
-            '<td valign="top" style="padding:12px 16px 4px 10px;"><table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0">%s</table></td></tr>'
-            '<tr><td colspan="2" style="padding:0 18px 16px 18px;"><table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:11px 14px;%sfont-size:14px;line-height:20px;color:#282828;"><b>%s</b> %s</td></tr></table></td></tr>'
-            '%s</table></td></tr>\n') % (k, F, label, SERIF, head, k, re.sub('&[a-zA-Z]+;', '', label.title()), fr, F, q, a, review)
+def fchain(val, keys=None, dflt='', extra=()):
+    """Eén {% if %}/{% elif %}-keten voor één veld; opeenvolgende categorieën met dezelfde waarde delen één voorwaarde.
+    Bouwt alleen de tekst die verschilt; de opmaak staat één keer om de keten heen (Gmail-clipping, export_klaviyo MAXKB)."""
+    parts = []
+    for k, toks, noun, label in list(extra) + CATS:
+        if keys is not None and k not in keys: continue
+        v = val(k)
+        if v is None: continue
+        if parts and parts[-1][1] == v: parts[-1][0].extend(toks)
+        else: parts.append([list(toks), v])
+    out = ''.join(('{%% if %s %%}' if i == 0 else '{%% elif %s %%}') % cond(t) + v for i, (t, v) in enumerate(parts))
+    return out + ('{%% else %%}%s{%% endif %%}' % dflt if dflt else '{% endif %}')
 
-def goes(k):
-    if k not in G: return None
-    head, stat, items = G[k]
-    rows = []
-    for i, it in enumerate(items):
-        name, line, handle, im = ITEM[it]
-        rows.append(('<tr><td width="76" valign="middle" style="width:76px;padding:12px 0 12px 14px;%s"><a href="[[pre]]%s[[post]]"><img src="{{SHARED}}/pc-%s.jpg" width="64" height="64" alt="%s" style="width:64px;height:64px;"></a></td>'
-                     '<td valign="middle" style="padding:12px 10px 12px 12px;%s"><a href="[[pre]]%s[[post]]" style="text-decoration:none;color:#282828;"><div style="font-size:15px;line-height:20px;font-weight:600;color:#282828;">%s</div>'
-                     '<div style="font-size:13px;line-height:18px;color:#727272;padding-top:2px;">%s</div></a></td>'
-                     '<td width="62" align="right" valign="middle" style="width:62px;padding:12px 14px 12px 0;%sfont-size:13px;line-height:18px;font-weight:600;"><a href="[[pre]]%s[[post]]" style="color:#AC3B19;text-decoration:none;">See it&nbsp;&rarr;</a></td></tr>')
-                    % ('border-top:1px solid #ECE7DD;' if i else '', handle, im, re.sub('&[a-zA-Z]+;', '', name), F, handle, name, line, F, handle))
-    return ('<tr><td class="pad" data-goes="%s" style="padding:[[pad]];">'
-            '<div style="%sfont-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">OFTEN ADDED NEXT</div>'
-            '<div class="h2" style="%sfont-size:32px;line-height:36px;color:#282828;text-align:center;padding:6px 0 4px 0;">%s</div>'
-            '%s'
-            '<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%%;background:#FFFFFF;border:1px solid #ECE7DD;margin-top:10px;">%s</table>'
-            '<div style="%sfont-size:12px;line-height:18px;color:#727272;text-align:center;padding-top:8px;">[[note]]</div></td></tr>\n') % (k, F, SERIF, head,
-            ('<div style="%sfont-size:13px;line-height:19px;color:#727272;text-align:center;padding-bottom:2px;">%s</div>' % (F, stat)) if stat else '', ''.join(rows), F)
+def anycond(keys):
+    return cond([t for k, toks, n, l in CATS if k in keys for t in toks])
+
+def about_block():
+    K = [k for k in KEY if k in A]
+    R = [k for k in K if A[k][3]]
+    tick = '<span style="color:#AC3B19;font-weight:600;">&#10003;</span>&nbsp; '
+    rev = lambda k: ('&ldquo;%s&rdquo;' % A[k][3][1]) if A[k][3] else None
+    who = lambda k: ('<b style="color:#282828;font-weight:600;">%s</b> &middot; Verified buyer &middot; %s' % (REV[A[k][3][0]]['name'], A[k][3][2])) if A[k][3] else None
+    return ('{%% with s=[[src]] %%}{%% if %s %%}\n' % anycond(K) +
+      '<tr><td class="pad" data-about="' + fchain(lambda k: k, K) + '" style="padding:[[pad]];">'
+      '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;background:#FFFFFF;border:1px solid #ECE7DD;">'
+      '<tr><td style="padding:18px 18px 0 18px;' + F + 'font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">ABOUT [[lead]] ' + fchain(lambda k: KEY[k][3], K) + '</td></tr>'
+      '<tr><td style="padding:6px 18px 0 18px;' + SERIF + 'font-size:26px;line-height:29px;color:#282828;">' + fchain(lambda k: A[k][0], K) + '</td></tr>'
+      '<tr><td style="padding:12px 18px 8px 18px;' + F + 'font-size:14px;line-height:21px;color:#282828;">' + tick + fchain(lambda k: A[k][1][0], K) + '<br>' + tick + fchain(lambda k: A[k][1][1], K) + '<br>' + tick + fchain(lambda k: A[k][1][2], K) + '</td></tr>'
+      '<tr><td style="padding:6px 18px 16px 18px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:11px 14px;' + F + 'font-size:14px;line-height:20px;color:#282828;"><b>' + fchain(lambda k: A[k][2][0], K) + '</b> ' + fchain(lambda k: A[k][2][1], K) + '</td></tr></table></td></tr>'
+      '{%% if %s %%}' % anycond(R) +
+      '<tr><td style="padding:0 18px 18px 18px;' + F + '"><div style="border-top:1px solid #ECE7DD;padding-top:14px;"><div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>'
+      '<div style="font-size:15px;line-height:22px;color:#282828;padding:6px 0 6px 0;">' + fchain(rev, R) + '</div>'
+      '<div style="font-size:12px;line-height:16px;color:#727272;">' + fchain(who, R) + '</div></div></td></tr>{% endif %}'
+      '</table></td></tr>\n{% endif %}{% endwith %}\n')
+
+def goes_block(n=2):
+    K = [k for k in KEY if k in G]
+    X = [(k + '+lid', t, None, None) for k, t, items in GEXTRA]
+    GI = dict(((k + '+lid'), items) for k, t, items in GEXTRA)
+    base = lambda k: k.split('+')[0]
+    def fc(val, keys, **kw): return fchain(val, keys + list(GI), extra=X, **kw)
+    def row(i):
+        it = lambda k: ITEM[(GI[k] if k in GI else G[k][2])[i]]
+        href = '[[pre]]' + fc(lambda k: it(k)[2], K) + '[[post]]'
+        return ('<tr><td width="76" valign="middle" style="width:76px;padding:12px 0 12px 14px;%s"><img src="%s" width="64" height="64" alt="" style="width:64px;height:64px;"></td>'
+                '<td valign="middle" style="padding:12px 12px 12px 12px;%s%s"><a href="%s" style="text-decoration:none;color:#282828;"><span style="font-size:15px;line-height:20px;font-weight:600;color:#282828;">%s</span><br>'
+                '<span style="font-size:13px;line-height:18px;color:#727272;">%s</span> <span style="font-size:13px;font-weight:600;color:#AC3B19;white-space:nowrap;">See it&nbsp;&rarr;</span></a></td></tr>') % (
+            'border-top:1px solid #ECE7DD;' if i else '', fc(lambda k: '{{SHARED}}/pc-%s.jpg' % it(k)[3], K), F, 'border-top:1px solid #ECE7DD;' if i else '',
+            href, fc(lambda k: it(k)[0], K), fc(lambda k: it(k)[1], K))
+    S = [k for k in K if G[k][1]]
+    return ('{%% with s=[[src]] %%}{%% if %s %%}\n' % anycond(K) +
+      '<tr><td class="pad" data-goes="' + fc(lambda k: base(k), K) + '" style="padding:[[pad]];">'
+      '<div style="' + F + 'font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">OFTEN ADDED NEXT</div>'
+      '<div class="h2" style="' + SERIF + 'font-size:32px;line-height:36px;color:#282828;text-align:center;padding:6px 0 4px 0;">' + fc(lambda k: G[base(k)][0], K) + '</div>'
+      '{%% if %s %%}<div style="%sfont-size:13px;line-height:19px;color:#727272;text-align:center;">' % (anycond(S), F) + fc(lambda k: G[base(k)][1], S) + '</div>{% endif %}'
+      '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;background:#FFFFFF;border:1px solid #ECE7DD;margin-top:10px;">' + row(0) + (row(1) if n == 2 else '') + '</table>'
+      '<div style="' + F + 'font-size:12px;line-height:18px;color:#727272;text-align:center;padding-top:8px;">[[note]]</div></td></tr>\n{% endif %}{% endwith %}\n')
 
 def write_blocks():
     hdr = lambda n, u: '<!-- BLOCK %s (gegenereerd door scripts/make_product_blocks.py, niet met de hand wijzigen). %s -->\n' % (n, u)
-    a = hdr('about', 'Params: src (Django-expressie), lead (YOUR/THE), pad.') + ''.join(chain(about)) + '{% endif %}\n'
-    g = hdr('goes', 'Params: src, pad, pre, post (link = pre + handle + post), note (regel onder de rijen, mag leeg). Geen gift card.') + ''.join(chain(goes)) + '{% endif %}\n'
-    n = '{%% if %s %%}' % cond(CATS[0][1]) + CATS[0][2]
-    for k, toks, noun, label in CATS[1:]: n += '{%% elif %s %%}%s' % (cond(toks), noun)
-    n += '{% else %}[[dflt]]{% endif %}'
-    open(os.path.join(B, 'about.html'), 'w').write(a)
-    open(os.path.join(B, 'goes.html'), 'w').write(g)
-    open(os.path.join(B, 'noun.html'), 'w').write(n)   # inline, geen commentaarregel (komt midden in een zin)
-    grp = lambda k: 'set' if k.startswith('set') else (k if k in ('pot', 'pizza', 'apron') else 'dflt')
-    pk = ''.join(('{%% if %s %%}' if i == 0 else '{%% elif %s %%}') % cond(toks) + '[[%s]]' % grp(k) for i, (k, toks, noun, label) in enumerate(CATS))
-    open(os.path.join(B, 'pick.html'), 'w').write(pk + '{% else %}[[dflt]]{% endif %}')
+    open(os.path.join(B, 'about.html'), 'w').write(hdr('about', 'Params: src (Django-expressie), lead (YOUR/THE), pad.') + about_block())
+    open(os.path.join(B, 'goes.html'), 'w').write(hdr('goes', 'Params: src, pad, pre, post (link = pre + handle + post), note (regel onder de rijen, mag leeg). Geen gift card.') + goes_block())
+    open(os.path.join(B, 'goes1.html'), 'w').write(hdr('goes1', 'Zoals goes, alleen de eerste rij (voor mails waar de tweede rij, vaak het deksel, al als hoofdkaart staat).') + goes_block(1))
+    # inline blokken (midden in een zin of attribuut): geen commentaarregel
+    open(os.path.join(B, 'noun.html'), 'w').write('{% with s=[[src]] %}' + fchain(lambda k: KEY[k][2], dflt='[[dflt]]') + '{% endwith %}')
+    open(os.path.join(B, 'label.html'), 'w').write('{% with s=[[src]] %}' + fchain(lambda k: KEY[k][3], dflt='[[dflt]]') + '{% endwith %}')
+    grp = lambda k: '[[set]]' if k.startswith('set') else ('[[%s]]' % k if k in ('pot', 'pizza', 'apron') else '[[dflt]]')
+    open(os.path.join(B, 'pick.html'), 'w').write('{% with s=[[src]] %}' + fchain(grp, dflt='[[dflt]]') + '{% endwith %}')
 
 def bg(im):
     px = [im.getpixel(p) for p in ((2, 2), (im.width - 3, 2), (2, im.height - 3), (im.width - 3, im.height - 3))]
     return tuple(sum(c[i] for c in px) // 4 for i in range(3))
 
 def write_images():
+    used = {v[3] for v in ITEM.values()}   # alleen beelden die het goes-blok toont (about heeft geen beeld: de cart toont het product al)
+    for f in os.listdir(SH):
+        if f.startswith('pc-') and f[3:-4] not in used: os.remove(os.path.join(SH, f))
     for k, src in IMG.items():
+        if k not in used: continue
         if not os.path.exists(src): sys.exit('beeld ontbreekt: %s (geef --dl=<map> met de CDN-kopieën)' % src)
         im = Image.open(src).convert('RGB')
         if k in CROP:
@@ -314,4 +334,4 @@ def check_quotes():
 REV = load_reviews()
 if __name__ == '__main__':
     check_quotes(); write_blocks(); write_images()
-    print('ok: about.html, goes.html, noun.html en %d beelden pc-*.jpg' % len(IMG))
+    print('ok: about.html, goes.html, noun.html, pick.html en %d beelden pc-*.jpg' % len({v[3] for v in ITEM.values()}))

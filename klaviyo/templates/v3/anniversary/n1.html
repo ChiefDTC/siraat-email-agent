@@ -45,11 +45,11 @@
   <a href="https://siraatskitchen.com/pages/care-use?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-anniversary&utm_content=n1-hero"><img src="{{IMG}}/n1-hero.jpg" width="600" alt="Six months in: half a year on titanium. Three questions, short answers." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
-{{BLOCK:cta label="Show me the care video" url="https://siraatskitchen.com/pages/care-use?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-anniversary&utm_content=n1-cta1" pad="22px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Questions about your pan? Reply. A person on our team answers.</div>"}}
+{{BLOCK:cta label="Show me the care video" url="https://siraatskitchen.com/pages/care-use?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-anniversary&utm_content=n1-cta1" pad="22px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Questions about your {% with s=event.Items|join:',' %}{% if '12-Pcs' in s or '12 pcs' in s or 'Everything' in s or 'Cookware Set Pro' in s or 'Complete Edition' in s or 'Full Hammered' in s %}set{% elif 'Pot' in s %}pot{% elif '6-Pcs' in s or '6-teilig' in s or '2 Pans' in s or 'Pro Duo' in s or 'Pan Pro Kit' in s %}set{% elif 'Pan Pro Standard' in s or 'Titanium Pan Pro' in s or 'Frying Pan' in s or 'Pan Pro Large' in s or 'Pan Pro Small' in s or 'Pan Pro Mini' in s %}pan{% elif 'Deep Pan' in s %}deep pan{% elif 'Wok' in s %}wok{% elif 'pe Pan' in s %}cr&ecirc;pe pan{% elif 'Pizza Steel' in s %}pizza steel{% elif 'Roasting' in s %}roasting pan{% elif 'Hammered Pan Pro' in s or 'Cook & Prep' in s %}pan{% elif 'Cutting Board' in s %}board{% elif 'Lid' in s %}lid{% elif 'Mill' in s %}mills{% elif 'Utensil' in s or 'Chopsticks' in s %}utensils{% elif 'Apron' in s %}apron{% elif 'Dishwasher Sheets' in s or 'Detergent' in s %}sheets{% elif 'Gift Card' in s %}gift card{% else %}pan{% endif %}{% endwith %}? Reply. A person on our team answers.</div>"}}
 
 <tr><td class="pad" style="padding:24px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;color:#282828;">
   <p style="margin:0 0 16px 0;">Hi {{ first_name|default:'there' }},</p>
-  <p style="margin:0 0 0px 0;">About six months ago your first Siraat order was on its way. By now your pan has seen a lot of breakfasts. These are the three questions we hear most at this point, with the short answers.</p>
+  <p style="margin:0 0 0px 0;">About six months ago your first Siraat order was on its way. By now your {{BLOCK:noun src="event.Items|join:','" dflt="pan"}} has seen a lot of cooking. These are the three questions we hear most at this point, with the short answers.</p>
 </td></tr>
 
 {{BLOCK:features pad="26px 44px 6px 44px" eyebrow="SIX-MONTH CHECK" headline="Three short answers" i1="dishwasher-safe" t1="A brown tint? That is carbonized oil." d1="Not damage, and not a defect. A paste of baking soda and water with a soft sponge takes it off." i2="no-coating" t2="Sticking more than before? Back to medium." d2="Preheat 2 to 3 minutes on medium. The water drop should form a ball and glide. Then a teaspoon of oil." i3="warranty-75-year" t3="A dent, a warp, a loose handle?" d3="That is what the 75-year warranty is for. Send a photo to support@siraatskitchen.com and we take care of it."}}
@@ -100,7 +100,7 @@
 
 <!-- SIGN-OFF -->
 <tr><td class="pad" style="padding:24px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
-  Something not right with your pan? Reply before you put up with it. We would rather fix it than have you cook on something you don&rsquo;t love.<br><br>
+  Something not right with your {{BLOCK:noun src="event.Items|join:','" dflt="pan"}}? Reply before you put up with it. We would rather fix it than have you cook on something you don&rsquo;t love.<br><br>
   Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
 </td></tr>
 

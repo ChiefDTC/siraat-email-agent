@@ -75,30 +75,45 @@ REPLY_TO = "support@siraatskitchen.com"
 CODE = "CODE ·"  # cooldown-terugval plan 1.4: alle codemails heten "CODE · ..."
 
 # ---------------------------------------------------------------- producttitels (plan 1.7)
-KOOK_TITELS = [
-    "Titanium Hammered Pan Pro Standard", "Titanium Hammered Pan Pro Large", "Titanium Hammered Pan Pro Small",
-    "Titanium Hammered Pan Pro Mini", "Titanium Pan Pro", "Titanium Hammered Deep Pan Pro",
-    "Titanium Hammered Wok Pan Pro", "Titanium Hammered Crêpe Pan Pro", "Titanium Hammered Pizza Steel",
-    "Titanium Hammered Roasting Pan", "2 Litre Titanium Hammered Pot With Lid", "3 Litre Titanium Hammered Pot With Lid",
-    "7,5 Litre Titanium Hammered Pot With Lid", "Pot Set With Lids 6-Pcs", "Titanium Hammered Pan Pro With Lid",
-    "Titanium Hammered Pan Pro & Utensil Set", "Titanium Cook & Prep Bundle",
-]
-SET_TITELS = [
-    "Titanium Hammered Pan Set With Lids | 6-Pcs", "Titanium Hammered Cookware Set | 12-Pcs",
-    "Titanium Hammered Cookware Set Pro", "Titanium Hammered Complete Edition", "Titanium Hammered – Complete Edition",
-    "Full Hammered Pro Edition", "The Just Everything Bundle | 34-Pcs", "2 Pans + 2 Lids",
-    "Titanium Hammered Pan Pro Duo", "Titanium Hammered Pro Duo", "Titanium Hammered Pan Pro Kit",
-    "12 pcs cookware set", "Titanium-Hammerpfannenset mit Deckel | 6-teilig",
-]
+# Exacte Shopify-producttitels (Admin API products, alle statussen incl. UNLISTED/ARCHIVED, opgehaald 8 okt 2026;
+# lijst in content/facts/shopify-titles.csv). Items in Checkout Started en Placed Order = deze producttitels.
+# Audit 01 S2: schorten heten "(Azure)", niet " - Azure"; BDAY-, SB- en FREE PIZZA STEEL-listings ontbraken.
 PANPRO_TITELS = [
     "Titanium Hammered Pan Pro Standard", "Titanium Hammered Pan Pro Large", "Titanium Hammered Pan Pro Small",
     "Titanium Hammered Pan Pro Mini", "Titanium Pan Pro", "Titanium Hammered Pan Pro With Lid",
+    "Titanium Hammered Pan Pro Small (BDAY SALE)", "Titanium Hammered Pan Pro Standard (BDAY SALE)",
+    "Titanium Hammered Pan Pro Large (BDAY SALE)", "Titanium Hammered Pan Pro - Reader Exclusive Deal",
+    "Titanium Hammered Pan Pro", "Titanium Hammered Pan", "Titanium Hammered Pan Pro Standrd",
+    "Titanium Hammered Pan Pro-Standard", "Titanium Hammered Pan Pro-Large", "Titanium Hammered Pan Pro-Small",
+    "Titanium Hammered Pan Pro Mini With Lid", "Titanium Hammered Pan Pro Small With Lid",
+    "Titanium Hammered Pan Pro Standard With Lid", "Titanium Hammered Pan Pro Large With Lid",
+    "Holiday Sale Exclusive | Titanium Hammered Pan Pro", 'Titanium Hammered Frying Pan, 11"',
 ]
-VORM_TITELS = ["Titanium Hammered Deep Pan Pro", "Titanium Hammered Wok Pan Pro", "Titanium Hammered Crêpe Pan Pro"]
-DEKSEL_TITELS = ["Stainless Steel Lid", "Titanium Hammered Pan Pro With Lid"]
-# Plan 1.7: exacte schrijfwijze uit een echt Placed Order-event kopiëren. Nakijken vóór livegang.
-SCHORT_TITELS = ["Siraat Signature Apron - Azure", "Siraat Signature Apron - Moss",
-                 "Siraat Signature Apron - Ember", "Siraat Signature Apron - Oak"]
+VORM_TITELS = ["Titanium Hammered Deep Pan Pro", "Titanium Hammered Wok Pan Pro", "Titanium Hammered Crêpe Pan Pro",
+               "Titanium Hammered Wok Pan Pro Medium", "Titanium Hammered Deep Pan Pro Mini"]
+POT_TITELS = ["2 Litre Titanium Hammered Pot With Lid", "3 Litre Titanium Hammered Pot With Lid",
+              "7,5 Litre Titanium Hammered Pot With Lid", "Titanium Hammered Pot Set With Lids | 6-Pcs"]
+KOOK_TITELS = PANPRO_TITELS + VORM_TITELS + POT_TITELS + [
+    "Titanium Hammered Pizza Steel", "Titanium Hammered Roasting Pan",
+    "Titanium Hammered Pan Pro & Utensil Set", "Titanium Cook & Prep Bundle",
+]
+SET_TITELS = [
+    "Titanium Hammered Pan Set With Lids | 6-Pcs", "Titanium Hammered Pan Set With Lids | 6-Pcs (BDAY SALE)",
+    "Titanium Hammered Pan Set With Lids | 6-Pcs SB", "Titanium Hammered Cookware Set | 12-Pcs",
+    "Titanium Hammered Cookware Set | 12-Pcs | + FREE PIZZA STEEL", "Titanium Hammered Cookware Set | 12-Pcs | + FREE PIZZA STEEL (EXCLUSIVE)",
+    "Titanium Hammered Cookware Set Pro", "Titanium Hammered Complete Edition", "Titanium Hammered – Complete Edition",
+    "Full Hammered Pro Edition", "The Just Everything Bundle | 34-Pcs", "2 Pans + 2 Lids",
+    "Titanium Hammered Pan Pro Duo", "Titanium Hammered Pro Duo", "Titanium Hammered Pan Pro Kit",
+    "Titanium Hammered Wok & Deep Pan Pro", "Titanium Hammered Wok & Deep Pan Set",
+    "12 pcs cookware set", "Titanium-Hammerpfannenset mit Deckel | 6-teilig",
+]
+DEKSEL_TITELS = ["Stainless Steel Lid", "Stainless Steel Lid (S)", "Titanium Hammered Pan Pro With Lid",
+                 "Titanium Hammered Pan Pro Mini With Lid", "Titanium Hammered Pan Pro Small With Lid",
+                 "Titanium Hammered Pan Pro Standard With Lid", "Titanium Hammered Pan Pro Large With Lid"]
+# P2 (eerste ei, voorverwarmen) alleen voor pannen en sets: niet voor wie alleen een pizza steel, roasting pan of pot kocht (productmatrix 8 okt).
+P2_TITELS = PANPRO_TITELS + VORM_TITELS + SET_TITELS + ["Titanium Hammered Pan Pro & Utensil Set", "Titanium Cook & Prep Bundle"]
+SCHORT_TITELS = ["Siraat Signature Apron (Azure)", "Siraat Signature Apron (Moss)",
+                 "Siraat Signature Apron (Ember)", "Siraat Signature Apron (Oak)"]
 EGIFT_TITELS = ["E-Gift Card"]
 KOOK_WOORDEN = ["Hammer", "Pan", "Pot", "ookware", "Everything", "fanne", "Prep Bundle"]
 KOOK = KOOK_TITELS + SET_TITELS
@@ -108,7 +123,7 @@ BACKORDER_FALLBACK = ["Titanium Hammered Cookware Set | 12-Pcs",
 TITLE_SETS = {tuple(KOOK): "KOOK_TITELS+SET_TITELS", tuple(SET_TITELS): "SET_TITELS",
               tuple(PANPRO_TITELS + VORM_TITELS): "PANPRO+VORM_TITELS", tuple(PANPRO_TITELS): "PANPRO_TITELS",
               tuple(DEKSEL_TITELS): "DEKSEL_TITELS", tuple(SCHORT_TITELS): "SCHORT_TITELS",
-              tuple(EGIFT_TITELS): "E-Gift Card", tuple(BACKORDER_FALLBACK): "12-pcs (backorder)"}
+              tuple(EGIFT_TITELS): "E-Gift Card", tuple(P2_TITELS): "P2_TITELS", tuple(BACKORDER_FALLBACK): "12-pcs (backorder)"}
 
 
 # ---------------------------------------------------------------- API (alleen GET, behalve POST bij --live)
@@ -677,14 +692,14 @@ def build_postpurchase(f):
         lambda n: f.mail("p1-first", "P1-FIRST", n, [[po("equals", 1, ALLTIME)]]),
         lambda n: f.mail("p1-repeat", "P1-REPEAT", n, [[po("greater-than", 1, ALLTIME)]]),
         lambda n: f.delay("days", 16, "09:00:00", n),
-        lambda n: f.mail("p2-safe", "P2-SAFE", n, [[pol(17, True, KOOK)], [zero(DELIVERED, FLOW_START)],
+        lambda n: f.mail("p2-safe", "P2-SAFE", n, [[pol(17, True, P2_TITELS)], [zero(DELIVERED, FLOW_START)],
                                                     [zero(REFUNDED, last_days(30))]]),
         lambda n: f.delay("days", 4, "09:00:00", n),
         lambda n: r0,
     ])
     f.notes += ["P1-FIRST/P1-REPEAT en de P3-router als verzendfilters (geen samenkomende takken). Categorie op Placed Order in de laatste 21 dagen.",
                 "P3-NEXT staat twee keer (deksel in order; of eigenaar die nu een accessoire kocht), want OF tussen twee EN-blokken kan niet in één filter.",
-                "SCHORT_TITELS zijn aangenomen ('Siraat Signature Apron - <kleur>'): exacte titels uit een echt Placed Order-event overnemen vóór livegang.",
+                "Titellijsten = exacte Shopify-producttitels (8 okt 2026, alle statussen); P2 en P2-SAFE alleen bij pannen en sets (P2_TITELS).",
                 "T02 in P3: één split, alle vijf P3-mails in beide armen (strata P3-pan, P3-set, P3-accessory, P3-next, P3-apron)."]
     return f.definition([mtrig(PLACED_ORDER)], groups([not_in_flow(last_days(30))]), entry, reentry=30)
 
@@ -694,7 +709,7 @@ def build_levering(f):
     entry = f.delay("days", 1, "09:00:00", p2)
     return f.definition(
         [mtrig(DELIVERED)],
-        groups([some(PLACED_ORDER, last_days(30), f_items(KOOK))], [not_in_flow(last_days(30))],
+        groups([some(PLACED_ORDER, last_days(30), f_items(P2_TITELS))], [not_in_flow(last_days(30))],
                [zero(RECEIVED_EMAIL, last_days(30),
                      f_str("$flow", "equals", f.flow_ref("postpurchase")) + f_str("Campaign Name", "contains", "P2-SAFE"))]),
         entry, reentry=30)

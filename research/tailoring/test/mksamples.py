@@ -19,15 +19,21 @@ CATS = {
  'pot':      ('3 Litre Titanium Hammered Pot With Lid', 179, 'titanium-hammered-cookware-set'),
  'set6':     ('Titanium Hammered Pan Set With Lids | 6-Pcs', 349, 'titanium-hammered-pan-set-with-lids-6-pcs'),
  'set12':    ('Titanium Hammered Cookware Set | 12-Pcs', 599, 'titanium-hammered-cookware-set'),
- 'setbig':   ('The Just Everything Bundle | 34-Pcs', 999, 'full-hammered-pro-edition'),
+ 'setbig':   ('Titanium Hammered Cookware Set Pro', 479, 'titanium-hammered-cookware-set-pro'),
+ 'setall':   ('The Just Everything Bundle | 34-Pcs', 1499, 'full-hammered-pro-edition'),
  'lid':      ('Stainless Steel Lid', 59, 'stainless-steel-lid'),
  'apron':    ('Siraat Signature Apron (Moss)', 49, 'siraat-signature-apron'),
  'board':    ('Titanium Cutting Board (Anti-Microbial)', 89, 'titanium-cutting-board-v2'),
- 'utensil':  ('Titanium Utensil Set Bundle', 62, 'titanium-cutting-board-v2'),
+ 'utensil':  ('Titanium Utensil Set Bundle', 149, 'titanium-cutting-board-v2'),
  'mill':     ('Salt & Pepper Mill Set', 124, 'salt-pepper-mill-set'),
  'sheets':   ('Plastic-Free Dishwasher Sheets', 25, 'dishwashing-detergent-sheets-fresh-lemon'),
  'giftcard': ('E-Gift Card', 100, 'e-gift-card'),
 }
+# Echte afwijkende Shopify-titels (audit 01 S2): moeten in dezelfde categorie vallen
+EXTRA = {'set6bday': ('Titanium Hammered Pan Set With Lids | 6-Pcs (BDAY SALE)', 349, 'titanium-hammered-pan-set-with-lids-6-pcs'),
+         'set12pizza': ('Titanium Hammered Cookware Set | 12-Pcs | + FREE PIZZA STEEL', 699, 'titanium-hammered-cookware-set'),
+         'stdbday': ('Titanium Hammered Pan Pro Standard (BDAY SALE)', 119, 'titanium-hammered-pan-pro'),
+         'panlidstd': ('Titanium Hammered Pan Pro Standard With Lid', 186, 'titanium-hammered-pan-pro')}
 def img(h):
     d = P + h + '/img/'
     f = sorted(x for x in os.listdir(d) if x.endswith('.jpg'))
@@ -44,10 +50,11 @@ def order_like(base, title, price, im, us):
     return d
 def main():
     n = 0
-    for c, (t, p, h) in CATS.items():
+    for c, (t, p, h) in list(CATS.items()) + list(EXTRA.items()):
         im = img(h)
         json.dump(order_like('co_pan.json', t, p, im, None), open(os.path.join(S, 'co_x_%s.json' % c), 'w'), ensure_ascii=False)
         json.dump(order_like('po_pan_us.json', t, p, im, 'US'), open(os.path.join(S, 'po_x_%s.json' % c), 'w'), ensure_ascii=False)
+        if c in EXTRA: n += 2; continue
         json.dump({'Product Name': t, 'Price': p, 'Quantity': 1, 'ImageURL': im + '?v=1', 'URL': 'https://2d0add-d6.myshopify.com/products/x', '$currency': 'USD', '$value': p},
                   open(os.path.join(S, 'atc_x_%s.json' % c), 'w'), ensure_ascii=False)
         json.dump({'Name': t, 'Price': '$%d' % p, 'ImageURL': im + '?v=1', 'URL': 'https://siraatskitchen.com/products/x'},

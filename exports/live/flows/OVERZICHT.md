@@ -1,6 +1,6 @@
 # v4-flows · overzicht voor controle
 
-Gegenereerd door `scripts/build_flows.py` op 2026-10-07 21:01 (dry-run). Modus: W4 `split`, A/B `action`, T02 op V1/N2 `uit`. De JSON per flow staat ernaast (`<slug>.json`).
+Gegenereerd door `scripts/build_flows.py` op 2026-10-08 09:48 (dry-run). Modus: W4 `split`, A/B `action`, T02 op V1/N2 `uit`. De JSON per flow staat ernaast (`<slug>.json`).
 
 Leeswijzer: ⏱ wachttijd · ◆ split (JA/NEE) · 🔀 A/B-actie · ✉ mail (berichtnaam · template-ID · onderwerp). "standaard" = de verzendfilter die op elke mail van die flow staat (zie kop). Takken komen nooit samen: waar het plan een gedeeld vervolg heeft, staat het vervolg per tak apart.
 
@@ -25,31 +25,6 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
 
 ## Klaviyo-controle (GET)
 
-| Metric | Verwacht | In Klaviyo |
-| --- | --- | --- |
-| RfMvni | Checkout Started | Checkout Started |
-| QXcV8K | Added to Cart | Added to Cart |
-| XNtYMB | Viewed Product | Viewed Product |
-| RSNxYV | Placed Order | Placed Order |
-| VcUF33 | Delivered Shipment | Delivered Shipment |
-| UdCdLD | Active on Site | Active on Site |
-| YkRM4Q | Received Email | Received Email |
-| W247h8 | Clicked Email | Clicked Email |
-| WyrTym | Opened Email | Opened Email |
-| Xg6cwn | Refunded Order | Refunded Order |
-| YzvjGf | Opened Ticket | Opened Ticket |
-| VtEiZT | Fulfilled Order | Fulfilled Order |
-
-- Lijst Uw8eZG: Email List
-- Segment "v4 · Sunset · unengaged 120d": **ONTBREEKT**
-- Segment "v4 · Sunset · suppressed": **ONTBREEKT**
-- Segment "v4 · Welcome-bescherming": **ONTBREEKT**
-- Segment "v4 · Campagne-cap": **ONTBREEKT**
-- Segment "v4 · Heeft kookgerei": **ONTBREEKT**
-- Segment "v4 · VIP": **ONTBREEKT**
-- Segment "v4 · US": **ONTBREEKT**
-- Coupons in Klaviyo: **geen** (alle 8 pools ontbreken)
-- Bestaande v4-flows: Y6yj2z v4 · Checkout abandonment (draft)
 
 ### Templates die nog geëxporteerd moeten worden
 
@@ -129,7 +104,7 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
 - **Herinstap**: 30 dagen
 - P1-FIRST/P1-REPEAT en de P3-router als verzendfilters (geen samenkomende takken). Categorie op Placed Order in de laatste 21 dagen.
 - P3-NEXT staat twee keer (deksel in order; of eigenaar die nu een accessoire kocht), want OF tussen twee EN-blokken kan niet in één filter.
-- SCHORT_TITELS zijn aangenomen ('Siraat Signature Apron - <kleur>'): exacte titels uit een echt Placed Order-event overnemen vóór livegang.
+- Titellijsten = exacte Shopify-producttitels (8 okt 2026, alle statussen); P2 en P2-SAFE alleen bij pannen en sets (P2_TITELS).
 - T02 in P3: één split, alle vijf P3-mails in beide armen (strata P3-pan, P3-set, P3-accessory, P3-next, P3-apron).
 
 - ⏱ wacht 1 uur
@@ -139,7 +114,7 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
   - filter: Placed Order > 1 over all time
 - ⏱ wacht 16 dagen, tot 09:00
 - ✉ **P2-SAFE** · **ONTBREEKT** `v4 · Post-purchase · p2-safe` · "When your pan arrives: the first egg"
-  - filter: Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) > 0 in de laatste 17 dagen EN Delivered Shipment = 0 sinds flowstart EN Refunded Order = 0 in de laatste 30 dagen
+  - filter: Placed Order (Items contains-any P2_TITELS) > 0 in de laatste 17 dagen EN Delivered Shipment = 0 sinds flowstart EN Refunded Order = 0 in de laatste 30 dagen
 - ⏱ wacht 4 dagen, tot 09:00
 - ◆ split: Placed Order = 2 over all time
   - JA:
@@ -197,7 +172,7 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
 ## v4 · Post-purchase · levering (`levering`, utm_campaign `v4-postpurchase`)
 
 - **Trigger**: Delivered Shipment
-- **Flowfilters**: Placed Order (Items contains-any KOOK_TITELS+SET_TITELS) > 0 in de laatste 30 dagen EN niet in deze flow in de laatste 30 dagen EN Received Email ($flow = v4 · Post-purchase en Campaign Name contains P2-SAFE) = 0 in de laatste 30 dagen
+- **Flowfilters**: Placed Order (Items contains-any P2_TITELS) > 0 in de laatste 30 dagen EN niet in deze flow in de laatste 30 dagen EN Received Email ($flow = v4 · Post-purchase en Campaign Name contains P2-SAFE) = 0 in de laatste 30 dagen
 - **Herinstap**: 30 dagen
 - **Verwijst naar**: v4 · Post-purchase
 
@@ -215,8 +190,6 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
 - Oud pad uit Y2TmNB (GET): wacht 10 minuten → UD7QXp "Don’t leave these hanging" → wacht 1 dagen tot 08:30 → TK3h6j "Join the Happy Chef Club" → wacht 1 dagen → VPBrLr "We’ve cooked something for you!" → wacht 2 dagen → UMURrd "One Click to Cooking Better for Life" → wacht 1 dagen → RbaQfc "We Can’t Keep these Forever"
 - Landsplit vervallen (country-split-review): C4 is één template `c4` / `c4-nocode`, land via {% if %} in de template.
 - Categorie (C2/C2-ACC, C3-S/C3-P/C3-ACC) als verzendfilter op Checkout Started in de laatste 2/4 dagen (Bouwnotitie 2.1).
-- Let op: c4-nocode: geen manifestregel, onderwerp/preview uit de topcomment van de bron-HTML
-- Let op: c4: geen manifestregel, onderwerp/preview uit de topcomment van de bron-HTML
 
 - ◆ split: random 50%
   - JA:
@@ -243,7 +216,7 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
       - NEE:
         - ◆ split: random 50%
           - JA:
-            - ✉ **CODE · C4** · **ONTBREEKT** `v4 · Checkout abandonment · c4` · "Last chance: your own 10%% ends in 48 hours"
+            - ✉ **CODE · C4** · **ONTBREEKT** `v4 · Checkout abandonment · c4` · "Your own 10% ends in 48 hours"
               - filter: standaard
           - NEE:
             - ✉ **C4 nocode · T02-B** · **ONTBREEKT** `v4 · Checkout abandonment · c4-nocode` · "Your cart and $70 in gifts, one last time"
@@ -280,7 +253,7 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
     - ⏱ wacht 30 minuten
     - ◆ split: (Added to Cart (Product Name contains Hammer) > 0 in de laatste 1 dagen OF Added to Cart (Product Name contains Pan) > 0 in de laatste 1 dagen OF Added to Cart (Product Name contains Pot) > 0 in de laatste 1 dagen OF Added to Cart (Product Name contains ookware) > 0 in de laatste 1 dagen OF Added to Cart (Product Name contains Everything) > 0 in de laatste 1 dagen OF Added to Cart (Product Name contains fanne) > 0 in de laatste 1 dagen OF Added to Cart (Product Name contains Prep Bundle) > 0 in de laatste 1 dagen)
       - JA:
-        - ✉ **K1** · **ONTBREEKT** `v4 · Cart abandonment · k1` · "One pass with a damp cloth."
+        - ✉ **K1** · **ONTBREEKT** `v4 · Cart abandonment · k1` · "Nothing on it to peel off"
           - filter: standaard
         - ⏱ wacht 1 dagen
         - ✉ **K2-RETURNING** · **ONTBREEKT** `v4 · Cart abandonment · k2-returning` · "Adding to your Siraat kitchen?"
@@ -295,7 +268,7 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
           - NEE:
             - ◆ split: random 50%
               - JA:
-                - ✉ **CODE · K3 · pan** · **ONTBREEKT** `v4 · Cart abandonment · k3` · "Your own 10% code, for 48 hours"
+                - ✉ **CODE · K3 · pan** · **ONTBREEKT** `v4 · Cart abandonment · k3` · "Last chance: your own 10% ends in 48 hours"
                   - filter: standaard
               - NEE:
                 - ✉ **K3 · pan nocode · T02-B** · **ONTBREEKT** `v4 · Cart abandonment · k3-nocode` · "What if it's not for you?"
@@ -311,7 +284,7 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
           - NEE:
             - ◆ split: random 50%
               - JA:
-                - ✉ **CODE · K3 · acc** · **ONTBREEKT** `v4 · Cart abandonment · k3` · "Your own 10% code, for 48 hours"
+                - ✉ **CODE · K3 · acc** · **ONTBREEKT** `v4 · Cart abandonment · k3` · "Last chance: your own 10% ends in 48 hours"
                   - filter: standaard
               - NEE:
                 - ✉ **K3 · acc nocode · T02-B** · **ONTBREEKT** `v4 · Cart abandonment · k3-nocode` · "What if it's not for you?"
@@ -351,9 +324,9 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
               - filter: standaard
           - NEE:
             - 🔀 A/B-actie **T04 · W1-A code-blok tegen W1-B gift card** (50/50, geen automatische winnaar, winnaar op unique-clicks)
-              - ✉ **W1 · T04-A** · **ONTBREEKT** `v4 · Welcome · w1-a` · "The pan with nothing on it (and your 10%)"
+              - ✉ **W1 · T04-A** · **ONTBREEKT** `v4 · Welcome · w1-a` · "No PFAS, nothing to wear off, and your 10%"
                 - filter: standaard
-              - ✉ **W1 · T04-B** · **ONTBREEKT** `v4 · Welcome · w1-b` · "The pan with nothing on it (and your 10%)"
+              - ✉ **W1 · T04-B** · **ONTBREEKT** `v4 · Welcome · w1-b` · "No PFAS, nothing to wear off, and your 10%"
                 - filter: standaard
             - ⏱ wacht 1 dagen, tot 09:00
             - ✉ **W2** · **ONTBREEKT** `v4 · Welcome · w2` · "The pan nobody else was making" · afzender Benjamin at Siraat's Kitchen
@@ -419,7 +392,7 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
     - ◆ split: (Viewed Product (Name contains Hammer) > 0 in de laatste 1 dagen OF Viewed Product (Name contains Pan) > 0 in de laatste 1 dagen OF Viewed Product (Name contains Pot) > 0 in de laatste 1 dagen OF Viewed Product (Name contains ookware) > 0 in de laatste 1 dagen OF Viewed Product (Name contains Everything) > 0 in de laatste 1 dagen OF Viewed Product (Name contains fanne) > 0 in de laatste 1 dagen OF Viewed Product (Name contains Prep Bundle) > 0 in de laatste 1 dagen)
       - JA:
         - 🔀 A/B-actie **T05a · B1-onderwerp (authority tegen social proof)** (50/50, geen automatische winnaar, winnaar op unique-clicks)
-          - ✉ **B1 · T05a-A** · **ONTBREEKT** `v4 · Browse abandonment · b1` · "Lab-tested: nothing on this pan to scratch off"
+          - ✉ **B1 · T05a-A** · **ONTBREEKT** `v4 · Browse abandonment · b1` · "Lab-tested: nothing here to wear off"
             - filter: standaard
           - ✉ **B1 · T05a-B** · **ONTBREEKT** `v4 · Browse abandonment · b1` · "100,000+ happy customers cook on this pan"
             - filter: standaard
@@ -433,7 +406,7 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
               - NEE:
                 - ◆ split: random 50%
                   - JA:
-                    - ✉ **CODE · B2-CLICKED · pan** · **ONTBREEKT** `v4 · Browse abandonment · b2-clicked` · "Your own 10%, for the next 48 hours"
+                    - ✉ **CODE · B2-CLICKED · pan** · **ONTBREEKT** `v4 · Browse abandonment · b2-clicked` · "Here is your 10%, for the next 48 hours"
                       - filter: standaard EN Added to Cart = 0 sinds flowstart
                   - NEE:
                     - ✉ **B2-CLICKED · pan nocode · T02-B** · **ONTBREEKT** `v4 · Browse abandonment · b2-clicked-nocode` · ""I ordered one pan to try it out""
@@ -454,7 +427,7 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
               - NEE:
                 - ◆ split: random 50%
                   - JA:
-                    - ✉ **CODE · B2-CLICKED · acc** · **ONTBREEKT** `v4 · Browse abandonment · b2-clicked` · "Your own 10%, for the next 48 hours"
+                    - ✉ **CODE · B2-CLICKED · acc** · **ONTBREEKT** `v4 · Browse abandonment · b2-clicked` · "Here is your 10%, for the next 48 hours"
                       - filter: standaard EN Added to Cart = 0 sinds flowstart
                   - NEE:
                     - ✉ **B2-CLICKED · acc nocode · T02-B** · **ONTBREEKT** `v4 · Browse abandonment · b2-clicked-nocode` · ""I ordered one pan to try it out""
@@ -532,7 +505,7 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
       - NEE:
         - ◆ split: random 50%
           - JA:
-            - ✉ **CODE · R2** · **ONTBREEKT** `v4 · Winback · r2` · "10% off your next piece, for 72 hours"
+            - ✉ **CODE · R2** · **ONTBREEKT** `v4 · Winback · r2` · "Here is your 10%, for the next 72 hours"
               - filter: standaard
           - NEE:
             - ✉ **R2 nocode · T02-B** · **ONTBREEKT** `v4 · Winback · r2-nocode` · "Ready for pan number two?"
@@ -573,7 +546,7 @@ Volgorde = bouwvolgorde voor `--live` (een flow verwijst via "Received Email whe
 - ✉ **A1** · **ONTBREEKT** `v4 · Site abandonment · a1` · "Not sure which pan? Start here."
   - filter: standaard
 - ⏱ wacht 2 dagen, tot 09:00
-- ✉ **A2** · **ONTBREEKT** `v4 · Site abandonment · a2` · "Where 100,000+ people started"
+- ✉ **A2** · **ONTBREEKT** `v4 · Site abandonment · a2` · "Where 100,000+ happy customers started"
   - filter: standaard
 
 ## v4 · Sunset (`sunset`, utm_campaign `v4-sunset`)

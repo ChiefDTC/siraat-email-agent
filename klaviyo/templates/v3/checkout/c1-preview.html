@@ -85,7 +85,7 @@
 </td></tr>
 
 
-<!-- HERO 4:3 met aanbodbalk (make_hero.py --offer --ratio=4:3, bron: content/media/hero-register/checkout.csv) -->
+<!-- HERO 4:3 met aanbodbalk (make_hero.py --offer --ratio=4:3, bron: content/media/hero-register/checkout.csv). Productmatrix 8 okt: eigen hero voor set, pot, pizza steel en schort via het pick-blok -->
 <tr><td style="padding:0;">
   <a href="https://siraatskitchen.com/checkouts/sample/recover?key=x&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1-hero"><img src="assets/c1-hero.jpg" width="600" alt="Your cart is saved, right where you left it. Extra 10% off with code HI10, plus $70 in gifts." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
@@ -129,10 +129,14 @@
 
 
 
-<!-- EEN TWIJFEL WEG: kookgerei krijgt maat en kookplaat, accessoires verzending en retour -->
+<!-- PRODUCTMATRIX (8 okt): over jouw product, met het bezwaar dat voor dat product het vaakst komt en een echte review van een koper (blocks/about.html) -->
+<!-- BLOCK about (gegenereerd door scripts/make_product_blocks.py, niet met de hand wijzigen). Params: src (Django-expressie), lead (YOUR/THE), pad. -->
 
-<tr><td class="pad" style="padding:26px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">Something stopped you? Most questions here are about size, stove and price. The 11-inch is our best seller, for cooking for 2 to 4, and works on every stove. Prefer to pay over time? Shop Pay Installments and Affirm are at checkout.</td></tr>
+<tr><td class="pad" data-about="standard" style="padding:24px 44px 4px 44px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;background:#FFFFFF;border:1px solid #ECE7DD;"><tr><td style="padding:18px 18px 0 18px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">ABOUT YOUR PAN PRO 11&Prime;</td></tr><tr><td style="padding:6px 18px 0 18px;font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:26px;line-height:29px;color:#282828;">The size most kitchens start with.</td></tr><tr><td style="padding:12px 18px 8px 18px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#282828;"><span style="color:#AC3B19;font-weight:600;">&#10003;</span>&nbsp; 11&Prime; (28 cm): everyday cooking for 2 to 4.<br><span style="color:#AC3B19;font-weight:600;">&#10003;</span>&nbsp; Gas, electric, ceramic and induction.<br><span style="color:#AC3B19;font-weight:600;">&#10003;</span>&nbsp; No coating. Tested free from PFAS by Light Labs, report no. 25895.</td></tr><tr><td style="padding:6px 18px 16px 18px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:11px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;"><b>Will eggs stick?</b> Not once it is hot. Medium heat for 2 to 3 minutes, the water drop test, then a thin layer of oil.</td></tr></table></td></tr><tr><td style="padding:0 18px 18px 18px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="border-top:1px solid #ECE7DD;padding-top:14px;"><div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;letter-spacing:2px;color:#AC3B19;">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div style="font-size:15px;line-height:22px;color:#282828;padding:6px 0 6px 0;">&ldquo;I purchased the hammered pro pan standard. It is beautiful and lightweight.&rdquo;</div><div style="font-size:12px;line-height:16px;color:#727272;"><b style="color:#282828;font-weight:600;">Deb</b> &middot; Verified buyer &middot; Pan Pro 11&Prime;</div></div></td></tr></table></td></tr>
 
+
+
+<tr><td class="pad" style="padding:14px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#727272;text-align:center;">Prefer to pay over time? Shop Pay Installments and Affirm are at checkout.</td></tr>
 
 
 <!-- BLOCK gifts: vier gifts met beeld en waarde, gelijke hoogte, 2x2 op mobiel -->
@@ -149,8 +153,8 @@
         </td>
         <td width="10" style="font-size:0;line-height:0;">&nbsp;</td>
         <td width="50%" valign="top" align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:10px 6px 14px 6px;font-family:Inter,Arial,Helvetica,sans-serif;">
-          <img src="../../partials/shared/gift-ebook.jpg" width="110" alt="Plastic-Free Home e-book" style="width:110px;height:110px;margin:0 auto;">
-          <div style="font-size:13px;line-height:17px;font-weight:600;color:#282828;padding-top:6px;height:34px;">Plastic-Free<br>Home e-book</div>
+          <img src="../../partials/shared/gift-ebook.jpg" width="110" alt="The Green Clean E-Guide" style="width:110px;height:110px;margin:0 auto;">
+          <div style="font-size:13px;line-height:17px;font-weight:600;color:#282828;padding-top:6px;height:34px;">The Green Clean<br>E-Guide</div>
           <div style="font-size:12px;line-height:16px;font-weight:600;color:#AC3B19;">$30 value</div>
         </td>
       </tr></table>
@@ -176,63 +180,6 @@
 
 
 
-<!-- BLOCK compare (research/ux-round2): vergelijkingstabel, 5 rijen, live tekst, eigen kolom wit, andere kolom grijs.
-     Kopstuk compare-cap-panpro.png = scripts/make_compare_assets.py (productfoto steekt over de rand). Iconen: icon-check (brick), icon-cross, icon-same (grijs vinkje, voor gedeelde eigenschappen). -->
-<tr><td class="pad" style="padding:34px 44px 6px 44px;">
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">THE DIFFERENCE</div>
-  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 10px 0;">No PFAS. No coating.</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;table-layout:fixed;">
-    <tr><td colspan="2" style="padding:0;font-size:0;line-height:0;"><img src="../../partials/shared/compare-cap-panpro.png" width="512" alt="" style="display:block;width:100%;max-width:512px;height:auto;"></td></tr>
-    <tr>
-      <td width="50%" align="center" valign="bottom" bgcolor="#FFFFFF" class="cmp-h" style="background:#FFFFFF;padding:0 12px 14px 12px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:17px;line-height:22px;font-weight:600;color:#282828;">Siraat Titanium</td>
-      <td width="50%" align="center" valign="bottom" bgcolor="#ECE8E1" class="cmp-h" style="background:#ECE8E1;padding:0 12px 14px 12px;border-bottom:1px solid #DDD7CD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:17px;line-height:22px;font-weight:600;color:#5E5A55;">Coated nonstick</td>
-    </tr>
-        <tr>
-      <td height="64" valign="middle" bgcolor="#FFFFFF" class="cmp-c" style="background:#FFFFFF;height:64px;padding:0 10px 0 18px;border-bottom:1px solid #ECE7DD;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-        <td width="24" valign="middle" style="padding:0 8px 0 0;"><img src="../../partials/shared/icon-check.png" width="16" height="16" alt="Yes:" style="display:block;width:16px;height:16px;"></td>
-        <td valign="middle" class="cmp-t" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:20px;font-weight:600;color:#282828;">Titanium cooking surface</td></tr></table></td>
-      <td height="64" valign="middle" bgcolor="#ECE8E1" class="cmp-c" style="background:#ECE8E1;height:64px;padding:0 10px 0 18px;border-bottom:1px solid #DDD7CD;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-        <td width="24" valign="middle" style="padding:0 8px 0 0;"><img src="../../partials/shared/icon-cross.png" width="16" height="16" alt="No:" style="display:block;width:16px;height:16px;"></td>
-        <td valign="middle" class="cmp-t" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:20px;color:#5E5A55;">A PTFE or ceramic coating</td></tr></table></td>
-    </tr>
-    <tr>
-      <td height="64" valign="middle" bgcolor="#FFFFFF" class="cmp-c" style="background:#FFFFFF;height:64px;padding:0 10px 0 18px;border-bottom:1px solid #ECE7DD;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-        <td width="24" valign="middle" style="padding:0 8px 0 0;"><img src="../../partials/shared/icon-check.png" width="16" height="16" alt="Yes:" style="display:block;width:16px;height:16px;"></td>
-        <td valign="middle" class="cmp-t" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:20px;font-weight:600;color:#282828;">No coating to wear off</td></tr></table></td>
-      <td height="64" valign="middle" bgcolor="#ECE8E1" class="cmp-c" style="background:#ECE8E1;height:64px;padding:0 10px 0 18px;border-bottom:1px solid #DDD7CD;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-        <td width="24" valign="middle" style="padding:0 8px 0 0;"><img src="../../partials/shared/icon-cross.png" width="16" height="16" alt="No:" style="display:block;width:16px;height:16px;"></td>
-        <td valign="middle" class="cmp-t" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:20px;color:#5E5A55;">Coating wears with use</td></tr></table></td>
-    </tr>
-    <tr>
-      <td height="64" valign="middle" bgcolor="#FFFFFF" class="cmp-c" style="background:#FFFFFF;height:64px;padding:0 10px 0 18px;border-bottom:1px solid #ECE7DD;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-        <td width="24" valign="middle" style="padding:0 8px 0 0;"><img src="../../partials/shared/icon-check.png" width="16" height="16" alt="Yes:" style="display:block;width:16px;height:16px;"></td>
-        <td valign="middle" class="cmp-t" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:20px;font-weight:600;color:#282828;">Metal utensils welcome</td></tr></table></td>
-      <td height="64" valign="middle" bgcolor="#ECE8E1" class="cmp-c" style="background:#ECE8E1;height:64px;padding:0 10px 0 18px;border-bottom:1px solid #DDD7CD;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-        <td width="24" valign="middle" style="padding:0 8px 0 0;"><img src="../../partials/shared/icon-cross.png" width="16" height="16" alt="No:" style="display:block;width:16px;height:16px;"></td>
-        <td valign="middle" class="cmp-t" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:20px;color:#5E5A55;">Wood or silicone advised</td></tr></table></td>
-    </tr>
-    <tr>
-      <td height="64" valign="middle" bgcolor="#FFFFFF" class="cmp-c" style="background:#FFFFFF;height:64px;padding:0 10px 0 18px;border-bottom:1px solid #ECE7DD;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-        <td width="24" valign="middle" style="padding:0 8px 0 0;"><img src="../../partials/shared/icon-check.png" width="16" height="16" alt="Yes:" style="display:block;width:16px;height:16px;"></td>
-        <td valign="middle" class="cmp-t" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:20px;font-weight:600;color:#282828;">Tested by Light Labs</td></tr></table></td>
-      <td height="64" valign="middle" bgcolor="#ECE8E1" class="cmp-c" style="background:#ECE8E1;height:64px;padding:0 10px 0 18px;border-bottom:1px solid #DDD7CD;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-        <td width="24" valign="middle" style="padding:0 8px 0 0;"><img src="../../partials/shared/icon-cross.png" width="16" height="16" alt="No:" style="display:block;width:16px;height:16px;"></td>
-        <td valign="middle" class="cmp-t" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:20px;color:#5E5A55;">Testing varies by brand</td></tr></table></td>
-    </tr>
-    <tr>
-      <td height="64" valign="middle" bgcolor="#FFFFFF" class="cmp-c" style="background:#FFFFFF;height:64px;padding:0 10px 0 18px;border-bottom:1px solid #ECE7DD;border-bottom:0;border-radius:0 0 0 12px;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-        <td width="24" valign="middle" style="padding:0 8px 0 0;"><img src="../../partials/shared/icon-check.png" width="16" height="16" alt="Yes:" style="display:block;width:16px;height:16px;"></td>
-        <td valign="middle" class="cmp-t" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:20px;font-weight:600;color:#282828;">Dishwasher safe</td></tr></table></td>
-      <td height="64" valign="middle" bgcolor="#ECE8E1" class="cmp-c" style="background:#ECE8E1;height:64px;padding:0 10px 0 18px;border-bottom:1px solid #DDD7CD;border-bottom:0;border-radius:0 0 12px 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-        <td width="24" valign="middle" style="padding:0 8px 0 0;"><img src="../../partials/shared/icon-cross.png" width="16" height="16" alt="No:" style="display:block;width:16px;height:16px;"></td>
-        <td valign="middle" class="cmp-t" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:20px;color:#5E5A55;">Hand wash advised</td></tr></table></td>
-    </tr>
-
-  </table>
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#9A948B;text-align:center;padding-top:10px;">Light Labs report no. 25895: 31 PFAS tested, all below detection.</div>
-</td></tr>
-
-
 
 <!-- BLOCK cta: primaire knop, 340 px desktop, volle breedte mobiel -->
 <tr><td align="center" class="pad" style="padding:26px 44px 4px 44px;">
@@ -244,6 +191,12 @@
   </tr></table>
   <div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Free shipping. 30-day returns. 100,000+ happy customers.</div>
 </td></tr>
+
+
+<!-- BLOCK goes (gegenereerd door scripts/make_product_blocks.py, niet met de hand wijzigen). Params: src, pad, pre, post (link = pre + handle + post), note (regel onder de rijen, mag leeg). Geen gift card. -->
+
+<tr><td class="pad" data-goes="standard" style="padding:28px 44px 4px 44px;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">OFTEN ADDED NEXT</div><div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:32px;line-height:36px;color:#282828;text-align:center;padding:6px 0 4px 0;">What 11&Prime; owners add next</div><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;text-align:center;">One in five 11&Prime; owners comes back for the Mini.</div><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;background:#FFFFFF;border:1px solid #ECE7DD;margin-top:10px;"><tr><td width="76" valign="middle" style="width:76px;padding:12px 0 12px 14px;"><img src="../../partials/shared/pc-mini.jpg" width="64" height="64" alt="" style="width:64px;height:64px;"></td><td valign="middle" style="padding:12px 12px 12px 12px;font-family:Inter,Arial,Helvetica,sans-serif;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-pan-pro-mini%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-checkout%26utm_content%3Dc1-goes" style="text-decoration:none;color:#282828;"><span style="font-size:15px;line-height:20px;font-weight:600;color:#282828;">Pan Pro Mini 8&Prime;</span><br><span style="font-size:13px;line-height:18px;color:#727272;">The breakfast pan: eggs and small portions.</span> <span style="font-size:13px;font-weight:600;color:#AC3B19;white-space:nowrap;">See it&nbsp;&rarr;</span></a></td></tr><tr><td width="76" valign="middle" style="width:76px;padding:12px 0 12px 14px;border-top:1px solid #ECE7DD;"><img src="../../partials/shared/pc-lid.jpg" width="64" height="64" alt="" style="width:64px;height:64px;"></td><td valign="middle" style="padding:12px 12px 12px 12px;font-family:Inter,Arial,Helvetica,sans-serif;border-top:1px solid #ECE7DD;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/stainless-steel-lid%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-checkout%26utm_content%3Dc1-goes" style="text-decoration:none;color:#282828;"><span style="font-size:15px;line-height:20px;font-weight:600;color:#282828;">Stainless Steel Lid, 28 cm</span><br><span style="font-size:13px;line-height:18px;color:#727272;">Fits your 11&Prime; Pan Pro.</span> <span style="font-size:13px;font-weight:600;color:#AC3B19;white-space:nowrap;">See it&nbsp;&rarr;</span></a></td></tr></table><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;text-align:center;padding-top:8px;">HI10 takes 10% off these too. Add one before you check out.</div></td></tr>
+
 
 
 
