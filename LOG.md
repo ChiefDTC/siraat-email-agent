@@ -105,3 +105,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 2026-10-09 · Receptcampagne 01 onderwerp op verzoek Floris: 'Friday steak night, sauce included', preheader 'A real crust, and a mushroom sauce from the brown bits. 25 minutes, one pan.' Campagne Draft.
 - 2026-10-09 · Receptcampagne 01 US-only: segment VNX8N9 'v5 · Engaged 90 Days · US' aangemaakt en als ontvanger gezet; template alleen US-eenheden (oz, cups, inch, °F), $144. Draft.
 - 2026-10-09 16:33 · Floris verstuurt receptcampagne 01 (01M4GEXP3D1ME16M2CQPNR879X), onderwerp 'Friday steak night recipe, sauce included', 8:30 AM recipient local time, geschat 29.093 ontvangers (v5 · Engaged 90 Days · US).
+- 2026-10-09 · Segment QTNgaV 'v5 · Engaged 90 Days · INT (excl US)' aangemaakt voor receptcampagne INT (10 okt 08:30 lokaal).
