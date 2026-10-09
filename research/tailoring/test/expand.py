@@ -12,7 +12,7 @@ h=open(src).read()
 P=os.path.join(os.path.dirname(os.path.abspath(src)),'partials')
 d=os.path.dirname(os.path.abspath(src))
 while not os.path.isdir(os.path.join(d,'partials')) and os.path.dirname(d)!=d: d=os.path.dirname(d)
-P=os.path.join(d,'partials'); R=os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','klaviyo','templates','partials')
+P=os.path.join(d,'partials'); R='/home/user/siraat-email-agent/klaviyo/templates/partials'
 h=h.replace('{{HEADER}}',open(os.path.join(P,'header.html')).read()).replace('{{FOOTER}}',open(os.path.join(P,'footer.html')).read())
 # Blokken uit klaviyo/templates/partials/blocks: {{BLOCK:naam key="waarde"}} met [[key]] in het blok
 B=os.path.join(R,'blocks'); SH=os.path.join(R,'shared')

@@ -1,6 +1,6 @@
 # QA-render rapport
 
-Gegenereerd door `scripts/qa_render.py`. 63 mails: **61 groen**, 2 met FOUT, 41 met waarschuwing.
+Gegenereerd door `scripts/qa_render.py`. 63 mails: **63 groen**, 0 met FOUT, 41 met waarschuwing.
 
 Tag-allowlist: Django `autoescape, comment, cycle, elif, else, empty, endautoescape, endcomment, endfilter, endfor, endif, endifchanged, endspaceless, endverbatim, endwith, filter, firstof, for, if, ifchanged, lorem, now, regroup, resetcycle, spaceless, templatetag, verbatim, widthratio, with` plus Klaviyo `coupon_code, manage_preferences, manage_preferences_link, today, unsubscribe, unsubscribe_link, web_view, web_view_link`.
 
@@ -84,8 +84,8 @@ Tag-allowlist: Django `autoescape, comment, cycle, elif, else, empty, endautoesc
 | winback/r2-vip-nocode | groen | po_pan_us, po_set6, po_apron_us, po_deep | 3207 | 2 | ja | 0 |
 | winback/r2-vip | let op | po_pan_us, po_set6, po_apron_us, po_deep | 3577 | 11 | ja | 0 |
 | winback/r2 | let op | po_pan_us, po_set6, po_apron_us, po_deep | 3526 | 11 | ja | 0 |
-| campaigns/recept-01-steak-int | FOUT | none | 4839 | 1 | ja | 0 |
-| campaigns/recept-01-steak | FOUT | none | 4830 | 1 | nee | 30 |
+| campaigns/recept-01-steak-int | let op | none | 4839 | 1 | ja | 0 |
+| campaigns/recept-01-steak | let op | none | 4830 | 1 | nee | 30 |
 
 ## Fouten en waarschuwingen
 
@@ -145,9 +145,9 @@ Tag-allowlist: Django `autoescape, comment, cycle, elif, else, empty, endautoesc
 - let op winback/r1-acc: ruw 390 px (code-editor mobiel): tabel 515 px breed door lange Django-expressies; gerenderd in orde
 - let op winback/r2-vip: ruw 390 px (code-editor mobiel): tabel 554 px breed door lange Django-expressies; gerenderd in orde
 - let op winback/r2: ruw 390 px (code-editor mobiel): tabel 501 px breed door lange Django-expressies; gerenderd in orde
-- FOUT campaigns/recept-01-steak-int: hoogte 4839 px op 390 px (max ~3600) bij none
+- let op campaigns/recept-01-steak-int: hoogte 4839 px op 390 px bij none (geen verkoopmail of P2: langer toegestaan)
 - let op campaigns/recept-01-steak-int: ruw 390 px (code-editor mobiel): tabel 545 px breed door lange Django-expressies; gerenderd in orde
-- FOUT campaigns/recept-01-steak: hoogte 4830 px op 390 px (max ~3600) bij none
+- let op campaigns/recept-01-steak: hoogte 4830 px op 390 px bij none (geen verkoopmail of P2: langer toegestaan)
 - let op campaigns/recept-01-steak: v5-markt (nog niet V5-STRICT): USD-bedrag buiten de US bij AU,CA,EU,SG,UK,XX, bv. "nd our best seller. 
          $288    $144"
 - let op campaigns/recept-01-steak: v5-markt (nog niet V5-STRICT): inch buiten de US bij AU,CA,EU,SG,UK, bv. "in (strip) steaks, about 1″ thic"
