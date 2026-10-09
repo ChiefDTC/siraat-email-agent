@@ -6,6 +6,13 @@
 //   forced  geforceerde inversie: Chromium auto-dark (WebContentsForceDark) NA het weghalen van color-scheme (meta's en :root).
 //           Benadering van clients die zelf omkeren en 'light only' negeren (Gmail-app bij niet-Google-accounts, Outlook.com/-apps,
 //           Outlook Windows). Sinds de mails 'light only' melden (13-darkmode.md, 8 okt 2026) zou auto-dark ze anders altijd licht laten.
+//   gmailios  Gmail-app iPhone in de strengste vorm (niet-Google-account, of Gmail die het <style>-blok weggooit): alle <style>,
+//           <link> en color-scheme-meta's weg, class-attributen weg (dus geen media queries), alleen inline CSS en attributen.
+//           Breder dan het scherm = Gmail schaalt de mail in (zoom), zoals de app doet. Meet lege tekstcellen en contrast.
+//   gmailtrim gmailios plus Gmail-trimming in een thread (twee mails met hetzelfde onderwerp, 9 okt 2026): de laatste rijen van de
+//           hoofdtabel worden uit hun tabel getild en los na de mail gezet, achter een '•••' (zoals Gmail getrimde inhoud
+//           toont). <tr>/<td> buiten een tabel vallen dan weg; alleen wat een eigen <table bgcolor> heeft houdt zijn achtergrond.
+//           Lichte tekst op wit in dat deel = de footerfout van 9 okt.
 //   apple   wat Apple Mail (en Outlook Mac, Android-webviews die color-scheme volgen) doet: prefers-color-scheme: dark plus auto-dark
 //           die de color-scheme-verklaring van de mail WEL volgt. Met 'light only' blijft de mail licht; zonder verklaring wordt hij donker.
 // Meet: horizontaal scrollen, afgesneden/vervormde/uitstekende beelden, beelden die niet laden, contrast van de afmeldlink,
@@ -24,7 +31,7 @@ const TRACK = /klclick\d?\.com|kmail-lists\.com|klaviyo\.com\/(o|l)\//;
     while (i < jobs.length) {
       const j = jobs[i++];
       const b = (j.mode === 'forced' || j.mode === 'apple') ? forced : normal;
-      const ctx = await b.newContext({ colorScheme: j.mode === 'light' ? 'light' : 'dark', viewport: { width: j.width, height: 900 } });
+      const ctx = await b.newContext({ colorScheme: (j.mode === 'light' || j.mode.startsWith('gmail')) ? 'light' : 'dark', viewport: { width: j.width, height: 900 } });
       await ctx.route(/^https?:/, r => (j.net && !TRACK.test(r.request().url()) && r.request().resourceType() === 'image') ? r.continue() : r.abort());
       const p = await ctx.newPage();
       try {
@@ -37,6 +44,31 @@ const TRACK = /klclick\d?\.com|kmail-lists\.com|klaviyo\.com\/(o|l)\//;
           document.documentElement.style.setProperty('color-scheme', 'normal', 'important');
           return new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
         });
+        if (j.mode === 'gmailios' || j.mode === 'gmailtrim') await p.evaluate((mode) => {
+          // tekst per cel vóór de ingreep (voor de controle 'cel met tekst rendert leeg')
+          document.querySelectorAll('td,th').forEach((td, i) => { td.setAttribute('data-qa-td', i); const t = (td.textContent || '').replace(/[\s\u200c\u034f\u00a0\u00ad\u200b]+/g, ' ').trim(); if (t) td.setAttribute('data-qa-text', t.slice(0, 60)); });
+          document.querySelectorAll('style,link,meta[name="color-scheme"],meta[name="supported-color-schemes"]').forEach(e => e.remove());
+          document.querySelectorAll('[class]').forEach(e => e.removeAttribute('class'));
+          if (mode === 'gmailtrim') {
+            const main = document.querySelector('table[width="600"]') || document.querySelector('table table');
+            const rows = main ? [...main.querySelectorAll(':scope > tbody > tr, :scope > tr')] : [];
+            const cut = rows.slice(Math.max(1, rows.length - 3));   // laatste rijen: knop/P.S./footer, het deel dat Gmail als herhaling inklapt
+            if (cut.length) {
+              const html = cut.map(r => r.outerHTML).join('');
+              cut.forEach(r => r.remove());
+              const dots = document.createElement('div'); dots.textContent = '\u2022\u2022\u2022'; dots.setAttribute('data-qa-dots', '1');
+              dots.style.cssText = 'font:16px Arial;color:#888;padding:6px 12px;';
+              const box = document.createElement('div'); box.setAttribute('data-qa-trimmed', '1'); box.innerHTML = html;   // parser laat losse tr/td vallen
+              document.body.appendChild(dots); document.body.appendChild(box);
+            }
+          }
+          return new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+        }, j.mode);
+        let gmailScale = 1;
+        if (j.mode === 'gmailios' || j.mode === 'gmailtrim') {   // Gmail schaalt een mail die breder is dan het scherm in: leg hem op zijn eigen breedte op en meld de schaal
+          const sw = await p.evaluate(() => Math.max(document.documentElement.scrollWidth, document.body.scrollWidth));
+          if (sw > j.width + 1) { gmailScale = j.width / sw; await p.setViewportSize({ width: sw, height: 900 }); }
+        }
         const m = await p.evaluate((mode) => {
           const parse = c => { const m = c && c.match(/rgba?\(([^)]+)\)/); if (!m) return null; const v = m[1].split(/[ ,/]+/).filter(Boolean).map(Number); return [v[0], v[1], v[2], v.length > 3 ? v[3] : 1]; };
           const lin = c => { c /= 255; return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4); };
@@ -79,6 +111,32 @@ const TRACK = /klclick\d?\.com|kmail-lists\.com|klaviyo\.com\/(o|l)\//;
             const fg = parse(getComputedStyle(a).color), bg = bgOf(a);
             out.unsubContrast.push({ t, ratio: +ratio(fg, bg).toFixed(2), fg: css(fg), bg: css(bg), mode });
           }
+          if (mode === 'gmailios' || mode === 'gmailtrim') {
+            out.emptyCells = []; out.gmailContrast = [];
+            for (const td of document.querySelectorAll('td[data-qa-text]')) {
+              if (!vis(td)) continue;
+              const want = td.getAttribute('data-qa-text'); const r = td.getBoundingClientRect();
+              const got = (td.innerText || '').replace(/\s+/g, ' ').trim();
+              if (!got || r.width < 2 || r.height < 2) { out.emptyCells.push('cel rendert leeg: "' + want.slice(0, 50) + '"'); continue; }
+              // tekst die buiten de cel valt of in een kolom van < 48 px wordt geperst
+              const tw = document.createTreeWalker(td, NodeFilter.SHOW_TEXT); let n, outside = 0, inside = 0;
+              while ((n = tw.nextNode())) {
+                if (!n.nodeValue.trim() || !vis(n.parentElement)) continue;
+                const rg = document.createRange(); rg.selectNodeContents(n);
+                for (const q of rg.getClientRects()) { if (q.width < 1) continue; (q.right > r.right + 3 || q.left < r.left - 3 || q.bottom > r.bottom + 3 || q.top < r.top - 3) ? outside++ : inside++; }
+              }
+              if (outside && !inside) out.emptyCells.push('tekst staat buiten de cel: "' + want.slice(0, 50) + '"');
+              else if (r.width < 48 && want.length > 24 && !td.querySelector('td')) out.emptyCells.push('tekst in een kolom van ' + Math.round(r.width) + ' px geperst: "' + want.slice(0, 50) + '"');
+            }
+            const tw = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT); let n; const seen = new Set();
+            while ((n = tw.nextNode())) {
+              const t = n.nodeValue.replace(/[\s\u200c\u00a0\u034f\u00ad]+/g, ' ').trim(); if (t.length < 2) continue;
+              const el = n.parentElement; if (!el || seen.has(el) || !vis(el) || el.closest('[data-qa-dots]')) continue; seen.add(el);
+              const r = el.getBoundingClientRect(); if (r.width === 0 || r.height === 0) continue;
+              const fg = parse(getComputedStyle(el).color); if (!fg) continue; const bg = bgOf(el); const cr = ratio(fg, bg);
+              if (cr < 3) out.gmailContrast.push({ t: t.slice(0, 40), ratio: +cr.toFixed(2), fg: css(fg), bg: css(bg), trimmed: !!el.closest('[data-qa-trimmed]') });
+            }
+          }
           if (mode === 'dark') {   // forced dark wijzigt de kleuren pas bij het tekenen: alleen screenshot, geen meting
             const tw = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT); let n; const seen = new Set();
             while ((n = tw.nextNode())) {
@@ -92,6 +150,7 @@ const TRACK = /klclick\d?\.com|kmail-lists\.com|klaviyo\.com\/(o|l)\//;
           return out;
         }, j.mode);
         if (j.shot) await p.screenshot({ path: j.shot, fullPage: true, type: 'jpeg', quality: 60 });
+        if (j.mode === 'gmailios' || j.mode === 'gmailtrim') { m.gmailScale = +gmailScale.toFixed(3); m.scrollWidth = Math.round(m.scrollWidth * gmailScale); m.vw = j.width; }
         res[j.key] = Object.assign({ width: j.width, mode: j.mode }, m);
       } catch (e) { res[j.key] = { width: j.width, mode: j.mode, error: String(e).slice(0, 300), scrollWidth: 0, vw: j.width }; }
       await ctx.close();

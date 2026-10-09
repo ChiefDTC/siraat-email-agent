@@ -113,7 +113,7 @@ for a,b in sorted(u.items(),key=lambda x:-len(x[0])): k=k.replace('{{IMG}}/'+a,b
 for a,b in su.items(): k=k.replace('{{SHARED}}/'+a,b)
 base=src[:-5]
 # QA 2026-10-07: Outlook-fontfallback, @import apart (niet-mso), interne comments weg uit de verzendversie
-MSO='<!--[if mso]><style>body,table,td,div,p,a,span{font-family:Arial,Helvetica,sans-serif!important;}</style><![endif]-->\n'
+MSO='<!--[if mso]><style>body,table,td,div,p,a,span{font-family:Arial,Helvetica,sans-serif!important;}table.w{width:600px!important;}</style><![endif]-->\n'
 def head_fix(x):
     imp=re.search(r"\s*@import url\([^)]*\);",x)
     if imp:
@@ -152,6 +152,24 @@ def add_utm(x):
         return '%s%s%sutm_source=klaviyo&utm_medium=email&utm_campaign=%s&utm_content=%s-%s%s"'%(m.group(1),u,'&' if '?' in u else '?',camp,mid,blk,term)
     return re.sub(r'(href=")([^"{}]+)"',fix,x)
 k=add_utm(k)
+# Gmail-proof achtergronden (10 okt 2026, research/v6-golive/14-gmail-ios.md): Gmail iPhone toonde de donkere footer wit, omdat #282828
+# alleen als CSS op één <td> stond. Elke <table>/<td>/<th> met een kleur krijgt bgcolor-attribuut EN inline background-color met
+# dezelfde waarde (ontbrekende helft wordt aangevuld). Controle: mail_checks.bg_problems (qa_render, FOUT).
+def bg_attrs(x):
+    def fix(m):
+        tag=m.group(0); st=re.search(r'\bstyle="([^"]*)"',tag); css=re.search(r'background(?:-color)?\s*:\s*(#[0-9a-fA-F]{3,6})\b',st.group(1)) if st else None
+        bg=re.search(r'\bbgcolor="([^"]*)"',tag)
+        if css and not bg: tag=tag[:len(m.group(1))]+' bgcolor="%s"'%css.group(1).upper()+tag[len(m.group(1)):]
+        elif bg and not css and re.match(r'#[0-9a-fA-F]{3,6}$',bg.group(1)):
+            tag=tag.replace(st.group(0),'style="background-color:%s;%s"'%(bg.group(1),st.group(1))) if st else tag[:-1]+' style="background-color:%s;">'%bg.group(1)
+        return tag
+    return re.sub(r'(<(?:table|td|th))\b[^>]*>',fix,x)
+k=bg_attrs(k)
+# Vloeiende hoofdkolom (10 okt 2026): width:100% + max-width:600px in plaats van vaste 600px, zodat de mail ook zonder <style>
+# (Gmail-app bij niet-Google-accounts, of als Gmail het blok weggooit) op 375 px past en de hybride blokken (productcard) stapelen.
+# Outlook Windows kent geen max-width: daar houdt de MSO-stijl (head_fix) table.w op 600 px, plus width="600" als attribuut.
+def fluid_main(x): return x.replace('class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;','class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;')
+k=fluid_main(k)
 # QA-poort 2026-10-07 (qa_render.py): Django-logica in HTML-tekst (tussen <table>/<tr>/<td>) in een HTML-commentaar,
 # <!--{% if ... %}-->. Django/Klaviyo verwerkt tags ook binnen commentaar (gerenderd blijft alleen <!----> over),
 # de browser en de Klaviyo-code-editor tonen ze niet en "foster-parenten" ze dus niet boven de tabel.
@@ -173,8 +191,10 @@ k=wrap_ctrl(k)
 if '{{IMG}}' not in k and '{{SHARED}}' not in k: open(OPT.get('--out',base+'.klaviyo.html'),'w').write(k)
 elif OPT.get('--out'): sys.exit('nog {{IMG}}/{{SHARED}} zonder URL: '+', '.join(sorted(set(re.findall(r'\{\{(?:IMG|SHARED)\}\}/([\w.-]+)',k)))))
 if OPT.get('--no-preview'): sys.exit(0)
+import datetime as _dtr; _dt_ref=_dtr.datetime.now().strftime('%Y%m%d%H%M%S')
 p=h.replace('{{IMG}}',os.path.basename(assets.rstrip('/'))).replace('{{SHARED}}',os.path.relpath(SH,os.path.dirname(os.path.abspath(src))))
-p=light_only(p)
+p=light_only(p); p=fluid_main(bg_attrs(p))
+p=re.sub(r"\{% today '[^']*' as sk_ref %\}",'',p).replace('{{ sk_ref }}',_dt_ref) if 'sk_ref' in p else p
 p=re.sub(r"\{% coupon_code [^%]*%\}",'SRT-K7Q2M',p)
 # Preview: Klaviyo-datumtag als voorbeelddatum (vandaag + N dagen, Django-datumformaat naar strftime)
 import datetime as _dt

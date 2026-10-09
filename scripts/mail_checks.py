@@ -645,3 +645,74 @@ def summary(res):
     for k in CHECKS:
         if k in res: c[res[k]['status']] += 1
     return c
+
+
+# ------------------------------------------------------------------ achtergronden (10 okt 2026, research/v6-golive/14-gmail-ios.md)
+# Gmail iPhone toonde de donkere footer WIT: de achtergrond stond alleen als CSS (style="background:#282828") op één <td>. Valt die
+# cel weg (Gmail-trimming van herhaalde inhoud in een thread knipt de structuur open, of een client negeert de CSS-achtergrond), dan
+# staat lichte tekst op wit. Regel: elk gekleurd vlak op <table>/<td>/<th> heeft bgcolor-attribuut ÉN inline background-color met
+# dezelfde kleur; geen gekleurde <div>-vlakken (een div krijgt geen bgcolor). Kleine inline elementen (span/a/b: pill, code) mogen.
+_BG_RE = re.compile(r'background(?:-color)?\s*:\s*(#[0-9a-fA-F]{3,6}|rgb\([^)]*\))', re.I)
+
+
+def _hex(c):
+    c = (c or '').strip().lower()
+    if c.startswith('rgb'):
+        v = [int(x) for x in re.findall(r'\d+', c)[:3]]; return '#%02x%02x%02x' % tuple(v) if len(v) == 3 else None
+    if not re.match(r'#[0-9a-f]{3}([0-9a-f]{3})?$', c): return None
+    return '#' + ''.join(ch * 2 for ch in c[1:]) if len(c) == 4 else c
+
+
+def _rel_hex(c):
+    v = [int(c[i:i + 2], 16) / 255 for i in (1, 3, 5)]
+    v = [x / 12.92 if x <= 0.03928 else ((x + 0.055) / 1.055) ** 2.4 for x in v]
+    return 0.2126 * v[0] + 0.7152 * v[1] + 0.0722 * v[2]
+
+
+def bg_problems(x):
+    """FOUT-regels voor achtergronden die in Gmail (app) kunnen wegvallen. x = ruwe of gerenderde HTML.
+    1. <table>/<td>/<th> met een CSS-achtergrond zonder bgcolor-attribuut, of met een ander bgcolor dan de CSS-kleur
+    2. <table>/<td>/<th> met bgcolor maar zonder inline background(-color)
+    3. <div>/<p> met een gekleurde achtergrond (behalve wit en het crème van de kolom)
+    4. lichte tekst (luminantie > 0.6) waarvan de dichtstbijzijnde bgcolor-voorouder licht is (die tekst leunt op een CSS-achtergrond)"""
+    from html.parser import HTMLParser
+    body = re.sub(r'<head.*?</head>', '', x, flags=re.S | re.I)
+    body = re.sub(r'<!--.*?-->', '', body, flags=re.S)   # ook [if mso]-blokken: alleen wat niet-Outlook-clients zien
+    F = []
+
+    class P(HTMLParser):
+        VOID = {'img', 'br', 'meta', 'link', 'hr', 'input', 'col', 'source', 'area', 'wbr', 'base'}
+
+        def __init__(s):
+            super().__init__(convert_charrefs=True); s.st = []
+
+        def handle_starttag(s, tag, a):
+            a = dict(a); st = a.get('style') or ''
+            m = _BG_RE.search(st); css = _hex(m.group(1)) if m else None; attr = _hex(a.get('bgcolor'))
+            line = s.getpos()[0]
+            if tag in ('table', 'td', 'th'):
+                if css and css not in ('#ffffff',) and not attr: F.append('regel %d: <%s> met achtergrond %s alleen als CSS, zonder bgcolor-attribuut' % (line, tag, css))
+                elif css and attr and css != attr: F.append('regel %d: <%s> bgcolor %s wijkt af van CSS-achtergrond %s' % (line, tag, attr, css))
+                elif attr and not css and attr != '#ffffff': F.append('regel %d: <%s> bgcolor %s zonder inline background-color' % (line, tag, attr))
+            if tag in ('div', 'p') and css and css not in ('#ffffff', '#f8f7f2') and not re.search(r'display:\s*none', st, re.I):
+                F.append('regel %d: <%s> met gekleurde achtergrond %s (zet het vlak op een <td> met bgcolor)' % (line, tag, css))
+            if tag in s.VOID: return
+            if tag in ('td', 'th', 'tr') and s.st and s.st[-1][0] in ('td', 'th'): s.st.pop()
+            col = re.search(r'(?<![-\w])color\s*:\s*(#[0-9a-fA-F]{3,6})', st)
+            s.st.append((tag, attr or (css if tag in ('span', 'a', 'b') else None), _hex(col.group(1)) if col else None, line))
+
+        def handle_startendtag(s, tag, a): s.handle_starttag(tag, a)
+
+        def handle_endtag(s, tag):
+            for i in range(len(s.st) - 1, -1, -1):
+                if s.st[i][0] == tag: del s.st[i:]; break
+
+        def handle_data(s, d):
+            if not d.strip() or not s.st: return
+            fg = next((c for _, _, c, _ in reversed(s.st) if c), None)
+            if not fg or _rel_hex(fg) < 0.6: return
+            bg = next((b for _, b, _, _ in reversed(s.st) if b), '#ffffff')
+            if _rel_hex(bg) > 0.4: F.append('regel %d: lichte tekst %s zonder donker bgcolor-vlak eronder (bgcolor-voorouder %s): "%s"' % (s.getpos()[0], fg, bg, re.sub(r'\s+', ' ', d.strip())[:40]))
+
+    p = P(); p.feed(body); p.close()
+    return sorted(set(F), key=F.index)

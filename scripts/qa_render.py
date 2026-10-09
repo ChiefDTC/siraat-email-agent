@@ -27,6 +27,12 @@ Controles per mail:
     Browsermetingen (dark-mode-simulatie, contrast, tap targets, lettergrootte): python3 -I scripts/qa_inbox.py
  h. inbox-preview (9 okt 2026, mail_checks.preview_problems): FOUT bij geen of lege preheader, tekst vóór de preheader, of minder dan
     300 zero-width opvulposities tussen preheader en de eerste andere tekst (topbalk, logo-alt, nav). Ruw en per gerenderde variant.
+ i. Gmail-app (10 okt 2026, research/v6-golive/14-gmail-ios.md): FOUT bij een gekleurd vlak dat alleen als CSS op een tabelcel staat
+    (geen bgcolor), bgcolor zonder inline background-color, een gekleurde <div>, of lichte tekst zonder donker bgcolor-vlak
+    (mail_checks.bg_problems, ruwe HTML). Browser (scripts/qa_mail_shots.js, eerste variant, 375 px): 'gmailios' (alle <style> en
+    classes weg, dus geen media queries) en 'gmailtrim' (idem plus Gmail-trimming: de laatste rijen los na een '•••'). FOUT bij een
+    tabelcel met tekst die leeg rendert, tekst buiten zijn cel of in een kolom < 48 px, of tekst met contrast < 2,2:1 (onleesbaar,
+    zoals de witte footer van 9 okt). Screenshots exports/qa/shots/<flow>-<id>-gmailios.jpg en -gmailtrim.jpg.
 Campagnes: klaviyo/templates/campaigns/*.html tellen mee als flow 'campaigns' (geen event, signaal uit MARKET-SIGNAL of 'profile').
 """
 import sys,os,re,glob,json,subprocess,tempfile,shutil,html as H
@@ -226,7 +232,7 @@ def main():
     if not ms: sys.exit('geen mails gevonden')
     tmp=tempfile.mkdtemp(prefix='qa-render-'); browser='--static' not in OPT
     if browser: os.makedirs(SHOTS,exist_ok=True)
-    R={}; jobs=[]; used_all={}
+    R={}; jobs=[]; gjobs=[]; used_all={}
     for flow,mid,src in ms:
         key=flow+'/'+mid; e=R[key]={'F':[],'W':[],'variants':[]}
         try: rawp,k=build(flow,src,tmp)
@@ -235,6 +241,7 @@ def main():
         for f in used: used_all.setdefault(f,set()).add(key)
         e['F']+=['ruwe HTML, tekst in tabelcontext (foster-parenting): '+b for b in foster(k)]
         e['F']+=['ruw: '+x for x in MC.preview_problems(k)]
+        e['F']+=['achtergrond (Gmail): '+x for x in MC.bg_problems(k)]   # i.
         e['ph']=MC.inbox_preview(k)[2]
         if F: continue
         rendered=[]
@@ -255,6 +262,9 @@ def main():
             for w,dev in ((600,'desktop'),(390,'mobile')):
                 shot=os.path.join(SHOTS,'%s-%s-%s-rendered.jpg'%(flow,mid,dev)) if i==0 else None
                 jobs.append(dict(key='%s|%s|%d|r'%(key,var,w),html=rp,width=w,shot=shot,raw=False))
+            if i==0:   # i. Gmail-app-simulatie op 375 px
+                for gm in ('gmailios','gmailtrim'):
+                    gjobs.append(dict(key='%s|%s|%s'%(key,var,gm),html=rp,width=375,mode=gm,net=False,shot=os.path.join(SHOTS,'%s-%s-%s.jpg'%(flow,mid,gm)) if browser else None))
         # g. v5-markten (statisch, zonder browser)
         e['strict']=is_strict(src)
         if QA_META.search(k): e['F'].append('tijdelijke QA-markering <meta name="x-siraat-qa/x-siraat-build/siraat-qa"> in de mail: mag niet naar klanten (V5-STRICT hoort in de topcomment van de bron)')
@@ -272,6 +282,17 @@ def main():
         r=subprocess.run(['node',os.path.join(ROOT,'scripts','qa_shots.js'),jf,rf],capture_output=True,text=True)
         if r.returncode or not os.path.exists(rf): sys.exit('browser faalt: '+(r.stderr or r.stdout)[-500:])
         M=json.load(open(rf))
+    if browser and gjobs:   # i. Gmail-app-simulatie
+        jf=os.path.join(tmp,'gjobs.json'); rf=os.path.join(tmp,'gres.json'); json.dump(gjobs,open(jf,'w'))
+        r=subprocess.run(['node',os.path.join(ROOT,'scripts','qa_mail_shots.js'),jf,rf],capture_output=True,text=True)
+        if r.returncode or not os.path.exists(rf): sys.exit('browser (Gmail-simulatie) faalt: '+(r.stderr or r.stdout)[-500:])
+        for jk,m in json.load(open(rf)).items():
+            key,var,gm=jk.split('|'); e=R[key]
+            if 'error' in m: e['F'].append('%s 375 px: browser: %s'%(gm,m['error'])); continue
+            for x in m.get('emptyCells',[]): e['F'].append('%s 375 px: %s'%(gm,x))
+            for c in m.get('gmailContrast',[]):
+                if c['ratio']<2.2: e['F'].append('%s 375 px: onleesbare tekst%s "%s" (%s op %s, %.2f:1)'%(gm,' in het getrimde deel' if c['trimmed'] else '',c['t'],c['fg'],c['bg'],c['ratio']))
+            if m.get('gmailScale',1)<1 and gm=='gmailios': e['W'].append('gmailios 375 px: mail is %d px breed zonder <style>, Gmail schaalt in (%.0f%%)'%(round(375/m['gmailScale']),m['gmailScale']*100))
     heights={}
     for jk,m in M.items():
         key,var,w,mode=jk.split('|'); w=int(w); e=R[key]; tag='%s %d px'%(var,w)
