@@ -4,7 +4,8 @@ OK, FOUT, LET OP of N.V.T. met details. Wijzigt niets aan templates.
 
 Controles (naam = sleutel in het rapport en het Slack-bericht):
   onderwerp      onderwerp aanwezig, geen em dash, geen placeholder
-  preheader      verborgen preheader-tekst aanwezig en niet gelijk aan het onderwerp
+  preheader      verborgen preheader-tekst aanwezig en niet gelijk aan het onderwerp; inbox-preview (preview_problems):
+                 geen tekst vóór de preheader en >= 300 zero-width opvulposities vóór de eerste bodytekst
   afzender       adres op siraatskitchen.com (alleen bij echte mails)
   grootte        HTML-part < 102 KB (Gmail knipt daarboven), let op vanaf 90 KB
   links          elke link volgen (Klaviyo-tracking via curl -sSIL --max-redirs 10, anders via de tekstversie) tot status 200
@@ -139,6 +140,83 @@ def _strip_hidden(x):
         if end is None: break
         out = out[:mm.start()] + ' ' + out[end:]
     return out
+
+
+# ------------------------------------------------------------------ inbox-preview (9 okt 2026, research/v6-golive/12-fixes.md)
+# Gmail iPhone toonde na onderwerp en preheader ook bodytekst ("... one pan. THE WEEKEND PAN · A RECIPE FROM BENJAMIN Siraat COOKWARE").
+# inbox_preview() bootst een inbox-preview na: tekstnodes in documentvolgorde vanaf <body> (ook verborgen, dus ook de preheader),
+# alt-teksten van beelden als tekst, commentaar/head/style weg, witruimte samengevoegd. Zero-width opvultekens (PREVIEW_FILL) tellen
+# als lege posities: ze vullen de previewruimte zonder iets te tonen. &nbsp; en figure space tellen NIET mee (clients voegen witruimte samen).
+PREVIEW_FILL = set('͏‌​‍⁠﻿­⁣')
+PREVIEW_BUDGET = 300   # zo veel lege posities moeten er na de preheader-tekst staan voor de eerste andere tekst
+
+
+def inbox_preview(x):
+    """Geeft (preheader, tekst_voor_preheader, lege_posities_na_preheader, eerste_andere_tekst) zoals een inbox-preview de mail leest."""
+    from html.parser import HTMLParser
+
+    class P(HTMLParser):
+        SKIP = {'head', 'style', 'script', 'title'}
+        VOID = {'img', 'br', 'meta', 'link', 'hr', 'input', 'col', 'source', 'area', 'wbr', 'base'}
+
+        def __init__(s):
+            super().__init__(convert_charrefs=True); s.skip = 0; s.body = False; s.st = []; s.ph = None; s.chunks = []
+
+        def handle_starttag(s, tag, a):
+            a = dict(a)
+            if tag == 'body': s.body = True; return
+            if tag in s.SKIP: s.skip += 1; return
+            if not s.body or s.skip: return
+            if tag == 'img' and (a.get('alt') or '').strip(): s.chunks.append((' %s ' % a['alt'], 'alt' if s.ph != 'open' else 'ph'))
+            if tag in s.VOID: return
+            hid = bool(re.search(r'display:\s*none', a.get('style') or '', re.I))
+            if s.ph is None and hid and tag in ('div', 'span'): s.ph = 'open'; s.st.append((tag, 'ph')); return
+            s.st.append((tag, None))
+
+        def handle_startendtag(s, tag, a): s.handle_starttag(tag, a)
+
+        def handle_endtag(s, tag):
+            if tag in s.SKIP: s.skip = max(0, s.skip - 1); return
+            if not s.body: return
+            for i in range(len(s.st) - 1, -1, -1):
+                if s.st[i][0] == tag:
+                    if s.st[i][1] == 'ph': s.ph = 'done'
+                    del s.st[i:]; break
+            if tag in ('div', 'p', 'td', 'tr', 'table', 'li', 'h1', 'h2', 'h3'): s.chunks.append((' ', 'ws'))
+
+        def handle_data(s, d):
+            if s.body and not s.skip: s.chunks.append((d, 'ph' if s.ph == 'open' else ('pre' if s.ph is None else 'body')))
+
+    p = P(); p.feed(x); p.close()
+    ws = lambda t: re.sub(r'[\s  ]+', ' ', t)
+    before = ws(''.join(d for d, k in p.chunks if k in ('pre',) or (k == 'alt' and p.ph is None))).strip()
+    if p.ph is None: return '', before, 0, ws(''.join(d for d, k in p.chunks))[:120].strip()
+    ph = ''.join(d for d, k in p.chunks if k == 'ph')
+    # preheader-tekst = alles tot het laatste niet-opvulteken; de rest van de div is opvulling
+    i = len(ph)
+    while i and (ph[i - 1] in PREVIEW_FILL or ph[i - 1].isspace() or ph[i - 1] in '  '): i -= 1
+    pre_text = ws(''.join(c for c in ph[:i] if c not in PREVIEW_FILL)).strip()
+    started = False; tail = ph[i:]
+    for d, k in p.chunks:
+        if k == 'ph': started = True; continue
+        if started: tail += d
+    empty = 0; first = ''
+    for j, c in enumerate(tail):
+        if c in PREVIEW_FILL: empty += 1; continue
+        if c.isspace() or c in '  ': continue
+        first = ws(''.join(ch for ch in tail[j:j + 400] if ch not in PREVIEW_FILL)).strip()[:90]; break
+    return pre_text, before, empty, first
+
+
+def preview_problems(x, budget=PREVIEW_BUDGET):
+    """FOUT-regels voor de inbox-preview: geen/lege preheader, tekst vóór de preheader, of bodytekst binnen `budget` lege posities."""
+    pre, before, empty, first = inbox_preview(x)
+    F = []
+    if not pre: F.append('preview: geen of lege preheader (inbox toont dan bodytekst)')
+    if before: F.append('preview: tekst vóór de preheader: "%s"' % before[:80])
+    if pre and first and empty < budget:
+        F.append('preview: na de preheader maar %d lege opvulposities (min %d), daarna bodytekst in de inbox-preview: "%s"' % (empty, budget, first[:70]))
+    return F
 
 
 def preheader(x):
@@ -301,6 +379,8 @@ def run_checks(m, market=None, kind='mail', raw=None, browser=None, skip_net=Fal
     elif _norm(pre) == _norm(subj): out['preheader'] = R(LETOP, 'preheader gelijk aan onderwerp')
     elif PLACEHOLDER.search(pre): out['preheader'] = R(FOUT, 'placeholder in preheader: "%s"' % pre[:90])
     else: out['preheader'] = R(OK, '"%s"' % pre[:110])
+    pp = preview_problems(x)   # inbox-preview: alleen onderwerp + preheader, nooit bodytekst erachter (9 okt 2026)
+    if pp: out['preheader'] = R(FOUT, '; '.join(pp))
     # afzender
     if kind != 'mail': out['afzender'] = R(NVT, 'flow-instelling in Klaviyo, niet in de template')
     else:

@@ -25,9 +25,13 @@ Controles per mail:
     spamsignalen in onderwerp/preview/body, linkverkorters en domeinen, alt-teksten, Outlook (VML-knoppen, mso-hide,
     width-attribuut, max-width), dark mode (donker logo op transparant), dubbele regels in Klaviyo's plain-text-versie.
     Browsermetingen (dark-mode-simulatie, contrast, tap targets, lettergrootte): python3 -I scripts/qa_inbox.py
+ h. inbox-preview (9 okt 2026, mail_checks.preview_problems): FOUT bij geen of lege preheader, tekst vóór de preheader, of minder dan
+    300 zero-width opvulposities tussen preheader en de eerste andere tekst (topbalk, logo-alt, nav). Ruw en per gerenderde variant.
+Campagnes: klaviyo/templates/campaigns/*.html tellen mee als flow 'campaigns' (geen event, signaal uit MARKET-SIGNAL of 'profile').
 """
 import sys,os,re,glob,json,subprocess,tempfile,shutil,html as H
 from html.parser import HTMLParser
+sys.path.insert(0,os.path.dirname(os.path.abspath(__file__))); import mail_checks as MC   # inbox-preview (h)
 try:   # inbox- en deliverability-waarschuwingen (scripts/inbox_checks.py, research/deliverability/01-inbox-check.md); nooit FOUT
     sys.path.insert(0,os.path.dirname(os.path.abspath(__file__))); import inbox_checks as IC
 except Exception: IC=None
@@ -65,7 +69,9 @@ VARIANTS={'checkout':[('co_pan','kookgerei'),('co_set6','set'),('co_apron','acce
  'browse':[('vp_pan','kookgerei'),('vp_set6','set'),('vp_apron','accessoire')],
  'post-purchase':PO,'winback':PO,'anniversary':PO,
  'vip':PO+[('po_pan_us+pool','kookgerei US, person.last_flow_code_pool=SK_REGULARS15_14D')],
- 'welcome':[('none','geen event')],'site':[('none','geen event')],'sunset':[('none','geen event')],'ugc':[('none','geen event')]}
+ 'welcome':[('none','geen event')],'site':[('none','geen event')],'sunset':[('none','geen event')],'ugc':[('none','geen event')],
+ 'campaigns':[('none','geen event')]}
+CAMP=os.path.join(ROOT,'klaviyo','templates','campaigns')
 LONG_OK=re.compile(r'^(p2(-safe)?|p1-.*|w0|w2)$')   # PLAYBOOK 12: lengtegrens geldt voor verkoopmails; P2/P2-safe mogen langer, P1, W0, W2 zijn geen verkoopmail (h11)
 MAXH=3600; MAXH_HARD=3780            # "ruwweg" 3.600: boven 3.600 waarschuwing, boven 3.780 fout
 
@@ -77,6 +83,8 @@ def mails():
             out.append((f,os.path.basename(s)[:-5],s))
     # alleen mails uit de v4-inventaris (sectie 5 van v4-flow-system.md); vervangen bestanden (c4-us, c4-int ...) blijven staan maar tellen niet mee
     inv=inventory(); out=[m for m in out if m[1] in inv]
+    for s in sorted(glob.glob(os.path.join(CAMP,'*.html'))):
+        if not re.search(r'-preview|\.klaviyo\.html$',s): out.append(('campaigns',os.path.basename(s)[:-5],s))
     if OPT.get('--only'):
         want=set(OPT['--only'].split(',')); out=[m for m in out if m[0]+'/'+m[1] in want]
     return out
@@ -93,7 +101,7 @@ def inventory():
 
 def build(flow,src,tmp):
     """Klaviyo-versie via build_template.py --out --no-preview; beelden als file:// zodat de browser ze laadt (CDN = zelfde bestand)."""
-    ad=os.path.join(V,flow,'assets')
+    ad=os.path.join(CAMP if flow=='campaigns' else os.path.join(V,flow),'assets')
     tu=os.path.join(tmp,'u.txt'); ts=os.path.join(tmp,'s.txt')
     open(tu,'w').write(''.join('%s file://%s\n'%(n,os.path.join(os.path.realpath(ad),n)) for n in sorted(os.listdir(ad)) if os.path.isfile(os.path.join(ad,n))))
     open(ts,'w').write(''.join('%s file://%s\n'%(n,os.path.join(os.path.realpath(SH),n)) for n in sorted(os.listdir(SH)) if os.path.isfile(os.path.join(SH,n))))
@@ -195,6 +203,7 @@ def v5_market(flow,mid,k,e,strict=False):
         body=re.sub(r'<style.*?</style>','',r,flags=re.S)
         for t in ('{%','%}','{{','}}'):
             if t in body: F.append('markt %s: restant %s na rendering'%(m,t))
+        F+=['markt %s: %s'%(m,x) for x in MC.preview_problems(r)]   # h. inbox-preview per markt
         F+=['markt %s: v5-blok: %s'%(m,x) for x in V5C.market_problems(r,m,strict_scope=V5C.v5_parts(r))]
         F+=['markt %s: %s'%(m,x) for x in V5C.gifts_problems(r) if 'gifts5' in x]
         F+=['markt %s: %s'%(m,x) for x in V5C.xsell_empty(r)]   # H2: profiel zonder siraat_owned mag geen lege cross-sell geven
@@ -225,6 +234,8 @@ def main():
         F,W,used=tags_filters(k); e['F']+=F; e['W']+=W
         for f in used: used_all.setdefault(f,set()).add(key)
         e['F']+=['ruwe HTML, tekst in tabelcontext (foster-parenting): '+b for b in foster(k)]
+        e['F']+=['ruw: '+x for x in MC.preview_problems(k)]
+        e['ph']=MC.inbox_preview(k)[2]
         if F: continue
         rendered=[]
         for i,(var,label) in enumerate(VARIANTS[flow]):
@@ -235,6 +246,7 @@ def main():
             except Exception as ex: e['F'].append('%s: rendering faalt: %s'%(var,str(ex)[:200])); continue
             e['variants'].append(var); rendered.append(r)
             e['F']+=['%s: %s'%(var,x) for x in after_render(r)]
+            e['F']+=['%s: %s'%(var,x) for x in MC.preview_problems(r)]
             # H2 (09-monitor-rapport): het profiel in context() heeft GEEN siraat_owned (zoals een klant vóór de nachtelijke sync);
             # de stub kltags.lookup geeft dan net als Klaviyo een ontbrekende waarde. Lege cross-sell of ontbrekende dekselregel = FOUT.
             e['F']+=['%s (profiel zonder siraat_owned): %s'%(var,x) for x in V5C.xsell_empty(r)+V5C.lid_missing(r,mid,ctx['event'].get('Items'))]
