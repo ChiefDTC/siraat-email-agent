@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="color-scheme" content="light">
-<meta name="supported-color-schemes" content="light">
+<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light only">
 <title>Your cart, 10% less</title>
 <!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
 <!--[if !mso]><!--><style>@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');</style><!--<![endif]-->
@@ -39,38 +39,60 @@
     .rv{display:block!important;width:100%!important;box-sizing:border-box!important;}
     .rvsp{display:block!important;width:100%!important;height:12px!important;font-size:0!important;line-height:0!important;}
   }
+  /* H3 (09-monitor-rapport): code van 13 tekens (CART-XXXXXXXX) op één regel op telefoons (gemeten op 320 en 375 px).
+     Niet in het 620-blok: de ruwe Klaviyo-weergave op 600 px toont de lange coupon_code-tag, die moet daar kunnen breken. */
+  @media only screen and (max-width:480px){
+    .offer-code{font-size:22px!important;letter-spacing:2px!important;white-space:nowrap!important;word-break:normal!important;padding:12px 14px!important;}
+    .offer-wrap{padding:0 8px!important;}
+    .cb-code{white-space:nowrap!important;word-break:normal!important;}
+  }
+  @media only screen and (max-width:360px){
+    .offer-code{font-size:20px!important;letter-spacing:1.5px!important;padding:12px 10px!important;}
+  }
   /* research/ux-round2 blokken (compare, closerlook, productcard) */
   @media only screen and (max-width:620px){
     .cmp-h{font-size:15px!important;line-height:20px!important;padding:0 8px 12px 8px!important;}
     .cmp-c{padding:0 8px 0 12px!important;height:68px!important;}
     .cmp-t{font-size:14px!important;line-height:19px!important;}
-    .pc-i{width:132px!important;}
-    .pc-img{width:132px!important;}
-    .pc-t{padding:12px 14px 12px 12px!important;}
+    .pc-t{max-width:100%!important;}
+    .pc-tc{padding:12px 16px 16px 16px!important;text-align:center!important;}
     .pc-n{font-size:16px!important;line-height:21px!important;}
     .pc-s{font-size:13px!important;line-height:18px!important;}
   }
+  /* urgency-upgrade 7 okt 2026: ugc (reviewkaarten met beeld) en deadline-tegels */
+  @media only screen and (max-width:620px){
+    .ug-desk{display:none!important;max-height:0!important;overflow:hidden!important;}
+    .ug-mob{display:block!important;max-height:none!important;overflow:visible!important;}
+    .dl-t{width:84px!important;}
+    .dl-n{font-size:22px!important;line-height:26px!important;}
+  }
+  /* v5-bouwstenen (8 okt 2026): gifts5-strook, reviews3 */
+  @media only screen and (max-width:620px){
+    .gm{padding:8px 2px 12px 2px!important;}
+    .gm img{width:52px!important;height:52px!important;}
+  }
 </style>
-<!--[if mso]><style>body,table,td,div,p,a,span{font-family:Arial,Helvetica,sans-serif!important;}</style><![endif]-->
+<!--[if mso]><style>body,table,td,div,p,a,span{font-family:Arial,Helvetica,sans-serif!important;}table.w{width:600px!important;}</style><![endif]-->
+<style>:root{color-scheme:light only;supported-color-schemes:light only;}</style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Your personal code is already applied. After 48 hours, the regular sale price.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;color:transparent;">Your personal code is already applied. After 48 hours, the regular sale price.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background-color:#FFFFFF;">
 <tr><td align="center" style="padding:8px 0 32px 0;">
-<table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
+<table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
-<tr><td align="center" class="codebar" bgcolor="#282828" style="background:#282828;padding:11px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;letter-spacing:1.5px;font-weight:600;color:#FFFFFF;">
-  YOUR OWN 10% CODE &middot; 48 HOURS&nbsp; <span style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;word-break:break-all;">{% coupon_code 'C4_10_48H' %}</span>
+<tr><td align="center" class="codebar" bgcolor="#282828" style="background:#282828;overflow-wrap:anywhere;padding:11px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;letter-spacing:1.5px;font-weight:600;color:#FFFFFF;">
+  YOUR OWN 10% CODE &middot; 48 HOURS&nbsp; <span class="cb-code" style="display:inline-block;border:1px dashed #FFFFFF;padding:1px 8px;letter-spacing:2px;word-break:break-all;">{% coupon_code 'C4_10_48H' %}</span>
 </td></tr>
 
 
-<tr><td style="padding:18px 36px;background:#F8F7F2;border-bottom:1px solid #ECE7DD;" class="pad">
+<tr><td bgcolor="#F8F7F2" style="padding:18px 36px;background-color:#F8F7F2;border-bottom:1px solid #ECE7DD;" class="pad">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-    <td valign="middle"><a href="https://siraatskitchen.com/?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4us-logo"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/ae4dfc27-1e05-481a-90b6-f6467bc3db78.png" width="150" alt="Siraat" style="width:150px;height:auto;"></a></td>
-    <td valign="middle" align="right" class="navhide" style="padding-left:20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:1.5px;font-weight:600;white-space:nowrap;">
+    <td valign="middle"><a href="https://siraatskitchen.com/?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4us-logo"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/68a06000-e2d3-4858-86cb-92587411d958.png" width="150" alt="Siraat" style="display:block;width:150px;height:auto;border:0;"></a></td>
+    <td valign="middle" align="right" class="navhide" style="padding-left:20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:18px;letter-spacing:1.5px;font-weight:600;">
       <a href="https://siraatskitchen.com/collections/pans?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4us-nav-pans" style="color:#282828;text-decoration:none;">COOKWARE</a>&nbsp;&nbsp;&nbsp;
       <a href="https://siraatskitchen.com/collections/bundles?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4us-nav-bundles" style="color:#282828;text-decoration:none;">SETS</a>&nbsp;&nbsp;&nbsp;
-      <a href="https://siraatskitchen.com/pages/faq?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4us-nav-faq" style="color:#282828;text-decoration:none;">ABOUT</a>
+      <a href="https://siraatskitchen.com/pages/about-us?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4us-nav-about-us" style="color:#282828;text-decoration:none;">ABOUT</a>
     </td>
   </tr></table>
 </td></tr>
@@ -81,7 +103,7 @@
 </td></tr>
 
 <tr><td class="pad" style="padding:22px 44px 4px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
+  <table bgcolor="#FFFFFF" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
     <tr><td colspan="3" style="padding:16px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">STILL IN YOUR CART</td></tr>
     <!--{% for item in event.extra.line_items %}--><!--{% if item.line_price > 0 %}-->
     <tr>
@@ -92,7 +114,7 @@
         <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;">{{ item.title }}</div>
         <div style="font-size:13px;line-height:19px;color:#727272;padding-top:2px;">Qty {{ item.quantity|floatformat:0 }}</div>
       </td>
-      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;"><!--{% if event.extra.presentment_currency == 'USD' or not event.extra.presentment_currency %}-->${{ item.line_price|floatformat:2 }}<!--{% endif %}--></td>
+      <td align="right" valign="middle" style="padding:12px 16px 12px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#282828;"><!--{% if event.extra.presentment_currency == 'USD' %}-->${{ item.line_price|floatformat:2 }}<!--{% endif %}--></td>
     </tr>
     <!--{% endif %}--><!--{% endfor %}-->
     <tr><td colspan="3" style="padding:0 16px 16px 16px;">
@@ -105,7 +127,7 @@
 
 
 <tr><td align="center" class="pad" style="padding:20px 44px 4px 44px;">
-  <table role="presentation" class="btnw" width="340" cellpadding="0" cellspacing="0" border="0" style="width:340px;"><tr>
+  <table role="presentation" class="btnw" width="340" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:340px;"><tr>
     <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:3px;">
       <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/checkout?ref=email' }}&discount={% coupon_code 'C4_10_48H' %}&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4us-cta1" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Complete my order</center></v:roundrect><![endif]-->
       <!--[if !mso]><!--><a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/checkout?ref=email' }}&discount={% coupon_code 'C4_10_48H' %}&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4us-cta1" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Complete my order &rarr;</a><!--<![endif]-->
@@ -119,7 +141,7 @@
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#321E1D" style="background:#321E1D;">
     <tr><td align="center" style="padding:30px 26px 8px 26px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#D9CFC7;">THE LAST EMAIL ABOUT YOUR CART</td></tr>
     <tr><td align="center" class="h2" style="padding:0 26px 16px 26px;font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#FFFFFF;">10% off your cart</td></tr>
-    <tr><td align="center" style="padding:0 26px;">
+    <tr><td align="center" class="offer-wrap" style="padding:0 26px;">
       <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" class="offer-code" style="border:2px dashed #FFFFFF;padding:12px 30px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:32px;line-height:36px;letter-spacing:6px;font-weight:600;color:#FFFFFF;word-break:break-all;">{% coupon_code 'C4_10_48H' %}</td></tr></table>
     </td></tr>
     <tr><td align="center" style="padding:14px 26px 0 26px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#EDE6E0;">Made for you, so it has an end date. After 48 hours the regular sale price applies. One use, with all 4 gifts.</td></tr>
@@ -127,7 +149,10 @@
 
     <tr><td align="center" style="padding:20px 26px 30px 26px;">
       <table role="presentation" class="btnw" width="320" cellpadding="0" cellspacing="0" border="0" style="width:320px;"><tr>
-        <td align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border-radius:3px;"><a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/checkout?ref=email' }}&discount={% coupon_code 'C4_10_48H' %}&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4us-offer" style="display:block;padding:18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#321E1D;text-decoration:none;text-transform:uppercase;">Complete my order &rarr;</a></td>
+        <td align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border-radius:3px;">
+          <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/checkout?ref=email' }}&discount={% coupon_code 'C4_10_48H' %}&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4us-offer" style="height:54px;v-text-anchor:middle;width:320px;" arcsize="6%" stroke="f" fillcolor="#FFFFFF"><center style="color:#321E1D;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Complete my order</center></v:roundrect><![endif]-->
+          <!--[if !mso]><!--><a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/checkout?ref=email' }}&discount={% coupon_code 'C4_10_48H' %}&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4us-offer" style="display:block;padding:18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#321E1D;text-decoration:none;text-transform:uppercase;">Complete my order &rarr;</a><!--<![endif]-->
+        </td>
       </tr></table>
     </td></tr>
   </table>
@@ -137,7 +162,7 @@
 <tr><td class="pad" style="padding:30px 44px 6px 44px;">
   <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">STILL UNSURE?</div>
   <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 16px 0;">Two promises</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
+  <table bgcolor="#FFFFFF" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
     <tr><td width="58" valign="top" style="padding:20px 0 16px 20px;border-bottom:1px solid #ECE7DD;"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/543e925f-fed4-4f3b-a811-a70761a13542.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
       <td valign="top" style="padding:18px 20px 16px 14px;font-family:Inter,Arial,Helvetica,sans-serif;border-bottom:1px solid #ECE7DD;"><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;">Changed your mind?</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Send it back unused within 30 days of delivery for a full refund.</div><div style="font-size:14px;line-height:21px;color:#282828;font-style:italic;padding-top:10px;"><span style="font-style:normal;color:#AC3B19;letter-spacing:1px;">&#9733;&#9733;&#9733;&#9733;&#9733;</span><br>&ldquo;I returned my pans, unused, and received a refund, no questions asked. Easy return procedure.&rdquo;<div style="font-style:normal;font-size:12px;line-height:17px;font-weight:600;color:#727272;padding-top:3px;">Steven T. &middot; Verified buyer</div></div></td></tr>
     <tr><td width="58" valign="top" style="padding:20px 0 16px 20px;"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/e39ac58c-e419-47b6-ab84-b2cd8185e946.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
@@ -158,8 +183,8 @@
         </td>
         <td width="10" style="font-size:0;line-height:0;">&nbsp;</td>
         <td width="50%" valign="top" align="center" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;padding:10px 6px 14px 6px;font-family:Inter,Arial,Helvetica,sans-serif;">
-          <img src="https://cdn.klaviyomail.com/company/TdtTzz/images/3fab7ff2-1993-48d2-8567-d9f3d0ce04dd.jpeg" width="110" alt="Plastic-Free Home e-book" style="width:110px;height:110px;margin:0 auto;">
-          <div style="font-size:13px;line-height:17px;font-weight:600;color:#282828;padding-top:6px;height:34px;">Plastic-Free<br>Home e-book</div>
+          <img src="https://cdn.klaviyomail.com/company/TdtTzz/images/3fab7ff2-1993-48d2-8567-d9f3d0ce04dd.jpeg" width="110" alt="The Green Clean E-Guide" style="width:110px;height:110px;margin:0 auto;">
+          <div style="font-size:13px;line-height:17px;font-weight:600;color:#282828;padding-top:6px;height:34px;">The Green Clean<br>E-Guide</div>
           <div style="font-size:12px;line-height:16px;font-weight:600;color:#AC3B19;">$30 value</div>
         </td>
       </tr></table>
@@ -185,7 +210,7 @@
 
 
 <tr><td align="center" class="pad" style="padding:26px 44px 4px 44px;">
-  <table role="presentation" class="btnw" width="340" cellpadding="0" cellspacing="0" border="0" style="width:340px;"><tr>
+  <table role="presentation" class="btnw" width="340" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:340px;"><tr>
     <td align="center" bgcolor="#AC3B19" style="background:#AC3B19;border-radius:3px;">
       <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/checkout?ref=email' }}&discount={% coupon_code 'C4_10_48H' %}&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4us-cta2" style="height:56px;v-text-anchor:middle;width:340px;" arcsize="6%" stroke="f" fillcolor="#AC3B19"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Complete my order</center></v:roundrect><![endif]-->
       <!--[if !mso]><!--><a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/checkout?ref=email' }}&discount={% coupon_code 'C4_10_48H' %}&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4us-cta2" style="display:block;padding:19px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Complete my order &rarr;</a><!--<![endif]-->
@@ -197,15 +222,26 @@
 
 <!--{% if 'Hammer' in event.Items|join:',' or 'Pan' in event.Items|join:',' or 'Pot' in event.Items|join:',' or 'ookware' in event.Items|join:',' or 'Everything' in event.Items|join:',' or 'fanne' in event.Items|join:',' or 'Prep Bundle' in event.Items|join:',' %}-->
 <tr><td class="pad" style="padding:26px 44px 6px 44px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #ECE7DD;"><tr>
-    <td width="200" class="pc-i" valign="middle" style="width:200px;padding:0;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'C4_10_48H' %}?redirect=/products/titanium-hammered-cookware-set%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-checkout%26utm_content%3Dc4us-set12"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/c56f8978-ac6b-49ca-9bf9-606ee2630222.jpeg" width="200" alt="Siraat Titanium Hammered Cookware Set, 12 pieces: three pans, three pots and six lids" class="pc-img" style="display:block;width:200px;height:auto;"></a></td>
-    <td valign="middle" class="pc-t" style="padding:16px 20px 16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'C4_10_48H' %}?redirect=/products/titanium-hammered-cookware-set%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-checkout%26utm_content%3Dc4us-set12" style="text-decoration:none;">
-      <div style="padding-bottom:8px;"><span style="display:inline-block;background:#AC3B19;color:#FFFFFF;font-size:10px;line-height:14px;letter-spacing:1.4px;font-weight:600;padding:3px 9px;border-radius:10px;">US ONLY</span></div>
-      <div class="pc-n" style="font-size:18px;line-height:24px;font-weight:600;color:#282828;">The 12-piece set</div>
-      <div class="pc-s" style="font-size:14px;line-height:20px;color:#727272;padding-top:3px;">For a full house: 3 pans, 3 pots, 6 lids. Your code works here too.</div>
-      <div style="padding-top:10px;font-size:16px;line-height:22px;"><span style="color:#9A948B;text-decoration:line-through;">$1,186</span>&nbsp; <b style="color:#AC3B19;font-weight:600;">$599</b></div>
-      <div style="padding-top:10px;font-size:13px;line-height:16px;letter-spacing:1.5px;font-weight:600;color:#282828;text-transform:uppercase;"><span style="border-bottom:1px solid #282828;padding-bottom:2px;">See the set</span> &rarr;</div>
-    </a></td>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border:1px solid #ECE7DD;"><tr>
+    <td align="center" valign="middle" bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:0;font-size:0;line-height:0;text-align:center;">
+      <!--[if mso]><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td width="200" valign="middle"><![endif]-->
+      <table role="presentation" class="pc-i" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="display:inline-block;vertical-align:middle;width:100%;max-width:200px;background-color:#FFFFFF;"><tr>
+        <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:0;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'C4_10_48H' %}?redirect=/products/titanium-hammered-cookware-set%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-checkout%26utm_content%3Dc4us-set12"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/c56f8978-ac6b-49ca-9bf9-606ee2630222.jpeg" width="200" alt="Siraat Titanium Hammered Cookware Set, 12 pieces: three pans, three pots and six lids" class="pc-img" style="display:block;width:100%;max-width:200px;height:auto;border:0;"></a></td>
+      </tr></table>
+      <!--[if mso]></td><td width="308" valign="middle"><![endif]-->
+      <table role="presentation" class="pc-t" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="display:inline-block;vertical-align:middle;width:100%;max-width:308px;background-color:#FFFFFF;"><tr>
+        <td class="pc-tc" bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:16px 20px 16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;text-align:left;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr><td style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;"><div style="padding-bottom:8px;"><span style="display:inline-block;background:#AC3B19;color:#FFFFFF;font-size:10px;line-height:14px;letter-spacing:1.4px;font-weight:600;padding:3px 9px;border-radius:10px;">US ONLY</span></div></td></tr>
+            <tr><td class="pc-n" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:18px;line-height:24px;font-weight:600;color:#282828;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'C4_10_48H' %}?redirect=/products/titanium-hammered-cookware-set%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-checkout%26utm_content%3Dc4us-set12" style="color:#282828;text-decoration:none;">The 12-piece set</a></td></tr>
+            <tr><td class="pc-s" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#727272;padding-top:3px;">For a full house: 3 pans, 3 pots, 6 lids. Your code works here too.</td></tr>
+            <tr><td style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:17px;color:#727272;"><div style="padding-top:10px;font-size:16px;line-height:22px;"><span style="color:#9A948B;text-decoration:line-through;">$1,186</span>&nbsp; <b style="color:#AC3B19;font-weight:600;">$599</b></div></td></tr>
+            <tr><td style="font-family:Inter,Arial,Helvetica,sans-serif;padding-top:10px;font-size:13px;line-height:16px;letter-spacing:1.5px;font-weight:600;color:#282828;text-transform:uppercase;"><a href="https://siraatskitchen.com/discount/{% coupon_code 'C4_10_48H' %}?redirect=/products/titanium-hammered-cookware-set%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-checkout%26utm_content%3Dc4us-set12" style="color:#282828;text-decoration:none;"><span style="border-bottom:1px solid #282828;padding-bottom:2px;">See the set</span> &rarr;</a></td></tr>
+          </table>
+        </td>
+      </tr></table>
+      <!--[if mso]></td></tr></table><![endif]-->
+    </td>
   </tr></table>
 </td></tr>
 
@@ -217,24 +253,30 @@
   Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
 </td></tr>
 
-<tr><td class="pad" style="padding:38px 40px 30px 40px;background:#282828;">
-  <a href="https://siraatskitchen.com/?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4us-ft-logo"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/7027081c-350d-476e-85b6-25057ebaf65d.png" width="190" alt="Siraat" style="width:190px;height:auto;"></a>
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;letter-spacing:2px;font-weight:600;color:#BDB8B0;padding-top:14px;">NON-TOXIC COOKWARE &middot; BUILT FOR LIFE</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:28px;">
-    <tr><td style="border-top:1px solid #5A5856;padding:15px 4px;"><a href="https://siraatskitchen.com/collections/pans?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4us-ft-pans" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;font-weight:600;color:#F2F2F2;text-decoration:none;">TITANIUM COOKWARE &nbsp;&rarr;</a></td></tr>
-    <tr><td style="border-top:1px solid #5A5856;padding:15px 4px;"><a href="https://siraatskitchen.com/collections/bundles?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4us-ft-bundles" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;font-weight:600;color:#F2F2F2;text-decoration:none;">BUNDLES &amp; SETS &nbsp;&rarr;</a></td></tr>
-    <tr><td style="border-top:1px solid #5A5856;padding:15px 4px;"><a href="https://siraatskitchen.com/collections/accessories?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4us-ft-accessories" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;font-weight:600;color:#F2F2F2;text-decoration:none;">ACCESSORIES &nbsp;&rarr;</a></td></tr>
-    <tr><td style="border-top:1px solid #5A5856;border-bottom:1px solid #5A5856;padding:15px 4px;"><a href="https://siraatskitchen.com/pages/third-party-testing?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4us-ft-third-party-testing" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;font-weight:600;color:#F2F2F2;text-decoration:none;">LAB RESULTS &nbsp;&rarr;</a></td></tr>
+<tr><td class="pad" bgcolor="#282828" style="padding:38px 40px 30px 40px;background-color:#282828;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#282828" style="background-color:#282828;">
+  <tr><td bgcolor="#282828" style="background-color:#282828;"><a href="https://siraatskitchen.com/?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4us-ft-logo"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/c8e347f7-34c0-42d9-8ddc-32949f48155e.png" width="190" alt="Siraat" style="display:block;width:190px;height:auto;border:0;"></a></td></tr>
+  <tr><td bgcolor="#282828" style="background-color:#282828;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;letter-spacing:2px;font-weight:600;color:#BDB8B0;padding-top:14px;">NON-TOXIC COOKWARE &middot; BUILT FOR LIFE</td></tr>
+  <tr><td bgcolor="#282828" style="background-color:#282828;padding-top:28px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#282828" style="background-color:#282828;">
+    <tr><td bgcolor="#282828" style="background-color:#282828;border-top:1px solid #5A5856;padding:15px 4px;"><a href="https://siraatskitchen.com/collections/pans?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4us-ft-pans" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;font-weight:600;color:#F2F2F2;text-decoration:none;">TITANIUM COOKWARE &nbsp;&rarr;</a></td></tr>
+    <tr><td bgcolor="#282828" style="background-color:#282828;border-top:1px solid #5A5856;padding:15px 4px;"><a href="https://siraatskitchen.com/collections/bundles?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4us-ft-bundles" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;font-weight:600;color:#F2F2F2;text-decoration:none;">BUNDLES &amp; SETS &nbsp;&rarr;</a></td></tr>
+    <tr><td bgcolor="#282828" style="background-color:#282828;border-top:1px solid #5A5856;padding:15px 4px;"><a href="https://siraatskitchen.com/collections/accessories?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4us-ft-accessories" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;font-weight:600;color:#F2F2F2;text-decoration:none;">ACCESSORIES &nbsp;&rarr;</a></td></tr>
+    <tr><td bgcolor="#282828" style="background-color:#282828;border-top:1px solid #5A5856;border-bottom:1px solid #5A5856;padding:15px 4px;"><a href="https://siraatskitchen.com/pages/third-party-testing?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4us-ft-third-party-testing" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;font-weight:600;color:#F2F2F2;text-decoration:none;">LAB RESULTS &nbsp;&rarr;</a></td></tr>
   </table>
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:28px auto 22px auto;"><tr>
-    <td style="padding:0 16px;"><a href="https://www.facebook.com/siraatskitchen"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/17c00632-f9db-4dcd-a27e-bf0adc4987da.png" width="32" alt="Facebook" style="width:32px;height:32px;"></a></td>
-    <td style="padding:0 16px;"><a href="https://www.instagram.com/siraatskitchen"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/6b905e47-7bf9-4aec-a63b-0538ecc6bd60.png" width="32" alt="Instagram" style="width:32px;height:32px;"></a></td>
+  </td></tr>
+  <tr><td align="center" bgcolor="#282828" style="background-color:#282828;padding:28px 0 22px 0;">
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#282828" style="background-color:#282828;margin:0 auto;"><tr>
+    <td bgcolor="#282828" style="background-color:#282828;padding:0 16px;"><a href="https://www.facebook.com/people/SiraatsKitchen/61567176126958/"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/17c00632-f9db-4dcd-a27e-bf0adc4987da.png" width="32" alt="Facebook" style="width:32px;height:32px;"></a></td>
+    <td bgcolor="#282828" style="background-color:#282828;padding:0 16px;"><a href="https://www.instagram.com/siraatskitchen"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/6b905e47-7bf9-4aec-a63b-0538ecc6bd60.png" width="32" alt="Instagram" style="width:32px;height:32px;"></a></td>
   </tr></table>
-  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:19px;color:#BDB8B0;text-align:center;">
+  </td></tr>
+  <tr><td align="center" bgcolor="#282828" style="background-color:#282828;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:19px;color:#BDB8B0;text-align:center;">
     Free shipping on all orders &middot; 30-day returns &middot; 75-year warranty<br><br>
-    {% unsubscribe 'Unsubscribe' %} &nbsp;|&nbsp; <a href="{% manage_preferences_link %}" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; {% web_view 'View in browser' %}<br>
-    {{ organization.name }} &middot; {{ organization.full_address }}
-  </div>
+    <a href="{% unsubscribe_link %}" style="color:#BDB8B0;">Unsubscribe</a> &nbsp;|&nbsp; <a href="{% manage_preferences_link %}" style="color:#BDB8B0;">Manage preferences</a> &nbsp;|&nbsp; <a href="{% web_view_link %}" style="color:#BDB8B0;">View in browser</a><br>
+    {{ organization.name }} &middot; {{ organization.full_address }}<!--{% today '%Y%m%d%H%M%S' as sk_ref %}--><span style="display:none!important;visibility:hidden;mso-hide:all;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;color:#282828;">ref {{ sk_ref }}</span>
+  </td></tr>
+</table>
 </td></tr>
 
 

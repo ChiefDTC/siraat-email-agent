@@ -647,7 +647,7 @@ def summary(res):
     return c
 
 
-# ------------------------------------------------------------------ achtergronden (10 okt 2026, research/v6-golive/14-gmail-ios.md)
+# ------------------------------------------------------------------ achtergronden (10 okt 2026, research/v6-golive/16-gmail-ios.md)
 # Gmail iPhone toonde de donkere footer WIT: de achtergrond stond alleen als CSS (style="background:#282828") op één <td>. Valt die
 # cel weg (Gmail-trimming van herhaalde inhoud in een thread knipt de structuur open, of een client negeert de CSS-achtergrond), dan
 # staat lichte tekst op wit. Regel: elk gekleurd vlak op <table>/<td>/<th> heeft bgcolor-attribuut ÉN inline background-color met

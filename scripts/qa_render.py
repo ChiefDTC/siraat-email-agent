@@ -27,7 +27,7 @@ Controles per mail:
     Browsermetingen (dark-mode-simulatie, contrast, tap targets, lettergrootte): python3 -I scripts/qa_inbox.py
  h. inbox-preview (9 okt 2026, mail_checks.preview_problems): FOUT bij geen of lege preheader, tekst vóór de preheader, of minder dan
     300 zero-width opvulposities tussen preheader en de eerste andere tekst (topbalk, logo-alt, nav). Ruw en per gerenderde variant.
- i. Gmail-app (10 okt 2026, research/v6-golive/14-gmail-ios.md): FOUT bij een gekleurd vlak dat alleen als CSS op een tabelcel staat
+ i. Gmail-app (10 okt 2026, research/v6-golive/16-gmail-ios.md): FOUT bij een gekleurd vlak dat alleen als CSS op een tabelcel staat
     (geen bgcolor), bgcolor zonder inline background-color, een gekleurde <div>, of lichte tekst zonder donker bgcolor-vlak
     (mail_checks.bg_problems, ruwe HTML). Browser (scripts/qa_mail_shots.js, eerste variant, 375 px): 'gmailios' (alle <style> en
     classes weg, dus geen media queries) en 'gmailtrim' (idem plus Gmail-trimming: de laatste rijen los na een '•••'). FOUT bij een
@@ -225,7 +225,7 @@ def v5_market(flow,mid,k,e,strict=False):
     e['v5']=sum(len(v[0]) for v in W.values())
     return F
 
-def norm(x): return re.sub(r'\s+',' ',x.replace('<!---->','')).strip()
+def norm(x): return re.sub(r'\s+',' ',re.sub(r'ref \d{14}','ref T',x).replace('<!---->','')).strip()   # verzendstempel (footer) mag verschillen
 
 def main():
     ms=mails()

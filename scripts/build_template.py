@@ -152,7 +152,7 @@ def add_utm(x):
         return '%s%s%sutm_source=klaviyo&utm_medium=email&utm_campaign=%s&utm_content=%s-%s%s"'%(m.group(1),u,'&' if '?' in u else '?',camp,mid,blk,term)
     return re.sub(r'(href=")([^"{}]+)"',fix,x)
 k=add_utm(k)
-# Gmail-proof achtergronden (10 okt 2026, research/v6-golive/14-gmail-ios.md): Gmail iPhone toonde de donkere footer wit, omdat #282828
+# Gmail-proof achtergronden (10 okt 2026, research/v6-golive/16-gmail-ios.md): Gmail iPhone toonde de donkere footer wit, omdat #282828
 # alleen als CSS op één <td> stond. Elke <table>/<td>/<th> met een kleur krijgt bgcolor-attribuut EN inline background-color met
 # dezelfde waarde (ontbrekende helft wordt aangevuld). Controle: mail_checks.bg_problems (qa_render, FOUT).
 def bg_attrs(x):

@@ -76,6 +76,7 @@ Let op: de brand guidelines (site) gebruiken Inter voor koppen en Terracotta #C7
 - Steekproef: bij 3,3 procent basis en 3.600 mails per maand zie je een groot verschil (naar 5 procent) in een maand; een klein verschil (naar 4,3 procent) vraagt ongeveer 5.000 mails per arm. Minimaal vier weken laten lopen, geen automatische winnaar.
 - Volgorde van tests per flow: 1 onderwerpregel, 2 wachttijd (7 tegenover 14 dagen via twee paden), 3 incentive-framing.
 - Uitschrijfratio boven 0,5 procent op een flow-mail is een signaal, boven 1 procent is een probleem.
+- Testmails in Gmail (vanaf 10 okt 2026, research/v6-golive/16-gmail-ios.md): twee mails met hetzelfde onderwerp naar hetzelfde adres komen in één thread en Gmail trimt de herhaalde inhoud van de tweede (`•••`), los van de opmaak (lege kaartkolommen, witte footer). Beoordeel alleen de eerste mail van een thread: uniek onderwerp per preview-send of de vorige eerst verwijderen. Gekleurde vlakken altijd als `bgcolor` plus inline `background-color` op `<table>/<td>` (build_template.py vult aan, qa_render.py controleert), nooit alleen CSS of een gekleurde div. QA-simulatie: `qa_mail_shots.js` modi `gmailios` en `gmailtrim`.
 
 ## 7. Overgang van een oude naar een nieuwe flow
 
