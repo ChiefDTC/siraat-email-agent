@@ -150,7 +150,7 @@ def check(k,subj_a,subj_b,prev):
     if subj_b and len(subj_b)>50: B.append('onderwerp B %d tekens (max 50)'%len(subj_b))
     if not prev: B.append('geen PREVIEW in topcomment')
     elif not 40<=len(prev)<=90: B.append('preview %d tekens (40 tot 90)'%len(prev))
-    ph=re.search(r'<div style="display:none;[^"]*">(.*?)(?:&nbsp;|&zwnj;|</div>)',k,re.S)
+    ph=re.search(r'<div style="display:none;[^"]*">(.*?)(?:&nbsp;|&zwnj;|&#847;|</div>)',k,re.S)
     norm=lambda x:re.sub(r'\s+',' ',x.replace('\u2019',"'").replace('\u2018',"'").replace('\u201c','"').replace('\u201d','"')).strip()
     if prev and ph and norm(H.unescape(ph.group(1)))!=norm(prev): W.append('preheader in de HTML wijkt af van PREVIEW')
     for tag in re.findall(r'<img\b[^>]*>',k,re.S):
