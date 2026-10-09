@@ -67,3 +67,4 @@ Bijwerken bij elk nieuw besluit. Datum per regel.
 - Geen eigen Klaviyo-verzendmail: bij fulfillment gaat automatisch een mail met tracking-URL (Floris).
 - Klaviyo default opt-in voor API-inschrijvingen op Single opt-in gezet (Floris, 8 okt 22:35). Shopify-sync naar Email List (single opt-in) gecontroleerd.
 - 9 okt 2026: receptcampagnes gebruiken op verzoek van Floris de knoppen "Shop now" en "Shop the pan" (uitzondering op de copyregel "nooit Shop now"). Eerste receptcampagne: concept B (steak met brown butter mushroom pan sauce), Pan Pro Standard 28 cm.
+- 9 okt 2026: naamgeving eigen campagnes: "Floris | <dag> <Maand> | <Type> | <Doelgroep>", bijv. "Floris | 9 October | Recipe | USA Only".

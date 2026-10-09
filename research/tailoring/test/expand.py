@@ -12,7 +12,7 @@ h=open(src).read()
 P=os.path.join(os.path.dirname(os.path.abspath(src)),'partials')
 d=os.path.dirname(os.path.abspath(src))
 while not os.path.isdir(os.path.join(d,'partials')) and os.path.dirname(d)!=d: d=os.path.dirname(d)
-P=os.path.join(d,'partials'); R='/home/user/siraat-email-agent/klaviyo/templates/partials'
+P=os.path.join(d,'partials'); R=os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','klaviyo','templates','partials')
 h=h.replace('{{HEADER}}',open(os.path.join(P,'header.html')).read()).replace('{{FOOTER}}',open(os.path.join(P,'footer.html')).read())
 # Blokken uit klaviyo/templates/partials/blocks: {{BLOCK:naam key="waarde"}} met [[key]] in het blok
 B=os.path.join(R,'blocks'); SH=os.path.join(R,'shared')
@@ -91,5 +91,20 @@ h=re.sub(r'\{\{BLOCK:([\w-]+)((?:\s+\w+="[^"]*")*)\s*\}\}',blk,h)
 try: h=v5lib.expand(h,FLOW)
 except ValueError as e: sys.exit('v5-macro: %s'%e)
 h=date_macro(h)
+# Preheader (9 okt 2026, research/v6-golive/12-fixes.md): Gmail iPhone toonde na de preview ook de topbalk, de logo-alt en de nav
+# ("A real crust ... one pan. THE WEEKEND PAN · A RECIPE FROM BENJAMIN Siraat COOKWARE SETS ABOUT"), omdat de opvulling maar 8 paren was.
+# Eén vaste verborgen div direct na <body>: preview-tekst + PH_PAIRS keer '&#847;&zwnj;&nbsp;' (zero-width tekens die inbox-previews niet
+# samenvoegen, zodat de previewruimte vol is voordat de eerste bodytekst komt). De bron mag elke stijl/opvulling hebben; die wordt vervangen.
+# Geen preheader of lege preheader = bouwfout. Controle: inbox_checks.preview_problems (qa_render) en mail_checks 'preheader'.
+PH_PAIRS=200; PH_FILL='&#847;&zwnj;&nbsp;'
+PH_STYLE='display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;color:transparent;'
+PH_JUNK=r'(?:&nbsp;|&zwnj;|&zwj;|&shy;|&#\d+;|&#x[0-9a-fA-F]+;|[\s͏­​-‍ ⁠⁣﻿ ])'
+def preheader_fix(x):
+    m=re.search(r'(<body\b[^>]*>)\s*<div style="display:\s*none;[^"]*">(.*?)</div>',x,re.S|re.I)
+    if not m: sys.exit('preheader: geen verborgen preheader-div direct na <body> in %s'%src)
+    t=re.sub(PH_JUNK+r'+$','',m.group(2)).strip()
+    if not re.sub(PH_JUNK,'',re.sub(r'<[^>]+>','',t)).strip(): sys.exit('preheader: lege preheader in %s'%src)
+    return x[:m.start()]+m.group(1)+'\n<div style="%s">%s%s</div>'%(PH_STYLE,t,PH_FILL*PH_PAIRS)+x[m.end():]
+h=preheader_fix(h)
 h=h.replace('</style>',open(os.path.join(B,'_style.css')).read()+'</style>',1)
 open(sys.argv[4],'w').write(h)

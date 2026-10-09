@@ -72,7 +72,7 @@ VARIANTS={'checkout':[('co_pan','kookgerei'),('co_set6','set'),('co_apron','acce
  'welcome':[('none','geen event')],'site':[('none','geen event')],'sunset':[('none','geen event')],'ugc':[('none','geen event')],
  'campaigns':[('none','geen event')]}
 CAMP=os.path.join(ROOT,'klaviyo','templates','campaigns')
-LONG_OK=re.compile(r'^(p2(-safe)?|p1-.*|w0|w2)$')   # PLAYBOOK 12: lengtegrens geldt voor verkoopmails; P2/P2-safe mogen langer, P1, W0, W2 zijn geen verkoopmail (h11)
+LONG_OK=re.compile(r'^(p2(-safe)?|p1-.*|w0|w2|recept-.*)$')   # PLAYBOOK 12: lengtegrens geldt voor verkoopmails; P2/P2-safe mogen langer, P1, W0, W2 en receptcampagnes zijn geen verkoopmail (h11)
 MAXH=3600; MAXH_HARD=3780            # "ruwweg" 3.600: boven 3.600 waarschuwing, boven 3.780 fout
 
 def mails():

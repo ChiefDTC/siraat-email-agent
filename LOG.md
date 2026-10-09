@@ -108,3 +108,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 2026-10-09 · Segment QTNgaV 'v5 · Engaged 90 Days · INT (excl US)' aangemaakt voor receptcampagne INT (10 okt 08:30 lokaal).
 - 2026-10-09 · INCIDENT: receptcampagne US toonde in Gmail-preview na de preheader body-tekst (te korte preheader-opvulling). Oorzaak: QA controleerde alleen aanwezigheid/lengte preheader, niet de inbox-preview; signaal uit 06-deliverability (opvulling ~90 paren) te laag geprioriteerd. Fix loopt voor alle templates + nieuwe QA-check; INT-campagne pas inplannen na fix.
 - 2026-10-09 · Receptcampagne INT 01M4GHF7GENTJH8VNYVG92FXS3 als Draft (template UyNMup/TKGJ7b, preheader-opvulling 200 paren), strategie 10 okt 08:30 lokaal; inplannen door permissiecheck geweigerd, Floris plant zelf na testmail.
+- 2026-10-09 · Campagnes hernoemd: 'Floris | 9 October | Recipe | USA Only' (verzendt) en 'Floris | 10 October | Recipe | INT excl. USA' (Draft).
