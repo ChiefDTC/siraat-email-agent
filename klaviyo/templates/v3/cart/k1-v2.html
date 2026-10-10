@@ -79,13 +79,6 @@
 
 <tr><td class="pad lead" style="padding:26px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">The hammered pattern is the point. Less food touches the metal, so it lets go, and cleanup is a quick wipe with a soft sponge. No coating, so no PFAS and nothing to peel off. Dishwasher? That works too.</td></tr>
 
-<!-- Pan Pro: een zin RVS (closer look weggehaald op 10 okt voor de lengte: het grote productbeeld toont de pan al); andere pannen en sets: de RVS-vergelijking (een vergelijking per flow: RVS alleen in K1) -->
-{% if 'Hammered Pan Pro' in event|lookup:'Product Name' %}
-<tr><td class="pad lead" style="padding:18px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">Stainless steel often needs a soak. This needs a sponge.</td></tr>
-{% elif 'Pan' in event|lookup:'Product Name' or 'Wok' in event|lookup:'Product Name' or 'ookware' in event|lookup:'Product Name' %}
-{{BLOCK:vs kind="steel" pad="30px 44px 6px 44px"}}
-{% endif %}
-
 {{BLOCK:reviews3 set="k1" pad="28px 44px 6px 44px"}}
 
 {{BLOCK:cta label="Return to my cart" url="https://siraatskitchen.com/cart?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-cart&utm_content=k1-cta2" pad="24px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
