@@ -56,3 +56,10 @@ Controle na 13 tot 18: `qa_render.py` (met browser) 61/61 groen; alle 61 gebouwd
 - **"Finish my order"** in k1, k1-acc, k2-new, k2-returning en k3-nocode gaat naar de productpagina (`event.URL`), niet naar de cart. Keuze: knoptekst aanpassen (bijv. "Back to my pan") of cart-permalink `/cart/{{ event.VariantID }}:{{ event.Quantity }}` (vervangt wel de bestaande cart door dat ene product). Zie 05-links.md.
 - **Compare-at $288** (Pan Pro Standard, `{{WAS:standard}}` uit de catalogus) staat niet in DECISIONS als bevestigd anker (daar staat $439 bij $134); bevestigen of niet tonen.
 - **Warranty-pagina** zegt "lifetime warranty", mails en DECISIONS zeggen 75 jaar (ook /pages/about-us: "made to last a lifetime"). Pagina aanpassen of k2-new naar /policies/refund-policy laten linken.
+
+## Fix: storebot-filter op checkoutflow (10 okt 2026, akkoord Floris)
+- Probleem: circa 22 van 90 checkouts per dag komen van Google Merchant Center testbots (adressen op storebotmail.joonix.net). Die kregen checkoutmails en bouncten: C1 34% bounce.
+- Oplossing: op alle 14 mails van QUBUQV (C1 t/m C4, Old Checkout 1 t/m 5, ACC-varianten) een extra filtergroep: profieleigenschap email bevat niet "storebotmail.joonix.net".
+- Controle: diff voor/na toont alleen die extra groep; trigger, profielfilter, splits en delays ongewijzigd. Flow blijft live.
+- Bewust niet gefilterd: verdachte $19-checkouts met generieke namen, want die kunnen echt zijn.
+- Nacontrole: na 24 uur mogen er geen Received Email events meer zijn naar storebot-adressen uit QUBUQV.
