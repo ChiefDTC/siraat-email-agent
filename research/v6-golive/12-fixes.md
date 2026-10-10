@@ -63,3 +63,10 @@ Controle na 13 tot 18: `qa_render.py` (met browser) 61/61 groen; alle 61 gebouwd
 - Controle: diff voor/na toont alleen die extra groep; trigger, profielfilter, splits en delays ongewijzigd. Flow blijft live.
 - Bewust niet gefilterd: verdachte $19-checkouts met generieke namen, want die kunnen echt zijn.
 - Nacontrole: na 24 uur mogen er geen Received Email events meer zijn naar storebot-adressen uit QUBUQV.
+
+## Fix: K1 v2 live (10 okt 2026, akkoord Floris na testmail T2)
+- Flow TZG9Mx, actie 119850627 (K1, message Vb6YFp): template UQkhFj vervangen door k1-v2 (bron klaviyo/templates/v3/cart/k1-v2.html, Klaviyo-kopie RXNZa3, los template XY7Gi7).
+- Inhoud: hero, productkaart en knoppen naar /cart (hele winkelwagen, gift-app), knop "Return to my cart", restore-link naar /cart/VariantID:Qty?storefront=true, grote productkaart met compare-at uit het event (= Shopify-catalogus), RVS-zin en RVS-vergelijking weg, closer look weg.
+- Controle: rest van de actie (onderwerp, preview, filters, afzender) ongewijzigd, flow live, render zonder restanten.
+- Let op: de A/B oud tegen nieuw in de cartflow meet vanaf nu de nieuwe K1. Telling voor K1 opnieuw starten vanaf 10 okt 14:15 UTC.
+- Nog open: Floris test of de restore-link de 4 gifts toevoegt.
