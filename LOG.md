@@ -134,3 +134,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 2026-10-12 10:35 UTC: review-hero kort live in XzHrez via PATCH per variatie-actie (akkoord Floris). A/B blijft live.
 - 2026-10-12 10:55 UTC: reviewmail zonder header live (logo in hero), DECISIONS bijgewerkt.
 - 2026-10-12 11:00 UTC: concurrentenonderzoek gestart (research/concurrenten): agents voor Caraway, Made In, Okura, Plateful, Our Place; Taima-agent geweigerd door beveiliging.
+- 2026-10-12 11:25 UTC: concurrenten-inschrijvingen klaar: Our Place w/c/co + b (Floris), Caraway w/b/c (co gestopt: telefoon verplicht), Made In w/b/c (co idem), Okura co, Plateful co (w/b/c captcha). Taima niet gestart. Dagelijkse inbox-tijdlijn-routine aangemaakt.
