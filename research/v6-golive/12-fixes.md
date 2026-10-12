@@ -76,3 +76,8 @@ Controle na 13 tot 18: `qa_render.py` (met browser) 61/61 groen; alle 61 gebouwd
 - Controle: per actie alleen het percentage veranderd, flows live. Snapshots scratchpad/golive/<flow>-voor-9010.json.
 - Terugdraaien: percentage terug naar 50 (of 0 voor 100% oud) op dezelfde drie acties.
 - Bewaking: dagelijkse routine "Siraat 90/10 bewaking" (trig_01Tjvd8TSPX99Xt8VFTWNgNS) om 09:46 NL, alarm in #claude-mail alleen bij problemen.
+
+## Review-hero korter live (12 okt 2026, expliciet akkoord Floris)
+- XzHrez: de drie berichten in de A/B (acties 119577631, 119577632, 119577635) gekoppeld aan r1-short (bibliotheek W3XpNR; flow-kopieen X3aHU9, Va7A4g, SE3pzL). Was UxfsuQ, SVpzGN, WTnCid.
+- Werkwijze: PATCH per variatie-actie werkt; PATCH op de ab-test-actie zelf wordt geweigerd zolang de test loopt.
+- Controle: onderwerpen ongewijzigd, A/B-test live (50/50), flow live, render zonder restanten, Trustpilot-link aanwezig, preview en bg 0, beelden gelijk aan de bron.
