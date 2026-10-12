@@ -41,3 +41,6 @@ tijd_utc,adres,scenario,actie,product,url,resultaat,opmerking
 "2026-10-12T11:06:38Z","lolagroothuis+ok-co@gmail.com","co","scenario start","","","start","nieuwe browsercontext, en-US, America/Denver, 1280x900"
 "2026-10-12T11:06:44Z","lolagroothuis+ok-co@gmail.com","co","home openen","","https://okuracookware.com/","ok (200)",""
 "2026-10-12T11:07:16Z","lolagroothuis+ok-co@gmail.com","co","geen popup","","https://okuracookware.com/","info","binnen 30 s geen popup"
+"2026-10-12T11:07:22Z","lolagroothuis+ok-co@gmail.com","co","product openen","Hammered Titanium Pan 11 inch (28 cm)","https://okuracookware.com/products/hand-hammered-titanium-pan?variant=47762683232507","ok",""
+"2026-10-12T11:07:27Z","lolagroothuis+ok-co@gmail.com","co","add to cart (knop)","Hammered Titanium Pan 11 inch (28 cm)","https://okuracookware.com/products/hand-hammered-titanium-pan?variant=47762683232507","geen reactie","knop button.okh-atc deed niets; theme-JS deels niet geladen omdat sandbox-proxy o.a. cdn.jsdelivr.net blokkeert; terugval: native productformulier /cart/add verzenden (variant 47762683232507)"
+"2026-10-12T11:07:32Z","lolagroothuis+ok-co@gmail.com","co","add to cart","Hammered Titanium Pan 11 Inch (28 cm) x1","https://okuracookware.com/cart","ok","totaal $107.95"
