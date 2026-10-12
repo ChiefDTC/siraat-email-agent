@@ -127,3 +127,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 2026-10-11 13:01 UTC: nacontrole storebot-filter (routine): 0 mails naar storebot-adressen sinds 10 okt 12:30 UTC, bounces C1 en Old Checkout 1 zie bericht aan Floris.
 - 2026-10-11 21:50 UTC: update. Omzet oud vs nieuw (welcome/browse/cart/checkout): $4,030 vs $4,693, plus $779 alleen-nieuw. Cart nieuw 3 orders $637 vs oud 1 $278 (K1 v2 sinds 10 okt 14:15). Welcome oud 11 orders $3,441 vs nieuw 7 $2,351. Welcome nieuw spam 4/1341 (0,30%).
 - 2026-10-12 09:40 UTC: update. Omzet oud vs nieuw (4 flows) $4,548 vs $5,560 (per ontvanger $1.66 vs $2.01), alleen-nieuw $779. Welcome oud 12 orders $3,764 vs nieuw 8 $2,620, uitschrijvingen 58 vs 30. Advies: browse/cart/checkout naar 90/10 nieuw, welcome 50/50 nog een week. Wacht op akkoord.
+- 2026-10-12 09:50 UTC: browse/cart/checkout naar 90% nieuw (akkoord Floris), welcome 50/50. Dagelijkse bewakingsroutine aangemaakt.

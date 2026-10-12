@@ -70,3 +70,9 @@ Controle na 13 tot 18: `qa_render.py` (met browser) 61/61 groen; alle 61 gebouwd
 - Controle: rest van de actie (onderwerp, preview, filters, afzender) ongewijzigd, flow live, render zonder restanten.
 - Let op: de A/B oud tegen nieuw in de cartflow meet vanaf nu de nieuwe K1. Telling voor K1 opnieuw starten vanaf 10 okt 14:15 UTC.
 - Nog open: Floris test of de restore-link de 4 gifts toevoegt.
+
+## Uitrol: browse, cart en checkout naar 90% nieuw (12 okt 2026 ca. 09:50 UTC, akkoord Floris)
+- Splits (profile-sample) van 50 naar 90 naar de nieuwe arm: browse 119850685 (WdRz5k), cart 119850622 (TZG9Mx), checkout 119850583 (QUBUQV). Welcome blijft 50/50. T02-codesplits (50/50) ongewijzigd.
+- Controle: per actie alleen het percentage veranderd, flows live. Snapshots scratchpad/golive/<flow>-voor-9010.json.
+- Terugdraaien: percentage terug naar 50 (of 0 voor 100% oud) op dezelfde drie acties.
+- Bewaking: dagelijkse routine "Siraat 90/10 bewaking" (trig_01Tjvd8TSPX99Xt8VFTWNgNS) om 09:46 NL, alarm in #claude-mail alleen bij problemen.
