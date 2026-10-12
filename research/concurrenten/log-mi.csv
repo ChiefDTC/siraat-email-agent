@@ -1,0 +1,41 @@
+tijd_utc,adres,scenario,actie,product,url,resultaat,opmerking
+2026-10-12T10:59:44Z,lolagroothuis+mi-w@gmail.com,w,home openen,,https://madeincookware.com/,HTTP 200,nieuwe context
+2026-10-12T11:00:20Z,lolagroothuis+mi-w@gmail.com,w,geen popup,,https://madeincookware.com/,info,geen popup binnen 30s+exit intent; footer gebruikt
+2026-10-12T11:00:28Z,lolagroothuis+mi-w@gmail.com,w,fout,,https://madeincookware.com/,mislukt,page.evaluate: TypeError: Cannot read properties of null (reading 'closest')
+2026-10-12T11:00:57Z,lolagroothuis+mi-w@gmail.com,w,inschrijven footer (Stay in Touch),,https://madeincookware.com/,verzonden,"melding: Thanks! You've been subscribed. (screenshot mi-w-3); scriptfout bij uitlezen melding daarna, inschrijving zelf gelukt om ca 11:00:22Z"
+2026-10-12T11:00:57Z,lolagroothuis+mi-w@gmail.com,w,context sluiten,,https://madeincookware.com/,ok,"context gesloten direct na scriptfout (ca 8s na verzenden, niet de volle 10s)"
+2026-10-12T11:00:57Z,lolagroothuis+mi-w@gmail.com,w,popup-systeem,,https://madeincookware.com/,info,"geen popup; geen Klaviyo/Attentive/Postscript scripts client-side; footer via Next.js server action subscribeToGeneralMarketing met hidden list_id Uyuj8q (Klaviyo-lijst-ID formaat, server-side)"
+2026-10-12T11:01:10Z,lolagroothuis+mi-b@gmail.com,b,home openen,,https://madeincookware.com/,HTTP 200,nieuwe context
+2026-10-12T11:01:50Z,lolagroothuis+mi-b@gmail.com,b,geen popup,,https://madeincookware.com/,info,geen popup binnen 30s+exit intent; footer gebruikt
+2026-10-12T11:01:58Z,lolagroothuis+mi-b@gmail.com,b,inschrijven footer,,https://madeincookware.com/,verzonden (2xx),"melding: Thanks! You’ve been subscribed. | net: POST https://madeincookware.com/ ------WebKitFormBoundaryOC3hIoSjMnSCzGJg
+Content-Disposition: form-data; name=""_1_list_id""
+
+Uyuj8q
+------WebKitFormBoundaryOC3hIoSjMnSCzGJg
+Content-Disposition: form-data; name=""_1_email""
+
+lola | RESP 200 https://analytics.madeincookware.com/g/collect?v=2&tid=G-DFPGDJ8ETZ&gtm=45he6a72v9249624117z89249609149za20kzb9249609149zd9249609149xf3xg4&_p=1791802870841&gcs= | RESP 200 https://analytics.madeincookware.com/g/collect?v=2&tid=G-DFPGDJ8ETZ&gtm=45he6a72v9249624117z89249609149za20kzb9249609149zd9249609149xf3xg4&_p=1791802870841&gcs="
+2026-10-12T11:01:59Z,lolagroothuis+mi-b@gmail.com,b,productpagina bekijken,Carbon Steel Frying Pan 10 inch,https://madeincookware.com/products/carbon-steel-frying-pan/10-inch,HTTP 200,"10 "" Seasoned Carbon Steel Frying Pan - Made In"
+2026-10-12T11:02:22Z,lolagroothuis+mi-b@gmail.com,b,productpagina bekijken,Stainless Clad Frying Pan 12 inch,https://madeincookware.com/products/stainless-steel-frying-pan/12-inch,HTTP 200,"12"" Stainless Steel Frying Pan - Made In"
+2026-10-12T11:02:44Z,lolagroothuis+mi-b@gmail.com,b,productpagina bekijken,CeramiClad Non Stick Frying Pan 10 inch,https://madeincookware.com/products/ceramic-frying-pan/10-inch-black,HTTP 200,Ceramic Non Stick Pans | CeramiClad™ - Made In
+2026-10-12T11:03:05Z,lolagroothuis+mi-b@gmail.com,b,15s wachten,,https://madeincookware.com/products/ceramic-frying-pan/10-inch-black,ok,niets in winkelwagen
+2026-10-12T11:03:20Z,lolagroothuis+mi-b@gmail.com,b,context sluiten,,https://madeincookware.com/products/ceramic-frying-pan/10-inch-black,ok,
+2026-10-12T11:03:39Z,lolagroothuis+mi-c@gmail.com,c,home openen,,https://madeincookware.com/,HTTP 200,nieuwe context
+2026-10-12T11:04:19Z,lolagroothuis+mi-c@gmail.com,c,geen popup,,https://madeincookware.com/,info,geen popup binnen 30s+exit intent; footer gebruikt
+2026-10-12T11:04:27Z,lolagroothuis+mi-c@gmail.com,c,inschrijven footer,,https://madeincookware.com/,verzonden (2xx),"melding: Thanks! You’ve been subscribed. | net: POST https://madeincookware.com/ ------WebKitFormBoundaryKqkD9DMpZTECWtrM
+Content-Disposition: form-data; name=""_1_list_id""
+
+Uyuj8q
+------WebKitFormBoundaryKqkD9DMpZTECWtrM
+Content-Disposition: form-data; name=""_1_email""
+
+lola | RESP 200 https://analytics.madeincookware.com/g/collect?v=2&tid=G-DFPGDJ8ETZ&gtm=45he6a72v9249624117z89249609149za20kzb9249609149zd9249609149xf3xg4&_p=1791803020007&gcs= | RESP 200 https://analytics.madeincookware.com/g/collect?v=2&tid=G-DFPGDJ8ETZ&gtm=45he6a72v9249624117z89249609149za20kzb9249609149zd9249609149xf3xg4&_p=1791803020007&gcs="
+2026-10-12T11:04:29Z,lolagroothuis+mi-c@gmail.com,c,productpagina openen,"Stainless Clad Frying Pan 12 inch (Best Seller, $149)",https://madeincookware.com/products/stainless-steel-frying-pan/12-inch,HTTP 200,"12"" Stainless Steel Frying Pan - Made In"
+2026-10-12T11:04:41Z,lolagroothuis+mi-c@gmail.com,c,add to cart,"Stainless Clad Frying Pan 12 inch (Best Seller, $149)",https://madeincookware.com/products/stainless-steel-frying-pan/12-inch,ok,geklikt op Add to Cart | $149
+2026-10-12T11:04:48Z,lolagroothuis+mi-c@gmail.com,c,winkelwagenpagina openen,"Stainless Clad Frying Pan 12 inch (Best Seller, $149)",https://madeincookware.com/,HTTP 200,product zichtbaar in cart
+2026-10-12T11:05:03Z,lolagroothuis+mi-c@gmail.com,c,15s wachten en context sluiten,"Stainless Clad Frying Pan 12 inch (Best Seller, $149)",https://madeincookware.com/,ok,niets gekocht
+2026-10-12T11:05:43Z,lolagroothuis+mi-c@gmail.com,c,correctie winkelwagen,"Stainless Clad Frying Pan 12 inch (Best Seller, $149)",https://madeincookware.com/cart,redirect naar home,"/cart heeft geen eigen pagina (redirect naar /); vorige regel product zichtbaar was vals positief (menutekst). Wel: winkelwagen-badge 1 (shot mi-c-6). Na Add to Cart verschijnt upsell-modal Protect Your Pan (Pan Protectors $49, Stainless Cleaning Kit $49), modal niet gesloten. Cart is een drawer."
+2026-10-12T11:06:15Z,lolagroothuis+mi-co@gmail.com,co,fout,,about:blank,mislukt,page.goto: net::ERR_TIMED_OUT at https://madeincookware.com/
+2026-10-12T11:06:22Z,lolagroothuis+mi-co@gmail.com,co,home openen,,https://madeincookware.com/,HTTP 200,nieuwe context
+2026-10-12T11:06:31Z,lolagroothuis+mi-co@gmail.com,co,popup sluiten,,https://madeincookware.com/,geen popup,niet ingeschreven
+2026-10-12T11:06:32Z,lolagroothuis+mi-co@gmail.com,co,productpagina openen,"Stainless Clad Frying Pan 12 inch (Best Seller, $149)",https://madeincookware.com/products/stainless-steel-frying-pan/12-inch,HTTP 200,"12"" Stainless Steel Frying Pan - Made In"
