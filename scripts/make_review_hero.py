@@ -2,7 +2,7 @@
 Gebruik: python3 -I scripts/make_review_hero.py [uit.jpg]
 Bron: klaviyo/figma/ai/review-hero-dark-1200.jpg (zelfde flitsfoto als de live hero, al donker, zonder tekst).
 Uitsnede 1200x1020 (y 50..1070): beide gezichten en de pan blijven in beeld; op 375 px is de hero 319 px hoog (was 375 plus 8 px rand, kop en subregel erin).
-In het beeld alleen eyebrow en kop (TT Ramillas). Logo staat in de vaste header, de subregel staat als live tekst onder het beeld."""
+In het beeld logo-lockup (wit, bovenaan, 12 okt: geen header in deze mail op verzoek Floris), eyebrow en kop (TT Ramillas). de subregel staat als live tekst onder het beeld."""
 import sys
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 R='/home/user/siraat-email-agent/'
@@ -29,4 +29,7 @@ for c in eyebrow:
 y+=48+40
 for ln in lines:
     tw=d.textlength(ln,font=fh); d.text(((W-tw)/2,y),ln,font=fh,fill=(255,255,255)); y+=lh
+logo=Image.open(R+'brand/logo/lockup/siraat-lockup-white.png').convert('RGBA')
+lw=300; logo=logo.resize((lw,round(logo.height*lw/logo.width)),Image.LANCZOS)
+im.paste(logo,((W-lw)//2,56),logo)
 im.save(OUT,quality=80,optimize=True,progressive=True); print(OUT)

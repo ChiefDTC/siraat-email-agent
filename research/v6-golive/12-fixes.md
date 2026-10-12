@@ -81,3 +81,4 @@ Controle na 13 tot 18: `qa_render.py` (met browser) 61/61 groen; alle 61 gebouwd
 - XzHrez: de drie berichten in de A/B (acties 119577631, 119577632, 119577635) gekoppeld aan r1-short (bibliotheek W3XpNR; flow-kopieen X3aHU9, Va7A4g, SE3pzL). Was UxfsuQ, SVpzGN, WTnCid.
 - Werkwijze: PATCH per variatie-actie werkt; PATCH op de ab-test-actie zelf wordt geweigerd zolang de test loopt.
 - Controle: onderwerpen ongewijzigd, A/B-test live (50/50), flow live, render zonder restanten, Trustpilot-link aanwezig, preview en bg 0, beelden gelijk aan de bron.
+- 12 okt, vervolg: header weg op verzoek Floris, witte logo-lockup in de hero (Klaviyo-beeld 382456929). Bibliotheek RFcjsS, flow-kopieen R4bgQf, RAz57u, Y9fywM op acties 119577631/632/635. Onderwerpen gelijk, A/B live, render zonder restanten, preview en bg 0. Screenshot img/19-review-zonder-header-375.jpg.

@@ -1,7 +1,7 @@
 <!-- REVIEW R1 KORT (12 okt 2026, research/v6-golive/19-review-hero.md). Opvolger van klaviyo/templates/review-request.html (live in flow XzHrez,
      templates UxfsuQ, SVpzGN, WTnCid). Wijziging op verzoek van Floris: hero lager (1200x1060 in plaats van 1200x1200, alleen eyebrow en kop in
      het beeld), subregel als live tekst onder het beeld, sterren direct onder de intro (PLAYBOOK 10: knop direct onder de hero), stappen daarna.
-     Vaste header en footer uit partials. Hero: scripts/make_review_hero.py. Sterren-routing ongewijzigd (PLAYBOOK 5). -->
+     Geen vaste header (12 okt, uitzondering op verzoek Floris: logo-lockup wit in de hero, zie DECISIONS.md); vaste footer uit partials. Hero: scripts/make_review_hero.py. Sterren-routing ongewijzigd (PLAYBOOK 5). -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -31,11 +31,10 @@
 <tr><td align="center" bgcolor="#FFFFFF" style="padding:8px 0 32px 0;background-color:#FFFFFF;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" bgcolor="#F8F7F2" style="width:600px;max-width:600px;background-color:#F8F7F2;">
 
-{{HEADER}}
 
 <!-- HERO 1200x1060 (make_review_hero.py): eyebrow en kop in TT Ramillas in het beeld, geen link -->
 <tr><td bgcolor="#2B2929" style="padding:0;background-color:#2B2929;">
-  <img src="{{IMG}}/review-hero-short.jpg" width="600" alt="Thank you for your order. Win your purchase amount back." style="width:100%;max-width:600px;height:auto;display:block;border:0;">
+  <img src="{{IMG}}/review-hero-short.jpg" width="600" alt="Siraat. Thank you for your order. Win your purchase amount back." style="width:100%;max-width:600px;height:auto;display:block;border:0;">
 </td></tr>
 
 <!-- INTRO: kop (beeld) en de subregel die eerst in de hero stond -->
