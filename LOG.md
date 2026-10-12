@@ -133,3 +133,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 2026-10-12 10:25 UTC: review-hero kort: template W3XpNR 'v4 · Review R1 kort (12 okt)' aangemaakt. Koppelen aan XzHrez via API geweigerd (A/B-test live: 'Cannot update the main action while the experiment is live'; flow-templates niet patchbaar). Floris koppelt in de UI. Flow ongewijzigd live.
 - 2026-10-12 10:35 UTC: review-hero kort live in XzHrez via PATCH per variatie-actie (akkoord Floris). A/B blijft live.
 - 2026-10-12 10:55 UTC: reviewmail zonder header live (logo in hero), DECISIONS bijgewerkt.
+- 2026-10-12 11:00 UTC: concurrentenonderzoek gestart (research/concurrenten): agents voor Caraway, Made In, Okura, Plateful, Our Place; Taima-agent geweigerd door beveiliging.
