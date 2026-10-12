@@ -39,3 +39,5 @@ tijd_utc,adres,scenario,actie,product,url,resultaat,opmerking
 "2026-10-12T11:03:29Z","lolagroothuis+ok-co@gmail.com","co","context gesloten","","","ok",""
 "2026-10-12T11:06:31Z","","alle","analyse popup-systeem","","https://static-forms.klaviyo.com/forms/api/v7/R89BuF/full-forms","info","Klaviyo onsite script geladen (company_id R89BuF) maar Klaviyo-formulieren uitgeschakeld (full_forms leeg, enabled false); geen Attentive/Postscript/Privy/Justuno; theme popup.js aanwezig maar geen popup-elementen; dus geen inschrijfpopup. Klaviyo synct Shopify e-mail- en SMS-consent (sync_email_consent true). Footerformulier is Shopify contact-form met hCaptcha; js.hcaptcha.com wordt door de sandbox-proxy geblokkeerd, vandaar Missing CAPTCHA token"
 "2026-10-12T11:06:38Z","lolagroothuis+ok-co@gmail.com","co","scenario start","","","start","nieuwe browsercontext, en-US, America/Denver, 1280x900"
+"2026-10-12T11:06:44Z","lolagroothuis+ok-co@gmail.com","co","home openen","","https://okuracookware.com/","ok (200)",""
+"2026-10-12T11:07:16Z","lolagroothuis+ok-co@gmail.com","co","geen popup","","https://okuracookware.com/","info","binnen 30 s geen popup"
