@@ -1,0 +1,78 @@
+<!-- V5-STRICT | W1-V2 (13 okt 2026, research/v6-golive/20-welcome-analyse.md). Voorstel nieuwe A/B-variant tegen Old · Welcome 1. NIET LIVE, niet in Klaviyo. | SUBJECT: {{ first_name|default:'Hi' }}, here's your 10% | SUBJECTS (5 types): OFFER '{{ first_name|default:'Hi' }}, here's your 10%' / SPEC 'HI10: 10% off, plus 4 gifts' / Q 'Already picked a pan?' / STORY '"The last pans we ever have to purchase"' / C+B 'Thanks for joining. Your code is inside.' | PREVIEW: Thanks for joining. HI10 takes 10% off on top of the sale, sets included. | WAAROM: twee derde van de welcome-kopers bestelt binnen een uur na W1 (pop-up tijdens het winkelen). W1 moet dus binnen 5 minuten de code geven, herkenbaar in onderwerp en eerste scherm, met een link die de code op hun bestaande cart zet. Bewijs (PFAS-rapport) kort, daarna de twee producten die welcome-kopers echt kopen (Pan Pro, 6-delige set). | TIMING: 5 minuten na inschrijving (zoals nu). | OPBOUW: codebalk, header, aanbod met code boven de vouw, cartlink, Card Game-regel, korte noot van Benjamin met rapport, twee productkaarten, gifts, 2 reviews, knop, ondertekening, footer. | FILTERS: als W1 [AB] (Placed Order 0 sinds flowstart, geen checkout- of cartmail in 1 dag, skip). | MARKT: profiel-helper | UTM: utm_campaign=v4-welcome, utm_content=w1v2-<blok>, utm_term=t04-c -->
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
+<title>Here's your 10%</title>
+<!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
+  body{margin:0;padding:0;background:#FFFFFF;-webkit-text-size-adjust:100%;}
+  table{border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;}
+  img{border:0;display:block;line-height:100%;outline:none;text-decoration:none;}
+  a{color:#AC3B19;}
+  @media only screen and (max-width:620px){
+    .w{width:100%!important;}
+    .pad{padding-left:22px!important;padding-right:22px!important;}
+    .h2{font-size:30px!important;line-height:34px!important;}
+    .navhide{display:none!important;}
+    .lead{font-size:16px!important;line-height:25px!important;}
+    .cs-q{font-size:18px!important;line-height:24px!important;}
+  }
+</style>
+</head>
+<body style="margin:0;padding:0;background:#FFFFFF;">
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Thanks for joining. HI10 takes 10% off on top of the sale, sets included.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
+<tr><td align="center" style="padding:8px 0 32px 0;">
+<table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
+
+{{BLOCK:codebar text="YOUR WELCOME 10% &middot; CODE"}}
+
+{{HEADER}}
+
+<!-- OPENER: wie net inschreef zoekt de code. Code en knop boven de vouw, geen hero-beeld (sneller, en de code is live tekst) -->
+<tr><td class="pad" align="center" style="padding:30px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;text-align:center;">Thanks for joining, {{ first_name|default:'and welcome' }}. Here is the code you came for.</td></tr>
+
+{{BLOCK:offer pad="18px 44px 4px 44px" eyebrow="YOUR WELCOME OFFER" headline="10% on top of the sale" code="HI10" note="Works on everything, sets included. {{IF:PRICED}}The 6-piece set: {{PRICE:set6}}, or {{PRICE:set6*0.9}} with HI10. {{ENDIF}}Applied with the button." label="Claim my 10% + gifts" url="https://siraatskitchen.com/discount/HI10?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw1v2-offer%26utm_term%3Dt04-c"}}
+
+<!-- CARTLINK: voor wie al iets in de cart heeft (32 van 49 kopers in de oude arm bestelden binnen een uur na W1) -->
+<tr><td class="pad" align="center" style="padding:12px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;color:#282828;text-align:center;">Already something in your cart? <a href="https://siraatskitchen.com/discount/HI10?redirect=/cart%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw1v2-cart%26utm_term%3Dt04-c" style="color:#AC3B19;font-weight:600;">Apply my 10% to my cart &rarr;</a></td></tr>
+<tr><td class="pad" align="center" style="padding:8px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;text-align:center;">{{FRICTION}}</td></tr>
+
+<!-- CARD GAME: één regel (besluit 7 okt) -->
+<tr><td class="pad" style="padding:18px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#727272;text-align:center;"><img src="{{SHARED}}/icon-gift.png" width="18" height="18" alt="" style="display:inline-block;vertical-align:-4px;width:18px;height:18px;">&nbsp;Your Card Game entry is in, with a chance to get your order refunded.</td></tr>
+
+<!-- NOOT VAN BENJAMIN: kort, één idee (nothing to wear off, met het rapport als bewijs) -->
+<tr><td class="pad lead" style="padding:26px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;"><p style="margin:0 0 14px 0;">I&rsquo;m Benjamin, I started Siraat&rsquo;s Kitchen. One thing before you pick.</p><p style="margin:0 0 14px 0;">Our pans have a pure titanium cooking surface with no coatings. There is nothing on it to wear off. Light Labs tested that surface for 31 PFAS compounds, and every one came back below the detection limit. <a href="https://siraatskitchen.com/pages/third-party-testing?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-welcome&utm_content=w1v2-report&utm_term=t04-c" style="color:#AC3B19;">Report no. 25895, read it yourself &rarr;</a></p><p style="margin:0;">That is why every pan is covered for 75 years. Changed your mind? Unused pans can go back within 30 days.</p></td></tr>
+
+<!-- WAAR WELCOME-KOPERS MEE BEGINNEN (orders 9 tot 13 okt: Pan Pro en 6-delige set samen ruim de helft) -->
+<tr><td class="pad" align="center" style="padding:30px 44px 2px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">WHERE MOST PEOPLE START</td></tr>
+
+{{BLOCK:productcard pad="12px 44px 6px 44px" img="card-panpro-bestseller.jpg" alt="Titanium Hammered Pan Pro" pill="" name="The Pan Pro, {{SIZE:28}}" sub="One pan for eggs, steak and everything between." now="{{PRICE:standard}}" note="{{IF:PRICED}}{{PRICE:standard*0.9}} with HI10{{ENDIF}}" link="Get 10% off this pan" url="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw1v2-prod-panpro%26utm_term%3Dt04-c"}}
+
+{{BLOCK:productcard pad="8px 44px 6px 44px" img="card-set6.jpg" alt="The 6-piece set: Mini, Small and Large pans with three lids" pill="FALL SALE" name="The 6-piece set" sub="Buy 2, get 4 free: Mini, Small and Large, each with its own lid. Six pieces." now="<span style='word-break:break-all;'>{{PRICE:set6}}</span>" was="<span style='word-break:break-all;'>{{WAS:set6}}</span>" link="See the 6-piece set" url="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-pan-set-with-lids-6-pcs%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw1v2-prod-set6%26utm_term%3Dt04-c"}}
+
+{{BLOCK:gifts5 style="row" pad="18px 44px 4px 44px" line="Every order comes with {{GIFTS:total}}."}}
+
+{{BLOCK:reviews3 set="w1-a" n="2" pad="22px 44px 6px 44px"}}
+
+{{BLOCK:cta label="Claim my 10% + gifts" url="https://siraatskitchen.com/discount/HI10?redirect=/collections/all%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-welcome%26utm_content%3Dw1v2-cta%26utm_term%3Dt04-c" pad="22px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
+
+<!-- SIGN-OFF -->
+<tr><td class="pad" style="padding:24px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+  Not sure which size? Reply and tell us who you cook for. Our team will help.<br><br>
+  Benjamin<br><span style="color:#727272;">Founder, Siraat&rsquo;s Kitchen</span><br><br><span style="color:#727272;">P.S. Tomorrow: why I started making this pan.</span>
+</td></tr>
+
+{{FOOTER}}
+
+</table>
+</td></tr>
+</table>
+</body>
+</html>
