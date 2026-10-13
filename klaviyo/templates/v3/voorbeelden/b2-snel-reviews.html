@@ -1,0 +1,60 @@
+<!-- VOORBEELD B2 (13 okt 2026, research/v6-golive/21-voorbeelden-checkout-browse.md) | NIET LIVE | V5-STRICT | Idee: als B1 (bekeken pan groot), plus korte social proof: twee echte Trustpilot-reviews over de Pan Pro (R169 Michael G., R138 Tammy) | SUBJECT_A: Still thinking about this pan? (gelijk aan B1, zodat alleen de reviews verschillen) | SUBJECT_B: "The egg released completely" | SUBJECTS (5 types): curiosity+benefit 'What happened to Michael's first egg' / specificity 'Tammy is on her 4th pan' / question 'Still thinking about this pan?' / story '"The egg released completely"' / offer 'Get this pan with 10% off' | PREVIEW: Michael tried an egg the next morning. Tammy is on her 4th pan. | SEND: WdRz5k stap 1, 45 tot 60 minuten na Viewed Product, kookgerei-tak | REVIEWS: letterlijk uit content/reviews/top.md (5 sterren, 119 en 101 tekens, verschil 18) | UTM: utm_content=vb2-<blok> -->
+<!-- MARKET-SIGNAL: browse -->
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
+<title>The pan you viewed</title>
+<!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
+  body{margin:0;padding:0;background:#FFFFFF;-webkit-text-size-adjust:100%;}
+  table{border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;}
+  img{border:0;display:block;line-height:100%;outline:none;text-decoration:none;}
+  a{color:#AC3B19;}
+  @media only screen and (max-width:620px){
+    .w{width:100%!important;}
+    .pad{padding-left:22px!important;padding-right:22px!important;}
+    .navhide{display:none!important;}
+    .lead{font-size:16px!important;line-height:25px!important;}
+    .h2{font-size:30px!important;line-height:34px!important;}
+  }
+</style>
+</head>
+<body style="margin:0;padding:0;background:#FFFFFF;">
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;">Michael tried an egg the next morning. Tammy is on her 4th pan.</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background-color:#FFFFFF;">
+<tr><td align="center" style="padding:8px 0 32px 0;">
+<table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background-color:#F8F7F2;" bgcolor="#F8F7F2">
+
+{{BLOCK:codebar}}
+
+{{HEADER}}
+<!-- PRODUCT GROOT IN BEELD (HexClad-idee): precies de bekeken pan, beeld uit event.ImageURL op volle breedte (Shopify width=1200), naam, prijs; geen gemaakte hero -->
+<tr><td class="pad" style="padding:26px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">YOU WERE LOOKING AT</td></tr>
+<tr><td class="pad h2" style="padding:8px 44px 16px 44px;font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:34px;line-height:38px;color:#282828;text-align:center;">{% firstof event.Name event.ProductName 'Titanium Hammered Pan Pro' %}</td></tr>
+<tr><td class="pad" style="padding:0 44px 0 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border:1px solid #ECE7DD;">
+    <tr><td style="padding:0;"><a href="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Dvb2-product"><img src="{% if event.ImageURL %}{{ event.ImageURL }}{% if '?' in event.ImageURL %}&{% else %}?{% endif %}width=1200{% else %}https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-40a5-9ad7-523bdddc54d4.webp?v=1781682831&width=1200{% endif %}" width="510" alt="{% firstof event.Name event.ProductName 'Titanium Hammered Pan Pro' %}" style="display:block;width:100%;max-width:510px;height:auto;"></a></td></tr>
+    <tr><td style="padding:14px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;text-align:center;">{% if 'Hammer' in event.Name or 'Pan' in event.Name or 'Pot' in event.Name or 'ookware' in event.Name or 'Everything' in event.Name or 'fanne' in event.Name or 'Prep Bundle' in event.Name %}Pure titanium cooking surface &middot; No coatings &middot; 75-year warranty{% else %}From Siraat&rsquo;s Kitchen &middot; 30-day returns{% endif %}</td></tr>
+    <tr><td style="padding:2px 16px 16px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:20px;line-height:28px;font-weight:600;color:#282828;text-align:center;">{{IF:US}}{{ event.Price }}{{ELIF:UK,EU}}{% if '£' in event.Price or '€' in event.Price %}{{ event.Price }}{% endif %}{{ENDIF}}</td></tr>
+  </table>
+</td></tr>
+<tr><td class="pad" style="padding:12px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#282828;text-align:center;"><b>HI10</b> takes an extra 10% off. Already applied with the button.</td></tr>
+{{BLOCK:cta label="Get 10% off this {% with s=event.Name %}{% if 'Set' in s or 'Pcs' in s or 'Duo' in s or 'Everything' in s or 'Edition' in s %}set{% elif 'Pan' in s or 'Wok' in s %}pan{% elif 'Pot' in s %}pot{% else %}one{% endif %}{% endwith %}" url="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Dvb2-cta1" pad="16px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
+{{BLOCK:reviews3 ids="R169,R138" n="2" eyebrow="IN THEIR WORDS" pad="28px 44px 6px 44px"}}
+<tr><td class="pad" style="padding:8px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#727272;text-align:center;">Every order comes with {{GIFTS:total}}.</td></tr>
+{{BLOCK:cta label="Get 10% off this {% with s=event.Name %}{% if 'Set' in s or 'Pcs' in s or 'Duo' in s or 'Everything' in s or 'Edition' in s %}set{% elif 'Pan' in s or 'Wok' in s %}pan{% elif 'Pot' in s %}pot{% else %}one{% endif %}{% endwith %}" url="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://siraatskitchen.com'|default:'/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-browse%26utm_content%3Dvb2-cta2" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
+<tr><td class="pad" style="padding:20px 44px 30px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;text-align:center;">Not sure about the size? Reply and our team will help.<br><br>Benjamin<br><span style="color:#727272;">Founder, Siraat&rsquo;s Kitchen</span></td></tr>
+
+{{FOOTER}}
+
+</table>
+</td></tr>
+</table>
+</body>
+</html>

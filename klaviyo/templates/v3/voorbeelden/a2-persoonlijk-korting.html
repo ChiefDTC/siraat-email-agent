@@ -1,0 +1,61 @@
+<!-- VOORBEELD A2 (13 okt 2026, research/v6-golive/21-voorbeelden-checkout-browse.md) | NIET LIVE | Idee: persoonlijke brief van Benjamin met de korting al in de link (Plateful: 10% in de link, 2 dagen geldig) | SUBJECT_A: 10% off your cart, for 48 hours (gelijk aan C4-US, zodat alleen de vorm verschilt) | SUBJECT_B: I put 10% on your cart | SUBJECTS (5 types): curiosity+benefit 'No code to type this time' / specificity '10% on your cart. Already in the link. 48 hours.' / question 'Still deciding on your cart?' / story 'A note from Benjamin, with 10% in it' / offer 'I put 10% on your cart' | PREVIEW: No code to type. It's already in the link, for 48 hours. | SEND: QUBUQV stap 6K, US-tak, code-arm A, als A/B-variant van C4-US (dag 5, 09:00). COUPON: dezelfde pool C4_10_48H (uniek, 10%, één keer, vervalt 48 uur na toewijzing), dus geen nieuwe coupon nodig; daarna Update profile last_flow_code_at zoals nu | LINK: responsive_checkout_url + &discount=<unieke code> (zelfde vorm als C4, bewezen in de testrun); terugval /checkout | HEADER: klein lockup als briefhoofd [VOORSTEL]; vaste footer blijft -->
+<!-- MARKET-SIGNAL: checkout -->
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
+<title>10% on your cart</title>
+<!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
+  body{margin:0;padding:0;background:#FFFFFF;-webkit-text-size-adjust:100%;}
+  table{border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;}
+  img{border:0;display:block;line-height:100%;outline:none;text-decoration:none;}
+  a{color:#AC3B19;}
+  @media only screen and (max-width:620px){
+    .w{width:100%!important;}
+    .pad{padding-left:22px!important;padding-right:22px!important;}
+    .navhide{display:none!important;}
+    .lead{font-size:16px!important;line-height:25px!important;}
+    .h2{font-size:30px!important;line-height:34px!important;}
+  }
+</style>
+</head>
+<body style="margin:0;padding:0;background:#FFFFFF;">
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;">No code to type. It's already in the link, for 48 hours.</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background-color:#FFFFFF;">
+<tr><td align="center" style="padding:8px 0 32px 0;">
+<table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background-color:#F8F7F2;" bgcolor="#F8F7F2">
+<!-- BRIEFHOOFD (voorstel, Floris beslist): klein logo-lockup links, geen navigatie, geen banner. Alternatief: helemaal geen header. Nooit alleen woordmerk of monogram. -->
+<tr><td class="pad" bgcolor="#F8F7F2" style="padding:26px 44px 6px 44px;background-color:#F8F7F2;"><a href="https://siraatskitchen.com"><img src="{{SHARED}}/logo-black-cream.png" width="104" alt="Siraat" style="display:block;width:104px;height:auto;border:0;"></a></td></tr>
+<tr><td class="pad lead" style="padding:22px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;"><p style="margin:0 0 14px 0;">Hi {{ first_name|default:'there' }},</p><p style="margin:0 0 14px 0;">Your cart is still saved. I&rsquo;d rather you cook with it than keep thinking about it, so I&rsquo;ve put 10% on it.</p><p style="margin:0;">There&rsquo;s no code to copy. It&rsquo;s already in this link:</p></td></tr>
+<tr><td class="pad" style="padding:16px 44px 2px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:17px;line-height:26px;font-weight:600;"><a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/checkout?ref=email' }}&discount={% coupon_code 'C4_10_48H' %}&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=a2-link1" style="color:#AC3B19;text-decoration:underline;">Complete my order with 10% off &rarr;</a></td></tr>
+<tr><td class="pad" style="padding:2px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;">{{FRICTION:code}}</td></tr>
+<tr><td class="pad" style="padding:16px 44px 6px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#727272;">What&rsquo;s in your cart:</td></tr>
+<!-- WINKELMAND als platte factuur (Plateful-idee): alleen betaalde regels; bedrag alleen bij USD (zoals BLOCK:cart) -->
+<tr><td class="pad" style="padding:4px 44px 4px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border:1px solid #ECE7DD;">
+    {% for li in event.extra.line_items %}{% if li.price > 0 %}
+    <tr>
+      <td style="padding:12px 14px 4px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">{{ li.title }}{% if li.quantity > 1 %} &times; {{ li.quantity }}{% endif %}</td>
+      <td align="right" valign="top" style="padding:12px 14px 4px 8px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;white-space:nowrap;">{% if event.extra.presentment_currency == 'USD' %}${{ li.line_price|floatformat:2 }}{% endif %}</td>
+    </tr>
+    {% endif %}{% endfor %}
+    <tr><td colspan="2" style="padding:8px 14px 12px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;">10% comes off at checkout. Plus {{GIFTS:total}}, included.</td></tr>
+  </table>
+</td></tr>
+<tr><td class="pad lead" style="padding:22px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;"><p style="margin:0 0 14px 0;">The 10% is made for you and works once, so it has an end date. It runs for 48 hours after this email, until {{DATE:2:l}} morning. After that, the regular sale price applies.</p><p style="margin:0 0 14px 0;">Two promises, so you can decide without worrying:</p><p style="margin:0 0 14px 0;"><b>Changed your mind?</b> Send it back unused within 30 days for a full refund.</p><p style="margin:0 0 14px 0;"><b>Something wrong?</b> If it arrives damaged or defective in the first 30 days, we refund or replace it and pay the shipping. After that, the 75-year warranty covers it.</p><p style="margin:0;">Anything else, just reply and our team will help.</p></td></tr>
+<tr><td class="pad" style="padding:20px 44px 30px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">Benjamin<br><span style="font-size:14px;color:#727272;">Founder, Siraat&rsquo;s Kitchen</span></td></tr>
+<tr><td class="pad" style="padding:0 44px 30px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:22px;color:#727272;">P.S. Same link, same 10%: <a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/checkout?ref=email' }}&discount={% coupon_code 'C4_10_48H' %}&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=a2-link2" style="color:#AC3B19;">back to your cart</a>.</td></tr>
+
+{{FOOTER}}
+
+</table>
+</td></tr>
+</table>
+</body>
+</html>
