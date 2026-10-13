@@ -22,6 +22,13 @@ Screenshot van het geheel: `research/figma/alle-emails-overzicht.png` (verkleind
 - **W4-INT**: na 5 min + 1 d (10:00) + 2 d (09:00) + 3 d (09:00). Onderwerp: Who are you cooking for?
 - **W5**: na 5 min + 1 d (10:00) + 2 d (09:00) + 3 d (09:00) + 4 d (09:00). Onderwerp: Tammy is on her fourth pan
 
+### Rij 1b · W1 v2 voorstel (13 okt)
+[Naar het voorstel](https://www.figma.com/design/oaxnBkz3MAbePRnorCrQwz?node-id=25-2) · Frame "W1 v2 proposal (Oct 13)" direct onder rij 1 (node 25:2). Voor Floris: drie keer welkomstmail 1 naast elkaar, labels met timing, onderwerp, preview en twee regels "what changed" (uit research/v6-golive/20-welcome-analyse.md). Niet in Klaviyo.
+
+- **W1 · current (variant A)**: kopie van de render uit rij 1. Onderwerp: No PFAS. Here's the paper. And 10%.
+- **Old · Welcome 1** (template YrrJiM): live template via GET /api/templates en Klaviyo template-render (Sarah), 600 px 2x. Onderwerp: `{{ first_name }}`, Thanks For Joining Us. Code zit in de beelden.
+- **W1 v2 · proposal**: klaviyo/templates/v3/welcome/w1-v2-preview.html, 600 px 2x, volle lengte, code in tekst gemaskeerd. Onderwerp: `{{ first_name }}`, here's your 10%.
+
 ### Rij 2 · v4 · Browse abandonment (WdRz5k), 5 mails
 [Naar de rij](https://www.figma.com/design/oaxnBkz3MAbePRnorCrQwz?node-id=2-66) · Trigger: Product bekeken, niet in cart. 90% nieuw sinds 12 okt. B1 A/B op onderwerp, B2 alleen wie in B1 klikte krijgt een eigen code (code/nocode-test T02).
 
