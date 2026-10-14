@@ -145,4 +145,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 2026-10-13 10:30 UTC: Figma 'Siraat · All emails': frame "W1 v2 proposal (Oct 13)" (node 25:2) direct onder de Welcome-rij met huidige W1 (A), Old · Welcome 1 (Klaviyo template-render YrrJiM, alleen gelezen) en W1 v2 (lokale render 600 px). Link in research/figma/alle-emails.md.
 - 2026-10-13 22:10 UTC: update. Per ontvanger nieuw vs oud: browse $0.54 vs 0, cart $2.52 vs $1.43, checkout $4.96 vs $4.35, welcome toegeschreven $1.28 vs $2.29 (alle orders per W1-ontvanger gelijk volgens 20-welcome-analyse). Checkout-bounce nieuw 24% door bots.
 - 2026-10-14 07:50 UTC: 90/10-bewaking: splits 90, live. Checkout-bounce nieuw 30% sinds switch (bots), gepost in #claude-mail. Per ontvanger sinds switch: cart nieuw $2.32 vs oud $0, checkout $2.40 vs $2.61. Geen terugdraaien.
-- 14 okt 2026 08:45 UTC: concurrenten-tijdlijn dag 2, 8 nieuwe mails (Our Place 4, HexClad 2, Caraway 1 + welkom 2 op w/c), overzicht bijgewerkt.
+- 14 okt 2026 08:45 UTC: concurrenten-tijdlijn dag 2, 8 nieuwe mails (Our Place 5, HexClad 2, Caraway 1), overzicht bijgewerkt.
