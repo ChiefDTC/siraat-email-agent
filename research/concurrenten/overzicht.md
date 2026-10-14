@@ -1,4 +1,4 @@
-# Concurrenten-inbox: overzicht na dag 1 (stand 13 okt 2026, ca. 07:00 UTC)
+# Concurrenten-inbox: overzicht na dag 2 (stand 14 okt 2026, ca. 08:45 UTC)
 
 Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmail.com, per regel in `tijdlijn.csv`. Acties uit `log-*.csv` (HexClad en Our Place b handmatig door Floris, geen log). Kortingscodes staan nergens uitgeschreven.
 
@@ -6,9 +6,9 @@ Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmai
 
 | Merk | w | b | c | co | Totaal | Status inschrijving |
 |---|---|---|---|---|---|---|
-| HexClad | 2 | 2 | 2 | n.v.t. | 6 | w/b/c handmatig (Floris), co niet gedaan |
-| Our Place | 1 | 2 | 1 | 0 | 4 | alles gelukt; c pas om 11:18 in winkelwagen |
-| Caraway | 2 (op hex-w) | 0 | 0 | 0 | 2 | w/b/c via footer "gelukt", maar geen enkele mail op cw-adressen; beide Caraway-mails kwamen op hex-w binnen |
+| HexClad | 3 | 3 | 2 | n.v.t. | 8 | w/b/c handmatig (Floris), co niet gedaan |
+| Our Place | 2 | 5 | 2 | 0 | 9 | alles gelukt; c pas om 11:18 in winkelwagen |
+| Caraway | 3 (op hex-w) | 0 | 0 | 0 | 3 | w/b/c via footer "gelukt", maar geen enkele mail op cw-adressen; beide Caraway-mails kwamen op hex-w binnen |
 | Made In | 0 | 0 | 0 | 0 | 0 | w/b/c footer "Thanks! You've been subscribed", co gestopt (telefoon verplicht) |
 | Okura | 0 | 0 | 0 | 0 | 0 | w/b/c captcha, alleen co (checkout zonder betaling, opt-in aan) |
 | Plateful | 0 | 0 | 0 | 1 | 1 | w/b/c captcha, co gelukt |
@@ -18,16 +18,23 @@ Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmai
 
 | Adres | 1e mail | 2e mail | 3e mail |
 |---|---|---|---|
-| hex-w | 0,0 welkom (benadering) | 1,5 browse "Still thinking about it?" | |
-| hex-b | 0,0 welkom (benadering) | 1,0 browse "Great choice, chef!" | |
-| hex-c | 0,0 welkom (benadering) | 0,7 cart "Your kitchen needs this!" | |
-| Caraway (hex-w) | 0,0 welkom "Greetings From Caraway" | 12,0 "Our Top Caraway Picks" | |
-| op-b | 0,0 welkom (benadering) | 4,0 browse "You Left Before the Good Part" | |
-| op-w | 0,07 welkom (4 min na popup) | | |
-| op-c | 0,08 welkom | (nog geen cartmail, ca. 20 uur na winkelwagen) | |
+| hex-w | 0,0 welkom (benadering) | 1,5 browse "Still thinking about it?" | 25,6 browse 2 "The last cookware you'll ever need" |
+| hex-b | 0,0 welkom (benadering) | 1,0 browse "Great choice, chef!" | 25,0 browse 2 "Lasts a Lifetime – Guaranteed!" |
+| hex-c | 0,0 welkom (benadering) | 0,7 cart "Your kitchen needs this!" | (geen cart 2 na 46 uur) |
+| Caraway (hex-w) | 0,0 welkom "Greetings From Caraway" | 12,0 "Our Top Caraway Picks" | 36,1 "Are You Cooking Clean?" (PFAS-vergelijking) |
+| op-b | 0,0 welkom (benadering) | 4,0 browse "You Left Before the Good Part" | 24,0 welkom 2 "Did you hear?", 28,0 browse 2 "We Can't Wait Forever 💔", 42,4 "Party of One" (campagne minis) |
+| op-w | 0,07 welkom (4 min na popup) | 24,2 welkom 2 "Did you hear?" | |
+| op-c | 0,08 welkom | 24,2 welkom 2 "Did you hear?" | (nog steeds geen cartmail na 45 uur) |
 | pf-co | 12,5 abandoned checkout | | |
 
 HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte actie lag rond 10:30 tot 10:38 UTC, dus de browse- en cartmails komen eerder 0,7 tot 1,5 uur na de actie dan later.
+
+## Patroon na dag 2
+
+- **Vaste stap van 24 uur.** Our Place (welkom 2 en browse 2), HexClad (browse 2) en Caraway (welkom 2 naar 3) sturen hun vervolgmail allemaal ongeveer 24 uur na de vorige. Niemand gebruikt nog een kortingscode als tweede stap.
+- **HexClad browse 2 = garantie in plaats van korting.** Onderwerpen "Lasts a Lifetime – Guaranteed!" en "The last cookware you'll ever need", met hetzelfde bekeken product, reviews en "Complete your order".
+- **Our Place stuurt een verlopen sale door.** "Did you hear?" en "We Can't Wait Forever 💔" duwen October Prime Deals terwijl de kleine lettertjes zeggen dat die op 12 okt 23:59 PT eindigde. Slordig, en de browse 2 toont nog steeds geen bekeken product.
+- **Caraway welkom 3 is materiaal-educatie.** Traditionele non-stick (PFAS/PTFE) tegenover hun keramiek, "getest op 220+ PFAS", plus vaste dollarbedragen korting op sets ($95 tot $190) zonder code.
 
 ## Korting: wanneer en hoe hoog
 
@@ -50,9 +57,13 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 4. **De welkomstmail als "You're in".** HexClad en Our Place maken van de welkomstmail direct de toegang tot de lopende sale. Siraat kan tijdens een sale een korte eerste welkomstmail sturen die begint met de actie en pas daarna het verhaal van Benjamin vertelt.
 5. **Beloning voor de tweede aankoop in de welkomstreeks.** Caraway geeft geen welkomstkorting, maar wel $50 op een tweede aankoop boven $300. Siraat kan zo'n bundel- of tweede-pan-beloning noemen naast de 75 jaar garantie en 30 dagen retour, zonder de eerste marge weg te geven.
 
+6. **Browse 2 na 24 uur met garantie als hoofdboodschap.** HexClad zet "Lasts a Lifetime" in het onderwerp. Siraat heeft een sterker getal: 75 jaar garantie. Een tweede browse-mail met onderwerp rond "75 years" en het bekeken product is een logische test.
+7. **Materiaalvergelijking in de welkomstreeks.** Caraway zet traditioneel non-stick naast hun pan. Siraat kan coating tegenover ongecoat titanium zetten (geen coating die slijt), passend bij de regel dat pre-purchase mails over USP's en materiaal gaan en niet over gebruik.
+
 ## Open punten
 
 - Caraway-adressen cw-w/b/c kregen niets, terwijl het hex-w-adres twee Caraway-mails kreeg: de footer-inschrijving van de agent werkte waarschijnlijk niet. Opnieuw proberen of handmatig doen.
 - Made In stuurde na ruim 20 uur nog niets ondanks de bevestiging "subscribed"; mogelijk double opt-in of een vertraagde reeks.
-- Okura (ok-co) en Our Place (op-c, op-co) stuurden nog geen cart- of checkoutmail. Morgen opnieuw controleren.
+- Okura (ok-co) en Our Place (op-c, op-co) stuurden ook op dag 2 geen cart- of checkoutmail. Our Place lijkt alleen browse te triggeren (op-b), niet cart of checkout.
+- Made In, Caraway-adressen en Plateful (na de ene checkoutmail) bleven op dag 2 stil.
 - Taima en HexClad co zijn nog niet gedaan.
