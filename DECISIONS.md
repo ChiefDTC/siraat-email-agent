@@ -69,3 +69,4 @@ Bijwerken bij elk nieuw besluit. Datum per regel.
 - 9 okt 2026: receptcampagnes gebruiken op verzoek van Floris de knoppen "Shop now" en "Shop the pan" (uitzondering op de copyregel "nooit Shop now"). Eerste receptcampagne: concept B (steak met brown butter mushroom pan sauce), Pan Pro Standard 28 cm.
 - 9 okt 2026: naamgeving eigen campagnes: "Floris | <dag> <Maand> | <Type> | <Doelgroep>", bijv. "Floris | 9 October | Recipe | USA Only".
 - 12 okt 2026: reviewmail (flow XzHrez) zonder vaste header op verzoek van Floris (uitzondering op de headerregel). Het logo staat als witte lockup (brand/logo/lockup/siraat-lockup-white.png) in de hero; vaste footer blijft.
+| 2026-10-15 | Merknaam in mailcopy is Siraat, niet Siraat's Kitchen (Floris). | Toegepast in W1 v3 en W1 v2 (kop, Benjamin-noot, ondertekening). Overige mails nog niet aangepast, wacht op akkoord. |
