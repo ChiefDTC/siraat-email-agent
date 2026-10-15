@@ -1,0 +1,66 @@
+[
+ {
+  "key": "v1-light",
+  "html": "/home/user/siraat-email-agent/research/giftcard/demo/v1.html",
+  "width": 375,
+  "mode": "light",
+  "shot": "/home/user/siraat-email-agent/research/giftcard/demo/v1-375-light.png",
+  "net": false
+ },
+ {
+  "key": "v1-forced",
+  "html": "/home/user/siraat-email-agent/research/giftcard/demo/v1.html",
+  "width": 375,
+  "mode": "forced",
+  "shot": "/home/user/siraat-email-agent/research/giftcard/demo/v1-375-forced.png",
+  "net": false
+ },
+ {
+  "key": "v2-light",
+  "html": "/home/user/siraat-email-agent/research/giftcard/demo/v2.html",
+  "width": 375,
+  "mode": "light",
+  "shot": "/home/user/siraat-email-agent/research/giftcard/demo/v2-375-light.png",
+  "net": false
+ },
+ {
+  "key": "v2-forced",
+  "html": "/home/user/siraat-email-agent/research/giftcard/demo/v2.html",
+  "width": 375,
+  "mode": "forced",
+  "shot": "/home/user/siraat-email-agent/research/giftcard/demo/v2-375-forced.png",
+  "net": false
+ },
+ {
+  "key": "v3-light",
+  "html": "/home/user/siraat-email-agent/research/giftcard/demo/v3.html",
+  "width": 375,
+  "mode": "light",
+  "shot": "/home/user/siraat-email-agent/research/giftcard/demo/v3-375-light.png",
+  "net": false
+ },
+ {
+  "key": "v3-forced",
+  "html": "/home/user/siraat-email-agent/research/giftcard/demo/v3.html",
+  "width": 375,
+  "mode": "forced",
+  "shot": "/home/user/siraat-email-agent/research/giftcard/demo/v3-375-forced.png",
+  "net": false
+ },
+ {
+  "key": "v3s-light",
+  "html": "/home/user/siraat-email-agent/research/giftcard/demo/v3s.html",
+  "width": 375,
+  "mode": "light",
+  "shot": "/home/user/siraat-email-agent/research/giftcard/demo/v3s-375-light.png",
+  "net": false
+ },
+ {
+  "key": "v3s-forced",
+  "html": "/home/user/siraat-email-agent/research/giftcard/demo/v3s.html",
+  "width": 375,
+  "mode": "forced",
+  "shot": "/home/user/siraat-email-agent/research/giftcard/demo/v3s-375-forced.png",
+  "net": false
+ }
+]
