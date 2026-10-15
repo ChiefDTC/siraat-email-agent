@@ -1,4 +1,4 @@
-# Concurrenten-inbox: overzicht na dag 2 (stand 14 okt 2026, ca. 08:45 UTC)
+# Concurrenten-inbox: overzicht na dag 3 (stand 15 okt 2026, ca. 08:45 UTC)
 
 Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmail.com, per regel in `tijdlijn.csv`. Acties uit `log-*.csv` (HexClad en Our Place b handmatig door Floris, geen log). Kortingscodes staan nergens uitgeschreven.
 
@@ -6,8 +6,8 @@ Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmai
 
 | Merk | w | b | c | co | Totaal | Status inschrijving |
 |---|---|---|---|---|---|---|
-| HexClad | 3 | 3 | 2 | n.v.t. | 8 | w/b/c handmatig (Floris), co niet gedaan |
-| Our Place | 2 | 5 | 2 | 0 | 9 | alles gelukt; c pas om 11:18 in winkelwagen |
+| HexClad | 5 | 5 | 4 | n.v.t. | 14 | w/b/c handmatig (Floris), co niet gedaan |
+| Our Place | 3 | 6 | 3 | 0 | 12 | alles gelukt; c pas om 11:18 in winkelwagen |
 | Caraway | 3 (op hex-w) | 0 | 0 | 0 | 3 | w/b/c via footer "gelukt", maar geen enkele mail op cw-adressen; beide Caraway-mails kwamen op hex-w binnen |
 | Made In | 0 | 0 | 0 | 0 | 0 | w/b/c footer "Thanks! You've been subscribed", co gestopt (telefoon verplicht) |
 | Okura | 0 | 0 | 0 | 0 | 0 | w/b/c captcha, alleen co (checkout zonder betaling, opt-in aan) |
@@ -36,6 +36,13 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 - **Our Place stuurt een verlopen sale door.** "Did you hear?" en "We Can't Wait Forever 💔" duwen October Prime Deals terwijl de kleine lettertjes zeggen dat die op 12 okt 23:59 PT eindigde. Slordig, en de browse 2 toont nog steeds geen bekeken product.
 - **Caraway welkom 3 is materiaal-educatie.** Traditionele non-stick (PFAS/PTFE) tegenover hun keramiek, "getest op 220+ PFAS", plus vaste dollarbedragen korting op sets ($95 tot $190) zonder code.
 
+## Patroon na dag 3
+
+- **HexClad welkom 3 na precies 48 uur** ("Why folks love us", reviews) naar w, b en c tegelijk. De welkomreeks loopt dus in vaste stappen van 24 uur naast de browsemails.
+- **HexClad browse 3 = betalen in termijnen.** "Price holding you back? We got you." legt Affirm uit in vier stappen. Na drie browsemails nog steeds geen kortingscode: eerst garantie, dan reviews, dan gespreid betalen.
+- **Campagnes beginnen op dag 3.** Our Place "Party of One" en "Must See" (bestsellers, cadeau bij $300+), HexClad bakeware-reviews vanaf hello@. Our Place verstuurt dezelfde campagne gespreid over 9 uur.
+- **Nog steeds geen enkele kortingscode** bij HexClad, Our Place en Caraway na 3 dagen. Alleen Plateful gaf 10% in de checkoutmail.
+
 ## Korting: wanneer en hoe hoog
 
 - **Plateful** is het enige merk met een kortingscode: 10% in de abandoned checkout na 12,5 uur, 2 dagen geldig en al verrekend in de checkout-link (kortingscode aanwezig, niet uitgeschreven).
@@ -59,6 +66,7 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 
 6. **Browse 2 na 24 uur met garantie als hoofdboodschap.** HexClad zet "Lasts a Lifetime" in het onderwerp. Siraat heeft een sterker getal: 75 jaar garantie. Een tweede browse-mail met onderwerp rond "75 years" en het bekeken product is een logische test.
 7. **Materiaalvergelijking in de welkomstreeks.** Caraway zet traditioneel non-stick naast hun pan. Siraat kan coating tegenover ongecoat titanium zetten (geen coating die slijt), passend bij de regel dat pre-purchase mails over USP's en materiaal gaan en niet over gebruik.
+8. **Prijsbezwaar beantwoorden met gespreid betalen.** HexClad zet "Price holding you back?" in het onderwerp en legt Affirm stap voor stap uit. Prijs is ook bij Siraat het grootste bezwaar (27% twijfelde). Als Siraat in de US een termijnoptie heeft, is dit een sterke derde browse- of cartmail zonder marge weg te geven. [VRAAG FLORIS: welke betaaloptie in termijnen hebben we?]
 
 ## Open punten
 
