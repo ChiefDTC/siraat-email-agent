@@ -82,3 +82,11 @@ Controle na 13 tot 18: `qa_render.py` (met browser) 61/61 groen; alle 61 gebouwd
 - Werkwijze: PATCH per variatie-actie werkt; PATCH op de ab-test-actie zelf wordt geweigerd zolang de test loopt.
 - Controle: onderwerpen ongewijzigd, A/B-test live (50/50), flow live, render zonder restanten, Trustpilot-link aanwezig, preview en bg 0, beelden gelijk aan de bron.
 - 12 okt, vervolg: header weg op verzoek Floris, witte logo-lockup in de hero (Klaviyo-beeld 382456929). Bibliotheek RFcjsS, flow-kopieen R4bgQf, RAz57u, Y9fywM op acties 119577631/632/635. Onderwerpen gelijk, A/B live, render zonder restanten, preview en bg 0. Screenshot img/19-review-zonder-header-375.jpg.
+
+## W1 v3 als variant B live (15 okt 2026 ca. 00:33 UTC, expliciet akkoord Floris)
+- Flow T4a5Mk (v4 · Welcome), W1-test 119850659, variant B = actie 119850658. Template RgF2K5 vervangen door W1 v3 (bron klaviyo/templates/v3/welcome/w1-v3.html, bibliotheek RGgUs4, flow-kopie X5yyXv).
+- Onderwerp B: "{{ first_name|default:'Hi' }}, here's your 10%". Preview B: "Welcome to Siraat. HI10 takes 10% off on top of the sale." Variant A ongewijzigd.
+- Controle: alleen subject_line, preview_text en template_id van B anders (ook gespiegeld in de ab-test-actie), A/B live 50/50, flow live, render zonder restanten. Snapshots scratchpad/golive/t4a5mk-acties-voor.json en -na.json.
+- Meting: telling vanaf nu. Hoofdmaat alle orders per ontvanger binnen 5 dagen na W1, daarnaast open, klik, uitschrijvingen. Looptijd tot ca. 29 okt.
+- Terugdraaien: template_id RgF2K5, onderwerp "No PFAS. Here's the paper. And 10%." en de oude preview terug op actie 119850658.
+- Afzendernaam blijft "Siraat's Kitchen" in A en B (later voor alle mails tegelijk).
