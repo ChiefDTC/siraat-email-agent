@@ -165,3 +165,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 16 okt 2026 08:45 UTC: concurrenten-tijdlijn dag 4, 6 nieuwe mails (HexClad 3, Our Place 2, Caraway 1), overzicht bijgewerkt.
 - 16 okt 2026 21:07 UTC: review-backfill klaargezet op verzoek Floris: lijst UXBmYd (253 profielen, bezorgd 20 sep-6 okt, zonder eerdere reviewmail, zonder refund, met marketingtoestemming), campagne-concept 01M538JS4KMBVEPZ94EB90JB6X met reviewtemplate, testmail naar Floris. Niet verstuurd. Zie research/review/01-backfill-16okt.md.
 - 16 okt 2026 21:15 UTC: recente mails gecheckt voor de 253 van de review-backfill: gem. 1,8 sinds 13 okt (HS 5-Star 14 okt, Bundle Push 16 okt), 197 in laatste 24 uur. Advies verzenden zondag 19 okt.
+- 16 okt 2026 21:20 UTC: review-backfill uitgesteld op verzoek Floris; herinnering gepland zondag 19 okt 07:00 UTC (trig_01SVRR3YzAuE24qT7i1Jbwnf), dan eerst lijst en recente mails opnieuw checken.
