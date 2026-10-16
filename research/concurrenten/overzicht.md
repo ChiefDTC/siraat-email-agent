@@ -1,4 +1,4 @@
-# Concurrenten-inbox: overzicht na dag 3 (stand 15 okt 2026, ca. 08:45 UTC)
+# Concurrenten-inbox: overzicht na dag 4 (stand 16 okt 2026, ca. 08:45 UTC)
 
 Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmail.com, per regel in `tijdlijn.csv`. Acties uit `log-*.csv` (HexClad en Our Place b handmatig door Floris, geen log). Kortingscodes staan nergens uitgeschreven.
 
@@ -6,9 +6,9 @@ Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmai
 
 | Merk | w | b | c | co | Totaal | Status inschrijving |
 |---|---|---|---|---|---|---|
-| HexClad | 5 | 5 | 4 | n.v.t. | 14 | w/b/c handmatig (Floris), co niet gedaan |
-| Our Place | 3 | 6 | 3 | 0 | 12 | alles gelukt; c pas om 11:18 in winkelwagen |
-| Caraway | 3 (op hex-w) | 0 | 0 | 0 | 3 | w/b/c via footer "gelukt", maar geen enkele mail op cw-adressen; beide Caraway-mails kwamen op hex-w binnen |
+| HexClad | 5 | 7 | 5 | n.v.t. | 17 | w/b/c handmatig (Floris), co niet gedaan |
+| Our Place | 3 | 7 | 4 | 0 | 14 | alles gelukt; c pas om 11:18 in winkelwagen |
+| Caraway | 4 (op hex-w) | 0 | 0 | 0 | 4 | w/b/c via footer "gelukt", maar geen enkele mail op cw-adressen; beide Caraway-mails kwamen op hex-w binnen |
 | Made In | 0 | 0 | 0 | 0 | 0 | w/b/c footer "Thanks! You've been subscribed", co gestopt (telefoon verplicht) |
 | Okura | 0 | 0 | 0 | 0 | 0 | w/b/c captcha, alleen co (checkout zonder betaling, opt-in aan) |
 | Plateful | 0 | 0 | 0 | 1 | 1 | w/b/c captcha, co gelukt |
@@ -42,6 +42,13 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 - **HexClad browse 3 = betalen in termijnen.** "Price holding you back? We got you." legt Affirm uit in vier stappen. Na drie browsemails nog steeds geen kortingscode: eerst garantie, dan reviews, dan gespreid betalen.
 - **Campagnes beginnen op dag 3.** Our Place "Party of One" en "Must See" (bestsellers, cadeau bij $300+), HexClad bakeware-reviews vanaf hello@. Our Place verstuurt dezelfde campagne gespreid over 9 uur.
 - **Nog steeds geen enkele kortingscode** bij HexClad, Our Place en Caraway na 3 dagen. Alleen Plateful gaf 10% in de checkoutmail.
+
+## Patroon na dag 4
+
+- **Drempelcadeau is het BFCM-voorspel.** Our Place: gratis Titanium Perfect Pot Pro bij $300+ ("For You: A Free Gift"), na "Must See" met dezelfde drempel. Precies het idee van Homestead (vanaf $400 een gratis pizza steel).
+- **Caraway welkom 4 duwt sets** met een dollarbedrag ("Save $230 on an all-in-one set"), nog steeds zonder code.
+- **HexClad browse 3 ook voor hex-b**: "Buy now, pay later?". Termijnbetaling is dus een vaste stap, geen losse campagne.
+- **Na 4 dagen nog steeds geen kortingscode** bij HexClad, Our Place en Caraway.
 
 ## Korting: wanneer en hoe hoog
 
