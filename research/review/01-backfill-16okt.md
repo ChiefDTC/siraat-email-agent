@@ -20,3 +20,9 @@ Scripts en ruwe data: scratchpad/golive/backfill-*.json, backfill_check.py.
 - Smart sending uit, UTM utm_campaign=v4-review-backfill. Render zonder restanten; ordernummer in de sterlinks is leeg (geen event in een campagne).
 - Testmail naar Floris 16 okt 21:06 UTC.
 - Versturen alleen na akkoord Floris.
+
+## Recente mails van de 253 (check 16 okt 21:15 UTC, Received Email sinds 13 okt)
+- Gemiddeld 1,8 mails per persoon; 5 kregen niets, 234 kregen 1 of 2, 14 kregen 3 of meer.
+- 239 kregen HS October Email 6 "5-Star Cookware for a 5-Star Experience" (14 okt), 182 kregen HS Email 13 Bundle Push (16 okt 18:15 UTC). 197 kregen een mail in de laatste 24 uur.
+- Gepland door Homestead: Email 7 Cutting Board (17 okt, verstuurt nu), Email 8 Dishwasher Sheets (20 okt), Email 9 Bundle Upgrade (23 okt).
+- Geen eerdere reviewvraag (al uitgesloten). Advies: versturen zondag 19 okt, tussen Cutting Board (17 okt) en Dishwasher Sheets (20 okt).
