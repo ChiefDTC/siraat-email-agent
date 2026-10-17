@@ -167,3 +167,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 16 okt 2026 21:15 UTC: recente mails gecheckt voor de 253 van de review-backfill: gem. 1,8 sinds 13 okt (HS 5-Star 14 okt, Bundle Push 16 okt), 197 in laatste 24 uur. Advies verzenden zondag 19 okt.
 - 16 okt 2026 21:20 UTC: review-backfill uitgesteld op verzoek Floris; herinnering gepland zondag 19 okt 07:00 UTC (trig_01SVRR3YzAuE24qT7i1Jbwnf), dan eerst lijst en recente mails opnieuw checken.
 - 17 okt 2026 07:50 UTC: 90/10-bewaking: splits 90, flows live. Sinds switch nieuw vs oud: browse $0.92 vs 0, cart $1.60 vs 0, checkout $2.11 vs $2.58 (82%). Alarmen: checkout-bounce nieuw 25% (bots), cart-uitschrijving nieuw 1,4% (oud 1,9%). Gepost in #claude-mail, niets teruggedraaid.
+- 17 okt 2026 08:45 UTC: concurrenten-tijdlijn dag 5, 5 nieuwe mails (Our Place 3, HexClad 2), overzicht bijgewerkt.

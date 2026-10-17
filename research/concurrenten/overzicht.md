@@ -1,4 +1,4 @@
-# Concurrenten-inbox: overzicht na dag 4 (stand 16 okt 2026, ca. 08:45 UTC)
+# Concurrenten-inbox: overzicht na dag 5 (stand 17 okt 2026, ca. 08:45 UTC)
 
 Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmail.com, per regel in `tijdlijn.csv`. Acties uit `log-*.csv` (HexClad en Our Place b handmatig door Floris, geen log). Kortingscodes staan nergens uitgeschreven.
 
@@ -6,8 +6,8 @@ Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmai
 
 | Merk | w | b | c | co | Totaal | Status inschrijving |
 |---|---|---|---|---|---|---|
-| HexClad | 5 | 7 | 5 | n.v.t. | 17 | w/b/c handmatig (Floris), co niet gedaan |
-| Our Place | 3 | 7 | 4 | 0 | 14 | alles gelukt; c pas om 11:18 in winkelwagen |
+| HexClad | 5 | 8 | 6 | n.v.t. | 19 | w/b/c handmatig (Floris), co niet gedaan |
+| Our Place | 4 | 8 | 5 | 0 | 17 | alles gelukt; c pas om 11:18 in winkelwagen |
 | Caraway | 4 (op hex-w) | 0 | 0 | 0 | 4 | w/b/c via footer "gelukt", maar geen enkele mail op cw-adressen; beide Caraway-mails kwamen op hex-w binnen |
 | Made In | 0 | 0 | 0 | 0 | 0 | w/b/c footer "Thanks! You've been subscribed", co gestopt (telefoon verplicht) |
 | Okura | 0 | 0 | 0 | 0 | 0 | w/b/c captcha, alleen co (checkout zonder betaling, opt-in aan) |
@@ -49,6 +49,12 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 - **Caraway welkom 4 duwt sets** met een dollarbedrag ("Save $230 on an all-in-one set"), nog steeds zonder code.
 - **HexClad browse 3 ook voor hex-b**: "Buy now, pay later?". Termijnbetaling is dus een vaste stap, geen losse campagne.
 - **Na 4 dagen nog steeds geen kortingscode** bij HexClad, Our Place en Caraway.
+
+## Patroon na dag 5
+
+- **Ritme campagnes:** Our Place stuurt elke dag om 05:15 UTC een campagne naar op-b en daarna gespreid naar c en w; HexClad stuurt om de dag een campagne via een apart segment (b en c, niet w).
+- **Inhoud naast aanbod:** Our Place "One Oven. Endless Cravings." (8 bereidingen) en HexClad een pop-up evenement in New York. Geen korting, wel reden om te openen.
+- **Nog steeds geen kortingscode** na 5 dagen bij HexClad, Our Place en Caraway.
 
 ## Korting: wanneer en hoe hoog
 
