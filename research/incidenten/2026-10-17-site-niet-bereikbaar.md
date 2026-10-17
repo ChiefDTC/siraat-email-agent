@@ -23,3 +23,9 @@ Tweede kandidaat: een ISP- of beveiligingsfilter (bijv. UK-ISP-filters) dat het 
    - Juist: A = 23.227.38.65 (alleen dit), www CNAME = shops.myshopify.com, en geen andere AAAA dan die van Shopify.
    - Elk ander IP-adres of een oud AAAA-record verwijderen bij de DNS-provider.
 3. Daarna: Shopify Domains > "Verify connection", zodat het certificaat opnieuw wordt uitgegeven.
+
+## Update 12:41 (Floris, dnschecker.org)
+- A siraatskitchen.com = 23.227.38.65 wereldwijd, overal resolved.
+- AAAA = 2620:127:f00f:5:: wereldwijd. Dat is het officiële Shopify IPv6-adres.
+- Conclusie: de DNS van het hoofddomein is schoon. De hypothese van een oud of verkeerd record vervalt.
+- Volgende kandidaat: het domein wordt door beveiligingsfilters geblokkeerd (ISP-filter, antivirus, bedrijfsnetwerk, Safe Browsing-achtige lijsten). Nog te checken: www-CNAME, Google Transparency Report, VirusTotal (siraatskitchen.com en ctrk.klclick1.com), en de UK-ISP-filters.
