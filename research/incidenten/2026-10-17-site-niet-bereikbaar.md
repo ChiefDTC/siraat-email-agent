@@ -30,3 +30,9 @@ Tweede kandidaat: een ISP- of beveiligingsfilter (bijv. UK-ISP-filters) dat het 
 - Conclusie: de DNS van het hoofddomein is schoon. De hypothese van een oud of verkeerd record vervalt.
 - Volgende kandidaat: het domein wordt door beveiligingsfilters geblokkeerd (ISP-filter, antivirus, bedrijfsnetwerk, Safe Browsing-achtige lijsten). Nog te checken: www-CNAME, Google Transparency Report, VirusTotal (siraatskitchen.com en ctrk.klclick1.com), en de UK-ISP-filters.
 - www.siraatskitchen.com CNAME = shops.myshopify.com wereldwijd (12:48). Volledige DNS in orde. Oorzaak ligt buiten onze DNS: volgende stap reputatie (Safe Browsing, VirusTotal, Sky Shield) + klanten vragen naar provider/4G.
+
+## Oorzaak gevonden (12:50)
+- Google Safe Browsing: geen onveilige content.
+- VirusTotal siraatskitchen.com: 2/92 malicious (Chong Lua Dao: Malicious, VIPRE: Malware) en 2 suspicious (alphaMountain.ai, Gridinsoft).
+- VIPRE is consumenten-antivirus met webfilter dat HTTPS onderschept. Dat geeft precies ERR_SSL_PROTOCOL_ERROR en blokkeert ook de directe URL. alphaMountain.ai levert URL-categorieën aan andere filters (o.a. DNS- en routerfilters), dus die melding kan verder doorwerken.
+- Actie: false-positive aanvragen bij alle vier. Nog checken: ctrk.klclick1.com op VirusTotal.
