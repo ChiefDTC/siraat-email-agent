@@ -44,3 +44,4 @@ Tweede kandidaat: een ISP- of beveiligingsfilter (bijv. UK-ISP-filters) dat het 
 - Spectrum is een van de grootste internetproviders in de VS. Dat verklaart "honderden".
 - Actie: aanvraag via https://www.spectrum.net/support/forms/verify_url_security (siraatskitchen.com, www, en account.siraatskitchen.com).
 - Leerpunt CS: "het ligt aan je browser" was 2 maanden lang het antwoord. Dat moet stoppen.
+- 13:01: Spectrum-formulier voor alle 3 URLs: 'Security Shield Is Not Blocking This Site'. Waarschijnlijk opgeheven na Owens aanvraag van 13 okt. Let op: andere sites meldden dat het formulier 'vrij' zei terwijl de blokkade nog deels bestond. Verifiëren via eerstvolgende Spectrum-klant.
