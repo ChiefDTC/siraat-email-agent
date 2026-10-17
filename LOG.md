@@ -170,3 +170,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 17 okt 2026 08:45 UTC: concurrenten-tijdlijn dag 5, 5 nieuwe mails (Our Place 3, HexClad 2), overzicht bijgewerkt.
 - 17 okt 2026 ca. 11:00 UTC: Incident site niet bereikbaar: 3 tickets, oorzaak op domein/SSL-niveau (niet de maillinks), Klaviyo-kliks en orders normaal. DNS-check voor Floris in research/incidenten/2026-10-17-site-niet-bereikbaar.md.
 - 17 okt 2026 12:45 UTC: DNS siraatskitchen.com gecheckt door Floris (A en AAAA correct Shopify). DNS-hypothese vervalt, volgende stap is reputatie/filters checken.
+- 17 okt 2026 12:50 UTC: www-CNAME ook correct. DNS volledig in orde, incident nu reputatie/filter-spoor.

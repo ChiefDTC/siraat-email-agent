@@ -29,3 +29,4 @@ Tweede kandidaat: een ISP- of beveiligingsfilter (bijv. UK-ISP-filters) dat het 
 - AAAA = 2620:127:f00f:5:: wereldwijd. Dat is het officiële Shopify IPv6-adres.
 - Conclusie: de DNS van het hoofddomein is schoon. De hypothese van een oud of verkeerd record vervalt.
 - Volgende kandidaat: het domein wordt door beveiligingsfilters geblokkeerd (ISP-filter, antivirus, bedrijfsnetwerk, Safe Browsing-achtige lijsten). Nog te checken: www-CNAME, Google Transparency Report, VirusTotal (siraatskitchen.com en ctrk.klclick1.com), en de UK-ISP-filters.
+- www.siraatskitchen.com CNAME = shops.myshopify.com wereldwijd (12:48). Volledige DNS in orde. Oorzaak ligt buiten onze DNS: volgende stap reputatie (Safe Browsing, VirusTotal, Sky Shield) + klanten vragen naar provider/4G.
