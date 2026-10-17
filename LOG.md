@@ -175,3 +175,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 17 okt 2026 12:57 UTC: ctrk.klclick1.com schoon (0/92). Maillinks bevestigd niet de oorzaak.
 - 17 okt 2026 13:05 UTC: Spectrum Security Shield bevestigd als blokkade (ticket 91338121). Probleem sinds minstens 11 aug 2026. Spectrum-formulier doorgegeven aan Floris.
 - 17 okt 2026 13:03 UTC: Spectrum meldt geen blokkade meer voor alle 3 URLs. VIPRE/alphaMountain/Gridinsoft/Chong Lua Dao blijven open.
+- 17 okt 2026 13:10 UTC: Timothy Hess-case bevestigt filter op thuisnetwerk (bestelde via zakelijke VPN). Probleem raakt ook advertentieverkeer.

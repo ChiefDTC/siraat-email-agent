@@ -45,3 +45,4 @@ Tweede kandidaat: een ISP- of beveiligingsfilter (bijv. UK-ISP-filters) dat het 
 - Actie: aanvraag via https://www.spectrum.net/support/forms/verify_url_security (siraatskitchen.com, www, en account.siraatskitchen.com).
 - Leerpunt CS: "het ligt aan je browser" was 2 maanden lang het antwoord. Dat moet stoppen.
 - 13:01: Spectrum-formulier voor alle 3 URLs: 'Security Shield Is Not Blocking This Site'. Waarschijnlijk opgeheven na Owens aanvraag van 13 okt. Let op: andere sites meldden dat het formulier 'vrij' zei terwijl de blokkade nog deels bestond. Verifiëren via eerstvolgende Spectrum-klant.
+- 13:10: case Timothy Hess (#SIRAAT109321, Elkhart IN). Besteld 15 okt op desktop via IP 130.41.14.100 = Palo Alto Networks (Prisma Access, zakelijke VPN, Denver). Thuis op telefoon via wifi ERR_CONNECTION_REFUSED. Bevestigt: filter op thuisnetwerk. Kwam via AppLovin-advertentie: probleem raakt ook betaald verkeer, niet alleen mail.
