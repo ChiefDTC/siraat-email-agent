@@ -181,3 +181,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 17 okt 2026 13:35 UTC: Owen = Charter/Spectrum bevestigd via IP. Blokkade begon tussen 5 jul en 11 aug 2026.
 - 17 okt 2026 13:40 UTC: Sara = AT&T. Tweede provider (ActiveArmor) als waarschijnlijke blokkade.
 - 17 okt 2026 14:30 UTC: alphaMountain heeft site geherclassificeerd, partners binnen 24 uur bijgewerkt.
+- 17 okt 2026 16:40 UTC: Blockify (nu verwijderd) als waarschijnlijke trigger voor de vendor-flags (cloaking-signaal). Nepsite siratskitchen.com melden.

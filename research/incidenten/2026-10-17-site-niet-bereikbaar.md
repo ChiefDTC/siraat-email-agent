@@ -61,3 +61,10 @@ Tweede kandidaat: een ISP- of beveiligingsfilter (bijv. UK-ISP-filters) dat het 
 - 13:35: Owen IP (2603:8001::) = AS20001 Charter Communications (Spectrum), bevestigd. Owen bestelde 15 jun, 2 jul, 5 jul via Spectrum zonder probleem; 11 aug geblokkeerd => blokkade begon tussen 5 jul en 11 aug 2026. Owen totaal ~$1.525 omzet. Sara (#SIRAAT99452, 24 aug, IP 2600:1700:: vermoedelijk AT&T) nog te checken.
 - 13:40: Sara (Greenville SC) IP = AS7018 AT&T. Bestelde 24 aug, kreeg 12 okt ERR_SSL_PROTOCOL_ERROR. Tweede provider-spoor: AT&T ActiveArmor (geen officieel site-eigenaar-formulier gevonden; route via AT&T support). Twee van de drie bekende gevallen = Amerikaanse provider-filter.
 - 14:26: alphaMountain antwoordt: 'We have rescanned and reclassified the site. Our partner systems will be updated within 24 hours.' Verwachting: partnerfilters (o.a. routers/providers) vanaf ~18 okt 14:30 bijgewerkt. Daarna Jeff/Sara/Timothy laten hertesten.
+
+## Hypothese team (16:37): Blockify + nepsite
+- Altug: "systemen registreren Blockify als spam"; nepsite siratskitchen.com staat 0/92 clean, de echte winkel geflagd.
+- Beoordeling: Blockify (IP/VPN/land-blocker, geïnstalleerd vanaf ca. april, nu verwijderd) is een sterke kandidaat als oorzaak. Securityscanners van VIPRE/alphaMountain e.d. crawlen vanaf datacenter- en VPN-IP's. Blockify blokkeert of redirect juist die bezoekers. De scanner ziet dan andere inhoud dan een gewone bezoeker: dat is "cloaking", een klassiek phishing-signaal. De nepsite doet dat niet en blijft clean.
+- Ondersteunend: homepage-scan 17 okt bevat geen Blockify-code meer (verwijderd). Blockify-mail in Gorgias 9 sep bevestigt dat het actief was.
+- Nepsite melden: Google Safe Browsing phishing-report, Shopify AUP-report (als het een Shopify-winkel is), registrar.
+- Niet opnieuw installeren van IP/VPN/bot-blockers zonder whitelist voor securitycrawlers.
