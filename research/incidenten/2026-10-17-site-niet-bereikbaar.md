@@ -36,3 +36,4 @@ Tweede kandidaat: een ISP- of beveiligingsfilter (bijv. UK-ISP-filters) dat het 
 - VirusTotal siraatskitchen.com: 2/92 malicious (Chong Lua Dao: Malicious, VIPRE: Malware) en 2 suspicious (alphaMountain.ai, Gridinsoft).
 - VIPRE is consumenten-antivirus met webfilter dat HTTPS onderschept. Dat geeft precies ERR_SSL_PROTOCOL_ERROR en blokkeert ook de directe URL. alphaMountain.ai levert URL-categorieën aan andere filters (o.a. DNS- en routerfilters), dus die melding kan verder doorwerken.
 - Actie: false-positive aanvragen bij alle vier. Nog checken: ctrk.klclick1.com op VirusTotal.
+- ctrk.klclick1.com op VirusTotal: 0/92, schoon (12:55). Klaviyo-linkdomein is niet de oorzaak; probleem zit alleen bij siraatskitchen.com. Contacten: docs.virustotal.com/docs/false-positive-contacts.

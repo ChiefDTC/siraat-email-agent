@@ -172,3 +172,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 17 okt 2026 12:45 UTC: DNS siraatskitchen.com gecheckt door Floris (A en AAAA correct Shopify). DNS-hypothese vervalt, volgende stap is reputatie/filters checken.
 - 17 okt 2026 12:50 UTC: www-CNAME ook correct. DNS volledig in orde, incident nu reputatie/filter-spoor.
 - 17 okt 2026 12:55 UTC: oorzaak gevonden: VirusTotal 2/92 malicious (VIPRE, Chong Lua Dao) + 2 suspicious (alphaMountain, Gridinsoft). False-positive tekst opgesteld voor Floris.
+- 17 okt 2026 12:57 UTC: ctrk.klclick1.com schoon (0/92). Maillinks bevestigd niet de oorzaak.
