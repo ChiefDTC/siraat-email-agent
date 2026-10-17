@@ -58,3 +58,4 @@ Tweede kandidaat: een ISP- of beveiligingsfilter (bijv. UK-ISP-filters) dat het 
 | Trend Micro | Untested | reclassify request (Shopping) |
 | McAfee | Shopping/Merchandizing, Minimal Risk | geen |
 | VIPRE, alphaMountain, Gridinsoft, Chong Lua Dao | gemarkeerd | false-positive mails verstuurd 17 okt |
+- 13:35: Owen IP (2603:8001::) = AS20001 Charter Communications (Spectrum), bevestigd. Owen bestelde 15 jun, 2 jul, 5 jul via Spectrum zonder probleem; 11 aug geblokkeerd => blokkade begon tussen 5 jul en 11 aug 2026. Owen totaal ~$1.525 omzet. Sara (#SIRAAT99452, 24 aug, IP 2600:1700:: vermoedelijk AT&T) nog te checken.

@@ -178,3 +178,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 17 okt 2026 13:10 UTC: Timothy Hess-case bevestigt filter op thuisnetwerk (bestelde via zakelijke VPN). Probleem raakt ook advertentieverkeer.
 - 17 okt 2026 13:22 UTC: checkers doorgelopen (Talos, BrightCloud, Zvelo, Norton, Trend Micro). Mails naar 4 vendors verstuurd door Floris.
 - 17 okt 2026 13:25 UTC: McAfee: Shopping, Minimal Risk. Alle grote filters schoon; open: 4 vendors + BrightCloud/Trend Micro aanvragen + ISP navragen bij Donna en Timothy.
+- 17 okt 2026 13:35 UTC: Owen = Charter/Spectrum bevestigd via IP. Blokkade begon tussen 5 jul en 11 aug 2026.
