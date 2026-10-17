@@ -37,3 +37,10 @@ Tweede kandidaat: een ISP- of beveiligingsfilter (bijv. UK-ISP-filters) dat het 
 - VIPRE is consumenten-antivirus met webfilter dat HTTPS onderschept. Dat geeft precies ERR_SSL_PROTOCOL_ERROR en blokkeert ook de directe URL. alphaMountain.ai levert URL-categorieën aan andere filters (o.a. DNS- en routerfilters), dus die melding kan verder doorwerken.
 - Actie: false-positive aanvragen bij alle vier. Nog checken: ctrk.klclick1.com op VirusTotal.
 - ctrk.klclick1.com op VirusTotal: 0/92, schoon (12:55). Klaviyo-linkdomein is niet de oorzaak; probleem zit alleen bij siraatskitchen.com. Contacten: docs.virustotal.com/docs/false-positive-contacts.
+
+## Grootste bron gevonden: Spectrum Security Shield (13:05)
+- Ticket 91338121 (Owen, Californië): na weken bevestigd: "Spectrum security shield had your site blocked". Shield uit = kon bestellen. Hij heeft zelf bij Spectrum een unblock aangevraagd (13 okt, "tot 5 dagen").
+- Eerste melding van dezelfde klant: ticket 78311285, 11 aug 2026 ("Safari can't open the page"). Probleem bestaat dus minstens sinds 11 aug 2026. John (13 okt) schreef "down for months".
+- Spectrum is een van de grootste internetproviders in de VS. Dat verklaart "honderden".
+- Actie: aanvraag via https://www.spectrum.net/support/forms/verify_url_security (siraatskitchen.com, www, en account.siraatskitchen.com).
+- Leerpunt CS: "het ligt aan je browser" was 2 maanden lang het antwoord. Dat moet stoppen.
