@@ -59,3 +59,4 @@ Tweede kandidaat: een ISP- of beveiligingsfilter (bijv. UK-ISP-filters) dat het 
 | McAfee | Shopping/Merchandizing, Minimal Risk | geen |
 | VIPRE, alphaMountain, Gridinsoft, Chong Lua Dao | gemarkeerd | false-positive mails verstuurd 17 okt |
 - 13:35: Owen IP (2603:8001::) = AS20001 Charter Communications (Spectrum), bevestigd. Owen bestelde 15 jun, 2 jul, 5 jul via Spectrum zonder probleem; 11 aug geblokkeerd => blokkade begon tussen 5 jul en 11 aug 2026. Owen totaal ~$1.525 omzet. Sara (#SIRAAT99452, 24 aug, IP 2600:1700:: vermoedelijk AT&T) nog te checken.
+- 13:40: Sara (Greenville SC) IP = AS7018 AT&T. Bestelde 24 aug, kreeg 12 okt ERR_SSL_PROTOCOL_ERROR. Tweede provider-spoor: AT&T ActiveArmor (geen officieel site-eigenaar-formulier gevonden; route via AT&T support). Twee van de drie bekende gevallen = Amerikaanse provider-filter.
