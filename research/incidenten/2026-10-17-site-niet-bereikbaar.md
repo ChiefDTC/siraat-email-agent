@@ -46,3 +46,15 @@ Tweede kandidaat: een ISP- of beveiligingsfilter (bijv. UK-ISP-filters) dat het 
 - Leerpunt CS: "het ligt aan je browser" was 2 maanden lang het antwoord. Dat moet stoppen.
 - 13:01: Spectrum-formulier voor alle 3 URLs: 'Security Shield Is Not Blocking This Site'. Waarschijnlijk opgeheven na Owens aanvraag van 13 okt. Let op: andere sites meldden dat het formulier 'vrij' zei terwijl de blokkade nog deels bestond. Verifiëren via eerstvolgende Spectrum-klant.
 - 13:10: case Timothy Hess (#SIRAAT109321, Elkhart IN). Besteld 15 okt op desktop via IP 130.41.14.100 = Palo Alto Networks (Prisma Access, zakelijke VPN, Denver). Thuis op telefoon via wifi ERR_CONNECTION_REFUSED. Bevestigt: filter op thuisnetwerk. Kwam via AppLovin-advertentie: probleem raakt ook betaald verkeer, niet alleen mail.
+
+## Checkers (13:20, Floris)
+| Checker | Resultaat | Actie |
+|---|---|---|
+| Spectrum Security Shield | niet geblokkeerd | geen |
+| Cisco Talos/OpenDNS | Neutral, Shopping, niet op blocklist | optioneel reputatieticket |
+| OpenText/BrightCloud | Low Risk 64/100, foutief "1 month old" | change request ingediend/te doen |
+| Zvelo | Online Shopping, geen phishing | geen |
+| Norton Safe Web | Safe | geen |
+| Trend Micro | Untested | reclassify request (Shopping) |
+| McAfee | trustedsource.org 403 | via sitelookup.mcafee.com |
+| VIPRE, alphaMountain, Gridinsoft, Chong Lua Dao | gemarkeerd | false-positive mails verstuurd 17 okt |
