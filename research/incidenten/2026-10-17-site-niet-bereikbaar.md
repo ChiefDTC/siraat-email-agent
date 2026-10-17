@@ -56,5 +56,5 @@ Tweede kandidaat: een ISP- of beveiligingsfilter (bijv. UK-ISP-filters) dat het 
 | Zvelo | Online Shopping, geen phishing | geen |
 | Norton Safe Web | Safe | geen |
 | Trend Micro | Untested | reclassify request (Shopping) |
-| McAfee | trustedsource.org 403 | via sitelookup.mcafee.com |
+| McAfee | Shopping/Merchandizing, Minimal Risk | geen |
 | VIPRE, alphaMountain, Gridinsoft, Chong Lua Dao | gemarkeerd | false-positive mails verstuurd 17 okt |
