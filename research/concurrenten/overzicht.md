@@ -1,4 +1,4 @@
-# Concurrenten-inbox: overzicht na dag 5 (stand 17 okt 2026, ca. 08:45 UTC)
+# Concurrenten-inbox: overzicht na dag 6 (stand 18 okt 2026, ca. 08:45 UTC)
 
 Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmail.com, per regel in `tijdlijn.csv`. Acties uit `log-*.csv` (HexClad en Our Place b handmatig door Floris, geen log). Kortingscodes staan nergens uitgeschreven.
 
@@ -6,9 +6,9 @@ Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmai
 
 | Merk | w | b | c | co | Totaal | Status inschrijving |
 |---|---|---|---|---|---|---|
-| HexClad | 5 | 8 | 6 | n.v.t. | 19 | w/b/c handmatig (Floris), co niet gedaan |
-| Our Place | 4 | 8 | 5 | 0 | 17 | alles gelukt; c pas om 11:18 in winkelwagen |
-| Caraway | 4 (op hex-w) | 0 | 0 | 0 | 4 | w/b/c via footer "gelukt", maar geen enkele mail op cw-adressen; beide Caraway-mails kwamen op hex-w binnen |
+| HexClad | 6 | 9 | 7 | n.v.t. | 22 | w/b/c handmatig (Floris), co niet gedaan |
+| Our Place | 5 | 8 | 6 | 0 | 19 | alles gelukt; c pas om 11:18 in winkelwagen |
+| Caraway | 5 (op hex-w) | 0 | 0 | 0 | 5 | w/b/c via footer "gelukt", maar geen enkele mail op cw-adressen; beide Caraway-mails kwamen op hex-w binnen |
 | Made In | 0 | 0 | 0 | 0 | 0 | w/b/c footer "Thanks! You've been subscribed", co gestopt (telefoon verplicht) |
 | Okura | 0 | 0 | 0 | 0 | 0 | w/b/c captcha, alleen co (checkout zonder betaling, opt-in aan) |
 | Plateful | 0 | 0 | 0 | 1 | 1 | w/b/c captcha, co gelukt |
@@ -20,8 +20,8 @@ Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmai
 |---|---|---|---|
 | hex-w | 0,0 welkom (benadering) | 1,5 browse "Still thinking about it?" | 25,6 browse 2 "The last cookware you'll ever need" |
 | hex-b | 0,0 welkom (benadering) | 1,0 browse "Great choice, chef!" | 25,0 browse 2 "Lasts a Lifetime – Guaranteed!" |
-| hex-c | 0,0 welkom (benadering) | 0,7 cart "Your kitchen needs this!" | (geen cart 2 na 46 uur) |
-| Caraway (hex-w) | 0,0 welkom "Greetings From Caraway" | 12,0 "Our Top Caraway Picks" | 36,1 "Are You Cooking Clean?" (PFAS-vergelijking) |
+| hex-c | 0,0 welkom (benadering) | 0,7 cart "Your kitchen needs this!" | 48,0 welkom 3 (geen cart 2, ook na 132 uur niet) |
+| Caraway (hex-w) | 0,0 welkom "Greetings From Caraway" | 12,0 "Our Top Caraway Picks" | 36,1 "Are You Cooking Clean?" (PFAS-vergelijking), daarna 84,1 welkom 4 (set, $230) en 132,2 welkom 5 "The Problem: Traditional Cookware Is Toxic" |
 | op-b | 0,0 welkom (benadering) | 4,0 browse "You Left Before the Good Part" | 24,0 welkom 2 "Did you hear?", 28,0 browse 2 "We Can't Wait Forever 💔", 42,4 "Party of One" (campagne minis) |
 | op-w | 0,07 welkom (4 min na popup) | 24,2 welkom 2 "Did you hear?" | |
 | op-c | 0,08 welkom | 24,2 welkom 2 "Did you hear?" | (nog steeds geen cartmail na 45 uur) |
@@ -56,6 +56,13 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 - **Inhoud naast aanbod:** Our Place "One Oven. Endless Cravings." (8 bereidingen) en HexClad een pop-up evenement in New York. Geen korting, wel reden om te openen.
 - **Nog steeds geen kortingscode** na 5 dagen bij HexClad, Our Place en Caraway.
 
+## Patroon na dag 6
+
+- **HexClad welkom 4 na precies 120 uur** ("Gordon Ramsay ❤️‍🔥 these pans", preview "Here's why") naar w, b en c binnen 2 minuten. Het ritme is dus 0, 24, 48 en daarna 120 uur: na drie dagen achter elkaar een pauze van drie dagen. Inhoud is puur autoriteit (17 Michelin-sterren, "Buy HexClad once, and you'll use it for life"), plus refer a friend en een winactie, zonder product of prijs.
+- **Caraway welkom 5 na 132 uur is een angst-hook:** "The Problem: Traditional Cookware Is Toxic" met "a single scratch on a PTFE-coated pan releases 9,100+ microplastics". Daarna de oplossing: sets met tot $700 besparing, of de Fry Pan als kleine instap ("Not Ready for a Full Set?"), en 30 dagen geld-terug. Caraway loopt nu in stappen van 48 uur (36, 84, 132).
+- **Our Place verstuurt elke campagne in dezelfde volgorde:** b om 07:15, c 7 uur later, w 9 uur later. Opnieuw geen korting.
+- **Na 6 dagen nog steeds geen kortingscode** bij HexClad, Our Place en Caraway. Plateful blijft het enige merk met een code.
+
 ## Korting: wanneer en hoe hoog
 
 - **Plateful** is het enige merk met een kortingscode: 10% in de abandoned checkout na 12,5 uur, 2 dagen geldig en al verrekend in de checkout-link (kortingscode aanwezig, niet uitgeschreven).
@@ -80,6 +87,10 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 6. **Browse 2 na 24 uur met garantie als hoofdboodschap.** HexClad zet "Lasts a Lifetime" in het onderwerp. Siraat heeft een sterker getal: 75 jaar garantie. Een tweede browse-mail met onderwerp rond "75 years" en het bekeken product is een logische test.
 7. **Materiaalvergelijking in de welkomstreeks.** Caraway zet traditioneel non-stick naast hun pan. Siraat kan coating tegenover ongecoat titanium zetten (geen coating die slijt), passend bij de regel dat pre-purchase mails over USP's en materiaal gaan en niet over gebruik.
 8. **Prijsbezwaar beantwoorden met gespreid betalen.** HexClad zet "Price holding you back?" in het onderwerp en legt Affirm stap voor stap uit. Prijs is ook bij Siraat het grootste bezwaar (27% twijfelde). Als Siraat in de US een termijnoptie heeft, is dit een sterke derde browse- of cartmail zonder marge weg te geven. [VRAAG FLORIS: welke betaaloptie in termijnen hebben we?]
+
+9. **Een welkomstmail met een autoriteit en een citaat, zonder product.** HexClad gebruikt na 5 dagen Gordon Ramsay en een citaat over "buy once, use for life". Siraat heeft geen beroemde chef, maar wel Benjamin en echte reviews. Een late welkomstmail met een citaat van een echte klant over jaren gebruik, plus de 75 jaar garantie, vertelt hetzelfde verhaal zonder te leunen op iemand die we niet hebben.
+10. **Een kleine instap naast de set.** Caraway zet onder de set-aanbieding "Not Ready for a Full Set?" met de losse bestseller-pan. Siraat kan in welkomst- en browsemails onder de set altijd een tweede, lagere stap tonen (een losse pan), zodat wie de set te duur vindt niet afhaakt.
+11. **Een pauze in de welkomstreeks na drie dagen.** HexClad stuurt op dag 0, 1 en 2 en pas weer op dag 5. Siraat kan testen of een pauze van twee tot drie dagen na de eerste drie mails de uitschrijvingen in de welkomstflow verlaagt (beide armen zitten nu boven 1%).
 
 ## Open punten
 

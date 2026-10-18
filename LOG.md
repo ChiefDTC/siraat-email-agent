@@ -183,3 +183,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 17 okt 2026 14:30 UTC: alphaMountain heeft site geherclassificeerd, partners binnen 24 uur bijgewerkt.
 - 17 okt 2026 16:40 UTC: Blockify (nu verwijderd) als waarschijnlijke trigger voor de vendor-flags (cloaking-signaal). Nepsite siratskitchen.com melden.
 - 18 okt 2026 07:52 UTC: 90/10-bewaking: splits 90, flows live. Sinds switch nieuw vs oud per ontvanger: browse $0.84 vs 0, cart $1.25 vs $0.63, checkout $2.08 vs $2.36 (88%), welcome $1.26 vs $1.15. Alarmen: checkout-bounce nieuw 21,6% (bots), uitschrijving cart nieuw 1,3% (oud 2,0%), welcome beide armen >1%. Gepost in #claude-mail, niets teruggedraaid.
+- 18 okt 2026 08:45 UTC: concurrenten-tijdlijn dag 6, 6 nieuwe mails (HexClad 3, Our Place 2, Caraway 1), overzicht bijgewerkt.
