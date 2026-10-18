@@ -68,3 +68,4 @@ Tweede kandidaat: een ISP- of beveiligingsfilter (bijv. UK-ISP-filters) dat het 
 - Ondersteunend: homepage-scan 17 okt bevat geen Blockify-code meer (verwijderd). Blockify-mail in Gorgias 9 sep bevestigt dat het actief was.
 - Nepsite melden: Google Safe Browsing phishing-report, Shopify AUP-report (als het een Shopify-winkel is), registrar.
 - Niet opnieuw installeren van IP/VPN/bot-blockers zonder whitelist voor securitycrawlers.
+- 18 okt 15:34: VirusTotal 0/92. VIPRE, Chong Lua Dao, alphaMountain (nu 'Shopping') clean. Alleen Gridinsoft nog Suspicious (nog niet gemaild per Floris).
