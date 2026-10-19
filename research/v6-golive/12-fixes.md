@@ -98,3 +98,56 @@ Controle na 13 tot 18: `qa_render.py` (met browser) 61/61 groen; alle 61 gebouwd
 - Mapping oud naar nieuw template per actie: research/footer-links/footer-applied-*.json. Oude HTML: scratchpad golive/footer-backup/.
 - Terugdraaien: per actie template_id terugzetten naar de oude id (via bibliotheek-kopie van de backup-HTML, zelfde script scratchpad golive/footer_apply.py met kleur omgedraaid).
 - Risico (gemeld): afmeldlink nauwelijks zichtbaar; CAN-SPAM vraagt "clear and conspicuous". Klaviyo stuurt wel de List-Unsubscribe-header mee (één-klik afmelden in Gmail/Yahoo). Spamklachten de komende week volgen in de 90/10-bewaking.
+
+## Browse Triple Pixel concept (19 okt)
+
+Status: **concept**. Flow en alle mails staan op Draft; niets verstuurd, niets gepland. Livegang alleen na expliciet akkoord van Floris.
+
+**Waarom.** Bij de livegang (9 okt) gingen Wj6x6V (Viewed Product, XNtYMB) en TyEjuQ "EB | DEC 25 | Browse Abandonment | Triple Pixel" (Viewed Product - Triple Pixel, V48nhq) naar Draft. TyEjuQ haalde ~$6.000 in 11 dagen. WdRz5k (v4 · Browse abandonment) start alleen op XNtYMB, dus bezoekers die alleen het Triple Pixel-event geven krijgen sindsdien geen browsemail.
+
+**Oude TyEjuQ (GET).** Trigger V48nhq zonder triggerfilter. Flowfilters: Checkout Started 0, Placed Order 0, Added to Cart 0 sinds flowstart, niet in deze flow in 30 dagen, e-mail bevat niet test@example.com. Herinstap 2 dagen. 50/50-split: 10 min of 30 min wachten, dan één mail "Hi {first_name}, we saw you looking..." (beide mails nu draft).
+
+**Volume (metric-aggregates, 12 t/m 18 okt, UTC).** V48nhq gemiddeld ~2.350 events en ~960 unieke profielen per dag; XNtYMB ~2.360 events en ~1.190 unieke profielen. Op 18 okt: 1.072 TP-profielen, waarvan **191 zonder Shopify Viewed Product** (17 tot 19 okt), alle 191 met e-mail, 163 mogen marketing ontvangen. WdRz5k verstuurde 282 tot 545 mails per dag (~0,32 mail per uniek viewer). Verwachting nieuwe flow: **ongeveer 40 tot 70 mails per dag** (B1 plus B2), vooral B1.
+
+**Nieuwe flow QNZyEb "v4 · Browse abandonment · Triple Pixel"** (POST /api/flows, revision 2025-10-15; snapshot `research/v6-golive/browse-tp-concept.json`).
+- Trigger: metric V48nhq (Viewed Product - Triple Pixel), geen triggerfilter (zoals WdRz5k).
+- Flowfilters: gelijk aan WdRz5k (Added to Cart, Checkout Started, Placed Order 0 sinds flowstart; Received Email uit TZG9Mx, QUBUQV en T4a5Mk 0 in 7 dagen; niet in deze flow in 7 dagen), plus **Received Email waar $flow = WdRz5k 0 keer in de laatste 7 dagen** (dedupe), plus **Viewed Product (XNtYMB) 0 keer in de laatste 1 dag**. Die laatste staat niet in WdRz5k maar wel in het plan (11-overstapplan sectie 7): beide flows wachten 1 uur, dus zonder dit filter kunnen ze B1 in dezelfde minuut sturen voordat de Received Email-dedupe iets ziet. Weg te halen in de UI als Floris dat niet wil.
+- Herinstap 7 dagen (zoals WdRz5k).
+- Opbouw: alleen de nieuwe arm van WdRz5k (vanaf actie 119850686), zonder oude arm en zonder 90/10-split 119850685. Wacht 1 uur > categoriesplit (nu op V48nhq, Name bevat Hammer/Pan/Pot/ookware/Everything/fanne/Prep Bundle in 1 dag) > kookgerei: TP · B1 / anders: TP · B1-ACC > wacht 2 dagen tot 09:00 > kliksplit (met Bot Click = false) > cooldown-split (Received Email Campaign Name bevat "CODE ·" in 30 dagen, gedeeld met alle v4-flows) > 50/50 T02 code of geen code, of B2-NOTCLICKED.
+- A/B-test B1 (119850693) niet nagebouwd: TP · B1 = variant A ("Get this pan with 10% off", template R6E5Zv).
+- Berichtnamen met "TP · " ervoor; utm_campaign per bericht `v4-browse-tp` (was `v4-browse`). De UTM's in de template-links zelf blijven `v4-browse` (zelfde template).
+- B1-ACC-kliksplit zoekt nu Campaign Name bevat "TP · B1-ACC" (anders zou een klik op de B1-ACC uit WdRz5k meetellen).
+
+| Actie | Bericht | Template (kopie) | Bron in WdRz5k |
+|---|---|---|---|
+| 121177227 | TP · B1 | WchdbC | 119850691 / R6E5Zv |
+| 121177228 | TP · B1-ACC | TLQh4w | 119850694 / VTwW7c |
+| 121177242 | TP · B2-NOTCLICKED | TGd2H8 | 119850700 / VyZUHC |
+| 121177244 | TP · B2-CLICKED · pan nocode · cooldown | WE3K7t | 119850702 / RDD8j6 |
+| 121177250 | TP · CODE · B2-CLICKED · pan | WzquL5 | 119850706 / XRNAkP |
+| 121177251 | TP · B2-CLICKED · pan nocode · T02-B | VWps9s | 119850707 / SGpGH3 |
+| 121177247 | TP · B2-CLICKED · acc nocode · cooldown | XPszZj | 119850704 / TgNv8M |
+| 121177252 | TP · CODE · B2-CLICKED · acc | STVtpH | 119850708 / YcURLK |
+| 121177258 | TP · B2-CLICKED · acc nocode · T02-B | X3b2FU | 119850709 / UZcnke |
+
+**Controles (GET na aanmaken).**
+- Flow status draft, 9 mails status draft, trigger V48nhq, 9 flowfilters zoals hierboven, entry 121177225 (wacht 1 uur).
+- Alle 9 templatekopieën byte-gelijk aan de huidige templates van WdRz5k. In elke mail: header-lockup en footer-lockup (CDN), footer #282828, 3 footerlinks #111111 (Unsubscribe, Manage preferences, View in browser), ABOUT naar /pages/about-us, geen em dash. #BDB8B0 komt alleen nog voor in tagline en claimsregel (geen link).
+- `POST /api/template-render` met een TP-achtig event (Name, URL, ImageURL, Price): 7 van 9 renderen zonder restanten `{{`/`{%`, productnaam staat erin, 3x #111111. De 2 CODE-mails geven "customer profile is required" (coupon_code-tag); de live CODE-template XRNAkP in WdRz5k geeft precies dezelfde melding, dus geen afwijking.
+- Het TP-event heeft dezelfde vorm als het klaviyo.js-event: Name, URL, ImageURL, Price, CompareAtPrice, ProductID, Categories (200 recente events).
+
+**Open punt vóór livegang (verplicht).** De kliksplit na TP · B1 (actie **121177235**) zoekt nog Clicked Email waar **$flow = WdRz5k**; dat moet **QNZyEb** zijn. `PATCH /api/flow-actions/121177235` is geweigerd door de permissiecontrole van deze sessie. Zonder fix gaat vrijwel iedereen in de kookgerei-tak naar B2-NOTCLICKED (dedupe sluit WdRz5k-mails uit). UI: Flows > *v4 · Browse abandonment · Triple Pixel* > kookgerei-tak, conditional split na "Wait 2 days" > voorwaarde *Clicked Email* > filter *Flow equals* > kies *v4 · Browse abandonment · Triple Pixel* > Save.
+
+**Spiegelfilter voor WdRz5k (voorstel, NIET toegepast).** Flowfilter toevoegen op WdRz5k: *Received Email where Flow equals v4 · Browse abandonment · Triple Pixel (QNZyEb) zero times in the last 7 days*. API-vorm: `{"type":"profile-metric","metric_id":"YkRM4Q","measurement":"count","measurement_filter":{"type":"numeric","operator":"equals","value":0},"timeframe_filter":{"type":"date","operator":"in-the-last","unit":"day","quantity":7},"metric_filters":[{"property":"$flow","filter":{"type":"string","operator":"equals","value":"QNZyEb"}}]}` als nieuwe conditiegroep. Alleen tegelijk met de livegang van QNZyEb; WdRz5k is live, dus wijzigen vraagt akkoord Floris. Let op: een flowfilter op een live flow geldt ook voor wie er al in zit.
+
+**Inhaalsegment SffqDu "TP browse gemist sinds 9 okt"** (alleen segment, geen campagne). V48nhq meer dan 0 keer na 2026-10-08T22:29Z, Placed Order 0 keer sindsdien, Received Email uit WdRz5k 0 keer sindsdien, mag e-mailmarketing ontvangen. Grootte na verwerking (19 okt 18:03 UTC): **2.788 profielen**. Bevat ook mensen die om andere redenen geen browsemail kregen (cart- of checkoutmail, eerder in WdRz5k); voor een inhaalcampagne eventueel nog Added to Cart en Checkout Started sinds 9 okt uitsluiten.
+
+**Livegang (na akkoord Floris).**
+1. Kliksplit 121177235 naar $flow = QNZyEb (UI-stap hierboven).
+2. Eventueel: triggerfilter tegen gratis producten (Name bevat niet Giveaway, E-Guide, E-Book, Mystery Gift; 02-segmenten-foutenjacht bevinding 14). Komt in TP-events zelden voor (1 E-Guide in 200).
+3. Alle 9 mails op Live: in de UI per mailkaart *Status* > *Live*, of via API `PATCH /api/flow-actions/{id}` met status live voor 121177227, 121177228, 121177242, 121177244, 121177250, 121177251, 121177247, 121177252, 121177258.
+4. Flow op Live: statusmenu rechtsboven > *Live*, of `PATCH /api/flows/QNZyEb` met `status: live`.
+5. Dezelfde minuut: spiegelfilter op WdRz5k (zie boven).
+6. Na 1 uur en 24 uur: Received Email per $flow QNZyEb (verwacht 40 tot 70 per dag), geen profiel met mail uit WdRz5k én QNZyEb binnen 7 dagen, uitschrijving en bounce in de 90/10-bewaking meenemen.
+
+**Terugdraaien.** QNZyEb op Draft (statusmenu of `PATCH /api/flows/QNZyEb` status draft); lopende profielen krijgen dan niets meer. Spiegelfilter van WdRz5k weer weghalen. Niet archiveren (PLAYBOOK 7). TyEjuQ niet terugzetten (verouderde claims).
