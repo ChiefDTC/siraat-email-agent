@@ -90,3 +90,11 @@ Controle na 13 tot 18: `qa_render.py` (met browser) 61/61 groen; alle 61 gebouwd
 - Meting: telling vanaf nu. Hoofdmaat alle orders per ontvanger binnen 5 dagen na W1, daarnaast open, klik, uitschrijvingen. Looptijd tot ca. 29 okt.
 - Terugdraaien: template_id RgF2K5, onderwerp "No PFAS. Here's the paper. And 10%." en de oude preview terug op actie 119850658.
 - Afzendernaam blijft "Siraat's Kitchen" in A en B (later voor alle mails tegelijk).
+
+## Footer-links zwart (19 okt 2026 ca. 17:50 UTC, keuze en akkoord Floris: variant E)
+- Unsubscribe, Manage preferences en View in browser in de vaste footer van #BDB8B0 naar #111111 (contrast 1,3:1 op #282828). Advies was B (#8C8780); Floris koos E.
+- Repo: klaviyo/templates/partials/footer.html aangepast.
+- Klaviyo: 89 flowmails in 15 live flows (alle v4-flows plus Review request) via bibliotheek-kopie en PATCH flow-action template_id. Elke mail gecontroleerd: oude kleur weg, 3x #111111, status ongewijzigd. A/B-tests W1 en browse blijven live met de nieuwe templates. Oude EB-flows en Old-armen hebben een andere footer en zijn niet aangeraakt.
+- Mapping oud naar nieuw template per actie: research/footer-links/footer-applied-*.json. Oude HTML: scratchpad golive/footer-backup/.
+- Terugdraaien: per actie template_id terugzetten naar de oude id (via bibliotheek-kopie van de backup-HTML, zelfde script scratchpad golive/footer_apply.py met kleur omgedraaid).
+- Risico (gemeld): afmeldlink nauwelijks zichtbaar; CAN-SPAM vraagt "clear and conspicuous". Klaviyo stuurt wel de List-Unsubscribe-header mee (één-klik afmelden in Gmail/Yahoo). Spamklachten de komende week volgen in de 90/10-bewaking.

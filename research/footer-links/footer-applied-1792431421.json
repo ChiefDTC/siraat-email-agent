@@ -1,0 +1,618 @@
+[
+ {
+  "flow": "v4 \u00b7 Checkout abandonment",
+  "action": "119850587",
+  "old": "QYZvzP",
+  "new": "Udgz6f",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Checkout abandonment",
+  "action": "119850597",
+  "old": "Y65Mgm",
+  "new": "QUUPik",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Checkout abandonment",
+  "action": "119850599",
+  "old": "SxxC48",
+  "new": "Yp8nzj",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Checkout abandonment",
+  "action": "119850603",
+  "old": "SsUmGJ",
+  "new": "TVmMTy",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Checkout abandonment",
+  "action": "119850606",
+  "old": "YnzNvq",
+  "new": "WDiKfH",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Checkout abandonment",
+  "action": "119850613",
+  "old": "ShDQZW",
+  "new": "TkWZtN",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Checkout abandonment",
+  "action": "119850618",
+  "old": "VaRj4T",
+  "new": "RR39cn",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Checkout abandonment",
+  "action": "119850620",
+  "old": "XvEYQB",
+  "new": "UukQd9",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Checkout abandonment",
+  "action": "119850621",
+  "old": "TdaURC",
+  "new": "XPiQbV",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Welcome",
+  "action": "119850655",
+  "old": "TNLdn6",
+  "new": "TPiMrZ",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Welcome",
+  "action": "119850657",
+  "old": "WTQsiG",
+  "new": "Sq2bvX",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Welcome",
+  "action": "119850658",
+  "old": "X5yyXv",
+  "new": "Rx7mRa",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Welcome",
+  "action": "119850663",
+  "old": "YmKirB",
+  "new": "VjPTKM",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Welcome",
+  "action": "119850667",
+  "old": "Scc6AK",
+  "new": "VCjUYQ",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Welcome",
+  "action": "119850673",
+  "old": "VGqBgj",
+  "new": "SWZdPy",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Welcome",
+  "action": "119850674",
+  "old": "TJJd54",
+  "new": "XV8AC3",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Welcome",
+  "action": "119850679",
+  "old": "UPvMBw",
+  "new": "UZU8qz",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Welcome",
+  "action": "119850680",
+  "old": "UEfgUJ",
+  "new": "VVrcgf",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Cart abandonment",
+  "action": "119850627",
+  "old": "RXNZa3",
+  "new": "Rp3mf6",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Cart abandonment",
+  "action": "119850628",
+  "old": "Tr3FKh",
+  "new": "WrMYnX",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Cart abandonment",
+  "action": "119850633",
+  "old": "TSNdF8",
+  "new": "T9seB4",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Cart abandonment",
+  "action": "119850636",
+  "old": "TNaXjJ",
+  "new": "YccRJV",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Cart abandonment",
+  "action": "119850637",
+  "old": "Ypb4xL",
+  "new": "UgQ5kp",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Cart abandonment",
+  "action": "119850641",
+  "old": "Tiprfn",
+  "new": "VE7F7U",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Cart abandonment",
+  "action": "119850642",
+  "old": "UpaZMQ",
+  "new": "U5yyv6",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Cart abandonment",
+  "action": "119850644",
+  "old": "W2knBx",
+  "new": "SzCGdE",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Cart abandonment",
+  "action": "119850646",
+  "old": "Wu6Uxn",
+  "new": "RC6Cdt",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Cart abandonment",
+  "action": "119850647",
+  "old": "V9ryWJ",
+  "new": "YxUpdd",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Sunset",
+  "action": "119850754",
+  "old": "UJDheF",
+  "new": "XXvAMt",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Sunset",
+  "action": "119850756",
+  "old": "QYwZwV",
+  "new": "XCYzpT",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Winback",
+  "action": "119850720",
+  "old": "UL53kQ",
+  "new": "YyvDfz",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Winback",
+  "action": "119850721",
+  "old": "SbmAwW",
+  "new": "X9d3jx",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Winback",
+  "action": "119850722",
+  "old": "XtZYGZ",
+  "new": "TQRhxC",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Winback",
+  "action": "119850723",
+  "old": "SyuS7p",
+  "new": "VLwFAn",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Winback",
+  "action": "119850728",
+  "old": "W4HnLX",
+  "new": "VrZEcN",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Winback",
+  "action": "119850730",
+  "old": "WB7b4c",
+  "new": "V7uCPe",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Winback",
+  "action": "119850732",
+  "old": "R4yZPX",
+  "new": "VWnsjw",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Winback",
+  "action": "119850733",
+  "old": "TVLtSU",
+  "new": "RWnpzA",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Winback",
+  "action": "119850734",
+  "old": "QNFeMM",
+  "new": "TqhfGv",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Winback",
+  "action": "119850735",
+  "old": "VuiAmd",
+  "new": "Ufb5cM",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Site abandonment",
+  "action": "119850748",
+  "old": "UYx4gR",
+  "new": "QWPjqS",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Site abandonment",
+  "action": "119850750",
+  "old": "Rj42Uv",
+  "new": "UhMjpE",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Post-purchase \u00b7 levering",
+  "action": "119850581",
+  "old": "Tv5G4j",
+  "new": "UKxRjv",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 VIP",
+  "action": "119850713",
+  "old": "SnD7nf",
+  "new": "TXgi26",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 VIP",
+  "action": "119850714",
+  "old": "SQpDi6",
+  "new": "Ub94TK",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 VIP",
+  "action": "119850717",
+  "old": "SAvSfU",
+  "new": "Xw74Sx",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 VIP",
+  "action": "119850718",
+  "old": "SvSBUw",
+  "new": "Ywfp5B",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Browse abandonment",
+  "action": "119850691",
+  "old": "RYUzKs",
+  "new": "R6E5Zv",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Browse abandonment",
+  "action": "119850692",
+  "old": "SsF7Fh",
+  "new": "VFEbdx",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Browse abandonment",
+  "action": "119850694",
+  "old": "ShqAYv",
+  "new": "VTwW7c",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Browse abandonment",
+  "action": "119850700",
+  "old": "Wk2TVi",
+  "new": "VyZUHC",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Browse abandonment",
+  "action": "119850702",
+  "old": "SzUCdy",
+  "new": "RDD8j6",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Browse abandonment",
+  "action": "119850704",
+  "old": "XfxXLY",
+  "new": "TgNv8M",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Browse abandonment",
+  "action": "119850706",
+  "old": "WxTENX",
+  "new": "XRNAkP",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Browse abandonment",
+  "action": "119850707",
+  "old": "Y6rMhg",
+  "new": "SGpGH3",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Browse abandonment",
+  "action": "119850708",
+  "old": "SCwSqr",
+  "new": "YcURLK",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Browse abandonment",
+  "action": "119850709",
+  "old": "VvJktn",
+  "new": "UZcnke",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Sunset \u00b7 kept",
+  "action": "119850775",
+  "old": "UWw48k",
+  "new": "UKiBi4",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Sunset \u00b7 kept",
+  "action": "119850777",
+  "old": "XPHwbh",
+  "new": "SGYWKp",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Post-purchase",
+  "action": "119850551",
+  "old": "SNfTa7",
+  "new": "XhZ3Xr",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Post-purchase",
+  "action": "119850552",
+  "old": "Uw4wjc",
+  "new": "UCEkN9",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Post-purchase",
+  "action": "119850554",
+  "old": "WLeVKw",
+  "new": "SvHrU6",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Post-purchase",
+  "action": "119850558",
+  "old": "VrzAaS",
+  "new": "RHrSAF",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Post-purchase",
+  "action": "119850560",
+  "old": "TtTbXB",
+  "new": "Vwaqvi",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Post-purchase",
+  "action": "119850561",
+  "old": "TpfVCd",
+  "new": "SQPHk2",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Post-purchase",
+  "action": "119850562",
+  "old": "TiCFgP",
+  "new": "XmcycE",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Post-purchase",
+  "action": "119850563",
+  "old": "XYg2Qf",
+  "new": "TrPKN8",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Post-purchase",
+  "action": "119850564",
+  "old": "VubQmK",
+  "new": "RiSQU5",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Post-purchase",
+  "action": "119850565",
+  "old": "YmpiqG",
+  "new": "RLDnPU",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Post-purchase",
+  "action": "119850566",
+  "old": "UBh2GW",
+  "new": "TeyeWP",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Post-purchase",
+  "action": "119850567",
+  "old": "Wj5DS3",
+  "new": "XJV5Pt",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Post-purchase",
+  "action": "119850568",
+  "old": "SDACvF",
+  "new": "S7KEfQ",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Post-purchase",
+  "action": "119850569",
+  "old": "TbYqLU",
+  "new": "W5JGRf",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Post-purchase",
+  "action": "119850570",
+  "old": "XRBLkk",
+  "new": "SeZaN7",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Post-purchase",
+  "action": "119850571",
+  "old": "Tz7Gmm",
+  "new": "Rn6m9i",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Post-purchase",
+  "action": "119850572",
+  "old": "U2Sehc",
+  "new": "WvueCz",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Post-purchase",
+  "action": "119850573",
+  "old": "RwN3NG",
+  "new": "Y8DBsg",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Post-purchase",
+  "action": "119850574",
+  "old": "T5kagZ",
+  "new": "Rk5kYM",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Post-purchase",
+  "action": "119850575",
+  "old": "VjwzHj",
+  "new": "Vi4pAc",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Post-purchase",
+  "action": "119850576",
+  "old": "TstrRs",
+  "new": "SttbJ8",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Post-purchase",
+  "action": "119850577",
+  "old": "Vag52x",
+  "new": "RAyn5j",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Post-purchase",
+  "action": "119850578",
+  "old": "Yve4Zj",
+  "new": "T4tece",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Post-purchase",
+  "action": "119850579",
+  "old": "RMh4Te",
+  "new": "SNzta4",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Anniversary",
+  "action": "119850738",
+  "old": "TwCc9W",
+  "new": "VB9ERB",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Anniversary",
+  "action": "119850741",
+  "old": "YcfxHn",
+  "new": "XRk6hV",
+  "ok": true
+ },
+ {
+  "flow": "v4 \u00b7 Anniversary",
+  "action": "119850742",
+  "old": "XuBeKm",
+  "new": "VP2rKg",
+  "ok": true
+ },
+ {
+  "flow": "Review request \u00b7 Delivered +14d (Siraat DS)",
+  "action": "119577632",
+  "old": "RAz57u",
+  "new": "Wc9HjH",
+  "ok": true
+ },
+ {
+  "flow": "Review request \u00b7 Delivered +14d (Siraat DS)",
+  "action": "119577635",
+  "old": "Y9fywM",
+  "new": "UGdR4h",
+  "ok": true
+ }
+]
