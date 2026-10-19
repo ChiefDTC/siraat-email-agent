@@ -12,7 +12,7 @@ Bovenaan staat wat eerst komt. Siraat mag items toevoegen, schrappen of verplaat
 
 ## Daarna
 
-6. **Vaatwasstrips-abonnementsflow** versterken (vraag van Siraat aan Homestead, oktober): follow-ups naar mensen die de strips als gift kregen maar nog geen abonnement hebben, timing eerder (pak van 10 vellen), 20 procent op het abonnement na de educatie.
+6. **Vaatwasstrips-abonnementsflow** versterken (vraag van Siraat aan Homestead, oktober): follow-ups naar mensen die de strips als gift kregen maar nog geen abonnement hebben, timing eerder (pak van 10 vellen), 20 procent op het abonnement na de educatie. Status 19 okt: Mystery Gift v3 als concept herbouwd (klaviyo/flows/mystery-gift-v3.md, 4 mails in klaviyo/templates/v3/mystery/). Volgende stap: Floris keurt copy, M4 aan/uit en Recharge-portaalclaim; dan beelden naar Klaviyo, templates en flow via klikstappen. Daarna wekelijks checken of het Mystery Gift-product-ID (15785445622100) niet opnieuw is gekloond.
 7. Reviewflow: tak voor de 12-delige set zodra de backorder opgelost is (21 dagen wachttijd). Check ook de 6-delige pannenset (voorraad -318 op 6 oktober).
 8. Reviewflow test 2: wachttijd 7 tegenover 14 dagen.
 9. Winback herbouwen (0,5 procent klik). Founder-note stijl, 3 mails.
