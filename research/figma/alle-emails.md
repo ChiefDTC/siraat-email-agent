@@ -90,6 +90,14 @@ Screenshot van het geheel: `research/figma/alle-emails-overzicht.png` (verkleind
 - **U1 · UGC first egg (VPixnJ)**: 4 dagen na levering (09:00). Onderwerp: Show us your first egg?
 - **Review R1 kort, zonder header (A/B onderwerp)**: 14 dagen na levering (09:30). Onderwerp: Win your purchase amount back | How was your experience?
 
+### Rij 7b · Mystery Gift v3 (concept, 19 okt), 4 mails
+[Naar de rij](https://www.figma.com/design/oaxnBkz3MAbePRnorCrQwz?node-id=39-2) · Frame "Mystery Gift v3 (concept, 19 okt)" direct onder rij 7 (node 39:2). Trigger: Ordered Product, ProductID 15785445622100 (OF ProductName equals "Mystery Gift"); vervangt WvRupU (Draft, dode trigger). Filters: rc_active_subscriber false of niet gezet, geen order met Dishwasher Sheets sinds start, nooit eerder in deze flow, nooit WvRupU ontvangen, geen refund in 30 dagen; elke mail slaat over als er in de laatste 2 dagen een X3ySuU-mail ging. Status: concept, niet in Klaviyo. Beelden: klaviyo/templates/v3/mystery/previews/m1 t/m m4-mobile-375.png (375 px, 2x). Spec: klaviyo/flows/mystery-gift-v3.md.
+
+- **M1 reveal**: dag 3, 10:00. Onderwerp A: Let's reveal your mystery gift | B: What's in the small box in your order. Preview: It's not overstock. It's the other half of a no-coating kitchen.
+- **M2 gebruik**: dag 12, 10:00. Onderwerp: The ten-second way to use your gift. Preview: One sheet where the pod goes. Half a sheet for a light load.
+- **M3 aanbod**: dag 23, 10:00. Onderwerp A: Alright, here's the offer | B: 20% off every delivery, not just the first. Preview: Including the part most brands would leave out.
+- **M4 laatste, optioneel**: dag 30, 10:00. Onderwerp: Last one from me about the dishwasher sheets. Preview: The price isn't going anywhere. These emails are.
+
 ### Rij 8a · v4 · Winback (UyFc78), 7 mails
 [Naar de rij](https://www.figma.com/design/oaxnBkz3MAbePRnorCrQwz?node-id=4-2) · Trigger: Bestelling, daarna 45 dagen stilte. R1 per product (set, pan, accessoire), R2 dag 75: 10% of 15% voor terugkerende klanten (code/nocode).
 
