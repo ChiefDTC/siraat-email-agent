@@ -70,3 +70,12 @@ Bijwerken bij elk nieuw besluit. Datum per regel.
 - 9 okt 2026: naamgeving eigen campagnes: "Floris | <dag> <Maand> | <Type> | <Doelgroep>", bijv. "Floris | 9 October | Recipe | USA Only".
 - 12 okt 2026: reviewmail (flow XzHrez) zonder vaste header op verzoek van Floris (uitzondering op de headerregel). Het logo staat als witte lockup (brand/logo/lockup/siraat-lockup-white.png) in de hero; vaste footer blijft.
 | 2026-10-15 | Merknaam in mailcopy is Siraat, niet Siraat's Kitchen (Floris). | Toegepast in W1 v3 en W1 v2 (kop, Benjamin-noot, ondertekening). Overige mails nog niet aangepast, wacht op akkoord. |
+
+## 19 oktober 2026 (avond, Floris)
+
+| Datum | Besluit | Gevolg voor mails |
+| --- | --- | --- |
+| 2026-10-19 | Alle oud/nieuw-tests (T01) gestopt: welcome, checkout, cart en browse op 100% nieuw. | Oude armen krijgen niemand meer, blijven staan voor rollback. Failure to launch krijgt geen nieuwe instroom meer. |
+| 2026-10-19 | Sale-kalender: nu 50% off, Halloween 70% off, november (Black Friday) 70% off. De 4 gifts blijven in de novembersale. | C1-onderwerptest (T14) kan op 22 okt starten. Gift-copy blijft in flows. |
+| 2026-10-19 | HI10 en de unieke flowcodes mogen stapelen op de sale (50 en 70% off). | Codemails blijven in de sale; T02-besluit op 31 okt houdt rekening met de marge. |
+| 2026-10-19 | C1-onderwerptest mag (T12 "geen C1-onderwerptest" vervalt), omdat de oud/nieuw-test in checkout klaar is. | T14: A huidig onderwerp, B "Don't leave these hanging". |
