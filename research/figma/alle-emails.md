@@ -137,6 +137,15 @@ Screenshot van het geheel: `research/figma/alle-emails-overzicht.png` (verkleind
 - **Recept 01 · Steak night · US**: US: verstuurd 9 okt. Onderwerp: Friday steak night, sauce included
 - **Recept 01 · Steak night · INT**: INT: gepland 10 okt, geannuleerd (niet verstuurd). Onderwerp: Weekend steak night recipe, sauce included
 
+### Footer links: 5 kleuren (19 okt)
+[Naar het frame](https://www.figma.com/design/oaxnBkz3MAbePRnorCrQwz?node-id=49-2) · Los frame rechts naast het overzicht (node 49:2), bestaande inhoud niet aangepast. Voor Floris: de footer vijf keer naast elkaar (600 px breed, render 2x uit research/footer-links/footer-A t/m E.html, PNG's ernaast). Huidig: #BDB8B0 (contrast 7,5). Alleen de links Unsubscribe, Manage preferences, View in browser veranderen.
+
+- **A**: lichter grijs #D9D5CF, contrast 10,1
+- **B**: middengrijs #8C8780, contrast 4,1 (advies)
+- **C**: donkergrijs #6F6B66, contrast 2,8
+- **D**: antraciet #55524E, contrast 1,9
+- **E**: zwart #111111, contrast 1,3
+
 ### Rij 10 · Merk-bouwstenen
 
 - Logo-lockups (brand/logo/lockup/): zwart op crème, wit op donker, e-mailformaten.
