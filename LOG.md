@@ -185,3 +185,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 18 okt 2026 07:52 UTC: 90/10-bewaking: splits 90, flows live. Sinds switch nieuw vs oud per ontvanger: browse $0.84 vs 0, cart $1.25 vs $0.63, checkout $2.08 vs $2.36 (88%), welcome $1.26 vs $1.15. Alarmen: checkout-bounce nieuw 21,6% (bots), uitschrijving cart nieuw 1,3% (oud 2,0%), welcome beide armen >1%. Gepost in #claude-mail, niets teruggedraaid.
 - 18 okt 2026 08:45 UTC: concurrenten-tijdlijn dag 6, 6 nieuwe mails (HexClad 3, Our Place 2, Caraway 1), overzicht bijgewerkt.
 - 18 okt 2026 15:35 UTC: VirusTotal siraatskitchen.com 0/92 malicious; alleen Gridinsoft nog suspicious.
+- 19 okt 2026 07:10 UTC: review-backfill hercheck: lijst UXBmYd 253, 0 refunds/cancels sinds 16 okt, 0 reviewmails. Sinds 17 okt: 83 geen mail, 159 één mail (vooral HS-campagne 17 okt), 11 twee of meer. Campagne 01M538JS4KMBVEPZ94EB90JB6X nog Draft. Akkoord gevraagd voor 14:00 UTC vandaag.
