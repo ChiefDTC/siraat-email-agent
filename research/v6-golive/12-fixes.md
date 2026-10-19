@@ -151,3 +151,12 @@ Status: **concept**. Flow en alle mails staan op Draft; niets verstuurd, niets g
 6. Na 1 uur en 24 uur: Received Email per $flow QNZyEb (verwacht 40 tot 70 per dag), geen profiel met mail uit WdRz5k én QNZyEb binnen 7 dagen, uitschrijving en bounce in de 90/10-bewaking meenemen.
 
 **Terugdraaien.** QNZyEb op Draft (statusmenu of `PATCH /api/flows/QNZyEb` status draft); lopende profielen krijgen dan niets meer. Spiegelfilter van WdRz5k weer weghalen. Niet archiveren (PLAYBOOK 7). TyEjuQ niet terugzetten (verouderde claims).
+
+### Livegang Browse Triple Pixel v3 en 100% nieuw (19 okt 2026, akkoord Floris "ja zet maar live")
+
+- QNZyEb: 9 berichten op de v3-templates gezet (library-template + flow-action PATCH, mapping in `tp-v3-applied.json`; oude kopieën WchdbC, TLQh4w, TGd2H8, WE3K7t, XPszZj, VWps9s, X3b2FU, WzquL5, STVtpH blijven bestaan voor rollback). Onderwerp A uit browse-tp-v3.md sectie 3; B2-NOTCLICKED nu "Why we can cover this pan for 75 years". Preheaders uit dezelfde tabel.
+- Kliksplit 121177235: Clicked Email $flow = WdRz5k vervangen door QNZyEb.
+- 9 berichten live, flow QNZyEb live. Controle: header- en footerlockup, 3x #111111, geen em dash, render op TP-event zonder restanten (CODE-mails: bekende melding "customer profile is required", zelfde als live XRNAkP).
+- Spiegeldedupe op WdRz5k: een flowfilter kan niet via de API (PLAYBOOK: geen definition in PATCH /api/flows). Daarom als berichtfilter "Received Email where $flow = QNZyEb 0 keer in 7 dagen" op alle 11 mails van de nieuwe arm (B1 hoofd + variant A en B, B1-ACC, alle B2/CODE). A/B-test 119850693 bleef live, zelfde experiment-id.
+- Splits naar 100% nieuw: browse 119850685 en checkout 119850583 van 90 naar 100. Oude armen krijgen niemand meer, blijven staan voor rollback (terug naar 90).
+- Backups van elke actie vóór de wijziging: scratchpad `tp/backup/`.

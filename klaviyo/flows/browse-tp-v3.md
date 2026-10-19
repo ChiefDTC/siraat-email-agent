@@ -1,6 +1,6 @@
 # Browse Triple Pixel v3 · nieuw ontwerp voor flow QNZyEb (concept)
 
-Versie 19 oktober 2026. Vervangt de 1:1-kopie van de negen v4-browsemails (WdRz5k) in de draft-flow **QNZyEb "v4 · Browse abandonment · Triple Pixel"**. **Niets is in Klaviyo aangepast: geen templates, geen flowwijziging.** Dit is ontwerp plus bron-HTML; livegang alleen na akkoord en klikwerk van Floris.
+Versie 19 oktober 2026, **live sinds 19 okt** (zie 12-fixes.md). Vervangt de 1:1-kopie van de negen v4-browsemails (WdRz5k) in de draft-flow **QNZyEb "v4 · Browse abandonment · Triple Pixel"**. **Niets is in Klaviyo aangepast: geen templates, geen flowwijziging.** Dit is ontwerp plus bron-HTML; livegang alleen na akkoord en klikwerk van Floris.
 
 - Bron en previews: `klaviyo/templates/v3/browse-tp/` (`tp-*.html` bron, `tp-*.klaviyo.html` met CDN-links, `tp-*-preview.html` gerenderd op een TP-achtig event, `previews/tp-*-mobile-375.png` en `-desktop.png`).
 - Bouwen: `python3 -I scripts/build_template.py klaviyo/templates/v3/browse-tp/tp-b1.html klaviyo/templates/v3/browse-tp/assets klaviyo/templates/v3/browse-tp/assets/klaviyo-urls.txt` (zelfde voor de andere vier). Preview met logica: `expand.py` + `render.py` zoals PLAYBOOK 12, op een event met `Price "$144.00"` en profiel US.

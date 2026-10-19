@@ -1,0 +1,110 @@
+[
+ {
+  "action": "121177227",
+  "file": "tp-b1",
+  "old": [
+   "WchdbC",
+   "Get this pan with 10% off",
+   "Two years ago I read about PFAS. This pan is what came out of it."
+  ],
+  "new": "TY9hCH",
+  "subject": "Get this pan with 10% off",
+  "ok": true
+ },
+ {
+  "action": "121177228",
+  "file": "tp-b1-acc",
+  "old": [
+   "TLQh4w",
+   "Looked twice? Here's the detail.",
+   "What it is made of, in two lines. And how Siraat started."
+  ],
+  "new": "SVXXh8",
+  "subject": "Looked twice? Here's the detail.",
+  "ok": true
+ },
+ {
+  "action": "121177242",
+  "file": "tp-b2-notclicked",
+  "old": [
+   "TGd2H8",
+   "Skeptical? So were they.",
+   "One thought it was a scam. One is on her fourth pan."
+  ],
+  "new": "XmHxNn",
+  "subject": "Why we can cover this pan for 75 years",
+  "ok": true
+ },
+ {
+  "action": "121177244",
+  "file": "tp-b2-clicked-nocode",
+  "old": [
+   "WE3K7t",
+   "\"I ordered one pan to try it out\"",
+   "Sunny C. started with one. Every order comes with 4 gifts."
+  ],
+  "new": "SPjGMd",
+  "subject": "\"I ordered one pan to try it out\"",
+  "ok": true
+ },
+ {
+  "action": "121177247",
+  "file": "tp-b2-clicked-nocode",
+  "old": [
+   "XPszZj",
+   "\"I ordered one pan to try it out\"",
+   "Sunny C. started with one. Every order comes with 4 gifts."
+  ],
+  "new": "W5EsqB",
+  "subject": "\"I ordered one pan to try it out\"",
+  "ok": true
+ },
+ {
+  "action": "121177251",
+  "file": "tp-b2-clicked-nocode",
+  "old": [
+   "VWps9s",
+   "\"I ordered one pan to try it out\"",
+   "Sunny C. started with one. Every order comes with 4 gifts."
+  ],
+  "new": "QPCirr",
+  "subject": "\"I ordered one pan to try it out\"",
+  "ok": true
+ },
+ {
+  "action": "121177258",
+  "file": "tp-b2-clicked-nocode",
+  "old": [
+   "X3b2FU",
+   "\"I ordered one pan to try it out\"",
+   "Sunny C. started with one. Every order comes with 4 gifts."
+  ],
+  "new": "Ut6jDg",
+  "subject": "\"I ordered one pan to try it out\"",
+  "ok": true
+ },
+ {
+  "action": "121177250",
+  "file": "tp-b2-clicked",
+  "old": [
+   "WzquL5",
+   "Your own 10% expires in 48 hours",
+   "Already applied. In 48 hours we remove it."
+  ],
+  "new": "QQdytM",
+  "subject": "Your own 10% expires in 48 hours",
+  "ok": true
+ },
+ {
+  "action": "121177252",
+  "file": "tp-b2-clicked",
+  "old": [
+   "STVtpH",
+   "Your own 10% expires in 48 hours",
+   "Already applied. In 48 hours we remove it."
+  ],
+  "new": "QXt524",
+  "subject": "Your own 10% expires in 48 hours",
+  "ok": true
+ }
+]
