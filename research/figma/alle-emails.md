@@ -38,6 +38,15 @@ Screenshot van het geheel: `research/figma/alle-emails-overzicht.png` (verkleind
 - **CODE · B2-CLICKED · pan** (ook: CODE · B2-CLICKED · acc): na 1 u + 2 d (09:00). Onderwerp: Your own 10% expires in 48 hours
 - **B2-NOTCLICKED**: na 1 u + 2 d (09:00). Onderwerp: Skeptical? So were they.
 
+### Rij 2b · Browse Triple Pixel v3 (concept, 19 okt), 5 ontwerpen voor 9 mails
+[Naar de rij](https://www.figma.com/design/oaxnBkz3MAbePRnorCrQwz?node-id=58-2) · Frame "Browse Triple Pixel v3 (concept, 19 okt)" direct onder rij 2 (node 58:2). Trigger: Viewed Product - Triple Pixel (V48nhq), flow QNZyEb (Draft). Filters: geen mail uit WdRz5k in 7 dagen, geen Klaviyo Viewed Product (XNtYMB) in de laatste 1 dag, plus de filters van WdRz5k. Status: concept, niet in Klaviyo. Beelden: klaviyo/templates/v3/browse-tp/previews/tp-*-mobile-375.png (375 px, 2x; de code in de CODE-mail is een voorbeeldcode van de lokale render). Spec: klaviyo/flows/browse-tp-v3.md.
+
+- **TP · B1 (kookgerei)**: na 1 u. Onderwerp A: Get this pan with 10% off | B: Three questions to ask before you buy a pan. Preview: Here it is again, with the lab report, the 75-year warranty and 10% off.
+- **TP · B1-ACC**: na 1 u. Onderwerp A: Looked twice? Here's the detail. | B: We started with the cutting board. Preview: Here it is again. What it's made of, and 10% off with HI10.
+- **TP · B2-NOTCLICKED**: na 1 u + 2 d (09:00), niet geklikt. Onderwerp A: Why we can cover this pan for 75 years | B: How long did your last pan last? Preview: Nothing on it to wear off. That's why the warranty is this long.
+- **TP · B2-CLICKED nocode** (pan en acc, cooldown en T02-B, 4 berichten): na 1 u + 2 d (09:00). Onderwerp A: "I ordered one pan to try it out" | B: Two promises, before you decide. Preview: If you change your mind, or if something's wrong. Both are covered.
+- **TP · CODE · B2-CLICKED** (pan en acc): na 1 u + 2 d (09:00). Onderwerp A: Your own 10% expires in 48 hours | B: Want 10% off the one you went back to? Preview: Already applied with the button. In 48 hours we remove it.
+
 ### Rij 3 · v4 · Cart abandonment (TZG9Mx), 6 mails
 [Naar de rij](https://www.figma.com/design/oaxnBkz3MAbePRnorCrQwz?node-id=2-111) · Trigger: Added to Cart, geen checkout. 90% nieuw sinds 12 okt. K1 v2 (cartpagina, sinds 10 okt). Eerste korting pas in K3 (eigen 10%, 48 uur).
 
