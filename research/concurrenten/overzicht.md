@@ -1,4 +1,4 @@
-# Concurrenten-inbox: overzicht na dag 7 (stand 19 okt 2026, ca. 08:45 UTC)
+# Concurrenten-inbox: overzicht na dag 8 (stand 20 okt 2026, ca. 08:40 UTC)
 
 Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmail.com, per regel in `tijdlijn.csv`. Acties uit `log-*.csv` (HexClad en Our Place b handmatig door Floris, geen log). Kortingscodes staan nergens uitgeschreven.
 
@@ -6,8 +6,8 @@ Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmai
 
 | Merk | w | b | c | co | Totaal | Status inschrijving |
 |---|---|---|---|---|---|---|
-| HexClad | 6 | 10 | 8 | n.v.t. | 24 | w/b/c handmatig (Floris), co niet gedaan |
-| Our Place | 6 | 10 | 7 | 0 | 23 | alles gelukt; c pas om 11:18 in winkelwagen |
+| HexClad | 6 | 10 | 9 | n.v.t. | 25 | w/b/c handmatig (Floris), co niet gedaan |
+| Our Place | 6 | 10 | 8 | 0 | 24 | alles gelukt; c pas om 11:18 in winkelwagen |
 | Caraway | 5 (op hex-w) | 0 | 0 | 0 | 5 | w/b/c via footer "gelukt", maar geen enkele mail op cw-adressen; beide Caraway-mails kwamen op hex-w binnen |
 | Made In | 0 | 0 | 0 | 0 | 0 | w/b/c footer "Thanks! You've been subscribed", co gestopt (telefoon verplicht) |
 | Okura | 0 | 0 | 0 | 0 | 0 | w/b/c captcha, alleen co (checkout zonder betaling, opt-in aan) |
@@ -20,7 +20,7 @@ Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmai
 |---|---|---|---|
 | hex-w | 0,0 welkom (benadering) | 1,5 browse "Still thinking about it?" | 25,6 browse 2 "The last cookware you'll ever need" |
 | hex-b | 0,0 welkom (benadering) | 1,0 browse "Great choice, chef!" | 25,0 browse 2 "Lasts a Lifetime – Guaranteed!" |
-| hex-c | 0,0 welkom (benadering) | 0,7 cart "Your kitchen needs this!" | 48,0 welkom 3 (geen cart 2, ook na 152 uur niet) |
+| hex-c | 0,0 welkom (benadering) | 0,7 cart "Your kitchen needs this!" | 48,0 welkom 3, cart 2 "The last cookware you'll ever need" pas na 168,7 uur (7 dagen) |
 | Caraway (hex-w) | 0,0 welkom "Greetings From Caraway" | 12,0 "Our Top Caraway Picks" | 36,1 "Are You Cooking Clean?" (PFAS-vergelijking), daarna 84,1 welkom 4 (set, $230) en 132,2 welkom 5 "The Problem: Traditional Cookware Is Toxic" |
 | op-b | 0,0 welkom (benadering) | 4,0 browse "You Left Before the Good Part" | 24,0 welkom 2 "Did you hear?", 28,0 browse 2 "We Can't Wait Forever 💔", 42,4 "Party of One" (campagne minis) |
 | op-w | 0,07 welkom (4 min na popup) | 24,2 welkom 2 "Did you hear?" | |
@@ -72,6 +72,14 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 - **Geen nieuwe mail van Caraway, Made In, Okura, Plateful of Taima** in de laatste 26 uur. Caraway's ritme van 48 uur voorspelt welkom 6 rond 180 uur (19 okt rond 22:45 UTC).
 - **Na 7 dagen nog steeds geen kortingscode** bij HexClad, Our Place en Caraway. Plateful blijft het enige merk met een code.
 
+## Patroon na dag 8 (20 okt)
+
+- **HexClad stuurt de tweede cartmail pas na 7 dagen.** hex-c kreeg op 19 okt om 11:22 UTC (168,7 uur na de actie) "The last cookware you'll ever need" (preview "Your favorite kitchen staple is here."): dezelfde Hybrid Fry Pan 10 inch ($116), "You Qualify For Free Shipping", "Built To Last" met lifetime guarantee, een review van een klant die 5 tot 6 avonden per week kookt en "Complete your order". Hetzelfde onderwerp als browse 2 van hex-w na 25,6 uur. De cartflow heeft dus een tweede stap na een week, als late herinnering, nog steeds zonder korting.
+- **Our Place slaat w over bij de accessoire-campagne.** "Mutually Beneficial" ging naar op-b (05:15) en op-c (12:15, weer 7 uur later), maar op-w kreeg hem niet. De eerste campagne die alleen naar wie producten heeft bekeken of in de winkelwagen had gaat. Accessoires dus alleen naar mensen met aantoonbare interesse.
+- **Caraway welkom 6 bleef uit.** Het ritme van 48 uur voorspelde een mail rond 180 uur (19 okt 22:45 UTC); er kwam niets. De welkomreeks van Caraway lijkt na 5 mails (132 uur) klaar.
+- **Rustigste dag tot nu toe:** 2 nieuwe mails (HexClad 1, Our Place 1). Geen mail van Made In, Okura, Plateful of Taima.
+- **Na 8 dagen nog steeds geen kortingscode** bij HexClad, Our Place en Caraway. Plateful blijft het enige merk met een code.
+
 ## Korting: wanneer en hoe hoog
 
 - **Plateful** is het enige merk met een kortingscode: 10% in de abandoned checkout na 12,5 uur, 2 dagen geldig en al verrekend in de checkout-link (kortingscode aanwezig, niet uitgeschreven).
@@ -103,6 +111,8 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 12. **Een productverbetering als eigen campagne.** Our Place verkoopt een kleine aanpassing (fijnere textuur, makkelijker schoonmaken) als nieuws met "Look Closer", zonder korting. Als Siraat iets aan pan, handgreep, verpakking of meegeleverde info verbetert, is dat een campagne met een close-up van het detail en Benjamin die uitlegt waarom. Belangrijk omdat Our Place nu ook op titanium inzet: Siraat moet het verschil benadrukken (puur titanium zonder coating tegenover hun nonstick-laag op titanium).
 13. **Een accessoire-campagne voor bestaande kopers.** Our Place stuurt "Mutually Beneficial" met alleen tools en kleine accessoires. Siraat kan in de post-purchase flow of als campagne naar kopers een deksel, spatel of tweede maat aanbieden, met de 75 jaar garantie als reden om het setje compleet te maken.
 14. **Urgentie zonder korting via een einddatum op iets anders dan prijs.** HexClad zet "ends today" op dubbele punten in een winactie. Siraat kan eerlijke deadlines gebruiken die geen marge kosten, zoals de laatste besteldag voor levering voor de feestdagen.
+15. **Een late cartmail na 7 dagen.** HexClad stuurt de tweede cartmail pas na een week, met hetzelfde product, gratis verzending, de garantie en een klantreview over intensief gebruik. Siraat kan achteraan de cartflow een extra stap na 7 dagen testen voor wie nog niet kocht, met de bekeken pan, de 75 jaar garantie en een review van iemand die de pan al lang dagelijks gebruikt. Weinig risico op uitschrijvingen omdat er een week tussen zit.
+16. **Accessoire-campagnes alleen naar betrokken profielen.** Our Place stuurde "Mutually Beneficial" wel naar b en c, maar niet naar w. Siraat kan cross-sell campagnes (deksel, spatel, tweede maat) beperken tot kopers en mensen die een product bekeken of in de winkelwagen hadden, zodat koude inschrijvers alleen de kernpan zien en de lijst minder vermoeid raakt.
 
 ## Open punten
 
