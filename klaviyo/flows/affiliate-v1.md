@@ -1,0 +1,63 @@
+# Affiliate-mails v1 (Social Snowball), concept 21 okt 2026
+
+Status: **concept, niets in Klaviyo aangemaakt of gewijzigd.** De 6 Snowball-standaardflows blijven Draft (DECISIONS 21 okt). Bronnen, Klaviyo-versies en previews in `klaviyo/templates/v3/affiliate/`. Achtergrond: `research/snowball/01-case-studies-en-copy.md` (copy, FTC, deliverability), `02-klaviyo-audit.md` (profielvelden, events), `03-flowstructuur.md` (flows S0 t/m S7, frequentiebudget), `04-commissie-economie.md`.
+
+## Uitgangspunten
+
+- Afzender Benjamin, merknaam Siraat, kalm flowregister, vaste header en footer (lockup), geen em dash.
+- **Commissie en vriendenkorting komen uit profielvariabelen**, zodat een ander percentage geen templatewijziging vraagt:
+  - `{{ person|lookup:'Referral Reward - SocialSnowball'|default:'20%' }}` (nu 20%)
+  - `{{ person|lookup:'Referral Friend Offer - SocialSnowball'|default:'10%' }}` (nu 10%)
+  - `{{ person|lookup:'Referral Link - SocialSnowball'|default:'https://siraatskitchen.com' }}`
+  - `{{ person|lookup:'Referral Code - SocialSnowball'|default:'' }}` (codevak verdwijnt als leeg)
+  - `{{ person|lookup:'Referral Currency - SocialSnowball'|default:'$' }}` (alleen in sale en payout)
+- **Vaste bedragen staan alleen in het rekenvoorbeeld** (aff-announce) en in onderwerp/preview: Pan Pro Duo $229, vriend betaalt $206.10, jij krijgt 20% daarvan = $41.22. In de bron gemarkeerd met `UPDATE IF COMMISSION CHANGES`. Als Snowball de commissie over het bedrag vóór de vriendenkorting rekent, wordt het $45.80.
+- Eerlijke verdienclaims: geen inkomensbeloftes, geen verzonnen verhalen, alleen het rekenvoorbeeld per order en "No target, no minimum. What you earn depends only on how many friends order."
+- FTC: in elke mail de regel "One rule when you share: let friends know you earn a commission. 'It's my referral link' is enough." In de deelkit staat de disclosure in elke kant-en-klare tekst (#ad vooraan in de Instagram-caption).
+- Uitbetaling: cash via Tremendous (Visa virtual card, Amazon gift card, PayPal, Venmo, bank). Geen wachttijd of minimum in de copy zolang die niet vaststaan.
+- Beelden: AI (flash-stijl, verzonnen personen). Nooit presenteren als klant, affiliate of reviewer; alt-teksten beschrijven alleen de scène.
+- UTM op eigen links: `utm_campaign=aff-v1`. De referral-link zelf zonder UTM (die moet schoon gedeeld worden).
+
+## Mails
+
+| Bestand | Doel | Trigger / plaats (voorstel, sluit aan op 03-flowstructuur) | Onderwerp A / B | Preview |
+| --- | --- | --- | --- | --- |
+| `aff-announce` | Eenmalig uitleggen aan de 437 automatisch ingeschreven kopers (13 t/m 21 okt) dat ze al een link hebben. Wat het is, wat vrienden krijgen, wat jij verdient, rekenvoorbeeld, link + code, uitbetaling, 3 deelideeën, FTC. | Campagne. Segment: Enrolled in SocialSnowball through purchase (XzrVJZ) vóór de start van S1, kan e-mailmarketing ontvangen (~420), geen Refunded Order, geen Opened Ticket in 30 dagen, niet in holdout (`snow_pilot` != out). Smart sending aan. Verzenden als de meesten bezorgd zijn (voorstel: 29 okt, 10:00 ET). | A: You already have your own Siraat link · B: A quick note from Benjamin | Friends get 10% off with it. You earn 20% of what they pay. |
+| `aff-block` | Herbruikbaar blok (geen mail): beeld, één regel, vriendenkorting, verdienregel, link, knop, FTC-regel. Alleen zichtbaar met een link en niet in de holdout. | VQ93sx levering (P2, actie 119850581, onderaan vóór de footer), "How is the pan treating you?" (X3ySuU), bedankmail na review (REV1 / S4). Codetemplates: rijen uit `aff-block.html` (bron, `{{IMG}}`) of `aff-block.klaviyo.html` (CDN). Drag-and-drop: `aff-block.universal.html` als universal content. | n.v.t. | n.v.t. |
+| `aff-welcome-kit` | Welkom + deelkit: link, hoe het werkt, drie kant-en-klare teksten (sms/WhatsApp, Instagram-caption, e-mail aan een vriend), elk met disclosure, drie eerlijke regels. | Flow "Affiliate · welkom + nudges" mail 1 = S1-A1 in 03-flowstructuur: trigger XzrVJZ, wachten tot na bezorging (S1: 31 dagen, of Delivered Shipment + 5 dagen), verzendfilter F-BEZORGD, geen aff-announce ontvangen, smart sending aan. | A: Your link is ready · B: 3 messages you can copy and send | Text, Instagram or email. Each one ready to paste. |
+| `aff-nudge-1` | Activatie, hoek "de makkelijkste manier": niet posten maar antwoorden als iemand vraagt; link opslaan. Tekstmail zonder hero. | Welcome-kit + 7 dagen, alleen als New referral sale (Xqbr4d) 0 keer sinds flowstart. | A: The easiest way to share your link · B: Has anyone asked about your pan yet? | Not a post. Just an answer when someone asks what pan that is. |
+| `aff-nudge-2` | Activatie, hoek "wat je vrienden krijgen": 10% off, titanium zonder coating, PFAS-rapport 25895, 75 jaar garantie, gratis verzending, 30 dagen retour. Laatste herinnering ("last reminder", moet waar blijven). | Nudge-1 + 7 dagen, zelfde voorwaarde. Daarna geen affiliate-nudge meer. | A: What your friends get with your link · B: 10% off, plus everything you got | The same pan, the same 75-year warranty, and 10% off from you. |
+| `aff-sale` | Melding "een vriend bestelde met je link": orderwaarde en commissie, wat er nu gebeurt, link opnieuw delen. Geen naam van de vriend. | Flow "Affiliate · verkoop" (S5a, vervangt draft VnWwqJ): trigger New referral sale (Xqbr4d), 15 min, max 1 per 3 dagen, smart sending uit. | A: A friend just ordered with your link · B: Thank you for passing it on | Here's what you earned, and what happens next. |
+| `aff-payout` | Uitbetaling verstuurd: bedrag, Tremendous-mail claimen (5 opties), dashboard, blijven delen. | Flow "Affiliate · uitbetaling" (S5b, vervangt draft VdNKHq): trigger Payout sent (WManrA), direct, max 1 per 14 dagen, smart sending uit. | A: Your payout is on its way · B: Thank you. Here's your commission. | Look for an email from Tremendous to choose how you get paid. |
+
+Per mail staan de vijf onderwerpregels (één per type) en de keuze voor de A/B in de topcomment van de bron. A/B telkens één variabele, winnaar op unieke kliks (bij nudges en welcome liever op referral-sales per ontvanger zodra er volume is).
+
+## Bedragen in sale en payout
+
+Volgens de audit dragen de events bijna niets: New referral sale heeft alleen `Social Snowball - Conversion ID` en `$value`, Payout sent alleen de Conversion ID. De bedragen staan als profieleigenschap. De templates lezen daarom in deze volgorde, en vallen netjes terug:
+
+- Orderwaarde: `event|lookup:'Social Snowball: Affiliate Order Value'` → `event|lookup:'$value'` → `person|lookup:'Social Snowball: Affiliate Order Value'` → "in your dashboard".
+- Commissie / uitbetaling: `event|lookup:'Social Snowball: Payout amount'` → `person|lookup:'Social Snowball: Payout amount'` → "in your dashboard" (sale) of een zin zonder bedrag (payout).
+- Risico (audit 3.5): bij twee sales kort na elkaar kan het profielbedrag bij de verkeerde sale horen. Daarom 15 minuten wachten en max 1 verkoopmail per 3 dagen.
+
+## Previews en QA
+
+- Previews (Django-render met voorbeeldprofiel Sarah, link `SARAH48213`, 20%/10%; sale $206.10/$41.22; payout $82.44): `*-preview.html`. Screenshots 375 en 600 px (2x) in `previews/`.
+- Gecontroleerd: geen horizontale scroll (375 en 600), geen kapotte beelden, geen restanten `{{ }}`/`{% %}`, geen em dash, `scripts/check_previews.py affiliate` 0 problemen. Klaviyo-versies ook gerenderd met een leeg profiel: defaults werken, het blok verdwijnt.
+- `qa_render.py` kent de map affiliate nog niet (FLOWS-lijst); toevoegen met een sample voor Xqbr4d/WManrA vóór een export.
+- `aff-block-demo.html` is alleen een preview-omgeving voor het blok, niet versturen.
+
+## Open punten voor Floris
+
+1. **Commissie definitief?** Nu 20% / 10% op het profiel; advies 04 is 15% op netto met max $50. De mails volgen het profiel vanzelf, maar het rekenvoorbeeld in aff-announce en de percentages in onderwerp en preview staan vast (UPDATE IF COMMISSION CHANGES).
+2. **Rekenbasis**: commissie over wat de vriend betaalt (na 10%) of over de prijs vóór korting? Copy zegt "20% of what they pay" ($41.22). Anders wordt het $45.80 en de tekst "20% of the order".
+3. **Portal-URL**: nu `https://affiliates.socialsnowball.io/auth/affiliate/login` (uit de drafts). Is er een Siraat-portal of een andere login-URL?
+4. **Werkt de Referral Code bij het afrekenen?** Codetype is "tracking link" (Safelinks maakt per klik een unieke code). Als de code zelf niet in de checkout werkt, het codevak weghalen.
+5. **Wachttijd en minimum uitbetaling** (45 of 30 dagen, minimum $50?): staan nu bewust niet in de copy. Na besluit één regel toevoegen in announce, welcome-kit en sale.
+6. **Alleen nieuwe klanten / alleen eerste order** voor de vriendenkorting: niet in de copy tot het in Snowball zo staat.
+7. **Tremendous-mail**: klopt het dat Tremendous zelf een claimmail stuurt met de vijf opties (Visa virtual card, Amazon, PayPal, Venmo, bank)? Bevestigen welke opties echt aanstaan.
+8. **Timing aff-announce**: voorstel 29 okt (meeste orders van 13 t/m 21 okt dan bezorgd). Of samenvoegen met S1 zodat de 437 gewoon in S1 lopen.
+9. **Frequentiebudget**: 03-flowstructuur gaat uit van maximaal 2 activatiemails (A1, A2 alleen klikkers). Deze set heeft welcome-kit + 2 nudges. Voorstel: nudge-1 alleen naar wie de welcome-kit opende of klikte, nudge-2 alleen naar klikkers zonder sale; of nudge-2 schrappen.
+10. **Afzender**: "Benjamin at Siraat" met reply-to support? De drafts gebruiken "SiraatsKitchen" zonder reply-to.
+11. **Holdout/pilot**: het blok toont niet bij `snow_pilot == 'out'`. De nachtelijke `snow_block_ok`-vlag (03, sectie 4) is nog niet gebouwd; tot dan blok alleen in de pilot.
+12. Sale en payout zijn meldingen: als marketing versturen (alleen wie mag) of transactioneel? Advies: marketing, omdat er een deeloproep in staat.

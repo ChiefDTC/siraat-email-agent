@@ -1,0 +1,76 @@
+<!-- AFF-SALE (concept 21 okt 2026, NIET LIVE) | Flow "Affiliate · verkoop" (vervangt Snowball-draft VnWwqJ): trigger New referral sale (Xqbr4d), direct, geen smart sending (meldingsmail). | SUBJECT A: A friend just ordered with your link | SUBJECT B: Thank you for passing it on | SUBJECTS (5 types): SPEC "1 new sale on your Siraat link" / Q "Guess who just ordered?" / C+B "A friend just ordered with your link" / STORY (founder) "Thank you for passing it on" / OFFER "Your commission is in" | A/B: C+B tegen STORY | PREVIEW: Here's what you earned, and what happens next. | Bedragen: eerst event (Social Snowball: Payout amount, Social Snowball: Affiliate Order Value, $value), dan profiel (audit 02: de bedragen staan nu op het profiel, het event heeft alleen Conversion ID en $value), anders "in your dashboard". Valuta: Referral Currency - SocialSnowball. | Beeld: {{IMG}}/aff-sale.jpg (4:5, AI, verzonnen persoon) -->
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
+<title>A friend just ordered</title>
+<!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
+  body{margin:0;padding:0;background:#FFFFFF;-webkit-text-size-adjust:100%;}
+  table{border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;}
+  img{border:0;display:block;line-height:100%;outline:none;text-decoration:none;}
+  a{color:#AC3B19;}
+  .lnk{word-break:break-all;}
+  @media only screen and (max-width:620px){
+    .w{width:100%!important;}
+    .pad{padding-left:22px!important;padding-right:22px!important;}
+    .h1{font-size:36px!important;line-height:40px!important;}
+    .navhide{display:none!important;}
+    .lead{font-size:16px!important;line-height:25px!important;}
+    .ab{display:block!important;width:100%!important;}
+    .abimg{padding:0 0 14px 0!important;}
+    .abimg img{width:100%!important;max-width:100%!important;}
+  }
+</style>
+</head>
+<body style="margin:0;padding:0;background:#FFFFFF;">
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Here's what you earned, and what happens next.</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
+<tr><td align="center" style="padding:8px 0 32px 0;">
+<table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
+
+{{HEADER}}
+<tr><td class="pad" align="center" style="padding:30px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">NEW SALE</td></tr>
+<tr><td class="pad h1" align="center" style="padding:10px 44px 0 44px;font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:44px;line-height:48px;color:#282828;text-align:center;">A friend just<br>ordered.</td></tr>
+<tr><td class="pad" align="center" style="padding:10px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;color:#727272;text-align:center;">With your link. Here&rsquo;s your part.</td></tr>
+<tr><td align="center" class="pad" style="padding:24px 44px 0 44px;"><img src="{{IMG}}/aff-sale.jpg" width="440" alt="A man in an apron smiling at his phone next to a pan on the stove" style="display:block;width:100%;max-width:440px;height:auto;border:0;margin:0 auto;"></td></tr>
+<tr><td class="pad lead" style="padding:26px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;"><p style="margin:0 0 14px 0;">Hi {{ first_name|default:'there' }},</p><p style="margin:0;">Someone just ordered with your Siraat link. Thank you for passing it on. We don&rsquo;t share who it was, for their privacy, but you probably have a good guess.</p></td></tr>
+<tr><td class="pad" style="padding:22px 44px 0 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border:1px solid #ECE7DD;">
+  <tr><td colspan="2" bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:14px 16px 2px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">THIS SALE</td></tr>
+  <tr><td valign="top" style="padding:12px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;color:#282828;border-bottom:1px solid #ECE7DD;">Order value</td><td valign="top" align="right" style="padding:12px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;font-weight:600;color:#282828;border-bottom:1px solid #ECE7DD;white-space:nowrap;">{% if event|lookup:'Social Snowball: Affiliate Order Value' %}{{ person|lookup:'Referral Currency - SocialSnowball'|default:'$' }}{{ event|lookup:'Social Snowball: Affiliate Order Value'|floatformat:2 }}{% elif event|lookup:'$value' %}{{ person|lookup:'Referral Currency - SocialSnowball'|default:'$' }}{{ event|lookup:'$value'|floatformat:2 }}{% elif person|lookup:'Social Snowball: Affiliate Order Value' %}{{ person|lookup:'Referral Currency - SocialSnowball'|default:'$' }}{{ person|lookup:'Social Snowball: Affiliate Order Value'|floatformat:2 }}{% else %}in your dashboard{% endif %}</td></tr><tr><td valign="top" style="padding:12px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;color:#282828;border-bottom:0;"><b style="color:#AC3B19;">Your commission</b></td><td valign="top" align="right" style="padding:12px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;font-weight:600;color:#282828;border-bottom:0;white-space:nowrap;"><span style="color:#AC3B19;">{% if event|lookup:'Social Snowball: Payout amount' %}{{ person|lookup:'Referral Currency - SocialSnowball'|default:'$' }}{{ event|lookup:'Social Snowball: Payout amount'|floatformat:2 }}{% elif person|lookup:'Social Snowball: Payout amount' %}{{ person|lookup:'Referral Currency - SocialSnowball'|default:'$' }}{{ person|lookup:'Social Snowball: Payout amount'|floatformat:2 }}{% else %}in your dashboard{% endif %}</span></td></tr>
+  </table>
+</td></tr>
+<tr><td class="pad" style="padding:30px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">WHAT HAPPENS NEXT</td></tr>
+<tr><td class="pad lead" style="padding:10px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;"><p style="margin:0;">Your commission shows in <a href="https://affiliates.socialsnowball.io/auth/affiliate/login" style="color:#AC3B19;">your dashboard</a>. When it&rsquo;s paid, you&rsquo;ll get another email from us, and Tremendous sends you a link to choose how you want it: Visa virtual card, Amazon gift card, PayPal, Venmo or bank transfer.</p></td></tr>
+{{BLOCK:cta label="Open my dashboard" url="https://affiliates.socialsnowball.io/auth/affiliate/login" pad="24px 44px 0 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Clicks, sales and payouts, all in one place.</div>"}}
+<tr><td class="pad lead" style="padding:26px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;"><p style="margin:0;">If one friend asked, someone else will too. Your link is the same as always:</p></td></tr>
+<tr><td class="pad" style="padding:14px 44px 0 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border:1px solid #ECE7DD;">
+  <tr><td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:18px 20px 0 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">YOUR LINK</td></tr>
+  <tr><td class="lnk" bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:8px 20px 0 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:17px;line-height:24px;font-weight:600;color:#282828;word-break:break-all;"><a href="{{ person|lookup:'Referral Link - SocialSnowball'|default:'https://siraatskitchen.com' }}" style="color:#282828;text-decoration:underline;">{{ person|lookup:'Referral Link - SocialSnowball'|default:'https://siraatskitchen.com' }}</a></td></tr>
+  {% if person|lookup:'Referral Code - SocialSnowball' %}<tr><td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:16px 20px 0 20px;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background-color:#F8F7F2;border:1px dashed #AC3B19;padding:10px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;color:#727272;">Your code&nbsp;&nbsp;<span style="font-size:18px;line-height:22px;letter-spacing:2px;font-weight:600;color:#282828;">{{ person|lookup:'Referral Code - SocialSnowball'|default:'' }}</span></td></tr></table>
+  </td></tr>{% endif %}
+  <tr><td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:14px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;">Friends get {{ person|lookup:'Referral Friend Offer - SocialSnowball'|default:'10%' }} off when they order with it.</td></tr>
+  </table>
+</td></tr>
+<tr><td class="pad" style="padding:18px 44px 0 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-left:3px solid #AC3B19;padding:4px 0 4px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#282828;"><b>One rule when you share:</b> let friends know you earn a commission. &ldquo;It&rsquo;s my referral link&rdquo; is enough.</td></tr></table>
+</td></tr>
+<tr><td class="pad" style="padding:26px 44px 30px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+  Questions about a sale? Reply and our team will help.<br><br>Benjamin<br><span style="color:#727272;">Founder, Siraat</span>
+</td></tr>
+
+{{FOOTER}}
+
+</table>
+</td></tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!-- AFF-BLOCK (concept 21 okt 2026, NIET LIVE): herbruikbaar blok voor bestaande mails (VQ93sx levering, "How is the pan treating you?" in X3ySuU, bedankmail na review). Alleen zichtbaar als het profiel een Snowball-link heeft en niet in de holdout zit (snow_pilot != out, research/snowball/03-flowstructuur.md 2.0). Rijen <tr> voor de v3-codetemplates (600-kolom, crème). Universal-content-versie: aff-block.universal.html. {{IMG}} = map assets van de flow waarin het blok komt (beeld aff-block.jpg meekopieren of CDN-URL gebruiken). -->
+{% if person|lookup:'Referral Link - SocialSnowball' and person|lookup:'snow_pilot' != 'out' %}
+<tr><td class="pad" style="padding:28px 44px 6px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border:1px solid #ECE7DD;">
+  <tr><td align="center" bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:22px 20px 0 20px;"><a href="{{ person|lookup:'Referral Link - SocialSnowball'|default:'https://siraatskitchen.com' }}"><img src="{{IMG}}/aff-block.jpg" width="180" alt="A hammered titanium pan passed across a dinner table" style="display:block;width:180px;max-width:180px;height:auto;border:0;margin:0 auto;"></a></td></tr>
+  <tr><td align="center" bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:16px 20px 22px 20px;font-family:Inter,Arial,Helvetica,sans-serif;text-align:center;">
+      <div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">YOUR SIRAAT LINK</div>
+      <div style="padding-top:8px;font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:28px;line-height:32px;color:#282828;">Know someone on a peeling pan?</div>
+      <div style="padding-top:8px;font-size:15px;line-height:22px;color:#282828;">They get <b>{{ person|lookup:'Referral Friend Offer - SocialSnowball'|default:'10%' }} off</b> with your link. You earn <b>{{ person|lookup:'Referral Reward - SocialSnowball'|default:'20%' }} of what they pay</b>, in cash.</div>
+      <div class="lnk" style="padding-top:10px;font-size:13px;line-height:19px;color:#727272;word-break:break-all;"><a href="{{ person|lookup:'Referral Link - SocialSnowball'|default:'https://siraatskitchen.com' }}" style="color:#282828;">{{ person|lookup:'Referral Link - SocialSnowball'|default:'https://siraatskitchen.com' }}</a></div>
+      <table role="presentation" align="center" cellpadding="0" cellspacing="0" border="0" style="margin:14px auto 0 auto;"><tr><td bgcolor="#AC3B19" style="background-color:#AC3B19;border-radius:3px;"><a href="{{ person|lookup:'Referral Link - SocialSnowball'|default:'https://siraatskitchen.com' }}" style="display:block;padding:13px 22px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:16px;font-weight:600;letter-spacing:1.2px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Share my link &rarr;</a></td></tr></table>
+      <div style="padding-top:10px;font-size:12px;line-height:17px;color:#727272;">Sharing? Let friends know you earn a commission.</div>
+  </td></tr>
+  </table>
+</td></tr>
+{% endif %}

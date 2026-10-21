@@ -1,0 +1,97 @@
+<!-- AFF-WELCOME-KIT (concept 21 okt 2026, NIET LIVE) | Flow "Affiliate · welkom + nudges" mail 1. Trigger: Delivered Shipment (VcUF33) + 5 dagen, 10:00 lokaal, profielfilter Referral Link - SocialSnowball is gezet, nooit eerder in deze flow, geen aff-announce ontvangen. Zie klaviyo/flows/affiliate-v1.md. | SUBJECT A: Your link is ready | SUBJECT B: 3 messages you can copy and send | SUBJECTS (5 types): SPEC "3 messages you can copy and send" / Q "Who's the first person you'd tell?" / C+B "What to send when someone asks about your pan" / STORY (founder) "From Benjamin: your link is ready" / OFFER "10% off for friends, ready to share" | A/B: kort (Your link is ready) tegen specifiek (3 messages), winnaar op unieke kliks | PREVIEW: Text, Instagram or email. Each one ready to paste. | Variabelen: Referral Link/Code/Reward/Friend Offer - SocialSnowball | FTC: disclosure in elke kant-en-klare tekst | Beeld: {{IMG}}/aff-hero-dinner.jpg (AI, verzonnen personen) -->
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
+<title>Your link is ready</title>
+<!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
+  body{margin:0;padding:0;background:#FFFFFF;-webkit-text-size-adjust:100%;}
+  table{border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;}
+  img{border:0;display:block;line-height:100%;outline:none;text-decoration:none;}
+  a{color:#AC3B19;}
+  .lnk{word-break:break-all;}
+  @media only screen and (max-width:620px){
+    .w{width:100%!important;}
+    .pad{padding-left:22px!important;padding-right:22px!important;}
+    .h1{font-size:36px!important;line-height:40px!important;}
+    .navhide{display:none!important;}
+    .lead{font-size:16px!important;line-height:25px!important;}
+    .ab{display:block!important;width:100%!important;}
+    .abimg{padding:0 0 14px 0!important;}
+    .abimg img{width:100%!important;max-width:100%!important;}
+  }
+</style>
+</head>
+<body style="margin:0;padding:0;background:#FFFFFF;">
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Text, Instagram or email. Each one ready to paste.</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
+<tr><td align="center" style="padding:8px 0 32px 0;">
+<table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
+
+{{HEADER}}
+<tr><td class="pad" align="center" style="padding:30px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">YOUR SHARE KIT</td></tr>
+<tr><td class="pad h1" align="center" style="padding:10px 44px 0 44px;font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:44px;line-height:48px;color:#282828;text-align:center;">Ready when<br>you are.</td></tr>
+<tr><td class="pad" align="center" style="padding:10px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;color:#727272;text-align:center;">Three messages, ready to paste.</td></tr>
+<tr><td align="center" class="" style="padding:24px 0 0 0;"><img src="{{IMG}}/aff-hero-dinner.jpg" width="600" alt="Friends sharing dinner from a hammered titanium pan" style="display:block;width:100%;max-width:600px;height:auto;border:0;margin:0 auto;"></td></tr>
+<tr><td class="pad lead" style="padding:26px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;"><p style="margin:0 0 14px 0;">Hi {{ first_name|default:'there' }},</p><p style="margin:0 0 14px 0;">Your pan has arrived, and with it your own Siraat link. Anyone who orders with it gets <b>{{ person|lookup:'Referral Friend Offer - SocialSnowball'|default:'10%' }} off</b>. You earn <b>{{ person|lookup:'Referral Reward - SocialSnowball'|default:'20%' }} of what they pay</b>, in cash.</p><p style="margin:0;">Most people never write a post about a pan. They answer a question. So here&rsquo;s your link, and three answers you can copy as they are.</p></td></tr>
+<tr><td class="pad" style="padding:22px 44px 0 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border:1px solid #ECE7DD;">
+  <tr><td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:18px 20px 0 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">YOUR LINK</td></tr>
+  <tr><td class="lnk" bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:8px 20px 0 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:17px;line-height:24px;font-weight:600;color:#282828;word-break:break-all;"><a href="{{ person|lookup:'Referral Link - SocialSnowball'|default:'https://siraatskitchen.com' }}" style="color:#282828;text-decoration:underline;">{{ person|lookup:'Referral Link - SocialSnowball'|default:'https://siraatskitchen.com' }}</a></td></tr>
+  {% if person|lookup:'Referral Code - SocialSnowball' %}<tr><td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:16px 20px 0 20px;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background-color:#F8F7F2;border:1px dashed #AC3B19;padding:10px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;color:#727272;">Your code&nbsp;&nbsp;<span style="font-size:18px;line-height:22px;letter-spacing:2px;font-weight:600;color:#282828;">{{ person|lookup:'Referral Code - SocialSnowball'|default:'' }}</span></td></tr></table>
+  </td></tr>{% endif %}
+  <tr><td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:14px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;">Friends get {{ person|lookup:'Referral Friend Offer - SocialSnowball'|default:'10%' }} off when they order with it.</td></tr>
+  </table>
+</td></tr>
+{{BLOCK:cta label="See what my friends see" url="{{ person|lookup:'Referral Link - SocialSnowball'|default:'https://siraatskitchen.com' }}" pad="24px 44px 0 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>Your friend gets {{ person|lookup:'Referral Friend Offer - SocialSnowball'|default:'10%' }} off. Free shipping. 30-day returns.</div>"}}
+<tr><td class="pad" style="padding:22px 44px 0 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border:1px solid #ECE7DD;">
+  <tr><td colspan="2" bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:14px 16px 2px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">HOW IT WORKS</td></tr>
+  <tr><td valign="top" width="34" style="padding:12px 0 12px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;font-weight:600;color:#AC3B19;border-bottom:1px solid #ECE7DD;">1</td><td valign="top" style="padding:12px 16px 12px 6px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;color:#282828;border-bottom:1px solid #ECE7DD;">A friend opens your link. Their {{ person|lookup:'Referral Friend Offer - SocialSnowball'|default:'10%' }} off is applied at checkout.</td></tr><tr><td valign="top" width="34" style="padding:12px 0 12px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;font-weight:600;color:#AC3B19;border-bottom:1px solid #ECE7DD;">2</td><td valign="top" style="padding:12px 16px 12px 6px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;color:#282828;border-bottom:1px solid #ECE7DD;">They order. The sale is tracked back to you, and we email you.</td></tr><tr><td valign="top" width="34" style="padding:12px 0 12px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;font-weight:600;color:#AC3B19;border-bottom:0;">3</td><td valign="top" style="padding:12px 16px 12px 6px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;color:#282828;border-bottom:0;">You earn {{ person|lookup:'Referral Reward - SocialSnowball'|default:'20%' }} of what they pay. Paid in cash through Tremendous: Visa virtual card, Amazon gift card, PayPal, Venmo or bank.</td></tr>
+  </table>
+</td></tr>
+<tr><td class="pad" style="padding:30px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">COPY, CHANGE, MAKE IT YOURS</td></tr>
+<tr><td class="pad" style="padding:12px 44px 0 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border:1px solid #ECE7DD;">
+  <tr><td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:16px 18px 0 18px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">TEXT OR WHATSAPP</td></tr>
+  <tr><td class="lnk" bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:8px 18px 16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#282828;word-break:break-word;">&ldquo;This is the pan I told you about. Pure titanium cooking surface, no coatings. My link gives you {{ person|lookup:'Referral Friend Offer - SocialSnowball'|default:'10%' }} off: <a href="{{ person|lookup:'Referral Link - SocialSnowball'|default:'https://siraatskitchen.com' }}" style="color:#282828;">{{ person|lookup:'Referral Link - SocialSnowball'|default:'https://siraatskitchen.com' }}</a> (It&rsquo;s my referral link, so I earn a commission if you order.)&rdquo;</td></tr>
+  </table>
+</td></tr>
+<tr><td class="pad" style="padding:14px 44px 0 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border:1px solid #ECE7DD;">
+  <tr><td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:16px 18px 0 18px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">INSTAGRAM CAPTION</td></tr>
+  <tr><td class="lnk" bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:8px 18px 16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#282828;word-break:break-word;">&ldquo;#ad Made this on my Siraat pan tonight. Pure titanium cooking surface, no coatings, tested free from PFAS by Light Labs. {{ person|lookup:'Referral Friend Offer - SocialSnowball'|default:'10%' }} off with my referral link, I earn a commission if you use it: <a href="{{ person|lookup:'Referral Link - SocialSnowball'|default:'https://siraatskitchen.com' }}" style="color:#282828;">{{ person|lookup:'Referral Link - SocialSnowball'|default:'https://siraatskitchen.com' }}</a>&rdquo;</td></tr>
+  </table>
+</td></tr>
+<tr><td class="pad" style="padding:14px 44px 0 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border:1px solid #ECE7DD;">
+  <tr><td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:16px 18px 0 18px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">EMAIL TO A FRIEND</td></tr>
+  <tr><td class="lnk" bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:8px 18px 16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#282828;word-break:break-word;"><b>Subject:</b> The pan I keep talking about<br><br>&ldquo;Hi [name], you asked what pan I use. It&rsquo;s from Siraat: a pure titanium cooking surface with no coatings. They had it tested for PFAS by Light Labs and you can read the report yourself (no. 25895). It&rsquo;s covered by a 75-year warranty, and you get 30 days to return it. My link gives you {{ person|lookup:'Referral Friend Offer - SocialSnowball'|default:'10%' }} off: <a href="{{ person|lookup:'Referral Link - SocialSnowball'|default:'https://siraatskitchen.com' }}" style="color:#282828;">{{ person|lookup:'Referral Link - SocialSnowball'|default:'https://siraatskitchen.com' }}</a><br><br>Full disclosure: it&rsquo;s my referral link, so I earn a commission if you order.&rdquo;</td></tr>
+  </table>
+</td></tr>
+<tr><td class="pad lead" style="padding:18px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;"><p style="margin:0;"><b>A photo does more than any caption.</b> Your own pan, on your own stove, with whatever you made last night.</p></td></tr>
+<tr><td class="pad" style="padding:22px 44px 0 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border:1px solid #ECE7DD;">
+  <tr><td colspan="2" bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:14px 16px 2px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">THREE RULES, SO IT STAYS FAIR</td></tr>
+  <tr><td valign="top" width="34" style="padding:12px 0 12px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;font-weight:600;color:#AC3B19;border-bottom:1px solid #ECE7DD;">1</td><td valign="top" style="padding:12px 16px 12px 6px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;color:#282828;border-bottom:1px solid #ECE7DD;"><b>Say it&rsquo;s your referral link.</b> Every time, especially in public posts. &ldquo;#ad&rdquo; or &ldquo;my referral link&rdquo; is enough.</td></tr><tr><td valign="top" width="34" style="padding:12px 0 12px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;font-weight:600;color:#AC3B19;border-bottom:1px solid #ECE7DD;">2</td><td valign="top" style="padding:12px 16px 12px 6px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;color:#282828;border-bottom:1px solid #ECE7DD;"><b>Only say what&rsquo;s true.</b> No coatings, tested free from PFAS (report no. 25895), 75-year warranty, 30-day returns, free shipping. No health promises, please.</td></tr><tr><td valign="top" width="34" style="padding:12px 0 12px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;font-weight:600;color:#AC3B19;border-bottom:0;">3</td><td valign="top" style="padding:12px 16px 12px 6px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;color:#282828;border-bottom:0;"><b>Keep it personal.</b> No coupon sites, no ads on our name.</td></tr>
+  </table>
+</td></tr>
+<tr><td class="pad lead" style="padding:18px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;"><p style="margin:0;">Clicks, sales and payouts are in <a href="https://affiliates.socialsnowball.io/auth/affiliate/login" style="color:#AC3B19;">your dashboard</a>. No target and no minimum: what you earn depends only on how many friends order.</p></td></tr>
+<tr><td class="pad" style="padding:26px 44px 30px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+  Thank you for passing it on.<br><br>Benjamin<br><span style="color:#727272;">Founder, Siraat</span>
+</td></tr>
+
+{{FOOTER}}
+
+</table>
+</td></tr>
+</table>
+</body>
+</html>
