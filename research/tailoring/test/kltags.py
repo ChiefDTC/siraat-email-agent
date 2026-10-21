@@ -55,3 +55,21 @@ def format_date_string(v):
         try: return _dt.datetime.strptime(str(v), f)
         except ValueError: pass
     return ''
+# Klaviyo-rekenfilters (staan in KL_FILTERS van scripts/qa_render.py; affiliate v2, 21 okt 2026): multiply, divide, ceil.
+# Ontbrekend of niet-numeriek: leeg, zoals Klaviyo. [CONTROLEREN in een Klaviyo-preview op een echt profiel voor livegang.]
+def _num(v):
+    try: return float(v)
+    except (TypeError, ValueError): return None
+@register.filter
+def multiply(v, n):
+    a, b = _num(v), _num(n)
+    return '' if a is None or b is None else a * b
+@register.filter
+def divide(v, n):
+    a, b = _num(v), _num(n)
+    return '' if a is None or not b else a / b
+@register.filter
+def ceil(v):
+    import math
+    a = _num(v)
+    return '' if a is None else int(math.ceil(a - 1e-9))
