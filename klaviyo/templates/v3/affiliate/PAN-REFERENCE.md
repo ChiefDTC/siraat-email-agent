@@ -19,5 +19,6 @@ Bron: Figma "Siraat · Pan reference (baseline)" (fileKey `3wLeS9FnZ3cqnKujEdBZc
 
 ## Referentiebeelden voor Higgsfield
 
-- `ref-t01.jpg` (T01, PDP-packshot van boven, toont hamerslag, klinknagels, greep met ophanggat)
-- `ref-13.jpg` (13 Pro Duo, zijaanzicht, toont gladde buitenkant en flared rand)
+- T01, PDP-packshot van boven (Figma node 2:69): toont hamerslag, klinknagels, greep met ophanggat. Higgsfield media `7c79da55-c0f4-4821-a2ee-e6610b83f712`.
+- 13 Pro Duo, zijaanzicht (Figma node 2:29): toont gladde buitenkant en flared rand. Higgsfield media `e4437585-faac-47f3-8693-b70173f04e66` (bevat ook een spatel; in de prompt negeren).
+- Import via `media_import_url` met de Figma-asset-URL uit `download_assets` (upload.higgsfield.ai is geblokkeerd).
