@@ -107,6 +107,17 @@ Screenshot van het geheel: `research/figma/alle-emails-overzicht.png` (verkleind
 - **M3 aanbod**: dag 23, 10:00. Onderwerp A: Alright, here's the offer | B: 20% off every delivery, not just the first. Preview: Including the part most brands would leave out.
 - **M4 laatste, optioneel**: dag 30, 10:00. Onderwerp: Last one from me about the dishwasher sheets. Preview: The price isn't going anywhere. These emails are.
 
+### Rij 7c · Affiliate v1 · Social Snowball (concept, 21 okt), 6 mails + 1 blok
+[Naar de rij](https://www.figma.com/design/oaxnBkz3MAbePRnorCrQwz?node-id=85-2) · Frame "Affiliate v1 · Social Snowball (concept, 21 okt)" direct onder rij 7b Mystery Gift (node 85:2). Commissie en vriendenkorting uit profielvariabelen (nu 20% / 10%), rekenvoorbeeld Pan Pro Duo $229 gemarkeerd UPDATE IF COMMISSION CHANGES, FTC-regel in elke mail, uitbetaling cash via Tremendous. Status: concept, niet in Klaviyo; aanbod (20/10 tegen advies 15/15) wacht op Floris. Beelden: klaviyo/templates/v3/affiliate/previews/aff-*-mobile-375.png (375 px, 2x, voorbeeldprofiel Sarah). Spec: klaviyo/flows/affiliate-v1.md.
+
+- **AFF · Announce**: eenmalige campagne aan de 437 automatisch ingeschreven kopers. Onderwerp A: You already have your own Siraat link | B: A quick note from Benjamin. Preview: Friends get 10% off with it. You earn 20% of what they pay.
+- **AFF · Welcome kit**: na bezorging. Onderwerp A: Your link is ready | B: 3 messages you can copy and send. Preview: Text, Instagram or email. Each one ready to paste.
+- **AFF · Nudge 1**: welcome kit + 7 d, 0 sales. Onderwerp A: The easiest way to share your link | B: Has anyone asked about your pan yet?
+- **AFF · Nudge 2**: nudge 1 + 7 d, 0 sales, laatste. Onderwerp A: What your friends get with your link | B: 10% off, plus everything you got
+- **AFF · Sale**: New referral sale (Xqbr4d). Onderwerp A: A friend just ordered with your link | B: Thank you for passing it on
+- **AFF · Payout**: Payout sent (WManrA). Onderwerp A: Your payout is on its way | B: Thank you. Here's your commission.
+- **AFF · Block (in context)**: blok voor VQ93sx, "How is the pan treating you?" en de review-bedankmail; ook als universal content (aff-block.universal.html).
+
 ### Rij 8a · v4 · Winback (UyFc78), 7 mails
 [Naar de rij](https://www.figma.com/design/oaxnBkz3MAbePRnorCrQwz?node-id=4-2) · Trigger: Bestelling, daarna 45 dagen stilte. R1 per product (set, pan, accessoire), R2 dag 75: 10% of 15% voor terugkerende klanten (code/nocode).
 

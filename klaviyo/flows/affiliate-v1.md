@@ -11,10 +11,10 @@ Status: **concept, niets in Klaviyo aangemaakt of gewijzigd.** De 6 Snowball-sta
   - `{{ person|lookup:'Referral Link - SocialSnowball'|default:'https://siraatskitchen.com' }}`
   - `{{ person|lookup:'Referral Code - SocialSnowball'|default:'' }}` (codevak verdwijnt als leeg)
   - `{{ person|lookup:'Referral Currency - SocialSnowball'|default:'$' }}` (alleen in sale en payout)
-- **Vaste bedragen staan alleen in het rekenvoorbeeld** (aff-announce) en in onderwerp/preview: Pan Pro Duo $229, vriend betaalt $206.10, jij krijgt 20% daarvan = $41.22. In de bron gemarkeerd met `UPDATE IF COMMISSION CHANGES`. Als Snowball de commissie over het bedrag vóór de vriendenkorting rekent, wordt het $45.80.
-- Eerlijke verdienclaims: geen inkomensbeloftes, geen verzonnen verhalen, alleen het rekenvoorbeeld per order en "No target, no minimum. What you earn depends only on how many friends order."
+- **Vaste bedragen staan alleen in het rekenvoorbeeld** (aff-announce) en in onderwerp/preview: Pan Pro Duo $229, vriend betaalt $206.10, jij krijgt 20% daarvan = $41.22. In de bron gemarkeerd met `UPDATE IF COMMISSION CHANGES`. Als Snowball de commissie over het bedrag vóór de vriendenkorting rekent, wordt het $45.80. In dezelfde comment staan de getallen voor het advies 15%/15% (research/snowball/05-aanbod-besluit.md, nog niet akkoord): Pan Pro Duo $229, vriend betaalt $194.65, commissie $29.20; Pan Pro Standard $144: commissie ca. $18.36.
+- Eerlijke verdienclaims: geen inkomensbeloftes, geen verzonnen verhalen, alleen het rekenvoorbeeld per order en "No target and no posting schedule. What you earn depends only on how many friends order." Geen "no minimum" (advies: minimum $10).
 - FTC: in elke mail de regel "One rule when you share: let friends know you earn a commission. 'It's my referral link' is enough." In de deelkit staat de disclosure in elke kant-en-klare tekst (#ad vooraan in de Instagram-caption).
-- Uitbetaling: cash via Tremendous (Visa virtual card, Amazon gift card, PayPal, Venmo, bank). Geen wachttijd of minimum in de copy zolang die niet vaststaan.
+- Uitbetaling: cash via Tremendous (Visa virtual card, Amazon gift card, PayPal, Venmo, bank). Copy: "Payouts go out monthly, once your friend's return window has passed" (announce, welcome-kit, sale), volgens advies 05-aanbod-besluit (45 dagen na verzending, minimum $10; nog niet akkoord Floris). Geen bedrag voor het minimum in de copy.
 - Beelden: AI (flash-stijl, verzonnen personen). Nooit presenteren als klant, affiliate of reviewer; alt-teksten beschrijven alleen de scène.
 - UTM op eigen links: `utm_campaign=aff-v1`. De referral-link zelf zonder UTM (die moet schoon gedeeld worden).
 
@@ -49,11 +49,11 @@ Volgens de audit dragen de events bijna niets: New referral sale heeft alleen `S
 
 ## Open punten voor Floris
 
-1. **Commissie definitief?** Nu 20% / 10% op het profiel; advies 04 is 15% op netto met max $50. De mails volgen het profiel vanzelf, maar het rekenvoorbeeld in aff-announce en de percentages in onderwerp en preview staan vast (UPDATE IF COMMISSION CHANGES).
+1. **Commissie definitief?** Nu 20% / 10% op het profiel; advies 05-aanbod-besluit is 15% commissie (netto, max $50) en 15% vriendenkorting alleen op een eerste order. De mails volgen het profiel vanzelf, maar het rekenvoorbeeld in aff-announce en de percentages in onderwerp en preview staan vast (UPDATE IF COMMISSION CHANGES).
 2. **Rekenbasis**: commissie over wat de vriend betaalt (na 10%) of over de prijs vóór korting? Copy zegt "20% of what they pay" ($41.22). Anders wordt het $45.80 en de tekst "20% of the order".
 3. **Portal-URL**: nu `https://affiliates.socialsnowball.io/auth/affiliate/login` (uit de drafts). Is er een Siraat-portal of een andere login-URL?
 4. **Werkt de Referral Code bij het afrekenen?** Codetype is "tracking link" (Safelinks maakt per klik een unieke code). Als de code zelf niet in de checkout werkt, het codevak weghalen.
-5. **Wachttijd en minimum uitbetaling** (45 of 30 dagen, minimum $50?): staan nu bewust niet in de copy. Na besluit één regel toevoegen in announce, welcome-kit en sale.
+5. **Wachttijd en minimum uitbetaling**: copy zegt nu "monthly, once the return window has passed" (advies: 45 dagen na verzending, minimum $10). Klopt dat met de Snowball-instelling? Anders die zin aanpassen in announce, welcome-kit en sale.
 6. **Alleen nieuwe klanten / alleen eerste order** voor de vriendenkorting: niet in de copy tot het in Snowball zo staat.
 7. **Tremendous-mail**: klopt het dat Tremendous zelf een claimmail stuurt met de vijf opties (Visa virtual card, Amazon, PayPal, Venmo, bank)? Bevestigen welke opties echt aanstaan.
 8. **Timing aff-announce**: voorstel 29 okt (meeste orders van 13 t/m 21 okt dan bezorgd). Of samenvoegen met S1 zodat de 437 gewoon in S1 lopen.
