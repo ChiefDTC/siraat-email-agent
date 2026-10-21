@@ -1,3 +1,52 @@
+# Affiliate-mails v2 (Social Snowball), concept 21 okt 2026
+
+Status: **concept, niets in Klaviyo aangemaakt, gewijzigd of verstuurd.** v2 vervangt de v1-copy hieronder (v1 blijft als achtergrond staan). Aanleiding: Floris, "too much text" en "someone who ordered $200 should see they can earn that back". Aanbod volgens DECISIONS 21 okt (15/15).
+
+## Wat er veranderd is
+
+- **Platte brief is de versie om te gebruiken** (Floris, 21 okt): `aff-announce`, `aff-welcome-kit`, `aff-nudge-1`, `aff-sale`, `aff-payout` zijn brieven van Benjamin op wit, zonder header en logo: één beeld, korte tekst, één knop met de referral-link, "Benjamin, founder of Siraat", kleine lettertjes (FTC en voorwaarden) en een minimale wettelijke footer (afmelden en voorkeuren in #111111, `{{ organization.name }} · {{ organization.full_address }}`). Dit is een uitzondering op de vaste header/footer-regel; Floris legt die zelf vast in DECISIONS.md en CLAUDE.md.
+- De branded v2 (vaste header, footer, hero met kop) staat in `archive/v2-branded/` (bron, .klaviyo.html, US-screenshots 375 px), alleen ter vergelijking.
+- **Het blok `aff-block` blijft branded**: het staat binnen bestaande branded mails. Wel v2-copy en de rekensom; markt = verzendland van de order (`MARKET-SIGNAL: order`).
+- `aff-nudge-2` vervalt: `archive/` (bron, Klaviyo-versie, preview, screenshots). `aff-nudge-1` is nu de laatste activatiemail en gaat **alleen naar wie de welcome-kit opende of erop klikte** (flowfilter), en alleen bij 0 keer New referral sale (Xqbr4d) sinds flowstart.
+- Geen codevak meer (SafeLinks: alleen de link delen). De link staat als knop plus "Or copy it:".
+- **Afzender**: from-label "Benjamin from Siraat", **geen reply-to naar support**. Daarom ook geen "Reply and our team will help" meer in de copy.
+- UTM: `utm_campaign=aff-v2` alleen op de dashboardlink (de referral-link blijft schoon).
+
+## Aanbod en rekensom ("Your order can pay for itself")
+
+- Vriend 15% op de eerste order; jij 15% van wat de vriend betaalt; uitbetaling in USD via Tremendous (PayPal, bank, Visa of gift card) na de retourtermijn. Het plafond van $50 per order staat alleen in de kleine lettertjes.
+- Percentages uit de profielvariabelen met default `'15%'` (`Referral Reward - SocialSnowball`, `Referral Friend Offer - SocialSnowball`). **De rekensom verschijnt alleen als beide 15% zijn**; staat het profiel nog op 20%/10% (nu zo in Snowball), dan toont de mail alleen "Every friend who orders with your link: 20% of what they pay, for you." Zo klopt de som nooit met een ander percentage.
+- Persoonlijk (profiel `Siraat Last Order Value` + `Siraat Last Order Currency`, numeriek, in de valuta van de klant): verdienste per vriend = waarde x 0,85 x 0,15 = waarde x 0,1275 (`ov|multiply:0.1275|floatformat:0`, "about"). Aantal vrienden = ceil(1 / 0,1275) = **altijd 8** zolang het plafond niet raakt (8 x 12,75% = 102% van de order). Boven $392.16 (USD): "$50, the most per order" en `ov|divide:50|ceil` vrienden. Andere valuta ($, £, €, C$, A$, NZ$, S$) alleen onder een veilige grens (GBP 290, EUR 330, CAD 530, AUD 590, NZD 650, SGD 490; ca. $50 omgerekend, okt 2026), daarboven het marktvoorbeeld. Onbekende valuta of een tekst-waarde: marktvoorbeeld.
+- Zonder orderwaarde: Pan Pro Duo per markt via `{{PRICE:panproduo}}`, `*0.85`, `*0.1275`, `*1.02` (profielland, `person.Country`). Onbekende markt: alleen de percentageregel.
+- Formulering als rekensom, nooit als belofte: "A friend who orders the same pays 15% less, and you get about $27. 8 friends: your whole order back."
+- **Uitgewerkt, US (order $214)**: vriend betaalt $181.90, jij $27.29 (mail: "about $27"); 8 x $27.29 = $218.28, dus de hele $214 terug (7 vrienden = $191, niet genoeg).
+- **Uitgewerkt, UK (geen orderwaarde)**: Pan Pro Duo £177 (catalogus), vriend betaalt £150.45, jij £22.57; 8 vrienden = £180.54, een hele Duo terug.
+- Getest: plafond (US $599: "$50 ... 12 friends"), GBP £160 ("about £20", 8 vrienden), profiel 20/10 (alleen percentageregel), orderwaarde als tekst (marktvoorbeeld).
+- [CONTROLEREN in een Klaviyo-preview op een echt profiel] de filters `multiply`, `divide`, `ceil` (staan in de Klaviyo-lijst van qa_render; in de Django-test nagebootst in `research/tailoring/test/kltags.py`) en dat `Siraat Last Order Value` als getal op het profiel staat.
+- **Let op prijzen**: `content/catalog/products.json` (8 okt) wijkt af van de site (21 okt) voor de Pan Pro Duo: US $249 klopt, maar UK £172 (catalogus £177), EU €209 (199), CA C$329 (314), AU A$327 (337), NZ NZ$410 (416), SG S$297 (298). Catalogus verversen en de mails opnieuw bouwen vóór livegang. De briefing noemde $229 (oud, `content/facts/products.csv`).
+
+## Mails v2
+
+| Bestand | Plaats | Onderwerp A / B (5 types in de topcomment) | Preview |
+| --- | --- | --- | --- |
+| `aff-announce` | Eenmalige campagne aan de ~420 auto-ingeschreven kopers (zie v1) | A: Your order can pay for itself · B: Give 15%, get 15% | Friends get 15% off their first order. You get 15% of what they pay. |
+| `aff-welcome-kit` | Flow mail 1 na bezorging; 3 korte deelteksten (sms, Instagram met #ad, e-mailregel), elk met disclosure | A: Ready to paste: give 15%, get 15% · B: 3 texts that can pay for your pan | Your order can pay for itself. Three texts, ready to paste. |
+| `aff-nudge-1` | Welcome-kit + 7 dagen, alleen openers/klikkers van de welcome-kit, 0 sales | A: Has anyone asked about your pan? · B: Your order can pay for itself | That is the moment your link pays. Give 15%, get 15%. |
+| `aff-sale` | New referral sale (Xqbr4d), 15 min, max 1 per 3 dagen | A: A friend just ordered with your link · B: Thank you for passing it on | Here is your commission, and how your order can pay for itself. |
+| `aff-payout` | Payout sent (WManrA), direct, max 1 per 14 dagen | A: Your payout is on its way · B: Paid: your 15% from friends | Look for an email from Tremendous to choose PayPal, bank, Visa or a gift card. |
+| `aff-block` | Blok in VQ93sx, X3ySuU, bedankmail na review (branded) | n.v.t. | n.v.t. |
+
+Lengte body copy (platte brief, US-render, zonder aanhef-beeld, knop, ondertekening en kleine lettertjes): announce 75, welcome-kit 70 (plus 3 deelteksten), nudge-1 62, sale 58, payout 66 woorden. v1 had 170 tot 430 woorden boven de footer.
+
+## Bouwen, previews, QA
+
+- Generator en bouwscript in de scratchpad van de sessie (`gen_aff_v2.py`, `build_v2.sh`); bronnen met `{{IMG}}`, `.klaviyo.html` met CDN-beelden (assets/klaviyo-urls.txt, v2-beelden).
+- Drie testprofielen: US met Siraat Last Order Value 214 (USD), UK zonder orderwaarde, onbekend land; alle 15%/15%. Previews `*-preview.html` (US), `*-preview-uk.html`, `*-preview-unknown.html`; screenshots `previews/<mail>-<us|uk|unknown>-<mobile-375|desktop-600>.png`.
+- Gecontroleerd: geen em dash, geen `{{`/`{%` in gerenderde previews, geen horizontale scroll op 375 en 600, alle beelden laden, `scripts/check_previews.py affiliate` 0 problemen.
+- Figma: rij node 85-2 in oaxnBkz3MAbePRnorCrQwz bijgewerkt met de 375 px US-screenshots (platte brieven + blok), nudge 2 eruit.
+
+---
+
 # Affiliate-mails v1 (Social Snowball), concept 21 okt 2026
 
 Status: **concept, niets in Klaviyo aangemaakt of gewijzigd.** De 6 Snowball-standaardflows blijven Draft (DECISIONS 21 okt). Bronnen, Klaviyo-versies en previews in `klaviyo/templates/v3/affiliate/`. Achtergrond: `research/snowball/01-case-studies-en-copy.md` (copy, FTC, deliverability), `02-klaviyo-audit.md` (profielvelden, events), `03-flowstructuur.md` (flows S0 t/m S7, frequentiebudget), `04-commissie-economie.md`.
