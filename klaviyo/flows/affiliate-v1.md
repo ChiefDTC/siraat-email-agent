@@ -1,3 +1,13 @@
+# Update 22 okt 2026: als concept in Klaviyo (zie affiliate-system-v1.md)
+
+- Flows, templates, segment en campagne staan als **Draft** in Klaviyo: `klaviyo/flows/affiliate-system-v1.md` (ID's, filters, tijdlijn, checklist). Niets live.
+- Floris 22 okt: deelkit en kleine lettertjes eruit ("te moeilijk"). Elke mail heeft nu één grijze regel "Your sales and payouts are in your dashboard." In het blok is "Sharing? Say it's your referral link." weg.
+- `aff-welcome-kit` gearchiveerd (`archive/welcome-kit/`). S1 = A1 `aff-announce` (bezorging + 3 dagen, uiterlijk dag 21) en A2 `aff-nudge-1` 3 dagen later, alleen voor wie A1 opende en niet klikte.
+- Link binnen het uur: blok "Give 15%, get 15%" in P1-FIRST/P1-REPEAT (voorbereid, niet gekoppeld). Refer-a-friend-regel voor de vaste footer: `klaviyo/templates/partials/footer-refer-row.html` (niet toegepast).
+- UTM per mail: `utm_campaign=aff-<mail>`. "Or copy it:"-regel in de `.klaviyo.html` met dubbele aanhalingstekens (Klaviyo renderde de template anders niet).
+- Open punt FTC: disclosure staat niet meer in de mails; moet in het Snowball-portaal en de voorwaarden.
+- De tabellen hieronder (v2, v1) zijn achtergrond; waar ze afwijken geldt affiliate-system-v1.md.
+
 # Affiliate-mails v2 (Social Snowball), concept 21 okt 2026
 
 Status: **concept, niets in Klaviyo aangemaakt, gewijzigd of verstuurd.** v2 vervangt de v1-copy hieronder (v1 blijft als achtergrond staan). Aanleiding: Floris, "too much text" en "someone who ordered $200 should see they can earn that back". Aanbod volgens DECISIONS 21 okt (15/15).

@@ -1,0 +1,8 @@
+<!-- FOOTER-REFER-ROW (concept 22 okt 2026, NIET toegepast). Eén regel "refer a friend" voor de vaste footer.
+     Plaats: in partials/footer.html direct VOOR de rij met "Free shipping on all orders ... Unsubscribe | Manage preferences".
+     Toont alleen als het profiel een Snowball-link heeft (kopers vanaf 20 okt 2026 = affiliates) en niet in de holdout (snow_pilot != out).
+     Percentages uit de profielvariabelen, dus de regel volgt Snowball (nu nog 20%/10% op het profiel tot Snowball op 15/15 staat).
+     Toepassen: zie klaviyo/flows/affiliate-system-v1.md, sectie "Refer-a-friend in elke flow". -->
+{% if person|lookup:'Referral Link - SocialSnowball' and person|lookup:'snow_pilot' != 'out' %}
+  <tr><td align="center" bgcolor="#282828" style="background-color:#282828;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#F2F2F2;text-align:center;padding:0 0 22px 0;">Give friends {{ person|lookup:'Referral Friend Offer - SocialSnowball'|default:'15%' }} off their first order. You get {{ person|lookup:'Referral Reward - SocialSnowball'|default:'15%' }}. <a href="{{ person|lookup:'Referral Link - SocialSnowball'|default:'https://siraatskitchen.com' }}" style="color:#F2F2F2;font-weight:600;text-decoration:underline;white-space:nowrap;">Share your link&nbsp;&rarr;</a></td></tr>
+{% endif %}
