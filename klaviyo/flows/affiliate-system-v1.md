@@ -8,7 +8,7 @@ Bronnen: `klaviyo/flows/affiliate-v1.md` (copy v2), `research/snowball/02-klaviy
 
 | Wat | Naam | ID | Link |
 | --- | --- | --- | --- |
-| Flow S1 | AFF S1 · Activatie nieuwe kopers | **VX4gA3** | https://www.klaviyo.com/flow/VX4gA3/edit |
+| Flow S1 | AFF S1 · Activatie na bezorging | **R22pzb** | https://www.klaviyo.com/flow/R22pzb/edit |
 | Flow S5a | AFF S5a · Verkoopmelding | **Yp6sKv** | https://www.klaviyo.com/flow/Yp6sKv/edit |
 | Flow S5b | AFF S5b · Uitbetaling | **TkV5DY** | https://www.klaviyo.com/flow/TkV5DY/edit |
 | Segment | AFF · bestaande affiliates | **TZ8Cmj** | https://www.klaviyo.com/list/TZ8Cmj |
@@ -22,75 +22,71 @@ Bronnen: `klaviyo/flows/affiliate-v1.md` (copy v2), `research/snowball/02-klaviy
 
 Alle mails: afzender "Benjamin from Siraat" <send@siraatskitchen.com>, reply-to = hetzelfde adres (geen support), niet transactioneel, UTM `utm_source=klaviyo`, `utm_medium=email`, `utm_campaign=aff-<mail>` (aff-announce, aff-nudge-1, aff-sale, aff-payout; ook in de dashboardlink van de template). Smart sending aan in S1 en de campagne, uit in S5a en S5b.
 
+22 okt middag: S1 opnieuw gebouwd op de bezorg-trigger (R22pzb, sectie 3). De eerste versie VX4gA3 (trigger inschrijving, lineair met slots) is verwijderd; die was door ons gemaakt en nooit live.
+
 Bouwscript: `scripts/build_aff_flows.py` (POST /api/flows met definition en temporary_id, weigert als de flownaam al bestaat). P1-blok: `scripts/aff_p1_block.py`.
 
 ## 2. Tijdlijn per klant
 
 | Moment | Wat de klant krijgt | Bron |
 | --- | --- | --- |
-| Minuut 0 | Shopify-orderbevestiging | Shopify |
+| Minuut 0 | Shopify-orderbevestiging en de pop-up met de referral-link | Shopify, Snowball |
 | Minuut 3 | E-Guide | YyaMjx (live, ongewijzigd) |
-| Minuut ~20 | Snowball schrijft in (XzrVJZ), link staat op het profiel; S1 start (10% holdout) | Snowball, S1 |
+| Minuut ~20 | Snowball schrijft in (XzrVJZ), link staat op het profiel | Snowball |
 | 1 uur | P1-FIRST of P1-REPEAT **met het blok "Give 15%, get 15%" onder de eerste alinea** (na de swap, sectie 6) | X3ySuU (live, swap voorbereid) |
+| Bezorging | S1 start (Postflows UabgWz), 10% holdout | S1 |
 | Bezorging + 1 en + 4 dagen | P2 (VQ93sx) en U1 (VPixnJ), met de refer-a-friend-footerregel (na toepassen, sectie 7) | live flows |
-| Bezorging + 3 tot 6 dagen | **A1 = aff-announce** ("Your order can pay for itself") | S1 |
+| Bezorging + 3 dagen, 10:00 | **A1 = aff-announce** ("Your order can pay for itself"); + 5 dagen als er in de 2 dagen ervoor een reviewmail was | S1 |
 | A1 + 3 dagen | **A2 = aff-nudge-1**, alleen als A1 geopend en niet geklikt | S1 |
 | Bezorging + 14 dagen | Reviewverzoek | XzHrez (live) |
-| Geen bezorgbewijs | A1 op dag 21 (of het eerstvolgende slot) | S1 |
 | Bij een referral-sale | aff-sale, direct (max 1 per 3 dagen) | S5a |
 | Bij een uitbetaling | aff-payout, direct (max 1 per 14 dagen) | S5b |
 
-Maximaal 2 activatiemails per persoon (A1, A2). Clickers en niet-openers krijgen na A1 niets meer.
+Maximaal 2 activatiemails per persoon (A1, A2). Clickers en niet-openers krijgen na A1 niets meer. Zonder bezorgbewijs geen A1 (de vangnet-cap op dag 21 uit VX4gA3 is vervallen).
 
-## 3. Structuur S1 (VX4gA3)
+## 3. Structuur S1 (R22pzb)
 
-Trigger: Enrolled in SocialSnowball through purchase (XzrVJZ).
+Trigger: **Postflows - 4. Shipment Delivered (UabgWz)**. Vuurt voor bijna elke order (week van 15 okt: 1.678 events op 1.437 orders), dus de trigger is zelf het bezorgbewijs.
 
 Flowfilters (alle moeten gelden, op elk moment in de flow):
-1. Has not been in this flow over all time.
-2. Refunded Order (Xg6cwn) zero times since starting this flow.
-3. Cancelled Order (TFervq) zero times since starting this flow.
-4. Opened Ticket (Gorgias, YzvjGf) zero times in the last 21 days. (Er is ook "Ticket Created" S2Aax7 van Klaviyo zelf; niet gebruikt.)
-5. New referral sale (Xqbr4d) zero times since starting this flow.
+1. Profieleigenschap `Referral Link - SocialSnowball` is gezet (alleen affiliates).
+2. Has not been in this flow over all time (geen tweede mail bij een tweede pakket of een herhaald Postflows-event).
+3. Refunded Order (Xg6cwn) zero times in the last 60 days.
+4. Cancelled Order (TFervq) zero times in the last 60 days.
+5. Opened Ticket (Gorgias, YzvjGf) zero times in the last 21 days.
+6. New referral sale (Xqbr4d) zero times over all time (wie al verkoopt, heeft de uitleg niet nodig).
 
 ```
-XzrVJZ
+UabgWz (bezorgd)
   └ Split: random 10%  ── JA → einde (holdout, geen mail)
                         └ NEE
-      wacht 6 d (09:00) ── A1·d6
-      wacht 3 d ── A2·d9  ── A1·d9
-      wacht 3 d ── A2·d12 ── A1·d12
-      wacht 3 d ── A2·d15 ── A1·d15
-      wacht 3 d ── A2·d18 ── A1·d18
-      wacht 3 d ── A2·d21 ── A1·d21 (cap: ook zonder bezorgbewijs)
-      wacht 3 d ── A2·d24 ── A1·d24
-      wacht 3 d ── A2·d27 ── A1·d27
-      wacht 3 d ── A2·d30 ── einde
+      wacht 3 d (10:00 profieltijd)
+      Split: reviewmail XzHrez of TvfJYU ontvangen in de laatste 2 dagen?
+        ├ NEE → A1 announce ──────────── wacht 3 d ── Split: A1 geopend en niet geklikt? ── JA → A2 nudge-1
+        │                                                                              └ NEE → einde
+        └ JA  → wacht 2 d (10:00) → A1 announce · na review ── wacht 3 d ── zelfde split ── JA → A2 nudge-1 · na review
 ```
 
-Waarom lineair: Klaviyo-flows mogen in de editor geen samenkomende takken hebben (v4 2.1). Een API-test op 22 okt (testflow SB92xY, meteen weer verwijderd) liet zien dat de API een samenkomende link wel accepteert, maar de editor is daar niet op getest; daarom de bewezen vorm. Elke A1- en A2-kopie heeft verzendfilters die bepalen of het profiel nu aan de beurt is. Wie wordt overgeslagen (nog niet bezorgd, reviewmail net gehad, smart sending), komt bij het volgende slot terug. Alle A1-kopieën heten `AFF S1 · A1 · announce · d<dag>`, alle A2-kopieën `AFF S1 · A2 · nudge-1 · d<dag>`; filters werken op de naam (`Campaign Name contains 'AFF S1 · A1'`), dus rapporteren kan per naam-prefix.
+Takken lopen niet samen (editorregel v4 2.1), daarom staat de staart A1, wacht, split, A2 twee keer. Mailnamen: `AFF S1 · A1 · announce`, `AFF S1 · A1 · announce · na review`, `AFF S1 · A2 · nudge-1`, `AFF S1 · A2 · nudge-1 · na review`; de A2-split werkt op de naam (`Campaign Name contains 'AFF S1 · A1'`, Opened Email WyrTym > 0 en Clicked Email W247h8 = 0 sinds start flow), dus rapporteren kan per naam-prefix. Geen verzendfilters op de mails nodig.
 
-Verzendfilters A1 (dag 6 tot 18):
-- Received Email where Campaign Name contains `AFF S1 · A1` zero times since starting this flow (één A1 per persoon).
-- Delivered Shipment (VcUF33) **of** Postflows 4. Shipment Delivered (UabgWz) at least once since starting this flow (bezorgbewijs).
-- VcUF33 zero times in the last 3 days en UabgWz zero times in the last 3 days (bezorging minstens 3 dagen geleden).
-- Received Email where $flow = XzHrez zero times in the last 3 days, idem TvfJYU (3 dagen afstand tot de reviewmail; anders volgend slot).
+| Actie | Type | Wat |
+| --- | --- | --- |
+| 121654812 | split | random 10% holdout |
+| 121654813 | wacht | 3 dagen, 10:00 profieltijd |
+| 121654814 | split | Received Email (YkRM4Q) uit XzHrez of TvfJYU in de laatste 2 dagen |
+| 121654815 | wacht | 2 dagen, 10:00 |
+| 121654816 / 121654817 | mail | A1 (template-kopie VLgZtZ / RyqbQq) |
+| 121654818 / 121654819 | wacht | 3 dagen, 10:00 |
+| 121654820 / 121654821 | split | A1 geopend en niet geklikt |
+| 121654822 / 121654823 | mail | A2 (template-kopie TTdRC8 / QQKSSp) |
 
-A1 vanaf dag 21 (cap): dezelfde filters zonder de regel "bezorgbewijs". Wie op dag 19 tot 21 is bezorgd, wacht nog tot het slot daarna (dag 24).
-
-Verzendfilters A2:
-- Received Email where Campaign Name contains `AFF S1 · A1` at least once in the last 4 days (A1 in het vorige slot, dus precies 3 dagen geleden).
-- Opened Email (WyrTym) where Campaign Name contains `AFF S1 · A1` at least once since starting this flow.
-- Clicked Email (W247h8) where Campaign Name contains `AFF S1 · A1` zero times since starting this flow.
-- Received Email where Campaign Name contains `AFF S1 · A2` zero times since starting this flow.
-- Plus flowfilter 5 (geen sale sinds start).
-
-Onderwerpen: A1 "Your order can pay for itself" / preview "Friends get 15% off their first order. You get 15% of what they pay." A2 "Has anyone asked about your pan?" / "That is the moment your link pays. Give 15%, get 15%." A/B-tests (onderwerpen B in de topcomment van de bron) kunnen alleen in de editor worden toegevoegd.
+Onderwerpen: A1 "Your order can pay for itself" / preview "Friends get 15% off their first order. You get 15% of what they pay." A2 "Has anyone asked about your pan?" / "That is the moment your link pays. Give 15%, get 15%." (uit de topcomment van de bron). A/B-tests (onderwerpen B in de topcomment) kunnen alleen in de editor worden toegevoegd.
 
 Bekende randen:
-- U1 (VPixnJ) gaat op bezorging + 4. A1 kan op bezorging + 3 tot 6 vallen, dus soms binnen een dag van U1. Smart sending (accountinstelling) kan A1 dan overslaan; het volgende slot vangt hem op. Alternatief na de eerste week: de 3-dagenregel ook op VQ93sx en VPixnJ zetten (zelfde filter als de reviewflows).
-- Holdout: Klaviyo kan via de API geen "Update profile property" plaatsen. Om de holdout later te kunnen meten: in de editor op de JA-tak van de 10%-split een Update profile property `snow_pilot = holdout` zetten vóór livegang. Zonder die stap is de holdout alleen te benaderen als "in flow S1, geen AFF S1-mail ontvangen, wel bezorgd".
-- Postflows vuurt ca. 2,5 keer per zending; een late herhaling schuift A1 hooguit één slot op.
+- U1 (VPixnJ) gaat op bezorging + 4, A1 op bezorging + 3. Smart sending (accountinstelling) kan A1 overslaan als er net een andere mail was; er is geen tweede slot meer, dus wie wordt overgeslagen krijgt geen A1. Na de eerste week meten hoeveel A1's smart sending overslaat.
+- De reviewcheck kijkt naar de 2 dagen vóór het A1-moment. XzHrez gaat op bezorging + 14, dus in de gewone tak speelt hij zelden; hij vangt vooral TvfJYU (fallback) en late Postflows-events.
+- Holdout: Klaviyo kan via de API geen "Update profile property" plaatsen. Om de holdout later te kunnen meten: in de editor op de JA-tak van de 10%-split een Update profile property `snow_pilot = holdout` zetten vóór livegang. Zonder die stap is de holdout alleen te benaderen als "in flow S1, geen AFF S1-mail ontvangen".
+- De linkeigenschap moet er bij bezorging al staan. Inschrijving gebeurt 17 tot 22 minuten na de order, bezorging dagen later, dus dat klopt voor kopers sinds 20 okt.
 
 ## 4. S5a en S5b
 
@@ -113,7 +109,7 @@ Segment **TZ8Cmj "AFF · bestaande affiliates"** (via de API aangemaakt):
 
 Campagne **"AFF · Aankondiging bestaande affiliates"**: Draft, audience TZ8Cmj, template AFF · announce (kopie UaYp6t), onderwerp "Your order can pay for itself", smart sending aan, UTM aff-announce. De API zet bij een draft een standaard verzendstrategie (static, tijdstip van aanmaken); dat is geen inplanning, er is geen send job. **Niet op "Schedule" of "Send" klikken voordat de checklist rond is**; dan eerst het verzendtijdstip zetten.
 
-Overlap: het segment telt alleen inschrijvingen vóór 22 okt, S1 alleen nieuwe triggers na livegang. Niemand krijgt beide.
+Overlap: het segment telt inschrijvingen vóór 22 okt. S1 start nu op bezorging, dus een bestaande affiliate die na livegang van S1 (opnieuw) een bezorgevent krijgt, kan ook S1 krijgen. Oplossing vóór livegang: de campagne eerst versturen en in S1 een flowfilter toevoegen "Received Email where Campaign Name = AFF · Aankondiging bestaande affiliates zero times", of bewust accepteren (S1 telt per persoon maar één keer).
 
 ## 6. Link binnen het uur: P1 met blok (voorbereid, niet gekoppeld)
 
@@ -186,6 +182,8 @@ Volledige lijst per actie met template-ID: scratchpad `aff/footer-scan.json` (al
 - Template-render (Klaviyo `POST /api/template-render`) op de bibliotheektemplates, de flowkopieën (A1 d6 TxBksV, A1 d27 WHiPJV, A2 d9 SUAhQi, sale RKLGYN, payout WiKN4j) en de campagnekopie UaYp6t, met een testprofiel (Referral-eigenschappen 15%/15%, link, Siraat Last Order Value 214 USD) en UK zonder orderwaarde, plus 20/10 en zonder link voor de bibliotheektemplates: geen `{{`/`{%`-restanten, geen em dash. Uitkomsten: US "Your last order was $214 ... about $27. 8 friends: your whole order back.", UK "Pan Pro Duo at £177 ... you get £22.57", 20/10 alleen de percentageregel. Sale: "Your commission: $27.29", zonder bedrag "in your dashboard". `multiply`, `divide` en `ceil` werken in Klaviyo (render bevestigd).
 - `scripts/check_previews.py affiliate`: 0 problemen. Screenshots 375 en 600 px: geen overflow, alle beelden laden.
 
+Verificatie S1 R22pzb (22 okt middag, GET met definition): flow status draft, trigger UabgWz, 6 flowfilters zoals sectie 3, 12 acties, alle links verwijzen naar bestaande acties, 4 mails status draft, afzender "Benjamin from Siraat" <send@siraatskitchen.com> (reply-to zelfde adres), smart sending aan, UTM aff-announce / aff-nudge-1, wachttijden 3/2/3 dagen tot 10:00 profieltijd. Template-render op X4LBgN, VNJw3y en de flowkopieën VLgZtZ, RyqbQq, TTdRC8, QQKSSp (US $214 en UK zonder orderwaarde): geen `{{`/`{%`-restanten, geen em dash, link TESTER12345 5 keer, afmelden en voorkeuren aanwezig. VX4gA3 daarna verwijderd (GET geeft 404).
+
 ## 10. Launch-checklist (blokkerend)
 
 1. **Snowball op 15/15**: vriend 15% op de eerste order, affiliate 15% van wat de vriend betaalt (zonder verzending en tax), max $50 per order. **SafeLink** aan (unieke code per klik).
@@ -203,7 +201,7 @@ Volledige lijst per actie met template-ID: scratchpad `aff/footer-scan.json` (al
 
 1. Checklist 1 tot 10 afvinken.
 2. S5a (Yp6sKv) en S5b (TkV5DY): mail op Live, dan flow op Live.
-3. S1 (VX4gA3): alle 16 mails op Live (of eerst Manual voor een droge week), dan flow op Live. Eerste A1 valt pas 6 dagen later.
+3. S1 (R22pzb): alle 4 mails op Live (of eerst Manual voor een droge week), dan flow op Live. Eerste A1 valt 3 dagen na de eerste bezorging.
 4. P1-swap (sectie 6, acties 119850551 en 119850552), alleen in een sessie die live flows mag wijzigen.
 5. Campagne: segment TZ8Cmj opnieuw bekijken (doel ~300), verzendtijd zetten (10:00 ET), smart sending aan laten, versturen.
 6. Daarna de bezorgblokken (sectie 6) en de footerregel (sectie 7), elk na een eigen akkoord.

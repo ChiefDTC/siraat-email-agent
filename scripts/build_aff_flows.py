@@ -3,10 +3,11 @@
 Draaien vanuit de scratchpad golive-map (kl.py): python3 build_aff_flows.py [--dry]
 Alle mails status draft, flows status draft. Raakt geen bestaande flows aan.
 
-S1 is lineair (Klaviyo kent geen samenkomende takken, PLAYBOOK/v4 2.1): slots om de 3 dagen, per slot
-eerst een A2-kopie (nudge-1 voor openers van A1 zonder klik, 3 dagen na A1) en dan een A1-kopie (announce)
-met verzendfilters die bepalen of het profiel nu aan de beurt is. Een overgeslagen profiel komt in het
-volgende slot terug; zo werkt ook de 3-dagenafstand tot de reviewmail zonder extra takken.
+S1 (vanaf 22 okt middag) start op bezorging: Postflows - 4. Shipment Delivered (UabgWz), alleen affiliates
+(profiel heeft Referral Link - SocialSnowball). 10% holdout, 3 dagen (10:00), 2 dagen extra als er net een
+reviewmail was, A1 announce, 3 dagen, A2 nudge-1 alleen voor openers zonder klik. Geen samenkomende takken
+(PLAYBOOK/v4 2.1), dus de A1-staart staat dubbel. De oude lineaire slotversie (VX4gA3) is verwijderd.
+Optie --only s1 bouwt alleen S1.
 """
 import json, sys
 sys.path.insert(0, '/tmp/claude-0/-home-user/63cabcd2-6467-5149-aa57-034a09c8b336/scratchpad/golive')
@@ -14,14 +15,15 @@ from kl import api
 
 T = json.load(open('/tmp/claude-0/-home-user/63cabcd2-6467-5149-aa57-034a09c8b336/scratchpad/aff/templates.json'))
 DRY = '--dry' in sys.argv
-ENROLLED, SALE, PAYOUT = 'XzrVJZ', 'Xqbr4d', 'WManrA'
+SALE, PAYOUT = 'Xqbr4d', 'WManrA'   # XzrVJZ (inschrijving) is niet meer de S1-trigger
 RECEIVED, OPENED, CLICKED = 'YkRM4Q', 'WyrTym', 'W247h8'
 REFUND, CANCEL, TICKET = 'Xg6cwn', 'TFervq', 'YzvjGf'
-DELIV, POSTFLOWS = 'VcUF33', 'UabgWz'
+POSTFLOWS = 'UabgWz'                # Postflows - 4. Shipment Delivered
 REVIEW_FLOWS = ['XzHrez', 'TvfJYU']
 A1, A2 = 'AFF S1 · A1', 'AFF S1 · A2'
-SLOTS = [6, 9, 12, 15, 18, 21, 24, 27]   # dagen na inschrijving waarop A1 kan vallen
-CAP = 21                                   # vanaf dag 21 ook zonder bezorgbewijs
+REF_LINK = 'Referral Link - SocialSnowball'
+S1_NAME = 'AFF S1 · Activatie na bezorging'
+SEND_AT = '10:00:00'                       # profieltijdzone
 
 
 def tf(op, **k):
@@ -67,53 +69,48 @@ def email(tid, m, filters, nxt):
 
 def wait(tid, days, nxt):
     return {'temporary_id': tid, 'type': 'time-delay',
-            'data': {'unit': 'days', 'value': days, 'secondary_value': None, 'timezone': 'profile', 'delay_until_time': '09:00:00'},
+            'data': {'unit': 'days', 'value': days, 'secondary_value': None, 'timezone': 'profile', 'delay_until_time': SEND_AT},
             'links': {'next': nxt}}
 
 
-# ------------------------------------------------------------------ S1
+# ------------------------------------------------------------------ S1 (22 okt middag: bezorg-trigger)
 def s1():
+    """S1 op bezorging (Postflows UabgWz). Geen slots meer: de trigger is zelf het bezorgbewijs.
+    Takken lopen niet samen (editorregel v4 2.1): A1 en de A2-staart staan dubbel, een keer direct
+    en een keer na 2 extra dagen wachten als er net een reviewmail was."""
     pf = {'condition_groups': [
+        G({'type': 'profile-property', 'property': "properties['%s']" % REF_LINK, 'filter': {'type': 'existence', 'operator': 'is-set'}}),
         G({'type': 'profile-not-in-flow', 'timeframe_filter': tf('alltime')}),
-        G(pm(REFUND, 'equals', 0, tf('flow-start'))),
-        G(pm(CANCEL, 'equals', 0, tf('flow-start'))),
+        G(pm(REFUND, 'equals', 0, tf('in-the-last', days=60))),
+        G(pm(CANCEL, 'equals', 0, tf('in-the-last', days=60))),
         G(pm(TICKET, 'equals', 0, tf('in-the-last', days=21))),
-        G(pm(SALE, 'equals', 0, tf('flow-start'))),
+        G(pm(SALE, 'equals', 0, tf('alltime'))),
     ]}
-    no_review_3d = [G(pm(RECEIVED, 'equals', 0, tf('in-the-last', days=3), flow_is(f))) for f in REVIEW_FLOWS]
-    not_yet_a1 = G(pm(RECEIVED, 'equals', 0, tf('flow-start'), name_is(A1)))
-    settled = [G(pm(DELIV, 'equals', 0, tf('in-the-last', days=3))), G(pm(POSTFLOWS, 'equals', 0, tf('in-the-last', days=3)))]
-    has_proof = G(pm(DELIV, 'greater-than', 0, tf('flow-start')), pm(POSTFLOWS, 'greater-than', 0, tf('flow-start')))
-    a2_filters = [G(pm(RECEIVED, 'greater-than', 0, tf('in-the-last', days=4), name_is(A1))),
-                  G(pm(OPENED, 'greater-than', 0, tf('flow-start'), name_is(A1))),
-                  G(pm(CLICKED, 'equals', 0, tf('flow-start'), name_is(A1))),
-                  G(pm(RECEIVED, 'equals', 0, tf('flow-start'), name_is(A2)))]
+    review_2d = {'condition_groups': [G(*[pm(RECEIVED, 'greater-than', 0, tf('in-the-last', days=2), flow_is(f)) for f in REVIEW_FLOWS])]}
+    opened_not_clicked = {'condition_groups': [G(pm(OPENED, 'greater-than', 0, tf('flow-start'), name_is(A1))),
+                                               G(pm(CLICKED, 'equals', 0, tf('flow-start'), name_is(A1)))]}
     m1 = msg(A1 + ' · announce', 'Your order can pay for itself', 'Friends get 15% off their first order. You get 15% of what they pay.',
              T['AFF · announce'], 'aff-announce', True)
     m2 = msg(A2 + ' · nudge-1', 'Has anyone asked about your pan?', 'That is the moment your link pays. Give 15%, get 15%.',
              T['AFF · nudge-1'], 'aff-nudge-1', True)
-    acts = [{'temporary_id': 'hold', 'type': 'conditional-split',
-             'data': {'profile_filter': {'condition_groups': [G({'type': 'profile-sample', 'percentage': 10})]}},
-             'links': {'next_if_true': None, 'next_if_false': 'w0'}}]
-    prev = None
-    for i, d in enumerate(SLOTS):
-        gap = d if i == 0 else d - SLOTS[i - 1]
-        acts.append(wait(f'w{i}', gap, f'b{i}'))
-        # A2 (3 dagen na A1 in het vorige slot) en daarna A1
-        acts.append(email(f'b{i}', dict(m2, name=f'{A2} · nudge-1 · d{d}'), a2_filters, f'a{i}'))
-        f1 = [not_yet_a1] + settled + no_review_3d + ([] if d >= CAP else [has_proof])
-        acts.append(email(f'a{i}', dict(m1, name=f'{A1} · announce · d{d}'), f1, f'w{i+1}'))
-    last = SLOTS[-1] + 3
-    acts.append(wait(f'w{len(SLOTS)}', 3, 'bz'))
-    acts.append(email('bz', dict(m2, name=f'{A2} · nudge-1 · d{last}'), a2_filters, None))
-    acts[0]['links']['next_if_false'] = 'w0'
-    # eerste A2-kopie (dag 6) kan nooit vuren (geen eerdere A1); weglaten houdt de flow kleiner
-    acts = [a for a in acts if a['temporary_id'] != 'b0']
-    for a in acts:
-        if a['links'].get('next') == 'b0':
-            a['links']['next'] = 'a0'
-    return 'AFF S1 · Activatie nieuwe kopers', {'triggers': [{'type': 'metric', 'id': ENROLLED}], 'profile_filter': pf,
-                                               'entry_action_id': 'hold', 'actions': acts}
+
+    def split(tid, flt, yes, no):
+        return {'temporary_id': tid, 'type': 'conditional-split', 'data': {'profile_filter': flt},
+                'links': {'next_if_true': yes, 'next_if_false': no}}
+
+    def tail(sfx, label):  # A1, 3 dagen, opened-niet-geklikt, A2
+        return [email('a1' + sfx, dict(m1, name=f'{A1} · announce{label}'), None, 'w3' + sfx),
+                wait('w3' + sfx, 3, 'c' + sfx),
+                split('c' + sfx, opened_not_clicked, 'a2' + sfx, None),
+                email('a2' + sfx, dict(m2, name=f'{A2} · nudge-1{label}'), None, None)]
+
+    acts = [split('hold', {'condition_groups': [G({'type': 'profile-sample', 'percentage': 10})]}, None, 'w1'),
+            wait('w1', 3, 'rv'),
+            split('rv', review_2d, 'w2', 'a1'),
+            wait('w2', 2, 'a1r')]
+    acts += tail('', '') + tail('r', ' · na review')
+    return S1_NAME, {'triggers': [{'type': 'metric', 'id': POSTFLOWS}], 'profile_filter': pf,
+                     'entry_action_id': 'hold', 'actions': acts}
 
 
 def single(name, trig, days_not_in_flow, m):
@@ -133,7 +130,8 @@ def s5():
 
 if __name__ == '__main__':
     out = {}
-    for name, d in [s1()] + s5():
+    flows = [s1()] if '--only' in sys.argv and 's1' in sys.argv else [s1()] + s5()
+    for name, d in flows:
         print(name, len(d['actions']), 'acties')
         if DRY:
             continue
@@ -145,4 +143,10 @@ if __name__ == '__main__':
             print('  FOUT', json.dumps(r['errors'])[:1500]); continue
         out[name] = r['data']['id']; print('  ', r['data']['id'], r['data']['attributes']['status'])
     if out:
-        json.dump(out, open('/tmp/claude-0/-home-user/63cabcd2-6467-5149-aa57-034a09c8b336/scratchpad/aff/flows.json', 'w'), ensure_ascii=False, indent=1)
+        fj = '/tmp/claude-0/-home-user/63cabcd2-6467-5149-aa57-034a09c8b336/scratchpad/aff/flows.json'
+        try:
+            prev = json.load(open(fj))
+        except Exception:
+            prev = {}
+        prev.update(out)
+        json.dump(prev, open(fj, 'w'), ensure_ascii=False, indent=1)
