@@ -1,4 +1,4 @@
-# Concurrenten-inbox: overzicht na dag 10 (stand 22 okt 2026, ca. 08:40 UTC)
+# Concurrenten-inbox: overzicht na dag 11 (stand 23 okt 2026, ca. 08:40 UTC)
 
 Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmail.com, per regel in `tijdlijn.csv`. Acties uit `log-*.csv` (HexClad en Our Place b handmatig door Floris, geen log). Kortingscodes staan nergens uitgeschreven.
 
@@ -6,8 +6,8 @@ Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmai
 
 | Merk | w | b | c | co | Totaal | Status inschrijving |
 |---|---|---|---|---|---|---|
-| HexClad | 7 | 12 | 11 | n.v.t. | 30 | w/b/c handmatig (Floris), co niet gedaan |
-| Our Place | 7 | 13 | 9 | 0 | 29 | alles gelukt; c pas om 11:18 in winkelwagen |
+| HexClad | 8 | 13 | 12 | n.v.t. | 33 | w/b/c handmatig (Floris), co niet gedaan |
+| Our Place | 9 | 14 | 11 | 0 | 34 | alles gelukt; c pas om 11:18 in winkelwagen |
 | Caraway | 5 (op hex-w) | 0 | 0 | 0 | 5 | w/b/c via footer "gelukt", maar geen enkele mail op cw-adressen; beide Caraway-mails kwamen op hex-w binnen |
 | Made In | 0 | 0 | 0 | 0 | 0 | w/b/c footer "Thanks! You've been subscribed", co gestopt (telefoon verplicht) |
 | Okura | 0 | 0 | 0 | 0 | 0 | w/b/c captcha, alleen co (checkout zonder betaling, opt-in aan) |
@@ -18,11 +18,11 @@ Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmai
 
 | Adres | 1e mail | 2e mail | 3e mail |
 |---|---|---|---|
-| hex-w | 0,0 welkom (benadering) | 1,5 browse "Still thinking about it?" | 25,6 browse 2 "The last cookware you'll ever need"; welkomreeks 0, 24, 48, 120 en 192,1 ("To know us is to 🫶 us") |
+| hex-w | 0,0 welkom (benadering) | 1,5 browse "Still thinking about it?" | 25,6 browse 2 "The last cookware you'll ever need"; welkomreeks 0, 24, 48, 120, 192,1 ("To know us is to 🫶 us") en 240,1 ("A letter from HexClad's founder 💌") |
 | hex-b | 0,0 welkom (benadering) | 1,0 browse "Great choice, chef!" | 25,0 browse 2 "Lasts a Lifetime – Guaranteed!" |
 | hex-c | 0,0 welkom (benadering) | 0,7 cart "Your kitchen needs this!" | 48,0 welkom 3, cart 2 "The last cookware you'll ever need" pas na 168,7 uur (7 dagen), welkom 5 na 192,1 |
 | Caraway (hex-w) | 0,0 welkom "Greetings From Caraway" | 12,0 "Our Top Caraway Picks" | 36,1 "Are You Cooking Clean?" (PFAS-vergelijking), daarna 84,1 welkom 4 (set, $230) en 132,2 welkom 5 "The Problem: Traditional Cookware Is Toxic" |
-| op-b | 0,0 welkom (benadering) | 4,0 browse "You Left Before the Good Part" | 24,0 welkom 2 "Did you hear?", 28,0 browse 2 "We Can't Wait Forever 💔", 42,4 "Party of One" (campagne minis); daarna alleen campagnes, laatste 234,4 "Set Savings" |
+| op-b | 0,0 welkom (benadering) | 4,0 browse "You Left Before the Good Part" | 24,0 welkom 2 "Did you hear?", 28,0 browse 2 "We Can't Wait Forever 💔", 42,4 "Party of One" (campagne minis); daarna alleen campagnes, 234,4 "Set Savings", laatste 258,4 "No Set Menu" |
 | op-w | 0,07 welkom (4 min na popup) | 24,2 welkom 2 "Did you hear?" | |
 | op-c | 0,08 welkom | 24,2 welkom 2 "Did you hear?" | (nog steeds geen cartmail, ook na 150 uur niet; alleen campagnes) |
 | pf-co | 12,5 abandoned checkout | | |
@@ -98,10 +98,22 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 - **Geen nieuwe mail van HexClad** (voor het eerst sinds de start een dag zonder HexClad; welkom 6 zou bij een stap van 72 uur rond 264 uur vallen, 23 okt rond 10:40 UTC) **en niets van Caraway, Made In, Okura, Plateful of Taima.**
 - **4 nieuwe mails** (allemaal Our Place). **Na 10 dagen nog steeds geen kortingscode** bij HexClad, Our Place en Caraway. Plateful blijft het enige merk met een code.
 
+## Dag 11 (23 okt)
+
+- **HexClad welkom 6 na 240 uur: "A letter from HexClad's founder 💌"** (preview "Lovely to meet you, Chef!"), om 10:40 tot 10:42 UTC op 22 okt naar w, b en c, net na de vorige run. De voorspelling van 264 uur klopte dus niet: na 120 en 192 is de stap nu 48 uur. Het onderwerp belooft een persoonlijke brief, maar de hele brief staat in een afbeelding; in de tekst (en alt-teksten) alleen "WELCOME!", de lifetime warranty ("If our product fails you, we'll make it right"), refer a friend $100 met een gratis beloning voor de verwijzer, de categorieen en "50,000+ Star Reviews". Wie afbeeldingen uit heeft, ziet geen woord van de oprichter. De versies voor w en b bevatten in de platte tekst bovendien een verborgen blok met generieke beveiligingstekst met invulvelden ("[Company Name]"), waarschijnlijk vulsel voor de tekst-beeldverhouding. Slordig.
+- **Our Place geeft de eerste uitgeschreven kortingscode, maar niet op eigen pannen.** "Our Place x Lovevery ♥️" (preview "Something for your little chef") is een brief van co-founder Shiza over haar dochter Sophia en een speelkeuken van Lovevery in de Our Place-kleur Blue Salt, met een speel-Always Pan. Code OPLOVEVERY10 geeft 10% op "select products", de knop gaat naar lovevery.com. Een collab als campagne, gebracht als persoonlijk verhaal van de oprichter, vlak voor de cadeauperiode.
+- **Lovevery ging alleen naar c en w, niet naar b.** op-c om 23:15 UTC, op-w twee uur later; op-b kreeg om 05:15 UTC in plaats daarvan "No Set Menu" (preview "Follow your cravings"): de 6-in-1 Rice Cooker met een herfstrecept (Creamy Chicken Congee, "Tonight's Special"), geen prijs. Our Place splitst de lijst dus soms op segment in plaats van alles in de volgorde b, c, w te sturen.
+- **"Set Savings" ging ook naar c (12:15) en w (14:16)**, weer 7 en 9 uur na b. Nog steeds zonder bedrag in de tekst.
+- **Referral:** HexClad zet refer a friend ($100 voor de vriend, "a FREE reward for yourself") nu ook als groot blok in de oprichtersmail; Our Place houdt "Get $20" in de footer. Geen van beide stuurt een aparte referralmail.
+- **Halloween en BFCM:** nog geen Halloween-actie of vroege Black Friday bij HexClad, Our Place of Caraway. Ter vergelijking kwam op het hoofdadres (buiten dit onderzoek) wel een Halloween-mail van een ander merk met 20% op alles ("BOO! 20% OFF everything 👻").
+- **Geen nieuwe mail van Caraway, Made In, Okura, Plateful of Taima.**
+- **8 nieuwe mails** (HexClad 3, Our Place 5). Eerste code bij Our Place (10%, partnerproducten). **HexClad en Caraway na 11 dagen nog steeds zonder kortingscode.**
+
 ## Korting: wanneer en hoe hoog
 
 - **Plateful** is het enige merk met een kortingscode: 10% in de abandoned checkout na 12,5 uur, 2 dagen geldig en al verrekend in de checkout-link (kortingscode aanwezig, niet uitgeschreven).
 - **HexClad** en **Our Place** geven geen code, maar duwen een lopende sitebrede sale (Prime Time Sale, October Prime Deals). HexClad noemt in cart- en browsemails alleen gratis verzending; Our Place zegt "Prime Deals" zonder percentage in de tekst, met een einddatum (12 okt 23:59 PT) in de kleine lettertjes.
+- **Our Place** gaf op dag 11 (252 uur) de eerste uitgeschreven code: OPLOVEVERY10, 10% op select products van de Lovevery-collab, alleen naar c en w.
 - **Caraway** geeft geen welkomstkorting; in mail 2 belooft het $50 korting op een tweede aankoop van $300+ (code pas na de eerste aankoop).
 
 ## Opvallende onderwerpen en previews
@@ -136,6 +148,9 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 19. **Een keuzehulp tussen twee Siraat-producten.** Our Place zet in "It Takes Two" twee pannen naast elkaar met per pan waarvoor hij het best is. Siraat kan in browse 2 of een campagne de losse pan naast de Pan Pro Duo (of twee maten) zetten met "welke past bij hoe jij kookt", zodat twijfel tussen producten geen reden wordt om niets te kopen.
 20. **Referral als vaste regel in elke mail, plus eigen mails.** HexClad ($100) en Our Place ($20) zetten refer a friend in elke footer, maar sturen er geen eigen mail over. Siraat kan het Social Snowball-programma (vriend 15%, affiliate 15%) op dezelfde manier als vaste regel in footer of blok van alle bestaande mails zetten, naast de losse affiliate-mails van Benjamin. Zo ziet elke ontvanger het programma, ook wie de aankondiging mist. Kanttekening: wij geven een percentage en zij een vast bedrag; het advies om na BFCM 15/15 te testen tegen een vast bedrag blijft staan.
 21. **Een "savings"-onderwerp altijd met het getal.** Our Place belooft "Set Savings" maar noemt geen bedrag in de mail. Als Siraat een setvoordeel communiceert, hoort het echte bedrag of percentage in onderwerp of preview en bovenaan de mail, anders voelt de belofte leeg.
+22. **Een echte brief van Benjamin in tekst, niet in beeld.** HexClad noemt mail 6 "A letter from HexClad's founder", maar de brief is een afbeelding; met afbeeldingen uit blijft er niets over. Siraat heeft het voordeel dat de founder-notes van Benjamin als echte tekst werken (97 tot 142 per 1000). Houd dat zo: brieven van Benjamin altijd als live tekst, met hooguit een foto, zodat de boodschap ook zonder beelden en in de preview overkomt.
+23. **Referral als blok in een late welkomstmail.** HexClad zet refer a friend groot in de oprichtersmail, met een beloning voor beide kanten. Siraat kan in de laatste welkomstmail of de brief van Benjamin een blok opnemen met "geef een vriend 15%" (Social Snowball), in de vaste opmaak, zodat ook niet-kopers het programma leren kennen voordat de BFCM-drukte begint.
+24. **Een cadeau-collab als persoonlijk verhaal.** Our Place verkoopt een samenwerking met Lovevery via een brief van de co-founder over haar dochter, met een kleine code (10%) op partnerproducten in plaats van op de eigen pannen. Als Siraat voor de feestdagen een samenwerking of cadeau-item heeft, kan Benjamin het in een eigen verhaal brengen (waarom dit, voor wie), zonder de kernpan af te prijzen.
 
 ## Open punten
 
