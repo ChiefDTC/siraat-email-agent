@@ -1,8 +1,20 @@
-# Mystery Gift v3 · onthulling en abonnement op de vaatwasstrips (concept)
+# Mystery Gift v3 · onthulling en abonnement op de vaatwasstrips (LIVE sinds 23 okt 2026)
 
 Versie 19 oktober 2026. Vervangt de dode flow WvRupU "Mystery Gift Reveal, Sheets". **Niets is in Klaviyo of Shopify aangemaakt of gewijzigd; dit is ontwerp plus bron-HTML. Livegang alleen na akkoord en klikwerk van Floris.**
 
 Mails: `klaviyo/templates/v3/mystery/` (bron `m1.html` t/m `m4.html`, `-preview.html` gerenderd op een US-profiel, `previews/` met `-mobile-375.png` en `-desktop.png`, `assets/` met `m1-hero.jpg` t/m `m4-hero.jpg` (Higgsfield v3 23 okt, 1200x792, echte verpakking met opdruk ingezet; v2 in `assets/v2/`, v1 in `assets/v1/`, zie `assets/PROMPTS.md`) en `klaviyo-urls.txt`). Bouwen: `python3 -I scripts/build_template.py klaviyo/templates/v3/mystery/m1.html klaviyo/templates/v3/mystery/assets klaviyo/templates/v3/mystery/assets/klaviyo-urls.txt` (zelfde voor m2 t/m m4).
+
+## 0. Status (23 okt 2026, 16:10 UTC)
+
+LIVE op akkoord van Floris ("implementeer maar en zet de flow maar live"). Flow **YwsKcf** "v4 · Mystery Gift", gebouwd met `scripts/build_mystery_flow.py`.
+- Trigger Ordered Product (XT7f8Z) waar `ProductID` = 15785445622100 OF `Name` = "Mystery Gift" (het event heeft `Name`, geen `ProductName`; ProductID is numeriek). Ongeveer 144 gift-events per 20 uur.
+- Flowfilters zoals sectie 3; strips-aankoop gecheckt op `Items` bevat "Plastic-Free Dishwasher Sheets" en "Non-Toxic Dishwasher Sheets" (huidige productnaam).
+- M1 121895219, M2 121895221, M3 121895224 live; M4 121895236 draft (uit, advies). Elke mail slaat over bij een X3ySuU-mail in de laatste 2 dagen.
+- Library-templates RE5Jtb, SMtzcw, UxSsyu, TSQpMk (flowkopie Vpmw78, ViJfKJ, U4Gawu, WpvQic), beelden v3.
+- A/B op onderwerp kan niet via de API: alleen onderwerp A (oude controle). Test B toevoegen in de UI is optioneel.
+- Recharge skip/pause/cancel bevestigd op de productpagina (Floris, 23 okt).
+- QA: statisch groen; enige melding is de zwarte footerlinks (#111111, variant E, keuze Floris 19 okt), gelijk aan alle live flows.
+- WvRupU blijft Draft.
 
 ## 1. Waarom opnieuw
 
