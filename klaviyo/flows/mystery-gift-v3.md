@@ -2,7 +2,7 @@
 
 Versie 19 oktober 2026. Vervangt de dode flow WvRupU "Mystery Gift Reveal, Sheets". **Niets is in Klaviyo of Shopify aangemaakt of gewijzigd; dit is ontwerp plus bron-HTML. Livegang alleen na akkoord en klikwerk van Floris.**
 
-Mails: `klaviyo/templates/v3/mystery/` (bron `m1.html` t/m `m4.html`, `-preview.html` gerenderd op een US-profiel, `previews/` met `-mobile-375.png` en `-desktop.png`, `assets/` met `m1-hero.jpg` t/m `m4-hero.jpg` (Higgsfield v2 23 okt, 1200x792, pak en vellen als held; v1 in `assets/v1/`, zie `assets/PROMPTS.md`) en `klaviyo-urls.txt`). Bouwen: `python3 -I scripts/build_template.py klaviyo/templates/v3/mystery/m1.html klaviyo/templates/v3/mystery/assets klaviyo/templates/v3/mystery/assets/klaviyo-urls.txt` (zelfde voor m2 t/m m4).
+Mails: `klaviyo/templates/v3/mystery/` (bron `m1.html` t/m `m4.html`, `-preview.html` gerenderd op een US-profiel, `previews/` met `-mobile-375.png` en `-desktop.png`, `assets/` met `m1-hero.jpg` t/m `m4-hero.jpg` (Higgsfield v3 23 okt, 1200x792, echte verpakking met opdruk ingezet; v2 in `assets/v2/`, v1 in `assets/v1/`, zie `assets/PROMPTS.md`) en `klaviyo-urls.txt`). Bouwen: `python3 -I scripts/build_template.py klaviyo/templates/v3/mystery/m1.html klaviyo/templates/v3/mystery/assets klaviyo/templates/v3/mystery/assets/klaviyo-urls.txt` (zelfde voor m2 t/m m4).
 
 ## 1. Waarom opnieuw
 
@@ -50,8 +50,8 @@ Mails: `klaviyo/templates/v3/mystery/` (bron `m1.html` t/m `m4.html`, `-preview.
 | Mail | Onderwerp (A/B waar vermeld) | Preview | Knop | Hero |
 | --- | --- | --- | --- | --- |
 | M1 | A: "Let's reveal your mystery gift" (oude controle) · B: "What's in the small box in your order" | It's not overstock. It's the other half of a no-coating kitchen. | See my gift up close | `m1-hero.jpg` pak omhoog uit de giftdoos |
-| M2 | "The ten-second way to use your gift" | One sheet where the pod goes. Half a sheet for a light load. | Show me the sheets | `m2-hero.jpg` wit vel in het doseerbakje, pak op de deur |
-| M3 | A: "Alright, here's the offer" (oude controle) · B: "20% off every delivery, not just the first" | Including the part most brands would leave out. | Get 20% every month | `m3-hero.jpg` nieuwe pakken komen binnen, oud pak bijna op |
+| M2 | "The ten-second way to use your gift" | One sheet where the pod goes. Half a sheet for a light load. | Show me the sheets | `m2-hero.jpg` wit vel in het doseerbakje, pak naast de vaatwasser |
+| M3 | A: "Alright, here's the offer" (oude controle) · B: "20% off every delivery, not just the first" | Including the part most brands would leave out. | Get 20% every month | `m3-hero.jpg` nieuw pak uit het verzendzakje naast het bijna lege oude pak |
 | M4 | "Last one from me about the dishwasher sheets" | The price isn't going anywhere. These emails are. | Keep my sheets coming | `m4-hero.jpg` stilleven pak, vellen, giftdoos en pan |
 
 Alle vijf onderwerptypes per mail staan in de topcomment van elke bron. A/B: één variabele (onderwerp), winnaar op unieke kliks, minimaal 4 weken, geen automatische winnaar (PLAYBOOK 6).
@@ -74,7 +74,7 @@ Inhoud in het kort:
 
 ## 7. Open punten
 
-1. **Beelden in Klaviyo** (23 okt): v2 van `m1-hero.jpg` t/m `m4-hero.jpg` staat in de Klaviyo-bibliotheek (`siraat-mystery-m*-hero.jpg`), URL's in `assets/klaviyo-urls.txt`, `m1.klaviyo.html` t/m `m4.klaviyo.html` gebouwd. Templates en flow nog niet in Klaviyo; daarvoor `qa_render.py` groen en akkoord Floris.
+1. **Beelden in Klaviyo** (23 okt): v3 (echte verpakking) van `m1-hero.jpg` t/m `m4-hero.jpg` staat in de Klaviyo-bibliotheek (`siraat-mystery-m*-hero-v3.jpg`), URL's in `assets/klaviyo-urls.txt`, `m1.klaviyo.html` t/m `m4.klaviyo.html` gebouwd. Templates en flow nog niet in Klaviyo; daarvoor `qa_render.py` groen en akkoord Floris.
 2. [VRAAG FLORIS] Recharge-portaal (skip/cancel) bevestigen, zie 2.
 3. [VRAAG FLORIS] M4 aan of uit.
 4. Ordered Product-event: `first_name` komt uit het profiel; checken in een Klaviyo-preview op een echt profiel dat `person.Country` gevuld is voor de prijsregel (anders loopt de zin zonder bedrag, geen fout).
