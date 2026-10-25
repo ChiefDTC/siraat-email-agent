@@ -44,7 +44,7 @@ Van de 253 uit UXBmYd blijven er 35 over: 168 eraf door supportcontact, 27 geen 
 | Golf | Regel | Profielen | Klaviyo-lijst | Campagne (Draft) | Template |
 |---|---|---|---|---|---|
 | 1 | bezorgd tot en met 13 okt | 608 | RtpJBt "Review catch-up golf 1 (22 okt)" | 01M5CSHE3FYPP6JSSHHSE3P2RQ "Review catch-up · golf 1 · 22 okt" | WHMSBy (kloon van TuCKL4) |
-| 2 | bezorgd na 13 okt | 224 | VeGwpV "Review catch-up golf 2 (3 nov)" | 01M5CSHG8HEQ089278KBZ863SP "Review catch-up · golf 2 · 3 nov" | VQT4WK (kloon van TuCKL4) |
+| 2 | bezorgd na 13 okt | 224, na hercheck 25 okt 218 | VeGwpV "Review catch-up golf 2 (3 nov)" | 01M5CSHG8HEQ089278KBZ863SP "Review catch-up · golf 2 · 28 okt", ingepland 28 okt 14:00 UTC (akkoord Floris 25 okt) | VQT4WK (kloon van TuCKL4) |
 
 Beide campagnes: onderwerp "Win your purchase amount back", preview "Two minutes. One honest review.", afzender en reply-to zoals de backfill, smart sending AAN, UTC (niet lokaal), datum 22 okt en 3 nov 14:00 UTC als richtwaarde, status Draft, niet ingepland. UTM utm_campaign v4-review-catchup-g1 en -g2. Template-HTML identiek aan TuCKL4 (de reviewmail uit de backfill en de flow); ordernummer in de sterlinks blijft leeg in een campagne, net als bij de backfill.
 
