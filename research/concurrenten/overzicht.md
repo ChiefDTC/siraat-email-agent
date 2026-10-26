@@ -1,4 +1,4 @@
-# Concurrenten-inbox: overzicht na dag 13 (stand 25 okt 2026, ca. 09:40 UTC)
+# Concurrenten-inbox: overzicht na dag 14 (stand 26 okt 2026, ca. 09:40 UTC)
 
 Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmail.com, per regel in `tijdlijn.csv`. Acties uit `log-*.csv` (HexClad en Our Place b handmatig door Floris, geen log). Kortingscodes staan nergens uitgeschreven.
 
@@ -6,8 +6,8 @@ Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmai
 
 | Merk | w | b | c | co | Totaal | Status inschrijving |
 |---|---|---|---|---|---|---|
-| HexClad | 9 | 14 | 13 | n.v.t. | 36 | w/b/c handmatig (Floris), co niet gedaan |
-| Our Place | 11 | 17 | 13 | 0 | 41 | alles gelukt; c pas om 11:18 in winkelwagen |
+| HexClad | 9 | 15 | 14 | n.v.t. | 38 | w/b/c handmatig (Floris), co niet gedaan |
+| Our Place | 12 | 18 | 14 | 0 | 44 | alles gelukt; c pas om 11:18 in winkelwagen |
 | Caraway | 5 (op hex-w) | 0 | 0 | 0 | 5 | w/b/c via footer "gelukt", maar geen enkele mail op cw-adressen; beide Caraway-mails kwamen op hex-w binnen |
 | Made In | 0 | 0 | 0 | 0 | 0 | w/b/c footer "Thanks! You've been subscribed", co gestopt (telefoon verplicht) |
 | Okura | 0 | 0 | 0 | 0 | 0 | w/b/c captcha, alleen co (checkout zonder betaling, opt-in aan) |
@@ -22,7 +22,7 @@ Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmai
 | hex-b | 0,0 welkom (benadering) | 1,0 browse "Great choice, chef!" | 25,0 browse 2 "Lasts a Lifetime – Guaranteed!" |
 | hex-c | 0,0 welkom (benadering) | 0,7 cart "Your kitchen needs this!" | 48,0 welkom 3, cart 2 "The last cookware you'll ever need" pas na 168,7 uur (7 dagen), welkom 5 na 192,1 |
 | Caraway (hex-w) | 0,0 welkom "Greetings From Caraway" | 12,0 "Our Top Caraway Picks" | 36,1 "Are You Cooking Clean?" (PFAS-vergelijking), daarna 84,1 welkom 4 (set, $230) en 132,2 welkom 5 "The Problem: Traditional Cookware Is Toxic" |
-| op-b | 0,0 welkom (benadering) | 4,0 browse "You Left Before the Good Part" | 24,0 welkom 2 "Did you hear?", 28,0 browse 2 "We Can't Wait Forever 💔", 42,4 "Party of One" (campagne minis); daarna alleen campagnes, 234,4 "Set Savings", 258,4 "No Set Menu", 269,4 "Our Place x Lovevery ♥️" (als laatste van de drie adressen), 282,4 "One Less Worry", laatste 307,4 "Low Stock: Coveted Colors" |
+| op-b | 0,0 welkom (benadering) | 4,0 browse "You Left Before the Good Part" | 24,0 welkom 2 "Did you hear?", 28,0 browse 2 "We Can't Wait Forever 💔", 42,4 "Party of One" (campagne minis); daarna alleen campagnes, 234,4 "Set Savings", 258,4 "No Set Menu", 269,4 "Our Place x Lovevery ♥️" (als laatste van de drie adressen), 282,4 "One Less Worry", 307,4 "Low Stock: Coveted Colors", laatste 331,4 "Double Major" (Titanium Always Pan Pro) |
 | op-w | 0,07 welkom (4 min na popup) | 24,2 welkom 2 "Did you hear?" | |
 | op-c | 0,08 welkom | 24,2 welkom 2 "Did you hear?" | (nog steeds geen cartmail, ook na 150 uur niet; alleen campagnes) |
 | pf-co | 12,5 abandoned checkout | | |
@@ -127,6 +127,15 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 - **Geen nieuwe mail van Caraway, Made In, Okura of Plateful.**
 - **6 nieuwe mails** (HexClad 3, Our Place 3). **HexClad en Caraway na 13 dagen nog steeds zonder kortingscode**; Our Place alleen op partnerproducten. Nog geen Halloween- of vroege Black Friday-actie.
 
+## Dag 14 (26 okt)
+
+- **Our Place verkoopt de Titanium Always Pan Pro als hoofdproduct.** "Double Major" (preview "High heat nonstick and easier cleanup, all together") kwam vandaag om 06:15 UTC naar op-b (331,4 uur), onder de kop "Advanced Degrees": "designed to take the heat so you can take the compliments". De specificaties staan in een rij: rvs buitenkant, aluminium kern, titanium binnenkant, Limited Lifetime Warranty, "heat safe up to 535ºC for proper sears" (zo staat het er; vermoedelijk is 535 ºF bedoeld) en de verfijnde micro-textuur NoCo. Geen prijs, geen korting. Na "Look Closer" (titanium refined) en "It Takes Two" (Titanium Braiser Pro) is dit de derde titanium-campagne in negen dagen, en de eerste die alleen de titanium pan verkoopt, met precies de beloftes van Siraat: hoge hitte en een goede korst. Hun titanium is een laag op rvs en aluminium met nonstick-textuur; dat verschil met puur titanium is het argument van Siraat.
+- **Our Place houdt 06:15 UTC aan voor op-b.** Twee dagen op rij een uur later dan de oude 05:15, maar c en w kregen "Low Stock: Coveted Colors" gisteren op de oude kloktijden (12:15 en 14:16), dus 6 en 8 uur na b in plaats van 7 en 9. Mogelijk hangt het samen met de overgang naar wintertijd in Europa (25 okt) bij een planning in lokale tijd voor b, terwijl c en w op een vaste UTC-tijd staan; de volgorde b, c, w blijft.
+- **HexClad zet een tweede deadline op de winactie.** "Ends soon: 2x entries on accessories" (preview "🍝More chances to win 🇮🇹") ging om 16:30 UTC naar het hello@-segment (hex-c 317,9 en hex-b 317,9 uur, niet w). Dubbele punten voor Gordon's Golden Ticket to Italy bij aankoop van accessoires (de knop gaat naar messen); de hele actie loopt tot 2 nov 2026 met een hoofdprijs van ruim $150,000. Na "2x entries ends today 🍕" (dag 7) is dit dezelfde truc, nu gericht op de kleinere aankoop. De reviewteller staat nu op "51,000+ Star Reviews" (was 50,000+). De platte tekst bevat weer het verborgen generieke beveiligingsblok met invulvelden; genegeerd.
+- **HexClad welkom 8 nog niet binnen.** Bij de stap van 48 uur valt die rond 336 uur (vandaag rond 10:40 UTC), dus net na deze run.
+- **Geen nieuwe mail van Caraway, Made In, Okura, Plateful of Taima.**
+- **5 nieuwe mails** (Our Place 3, HexClad 2). **HexClad en Caraway na 14 dagen nog steeds zonder kortingscode**; Our Place alleen op partnerproducten. Nog geen Halloween- of vroege Black Friday-actie, terwijl Halloween over vijf dagen is.
+
 ## Korting: wanneer en hoe hoog
 
 - **Plateful** is het enige merk met een kortingscode: 10% in de abandoned checkout na 12,5 uur, 2 dagen geldig en al verrekend in de checkout-link (kortingscode aanwezig, niet uitgeschreven).
@@ -139,6 +148,8 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 - HexClad: "You're In!" (welkom als toegang tot een sale), "Your kitchen needs this!", "Great choice, chef!" met preview "Not to mention, Gordon Ramsay approved...", "Still thinking about it?" met "Get it while it's hot 🔥".
 - Our Place: "You Left Before the Good Part" / "Prime Deals are waiting"; later korte campagne-onderwerpen van twee woorden ("Be Quick", "Set Savings", "One Less Worry") en nu "Low Stock: Coveted Colors" met preview "Get your favorites fast".
 - HexClad welkom 7: "Let's keep hanging out, cooks!" met preview "🫶🍳 Here's how." (community in plaats van product).
+- HexClad hello@: "Ends soon: 2x entries on accessories" met preview "🍝More chances to win 🇮🇹" (deadline op punten, niet op prijs).
+- Our Place: "Double Major" met preview "High heat nonstick and easier cleanup, all together" en kop "Advanced Degrees" (woordgrap op studie, verkoopt de titanium pan op hitte en schoonmaak).
 - Caraway: "Greetings From Caraway 🍳", "Our Top Caraway Picks" met preview "All ⭐️⭐️⭐️⭐️⭐️ across the board."
 - Plateful: "Lola, about your Titanium Pro Pan™ order": platte tekst, ondertekend door een persoon (Dannah), met factuurnummer en telefoonnummer. Leest als service, niet als marketing.
 
@@ -173,6 +184,9 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 25. **Non-toxic als geruststelling, niet als angst.** Our Place noemt de campagne "One Less Worry" en zegt alleen wat er niet in zit (PFAS, lood, microplastics), zonder andere pannen zwart te maken; Caraway deed het juist met een probleem-hook. Siraat kan beide testen in de welkomstreeks: een mail die opent met de geruststelling (puur titanium, geen coating die kan slijten of afbladderen) tegenover een mail die opent met het probleem van slijtende coatings. Alleen goedgekeurde claims gebruiken (zie DECISIONS.md en de copyregels); geen eigen testcijfers verzinnen.
 26. **Een community-mail na de verkoopmails in de welkomstreeks.** HexClad stuurt na 12 dagen geen product meer, maar een uitnodiging voor hun Facebook-groep met "Let's keep hanging out". Siraat kan achteraan de welkomstreeks (of in de post-purchase flow) een korte mail van Benjamin testen die uitnodigt om recepten en foto's te delen (bijvoorbeeld via Instagram of een eigen groep), zonder verkoopdruk. Dat houdt niet-kopers betrokken zonder dat elke mail om een aankoop vraagt, wat de uitschrijvingen in de welkomstflow kan helpen. Alleen doen als er echt een plek is waar Benjamin of het team reageert.
 27. **Schaarste op variant alleen als die echt is.** Our Place stuurt "Low Stock: Coveted Colors" naar een collectie met alleen bijna uitverkochte kleuren. Als een Siraat-maat of -set echt bijna op is, kan dat een korte campagne zijn met het echte aantal of de echte maat in het onderwerp; nooit verzonnen schaarste (zie de copyregels).
+
+28. **Een titanium-campagne die het verschil met "titanium-laag" uitlegt.** Our Place verkoopt de Titanium Always Pan Pro met hoge hitte en "proper sears", maar hun titanium is een binnenlaag met nonstick-textuur op rvs en aluminium. Siraat kan een campagne of welkomstmail sturen waarin Benjamin in gewone woorden uitlegt wat puur titanium betekent (geen coating die kan slijten), met de 75 jaar garantie tegenover een "limited lifetime warranty". Geen andere merken bij naam noemen en alleen goedgekeurde claims gebruiken (zie DECISIONS.md en de copyregels).
+29. **Een specificatierij in plaats van een lange tekst.** "Double Major" zet vier feiten in een regel (materiaal, garantie, hittebestendigheid, oppervlak) onder een korte kop met woordgrap. Siraat kan in productmails onder de hero een vaste rij van drie of vier feiten gebruiken (puur titanium, 75 jaar garantie, 30 dagen retour, 100,000+ klanten), zodat de kern ook bij snel scrollen overkomt.
 
 ## Open punten
 
