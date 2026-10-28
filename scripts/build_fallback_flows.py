@@ -5,13 +5,13 @@ Sinds ~22 okt komen Delivered Shipment (VcUF33) en Postflows (UabgWz) maar voor 
 orders binnen. Deze twee flows starten op Fulfilled Order (VtEiZT) plus een vaste wachttijd en
 nemen alleen wie geen bezorgevent kreeg sinds de start (zelfde opzet als review-vangnet TvfJYU).
 
-  P2-vangnet   : Fulfilled + 9 dagen 13:00  -> zelfde mail als VQ93sx P2 (template UKxRjv)
+  P2-vangnet   : Fulfilled + 12 dagen 13:00  -> zelfde mail als VQ93sx P2 (template UKxRjv)
   AFF-vangnet  : Fulfilled + 12 dagen 10:00 -> zelfde opbouw als R22pzb (10% holdout, A1, A2)
 
 Wachttijd uit de data: Fulfilled -> Delivered (Klaviyo, 1.323 orders 20 sep tot 11 okt) mediaan
 7,1 dagen, p75 9,7, p90 12,5; Ecomflow US 9,1 dagen gemiddeld (30 d). P2 gaat in het origineel
-1 dag na bezorging om 09:00, dus vangnet op dag 9 om 13:00 (andere tijd dan 09:00, zodat een
-origineel van dezelfde ochtend al als ontvangen telt). AFF origineel = bezorging + 3 dagen.
+1 dag na bezorging om 09:00. P2 zegt "your pan has arrived", dus vangnet pas op dag 12 om 13:00
+(p90 van de levertijd; andere tijd dan 09:00, zodat een origineel van dezelfde ochtend al als ontvangen telt). AFF origineel = bezorging + 3 dagen.
 
 Dedupe: vangnet slaat over als er sinds de start een bezorgevent kwam, of als de originele mail
 (of P2-SAFE) al ontvangen is. De originele mails krijgen apart (patch_dedupe) het filter
@@ -27,7 +27,7 @@ from kl import api
 DRY = '--dry' in sys.argv
 FULFILLED, DELIVERED, POSTFLOWS = 'VtEiZT', 'VcUF33', 'UabgWz'
 PLACED, RECEIVED, REFUND = 'RSNxYV', 'YkRM4Q', 'Xg6cwn'
-NAME_P2 = 'v4 · P2 vangnet · Fulfilled +9d (geen Delivered)'
+NAME_P2 = 'v4 · P2 vangnet · Fulfilled +12d (geen Delivered)'
 NAME_AFF = 'AFF S1 vangnet · Fulfilled +12d (geen Postflows)'
 
 
@@ -82,7 +82,7 @@ def p2_definition():
     m['additional_filters'] = af
     acts = [
         {'temporary_id': 'w1', 'type': 'time-delay',
-         'data': {'unit': 'days', 'value': 9, 'secondary_value': None, 'timezone': 'profile', 'delay_until_time': '13:00:00'},
+         'data': {'unit': 'days', 'value': 12, 'secondary_value': None, 'timezone': 'profile', 'delay_until_time': '13:00:00'},
          'links': {'next': 'e1'}},
         {'temporary_id': 'e1', 'type': 'send-email', 'data': {'message': m, 'status': 'draft'}, 'links': {'next': None}},
     ]
@@ -114,9 +114,14 @@ def aff_definition():
 
 
 def create(name, d):
-    ex = api('GET', '/api/flows?filter=equals(name,"%s")' % name)
-    if ex.get('data'):
-        print('flow bestaat al', name, ex['data'][0]['id']); return ex['data'][0]['id']
+    url = '/api/flows?page[size]=50&fields[flow]=name'
+    while url:  # filter op naam met een middot werkt niet betrouwbaar, dus zelf vergelijken
+        ex = api('GET', url)
+        hit = [f['id'] for f in ex.get('data', []) if f['attributes']['name'] == name]
+        if hit:
+            print('flow bestaat al', name, hit[0]); return hit[0]
+        nxt = ex.get('links', {}).get('next')
+        url = nxt.replace('https://a.klaviyo.com', '') if nxt else None
     if DRY:
         print('DRY', name, json.dumps(d)[:400]); return None
     r = api('POST', '/api/flows', {'data': {'type': 'flow', 'attributes': {'name': name, 'definition': d}}})

@@ -31,3 +31,4 @@ c3p-hero-v5.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/86855f21-2a68-
 c3s-hero-v5.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/e24291cc-6352-44bd-aefa-0ee0e8669838.jpeg
 c4-nocode-hero-v5.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/0d02057b-d06f-4602-aade-37a3dea38950.jpeg
 c4-hero-v5.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/da338b14-cca6-4162-91a6-d4ba8691e4ce.jpeg
+c5-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/fb4b0cdf-e295-4cce-89b5-c0229c90a20b.jpeg

@@ -17,3 +17,4 @@ k2-new-hero-v5.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/9a8aae73-2b
 k2-returning-hero-v5.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/3e2ffdce-bcba-416d-a872-9c66003aee66.jpeg
 k3-nocode-hero-v5.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/459fc2c9-991c-4dbe-b33a-4dbfc8b84008.jpeg
 k3-hero-v5.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/504c91d6-4095-4b17-84f5-858774296f01.jpeg
+k4-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/8426a91f-bd5a-4867-8382-ffcc230710cf.jpeg

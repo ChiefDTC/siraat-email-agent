@@ -13,3 +13,4 @@ b1-hero-v5.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/a0d7c845-62a3-4
 b2-clicked-nocode-hero-v5.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/020c45ce-3e17-4476-bf33-59f921541e97.jpeg
 b2-clicked-hero-v5.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/5d9c557e-993c-4cc7-9990-8f6d2e7cbb56.jpeg
 b2-notclicked-hero-v5.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/0fa477a7-f9c7-45ff-9ea6-dc3eade55432.jpeg
+b1-hero-br1.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/5c05c48c-d26a-4d0a-9b66-c26ffd44d4f2.jpeg

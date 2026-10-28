@@ -483,6 +483,8 @@ Status: **gebouwd** = HTML en preview klaar, hero lokaal in `assets/`, upload na
 | k1 | cart/k1.html | Cart | 1 | kookgerei | One pass with a damp cloth. | Your pan is still in your cart (+10% off) | gebouwd, copy-ronde |
 | k1-acc | cart/k1-acc.html | Cart | 1 | accessoire | Picked it out? It's still here. | "Such beautiful quality" | gebouwd |
 | k2-new | cart/k2-new.html | Cart | 2K | nieuw | The pan you keep replacing is the expensive one | What a pan really costs per year (now 10% less) | gebouwd, copy-ronde |
+| k4-installments | cart/k4-installments.html | Cart | na K3, dag 7 (T23, 50% holdout, alleen US) | US | Same pan. Paid over time. | Is the price what stopped you? | gebouwd 28 okt (A/B Q4), library-template, start in UI |
+| c5-installments | checkout/c5-installments.html | Checkout | na C4, dag 14 (T24, 50% holdout, alleen US) | US | Same pan. Paid over time. | Is the price what stopped you? | gebouwd 28 okt (A/B Q4), library-template, start in UI |
 | k2-returning | cart/k2-returning.html | Cart | 2K | bestaande klant | Adding to your Siraat kitchen? | Your cart, 10% off, as a thank-you | gebouwd, copy-ronde |
 | k3 | cart/k3.html | Cart | 3K/2A | code | 10% off your cart, for 48 hours | Covered for 75 years. Returnable for 30 days. 10% less. | gebouwd, copy-ronde, B 55 (inkorten) |
 | k3-nocode | | Cart | 3K/2A | T02-B / cooldown | | | te bouwen |
