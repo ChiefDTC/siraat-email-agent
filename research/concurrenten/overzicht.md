@@ -1,4 +1,4 @@
-# Concurrenten-inbox: overzicht na dag 15 (stand 27 okt 2026, ca. 09:40 UTC)
+# Concurrenten-inbox: overzicht na dag 16 (stand 28 okt 2026, ca. 09:40 UTC)
 
 Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmail.com, per regel in `tijdlijn.csv`. Acties uit `log-*.csv` (HexClad en Our Place b handmatig door Floris, geen log). Kortingscodes staan nergens uitgeschreven.
 
@@ -6,8 +6,8 @@ Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmai
 
 | Merk | w | b | c | co | Totaal | Status inschrijving |
 |---|---|---|---|---|---|---|
-| HexClad | 9 | 15 | 15 | n.v.t. | 39 | w/b/c handmatig (Floris), co niet gedaan |
-| Our Place | 13 | 19 | 15 | 0 | 47 | alles gelukt; c pas om 11:18 in winkelwagen |
+| HexClad | 9 | 16 | 16 | n.v.t. | 41 | w/b/c handmatig (Floris), co niet gedaan |
+| Our Place | 13 | 20 | 15 | 0 | 48 | alles gelukt; c pas om 11:18 in winkelwagen |
 | Caraway | 5 (op hex-w) | 0 | 0 | 0 | 5 | w/b/c via footer "gelukt", maar geen enkele mail op cw-adressen; beide Caraway-mails kwamen op hex-w binnen |
 | Made In | 0 | 0 | 0 | 0 | 0 | w/b/c footer "Thanks! You've been subscribed", co gestopt (telefoon verplicht) |
 | Okura | 0 | 0 | 0 | 0 | 0 | w/b/c captcha, alleen co (checkout zonder betaling, opt-in aan) |
@@ -22,7 +22,7 @@ Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmai
 | hex-b | 0,0 welkom (benadering) | 1,0 browse "Great choice, chef!" | 25,0 browse 2 "Lasts a Lifetime – Guaranteed!" |
 | hex-c | 0,0 welkom (benadering) | 0,7 cart "Your kitchen needs this!" | 48,0 welkom 3, cart 2 "The last cookware you'll ever need" pas na 168,7 uur (7 dagen), welkom 5 na 192,1, cart 3 "Price holding you back? We got you." (Affirm) na 336,8 uur (weer 7 dagen) |
 | Caraway (hex-w) | 0,0 welkom "Greetings From Caraway" | 12,0 "Our Top Caraway Picks" | 36,1 "Are You Cooking Clean?" (PFAS-vergelijking), daarna 84,1 welkom 4 (set, $230) en 132,2 welkom 5 "The Problem: Traditional Cookware Is Toxic" |
-| op-b | 0,0 welkom (benadering) | 4,0 browse "You Left Before the Good Part" | 24,0 welkom 2 "Did you hear?", 28,0 browse 2 "We Can't Wait Forever 💔", 42,4 "Party of One" (campagne minis); daarna alleen campagnes, 234,4 "Set Savings", 258,4 "No Set Menu", 269,4 "Our Place x Lovevery ♥️" (als laatste van de drie adressen), 282,4 "One Less Worry", 307,4 "Low Stock: Coveted Colors", 331,4 "Double Major" (Titanium Always Pan Pro), laatste 355,4 "Braised Right" (Titanium Braiser Pro + Wonder Oven Pro) |
+| op-b | 0,0 welkom (benadering) | 4,0 browse "You Left Before the Good Part" | 24,0 welkom 2 "Did you hear?", 28,0 browse 2 "We Can't Wait Forever 💔", 42,4 "Party of One" (campagne minis); daarna alleen campagnes, 234,4 "Set Savings", 258,4 "No Set Menu", 269,4 "Our Place x Lovevery ♥️" (als laatste van de drie adressen), 282,4 "One Less Worry", 307,4 "Low Stock: Coveted Colors", 331,4 "Double Major" (Titanium Always Pan Pro), 355,4 "Braised Right" (Titanium Braiser Pro + Wonder Oven Pro, alleen naar b), laatste 379,4 "Not a Trick" (Halloween, mystery reward met code) |
 | op-w | 0,07 welkom (4 min na popup) | 24,2 welkom 2 "Did you hear?" | |
 | op-c | 0,08 welkom | 24,2 welkom 2 "Did you hear?" | (nog steeds geen cartmail, ook na 150 uur niet; alleen campagnes) |
 | pf-co | 12,5 abandoned checkout | | |
@@ -145,11 +145,20 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 - **Geen nieuwe mail van Caraway, Made In, Okura, Plateful of Taima.**
 - **4 nieuwe mails** (Our Place 3, HexClad 1). **HexClad en Caraway na 15 dagen nog steeds zonder kortingscode**; Our Place alleen op partnerproducten. Vier dagen voor Halloween nog geen Halloween- of vroege Black Friday-actie.
 
+## Dag 16 (28 okt)
+
+- **Our Place opent Halloween met een mystery reward, niet met een percentage.** "Not a Trick" (preview "A reward is waiting for you") kwam vandaag om 06:15 UTC naar op-b (379,4 uur), de vierde dag op rij om 06:15. "There's a mystery reward waiting for you. But you won't know how good it is until you redeem your code." De mail geeft een persoonlijke code (TrickORTreat2Z8VFK) die je op de rewardspagina (Dirty Dishes Club) bij "Ways to Earn" in de tegel "Trick or Treat" invult; pas daarna zie je wat je krijgt. Knoppen "Collect your treat" en "SHOP NOW". Geen percentage of bedrag in de tekst. Dit is de eerste Halloween-actie van een concurrent in het onderzoek, drie dagen voor Halloween, en de eerste code op eigen producten bij Our Place (na OPLOVEVERY10 op partnerproducten). De truc: nieuwsgierigheid in plaats van een openlijke korting, en de klant moet inloggen in het loyaliteitsprogramma.
+- **"Braised Right" ging alleen naar op-b.** Op 27 okt kwamen op de vaste tijden 12:15 en 14:15 UTC geen kopieen naar op-c en op-w (ook niet later). Na "Mutually Beneficial" (19 okt, niet naar w) en "It Takes Two" (21 okt, alleen b) is dit de derde campagne die alleen het b-segment (productpagina's bekeken) krijgt. De bundel van twee nieuwe producten gaat dus alleen naar betrokken profielen.
+- **HexClad stuurt een herfstcampagne rond een gerecht.** "Fall dinners, made easy" (preview "Your roasting season essentials are here") ging om 23:30 UTC op 27 okt naar het hello@-segment (hex-c 372,9 en hex-b 372,9 uur, niet w), net als eerdere hello@-campagnes op dat tijdstip. "Roasting Season" met braadsleden, een Damascus vleesmesset en steakmessen, plus het recept HexClassic Roast Chicken. Geen prijs, geen korting; wel de opbouw naar Thanksgiving via accessoires en een recept. De platte tekst bevat weer het verborgen generieke beveiligingsblok met invulvelden; genegeerd.
+- **Geen nieuwe mail op hex-w** (welkomreeks blijft na 7 mails stil) **en niets van Caraway, Made In, Okura, Plateful of Taima.**
+- **3 nieuwe mails** (HexClad 2, Our Place 1). **HexClad en Caraway na 16 dagen nog steeds zonder kortingscode**; Our Place nu met een rewardscode van onbekende waarde.
+
 ## Korting: wanneer en hoe hoog
 
 - **Plateful** is het enige merk met een kortingscode: 10% in de abandoned checkout na 12,5 uur, 2 dagen geldig en al verrekend in de checkout-link (kortingscode aanwezig, niet uitgeschreven).
 - **HexClad** en **Our Place** geven geen code, maar duwen een lopende sitebrede sale (Prime Time Sale, October Prime Deals). HexClad noemt in cart- en browsemails alleen gratis verzending; Our Place zegt "Prime Deals" zonder percentage in de tekst, met een einddatum (12 okt 23:59 PT) in de kleine lettertjes.
 - **Our Place** gaf op dag 11 (252 uur) de eerste uitgeschreven code: OPLOVEVERY10, 10% op select products van de Lovevery-collab, eerst naar c en w; op-b kreeg hem op dag 12 alsnog (269,4 uur), 17 uur na op-c. Nog steeds geen code op eigen pannen.
+- **Our Place** stuurde op dag 16 (379,4 uur, alleen op-b) de Halloween-mail "Not a Trick" met een unieke rewardscode (TrickORTreat2Z8VFK) voor een "mystery reward" in het loyaliteitsprogramma. De waarde staat niet in de mail; die zie je pas na inwisselen op de site.
 - **Caraway** geeft geen welkomstkorting; in mail 2 belooft het $50 korting op een tweede aankoop van $300+ (code pas na de eerste aankoop).
 
 ## Opvallende onderwerpen en previews
@@ -161,6 +170,8 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 - HexClad cart 3: "Price holding you back? We got you." met preview "Buy now, pay over time with Affirm" (prijsbezwaar benoemd in het onderwerp, antwoord is termijnen, geen korting).
 - Our Place: "Braised Right" met preview "Two ways" en kop "How Fitting" (woordgrap, verkoopt twee producten als één gerecht).
 - Our Place: "Double Major" met preview "High heat nonstick and easier cleanup, all together" en kop "Advanced Degrees" (woordgrap op studie, verkoopt de titanium pan op hitte en schoonmaak).
+- Our Place Halloween: "Not a Trick" met preview "A reward is waiting for you" (woordspel op trick or treat, verbergt de waarde van de beloning).
+- HexClad hello@: "Fall dinners, made easy" met preview "Your roasting season essentials are here" (seizoen en gerecht in plaats van product).
 - Caraway: "Greetings From Caraway 🍳", "Our Top Caraway Picks" met preview "All ⭐️⭐️⭐️⭐️⭐️ across the board."
 - Plateful: "Lola, about your Titanium Pro Pan™ order": platte tekst, ondertekend door een persoon (Dannah), met factuurnummer en telefoonnummer. Leest als service, niet als marketing.
 
@@ -200,6 +211,8 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 29. **Een specificatierij in plaats van een lange tekst.** "Double Major" zet vier feiten in een regel (materiaal, garantie, hittebestendigheid, oppervlak) onder een korte kop met woordgrap. Siraat kan in productmails onder de hero een vaste rij van drie of vier feiten gebruiken (puur titanium, 75 jaar garantie, 30 dagen retour, 100,000+ klanten), zodat de kern ook bij snel scrollen overkomt.
 30. **Cartflow langer laten lopen met een vaste stap van 7 dagen.** HexClad stuurt cart 2 na 7 dagen en cart 3 na 14 dagen, elk met hetzelfde product en een ander bezwaar (eerst garantie, dan prijs via termijnen). Siraat kan na de bestaande cartmails een stap na 7 en na 14 dagen testen, met de pan uit de winkelwagen en per mail één bezwaar: eerst de 75 jaar garantie, daarna de prijs (prijs per jaar gebruik of een termijnoptie als die er is, zie idee 8). Weinig risico op uitschrijvingen door de lange pauze.
 31. **Een recept dat twee Siraat-producten verbindt.** Our Place verkoopt in "Braised Right" de braadpan en de oven samen via één gerecht (short ribs: aanbraden en stoven). Siraat kan een campagne of post-purchase mail maken rond een gerecht dat de pan en de Pan Pro Duo of een deksel nodig heeft, met Benjamin die het gerecht uitlegt en een knop naar de combinatie. Alleen echte bundels en echte prijzen noemen.
+32. **Een Halloween- of feestdagenbeloning als verrassing voor bestaande kopers.** Our Place geeft met "Not a Trick" een mystery reward via een persoonlijke code, zonder percentage in de mail. Siraat kan voor kopers (post-purchase segment) een kleine, echte verrassing testen, bijvoorbeeld een gratis accessoire of een cadeau bij de volgende bestelling, met een korte deadline die echt is. Niet als verborgen korting naar de hele lijst: wat de klant krijgt moet bij inwisselen eerlijk en altijd de moeite waard zijn, en geen verzonnen schaarste (zie de copyregels).
+33. **Een herfstcampagne rond een gerecht.** HexClad verkoopt in "Fall dinners, made easy" braadsleden en messen via een recept voor geroosterde kip. Siraat kan richting Thanksgiving een campagne van Benjamin maken rond één herfstgerecht dat in de titanium pan lukt (aanbraden, korst), met het recept als reden om te openen en de pan als knop. Alleen echte producten en goedgekeurde claims.
 
 ## Open punten
 
