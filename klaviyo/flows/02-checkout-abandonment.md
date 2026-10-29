@@ -51,3 +51,7 @@ Trigger: Checkout Started (Shopify)
 ## Sms
 
 - **SMS-1** (1 uur na C1, alleen met SMS consent): `Siraat's Kitchen: your cart is saved and ships free. Finish here: {{ event.extra.checkout_url }} Reply STOP to opt out.`
+
+## Wijzigingen 28 okt 2026 (A/B Q4)
+
+- Voorbereid, start in de UI (research/ab-tests-q4/06-ui-stappen.md): T22 (C2 na 48 uur, random split met klonen), T14 (C1-onderwerp "Don't leave these hanging"), T24 (C5 termijnen op dag 14, alleen US, 50% holdout, template VeFfkA, bron v3/checkout/c5-installments.html).

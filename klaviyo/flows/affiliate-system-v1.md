@@ -206,3 +206,10 @@ Verificatie S1 R22pzb (22 okt middag, GET met definition): flow status draft, tr
 5. Campagne: segment TZ8Cmj opnieuw bekijken (doel ~300), verzendtijd zetten (10:00 ET), smart sending aan laten, versturen.
 6. Daarna de bezorgblokken (sectie 6) en de footerregel (sectie 7), elk na een eigen akkoord.
 7. Bewaken met de drempels uit 03-flowstructuur 5.2 (uitschrijving per mail < 0,4%, stop > 1%).
+
+## Wijzigingen 28 okt 2026 (A/B Q4)
+
+- Verzendfilter $0 (28 okt 2026, A/B Q4): elke mail heeft een extra conditiegroep "Placed Order met $value > 0, minstens 1 keer in de laatste N dagen" (N = wachttijd + buffer). TikTok-samples, seeding en gratis vervangingen krijgen zo geen mails; een betaalde order valt altijd binnen het venster. Details en terugdraaien: research/ab-tests-q4/07-uitgevoerd.md, exports/rollback/2026-10-28-abq4/.
+- Nieuw, live: **YhQJdb** "AFF S1 vangnet · Fulfilled +12d (geen Postflows)". Zelfde opbouw als R22pzb (10% holdout, A1 met review-split, A2 alleen bij open zonder klik), trigger Fulfilled Order, eerste wachttijd 12 dagen tot 10:00. Profielfilter van R22pzb plus: nooit een R22pzb-mail, geen Postflows-event sinds de start. Templates zijn kopieën (VfnKts, UCmGQP, XAcrfa, VaKv84).
+- R22pzb A1/A2 (121654816, 121654817, 121654822, 121654823): extra filter "nooit een mail uit YhQJdb".
+- Restpunt: de 10%-holdout van R22pzb is niet herkenbaar; een klein deel kan een vangnetmail krijgen.

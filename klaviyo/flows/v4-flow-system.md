@@ -545,3 +545,10 @@ Gebouwd met `scripts/build_flow_checkout.py` via de Flows API. Afwijkingen van d
 
 C4 heeft geen landsplit meer (advies `research/build-v4/country-split-review.md`, eigenaar bevestigde: INT is duties paid, de 12-delige set is alleen US). Twee templates: `checkout/c4.html` (code, T02-A) en `checkout/c4-nocode.html` (T02-B en cooldown). De template kiest zelf: **US** als `person.Country` "United States" of "US" is, of als er geen profielland is en `event.extra.presentment_currency` USD is (of leeg); anders **INT** (INT-hero, "duties paid" in friction reducers en offer-note, `icons-int` in plaats van de set-kaart). `person.Country` is de documentatievorm van Klaviyo (help "Message personalization reference"); nog niet getest op een echt profiel: bij de eerste preview controleren met een profiel met land "US" en een met "Netherlands". Werkt het niet, dan valt elke ontvanger zonder land terug op de valuta (de oude USCOND['checkout']).
 Stap 5K-6K en 5A-6A in de flow worden: dag 5 09:00, code-router (cooldown, T02) en dan c4 of c4-nocode. De oude bestanden c4-us, c4-int, c4-us-nocode, c4-int-nocode blijven staan maar zijn uit deze inventaris en uit export/QA. Flow Y6yj2z en `scripts/build_flow_checkout.py` moeten nog worden aangepast (andere agent): 3 landsplits en 6 van de 8 router-splits eruit, manifest-ID's c4 en c4-nocode.
+
+## Wijzigingen 28 okt 2026 (A/B Q4, research/ab-tests-q4/07-uitgevoerd.md)
+
+- $0-verzendfilter (Placed Order met $value > 0, minstens 1 keer in de laatste N dagen) op 58 verzendacties: X3ySuU, VQ93sx, XzHrez (beide variaties), TvfJYU, YwsKcf, R22pzb, UEfh4h, UyFc78, VTkxFL (VIP), XbYT7T (anniversary), YyaMjx (FREE E-GUIDE), VPixnJ (UGC). Niet op UYALJ8 (gift card-trigger).
+- Review: XzHrez-variaties 119577632 en 119577635 slaan over na een mail uit het vangnet TvfJYU (dubbel reviewverzoek voorkomen).
+- Nieuwe live vangnetflows: R9dcdY (P2, Fulfilled + 12 d) en YhQJdb (affiliate S1, Fulfilled + 12 d), met dedupe in beide richtingen.
+- Nieuwe mails in de inventaris: k4-installments (T23) en c5-installments (T24), als library-template, start in de UI.

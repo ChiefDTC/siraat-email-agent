@@ -132,11 +132,11 @@ if __name__ == '__main__':
         a = api('GET', '/api/templates/' + src)['data']['attributes']['html']
         open(OUT + key + '.a.html', 'w').write(a)
         b = fn(a)
-        assert '—' not in b
+        assert '\u2014' not in b
         open(OUT + key + '.klaviyo.html', 'w').write(b)
         ids[name] = upsert(name, b); print(key, name, ids[name], len(a), len(b))
     for key, name, path in NEW:
-        b = open(path).read(); assert '—' not in b
+        b = open(path).read(); assert '\u2014' not in b
         open(OUT + key + '.klaviyo.html', 'w').write(b)
         ids[name] = upsert(name, b); print(key, name, ids[name], len(b))
     if not DRY:

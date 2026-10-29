@@ -53,3 +53,7 @@ Staat volledig in Figma pagina 02 (live tekst). Register kalm. Claims alleen uit
 2. Shopify-korting vast bedrag + Klaviyo unique coupon.
 3. Flow via API als draft naast de oude; 50/50-split in de oude flow.
 4. Goedkeuring Floris, live, 2-weken-check, 4-weken-read.
+
+## Wijzigingen 28 okt 2026 (A/B Q4)
+
+- T04 gesloten met A (P(B beter) 69%, onder 95%). Variatie B (119850658) is nu **Q1**: onderwerp "Your 10% works on top of the sale", preview en template gelijk aan A (kopie XMAs8s). Loopt sinds 28 okt 23:13 UTC, 50/50, winnaar handmatig. Beslissen 19 nov.

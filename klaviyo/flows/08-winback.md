@@ -33,3 +33,7 @@ Trigger: Placed Order
 | 1 | [wb1-whats-new.html](../emails/08-winback/wb1-whats-new.html) | 60 dagen na order, 09:00 | What's new since your last order | The pieces customers add second. | Geen | Placed Order = 0 in last 60 days | AAN |  |
 | 2 | [wb2-winback10.html](../emails/08-winback/wb2-winback10.html) | 3 dagen, 09:00 | 10% off your next pan | A thank-you for being a customer. Valid 5 days. | WINBACK10 uniek, 10%, 5 dagen | Placed Order = 0 in last 60 days | AAN |  |
 | 3 | [wb3-expires.html](../emails/08-winback/wb3-expires.html) | 2 dagen, 09:00 | Your 10% expires tonight | Last chance for the returning-customer code. | WINBACK10 | Placed Order = 0 in last 60 days AND Opened Email ≥ 1 since start | AAN |  |
+
+## Wijzigingen 28 okt 2026 (A/B Q4)
+
+- Verzendfilter $0 (28 okt 2026, A/B Q4): elke mail heeft een extra conditiegroep "Placed Order met $value > 0, minstens 1 keer in de laatste N dagen" (N = wachttijd + buffer). TikTok-samples, seeding en gratis vervangingen krijgen zo geen mails; een betaalde order valt altijd binnen het venster. Details en terugdraaien: research/ab-tests-q4/07-uitgevoerd.md, exports/rollback/2026-10-28-abq4/. Geldt voor UEfh4h (4 mails) en v4-winback UyFc78 (10 mails).

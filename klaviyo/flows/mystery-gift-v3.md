@@ -110,3 +110,7 @@ Alleen na akkoord. Niets hiervan is gedaan.
 - Flow "v4 · Mystery Gift" > statusmenu > **Draft** (of per mail op Manual). Profielen in de wachtrij krijgen dan niets meer. Niet verwijderen.
 - Signalen om terug te draaien: uitschrijving per mail boven 1 procent, spam boven 0,1 procent, tickets "what are these sheets" of "cancel my subscription" die oplopen (Gorgias), of M1 die gelijk valt met een verzendmail en verwarring geeft.
 - Er wordt geen code of korting aangemaakt, dus er valt in Shopify niets terug te zetten.
+
+## Wijzigingen 28 okt 2026 (A/B Q4)
+
+- Verzendfilter $0 (28 okt 2026, A/B Q4): elke mail heeft een extra conditiegroep "Placed Order met $value > 0, minstens 1 keer in de laatste N dagen" (N = wachttijd + buffer). TikTok-samples, seeding en gratis vervangingen krijgen zo geen mails; een betaalde order valt altijd binnen het venster. Details en terugdraaien: research/ab-tests-q4/07-uitgevoerd.md, exports/rollback/2026-10-28-abq4/. (M1 tot M4, ook de draft M4.)

@@ -35,3 +35,7 @@ Trigger: Added to Cart (Shopify)
 | 2 | [k2-questions.html](../emails/03-cart-abandonment/k2-questions.html) | 1 dag, 09:00 | Questions before you decide? | 100 days to try it. Here's how the first cook goes. | Geen | Checkout Started = 0 AND Placed Order = 0 since start | AAN |  |
 | 3 | [k3-cook10.html](../emails/03-cart-abandonment/k3-cook10.html) | 1 dag, 09:00 | {{ first_name|default:'Hey' }}, get cooking with 10% off | Your cart plus 10% off, valid 48 hours. | COOK10 uniek, 10%, 48 uur | Checkout Started = 0 in last 3 days AND Placed Order = 0 since start | AAN |  |
 | 4 | [k4-last-call.html](../emails/03-cart-abandonment/k4-last-call.html) | 1 dag, 09:00 | Last call for 10% off | Your code ends tonight. | COOK10 | Checkout Started = 0 in last 3 days AND Placed Order = 0 since start AND Opened Email ≥ 1 since start | AAN |  |
+
+## Wijzigingen 28 okt 2026 (A/B Q4)
+
+- Voorbereid, start in de UI (research/ab-tests-q4/06-ui-stappen.md): T21 (K1 met HI10 al toegepast, template W4XNNw), T23 (K4 termijnen op dag 7, alleen US, 50% holdout, template WJB7C2, bron v3/cart/k4-installments.html), T18 (K1-onderwerp) pas na T21.
