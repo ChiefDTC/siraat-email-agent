@@ -107,6 +107,11 @@ Screenshot van het geheel: `research/figma/alle-emails-overzicht.png` (verkleind
 - **M3 aanbod**: dag 23, 10:00. Onderwerp A: Alright, here's the offer | B: 20% off every delivery, not just the first. Preview: Including the part most brands would leave out.
 - **M4 laatste, optioneel**: dag 30, 10:00. Onderwerp: Last one from me about the dishwasher sheets. Preview: The price isn't going anywhere. These emails are.
 
+### Rij 7b2 · Abonnement sheets S1 (voorbeeld, 29 okt), 1 mail
+[Naar de rij](https://www.figma.com/design/oaxnBkz3MAbePRnorCrQwz?node-id=138-2) · Frame "Abonnement sheets S1 (voorbeeld, 29 okt)" direct onder rij 7b Mystery Gift (node 138:2). Status: voorbeeld, niet in Klaviyo. Plek: post-purchase X3ySuU, conditional split vóór P1 (Ordered Product Name contains Dishwasher Sheets, laatste 1 dag); ja: S1, daarna P1; nee: P1. Open: $20 elke 28 dagen ook buiten US, stuurt Recharge zelf mails, herinneringsmail S2 (dag 23) volgt. Beeld: klaviyo/templates/v3/subscription/previews/s1-mobile-375.png (375 px, 2x). Bron: klaviyo/templates/v3/subscription/s1.html.
+
+- **S1 bevestiging**: na eerste sheets-order. Onderwerp: Your first pack of sheets is on us. Preview: First pack free today. Then $20 every 28 days, skip or cancel anytime.
+
 ### Rij 7c · Affiliate v1 · Social Snowball (concept, 21 okt), 6 mails + 1 blok
 [Naar de rij](https://www.figma.com/design/oaxnBkz3MAbePRnorCrQwz?node-id=85-2) · Frame "Affiliate v1 · Social Snowball (concept, 21 okt)" direct onder rij 7b Mystery Gift (node 85:2). Commissie en vriendenkorting uit profielvariabelen (nu 20% / 10%), rekenvoorbeeld Pan Pro Duo $229 gemarkeerd UPDATE IF COMMISSION CHANGES, FTC-regel in elke mail, uitbetaling cash via Tremendous. Status: concept, niet in Klaviyo; aanbod (20/10 tegen advies 15/15) wacht op Floris. Beelden: klaviyo/templates/v3/affiliate/previews/aff-*-mobile-375.png (375 px, 2x, voorbeeldprofiel Sarah). Spec: klaviyo/flows/affiliate-v1.md.
 
