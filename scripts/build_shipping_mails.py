@@ -77,7 +77,7 @@ M = {
                   hero('Your order is packed.', 'Here is what happens next, so nothing is a surprise.'),
                   text('Good news: your order has left our warehouse and has a tracking number.')
                   + box('YOUR SHIPMENT', [('Order', ORDER), ('Carrier', CAR), ('Status', LAST)])
-                  + dark('GOOD TO KNOW', 'The quiet days are normal.', 'Your parcel first travels to your country and clears customs. During that time, usually 5 to 7 days, your tracking link can still say &ldquo;label created&rdquo; or &ldquo;not yet received&rdquo;. Nothing is lost. As soon as your local carrier scans it, I&rsquo;ll let you know.')
+                  + dark('GOOD TO KNOW', 'The quiet days are normal.', 'Your parcel is now making its way to your local carrier. During that part of the trip, usually 5 to 7 days, your tracking link can still say &ldquo;label created&rdquo; or &ldquo;not yet received&rdquo;. That&rsquo;s normal and nothing is lost. As soon as your local carrier scans it, you&rsquo;ll get an update from me.')
                   + cta('Track my order', 'Updates can take a few days to show.'), 'Label created'),
     'z2-in-transit': (1, 'Your order is on its way', 'Your parcel has been scanned by the carrier and is moving.',
                       hero('Your parcel is on the&nbsp;move.', 'The carrier has it, and it is heading your way.'),
