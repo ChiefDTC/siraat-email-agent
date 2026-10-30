@@ -2,8 +2,7 @@
 """Bouwt v4 · Abonnement S1 (Loop) via de API als draft. Draaien: python3 scripts/build_subscription_flow.py [--dry]
 Trigger: Ordered Product, Dishwasher Sheets (ProductID 15483020443988) voor $0 = eerste gratis pack van een Loop-abonnement.
 Losse kopers ($35) en herhaalorders ($20) vallen erbuiten. 15 minuten wachten, dan een split, S1 (variant b) in de JA-tak.
-Random sample kan niet via de API: de split heeft een placeholder (property s1_test = true, staat bij niemand), zodat
-niemand de mail krijgt tot Floris in de UI de voorwaarde vervangt door Random sample 20%."""
+Random sample via de API: conditie {'type': 'profile-sample', 'percentage': 20}."""
 import json, sys
 sys.path.insert(0, '/tmp/claude-0/-home-user/63cabcd2-6467-5149-aa57-034a09c8b336/scratchpad/golive')
 from kl import api
@@ -36,8 +35,7 @@ def definition(tid):
         {'conditions': [prop('ProductID', 'equals', SHEETS)]},
         {'conditions': [prop('$value', 'equals', 0)]}]}}
     pf = {'condition_groups': [{'conditions': [{'type': 'profile-not-in-flow', 'timeframe_filter': {'type': 'date', 'operator': 'alltime'}}]}]}
-    placeholder = {'condition_groups': [{'conditions': [{'type': 'profile-property', 'property': "properties['s1_test']",
-                                                         'filter': {'type': 'boolean', 'operator': 'equals', 'value': True}}]}]}
+    placeholder = {'condition_groups': [{'conditions': [{'type': 'profile-sample', 'percentage': 20}]}]}  # random sample 20%
     msg = {'from_email': 'send@siraatskitchen.com', 'from_label': 'Benjamin from Siraat', 'reply_to_email': 'send@siraatskitchen.com',
            'cc_email': None, 'bcc_email': None, 'subject_line': SUBJECT, 'preview_text': PREVIEW, 'template_id': tid,
            'smart_sending_enabled': False, 'transactional': False, 'add_tracking_params': True,
