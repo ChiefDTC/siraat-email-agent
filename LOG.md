@@ -273,3 +273,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 30 okt 2026: S1 abonnementsmail, drie varianten met skip-in-plaats-van-annuleren blok (s1b skip tip, s1c prijsvergrendeling, s1d skip/move/pause). Alleen HTML en previews, niets in Klaviyo. s1c alleen als Recharge de prijs echt vastzet.
 - 30 okt 2026: S1 variant e (s1e): 'Never a higher price than this.' plus punten. Wacht op bevestiging prijsgarantie en puntenprogramma; geen puntenapp gevonden in Klaviyo (alleen Alia Reward Claimed).
 - 30 okt 2026: S1 (alle varianten) introzin aangepast naar 'You added our Dishwasher Sheets pack to your order for free! Thank you.' (Floris). Previews opnieuw gerenderd, Figma 138:18 vervangen.
+- 30 okt 2026: S1 CTA 'See my subscription' wijst nu naar {{ event.customer_portal_link }} (persoonlijke Recharge-portallink uit event WPwuMk, geen login nodig), fallback /tools/recurring/login. Vereist dat S1 triggert op Recharge: Subscription started.
