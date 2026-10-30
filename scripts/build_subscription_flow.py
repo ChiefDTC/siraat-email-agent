@@ -15,7 +15,7 @@ SHEETS = 15483020443988
 NAME = 'v4 · Abonnement S1 (Loop, test 20%)'
 TNAME = 'v4 · Abonnement · S1 skip-tip (b)'
 SUBJECT = 'Your first pack of sheets is on us'
-PREVIEW = 'First pack free today. Then $20 every 28 days, skip or cancel anytime.'
+PREVIEW = 'Your free dishwasher sheet pack is on us.'
 
 
 def template():

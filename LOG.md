@@ -277,3 +277,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 30 okt 2026: abonnementen lopen via Loop, niet Recharge (Floris). S1 CTA naar https://siraatskitchen.com/a/loop_subscriptions/customer met UTM; Recharge-portallink eruit. Loop heeft geen events in Klaviyo: integratie koppelen voor S1-trigger en persoonlijke link. De gedeelde preview-link met merchantToken NIET gebruikt (beheerderstoken, één klant, verloopt).
 - 30 okt 2026: S1 (alle varianten) label 'YOUR SHEETS SUBSCRIPTION' weg (Floris). Previews en Figma 138:18 bijgewerkt.
 - 30 okt 2026: flow WTY94m 'v4 · Abonnement S1 (Loop, test 20%)' als draft gebouwd: trigger sheets voor $0, 15 min, split met placeholder (random 20% in UI), S1b template VFX3XC, Smart Sending uit. Render getest. Zie klaviyo/flows/abonnement-s1.md.
+- 30 okt 2026: S1 previewtekst naar 'Your free dishwasher sheet pack is on us.' (Floris), in flow WTY94m, flow-template en VFX3XC en alle s1-bestanden.
