@@ -283,3 +283,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 30 okt 2026: S2 Upcoming order (Loop) voorbeelden s2a (duidelijke herinnering) en s2b (skip-blok) gebouwd en in Figma gezet (rij 155:2 naast S1, met Loop-standaard als controle; screenshot Loop niet in repo, bevat klantdata). S1-titelkaart in Figma bijgewerkt naar live-status.
 - 30 okt 2026: S2c platte brief van Benjamin (geen header/logo, minimale footer) als extra variant voor Loop-herinnering, in Figma rij 155:2. Uitzondering op vaste header/footer pas na akkoord Floris.
 - 30 okt 2026: onderzoek ordercommunicatie (3 agents, read-only), zie research/ordercommunicatie/01-onderzoek-30okt.md. Plan A t/m E wacht op akkoord.
+- 30 okt 2026: verzendupdates Z1 t/m Z6 (ingepakt, onderweg, vandaag, afhalen, gemist, bezorgd) als HTML-voorbeeld op ParcelWILL-events, in Figma rij 163:2. Niet in Klaviyo.
