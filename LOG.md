@@ -301,3 +301,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 31 okt 2026: BF-W1 Smooche-kaarten met glaseffect (C vault, D plinths, E strak), ADD TO CART via /cart/add, regel free shipping onder hero weg. Figma rij 190:2.
 - 31 okt 2026: variant D (glass plinths) gekozen. Template Xr8L4u in flows Rn556d (A/B hoofdlijst) en WjAc2q (BFCM2026), beide nog draft. Backups in scratchpad bfw1-*-backup.json.
 - 31 okt 2026: testmails BF-W1 D (template Xr8L4u) VS en Duitsland naar lolagroothuis@gmail.com op verzoek Floris.
+- 31 okt 2026: W1 D kop naar 'You've got up to 70% off.' + 'No code needed. Your Black Friday prices are already on the site.' (Floris wilde 'You've got the discount'; 'up to' blijft omdat niet alles 70% is). Templates TdfWqT, XkvvH6, Xr8L4u bijgewerkt, Figma 190:2.
