@@ -85,3 +85,11 @@ Bijwerken bij elk nieuw besluit. Datum per regel.
 | 2026-10-21 | Affiliate-mails (Social Snowball) zonder header en logo: platte brief van Benjamin met één beeld, korte tekst en één knop, minimale footer met afmelden, voorkeuren en adres. Uitzondering op de vaste header/footer-regel, alleen voor deze losse mails. | CLAUDE.md bijgewerkt. |
 | 2026-10-22 | Snowball: vriendenkorting 15% geldt voor alle klanten (niet alleen nieuwe), keuze Floris. Safelinks aan (eenmalige code per klik), cookie 30 dagen, UTM aan, referral-orders getagd in Shopify. Commissie 15%. | Copy blijft "15% off their first order"? Nee: copy zegt "15% off" zonder "first order" waar nodig aanpassen. Bewaken: aandeel referral-orders van bestaande klanten. |
 | 2026-10-23 | Mystery Gift-flow (YwsKcf) zonder header en logo bovenaan, vaste footer blijft. Keuze Floris. | CLAUDE.md bijgewerkt. |
+
+
+## Black Friday 2026 (Floris, 31 okt 2026)
+- Aanbod: Black Friday Sale tot 70% korting via https://siraatskitchen.com/collections/black-friday-sale. Extra 10% met BF-code alleen in abandonment-flows (niet-afrekenaars). Code nooit in de repo; placeholder BFCODE.
+- Topbar: "BLACK FRIDAY SALE IS LIVE".
+- "Non-toxic" mag gebruikt worden (wijkt af van het BF brand book), naast pure titanium enz.
+- Logo: vaste lockup blijft (monogram + woordmerk), ook in BF-stijl.
+- Alle flows worden opnieuw gemaakt in Black Friday-stijl.

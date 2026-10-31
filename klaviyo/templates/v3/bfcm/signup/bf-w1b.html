@@ -1,0 +1,62 @@
+<!--
+BF SIGNUP FLOW · W1b
+SUBJECT: Your member price is waiting
+  Alternatieven: "Still applied, still yours" · "Extra 10%, still in the button" · "Pans or sets?"
+PREVIEW: Extra 10% on top of Black Friday prices. Still applied with one click.
+TIMING: zelfde dag, 3 uur na W1 (wacht 3 uur, geen "tot"-tijd). Smart Sending AAN (mag overgeslagen worden als iemand net een campagne kreeg; FLOW.md).
+FILTER: alleen niet-kopers: Placed Order = 0 sinds flowstart. Optioneel testen: ook overslaan als iemand in de laatste 3 uur Started Checkout had (checkout-flow neemt het over).
+AANNAMES:
+  1. Aanbod-werkhypothese "Extra 10% off on top of Black Friday prices", HI10 via de knop (niet besloten).
+  2. /collections/black-friday, /collections/pans en /collections/bundles bestaan; alle links met /discount/HI10?redirect=.
+  3. Categorietegels: Pans, Sets, Deep Pan Pro, Wok Pan Pro.
+-->
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
+<title>Your member price is waiting</title>
+<!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600;800;900&display=swap');
+  body{margin:0;padding:0;background:#FFFFFF;-webkit-text-size-adjust:100%;}
+  table{border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;}
+  img{border:0;display:block;line-height:100%;outline:none;text-decoration:none;}
+  a{color:#272727;}
+  @media only screen and (max-width:620px){
+    .w{width:100%!important;}
+    .pad{padding-left:22px!important;padding-right:22px!important;}
+    .h1{font-size:34px!important;line-height:37px!important;}
+    .navhide{display:none!important;}
+    .lead{font-size:16px!important;line-height:25px!important;}
+    .bfh{font-size:36px!important;line-height:40px!important;}
+  }
+</style>
+</head>
+<body style="margin:0;padding:0;background:#FFFFFF;">
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Extra 10% on top of Black Friday prices. Still applied with one click.</div>
+<!-- MARKET-SIGNAL: profile -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
+<tr><td align="center" style="padding:8px 0 32px 0;">
+<table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
+
+{{BLOCK:bf-topbar text="BLACK FRIDAY &middot; MEMBER PRICE"}}
+{{HEADER}}
+<tr><td class="pad h1" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:36px 40px 16px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:40px;line-height:43px;font-weight:900;letter-spacing:-1.2px;color:#272727;">Your member price<br>is waiting.</td></tr>
+<tr><td class="pad lead" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:0 40px 4px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#272727;">Quick note from Benjamin. Your extra 10% is still in the button below, on top of the Black Friday prices. One click and it's applied.</td></tr>
+{{BLOCK:bf-deal pad="22px 40px 6px 40px" eyebrow="YOUR MEMBER PRICE" headline="Extra 10% off" detail="On top of Black Friday prices. Already applied with the button. Code HI10."}}
+{{BLOCK:bf-cta label="Shop the sale" url="https://siraatskitchen.com/discount/HI10?redirect=/collections/black-friday" bg="#F8F7F2" pad="20px 40px 32px 40px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#5E5A54;padding-top:14px;'>30-day returns. 75-year warranty. 100,000+ customers.</div>"}}
+{{BLOCK:bf-sectionbar text="SHOP BY CATEGORY"}}
+{{BLOCK:bf-tiles2 pad="22px 24px 6px 24px" img1="https://cdn.shopify.com/s/files/1/0907/0877/1156/files/siraat-bf-product-hammered-pan-pro-yellow-tag.webp?width=600&format=pjpg" name1="Pans" url1="https://siraatskitchen.com/discount/HI10?redirect=/collections/pans" img2="https://cdn.shopify.com/s/files/1/0907/0877/1156/files/siraat-bf-product-bundle-cookware-set-pro-yellow-tag.webp?width=600&format=pjpg" name2="Sets" url2="https://siraatskitchen.com/discount/HI10?redirect=/collections/bundles"}}
+{{BLOCK:bf-tiles2 pad="18px 24px 30px 24px" img1="https://cdn.shopify.com/s/files/1/0907/0877/1156/files/siraat-bf-product-hammered-deep-pan-pro-yellow-tag.webp?width=600&format=pjpg" name1="Deep Pan Pro" url1="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-deep-pan-pro" img2="https://cdn.shopify.com/s/files/1/0907/0877/1156/files/siraat-bf-product-hammered-wok-pan-pro-yellow-tag.webp?width=600&format=pjpg" name2="Wok Pan Pro" url2="https://siraatskitchen.com/discount/HI10?redirect=/products/titanium-hammered-wok-pan-pro"}}
+
+{{FOOTER}}
+
+</table>
+</td></tr>
+</table>
+</body>
+</html>

@@ -30,6 +30,8 @@ DEF={'codebar':{'text':'EXTRA 10% OFF YOUR ORDER &middot; CODE','code':'HI10'},
  'deadline':{'pad':'18px 44px 6px 44px','label':'YOUR OWN CODE RUNS OUT','amount':'48','unit':'HOURS','note':''},
  'ugc':{'pad':'28px 44px 6px 44px','eyebrow':'IN THEIR WORDS','headline':'From their kitchens','foot':'Verified reviews. Join 100,000+ happy customers.'}}
 DEF['offer'].update({'days':'','amount':'','unit':'HOURS'})
+# Black Friday 2026 brand book blokken (31 okt 2026)
+DEF.update({'bf-topbar':{'bg':'#272727','color':'#FFB800'},'bf-cta':{'pad':'24px 40px 34px 40px','bg':'#0E0E0E','sub':''},'bf-deal':{'pad':'24px 40px 6px 40px','eyebrow':'BLACK FRIDAY DEAL'},'bf-tiles2':{'pad':'20px 24px 6px 24px'},'bf-hero':{'tag':'BLACK FRIDAY','alt':'Siraat hammered titanium cookware'}})
 # Persoonlijke deadline (urgency-upgrade 7 okt 2026): {{DATE:<dagen>:<Django-datumformaat>[:upper]}} wordt de Klaviyo-tag
 # {% today '%Y-%m-%d' as today %}{{ today|days_later:N|format_date_string|date:'FMT' }} (help.klaviyo.com, date variables reference).
 # Alleen gebruiken bij een unieke code die echt vervalt (C4/K3/B2 48 uur, R2 72 uur, P3 en V1 14 dagen, N2 7 dagen).
