@@ -1,4 +1,4 @@
-<!-- BF 2026 VARIANT (voorbeeld, niet live, 31 okt 2026) | BRON: klaviyo/templates/v3/checkout/c4.html | SUBJECT_A: Your own 10%, on top of Black Friday prices | SUBJECT_B: 48 hours: your 10% on top of the sale | PREVIEW: Already applied to your cart. In 48 hours we remove it, then the regular sale price applies. | AANNAMES: Aanbod is werkhypothese (Extra 10% off on top of Black Friday prices, README bfcm); 4 gifts en sale op deze producten aangenomen, bevestigen Floris; codemail: unieke code C4_10_48H blijft (een code per order, T02/CODE-cooldown), geen HI10 | WIJZIGINGEN: zie bfcm/abandon/NOTES.md -->
+<!-- BF 2026 VARIANT (voorbeeld, niet live, 31 okt 2026) | BRON: klaviyo/templates/v3/checkout/c4.html | SUBJECT_A: Your own 10%, on top of Black Friday prices | SUBJECT_B: 48 hours: your 10% on top of the sale | PREVIEW: Already applied to your cart. In 48 hours we remove it, then the regular sale price applies. | AANNAMES: Aanbod Floris 31 okt: Black Friday Sale up to 70% off (collectie black-friday-sale) plus extra 10% met code BFCODE (placeholder, echte code pas bij upload); HI10 eruit; 4 gifts nog geldig aangenomen; vaste prijzen uit de v5-prijslijst weggelaten (kloppen niet met BF-prijzen); codemail: unieke code C4_10_48H (ook 10%, echt 48 uur) blijft in plaats van BFCODE, een code per order; besluit Floris | WIJZIGINGEN: zie bfcm/abandon/NOTES.md -->
 <!-- ORIGINELE BRONKOP (ter referentie): V5-STRICT | SUBJECT_A: We're removing your discount in 48 hours | SUBJECT_B: Your 10% expires in 48 hours | SUBJECTS (5 types): curiosity+benefit 'Why your code has an end date' / specificity 'Your 10%, applied, 48 hours' / question 'Still deciding on your cart?' / story '"They honored the warranty"' / offer 'Your 10% expires in 48 hours' | A/B: verlies (we are removing, besluit 8 okt) vs deadline; alleen in een vrije testplek (T02 loopt op deze stap) | PREVIEW: Already applied to your cart. In 48 hours we're removing it. | SEND: v4 2.1 stap 5K-6K/5A-6A (vereenvoudigd): wait 2 days until 09:00 (day 5, 09:00) after C3; geen landsplit, code router (1.4) pool C4_10_48H, T02 arm A. Then Update profile property last_flow_code_at = today. COUPON: C4_10_48H (unique, 10%, one use, one per customer, expires 48 hours after assignment). DEADLINE: Klaviyo-tag today + days_later:2 (accounttijdzone), zie urgency-upgrade.md | FILTERS: Message: Placed Order = 0 since starting this flow | V5 (8 okt 2026, research/v5/03-copy-spec.md sectie 3 + DECISIONS 8 okt): alle bedragen, maten en verzendregels via de markt-macro's; hero zonder HI10 en zonder bedrag in het beeld (marktneutraal, -v5.jpg); gifts via gifts5, reviews via reviews3 (drie pijlers); friction reducer alleen onder de eerste en laatste knop. Besluit 8 okt: laatste codemail = "we're removing your discount" (waar: de unieke code vervalt), datum via de datum-macro. Twee beloftes met Steven T. en Brandon W. in reviews3. Geen 12-delige set, geen tweede aanbod. -->
 <!-- MARKET-SIGNAL: checkout -->
 <!DOCTYPE html>
@@ -38,7 +38,7 @@
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
-{{BLOCK:bf-topbar text="BLACK FRIDAY IS LIVE &middot; MEMBER PRICES"}}
+{{BLOCK:bf-topbar text="BLACK FRIDAY SALE IS LIVE"}}
 
 {{HEADER}}
 
@@ -47,7 +47,7 @@
   <a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/checkout?ref=email' }}&discount={% coupon_code 'C4_10_48H' %}&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c4-hero"><img src="{{IMG}}/c4-hero-v5.jpg" width="600" alt="Last email, 48 hours. Your 10% runs out, then we're removing your discount. Your own code is already applied." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
-{{BLOCK:bf-deal pad="22px 44px 0 44px" headline="Extra 10% off" detail="On top of Black Friday prices. Your own code {% coupon_code 'C4_10_48H' %}, applied at checkout with the button, until {{DATE:2:l, F j}}."}}
+{{BLOCK:bf-deal pad="22px 44px 0 44px" headline="Extra 10% off" detail="On top of Black Friday prices, up to 70% off. Applied with the button, or use your own code {% coupon_code 'C4_10_48H' %} at checkout, until {{DATE:2:l, F j}}."}}
 {{BLOCK:cart pad="22px 44px 4px 44px" title="STILL IN YOUR CART" line="Your own code takes 10% off, already applied. Your 4 gifts are still pending."}}
 
 

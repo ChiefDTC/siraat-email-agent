@@ -1,15 +1,15 @@
 <!--
-BF SIGNUP FLOW · W1-LETTER (A/B-arm B tegen bf-w1.html: bijna platte brief, vaste header en footer, alleen bf-topbar, geen hero, geen tegels, één gele knop)
-SUBJECT: You're in. Your extra 10% is applied.   (zelfde onderwerp als bf-w1, zodat de test alleen de vorm meet)
+BF SIGNUP FLOW · W1-LETTER (A/B-arm B tegen bf-w1.html: bijna platte brief binnen vaste header en footer, alleen bf-topbar, geen hero, geen tegels, één gele knop)
+SUBJECT: You're in. The sale is live.   (zelfde onderwerp als bf-w1, zodat de test alleen de vorm meet)
 PREVIEW: Benjamin here. A short note, and one button.
 TIMING: 1 minuut na aanmelding via de BF-pop-up. Smart Sending UIT.
 FILTER: Placed Order = 0 sinds flowstart.
+  OFFER (Floris, 31 okt 2026): Black Friday Sale, "Up to 70% off", voor iedereen, via /collections/black-friday-sale. GEEN extra code in deze flow (extra code alleen in abandonment-mails).
+  Controleer voor livegang dat minstens één product echt 70% onder de eerdere prijs staat (anders klopt "up to 70%" niet) en dat de prijzen op de site al zonder code gelden ("No code needed").
 AANNAMES:
-  1. Aanbod-werkhypothese "Extra 10% off on top of Black Friday prices", HI10 al toegepast via de knop (niet besloten).
-  2. /collections/black-friday bestaat.
-  3. "Member price" = dezelfde 10% voor iedereen die zich aanmeldt.
-  4. "It works for the whole sale": HI10 vervalt niet.
-  5. Afzender "Benjamin at Siraat's Kitchen"; reply-to moet een gelezen inbox zijn (P.S. vraagt om te antwoorden).
+  1. Collectie-URL /collections/black-friday-sale.
+  2. "Start with the Pan Pro" is Benjamins advies, geen verkoopclaim.
+  3. Afzender "Benjamin at Siraat's Kitchen"; reply-to moet een gelezen inbox zijn (P.S. vraagt om te antwoorden).
 -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
@@ -91,7 +91,7 @@ AANNAMES:
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
 <!-- BLOCK bf-topbar (BF 2026 brand book): smalle balk bovenaan, ink of yellow. Keys: text, bg (#272727 of #FFB800), color (#FFB800 of #272727). Alleen ware tekst ("SITEWIDE" alleen als het echt sitewide is). -->
-<tr><td align="center" bgcolor="#272727" style="background-color:#272727;padding:11px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:800;color:#FFB800;text-transform:uppercase;">BLACK FRIDAY &middot; YOUR EXTRA 10% IS APPLIED</td></tr>
+<tr><td align="center" bgcolor="#272727" style="background-color:#272727;padding:11px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:800;color:#FFB800;text-transform:uppercase;">BLACK FRIDAY SALE IS LIVE</td></tr>
 
 <!-- HEADER (vast, uit partials/header.html) -->
 <tr><td bgcolor="#F8F7F2" style="padding:18px 36px;background-color:#F8F7F2;border-bottom:1px solid #ECE7DD;" class="pad">
@@ -107,19 +107,18 @@ AANNAMES:
 
 <tr><td class="pad lead" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:38px 40px 16px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:17px;line-height:27px;color:#272727;">Hi,</td></tr>
 <tr><td class="pad lead" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:0 40px 16px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:17px;line-height:27px;color:#272727;">Benjamin here. You're in.</td></tr>
-<tr><td class="pad lead" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:0 40px 16px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:17px;line-height:27px;color:#272727;">Because you signed up, you get our member price: an extra 10% off, on top of the Black Friday prices.</td></tr>
-<tr><td class="pad lead" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:0 40px 16px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:17px;line-height:27px;color:#272727;">I put it in the button below, so it's already applied when you check out. If you ever need it, the code is <b style="font-weight:800;">HI10</b>.</td></tr>
-<tr><td class="pad lead" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:0 40px 16px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:17px;line-height:27px;color:#272727;">Not sure where to start? Start with the Pan Pro. It has a pure titanium cooking surface and no coatings, so there's nothing on it to wear off. That's why we cover it for 75 years.</td></tr>
-<tr><td class="pad lead" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:0 40px 4px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:17px;line-height:27px;color:#272727;">The 10% works for the whole sale.</td></tr>
+<tr><td class="pad lead" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:0 40px 16px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:17px;line-height:27px;color:#272727;">Our Black Friday Sale is live: up to 70% off, for everyone. No code needed, the prices are already on the site.</td></tr>
+<tr><td class="pad lead" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:0 40px 16px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:17px;line-height:27px;color:#272727;">You asked for our best picks, so here's the first one. If you're not sure where to start, start with the Pan Pro. It has a pure titanium cooking surface and no coatings, so there's nothing on it to wear off. That's why we cover it for 75 years.</td></tr>
+<tr><td class="pad lead" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:0 40px 4px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:17px;line-height:27px;color:#272727;">Already know you want more than one pan? Then look at the sets first.</td></tr>
 <!-- BLOCK bf-cta (BF 2026): gele knop, ink tekst, pilvorm. Keys: label, url, pad, bg (achtergrond rij, standaard #0E0E0E), sub. -->
 <tr><td align="center" class="pad" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:20px 40px 30px 40px;">
   <table role="presentation" class="btnw" width="320" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:320px;"><tr>
     <td align="center" bgcolor="#FFB800" style="background:#FFB800;border-radius:28px;">
-      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/discount/HI10?redirect=/collections/black-friday" style="height:54px;v-text-anchor:middle;width:320px;" arcsize="50%" stroke="f" fillcolor="#FFB800"><center style="color:#272727;font-family:Arial,sans-serif;font-size:15px;font-weight:bold;">Shop the sale</center></v:roundrect><![endif]-->
-      <!--[if !mso]><!--><a href="https://siraatskitchen.com/discount/HI10?redirect=/collections/black-friday" style="display:block;padding:18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:18px;font-weight:800;letter-spacing:1.5px;color:#272727;text-decoration:none;text-transform:uppercase;">Shop the sale &rarr;</a><!--<![endif]-->
+      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/collections/black-friday-sale" style="height:54px;v-text-anchor:middle;width:320px;" arcsize="50%" stroke="f" fillcolor="#FFB800"><center style="color:#272727;font-family:Arial,sans-serif;font-size:15px;font-weight:bold;">Shop the sale</center></v:roundrect><![endif]-->
+      <!--[if !mso]><!--><a href="https://siraatskitchen.com/collections/black-friday-sale" style="display:block;padding:18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:18px;font-weight:800;letter-spacing:1.5px;color:#272727;text-decoration:none;text-transform:uppercase;">Shop the sale &rarr;</a><!--<![endif]-->
     </td>
   </tr></table>
-  <div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#5E5A54;padding-top:14px;'>Extra 10% already applied. 30-day returns. 75-year warranty.</div>
+  <div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#5E5A54;padding-top:14px;'>No code needed. 30-day returns. 75-year warranty.</div>
 </td></tr>
 
 <tr><td class="pad" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:0 40px 20px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;color:#272727;"><b style="font-weight:800;">Benjamin</b><br><span style="font-size:13px;color:#5E5A54;">Founder, Siraat</span></td></tr>
@@ -151,7 +150,7 @@ AANNAMES:
   <tr><td align="center" bgcolor="#282828" style="background-color:#282828;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:19px;color:#BDB8B0;text-align:center;">
     Free shipping on all orders &middot; 30-day returns &middot; 75-year warranty<br><br>
     <a href="#" style="color:#111111;">Unsubscribe</a> &nbsp;|&nbsp; <a href="#" style="color:#111111;">Manage preferences</a> &nbsp;|&nbsp; <a href="#" style="color:#111111;">View in browser</a><br>
-    Siraat's Kitchen &middot; [address]<span style="display:none!important;visibility:hidden;mso-hide:all;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;color:#282828;">ref 20261031153153</span>
+    Siraat's Kitchen &middot; [address]<span style="display:none!important;visibility:hidden;mso-hide:all;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;color:#282828;">ref 20261031153428</span>
   </td></tr>
 </table>
 </td></tr>

@@ -1,0 +1,61 @@
+<!-- BFCM 2026 VARIANT (voorbeeld, niet live, niet in Klaviyo) | BRON: klaviyo/templates/v3/post-purchase/p3-accessory-nocode.html | FLOW: v4 · Post-purchase, stap 3, router-tak accessory (in BF beide takken: p3-accessory en p3-accessory-nocode) | BERICHT: P3-ACCESSORY | BF_SUBJECTS: Onderwerp en preview van p3-accessory-nocode (ongewijzigd, zie oorspronkelijke kopcommentaar) | BF_PREVIEW: Ongewijzigd (zie hieronder) | WIJZIGINGEN: Alleen bf-topbar "BLACK FRIDAY SALE IS LIVE" (ink) boven de header; rustig, geen dealblok; gifts5 zonder urgentieregel ("Your 4 gifts end when the fall sale ends." klopt niet tijdens BF); verder alles ongewijzigd. Gebouwd op de codeloze versie: geen enkele code in post-purchase tijdens BF (Floris, 31 okt), dus de codetak p3-accessory (P3_THANKYOU_10_14D) en p3-accessory-nocode krijgen allebei deze mail | AANNAMES: Topbalk meldt alleen de sale, zonder bedrag of druk; de P3-code wordt tijdens BF niet uitgedeeld (router: tijdens BF naar de codeloze tak) [VRAAG FLORIS of de code-router zo moet] | Oorspronkelijke kopcommentaar volgt hieronder. -->
+<!-- V5-STRICT (v5 stap 2, 8 okt 2026): S2 (van plank naar pan) plus de directe vergelijking, prijzen per markt via macro, cross-sell via xsell, closerlook weg, Marilyn (R017) en Fran (merknaam Teflon) weg | SUBJECT_A: Now meet the pan | SUBJECT_B: From the board to the pan | PREVIEW: We started with cutting boards too. Then the pan. 4 gifts with every order. | SEND: Placed Order + 20 days, until 09:00 local (flow step 3, decision 3.9) | FILTERS: Flow 'v4 · Post-purchase' step 3: CS R0 Placed Order equals 2 over all time = end (VIP takes over); router 3K/3A (v4 2.5). Send filters: Placed Order zero times since starting this flow; Refunded Order (Xg6cwn) zero times in 30 days. Code-router: cooldown (last_flow_code_at in last 30 days) or T02 arm B = this template. No coupon; gifts, draw and 30-day returns carry the offer. | SUBJECTS (5 types): C+B 'Now meet the pan' / SPEC 'The Pan Pro 11": $120.60 with your code' / Q 'Ready for the pan?' / STORY '"I ordered one pan to try it out"' / OFFER 'Your thank-you code: 10% off the Pan Pro' | A/B: curiosity+benefit (Com) vs customer quote (SP) | UTM: utm_content=p3acc-<block>, utm_term=t02-b (T02 arm B); discount links carry the UTMs URL-encoded inside redirect -->
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
+<title>Now meet the pan</title>
+<!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
+  body{margin:0;padding:0;background:#FFFFFF;-webkit-text-size-adjust:100%;}
+  table{border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;}
+  img{border:0;display:block;line-height:100%;outline:none;text-decoration:none;}
+  a{color:#AC3B19;}
+  @media only screen and (max-width:620px){
+    .w{width:100%!important;}
+    .pad{padding-left:22px!important;padding-right:22px!important;}
+    .h2{font-size:30px!important;line-height:34px!important;}
+    .stepimg{width:100%!important;}
+  }
+</style>
+</head>
+<body style="margin:0;padding:0;background:#FFFFFF;">
+<div style="display:none;mso-hide:all;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">We started with cutting boards too. Then the pan. 4 gifts with every order.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<!-- MARKET-SIGNAL: order -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
+<tr><td align="center" style="padding:8px 0 32px 0;">
+<table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
+{{BLOCK:bf-topbar text="BLACK FRIDAY SALE IS LIVE"}}
+{{HEADER}}
+
+<!-- HERO 1:1 met aanbodbalk (make_hero.py --offer) -->
+<tr><td style="padding:0;">
+  <a href="https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3accessorync-hero"><img src="{{IMG}}/p3-accessory-nocode-hero.jpg" width="600" alt="For Siraat owners. Now meet the pan: the original hammered titanium pan. 4 gifts with every order, 30-day returns." style="width:100%;max-width:600px;height:auto;"></a>
+</td></tr>
+{{BLOCK:cta label="Get the Pan Pro" url="https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3accessorync-cta1" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
+<tr><td class="pad" style="padding:24px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">
+  <p style="margin:0 0 14px 0;">Hi {{ first_name|default:'there' }}, {% with s=event.Items|join:','|lower %}{% if 'pizza' in s %}your pizza steel has had a few weeks of heat by now. {% endif %}{% endwith %}We started the same way. Before there was a pan, I made titanium cutting boards. Then the pan, because in the end you cook in a pan.</p><p style="margin:0 0 14px 0;"><b>Your next pan vs. your coated one:</b> a pure titanium cooking surface with no coating to wear off, and no PFAS. Light Labs tested it: report no. 25895, 31 PFAS compounds, all below the detection limit. Covered for 75 years.</p><p style="margin:0 0 0px 0;">The Pan Pro {{SIZE:28}} is where most kitchens start.{{IF:PRICED}} {{PRICE:standard}}, with 4 gifts.{{ENDIF}}</p>
+</td></tr>
+{{BLOCK:xsell pre="https://siraatskitchen.com/products/" post="?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3accessorync-xs" pad="26px 44px 4px 44px" note="{% if 'pan pro small' in xs %}{% if 'pan pro mini' not in xs and 'panpro_mini' not in xo %}One in three Small owners comes back for the Mini. {% endif %}{% elif 'pan pro standard' in xs %}{% if 'pan pro mini' not in xs and 'panpro_mini' not in xo %}One in five Pan Pro owners comes back for the Mini. {% endif %}{% elif 'pan pro large' in xs %}{% if 'lid' not in xs and 'lid_30' not in xo %}One in five Large owners adds the lid next. {% endif %}{% elif 'pan pro mini' in xs %}{% if 'pan pro standard' not in xs and 'panpro_standard' not in xo %}One in four Mini owners comes back for the Pan Pro. {% endif %}{% elif 'deep pan' in xs and 'wok' not in xs and 'wok' not in xo %}The deep pan and the wok are the pair most often bought together. {% endif %}Every order comes with 4 gifts."}}
+{{BLOCK:gifts5 style="row" line="Your next order comes with {{GIFTS:total}} too." pad="22px 44px 6px 44px"}}
+{{BLOCK:reviews3 ids="R487,R082,R473" n="2"}}
+{{BLOCK:cta label="Get the Pan Pro" url="https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-postpurchase&utm_content=p3accessorync-cta2" pad="24px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
+<!-- SIGN-OFF -->
+<tr><td class="pad" style="padding:24px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+  Not sure which size? Reply with what you cook most and our team will help you pick.<br><br>
+  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span><br><br>
+  <span style="color:#727272;">P.S. Not sure which size? Reply with what you cook most.</span>
+</td></tr>
+
+{{FOOTER}}
+
+</table>
+</td></tr>
+</table>
+</body>
+</html>

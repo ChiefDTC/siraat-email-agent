@@ -1,4 +1,4 @@
-<!-- BF 2026 VARIANT (voorbeeld, niet live, 31 okt 2026) | BRON: klaviyo/templates/v3/checkout/c4.html | SUBJECT_A: Your own 10%, on top of Black Friday prices | SUBJECT_B: 48 hours: your 10% on top of the sale | PREVIEW: Already applied to your cart. In 48 hours we remove it, then the regular sale price applies. | AANNAMES: Aanbod is werkhypothese (Extra 10% off on top of Black Friday prices, README bfcm); 4 gifts en sale op deze producten aangenomen, bevestigen Floris; codemail: unieke code C4_10_48H blijft (een code per order, T02/CODE-cooldown), geen HI10 | WIJZIGINGEN: zie bfcm/abandon/NOTES.md -->
+<!-- BF 2026 VARIANT (voorbeeld, niet live, 31 okt 2026) | BRON: klaviyo/templates/v3/checkout/c4.html | SUBJECT_A: Your own 10%, on top of Black Friday prices | SUBJECT_B: 48 hours: your 10% on top of the sale | PREVIEW: Already applied to your cart. In 48 hours we remove it, then the regular sale price applies. | AANNAMES: Aanbod Floris 31 okt: Black Friday Sale up to 70% off (collectie black-friday-sale) plus extra 10% met code BFCODE (placeholder, echte code pas bij upload); HI10 eruit; 4 gifts nog geldig aangenomen; vaste prijzen uit de v5-prijslijst weggelaten (kloppen niet met BF-prijzen); codemail: unieke code C4_10_48H (ook 10%, echt 48 uur) blijft in plaats van BFCODE, een code per order; besluit Floris | WIJZIGINGEN: zie bfcm/abandon/NOTES.md -->
 <!-- ORIGINELE BRONKOP (ter referentie): V5-STRICT | SUBJECT_A: We're removing your discount in 48 hours | SUBJECT_B: Your 10% expires in 48 hours | SUBJECTS (5 types): curiosity+benefit 'Why your code has an end date' / specificity 'Your 10%, applied, 48 hours' / question 'Still deciding on your cart?' / story '"They honored the warranty"' / offer 'Your 10% expires in 48 hours' | A/B: verlies (we are removing, besluit 8 okt) vs deadline; alleen in een vrije testplek (T02 loopt op deze stap) | PREVIEW: Already applied to your cart. In 48 hours we're removing it. | SEND: v4 2.1 stap 5K-6K/5A-6A (vereenvoudigd): wait 2 days until 09:00 (day 5, 09:00) after C3; geen landsplit, code router (1.4) pool C4_10_48H, T02 arm A. Then Update profile property last_flow_code_at = today. COUPON: C4_10_48H (unique, 10%, one use, one per customer, expires 48 hours after assignment). DEADLINE: Klaviyo-tag today + days_later:2 (accounttijdzone), zie urgency-upgrade.md | FILTERS: Message: Placed Order = 0 since starting this flow | V5 (8 okt 2026, research/v5/03-copy-spec.md sectie 3 + DECISIONS 8 okt): alle bedragen, maten en verzendregels via de markt-macro's; hero zonder HI10 en zonder bedrag in het beeld (marktneutraal, -v5.jpg); gifts via gifts5, reviews via reviews3 (drie pijlers); friction reducer alleen onder de eerste en laatste knop. Besluit 8 okt: laatste codemail = "we're removing your discount" (waar: de unieke code vervalt), datum via de datum-macro. Twee beloftes met Steven T. en Brandon W. in reviews3. Geen 12-delige set, geen tweede aanbod. -->
 <!-- MARKET-SIGNAL: checkout -->
 <!DOCTYPE html>
@@ -85,7 +85,7 @@
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
 <!-- BLOCK bf-topbar (BF 2026 brand book): smalle balk bovenaan, ink of yellow. Keys: text, bg (#272727 of #FFB800), color (#FFB800 of #272727). Alleen ware tekst ("SITEWIDE" alleen als het echt sitewide is). -->
-<tr><td align="center" bgcolor="#272727" style="background-color:#272727;padding:11px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:800;color:#FFB800;text-transform:uppercase;">BLACK FRIDAY IS LIVE &middot; MEMBER PRICES</td></tr>
+<tr><td align="center" bgcolor="#272727" style="background-color:#272727;padding:11px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:800;color:#FFB800;text-transform:uppercase;">BLACK FRIDAY SALE IS LIVE</td></tr>
 
 
 <!-- HEADER (vast, uit partials/header.html) -->
@@ -111,7 +111,7 @@
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFB800" style="background:#FFB800;border:2px dashed #272727;">
   <tr><td align="center" style="padding:18px 20px 4px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:800;color:#272727;">BLACK FRIDAY DEAL</td></tr>
   <tr><td align="center" style="padding:4px 20px 0 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:30px;line-height:32px;font-weight:900;letter-spacing:-0.8px;color:#272727;">Extra 10% off</td></tr>
-  <tr><td align="center" style="padding:8px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#272727;">On top of Black Friday prices. Your own code SRT-K7Q2M, applied at checkout with the button, until {% today '%Y-%m-%d' as today %}Monday, November 2.</td></tr>
+  <tr><td align="center" style="padding:8px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#272727;">On top of Black Friday prices, up to 70% off. Applied with the button, or use your own code SRT-K7Q2M at checkout, until {% today '%Y-%m-%d' as today %}Monday, November 2.</td></tr>
   </table>
 </td></tr>
 
@@ -252,7 +252,7 @@
   <tr><td align="center" bgcolor="#282828" style="background-color:#282828;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:19px;color:#BDB8B0;text-align:center;">
     Free shipping on all orders &middot; 30-day returns &middot; 75-year warranty<br><br>
     <a href="#" style="color:#111111;">Unsubscribe</a> &nbsp;|&nbsp; <a href="#" style="color:#111111;">Manage preferences</a> &nbsp;|&nbsp; <a href="#" style="color:#111111;">View in browser</a><br>
-    Siraat's Kitchen &middot; [address]<span style="display:none!important;visibility:hidden;mso-hide:all;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;color:#282828;">ref 20261031153243</span>
+    Siraat's Kitchen &middot; [address]<span style="display:none!important;visibility:hidden;mso-hide:all;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;color:#282828;">ref 20261031153739</span>
   </td></tr>
 </table>
 </td></tr>

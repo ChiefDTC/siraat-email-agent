@@ -1,4 +1,4 @@
-<!-- BF 2026 VARIANT (voorbeeld, niet live, 31 okt 2026) | BRON: klaviyo/templates/v3/cart/k3-nocode.html | SUBJECT_A: What if it's not for you? | SUBJECT_B: Last email about your Black Friday cart | PREVIEW: Then it goes back unused within 30 days. An extra 10% on top of the sale, with the button. | AANNAMES: Aanbod is werkhypothese (Extra 10% off on top of Black Friday prices, README bfcm); 4 gifts en sale op deze producten aangenomen, bevestigen Floris; nocode-mail krijgt nu HI10 (publiek), weghalen als cooldown codevrij moet blijven | WIJZIGINGEN: zie bfcm/abandon/NOTES.md -->
+<!-- BF 2026 VARIANT (voorbeeld, niet live, 31 okt 2026) | BRON: klaviyo/templates/v3/cart/k3-nocode.html | SUBJECT_A: What if it's not for you? | SUBJECT_B: Last email about your Black Friday cart | PREVIEW: Then it goes back unused within 30 days. An extra 10% on top of the sale, with the button. | AANNAMES: Aanbod Floris 31 okt: Black Friday Sale up to 70% off (collectie black-friday-sale) plus extra 10% met code BFCODE (placeholder, echte code pas bij upload); HI10 eruit; 4 gifts nog geldig aangenomen; vaste prijzen uit de v5-prijslijst weggelaten (kloppen niet met BF-prijzen); nocode-mail krijgt nu BFCODE (abandonment krijgt de extra 10%%), weghalen als cooldown codevrij moet blijven | WIJZIGINGEN: zie bfcm/abandon/NOTES.md -->
 <!-- ORIGINELE BRONKOP (ter referentie): V5-STRICT | SUBJECT_A: What if it's not for you? | SUBJECT_B: Last email about your cart | SUBJECTS (5 types): curiosity+benefit 'The last email about your cart' / specificity '30-day returns. 75-year warranty. 4 gifts.' / question 'What if it's not for you?' / story '"Easy return procedure"' / offer 'Your cart, with 4 gifts pending' | A/B: vraag (A) vs laatste mail (B); cart draait in fase 1 geen onderwerptest | PREVIEW: Then it goes back unused within 30 days. Your 4 gifts are still pending. | SEND: same slot as k3: code-router (v4 1.4) cooldown = yes (code in last 30 days) OR T02 arm B. No code, no HI10 (v4 3.15) | COUPON: none | FILTERS: Trigger: Added to Cart (QXcV8K) with Price greater than 0 and Product Name doesn't contain Mystery Gift, E-Book, Free Shipping, Giveaway. Flow: Checkout Started = 0 since flow start; Placed Order = 0 since flow start; Received Email where Flow = 'v4 · Checkout abandonment' = 0 in the last 7 days; not in this flow in the last 14 days. Message: Checkout Started = 0 and Placed Order = 0 since flow start | UTM: utm_content=k3-<blok>, utm_term=t02-b (same mail ID, v4 testing 04-utm 3) | V5 (8 okt 2026, research/v5/03-copy-spec.md sectie 4 + DECISIONS 8 okt): alle bedragen, maten en verzendregels via de markt-macro's; hero zonder HI10 en zonder bedrag in het beeld (-v5.jpg); gifts via gifts5, reviews via reviews3 (drie pijlers); friction reducer alleen onder de eerste en laatste knop. Urgentie: laatste mail (U8) + gifts eindigen met de fall sale. -->
 <!-- MARKET-SIGNAL: cart -->
 <!DOCTYPE html>
@@ -85,7 +85,7 @@
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
 <!-- BLOCK bf-topbar (BF 2026 brand book): smalle balk bovenaan, ink of yellow. Keys: text, bg (#272727 of #FFB800), color (#FFB800 of #272727). Alleen ware tekst ("SITEWIDE" alleen als het echt sitewide is). -->
-<tr><td align="center" bgcolor="#272727" style="background-color:#272727;padding:11px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:800;color:#FFB800;text-transform:uppercase;">BLACK FRIDAY IS LIVE &middot; MEMBER PRICES</td></tr>
+<tr><td align="center" bgcolor="#272727" style="background-color:#272727;padding:11px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:800;color:#FFB800;text-transform:uppercase;">BLACK FRIDAY SALE IS LIVE</td></tr>
 
 
 <!-- HEADER (vast, uit partials/header.html) -->
@@ -103,14 +103,14 @@
 
 <!-- HERO 4:3 (v5-AI steak-sear; andere tak van dezelfde stap) -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/discount/HI10?redirect=#%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk3-hero%26utm_term%3Dt02-b"><img src="assets/k3-nocode-hero-v5.jpg" width="600" alt="Last email. What if it's not for you? 30 days to change your mind. 4 gifts pending." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://siraatskitchen.com/discount/BFCODE?redirect=#%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk3-hero%26utm_term%3Dt02-b"><img src="assets/k3-nocode-hero-v5.jpg" width="600" alt="Last email. What if it's not for you? 30 days to change your mind. 4 gifts pending." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 <!-- BLOCK bf-deal (BF 2026): ticketblok met de deal, geel met ink rand. Keys: pad, eyebrow, headline, detail. Bedragen alleen als ze exact kloppen met Shopify. -->
 <tr><td class="pad" style="padding:22px 44px 0 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFB800" style="background:#FFB800;border:2px dashed #272727;">
   <tr><td align="center" style="padding:18px 20px 4px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:800;color:#272727;">BLACK FRIDAY DEAL</td></tr>
   <tr><td align="center" style="padding:4px 20px 0 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:30px;line-height:32px;font-weight:900;letter-spacing:-0.8px;color:#272727;">Extra 10% off</td></tr>
-  <tr><td align="center" style="padding:8px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#272727;">On top of Black Friday prices. Applied at checkout with the button.</td></tr>
+  <tr><td align="center" style="padding:8px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#272727;">On top of Black Friday prices, up to 70% off. Applied with the button, or use code BFCODE at checkout.</td></tr>
   </table>
 </td></tr>
 
@@ -120,7 +120,7 @@
     <tr><td colspan="3" style="padding:16px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">STILL IN YOUR CART</td></tr>
     <tr>
       <td width="104" valign="middle" style="padding:12px 0 12px 16px;">
-        <a href="https://siraatskitchen.com/discount/HI10?redirect=#%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk3-product%26utm_term%3Dt02-b"><img src="assets/cart-fallback.jpg" width="88" alt="#" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;"></a>
+        <a href="https://siraatskitchen.com/discount/BFCODE?redirect=#%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk3-product%26utm_term%3Dt02-b"><img src="assets/cart-fallback.jpg" width="88" alt="#" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;"></a>
       </td>
       <td valign="middle" style="padding:12px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
         <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;word-break:break-word;">#</div>
@@ -139,8 +139,8 @@
 <tr><td align="center" class="pad" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:16px 44px 4px 44px;">
   <table role="presentation" class="btnw" width="320" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:320px;"><tr>
     <td align="center" bgcolor="#FFB800" style="background:#FFB800;border-radius:28px;">
-      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/discount/HI10?redirect=#%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk3-cta1%26utm_term%3Dt02-b" style="height:54px;v-text-anchor:middle;width:320px;" arcsize="50%" stroke="f" fillcolor="#FFB800"><center style="color:#272727;font-family:Arial,sans-serif;font-size:15px;font-weight:bold;">Finish my order</center></v:roundrect><![endif]-->
-      <!--[if !mso]><!--><a href="https://siraatskitchen.com/discount/HI10?redirect=#%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk3-cta1%26utm_term%3Dt02-b" style="display:block;padding:18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:18px;font-weight:800;letter-spacing:1.5px;color:#272727;text-decoration:none;text-transform:uppercase;">Finish my order &rarr;</a><!--<![endif]-->
+      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/discount/BFCODE?redirect=#%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk3-cta1%26utm_term%3Dt02-b" style="height:54px;v-text-anchor:middle;width:320px;" arcsize="50%" stroke="f" fillcolor="#FFB800"><center style="color:#272727;font-family:Arial,sans-serif;font-size:15px;font-weight:bold;">Finish my order</center></v:roundrect><![endif]-->
+      <!--[if !mso]><!--><a href="https://siraatskitchen.com/discount/BFCODE?redirect=#%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk3-cta1%26utm_term%3Dt02-b" style="display:block;padding:18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:18px;font-weight:800;letter-spacing:1.5px;color:#272727;text-decoration:none;text-transform:uppercase;">Finish my order &rarr;</a><!--<![endif]-->
     </td>
   </tr></table>
   <div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{% with mc=event|lookup:'_ip_country_code' meu='AT|BE|BG|HR|CZ|EE|FI|FR|DE|GR|HU|IE|IT|LV|LU|NL|SK|SI|ES' mme='AE|SA|KW|BH|OM|QA' %}{% if mc == 'US' %}Free shipping from the US. 30-day returns. 100,000+ happy customers.{% else %}Free shipping, duties paid. 30-day returns. 100,000+ happy customers.{% endif %}{% endwith %}</div>
@@ -205,8 +205,8 @@
 <tr><td align="center" class="pad" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:24px 44px 6px 44px;">
   <table role="presentation" class="btnw" width="320" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:320px;"><tr>
     <td align="center" bgcolor="#FFB800" style="background:#FFB800;border-radius:28px;">
-      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/discount/HI10?redirect=#%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk3-cta2%26utm_term%3Dt02-b" style="height:54px;v-text-anchor:middle;width:320px;" arcsize="50%" stroke="f" fillcolor="#FFB800"><center style="color:#272727;font-family:Arial,sans-serif;font-size:15px;font-weight:bold;">Finish my order</center></v:roundrect><![endif]-->
-      <!--[if !mso]><!--><a href="https://siraatskitchen.com/discount/HI10?redirect=#%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk3-cta2%26utm_term%3Dt02-b" style="display:block;padding:18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:18px;font-weight:800;letter-spacing:1.5px;color:#272727;text-decoration:none;text-transform:uppercase;">Finish my order &rarr;</a><!--<![endif]-->
+      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/discount/BFCODE?redirect=#%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk3-cta2%26utm_term%3Dt02-b" style="height:54px;v-text-anchor:middle;width:320px;" arcsize="50%" stroke="f" fillcolor="#FFB800"><center style="color:#272727;font-family:Arial,sans-serif;font-size:15px;font-weight:bold;">Finish my order</center></v:roundrect><![endif]-->
+      <!--[if !mso]><!--><a href="https://siraatskitchen.com/discount/BFCODE?redirect=#%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk3-cta2%26utm_term%3Dt02-b" style="display:block;padding:18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:18px;font-weight:800;letter-spacing:1.5px;color:#272727;text-decoration:none;text-transform:uppercase;">Finish my order &rarr;</a><!--<![endif]-->
     </td>
   </tr></table>
   <div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{% with mc=event|lookup:'_ip_country_code' meu='AT|BE|BG|HR|CZ|EE|FI|FR|DE|GR|HU|IE|IT|LV|LU|NL|SK|SI|ES' mme='AE|SA|KW|BH|OM|QA' %}{% if mc == 'US' %}Free shipping from the US. 30-day returns. 100,000+ happy customers.{% else %}Free shipping, duties paid. 30-day returns. 100,000+ happy customers.{% endif %}{% endwith %}</div>
@@ -245,7 +245,7 @@
   <tr><td align="center" bgcolor="#282828" style="background-color:#282828;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:19px;color:#BDB8B0;text-align:center;">
     Free shipping on all orders &middot; 30-day returns &middot; 75-year warranty<br><br>
     <a href="#" style="color:#111111;">Unsubscribe</a> &nbsp;|&nbsp; <a href="#" style="color:#111111;">Manage preferences</a> &nbsp;|&nbsp; <a href="#" style="color:#111111;">View in browser</a><br>
-    Siraat's Kitchen &middot; [address]<span style="display:none!important;visibility:hidden;mso-hide:all;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;color:#282828;">ref 20261031153243</span>
+    Siraat's Kitchen &middot; [address]<span style="display:none!important;visibility:hidden;mso-hide:all;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;color:#282828;">ref 20261031153740</span>
   </td></tr>
 </table>
 </td></tr>

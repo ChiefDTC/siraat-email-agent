@@ -1,4 +1,4 @@
-<!-- BF 2026 VARIANT (voorbeeld, niet live, 31 okt 2026) | BRON: klaviyo/templates/v3/checkout/c3-acc.html | SUBJECT_A: The pan we made after the board, priced for Black Friday | SUBJECT_B: Still cooking on a coated pan? | PREVIEW: We started with cutting boards too. Black Friday is live, plus an extra 10%. | AANNAMES: Aanbod is werkhypothese (Extra 10% off on top of Black Friday prices, README bfcm); 4 gifts en sale op deze producten aangenomen, bevestigen Floris | WIJZIGINGEN: zie bfcm/abandon/NOTES.md -->
+<!-- BF 2026 VARIANT (voorbeeld, niet live, 31 okt 2026) | BRON: klaviyo/templates/v3/checkout/c3-acc.html | SUBJECT_A: The pan we made after the board, priced for Black Friday | SUBJECT_B: Still cooking on a coated pan? | PREVIEW: We started with cutting boards too. Black Friday is live, plus an extra 10%. | AANNAMES: Aanbod Floris 31 okt: Black Friday Sale up to 70% off (collectie black-friday-sale) plus extra 10% met code BFCODE (placeholder, echte code pas bij upload); HI10 eruit; 4 gifts nog geldig aangenomen; vaste prijzen uit de v5-prijslijst weggelaten (kloppen niet met BF-prijzen) | WIJZIGINGEN: zie bfcm/abandon/NOTES.md -->
 <!-- ORIGINELE BRONKOP (ter referentie): V5-STRICT | SUBJECT_A: The pan we made after the board | SUBJECT_B: Still cooking on a coated pan? | SUBJECTS (5 types): curiosity+benefit 'The pan we made after the board' / specificity 'Report no. 25895, covered for 75 years' / question 'Still cooking on a coated pan?' / story '"Lower heat lower gas bills better tasting food"' / offer 'HI10 works on the pan too' | A/B: story (A) vs vraag (B); v4 3.19: alleen A | PREVIEW: We started with cutting boards too. Then the pan, because you cook in a pan. | SEND: v4 2.1 stap 4A: wait 2 days until 09:00 (day 3, 09:00), ACCESSORY path, only new customers (CS HEEFT_GEKOCHT = no). Existing customers skip to C4. | FILTERS: Message: Placed Order = 0 since starting this flow | V5 (8 okt 2026, research/v5/03-copy-spec.md sectie 3 + DECISIONS 8 okt): alle bedragen, maten en verzendregels via de markt-macro's; hero zonder HI10 en zonder bedrag in het beeld (marktneutraal, -v5.jpg); gifts via gifts5, reviews via reviews3 (drie pijlers); friction reducer alleen onder de eerste en laatste knop. Verhaalstap S2 (van plank naar pan). Eigenaar-check in de template (siraat_owned) als vangnet naast de flow-split. Geen coated-vergelijking (zit in C1). -->
 <!-- MARKET-SIGNAL: checkout -->
 <!DOCTYPE html>
@@ -38,35 +38,35 @@
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
-{{BLOCK:bf-topbar text="BLACK FRIDAY IS LIVE &middot; MEMBER PRICES"}}
+{{BLOCK:bf-topbar text="BLACK FRIDAY SALE IS LIVE"}}
 
 {{HEADER}}
 
 <!-- HERO 4:3 (apron lifestyle, marktneutraal; geen "no coating" naast de schort) -->
 <tr><td style="padding:0;">
-  <a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c3acc-hero"><img src="{{IMG}}/c3acc-hero-v5.jpg" width="600" alt="Where we started. From the board to the pan. Tested PFAS-free, covered for 75 years. 4 gifts pending." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/BFCODE?redirect=/cart' }}&discount=BFCODE&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c3acc-hero"><img src="{{IMG}}/c3acc-hero-v5.jpg" width="600" alt="Where we started. From the board to the pan. Tested PFAS-free, covered for 75 years. 4 gifts pending." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
-{{BLOCK:bf-deal pad="22px 44px 0 44px" headline="Extra 10% off" detail="On top of Black Friday prices. Applied at checkout with the button."}}
-{{BLOCK:cart pad="22px 44px 4px 44px" title="STILL IN YOUR CART" line="HI10 is already applied, on your cart or on the pan."}}
+{{BLOCK:bf-deal pad="22px 44px 0 44px" headline="Extra 10% off" detail="On top of Black Friday prices, up to 70% off. Applied with the button, or use code BFCODE at checkout."}}
+{{BLOCK:cart pad="22px 44px 4px 44px" title="STILL IN YOUR CART" line="BFCODE is already applied, on your cart or on the pan."}}
 
 
-{{BLOCK:bf-cta bg="#F8F7F2" label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c3acc-cta1" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
+{{BLOCK:bf-cta bg="#F8F7F2" label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/BFCODE?redirect=/cart' }}&discount=BFCODE&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c3acc-cta1" pad="20px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
 
 <!-- BESTAANDE EIGENAAR (siraat_owned bevat een pan): geen pan-pitch, geen productkaart. Nieuwe klant: S2 als Benjamin + Pan Pro-kaart -->
 {% with own=person|lookup:'siraat_owned'|default:'' %}{% if 'panpro' in own or 'pan_original' in own or 'deep' in own or 'wok' in own or 'crepe' in own %}
-<tr><td class="pad lead" style="padding:26px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">You already cook on one of our pans, so there's nothing new to tell you about it. Your cart is saved, HI10 is applied, and the 4 gifts ship with it.</td></tr>
+<tr><td class="pad lead" style="padding:26px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">You already cook on one of our pans, so there's nothing new to tell you about it. Your cart is saved, BFCODE is applied, and the 4 gifts ship with it.</td></tr>
 {% else %}
 <tr><td class="pad lead" style="padding:26px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">We started with titanium cutting boards. Then we made the pan. A board is nice, but in the end you cook in a pan.{% if 'Apron' in event.Items|join:',' %} An apron does want something to cook in, though.{% endif %}<br><br>If you still cook on a coated pan, this is the one change worth making: titanium, tested free from PFAS by Light Labs (report no. 25895), and covered for 75 years.</td></tr>
 
-{{BLOCK:productcard pad="20px 44px 6px 44px" img="card-panpro-bestseller.jpg" alt="Titanium Hammered Pan Pro" pill="" name="The Pan Pro, {{SIZE:28}}" sub="Tested free from PFAS by Light Labs, report no. 25895." now="{{PRICE:standard}}" note="{{IF:PRICED}}{{PRICE:standard*0.9}} with HI10{{ENDIF}}" link="Add the Pan Pro" url="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-checkout%26utm_content%3Dc3acc-prod-panpro"}}
+{{BLOCK:productcard pad="20px 44px 6px 44px" img="card-panpro-bestseller.jpg" alt="Titanium Hammered Pan Pro" pill="" name="The Pan Pro, {{SIZE:28}}" sub="Tested free from PFAS by Light Labs, report no. 25895." now="" note="" link="Add the Pan Pro" url="https://siraatskitchen.com/discount/BFCODE?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-checkout%26utm_content%3Dc3acc-prod-panpro"}}
 {% endif %}{% endwith %}
 
 {{BLOCK:gifts5 style="row" urgency="1" line="Your {{GIFTS:total}} are still pending on this cart."}}
 
 {{BLOCK:reviews3 ids="R473,R082,R386" pad="26px 44px 6px 44px"}}
 
-{{BLOCK:bf-cta bg="#F8F7F2" label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/HI10?redirect=/cart' }}&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c3acc-cta2" pad="24px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
+{{BLOCK:bf-cta bg="#F8F7F2" label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/BFCODE?redirect=/cart' }}&discount=BFCODE&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c3acc-cta2" pad="24px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
 <!-- SIGN-OFF -->
 <tr><td class="pad" style="padding:22px 44px 24px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
   Hi {{ first_name|default:'there' }}, questions about the pan, or about what's in your cart? Reply and ask.<br><br>

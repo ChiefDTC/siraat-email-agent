@@ -1,4 +1,4 @@
-<!-- BF 2026 VARIANT (voorbeeld, niet live, 31 okt 2026) | BRON: klaviyo/templates/v3/checkout/c3-acc.html | SUBJECT_A: The pan we made after the board, priced for Black Friday | SUBJECT_B: Still cooking on a coated pan? | PREVIEW: We started with cutting boards too. Black Friday is live, plus an extra 10%. | AANNAMES: Aanbod is werkhypothese (Extra 10% off on top of Black Friday prices, README bfcm); 4 gifts en sale op deze producten aangenomen, bevestigen Floris | WIJZIGINGEN: zie bfcm/abandon/NOTES.md -->
+<!-- BF 2026 VARIANT (voorbeeld, niet live, 31 okt 2026) | BRON: klaviyo/templates/v3/checkout/c3-acc.html | SUBJECT_A: The pan we made after the board, priced for Black Friday | SUBJECT_B: Still cooking on a coated pan? | PREVIEW: We started with cutting boards too. Black Friday is live, plus an extra 10%. | AANNAMES: Aanbod Floris 31 okt: Black Friday Sale up to 70% off (collectie black-friday-sale) plus extra 10% met code BFCODE (placeholder, echte code pas bij upload); HI10 eruit; 4 gifts nog geldig aangenomen; vaste prijzen uit de v5-prijslijst weggelaten (kloppen niet met BF-prijzen) | WIJZIGINGEN: zie bfcm/abandon/NOTES.md -->
 <!-- ORIGINELE BRONKOP (ter referentie): V5-STRICT | SUBJECT_A: The pan we made after the board | SUBJECT_B: Still cooking on a coated pan? | SUBJECTS (5 types): curiosity+benefit 'The pan we made after the board' / specificity 'Report no. 25895, covered for 75 years' / question 'Still cooking on a coated pan?' / story '"Lower heat lower gas bills better tasting food"' / offer 'HI10 works on the pan too' | A/B: story (A) vs vraag (B); v4 3.19: alleen A | PREVIEW: We started with cutting boards too. Then the pan, because you cook in a pan. | SEND: v4 2.1 stap 4A: wait 2 days until 09:00 (day 3, 09:00), ACCESSORY path, only new customers (CS HEEFT_GEKOCHT = no). Existing customers skip to C4. | FILTERS: Message: Placed Order = 0 since starting this flow | V5 (8 okt 2026, research/v5/03-copy-spec.md sectie 3 + DECISIONS 8 okt): alle bedragen, maten en verzendregels via de markt-macro's; hero zonder HI10 en zonder bedrag in het beeld (marktneutraal, -v5.jpg); gifts via gifts5, reviews via reviews3 (drie pijlers); friction reducer alleen onder de eerste en laatste knop. Verhaalstap S2 (van plank naar pan). Eigenaar-check in de template (siraat_owned) als vangnet naast de flow-split. Geen coated-vergelijking (zit in C1). -->
 <!-- MARKET-SIGNAL: checkout -->
 <!DOCTYPE html>
@@ -85,7 +85,7 @@
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
 <!-- BLOCK bf-topbar (BF 2026 brand book): smalle balk bovenaan, ink of yellow. Keys: text, bg (#272727 of #FFB800), color (#FFB800 of #272727). Alleen ware tekst ("SITEWIDE" alleen als het echt sitewide is). -->
-<tr><td align="center" bgcolor="#272727" style="background-color:#272727;padding:11px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:800;color:#FFB800;text-transform:uppercase;">BLACK FRIDAY IS LIVE &middot; MEMBER PRICES</td></tr>
+<tr><td align="center" bgcolor="#272727" style="background-color:#272727;padding:11px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:800;color:#FFB800;text-transform:uppercase;">BLACK FRIDAY SALE IS LIVE</td></tr>
 
 
 <!-- HEADER (vast, uit partials/header.html) -->
@@ -103,7 +103,7 @@
 
 <!-- HERO 4:3 (apron lifestyle, marktneutraal; geen "no coating" naast de schort) -->
 <tr><td style="padding:0;">
-  <a href="#&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c3acc-hero"><img src="assets/c3acc-hero-v5.jpg" width="600" alt="Where we started. From the board to the pan. Tested PFAS-free, covered for 75 years. 4 gifts pending." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="#&discount=BFCODE&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c3acc-hero"><img src="assets/c3acc-hero-v5.jpg" width="600" alt="Where we started. From the board to the pan. Tested PFAS-free, covered for 75 years. 4 gifts pending." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
 <!-- BLOCK bf-deal (BF 2026): ticketblok met de deal, geel met ink rand. Keys: pad, eyebrow, headline, detail. Bedragen alleen als ze exact kloppen met Shopify. -->
@@ -111,7 +111,7 @@
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFB800" style="background:#FFB800;border:2px dashed #272727;">
   <tr><td align="center" style="padding:18px 20px 4px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:800;color:#272727;">BLACK FRIDAY DEAL</td></tr>
   <tr><td align="center" style="padding:4px 20px 0 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:30px;line-height:32px;font-weight:900;letter-spacing:-0.8px;color:#272727;">Extra 10% off</td></tr>
-  <tr><td align="center" style="padding:8px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#272727;">On top of Black Friday prices. Applied at checkout with the button.</td></tr>
+  <tr><td align="center" style="padding:8px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#272727;">On top of Black Friday prices, up to 70% off. Applied with the button, or use code BFCODE at checkout.</td></tr>
   </table>
 </td></tr>
 
@@ -133,7 +133,7 @@
     
     <tr><td colspan="3" style="padding:0 16px 16px 16px;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F8F7F2" style="background:#F8F7F2;padding:11px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">
-        <img src="../../../partials/shared/icon-discount-tag.png" width="20" height="20" alt="" style="display:inline-block;vertical-align:-5px;width:20px;height:20px;">&nbsp; HI10 is already applied, on your cart or on the pan.
+        <img src="../../../partials/shared/icon-discount-tag.png" width="20" height="20" alt="" style="display:inline-block;vertical-align:-5px;width:20px;height:20px;">&nbsp; BFCODE is already applied, on your cart or on the pan.
       </td></tr></table>
     </td></tr>
   </table>
@@ -145,8 +145,8 @@
 <tr><td align="center" class="pad" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:20px 44px 4px 44px;">
   <table role="presentation" class="btnw" width="320" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:320px;"><tr>
     <td align="center" bgcolor="#FFB800" style="background:#FFB800;border-radius:28px;">
-      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="#&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c3acc-cta1" style="height:54px;v-text-anchor:middle;width:320px;" arcsize="50%" stroke="f" fillcolor="#FFB800"><center style="color:#272727;font-family:Arial,sans-serif;font-size:15px;font-weight:bold;">Complete my order</center></v:roundrect><![endif]-->
-      <!--[if !mso]><!--><a href="#&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c3acc-cta1" style="display:block;padding:18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:18px;font-weight:800;letter-spacing:1.5px;color:#272727;text-decoration:none;text-transform:uppercase;">Complete my order &rarr;</a><!--<![endif]-->
+      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="#&discount=BFCODE&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c3acc-cta1" style="height:54px;v-text-anchor:middle;width:320px;" arcsize="50%" stroke="f" fillcolor="#FFB800"><center style="color:#272727;font-family:Arial,sans-serif;font-size:15px;font-weight:bold;">Complete my order</center></v:roundrect><![endif]-->
+      <!--[if !mso]><!--><a href="#&discount=BFCODE&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c3acc-cta1" style="display:block;padding:18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:18px;font-weight:800;letter-spacing:1.5px;color:#272727;text-decoration:none;text-transform:uppercase;">Complete my order &rarr;</a><!--<![endif]-->
     </td>
   </tr></table>
   <div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{% with mcur=event.extra.presentment_currency mpc=person.Country|default:'US' mme='AED|SAR|KWD|BHD|OMR|QAR' %}{% if mcur == 'USD' and mpc == 'United States' or mcur == 'USD' and mpc == 'US' %}Free shipping from the US. 30-day returns. 100,000+ happy customers.{% else %}Free shipping, duties paid. 30-day returns. 100,000+ happy customers.{% endif %}{% endwith %}</div>
@@ -155,7 +155,7 @@
 
 <!-- BESTAANDE EIGENAAR (siraat_owned bevat een pan): geen pan-pitch, geen productkaart. Nieuwe klant: S2 als Benjamin + Pan Pro-kaart -->
 {% with own=person|lookup:'siraat_owned'|default:'' %}{% if 'panpro' in own or 'pan_original' in own or 'deep' in own or 'wok' in own or 'crepe' in own %}
-<tr><td class="pad lead" style="padding:26px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">You already cook on one of our pans, so there's nothing new to tell you about it. Your cart is saved, HI10 is applied, and the 4 gifts ship with it.</td></tr>
+<tr><td class="pad lead" style="padding:26px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">You already cook on one of our pans, so there's nothing new to tell you about it. Your cart is saved, BFCODE is applied, and the 4 gifts ship with it.</td></tr>
 {% else %}
 <tr><td class="pad lead" style="padding:26px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">We started with titanium cutting boards. Then we made the pan. A board is nice, but in the end you cook in a pan.{% if 'Apron' in event.Items|join:',' %} An apron does want something to cook in, though.{% endif %}<br><br>If you still cook on a coated pan, this is the one change worth making: titanium, tested free from PFAS by Light Labs (report no. 25895), and covered for 75 years.</td></tr>
 
@@ -173,17 +173,17 @@
     <td align="center" valign="middle" bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:0;font-size:0;line-height:0;text-align:center;">
       <!--[if mso]><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td width="200" valign="middle"><![endif]-->
       <table role="presentation" class="pc-i" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="display:inline-block;vertical-align:middle;width:100%;max-width:200px;background-color:#FFFFFF;"><tr>
-        <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:0;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-checkout%26utm_content%3Dc3acc-prod-panpro"><img src="../../../partials/shared/card-panpro-bestseller.jpg" width="200" alt="Titanium Hammered Pan Pro" class="pc-img" style="display:block;width:100%;max-width:200px;height:auto;border:0;"></a></td>
+        <td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:0;"><a href="https://siraatskitchen.com/discount/BFCODE?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-checkout%26utm_content%3Dc3acc-prod-panpro"><img src="../../../partials/shared/card-panpro-bestseller.jpg" width="200" alt="Titanium Hammered Pan Pro" class="pc-img" style="display:block;width:100%;max-width:200px;height:auto;border:0;"></a></td>
       </tr></table>
       <!--[if mso]></td><td width="308" valign="middle"><![endif]-->
       <table role="presentation" class="pc-t" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="display:inline-block;vertical-align:middle;width:100%;max-width:308px;background-color:#FFFFFF;"><tr>
         <td class="pc-tc" bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:16px 20px 16px 18px;font-family:Inter,Arial,Helvetica,sans-serif;text-align:left;">
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
             <tr><td style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;"></td></tr>
-            <tr><td class="pc-n" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:18px;line-height:24px;font-weight:600;color:#282828;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-checkout%26utm_content%3Dc3acc-prod-panpro" style="color:#282828;text-decoration:none;">The Pan Pro, {% with mcur=event.extra.presentment_currency mpc=person.Country|default:'US' mme='AED|SAR|KWD|BHD|OMR|QAR' %}{% if mcur == 'USD' and mpc == 'United States' or mcur == 'USD' and mpc == 'US' %}11&Prime;{% elif mcur %}28 cm{% else %}28 cm (11&Prime;){% endif %}{% endwith %}</a></td></tr>
+            <tr><td class="pc-n" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:18px;line-height:24px;font-weight:600;color:#282828;"><a href="https://siraatskitchen.com/discount/BFCODE?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-checkout%26utm_content%3Dc3acc-prod-panpro" style="color:#282828;text-decoration:none;">The Pan Pro, {% with mcur=event.extra.presentment_currency mpc=person.Country|default:'US' mme='AED|SAR|KWD|BHD|OMR|QAR' %}{% if mcur == 'USD' and mpc == 'United States' or mcur == 'USD' and mpc == 'US' %}11&Prime;{% elif mcur %}28 cm{% else %}28 cm (11&Prime;){% endif %}{% endwith %}</a></td></tr>
             <tr><td class="pc-s" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#727272;padding-top:3px;">Tested free from PFAS by Light Labs, report no. 25895.</td></tr>
-            <tr><td style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:17px;color:#727272;"><div style="padding-top:10px;font-size:16px;line-height:22px;"><b style="color:#AC3B19;font-weight:600;">{% with mcur=event.extra.presentment_currency mpc=person.Country|default:'US' mme='AED|SAR|KWD|BHD|OMR|QAR' %}{% if mcur == 'USD' and mpc == 'United States' or mcur == 'USD' and mpc == 'US' %}$144{% elif mcur == 'CAD' %}C$224{% elif mcur == 'GBP' %}£124{% elif mcur == 'EUR' %}€139{% elif mcur == 'AUD' %}A$224{% elif mcur == 'NZD' %}NZ$274{% elif mcur == 'SGD' %}S$204{% endif %}{% endwith %}</b></div><div style="font-size:12px;line-height:17px;color:#727272;">{% with mcur=event.extra.presentment_currency mpc=person.Country|default:'US' mme='AED|SAR|KWD|BHD|OMR|QAR' %}{% if mcur == 'USD' and mpc == 'United States' or mcur == 'USD' and mpc == 'US' or mcur == 'CAD' or mcur == 'GBP' or mcur == 'EUR' or mcur == 'AUD' or mcur == 'NZD' or mcur == 'SGD' %}{% with mcur=event.extra.presentment_currency mpc=person.Country|default:'US' mme='AED|SAR|KWD|BHD|OMR|QAR' %}{% if mcur == 'USD' and mpc == 'United States' or mcur == 'USD' and mpc == 'US' %}$129.60{% elif mcur == 'CAD' %}C$201.60{% elif mcur == 'GBP' %}£111.60{% elif mcur == 'EUR' %}€125.10{% elif mcur == 'AUD' %}A$201.60{% elif mcur == 'NZD' %}NZ$246.60{% elif mcur == 'SGD' %}S$183.60{% endif %}{% endwith %} with HI10{% endif %}{% endwith %}</div></td></tr>
-            <tr><td style="font-family:Inter,Arial,Helvetica,sans-serif;padding-top:10px;font-size:13px;line-height:16px;letter-spacing:1.5px;font-weight:600;color:#282828;text-transform:uppercase;"><a href="https://siraatskitchen.com/discount/HI10?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-checkout%26utm_content%3Dc3acc-prod-panpro" style="color:#282828;text-decoration:none;"><span style="border-bottom:1px solid #282828;padding-bottom:2px;">Add the Pan Pro</span> &rarr;</a></td></tr>
+            <tr><td style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:17px;color:#727272;"></td></tr>
+            <tr><td style="font-family:Inter,Arial,Helvetica,sans-serif;padding-top:10px;font-size:13px;line-height:16px;letter-spacing:1.5px;font-weight:600;color:#282828;text-transform:uppercase;"><a href="https://siraatskitchen.com/discount/BFCODE?redirect=/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-checkout%26utm_content%3Dc3acc-prod-panpro" style="color:#282828;text-decoration:none;"><span style="border-bottom:1px solid #282828;padding-bottom:2px;">Add the Pan Pro</span> &rarr;</a></td></tr>
           </table>
         </td>
       </tr></table>
@@ -240,8 +240,8 @@
 <tr><td align="center" class="pad" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:24px 44px 6px 44px;">
   <table role="presentation" class="btnw" width="320" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:320px;"><tr>
     <td align="center" bgcolor="#FFB800" style="background:#FFB800;border-radius:28px;">
-      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="#&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c3acc-cta2" style="height:54px;v-text-anchor:middle;width:320px;" arcsize="50%" stroke="f" fillcolor="#FFB800"><center style="color:#272727;font-family:Arial,sans-serif;font-size:15px;font-weight:bold;">Complete my order</center></v:roundrect><![endif]-->
-      <!--[if !mso]><!--><a href="#&discount=HI10&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c3acc-cta2" style="display:block;padding:18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:18px;font-weight:800;letter-spacing:1.5px;color:#272727;text-decoration:none;text-transform:uppercase;">Complete my order &rarr;</a><!--<![endif]-->
+      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="#&discount=BFCODE&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c3acc-cta2" style="height:54px;v-text-anchor:middle;width:320px;" arcsize="50%" stroke="f" fillcolor="#FFB800"><center style="color:#272727;font-family:Arial,sans-serif;font-size:15px;font-weight:bold;">Complete my order</center></v:roundrect><![endif]-->
+      <!--[if !mso]><!--><a href="#&discount=BFCODE&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c3acc-cta2" style="display:block;padding:18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:18px;font-weight:800;letter-spacing:1.5px;color:#272727;text-decoration:none;text-transform:uppercase;">Complete my order &rarr;</a><!--<![endif]-->
     </td>
   </tr></table>
   <div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{% with mcur=event.extra.presentment_currency mpc=person.Country|default:'US' mme='AED|SAR|KWD|BHD|OMR|QAR' %}{% if mcur == 'USD' and mpc == 'United States' or mcur == 'USD' and mpc == 'US' %}Free shipping from the US. 30-day returns. 100,000+ happy customers.{% else %}Free shipping, duties paid. 30-day returns. 100,000+ happy customers.{% endif %}{% endwith %}</div>
@@ -280,7 +280,7 @@
   <tr><td align="center" bgcolor="#282828" style="background-color:#282828;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:19px;color:#BDB8B0;text-align:center;">
     Free shipping on all orders &middot; 30-day returns &middot; 75-year warranty<br><br>
     <a href="#" style="color:#111111;">Unsubscribe</a> &nbsp;|&nbsp; <a href="#" style="color:#111111;">Manage preferences</a> &nbsp;|&nbsp; <a href="#" style="color:#111111;">View in browser</a><br>
-    Siraat's Kitchen &middot; [address]<span style="display:none!important;visibility:hidden;mso-hide:all;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;color:#282828;">ref 20261031153243</span>
+    Siraat's Kitchen &middot; [address]<span style="display:none!important;visibility:hidden;mso-hide:all;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;color:#282828;">ref 20261031153739</span>
   </td></tr>
 </table>
 </td></tr>

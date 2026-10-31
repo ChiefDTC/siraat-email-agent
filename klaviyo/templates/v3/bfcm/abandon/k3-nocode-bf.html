@@ -1,4 +1,4 @@
-<!-- BF 2026 VARIANT (voorbeeld, niet live, 31 okt 2026) | BRON: klaviyo/templates/v3/cart/k3-nocode.html | SUBJECT_A: What if it's not for you? | SUBJECT_B: Last email about your Black Friday cart | PREVIEW: Then it goes back unused within 30 days. An extra 10% on top of the sale, with the button. | AANNAMES: Aanbod is werkhypothese (Extra 10% off on top of Black Friday prices, README bfcm); 4 gifts en sale op deze producten aangenomen, bevestigen Floris; nocode-mail krijgt nu HI10 (publiek), weghalen als cooldown codevrij moet blijven | WIJZIGINGEN: zie bfcm/abandon/NOTES.md -->
+<!-- BF 2026 VARIANT (voorbeeld, niet live, 31 okt 2026) | BRON: klaviyo/templates/v3/cart/k3-nocode.html | SUBJECT_A: What if it's not for you? | SUBJECT_B: Last email about your Black Friday cart | PREVIEW: Then it goes back unused within 30 days. An extra 10% on top of the sale, with the button. | AANNAMES: Aanbod Floris 31 okt: Black Friday Sale up to 70% off (collectie black-friday-sale) plus extra 10% met code BFCODE (placeholder, echte code pas bij upload); HI10 eruit; 4 gifts nog geldig aangenomen; vaste prijzen uit de v5-prijslijst weggelaten (kloppen niet met BF-prijzen); nocode-mail krijgt nu BFCODE (abandonment krijgt de extra 10%%), weghalen als cooldown codevrij moet blijven | WIJZIGINGEN: zie bfcm/abandon/NOTES.md -->
 <!-- ORIGINELE BRONKOP (ter referentie): V5-STRICT | SUBJECT_A: What if it's not for you? | SUBJECT_B: Last email about your cart | SUBJECTS (5 types): curiosity+benefit 'The last email about your cart' / specificity '30-day returns. 75-year warranty. 4 gifts.' / question 'What if it's not for you?' / story '"Easy return procedure"' / offer 'Your cart, with 4 gifts pending' | A/B: vraag (A) vs laatste mail (B); cart draait in fase 1 geen onderwerptest | PREVIEW: Then it goes back unused within 30 days. Your 4 gifts are still pending. | SEND: same slot as k3: code-router (v4 1.4) cooldown = yes (code in last 30 days) OR T02 arm B. No code, no HI10 (v4 3.15) | COUPON: none | FILTERS: Trigger: Added to Cart (QXcV8K) with Price greater than 0 and Product Name doesn't contain Mystery Gift, E-Book, Free Shipping, Giveaway. Flow: Checkout Started = 0 since flow start; Placed Order = 0 since flow start; Received Email where Flow = 'v4 · Checkout abandonment' = 0 in the last 7 days; not in this flow in the last 14 days. Message: Checkout Started = 0 and Placed Order = 0 since flow start | UTM: utm_content=k3-<blok>, utm_term=t02-b (same mail ID, v4 testing 04-utm 3) | V5 (8 okt 2026, research/v5/03-copy-spec.md sectie 4 + DECISIONS 8 okt): alle bedragen, maten en verzendregels via de markt-macro's; hero zonder HI10 en zonder bedrag in het beeld (-v5.jpg); gifts via gifts5, reviews via reviews3 (drie pijlers); friction reducer alleen onder de eerste en laatste knop. Urgentie: laatste mail (U8) + gifts eindigen met de fall sale. -->
 <!-- MARKET-SIGNAL: cart -->
 <!DOCTYPE html>
@@ -38,22 +38,22 @@
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
-{{BLOCK:bf-topbar text="BLACK FRIDAY IS LIVE &middot; MEMBER PRICES"}}
+{{BLOCK:bf-topbar text="BLACK FRIDAY SALE IS LIVE"}}
 
 {{HEADER}}
 
 <!-- HERO 4:3 (v5-AI steak-sear; andere tak van dezelfde stap) -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://2d0add-d6.myshopify.com'|cut:'https://siraatskitchen.com'|default:'/cart' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk3-hero%26utm_term%3Dt02-b"><img src="{{IMG}}/k3-nocode-hero-v5.jpg" width="600" alt="Last email. What if it's not for you? 30 days to change your mind. 4 gifts pending." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://siraatskitchen.com/discount/BFCODE?redirect={{ event.URL|cut:'https://2d0add-d6.myshopify.com'|cut:'https://siraatskitchen.com'|default:'/cart' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk3-hero%26utm_term%3Dt02-b"><img src="{{IMG}}/k3-nocode-hero-v5.jpg" width="600" alt="Last email. What if it's not for you? 30 days to change your mind. 4 gifts pending." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
-{{BLOCK:bf-deal pad="22px 44px 0 44px" headline="Extra 10% off" detail="On top of Black Friday prices. Applied at checkout with the button."}}
+{{BLOCK:bf-deal pad="22px 44px 0 44px" headline="Extra 10% off" detail="On top of Black Friday prices, up to 70% off. Applied with the button, or use code BFCODE at checkout."}}
 <!-- PRODUCTKAART Added to Cart: 'Product Name', ImageURL, Price, Quantity, $currency. Prijs alleen bij USD. -->
 <tr><td class="pad" style="padding:22px 44px 4px 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
     <tr><td colspan="3" style="padding:16px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">STILL IN YOUR CART</td></tr>
     <tr>
       <td width="104" valign="middle" style="padding:12px 0 12px 16px;">
-        <a href="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://2d0add-d6.myshopify.com'|cut:'https://siraatskitchen.com'|default:'/cart' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk3-product%26utm_term%3Dt02-b"><img src="{% if event.ImageURL %}{{ event.ImageURL }}&width=200{% else %}{{IMG}}/cart-fallback.jpg{% endif %}" width="88" alt="{{ event|lookup:'Product Name'|default:'Your item' }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;"></a>
+        <a href="https://siraatskitchen.com/discount/BFCODE?redirect={{ event.URL|cut:'https://2d0add-d6.myshopify.com'|cut:'https://siraatskitchen.com'|default:'/cart' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk3-product%26utm_term%3Dt02-b"><img src="{% if event.ImageURL %}{{ event.ImageURL }}&width=200{% else %}{{IMG}}/cart-fallback.jpg{% endif %}" width="88" alt="{{ event|lookup:'Product Name'|default:'Your item' }}" style="width:88px;height:88px;object-fit:cover;background:#F8F7F2;"></a>
       </td>
       <td valign="middle" style="padding:12px 14px;font-family:Inter,Arial,Helvetica,sans-serif;">
         <div style="font-size:15px;line-height:21px;font-weight:600;color:#282828;word-break:break-word;">{{ event|lookup:'Product Name'|default:'Your item' }}</div>
@@ -68,7 +68,7 @@
     </td></tr>
   </table>
 </td></tr>
-{{BLOCK:bf-cta bg="#F8F7F2" label="Finish my order" url="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://2d0add-d6.myshopify.com'|cut:'https://siraatskitchen.com'|default:'/cart' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk3-cta1%26utm_term%3Dt02-b" pad="16px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
+{{BLOCK:bf-cta bg="#F8F7F2" label="Finish my order" url="https://siraatskitchen.com/discount/BFCODE?redirect={{ event.URL|cut:'https://2d0add-d6.myshopify.com'|cut:'https://siraatskitchen.com'|default:'/cart' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk3-cta1%26utm_term%3Dt02-b" pad="16px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
 <tr><td class="pad lead" style="padding:26px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">Fair question. If it's not for you, send it back unused within 30 days of delivery for a full refund. That's the first of two promises.</td></tr>
 <!-- TWEE BELOFTES (06-offer-design 3; retourzending ongebruikt product is voor de klant). Garantiezin alleen bij kookgerei. -->
 <tr><td class="pad" style="padding:28px 44px 6px 44px;">
@@ -86,7 +86,7 @@
 
 {{BLOCK:gifts5 style="row" urgency="1" line="Your {{GIFTS:total}} are still pending on this cart."}}
 
-{{BLOCK:bf-cta bg="#F8F7F2" label="Finish my order" url="https://siraatskitchen.com/discount/HI10?redirect={{ event.URL|cut:'https://2d0add-d6.myshopify.com'|cut:'https://siraatskitchen.com'|default:'/cart' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk3-cta2%26utm_term%3Dt02-b" pad="24px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
+{{BLOCK:bf-cta bg="#F8F7F2" label="Finish my order" url="https://siraatskitchen.com/discount/BFCODE?redirect={{ event.URL|cut:'https://2d0add-d6.myshopify.com'|cut:'https://siraatskitchen.com'|default:'/cart' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk3-cta2%26utm_term%3Dt02-b" pad="24px 44px 6px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
 <!-- SIGN-OFF -->
 <tr><td class="pad" style="padding:22px 44px 24px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
   A question before you decide? Reply and ask.<br><br>

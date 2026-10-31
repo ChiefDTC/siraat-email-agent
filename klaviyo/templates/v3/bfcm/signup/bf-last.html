@@ -2,15 +2,15 @@
 BF SIGNUP FLOW · LAST CALL
 SUBJECT: Last call. Black Friday ends [END DATE].
   Alternatieven: "Last call." · "Ends [END DATE]" · "Before prices go back"
-PREVIEW: Black Friday prices end [END DATE]. Your extra 10% is still applied until then.
-TIMING: NIET een vaste wachttijd in de flow. Op de ECHTE laatste dag van de sale, bijv. 10:00 (tijdzone profiel). In Klaviyo: tijdsvertraging tot een vaste datum, of als campagne op het BF-segment (niet-kopers). Zie FLOW.md.
+PREVIEW: Up to 70% off until [END DATE]. Then prices go back to normal.
+TIMING: GEEN vaste wachttijd in de flow. Op de ECHTE laatste dag van de sale, bijv. 10:00 (tijdzone profiel), als campagne op het BF-segment (niet-kopers). Zie FLOW.md.
 FILTER: Placed Order = 0 sinds flowstart.
-PLACEHOLDERS (geel gemarkeerd in de mail, MOETEN vervangen worden voor live): [END DATE] (bijv. "Monday, Dec 1") en [END TIME + TIMEZONE] (bijv. "11:59 pm ET"). Ook in topbar, onderwerp en preview.
+PLACEHOLDERS (geel gemarkeerd in de mail, MOETEN vervangen worden voor live): [END DATE] (bijv. "Monday, Dec 1") en [END TIME + TIMEZONE] (bijv. "11:59 pm ET"). Ook in topbar, hero, deal-blok, onderwerp en preview.
+  OFFER (Floris, 31 okt 2026): Black Friday Sale, "Up to 70% off", voor iedereen, via /collections/black-friday-sale. GEEN extra code in deze flow (extra code alleen in abandonment-mails).
+  Controleer voor livegang dat minstens één product echt 70% onder de eerdere prijs staat (anders klopt "up to 70%" niet) en dat de prijzen op de site al zonder code gelden ("No code needed").
 AANNAMES:
-  1. Aanbod-werkhypothese "Extra 10% off on top of Black Friday prices", HI10 via de knop (niet besloten).
-  2. Na de einddatum gaan de BF-prijzen terug naar normaal. HI10 zelf vervalt niet (PLAYBOOK), daarom zegt de mail alleen dat de BF-prijzen eindigen, niet dat de 10% verdwijnt.
-  3. Echte einddatum is de enige urgentie; geen afteller, geen voorraadclaim.
-  4. Hero: siraat-collection-exclusive-08-vault.
+  1. Na de einddatum gaan de prijzen terug naar normaal (de enige urgentie; geen afteller, geen voorraadclaim).
+  2. Hero: siraat-collection-exclusive-08-vault.
 -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
@@ -39,7 +39,7 @@ AANNAMES:
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Black Friday prices end [END DATE]. Your extra 10% is still applied until then.</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Up to 70% off until [END DATE]. Then prices go back to normal.</div>
 <!-- MARKET-SIGNAL: profile -->
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
@@ -48,13 +48,13 @@ AANNAMES:
 {{BLOCK:bf-topbar text="LAST CALL &middot; ENDS [END DATE]" bg="#FFB800" color="#272727"}}
 {{HEADER}}
 {{BLOCK:bf-hero img="https://cdn.shopify.com/s/files/1/0907/0877/1156/files/siraat-collection-exclusive-08-vault-desktop.jpg?width=1200" alt="A vault of Siraat titanium pans" tag="LAST CALL" line1="Last call." line2="Ends [END DATE]." sub="Then prices go back to normal."}}
-{{BLOCK:bf-cta label="Shop before it ends" url="https://siraatskitchen.com/discount/HI10?redirect=/collections/black-friday" pad="26px 40px 36px 40px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#BDB8AE;padding-top:14px;'>Extra 10% already applied. 30-day returns. 75-year warranty.</div>"}}
+{{BLOCK:bf-cta label="Shop before it ends" url="https://siraatskitchen.com/collections/black-friday-sale" pad="26px 40px 36px 40px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#BDB8AE;padding-top:14px;'>No code needed. 30-day returns. 75-year warranty.</div>"}}
 <tr><td class="pad lead" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:34px 40px 14px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#272727;font-weight:800;">Benjamin here, one last time this sale.</td></tr>
 <tr><td class="pad lead" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:0 40px 14px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#272727;">Black Friday prices end on <span style="background:#FFE38A;padding:0 3px;">[END DATE]</span> at <span style="background:#FFE38A;padding:0 3px;">[END TIME + TIMEZONE]</span>. After that, prices go back to normal.</td></tr>
-<tr><td class="pad lead" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:0 40px 14px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#272727;">If you've been deciding between a pan and a set, this is the last day to do it at this price. Your extra 10% is still in the button.</td></tr>
+<tr><td class="pad lead" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:0 40px 14px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#272727;">If you've been deciding between a pan and a set, this is the last day to do it at this price.</td></tr>
 <tr><td class="pad lead" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:0 40px 4px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#272727;">Two promises, either way. Change your mind? Send it back unused within 30 days. Something wrong with it? It's covered for 75 years.</td></tr>
-{{BLOCK:bf-deal pad="22px 40px 6px 40px" eyebrow="UNTIL [END DATE]" headline="Extra 10% off" detail="On top of Black Friday prices. Already applied with the button."}}
-{{BLOCK:bf-cta label="Shop before it ends" url="https://siraatskitchen.com/discount/HI10?redirect=/collections/black-friday" bg="#F8F7F2" pad="20px 40px 20px 40px"}}
+{{BLOCK:bf-deal pad="22px 40px 6px 40px" eyebrow="UNTIL [END DATE]" headline="Up to 70% off" detail="Black Friday Sale, for everyone. No code needed."}}
+{{BLOCK:bf-cta label="Shop before it ends" url="https://siraatskitchen.com/collections/black-friday-sale" bg="#F8F7F2" pad="20px 40px 20px 40px"}}
 <tr><td class="pad" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:6px 40px 34px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;color:#272727;"><b style="font-weight:800;">Benjamin</b><br><span style="font-size:13px;color:#5E5A54;">Founder, Siraat</span></td></tr>
 
 {{FOOTER}}

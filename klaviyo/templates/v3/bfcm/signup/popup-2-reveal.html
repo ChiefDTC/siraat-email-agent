@@ -1,0 +1,61 @@
+<!--
+BF SIGNUP POP-UP · SCHERM 2 (reveal na aanmelding, kraskaart-stijl). Mockup, 375 px mobiel, schermvullende overlay. Niet live.
+COPY (Floris, 31 okt 2026): "Unlocked: Black Friday prices, up to 70% off" / knop "SHOP THE SALE" naar https://siraatskitchen.com/collections/black-friday-sale / "Same Black Friday prices for everyone."
+GEEN code, nooit "you won": iedereen krijgt hetzelfde. De kraslaag is alleen vorm (de mockup toont hem half weggekrast).
+AANNAMES:
+  1. Kraseffect in de echte pop-up: Alia "scratch"-element of een eenvoudige animatie; uitkomst is voor iedereen gelijk.
+  2. Tekst aangepast naar "Same Black Friday prices for everyone." (er is geen aparte ledenprijs). Popup 1 zonder "shop it first" (sale is al live).
+  3. Regel "We also sent it to your inbox" klopt alleen als W1 binnen 1 minuut verstuurd wordt (FLOW.md).
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=375, initial-scale=1">
+<title>BF pop-up 2 · reveal</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800;900&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:375px;height:812px;background:#0E0E0E;font-family:Inter,Arial,Helvetica,sans-serif;color:#FFFFFF;overflow:hidden}
+  .overlay{position:absolute;inset:0;background:#0E0E0E url('https://cdn.shopify.com/s/files/1/0907/0877/1156/files/siraat-collection-exclusive-08-vault-desktop.jpg?width=1600') 70% 0/auto 400px no-repeat}
+  .overlay:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,14,14,.35) 0%,rgba(14,14,14,.6) 30%,rgba(14,14,14,.95) 46%,#0E0E0E 55%)}
+  .wrap{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;padding:22px 24px 28px}
+  .top{display:flex;justify-content:space-between;align-items:center}
+  .logo{width:132px;height:auto;display:block}
+  .x{width:36px;height:36px;border-radius:18px;background:rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;font-size:20px;line-height:1}
+  .spacer{flex:1}
+  .hint{font-size:11px;font-weight:800;letter-spacing:2px;color:#BDB8AE;text-align:center;margin-bottom:12px}
+  .card{position:relative;background:#FFB800;color:#272727;border:2px dashed #272727;outline:6px solid #FFB800;border-radius:4px;padding:36px 20px 44px;text-align:center;overflow:hidden}
+  .eyebrow{font-size:12px;font-weight:800;letter-spacing:2.4px}
+  .big{font-size:38px;line-height:40px;font-weight:900;letter-spacing:-1.2px;margin-top:10px}
+  .small{font-size:16px;line-height:22px;margin-top:10px;font-weight:500}
+  .foil{position:absolute;left:0;width:100%;pointer-events:none}.foil-top{top:0;height:22px}.foil-bot{bottom:0;height:26px}
+  h2{font-size:15px;line-height:22px;font-weight:500;color:#E6E3DC;text-align:center;margin:22px 8px 0}
+  a.btn{display:block;margin-top:20px;height:56px;line-height:56px;border-radius:28px;background:#FFB800;color:#272727;font-weight:800;font-size:15px;letter-spacing:1.5px;text-align:center;text-decoration:none;text-transform:uppercase}
+  .same{margin-top:14px;text-align:center;font-size:12px;line-height:17px;color:#9A958C}
+</style>
+</head>
+<body>
+<div class="overlay">
+  <div class="wrap">
+    <div class="top">
+      <img class="logo" src="../../../../../brand/logo/lockup/siraat-lockup-white.png" alt="Siraat">
+      <div class="x" aria-label="Close">&times;</div>
+    </div>
+    <div class="spacer"></div>
+    <p class="hint">REVEALED</p>
+    <div class="card">
+      <div class="eyebrow">UNLOCKED</div>
+      <div class="big">Black Friday prices</div>
+      <div class="small">Up to 70% off, ready to shop.</div>
+      <!-- Kraslaag: restjes zilverfolie boven en onder (weggekrast). Alleen vorm. -->
+      <svg class="foil foil-top" viewBox="0 0 320 22" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="sv" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#E9E9E6"/><stop offset=".4" stop-color="#B9B8B3"/><stop offset=".7" stop-color="#DADAD6"/><stop offset="1" stop-color="#9E9D98"/></linearGradient></defs><path d="M0 0 H320 V6 C300 14 285 4 262 10 C240 18 222 6 200 9 C178 12 170 3 150 7 C128 12 120 20 98 12 C80 6 66 16 48 11 C30 6 18 14 0 9 Z" fill="url(#sv)"/></svg>
+      <svg class="foil foil-bot" viewBox="0 0 320 26" preserveAspectRatio="none" aria-hidden="true"><path d="M0 26 H320 V8 C302 2 290 14 270 10 C246 5 236 18 214 15 C196 12 186 4 166 9 C144 15 132 20 110 14 C92 9 80 2 60 8 C40 14 22 4 0 12 Z" fill="url(#sv)"/></svg>
+    </div>
+    <h2>That's it, you're in. Your Black Friday picks are on their way to your inbox.</h2>
+    <a class="btn" href="https://siraatskitchen.com/collections/black-friday-sale">Shop the sale &rarr;</a>
+    <p class="same">Same Black Friday prices for everyone.</p>
+  </div>
+</div>
+</body>
+</html>

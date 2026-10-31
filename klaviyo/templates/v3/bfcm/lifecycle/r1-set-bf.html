@@ -1,0 +1,59 @@
+<!-- BFCM 2026 VARIANT (voorbeeld, niet live, niet in Klaviyo) | BRON: klaviyo/templates/v3/winback/r1-set.html | FLOW: v4 · Winback (UyFc78), stap 1 (dag 45), pad set | BERICHT: R1-SET | BF_SUBJECTS: A: 'Worth locking up. Up to 70% off.' / C+B: 'The shapes a set leaves out, now in the sale' / SPEC: 'One size, a board, the tools. Up to 70% off.' / Q: 'Which pan do you reach for most?' / OFFER: 'The Black Friday Sale is live' | BF_PREVIEW: Worth locking up. The Black Friday Sale is live: up to 70% off. | WIJZIGINGEN: codebalk HI10 vervangen door bf-topbar; hero vervangen door bf-hero "Worth locking up." (Exclusive dark); beide knoppen bf-cta naar de sale (utm_content gelijk); alle /discount/HI10-links omgezet naar gewone links; HI10-zinnen vervangen door de sale; xsell zonder prijzen (prices="none") en zonder HI10-noot; gifts5 zonder urgentieregel (die noemt de fall sale) | AANNAMES: Aanbod (Floris, 31 okt): Black Friday Sale tot 70% korting voor iedereen via /collections/black-friday-sale; geen extra code in deze flow (alleen abandonment krijgt BFCODE); "Up to 70% off", nooit "70% off everything"; geen bedragen of prijzen per product omdat de saleprijzen per product niet in de bron staan | Oorspronkelijke kopcommentaar volgt hieronder. -->
+<!-- V5-STRICT (v5 stap 2, 8 okt 2026): cross-sell via blok xsell (6-delig: Pan Pro 28 cm, utensils, plank; nooit wat de set al bevat; 34-delig: terugvalregel), hero nieuw (echte foto, geen US-only potten meer), gifts5, geen USD buiten de US | SUBJECT_A: The shapes a set leaves out | SUBJECT_B: Which pan do you reach for most? | SUBJECTS (5 types): C+B 'The shapes a set leaves out' / SPEC 'Crepe pan, wok, board and tools for your set' / Q 'Which pan do you reach for most?' / STORY '"He already had the whole set"' / OFFER 'Your set, one step further. HI10 still works.' | PREVIEW: The one size a set leaves out, the board and the tools. | SEND: dag 45 na Placed Order, wacht 45 dagen tot 09:00 lokaal | FILTERS: v4 Winback stap 1, wacht 45 dagen tot 09:00. Verzendfilter: Placed Order zero times since starting this flow; Received Email where Flow = v4 Post-purchase zero times in the last 7 days; idem Flow = v4 VIP. Router: TS Items contains-any KOOK_TITELS + SET_TITELS; JA en (SET_TITELS of value >= 300) = r1-set, anders r1-pan; NEE en HEEFT_KOOKGEREI = r1-pan, NEE en nooit kookgerei = r1-acc. Offer: HI10 (publiek, geen deadline). Prijzen alleen bij verzendland US. Tak: r1-set (SET_TITELS of value >= 300). Rijen verdwijnen als de set dat stuk al bevat. | UTM: utm_campaign=v4-winback, utm_content=<mail>-<blok>; bij /discount/CODE?redirect=<pad> staan de UTM-parameters gecodeerd (%3F, %3D, %26) achter het pad binnen redirect -->
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
+<title>The shapes a set leaves out</title>
+<!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
+  body{margin:0;padding:0;background:#FFFFFF;-webkit-text-size-adjust:100%;}
+  table{border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;}
+  img{border:0;display:block;line-height:100%;outline:none;text-decoration:none;}
+  a{color:#AC3B19;}
+  @media only screen and (max-width:620px){
+    .w{width:100%!important;}
+    .pad{padding-left:22px!important;padding-right:22px!important;}
+    .h2{font-size:30px!important;line-height:34px!important;}
+    .stepimg{width:100%!important;}
+  }
+</style>
+</head>
+<body style="margin:0;padding:0;background:#FFFFFF;">
+<div style="display:none;mso-hide:all;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Worth locking up. The Black Friday Sale is live: up to 70% off.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<!-- MARKET-SIGNAL: order -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
+<tr><td align="center" style="padding:8px 0 32px 0;">
+<table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
+{{BLOCK:bf-topbar text="BLACK FRIDAY SALE IS LIVE"}}
+{{HEADER}}
+
+<!-- BF HERO (Exclusive dark) -->
+{{BLOCK:bf-hero img="https://cdn.shopify.com/s/files/1/0907/0877/1156/files/siraat-collection-exclusive-03-velvet-trunk-desktop.jpg?width=1200" alt="Siraat hammered titanium cookware, dark studio, Black Friday Sale" tag="BLACK FRIDAY" line1="Worth" line2="locking up." sub="Black Friday Sale is live. Up to 70% off."}}
+{{BLOCK:bf-cta label="Shop the sale" url="https://siraatskitchen.com/collections/black-friday-sale?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-winback&utm_content=r1set-cta1" pad="24px 40px 34px 40px" bg="#0E0E0E" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#BDB8B0;padding-top:12px;'>{{FRICTION}}</div>"}}
+<tr><td class="pad" style="padding:24px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">
+  <p style="margin:0 0 14px 0;">Hi {{ first_name|default:'there' }}, six weeks with your set. Which pan do you reach for most?</p><p style="margin:0 0 0px 0;">Set owners tend to come back for the same few things: the one size a set leaves out, the board and the tools. Here they are, matched to the set you have. The Black Friday Sale is live: up to 70% off.</p>
+</td></tr>
+{{BLOCK:xsell prices="none" pre="https://siraatskitchen.com/products/" post="?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-winback&utm_content=r1set-xs" pad="26px 44px 4px 44px" note="Up to 70% off in the Black Friday Sale."}}
+{{BLOCK:gifts5 style="row" line="Every order comes with {{GIFTS:total}}." pad="22px 44px 6px 44px"}}
+{{BLOCK:reviews3 ids="R542,R088,R082"}}
+{{BLOCK:bf-cta label="Shop the sale" url="https://siraatskitchen.com/collections/black-friday-sale?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-winback&utm_content=r1set-cta2" pad="24px 40px 8px 40px" bg="#F8F7F2" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
+<!-- SIGN-OFF -->
+<tr><td class="pad" style="padding:24px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+  A question about your set? Reply to this email and our team will help.<br><br>
+  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span><br><br>
+  <span style="color:#727272;">P.S. Reply with the pan you grab first. It shapes what we make next.</span>
+</td></tr>
+
+{{FOOTER}}
+
+</table>
+</td></tr>
+</table>
+</body>
+</html>

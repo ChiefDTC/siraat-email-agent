@@ -1,0 +1,59 @@
+<!-- BFCM 2026 VARIANT (voorbeeld, niet live, niet in Klaviyo) | BRON: klaviyo/templates/v3/vip/v1-nocode.html | FLOW: v4 · VIP, stap 1 (30 dagen na de 2e order); in BF beide armen (v1 met code en v1-nocode) | BERICHT: V1 (en V1-NOCODE) | BF_SUBJECTS: A: 'You're a VIP. Thank you.' (ongewijzigd) / C+B: 'What VIPs add next, now in the sale' / SPEC: 'Two orders. Up to 70% off.' / Q: 'Which pan do you reach for most?' / OFFER: 'Worth locking up: the Black Friday Sale' | BF_PREVIEW: Two orders makes you a VIP. The Black Friday Sale is live: up to 70% off. | WIJZIGINGEN: Gebouwd op de codeloze versie v1-nocode: geen enkele code in VIP tijdens BF (Floris, 31 okt), dus geen SK_REGULARS15_14D; bf-topbar boven de header; hero vervangen door bf-hero "Worth locking up." (03-velvet-trunk-steel-lids); beide knoppen bf-cta naar de sale; opener noemt de sale; xsell zonder prijzen; gifts5 zonder urgentieregel | AANNAMES: Aanbod (Floris, 31 okt): Black Friday Sale tot 70% korting voor iedereen via /collections/black-friday-sale; geen extra code in deze flow (alleen abandonment krijgt BFCODE); "Up to 70% off", nooit "70% off everything"; geen bedragen of prijzen per product omdat de saleprijzen per product niet in de bron staan; VIP-router moet tijdens BF naar deze codeloze mail sturen [VRAAG FLORIS]; VIP verliest tijdens BF de 15%-code, de sale (tot 70%) vervangt die | Oorspronkelijke kopcommentaar volgt hieronder. -->
+<!-- V5-STRICT (v5 stap 2, 8 okt 2026): alleen nog voor T02-B (geen code); besluit 8 okt: VIP krijgt 15% ook vlak na een ongebruikte code, dus cooldown-profielen horen naar v1 (flowwijziging). "Twice is a habit" weg, cross-sell via xsell, geen care-video | SUBJECT_A: You're a VIP. Thank you. | SUBJECT_B: For our VIPs: a note from Benjamin | SUBJECTS (5 types): C+B 'What VIPs add next' / SPEC 'Two orders. One thank you.' / Q 'Which pan do you reach for most?' / STORY '"We have purchased twice from Siraat"' / OFFER 'You're a VIP. Thank you.' | PREVIEW: Two orders makes you a VIP. A thank you, and 4 gifts with every order. | SEND: stap 1, wacht 30 dagen na de 2e Placed Order, tot 09:00 lokaal | FILTERS: v4 VIP, flowfilters: Placed Order equals 2 over all time, has not been in this flow, can receive email marketing. Verzendfilter: Refunded Order zero since start; Placed Order zero in the last 14 days. Code-router: cooldown (last_flow_code_at in 30 dagen) of later T02-B = deze mail met HI10 (geen unieke code, geen deadline). Update profile property siraat_regular = true. Prijzen alleen bij verzendland US. | UTM: utm_campaign=v4-vip, utm_content=<mail>-<blok>, utm_term=t02-b; bij /discount/CODE?redirect=<pad> staan de UTM-parameters gecodeerd (%3F, %3D, %26) achter het pad binnen redirect -->
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
+<title>You're a VIP. Thank you.</title>
+<!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
+  body{margin:0;padding:0;background:#FFFFFF;-webkit-text-size-adjust:100%;}
+  table{border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;}
+  img{border:0;display:block;line-height:100%;outline:none;text-decoration:none;}
+  a{color:#AC3B19;}
+  @media only screen and (max-width:620px){
+    .w{width:100%!important;}
+    .pad{padding-left:22px!important;padding-right:22px!important;}
+    .h2{font-size:30px!important;line-height:34px!important;}
+    .stepimg{width:100%!important;}
+  }
+</style>
+</head>
+<body style="margin:0;padding:0;background:#FFFFFF;">
+<div style="display:none;mso-hide:all;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Two orders makes you a VIP. The Black Friday Sale is live: up to 70% off.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<!-- MARKET-SIGNAL: order -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
+<tr><td align="center" style="padding:8px 0 32px 0;">
+<table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
+{{BLOCK:bf-topbar text="BLACK FRIDAY SALE IS LIVE"}}
+{{HEADER}}
+
+<!-- BF HERO (Exclusive dark) -->
+{{BLOCK:bf-hero img="https://cdn.shopify.com/s/files/1/0907/0877/1156/files/siraat-collection-exclusive-03-velvet-trunk-steel-lids-desktop.jpg?width=1200" alt="Siraat hammered titanium cookware, dark studio, Black Friday Sale" tag="BLACK FRIDAY" line1="Worth" line2="locking up." sub="Black Friday Sale is live. Up to 70% off."}}
+{{BLOCK:bf-cta label="Shop the sale" url="https://siraatskitchen.com/collections/black-friday-sale?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-vip&utm_content=v1nc-cta1" pad="24px 40px 34px 40px" bg="#0E0E0E" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#BDB8B0;padding-top:12px;'>{{FRICTION}}</div>"}}
+<tr><td class="pad" style="padding:24px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">
+  <p style="margin:0 0 14px 0;">Hi {{ first_name|default:'there' }}, you're a VIP customer now. Out of 100,000+ happy customers, you are one of the people who came back for a second order, and that is not something I take for granted.</p><p style="margin:0 0 0px 0;">So, thank you. Here is what VIPs add next, picked from what is not in your kitchen yet. The Black Friday Sale is live: up to 70% off, and every order comes with 4 gifts.</p>
+</td></tr>
+{{BLOCK:xsell prices="none" pre="https://siraatskitchen.com/products/" post="?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-vip&utm_content=v1nc-xs" pad="26px 44px 4px 44px" eyebrow="FOR YOUR NEXT ORDER" headline="Picked for your kitchen" fall="1" note="Nothing you already own. Every order comes with 4 gifts."}}
+{{BLOCK:gifts5 style="row" line="Your next order comes with {{GIFTS:total}}." pad="22px 44px 6px 44px"}}
+{{BLOCK:reviews3 ids="R011,R082,R064"}}
+{{BLOCK:bf-cta label="Shop the sale" url="https://siraatskitchen.com/collections/black-friday-sale?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-vip&utm_content=v1nc-cta2" pad="24px 40px 8px 40px" bg="#F8F7F2" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
+<!-- SIGN-OFF -->
+<tr><td class="pad" style="padding:24px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+  Already have it all? Reply and we will help you pick the next piece.<br><br>
+  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span><br><br>
+  <span style="color:#727272;">P.S. Which pan do you reach for most? Reply and tell me.</span>
+</td></tr>
+
+{{FOOTER}}
+
+</table>
+</td></tr>
+</table>
+</body>
+</html>

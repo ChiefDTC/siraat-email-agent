@@ -1,4 +1,4 @@
-<!-- BF 2026 VARIANT (voorbeeld, niet live, 31 okt 2026) | BRON: klaviyo/templates/v3/browse-tp/tp-b2-clicked.html | SUBJECT_A: Your own 10%, on top of Black Friday prices | SUBJECT_B: 48 hours: your 10% on the one you went back to | PREVIEW: Already applied with the button. In 48 hours we remove it, then the regular sale price applies. | AANNAMES: Aanbod is werkhypothese (Extra 10% off on top of Black Friday prices, README bfcm); 4 gifts en sale op deze producten aangenomen, bevestigen Floris; codemail: unieke code B2_10_48H blijft (een code per order, T02/CODE-cooldown), geen HI10 | WIJZIGINGEN: zie bfcm/abandon/NOTES.md -->
+<!-- BF 2026 VARIANT (voorbeeld, niet live, 31 okt 2026) | BRON: klaviyo/templates/v3/browse-tp/tp-b2-clicked.html | SUBJECT_A: Your own 10%, on top of Black Friday prices | SUBJECT_B: 48 hours: your 10% on the one you went back to | PREVIEW: Already applied with the button. In 48 hours we remove it, then the regular sale price applies. | AANNAMES: Aanbod Floris 31 okt: Black Friday Sale up to 70% off (collectie black-friday-sale) plus extra 10% met code BFCODE (placeholder, echte code pas bij upload); HI10 eruit; 4 gifts nog geldig aangenomen; vaste prijzen uit de v5-prijslijst weggelaten (kloppen niet met BF-prijzen); codemail: unieke code B2_10_48H (ook 10%, echt 48 uur) blijft in plaats van BFCODE, een code per order; besluit Floris | WIJZIGINGEN: zie bfcm/abandon/NOTES.md -->
 <!-- ORIGINELE BRONKOP (ter referentie): V5-STRICT | CODE · TP-B2-CLICKED Browse Triple Pixel v3 (concept 19 okt 2026, NIET LIVE) | Berichten: TP · CODE · B2-CLICKED · pan (121177250) en · acc (121177252): één template | SEND: 2 days after B1 of B1-ACC, until 09:00, geklikt; code-router: cooldown = no, T02 arm A; daarna profielupdate last_flow_code_at en last_flow_code_pool = B2_10_48H (zoals WdRz5k) | COUPON: B2_10_48H (Shopify unique, 10%, one use per customer, 48 uur, zelfde pool als WdRz5k) | SUBJECT_A: Your own 10% expires in 48 hours (controle, WdRz5k) | SUBJECT_B: Want 10% off the one you went back to? | SUBJECTS (5 types): C+B 'We made you a code. Here is why it ends.' / SPEC '10% off, 48 hours, one use' / Q 'Want 10% off the one you went back to?' / STORY 'December 20, 2024' / OFFER 'Your own 10% expires in 48 hours' | PREVIEW: Already applied with the button. In 48 hours we remove it. | IDEE: eigen code met echte reden en einde, plus in drie regels wie Siraat is (TP-bezoekers kennen ons minder). | FILTERS (flow QNZyEb, ongewijzigd): Trigger Viewed Product - Triple Pixel (V48nhq), geen triggerfilter. Flow: Added to Cart = 0, Checkout Started = 0, Placed Order = 0 since flow start; Received Email uit TZG9Mx, QUBUQV en T4a5Mk = 0 in 7 dagen; Received Email $flow = WdRz5k = 0 in 7 dagen; Viewed Product (XNtYMB) = 0 in de laatste 1 dag; niet in deze flow in 7 dagen. Herinstap 7 dagen | UTM: utm_campaign=v4-browse-tp, utm_content=tpb2k-<blok>, utm_term=t02-a -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
@@ -81,7 +81,7 @@
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
 <!-- BLOCK bf-topbar (BF 2026 brand book): smalle balk bovenaan, ink of yellow. Keys: text, bg (#272727 of #FFB800), color (#FFB800 of #272727). Alleen ware tekst ("SITEWIDE" alleen als het echt sitewide is). -->
-<tr><td align="center" bgcolor="#272727" style="background-color:#272727;padding:11px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:800;color:#FFB800;text-transform:uppercase;">BLACK FRIDAY IS LIVE &middot; MEMBER PRICES</td></tr>
+<tr><td align="center" bgcolor="#272727" style="background-color:#272727;padding:11px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:800;color:#FFB800;text-transform:uppercase;">BLACK FRIDAY SALE IS LIVE</td></tr>
 
 
 <!-- HEADER (vast, uit partials/header.html) -->
@@ -107,7 +107,7 @@
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFB800" style="background:#FFB800;border:2px dashed #272727;">
   <tr><td align="center" style="padding:18px 20px 4px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:800;color:#272727;">BLACK FRIDAY DEAL</td></tr>
   <tr><td align="center" style="padding:4px 20px 0 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:30px;line-height:32px;font-weight:900;letter-spacing:-0.8px;color:#272727;">Extra 10% off</td></tr>
-  <tr><td align="center" style="padding:8px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#272727;">On top of Black Friday prices. Your own code SRT-K7Q2M, applied at checkout with the button, until {% today '%Y-%m-%d' as today %}Monday, November 2.</td></tr>
+  <tr><td align="center" style="padding:8px 20px 18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#272727;">On top of Black Friday prices, up to 70% off. Applied with the button, or use your own code SRT-K7Q2M at checkout, until {% today '%Y-%m-%d' as today %}Monday, November 2.</td></tr>
   </table>
 </td></tr>
 
@@ -224,7 +224,7 @@
   <tr><td align="center" bgcolor="#282828" style="background-color:#282828;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:19px;color:#BDB8B0;text-align:center;">
     Free shipping on all orders &middot; 30-day returns &middot; 75-year warranty<br><br>
     <a href="#" style="color:#111111;">Unsubscribe</a> &nbsp;|&nbsp; <a href="#" style="color:#111111;">Manage preferences</a> &nbsp;|&nbsp; <a href="#" style="color:#111111;">View in browser</a><br>
-    Siraat's Kitchen &middot; [address]<span style="display:none!important;visibility:hidden;mso-hide:all;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;color:#282828;">ref 20261031153243</span>
+    Siraat's Kitchen &middot; [address]<span style="display:none!important;visibility:hidden;mso-hide:all;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;color:#282828;">ref 20261031153740</span>
   </td></tr>
 </table>
 </td></tr>

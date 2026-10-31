@@ -1,0 +1,120 @@
+<!-- BFCM 2026 VARIANT (voorbeeld, niet live, niet in Klaviyo) | BRON: klaviyo/templates/v3/welcome/w0.html | FLOW: v4 · Welcome, stap 2, pad bestaande klant (CS A2: al klant) | BERICHT: W0 | BF_SUBJECTS: A: 'Thank you. Now the first egg.' (ongewijzigd, rustig) / SPEC: '2 to 3 minutes on medium. Then the egg.' / Q: 'Ready for your first egg?' | BF_PREVIEW: Cold metal grabs your food, hot metal lets it go. (ongewijzigd) | WIJZIGINGEN: bf-topbar boven de header; hero vervangen door bf-hero (06-slate-flatlay) met de kookgids als idee; beide knoppen bf-cta (zelfde link naar de kookgids); verder ongewijzigd, geen aanbodblok (klantmail) | AANNAMES: Klantmail zonder aanbod in de bron: alleen de topbalk meldt de sale, geen dealblok | Oorspronkelijke kopcommentaar volgt hieronder. -->
+<!-- V5-STRICT | SUBJECT_A: Thank you. Now the first egg. | SUBJECT_B: 2 to 3 minutes on medium. Then the egg. | PREVIEW: Cold metal grabs your food, hot metal lets it go. | SEND: v4 Welcome step 2: after the 20-minute wait and CS A1 (no order since start), CS A2 = Placed Order at least once over all time (already a customer) -> w0 -> end of flow. Subject A only (v4 3.19). | FILTERS: Flow: list Uw8eZG (Alia Card Game), email does not contain test@, has not been in this flow over all time, re-entry never. No offer, no HI10, no codebar (customer mail). utm_campaign v4-welcome | V5: opener zonder "nothing on it to wear off" (herhaling 8), review via reviews3 (set w0), deksel met {{PRICE:lid}}, gifts5-strook voor de volgende order | MARKT: profiel-helper (person.Country, dan person.country_code) -->
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
+<title>Thank you. Now the first egg.</title>
+<!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
+  body{margin:0;padding:0;background:#FFFFFF;-webkit-text-size-adjust:100%;}
+  table{border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;}
+  img{border:0;display:block;line-height:100%;outline:none;text-decoration:none;}
+  a{color:#AC3B19;}
+  @media only screen and (max-width:620px){
+    .w{width:100%!important;}
+    .pad{padding-left:22px!important;padding-right:22px!important;}
+    .stack{display:block!important;width:100%!important;}
+    .stackpad{padding:0 0 14px 0!important;}
+    .h2{font-size:30px!important;line-height:34px!important;}
+    .navhide{display:none!important;}
+    .desk{display:none!important;max-height:0!important;overflow:hidden!important;}
+    .mob{display:block!important;max-height:none!important;overflow:visible!important;}
+    .center{text-align:center!important;}
+    .cs-q{font-size:15px!important;line-height:22px!important;}
+  }
+</style>
+</head>
+<body style="margin:0;padding:0;background:#FFFFFF;">
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Cold metal grabs your food, hot metal lets it go.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<!-- MARKET-SIGNAL: profile -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
+<tr><td align="center" style="padding:8px 0 32px 0;">
+<table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
+
+{{BLOCK:bf-topbar text="BLACK FRIDAY SALE IS LIVE"}}
+
+{{HEADER}}
+
+<!-- BF HERO (Exclusive dark) -->
+{{BLOCK:bf-hero img="https://cdn.shopify.com/s/files/1/0907/0877/1156/files/siraat-collection-exclusive-06-slate-flatlay-desktop.jpg?width=1200" alt="Siraat hammered titanium pans on dark slate" tag="FIRST USE" line1="Thank you." line2="Now the first egg." sub="Heat first, then oil, then the egg. Three steps for your first cook."}}
+
+{{BLOCK:bf-cta label="Watch the cook guide" url="https://siraatskitchen.com/pages/care-use?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-welcome&utm_content=w0-cta1" pad="24px 40px 34px 40px" bg="#0E0E0E" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#BDB8B0;padding-top:12px;'>Two and a half minutes, straight from our chef.</div>"}}
+
+<!-- INTRO -->
+<tr><td class="pad" style="padding:24px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;color:#282828;text-align:left;"><p style="margin:0 0 14px 0;">Hi {{ first_name|default:'there' }}, thank you. You chose a pan with no coating. That means it cooks a little differently from a coated pan.</p><p style="margin:0 0 14px 0;">Three steps, and your first egg slides.</p></td></tr>
+
+<!-- ALIA CARD GAME: deelname in één regel -->
+<tr><td class="pad" align="center" style="padding:0 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;text-align:center;">
+  <img src="{{SHARED}}/icon-gift.png" width="16" height="16" alt="" style="display:inline-block;vertical-align:-3px;width:16px;height:16px;">&nbsp;Your Card Game entry is in, with a chance to get your order refunded.
+</td></tr>
+
+<tr><td class="pad" style="padding:26px 44px 16px 44px;">
+  <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">FIRST USE</div>
+  <div class="h2" style="font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:36px;line-height:40px;color:#282828;text-align:center;padding:6px 0 4px 0;">Three steps, one egg.</div>
+</td></tr>
+
+<tr><td class="pad" style="padding:0 44px 12px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
+    <tr><td width="58" valign="top" style="padding:18px 0 14px 20px;"><img src="{{SHARED}}/icon-induction-ready.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
+      <td valign="top" style="padding:16px 20px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">STEP 1</div><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;padding-top:2px;">Heat first</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">Medium heat for 2 to 3 minutes, before anything goes in. Never on high.</div></td></tr>
+  </table>
+</td></tr>
+
+<tr><td class="pad" style="padding:0 44px 12px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
+    <tr><td width="58" valign="top" style="padding:18px 0 14px 20px;"><img src="{{SHARED}}/icon-water-filter.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
+      <td valign="top" style="padding:16px 20px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">STEP 2</div><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;padding-top:2px;">Do the water test</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">A drop of water should form a ball and glide. Evaporates at once? Too hot. Sits still? Wait.</div></td></tr>
+    <tr><td colspan="2" style="padding:0 18px 18px 18px;"><img src="{{IMG}}/gif-water-test.gif" width="480" alt="A drop of water gliding in a hot Siraat titanium pan" style="width:100%;max-width:480px;height:auto;margin:0 auto;"></td></tr>
+  </table>
+</td></tr>
+
+<tr><td class="pad" style="padding:0 44px 12px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;">
+    <tr><td width="58" valign="top" style="padding:18px 0 14px 20px;"><img src="{{SHARED}}/icon-no-coating.png" width="36" height="36" alt="" style="width:36px;height:36px;"></td>
+      <td valign="top" style="padding:16px 20px 14px 14px;font-family:Inter,Arial,Helvetica,sans-serif;"><div style="font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:#AC3B19;">STEP 3</div><div style="font-size:16px;line-height:22px;font-weight:600;color:#282828;padding-top:2px;">Then oil, then the egg</div><div style="font-size:14px;line-height:21px;color:#727272;padding-top:3px;">A teaspoon of oil, 10 to 15 seconds until it shines, then the egg. Let it release by itself.</div></td></tr>
+    <tr><td colspan="2" style="padding:0 18px 18px 18px;"><img src="{{IMG}}/gif-egg-slide.gif" width="480" alt="An egg sliding freely in a Siraat titanium pan" style="width:100%;max-width:480px;height:auto;margin:0 auto;"></td></tr>
+  </table>
+</td></tr>
+
+<!-- EERLIJKE VERWACHTING -->
+<tr><td class="pad" style="padding:6px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+  The first time, use a thin layer of oil. Sandi did: <i>&ldquo;it definitely needed just a thin covering of oil, and it cleaned up beautifully.&rdquo;</i>
+</td></tr>
+
+<!-- GOED OM TE WETEN -->
+<tr><td class="pad" style="padding:20px 44px 6px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #ECE7DD;"><tr>
+    <td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;"><img src="{{SHARED}}/icon-no-coating.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">NO<br>SEASONING</div></td><td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;border-left:1px solid #ECE7DD;"><img src="{{SHARED}}/icon-metal-utensil-safe.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">METAL<br>UTENSILS OK</div></td><td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;border-left:1px solid #ECE7DD;"><img src="{{SHARED}}/icon-dishwasher-safe.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">DISHWASHER<br>SAFE</div></td><td class="ic" width="25%" align="center" valign="top" style="padding:18px 6px;border-left:1px solid #ECE7DD;"><img src="{{SHARED}}/icon-warranty-75-year.png" width="34" height="34" alt="" style="width:34px;height:34px;margin:0 auto;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;color:#282828;padding-top:9px;">75-YEAR<br>WARRANTY</div></td>
+  </tr></table>
+</td></tr>
+
+<!-- REVIEWS (v5): drie pijlers, set w0 -->
+{{BLOCK:reviews3 set="w0" n="2" pad="22px 44px 6px 44px"}}
+
+{{BLOCK:bf-cta label="Watch the cook guide" url="https://siraatskitchen.com/pages/care-use?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-welcome&utm_content=w0-cta2" pad="24px 40px 8px 40px" bg="#F8F7F2" sub=""}}
+
+<!-- ZACHTE CROSS-SELL: deksel -->
+<tr><td class="pad" align="center" style="padding:16px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#727272;text-align:center;">
+  Simmering or steaming? <a href="https://siraatskitchen.com/products/stainless-steel-lid?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-welcome&utm_content=w0-prod-lid" style="color:#AC3B19;font-weight:600;">The stainless steel lid for your pan{{IF:PRICED}}, {{PRICE:lid}}{{ENDIF}} &rarr;</a>
+</td></tr>
+
+{{BLOCK:gifts5 style="row" pad="22px 44px 0 44px" line="Your next order comes with {{GIFTS:total}} too."}}
+
+<!-- SIGN-OFF -->
+<tr><td class="pad" style="padding:22px 44px 28px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;">
+  Stuck on something, literally or not? Reply and our team will help.<br><br>
+  Benjamin<br><span style="color:#727272;">Founder, Siraat's Kitchen</span>
+</td></tr>
+{{FOOTER}}
+
+</table>
+</td></tr>
+</table>
+</body>
+</html>

@@ -1,4 +1,4 @@
-<!-- BF 2026 VARIANT (voorbeeld, niet live, 31 okt 2026) | BRON: klaviyo/templates/v3/browse-tp/tp-b2-clicked.html | SUBJECT_A: Your own 10%, on top of Black Friday prices | SUBJECT_B: 48 hours: your 10% on the one you went back to | PREVIEW: Already applied with the button. In 48 hours we remove it, then the regular sale price applies. | AANNAMES: Aanbod is werkhypothese (Extra 10% off on top of Black Friday prices, README bfcm); 4 gifts en sale op deze producten aangenomen, bevestigen Floris; codemail: unieke code B2_10_48H blijft (een code per order, T02/CODE-cooldown), geen HI10 | WIJZIGINGEN: zie bfcm/abandon/NOTES.md -->
+<!-- BF 2026 VARIANT (voorbeeld, niet live, 31 okt 2026) | BRON: klaviyo/templates/v3/browse-tp/tp-b2-clicked.html | SUBJECT_A: Your own 10%, on top of Black Friday prices | SUBJECT_B: 48 hours: your 10% on the one you went back to | PREVIEW: Already applied with the button. In 48 hours we remove it, then the regular sale price applies. | AANNAMES: Aanbod Floris 31 okt: Black Friday Sale up to 70% off (collectie black-friday-sale) plus extra 10% met code BFCODE (placeholder, echte code pas bij upload); HI10 eruit; 4 gifts nog geldig aangenomen; vaste prijzen uit de v5-prijslijst weggelaten (kloppen niet met BF-prijzen); codemail: unieke code B2_10_48H (ook 10%, echt 48 uur) blijft in plaats van BFCODE, een code per order; besluit Floris | WIJZIGINGEN: zie bfcm/abandon/NOTES.md -->
 <!-- ORIGINELE BRONKOP (ter referentie): V5-STRICT | CODE · TP-B2-CLICKED Browse Triple Pixel v3 (concept 19 okt 2026, NIET LIVE) | Berichten: TP · CODE · B2-CLICKED · pan (121177250) en · acc (121177252): één template | SEND: 2 days after B1 of B1-ACC, until 09:00, geklikt; code-router: cooldown = no, T02 arm A; daarna profielupdate last_flow_code_at en last_flow_code_pool = B2_10_48H (zoals WdRz5k) | COUPON: B2_10_48H (Shopify unique, 10%, one use per customer, 48 uur, zelfde pool als WdRz5k) | SUBJECT_A: Your own 10% expires in 48 hours (controle, WdRz5k) | SUBJECT_B: Want 10% off the one you went back to? | SUBJECTS (5 types): C+B 'We made you a code. Here is why it ends.' / SPEC '10% off, 48 hours, one use' / Q 'Want 10% off the one you went back to?' / STORY 'December 20, 2024' / OFFER 'Your own 10% expires in 48 hours' | PREVIEW: Already applied with the button. In 48 hours we remove it. | IDEE: eigen code met echte reden en einde, plus in drie regels wie Siraat is (TP-bezoekers kennen ons minder). | FILTERS (flow QNZyEb, ongewijzigd): Trigger Viewed Product - Triple Pixel (V48nhq), geen triggerfilter. Flow: Added to Cart = 0, Checkout Started = 0, Placed Order = 0 since flow start; Received Email uit TZG9Mx, QUBUQV en T4a5Mk = 0 in 7 dagen; Received Email $flow = WdRz5k = 0 in 7 dagen; Viewed Product (XNtYMB) = 0 in de laatste 1 dag; niet in deze flow in 7 dagen. Herinstap 7 dagen | UTM: utm_campaign=v4-browse-tp, utm_content=tpb2k-<blok>, utm_term=t02-a -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
@@ -34,7 +34,7 @@
 <tr><td align="center" style="padding:8px 0 32px 0;">
 <table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
 
-{{BLOCK:bf-topbar text="BLACK FRIDAY IS LIVE &middot; MEMBER PRICES"}}
+{{BLOCK:bf-topbar text="BLACK FRIDAY SALE IS LIVE"}}
 
 {{HEADER}}
 
@@ -43,7 +43,7 @@
 <tr><td class="pad h1" align="center" style="padding:10px 44px 0 44px;font-family:'Instrument Serif','Times New Roman',serif;font-style:italic;font-size:44px;line-height:48px;color:#282828;text-align:center;">Your own 10%.</td></tr>
 <tr><td class="pad" align="center" style="padding:10px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;color:#727272;text-align:center;">For the one you went back to.</td></tr>
 
-{{BLOCK:bf-deal pad="22px 44px 0 44px" headline="Extra 10% off" detail="On top of Black Friday prices. Your own code {% coupon_code 'B2_10_48H' %}, applied at checkout with the button, until {{DATE:2:l, F j}}."}}
+{{BLOCK:bf-deal pad="22px 44px 0 44px" headline="Extra 10% off" detail="On top of Black Friday prices, up to 70% off. Applied with the button, or use your own code {% coupon_code 'B2_10_48H' %} at checkout, until {{DATE:2:l, F j}}."}}
 <!-- PRODUCT (groot): het bekeken product is het beeld van deze mail. Prijs alleen waar de notatie eenduidig is (browse-helper); geen doorgestreepte prijs. -->
 <tr><td class="pad" style="padding:24px 44px 0 44px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border:1px solid #ECE7DD;">
