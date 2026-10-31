@@ -8,7 +8,7 @@ Gemaakt 31 okt 2026. Niets in Klaviyo, Shopify of Figma aangepast; bronmails in 
 - Topbalk overal: bf-topbar "BLACK FRIDAY SALE IS LIVE" (ink #272727, geel), boven de vaste {{HEADER}} (lockup-logo) en {{FOOTER}} blijven.
 - Welcome: hero vervangen door bf-hero (Exclusive dark) + bf-topbar; codebalk HI10 weg; HI10-aanbodkaart wordt bf-deal "Up to 70% off"; hoofd- en slotknop bf-cta "Shop the sale" naar de BF-collectie (UTM-waarden gelijk aan de bron).
 - Post-purchase: alleen de topbalk, rustig, geen dealblok. Wel weggehaald wat tijdens de sale niet klopt: vaste prijzen (xsell prices="none", prijszinnen) en de gifts5-regel "Your 4 gifts end when the fall sale ends."
-- Winback en VIP: bf-hero "Worth / locking up." met sub "Black Friday Sale is live. Up to 70% off." (geen early access, de sale is al live); knoppen bf-cta naar de sale.
+- Winback en VIP: bf-hero met een korte directe kop per mail (Floris, 31 okt: niet overal "Worth locking up."): R1-PAN, R1-SET, R1-ACC "Your prices: / up to 70% off.", R2 "A second pan, / up to 70% off.", R2-VIP "Your next piece, / up to 70% off.", V1 "The pieces you don't have yet, / up to 70% off.", met sub "The Black Friday Sale is live, for everyone." (geen early access, de sale is al live); knoppen bf-cta naar de sale.
 - Brieven zonder hero (W2, V2) blijven brieven: alleen topbalk, P.S. over de sale, knop bf-cta.
 - Geen bedragen die niet exact met Shopify kloppen: {{PRICE}}/{{WAS}} en xsell-prijzen weg; giftwaarden ($70 in gifts) en de orderregel in P1 (echte orderdata) blijven.
 - "Non-toxic" mag (Floris), tekst van Benjamin en reviews ongewijzigd. Geen gedachtestreepje (gecontroleerd op bron, build en preview).
@@ -64,8 +64,8 @@ Gemaakt 31 okt 2026. Niets in Klaviyo, Shopify of Figma aangepast; bronmails in 
 - Flow/bericht: v4 · Welcome, stap 6 (dag 6), prospectpad, splitsing op land (US)
 - Onderwerpen (BF): A: 'Who are you cooking for?' (ongewijzigd) / OFFER: 'Your size, up to 70% off' / SPEC: 'Four sizes, one surface' / Q: 'Which size is yours this Black Friday?' / C+B: 'The size most people get right the first time'
 - Preview: One, two, or a family? Pick your pan by that. Up to 70% off in the Black Friday Sale.
-- Wijzigingen: codebalk HI10 vervangen door bf-topbar; hero vervangen door bf-hero (04-pan-tower, alle maten); beide knoppen bf-cta naar de sale; prijsregels met HI10 in de maatkiezer vervangen door "In the Black Friday Sale"; regel "Your 10% comes off at checkout" vervangen door "Up to 70% off in the Black Friday Sale"; productkaart 6-delig zonder pil FALL SALE, zonder "Buy 2, get 4 free" en zonder prijs; 12-delig: beeld card-set12-save587 (bedrag in het beeld) vervangen door de Shopify-productfoto 12pcsset.webp, prijs weg; /discount/HI10-links omgezet naar gewone productlinks
-- Aannames: Aanbod (Floris, 31 okt): Black Friday Sale tot 70% korting voor iedereen via /collections/black-friday-sale; geen extra code in deze flow (alleen abandonment krijgt BFCODE); "Up to 70% off", nooit "70% off everything"; geen bedragen of prijzen per product omdat de saleprijzen per product niet in de bron staan; aanname: alle vier de maten en de sets zitten in de BF-collectie [VRAAG FLORIS]; fall-setaanbod (Buy 2, get 4 free) niet meegenomen
+- Wijzigingen: codebalk HI10 vervangen door bf-topbar; hero vervangen door bf-hero (04-pan-tower, alle maten); beide knoppen bf-cta naar de sale; prijsregels met HI10 in de maatkiezer vervangen door "In the Black Friday Sale"; regel "Your 10% comes off at checkout" vervangen door "Up to 70% off in the Black Friday Sale"; productkaart 6-delig zonder pil FALL SALE, met "Buy 2, get 4 free" (Floris, 31 okt: aanbod bestaat nog) en zonder prijs; 12-delig: beeld card-set12-save587 (bedrag in het beeld) vervangen door de Shopify-productfoto 12pcsset.webp, prijs weg; /discount/HI10-links omgezet naar gewone productlinks
+- Aannames: Aanbod (Floris, 31 okt): Black Friday Sale tot 70% korting voor iedereen via /collections/black-friday-sale; geen extra code in deze flow (alleen abandonment krijgt BFCODE); "Up to 70% off", nooit "70% off everything"; geen bedragen of prijzen per product omdat de saleprijzen per product niet in de bron staan; aanname: alle vier de maten en de sets zitten in de BF-collectie [VRAAG FLORIS]; Buy 2, get 4 free blijft (Floris, 31 okt)
 - Shot: `previews/w4-us-bf-375.png`
 
 ### W4-INT (`w4-int-bf.html`)
@@ -73,8 +73,8 @@ Gemaakt 31 okt 2026. Niets in Klaviyo, Shopify of Figma aangepast; bronmails in 
 - Flow/bericht: v4 · Welcome, stap 6 (dag 6), prospectpad, splitsing op land (internationaal)
 - Onderwerpen (BF): A: 'Who are you cooking for?' (ongewijzigd) / OFFER: 'Your size, up to 70% off' / SPEC: 'Four sizes, one surface' / Q: 'Which size is yours this Black Friday?' / C+B: 'The size most people get right the first time'
 - Preview: One, two, or a family? Pick your pan by that. Free shipping, duties paid.
-- Wijzigingen: codebalk HI10 vervangen door bf-topbar; hero vervangen door bf-hero (04-pan-tower, alle maten); beide knoppen bf-cta naar de sale; prijsregels met HI10 in de maatkiezer vervangen door "In the Black Friday Sale"; regel "Your 10% comes off at checkout" vervangen door "Up to 70% off in the Black Friday Sale"; productkaart 6-delig zonder pil FALL SALE, zonder "Buy 2, get 4 free" en zonder prijs; /discount/HI10-links omgezet naar gewone productlinks
-- Aannames: Aanbod (Floris, 31 okt): Black Friday Sale tot 70% korting voor iedereen via /collections/black-friday-sale; geen extra code in deze flow (alleen abandonment krijgt BFCODE); "Up to 70% off", nooit "70% off everything"; geen bedragen of prijzen per product omdat de saleprijzen per product niet in de bron staan; aanname: alle vier de maten en de sets zitten in de BF-collectie [VRAAG FLORIS]; fall-setaanbod (Buy 2, get 4 free) niet meegenomen
+- Wijzigingen: codebalk HI10 vervangen door bf-topbar; hero vervangen door bf-hero (04-pan-tower, alle maten); beide knoppen bf-cta naar de sale; prijsregels met HI10 in de maatkiezer vervangen door "In the Black Friday Sale"; regel "Your 10% comes off at checkout" vervangen door "Up to 70% off in the Black Friday Sale"; productkaart 6-delig zonder pil FALL SALE, met "Buy 2, get 4 free" (Floris, 31 okt: aanbod bestaat nog) en zonder prijs; /discount/HI10-links omgezet naar gewone productlinks
+- Aannames: Aanbod (Floris, 31 okt): Black Friday Sale tot 70% korting voor iedereen via /collections/black-friday-sale; geen extra code in deze flow (alleen abandonment krijgt BFCODE); "Up to 70% off", nooit "70% off everything"; geen bedragen of prijzen per product omdat de saleprijzen per product niet in de bron staan; aanname: alle vier de maten en de sets zitten in de BF-collectie [VRAAG FLORIS]; Buy 2, get 4 free blijft (Floris, 31 okt)
 - Shot: `previews/w4-int-bf-375.png`
 
 ### W5 (`w5-bf.html`)
@@ -170,18 +170,18 @@ Gemaakt 31 okt 2026. Niets in Klaviyo, Shopify of Figma aangepast; bronmails in 
 ### R1-PAN (`r1-pan-bf.html`)
 - Bron: `klaviyo/templates/v3/winback/r1-pan.html`
 - Flow/bericht: v4 · Winback (UyFc78), stap 1 (dag 45), pad kookgerei
-- Onderwerpen (BF): A: 'Worth locking up. Up to 70% off.' / C+B: 'What pan owners add next, now in the sale' / SPEC: 'A lid, a wok, a crepe pan. Up to 70% off.' / Q: 'How's your pan doing?' (ongewijzigd, rustig) / OFFER: 'The Black Friday Sale is live'
-- Preview: Worth locking up. The Black Friday Sale is live: up to 70% off.
-- Wijzigingen: codebalk HI10 vervangen door bf-topbar; hero vervangen door bf-hero "Worth locking up." (Exclusive dark); beide knoppen bf-cta naar de sale (utm_content gelijk); alle /discount/HI10-links omgezet naar gewone links; HI10-zinnen vervangen door de sale; xsell zonder prijzen (prices="none") en zonder HI10-noot; gifts5 zonder urgentieregel (die noemt de fall sale)
+- Onderwerpen (BF): A: 'Your prices: up to 70% off.' / C+B: 'What pan owners add next, now in the sale' / SPEC: 'A lid, a wok, a crepe pan. Up to 70% off.' / Q: 'How's your pan doing?' (ongewijzigd, rustig) / OFFER: 'The Black Friday Sale is live'
+- Preview: Your prices: up to 70% off. The Black Friday Sale is live.
+- Wijzigingen: codebalk HI10 vervangen door bf-topbar; hero vervangen door bf-hero "Your prices: up to 70% off." (Exclusive dark); beide knoppen bf-cta naar de sale (utm_content gelijk); alle /discount/HI10-links omgezet naar gewone links; HI10-zinnen vervangen door de sale; xsell zonder prijzen (prices="none") en zonder HI10-noot; gifts5 zonder urgentieregel (die noemt de fall sale)
 - Aannames: Aanbod (Floris, 31 okt): Black Friday Sale tot 70% korting voor iedereen via /collections/black-friday-sale; geen extra code in deze flow (alleen abandonment krijgt BFCODE); "Up to 70% off", nooit "70% off everything"; geen bedragen of prijzen per product omdat de saleprijzen per product niet in de bron staan
 - Shot: `previews/r1-pan-bf-375.png`
 
 ### R1-SET (`r1-set-bf.html`)
 - Bron: `klaviyo/templates/v3/winback/r1-set.html`
 - Flow/bericht: v4 · Winback (UyFc78), stap 1 (dag 45), pad set
-- Onderwerpen (BF): A: 'Worth locking up. Up to 70% off.' / C+B: 'The shapes a set leaves out, now in the sale' / SPEC: 'One size, a board, the tools. Up to 70% off.' / Q: 'Which pan do you reach for most?' / OFFER: 'The Black Friday Sale is live'
-- Preview: Worth locking up. The Black Friday Sale is live: up to 70% off.
-- Wijzigingen: codebalk HI10 vervangen door bf-topbar; hero vervangen door bf-hero "Worth locking up." (Exclusive dark); beide knoppen bf-cta naar de sale (utm_content gelijk); alle /discount/HI10-links omgezet naar gewone links; HI10-zinnen vervangen door de sale; xsell zonder prijzen (prices="none") en zonder HI10-noot; gifts5 zonder urgentieregel (die noemt de fall sale)
+- Onderwerpen (BF): A: 'Your prices: up to 70% off.' / C+B: 'The shapes a set leaves out, now in the sale' / SPEC: 'One size, a board, the tools. Up to 70% off.' / Q: 'Which pan do you reach for most?' / OFFER: 'The Black Friday Sale is live'
+- Preview: Your prices: up to 70% off. The Black Friday Sale is live.
+- Wijzigingen: codebalk HI10 vervangen door bf-topbar; hero vervangen door bf-hero "Your prices: up to 70% off." (Exclusive dark); beide knoppen bf-cta naar de sale (utm_content gelijk); alle /discount/HI10-links omgezet naar gewone links; HI10-zinnen vervangen door de sale; xsell zonder prijzen (prices="none") en zonder HI10-noot; gifts5 zonder urgentieregel (die noemt de fall sale)
 - Aannames: Aanbod (Floris, 31 okt): Black Friday Sale tot 70% korting voor iedereen via /collections/black-friday-sale; geen extra code in deze flow (alleen abandonment krijgt BFCODE); "Up to 70% off", nooit "70% off everything"; geen bedragen of prijzen per product omdat de saleprijzen per product niet in de bron staan
 - Shot: `previews/r1-set-bf-375.png`
 
@@ -189,35 +189,35 @@ Gemaakt 31 okt 2026. Niets in Klaviyo, Shopify of Figma aangepast; bronmails in 
 - Bron: `klaviyo/templates/v3/winback/r1-acc.html`
 - Flow/bericht: v4 · Winback (UyFc78), stap 1 (dag 45), pad accessoire
 - Onderwerpen (BF): A: 'Ready for the pan? It's in the sale.' / C+B: 'The pan most kitchens start with, up to 70% off' / SPEC: 'Pan Pro, up to 70% off' / Q: 'Ready for the pan?' (ongewijzigd) / OFFER: 'The Black Friday Sale is live'
-- Preview: Worth locking up. The Black Friday Sale is live: up to 70% off.
-- Wijzigingen: codebalk HI10 vervangen door bf-topbar; hero vervangen door bf-hero "Worth locking up." (Exclusive dark); beide knoppen bf-cta naar de sale (utm_content gelijk); alle /discount/HI10-links omgezet naar gewone links; HI10-zinnen vervangen door de sale; xsell zonder prijzen (prices="none") en zonder HI10-noot; gifts5 zonder urgentieregel (die noemt de fall sale); prijsvergelijking met HI10 weg
+- Preview: Your prices: up to 70% off. The Black Friday Sale is live.
+- Wijzigingen: codebalk HI10 vervangen door bf-topbar; hero vervangen door bf-hero "Your prices: up to 70% off." (Exclusive dark); beide knoppen bf-cta naar de sale (utm_content gelijk); alle /discount/HI10-links omgezet naar gewone links; HI10-zinnen vervangen door de sale; xsell zonder prijzen (prices="none") en zonder HI10-noot; gifts5 zonder urgentieregel (die noemt de fall sale); prijsvergelijking met HI10 weg
 - Aannames: Aanbod (Floris, 31 okt): Black Friday Sale tot 70% korting voor iedereen via /collections/black-friday-sale; geen extra code in deze flow (alleen abandonment krijgt BFCODE); "Up to 70% off", nooit "70% off everything"; geen bedragen of prijzen per product omdat de saleprijzen per product niet in de bron staan
 - Shot: `previews/r1-acc-bf-375.png`
 
 ### R2 (en R2-NOCODE) (`r2-bf.html`)
 - Bron: `klaviyo/templates/v3/winback/r2-nocode.html`
 - Flow/bericht: v4 · Winback (UyFc78), stap 2 (dag 75), tak niet-VIP; in BF beide armen (T02-A met code en T02-B zonder)
-- Onderwerpen (BF): A: 'Worth locking up. Up to 70% off.' / C+B: 'Pan number two, in the sale' / SPEC: 'Up to 70% off, 4 gifts' / Q: 'Ready for pan number two?' / OFFER: 'The Black Friday Sale is live'
-- Preview: Worth locking up. The Black Friday Sale is live: up to 70% off.
-- Wijzigingen: Gebouwd op de codeloze versie r2-nocode: geen enkele code in winback tijdens BF (Floris, 31 okt), dus geen R2_10_72H, geen 72-uurstegels; bf-topbar boven de header; hero vervangen door bf-hero "Worth locking up."; beide knoppen bf-cta naar de sale; opener noemt de sale; xsell zonder prijzen; gifts5 zonder urgentieregel
+- Onderwerpen (BF): A: 'A second pan, up to 70% off.' / C+B: 'Pan number two, in the sale' / SPEC: 'Up to 70% off, 4 gifts' / Q: 'Ready for pan number two?' / OFFER: 'The Black Friday Sale is live'
+- Preview: A second pan, up to 70% off. The Black Friday Sale is live.
+- Wijzigingen: Gebouwd op de codeloze versie r2-nocode: geen enkele code in winback tijdens BF (Floris, 31 okt), dus geen R2_10_72H, geen 72-uurstegels; bf-topbar boven de header; hero vervangen door bf-hero "A second pan, up to 70% off."; beide knoppen bf-cta naar de sale; opener noemt de sale; xsell zonder prijzen; gifts5 zonder urgentieregel
 - Aannames: Aanbod (Floris, 31 okt): Black Friday Sale tot 70% korting voor iedereen via /collections/black-friday-sale; geen extra code in deze flow (alleen abandonment krijgt BFCODE); "Up to 70% off", nooit "70% off everything"; geen bedragen of prijzen per product omdat de saleprijzen per product niet in de bron staan; de code-router (T02) moet tijdens BF naar deze codeloze mail sturen [VRAAG FLORIS]
 - Shot: `previews/r2-bf-375.png`
 
 ### R2-VIP (en R2-VIP-NOCODE) (`r2-vip-bf.html`)
 - Bron: `klaviyo/templates/v3/winback/r2-vip-nocode.html`
 - Flow/bericht: v4 · Winback (UyFc78), stap 2 (dag 75), tak VIP; in BF beide armen (T02-A met code en T02-B zonder)
-- Onderwerpen (BF): A: 'Worth locking up. Up to 70% off.' / C+B: 'You came back. Here is the sale.' / SPEC: '4 gifts, free shipping, up to 70% off' / Q: 'What should we make next?' / OFFER: 'For our regulars: the Black Friday Sale'
-- Preview: Worth locking up. The Black Friday Sale is live: up to 70% off.
-- Wijzigingen: Gebouwd op de codeloze versie r2-vip-nocode: geen enkele code in winback tijdens BF (Floris, 31 okt), dus geen R2_VIP_15_72H, geen 72-uurstegels; bf-topbar boven de header; hero vervangen door bf-hero "Worth locking up."; beide knoppen bf-cta naar de sale; opener noemt de sale; xsell zonder prijzen; gifts5 zonder urgentieregel
+- Onderwerpen (BF): A: 'Your next piece, up to 70% off.' / C+B: 'You came back. Here is the sale.' / SPEC: '4 gifts, free shipping, up to 70% off' / Q: 'What should we make next?' / OFFER: 'For our regulars: the Black Friday Sale'
+- Preview: Your next piece, up to 70% off. The Black Friday Sale is live.
+- Wijzigingen: Gebouwd op de codeloze versie r2-vip-nocode: geen enkele code in winback tijdens BF (Floris, 31 okt), dus geen R2_VIP_15_72H, geen 72-uurstegels; bf-topbar boven de header; hero vervangen door bf-hero "Your next piece, up to 70% off."; beide knoppen bf-cta naar de sale; opener noemt de sale; xsell zonder prijzen; gifts5 zonder urgentieregel
 - Aannames: Aanbod (Floris, 31 okt): Black Friday Sale tot 70% korting voor iedereen via /collections/black-friday-sale; geen extra code in deze flow (alleen abandonment krijgt BFCODE); "Up to 70% off", nooit "70% off everything"; geen bedragen of prijzen per product omdat de saleprijzen per product niet in de bron staan; de code-router (T02) moet tijdens BF naar deze codeloze mail sturen [VRAAG FLORIS]; VIP verliest tijdens BF de 15%-code, de sale (tot 70%) vervangt die
 - Shot: `previews/r2-vip-bf-375.png`
 
 ### V1 (en V1-NOCODE) (`v1-bf.html`)
 - Bron: `klaviyo/templates/v3/vip/v1-nocode.html`
 - Flow/bericht: v4 · VIP, stap 1 (30 dagen na de 2e order); in BF beide armen (v1 met code en v1-nocode)
-- Onderwerpen (BF): A: 'You're a VIP. Thank you.' (ongewijzigd) / C+B: 'What VIPs add next, now in the sale' / SPEC: 'Two orders. Up to 70% off.' / Q: 'Which pan do you reach for most?' / OFFER: 'Worth locking up: the Black Friday Sale'
+- Onderwerpen (BF): A: 'You're a VIP. Thank you.' (ongewijzigd) / C+B: 'What VIPs add next, now in the sale' / SPEC: 'Two orders. Up to 70% off.' / Q: 'Which pan do you reach for most?' / OFFER: 'The pieces you don't have yet, up to 70% off'
 - Preview: Two orders makes you a VIP. The Black Friday Sale is live: up to 70% off.
-- Wijzigingen: Gebouwd op de codeloze versie v1-nocode: geen enkele code in VIP tijdens BF (Floris, 31 okt), dus geen SK_REGULARS15_14D; bf-topbar boven de header; hero vervangen door bf-hero "Worth locking up." (03-velvet-trunk-steel-lids); beide knoppen bf-cta naar de sale; opener noemt de sale; xsell zonder prijzen; gifts5 zonder urgentieregel
+- Wijzigingen: Gebouwd op de codeloze versie v1-nocode: geen enkele code in VIP tijdens BF (Floris, 31 okt), dus geen SK_REGULARS15_14D; bf-topbar boven de header; hero vervangen door bf-hero "The pieces you don't have yet, up to 70% off." (03-velvet-trunk-steel-lids); beide knoppen bf-cta naar de sale; opener noemt de sale; xsell zonder prijzen; gifts5 zonder urgentieregel
 - Aannames: Aanbod (Floris, 31 okt): Black Friday Sale tot 70% korting voor iedereen via /collections/black-friday-sale; geen extra code in deze flow (alleen abandonment krijgt BFCODE); "Up to 70% off", nooit "70% off everything"; geen bedragen of prijzen per product omdat de saleprijzen per product niet in de bron staan; VIP-router moet tijdens BF naar deze codeloze mail sturen [VRAAG FLORIS]; VIP verliest tijdens BF de 15%-code, de sale (tot 70%) vervangt die
 - Shot: `previews/v1-bf-375.png`
 

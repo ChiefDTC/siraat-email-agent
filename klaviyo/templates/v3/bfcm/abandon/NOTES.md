@@ -73,6 +73,12 @@ Onderwerp en preview per mail staan in de kopcommentaar van elk bestand.
 7. Knoplabels als "Get 10% off this pan" en hero's met "10% off" blijven; in BF-context betekent dat de extra 10%.
 8. UTM's ongewijzigd (utm_campaign v4-checkout enz.). Voorstel: `utm_term=bf26` om BF-verkeer apart te zien.
 
+## Besluiten Floris (31 okt, avond) en QA-ronde
+
+- Punt 2: de 4 gifts en "Buy 2, get 4 free" bestaan nog; blijven staan.
+- Punt 5: codemails (c4, k3, b2-clicked, tp-b2-clicked) houden de persoonlijke 48-uurscode, geen BFCODE.
+- Punt 3: prijzen in `content/catalog/products.json` ververst uit de storefront (31 okt, BF-prijzen; zie `prices_refreshed`). 12-delige set nu $649 met doorgestreept $1,997 (Floris; de US-storefront toont $2,047), 6-delige set $299 / $997, Pan Pro Standard $144 / $480. c3-p, c3-s en k2-new opnieuw gebouwd. Na de sale de catalogus opnieuw verversen.
+
 ## Bouwen en previews
 
 - Bouwen per mail (vanuit de scratchpad, met -I): `python3 -I scripts/build_template.py klaviyo/templates/v3/bfcm/abandon/<naam>-bf.html klaviyo/templates/v3/bfcm/abandon/assets klaviyo/templates/v3/bfcm/abandon/assets/klaviyo-urls.txt`. `assets/` bevat de assets van checkout, cart, browse, site en browse-tp; `klaviyo-urls.txt` is samengevoegd (eerste URL wint bij dubbele bestandsnamen, zelfde beeld).

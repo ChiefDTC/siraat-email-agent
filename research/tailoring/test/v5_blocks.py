@@ -51,15 +51,15 @@ def span(h, k):
 # verwachte macro-uitkomst per markt (XX = onbekend)
 EXP = {
  'size':  {'US': 'Pan Pro 11″', 'XX': 'Pan Pro 28 cm (11″)', '*': 'Pan Pro 28 cm'},
- 'price': {'US': 'Pan Pro $144', 'UK': 'Pan Pro £124', 'AU': 'Pan Pro A$224', 'CA': 'Pan Pro C$224', 'SG': 'Pan Pro S$204', 'EU': 'Pan Pro €139', 'XX': 'Pan Pro'},
- 'code':  {'US': '$129.60', 'UK': '£111.60', 'AU': 'A$201.60', 'CA': 'C$201.60', 'SG': 'S$183.60', 'EU': '€125.10', 'XX': ''},
+ 'price': {'US': 'Pan Pro $144', 'UK': 'Pan Pro £124', 'AU': 'Pan Pro A$224', 'CA': 'Pan Pro C$224', 'SG': 'Pan Pro S$204', 'EU': 'Pan Pro €149', 'XX': 'Pan Pro'},
+ 'code':  {'US': '$129.60', 'UK': '£111.60', 'AU': 'A$201.60', 'CA': 'C$201.60', 'SG': 'S$183.60', 'EU': '€134.10', 'XX': ''},
  'ship':  {'US': 'Free shipping from the US', '*': 'Free shipping, duties paid'},
  'gifts': {'US': '$70 in gifts', 'UK': '£55 in gifts', 'AU': 'A$100 in gifts', 'CA': 'C$95 in gifts', 'SG': 'S$95 in gifts', 'EU': '€70 in gifts', 'XX': '4 free gifts'},
  'filter': {'US': 'Win a $450 PFAS water filter', 'UK': 'Win a £350 PFAS water filter', 'AU': 'Win a A$660 PFAS water filter', 'CA': 'Win a C$620 PFAS water filter', 'SG': 'Win a S$590 PFAS water filter', 'EU': 'Win a €410 PFAS water filter', 'XX': 'Win a PFAS water filter'},
  'if':    {'US': 'MARKET-US', 'UK': 'MARKET-UK', 'AU': 'MARKET-AUNZ', 'CA': 'MARKET-CA', 'SG': 'MARKET-SG', '*': 'MARKET-OTHER'},
  'int':   {'US': '', 'XX': '', '*': 'KNOWN-INT'},
  'unknown': {'XX': 'MARKET-UNKNOWN', '*': ''},
- 'usonly': {'US': 'The 12-piece set, $599', '*': 'The 6-piece set'},
+ 'usonly': {'US': 'The 12-piece set, $649', '*': 'The 6-piece set'},
 }
 
 def main():
@@ -86,11 +86,11 @@ def main():
             ok(not re.search(r'\{[%{]|\}\}|%\}', C.text(h)), '%s/%s: Django-restant' % (sig, m))
         # bundel per titel (order/checkout: event.Items)
         if sig in ('order', 'checkout'):
-            B = [('Titanium Hammered Pan Set With Lids | 6-Pcs', 'set6', {'US': ['Buy 2, get 4 free.', 'Six pieces for $299', '$598'], 'UK': ['Six pieces for £249'], 'XX': ['Buy 2, get 4 free.']}),
-                 ('Titanium Hammered Cookware Set | 12-Pcs', 'set12', {'US': ['12 pieces for $599', '$1,186']}),
+            B = [('Titanium Hammered Pan Set With Lids | 6-Pcs', 'set6', {'US': ['Buy 2, get 4 free.', 'Six pieces for $299', '$997'], 'UK': ['Six pieces for £309'], 'XX': ['Buy 2, get 4 free.']}),
+                 ('Titanium Hammered Cookware Set | 12-Pcs', 'set12', {'US': ['12 pieces for $649', '$1,997']}),
                  ('Titanium Hammered Complete Edition', 'complete', {'US': ['Four pans for $399']}),
                  ('Titanium Hammered Cookware Set Pro', 'setpro', {}), ('Full Hammered Pro Edition', 'full', {}),
-                 ('2 Pans + 2 Lids', 'duo2', {'US': ['Four pieces for $199', 'Bought one by one: $361.']}), ('Titanium Hammered Pan Pro Duo', 'panproduo', {}),
+                 ('2 Pans + 2 Lids', 'duo2', {'US': ['Four pieces for $249', 'Bought one by one: $361.']}), ('Titanium Hammered Pan Pro Duo', 'panproduo', {}),
                  ('Titanium Hammered Pro Duo', 'produo', {}), ('Titanium Hammered Pan Pro Kit', 'kit', {}), ('Titanium Cook & Prep Bundle', 'cookprep', {}),
                  ('The Just Everything Bundle | 34-Pcs', 'everything', {}), ('Titanium Hammered Pan Pro Standard', 'generic', {})]
             for title, key, must in B:

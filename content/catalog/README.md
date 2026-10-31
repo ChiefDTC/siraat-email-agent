@@ -1,6 +1,6 @@
 # Productcatalogus (content/catalog)
 
-Alle actieve producten van siraatskitchen.com als gestructureerde data, met prijzen en compare-at per land, beschikbaarheid per markt, maten in cm en inch, gewicht, beelden, PDP-teksten en FAQ. Stand: 8 oktober 2026 (fall sale actief). Gemaakt door de markten-agent (fase 1), zie `research/v5/01-markten.md` voor de tailoring per markt.
+Alle actieve producten van siraatskitchen.com als gestructureerde data, met prijzen en compare-at per land, beschikbaarheid per markt, maten in cm en inch, gewicht, beelden, PDP-teksten en FAQ. Stand: 8 oktober 2026 (fall sale actief). Prijzen (alleen `variants[].prices`) ververst op 31 oktober 2026 met `refresh_catalog.py`: Black Friday-prijzen en -compare-at. Uitzondering: 12-Pcs set US compare_at 1997 (Floris), de US-storefront toont 2047. Na de sale opnieuw verversen. Gemaakt door de markten-agent (fase 1), zie `research/v5/01-markten.md` voor de tailoring per markt.
 
 ## Bestanden
 
