@@ -1,0 +1,43 @@
+{
+ "flow": "VLGhbR",
+ "flow_status": "live",
+ "statuses_unchanged": true,
+ "actions": [
+  {
+   "flow": "VLGhbR",
+   "action": "119850748",
+   "kind": "email",
+   "message_name": "A1",
+   "template_id": "QWPjqS",
+   "bf": "abandon/a1-bf",
+   "html_patched": true,
+   "subject_patched": true,
+   "old_subject": "Four eggs or five?",
+   "old_preview": "Four sizes, one titanium surface. Pick yours in 30 seconds.",
+   "new_subject": "Four eggs or five? Black Friday is live.",
+   "new_preview": "Four sizes, one titanium surface. An extra 10% on top of Black Friday prices.",
+   "rest_identical": true,
+   "template_after": "QWPjqS",
+   "html_matches": true,
+   "render": "OK"
+  },
+  {
+   "flow": "VLGhbR",
+   "action": "119850750",
+   "kind": "email",
+   "message_name": "A2",
+   "template_id": "UhMjpE",
+   "bf": "abandon/a2-bf",
+   "html_patched": true,
+   "subject_patched": true,
+   "old_subject": "Where 100,000+ customers started",
+   "old_preview": "The first pan shipped on December 20, 2024. Most people still start there.",
+   "new_subject": "Where 100,000+ customers started, priced for Black Friday",
+   "new_preview": "Most people start with one pan. An extra 10% on top of Black Friday prices.",
+   "rest_identical": true,
+   "template_after": "UhMjpE",
+   "html_matches": true,
+   "render": "OK"
+  }
+ ]
+}

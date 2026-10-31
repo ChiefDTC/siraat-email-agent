@@ -1,0 +1,67 @@
+{
+ "flow": "VTkxFL",
+ "flow_status": "live",
+ "statuses_unchanged": true,
+ "actions": [
+  {
+   "flow": "VTkxFL",
+   "action": "119850713",
+   "kind": "email",
+   "message_name": "V1 nocode \u00b7 cooldown",
+   "template_id": "TXgi26",
+   "bf": "lifecycle/v1-bf",
+   "html_patched": true,
+   "subject_patched": true,
+   "old_subject": "You're a VIP. Thank you.",
+   "old_preview": "Two orders makes you a VIP. A thank you, and 4 gifts with every order.",
+   "new_subject": "You're a VIP. Thank you.",
+   "new_preview": "Two orders makes you a VIP. The Black Friday Sale is live: up to 70% off.",
+   "rest_identical": true,
+   "template_after": "TXgi26",
+   "html_matches": true,
+   "render": "OK"
+  },
+  {
+   "flow": "VTkxFL",
+   "action": "119850714",
+   "kind": "email",
+   "message_name": "CODE \u00b7 V1",
+   "template_id": "Ub94TK",
+   "bf": "lifecycle/v1-bf",
+   "html_patched": true,
+   "subject_patched": true,
+   "old_subject": "You're a VIP. Here's 15% off.",
+   "old_preview": "Two orders makes you a VIP. Your own 15% code, for 14 days.",
+   "new_subject": "You're a VIP. Thank you.",
+   "new_preview": "Two orders makes you a VIP. The Black Friday Sale is live: up to 70% off.",
+   "rest_identical": true,
+   "template_after": "Ub94TK",
+   "html_matches": true,
+   "render": "OK"
+  },
+  {
+   "flow": "VTkxFL",
+   "action": "119850717",
+   "kind": "email",
+   "message_name": "V2",
+   "template_id": "Xw74Sx",
+   "bf": "lifecycle/v2-bf",
+   "html_patched": true,
+   "subject_patched": false,
+   "html_matches": true,
+   "render": "OK"
+  },
+  {
+   "flow": "VTkxFL",
+   "action": "119850718",
+   "kind": "email",
+   "message_name": "V2",
+   "template_id": "Ywfp5B",
+   "bf": "lifecycle/v2-bf",
+   "html_patched": true,
+   "subject_patched": false,
+   "html_matches": true,
+   "render": "OK"
+  }
+ ]
+}
