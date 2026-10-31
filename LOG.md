@@ -299,3 +299,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 31 okt 2026: stijl B (dark) gekozen. Template RGA6tM. Flow WjAc2q (BFCM2026) op B. Nieuwe flow Rn556d 'v4 · BFCM Welcome · direct A/B (hoofdlijst)': trigger Uw8eZG, geen delay, random 50% krijgt BF-W1 B direct. Alles draft. Bij livegang: filter op gewone welcome-W1 zodat JA-groep die niet ook krijgt.
 - 31 okt 2026: testmail BF-W1 B dark (template WKkHBE, VS-context) via Klaviyo template-preview naar lolagroothuis@gmail.com op verzoek Floris.
 - 31 okt 2026: BF-W1 Smooche-kaarten met glaseffect (C vault, D plinths, E strak), ADD TO CART via /cart/add, regel free shipping onder hero weg. Figma rij 190:2.
+- 31 okt 2026: variant D (glass plinths) gekozen. Template Xr8L4u in flows Rn556d (A/B hoofdlijst) en WjAc2q (BFCM2026), beide nog draft. Backups in scratchpad bfw1-*-backup.json.
