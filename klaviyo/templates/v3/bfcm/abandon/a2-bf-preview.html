@@ -1,5 +1,4 @@
-<!-- BF 2026 VARIANT (voorbeeld, niet live, 31 okt 2026) | BRON: klaviyo/templates/v3/site/a2.html | SUBJECT_A: Where 100,000+ customers started, priced for Black Friday | SUBJECT_B: The first pan, priced for Black Friday | PREVIEW: Most people start with one pan. An extra 10% on top of Black Friday prices. | AANNAMES: Aanbod Floris 31 okt: Black Friday Sale up to 70% off (collectie black-friday-sale) plus extra 10% met code BFCODE (placeholder, echte code pas bij upload); HI10 eruit; 4 gifts nog geldig aangenomen; vaste prijzen uit de v5-prijslijst weggelaten (kloppen niet met BF-prijzen) | WIJZIGINGEN: zie bfcm/abandon/NOTES.md -->
-<!-- ORIGINELE BRONKOP (ter referentie): V5-STRICT | SUBJECT_A: Where 100,000+ customers started | SUBJECT_B: December 20, 2024 | SUBJECTS (5 types): C+B 'The pan most of our customers bought first' / SPEC 'December 20, 2024' / Q 'Where would you start?' / STORY '"I purchased the hammered pro pan standard"' / OFFER 'Your 10%, on the pan most people start with' | PREVIEW: The first pan shipped on December 20, 2024. Most people still start there. | VERHAALSTAP: S5 + S7 (sinds 20 december 2024, 100,000+). Geen vergelijkingstabel meer (herhaling 5), geen "One pan, or three?" (herhaling 23), geen Tammy | SEND: v4 · Site abandonment, stap 2: wacht 2 dagen, tot 09:00 lokale tijd. Geen test in de eerste 4 weken: alleen SUBJECT_A | FILTERS: Message: Viewed Product, Added to Cart, Checkout Started en Placed Order zero times since starting this flow. Flowfilters zie a1 | MARKT: profiel-helper (scripts/v5lib.py): person.Country, dan person.country_code; onbekend = geen bedragen, maten in cm met inch | UTM: utm_campaign=v4-site, utm_content=a2-<blok> -->
+<!-- BF 2026 VARIANT (voorbeeld, niet live, 31 okt 2026) | BRON: klaviyo/templates/v3/site/a2.html | SUBJECT_A: Where 100,000+ customers started, priced for Black Friday | SUBJECT_B: The first pan, priced for Black Friday | PREVIEW: Most people start with one pan. An extra 10% on top of Black Friday prices. | AANNAMES: Aanbod Floris 31 okt: Black Friday Sale up to 70% off (collectie black-friday-sale) plus extra 10% met code BFCODE (placeholder, echte code pas bij upload); oude publieke code vervangen door BFCODE; 4 gifts nog geldig aangenomen; vaste prijzen uit de v5-prijslijst weggelaten (kloppen niet met BF-prijzen) | WIJZIGINGEN: zie bfcm/abandon/NOTES.md -->
 <!-- MARKET-SIGNAL: profile -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
@@ -101,7 +100,7 @@
 
 <!-- HERO (v5, scripts/make_hero.py, aanbodbalk zonder valutabedrag: geldt in elke markt) -->
 <tr><td style="padding:0;">
-  <a href="https://siraatskitchen.com/discount/BFCODE?redirect=/collections/pans%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-site%26utm_content%3Da2-hero"><img src="assets/a2-hero-v5.jpg" width="600" alt="Since December 20, 2024: 100,000+ kitchens started here, most of them with one pan. Extra 10% off with code BFCODE, plus 4 free gifts." style="width:100%;max-width:600px;height:auto;"></a>
+  <a href="https://siraatskitchen.com/discount/BFCODE?redirect=/collections/pans%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-site%26utm_content%3Da2-hero"><img src="assets/a2-hero-bf.jpg" width="600" alt="Since December 20, 2024: 100,000+ kitchens started here, most of them with one pan. Extra 10% off with code BFCODE, plus 4 free gifts." style="width:100%;max-width:600px;height:auto;"></a>
 </td></tr>
 
 <!-- BLOCK bf-deal (BF 2026): ticketblok met de deal, geel met ink rand. Keys: pad, eyebrow, headline, detail. Bedragen alleen als ze exact kloppen met Shopify. -->
@@ -281,7 +280,7 @@
   <tr><td align="center" bgcolor="#282828" style="background-color:#282828;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:19px;color:#BDB8B0;text-align:center;">
     Free shipping on all orders &middot; 30-day returns &middot; 75-year warranty<br><br>
     <a href="#" style="color:#111111;">Unsubscribe</a> &nbsp;|&nbsp; <a href="#" style="color:#111111;">Manage preferences</a> &nbsp;|&nbsp; <a href="#" style="color:#111111;">View in browser</a><br>
-    Siraat's Kitchen &middot; [address]<span style="display:none!important;visibility:hidden;mso-hide:all;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;color:#282828;">ref 20261031154037</span>
+    Siraat's Kitchen &middot; [address]<span style="display:none!important;visibility:hidden;mso-hide:all;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;color:#282828;">ref 20261031154615</span>
   </td></tr>
 </table>
 </td></tr>

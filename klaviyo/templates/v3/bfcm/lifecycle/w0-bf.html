@@ -1,4 +1,4 @@
-<!-- BFCM 2026 VARIANT (voorbeeld, niet live, niet in Klaviyo) | BRON: klaviyo/templates/v3/welcome/w0.html | FLOW: v4 · Welcome, stap 2, pad bestaande klant (CS A2: al klant) | BERICHT: W0 | BF_SUBJECTS: A: 'Thank you. Now the first egg.' (ongewijzigd, rustig) / SPEC: '2 to 3 minutes on medium. Then the egg.' / Q: 'Ready for your first egg?' | BF_PREVIEW: Cold metal grabs your food, hot metal lets it go. (ongewijzigd) | WIJZIGINGEN: bf-topbar boven de header; hero vervangen door bf-hero (06-slate-flatlay) met de kookgids als idee; beide knoppen bf-cta (zelfde link naar de kookgids); verder ongewijzigd, geen aanbodblok (klantmail) | AANNAMES: Klantmail zonder aanbod in de bron: alleen de topbalk meldt de sale, geen dealblok | Oorspronkelijke kopcommentaar volgt hieronder. -->
+<!-- BFCM 2026 VARIANT (voorbeeld, niet live, niet in Klaviyo) | BRON: klaviyo/templates/v3/welcome/w0.html | FLOW: v4 · Welcome, stap 2, pad bestaande klant (CS A2: al klant) | BERICHT: W0 | BF_SUBJECTS: A: 'Thank you. Now the first egg.' (ongewijzigd, rustig) / SPEC: '2 to 3 minutes on medium. Then the egg.' / Q: 'Ready for your first egg?' | BF_PREVIEW: Cold metal grabs your food, hot metal lets it go. (ongewijzigd) | WIJZIGINGEN: bf-topbar boven de header; hero vervangen door bf-hero (06-slate-flatlay) met de kookgids als idee; beide knoppen bf-cta (zelfde link naar de kookgids); prijs van het deksel ({{PRICE:lid}}) weg in de cross-sell-regel (saleprijs onbekend); verder ongewijzigd, geen aanbodblok (klantmail) | AANNAMES: Klantmail zonder aanbod in de bron: alleen de topbalk meldt de sale, geen dealblok | Oorspronkelijke kopcommentaar volgt hieronder. -->
 <!-- V5-STRICT | SUBJECT_A: Thank you. Now the first egg. | SUBJECT_B: 2 to 3 minutes on medium. Then the egg. | PREVIEW: Cold metal grabs your food, hot metal lets it go. | SEND: v4 Welcome step 2: after the 20-minute wait and CS A1 (no order since start), CS A2 = Placed Order at least once over all time (already a customer) -> w0 -> end of flow. Subject A only (v4 3.19). | FILTERS: Flow: list Uw8eZG (Alia Card Game), email does not contain test@, has not been in this flow over all time, re-entry never. No offer, no HI10, no codebar (customer mail). utm_campaign v4-welcome | V5: opener zonder "nothing on it to wear off" (herhaling 8), review via reviews3 (set w0), deksel met {{PRICE:lid}}, gifts5-strook voor de volgende order | MARKT: profiel-helper (person.Country, dan person.country_code) -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
@@ -42,7 +42,7 @@
 {{HEADER}}
 
 <!-- BF HERO (Exclusive dark) -->
-{{BLOCK:bf-hero img="https://cdn.shopify.com/s/files/1/0907/0877/1156/files/siraat-collection-exclusive-06-slate-flatlay-desktop.jpg?width=1200" alt="Siraat hammered titanium pans on dark slate" tag="FIRST USE" line1="Thank you." line2="Now the first egg." sub="Heat first, then oil, then the egg. Three steps for your first cook."}}
+{{BLOCK:bf-hero img="https://cdn.shopify.com/s/files/1/0907/0877/1156/files/siraat-collection-exclusive-06-slate-flatlay-desktop.jpg?width=1200" alt="Siraat hammered titanium pans on dark slate" tag="FIRST USE" line1="Thank you." line2="Now, the egg." sub="Heat first, then oil, then the egg. Three steps for your first cook."}}
 
 {{BLOCK:bf-cta label="Watch the cook guide" url="https://siraatskitchen.com/pages/care-use?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-welcome&utm_content=w0-cta1" pad="24px 40px 34px 40px" bg="#0E0E0E" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#BDB8B0;padding-top:12px;'>Two and a half minutes, straight from our chef.</div>"}}
 
@@ -101,7 +101,7 @@
 
 <!-- ZACHTE CROSS-SELL: deksel -->
 <tr><td class="pad" align="center" style="padding:16px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#727272;text-align:center;">
-  Simmering or steaming? <a href="https://siraatskitchen.com/products/stainless-steel-lid?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-welcome&utm_content=w0-prod-lid" style="color:#AC3B19;font-weight:600;">The stainless steel lid for your pan{{IF:PRICED}}, {{PRICE:lid}}{{ENDIF}} &rarr;</a>
+  Simmering or steaming? <a href="https://siraatskitchen.com/products/stainless-steel-lid?utm_source=klaviyo&utm_medium=email&utm_campaign=v4-welcome&utm_content=w0-prod-lid" style="color:#AC3B19;font-weight:600;">The stainless steel lid for your pan &rarr;</a>
 </td></tr>
 
 {{BLOCK:gifts5 style="row" pad="22px 44px 0 44px" line="Your next order comes with {{GIFTS:total}} too."}}
