@@ -1,4 +1,4 @@
-# Concurrenten-inbox: overzicht na dag 18 (stand 30 okt 2026, ca. 09:40 UTC)
+# Concurrenten-inbox: overzicht na dag 19 (stand 31 okt 2026, ca. 09:40 UTC)
 
 Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmail.com, per regel in `tijdlijn.csv`. Acties uit `log-*.csv` (HexClad en Our Place b handmatig door Floris, geen log). Kortingscodes staan nergens uitgeschreven.
 
@@ -6,8 +6,8 @@ Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmai
 
 | Merk | w | b | c | co | Totaal | Status inschrijving |
 |---|---|---|---|---|---|---|
-| HexClad | 9 | 17 | 17 | n.v.t. | 43 | w/b/c handmatig (Floris), co niet gedaan |
-| Our Place | 16 | 22 | 17 | 0 | 55 | alles gelukt; c pas om 11:18 in winkelwagen |
+| HexClad | 9 | 18 | 18 | n.v.t. | 45 | w/b/c handmatig (Floris), co niet gedaan |
+| Our Place | 18 | 23 | 19 | 0 | 60 | alles gelukt; c pas om 11:18 in winkelwagen |
 | Caraway | 5 (op hex-w) | 0 | 0 | 0 | 5 | w/b/c via footer "gelukt", maar geen enkele mail op cw-adressen; beide Caraway-mails kwamen op hex-w binnen |
 | Made In | 1 | 1 | 1 | 0 | 3 | w/b/c footer "Thanks! You've been subscribed", co gestopt (telefoon verplicht); eerste mail pas na 388 uur (campagne, geen welkom) |
 | Okura | 0 | 0 | 0 | 0 | 0 | w/b/c captcha, alleen co (checkout zonder betaling, opt-in aan) |
@@ -20,11 +20,11 @@ Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmai
 |---|---|---|---|
 | hex-w | 0,0 welkom (benadering) | 1,5 browse "Still thinking about it?" | 25,6 browse 2 "The last cookware you'll ever need"; welkomreeks 0, 24, 48, 120, 192,1 ("To know us is to 🫶 us"), 240,1 ("A letter from HexClad's founder 💌") en 288,1 ("Let's keep hanging out, cooks!") |
 | hex-b | 0,0 welkom (benadering) | 1,0 browse "Great choice, chef!" | 25,0 browse 2 "Lasts a Lifetime – Guaranteed!" |
-| hex-c | 0,0 welkom (benadering) | 0,7 cart "Your kitchen needs this!" | 48,0 welkom 3, cart 2 "The last cookware you'll ever need" pas na 168,7 uur (7 dagen), welkom 5 na 192,1, cart 3 "Price holding you back? We got you." (Affirm) na 336,8 uur (weer 7 dagen); laatste campagne 416,4 "Pops of color for your kitchen" (ook hex-b, nu via info@) |
+| hex-c | 0,0 welkom (benadering) | 0,7 cart "Your kitchen needs this!" | 48,0 welkom 3, cart 2 "The last cookware you'll ever need" pas na 168,7 uur (7 dagen), welkom 5 na 192,1, cart 3 "Price holding you back? We got you." (Affirm) na 336,8 uur (weer 7 dagen); campagne 416,4 "Pops of color for your kitchen" (ook hex-b, toen via info@), laatste 441,4 "Eyeing one of our new products?" (dubbele winactie-entries, ook hex-b, weer via hello@) |
 | Caraway (hex-w) | 0,0 welkom "Greetings From Caraway" | 12,0 "Our Top Caraway Picks" | 36,1 "Are You Cooking Clean?" (PFAS-vergelijking), daarna 84,1 welkom 4 (set, $230) en 132,2 welkom 5 "The Problem: Traditional Cookware Is Toxic" |
-| op-b | 0,0 welkom (benadering) | 4,0 browse "You Left Before the Good Part" | 24,0 welkom 2 "Did you hear?", 28,0 browse 2 "We Can't Wait Forever 💔", 42,4 "Party of One" (campagne minis); daarna alleen campagnes, 234,4 "Set Savings", 258,4 "No Set Menu", 269,4 "Our Place x Lovevery ♥️" (als laatste van de drie adressen), 282,4 "One Less Worry", 307,4 "Low Stock: Coveted Colors", 331,4 "Double Major" (Titanium Always Pan Pro), 355,4 "Braised Right" (Titanium Braiser Pro + Wonder Oven Pro, alleen naar b), 379,4 "Not a Trick" (Halloween, mystery reward met code, ook naar c 385,3 en w 387,4), 403,5 "Save With Sets" (tegelijk met w en c), laatste 427,4 "October Picks" (weer 06:15, alleen b) |
-| op-w | 0,07 welkom (4 min na popup) | 24,2 welkom 2 "Did you hear?" | daarna campagnes; 411,4 "A Gift With Purchase" (drempelcadeau $300+, alleen w) |
-| op-c | 0,08 welkom | 24,2 welkom 2 "Did you hear?" | (nog steeds geen cartmail, ook na 150 uur niet; alleen campagnes) |
+| op-b | 0,0 welkom (benadering) | 4,0 browse "You Left Before the Good Part" | 24,0 welkom 2 "Did you hear?", 28,0 browse 2 "We Can't Wait Forever 💔", 42,4 "Party of One" (campagne minis); daarna alleen campagnes, 234,4 "Set Savings", 258,4 "No Set Menu", 269,4 "Our Place x Lovevery ♥️" (als laatste van de drie adressen), 282,4 "One Less Worry", 307,4 "Low Stock: Coveted Colors", 331,4 "Double Major" (Titanium Always Pan Pro), 355,4 "Braised Right" (Titanium Braiser Pro + Wonder Oven Pro, alleen naar b), 379,4 "Not a Trick" (Halloween, mystery reward met code, ook naar c 385,3 en w 387,4), 403,5 "Save With Sets" (tegelijk met w en c), 427,4 "October Picks" (weer 06:15, c 433,3 en w 435,4 volgden), laatste 451,5 "All The Essentials You Need" (bundel, 06:21 tegelijk met c en w) |
+| op-w | 0,07 welkom (4 min na popup) | 24,2 welkom 2 "Did you hear?" | daarna campagnes; 411,4 "A Gift With Purchase" (drempelcadeau $300+, alleen w), 435,4 "October Picks", 451,5 "All The Essentials You Need" |
+| op-c | 0,08 welkom | 24,2 welkom 2 "Did you hear?" | (nog steeds geen cartmail, ook na 450 uur niet; alleen campagnes, laatste 451,4 "All The Essentials You Need") |
 | pf-co | 12,5 abandoned checkout | | |
 | mi-w/b/c | 388,5 campagne "Last Chance to Get First Access" (Kamagata-mes, wachtlijst), alle drie binnen 1,5 minuut; geen welkom, browse of cart | | |
 
@@ -170,6 +170,14 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 - **Geen nieuwe mail van Caraway, Made In, Okura, Plateful of Taima.** Made In bleef na de Kamagata-wachtlijst stil.
 - **4 nieuwe mails** (Our Place 2, HexClad 2). **Na 18 dagen nog steeds geen uitgeschreven procentkorting op eigen pannen bij HexClad, Our Place, Caraway of Made In**; Our Place geeft een cadeau vanaf $300. Een dag voor Halloween geen nieuwe Halloween-mail.
 
+## Dag 19 (31 okt)
+
+- **"October Picks" ging toch naar alle drie.** Na op-b (06:15) volgden op 30 okt op-c om 12:15 UTC (433,3 uur) en op-w om 14:15 UTC (435,4 uur), precies op de oude vaste tijden. Het maandoverzicht is dus een campagne voor de hele lijst, met het bekende gespreide patroon.
+- **Our Place stuurt op Halloween een bundel, geen Halloween-mail.** "All The Essentials You Need" (preview "Save when you bundle") kwam vandaag om 06:21 UTC binnen 20 seconden naar op-c (451,4), op-b (451,5) en op-w (451,5), net als "Save With Sets" op 29 okt. Hoofdboodschap: de Cookware Set (Always Pan en Perfect Pot in twee maten samen), "Unlock every recipe in the book with our bestselling Always Pan and Perfect Pot", met knoppen Why You'll Love Them en Shop the Bundle en daaronder de Cookware + Bakeware Set. Geen bedrag, percentage of code in de tekst. Dit is de derde set-campagne zonder getal (Set Savings 22 okt, Save With Sets 29 okt). De gelijktijdige verzending naar alle segmenten om 06:20 lijkt de nieuwe planning voor aanbod-mails, terwijl redactionele mails (October Picks) nog gespreid gaan.
+- **HexClad zet de winactie op scherp, zonder korting.** "Eyeing one of our new products?" (preview "👀 Now's the time to shop") ging op 30 okt om 20:00 UTC naar hex-c (441,4 uur) en 9 seconden later naar hex-b (441,4 uur), beide nu van hello@. Inhoud: dubbele entries voor Gordon's Golden Ticket to Italy op nieuwe producten, schorten en kleding (HexGear-schort, Everything Everywhere Bag); de winactie eindigt op 2 november (hoofdprijs boven $150,000). Verder de vaste blokken refer a friend $100, Bakeware "Shop New" en "51,000+ Star Reviews". Geen pan, prijs of korting. Weer een nieuw tijdstip (20:00 UTC) en de mail viel in Gmail onder Updates in plaats van Promoties. hex-w kreeg weer niets. Het verborgen generieke beveiligingsblok met invulvelden stond in beide versies; genegeerd.
+- **Geen nieuwe mail van Caraway, Made In, Okura, Plateful of Taima.**
+- **7 nieuwe mails** (Our Place 5, HexClad 2). **Na 19 dagen nog steeds geen uitgeschreven procentkorting op eigen pannen bij HexClad, Our Place, Caraway of Made In.** Op Halloween zelf geen Halloween-mail van wie dan ook, en nog geen Black Friday-signaal in onderwerp of tekst; Our Place bouwt wel op met bundels en een gelijktijdige verzending.
+
 ## Korting: wanneer en hoe hoog
 
 - **Plateful** is het enige merk met een kortingscode: 10% in de abandoned checkout na 12,5 uur, 2 dagen geldig en al verrekend in de checkout-link (kortingscode aanwezig, niet uitgeschreven).
@@ -177,6 +185,8 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 - **Our Place** gaf op dag 11 (252 uur) de eerste uitgeschreven code: OPLOVEVERY10, 10% op select products van de Lovevery-collab, eerst naar c en w; op-b kreeg hem op dag 12 alsnog (269,4 uur), 17 uur na op-c. Nog steeds geen code op eigen pannen.
 - **Our Place** stuurde op dag 16 (379,4 uur, alleen op-b) de Halloween-mail "Not a Trick" met een unieke rewardscode (TrickORTreat2Z8VFK) voor een "mystery reward" in het loyaliteitsprogramma. De waarde staat niet in de mail; die zie je pas na inwisselen op de site. Op dag 17 bleek dat c (385,3 uur) en w (387,4 uur) hem ook kregen, elk met een eigen unieke code.
 - **Our Place** stuurde op dag 18 "A Gift With Purchase" (411,4 uur, alleen op-w): gratis Titanium Perfect Pot Pro vanaf $300, geen code of percentage, net als op dag 4.
+- **Our Place** stuurde op dag 19 "All The Essentials You Need" (451,5 uur, alle drie tegelijk): Cookware Set als bundel met "Save when you bundle", weer zonder bedrag of percentage.
+- **HexClad** stuurde op dag 19 (441,4 uur) dubbele winactie-entries op nieuwe producten, geen korting.
 - **Made In** stuurde in 17 dagen een mail zonder korting of prijs (wachtlijst voor een limited edition mes). Our Place "Save With Sets" (403,4 uur) belooft besparing op sets zonder getal.
 - **Caraway** geeft geen welkomstkorting; in mail 2 belooft het $50 korting op een tweede aankoop van $300+ (code pas na de eerste aankoop).
 
@@ -196,6 +206,8 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 - Our Place: "A Gift With Purchase" met preview "Our way of saying thanks" (cadeau als bedankje gebracht, drempel $300).
 - Our Place: "October Picks" met preview "What to cook with (and eat)" (maandoverzicht met product en recept).
 - HexClad: "Pops of color for your kitchen" met preview "💚💖 We've got them. 💙💜" (kleur en accessoires, geen pan).
+- HexClad: "Eyeing one of our new products?" met preview "👀 Now's the time to shop" (vraag als onderwerp, prikkel is dubbele winkansen tot 2 nov, geen prijs).
+- Our Place: "All The Essentials You Need" met preview "Save when you bundle" (bundel als compleet startpakket, besparing zonder getal).
 - Caraway: "Greetings From Caraway 🍳", "Our Top Caraway Picks" met preview "All ⭐️⭐️⭐️⭐️⭐️ across the board."
 - Plateful: "Lola, about your Titanium Pro Pan™ order": platte tekst, ondertekend door een persoon (Dannah), met factuurnummer en telefoonnummer. Leest als service, niet als marketing.
 
@@ -241,6 +253,8 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 35. **Altijd een welkomstmail, ook bij inschrijven via de footer.** Made In stuurde footer-inschrijvers 16 dagen niets en daarna direct een campagne. Siraat moet controleren dat elke inschrijfbron (popup, footer, checkout-opt-in) de welkomflow triggert, zodat niemand zijn eerste kennismaking met Benjamin mist. [VRAAG FLORIS: zit de footer-inschrijving op de lijst die de welkomflow start?]
 36. **Een maandoverzicht van Benjamin.** Our Place stuurt "October Picks": wat het team nu gebruikt en kookt, met twee producten en een recept, zonder prijs. Siraat kan aan het eind van elke maand een korte mail van Benjamin sturen met wat hij die maand in de titanium pan maakte, een accessoire en een recept, als rustige campagne tussen de aanbiedingen door richting BFCM. Alleen echte producten en goedgekeurde claims.
 37. **Een cadeau vanaf een drempel in plaats van korting.** Our Place geeft voor de tweede keer een gratis titanium pot vanaf $300, zonder code. Als Siraat in november een echt cadeau heeft (accessoire of sheets), kan een drempelactie de orderwaarde verhogen zonder de pan af te prijzen; het cadeau en de drempel moeten dan concreet in onderwerp of preview staan, niet "of our choice". [VRAAG FLORIS: is er een cadeau-item en een drempel die bij de BFCM-setprijs past?]
+38. **Een startpakket als "alles wat je nodig hebt".** Our Place verkoopt de Cookware Set als "All The Essentials You Need" en "every recipe in the book", dus als compleet in plaats van als korting. Siraat kan de Pan Pro Duo of een set in een campagne brengen als de complete basis voor elke dag (aanbraden, bakken, stoven), met per product in een regel waarvoor hij is, en het echte setvoordeel in getal in de preview (zie idee 21).
+39. **Een deadline op winkansen of extra's in plaats van op prijs.** HexClad geeft dubbele winkansen tot 2 november op nieuwe producten en accessoires. Siraat kan richting BFCM een echte deadline gebruiken die geen marge kost, bijvoorbeeld een cadeau-item of sheets bij bestellingen tot een vaste datum, alleen als dat aanbod echt bestaat en eindigt (zie de copyregels). [VRAAG FLORIS: hebben we in november een extraatje met een echte einddatum?]
 
 ## Open punten
 
