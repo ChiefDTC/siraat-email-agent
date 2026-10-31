@@ -73,3 +73,9 @@ a2-hero-bf.jpg https://UPLOAD-BIJ-EXPORT/a2-hero-bf.jpg
 b1-hero-bf.jpg https://UPLOAD-BIJ-EXPORT/b1-hero-bf.jpg
 b1acc-hero-bf.jpg https://UPLOAD-BIJ-EXPORT/b1acc-hero-bf.jpg
 b2-notclicked-hero-bf.jpg https://UPLOAD-BIJ-EXPORT/b2-notclicked-hero-bf.jpg
+a1-hero-bf.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/4c7b583b-7fc8-4e0f-b193-2a143e1e8fba.jpeg
+a2-hero-bf.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/0e30a051-98f5-4a19-ad6f-d09951968f13.jpeg
+b1-hero-bf.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/03e676af-8cb2-43a9-962a-d1df56cfa475.jpeg
+b1acc-hero-bf.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/3f5ac85b-4e75-43d0-82a7-b272e93d2caf.jpeg
+b2-notclicked-hero-bf.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/75034471-cd92-4591-a8af-aae5cbdb370f.jpeg
+c3p-hero-bf.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/e5357617-a310-41cc-b639-9571d0cfa0e2.jpeg
