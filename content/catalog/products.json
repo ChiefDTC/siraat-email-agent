@@ -14071,7 +14071,7 @@
      "prices": {
       "US": {
        "price": 649.0,
-       "compare_at": 1997.0,
+       "compare_at": 2047.0,
        "currency": "USD"
       },
       "CA": {
@@ -16133,5 +16133,5 @@
    "description_html_len": 0
   }
  ],
- "prices_refreshed": "2026-10-31 (storefront per land, BF-prijzen; 12-Pcs US compare_at 1997 volgens Floris, storefront toont 2047)"
+ "prices_refreshed": "2026-10-31 (storefront per land, BF-prijzen; 12-Pcs US compare_at 2047 (Floris bevestigd 31 okt))"
 }
