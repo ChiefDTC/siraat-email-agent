@@ -298,3 +298,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 31 okt 2026: BF-W1 direct in twee minimalistische direct-response-stijlen (A light, B dark), prijzen VS gecontroleerd in Shopify (Pan Pro 144/480, 6 Pcs 299/997, 12 Pcs 599/1997, Wok 119/397). Figma rij 186:2. Flow WjAc2q onderwerp 'You're just in time 🧡' (draft).
 - 31 okt 2026: stijl B (dark) gekozen. Template RGA6tM. Flow WjAc2q (BFCM2026) op B. Nieuwe flow Rn556d 'v4 · BFCM Welcome · direct A/B (hoofdlijst)': trigger Uw8eZG, geen delay, random 50% krijgt BF-W1 B direct. Alles draft. Bij livegang: filter op gewone welcome-W1 zodat JA-groep die niet ook krijgt.
 - 31 okt 2026: testmail BF-W1 B dark (template WKkHBE, VS-context) via Klaviyo template-preview naar lolagroothuis@gmail.com op verzoek Floris.
+- 31 okt 2026: BF-W1 Smooche-kaarten met glaseffect (C vault, D plinths, E strak), ADD TO CART via /cart/add, regel free shipping onder hero weg. Figma rij 190:2.
