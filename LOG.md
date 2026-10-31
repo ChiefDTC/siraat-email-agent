@@ -306,3 +306,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 31 okt 2026: nieuwe testmails W1 D (VS + DE) met copy 'Your prices: 70% off.' naar lolagroothuis@gmail.com.
 - 31 okt 2026: W1 D knoppen 'Shop now' naar productpagina's (geen add to cart meer, Floris). Templates TdfWqT, XkvvH6, Xr8L4u bijgewerkt, testmails VS + DE naar lolagroothuis@gmail.com, Figma bijgewerkt.
 - 31 okt 2026: W1 D: eyebrow 'You're just in time' weg, minder ruimte tussen banner en kop (Floris). Templates bijgewerkt, testmail VS naar lolagroothuis@gmail.com, Figma bijgewerkt.
+- 31 okt 2026: 12-Pcs set prijs $649 (was $1,997) in Shopify gecontroleerd; W1 D aangepast ($649, label 67% off op die kaart), ook varianten a/b/c/e. Templates TdfWqT, XkvvH6, Xr8L4u bijgewerkt, testmail VS, Figma. Kop 'Your prices: 70% off.' klopt niet meer voor de 12-Pcs: vraag aan Floris.
