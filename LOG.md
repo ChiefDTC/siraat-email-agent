@@ -285,3 +285,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 30 okt 2026: onderzoek ordercommunicatie (3 agents, read-only), zie research/ordercommunicatie/01-onderzoek-30okt.md. Plan A t/m E wacht op akkoord.
 - 30 okt 2026: verzendupdates Z1 t/m Z6 (ingepakt, onderweg, vandaag, afhalen, gemist, bezorgd) als HTML-voorbeeld op ParcelWILL-events, in Figma rij 163:2. Niet in Klaviyo.
 - 30 okt 2026: Z1 zonder 'customs' (Floris): 'making its way to your local carrier'. Figma bijgewerkt.
+- 31 okt 2026 08:55 UTC: flowbewaking: splits 100% nieuw, kernflows, Mystery en S1 (WTY94m) live. Flowomzet (orders) 30 okt $4.260, 7 dagen gem. $6.679 per dag. S1 sinds live 31 ontvangen. Alarm: oude winback UEfh4h uitschr. 1,21% (6 op 495), voorstel draft. Welcome spam 0,25% (onder grens). Gepost in #claude-mail.
