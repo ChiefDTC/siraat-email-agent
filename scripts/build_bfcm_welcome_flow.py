@@ -11,7 +11,7 @@ LIST = 'SWsGdg'
 NAME = 'v4 · BFCM Welcome · direct (BFCM2026)'
 TNAME = 'v4 · BFCM · W1 direct (bestsellers)'
 SRC = '/home/user/siraat-email-agent/klaviyo/templates/v3/bfcm/signup/bf-w1.klaviyo.html'
-SUBJECT = 'A Black Friday welcome.'
+SUBJECT = "You're just in time 🧡"
 PREVIEW = "You're in. Up to 70% off, no code needed. Here's where I'd start."
 
 

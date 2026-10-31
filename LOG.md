@@ -295,3 +295,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 31 okt 2026: BFCM-aanmeldflow v2 met productkaarten per markt (bf-product blok; VS: Pan Pro Standard, 12 Pcs, 6 Pcs; buiten VS: Pan Pro Standard, 6 Pcs, Deep/Wok), in Figma rij 174:2.
 - 31 okt 2026: volgorde productkaarten overal Pan Pro Standard, 6 Pcs, 12 Pcs (Floris). Figma 174:2 bijgewerkt.
 - 31 okt 2026: flow WjAc2q 'v4 · BFCM Welcome · direct (BFCM2026)' als DRAFT: trigger lijst BFCM2026 (SWsGdg), BF-W1 direct (geen wachttijd), template TmKtC5, Smart Sending uit. Render gecontroleerd VS/DE/onbekend. Niet live.
+- 31 okt 2026: BF-W1 direct in twee minimalistische direct-response-stijlen (A light, B dark), prijzen VS gecontroleerd in Shopify (Pan Pro 144/480, 6 Pcs 299/997, 12 Pcs 599/1997, Wok 119/397). Figma rij 186:2. Flow WjAc2q onderwerp 'You're just in time 🧡' (draft).
