@@ -32,6 +32,8 @@ DEF={'codebar':{'text':'EXTRA 10% OFF YOUR ORDER &middot; CODE','code':'HI10'},
 DEF['offer'].update({'days':'','amount':'','unit':'HOURS'})
 # Black Friday 2026 brand book blokken (31 okt 2026)
 DEF.update({'bf-topbar':{'bg':'#272727','color':'#FFB800'},'bf-cta':{'pad':'24px 40px 34px 40px','bg':'#0E0E0E','sub':''},'bf-deal':{'pad':'24px 40px 6px 40px','eyebrow':'BLACK FRIDAY DEAL'},'bf-tiles2':{'pad':'20px 24px 6px 24px'},'bf-hero':{'tag':'BLACK FRIDAY','alt':'Siraat hammered titanium cookware'}})
+# bf-product (31 okt 2026): productkaart Smooche-stijl; side=left|right wordt dir=ltr|rtl (beeld blijft op mobiel bovenaan)
+DEF['bf-product']={'side':'left','pill':'UP TO 70% OFF','btn':'SHOP NOW','kicker':'TITANIUM HAMMERED','pad':'0 20px 12px 20px','bg':'#0E0E0E','panel':'#1C1C1C','alt':''}
 # Persoonlijke deadline (urgency-upgrade 7 okt 2026): {{DATE:<dagen>:<Django-datumformaat>[:upper]}} wordt de Klaviyo-tag
 # {% today '%Y-%m-%d' as today %}{{ today|days_later:N|format_date_string|date:'FMT' }} (help.klaviyo.com, date variables reference).
 # Alleen gebruiken bij een unieke code die echt vervalt (C4/K3/B2 48 uur, R2 72 uur, P3 en V1 14 dagen, N2 7 dagen).
@@ -54,6 +56,11 @@ def blk(m):
     elif name in v5lib.BLOCKS:
         try: return v5lib.block(name,kv,FLOW)
         except ValueError as e: sys.exit('blok %s: %s'%(name,e))
+    if name=='bf-product':
+        sd=kv.pop('side','left')
+        if sd not in ('left','right'): sys.exit('blok bf-product: side moet left of right zijn, niet %s'%sd)
+        kv['dir']='rtl' if sd=='right' else 'ltr'
+        if not kv.get('alt'): kv['alt']=kv.get('name','')
     fn='icons.html' if name=='icons-int' else name+'.html'
     t=open(os.path.join(B,fn)).read()
     if name=='compare':

@@ -1,16 +1,19 @@
 <!--
-BF SIGNUP FLOW · W2
+BF SIGNUP FLOW · W2 (sets eerst). Herbouwd 31 okt 2026 met productkaarten.
 SUBJECT: The complete collection.
   Alternatieven: "100,000+ kitchens, no coatings" · "Pans or a set?" · "One pan, or the whole stove?"
-PREVIEW: Every pan and set, up to 70% off for Black Friday.
+PREVIEW: The sets, up to 70% off for Black Friday. One surface, every piece.
 TIMING: dag 1, 09:00 (wacht 1 dag tot 09:00, tijdzone profiel). Smart Sending AAN.
 FILTER: Placed Order = 0 sinds flowstart.
 BEWIJS: alleen algemene, echte feiten (100,000+ customers, 75-year warranty, 30-day returns). Geen reviews, sterren of ratings.
   OFFER (Floris, 31 okt 2026): Black Friday Sale, "Up to 70% off", voor iedereen, via /collections/black-friday-sale. GEEN extra code in deze flow (extra code alleen in abandonment-mails).
   Controleer voor livegang dat minstens één product echt 70% onder de eerdere prijs staat (anders klopt "up to 70%" niet) en dat de prijzen op de site al zonder code gelden ("No code needed").
+PRODUCTKAARTEN (Floris, 31 okt: meer producten, Smooche-stijl): blok bf-product, markt via de USONLY-macro op person.Country (MARKET-SIGNAL profile); onbekend land telt als niet-US.
+  Geen vaste $-prijzen (verschillen per markt), alleen de pil "UP TO 70% OFF". 12-delige set alleen in de US (us_only in de catalogus).
+  Bullets alleen uit claims.csv/facts.csv; "Oven safe" zonder temperatuur (claims.csv: temperatuur nog niet bevestigd voor pannen).
+  Hoek sets: US 12-delige set, 6-delige set, Pan Pro Standard. Niet-US 6-delige set, Pan Pro Standard, Deep Pan Pro. (Bewust sets voor de Pan Pro, op verzoek "w2 sets-first".)
 AANNAMES:
-  1. Setstegels linken naar /collections/bundles (geen productlinks: welke bundels in de sale zitten ligt nog niet vast). Beelden: bundle-pan-pro-duo en bundle-complete-edition.
-  2. Hero: siraat-collection-exclusive-02-gallery-vitrines.
+  1. Hero: siraat-collection-exclusive-02-gallery-vitrines.
 -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
@@ -34,10 +37,13 @@ AANNAMES:
     .h1{font-size:34px!important;line-height:37px!important;}
     .navhide{display:none!important;}
     .lead{font-size:16px!important;line-height:25px!important;}
-    .bfh{font-size:36px!important;line-height:40px!important;}
+    .bfh{font-size:38px!important;line-height:44px!important;padding-left:16px!important;padding-right:16px!important;}
   }
   /* blocks (partials/blocks, ingevoegd door build_template.py) */
   @media only screen and (max-width:620px){
+    .bfp-c{max-width:100%!important;}
+    .bfp-t{height:auto!important;}
+    .bfp-pad{padding-left:12px!important;padding-right:12px!important;}
     .navhide{display:none!important;}
     .btnw{width:100%!important;min-width:0!important;}
     .btnw a{display:block!important;}
@@ -85,11 +91,11 @@ AANNAMES:
 <style>:root{color-scheme:light only;supported-color-schemes:light only;}</style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;color:transparent;">Every pan and set, up to 70% off for Black Friday.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;color:transparent;">The sets, up to 70% off for Black Friday. One surface, every piece.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
 <!-- MARKET-SIGNAL: profile -->
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background-color:#FFFFFF;">
 <tr><td align="center" style="padding:8px 0 32px 0;">
-<table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
+<table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;background:#0E0E0E;" bgcolor="#0E0E0E">
 
 <!-- BLOCK bf-topbar (BF 2026 brand book): smalle balk bovenaan, ink of yellow. Keys: text, bg (#272727 of #FFB800), color (#FFB800 of #272727). Alleen ware tekst ("SITEWIDE" alleen als het echt sitewide is). -->
 <tr><td align="center" bgcolor="#272727" style="background-color:#272727;padding:11px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:800;color:#FFB800;text-transform:uppercase;">BLACK FRIDAY SALE IS LIVE</td></tr>
@@ -106,40 +112,255 @@ AANNAMES:
   </tr></table>
 </td></tr>
 
-<!-- BLOCK bf-hero (BF 2026): donker beeld (Exclusive dark) + zwart tekstblok met tag, kop met gele markering op regel 2, subregel. Keys: img (volle URL), alt, tag, line1, line2, sub. Knop apart met bf-cta (bg #0E0E0E). -->
 <tr><td bgcolor="#0E0E0E" style="background-color:#0E0E0E;padding:0;"><img src="https://cdn.shopify.com/s/files/1/0907/0877/1156/files/siraat-collection-exclusive-02-gallery-vitrines-desktop.jpg?width=1200" width="600" alt="Siraat titanium pans in a dark gallery" style="display:block;width:100%;max-width:600px;height:auto;border:0;"></td></tr>
-<tr><td class="pad" bgcolor="#0E0E0E" style="background-color:#0E0E0E;padding:28px 40px 0 40px;">
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#FFB800" style="background:#FFB800;padding:6px 10px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:12px;letter-spacing:1.8px;font-weight:800;color:#272727;">BLACK FRIDAY DEAL</td></tr></table>
-</td></tr>
-<tr><td class="pad" bgcolor="#0E0E0E" style="background-color:#0E0E0E;padding:20px 40px 0 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:44px;line-height:46px;font-weight:900;letter-spacing:-1.3px;color:#FFFFFF;">The complete<br><span style="background:#FFB800;color:#272727;padding:0 6px;">collection.</span></td></tr>
-<tr><td class="pad" bgcolor="#0E0E0E" style="background-color:#0E0E0E;padding:18px 40px 0 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;color:#E6E3DC;">Every pan and set, up to 70% off.</td></tr>
-
+<tr><td align="center" class="pad" bgcolor="#0E0E0E" style="background-color:#0E0E0E;padding:30px 30px 0 30px;"><table role="presentation" align="center" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;"><tr><td bgcolor="#FFB800" style="background-color:#FFB800;padding:6px 10px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:12px;letter-spacing:1.8px;font-weight:800;color:#272727;">BLACK FRIDAY DEAL</td></tr></table></td></tr>
+<tr><td align="center" class="pad bfh" bgcolor="#0E0E0E" style="background-color:#0E0E0E;padding:18px 24px 0 24px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:46px;line-height:52px;font-weight:900;letter-spacing:-1.4px;color:#FFFFFF;text-align:center;">The complete<br><span style="background-color:#FFB800;color:#272727;padding:0 8px;">collection.</span></td></tr>
+<tr><td class="pad lead" align="center" bgcolor="#0E0E0E" style="background-color:#0E0E0E;padding:18px 36px 0 36px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:17px;line-height:26px;color:#E6E3DC;text-align:center;">Every pan and set, up to 70% off.</td></tr>
 <!-- BLOCK bf-cta (BF 2026): gele knop, ink tekst, pilvorm. Keys: label, url, pad, bg (achtergrond rij, standaard #0E0E0E), sub. -->
-<tr><td align="center" class="pad" bgcolor="#0E0E0E" style="background-color:#0E0E0E;padding:26px 40px 36px 40px;">
+<tr><td align="center" class="pad" bgcolor="#0E0E0E" style="background-color:#0E0E0E;padding:26px 40px 30px 40px;">
   <table role="presentation" class="btnw" width="320" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:320px;"><tr>
     <td align="center" bgcolor="#FFB800" style="background:#FFB800;border-radius:28px;">
-      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/collections/bundles" style="height:54px;v-text-anchor:middle;width:320px;" arcsize="50%" stroke="f" fillcolor="#FFB800"><center style="color:#272727;font-family:Arial,sans-serif;font-size:15px;font-weight:bold;">Shop the sets</center></v:roundrect><![endif]-->
-      <!--[if !mso]><!--><a href="https://siraatskitchen.com/collections/bundles" style="display:block;padding:18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:18px;font-weight:800;letter-spacing:1.5px;color:#272727;text-decoration:none;text-transform:uppercase;">Shop the sets &rarr;</a><!--<![endif]-->
+      <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/collections/black-friday-sale" style="height:54px;v-text-anchor:middle;width:320px;" arcsize="50%" stroke="f" fillcolor="#FFB800"><center style="color:#272727;font-family:Arial,sans-serif;font-size:15px;font-weight:bold;">Shop the sale</center></v:roundrect><![endif]-->
+      <!--[if !mso]><!--><a href="https://siraatskitchen.com/collections/black-friday-sale" style="display:block;padding:18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:18px;font-weight:800;letter-spacing:1.5px;color:#272727;text-decoration:none;text-transform:uppercase;">Shop the sale &rarr;</a><!--<![endif]-->
     </td>
   </tr></table>
   <div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#BDB8AE;padding-top:14px;'>No code needed. 30-day returns. 75-year warranty.</div>
 </td></tr>
 
-<tr><td class="pad" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:30px 24px 8px 24px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td width="33%" align="center" valign="top" style="padding:0 6px;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:22px;line-height:26px;font-weight:900;letter-spacing:-0.5px;color:#272727;">100,000+</div><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1.4px;font-weight:800;color:#272727;padding-top:6px;text-transform:uppercase;">customers</div></td><td width="33%" align="center" valign="top" style="padding:0 6px;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:22px;line-height:26px;font-weight:900;letter-spacing:-0.5px;color:#272727;">75 years</div><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1.4px;font-weight:800;color:#272727;padding-top:6px;text-transform:uppercase;">warranty</div></td><td width="33%" align="center" valign="top" style="padding:0 6px;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:22px;line-height:26px;font-weight:900;letter-spacing:-0.5px;color:#272727;">30 days</div><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1.4px;font-weight:800;color:#272727;padding-top:6px;text-transform:uppercase;">to return</div></td></tr></table></td></tr>
-<tr><td class="pad lead" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:22px 40px 14px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#272727;font-weight:800;">Morning. Benjamin again.</td></tr>
-<tr><td class="pad lead" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:0 40px 14px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#272727;">More than 100,000 people cook on Siraat now. That number still surprises me.</td></tr>
-<tr><td class="pad lead" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:0 40px 14px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#272727;">If you already know you want more than one pan, a set gets you there in one go. The same pure titanium cooking surface, no coatings, and the same 75-year warranty.</td></tr>
-<tr><td class="pad lead" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:0 40px 4px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#272727;">And if it's not right, you have 30 days to send it back unused.</td></tr>
-<!-- BLOCK bf-tiles2 (BF 2026): twee producttegels (yellow studio beelden met tag), naam + pijl eronder. Keys: pad, img1, name1, url1, img2, name2, url2. Stapelt niet; 2 kolommen ook op mobiel. -->
-<tr><td class="pad" style="padding:20px 24px 6px 24px;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-  <td width="50%" valign="top" style="padding-right:8px;"><a href="https://siraatskitchen.com/collections/bundles"><img src="https://cdn.shopify.com/s/files/1/0907/0877/1156/files/siraat-bf-product-bundle-pan-pro-duo-yellow-tag.webp?width=600&format=pjpg" width="252" alt="Two-pan sets" style="display:block;width:100%;height:auto;border:0;border-radius:6px;"></a><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:1.4px;font-weight:800;color:#272727;padding-top:10px;text-transform:uppercase;"><a href="https://siraatskitchen.com/collections/bundles" style="color:#272727;text-decoration:none;">Two-pan sets &rarr;</a></div></td>
-  <td width="50%" valign="top" style="padding-left:8px;"><a href="https://siraatskitchen.com/collections/bundles"><img src="https://cdn.shopify.com/s/files/1/0907/0877/1156/files/siraat-bf-product-bundle-complete-edition-yellow-tag.webp?width=600&format=pjpg" width="252" alt="Full sets" style="display:block;width:100%;height:auto;border:0;border-radius:6px;"></a><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;letter-spacing:1.4px;font-weight:800;color:#272727;padding-top:10px;text-transform:uppercase;"><a href="https://siraatskitchen.com/collections/bundles" style="color:#272727;text-decoration:none;">Full sets &rarr;</a></div></td>
-  </tr></table>
+<tr><td class="pad lead" align="left" bgcolor="#0E0E0E" style="background-color:#0E0E0E;padding:4px 40px 8px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#FFFFFF;text-align:left;font-weight:800;">Morning. Benjamin again.</td></tr>
+<tr><td class="pad lead" align="left" bgcolor="#0E0E0E" style="background-color:#0E0E0E;padding:0 40px 30px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#E6E3DC;text-align:left;">If you already know you want more than one pan, a set gets you there in one go. Every piece has the same pure titanium cooking surface, no coatings, and the same 75-year warranty.</td></tr>
+<!-- BLOCK bf-sectionbar (BF 2026): gele sectiebalk. Keys: text. -->
+<tr><td align="center" bgcolor="#FFB800" style="background-color:#FFB800;padding:12px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:14px;letter-spacing:2px;font-weight:800;color:#272727;">START WITH A SET</td></tr>
+
+<tr><td bgcolor="#0E0E0E" style="background-color:#0E0E0E;height:20px;line-height:20px;font-size:0;">&nbsp;</td></tr>
+{% with mpc=person.Country mpcc=person|lookup:'country_code' meu='AT|BE|BG|HR|CZ|EE|FI|FR|DE|GR|HU|IE|IT|LV|LU|NL|SK|SI|ES|Austria|Belgium|Bulgaria|Croatia|Czechia|Czech Republic|Estonia|Finland|France|Germany|Greece|Hungary|Ireland|Italy|Latvia|Luxembourg|Netherlands|Slovakia|Slovenia|Spain' mme='AE|SA|KW|BH|OM|QA|United Arab Emirates|Saudi Arabia|Kuwait|Bahrain|Oman|Qatar' %}{% if mpc == 'United States' or mpc == 'US' or not mpc and mpcc == 'US' %}
+<!-- BLOCK bf-product (BF 2026, 31 okt): productkaart op Night in de stijl van Smooche "Discover the collection". Beeldtegel aan de ene kant,
+     donker paneel aan de andere kant met gele pil, kleine bovenregel, productnaam (Inter Black, wit), 2 bullets en gele SHOP NOW-knop.
+     Keys: img (volle URL), alt, url, name, kicker (kleine regel boven de naam, bv. TITANIUM HAMMERED), b1, b2, side (left = beeld links,
+     right = beeld rechts op desktop), pill (standaard UP TO 70% OFF), btn (standaard SHOP NOW), pad, bg (achtergrond rij, #0E0E0E), panel (#1C1C1C).
+     Layout zonder <style>: hybride inline-blocks van 280 px (Outlook: spooktabel). Smaller dan 560 px vallen ze onder elkaar, beeld altijd eerst
+     (side=right gebruikt dir=rtl op de rij, zodat het beeld in de bron eerst blijft). Met <style> worden ze op mobiel 100% breed (.bfp-c). -->
+<tr><td class="bfp-pad" bgcolor="#0E0E0E" style="background-color:#0E0E0E;padding:0 20px 12px 20px;" align="center">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;"><tr>
+  <td align="center" dir="ltr" style="font-size:0;line-height:0;text-align:center;">
+  <!--[if mso]><table role="presentation" width="560" cellpadding="0" cellspacing="0" border="0" dir="ltr"><tr><td width="280" valign="top"><![endif]-->
+  <div class="bfp-c" dir="ltr" style="display:inline-block;width:100%;max-width:280px;vertical-align:middle;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td class="bfp-i" style="padding:4px;">
+      <a href="https://siraatskitchen.com/products/titanium-hammered-cookware-set" style="text-decoration:none;"><img src="https://cdn.shopify.com/s/files/1/0907/0877/1156/files/12pcsset.webp?width=800&format=pjpg" width="272" alt="Titanium Hammered Cookware Set, 12 pieces" style="display:block;width:100%;max-width:100%;height:auto;border:0;border-radius:8px;"></a>
+    </td></tr></table>
+  </div>
+  <!--[if mso]></td><td width="280" valign="top"><![endif]-->
+  <div class="bfp-c" dir="ltr" style="display:inline-block;width:100%;max-width:280px;vertical-align:middle;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td class="bfp-i" style="padding:4px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#1C1C1C" style="background-color:#1C1C1C;border-radius:8px;"><tr>
+      <td class="bfp-t" height="272" valign="middle" bgcolor="#1C1C1C" style="background-color:#1C1C1C;border-radius:8px;padding:22px 22px 22px 22px;text-align:left;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#FFB800" style="background-color:#FFB800;border-radius:14px;padding:6px 12px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:13px;letter-spacing:1.4px;font-weight:800;color:#272727;white-space:nowrap;">UP TO 70% OFF</td></tr></table>
+        <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:10px;line-height:14px;letter-spacing:1.8px;font-weight:800;color:#9E998F;padding-top:16px;text-transform:uppercase;">THE COMPLETE SET</div>
+        <div class="bfp-n" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:24px;line-height:26px;letter-spacing:-0.6px;font-weight:900;color:#FFFFFF;padding-top:5px;"><a href="https://siraatskitchen.com/products/titanium-hammered-cookware-set" style="color:#FFFFFF;text-decoration:none;">Cookware Set, 12&nbsp;Pcs</a></div>
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:12px;">
+          <tr><td width="16" valign="top" style="padding:6px 0 0 0;"><div style="width:7px;height:7px;background-color:#FFB800;font-size:0;line-height:0;">&nbsp;</div></td><td valign="top" style="padding:0 0 7px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:19px;color:#E6E3DC;">3 pans, 3 pots and 6 fitted lids.</td></tr>
+          <tr><td width="16" valign="top" style="padding:6px 0 0 0;"><div style="width:7px;height:7px;background-color:#FFB800;font-size:0;line-height:0;">&nbsp;</div></td><td valign="top" style="padding:0 0 0 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:19px;color:#E6E3DC;">Works on all stovetops, including induction.</td></tr>
+        </table>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:16px;"><tr><td bgcolor="#FFB800" style="background-color:#FFB800;border-radius:22px;">
+          <a href="https://siraatskitchen.com/products/titanium-hammered-cookware-set" style="display:inline-block;padding:12px 22px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:16px;letter-spacing:1.4px;font-weight:800;color:#272727;text-decoration:none;white-space:nowrap;">SHOP NOW &rarr;</a>
+        </td></tr></table>
+      </td></tr></table>
+    </td></tr></table>
+  </div>
+  <!--[if mso]></td></tr></table><![endif]-->
+  </td></tr></table>
 </td></tr>
 
+<!-- BLOCK bf-product (BF 2026, 31 okt): productkaart op Night in de stijl van Smooche "Discover the collection". Beeldtegel aan de ene kant,
+     donker paneel aan de andere kant met gele pil, kleine bovenregel, productnaam (Inter Black, wit), 2 bullets en gele SHOP NOW-knop.
+     Keys: img (volle URL), alt, url, name, kicker (kleine regel boven de naam, bv. TITANIUM HAMMERED), b1, b2, side (left = beeld links,
+     right = beeld rechts op desktop), pill (standaard UP TO 70% OFF), btn (standaard SHOP NOW), pad, bg (achtergrond rij, #0E0E0E), panel (#1C1C1C).
+     Layout zonder <style>: hybride inline-blocks van 280 px (Outlook: spooktabel). Smaller dan 560 px vallen ze onder elkaar, beeld altijd eerst
+     (side=right gebruikt dir=rtl op de rij, zodat het beeld in de bron eerst blijft). Met <style> worden ze op mobiel 100% breed (.bfp-c). -->
+<tr><td class="bfp-pad" bgcolor="#0E0E0E" style="background-color:#0E0E0E;padding:0 20px 12px 20px;" align="center">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;"><tr>
+  <td align="center" dir="rtl" style="font-size:0;line-height:0;text-align:center;">
+  <!--[if mso]><table role="presentation" width="560" cellpadding="0" cellspacing="0" border="0" dir="rtl"><tr><td width="280" valign="top"><![endif]-->
+  <div class="bfp-c" dir="ltr" style="display:inline-block;width:100%;max-width:280px;vertical-align:middle;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td class="bfp-i" style="padding:4px;">
+      <a href="https://siraatskitchen.com/products/titanium-hammered-pan-set-with-lids-6-pcs" style="text-decoration:none;"><img src="https://cdn.shopify.com/s/files/1/0907/0877/1156/files/6pcscookwareset.webp?width=600" width="272" alt="Titanium Hammered Pan Set With Lids, 6 pieces" style="display:block;width:100%;max-width:100%;height:auto;border:0;border-radius:8px;"></a>
+    </td></tr></table>
+  </div>
+  <!--[if mso]></td><td width="280" valign="top"><![endif]-->
+  <div class="bfp-c" dir="ltr" style="display:inline-block;width:100%;max-width:280px;vertical-align:middle;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td class="bfp-i" style="padding:4px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#1C1C1C" style="background-color:#1C1C1C;border-radius:8px;"><tr>
+      <td class="bfp-t" height="272" valign="middle" bgcolor="#1C1C1C" style="background-color:#1C1C1C;border-radius:8px;padding:22px 22px 22px 22px;text-align:left;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#FFB800" style="background-color:#FFB800;border-radius:14px;padding:6px 12px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:13px;letter-spacing:1.4px;font-weight:800;color:#272727;white-space:nowrap;">UP TO 70% OFF</td></tr></table>
+        <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:10px;line-height:14px;letter-spacing:1.8px;font-weight:800;color:#9E998F;padding-top:16px;text-transform:uppercase;">PANS WITH LIDS</div>
+        <div class="bfp-n" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:24px;line-height:26px;letter-spacing:-0.6px;font-weight:900;color:#FFFFFF;padding-top:5px;"><a href="https://siraatskitchen.com/products/titanium-hammered-pan-set-with-lids-6-pcs" style="color:#FFFFFF;text-decoration:none;">Pan Set with Lids, 6&nbsp;Pcs</a></div>
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:12px;">
+          <tr><td width="16" valign="top" style="padding:6px 0 0 0;"><div style="width:7px;height:7px;background-color:#FFB800;font-size:0;line-height:0;">&nbsp;</div></td><td valign="top" style="padding:0 0 7px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:19px;color:#E6E3DC;">3 pans and 3 fitted lids. Every frying job covered.</td></tr>
+          <tr><td width="16" valign="top" style="padding:6px 0 0 0;"><div style="width:7px;height:7px;background-color:#FFB800;font-size:0;line-height:0;">&nbsp;</div></td><td valign="top" style="padding:0 0 0 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:19px;color:#E6E3DC;">Non-toxic: PFAS-free and PTFE-free, lab tested.</td></tr>
+        </table>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:16px;"><tr><td bgcolor="#FFB800" style="background-color:#FFB800;border-radius:22px;">
+          <a href="https://siraatskitchen.com/products/titanium-hammered-pan-set-with-lids-6-pcs" style="display:inline-block;padding:12px 22px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:16px;letter-spacing:1.4px;font-weight:800;color:#272727;text-decoration:none;white-space:nowrap;">SHOP NOW &rarr;</a>
+        </td></tr></table>
+      </td></tr></table>
+    </td></tr></table>
+  </div>
+  <!--[if mso]></td></tr></table><![endif]-->
+  </td></tr></table>
+</td></tr>
+
+<!-- BLOCK bf-product (BF 2026, 31 okt): productkaart op Night in de stijl van Smooche "Discover the collection". Beeldtegel aan de ene kant,
+     donker paneel aan de andere kant met gele pil, kleine bovenregel, productnaam (Inter Black, wit), 2 bullets en gele SHOP NOW-knop.
+     Keys: img (volle URL), alt, url, name, kicker (kleine regel boven de naam, bv. TITANIUM HAMMERED), b1, b2, side (left = beeld links,
+     right = beeld rechts op desktop), pill (standaard UP TO 70% OFF), btn (standaard SHOP NOW), pad, bg (achtergrond rij, #0E0E0E), panel (#1C1C1C).
+     Layout zonder <style>: hybride inline-blocks van 280 px (Outlook: spooktabel). Smaller dan 560 px vallen ze onder elkaar, beeld altijd eerst
+     (side=right gebruikt dir=rtl op de rij, zodat het beeld in de bron eerst blijft). Met <style> worden ze op mobiel 100% breed (.bfp-c). -->
+<tr><td class="bfp-pad" bgcolor="#0E0E0E" style="background-color:#0E0E0E;padding:0 20px 30px 20px;" align="center">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;"><tr>
+  <td align="center" dir="ltr" style="font-size:0;line-height:0;text-align:center;">
+  <!--[if mso]><table role="presentation" width="560" cellpadding="0" cellspacing="0" border="0" dir="ltr"><tr><td width="280" valign="top"><![endif]-->
+  <div class="bfp-c" dir="ltr" style="display:inline-block;width:100%;max-width:280px;vertical-align:middle;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td class="bfp-i" style="padding:4px;">
+      <a href="https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern" style="text-decoration:none;"><img src="https://cdn.shopify.com/s/files/1/0907/0877/1156/files/siraat-bf-product-hammered-pan-pro-yellow.webp?width=800&format=pjpg" width="272" alt="Titanium Hammered Pan Pro Standard" style="display:block;width:100%;max-width:100%;height:auto;border:0;border-radius:8px;"></a>
+    </td></tr></table>
+  </div>
+  <!--[if mso]></td><td width="280" valign="top"><![endif]-->
+  <div class="bfp-c" dir="ltr" style="display:inline-block;width:100%;max-width:280px;vertical-align:middle;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td class="bfp-i" style="padding:4px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#1C1C1C" style="background-color:#1C1C1C;border-radius:8px;"><tr>
+      <td class="bfp-t" height="272" valign="middle" bgcolor="#1C1C1C" style="background-color:#1C1C1C;border-radius:8px;padding:22px 22px 22px 22px;text-align:left;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#FFB800" style="background-color:#FFB800;border-radius:14px;padding:6px 12px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:13px;letter-spacing:1.4px;font-weight:800;color:#272727;white-space:nowrap;">UP TO 70% OFF</td></tr></table>
+        <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:10px;line-height:14px;letter-spacing:1.8px;font-weight:800;color:#9E998F;padding-top:16px;text-transform:uppercase;">OR START WITH ONE</div>
+        <div class="bfp-n" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:24px;line-height:26px;letter-spacing:-0.6px;font-weight:900;color:#FFFFFF;padding-top:5px;"><a href="https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern" style="color:#FFFFFF;text-decoration:none;">Pan Pro Standard</a></div>
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:12px;">
+          <tr><td width="16" valign="top" style="padding:6px 0 0 0;"><div style="width:7px;height:7px;background-color:#FFB800;font-size:0;line-height:0;">&nbsp;</div></td><td valign="top" style="padding:0 0 7px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:19px;color:#E6E3DC;">Pure titanium cooking surface. Zero coating.</td></tr>
+          <tr><td width="16" valign="top" style="padding:6px 0 0 0;"><div style="width:7px;height:7px;background-color:#FFB800;font-size:0;line-height:0;">&nbsp;</div></td><td valign="top" style="padding:0 0 0 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:19px;color:#E6E3DC;">Covered by our 75-year warranty.</td></tr>
+        </table>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:16px;"><tr><td bgcolor="#FFB800" style="background-color:#FFB800;border-radius:22px;">
+          <a href="https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern" style="display:inline-block;padding:12px 22px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:16px;letter-spacing:1.4px;font-weight:800;color:#272727;text-decoration:none;white-space:nowrap;">SHOP NOW &rarr;</a>
+        </td></tr></table>
+      </td></tr></table>
+    </td></tr></table>
+  </div>
+  <!--[if mso]></td></tr></table><![endif]-->
+  </td></tr></table>
+</td></tr>
+
+{% else %}
+<!-- BLOCK bf-product (BF 2026, 31 okt): productkaart op Night in de stijl van Smooche "Discover the collection". Beeldtegel aan de ene kant,
+     donker paneel aan de andere kant met gele pil, kleine bovenregel, productnaam (Inter Black, wit), 2 bullets en gele SHOP NOW-knop.
+     Keys: img (volle URL), alt, url, name, kicker (kleine regel boven de naam, bv. TITANIUM HAMMERED), b1, b2, side (left = beeld links,
+     right = beeld rechts op desktop), pill (standaard UP TO 70% OFF), btn (standaard SHOP NOW), pad, bg (achtergrond rij, #0E0E0E), panel (#1C1C1C).
+     Layout zonder <style>: hybride inline-blocks van 280 px (Outlook: spooktabel). Smaller dan 560 px vallen ze onder elkaar, beeld altijd eerst
+     (side=right gebruikt dir=rtl op de rij, zodat het beeld in de bron eerst blijft). Met <style> worden ze op mobiel 100% breed (.bfp-c). -->
+<tr><td class="bfp-pad" bgcolor="#0E0E0E" style="background-color:#0E0E0E;padding:0 20px 12px 20px;" align="center">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;"><tr>
+  <td align="center" dir="ltr" style="font-size:0;line-height:0;text-align:center;">
+  <!--[if mso]><table role="presentation" width="560" cellpadding="0" cellspacing="0" border="0" dir="ltr"><tr><td width="280" valign="top"><![endif]-->
+  <div class="bfp-c" dir="ltr" style="display:inline-block;width:100%;max-width:280px;vertical-align:middle;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td class="bfp-i" style="padding:4px;">
+      <a href="https://siraatskitchen.com/products/titanium-hammered-pan-set-with-lids-6-pcs" style="text-decoration:none;"><img src="https://cdn.shopify.com/s/files/1/0907/0877/1156/files/6pcscookwareset.webp?width=600" width="272" alt="Titanium Hammered Pan Set With Lids, 6 pieces" style="display:block;width:100%;max-width:100%;height:auto;border:0;border-radius:8px;"></a>
+    </td></tr></table>
+  </div>
+  <!--[if mso]></td><td width="280" valign="top"><![endif]-->
+  <div class="bfp-c" dir="ltr" style="display:inline-block;width:100%;max-width:280px;vertical-align:middle;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td class="bfp-i" style="padding:4px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#1C1C1C" style="background-color:#1C1C1C;border-radius:8px;"><tr>
+      <td class="bfp-t" height="272" valign="middle" bgcolor="#1C1C1C" style="background-color:#1C1C1C;border-radius:8px;padding:22px 22px 22px 22px;text-align:left;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#FFB800" style="background-color:#FFB800;border-radius:14px;padding:6px 12px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:13px;letter-spacing:1.4px;font-weight:800;color:#272727;white-space:nowrap;">UP TO 70% OFF</td></tr></table>
+        <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:10px;line-height:14px;letter-spacing:1.8px;font-weight:800;color:#9E998F;padding-top:16px;text-transform:uppercase;">PANS WITH LIDS</div>
+        <div class="bfp-n" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:24px;line-height:26px;letter-spacing:-0.6px;font-weight:900;color:#FFFFFF;padding-top:5px;"><a href="https://siraatskitchen.com/products/titanium-hammered-pan-set-with-lids-6-pcs" style="color:#FFFFFF;text-decoration:none;">Pan Set with Lids, 6&nbsp;Pcs</a></div>
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:12px;">
+          <tr><td width="16" valign="top" style="padding:6px 0 0 0;"><div style="width:7px;height:7px;background-color:#FFB800;font-size:0;line-height:0;">&nbsp;</div></td><td valign="top" style="padding:0 0 7px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:19px;color:#E6E3DC;">3 pans and 3 fitted lids. Every frying job covered.</td></tr>
+          <tr><td width="16" valign="top" style="padding:6px 0 0 0;"><div style="width:7px;height:7px;background-color:#FFB800;font-size:0;line-height:0;">&nbsp;</div></td><td valign="top" style="padding:0 0 0 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:19px;color:#E6E3DC;">Non-toxic: PFAS-free and PTFE-free, lab tested.</td></tr>
+        </table>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:16px;"><tr><td bgcolor="#FFB800" style="background-color:#FFB800;border-radius:22px;">
+          <a href="https://siraatskitchen.com/products/titanium-hammered-pan-set-with-lids-6-pcs" style="display:inline-block;padding:12px 22px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:16px;letter-spacing:1.4px;font-weight:800;color:#272727;text-decoration:none;white-space:nowrap;">SHOP NOW &rarr;</a>
+        </td></tr></table>
+      </td></tr></table>
+    </td></tr></table>
+  </div>
+  <!--[if mso]></td></tr></table><![endif]-->
+  </td></tr></table>
+</td></tr>
+
+<!-- BLOCK bf-product (BF 2026, 31 okt): productkaart op Night in de stijl van Smooche "Discover the collection". Beeldtegel aan de ene kant,
+     donker paneel aan de andere kant met gele pil, kleine bovenregel, productnaam (Inter Black, wit), 2 bullets en gele SHOP NOW-knop.
+     Keys: img (volle URL), alt, url, name, kicker (kleine regel boven de naam, bv. TITANIUM HAMMERED), b1, b2, side (left = beeld links,
+     right = beeld rechts op desktop), pill (standaard UP TO 70% OFF), btn (standaard SHOP NOW), pad, bg (achtergrond rij, #0E0E0E), panel (#1C1C1C).
+     Layout zonder <style>: hybride inline-blocks van 280 px (Outlook: spooktabel). Smaller dan 560 px vallen ze onder elkaar, beeld altijd eerst
+     (side=right gebruikt dir=rtl op de rij, zodat het beeld in de bron eerst blijft). Met <style> worden ze op mobiel 100% breed (.bfp-c). -->
+<tr><td class="bfp-pad" bgcolor="#0E0E0E" style="background-color:#0E0E0E;padding:0 20px 12px 20px;" align="center">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;"><tr>
+  <td align="center" dir="rtl" style="font-size:0;line-height:0;text-align:center;">
+  <!--[if mso]><table role="presentation" width="560" cellpadding="0" cellspacing="0" border="0" dir="rtl"><tr><td width="280" valign="top"><![endif]-->
+  <div class="bfp-c" dir="ltr" style="display:inline-block;width:100%;max-width:280px;vertical-align:middle;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td class="bfp-i" style="padding:4px;">
+      <a href="https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern" style="text-decoration:none;"><img src="https://cdn.shopify.com/s/files/1/0907/0877/1156/files/siraat-bf-product-hammered-pan-pro-yellow.webp?width=800&format=pjpg" width="272" alt="Titanium Hammered Pan Pro Standard" style="display:block;width:100%;max-width:100%;height:auto;border:0;border-radius:8px;"></a>
+    </td></tr></table>
+  </div>
+  <!--[if mso]></td><td width="280" valign="top"><![endif]-->
+  <div class="bfp-c" dir="ltr" style="display:inline-block;width:100%;max-width:280px;vertical-align:middle;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td class="bfp-i" style="padding:4px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#1C1C1C" style="background-color:#1C1C1C;border-radius:8px;"><tr>
+      <td class="bfp-t" height="272" valign="middle" bgcolor="#1C1C1C" style="background-color:#1C1C1C;border-radius:8px;padding:22px 22px 22px 22px;text-align:left;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#FFB800" style="background-color:#FFB800;border-radius:14px;padding:6px 12px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:13px;letter-spacing:1.4px;font-weight:800;color:#272727;white-space:nowrap;">UP TO 70% OFF</td></tr></table>
+        <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:10px;line-height:14px;letter-spacing:1.8px;font-weight:800;color:#9E998F;padding-top:16px;text-transform:uppercase;">OR START WITH ONE</div>
+        <div class="bfp-n" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:24px;line-height:26px;letter-spacing:-0.6px;font-weight:900;color:#FFFFFF;padding-top:5px;"><a href="https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern" style="color:#FFFFFF;text-decoration:none;">Pan Pro Standard</a></div>
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:12px;">
+          <tr><td width="16" valign="top" style="padding:6px 0 0 0;"><div style="width:7px;height:7px;background-color:#FFB800;font-size:0;line-height:0;">&nbsp;</div></td><td valign="top" style="padding:0 0 7px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:19px;color:#E6E3DC;">Pure titanium cooking surface. Zero coating.</td></tr>
+          <tr><td width="16" valign="top" style="padding:6px 0 0 0;"><div style="width:7px;height:7px;background-color:#FFB800;font-size:0;line-height:0;">&nbsp;</div></td><td valign="top" style="padding:0 0 0 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:19px;color:#E6E3DC;">Covered by our 75-year warranty.</td></tr>
+        </table>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:16px;"><tr><td bgcolor="#FFB800" style="background-color:#FFB800;border-radius:22px;">
+          <a href="https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern" style="display:inline-block;padding:12px 22px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:16px;letter-spacing:1.4px;font-weight:800;color:#272727;text-decoration:none;white-space:nowrap;">SHOP NOW &rarr;</a>
+        </td></tr></table>
+      </td></tr></table>
+    </td></tr></table>
+  </div>
+  <!--[if mso]></td></tr></table><![endif]-->
+  </td></tr></table>
+</td></tr>
+
+<!-- BLOCK bf-product (BF 2026, 31 okt): productkaart op Night in de stijl van Smooche "Discover the collection". Beeldtegel aan de ene kant,
+     donker paneel aan de andere kant met gele pil, kleine bovenregel, productnaam (Inter Black, wit), 2 bullets en gele SHOP NOW-knop.
+     Keys: img (volle URL), alt, url, name, kicker (kleine regel boven de naam, bv. TITANIUM HAMMERED), b1, b2, side (left = beeld links,
+     right = beeld rechts op desktop), pill (standaard UP TO 70% OFF), btn (standaard SHOP NOW), pad, bg (achtergrond rij, #0E0E0E), panel (#1C1C1C).
+     Layout zonder <style>: hybride inline-blocks van 280 px (Outlook: spooktabel). Smaller dan 560 px vallen ze onder elkaar, beeld altijd eerst
+     (side=right gebruikt dir=rtl op de rij, zodat het beeld in de bron eerst blijft). Met <style> worden ze op mobiel 100% breed (.bfp-c). -->
+<tr><td class="bfp-pad" bgcolor="#0E0E0E" style="background-color:#0E0E0E;padding:0 20px 30px 20px;" align="center">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;"><tr>
+  <td align="center" dir="ltr" style="font-size:0;line-height:0;text-align:center;">
+  <!--[if mso]><table role="presentation" width="560" cellpadding="0" cellspacing="0" border="0" dir="ltr"><tr><td width="280" valign="top"><![endif]-->
+  <div class="bfp-c" dir="ltr" style="display:inline-block;width:100%;max-width:280px;vertical-align:middle;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td class="bfp-i" style="padding:4px;">
+      <a href="https://siraatskitchen.com/products/titanium-hammered-deep-pan-pro" style="text-decoration:none;"><img src="https://cdn.shopify.com/s/files/1/0907/0877/1156/files/siraat-bf-product-hammered-deep-pan-pro-yellow.webp?width=800&format=pjpg" width="272" alt="Titanium Hammered Deep Pan Pro" style="display:block;width:100%;max-width:100%;height:auto;border:0;border-radius:8px;"></a>
+    </td></tr></table>
+  </div>
+  <!--[if mso]></td><td width="280" valign="top"><![endif]-->
+  <div class="bfp-c" dir="ltr" style="display:inline-block;width:100%;max-width:280px;vertical-align:middle;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td class="bfp-i" style="padding:4px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#1C1C1C" style="background-color:#1C1C1C;border-radius:8px;"><tr>
+      <td class="bfp-t" height="272" valign="middle" bgcolor="#1C1C1C" style="background-color:#1C1C1C;border-radius:8px;padding:22px 22px 22px 22px;text-align:left;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#FFB800" style="background-color:#FFB800;border-radius:14px;padding:6px 12px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:13px;letter-spacing:1.4px;font-weight:800;color:#272727;white-space:nowrap;">UP TO 70% OFF</td></tr></table>
+        <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:10px;line-height:14px;letter-spacing:1.8px;font-weight:800;color:#9E998F;padding-top:16px;text-transform:uppercase;">TITANIUM HAMMERED</div>
+        <div class="bfp-n" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:24px;line-height:26px;letter-spacing:-0.6px;font-weight:900;color:#FFFFFF;padding-top:5px;"><a href="https://siraatskitchen.com/products/titanium-hammered-deep-pan-pro" style="color:#FFFFFF;text-decoration:none;">Deep Pan Pro</a></div>
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:12px;">
+          <tr><td width="16" valign="top" style="padding:6px 0 0 0;"><div style="width:7px;height:7px;background-color:#FFB800;font-size:0;line-height:0;">&nbsp;</div></td><td valign="top" style="padding:0 0 7px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:19px;color:#E6E3DC;">High sides for stews, sauces and one-pan meals.</td></tr>
+          <tr><td width="16" valign="top" style="padding:6px 0 0 0;"><div style="width:7px;height:7px;background-color:#FFB800;font-size:0;line-height:0;">&nbsp;</div></td><td valign="top" style="padding:0 0 0 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:19px;color:#E6E3DC;">Oven safe and dishwasher safe.</td></tr>
+        </table>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:16px;"><tr><td bgcolor="#FFB800" style="background-color:#FFB800;border-radius:22px;">
+          <a href="https://siraatskitchen.com/products/titanium-hammered-deep-pan-pro" style="display:inline-block;padding:12px 22px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:16px;letter-spacing:1.4px;font-weight:800;color:#272727;text-decoration:none;white-space:nowrap;">SHOP NOW &rarr;</a>
+        </td></tr></table>
+      </td></tr></table>
+    </td></tr></table>
+  </div>
+  <!--[if mso]></td></tr></table><![endif]-->
+  </td></tr></table>
+</td></tr>
+
+{% endif %}{% endwith %}
+<tr><td class="pad" bgcolor="#0E0E0E" style="background-color:#0E0E0E;padding:4px 24px 4px 24px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td width="33%" align="center" valign="top" style="padding:0 6px;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:22px;line-height:26px;font-weight:900;letter-spacing:-0.5px;color:#FFFFFF;">100,000+</div><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1.4px;font-weight:800;color:#BDB8AE;padding-top:6px;text-transform:uppercase;">customers</div></td><td width="33%" align="center" valign="top" style="padding:0 6px;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:22px;line-height:26px;font-weight:900;letter-spacing:-0.5px;color:#FFFFFF;">75 years</div><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1.4px;font-weight:800;color:#BDB8AE;padding-top:6px;text-transform:uppercase;">warranty</div></td><td width="33%" align="center" valign="top" style="padding:0 6px;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:22px;line-height:26px;font-weight:900;letter-spacing:-0.5px;color:#FFFFFF;">30 days</div><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1.4px;font-weight:800;color:#BDB8AE;padding-top:6px;text-transform:uppercase;">to return</div></td></tr></table></td></tr>
 <!-- BLOCK bf-cta (BF 2026): gele knop, ink tekst, pilvorm. Keys: label, url, pad, bg (achtergrond rij, standaard #0E0E0E), sub. -->
-<tr><td align="center" class="pad" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:26px 40px 20px 40px;">
+<tr><td align="center" class="pad" bgcolor="#0E0E0E" style="background-color:#0E0E0E;padding:26px 40px 20px 40px;">
   <table role="presentation" class="btnw" width="320" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:320px;"><tr>
     <td align="center" bgcolor="#FFB800" style="background:#FFB800;border-radius:28px;">
       <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://siraatskitchen.com/collections/black-friday-sale" style="height:54px;v-text-anchor:middle;width:320px;" arcsize="50%" stroke="f" fillcolor="#FFB800"><center style="color:#272727;font-family:Arial,sans-serif;font-size:15px;font-weight:bold;">Shop the sale</center></v:roundrect><![endif]-->
@@ -149,7 +370,7 @@ AANNAMES:
   
 </td></tr>
 
-<tr><td class="pad" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:6px 40px 34px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;color:#272727;"><b style="font-weight:800;">Benjamin</b><br><span style="font-size:13px;color:#5E5A54;">Founder, Siraat</span></td></tr>
+<tr><td class="pad lead" align="left" bgcolor="#0E0E0E" style="background-color:#0E0E0E;padding:6px 40px 34px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;color:#E6E3DC;text-align:left;"><b style="font-weight:800;color:#FFFFFF;">Benjamin</b><br><span style="font-size:13px;color:#9E998F;">Founder, Siraat</span></td></tr>
 
 <!-- FOOTER (vast, uit partials/footer.html). Gmail-proof (10 okt 2026, research/v6-golive/16-gmail-ios.md): het donkere vlak staat als
      bgcolor-attribuut EN inline background-color op de buitenste cel, op de binnentabel en op elke cel met tekst. Valt een buitenlaag
@@ -177,7 +398,7 @@ AANNAMES:
   <tr><td align="center" bgcolor="#282828" style="background-color:#282828;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:19px;color:#BDB8B0;text-align:center;">
     Free shipping on all orders &middot; 30-day returns &middot; 75-year warranty<br><br>
     <a href="#" style="color:#111111;">Unsubscribe</a> &nbsp;|&nbsp; <a href="#" style="color:#111111;">Manage preferences</a> &nbsp;|&nbsp; <a href="#" style="color:#111111;">View in browser</a><br>
-    Siraat's Kitchen &middot; [address]<span style="display:none!important;visibility:hidden;mso-hide:all;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;color:#282828;">ref 20261031153435</span>
+    Siraat's Kitchen &middot; [address]<span style="display:none!important;visibility:hidden;mso-hide:all;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;color:#282828;">ref 20261031161130</span>
   </td></tr>
 </table>
 </td></tr>

@@ -1,16 +1,19 @@
 <!--
-BF SIGNUP FLOW · W2
+BF SIGNUP FLOW · W2 (sets eerst). Herbouwd 31 okt 2026 met productkaarten.
 SUBJECT: The complete collection.
   Alternatieven: "100,000+ kitchens, no coatings" · "Pans or a set?" · "One pan, or the whole stove?"
-PREVIEW: Every pan and set, up to 70% off for Black Friday.
+PREVIEW: The sets, up to 70% off for Black Friday. One surface, every piece.
 TIMING: dag 1, 09:00 (wacht 1 dag tot 09:00, tijdzone profiel). Smart Sending AAN.
 FILTER: Placed Order = 0 sinds flowstart.
 BEWIJS: alleen algemene, echte feiten (100,000+ customers, 75-year warranty, 30-day returns). Geen reviews, sterren of ratings.
   OFFER (Floris, 31 okt 2026): Black Friday Sale, "Up to 70% off", voor iedereen, via /collections/black-friday-sale. GEEN extra code in deze flow (extra code alleen in abandonment-mails).
   Controleer voor livegang dat minstens één product echt 70% onder de eerdere prijs staat (anders klopt "up to 70%" niet) en dat de prijzen op de site al zonder code gelden ("No code needed").
+PRODUCTKAARTEN (Floris, 31 okt: meer producten, Smooche-stijl): blok bf-product, markt via de USONLY-macro op person.Country (MARKET-SIGNAL profile); onbekend land telt als niet-US.
+  Geen vaste $-prijzen (verschillen per markt), alleen de pil "UP TO 70% OFF". 12-delige set alleen in de US (us_only in de catalogus).
+  Bullets alleen uit claims.csv/facts.csv; "Oven safe" zonder temperatuur (claims.csv: temperatuur nog niet bevestigd voor pannen).
+  Hoek sets: US 12-delige set, 6-delige set, Pan Pro Standard. Niet-US 6-delige set, Pan Pro Standard, Deep Pan Pro. (Bewust sets voor de Pan Pro, op verzoek "w2 sets-first".)
 AANNAMES:
-  1. Setstegels linken naar /collections/bundles (geen productlinks: welke bundels in de sale zitten ligt nog niet vast). Beelden: bundle-pan-pro-duo en bundle-complete-edition.
-  2. Hero: siraat-collection-exclusive-02-gallery-vitrines.
+  1. Hero: siraat-collection-exclusive-02-gallery-vitrines.
 -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
@@ -34,29 +37,40 @@ AANNAMES:
     .h1{font-size:34px!important;line-height:37px!important;}
     .navhide{display:none!important;}
     .lead{font-size:16px!important;line-height:25px!important;}
-    .bfh{font-size:36px!important;line-height:40px!important;}
+    .bfh{font-size:38px!important;line-height:44px!important;padding-left:16px!important;padding-right:16px!important;}
   }
 </style>
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;">
-<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Every pan and set, up to 70% off for Black Friday.</div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">The sets, up to 70% off for Black Friday. One surface, every piece.</div>
 <!-- MARKET-SIGNAL: profile -->
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
 <tr><td align="center" style="padding:8px 0 32px 0;">
-<table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
+<table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#0E0E0E;" bgcolor="#0E0E0E">
 
 {{BLOCK:bf-topbar text="BLACK FRIDAY SALE IS LIVE"}}
 {{HEADER}}
-{{BLOCK:bf-hero img="https://cdn.shopify.com/s/files/1/0907/0877/1156/files/siraat-collection-exclusive-02-gallery-vitrines-desktop.jpg?width=1200" alt="Siraat titanium pans in a dark gallery" tag="BLACK FRIDAY DEAL" line1="The complete" line2="collection." sub="Every pan and set, up to 70% off."}}
-{{BLOCK:bf-cta label="Shop the sets" url="https://siraatskitchen.com/collections/bundles" pad="26px 40px 36px 40px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#BDB8AE;padding-top:14px;'>No code needed. 30-day returns. 75-year warranty.</div>"}}
-<tr><td class="pad" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:30px 24px 8px 24px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td width="33%" align="center" valign="top" style="padding:0 6px;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:22px;line-height:26px;font-weight:900;letter-spacing:-0.5px;color:#272727;">100,000+</div><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1.4px;font-weight:800;color:#272727;padding-top:6px;text-transform:uppercase;">customers</div></td><td width="33%" align="center" valign="top" style="padding:0 6px;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:22px;line-height:26px;font-weight:900;letter-spacing:-0.5px;color:#272727;">75 years</div><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1.4px;font-weight:800;color:#272727;padding-top:6px;text-transform:uppercase;">warranty</div></td><td width="33%" align="center" valign="top" style="padding:0 6px;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:22px;line-height:26px;font-weight:900;letter-spacing:-0.5px;color:#272727;">30 days</div><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1.4px;font-weight:800;color:#272727;padding-top:6px;text-transform:uppercase;">to return</div></td></tr></table></td></tr>
-<tr><td class="pad lead" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:22px 40px 14px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#272727;font-weight:800;">Morning. Benjamin again.</td></tr>
-<tr><td class="pad lead" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:0 40px 14px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#272727;">More than 100,000 people cook on Siraat now. That number still surprises me.</td></tr>
-<tr><td class="pad lead" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:0 40px 14px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#272727;">If you already know you want more than one pan, a set gets you there in one go. The same pure titanium cooking surface, no coatings, and the same 75-year warranty.</td></tr>
-<tr><td class="pad lead" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:0 40px 4px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#272727;">And if it's not right, you have 30 days to send it back unused.</td></tr>
-{{BLOCK:bf-tiles2 pad="20px 24px 6px 24px" img1="https://cdn.shopify.com/s/files/1/0907/0877/1156/files/siraat-bf-product-bundle-pan-pro-duo-yellow-tag.webp?width=600&format=pjpg" name1="Two-pan sets" url1="https://siraatskitchen.com/collections/bundles" img2="https://cdn.shopify.com/s/files/1/0907/0877/1156/files/siraat-bf-product-bundle-complete-edition-yellow-tag.webp?width=600&format=pjpg" name2="Full sets" url2="https://siraatskitchen.com/collections/bundles"}}
-{{BLOCK:bf-cta label="Shop the sale" url="https://siraatskitchen.com/collections/black-friday-sale" bg="#F8F7F2" pad="26px 40px 20px 40px"}}
-<tr><td class="pad" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:6px 40px 34px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;color:#272727;"><b style="font-weight:800;">Benjamin</b><br><span style="font-size:13px;color:#5E5A54;">Founder, Siraat</span></td></tr>
+<tr><td bgcolor="#0E0E0E" style="background-color:#0E0E0E;padding:0;"><img src="https://cdn.shopify.com/s/files/1/0907/0877/1156/files/siraat-collection-exclusive-02-gallery-vitrines-desktop.jpg?width=1200" width="600" alt="Siraat titanium pans in a dark gallery" style="display:block;width:100%;max-width:600px;height:auto;border:0;"></td></tr>
+<tr><td align="center" class="pad" bgcolor="#0E0E0E" style="background-color:#0E0E0E;padding:30px 30px 0 30px;"><table role="presentation" align="center" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;"><tr><td bgcolor="#FFB800" style="background-color:#FFB800;padding:6px 10px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:12px;letter-spacing:1.8px;font-weight:800;color:#272727;">BLACK FRIDAY DEAL</td></tr></table></td></tr>
+<tr><td align="center" class="pad bfh" bgcolor="#0E0E0E" style="background-color:#0E0E0E;padding:18px 24px 0 24px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:46px;line-height:52px;font-weight:900;letter-spacing:-1.4px;color:#FFFFFF;text-align:center;">The complete<br><span style="background-color:#FFB800;color:#272727;padding:0 8px;">collection.</span></td></tr>
+<tr><td class="pad lead" align="center" bgcolor="#0E0E0E" style="background-color:#0E0E0E;padding:18px 36px 0 36px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:17px;line-height:26px;color:#E6E3DC;text-align:center;">Every pan and set, up to 70% off.</td></tr>
+{{BLOCK:bf-cta label="Shop the sale" url="https://siraatskitchen.com/collections/black-friday-sale" pad="26px 40px 30px 40px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#BDB8AE;padding-top:14px;'>No code needed. 30-day returns. 75-year warranty.</div>"}}
+<tr><td class="pad lead" align="left" bgcolor="#0E0E0E" style="background-color:#0E0E0E;padding:4px 40px 8px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#FFFFFF;text-align:left;font-weight:800;">Morning. Benjamin again.</td></tr>
+<tr><td class="pad lead" align="left" bgcolor="#0E0E0E" style="background-color:#0E0E0E;padding:0 40px 30px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#E6E3DC;text-align:left;">If you already know you want more than one pan, a set gets you there in one go. Every piece has the same pure titanium cooking surface, no coatings, and the same 75-year warranty.</td></tr>
+{{BLOCK:bf-sectionbar text="START WITH A SET"}}
+<tr><td bgcolor="#0E0E0E" style="background-color:#0E0E0E;height:20px;line-height:20px;font-size:0;">&nbsp;</td></tr>
+{{USONLY}}
+{{BLOCK:bf-product side="left" img="https://cdn.shopify.com/s/files/1/0907/0877/1156/files/12pcsset.webp?width=800&format=pjpg" url="https://siraatskitchen.com/products/titanium-hammered-cookware-set" kicker="THE COMPLETE SET" name="Cookware Set, 12&nbsp;Pcs" alt="Titanium Hammered Cookware Set, 12 pieces" b1="3 pans, 3 pots and 6 fitted lids." b2="Works on all stovetops, including induction."}}
+{{BLOCK:bf-product side="right" img="https://cdn.shopify.com/s/files/1/0907/0877/1156/files/6pcscookwareset.webp?width=600" url="https://siraatskitchen.com/products/titanium-hammered-pan-set-with-lids-6-pcs" kicker="PANS WITH LIDS" name="Pan Set with Lids, 6&nbsp;Pcs" alt="Titanium Hammered Pan Set With Lids, 6 pieces" b1="3 pans and 3 fitted lids. Every frying job covered." b2="Non-toxic: PFAS-free and PTFE-free, lab tested."}}
+{{BLOCK:bf-product side="left" img="https://cdn.shopify.com/s/files/1/0907/0877/1156/files/siraat-bf-product-hammered-pan-pro-yellow.webp?width=800&format=pjpg" url="https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern" kicker="OR START WITH ONE" name="Pan Pro Standard" alt="Titanium Hammered Pan Pro Standard" b1="Pure titanium cooking surface. Zero coating." b2="Covered by our 75-year warranty." pad="0 20px 30px 20px"}}
+{{ELSEUS}}
+{{BLOCK:bf-product side="left" img="https://cdn.shopify.com/s/files/1/0907/0877/1156/files/6pcscookwareset.webp?width=600" url="https://siraatskitchen.com/products/titanium-hammered-pan-set-with-lids-6-pcs" kicker="PANS WITH LIDS" name="Pan Set with Lids, 6&nbsp;Pcs" alt="Titanium Hammered Pan Set With Lids, 6 pieces" b1="3 pans and 3 fitted lids. Every frying job covered." b2="Non-toxic: PFAS-free and PTFE-free, lab tested."}}
+{{BLOCK:bf-product side="right" img="https://cdn.shopify.com/s/files/1/0907/0877/1156/files/siraat-bf-product-hammered-pan-pro-yellow.webp?width=800&format=pjpg" url="https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern" kicker="OR START WITH ONE" name="Pan Pro Standard" alt="Titanium Hammered Pan Pro Standard" b1="Pure titanium cooking surface. Zero coating." b2="Covered by our 75-year warranty."}}
+{{BLOCK:bf-product side="left" img="https://cdn.shopify.com/s/files/1/0907/0877/1156/files/siraat-bf-product-hammered-deep-pan-pro-yellow.webp?width=800&format=pjpg" url="https://siraatskitchen.com/products/titanium-hammered-deep-pan-pro" kicker="TITANIUM HAMMERED" name="Deep Pan Pro" alt="Titanium Hammered Deep Pan Pro" b1="High sides for stews, sauces and one-pan meals." b2="Oven safe and dishwasher safe." pad="0 20px 30px 20px"}}
+{{/USONLY}}
+<tr><td class="pad" bgcolor="#0E0E0E" style="background-color:#0E0E0E;padding:4px 24px 4px 24px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td width="33%" align="center" valign="top" style="padding:0 6px;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:22px;line-height:26px;font-weight:900;letter-spacing:-0.5px;color:#FFFFFF;">100,000+</div><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1.4px;font-weight:800;color:#BDB8AE;padding-top:6px;text-transform:uppercase;">customers</div></td><td width="33%" align="center" valign="top" style="padding:0 6px;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:22px;line-height:26px;font-weight:900;letter-spacing:-0.5px;color:#FFFFFF;">75 years</div><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1.4px;font-weight:800;color:#BDB8AE;padding-top:6px;text-transform:uppercase;">warranty</div></td><td width="33%" align="center" valign="top" style="padding:0 6px;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:22px;line-height:26px;font-weight:900;letter-spacing:-0.5px;color:#FFFFFF;">30 days</div><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:1.4px;font-weight:800;color:#BDB8AE;padding-top:6px;text-transform:uppercase;">to return</div></td></tr></table></td></tr>
+{{BLOCK:bf-cta label="Shop the sale" url="https://siraatskitchen.com/collections/black-friday-sale" pad="26px 40px 20px 40px"}}
+<tr><td class="pad lead" align="left" bgcolor="#0E0E0E" style="background-color:#0E0E0E;padding:6px 40px 34px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;color:#E6E3DC;text-align:left;"><b style="font-weight:800;color:#FFFFFF;">Benjamin</b><br><span style="font-size:13px;color:#9E998F;">Founder, Siraat</span></td></tr>
 
 {{FOOTER}}
 

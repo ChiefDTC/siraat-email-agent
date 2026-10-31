@@ -1,0 +1,36 @@
+<!-- BLOCK bf-product (BF 2026, 31 okt): productkaart op Night in de stijl van Smooche "Discover the collection". Beeldtegel aan de ene kant,
+     donker paneel aan de andere kant met gele pil, kleine bovenregel, productnaam (Inter Black, wit), 2 bullets en gele SHOP NOW-knop.
+     Keys: img (volle URL), alt, url, name, kicker (kleine regel boven de naam, bv. TITANIUM HAMMERED), b1, b2, side (left = beeld links,
+     right = beeld rechts op desktop), pill (standaard UP TO 70% OFF), btn (standaard SHOP NOW), pad, bg (achtergrond rij, #0E0E0E), panel (#1C1C1C).
+     Layout zonder <style>: hybride inline-blocks van 280 px (Outlook: spooktabel). Smaller dan 560 px vallen ze onder elkaar, beeld altijd eerst
+     (side=right gebruikt dir=rtl op de rij, zodat het beeld in de bron eerst blijft). Met <style> worden ze op mobiel 100% breed (.bfp-c). -->
+<tr><td class="bfp-pad" bgcolor="[[bg]]" style="background-color:[[bg]];padding:[[pad]];" align="center">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;"><tr>
+  <td align="center" dir="[[dir]]" style="font-size:0;line-height:0;text-align:center;">
+  <!--[if mso]><table role="presentation" width="560" cellpadding="0" cellspacing="0" border="0" dir="[[dir]]"><tr><td width="280" valign="top"><![endif]-->
+  <div class="bfp-c" dir="ltr" style="display:inline-block;width:100%;max-width:280px;vertical-align:middle;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td class="bfp-i" style="padding:4px;">
+      <a href="[[url]]" style="text-decoration:none;"><img src="[[img]]" width="272" alt="[[alt]]" style="display:block;width:100%;max-width:100%;height:auto;border:0;border-radius:8px;"></a>
+    </td></tr></table>
+  </div>
+  <!--[if mso]></td><td width="280" valign="top"><![endif]-->
+  <div class="bfp-c" dir="ltr" style="display:inline-block;width:100%;max-width:280px;vertical-align:middle;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td class="bfp-i" style="padding:4px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="[[panel]]" style="background-color:[[panel]];border-radius:8px;"><tr>
+      <td class="bfp-t" height="272" valign="middle" bgcolor="[[panel]]" style="background-color:[[panel]];border-radius:8px;padding:22px 22px 22px 22px;text-align:left;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#FFB800" style="background-color:#FFB800;border-radius:14px;padding:6px 12px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:13px;letter-spacing:1.4px;font-weight:800;color:#272727;white-space:nowrap;">[[pill]]</td></tr></table>
+        <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:10px;line-height:14px;letter-spacing:1.8px;font-weight:800;color:#9E998F;padding-top:16px;text-transform:uppercase;">[[kicker]]</div>
+        <div class="bfp-n" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:24px;line-height:26px;letter-spacing:-0.6px;font-weight:900;color:#FFFFFF;padding-top:5px;"><a href="[[url]]" style="color:#FFFFFF;text-decoration:none;">[[name]]</a></div>
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:12px;">
+          <tr><td width="16" valign="top" style="padding:6px 0 0 0;"><div style="width:7px;height:7px;background-color:#FFB800;font-size:0;line-height:0;">&nbsp;</div></td><td valign="top" style="padding:0 0 7px 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:19px;color:#E6E3DC;">[[b1]]</td></tr>
+          <tr><td width="16" valign="top" style="padding:6px 0 0 0;"><div style="width:7px;height:7px;background-color:#FFB800;font-size:0;line-height:0;">&nbsp;</div></td><td valign="top" style="padding:0 0 0 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:19px;color:#E6E3DC;">[[b2]]</td></tr>
+        </table>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:16px;"><tr><td bgcolor="#FFB800" style="background-color:#FFB800;border-radius:22px;">
+          <a href="[[url]]" style="display:inline-block;padding:12px 22px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:16px;letter-spacing:1.4px;font-weight:800;color:#272727;text-decoration:none;white-space:nowrap;">[[btn]] &rarr;</a>
+        </td></tr></table>
+      </td></tr></table>
+    </td></tr></table>
+  </div>
+  <!--[if mso]></td></tr></table><![endif]-->
+  </td></tr></table>
+</td></tr>

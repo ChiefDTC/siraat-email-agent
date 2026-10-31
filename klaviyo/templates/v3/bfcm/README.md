@@ -8,7 +8,7 @@ Bron: Figma "Siraat · Black Friday 2026 Brand Book" (jY3uex0pCP6rHT97zFiA9B), p
 - Eén groot geel element per sectie. Geen gele tekst op wit/cream. Geen rode knoppen.
 
 ## Blokken (klaviyo/templates/partials/blocks, via {{BLOCK:naam key="..."}})
-bf-topbar (text, bg, color) · bf-hero (img, alt, tag, line1, line2, sub) · bf-cta (label, url, pad, bg, sub) · bf-sectionbar (text) · bf-tiles2 (pad, img1, name1, url1, img2, name2, url2) · bf-deal (pad, eyebrow, headline, detail).
+bf-topbar (text, bg, color) · bf-hero (img, alt, tag, line1, line2, sub) · bf-cta (label, url, pad, bg, sub) · bf-sectionbar (text) · bf-tiles2 (pad, img1, name1, url1, img2, name2, url2) · bf-deal (pad, eyebrow, headline, detail) · bf-product (side=left|right, img, url, name, kicker, alt, b1, b2; opties pill, btn, pad, bg, panel): productkaart Smooche-stijl, zie signup/FLOW.md.
 Voorbeeld: klaviyo/templates/v3/bfcm/_test/t.html. Vaste {{HEADER}} en {{FOOTER}} blijven (merkregel). bf-topbar staat boven {{HEADER}}.
 
 ## Beelden (Shopify CDN, https://cdn.shopify.com/s/files/1/0907/0877/1156/files/)

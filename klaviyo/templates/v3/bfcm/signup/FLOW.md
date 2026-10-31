@@ -18,6 +18,34 @@ Waarom: W1 komt nu 6,5 minuten na aanmelding en verdient $2,83 per ontvanger; 60
 | `*.klaviyo.html`, `*-preview.html` | uitvoer van build_template.py |
 | `previews/*-375.png` | renders op 375 px |
 
+## Productkaarten per markt (herbouw 31 okt 2026, feedback Floris)
+Feedback: "meer producten, net als Smooche met een mooie Black Friday-stijl. Hammered Pan Pro Standard is belangrijkste, in de USA ook de 12 pcs en de 6 pcs set; buiten de USA de 6 pcs set pushen."
+
+Opbouw (Smooche-welcome als voorbeeld): donker vlak (Night #0E0E0E) onder de vaste header, grote gecentreerde kop met gele markering, één regel aanbod, SHOP THE SALE, gele sectiebalk, productkaarten (blok `bf-product`, beeld en donker paneel om en om links/rechts, op mobiel beeld boven tekst), korte noot van Benjamin, bewijsrij (100,000+ / 75 years / 30 days), knop, vaste footer.
+
+Blok `{{BLOCK:bf-product side="left|right" img url name kicker alt b1 b2}}` (opties: pill, btn, pad, bg, panel). Gele pil "UP TO 70% OFF", geen vaste $-prijzen (verschillen per markt). Werkt zonder `<style>` (hybride inline-blocks van 280 px, Outlook spooktabel); met `<style>` op mobiel 100% breed.
+
+Markt: `{{USONLY}}...{{ELSEUS}}...{{/USONLY}}` op `person.Country` (MARKET-SIGNAL profile). Onbekend land krijgt de niet-US-kaarten. De 12-delige set staat alleen in de US-tak (us_only).
+
+| Mail | US | Niet-US en onbekend |
+|---|---|---|
+| bf-w1 (welkom) | Pan Pro Standard, 12-delig, 6-delig, Deep Pan Pro | Pan Pro Standard, 6-delig, Deep Pan Pro, Wok Pan Pro |
+| bf-w1b (korte versie, 3 keuzes) | Pan Pro Standard, 12-delig, 6-delig | Pan Pro Standard, 6-delig, Wok Pan Pro |
+| bf-w2 (sets eerst) | 12-delig, 6-delig, Pan Pro Standard | 6-delig, Pan Pro Standard, Deep Pan Pro |
+| bf-w3 (Pan Pro Standard uitgediept) | grote Pan Pro-sectie met eigen knop, dan 12-delig, 6-delig | idem, dan 6-delig, Deep Pan Pro |
+| bf-last | Pan Pro Standard, 12-delig, 6-delig | Pan Pro Standard, 6-delig, Deep Pan Pro |
+| bf-w1-letter | geen kaarten (platte A/B-arm), alleen een link naar de Pan Pro Standard in de tekst | idem |
+
+Bullets alleen uit claims.csv/facts.csv: pure titanium cooking surface + zero coating, alle kookplaten incl. inductie, oven en vaatwasser (zonder temperatuur), non-toxic PFAS-/PTFE-free lab tested, 75 jaar garantie, setinhoud volgens PDP (6-delig: 3 pannen + 3 deksels; 12-delig: 3 pannen, 3 potten, 6 deksels). "OUR #1 SELLER" bij de Pan Pro volgt de PDP-tagline.
+
+Renders: `previews/<mail>-us-375.png` en `<mail>-int-375.png` (Klaviyo-versie, Django-render met person.Country "United States" en "Germany"; script `_tools/render_bf.py`). De oude `<mail>-375.png` zijn de vorige versie. Let op: de `*-preview.html` uit build_template toont beide markttakken onder elkaar (de preview kent geen markt); kijk naar de -us/-int-renders.
+
+Open punten productkaarten:
+- Oventemperatuur: het brand book en de opdracht noemen 750°F / 400°C, maar claims.csv zegt dat die voor de pannen niet bevestigd is (alleen Roasting Pan PDP). Nu "Oven safe" zonder getal. [VRAAG FLORIS]
+- Beeld 6-delige set is een PNG (Shopify levert geen JPG door transparantie), ~220 KB op 600 px. Liever een JPG of yellow-studio-versie uploaden.
+- Kaarten linken naar de productpagina's: aanname dat de saleprijs daar ook staat.
+- Knoptekst "SHOP NOW" op verzoek (Smooche-stijl); de copy-skill zegt anders "nooit Shop now". Uitzondering zoals bij de receptcampagnes (DECISIONS 9 okt). [bevestigen]
+
 ## Segment (doelgroep)
 Naam: `BFCM 2026 · popup signups (not purchased)`.
 - Ingeschreven via de BF-pop-up: `Subscribed to Email Marketing` met bron/methode Alia (`custom_method_detail` "Alia sign-up") **of** profieleigenschap `signup_source = bf_popup_2026` (door de pop-up te zetten; voorkeur, want ondubbelzinnig),
