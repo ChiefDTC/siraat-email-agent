@@ -294,3 +294,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 31 okt 2026: BF-aanmeldflow herbouwd met productkaarten (nieuw blok bf-product, Smooche-stijl, Night): w1, w1b, w2 (sets eerst), w3 (Pan Pro Standard uitgediept), last; US Pan Pro Standard + 12- en 6-delig, niet-US Pan Pro Standard + 6-delig + Deep/Wok via USONLY. Renders -us/-int-375.png. Niets in Klaviyo, geen commit.
 - 31 okt 2026: BFCM-aanmeldflow v2 met productkaarten per markt (bf-product blok; VS: Pan Pro Standard, 12 Pcs, 6 Pcs; buiten VS: Pan Pro Standard, 6 Pcs, Deep/Wok), in Figma rij 174:2.
 - 31 okt 2026: volgorde productkaarten overal Pan Pro Standard, 6 Pcs, 12 Pcs (Floris). Figma 174:2 bijgewerkt.
+- 31 okt 2026: flow WjAc2q 'v4 · BFCM Welcome · direct (BFCM2026)' als DRAFT: trigger lijst BFCM2026 (SWsGdg), BF-W1 direct (geen wachttijd), template TmKtC5, Smart Sending uit. Render gecontroleerd VS/DE/onbekend. Niet live.
