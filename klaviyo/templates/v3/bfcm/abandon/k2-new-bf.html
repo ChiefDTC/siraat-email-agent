@@ -70,7 +70,7 @@
 </td></tr>
 {{BLOCK:bf-cta bg="#F8F7F2" label="Finish my order" url="https://siraatskitchen.com/discount/BFCODE?redirect={{ event.URL|cut:'https://2d0add-d6.myshopify.com'|cut:'https://siraatskitchen.com'|default:'/cart' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk2new-cta1" pad="16px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
 
-{{BLOCK:gifts5 style="row" urgency="1" line="Your cart is saved, with {{GIFTS:total}} still pending."}}
+{{BLOCK:gifts5 style="row" line="Your cart is saved, with {{GIFTS:total}} still pending."}}
 
 <!-- Set of bundel in de cart: het bundelblok (02-bundels, logica-check 15); pan: de som; overig kookgerei (pot, pizza steel, roasting pan): de garantie in een zin -->
 {% if 'Set' in event|lookup:'Product Name' or 'Pcs' in event|lookup:'Product Name' or 'Bundle' in event|lookup:'Product Name' or 'Duo' in event|lookup:'Product Name' or ' Kit' in event|lookup:'Product Name' or 'Edition' in event|lookup:'Product Name' or 'Collection' in event|lookup:'Product Name' %}

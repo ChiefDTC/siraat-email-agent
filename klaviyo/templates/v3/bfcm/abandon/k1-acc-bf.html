@@ -70,7 +70,7 @@
 </td></tr>
 {{BLOCK:bf-cta bg="#F8F7F2" label="Finish my order" url="https://siraatskitchen.com/discount/BFCODE?redirect={{ event.URL|cut:'https://2d0add-d6.myshopify.com'|cut:'https://siraatskitchen.com'|default:'/cart' }}%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk1acc-cta1" pad="16px 44px 4px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:10px;'>{{FRICTION}}</div>"}}
 
-{{BLOCK:gifts5 style="row" urgency="1" line="{{GIFTS:total}} ship with it."}}
+{{BLOCK:gifts5 style="row" line="{{GIFTS:total}} ship with it."}}
 
 <!-- BESTAANDE EIGENAAR (siraat_owned bevat een pan, 02-bundels sectie 3): geen nieuwe-klant-uitleg; nieuwe klant: S2 kort -->
 {% with own=person|lookup:'siraat_owned'|default:'' %}{% if 'panpro' in own or 'pan_original' in own or 'deep' in own or 'wok' in own or 'crepe' in own %}

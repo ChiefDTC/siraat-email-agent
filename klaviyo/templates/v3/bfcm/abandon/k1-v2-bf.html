@@ -78,7 +78,7 @@
 <tr><td class="pad" align="center" style="padding:8px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;text-align:center;">Cart empty? <a href="https://siraatskitchen.com/discount/BFCODE?redirect=/cart/{{ event.VariantID }}:{{ event.Quantity|default:1|floatformat:0 }}%3Fstorefront%3Dtrue%26utm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk1-restore" style="color:#AC3B19;text-decoration:underline;">Restore my {{ event|lookup:'Product Name'|default:'item'|cut:'Titanium '|cut:'Hammered ' }}</a></td></tr>
 {% endif %}
 
-{{BLOCK:gifts5 style="row" urgency="1" line="Your cart is saved, with {{GIFTS:total}} still pending."}}
+{{BLOCK:gifts5 style="row" line="Your cart is saved, with {{GIFTS:total}} still pending."}}
 
 <tr><td class="pad lead" style="padding:26px 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#282828;">The hammered pattern is the point. Less food touches the metal, so it lets go, and cleanup is a quick wipe with a soft sponge. No coating, so no PFAS and nothing to peel off. Dishwasher? That works too.</td></tr>
 
