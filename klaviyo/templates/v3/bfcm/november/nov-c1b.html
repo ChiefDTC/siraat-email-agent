@@ -10,7 +10,7 @@ TRIGGER/TIMING: v4 · Checkout abandonment QUBUQV, nieuwe stap na C1: wacht 1 uu
 FILTERS: Placed Order = 0 sinds flowstart; minder dan 3 Received Email in de laatste 1 dag; niet geklikt op C1 in de laatste 50 min (optioneel, test); geen BFCODE-mail uit de cart-flow in de laatste 1 uur.
 WAAROM: plan 04 punt 2 (C1 $7,96 per ontvanger; Smooche 3 mails in 90 min). Schatting $4.000 a $5.000 in november.
 AANBOD: up to 70% off + extra 10% met BFCODE (placeholder), 4 gifts. Geen nep-order of nep-deadline.
-PLACEHOLDER: {{NEXT_BATCH_DATE}} alleen zichtbaar als er een uitverkochte set in de checkout zit (6-Pcs, 12-Pcs, Pan Pro Duo, Pan Pro & Utensil Set).
+VOORRAADREGEL: alleen zichtbaar als er een 6-Pcs of 12-Pcs set in de checkout zit (nieuwe batch week van 9 nov, Floris 1 nov).
 -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
@@ -50,8 +50,8 @@ PLACEHOLDER: {{NEXT_BATCH_DATE}} alleen zichtbaar als er een uitverkochte set in
 <tr><td class="pad lead" style="padding:34px 44px 14px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;color:#282828;">Hi {{ first_name|default:'there' }},</td></tr>
 <tr><td class="pad lead" style="padding:0 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;color:#282828;">Benjamin here. You got to the last step about an hour ago, so I kept your cart for you, at Black Friday prices.</td></tr>
 {{BLOCK:cart pad="18px 44px 4px 44px" title="YOUR CART, SAVED" line="Your extra 10% is applied with the button. Or use code BFCODE at checkout."}}
-{% if '6-Pcs' in event.Items|join:',' or '12-Pcs' in event.Items|join:',' or 'Pan Pro Duo' in event.Items|join:',' or 'Utensil Set' in event.Items|join:',' %}
-<tr><td class="pad" style="padding:4px 44px 18px 44px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#FFB800" style="background-color:#FFB800;padding:12px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#272727;"><b style="font-weight:800;">NEXT BATCH.</b> The current batch of your set is sold out. Ordering now reserves yours from the next shipment, expected {{NEXT_BATCH_DATE}}.</td></tr></table></td></tr>
+{% if '6-Pcs' in event.Items|join:',' or '12-Pcs' in event.Items|join:',' %}
+<tr><td class="pad" style="padding:4px 44px 18px 44px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#FFB800" style="background-color:#FFB800;padding:12px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#272727;"><b style="font-weight:800;">NEXT BATCH.</b> The current batch of your set sold out. Ordering now reserves yours from our new batch, which arrives in mid-November.</td></tr></table></td></tr>
 {% endif %}
 {{BLOCK:bf-cta bg="#F8F7F2" label="Complete my order" url="{{ event.extra.responsive_checkout_url|default:'https://siraatskitchen.com/discount/BFCODE?redirect=/cart' }}&discount=BFCODE&utm_source=klaviyo&utm_medium=email&utm_campaign=v4-checkout&utm_content=c1b-cta1" pad="14px 44px 26px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:14px;'>{{FRICTION}}</div>"}}
 <tr><td class="pad lead" style="padding:0 44px 18px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;color:#282828;">Every order ships with {{GIFTS:total}}. Changed your mind later? Send it back unused within 30 days. Something wrong with it? It's covered for 75 years.</td></tr>

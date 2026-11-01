@@ -7,7 +7,6 @@ BF = os.path.dirname(N)
 rd = lambda p: open(os.path.join(BF, p)).read()
 
 SALE_END = 'Monday, November 30'
-END_TIME = 'midnight PT'          # [VRAAG FLORIS] exacte tijd en tijdzone
 HL = lambda t: '<span style="background-color:#FFE38A;color:#272727;padding:0 3px;">%s</span>' % t  # open punt zichtbaar in concept
 
 # Voorraadblok: US en niet-US (12-delige set alleen US). Drempels kloppen op 1 nov; geen exacte aantallen.
@@ -16,8 +15,8 @@ def stock(pad, bg, eyebrow='STOCK CHECK', note=None):
     common = ('t2="SELLING FAST" c2="#C8202A" f2="#FFFFFF" d2="<b>Wok Pan Pro {{SIZE:24}} and {{SIZE:28}}:</b> fewer than 100 left of each. <b>Pan Pro Mini:</b> fewer than 200 left." '
               't3="IN STOCK" c3="#3A3A3A" f3="#FFFFFF" d3="<b>Pan Pro Standard, Small and Large:</b> plenty in stock." note="%s"' % note)
     b = '{{BLOCK:bf-stock pad="%s" bg="%s" eyebrow="%s" t1="NEXT BATCH" c1="#FFB800" f1="#272727" d1="%s" %s}}'
-    us = b % (pad, bg, eyebrow, '<b>Pan Set, 6 Pcs, Cookware Set, 12 Pcs and Pan Pro Duo:</b> the current batch is sold out. Orders now reserve yours from the next shipment, expected {{NEXT_BATCH_DATE}}.', common)
-    intl = b % (pad, bg, eyebrow, '<b>Pan Set, 6 Pcs and Pan Pro Duo:</b> the current batch is sold out. Orders now reserve yours from the next shipment, expected {{NEXT_BATCH_DATE}}.', common)
+    us = b % (pad, bg, eyebrow, '<b>Pan Set, 6 Pcs and Cookware Set, 12 Pcs:</b> the current batch is sold out. Orders now reserve yours from our new batch, arriving in mid-November. Most of the next 12-piece batch is already reserved.', common)
+    intl = b % (pad, bg, eyebrow, '<b>Pan Set, 6 Pcs:</b> the current batch is sold out. Orders now reserve yours from our new batch, arriving in mid-November.', common)
     return '{{USONLY}}\n%s\n{{ELSEUS}}\n%s\n{{/USONLY}}' % (us, intl)
 
 def head(meta, title, preheader, signal, extra_css=''):
@@ -80,8 +79,8 @@ def utm(url, camp, content):
 files = {}
 
 # Sold-beyond-stock items, zoals ze in de eventtitels heten (catalogus): 6-Pcs set, 12-Pcs set, Pan Pro Duo, Pan Pro & Utensil Set
-SETCHK = lambda src: "{%% if '6-Pcs' in %s or '12-Pcs' in %s or 'Pan Pro Duo' in %s or 'Utensil Set' in %s %%}" % (src, src, src, src)
-BATCH_NOTE = '''<tr><td class="pad" style="padding:4px 44px 18px 44px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#FFB800" style="background-color:#FFB800;padding:12px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#272727;"><b style="font-weight:800;">NEXT BATCH.</b> The current batch of your set is sold out. Ordering now reserves yours from the next shipment, expected {{NEXT_BATCH_DATE}}.</td></tr></table></td></tr>
+SETCHK = lambda src: "{%% if '6-Pcs' in %s or '12-Pcs' in %s %%}" % (src, src)
+BATCH_NOTE = '''<tr><td class="pad" style="padding:4px 44px 18px 44px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#FFB800" style="background-color:#FFB800;padding:12px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#272727;"><b style="font-weight:800;">NEXT BATCH.</b> The current batch of your set sold out. Ordering now reserves yours from our new batch, which arrives in mid-November.</td></tr></table></td></tr>
 '''
 
 # ---------- 1. C1b checkout +1 uur ----------
@@ -97,7 +96,7 @@ TRIGGER/TIMING: v4 · Checkout abandonment QUBUQV, nieuwe stap na C1: wacht 1 uu
 FILTERS: Placed Order = 0 sinds flowstart; minder dan 3 Received Email in de laatste 1 dag; niet geklikt op C1 in de laatste 50 min (optioneel, test); geen BFCODE-mail uit de cart-flow in de laatste 1 uur.
 WAAROM: plan 04 punt 2 (C1 $7,96 per ontvanger; Smooche 3 mails in 90 min). Schatting $4.000 a $5.000 in november.
 AANBOD: up to 70% off + extra 10% met BFCODE (placeholder), 4 gifts. Geen nep-order of nep-deadline.
-PLACEHOLDER: {{NEXT_BATCH_DATE}} alleen zichtbaar als er een uitverkochte set in de checkout zit (6-Pcs, 12-Pcs, Pan Pro Duo, Pan Pro & Utensil Set).'''
+VOORRAADREGEL: alleen zichtbaar als er een 6-Pcs of 12-Pcs set in de checkout zit (nieuwe batch week van 9 nov, Floris 1 nov).'''
 b = head(meta, 'Your Black Friday cart is saved', 'Your extra 10% is still on it, and so are your 4 gifts.', 'checkout')
 b += OPEN('#F8F7F2') + '{{BLOCK:bf-topbar text="BLACK FRIDAY SALE IS LIVE"}}\n{{HEADER}}\n'
 b += P("Hi {{ first_name|default:'there' }},", '34px 44px 14px 44px')
@@ -174,7 +173,7 @@ b += OPEN('#F8F7F2') + '{{BLOCK:bf-topbar text="BLACK FRIDAY SALE IS LIVE"}}\n{{
 b += P("Hi {{ first_name|default:'there' }},", '34px 44px 18px 44px')
 b += P("It&rsquo;s Benjamin, founder of Siraat. Thanks for joining yesterday.")
 b += P('I made our pan because I didn&rsquo;t want PFAS coatings in my kitchen. Pure titanium, nothing to wear off, covered for 75 years. Lab tested: <a href="https://siraatskitchen.com/pages/third-party-testing?utm_source=klaviyo&amp;utm_medium=email&amp;utm_campaign=bf-nov&amp;utm_content=bfw2-report" style="color:#272727;">Light Labs report no. 25895</a>.')
-b += P("One heads-up. Our sets are going faster than we planned. The current batch is gone, so a set ordered today is reserved from the next shipment. The pans themselves are in stock.")
+b += P("One heads-up. Our sets are going faster than we planned. The current batch is gone, so a set ordered today is reserved from our new batch, which arrives in mid-November. The pans themselves are in stock.")
 b += P("Our Black Friday Sale is live: up to 70% off, no code needed.", '0 44px 6px 44px')
 b += SIGN_CREAM
 b += stock('6px 44px 6px 44px', '#F8F7F2')
@@ -219,14 +218,14 @@ b += '<tr><td bgcolor="#0E0E0E" style="background-color:#0E0E0E;padding:0;"><img
 b += '<tr><td align="center" class="pad" bgcolor="#0E0E0E" style="background-color:#0E0E0E;padding:30px 30px 0 30px;"><table role="presentation" align="center" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;"><tr><td bgcolor="#FFB800" style="background-color:#FFB800;padding:6px 10px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:12px;letter-spacing:1.8px;font-weight:800;color:#272727;">STOCK UPDATE</td></tr></table></td></tr>\n'
 b += '<tr><td align="center" class="pad bfh" bgcolor="#0E0E0E" style="background-color:#0E0E0E;padding:18px 24px 0 24px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:46px;line-height:52px;font-weight:900;letter-spacing:-1.4px;color:#FFFFFF;text-align:center;">Our sets<br><span style="background-color:#FFB800;color:#272727;padding:0 8px;">sold out.</span></td></tr>\n'
 b += '<tr><td class="pad lead" align="center" bgcolor="#0E0E0E" style="background-color:#0E0E0E;padding:18px 36px 26px 36px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:17px;line-height:26px;color:#E6E3DC;text-align:center;">The current batch, that is. Here&rsquo;s what&rsquo;s left, and what&rsquo;s next.</td></tr>\n'
-b += DARKP('Benjamin here, with an honest stock update. More of you picked a set this month than we planned for. The current batch is gone. You can still order one at the sale price: it&rsquo;s reserved for you from the next shipment, expected {{NEXT_BATCH_DATE}}.', '0 40px 16px 40px')
+b += DARKP('Benjamin here, with an honest stock update. More of you picked a set this month than we planned for. The current batch is gone. You can still order one at the sale price: it&rsquo;s reserved for you from our new batch, which arrives in mid-November.{{IF:US}} Most of the next 12-piece batch is already reserved.{{ENDIF}}', '0 40px 16px 40px')
 b += DARKP('The single pans are a different story. Most are in stock. Two are getting low, and I&rsquo;d rather tell you now than after.', '0 40px 22px 40px')
 b += stock('0 20px 26px 20px', '#0E0E0E', 'WHERE THINGS STAND')
 b += '{{BLOCK:bf-cta label="Shop the sale" url="%s" pad="4px 40px 30px 40px" sub="%s"}}\n' % (utm(SALE, 'bf-nov', 'stock-cta1'), SUB('No code needed. 30-day returns. 75-year warranty.'))
 b += '{{BLOCK:bf-sectionbar text="IN STOCK, LOW, AND NEXT BATCH"}}\n<tr><td bgcolor="#0E0E0E" style="background-color:#0E0E0E;height:20px;line-height:20px;font-size:0;">&nbsp;</td></tr>\n'
 b += CARD('left', IMG + 'siraat-bf-product-hammered-pan-pro-yellow.webp?width=800&format=pjpg', U_STD, 'IN STOCK', 'Pan Pro Standard', 'Pure titanium cooking surface. Zero coating.', 'Plenty in stock. The pan most people start with.')
 b += CARD('right', IMG + 'siraat-bf-product-hammered-wok-pan-pro-yellow.webp?width=800&format=pjpg', U_WOK, 'SELLING FAST', 'Wok Pan Pro', 'Made for stir-fries, searing and tossing.', '{{SIZE:24}} and {{SIZE:28}}: fewer than 100 left of each.')
-b += CARD('left', IMG + '6pcscookwareset.webp?width=600', U_SET6, 'NEXT BATCH', 'Pan Set with Lids, 6&nbsp;Pcs', '3 pans and 3 fitted lids.', 'Current batch sold out. Order now to reserve one from the next shipment.', '0 20px 30px 20px')
+b += CARD('left', IMG + '6pcscookwareset.webp?width=600', U_SET6, 'NEXT BATCH', 'Pan Set with Lids, 6&nbsp;Pcs', '3 pans and 3 fitted lids.', 'Current batch sold out. Order now to reserve one from the new batch.', '0 20px 30px 20px')
 b += DARKP('Two promises, either way. Change your mind? Send it back unused within 30 days. Something wrong with it? It&rsquo;s covered for 75 years.', '0 40px 4px 40px')
 b += '{{BLOCK:bf-cta label="Shop the sale" url="%s" pad="20px 40px 20px 40px"}}\n' % utm(SALE, 'bf-nov', 'stock-cta2')
 b += SIGN_DARK + TAIL
@@ -240,7 +239,7 @@ body = body.replace('>LAST CALL</td>', '>ENDS TOMORROW</td>')
 body = body.replace('Last call.<br><span style="background-color:#FFB800;color:#272727;padding:0 8px;">Ends [END DATE].</span>', 'One day<br><span style="background-color:#FFB800;color:#272727;padding:0 8px;">left.</span>')
 body = body.replace('Then prices go back to normal.', 'The Black Friday Sale ends tomorrow, %s. Then prices go back to normal.' % SALE_END)
 body = body.replace('Benjamin here, one last time this sale.', 'Benjamin here. One day left.')
-body = re.sub(r'Black Friday prices end on <span[^>]*>\[END DATE\]</span> at <span[^>]*>\[END TIME \+ TIMEZONE\]</span>\.', 'Black Friday prices end tomorrow, %s, at %s. Two things to know before you decide: our sets are now ordered from the next batch, and the Wok Pan Pro is running low.' % (SALE_END, HL(END_TIME)), body)
+body = re.sub(r'Black Friday prices end on <span[^>]*>\[END DATE\]</span> at <span[^>]*>\[END TIME \+ TIMEZONE\]</span>\.', 'Black Friday prices end tomorrow, %s. Two things to know before you decide: our sets are now ordered from the new batch, and the Wok Pan Pro is running low.' % SALE_END, body)
 body = body.replace("If you've been deciding between a pan and a set, these are the three I'd look at.", '')
 body = body.replace('{{BLOCK:bf-sectionbar text="LAST CALL: MY 3 PICKS"}}', stock('0 20px 30px 20px', '#0E0E0E') + '\n{{BLOCK:bf-sectionbar text="ONE DAY LEFT: MY 3 PICKS"}}')
 meta = '''ID: nov-last-day · Deadline 1, 24 uur voor het einde (bron: signup/bf-last.html, placeholders ingevuld)
@@ -248,30 +247,30 @@ SENDER: Siraat
 SUBJECT A: Black Friday ends tomorrow
 SUBJECT B: One day left: up to 70% off
   Alternatieven: "Ends Monday, November 30" · "Before prices go back" · "Pan or set? One day to decide."
-PREVIEW: Up to 70% off until Monday, November 30 at midnight PT. Then prices go back to normal.
+PREVIEW: Up to 70% off until Monday, November 30. Then prices go back to normal.
 TRIGGER/TIMING: campagne zo 29 nov 18:00 lokale tijd (ca. 30 uur voor het einde voor US-oost, 24 uur voor PT), plus dezelfde mail als laatste stap in de BF-reeks (Rn556d) voor niet-kopers.
 DOELGROEP: Engaged 60 dagen + abandoners 30 dagen (Started Checkout of Added to Cart, geen order), uitgesloten kopers laatste 7 dagen. Smart Sending aan (8 uur in BF-week).
-WAAROM: plan 04 punt 6 (echte deadline-mails, $10.000 a $20.000 netto voor beide). Einde: Monday, November 30 (Floris 1 nov). [VRAAG FLORIS] klok en tijdzone, nu "midnight PT".'''
-files['nov-last-day'] = head(meta, 'Black Friday ends tomorrow', 'Up to 70% off until Monday, November 30 at midnight PT. Then prices go back to normal.', 'profile') + body + TAIL.lstrip('\n')
+WAAROM: plan 04 punt 6 (echte deadline-mails, $10.000 a $20.000 netto voor beide). Einde: Monday, November 30 (Floris 1 nov; klok en tijdzone niet nodig in de copy).'''
+files['nov-last-day'] = head(meta, 'Black Friday ends tomorrow', 'Up to 70% off until Monday, November 30. Then prices go back to normal.', 'profile') + body + TAIL.lstrip('\n')
 
 # ---------- 8. Final hours (laatste dag, brief) ----------
 meta = '''ID: nov-final-hours · Deadline 2, laatste uren (korte brief van Benjamin in BF-stijl, geen hero)
 SENDER: Benjamin from Siraat
 SUBJECT A: Final hours
-SUBJECT B: Tonight at midnight PT, prices go back
-  Alternatieven: "The sale ends tonight" · "Last email about Black Friday" · "Benjamin here, one last time"
-PREVIEW: The Black Friday Sale ends tonight at midnight PT. This is my last email about it.
-TRIGGER/TIMING: campagne ma 30 nov 14:00 PT op een vaste tijd voor iedereen (niet lokale tijd, het einde is overal hetzelfde moment), US-lijst. INT apart: ma 30 nov 09:00 lokale tijd met dezelfde mail (einde = di ochtend in Europa, de copy noemt "Monday at midnight PT" zonder "tonight" voor INT via IF:US).
+SUBJECT B: Last day: up to 70% off
+  Alternatieven: "The sale ends today" · "Last email about Black Friday" · "Benjamin here, one last time"
+PREVIEW: The Black Friday Sale ends today. This is my last email about it.
+TRIGGER/TIMING: campagne ma 30 nov 11:00 lokale tijd (US en INT), dezelfde mail.
 DOELGROEP: klikkers 30 dagen + abandoners 14 dagen zonder order, uitgesloten kopers sinds 27 nov. Smart Sending aan (8 uur).
 WAAROM: plan 04 punt 6. Echte deadline: alleen als Floris het einde bevestigt. Geen afteller (kan later met echte eindtijd).'''
-b = head(meta, 'Final hours', 'The Black Friday Sale ends tonight at midnight PT. This is my last email about it.', 'profile')
+b = head(meta, 'Final hours', 'The Black Friday Sale ends today. This is my last email about it.', 'profile')
 b += OPEN('#0E0E0E') + '{{BLOCK:bf-topbar text="FINAL HOURS &middot; ENDS MONDAY, NOVEMBER 30" bg="#FFB800" color="#272727"}}\n{{HEADER}}\n'
 b += '<tr><td class="pad h1" bgcolor="#0E0E0E" style="background-color:#0E0E0E;padding:38px 40px 14px 40px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:46px;line-height:50px;font-weight:900;letter-spacing:-1.4px;color:#FFFFFF;">Final<br><span style="background-color:#FFB800;color:#272727;padding:0 6px;">hours.</span></td></tr>\n'
 b += DARKP("Hi {{ first_name|default:'there' }}, Benjamin here.", '10px 40px 16px 40px', '#FFFFFF', 'font-weight:800;')
-b += DARKP('The Black Friday Sale ends {{IF:US}}tonight{{ELSE}}Monday, November 30{{ENDIF}} at %s. After that, prices go back to normal and this is my last email about it.' % HL(END_TIME), '0 40px 16px 40px')
-b += DARKP('If you were waiting for the last moment: this is it. Up to 70% off, no code needed. A set ordered now is reserved from the next shipment, the single pans ship from stock.', '0 40px 6px 40px')
+b += DARKP('The Black Friday Sale ends today, Monday, November 30. After that, prices go back to normal, and this is my last email about it.', '0 40px 16px 40px')
+b += DARKP('If you were waiting for the last moment: this is it. Up to 70% off, no code needed. A set ordered now is reserved from our new batch. The single pans are in stock.', '0 40px 6px 40px')
 b += '{{BLOCK:bf-cta label="Shop before it ends" url="%s" pad="22px 40px 28px 40px" sub="%s"}}\n' % (utm(SALE, 'bf-nov', 'final-cta1'), SUB('No code needed. 30-day returns. 75-year warranty.'))
-b += stock('0 20px 26px 20px', '#0E0E0E', 'LAST STOCK CHECK', 'Checked this morning. Up to 70% off until midnight PT.')
+b += stock('0 20px 26px 20px', '#0E0E0E', 'LAST STOCK CHECK', 'Up to 70% off until the end of today.')
 b += DARKP('Thank you for cooking with us this year. 100,000+ happy customers now cook without a coating.', '0 40px 10px 40px')
 b += SIGN_DARK + TAIL
 files['nov-final-hours'] = b

@@ -185,3 +185,8 @@ Screenshot van het geheel: `research/figma/alle-emails-overzicht.png` (verkleind
 - Varianten met dezelfde HTML maar een ander voorbeeldproduct (bijv. pan of accessoire in K3, B2) zijn één keer gerenderd, met het panvoorbeeld.
 - INT-receptcampagne is nooit verstuurd (geannuleerd 9 okt), staat er voor de volledigheid in.
 - Renders zijn lokaal (Django), niet via Klaviyo's eigen template-render; kleine verschillen in Klaviyo-tags (unsubscribe-links, webview) zijn mogelijk.
+
+### BFCM-pagina · November meer output (plan, 1 nov), 8 mails
+[Naar de rij](https://www.figma.com/design/oaxnBkz3MAbePRnorCrQwz?node-id=210-2) · Pagina "BFCM 2026 · Flows (Black Friday-stijl)", frame 210:2 onder "BF-W1 · Smooche-kaarten" (190:2). Titelkaart 210:5, tijdlijn Smooche vs Siraat nu vs met plan 210:21, previews (US, 375 px, 2x) via upload_assets op rechthoeken 210:77 t/m 210:105. Status: concept, niet in Klaviyo. Details: research/smooche/05-designs-november.md.
+
+- C1b (+1 u) · W1b (+3 u) · K1b (+3 u) · BF-W2 (dag 1) · BF-W3 (dag 3) · Stock alert (campagne ~17 nov) · Last day (29 nov) · Final hours (30 nov).
