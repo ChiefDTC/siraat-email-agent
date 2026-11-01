@@ -7,8 +7,11 @@ Bron: Figma "Siraat · Black Friday 2026 Brand Book" (jY3uex0pCP6rHT97zFiA9B), p
 - Inter Black koppen (strak), Inter Extra Bold caps voor tags en knoppen, Inter Regular body. Serif (Instrument Serif Italic) alleen als tweede regel op donker beeld.
 - Eén groot geel element per sectie. Geen gele tekst op wit/cream. Geen rode knoppen.
 
+## November v2 (1 nov, Smooche-volume)
+Nieuwe mails in `november-v2/` (15 stuks, generator `_tools/make_v2.py`, checks `render_v2.py`, screenshots `shot_v2.js`). Plan: research/smooche/06-volume-plan-smooche.md. `november/` is vervangen (zie november/VERVANGEN.md).
+
 ## Blokken (klaviyo/templates/partials/blocks, via {{BLOCK:naam key="..."}})
-bf-stock (voorraadkaart, 3 regels t/c/f/d, note; alleen ware drempels, wekelijks controleren, zie november/) · bf-topbar (text, bg, color) · bf-hero (img, alt, tag, line1, line2, sub) · bf-cta (label, url, pad, bg, sub) · bf-sectionbar (text) · bf-tiles2 (pad, img1, name1, url1, img2, name2, url2) · bf-deal (pad, eyebrow, headline, detail) · bf-product (side=left|right, img, url, name, kicker, alt, b1, b2; opties pill, btn, pad, bg, panel): productkaart Smooche-stijl, zie signup/FLOW.md.
+bf-stock (voorraadkaart, 3 regels t/c/f/d, note; alleen JUST ARRIVED / SELLING FAST / IN STOCK, nooit NEXT BATCH of reserve, DECISIONS "Voorraad-copy") · bf-topbar (text, bg, color) · bf-hero (img, alt, tag, line1, line2, sub) · bf-cta (label, url, pad, bg, sub) · bf-sectionbar (text) · bf-tiles2 (pad, img1, name1, url1, img2, name2, url2) · bf-deal (pad, eyebrow, headline, detail) · bf-product (side=left|right, img, url, name, kicker, alt, b1, b2; opties pill, btn, pad, bg, panel): productkaart Smooche-stijl, zie signup/FLOW.md.
 Voorbeeld: klaviyo/templates/v3/bfcm/_test/t.html. Vaste {{HEADER}} en {{FOOTER}} blijven (merkregel). bf-topbar staat boven {{HEADER}}.
 
 ## Beelden (Shopify CDN, https://cdn.shopify.com/s/files/1/0907/0877/1156/files/)
