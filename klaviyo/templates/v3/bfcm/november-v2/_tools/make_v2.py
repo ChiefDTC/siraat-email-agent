@@ -171,8 +171,8 @@ TILE = {
  'standard': dict(img=YS('hammered-pan-pro'), name='Pan Pro Standard {{SIZE:28}}', was='{{WAS:standard}}', now='{{PRICE:standard}}', off='-70%', url=U['standard']),
  'large': dict(img=CDN + 'siraat-bf-product-hammered-pan-pro-yellow-tag.webp?width=600&format=pjpg', name='Pan Pro Large {{SIZE:30}}', was='{{WAS:large}}', now='{{PRICE:large}}', off='-70%', url=U['large']),
  'mini': dict(img=YS('hammered-pan-pro-mini'), name='Pan Pro Mini {{SIZE:20}}', was='{{WAS:mini}}', now='{{PRICE:mini}}', off='-70%', url=U['mini']),
- 'deep': dict(img=YS('hammered-deep-pan-pro'), name='Deep Pan Pro', was='{{WAS:deep}}', now='{{FROM:deep}}', off='-70%', url=U['deep']),
- 'wok': dict(img=YS('hammered-wok-pan-pro'), name='Wok Pan Pro', was='{{WAS:wok}}', now='{{FROM:wok}}', off='-70%', url=U['wok']),
+ 'deep': dict(img=YS('hammered-deep-pan-pro'), name='Deep Pan Pro', was='{{WAS:deep}}', now='<span style="font-size:13px;font-weight:700;letter-spacing:0;">from</span> {{PRICE:deep}}', off='-70%', url=U['deep']),
+ 'wok': dict(img=YS('hammered-wok-pan-pro'), name='Wok Pan Pro', was='{{WAS:wok}}', now='<span style="font-size:13px;font-weight:700;letter-spacing:0;">from</span> {{PRICE:wok}}', off='-70%', url=U['wok']),
  'small': dict(img=YS('hammered-pan-pro'), name='Pan Pro Small {{SIZE:26}}', was='{{WAS:small}}', now='{{PRICE:small}}', off='-70%', url='https://siraatskitchen.com/products/titanium-hammered-pan-pro-small'),
  'pizza': dict(img=CDN + 'TitaniumHammeredPizzaSteel.webp?width=600&format=pjpg', name='Pizza Steel', was='{{WAS:pizza}}', now='{{PRICE:pizza}}', off='-70%', url='https://siraatskitchen.com/products/titanium-hammered-pizza-steel'),
  'set6': dict(img='{{IMG}}/deal-set6.jpg', name='Pan Set with Lids, 6&nbsp;Pcs', was='{{WAS:set6}}', now='{{PRICE:set6}}', off='-70%', url=U['set6']),
@@ -182,7 +182,7 @@ def deal_main(bg, camp, content, label='Get the 12-piece deal', fr='{{FRICTION}}
     """US: 12-Pcs met gratis Pizza Steel. Elders: 6-Pcs (12-Pcs is US-only)."""
     us = deal(bg, '{{IMG}}/deal-set12-pizza.jpg', 'Titanium Hammered Cookware Set, 12 Pcs, with a free Pizza Steel', utm(U['set12p'], camp, content + '-set12'), [JA, SF],
               'Cookware Set, 12&nbsp;Pcs', '3 pans, 2 saucepans, a stockpot and 6 fitted lids. A whole kitchen with a pure titanium cooking surface, no coatings.',
-              '{{WAS:set12}}', '{{PRICE:set12}}', '-68%', '+ FREE Pizza Steel with this set (sells for {{PRICE:pizza}})', label, fr, 'THE COMPLETE SET')
+              '{{WAS:set12}}', '{{PRICE:set12}}', '-68%', '+ FREE Pizza Steel ($664 value) with this set', label, fr, 'THE COMPLETE SET')
     intl = deal(bg, '{{IMG}}/deal-set6.jpg', 'Titanium Hammered Pan Set with Lids, 6 Pcs', utm(U['set6'], camp, content + '-set6'), [JA, SF],
                 'Pan Set with Lids, 6&nbsp;Pcs', 'Pan Pro Mini, Small and Large, each with its own fitted lid. Pure titanium cooking surface, no coatings.',
                 '{{WAS:set6}}', '{{PRICE:set6}}', '-70%', '+ {{GIFTS:total}} with every order', label.replace('12-piece', '6-piece'), fr, 'THE STARTER SET')
@@ -191,7 +191,7 @@ def tiles_for(camp, content, keys_us, keys_int):
     def mk(keys):
         return [dict(TILE[k], url=utm(TILE[k]['url'], camp, content + '-' + k)) for k in keys]
     return mk(keys_us), mk(keys_int)
-def grid_mkt(bg, camp, content, keys_us=('set6', 'standard', 'large', 'mini'), keys_int=('standard', 'large', 'mini', 'small')):
+def grid_mkt(bg, camp, content, keys_us=('set6', 'standard', 'wok', 'deep'), keys_int=('standard', 'wok', 'deep', 'small')):
     a, b = tiles_for(camp, content, keys_us, keys_int)
     return '{{USONLY}}\n%s{{ELSEUS}}\n%s{{/USONLY}}\n' % (grid(bg, a), grid(bg, b))
 
@@ -262,17 +262,17 @@ def meta(id_, sender, subj, pre, when, who, why, alts=''):
 # --- F1 W1b: welcome +2 uur, de prijslijst ---
 c = 'bf-v2-welcome'
 m = meta('v2-w1b · Welcome tweede contact, +2 uur (T4a5Mk na W1 en Rn556d na BF-W1)', 'Siraat',
-         ('Your Black Friday price list', 'Up to 70% off. Every price inside.'), 'Every price, side by side. Free gifts. Ends Monday, Nov 30.',
+         ('Your Black Friday price list', 'Up to 70% off. Every price inside.'), 'Every price, side by side. Free gifts with every order.',
          'flow-stap +2 uur na aanmelding', 'Placed Order 0 sinds flowstart; geen Started Checkout in de laatste 1 uur (dan neemt checkout over)',
          'Smooche mail 3 (+2 u). W1 haalt $2,74 per ontvanger, daarna was er tot de volgende ochtend niets.', '"70% off: the full price list" · "Your prices are in" · "$649 for a whole kitchen"')
-b = head(m, 'Your Black Friday price list', 'Every price, side by side. Free gifts. Ends Monday, Nov 30.', 'profile') + OPEN(NIGHT)
-b += hero_dark('THE PRICE LIST', 'Black Friday', 'sale is live', sub='No code needed. Free gifts with every order.<br>Ends Monday, November 30.', url=utm(SALE, c, 'w1b-hero'), fr='{{FRICTION}}')
+b = head(m, 'Your Black Friday price list', 'Every price, side by side. Free gifts with every order.', 'profile') + OPEN(NIGHT)
+b += hero_dark('THE PRICE LIST', 'Black Friday', 'sale is live', sub='No code needed. Free gifts with every order.', url=utm(SALE, c, 'w1b-hero'), fr='{{FRICTION}}')
 b += band('THE BIGGEST DEAL IN THE SALE')
 b += gap(NIGHT, 24) + deal_main(NIGHT, c, 'w1b')
 b += band('EVERY PRICE, SIDE BY SIDE', INK, Y) + gap(NIGHT, 20) + grid_mkt(NIGHT, c, 'w1b')
 b += proof(NIGHT, ['R169'], 'Eggs slide. No coating.')
 b += stats(NIGHT)
-b += cta('Shop the sale', utm(SALE, c, 'w1b-cta2'), NIGHT, '4px 30px 34px 30px', 'Sale ends Monday, November 30.')
+b += cta('Shop the sale', utm(SALE, c, 'w1b-cta2'), NIGHT, '4px 30px 34px 30px')
 files['v2-w1b'] = b + TAIL
 
 # --- F2 W2: welcome +24 uur (ook campagne): just arrived, selling fast ---
@@ -285,7 +285,7 @@ b = head(m, 'Just arrived: the sets', 'New stock just landed. At up to 70% off, 
 b += hero_yellow('NEW STOCK IS IN', 'Just', 'arrived.', 'The 6 and 12-piece sets just landed in our warehouse. At up to 70% off, they are selling fast.', 'Shop the sets', utm(SALE, c, 'w2-hero'), 'Up to 70% off. Free gifts with every order.')
 b += band('SELLING FAST', INK, Y) + gap(NIGHT, 24)
 b += '{{USONLY}}\n' + deal(NIGHT, '{{IMG}}/deal-set12-pizza.jpg', 'Cookware Set, 12 Pcs, with a free Pizza Steel', utm(U['set12p'], c, 'w2-set12'), [JA, SF], 'Cookware Set, 12&nbsp;Pcs',
-        '3 pans, 2 saucepans, a stockpot and 6 fitted lids. The whole kitchen, done in one order.', '{{WAS:set12}}', '{{PRICE:set12}}', '-68%', '+ FREE Pizza Steel with this set (sells for {{PRICE:pizza}})', 'Get the 12-piece set', '', 'THE COMPLETE SET') + '{{/USONLY}}\n'
+        '3 pans, 2 saucepans, a stockpot and 6 fitted lids. The whole kitchen, done in one order.', '{{WAS:set12}}', '{{PRICE:set12}}', '-68%', '+ FREE Pizza Steel ($664 value) with this set', 'Get the 12-piece set', '', 'THE COMPLETE SET') + '{{/USONLY}}\n'
 b += deal(NIGHT, '{{IMG}}/deal-set6.jpg', 'Pan Set with Lids, 6 Pcs', utm(U['set6'], c, 'w2-set6'), [JA, SF], 'Pan Set with Lids, 6&nbsp;Pcs',
           'Pan Pro Mini, Small and Large, each with its own fitted lid. The three sizes you reach for every day.', '{{WAS:set6}}', '{{PRICE:set6}}', '-70%', '+ {{GIFTS:total}} with every order', 'Get the 6-piece set', '{{FRICTION}}', 'THE STARTER SET')
 b += proof(NIGHT, ['R398'], 'Started with one. Bought the set.', '14px 20px 10px 20px')
@@ -296,10 +296,10 @@ files['v2-w2'] = b + TAIL
 # --- F3 K1b: cart +1 uur, extra 10% ticket ---
 pn = "event|lookup:'Product Name'"
 m = meta('v2-k1b · Cart tweede contact, +1 uur (TZG9Mx na K1)', 'Siraat',
-         ('Extra 10% off your cart (already applied)', 'You left this at up to 70% off'), 'On top of Black Friday prices. Ends Monday, Nov 30.',
+         ('Extra 10% off your cart (already applied)', 'You left this at up to 70% off'), 'On top of Black Friday prices of up to 70% off.',
          'flow-stap +1 uur na Added to Cart (Smooche mail 6 op +1 u)', 'Placed Order 0; Started Checkout 0 sinds flowstart (checkout-flow neemt over)',
          'K1 haalt $3,59 per ontvanger; extra 10% met BFCODE alleen in abandonment (DECISIONS 31 okt).', '"Your cart just got 10% cheaper" · "Still yours, now 10% less" · "An extra 10%, on us"')
-b = head(m, 'Extra 10% off your cart', 'On top of Black Friday prices. Ends Monday, Nov 30.', 'cart') + OPEN(NIGHT)
+b = head(m, 'Extra 10% off your cart', 'On top of Black Friday prices of up to 70% off.', 'cart') + OPEN(NIGHT)
 b += row(NIGHT, '34px 24px 0 24px', pill('YOUR CART', center=True), 'center')
 b += row(NIGHT, '18px 16px 0 16px', '<div class="hx" style="font-family:%s;font-size:56px;line-height:56px;font-weight:900;letter-spacing:-2px;color:#FFFFFF;text-transform:uppercase;">Extra 10%% off.<br><span style="color:%s;">Already applied.</span></div>' % (FF, Y), 'center', 'padx')
 b += row(NIGHT, '16px 30px 22px 30px', txt('On top of Black Friday prices of up to 70% off. One tap and it is in your cart.', 17, 26, '#E6E3DC', 500, 'text-align:center;'), 'center')
@@ -313,7 +313,7 @@ cartcard = ('<table role="presentation" width="100%%" cellpadding="0" cellspacin
     CARTL('k1b-product'), pn, pill('STILL IN YOUR CART'), FF, INK, pn, txt('Qty {{ event.Quantity|default:1|floatformat:0 }}', 14, 20, '#727272', 600, 'padding-top:2px;'), Y, FF, INK)
 b += row(NIGHT, '0 20px 4px 20px', cartcard, 'left', 'padx')
 b += cta('Return to my cart', CARTL('k1b-cta1'), NIGHT, '22px 30px 26px 30px', FR_CODE)
-b += band('SALE ENDS MONDAY, NOV 30 &nbsp;&middot;&nbsp; FREE GIFTS')
+b += band('UP TO 70% OFF &nbsp;&middot;&nbsp; FREE GIFTS')
 b += proof(NIGHT, ['R577'], 'Makes the others feel sticky.')
 b += stats(NIGHT)
 b += cta('Use my extra 10%', CARTL('k1b-cta2'), NIGHT, '0 30px 34px 30px')
@@ -321,26 +321,26 @@ files['v2-k1b'] = b + TAIL
 
 # --- F4 C1b: checkout +1 uur, brief van Benjamin (Smooche "Chloe") ---
 m = meta('v2-c1b · Checkout tweede contact, +1 uur (QUBUQV na C1). Platte brief binnen vaste header/footer.', 'Benjamin from Siraat (reply-to gelezen inbox)',
-         ('I saved your cart', 'Benjamin here, about your order'), 'Plus an extra 10%, already applied. Sale ends Monday.',
+         ('I saved your cart', 'Benjamin here, about your order'), 'Plus an extra 10%, already applied with one tap.',
          'flow-stap +1 uur na Started Checkout (Smooche mail 7 op +1 u 15)', 'Placed Order 0 sinds flowstart',
          'C1 haalt $7,96 per ontvanger, het rijkste moment van de reis. Brief-vorm werkt bij Smooche (7 van 13 mails).', '"Your cart is still open" · "One step left" · "Something stop you?"')
-b = head(m, 'I saved your cart', 'Plus an extra 10%, already applied. Sale ends Monday.', 'checkout') + OPEN(CREAM)
+b = head(m, 'I saved your cart', 'Plus an extra 10%, already applied with one tap.', 'checkout') + OPEN(CREAM)
 b += P("Hi {{ first_name|default:'there' }},", '34px 40px 14px 40px')
 b += P('Benjamin here. You were one step from finishing your order an hour ago, so I saved your cart.')
 b += P('<b>Here is what is on it right now:</b>', '0 40px 10px 40px')
 b += bullets(CREAM, ['Black Friday prices, up to 70% off', '<b>An extra 10% off</b> with code BFCODE, already applied with the button', '{{GIFTS:total}}, included', 'Free shipping, 30-day returns and a 75-year warranty'])
 b += '{{BLOCK:cart pad="8px 40px 4px 40px" title="YOUR CART, SAVED" line="Extra 10% with code <b>BFCODE</b>, already applied with the button."}}\n'
 b += cta('Complete my order', CO('c1b-cta1'), CREAM, '20px 40px 26px 40px', FR_CODE)
-b += P('The sale ends Monday, November 30. If something stopped you, the size, the price, anything, just reply. Our team will help.')
+b += P('If something stopped you, the size, the price, anything, just reply. Our team will help.')
 b += sign()
 files['v2-c1b'] = b + TAIL
 
 # --- F5 C1c: checkout +3 uur, drie redenen ---
 m = meta('v2-c1c · Checkout derde contact, +3 uur (QUBUQV). Product en bewijs (Smooche mail 6 "3 reasons").', 'Siraat',
-         ('3 reasons 100,000+ people switched', 'Why it is covered for 75 years'), 'Then your extra 10%, still applied. Ends Monday.',
+         ('3 reasons 100,000+ people switched', 'Why it is covered for 75 years'), 'Then your extra 10%, still applied.',
          'flow-stap +3 uur na Started Checkout', 'Placed Order 0 sinds flowstart',
          'Bezwaren wegnemen (werkt titanium echt, is het getest) vlak voor de beslissing; bewijs = rapport + review.', '"Report no. 25895" · "Cold metal grabs. Hot metal lets go." · "What makes it different"')
-b = head(m, '3 reasons 100,000+ people switched', 'Then your extra 10%, still applied. Ends Monday.', 'checkout') + OPEN(NIGHT)
+b = head(m, '3 reasons 100,000+ people switched', 'Then your extra 10%, still applied.', 'checkout') + OPEN(NIGHT)
 b += row(NIGHT, '0', img(EX('04-pan-tower'), 'A tower of Siraat titanium pans'), 'center', '')
 b += row(NIGHT, '30px 24px 0 24px', pill('BEFORE YOU DECIDE', center=True), 'center')
 b += row(NIGHT, '18px 16px 26px 16px', '<div class="hx" style="font-family:%s;font-size:56px;line-height:56px;font-weight:900;letter-spacing:-2px;color:#FFFFFF;text-transform:uppercase;">3 reasons<br><span style="color:%s;">they switched.</span></div>' % (FF, Y), 'center', 'padx')
@@ -355,34 +355,34 @@ files['v2-c1c'] = b + TAIL
 
 # --- F6 C2b: checkout +25 uur, value stack ---
 m = meta('v2-c2b · Checkout, +25 uur (QUBUQV, na C2 op +24 u). Value stack.', 'Siraat',
-         ('Everything you get, added up', 'Your cart + 4 gifts + extra 10%'), 'It is all still on your cart. Black Friday ends Monday, Nov 30.',
+         ('Everything you get, added up', 'Your cart + 4 gifts + extra 10%'), 'It is all still on your cart, with your extra 10%.',
          'flow-stap +25 uur (Smooche herhaalt de cart-reeks precies 24 uur later)', 'Placed Order 0 sinds flowstart',
          'Prijs is het grootste bezwaar (27% twijfelde): waarde optellen, niet alleen korting.', '"Here is the math" · "What $70 in gifts looks like" · "The deal, line by line"')
-b = head(m, 'Everything you get, added up', 'It is all still on your cart. Black Friday ends Monday, Nov 30.', 'checkout') + OPEN(Y, 'EXTRA 10% APPLIED')
+b = head(m, 'Everything you get, added up', 'It is all still on your cart, with your extra 10%.', 'checkout') + OPEN(Y, 'EXTRA 10% APPLIED')
 b += hero_yellow('YOUR ORDER', 'Everything', 'you get.', 'Added up, line by line. It is all still on your cart.', 'Complete my order', CO('c2b-hero'), FR_CODE)
 b += gap(Y, 4)
 b += stack(Y, [('Your cart at Black Friday prices', 'UP TO 70% OFF'), ('Extra 10% with code BFCODE', 'APPLIED'), ('Free shipping', '{{IF:PRICED}}{{GIFTS:ship}} VALUE{{ELSE}}INCLUDED{{ENDIF}}'),
                ('Chef&#39;s e-book', '{{IF:PRICED}}{{GIFTS:ebook}} VALUE{{ELSE}}INCLUDED{{ENDIF}}'), ('Mystery gift', '{{IF:PRICED}}{{GIFTS:mystery}} VALUE{{ELSE}}INCLUDED{{ENDIF}}'), ('A chance to win a PFAS water filter', 'INCLUDED'),
                ('30-day returns', 'INCLUDED'), ('75-year warranty', 'INCLUDED')], 'Gifts with your order', '{{GIFTS:TOTAL}}')
 b += '{{BLOCK:cart pad="0 20px 4px 20px" title="YOUR CART" line="Extra 10% with code <b>BFCODE</b>, already applied with the button."}}\n'
-b += cta_ink('Complete my order', CO('c2b-cta2'), Y, '20px 30px 32px 30px', 'Black Friday ends Monday, November 30.')
+b += cta_ink('Complete my order', CO('c2b-cta2'), Y, '20px 30px 32px 30px', '{{GIFTS:total}} included.')
 b += band('100,000+ HAPPY CUSTOMERS', INK, Y)
 b += proof(NIGHT, ['R240'], 'Covered for 75 years.', '24px 20px 10px 20px')
 files['v2-c2b'] = b + TAIL
 
 # --- F7 C2c: checkout +26 uur, donkere brief "Two promises" ---
 m = meta('v2-c2c · Checkout, +26 uur (QUBUQV). Donkere brief van Benjamin, volledige risicoomkering.', 'Benjamin from Siraat',
-         ('Two promises before Monday', 'What if it is not for you?'), 'Your extra 10% is still on your cart. The sale ends Monday, Nov 30.',
+         ('Two promises, then it is your call', 'What if it is not for you?'), 'Your extra 10% is still on your cart. Two promises first.',
          'flow-stap +26 uur (Smooche mail 12 op +40,5 u, laatste van de reeks)', 'Placed Order 0 sinds flowstart',
          'Laatste mail van de dag-1-reeks: risico wegnemen (skill sectie 8, "Two promises").', '"Benjamin, one more time" · "The honest answer" · "If it is wrong, we fix it"')
-b = head(m, 'Two promises before Monday', 'Your extra 10% is still on your cart. The sale ends Monday, Nov 30.', 'checkout') + OPEN(NIGHT)
+b = head(m, 'Two promises, then it is your call', 'Your extra 10% is still on your cart. Two promises first.', 'checkout') + OPEN(NIGHT)
 b += row(NIGHT, '36px 40px 6px 40px', '<div class="hl" style="font-family:%s;font-size:40px;line-height:42px;font-weight:900;letter-spacing:-1.4px;color:#FFFFFF;">Two promises.<br><span style="color:%s;">Then it is your call.</span></div>' % (FF, Y), 'left', 'pad')
 b += P("Hi {{ first_name|default:'there' }}, Benjamin again.", '20px 40px 14px 40px', NIGHT, '#FFFFFF')
 b += P('Your cart is still open. If one thing is holding you back, it is usually this: what if it is not for you? So here are my two promises.', '0 40px 18px 40px', NIGHT, '#E6E3DC')
 prom = lambda n, t, d: row(NIGHT, '0 20px 12px 20px', '<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0" bgcolor="#1C1C1C" style="background-color:#1C1C1C;border-radius:10px;border-left:5px solid %s;"><tr><td style="padding:18px 20px;">%s%s%s</td></tr></table>' % (Y, txt(n, 12, 14, Y, 900, 'letter-spacing:2px;'), txt(t, 20, 26, '#FFFFFF', 900, 'padding-top:6px;'), txt(d, 16, 24, '#E6E3DC', 400, 'padding-top:6px;')), 'left', 'padx')
 b += prom('PROMISE 1', 'Changed your mind?', 'Send it back unused within 30 days for a full refund.')
 b += prom('PROMISE 2', 'Something wrong with it?', 'Damaged or defective in the first 30 days: refund or replacement, and we pay the shipping. After that, it is covered for 75 years.')
-b += P('Your extra 10% (code BFCODE) is still on your cart, and the Black Friday Sale ends Monday, November 30.', '14px 40px 6px 40px', NIGHT, '#E6E3DC')
+b += P('Your extra 10% (code BFCODE) is still on your cart, together with {{GIFTS:total}}.', '14px 40px 6px 40px', NIGHT, '#E6E3DC')
 b += cta('Complete my order', CO('c2c-cta1'), NIGHT, '18px 30px 24px 30px', FR_CODE)
 b += P('Reply if you have a question. Our team will help.', '0 40px 12px 40px', NIGHT, '#BDB8AE', 15, 23) + sign(NIGHT)
 files['v2-c2c'] = b + TAIL
@@ -392,27 +392,27 @@ files['v2-c2c'] = b + TAIL
 # =====================================================================
 c = 'bf-v2-end'
 m = meta('v2-sat28 · Campagne za 28 nov 08:15 lokaal', 'Siraat', ('The last weekend of Black Friday', '3 days left: up to 70% off'),
-         'Ends Monday, Nov 30. The sets are selling fast.', 'za 28 nov 08:15 lokaal (US/INT)', 'E90 + kopers 365 d, uitgesloten: order sinds 27 nov. Smart sending uit.',
+         'Up to 70% off and free gifts, for three more days.', 'za 28 nov 08:15 lokaal (US/INT)', 'E90 + kopers 365 d, uitgesloten: order sinds 27 nov. Smart sending uit.',
          'Harde push einde sale (Floris 1 nov).', '"Last weekend at these prices" · "The final weekend" · "Black Friday, last 3 days"')
-b = head(m, 'The last weekend of Black Friday', 'Ends Monday, Nov 30. The sets are selling fast.', 'profile') + OPEN(NIGHT, 'LAST WEEKEND &middot; ENDS MONDAY', Y, INK)
-b += hero_dark('ENDS MONDAY, NOV 30', 'The last', 'weekend.', sub='Up to 70% off and free gifts, for three more days. Then the Black Friday Sale is over.', url=utm(SALE, c, 'sat-hero'), fr='{{FRICTION}}', image=EX('07-stage-reveal'), alt='Siraat titanium pans on a stage')
+b = head(m, 'The last weekend of Black Friday', 'Up to 70% off and free gifts, for three more days.', 'profile') + OPEN(NIGHT, 'LAST WEEKEND &middot; UP TO 70% OFF', Y, INK)
+b += hero_dark('3 DAYS LEFT', 'The last', 'weekend.', sub='Up to 70% off and free gifts, for three more days. Then the Black Friday Sale is over.', url=utm(SALE, c, 'sat-hero'), fr='{{FRICTION}}', image=EX('07-stage-reveal'), alt='Siraat titanium pans on a stage')
 b += band('3 DAYS LEFT &nbsp;&middot;&nbsp; SAT &nbsp;&middot;&nbsp; SUN &nbsp;&middot;&nbsp; MON')
 b += gap(NIGHT, 24) + deal_main(NIGHT, c, 'sat')
 b += grid_mkt(NIGHT, c, 'sat')
 b += proof(NIGHT, ['R138'], 'Her 4th pan. Your first?')
-b += cta('Shop the sale', utm(SALE, c, 'sat-cta2'), NIGHT, '4px 30px 34px 30px', 'Ends Monday, November 30.')
+b += cta('Shop the sale', utm(SALE, c, 'sat-cta2'), NIGHT, '4px 30px 34px 30px')
 files['v2-sat28'] = b + TAIL
 
 m = meta('v2-sun29 · Campagne zo 29 nov 09:00 lokaal (+ resend 19:00 aan niet-openers en abandoners 30 d)', 'Siraat', ('Black Friday ends tomorrow', 'Tomorrow it is over'),
-         'Up to 70% off ends Monday, Nov 30. Here is every price.', 'zo 29 nov 09:00; resend 19:00', 'Lijst (min unengaged 180 non-buyers), uitgesloten order sinds 27 nov. Smart sending uit.',
+         'Up to 70% off ends tomorrow. Here is every price.', 'zo 29 nov 09:00; resend 19:00', 'Lijst (min unengaged 180 non-buyers), uitgesloten order sinds 27 nov. Smart sending uit.',
          'Echte deadline: einde maandag 30 nov.', '"One day left" · "Ends tomorrow: the full price list" · "Last day tomorrow"')
-b = head(m, 'Black Friday ends tomorrow', 'Up to 70% off ends Monday, Nov 30. Here is every price.', 'profile') + OPEN(Y, 'ENDS TOMORROW, NOV 30', INK, Y)
-b += hero_yellow('ONE DAY LEFT', 'Ends', 'tomorrow.', 'Up to 70% off and free gifts end Monday, November 30.', 'Shop before it ends', utm(SALE, c, 'sun-hero'), 'No code needed. Free gifts with every order.')
+b = head(m, 'Black Friday ends tomorrow', 'Up to 70% off ends tomorrow. Here is every price.', 'profile') + OPEN(Y, 'ENDS TOMORROW', INK, Y)
+b += hero_yellow('ONE DAY LEFT', 'Ends', 'tomorrow.', 'Up to 70% off and free gifts end tomorrow.', 'Shop before it ends', utm(SALE, c, 'sun-hero'), 'No code needed. Free gifts with every order.')
 b += band('THE FULL PRICE LIST', INK, Y) + gap(NIGHT, 24)
 b += deal_main(NIGHT, c, 'sun', 'Get the 12-piece deal')
-b += grid_mkt(NIGHT, c, 'sun', ('set6', 'standard', 'large', 'mini', 'small', 'pizza'), ('standard', 'large', 'mini', 'small', 'pizza', 'set6'))
+b += grid_mkt(NIGHT, c, 'sun', ('set6', 'standard', 'wok', 'deep', 'small', 'pizza'), ('standard', 'wok', 'deep', 'small', 'pizza', 'set6'))
 b += stats(NIGHT)
-b += cta('Shop before it ends', utm(SALE, c, 'sun-cta2'), NIGHT, '0 30px 34px 30px', 'Ends Monday, November 30.')
+b += cta('Shop before it ends', utm(SALE, c, 'sun-cta2'), NIGHT, '0 30px 34px 30px')
 files['v2-sun29'] = b + TAIL
 
 m = meta('v2-mon-am · Campagne ma 30 nov 07:00 lokaal', 'Siraat', ('Last day: up to 70% off', 'Today is the last day'), 'Black Friday ends today. Free gifts end with it.',
@@ -420,12 +420,12 @@ m = meta('v2-mon-am · Campagne ma 30 nov 07:00 lokaal', 'Siraat', ('Last day: u
 b = head(m, 'Last day: up to 70% off', 'Black Friday ends today. Free gifts end with it.', 'profile') + OPEN(NIGHT, 'LAST DAY &middot; ENDS TODAY', Y, INK)
 b += row(NIGHT, '0', img(EX('10-levitating-pan'), 'A Siraat titanium pan, lifted over the stove'), 'center', '')
 b += row(NIGHT, '30px 16px 0 16px', '<div style="font-family:%s;font-size:15px;line-height:18px;font-weight:900;letter-spacing:4px;color:%s;">BLACK FRIDAY</div><div class="hxx" style="font-family:%s;font-size:110px;line-height:100px;font-weight:900;letter-spacing:-5px;color:#FFFFFF;padding-top:8px;">LAST<br><span style="background-color:%s;color:%s;padding:0 10px;">DAY.</span></div>' % (FF, Y, FF, Y, INK), 'center', 'padx')
-b += row(NIGHT, '22px 30px 0 30px', txt('Up to 70% off and free gifts end today, Monday, November 30.', 18, 27, '#E6E3DC', 600, 'text-align:center;'), 'center')
+b += row(NIGHT, '22px 30px 0 30px', txt('Up to 70% off and free gifts end today.', 18, 27, '#E6E3DC', 600, 'text-align:center;'), 'center')
 b += cta('Shop before it ends', utm(SALE, c, 'monam-hero'), NIGHT, '24px 30px 30px 30px', '{{FRICTION}}')
 b += band('ENDS TODAY')
 b += gap(NIGHT, 24) + deal_main(NIGHT, c, 'monam', 'Get it before it ends')
 b += grid_mkt(NIGHT, c, 'monam')
-b += cta('Shop before it ends', utm(SALE, c, 'monam-cta2'), NIGHT, '10px 30px 34px 30px', 'Ends today, Monday, November 30.')
+b += cta('Shop before it ends', utm(SALE, c, 'monam-cta2'), NIGHT, '10px 30px 34px 30px', 'Ends today.')
 files['v2-mon-am'] = b + TAIL
 
 m = meta('v2-mon-pm · Campagne ma 30 nov 13:00 lokaal, brief van Benjamin', 'Benjamin from Siraat', ('Final hours', 'Benjamin here, before it ends'), 'The Black Friday Sale ends today. A short note first.',
@@ -433,10 +433,10 @@ m = meta('v2-mon-pm · Campagne ma 30 nov 13:00 lokaal, brief van Benjamin', 'Be
 b = head(m, 'Final hours', 'The Black Friday Sale ends today. A short note first.', 'profile') + OPEN(CREAM, 'FINAL HOURS &middot; ENDS TODAY', Y, INK)
 b += row(CREAM, '36px 40px 4px 40px', '<div class="hl" style="font-family:%s;font-size:44px;line-height:46px;font-weight:900;letter-spacing:-1.6px;color:%s;">Final hours.</div>' % (FF, INK), 'left', 'pad')
 b += P("Hi {{ first_name|default:'there' }},", '18px 40px 14px 40px')
-b += P('Benjamin here. Our Black Friday Sale ends today, Monday, November 30. A short note before it does.')
+b += P('Benjamin here. Our Black Friday Sale ends today. A short note before it does.')
 b += P('If you were waiting for the right moment, this is it. Here is what still holds until the end of today:')
 b += bullets(CREAM, ['<b>Up to 70% off</b>, no code needed', '{{USONLY}}<b>The 12-piece set for {{PRICE:set12}}</b> (was {{WAS:set12}}), with a free Pizza Steel{{ELSEUS}}<b>The 6-piece set for {{PRICE:set6}}</b> (was {{WAS:set6}}){{/USONLY}}', '{{GIFTS:total}} with every order', '30-day returns and a 75-year warranty'])
-b += cta('Shop before it ends', utm(SALE, c, 'monpm-cta1'), CREAM, '14px 40px 26px 40px', 'Ends today, Monday, November 30.')
+b += cta('Shop before it ends', utm(SALE, c, 'monpm-cta1'), CREAM, '14px 40px 26px 40px', 'Ends today.')
 b += P('Thank you for cooking with us this year. 100,000+ people now cook without a coating, and I hope you will be one of them.')
 b += sign()
 files['v2-mon-pm'] = b + TAIL
@@ -458,34 +458,34 @@ files['v2-mon-late'] = b + TAIL
 # DAGELIJKSE CAMPAGNES (lege dagen)
 # =====================================================================
 c = 'bf-v2-daily'
-m = meta('v2-pricelist · Campagne lege dagen (6, 12, 22 nov)', 'Siraat', ('The Black Friday price list', 'Every price, one email'), 'Up to 70% off, side by side. Ends Monday, Nov 30.',
+m = meta('v2-pricelist · Campagne lege dagen (6, 12, 22 nov)', 'Siraat', ('The Black Friday price list', 'Every price, one email'), 'Up to 70% off, side by side. Free gifts with every order.',
          'zie research/smooche/06 sectie 4', 'zie tabel', 'Prijzen als hoofdzaak: de prijs verkoopt (Smooche-beeldmails met %).', '"$144 for the pan" · "What 70% off looks like" · "Price list inside"')
-b = head(m, 'The Black Friday price list', 'Up to 70% off, side by side. Ends Monday, Nov 30.', 'profile') + OPEN(CREAM)
+b = head(m, 'The Black Friday price list', 'Up to 70% off, side by side. Free gifts with every order.', 'profile') + OPEN(CREAM)
 b += row(CREAM, '36px 16px 0 16px', pill('BLACK FRIDAY SALE IS LIVE', center=True), 'center')
 b += row(CREAM, '18px 16px 0 16px', '<div class="hx" style="font-family:%s;font-size:58px;line-height:56px;font-weight:900;letter-spacing:-2.2px;color:%s;text-transform:uppercase;">The price<br><span style="background-color:%s;padding:0 8px;">list.</span></div>' % (FF, INK, Y), 'center', 'padx')
-b += row(CREAM, '18px 30px 26px 30px', txt('Up to 70% off. Free gifts with every order. No code needed. Ends Monday, November 30.', 17, 26, '#3E3B37', 500, 'text-align:center;'), 'center')
+b += row(CREAM, '18px 30px 26px 30px', txt('Up to 70% off. Free gifts with every order. No code needed.', 17, 26, '#3E3B37', 500, 'text-align:center;'), 'center')
 b += deal_main(CREAM, c, 'pl', 'Get the 12-piece deal')
-b += grid_mkt(CREAM, c, 'pl', ('set6', 'standard', 'large', 'mini', 'small', 'pizza'), ('standard', 'large', 'mini', 'small', 'pizza', 'set6'))
+b += grid_mkt(CREAM, c, 'pl', ('set6', 'standard', 'wok', 'deep', 'small', 'pizza'), ('standard', 'wok', 'deep', 'small', 'pizza', 'set6'))
 b += stats(CREAM)
 b += cta('Shop the sale', utm(SALE, c, 'pl-cta2'), CREAM, '0 30px 34px 30px', '{{FRICTION}}')
 files['v2-pricelist'] = b + TAIL
 
-m = meta('v2-proof · Campagne lege dagen (9, 16 nov)', 'Siraat', ('100,000+ kitchens, no coatings', '"The last pans we ever have to purchase"'), 'What they say after the first egg. Up to 70% off until Monday, Nov 30.',
+m = meta('v2-proof · Campagne lege dagen (9, 16 nov)', 'Siraat', ('100,000+ kitchens, no coatings', '"The last pans we ever have to purchase"'), 'What they say after the first egg. And this month, up to 70% off.',
          'zie tabel', 'zie tabel', 'Sociaal bewijs als hoofdzaak (Smooche mail 8, educatie + reviews).', '"Carole has cooked for 60 years" · "In their words" · "Why they kept buying"')
-b = head(m, '100,000+ kitchens, no coatings', 'What they say after the first egg. Up to 70% off until Monday, Nov 30.', 'profile') + OPEN(NIGHT)
+b = head(m, '100,000+ kitchens, no coatings', 'What they say after the first egg. And this month, up to 70% off.', 'profile') + OPEN(NIGHT)
 b += row(NIGHT, '40px 16px 0 16px', txt('&#9733;&#9733;&#9733;&#9733;&#9733;', 26, 28, Y, 400, 'letter-spacing:5px;') + '<div class="hxx" style="font-family:%s;font-size:110px;line-height:104px;font-weight:900;letter-spacing:-5px;color:%s;padding-top:10px;">100,000+</div>' % (FF, Y), 'center', 'padx')
 b += row(NIGHT, '6px 16px 0 16px', '<div class="hx" style="font-family:%s;font-size:44px;line-height:46px;font-weight:900;letter-spacing:-1.6px;color:#FFFFFF;text-transform:uppercase;">happy customers.</div>' % FF, 'center', 'padx')
 b += row(NIGHT, '16px 30px 0 30px', txt('Here is what they say, in their own words. And this month, it is up to 70% off.', 17, 26, '#E6E3DC', 500, 'text-align:center;'), 'center')
 b += cta('Shop the sale', utm(SALE, c, 'proof-hero'), NIGHT, '24px 30px 10px 30px', '{{FRICTION}}')
 b += proof(NIGHT, ['R583', 'R220', 'R466'], 'In their words')
-b += band('UP TO 70% OFF &nbsp;&middot;&nbsp; ENDS MONDAY, NOV 30') + gap(NIGHT, 24)
+b += band('UP TO 70% OFF &nbsp;&middot;&nbsp; FREE GIFTS') + gap(NIGHT, 24)
 b += grid_mkt(NIGHT, c, 'proof')
-b += cta('Shop the sale', utm(SALE, c, 'proof-cta2'), NIGHT, '10px 30px 34px 30px', 'Ends Monday, November 30.')
+b += cta('Shop the sale', utm(SALE, c, 'proof-cta2'), NIGHT, '10px 30px 34px 30px')
 files['v2-proof'] = b + TAIL
 
-m = meta('v2-letter · Campagne lege dagen (4, 13 nov), brief van Benjamin', 'Benjamin from Siraat', ('What I would buy at 70% off', 'If I were starting from zero'), 'Three picks, depending on your kitchen. Ends Monday, Nov 30.',
+m = meta('v2-letter · Campagne lege dagen (4, 13 nov), brief van Benjamin', 'Benjamin from Siraat', ('What I would buy at 70% off', 'If I were starting from zero'), 'Three picks, depending on your kitchen.',
          'zie tabel', 'E30 (brieven werken het best bij betrokken lezers)', 'Founder-brieven halen 1,3% klik tegenover 0,3 tot 0,6% voor beeldmails (PLAYBOOK 1).', '"Three picks" · "Where I would start" · "Pan or set?"')
-b = head(m, 'What I would buy at 70% off', 'Three picks, depending on your kitchen. Ends Monday, Nov 30.', 'profile') + OPEN(CREAM)
+b = head(m, 'What I would buy at 70% off', 'Three picks, depending on your kitchen.', 'profile') + OPEN(CREAM)
 b += P("Hi {{ first_name|default:'there' }},", '34px 40px 14px 40px')
 b += P('Benjamin here. People keep asking me the same question this month: with everything up to 70% off, what should I actually buy? Here is my honest answer.')
 pick = lambda n, t, d, price, url: row(CREAM, '0 20px 12px 20px', '<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border-radius:10px;"><tr><td style="padding:18px 20px;">%s%s%s%s</td></tr></table>' % (
@@ -493,7 +493,7 @@ pick = lambda n, t, d, price, url: row(CREAM, '0 20px 12px 20px', '<table role="
 b += pick('IF YOU WANT ONE PAN', 'Pan Pro Standard {{SIZE:28}}', 'The size most people cook with every day. If you are not sure, start here.', price_line('{{WAS:standard}}', '{{PRICE:standard}}', '-70%', False, False), utm(U['standard'], c, 'letter-standard'))
 b += pick('IF YOU COOK FOR TWO OR MORE', 'Pan Set with Lids, 6&nbsp;Pcs', 'Mini, Small and Large, each with a lid. Just arrived, and selling fast.', price_line('{{WAS:set6}}', '{{PRICE:set6}}', '-70%', False, False), utm(U['set6'], c, 'letter-set6'))
 b += '{{USONLY}}\n' + pick('IF YOU ARE REPLACING EVERYTHING', 'Cookware Set, 12&nbsp;Pcs + free Pizza Steel', 'Pans, saucepans, a stockpot and 6 lids. Just arrived, and selling fast.', price_line('{{WAS:set12}}', '{{PRICE:set12}}', '-68%', False, False), utm(U['set12p'], c, 'letter-set12')) + '{{/USONLY}}\n'
-b += P('Whatever you pick: it ships with {{GIFTS:total}}, you have 30 days to send it back unused, and it is covered for 75 years. The sale ends Monday, November 30.', '14px 40px 6px 40px')
+b += P('Whatever you pick: it ships with {{GIFTS:total}}, you have 30 days to send it back unused, and it is covered for 75 years.', '14px 40px 6px 40px')
 b += cta('Shop the sale', utm(SALE, c, 'letter-cta1'), CREAM, '16px 40px 24px 40px', 'No code needed.')
 b += P('Not sure about a size? Reply and our team will help.', '0 40px 12px 40px', CREAM, '#5E5A54', 15, 23) + sign()
 files['v2-letter'] = b + TAIL

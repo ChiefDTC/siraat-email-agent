@@ -61,7 +61,7 @@ Scenario zoals Floris het testte, in lokale tijd van de klant: aanmelding dag 0 
 | 10 | d2 08:15 | 36,3 | Campagne | dagcampagne | kalender | (per dag) |
 | 11 | d2 10:20 | 38,5 | Checkout QUBUQV | C2 (c2-bf) | hergebruik, **wachttijd "volgende dag 08:30" naar precies +24 u** | (bestaand) |
 | 12 | d2 11:20 | 39,5 | Checkout QUBUQV | **v2-c2b** | nieuw, +25 u | Everything you get, added up |
-| 13 | d2 12:20 | 40,5 | Checkout QUBUQV | **v2-c2c** | nieuw, +26 u | Two promises before Monday |
+| 13 | d2 12:20 | 40,5 | Checkout QUBUQV | **v2-c2c** | nieuw, +26 u | Two promises, then it is your call |
 
 Totaal: **13 mails in 40,5 uur** (Smooche 13 in 41,3 uur). Verdeling: 0-6 uur 3 (Smooche 3), 6-24 uur 6 (Smooche 4), 24-41 uur 4 (Smooche 6). Hergebruikt: 6 (W1, B1, K1, C1, C2 plus de campagnes); nieuw: 7 flowmails.
 
@@ -183,7 +183,7 @@ Bovenop de Homestead-kalender. Smart Sending uit voor alle mails op 27 tot 30 no
 Aantal voor een E30-lezer: vr 3 à 4, za 3, zo 2 à 3, ma 5. Afstemmen met Homestead: zij kunnen E19 en E20 ook met de v2-ontwerpen sturen.
 
 Flow-aanpassingen 27 tot 30 nov:
-- Alle BF-flowmails hebben al de vaste band "Sale ends Monday, Nov 30"; geen datumlogica nodig.
+- Geen datumregel meer in de gewone v2-mails (Floris 1 nov avond: alle "Ends Monday, November 30" eruit). Alleen de eindmails (sat28, sun29, mon-am, mon-pm, mon-late) noemen de deadline in kop en onderwerp ("ends tomorrow", "last day", "final hours").
 - Rn556d en T4a5Mk: aanmelders van 28 tot 30 nov krijgen W1b al na **1 uur** (in plaats van 2) en v2-w2 na **12 uur**, zodat ze vóór het einde nog contact hebben. Kan met een conditional split op datum (Klaviyo: profiel-eigenschap "aangemeld na 28 nov") of door de wachttijden op 28 nov om te zetten.
 - QUBUQV en TZG9Mx: wie op 29 of 30 nov afhaakt, mist C2 (+24 u valt na de sale). Op 29 nov de C2-stap tijdelijk naar **+6 uur** zetten, op 1 dec terug.
 - 1 december: alle BF-templates terug, campagnes stoppen, geen "ends" meer.
@@ -199,18 +199,18 @@ Flow-aanpassingen 27 tot 30 nov:
 
 | Mail | Flow / dag | Wachttijd | Afzender | Onderwerp A / B | Preview |
 |---|---|---|---|---|---|
-| v2-w1b | T4a5Mk, Rn556d | +2 u | Siraat | Your Black Friday price list / Up to 70% off. Every price inside. | Every price, side by side. Free gifts. Ends Monday, Nov 30. |
-| v2-k1b | TZG9Mx | +1 u | Siraat | Extra 10% off your cart (already applied) / You left this at up to 70% off | On top of Black Friday prices. Ends Monday, Nov 30. |
-| v2-c1b | QUBUQV | +1 u | Benjamin from Siraat | I saved your cart / Benjamin here, about your order | Plus an extra 10%, already applied. Sale ends Monday. |
-| v2-c1c | QUBUQV | +3 u | Siraat | 3 reasons 100,000+ people switched / Why it is covered for 75 years | Then your extra 10%, still applied. Ends Monday. |
+| v2-w1b | T4a5Mk, Rn556d | +2 u | Siraat | Your Black Friday price list / Up to 70% off. Every price inside. | Every price, side by side. Free gifts with every order. |
+| v2-k1b | TZG9Mx | +1 u | Siraat | Extra 10% off your cart (already applied) / You left this at up to 70% off | On top of Black Friday prices of up to 70% off. |
+| v2-c1b | QUBUQV | +1 u | Benjamin from Siraat | I saved your cart / Benjamin here, about your order | Plus an extra 10%, already applied with one tap. |
+| v2-c1c | QUBUQV | +3 u | Siraat | 3 reasons 100,000+ people switched / Why it is covered for 75 years | Then your extra 10%, still applied. |
 | v2-w2 | T4a5Mk, Rn556d; campagne 2 en 20 nov | +24 u | Siraat | Just arrived: the 6 and 12-piece sets / Restocked, and going fast | New stock just landed. At up to 70% off, it is selling fast. |
-| v2-c2b | QUBUQV | +25 u | Siraat | Everything you get, added up / Your cart + 4 gifts + extra 10% | It is all still on your cart. Black Friday ends Monday, Nov 30. |
-| v2-c2c | QUBUQV | +26 u | Benjamin from Siraat | Two promises before Monday / What if it is not for you? | Your extra 10% is still on your cart. The sale ends Monday, Nov 30. |
-| v2-letter | campagne 4, 13 nov | | Benjamin from Siraat | What I would buy at 70% off / If I were starting from zero | Three picks, depending on your kitchen. Ends Monday, Nov 30. |
-| v2-pricelist | campagne 6, 12, 22, 27 nov | | Siraat | The Black Friday price list / Every price, one email | Up to 70% off, side by side. Ends Monday, Nov 30. |
-| v2-proof | campagne 9, 16, 28 nov; browse B3 | | Siraat | 100,000+ kitchens, no coatings / "The last pans we ever have to purchase" | What they say after the first egg. Up to 70% off until Monday, Nov 30. |
-| v2-sat28 | campagne za 28 nov 08:15 | | Siraat | The last weekend of Black Friday / 3 days left: up to 70% off | Ends Monday, Nov 30. The sets are selling fast. |
-| v2-sun29 | campagne zo 29 nov 09:00 + 19:00 | | Siraat | Black Friday ends tomorrow / Tomorrow it is over | Up to 70% off ends Monday, Nov 30. Here is every price. |
+| v2-c2b | QUBUQV | +25 u | Siraat | Everything you get, added up / Your cart + 4 gifts + extra 10% | It is all still on your cart, with your extra 10%. |
+| v2-c2c | QUBUQV | +26 u | Benjamin from Siraat | Two promises, then it is your call / What if it is not for you? | Your extra 10% is still on your cart. Two promises first. |
+| v2-letter | campagne 4, 13 nov | | Benjamin from Siraat | What I would buy at 70% off / If I were starting from zero | Three picks, depending on your kitchen. |
+| v2-pricelist | campagne 6, 12, 22, 27 nov | | Siraat | The Black Friday price list / Every price, one email | Up to 70% off, side by side. Free gifts with every order. |
+| v2-proof | campagne 9, 16, 28 nov; browse B3 | | Siraat | 100,000+ kitchens, no coatings / "The last pans we ever have to purchase" | What they say after the first egg. And this month, up to 70% off. |
+| v2-sat28 | campagne za 28 nov 08:15 | | Siraat | The last weekend of Black Friday / 3 days left: up to 70% off | Up to 70% off and free gifts, for three more days. |
+| v2-sun29 | campagne zo 29 nov 09:00 + 19:00 | | Siraat | Black Friday ends tomorrow / Tomorrow it is over | Up to 70% off ends tomorrow. Here is every price. |
 | v2-mon-am | campagne ma 30 nov 07:00 | | Siraat | Last day: up to 70% off / Today is the last day | Black Friday ends today. Free gifts end with it. |
 | v2-mon-pm | campagne ma 30 nov 13:00 | | Benjamin from Siraat | Final hours / Benjamin here, before it ends | The Black Friday Sale ends today. A short note first. |
 | v2-mon-late | campagne ma 30 nov 20:00 | | Siraat | Last email: Black Friday ends tonight / This is the last one | After today the Black Friday Sale is over. |
@@ -223,11 +223,11 @@ Bron: `klaviyo/templates/v3/bfcm/november-v2/_tools/make_v2.py` (componenten), b
 
 - Kleuren: Signal Yellow #FFB800 (vlakken, knoppen, tickets, %), Ink #272727, Night #0E0E0E, Cream #F8F7F2, Stock red #C8202A alleen voor "SELLING FAST". Inter Black koppen in caps, Inter Extra Bold tags. Geen gele tekst op cream.
 - Vaste topbar (`bf-topbar`) boven de vaste header met lockup en de vaste footer in elke mail (merkregel).
-- Componenten: donkere hero met "BLACK FRIDAY / SALE IS LIVE" en een reuzen-"70% OFF"; gele hero (just arrived, ends tomorrow, value stack); dealkaart met was/nu/% en bonusregel (12-Pcs + gratis Pizza Steel in de US, 6-Pcs elders); productraster 2 x 2 met doorgestreepte compare-at uit `content/catalog/products.json` per markt (`{{WAS}}`/`{{PRICE}}`); deadlineband; 30 / 75 / 100K+-strook; reviewkaarten (letterlijk uit `content/reviews/top.md`); value stack; brief van Benjamin (cream of Night).
+- Componenten: donkere hero met "BLACK FRIDAY / SALE IS LIVE" en een reuzen-"70% OFF"; gele hero (just arrived, ends tomorrow, value stack); dealkaart met was/nu/% en bonusregel ("+ FREE Pizza Steel ($664 value) with this set") (12-Pcs + gratis Pizza Steel in de US, 6-Pcs elders); productraster 2 x 2 met doorgestreepte compare-at uit `content/catalog/products.json` per markt (`{{WAS}}`/`{{PRICE}}`); deadlineband; 30 / 75 / 100K+-strook; reviewkaarten (letterlijk uit `content/reviews/top.md`); value stack; brief van Benjamin (cream of Night).
 - Gewijzigde blokken: `bf-cta` breder en zwaarder (360 px, 16 px, Inter Black), `bf-stock` zonder NEXT BATCH (alleen JUST ARRIVED, SELLING FAST, IN STOCK).
 - Nieuw beeld: `assets/deal-set12-pizza.jpg` (12-Pcs + Pizza Steel-inzet), `deal-set6.jpg`, `deal-set12.jpg` uit Shopify-productbeelden (nog naar de Klaviyo-bibliotheek bij export).
 
-Prijzen (US, products.json 31 okt): 12-Pcs $649 (was $2,047, -68%), 6-Pcs $299 (was $997), Pan Pro Standard $144 (was $480), Large $149 (was $497), Mini $99 (was $330), Deep vanaf $119 (was $397), Wok vanaf $119, Pizza Steel $199 (gratis bij de 12-Pcs via `/products/titanium-hammered-cookware-set-12-pcs-free-pizza-steel-1`). Andere markten via de macro's; overal 70%.
+Prijzen (US, products.json 31 okt): 12-Pcs $649 (was $2,047, -68%), 6-Pcs $299 (was $997), Pan Pro Standard $144 (was $480), Wok Pan Pro vanaf $119 (24 cm, was $397), Deep Pan Pro vanaf $119 (20 cm, was $397; 24 cm $134, 26 cm $139), Pizza Steel ter waarde van $664 (Floris), gratis (gratis bij de 12-Pcs via `/products/titanium-hammered-cookware-set-12-pcs-free-pizza-steel-1`). Andere markten via de macro's; overal 70%.
 
 ## 9. Open vragen voor Floris
 
@@ -239,3 +239,10 @@ Prijzen (US, products.json 31 okt): 12-Pcs $649 (was $2,047, -68%), 6-Pcs $299 (
 6. Mag K1 ook naar wie al een checkout startte (dan altijd 13 in de reis)?
 7. "Just arrived": klopt het ook voor de INT-voorraad (6-Pcs buiten de US)?
 8. Mag de extra 10% (BFCODE) ook in de cart-value-stack K2b, en werkt de code naast de automatische kortingen?
+
+## 10. Aanpassingen na feedback Floris (1 nov, avond)
+
+1. Pizza Steel-inzet in `assets/deal-set12-pizza.jpg` uitgezoomd: de hele steel met beide handgrepen en wat ruimte eromheen.
+2. Productraster: Pan Pro Large en Mini vervangen door Wok Pan Pro en Deep Pan Pro (gele BF-productbeelden, productpagina's, "from"-prijs van de standaardvariant uit products.json: Wok 24 cm $119 (was $397), Deep 20 cm $119 (was $397)). Pan Pro Standard blijft. US: 6-Pcs, Standard, Wok, Deep (+ Small en Pizza Steel in de grote lijsten); INT: Standard, Wok, Deep, Small. 6-Pcs-omschrijving "Pan Pro Mini, Small and Large, each with its own fitted lid" klopt (research/v5/02: Mini 20 cm, Small 26 cm, Large 30 cm, elk met deksel).
+3. Alle regels "Ends Monday, November 30." / "Ends Monday, Nov 30." / "Ends Monday." weg uit body en preview van alle v2-mails, ook de algemene slotregel in de eindmails. De eindmails houden hun eigen deadlinekop en onderwerp; C2c heet nu "Two promises, then it is your call".
+4. Bonusregel: "+ FREE Pizza Steel ($664 value) with this set" (was "sells for $199").
