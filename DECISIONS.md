@@ -93,3 +93,8 @@ Bijwerken bij elk nieuw besluit. Datum per regel.
 - "Non-toxic" mag gebruikt worden (wijkt af van het BF brand book), naast pure titanium enz.
 - Logo: vaste lockup blijft (monogram + woordmerk), ook in BF-stijl.
 - Alle flows worden opnieuw gemaakt in Black Friday-stijl.
+
+## Voorraad-copy (Floris, 1 nov 2026)
+- Nooit meer zeggen dat iets "eraan komt", "next batch", "reserve from the next shipment" of iets met een nieuwe badge/batch die nog moet komen.
+- Wel: "Just arrived and selling fast" (de nieuwe voorraad 6-pcs en 12-pcs is net binnen, gecontroleerd door Floris in de backend).
+- Volume: hetzelfde mailvolume als Smooche (ongeveer 13 mails in 41 uur voor iemand die aanmeldt, kijkt, in de winkelwagen legt en afrekent), en een harde push aan het einde van de sale (30 nov). Stijl: direct response, "het is nu echt de sale".
