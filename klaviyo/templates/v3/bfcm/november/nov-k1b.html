@@ -1,0 +1,73 @@
+<!--
+NOVEMBER MEER OUTPUT (concept 1 nov 2026, niet in Klaviyo). Plan: research/smooche/04-meer-output-november.md. Designs: research/smooche/05-designs-november.md.
+ID: nov-k1b · K1b cart, tweede contact dag 0
+SENDER: Benjamin from Siraat (reply-to gelezen inbox)
+SUBJECT A: Your cart, still at Black Friday prices
+SUBJECT B: Still thinking it over?
+  Alternatieven: "Benjamin here. Your cart is still open." · "Which pan did you pick?" · "An extra 10% on the cart you left"
+PREVIEW: Benjamin here. An extra 10% is applied with the button, on top of up to 70% off.
+TRIGGER/TIMING: v4 · Cart abandonment TZG9Mx, nieuwe stap na K1: wacht 3 uur na de trigger. Smart Sending aan.
+FILTERS: Placed Order = 0 sinds flowstart; Started Checkout = 0 sinds flowstart (checkout-flow neemt over); minder dan 3 Received Email in de laatste 1 dag.
+WAAROM: plan 04 punt 4 (K1 $3,59 per ontvanger, tweede dag-0-contact ontbreekt). Schatting $2.000 a $3.000.
+EVENT: Added to Cart: Product Name, ImageURL, Quantity (zoals k1-v2-bf). Prijs bewust weggelaten (BF-prijs en code in de cart).
+-->
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
+<title>Your cart, still at Black Friday prices</title>
+<!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600;800;900&display=swap');
+  body{margin:0;padding:0;background:#FFFFFF;-webkit-text-size-adjust:100%;}
+  table{border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;}
+  img{border:0;display:block;line-height:100%;outline:none;text-decoration:none;}
+  a{color:#272727;}
+  @media only screen and (max-width:620px){
+    .w{width:100%!important;}
+    .pad{padding-left:22px!important;padding-right:22px!important;}
+    .h1{font-size:34px!important;line-height:37px!important;}
+    .navhide{display:none!important;}
+    .lead{font-size:16px!important;line-height:25px!important;}
+    .bfh{font-size:38px!important;line-height:44px!important;padding-left:16px!important;padding-right:16px!important;}
+  }
+</style>
+</head>
+<body style="margin:0;padding:0;background:#FFFFFF;">
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;">Benjamin here. An extra 10% is applied with the button, on top of up to 70% off.</div>
+<!-- MARKET-SIGNAL: cart -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
+<tr><td align="center" style="padding:8px 0 32px 0;">
+<table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F8F7F2;" bgcolor="#F8F7F2">
+
+{{BLOCK:bf-topbar text="BLACK FRIDAY SALE IS LIVE"}}
+{{HEADER}}
+<tr><td class="pad lead" style="padding:34px 44px 14px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;color:#282828;">Hi {{ first_name|default:'there' }},</td></tr>
+<tr><td class="pad lead" style="padding:0 44px 4px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;color:#282828;">Benjamin here. You left this in your cart earlier today. It's still there, at Black Friday prices, and the button below takes an extra 10% off on top.</td></tr>
+<tr><td class="pad" style="padding:18px 44px 4px 44px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border:1px solid #ECE7DD;">
+    <tr><td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:16px 16px 12px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;letter-spacing:2px;font-weight:800;color:#272727;">STILL IN YOUR CART</td></tr>
+    <tr><td align="center" bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:0 16px;"><a href="https://siraatskitchen.com/discount/BFCODE?redirect=/cart%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk1b-product"><img src="{% if event.ImageURL %}{{ event.ImageURL }}&width=1000{% else %}{{IMG}}/cart-fallback.jpg{% endif %}" width="478" alt="{{ event|lookup:'Product Name'|default:'Your item' }}" style="display:block;width:100%;max-width:{% if event.ImageURL %}478{% else %}264{% endif %}px;height:auto;border:0;background-color:#F8F7F2;"></a></td></tr>
+    <tr><td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:16px 16px 4px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:18px;line-height:24px;font-weight:600;color:#282828;word-break:break-word;">{{ event|lookup:'Product Name'|default:'Your item' }}</td></tr>
+    <tr><td bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:0 16px 16px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#727272;">Qty {{ event.Quantity|default:1|floatformat:0 }} &middot; Extra 10% off with the button</td></tr>
+  </table>
+</td></tr>
+{% if '6-Pcs' in event|lookup:'Product Name' or '12-Pcs' in event|lookup:'Product Name' or 'Pan Pro Duo' in event|lookup:'Product Name' or 'Utensil Set' in event|lookup:'Product Name' %}
+<tr><td class="pad" style="padding:4px 44px 18px 44px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#FFB800" style="background-color:#FFB800;padding:12px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#272727;"><b style="font-weight:800;">NEXT BATCH.</b> The current batch of your set is sold out. Ordering now reserves yours from the next shipment, expected {{NEXT_BATCH_DATE}}.</td></tr></table></td></tr>
+{% endif %}
+{{BLOCK:bf-cta bg="#F8F7F2" label="Return to my cart" url="https://siraatskitchen.com/discount/BFCODE?redirect=/cart%3Futm_source%3Dklaviyo%26utm_medium%3Demail%26utm_campaign%3Dv4-cart%26utm_content%3Dk1b-cta1" pad="14px 44px 26px 44px" sub="<div style='font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;padding-top:14px;'>{{FRICTION}}</div>"}}
+<tr><td class="pad lead" style="padding:0 44px 18px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;color:#282828;">One thing people ask me: does titanium really work without a coating? It does, with heat. Medium heat for 2 to 3 minutes, then a teaspoon of oil. Cold metal grabs your food. Hot metal lets it go.</td></tr>
+<tr><td class="pad lead" style="padding:0 44px 18px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;color:#282828;">Every order ships with {{GIFTS:total}}, and you have 30 days to send it back unused. Questions about size? Reply and our team will help.</td></tr>
+<tr><td class="pad" style="padding:6px 44px 30px 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;color:#282828;">Benjamin<br><span style="color:#727272;font-size:14px;">Founder, Siraat</span></td></tr>
+
+{{FOOTER}}
+
+</table>
+</td></tr>
+</table>
+</body>
+</html>
