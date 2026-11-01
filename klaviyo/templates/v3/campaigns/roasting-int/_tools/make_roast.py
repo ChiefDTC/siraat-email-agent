@@ -23,6 +23,7 @@ CARVE = 'siraat-titanium-hammered-roasting-pan-07-carving-at-the-table'
 RACK = 'siraat-titanium-hammered-roasting-pan-08-v-rack-included-international-cm'
 PDP = 'https://siraatskitchen.com/products/titanium-hammered-roasting-pan'
 FR = 'Free shipping &middot; 100,000+ customers'
+ORANGE = '#D96200'  # A2-knop (Floris 1 nov): wit op #D96200 = 3,69:1 (WCAG AA voor vette tekst >= 14pt is 3:1); #F07A00 haalt maar 2,8:1
 
 def utm(content):
     return PDP + '?utm_source=klaviyo&utm_medium=email&utm_campaign=roasting-int&utm_content=' + content
@@ -93,13 +94,13 @@ def img(src, alt, url=None, w=600, radius=0):
 def gap(bg, h=24):
     return '<tr><td bgcolor="%s" style="background-color:%s;height:%dpx;line-height:%dpx;font-size:0;">&nbsp;</td></tr>\n' % (bg, bg, h, h)
 
-def button(label, url, bg, pad='22px 40px 28px 40px', sub=FR, frame=False, dark=False):
+def button(label, url, bg, pad='22px 40px 28px 40px', sub=FR, frame=False, dark=False, fill=None):
     """PDP-knop: ink, witte tekst, hoofdletters, pilvorm. frame=True: geel kader zoals het 'Early access'-blok op de PDP."""
     a = ('<!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="%s" style="height:58px;v-text-anchor:middle;width:380px;" arcsize="50%%" stroke="f" fillcolor="%s"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:15px;font-weight:bold;">%s</center></v:roundrect><![endif]-->'
          '<!--[if !mso]><!--><a href="%s" style="display:block;padding:20px 18px;font-family:%s;font-size:15px;line-height:18px;font-weight:700;letter-spacing:1.2px;color:%s;text-decoration:none;text-transform:uppercase;">%s &rarr;</a><!--<![endif]-->') % (
-        url, '#FFFFFF' if dark else INK, label, url, FF, INK if dark else '#FFFFFF', label)
+        url, fill or ('#FFFFFF' if dark else INK), label, url, FF, '#FFFFFF' if fill else (INK if dark else '#FFFFFF'), label)
     b = '<table role="presentation" width="380" cellpadding="0" cellspacing="0" border="0" style="width:100%%;max-width:380px;margin:0 auto;"><tr><td align="center" bgcolor="%s" style="background-color:%s;border-radius:30px;">%s</td></tr></table>' % (
-        '#FFFFFF' if dark else INK, '#FFFFFF' if dark else INK, a)
+        fill or ('#FFFFFF' if dark else INK), fill or ('#FFFFFF' if dark else INK), a)
     if frame:
         b = '<table role="presentation" width="420" cellpadding="0" cellspacing="0" border="0" style="width:100%%;max-width:420px;margin:0 auto;"><tr><td bgcolor="%s" style="background-color:%s;border:2px solid %s;border-radius:36px;padding:4px;">%s</td></tr></table>' % (INK, INK, Y, b)
     s = txt(sub, 13, 19, '#C9C2B6' if dark else GREY, 500, 'padding-top:12px;') if sub else ''
@@ -217,10 +218,10 @@ m = meta('roast-int-a2 · Bold BF launch zonder bedragen (vervangt A)', 'Siraat'
 b = head(m, 'NEW IN STOCK: the titanium roasting pan', 'Just arrived, with its Black Friday price on day one.') + OPEN()
 b += row(PACK, '30px 24px 0 24px', '<table role="presentation" align="center" style="margin:0 auto;" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right:6px;">%s</td><td>%s</td></tr></table>' % (pill('New in stock'), pill('Black Friday &nbsp;|&nbsp; 70% off', Y, INK)), 'center')
 b += row(PACK, '18px 24px 0 24px', serif('The Titanium Hammered<br>Roasting Pan', 48, 50, INK, 'h1', True), 'center')
-b += row(PACK, '12px 40px 0 40px', txt('Just arrived outside the US. A pure titanium roasting surface, hand-hammered, no coatings.', 17, 26, '#4A4A4A', 400, 'text-align:center;'), 'center')
+b += row(PACK, '12px 40px 0 40px', txt('Just arrived in our warehouse. A pure titanium roasting surface, hand-hammered, no coatings.', 17, 26, '#4A4A4A', 400, 'text-align:center;'), 'center')
 b += row(PACK, '10px 0 0 0', img(CROP(PK), 'The Titanium Hammered Roasting Pan with its fitted V-rack', utm('a2-hero')), 'center', '')
 b += bigoff(sub='Black Friday price from day one. No code needed.<br>Plus free gifts with every order.')
-b += button('Get my roasting pan', utm('a2-cta1'), '#FFFFFF', '26px 30px 30px 30px')
+b += button('Get my roasting pan', utm('a2-cta1'), '#FFFFFF', '26px 30px 30px 30px', fill=ORANGE)
 b += diamonds([('No coatings, no PFAS', 'A pure titanium roasting surface. The same titanium surface as our pans, tested PFAS-free by Light Labs, report no. 25895.'),
                ('Roast it, then make the gravy in it', 'Works on the stovetop too, induction included. Deglaze while it is warm and the drippings lift right off.'),
                ('Covered for 75 years', 'Dents, a warped base, a loose handle or rivet. Nothing on it to wear off, so we can promise that.')],
@@ -230,7 +231,7 @@ b += included(gifts='Free gifts')
 b += reviews(['R399', 'R011'], CREAM, 'What customers say about Siraat titanium')
 b += gap('#FFFFFF', 24) + trust()
 b += bigoff(80, 'big2', 'Black Friday price. No code needed.', '24px 20px 26px 20px', False)
-b += button('Get my roasting pan', utm('a2-cta2'), '#FFFFFF', '24px 30px 34px 30px')
+b += button('Get my roasting pan', utm('a2-cta2'), '#FFFFFF', '24px 30px 34px 30px', fill=ORANGE)
 files['roast-int-a2'] = b + TAIL
 assert not re.search(r'\{\{(PRICE|WAS|GIFTS)', files['roast-int-a2'])
 
