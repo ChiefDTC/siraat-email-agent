@@ -499,7 +499,7 @@ b += P('Not sure about a size? Reply and our team will help.', '0 40px 12px 40px
 files['v2-letter'] = b + TAIL
 
 for k, v in files.items():
-    assert '—' not in v, k
+    assert '\u2014' not in v, k
     for bad in ('next batch', 'NEXT BATCH', 'reserve', 'arriving', 'next shipment'):
         assert bad not in v.split('-->', 1)[1], (k, bad)
     open(os.path.join(N, k + '.html'), 'w').write(v)

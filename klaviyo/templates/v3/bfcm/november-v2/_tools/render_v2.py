@@ -25,4 +25,4 @@ for mid in ids:
         probs=Q.after_render(h)+Q.foster(h)
         open(os.path.join(OUT,'%s-%s.html'%(mid,tag)),'w').write(h)
         txt=re.sub(r'<[^>]+>',' ',re.sub(r'<style.*?</style>|<!--.*?-->','',h,flags=re.S))
-        print(mid,tag,'tagsF:%d'%len(F),probs[:3] or 'ok','| emdash:%d'%h.count('—'),'| lockup:%s'%('logo-black-cream' in h or 'logo-white' in h),'| footer:%s'%('unsubscribe' in h.lower()),'| BFCODE:%d'%h.count('BFCODE'),'| batchwords:%d'%len(re.findall(r'(?i)next batch|reserve|arriving',txt)),'| 12Pcs:%s'%('12 Pcs' in h or '12&nbsp;Pcs' in h),'| KB %.0f'%(len(h.encode())/1024))
+        print(mid,tag,'tagsF:%d'%len(F),probs[:3] or 'ok','| emdash:%d'%h.count('\u2014'),'| lockup:%s'%('logo-black-cream' in h or 'logo-white' in h),'| footer:%s'%('unsubscribe' in h.lower()),'| BFCODE:%d'%h.count('BFCODE'),'| batchwords:%d'%len(re.findall(r'(?i)next batch|reserve|arriving',txt)),'| 12Pcs:%s'%('12 Pcs' in h or '12&nbsp;Pcs' in h),'| KB %.0f'%(len(h.encode())/1024))
