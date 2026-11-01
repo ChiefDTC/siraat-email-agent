@@ -40,6 +40,8 @@ CSS = '''
     .col{display:block!important;width:100%!important;padding-left:0!important;padding-right:0!important;}
     .colgap{padding-bottom:10px!important;}
     .bf{font-size:24px!important;line-height:28px!important;}
+    .big{font-size:76px!important;line-height:76px!important;letter-spacing:-3px!important;}
+    .big2{font-size:64px!important;line-height:64px!important;letter-spacing:-2px!important;}
 '''
 def head(meta, title, pre):
     return '''<!--
@@ -152,13 +154,13 @@ def reviews(ids, bg=CREAM, title='In their words', pad='30px 20px 26px 20px'):
     h += txt('100,000+ happy customers, on the same titanium cooking surface', 13, 19, '#8A847A', 500, 'text-align:center;padding-top:14px;')
     return row(bg, pad, h, 'left', 'padx')
 
-def included(bg='#FFFFFF', pad='0 20px 24px 20px'):
+def included(bg='#FFFFFF', pad='0 20px 24px 20px', gifts='{{GIFTS:total}}'):
     li = lambda a, b: '<tr><td valign="top" style="padding:12px 0;border-bottom:1px solid %s;">%s</td><td align="right" valign="top" style="padding:12px 0 12px 10px;border-bottom:1px solid %s;">%s</td></tr>' % (
         HAIR, txt(a, 15, 21, INK, 500), HAIR, txt(b, 13, 21, '#8A847A', 600, 'white-space:nowrap;'))
     t = txt("WHAT&rsquo;S INCLUDED", 13, 18, INK, 600, 'letter-spacing:1.2px;padding-bottom:4px;')
     t += '<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid %s;">%s%s%s%s</table>' % (
         HAIR, li('Titanium Hammered Roasting Pan', 'In its protective box'), li('Fitted V-rack', '33.5 &times; 23.5 &times; 10 cm'),
-        li('5 essential guides', 'Care and cooking'), li('With every order', '{{GIFTS:total}}'))
+        li('5 essential guides', 'Care and cooking'), li('With every order', gifts))
     return row(bg, pad, t, 'left', 'padx')
 
 def P(t, bg='#FFFFFF', pad='0 40px 18px 40px', size=17, lh=27, color='#2E2E2E'):
@@ -182,7 +184,7 @@ m = meta('roast-int-a · Bold BF launch', 'Siraat',
 c = 'roasting-int'
 b = head(m, 'NEW IN STOCK: the titanium roasting pan', 'Just arrived, with its Black Friday price on day one.') + OPEN()
 b += row(PACK, '30px 24px 0 24px', '<table role="presentation" align="center" style="margin:0 auto;" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right:6px;">%s</td><td>%s</td></tr></table>' % (pill('New in stock'), pill('Black Friday &nbsp;|&nbsp; 70% off', Y, INK)), 'center')
-b += row(PACK, '18px 24px 0 24px', serif('The Titanium Hammered<br>Roasting Pan', 48, 50), 'center')
+b += row(PACK, '18px 24px 0 24px', serif('The Titanium Hammered<br>Roasting Pan', 48, 50, INK, 'h1', True), 'center')
 b += row(PACK, '12px 40px 0 40px', txt('Just arrived outside the US. A pure titanium roasting surface, hand-hammered, no coatings.', 17, 26, '#4A4A4A', 400, 'text-align:center;'), 'center')
 b += row(PACK, '10px 0 0 0', img(CROP(PK), 'The Titanium Hammered Roasting Pan with its fitted V-rack', utm('a-hero')), 'center', '')
 b += row(INK, '16px 20px', txt('BLACK FRIDAY SPECIAL', 13, 16, Y, 700, 'letter-spacing:2.4px;text-align:center;'), 'center', 'padx')
@@ -200,6 +202,37 @@ b += gap('#FFFFFF', 24) + trust()
 b += row('#FFFFFF', '0 20px 0 20px', price(40), 'center', 'padx')
 b += button('Get my roasting pan', utm('a-cta2'), '#FFFFFF', '20px 30px 34px 30px')
 files['roast-int-a'] = b + TAIL
+
+# A2 · variant A zonder bedragen (Floris, 1 nov avond): geen {{PRICE}}/{{WAS}}/{{GIFTS:total}}, één grote "70% OFF" in BF-geel.
+def bigoff(size=104, cls='big', sub='Black Friday price from day one. No code needed.', pad='26px 20px 30px 20px', label=True):
+    h = txt('BLACK FRIDAY SPECIAL', 13, 16, Y, 700, 'letter-spacing:2.4px;text-align:center;padding-bottom:10px;') if label else ''
+    h += '<div class="%s" style="font-family:%s;font-size:%dpx;line-height:%dpx;font-weight:900;letter-spacing:-4px;color:%s;text-align:center;">70%% OFF</div>' % (cls, FF, size, size - 2, Y)
+    h += txt(sub, 16, 24, '#E6E3DC', 500, 'text-align:center;padding-top:12px;')
+    return row(INK, pad, h, 'center', 'padx')
+m = meta('roast-int-a2 · Bold BF launch zonder bedragen (vervangt A)', 'Siraat',
+         ('NEW IN STOCK: the titanium roasting pan', 'Black Friday special: 70% off the roaster'),
+         ('Just arrived, with its Black Friday price on day one.', 'Pure titanium, no coatings. Rack included.'),
+         'wo 4 nov, 08:15 lokale tijd', WHO,
+         'Keuze Floris: variant A, zonder valuta-bedragen (overal gelijk), grote 70% OFF in BF-geel.')
+b = head(m, 'NEW IN STOCK: the titanium roasting pan', 'Just arrived, with its Black Friday price on day one.') + OPEN()
+b += row(PACK, '30px 24px 0 24px', '<table role="presentation" align="center" style="margin:0 auto;" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right:6px;">%s</td><td>%s</td></tr></table>' % (pill('New in stock'), pill('Black Friday &nbsp;|&nbsp; 70% off', Y, INK)), 'center')
+b += row(PACK, '18px 24px 0 24px', serif('The Titanium Hammered<br>Roasting Pan', 48, 50, INK, 'h1', True), 'center')
+b += row(PACK, '12px 40px 0 40px', txt('Just arrived outside the US. A pure titanium roasting surface, hand-hammered, no coatings.', 17, 26, '#4A4A4A', 400, 'text-align:center;'), 'center')
+b += row(PACK, '10px 0 0 0', img(CROP(PK), 'The Titanium Hammered Roasting Pan with its fitted V-rack', utm('a2-hero')), 'center', '')
+b += bigoff(sub='Black Friday price from day one. No code needed.<br>Plus free gifts with every order.')
+b += button('Get my roasting pan', utm('a2-cta1'), '#FFFFFF', '26px 30px 30px 30px')
+b += diamonds([('No coatings, no PFAS', 'A pure titanium roasting surface. The same titanium surface as our pans, tested PFAS-free by Light Labs, report no. 25895.'),
+               ('Roast it, then make the gravy in it', 'Works on the stovetop too, induction included. Deglaze while it is warm and the drippings lift right off.'),
+               ('Covered for 75 years', 'Dents, a warped base, a loose handle or rivet. Nothing on it to wear off, so we can promise that.')],
+              '#FFFFFF', 'Why a titanium roaster')
+b += row('#FFFFFF', '0 20px 24px 20px', img(IMG(TURKEY), 'A golden roast on the V-rack in the Siraat roasting pan on a holiday table', utm('a2-turkey'), 560, 10), 'center', 'padx')
+b += included(gifts='Free gifts')
+b += reviews(['R399', 'R011'], CREAM, 'What customers say about Siraat titanium')
+b += gap('#FFFFFF', 24) + trust()
+b += bigoff(80, 'big2', 'Black Friday price. No code needed.', '24px 20px 26px 20px', False)
+b += button('Get my roasting pan', utm('a2-cta2'), '#FFFFFF', '24px 30px 34px 30px')
+files['roast-int-a2'] = b + TAIL
+assert not re.search(r'\{\{(PRICE|WAS|GIFTS)', files['roast-int-a2'])
 
 # =====================================================================
 # B · Editorial PDP style
