@@ -222,11 +222,11 @@ b += row(PACK, '12px 40px 0 40px', txt('Just arrived in our warehouse. A pure ti
 b += row(PACK, '10px 0 0 0', img(CROP(PK), 'The Titanium Hammered Roasting Pan with its fitted V-rack', utm('a2-hero')), 'center', '')
 b += bigoff(sub='Black Friday price from day one. No code needed.<br>Plus free gifts with every order.')
 b += button('Get my roasting pan', utm('a2-cta1'), '#FFFFFF', '26px 30px 30px 30px', fill=Y, fg=INK)
+b += row('#FFFFFF', '0 20px 24px 20px', img(IMG(TURKEY), 'A golden roast on the V-rack in the Siraat roasting pan on a holiday table', utm('a2-turkey'), 560, 10), 'center', 'padx')
 b += diamonds([('No coatings, no PFAS', 'A pure titanium roasting surface. The same titanium surface as our pans, tested PFAS-free by Light Labs, report no. 25895.'),
                ('Roast it, then make the gravy in it', 'Works on the stovetop too, induction included. Deglaze while it is warm and the drippings lift right off.'),
                ('Covered for 75 years', 'Dents, a warped base, a loose handle or rivet. Nothing on it to wear off, so we can promise that.')],
               '#FFFFFF', 'Why a titanium roaster')
-b += row('#FFFFFF', '0 20px 24px 20px', img(IMG(TURKEY), 'A golden roast on the V-rack in the Siraat roasting pan on a holiday table', utm('a2-turkey'), 560, 10), 'center', 'padx')
 b += included(gifts='Free gifts')
 b += reviews(['R399', 'R011'], CREAM, 'What customers say about Siraat titanium')
 b += gap('#FFFFFF', 24) + trust()
