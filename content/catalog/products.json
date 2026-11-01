@@ -14625,23 +14625,23 @@
     "Shipbob"
    ],
    "role": "verkoop",
-   "us_only": true,
+   "us_only": false,
    "published_storefront": {
     "US": true,
-    "CA": false,
-    "GB": false,
-    "DE": false,
-    "NL": false,
-    "FR": false,
-    "AU": false,
-    "NZ": false,
-    "SG": false,
-    "HK": false,
-    "AE": false,
-    "CH": false,
-    "NO": false,
-    "SE": false,
-    "JP": false
+    "CA": true,
+    "GB": true,
+    "DE": true,
+    "NL": true,
+    "FR": true,
+    "AU": true,
+    "NZ": true,
+    "SG": true,
+    "HK": true,
+    "AE": true,
+    "CH": true,
+    "NO": true,
+    "SE": true,
+    "JP": true
    },
    "variants": [
     {
@@ -14657,20 +14657,20 @@
      "size_in_nominal": null,
      "available": {
       "US": true,
-      "CA": false,
-      "GB": false,
-      "DE": false,
-      "NL": false,
-      "FR": false,
-      "AU": false,
-      "NZ": false,
-      "SG": false,
-      "HK": false,
-      "AE": false,
-      "CH": false,
-      "NO": false,
-      "SE": false,
-      "JP": false
+      "CA": true,
+      "GB": true,
+      "DE": true,
+      "NL": true,
+      "FR": true,
+      "AU": true,
+      "NZ": true,
+      "SG": true,
+      "HK": true,
+      "AE": true,
+      "CH": true,
+      "NO": true,
+      "SE": true,
+      "JP": true
      },
      "prices": {
       "US": {
@@ -14678,20 +14678,76 @@
        "compare_at": 664.0,
        "currency": "USD"
       },
-      "CA": null,
-      "GB": null,
-      "DE": null,
-      "NL": null,
-      "FR": null,
-      "AU": null,
-      "NZ": null,
-      "SG": null,
-      "HK": null,
-      "AE": null,
-      "CH": null,
-      "NO": null,
-      "SE": null,
-      "JP": null
+      "CA": {
+       "price": 299.0,
+       "compare_at": 997.0,
+       "currency": "CAD"
+      },
+      "GB": {
+       "price": 199.0,
+       "compare_at": 664.0,
+       "currency": "GBP"
+      },
+      "DE": {
+       "price": 199.0,
+       "compare_at": 664.0,
+       "currency": "EUR"
+      },
+      "NL": {
+       "price": 199.0,
+       "compare_at": 664.0,
+       "currency": "EUR"
+      },
+      "FR": {
+       "price": 199.0,
+       "compare_at": 664.0,
+       "currency": "EUR"
+      },
+      "AU": {
+       "price": 299.0,
+       "compare_at": 997.0,
+       "currency": "AUD"
+      },
+      "NZ": {
+       "price": 359.0,
+       "compare_at": 1197.0,
+       "currency": "NZD"
+      },
+      "SG": {
+       "price": 259.0,
+       "compare_at": 864.0,
+       "currency": "SGD"
+      },
+      "HK": {
+       "price": 1585.0,
+       "compare_at": 5288.0,
+       "currency": "HKD"
+      },
+      "AE": {
+       "price": 742.0,
+       "compare_at": 2476.0,
+       "currency": "AED"
+      },
+      "CH": {
+       "price": 167.0,
+       "compare_at": 557.0,
+       "currency": "CHF"
+      },
+      "NO": {
+       "price": 199.0,
+       "compare_at": 664.0,
+       "currency": "USD"
+      },
+      "SE": {
+       "price": 1986.0,
+       "compare_at": 6625.0,
+       "currency": "SEK"
+      },
+      "JP": {
+       "price": 31900.0,
+       "compare_at": 106200.0,
+       "currency": "JPY"
+      }
      }
     }
    ],
