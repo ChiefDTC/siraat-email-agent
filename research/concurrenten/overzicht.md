@@ -1,4 +1,4 @@
-# Concurrenten-inbox: overzicht na dag 20 (stand 1 nov 2026, ca. 09:40 UTC)
+# Concurrenten-inbox: overzicht na dag 21 (stand 2 nov 2026, ca. 13:40 UTC)
 
 Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmail.com, per regel in `tijdlijn.csv`. Acties uit `log-*.csv` (HexClad en Our Place b handmatig door Floris, geen log). Kortingscodes staan nergens uitgeschreven.
 
@@ -6,8 +6,8 @@ Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmai
 
 | Merk | w | b | c | co | Totaal | Status inschrijving |
 |---|---|---|---|---|---|---|
-| HexClad | 9 | 19 | 19 | n.v.t. | 47 | w/b/c handmatig (Floris), co niet gedaan |
-| Our Place | 18 | 24 | 19 | 0 | 61 | alles gelukt; c pas om 11:18 in winkelwagen |
+| HexClad | 9 | 20 | 20 | n.v.t. | 49 | w/b/c handmatig (Floris), co niet gedaan |
+| Our Place | 20 | 27 | 21 | 0 | 68 | alles gelukt; c pas om 11:18 in winkelwagen |
 | Caraway | 5 (op hex-w) | 0 | 0 | 0 | 5 | w/b/c via footer "gelukt", maar geen enkele mail op cw-adressen; beide Caraway-mails kwamen op hex-w binnen |
 | Made In | 1 | 1 | 1 | 0 | 3 | w/b/c footer "Thanks! You've been subscribed", co gestopt (telefoon verplicht); eerste mail pas na 388 uur (campagne, geen welkom) |
 | Okura | 0 | 0 | 0 | 0 | 0 | w/b/c captcha, alleen co (checkout zonder betaling, opt-in aan) |
@@ -184,6 +184,14 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 - **Our Place sluit de Halloween-actie af met loyaliteit, niet met korting.** "Last Call for Mystery Rewards" (preview "Don't miss out!") kwam vandaag om 08:15 UTC alleen naar op-b (477,4 uur). Het is de laatste kans om de persoonlijke Trick or Treat-code uit "Not a Trick" in te wisselen voor een mystery reward van maximaal 100 punten in de Dirty Dishes Club, deadline 1 nov 23:59 PT ("Ends Tonight"). op-c en op-w hadden hem om 09:40 UTC nog niet; vermoedelijk volgen ze later vandaag, zoals bij eerdere gespreide campagnes.
 - **Geen nieuwe mail van Caraway, Made In, Okura, Plateful of Taima.**
 - **3 nieuwe mails** (HexClad 2, Our Place 1). Op 1 november, de start van onze Black Friday, nog steeds geen Black Friday-signaal of uitgeschreven procentkorting bij de concurrenten in deze inboxen. Idee voor Siraat: een laatste-kans-mail met een harde deadline ("Ends Tonight") en een persoonlijke code werkt ook zonder korting; dat past bij onze cadeaus (gratis pizza steel, 4 free gifts) aan het eind van een actieperiode.
+
+## Dag 21 (2 nov)
+
+- **Our Place geeft voor het eerst een uitgeschreven procentkorting.** "Take another look…" (preview "Get 10% off your first purchase with us!") kwam op 2 nov om 00:13 UTC naar op-b: "Did Titanium Catch Your Eye?" over de Titanium Pro Cookware Set, met een persoonlijke code voor 10% op de eerste aankoop vanaf $145, eenmalig en niet combineerbaar. Er was geen recente browse-actie, dus waarschijnlijk een browse-trigger op een oude sessie. Opvallend: alleen 10%, met drempel.
+- **Our Place stuurt de vierde set-campagne zonder getal.** "Pro Tip: Save On A Bundle" (preview "One click, complete kitchen") om 06:22 UTC binnen 5 seconden naar b, c en w. "Last Call for Mystery Rewards" kwam op 1 nov ook naar op-c (15:15) en op-w (17:15).
+- **HexClad: laatste kans op de winactie.** "You. Italy. $10K. Need we say more?" op 1 nov 18:00 UTC naar hex-c (via info@) en hex-b (via hello@). Nog steeds geen korting op pannen. hex-w kreeg niets.
+- **Geen mail van Caraway, Made In, Okura, Plateful of Taima.**
+- **8 nieuwe mails.** Idee voor Siraat: concurrenten houden hun korting klein (10% met drempel) en sturen bundels zonder getal; onze "up to 70% off" valt daardoor des te meer op, dus het percentage altijd vooraan in onderwerp en hero houden.
 
 ## Korting: wanneer en hoe hoog
 
