@@ -190,3 +190,10 @@ Screenshot van het geheel: `research/figma/alle-emails-overzicht.png` (verkleind
 [Naar de rij](https://www.figma.com/design/oaxnBkz3MAbePRnorCrQwz?node-id=210-2) · Pagina "BFCM 2026 · Flows (Black Friday-stijl)", frame 210:2 onder "BF-W1 · Smooche-kaarten" (190:2). Titelkaart 210:5, tijdlijn Smooche vs Siraat nu vs met plan 210:21, previews (US, 375 px, 2x) via upload_assets op rechthoeken 210:77 t/m 210:105. Status: concept, niet in Klaviyo. Details: research/smooche/05-designs-november.md.
 
 - C1b (+1 u) · W1b (+3 u) · K1b (+3 u) · BF-W2 (dag 1) · BF-W3 (dag 3) · Stock alert (campagne ~17 nov) · Last day (29 nov) · Final hours (30 nov).
+
+### BFCM-pagina · Cadeau-mail: Favorites Cookbook + Plastic-Free Home E-Book (concept, 2 nov), 4 varianten
+[Naar de rij](https://www.figma.com/design/oaxnBkz3MAbePRnorCrQwz?node-id=238-2) · Pagina "BFCM 2026 · Flows (Black Friday-stijl)", frame 238:2 direct onder "Roasting Pan INT launch" (228:2). Titelkaart 238:5 (doel, trigger Placed Order + 3 min zoals YyaMjx, status, open punten), previews via upload_assets op rechthoeken 238:17 (A), 238:21 (A-alt), 238:25 (A-alt 600 px), 238:29 (B), 238:33 (C). Status: concept, niet in Klaviyo. Beelden: klaviyo/templates/v3/gifts/previews/ (375 px en 600 px, 2x).
+
+- **A · Clean delivery card** (echte e-book cover, advies) en **A-alt** (placeholder-cover The Plastic-Free Home): Siraat · Your two books are ready · 25 recipes and a 90-page home guide. Yours to keep.
+- **B · Brief van Benjamin**: Benjamin from Siraat · Start with an egg · Your cookbook and e-book are inside. A note from Benjamin.
+- **C · What's inside showcase**: Siraat · 25 recipes, 6 chapters, yours · Your Favorites Cookbook and e-book are ready to download.
