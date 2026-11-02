@@ -1,0 +1,16 @@
+cookbook-cover.jpg https://upload-pending.invalid/gifts/cookbook-cover.jpg
+cookbook-mockup.png https://upload-pending.invalid/gifts/cookbook-mockup.png
+cookbook-spread.jpg https://upload-pending.invalid/gifts/cookbook-spread.jpg
+duo-hero-alt-email.jpg https://upload-pending.invalid/gifts/duo-hero-alt-email.jpg
+duo-hero-alt.png https://upload-pending.invalid/gifts/duo-hero-alt.png
+duo-hero-email.jpg https://upload-pending.invalid/gifts/duo-hero-email.jpg
+duo-hero.png https://upload-pending.invalid/gifts/duo-hero.png
+ebook-cover-alt.jpg https://upload-pending.invalid/gifts/ebook-cover-alt.jpg
+ebook-cover.jpg https://upload-pending.invalid/gifts/ebook-cover.jpg
+ebook-mockup-alt.png https://upload-pending.invalid/gifts/ebook-mockup-alt.png
+ebook-mockup.png https://upload-pending.invalid/gifts/ebook-mockup.png
+fb.png https://cdn.klaviyomail.com/company/TdtTzz/images/17c00632-f9db-4dcd-a27e-bf0adc4987da.png
+ig.png https://cdn.klaviyomail.com/company/TdtTzz/images/6b905e47-7bf9-4aec-a63b-0538ecc6bd60.png
+recipe-crispy-pizza-night.jpg https://upload-pending.invalid/gifts/recipe-crispy-pizza-night.jpg
+recipe-garlic-butter-ribeye.jpg https://upload-pending.invalid/gifts/recipe-garlic-butter-ribeye.jpg
+recipe-garlic-butter-shrimp.jpg https://upload-pending.invalid/gifts/recipe-garlic-butter-shrimp.jpg

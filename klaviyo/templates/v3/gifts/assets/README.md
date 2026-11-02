@@ -28,3 +28,7 @@ Bronnen:
 
 ## Opnieuw maken
 `_tools/make.py` (alle beelden) en `_tools/altcover.py` (placeholder-cover). Ze verwachten gerenderde pagina's in `hi/` (pdftoppm -r 220 -png) en de Shopify-foto in `dl/e1.png` naast het script; pas `OUT` zo nodig aan. Draaien met `python3 -I`.
+
+## Afgeleid voor de mail (2 nov 2026)
+- `duo-hero-email.jpg` en `duo-hero-alt-email.jpg` (1200x680): duo-hero zonder de lege bovenkant (y 220 tot 900), boven- en onderrand uitgefaded naar Night #0E0E0E zodat er geen naad met het donkere mailvlak is.
+- `fb.png`, `ig.png`: kopie uit roasting-int/assets voor de vaste footer; hun CDN-links staan in `klaviyo-urls.txt`. De gift-beelden zelf staan nog niet in Klaviyo (de .klaviyo.html gebruikt `https://upload-pending.invalid/gifts/...`, zie `_tools/render_gifts.py`).
