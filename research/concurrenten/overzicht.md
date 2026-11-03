@@ -193,6 +193,13 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 - **Geen mail van Caraway, Made In, Okura, Plateful of Taima.**
 - **8 nieuwe mails.** Idee voor Siraat: concurrenten houden hun korting klein (10% met drempel) en sturen bundels zonder getal; onze "up to 70% off" valt daardoor des te meer op, dus het percentage altijd vooraan in onderwerp en hero houden.
 
+## Dag 22 (3 nov)
+
+- **Our Place: tweede browse-mail, precies 24 uur na de eerste.** "This is waiting for you!" (preview "Inside: An exclusive offer to go Pro") kwam op 3 nov om 00:14 UTC naar op-b (517,4 uur), met dezelfde persoonlijke code voor 10% op de eerste aankoop vanaf $145 en een FINISH SHOPPING-knop naar de Titanium Pro Cookware Set. Het is dus een reeks: mail 1 noemt de korting, mail 2 herhaalt hem met "exclusive offer". Geen hogere korting in stap 2.
+- **HexClad lanceert een nieuw product in plaats van een Black Friday-actie.** "NEW: Hybrid Baking Sheet 2-Packs 🍪" (preview "Double down on better baking") op 2 nov om 23:00 UTC naar hex-c en 76 seconden later naar hex-b. Productlancering met twee koekjesrecepten en de vaste refer a friend $100, geen korting. hex-w kreeg weer niets.
+- **Geen mail van Caraway, Made In, Okura, Plateful of Taima.**
+- **3 nieuwe mails** (HexClad 2, Our Place 1). Idee voor Siraat: Our Place laat zien dat een browse-reeks met dezelfde code op dag 2 nog werkt; onze browse-flows kunnen in BFCM een tweede mail na 24 uur krijgen die de 70% herhaalt met "Still waiting for you" in plaats van een nieuwe aanbieding.
+
 ## Korting: wanneer en hoe hoog
 
 - **Plateful** is het enige merk met een kortingscode: 10% in de abandoned checkout na 12,5 uur, 2 dagen geldig en al verrekend in de checkout-link (kortingscode aanwezig, niet uitgeschreven).
