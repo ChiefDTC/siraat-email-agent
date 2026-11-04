@@ -367,3 +367,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 4 nov 2026: 6 hero-beelden Win Your Order Back (Higgsfield, ~23 credits) in win-order-back-1104/assets, Figma rij 255:2.
 - 4 nov 2026: Win Your Order Back C met hero-1 (Floris koos), beeld in Klaviyo-bibliotheek, templates QZ3fwC en QPLJPQ bijgewerkt (concept, niet ingepland). Figma rij 258:2.
 - 4 nov 2026: Win Your Order Back C2: tekst bovenop hero-1 (beeld naar boven verlengd met donkere ruimte, live tekst via achtergrondbeeld + VML), label 'VIP BLACK FRIDAY FLASH DEAL', band 'FLASH DEAL · TODAY ONLY'. Klaviyo-templates QZ3fwC en QPLJPQ op C2 gezet (concept, niet ingepland). Figma rij 261:2. Higgsfield outpaint (2 credits) niet gebruikt.
+- 4 nov 2026 01:34 UTC: testmails Win Your Order Back C2 (US QZ3fwC, INT QPLJPQ) naar lolagroothuis@gmail.com (akkoord Floris).
