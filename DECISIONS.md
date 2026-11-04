@@ -98,3 +98,7 @@ Bijwerken bij elk nieuw besluit. Datum per regel.
 - Nooit meer zeggen dat iets "eraan komt", "next batch", "reserve from the next shipment" of iets met een nieuwe badge/batch die nog moet komen.
 - Wel: "Just arrived and selling fast" (de nieuwe voorraad 6-pcs en 12-pcs is net binnen, gecontroleerd door Floris in de backend).
 - Volume: hetzelfde mailvolume als Smooche (ongeveer 13 mails in 41 uur voor iemand die aanmeldt, kijkt, in de winkelwagen legt en afrekent), en een harde push aan het einde van de sale (30 nov). Stijl: direct response, "het is nu echt de sale".
+
+## Figma bij elk voorbeeld (Floris, 4 nov 2026)
+
+Elke set HTML-voorbeelden of nieuwe mailontwerpen gaat altijd ook als rij in Figma (bestand oaxnBkz3MAbePRnorCrQwz), zonder dat Floris erom hoeft te vragen. Geef de link naar de rij mee bij de oplevering.
