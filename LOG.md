@@ -364,3 +364,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 4 nov 2026: prijslijst ronde 2 in Figma, rij 249:2 (US-D, US-E, INT-C, INT-D) onder 242:2.
 - 4 nov 2026: Win Your Order Back (1 willekeurige order vandaag volledig terugbetaald, zoals op de PDP): 6 concepten in klaviyo/templates/v3/campaigns/win-order-back-1104 (US/INT x A actie + collectie, B brief Benjamin, C kort en hard), 12-Pcs als een van zes producten. Figma rij 251:2. Niets in Klaviyo.
 - 4 nov 2026: Floris kiest Win Your Order Back C. In Klaviyo als DRAFT: US campagne 01M6J1MC4MXN4GEFT10Q4S3WJG (template QZ3fwC, VMjhb2 + R5rFrC), INTL 01M6J1MFSJCEJQDDG4JJGHH1X2 (template QPLJPQ, XrFa5r); basis-uitsluitingen, smart sending aan, onderwerp '1 order. Refunded. Today.', niet ingepland. Agent maakt hero-beelden (Higgsfield).
+- 4 nov 2026: 6 hero-beelden Win Your Order Back (Higgsfield, ~23 credits) in win-order-back-1104/assets, Figma rij 255:2.
