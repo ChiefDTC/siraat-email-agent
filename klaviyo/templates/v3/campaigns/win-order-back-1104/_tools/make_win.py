@@ -42,6 +42,7 @@ def meta3(id_, mkt, sender, subj, pre, why):
     who = ('Engaged 90D US v2 (VMjhb2) + No Country 90D (R5rFrC)' if mkt == 'US' else 'Engaged 90D INT v2 (XrFa5r)') + '; excl. kopers vandaag; smart sending aan'
     return 'ID: %s\nMARKT: %s\nSENDER: %s\nSUBJECT A: %s\nSUBJECT B: %s\nPREVIEW: %s\nWANNEER: wo 4 nov 2026, zo vroeg mogelijk (actie geldt alleen vandaag)\nWIE: %s\nWAAROM: %s' % (id_, mkt, sender, subj[0], subj[1], pre, who, why)
 files = {}
+HERO = 'https://cdn.klaviyomail.com/company/TdtTzz/images/1ff5f3b8-908c-4343-be27-05dff0aa6c2f.jpeg'  # hero-1 (Higgsfield, Floris koos 4 nov)
 SUBJ = ('Win your order back (today only)', "We're refunding one order today")
 PRE = 'Order anything today and it could be on us. Everything is already up to 70% off.'
 
@@ -81,6 +82,7 @@ for mkt in ('us', 'int'):
     b = head(m, '1 order. Refunded. Today.', PRE) + OPEN2(INK)
     b += refund_block('Order anything today and it could be on us. One random order gets refunded in full.')
     b += button('Win your order back', u(SALE, c, 'c-cta1'), INK, '0 30px 30px 30px', fill=Y, fg=INK, sub='Everything up to 70% off &middot; Free shipping &middot; 100,000+ customers', dark=True)
+    b += row(INK, '0 20px 26px 20px', img(HERO, 'A hammered titanium pan in an open black gift box with a yellow ribbon', u(SALE, c, 'c-hero'), 560, 10), 'center', 'padx')
     b += bfband('VIP BLACK FRIDAY &nbsp;&middot;&nbsp; TODAY ONLY')
     b += gap(CREAM, 20) + grid4(keys, US, c, 'c', CREAM) + gap(CREAM, 12)
     b += button('Shop VIP Black Friday', u(SALE, c, 'c-cta-end'), '#FFFFFF', '24px 30px 20px 30px', fill=Y, fg=INK) + small()
