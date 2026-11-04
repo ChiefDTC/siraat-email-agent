@@ -27,7 +27,7 @@ def steps(bg='#FFFFFF', pad='0 20px 24px 20px'):
     card = '<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border:1px solid %s;border-radius:10px;"><tr><td style="padding:20px 20px 6px 20px;">%s</td></tr></table>' % (INK, t)
     return row(bg, pad, card, 'left', 'padx')
 def refund_block(sub):
-    h = txt('TODAY ONLY', 13, 16, Y, 700, 'letter-spacing:2.4px;text-align:center;padding-bottom:10px;')
+    h = txt('VIP BLACK FRIDAY FLASH DEAL', 13, 16, Y, 700, 'letter-spacing:2.4px;text-align:center;padding-bottom:10px;')
     h += '<div class="big2" style="font-family:%s;font-size:70px;line-height:70px;font-weight:900;letter-spacing:-3px;color:%s;text-align:center;">1 ORDER<br>ON US</div>' % (FF, Y)
     h += txt(sub, 16, 24, '#E6E3DC', 500, 'text-align:center;padding-top:14px;')
     return row(INK, '28px 20px 30px 20px', h, 'center', 'padx')
@@ -41,6 +41,21 @@ def small(bg='#FFFFFF'):
 def meta3(id_, mkt, sender, subj, pre, why):
     who = ('Engaged 90D US v2 (VMjhb2) + No Country 90D (R5rFrC)' if mkt == 'US' else 'Engaged 90D INT v2 (XrFa5r)') + '; excl. kopers vandaag; smart sending aan'
     return 'ID: %s\nMARKT: %s\nSENDER: %s\nSUBJECT A: %s\nSUBJECT B: %s\nPREVIEW: %s\nWANNEER: wo 4 nov 2026, zo vroeg mogelijk (actie geldt alleen vandaag)\nWIE: %s\nWAAROM: %s' % (id_, mkt, sender, subj[0], subj[1], pre, who, why)
+head.__globals__['CSS'] += '    .ovpad{padding-bottom:410px!important;}\n  }\n  @media only screen and (max-width:480px){ .ovpad{padding-bottom:300px!important;} }\n  @media only screen and (max-width:400px){ .ovpad{padding-bottom:250px!important;}\n'
+HERO_OV = 'https://cdn.klaviyomail.com/company/TdtTzz/images/5d82de51-ecc7-4d6d-9027-ea1832408f2c.jpeg'  # hero-1 met donkere ruimte boven voor live tekst
+OVBG = '#130E0B'
+def overlay(c, ct):
+    """Live tekst bovenop het beeld (achtergrondbeeld + VML voor Outlook). Beeld onderaan verankerd, tekst in de donkere bovenkant."""
+    inner = txt('VIP BLACK FRIDAY FLASH DEAL', 13, 16, Y, 700, 'letter-spacing:2.4px;text-align:center;padding-bottom:10px;')
+    inner += '<div class="big2" style="font-family:%s;font-size:70px;line-height:70px;font-weight:900;letter-spacing:-3px;color:%s;text-align:center;">1 ORDER<br>ON US</div>' % (FF, Y)
+    inner += txt('Order anything today and it could be on us. One random order gets refunded in full.', 16, 24, '#F1EEE8', 500, 'text-align:center;padding:14px 10px 22px 10px;')
+    btn = ('<table role="presentation" width="380" cellpadding="0" cellspacing="0" border="0" style="width:100%%;max-width:380px;margin:0 auto;"><tr><td align="center" bgcolor="%s" style="background-color:%s;border-radius:30px;">'
+           '<a href="%s" style="display:block;padding:20px 18px;font-family:%s;font-size:15px;line-height:18px;font-weight:700;letter-spacing:1.2px;color:%s;text-decoration:none;text-transform:uppercase;">Win your order back &rarr;</a></td></tr></table>') % (Y, Y, u(SALE, c, ct + '-cta1'), FF, INK)
+    inner += btn + txt('Everything up to 70% off &middot; Free shipping &middot; 100,000+ customers', 13, 19, '#D8D2C8', 500, 'text-align:center;padding-top:12px;')
+    return ('<tr><td class="ovpad" align="center" valign="top" bgcolor="%s" background="%s" style="background-color:%s;background-image:url(%s);background-size:100%% auto;background-position:center bottom;background-repeat:no-repeat;padding:34px 24px 440px 24px;">'
+            '<!--[if gte mso 9]><v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;height:662px;"><v:fill type="frame" src="%s" color="%s" /><v:textbox inset="0,0,0,0"><![endif]-->'
+            '%s<!--[if gte mso 9]></v:textbox></v:rect><![endif]--></td></tr>\n') % (OVBG, HERO_OV, OVBG, HERO_OV, HERO_OV, OVBG, inner)
+
 files = {}
 HERO = 'https://cdn.klaviyomail.com/company/TdtTzz/images/1ff5f3b8-908c-4343-be27-05dff0aa6c2f.jpeg'  # hero-1 (Higgsfield, Floris koos 4 nov)
 SUBJ = ('Win your order back (today only)', "We're refunding one order today")
@@ -83,10 +98,19 @@ for mkt in ('us', 'int'):
     b += refund_block('Order anything today and it could be on us. One random order gets refunded in full.')
     b += button('Win your order back', u(SALE, c, 'c-cta1'), INK, '0 30px 30px 30px', fill=Y, fg=INK, sub='Everything up to 70% off &middot; Free shipping &middot; 100,000+ customers', dark=True)
     b += row(INK, '0 20px 26px 20px', img(HERO, 'A hammered titanium pan in an open black gift box with a yellow ribbon', u(SALE, c, 'c-hero'), 560, 10), 'center', 'padx')
-    b += bfband('VIP BLACK FRIDAY &nbsp;&middot;&nbsp; TODAY ONLY')
+    b += bfband('FLASH DEAL &nbsp;&middot;&nbsp; TODAY ONLY')
     b += gap(CREAM, 20) + grid4(keys, US, c, 'c', CREAM) + gap(CREAM, 12)
     b += button('Shop VIP Black Friday', u(SALE, c, 'c-cta-end'), '#FFFFFF', '24px 30px 20px 30px', fill=Y, fg=INK) + small()
     files['wb-%s-c' % mkt] = b + TAIL
+
+    # ---------- C2: C met tekst bovenop het beeld ----------
+    m = meta3('wb-%s-c2 · Kort en hard, tekst op het beeld' % mkt, mkt.upper(), 'Siraat', ('1 order. Refunded. Today.', 'Win your order back (today only)'), PRE, 'Floris 4 nov: tekst-overlay op hero-1, korter eerste scherm.')
+    b = head(m, '1 order. Refunded. Today.', PRE) + OPEN2(INK)
+    b += overlay(c, 'c2')
+    b += bfband('FLASH DEAL &nbsp;&middot;&nbsp; TODAY ONLY')
+    b += gap(CREAM, 20) + grid4(keys, US, c, 'c2', CREAM) + gap(CREAM, 12)
+    b += button('Shop VIP Black Friday', u(SALE, c, 'c2-cta-end'), '#FFFFFF', '24px 30px 20px 30px', fill=Y, fg=INK) + small()
+    files['wb-%s-c2' % mkt] = b + TAIL
 
 for k, v in files.items():
     assert '—' not in v, k
