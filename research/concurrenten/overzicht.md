@@ -200,6 +200,13 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 - **Geen mail van Caraway, Made In, Okura, Plateful of Taima.**
 - **3 nieuwe mails** (HexClad 2, Our Place 1). Idee voor Siraat: Our Place laat zien dat een browse-reeks met dezelfde code op dag 2 nog werkt; onze browse-flows kunnen in BFCM een tweede mail na 24 uur krijgen die de 70% herhaalt met "Still waiting for you" in plaats van een nieuwe aanbieding.
 
+## Dag 23 (4 nov)
+
+- **Our Place kondigt Black Friday aan, nog zonder korting.** "Black Friday's (Almost) Here" (preview "The year's best prices, coming soon") kwam vandaag om 06:15 UTC naar op-b (547,4 uur): één beeld "Black Friday Sale Is (Almost) Served · Fill your cart now and be ready when the savings arrive", knop Get Ready. Geen percentage, geen datum. Het is het eerste Black Friday-signaal van Our Place in deze inboxen; op-c en op-w hadden hem om 09:40 UTC nog niet.
+- **Our Place browse-reeks: derde mail, weer precies 24 uur later.** "Your 10% off is waiting." (preview "Are you ready to go Pro?") op 4 nov 00:15 UTC naar op-b (541,4 uur), met dezelfde persoonlijke code voor 10% vanaf $145. Opvallend: de mail beschrijft de Titanium Pro-set als "stainless steel cookware" met een "non-toxic nonstick interior" en tri-ply, dus een coating op roestvrij staal.
+- **Geen mail van HexClad, Caraway, Made In, Okura, Plateful of Taima.**
+- **2 nieuwe mails** (beide Our Place). Idee voor Siraat: (1) Our Place verkoopt "titanium" met een antiaanbaklaag; ons verschil "pure titanium, no coating" kan scherper in onderwerpen en vergelijkingsblokken. (2) Zij zitten nog in de "coming soon"-fase terwijl wij al 70% korting geven: onze voorsprong in de inbox nu hard uitspelen met dagelijkse mails.
+
 ## Korting: wanneer en hoe hoog
 
 - **Plateful** is het enige merk met een kortingscode: 10% in de abandoned checkout na 12,5 uur, 2 dagen geldig en al verrekend in de checkout-link (kortingscode aanwezig, niet uitgeschreven).
