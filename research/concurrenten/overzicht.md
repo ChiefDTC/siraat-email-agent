@@ -207,6 +207,14 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 - **Geen mail van HexClad, Caraway, Made In, Okura, Plateful of Taima.**
 - **2 nieuwe mails** (beide Our Place). Idee voor Siraat: (1) Our Place verkoopt "titanium" met een antiaanbaklaag; ons verschil "pure titanium, no coating" kan scherper in onderwerpen en vergelijkingsblokken. (2) Zij zitten nog in de "coming soon"-fase terwijl wij al 70% korting geven: onze voorsprong in de inbox nu hard uitspelen met dagelijkse mails.
 
+## Dag 24 (5 nov)
+
+- **Our Place start Black Friday op 5 nov: tot 68% korting.** "BLACK FRIDAY AT OUR PLACE" (preview "Our biggest sale of the year is live. Save sitewide.") kwam om 05:15 UTC naar op-b. Kop "BIGGEST DISCOUNT 68% OFF", sitewide, plus bij $350 besteding 300 bonuspunten ($30). Raster "The Best of Black Friday" met zes producten zonder prijzen. De sale loopt tot 30 nov 23:59 PT, dus dezelfde einddatum als Siraat. Een uur later volgde al "We Fixed the Air Fryer" (Wonder Oven) naar b, c en w.
+- **"Black Friday's (Almost) Here" van 4 nov kwam ook bij op-c (13:15) en op-w (15:17):** dus pas één dag tussen aankondiging en start.
+- **HexClad: weer een productlancering, nu een wijnkoeler.** "Stop drinking 🍷 wrong." op 4 nov 20:01 en 20:02 UTC naar hex-b en hex-c. Nog steeds geen Black Friday-korting. hex-w kreeg niets.
+- **Geen mail van Caraway, Made In, Okura, Plateful of Taima.**
+- **8 nieuwe mails** (Our Place 6, HexClad 2). Idee voor Siraat: Our Place zit nu op 68%, wij op "up to 70%". Ons percentage blijft het hoogste, dus altijd "70%" vooraan in onderwerp en hero, en het verschil "pure titanium, geen coating" erbij. Hun bonuspunten bij $350 lijken op onze gratis cadeaus: ons cadeaupakket met de waarde in dollars noemen houdt ons aanbod sterker.
+
 ## Korting: wanneer en hoe hoog
 
 - **Plateful** is het enige merk met een kortingscode: 10% in de abandoned checkout na 12,5 uur, 2 dagen geldig en al verrekend in de checkout-link (kortingscode aanwezig, niet uitgeschreven).

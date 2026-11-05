@@ -375,3 +375,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 4 nov 2026 08:50 UTC: dagelijkse bewaking. Splits 100% nieuw, flows live. 24u flowomzet $5.035. Alarmen: checkout bounce 6,6% (spam 0,294%), BF-direct uitschr. 1,60%. Gepost in #claude-mail. Niets aangepast.
 - 4 nov 2026: concurrenten-tijdlijn dag 23 (2 mails Our Place: BF-aankondiging zonder korting, browse-mail 3 met 10%-code).
 - 5 nov 2026 08:50 UTC: dagelijkse bewaking. Splits 100% nieuw, flows live. 24u flowomzet $10.741. Alarmen: checkout bounce 6,2%, BF-direct uitschr. 1,15%, site uitschr. 1,31% (234), e-guide spam 0,308% (1 melding). Gepost in #claude-mail. Niets aangepast.
+- 5 nov 2026: concurrenten-tijdlijn dag 24 (8 mails; Our Place start BF op 5 nov met tot 68% en bonuspunten bij $350, loopt tot 30 nov; HexClad wijnkoeler).
