@@ -12,12 +12,12 @@ sys.path.insert(0, '/home/user/siraat-email-agent/scripts'); import v5lib as V
 N = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # ---------------------------------------------------------------- vaste waarden
-TOPBAR = 'BLACK FRIDAY SALE IS LIVE'   # DECISIONS 31 okt en copy.md sectie 1 (zonder VIP; zie open punten)
+TOPBAR = 'VIP BLACK FRIDAY SALE IS LIVE'   # VIP-label in alle mails (Floris 2 nov)
 SALE = 'https://siraatskitchen.com/collections/black-friday-sale'
 PRD = 'https://siraatskitchen.com/products/'
 URL = {'large': PRD + 'titanium-hammered-pan-pro-large', 'deep': PRD + 'titanium-hammered-deep-pan-pro',
        'standard': PRD + 'original-siraat-100-pure-titanium-pan-with-hammered-pattern',
-       'set6': PRD + 'titanium-hammered-pan-set-with-lids-6-pcs', 'set12': PRD + 'titanium-hammered-cookware-set'}
+       'set6': PRD + 'titanium-hammered-pan-set-with-lids-6-pcs', 'set12': PRD + 'titanium-hammered-cookware-set-12-pcs-free-pizza-steel-1'}
 PK = {'large': 'Titanium_hammered_pan_pro_large_6d4ce352-c4ff-48c9-b4d1-170232007e4f.webp', 'deep': 'DeepHammeredPan.webp',
       'standard': 'Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-40a5-9ad7-523bdddc54d4.webp',
       'set6': '6pcscookwareset.webp', 'set12': '12pcsset.webp'}
@@ -26,6 +26,7 @@ FAMILY = 'siraat-titanium-hammered-deep-pan-10-family-dinner.webp'
 RAGU = 'siraat-titanium-hammered-deep-pan-01-ragu-on-the-stove.webp'
 BRAISE = 'siraat-titanium-hammered-deep-pan-05-chicken-braise.webp'
 C43 = lambda n: CDN + n + '?width=1200&height=900&crop=center&format=pjpg'
+C32 = lambda n: CDN + n + '?width=1200&height=800&crop=center&format=pjpg'
 C11 = lambda n: CDN + n + '?width=1200&height=1200&crop=center&format=pjpg'
 SQ2 = lambda n: CDN + n + '?width=1200&height=1200&crop=center&format=pjpg'
 FR_INT = 'Free shipping, duties paid. 30-day returns. 100,000+ happy customers.'
@@ -61,15 +62,19 @@ def price_line(k, us, int_label='70% OFF', big=20):
     return ('<span style="font-family:%s;font-size:%dpx;line-height:28px;font-weight:600;color:%s;white-space:nowrap;">%s</span> '
             '<span style="font-family:%s;font-size:13px;line-height:28px;font-weight:600;color:#B5B5B5;text-decoration:line-through;white-space:nowrap;">%s</span> %s') % (
         FF, big, INK, PRICE(k), FF, WAS(k), badge('%d%% OFF' % PCT(k)))
-def sbtn(label, url):
+def sbtn(label, url, full=False):
+    if full:
+        return ('<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0" style="margin-top:12px;"><tr><td align="center" bgcolor="%s" style="background-color:%s;border-radius:20px;">'
+                '<a href="%s" style="display:block;padding:11px 8px;font-family:%s;font-size:12px;line-height:15px;font-weight:700;letter-spacing:0.6px;color:%s;text-decoration:none;text-transform:uppercase;text-align:center;">%s &rarr;</a></td></tr></table>') % (Y, Y, url, FF, INK, label)
     return ('<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:12px;"><tr><td bgcolor="%s" style="background-color:%s;border-radius:20px;">'
             '<a href="%s" style="display:block;padding:11px 14px;font-family:%s;font-size:12px;line-height:14px;font-weight:700;letter-spacing:0.8px;color:%s;text-decoration:none;text-transform:uppercase;white-space:nowrap;">%s &rarr;</a></td></tr></table>') % (Y, Y, url, FF, INK, label)
-def hero(label, title, sub, image, alt, link, ratio=C43, pad_title='16px 24px 0 24px'):
-    h = row(PACK, '28px 24px 0 24px', pill(label, INK, '#FFFFFF'), 'center')
+def hero(label, title, sub, image, alt, link, ratio=C32, pad_title='12px 24px 0 24px'):
+    h = row(PACK, '22px 24px 0 24px', pill(label, INK, '#FFFFFF'), 'center')
     h += row(PACK, pad_title, serif(title, 46, 50, INK, 'h1', True), 'center')
-    h += row(PACK, '10px 36px 18px 36px', txt(sub, 17, 25, '#4A4A4A', 400, 'text-align:center;'), 'center')
+    h += row(PACK, '8px 36px 14px 36px', txt(sub, 17, 25, '#4A4A4A', 400, 'text-align:center;'), 'center')
     h += row(PACK, '0', img(ratio(image), alt, link), 'center', '')
     return h
+def offerbar(t): return row(INK, '12px 16px', txt(t, 12, 17, Y, 700, 'letter-spacing:1.4px;text-align:center;'), 'center', 'padx')
 def heading(t, bg='#FFFFFF', pad='30px 24px 6px 24px', sub=''):
     return row(bg, pad, serif(t, 34, 38, INK, 'h1b', True) + (txt(sub, 15, 22, GREY, 500, 'padding-top:8px;') if sub else ''), 'center')
 def closing(t, bg='#FFFFFF'): return P(t, bg, '6px 40px 4px 40px')
@@ -114,7 +119,7 @@ def gcard(k, line, us, int_label, label, link, sticker=''):
             '<tr><td style="padding:0;border-radius:10px 10px 0 0;overflow:hidden;">%s</td></tr><tr><td style="padding:12px 12px 14px 12px;">%s%s%s<div style="padding-top:8px;">%s</div>%s</td></tr></table>') % (
         HAIR, img(SQ(PK[k]), 'Siraat ' + NAME[k], link, 270, 0), st,
         '<div style="font-family:%s;font-size:16px;line-height:20px;font-weight:600;color:%s;"><a href="%s" style="color:%s;text-decoration:none;">%s</a></div>' % (FF, INK, link, INK, NAME[k]),
-        txt(line, 13, 18, '#6E6A64', 400, 'padding-top:4px;'), price_line(k, us, int_label, 18), sbtn(label, link))
+        txt(line, 13, 18, '#6E6A64', 400, 'padding-top:4px;'), price_line(k, us, int_label, 18), sbtn(label, link, True))
 def grid(cards, bg=CREAM):
     out = ''
     for i in range(0, len(cards), 2):
@@ -153,8 +158,8 @@ def bfband_full(us, camp, ct):
     out = row(ESP, '30px 26px 0 26px', h, 'left', 'pad')
     return out + dark_button('Get my Black Friday price', utm(SALE, camp, ct + '-band'), FRIC(us))
 def gifts_tiles(us, bg='#FFFFFF'):
-    it = ([('Free shipping', '{{GIFTS:ship}} value'), ('Plastic-Free Home e-book', '{{GIFTS:ebook}} value'), ('Mystery gift', '{{GIFTS:mystery}} value'), ('Chance to win {{GIFTS:filterline}}', 'Weekly draw')] if us else
-          [('Free shipping, duties paid', 'Included'), ('Plastic-Free Home e-book', 'Included'), ('Mystery gift', 'Included'), ('Chance to win a PFAS water filter', 'Weekly draw')])
+    it = ([('Free shipping', '{{GIFTS:ship}} value'), ('Plastic-Free Home e&#8209;book', '{{GIFTS:ebook}} value'), ('Mystery gift', '{{GIFTS:mystery}} value'), ('Chance to win {{GIFTS:filterline}}', 'Weekly draw')] if us else
+          [('Free shipping, duties paid', 'Included'), ('Plastic-Free Home e&#8209;book', 'Included'), ('Mystery gift', 'Included'), ('Chance to win a PFAS water filter', 'Weekly draw')])
     cell = lambda a, b, n: '<td width="50%%" valign="top" style="padding:0 5px 10px 5px;"><table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0" bgcolor="%s" style="background-color:%s;border-radius:8px;"><tr><td align="center" style="padding:16px 10px;"><div style="width:30px;height:30px;border-radius:15px;background-color:%s;font-family:%s;font-size:14px;line-height:30px;font-weight:800;color:%s;text-align:center;margin:0 auto;">%d</div>%s%s</td></tr></table></td>' % (
         CREAM, CREAM, Y, FF, INK, n, txt(a, 14, 19, INK, 600, 'text-align:center;padding-top:10px;'), txt(b, 12, 17, '#8A847A', 500, 'text-align:center;padding-top:3px;'))
     t = '<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0"><tr>%s%s</tr><tr>%s%s</tr></table>' % tuple(cell(a, b, i + 1) for i, (a, b) in enumerate(it))
@@ -168,8 +173,8 @@ def mini_offer(us, camp, ct, label='Get my Pan Pro at 70% off'):
     """Compacte productkaart in de brief (UX: beeld, prijs en knop binnen het eerste scherm)."""
     link = utm(URL['standard'], camp, ct)
     i = ('<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0"><tr><td width="96" valign="top" style="padding:0 14px 0 0;"><a href="%s"><img src="%s" width="84" alt="Siraat Pan Pro Standard" style="display:block;width:84px;height:84px;border-radius:8px;border:0;"></a></td>'
-         '<td valign="top"><div style="font-family:%s;font-size:17px;line-height:22px;font-weight:600;color:%s;"><a href="%s" style="color:%s;text-decoration:none;">Pan Pro Standard</a></div><div style="padding-top:4px;">%s</div>%s</td></tr></table>') % (
-        link, SQ(PK['standard']), FF, INK, link, INK, price_line('standard', us, '70% OFF', 20), sbtn(label, link))
+         '<td valign="top"><div style="font-family:%s;font-size:17px;line-height:22px;font-weight:600;color:%s;"><a href="%s" style="color:%s;text-decoration:none;">Pan Pro Standard</a></div><div style="padding-top:4px;">%s</div></td></tr></table>%s') % (
+        link, SQ(PK['standard']), FF, INK, link, INK, price_line('standard', us, '70% OFF', 20), sbtn(label, link, True))
     return row('#FFFFFF', '0 20px 20px 20px', boxed(i, HAIR, PACK, '14px'), 'left', 'padx')
 VS_ROWS = [('Pure titanium surface', 'A PTFE or ceramic coating'), ('No coating to wear off', 'Coating wears with use'), ('Metal utensils welcome', 'Wood or silicone advised'),
            ('Third-party tested by Light Labs', 'Testing varies by brand'), ('Dishwasher safe', 'Hand wash advised')]
@@ -185,8 +190,8 @@ def compare(bg=CREAM):
     t += txt('Light Labs report no. 25895: 31 PFAS compounds tested, all below detection.', 12, 18, '#8A847A', 400, 'text-align:center;padding-top:12px;')
     return row(bg, '30px 20px 26px 20px', t, 'left', 'padx')
 def stack_receipt(us):
-    li = lambda a, b, strong=False: '<tr><td valign="top" style="padding:11px 0;border-bottom:1px dashed #D8D1C4;">%s</td><td align="right" valign="top" style="padding:11px 0 11px 10px;border-bottom:1px dashed #D8D1C4;">%s</td></tr>' % (
-        txt(a, 15, 21, INK, 700 if strong else 500), txt(b, 15, 21, INK if strong else '#6E6A64', 700 if strong else 500, 'white-space:nowrap;'))
+    li = lambda a, b, strong=False: '<tr><td valign="top" style="padding:11px 0;border-bottom:1px dashed #D8D1C4;">%s</td><td align="right" width="40%%" valign="top" style="padding:11px 0 11px 10px;border-bottom:1px dashed #D8D1C4;">%s</td></tr>' % (
+        txt(a, 15, 21, INK, 700 if strong else 500), txt(b, 15, 21, INK if strong else '#6E6A64', 700 if strong else 500, 'text-align:right;'))
     if us:
         rows_ = [('Titanium Hammered Pan Pro Standard', '<span style="text-decoration:line-through;color:#B5B5B5;">%s</span> %s' % (WAS('standard'), PRICE('standard'))),
                  ('Free shipping', '{{IF:US}}{{GIFTS:ship}} {{ENDIF}}included'), ('Plastic-Free Home e-book', '{{IF:US}}{{GIFTS:ebook}} {{ENDIF}}included'),
@@ -206,7 +211,7 @@ def promises():
     for a, b in it:
         i += '<div style="height:10px;line-height:10px;font-size:0;">&nbsp;</div>' + boxed(txt(a, 16, 22, INK, 700) + txt(b, 15, 23, '#4A4A4A', 400, 'padding-top:4px;'), HAIR, '#FFFFFF', '16px 18px')
     return row(CREAM, '28px 20px 26px 20px', i, 'left', 'padx')
-def hero_btn(label, url, us, bg='#FFFFFF', pad='22px 30px 26px 30px'): return button(label, url, bg, pad, sub=FRIC(us), fill=Y, fg=INK)
+def hero_btn(label, url, us, bg='#FFFFFF', pad='16px 30px 26px 30px'): return button(label, url, bg, pad, sub=FRIC(us), fill=Y, fg=INK)
 def pbtn(label, url, us, pad='4px 30px 28px 30px', bg='#FFFFFF'): return button(label, url, bg, pad, sub=FRIC(us), fill=Y, fg=INK)
 
 files = {}
@@ -301,8 +306,8 @@ for mkt in ('us', 'int'):
     b = HEAD(meta4('e5-%s-c · Kort: één recept, sterke BF-sectie' % mkt, M, 'Siraat', subj, pre, WHEN5, WHO5 % who, 'copy.md E5 C: snelste recept als haak, daarna vier producten en de gifts.'), subj[0], pre) + OPEN3()
     b += hero('Weekly recipe', 'Ten minutes.<br>Made Tuesday.' if US else 'Ten minutes.<br>Made ahead.', 'Reheats while the turkey rests.' if US else 'Reheats while dinner rests.',
               BRAISE, 'A Siraat Deep Pan Pro on the stove', utm(URL['deep'], c5, 'c-hero'))
-    b += bfband('UP TO 70%% OFF &nbsp;&middot;&nbsp; %s' % ('{{GIFTS:TOTAL}}' if US else '4 GIFTS WITH EVERY ORDER'))
-    b += hero_btn('Get my Black Friday price', utm(SALE, c5, 'c-cta1'), US)
+    b += hero_btn('Get my Black Friday price', utm(SALE, c5, 'c-cta1'), US, pad='16px 30px 22px 30px')
+    b += offerbar('UP TO 70%% OFF &nbsp;&middot;&nbsp; %s' % ('{{GIFTS:TOTAL}}' if US else '4 GIFTS WITH EVERY ORDER')) + gap('#FFFFFF', 22)
     b += P('Benjamin here. One side dish this week, because %s is busy enough.' % ('Thanksgiving' if US else 'a big dinner'), '#FFFFFF', '4px 40px 16px 40px')
     i = serif('Green beans with shallots and almonds', 28, 31, INK, 'ptitle', True) + txt('Deep Pan Pro &middot; 10 minutes', 14, 20, GREY, 500, 'padding:4px 0 14px 0;')
     i += numbered(['Blanch %s green beans for 3 minutes. Drain.' % ('1 lb' if US else '500 g'), 'Soften 2 sliced shallots in a little butter in the Deep Pan Pro.',
@@ -357,8 +362,8 @@ for mkt in ('us', 'int'):
     subj = ('"The last pans we ever have to purchase"', 'How many pans have you thrown out?'); pre = 'Why a coated pan has an end date, and this one has a 75-year warranty.'
     b = HEAD(meta4('e6-%s-b · The last pan: coating tegen puur titanium' % mkt, M, 'Benjamin from Siraat', subj, pre, WHEN6, WHO6 % who, 'copy.md E6 B: coating heeft een einddatum, garantie en klantcitaat als bewijs.'), subj[0], pre) + OPEN3()
     b += hero("Benjamin's note", 'A pan with<br>no end date.', 'Covered for 75 years.', PK['standard'], 'The Siraat Titanium Hammered Pan Pro Standard', utm(URL['standard'], c6, 'b-hero'))
-    b += bfband('70%% OFF &nbsp;&middot;&nbsp; %s' % ('{{GIFTS:TOTAL}}' if US else '4 GIFTS WITH EVERY ORDER'))
-    b += hero_btn('Get my Pan Pro at 70% off', utm(URL['standard'], c6, 'b-cta1'), US)
+    b += hero_btn('Get my Pan Pro at 70% off', utm(URL['standard'], c6, 'b-cta1'), US, pad='16px 30px 22px 30px')
+    b += offerbar('70%% OFF &nbsp;&middot;&nbsp; %s' % ('{{GIFTS:TOTAL}}' if US else '4 GIFTS WITH EVERY ORDER')) + gap('#FFFFFF', 22)
     top = '4px 40px 16px 40px'
     if US: b += P('First, for Veterans Day: thank you to everyone who serves and has served.', '#FFFFFF', top); top = '0 40px 16px 40px'
     b += P('Benjamin here. A quick question before the sale stuff: how many frying pans have you thrown out?', '#FFFFFF', top)
@@ -369,7 +374,7 @@ for mkt in ('us', 'int'):
     b += P("I'm not going to tell you how many years it lasts. I'll tell you what we put in writing instead: a 75-year warranty. If it dents, if the base warps, if a handle or rivet comes loose, or if the lid stops fitting, we take care of it.", '#FFFFFF', '28px 40px 18px 40px')
     b += P('One customer sent us a photo and that was it:') + quote('R240')
     b += P("And another said the thing I'd never write myself:") + quote('R583')
-    i = eyebrow('Black Friday', GOLD, 'text-align:center;') + serif('Pan Pro Standard', 34, 38, INK, 'h1b', True, 'text-align:center;padding-top:6px;')
+    i = eyebrow('Black Friday', INK, 'text-align:center;') + serif('Pan Pro Standard', 34, 38, INK, 'h1b', True, 'text-align:center;padding-top:6px;')
     if US:
         i += ('<table role="presentation" align="center" style="margin:10px auto 0 auto;" cellpadding="0" cellspacing="0" border="0"><tr><td valign="middle" style="padding-right:10px;font-family:%s;font-size:18px;font-weight:600;color:#B5B5B5;text-decoration:line-through;white-space:nowrap;">%s</td>'
               '<td valign="middle" class="now" style="padding-right:10px;font-family:%s;font-size:44px;line-height:48px;font-weight:600;color:%s;white-space:nowrap;">%s</td><td valign="middle">%s</td></tr></table>') % (FF, WAS('standard'), FF, INK, PRICE('standard'), badge('70% OFF', 12))
@@ -390,9 +395,9 @@ for mkt in ('us', 'int'):
     pre = '$144 for the Pan Pro Standard. Ends November 30.' if US else '70% off the Pan Pro Standard, plus 4 gifts. Ends 30 November.'
     b = HEAD(meta4('e6-%s-c · Kort en hard, waardestapel' % mkt, M, 'Benjamin from Siraat', subj, pre, WHEN6, WHO6 % who, 'copy.md E6 C: most aware, aanbod voorop, waardestapel als bonnetje.'), subj[0], pre) + OPEN3()
     b += hero('Black Friday', 'The original pan.<br>70% off.', 'Plus 4 gifts. Ends Nov 30.' if US else 'Plus 4 gifts. Ends 30 Nov.', PK['standard'], 'The Siraat Titanium Hammered Pan Pro Standard', utm(URL['standard'], c6, 'c-hero'))
-    b += bfband('70% OFF &nbsp;&middot;&nbsp; 4 GIFTS WITH EVERY ORDER')
-    if US: b += pricebar('standard', US, pad='20px 20px 0 20px')
-    b += hero_btn('Get my Pan Pro at 70% off', utm(URL['standard'], c6, 'c-cta1'), US, pad='18px 30px 26px 30px')
+    if US: b += pricebar('standard', US, pad='16px 20px 0 20px')
+    b += hero_btn('Get my Pan Pro at 70% off', utm(URL['standard'], c6, 'c-cta1'), US, pad='14px 30px 22px 30px')
+    b += offerbar('70% OFF &nbsp;&middot;&nbsp; 4 GIFTS WITH EVERY ORDER') + gap('#FFFFFF', 22)
     top = '4px 40px 16px 40px'
     if US: b += P('First, for Veterans Day: thank you to everyone who serves and has served.', '#FFFFFF', top); top = '0 40px 16px 40px'
     b += P('Benjamin here. Short one today.', '#FFFFFF', top)
