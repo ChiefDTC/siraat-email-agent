@@ -374,3 +374,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 4 nov 2026: Win Your Order Back terug naar 1 order (Floris: zo staat het op de site). Kop 'WIN YOUR ORDER BACK', knop 'Shop VIP Black Friday', onderwerp 'Win your order back (today only)'. Beide campagnes opnieuw gekoppeld (US RJHivB, INT W5PCFt), concept. Figma 261:2 bijgewerkt.
 - 4 nov 2026 08:50 UTC: dagelijkse bewaking. Splits 100% nieuw, flows live. 24u flowomzet $5.035. Alarmen: checkout bounce 6,6% (spam 0,294%), BF-direct uitschr. 1,60%. Gepost in #claude-mail. Niets aangepast.
 - 4 nov 2026: concurrenten-tijdlijn dag 23 (2 mails Our Place: BF-aankondiging zonder korting, browse-mail 3 met 10%-code).
+- 5 nov 2026 08:50 UTC: dagelijkse bewaking. Splits 100% nieuw, flows live. 24u flowomzet $10.741. Alarmen: checkout bounce 6,2%, BF-direct uitschr. 1,15%, site uitschr. 1,31% (234), e-guide spam 0,308% (1 melding). Gepost in #claude-mail. Niets aangepast.
