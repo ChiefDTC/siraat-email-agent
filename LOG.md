@@ -385,3 +385,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 5 nov 2026: Homestead-Figma 13Ny4D0MDkTn15tlZsH8z6: mails in stukken van max 4000 px (32 delen) omdat lange beelden in Figma niet laadden.
 - 5 nov 2026: E5/E6 definitief (Floris: één versie per mail, zonder prijzen, korter): e5-*-final (prep-plan), e6-*-final (brief Benjamin), US en INT; make_final.py. Homestead-Figma 13Ny4D0MDkTn15tlZsH8z6 vervangen door deze 4 (rij 8:2).
 - 5 nov 2026: E5/E6 definitief: claims teruggezet (Floris), snijplankenzin uit E6; Figma Homestead-bestand bijgewerkt.
+- 5 nov 2026: E5 definitief visueel (Floris: zoals steak night, meer beelden, glasblokken): hero en elk recept met eigen foto en donker glaspaneel, ingrediënten en methode, pull-quotes, icoonrij. Homestead-Figma bijgewerkt.

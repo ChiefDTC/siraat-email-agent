@@ -13,6 +13,7 @@ _pl, _pb = price_line, pricebar
 HG['price_line'] = lambda k, us, int_label='70% OFF', big=20: _pl(k, False, int_label, big)
 HG['pricebar'] = lambda k, us, int_label='70% OFF', bg='#FFFFFF', pad='22px 20px 0 20px': _pb(k, False, int_label, bg, pad)
 HG['gv'] = lambda k: ''
+HG['prodhead'] = lambda k, title, meta_, link: ''  # titel staat al in het glasblok
 HG['REVS']['HS1'] = ("Buy it because it's safe, it's the only pan you will need in your kitchen, life long.", 'Siraat customer')  # Floris 5 nov: echte review
 E56LINES = E56SRC.split('\n')
 def grab(start, stop):
@@ -20,6 +21,27 @@ def grab(start, stop):
     j = next(n for n in range(i, len(E56LINES)) if E56LINES[n].strip().startswith(stop))
     return '\n'.join(l[4:] for l in E56LINES[i:j])
 DAYS = grab('d1, d2, d3 =', "b += P('Why it works")
+
+RECIPES = grab('SP = dict(', '# ================= E5 A')
+DAY3 = grab('b += daycard(d3', "b += P('Why it works")
+def glass_img(src, link, eyebrow_, title, meta_, h_desk=330, h_mob=170, title_size=34):
+    """Beeld als achtergrond met een donker glaspaneel onderaan (rgba + blur waar ondersteund; Outlook: VML en effen paneel)."""
+    panel = ('<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0" bgcolor="#1C1C1C" style="background-color:rgba(24,20,16,0.58);border:1px solid rgba(255,255,255,0.28);border-radius:14px;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);">'
+             '<tr><td style="padding:16px 18px 16px 18px;">%s%s%s</td></tr></table>') % (
+        txt(eyebrow_, 11, 14, '#E9DFC8', 700, 'letter-spacing:2px;text-transform:uppercase;'),
+        serif(title, title_size, title_size + 4, '#FFFFFF', 'gtitle', True, 'padding-top:6px;'),
+        txt(meta_, 14, 20, '#F1EEE8', 500, 'padding-top:4px;') if meta_ else '')
+    inner = '<a href="%s" style="text-decoration:none;display:block;">%s</a>' % (link, panel) if link else panel
+    return ('<tr><td class="gpad" align="left" valign="bottom" bgcolor="#2A2622" background="%s" style="background-color:#2A2622;background-image:url(%s);background-size:cover;background-position:center center;background-repeat:no-repeat;padding:%dpx 16px 16px 16px;border-radius:0;">'
+            '<!--[if gte mso 9]><v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;height:%dpx;"><v:fill type="frame" src="%s" color="#2A2622" /><v:textbox inset="0,0,0,0"><![endif]-->'
+            '%s<!--[if gte mso 9]></v:textbox></v:rect><![endif]--></td></tr>\n') % (src, src, h_desk, h_desk + 140, src, inner)
+head.__globals__['CSS'] += '    .gpad{padding-top:150px!important;}\n    .gtitle{font-size:28px!important;line-height:32px!important;}\n'
+def icons_row(items, bg=CREAM):
+    cell = lambda ic, t: '<td width="33%%" align="center" valign="top" style="padding:0 6px;"><img src="{{SHARED}}/%s" width="44" alt="" style="display:block;margin:0 auto;width:44px;height:auto;border:0;">%s</td>' % (ic, txt(t, 13, 18, INK, 600, 'text-align:center;padding-top:8px;'))
+    t = '<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0"><tr>%s</tr></table>' % ''.join(cell(a, b) for a, b in items)
+    return row(bg, '6px 16px 26px 16px', t, 'center', 'padx')
+def pull(t, bg=CREAM):
+    return row(bg, '28px 34px 22px 34px', serif(t, 24, 32, INK, 'h1s', True, 'text-align:center;'), 'center')
 def bf_short(us, camp, ct):
     h = txt('VIP BLACK FRIDAY', 13, 16, '#D9C9A8', 700, 'letter-spacing:2.4px;text-align:center;padding-bottom:12px;')
     h += serif('Up to 70% off, plus 4 gifts<br>with every order.', 34, 38, '#FFFFFF', 'h1b', True, 'text-align:center;')
@@ -35,20 +57,26 @@ for mkt in ('us', 'int'):
     who = 'US Engaged 30D' if US else 'INT Engaged 30D'
     WHEN5 = 'di 10 nov 2026, ochtend lokale tijd'; WHEN6 = 'wo 11 nov 2026, ochtend lokale tijd'
     SMALL = ('Offer valid November 1 to 30. Gifts while the sale runs; the water filter is a weekly draw.' if US else 'Offer valid 1 to 30 November. The water filter is a weekly draw.')
-    # ---------- E5 definitief: prep-plan, kort, zonder prijzen ----------
+    # ---------- E5 definitief v2: visueel zoals steak night, glasblokken over de beelden, zonder prijzen ----------
     subj = ('Your Thanksgiving, in 3 days and 2 pans', 'What can you cook before Thursday?') if US else ('A big dinner, in 3 days and 2 pans', 'What can you cook two days early?')
     pre = 'Tuesday, Wednesday, Thursday. The plan that frees up your stove.' if US else 'Day one, day two, the big day. The plan that frees up your stove.'
-    b = HEAD(meta4('e5-%s-final · Prep-plan, kort, zonder prijzen' % mkt, M, 'Siraat', subj, pre, WHEN5, WHO5 % who, 'Floris 5 nov: één versie, zonder prijs, korter.'), subj[0], pre) + OPEN3()
-    b += hero('Thanksgiving prep plan' if US else 'Big dinner prep plan', 'Three days.<br>Two pans.', 'One free stove on Thursday.' if US else 'One free stove on the day.',
-              IM_SWEET, 'Golden maple sweet potato rounds in a Siraat Pan Pro', utm(SALE, c5, 'f-hero'))
-    b += hero_btn('Shop VIP Black Friday', utm(SALE, c5, 'f-cta1'), US)
+    b = HEAD(meta4('e5-%s-final · Prep-plan, visueel, zonder prijzen' % mkt, M, 'Siraat', subj, pre, WHEN5, WHO5 % who, 'Floris 5 nov: zoals de steak night-mail, meer beelden, glasblokken.'), subj[0], pre) + OPEN3()
+    loc = dict(HG); loc.update(b='', US=US, c5=c5, URL=URL, utm=utm); exec(RECIPES, loc); SP, GB = loc['SP'], loc['GB']
+    b += glass_img(IM_TABLE, utm(SALE, c5, 'f-hero'), 'Thanksgiving prep plan' if US else 'Big dinner prep plan', 'Three days. Two pans.', 'One free stove on Thursday.' if US else 'One free stove on the day.', 360, 190, 40)
+    b += hero_btn('Shop VIP Black Friday', utm(SALE, c5, 'f-cta1'), US, '#FFFFFF', '20px 30px 22px 30px')
     b += P(("Benjamin here. Everything wants the stove at the same time on Thanksgiving. So two sides get done before Thursday, and on the day they only need warming up.") if US else
-           ("Benjamin here. At a big dinner everything wants the stove at the same time. So two sides get done in the days before, and on the day they only need warming up."), '#FFFFFF', '6px 40px 18px 40px')
-    loc = dict(HG); loc.update(b='', US=US, c5=c5); exec(DAYS, loc); b += loc['b']
-    b += P('Both cook on a pure titanium surface. Nothing sticks when the heat is right, and you clean up both pans in under a minute.', '#FFFFFF', '10px 40px 14px 40px')
-    b += gap('#FFFFFF', 6)
-    b += wide_card('large', 'Room for a whole batch of rounds.', US, '70% OFF', 'Shop the Pan Pro Large', utm(URL['large'], c5, 'f-card-large'))
-    b += wide_card('deep', 'Higher sides for sauces, pasta and one-pan dinners.', US, 'UP TO 70% OFF', 'Shop the Deep Pan Pro', utm(URL['deep'], c5, 'f-card-deep'))
+           ("Benjamin here. At a big dinner everything wants the stove at the same time. So two sides get done in the days before, and on the day they only need warming up."), '#FFFFFF', '4px 40px 20px 40px')
+    b += row(CREAM, '26px 20px 6px 20px', txt('&#9733;&#9733;&#9733;&#9733;&#9733;', 16, 18, GOLD, 400, 'letter-spacing:3px;text-align:center;') + txt('100,000+ HAPPY CUSTOMERS', 12, 16, INK, 700, 'letter-spacing:2px;text-align:center;padding-top:4px;'), 'center', 'padx')
+    b += pull("Make it Tuesday. Serve it Thursday. They're better the second day." if US else "Make it ahead. Serve it hot. They're better the second day.")
+    lg, dp = utm(URL['large'], c5, 'f-lg'), utm(URL['deep'], c5, 'f-dp')
+    d1, d2, d3 = ('TUESDAY', 'WEDNESDAY', 'THURSDAY') if US else ('DAY ONE', 'DAY TWO', 'THE BIG DAY')
+    b += gap('#FFFFFF', 20) + glass_img(IM_SWEET, lg, d1, 'Maple sweet potato rounds', 'Pan Pro Large &middot; 20 minutes')
+    b += recipe(link=lg, **SP) + pbtn('Shop the Pan Pro Large', lg, US, '18px 30px 26px 30px')
+    b += glass_img(IM_BEANS, dp, d2, 'Green beans with shallots and almonds', 'Deep Pan Pro &middot; 10 minutes')
+    b += recipe(link=dp, **GB) + pbtn('Shop the Deep Pan Pro', dp, US, '18px 30px 26px 30px')
+    loc2 = dict(HG); loc2.update(b='', US=US, d3=d3); exec(DAY3, loc2); b += loc2['b']
+    b += pull('Both cook on a pure titanium surface. Nothing sticks when the heat is right, and you clean up both pans in under a minute.')
+    b += icons_row([('icon-no-coating.png', 'No coatings'), ('icon-pfas-tested.png', 'Tested PFAS-free'), ('icon-dishwasher-safe.png', 'Dishwasher safe')])
     b += gap('#FFFFFF', 10) + bf_short(US, c5, 'f') + gifts(US)
     b += closing('Have a good Thanksgiving,' if US else 'Happy cooking,').replace('6px 40px 4px 40px', '18px 40px 4px 40px') + sign()
     files['e5-%s-final' % mkt] = b + small(SMALL) + TAIL
