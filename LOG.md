@@ -382,3 +382,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 5 nov 2026: E5/E6 kleuren naar huisstijl (geel alleen sale-tags, Floris), gift-tegels met echte gift-beelden; DECISIONS bijgewerkt. Agent maakt nieuwe beelden (gerechten, ei, Veterans Day).
 - 5 nov 2026: E5/E6 v2: nieuwe beelden (Higgsfield, 30 credits: tafel, zoete aardappel, sperziebonen, ei, Veterans Day-vlag) in de mails; Figma 268:2 en 268:23 bijgewerkt.
 - 5 nov 2026: apart Figma-bestand voor Homestead: https://www.figma.com/design/13Ny4D0MDkTn15tlZsH8z6 (toelichting in het Engels + E5 en E6, 12 voorbeelden).
+- 5 nov 2026: Homestead-Figma 13Ny4D0MDkTn15tlZsH8z6: mails in stukken van max 4000 px (32 delen) omdat lange beelden in Figma niet laadden.
