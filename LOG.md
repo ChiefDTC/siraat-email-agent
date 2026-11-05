@@ -383,3 +383,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 5 nov 2026: E5/E6 v2: nieuwe beelden (Higgsfield, 30 credits: tafel, zoete aardappel, sperziebonen, ei, Veterans Day-vlag) in de mails; Figma 268:2 en 268:23 bijgewerkt.
 - 5 nov 2026: apart Figma-bestand voor Homestead: https://www.figma.com/design/13Ny4D0MDkTn15tlZsH8z6 (toelichting in het Engels + E5 en E6, 12 voorbeelden).
 - 5 nov 2026: Homestead-Figma 13Ny4D0MDkTn15tlZsH8z6: mails in stukken van max 4000 px (32 delen) omdat lange beelden in Figma niet laadden.
+- 5 nov 2026: E5/E6 definitief (Floris: één versie per mail, zonder prijzen, korter): e5-*-final (prep-plan), e6-*-final (brief Benjamin), US en INT; make_final.py. Homestead-Figma 13Ny4D0MDkTn15tlZsH8z6 vervangen door deze 4 (rij 8:2).
