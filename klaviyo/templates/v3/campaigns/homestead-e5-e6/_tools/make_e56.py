@@ -25,8 +25,15 @@ NAME = {'large': 'Pan Pro Large', 'deep': 'Deep Pan Pro', 'standard': 'Pan Pro S
 FAMILY = 'siraat-titanium-hammered-deep-pan-10-family-dinner.webp'
 RAGU = 'siraat-titanium-hammered-deep-pan-01-ragu-on-the-stove.webp'
 BRAISE = 'siraat-titanium-hammered-deep-pan-05-chicken-braise.webp'
-C43 = lambda n: CDN + n + '?width=1200&height=900&crop=center&format=pjpg'
-C32 = lambda n: CDN + n + '?width=1200&height=800&crop=center&format=pjpg'
+C43 = lambda n: n if n.startswith('http') else CDN + n + '?width=1200&height=900&crop=center&format=pjpg'
+C32 = lambda n: n if n.startswith('http') else CDN + n + '?width=1200&height=800&crop=center&format=pjpg'
+# Nieuwe beelden (Higgsfield, 5 nov; Floris: betere beelden)
+IM_TABLE = 'https://cdn.klaviyomail.com/company/TdtTzz/images/96090f37-154b-4105-9419-fd63b5cbbc72.jpeg'
+IM_SWEET = 'https://cdn.klaviyomail.com/company/TdtTzz/images/b9d86771-f8e2-4154-97ee-10e620db8b96.jpeg'
+IM_BEANS = 'https://cdn.klaviyomail.com/company/TdtTzz/images/2383c27e-e535-41f0-90bf-2f922c8b7219.jpeg'
+IM_EGG = 'https://cdn.klaviyomail.com/company/TdtTzz/images/2a5217ee-dceb-4c59-86f4-de5456855eab.jpeg'
+IM_VET = 'https://cdn.klaviyomail.com/company/TdtTzz/images/0b4b0787-1355-4d98-b8bb-479c9659c3df.jpeg'
+
 C11 = lambda n: CDN + n + '?width=1200&height=1200&crop=center&format=pjpg'
 SQ2 = lambda n: CDN + n + '?width=1200&height=1200&crop=center&format=pjpg'
 FR_INT = 'Free shipping, duties paid. 30-day returns. 100,000+ happy customers.'
@@ -246,13 +253,15 @@ for mkt in ('us', 'int'):
     pre = 'Two sides, two pans, done before the big %s.' % ('day' if US else 'dinner')
     b = HEAD(meta4('e5-%s-a · Recept eerst, rijk opgemaakt' % mkt, M, 'Siraat', subj, pre, WHEN5, WHO5 % who, 'copy.md E5 A: twee receptkaarten, dan de BF-band. UX: beeld en knop in het eerste scherm.'), subj[0], pre) + OPEN3()
     b += hero('Weekly recipe', 'Make it Tuesday.<br>Serve it Thursday.' if US else 'Make it ahead.<br>Serve it hot.', 'Two sides that get better overnight.',
-              FAMILY, 'A family dinner table with a Siraat Deep Pan Pro in the middle', utm(SALE, c5, 'a-hero'))
+              IM_TABLE, 'A holiday table from above with sweet potatoes and green beans in two Siraat pans', utm(SALE, c5, 'a-hero'))
     b += hero_btn('Get my Black Friday price', utm(SALE, c5, 'a-cta1'), US)
     b += P('Benjamin here.', '#FFFFFF', '4px 40px 14px 40px')
     b += P(('Thanksgiving Thursday has one stove and five dishes that all want it at 4 pm. So I take two sides off the list early. Both get made the Tuesday before. Both reheat while the turkey rests. And the sweet potatoes, honestly, come out better the second day.') if US else
            ('A big dinner has one stove and five dishes that all want it at the same moment. So I take two sides off the list early. Both get made two days ahead. Both reheat while the main course rests. And the sweet potatoes, honestly, come out better the second day. (Cooking for Thanksgiving this month? These are the two I&#39;d make.)'),
            '#FFFFFF', '0 40px 10px 40px')
+    b += row('#FFFFFF', '4px 20px 18px 20px', img(IM_SWEET, 'Maple sweet potato rounds in a Siraat Pan Pro', lg, 560, 10), 'center', 'padx')
     b += recipe(link=lg, **SP) + pbtn('Shop the Pan Pro Large', lg, US, '18px 30px 26px 30px')
+    b += row('#FFFFFF', '4px 20px 18px 20px', img(IM_BEANS, 'Green beans with shallots and almonds in a Siraat Deep Pan Pro', dp, 560, 10), 'center', 'padx')
     b += recipe(link=dp, **GB) + pbtn('Shop the Deep Pan Pro', dp, US, '18px 30px 26px 30px')
     b += diamonds([('A pure titanium cooking surface, no coatings.', ''), ('Tested free from PFAS by Light Labs, report no. 25895.', ''), ('Dishwasher safe. Thursday night, that matters.' if US else 'Dishwasher safe. On the day, that matters.', '')],
                   '#FFFFFF', 'Why these two pans', pad='4px 20px 24px 20px')
@@ -272,7 +281,7 @@ for mkt in ('us', 'int'):
     pre = 'Tuesday, Wednesday, Thursday. The plan that frees up your stove.' if US else 'Day one, day two, the big day. The plan that frees up your stove.'
     b = HEAD(meta4('e5-%s-b · Prep plan in drie dagen' % mkt, M, 'Siraat', subj, pre, WHEN5, WHO5 % who, 'copy.md E5 B: draaiboek met drie dagkaarten en twee productkaarten.'), subj[0], pre) + OPEN3()
     b += hero('Thanksgiving prep plan' if US else 'Big dinner prep plan', 'Three days.<br>Two pans.', 'One free stove on Thursday.' if US else 'One free stove on the day.',
-              RAGU, 'A Siraat Deep Pan Pro with sauce simmering on the stove', utm(SALE, c5, 'b-hero'))
+              IM_SWEET, 'Golden maple sweet potato rounds in a Siraat Pan Pro', utm(SALE, c5, 'b-hero'))
     b += hero_btn('Get my Black Friday price', utm(SALE, c5, 'b-cta1'), US)
     b += P('Benjamin here.', '#FFFFFF', '4px 40px 14px 40px')
     b += P(("Here's the problem with Thanksgiving: everything wants the stove at the same time. Here's my fix: two sides get done before Thursday, in two pans, and on the day they only need warming up.") if US else
@@ -306,7 +315,7 @@ for mkt in ('us', 'int'):
     pre = 'One side dish, one pan, and the Black Friday prices.'
     b = HEAD(meta4('e5-%s-c · Kort: één recept, sterke BF-sectie' % mkt, M, 'Siraat', subj, pre, WHEN5, WHO5 % who, 'copy.md E5 C: snelste recept als haak, daarna vier producten en de gifts.'), subj[0], pre) + OPEN3()
     b += hero('Weekly recipe', 'Ten minutes.<br>Made Tuesday.' if US else 'Ten minutes.<br>Made ahead.', 'Reheats while the turkey rests.' if US else 'Reheats while dinner rests.',
-              BRAISE, 'A Siraat Deep Pan Pro on the stove', utm(URL['deep'], c5, 'c-hero'))
+              IM_BEANS, 'Green beans with shallots and almonds in a Siraat Deep Pan Pro', utm(URL['deep'], c5, 'c-hero'))
     b += hero_btn('Get my Black Friday price', utm(SALE, c5, 'c-cta1'), US, pad='16px 30px 22px 30px')
     b += offerbar('UP TO 70%% OFF &nbsp;&middot;&nbsp; %s' % ('{{GIFTS:TOTAL}}' if US else '4 GIFTS WITH EVERY ORDER')) + gap('#FFFFFF', 22)
     b += P('Benjamin here. One side dish this week, because %s is busy enough.' % ('Thanksgiving' if US else 'a big dinner'), '#FFFFFF', '4px 40px 16px 40px')
@@ -343,11 +352,12 @@ for mkt in ('us', 'int'):
     b = HEAD(meta4('e6-%s-a · Founder-brief, persoonlijk' % mkt, M, 'Benjamin from Siraat', subj, pre, WHEN6, WHO6 % who, 'copy.md E6 A: waarom Benjamin deze pan maakte. UX: compacte productkaart en knop binnen het eerste scherm.'), subj[0], pre) + OPEN3()
     top = '34px 40px 16px 40px'
     if US: b += P('First, for Veterans Day: thank you to everyone who serves and has served.', '#FFFFFF', top); top = '0 40px 16px 40px'
+    if US: b += row('#FFFFFF', '0 20px 20px 20px', img(IM_VET, 'A folded American flag on a kitchen shelf above a Siraat pan on the stove', None, 560, 10), 'center', 'padx')
     b += P('Benjamin here. I want to tell you how the Pan Pro Standard happened.', '#FFFFFF', top)
     b += mini_offer(US, c6, 'a-card')
     b += P("Siraat didn't start with pans. We started with titanium cutting boards. And the question that came after was obvious: could you cook on titanium too, with nothing coated on top of it?")
     b += P('The Pan Pro was the answer. A pure titanium cooking surface, a hammered pattern, no coatings of any kind. We shipped the first orders on %s. Since then, more than 100,000 people have bought from us, in a little over a year. Others started hammering titanium after that. This was the first one.' % ('December 20, 2024' if US else '20 December 2024'))
-    b += row('#FFFFFF', '4px 20px 22px 20px', img(C43(PK['standard']), 'The Siraat Titanium Hammered Pan Pro Standard', utm(URL['standard'], c6, 'a-img'), 560, 10), 'center', 'padx')
+    b += row('#FFFFFF', '4px 20px 22px 20px', img(IM_EGG, 'An egg sliding out of a Siraat Pan Pro Standard onto toast', utm(URL['standard'], c6, 'a-img'), 560, 10), 'center', 'padx')
     b += P("Here's what I like most about it. There's no coating on it, so there's nothing to wear thin and nothing to peel. It goes in the dishwasher. Metal spatulas are fine. And we had it tested: Light Labs, an ISO/IEC 17025-accredited lab, checked it for 31 PFAS compounds. Every one came back below the detection limit. Report no. 25895, and you can read it yourself.")
     b += P('The one thing it asks of you is heat. Medium for 2 to 3 minutes, until a drop of water balls up and glides, then a teaspoon of oil. Cold metal grabs your food, hot metal lets it go.')
     if US: b += P('This week the Pan Pro Standard is <b>%s</b>, down from %s. That&#39;s 70%% off, and every order comes with 4 gifts: free shipping, the Plastic-Free Home e-book, a mystery gift, and a weekly chance to win {{GIFTS:filterline}}.' % (PRICE('standard'), WAS('standard')))
@@ -367,6 +377,7 @@ for mkt in ('us', 'int'):
     b += offerbar('70%% OFF &nbsp;&middot;&nbsp; %s' % ('{{GIFTS:TOTAL}}' if US else '4 GIFTS WITH EVERY ORDER')) + gap('#FFFFFF', 22)
     top = '4px 40px 16px 40px'
     if US: b += P('First, for Veterans Day: thank you to everyone who serves and has served.', '#FFFFFF', top); top = '0 40px 16px 40px'
+    if US: b += row('#FFFFFF', '0 20px 20px 20px', img(IM_VET, 'A folded American flag on a kitchen shelf above a Siraat pan on the stove', None, 560, 10), 'center', 'padx')
     b += P('Benjamin here. A quick question before the sale stuff: how many frying pans have you thrown out?', '#FFFFFF', top)
     b += P("Most people I talk to can count a few. Not because they cooked wrong. Because a coated pan wears with use, and once the coating starts to go, the pan is done. That's the deal with coatings. They come with an end date nobody prints on the box.")
     b += P("The Pan Pro Standard doesn't have that problem, because there's nothing on it to lose. The cooking surface is pure titanium, with no coatings of any kind. No coating means nothing to wear thin, nothing to peel, nothing to baby. Metal spatula, dishwasher, %s, all fine." % ('Tuesday night' if US else 'a busy weeknight'))
@@ -401,6 +412,7 @@ for mkt in ('us', 'int'):
     b += offerbar('70% OFF &nbsp;&middot;&nbsp; 4 GIFTS WITH EVERY ORDER') + gap('#FFFFFF', 22)
     top = '4px 40px 16px 40px'
     if US: b += P('First, for Veterans Day: thank you to everyone who serves and has served.', '#FFFFFF', top); top = '0 40px 16px 40px'
+    if US: b += row('#FFFFFF', '0 20px 20px 20px', img(IM_VET, 'A folded American flag on a kitchen shelf above a Siraat pan on the stove', None, 560, 10), 'center', 'padx')
     b += P('Benjamin here. Short one today.', '#FFFFFF', top)
     if US:
         b += P('The Pan Pro Standard is the original hammered titanium pan. Pure titanium cooking surface, no coatings. Right now it&#39;s %s instead of %s. That&#39;s 70%% off.' % (PRICE('standard'), WAS('standard')))
