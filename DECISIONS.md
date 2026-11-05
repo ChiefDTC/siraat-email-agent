@@ -106,3 +106,7 @@ Elke set HTML-voorbeelden of nieuwe mailontwerpen gaat altijd ook als rij in Fig
 ## Kleur geel alleen voor sale-tags (Floris, 5 nov 2026)
 
 Geel #FFB800 is de Black Friday-kleur, niet onze huiskleur. Alleen sale-tags (70% OFF, 68% OFF, prijsbadges) zijn geel. Knoppen, labels, balken en topbalk in huisstijl: ink #272727 met wit/crème, op donker een witte knop met ink tekst; decoratie in goud #B8862B. Cadeaus altijd met de echte gift-beelden ({{SHARED}}/gift-*.jpg).
+
+## Claims E5/E6 (Floris, 5 nov 2026)
+
+Floris bevestigt: "Nothing sticks when the heat is right", "clean up in under a minute", "the pan Siraat started with" (Pan Pro Standard) en de review "Buy it because it is safe, it is the only pan you will need in your kitchen, life long." mogen gebruikt worden.

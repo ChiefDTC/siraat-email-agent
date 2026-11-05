@@ -13,6 +13,7 @@ _pl, _pb = price_line, pricebar
 HG['price_line'] = lambda k, us, int_label='70% OFF', big=20: _pl(k, False, int_label, big)
 HG['pricebar'] = lambda k, us, int_label='70% OFF', bg='#FFFFFF', pad='22px 20px 0 20px': _pb(k, False, int_label, bg, pad)
 HG['gv'] = lambda k: ''
+HG['REVS']['HS1'] = ("Buy it because it's safe, it's the only pan you will need in your kitchen, life long.", 'Siraat customer')  # Floris 5 nov: echte review
 E56LINES = E56SRC.split('\n')
 def grab(start, stop):
     i = next(n for n, l in enumerate(E56LINES) if l.strip().startswith(start))
@@ -44,6 +45,7 @@ for mkt in ('us', 'int'):
     b += P(("Benjamin here. Everything wants the stove at the same time on Thanksgiving. So two sides get done before Thursday, and on the day they only need warming up.") if US else
            ("Benjamin here. At a big dinner everything wants the stove at the same time. So two sides get done in the days before, and on the day they only need warming up."), '#FFFFFF', '6px 40px 18px 40px')
     loc = dict(HG); loc.update(b='', US=US, c5=c5); exec(DAYS, loc); b += loc['b']
+    b += P('Both cook on a pure titanium surface. Nothing sticks when the heat is right, and you clean up both pans in under a minute.', '#FFFFFF', '10px 40px 14px 40px')
     b += gap('#FFFFFF', 6)
     b += wide_card('large', 'Room for a whole batch of rounds.', US, '70% OFF', 'Shop the Pan Pro Large', utm(URL['large'], c5, 'f-card-large'))
     b += wide_card('deep', 'Higher sides for sauces, pasta and one-pan dinners.', US, 'UP TO 70% OFF', 'Shop the Deep Pan Pro', utm(URL['deep'], c5, 'f-card-deep'))
@@ -59,12 +61,13 @@ for mkt in ('us', 'int'):
         b += row('#FFFFFF', '0 20px 20px 20px', img(IM_VET, 'A folded American flag on a kitchen shelf above a Siraat pan on the stove', None, 560, 10), 'center', 'padx')
     b += P('Benjamin here. I want to tell you how the Pan Pro Standard happened.', '#FFFFFF', top)
     b += mini_offer(US, c6, 'f-card')
-    b += P("Siraat didn't start with pans. We started with titanium cutting boards, and the next question was obvious: could you cook on titanium too, with nothing coated on top of it? The Pan Pro was the answer. A pure titanium cooking surface, a hammered pattern, no coatings of any kind. Since then, more than 100,000 people have bought from us.")
+    b += P("It's the pan Siraat started with. A pure titanium cooking surface, a hammered pattern, no coatings of any kind. Since then, more than 100,000 people have bought from us.")
     b += row('#FFFFFF', '4px 20px 22px 20px', img(IM_EGG, 'An egg sliding out of a Siraat Pan Pro Standard onto toast', utm(URL['standard'], c6, 'f-img'), 560, 10), 'center', 'padx')
     b += P("No coating means nothing to wear thin and nothing to peel. It goes in the dishwasher, metal spatulas are fine, and Light Labs tested it for 31 PFAS compounds: every one came back below the detection limit.")
     b += P('This week it&#39;s <b>70% off</b>, with 4 gifts on every order.')
     b += pbtn('Get my Pan Pro at 70% off', utm(URL['standard'], c6, 'f-cta1'), US, '6px 30px 24px 30px')
-    b += quote('R411' if US else 'R138')
+    b += P('One more thing. This is from a real customer:')
+    b += quote('HS1')
     b += P("And it's covered for 75 years.") + sign()
     b += ps('30-day returns, counted from the day the box arrives. The sale ends %s.' % ('Monday, November 30' if US else 'Monday 30 November'))
     files['e6-%s-final' % mkt] = b + small(SMALL) + TAIL
