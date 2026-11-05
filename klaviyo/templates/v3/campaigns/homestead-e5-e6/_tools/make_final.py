@@ -24,10 +24,10 @@ DAYS = grab('d1, d2, d3 =', "b += P('Why it works")
 
 RECIPES = grab('SP = dict(', '# ================= E5 A')
 DAY3 = grab('b += daycard(d3', "b += P('Why it works")
-def glass_img(src, link, eyebrow_, title, meta_, h_desk=330, h_mob=170, title_size=34):
+def glass_img(src, link, eyebrow_, title, meta_, h_desk=440, h_mob=290, title_size=30):
     """Beeld als achtergrond met een donker glaspaneel onderaan (rgba + blur waar ondersteund; Outlook: VML en effen paneel)."""
     panel = ('<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0" bgcolor="#1C1C1C" style="background-color:rgba(24,20,16,0.58);border:1px solid rgba(255,255,255,0.28);border-radius:14px;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);">'
-             '<tr><td style="padding:16px 18px 16px 18px;">%s%s%s</td></tr></table>') % (
+             '<tr><td style="padding:12px 16px 12px 16px;">%s%s%s</td></tr></table>') % (
         txt(eyebrow_, 11, 14, '#E9DFC8', 700, 'letter-spacing:2px;text-transform:uppercase;'),
         serif(title, title_size, title_size + 4, '#FFFFFF', 'gtitle', True, 'padding-top:6px;'),
         txt(meta_, 14, 20, '#F1EEE8', 500, 'padding-top:4px;') if meta_ else '')
@@ -35,7 +35,7 @@ def glass_img(src, link, eyebrow_, title, meta_, h_desk=330, h_mob=170, title_si
     return ('<tr><td class="gpad" align="left" valign="bottom" bgcolor="#2A2622" background="%s" style="background-color:#2A2622;background-image:url(%s);background-size:cover;background-position:center center;background-repeat:no-repeat;padding:%dpx 16px 16px 16px;border-radius:0;">'
             '<!--[if gte mso 9]><v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;height:%dpx;"><v:fill type="frame" src="%s" color="#2A2622" /><v:textbox inset="0,0,0,0"><![endif]-->'
             '%s<!--[if gte mso 9]></v:textbox></v:rect><![endif]--></td></tr>\n') % (src, src, h_desk, h_desk + 140, src, inner)
-head.__globals__['CSS'] += '    .gpad{padding-top:150px!important;}\n    .gtitle{font-size:28px!important;line-height:32px!important;}\n'
+head.__globals__['CSS'] += '    .gpad{padding-top:290px!important;}\n    .gtitle{font-size:23px!important;line-height:27px!important;}\n'
 def icons_row(items, bg=CREAM):
     cell = lambda ic, t: '<td width="33%%" align="center" valign="top" style="padding:0 6px;"><img src="{{SHARED}}/%s" width="44" alt="" style="display:block;margin:0 auto;width:44px;height:auto;border:0;">%s</td>' % (ic, txt(t, 13, 18, INK, 600, 'text-align:center;padding-top:8px;'))
     t = '<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0"><tr>%s</tr></table>' % ''.join(cell(a, b) for a, b in items)
@@ -62,7 +62,7 @@ for mkt in ('us', 'int'):
     pre = 'Tuesday, Wednesday, Thursday. The plan that frees up your stove.' if US else 'Day one, day two, the big day. The plan that frees up your stove.'
     b = HEAD(meta4('e5-%s-final · Prep-plan, visueel, zonder prijzen' % mkt, M, 'Siraat', subj, pre, WHEN5, WHO5 % who, 'Floris 5 nov: zoals de steak night-mail, meer beelden, glasblokken.'), subj[0], pre) + OPEN3()
     loc = dict(HG); loc.update(b='', US=US, c5=c5, URL=URL, utm=utm); exec(RECIPES, loc); SP, GB = loc['SP'], loc['GB']
-    b += glass_img(IM_TABLE, utm(SALE, c5, 'f-hero'), 'Thanksgiving prep plan' if US else 'Big dinner prep plan', 'Three days. Two pans.', 'One free stove on Thursday.' if US else 'One free stove on the day.', 360, 190, 40)
+    b += glass_img(IM_TABLE, utm(SALE, c5, 'f-hero'), 'Thanksgiving prep plan' if US else 'Big dinner prep plan', 'Three days. Two pans.', 'One free stove on Thursday.' if US else 'One free stove on the day.', 460, 290, 36)
     b += hero_btn('Shop VIP Black Friday', utm(SALE, c5, 'f-cta1'), US, '#FFFFFF', '20px 30px 22px 30px')
     b += P(("Benjamin here. Everything wants the stove at the same time on Thanksgiving. So two sides get done before Thursday, and on the day they only need warming up.") if US else
            ("Benjamin here. At a big dinner everything wants the stove at the same time. So two sides get done in the days before, and on the day they only need warming up."), '#FFFFFF', '4px 40px 20px 40px')
