@@ -381,3 +381,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 5 nov 2026: Homestead E5/E6 herzien: 12 HTML-voorbeelden (E5 A/B/C, E6 A/B/C, US en INT) in klaviyo/templates/v3/campaigns/homestead-e5-e6 (design-agent), topbalk VIP, 12-Pcs-link naar pizza-steel-pagina. Renders ok, 375/600 geen overloop. Figma rijen 268:2 (E5) en 268:23 (E6). Niets in Klaviyo.
 - 5 nov 2026: E5/E6 kleuren naar huisstijl (geel alleen sale-tags, Floris), gift-tegels met echte gift-beelden; DECISIONS bijgewerkt. Agent maakt nieuwe beelden (gerechten, ei, Veterans Day).
 - 5 nov 2026: E5/E6 v2: nieuwe beelden (Higgsfield, 30 credits: tafel, zoete aardappel, sperziebonen, ei, Veterans Day-vlag) in de mails; Figma 268:2 en 268:23 bijgewerkt.
+- 5 nov 2026: apart Figma-bestand voor Homestead: https://www.figma.com/design/13Ny4D0MDkTn15tlZsH8z6 (toelichting in het Engels + E5 en E6, 12 voorbeelden).
