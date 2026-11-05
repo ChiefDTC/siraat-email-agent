@@ -46,7 +46,7 @@ head.__globals__['CSS'] += ('    .h1s{font-size:30px!important;line-height:34px!
                             '    .ptitle{font-size:26px!important;line-height:30px!important;}\n    .thumb{width:96px!important;}\n')
 
 def utm(url, camp, ct): return u(url, camp, ct)
-def topbar(): return '{{BLOCK:bf-topbar text="<a href=\'%s\' style=\'color:#272727;text-decoration:none;\'>%s</a>" bg="#FFB800" color="#272727"}}\n{{HEADER}}\n' % (SALE, TOPBAR)
+def topbar(): return '{{BLOCK:bf-topbar text="<a href=\'%s\' style=\'color:#F8F7F2;text-decoration:none;\'>%s</a>" bg="#272727" color="#F8F7F2"}}\n{{HEADER}}\n' % (SALE, TOPBAR)
 def OPEN3(bg='#FFFFFF'):
     return '<table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:%s;" bgcolor="%s">\n\n' % (bg, bg) + topbar()
 def HEAD(meta_, subj, pre):
@@ -65,16 +65,16 @@ def price_line(k, us, int_label='70% OFF', big=20):
 def sbtn(label, url, full=False):
     if full:
         return ('<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0" style="margin-top:12px;"><tr><td align="center" bgcolor="%s" style="background-color:%s;border-radius:20px;">'
-                '<a href="%s" style="display:block;padding:11px 8px;font-family:%s;font-size:12px;line-height:15px;font-weight:700;letter-spacing:0.6px;color:%s;text-decoration:none;text-transform:uppercase;text-align:center;">%s &rarr;</a></td></tr></table>') % (Y, Y, url, FF, INK, label)
+                '<a href="%s" style="display:block;padding:11px 8px;font-family:%s;font-size:12px;line-height:15px;font-weight:700;letter-spacing:0.6px;color:%s;text-decoration:none;text-transform:uppercase;text-align:center;">%s &rarr;</a></td></tr></table>') % (INK, INK, url, FF, '#FFFFFF', label)
     return ('<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:12px;"><tr><td bgcolor="%s" style="background-color:%s;border-radius:20px;">'
-            '<a href="%s" style="display:block;padding:11px 14px;font-family:%s;font-size:12px;line-height:14px;font-weight:700;letter-spacing:0.8px;color:%s;text-decoration:none;text-transform:uppercase;white-space:nowrap;">%s &rarr;</a></td></tr></table>') % (Y, Y, url, FF, INK, label)
+            '<a href="%s" style="display:block;padding:11px 14px;font-family:%s;font-size:12px;line-height:14px;font-weight:700;letter-spacing:0.8px;color:%s;text-decoration:none;text-transform:uppercase;white-space:nowrap;">%s &rarr;</a></td></tr></table>') % (INK, INK, url, FF, '#FFFFFF', label)
 def hero(label, title, sub, image, alt, link, ratio=C32, pad_title='12px 24px 0 24px'):
     h = row(PACK, '22px 24px 0 24px', pill(label, INK, '#FFFFFF'), 'center')
     h += row(PACK, pad_title, serif(title, 46, 50, INK, 'h1', True), 'center')
     h += row(PACK, '8px 36px 14px 36px', txt(sub, 17, 25, '#4A4A4A', 400, 'text-align:center;'), 'center')
     h += row(PACK, '0', img(ratio(image), alt, link), 'center', '')
     return h
-def offerbar(t): return row(INK, '12px 16px', txt(t, 12, 17, Y, 700, 'letter-spacing:1.4px;text-align:center;'), 'center', 'padx')
+def offerbar(t): return row(INK, '12px 16px', txt(t, 12, 17, '#F8F7F2', 700, 'letter-spacing:1.4px;text-align:center;'), 'center', 'padx')
 def heading(t, bg='#FFFFFF', pad='30px 24px 6px 24px', sub=''):
     return row(bg, pad, serif(t, 34, 38, INK, 'h1b', True) + (txt(sub, 15, 22, GREY, 500, 'padding-top:8px;') if sub else ''), 'center')
 def closing(t, bg='#FFFFFF'): return P(t, bg, '6px 40px 4px 40px')
@@ -82,7 +82,7 @@ def ps(t, bg='#FFFFFF'): return P('<b>P.S.</b> ' + t, bg, '8px 40px 14px 40px')
 def small(t, bg='#FFFFFF'): return row(bg, '10px 30px 26px 30px', txt(t, 12, 18, '#8A847A', 400, 'text-align:center;'), 'center')
 def numbered(steps, start=1):
     r = ''.join('<tr><td width="38" valign="top" style="padding:0 0 12px 0;"><div style="width:26px;height:26px;border-radius:13px;background-color:%s;font-family:%s;font-size:13px;line-height:26px;font-weight:800;color:%s;text-align:center;">%d</div></td><td valign="top" style="padding:2px 0 12px 0;">%s</td></tr>' % (
-        Y, FF, INK, i, txt(s, 16, 24, '#2E2E2E')) for i, s in enumerate(steps, start))
+        INK, FF, '#FFFFFF', i, txt(s, 16, 24, '#2E2E2E')) for i, s in enumerate(steps, start))
     return '<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0">%s</table>' % r
 def bullets(items, color='#2E2E2E', dot=GOLD, size=16, lh=24):
     r = ''.join('<tr><td width="20" valign="top" style="padding:%dpx 0 0 2px;"><div style="width:7px;height:7px;background-color:%s;transform:rotate(45deg);-webkit-transform:rotate(45deg);font-size:0;line-height:0;">&nbsp;</div></td><td valign="top" style="padding:0 0 8px 0;">%s</td></tr>' % (
@@ -103,7 +103,7 @@ def recipe(k, title, meta_, need, steps, ahead, note, link):
     i += txt(note, 15, 23, '#4A4A4A', 400, 'padding-top:14px;')
     return row('#FFFFFF', '6px 20px 0 20px', boxed(i, HAIR, '#FFFFFF', '20px 18px 18px 18px'), 'left', 'padx')
 def daycard(day, title, meta_, body, bullets_=None):
-    i = pill(day, Y, INK, False) + serif(title, 28, 31, INK, 'ptitle', True, 'padding-top:12px;') + txt(meta_, 14, 20, GREY, 500, 'padding-top:4px;')
+    i = pill(day, INK, '#FFFFFF', False) + serif(title, 28, 31, INK, 'ptitle', True, 'padding-top:12px;') + txt(meta_, 14, 20, GREY, 500, 'padding-top:4px;')
     i += (txt(body, 16, 25, '#2E2E2E', 400, 'padding-top:12px;') if body else '') + ('<div style="padding-top:12px;">%s</div>' % bullets(bullets_) if bullets_ else '')
     return row('#FFFFFF', '0 20px 12px 20px', boxed(i, HAIR, '#FFFFFF', '20px 18px 18px 18px'), 'left', 'padx')
 def wide_card(k, line, us, int_label, label, link):
@@ -143,25 +143,26 @@ def revblock(ids, bg=CREAM, title='From their kitchens', pad='28px 20px 26px 20p
 def quote(k, bg='#FFFFFF'):
     q, n = REVS[k]
     i = '<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-left:3px solid %s;padding:2px 0 2px 16px;">%s%s</td></tr></table>' % (
-        Y, txt('&ldquo;%s&rdquo;' % q, 17, 26, INK, 500), txt('%s, verified buyer' % n, 13, 18, '#8A847A', 500, 'padding-top:6px;'))
+        GOLD, txt('&ldquo;%s&rdquo;' % q, 17, 26, INK, 500), txt('%s, verified buyer' % n, 13, 18, '#8A847A', 500, 'padding-top:6px;'))
     return row(bg, '0 40px 18px 40px', i, 'left', 'pad')
-def dark_button(label, url, sub): return button(label, url, ESP, '22px 30px 30px 30px', sub=sub, fill=Y, fg=INK, dark=True)
+def dark_button(label, url, sub): return button(label, url, ESP, '22px 30px 30px 30px', sub=sub, fill='#FFFFFF', fg=INK, dark=True)
 def bfband_full(us, camp, ct):
     """BF-band uit copy.md sectie 1 (espresso-blok in offer-stijl)."""
-    h = txt('BLACK FRIDAY SALE', 13, 16, Y, 700, 'letter-spacing:2.4px;text-align:center;padding-bottom:12px;')
+    h = txt('VIP BLACK FRIDAY', 13, 16, '#D9C9A8', 700, 'letter-spacing:2.4px;text-align:center;padding-bottom:12px;')
     h += serif('Up to 70% off, plus 4 gifts<br>with every order.', 36, 40, '#FFFFFF', 'h1b', True, 'text-align:center;')
     gl = (['Free shipping%s' % gv('ship'), 'The Plastic-Free Home e-book%s' % gv('ebook'), 'A mystery gift%s' % gv('mystery'), 'A weekly chance to win {{GIFTS:filterline}}'] if us else
           ['Free shipping, duties paid', 'The Plastic-Free Home e-book', 'A mystery gift', 'A weekly chance to win a PFAS water filter'])
-    h += '<div style="padding:18px 6px 0 6px;">%s</div>' % bullets(gl, '#E6E3DC', Y, 15, 22)
+    h += '<div style="padding:18px 6px 0 6px;">%s</div>' % bullets(gl, '#E6E3DC', GOLD, 15, 22)
     if us: h += txt('With the 12-piece set: a Titanium Hammered Pizza Steel, free.', 15, 22, '#FFFFFF', 600, 'padding:6px 6px 0 6px;')
-    h += txt('Ends Monday, November 30.' if us else 'Ends Monday 30 November.', 14, 20, Y, 600, 'padding-top:14px;text-align:center;')
+    h += txt('Ends Monday, November 30.' if us else 'Ends Monday 30 November.', 14, 20, '#E6E3DC', 600, 'padding-top:14px;text-align:center;')
     out = row(ESP, '30px 26px 0 26px', h, 'left', 'pad')
     return out + dark_button('Get my Black Friday price', utm(SALE, camp, ct + '-band'), FRIC(us))
 def gifts_tiles(us, bg='#FFFFFF'):
     it = ([('Free shipping', '{{GIFTS:ship}} value'), ('Plastic-Free Home e&#8209;book', '{{GIFTS:ebook}} value'), ('Mystery gift', '{{GIFTS:mystery}} value'), ('Chance to win {{GIFTS:filterline}}', 'Weekly draw')] if us else
           [('Free shipping, duties paid', 'Included'), ('Plastic-Free Home e&#8209;book', 'Included'), ('Mystery gift', 'Included'), ('Chance to win a PFAS water filter', 'Weekly draw')])
-    cell = lambda a, b, n: '<td width="50%%" valign="top" style="padding:0 5px 10px 5px;"><table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0" bgcolor="%s" style="background-color:%s;border-radius:8px;"><tr><td align="center" style="padding:16px 10px;"><div style="width:30px;height:30px;border-radius:15px;background-color:%s;font-family:%s;font-size:14px;line-height:30px;font-weight:800;color:%s;text-align:center;margin:0 auto;">%d</div>%s%s</td></tr></table></td>' % (
-        CREAM, CREAM, Y, FF, INK, n, txt(a, 14, 19, INK, 600, 'text-align:center;padding-top:10px;'), txt(b, 12, 17, '#8A847A', 500, 'text-align:center;padding-top:3px;'))
+    GI = ['gift-shipping.jpg', 'gift-ebook.jpg', 'gift-mystery.jpg', 'gift-filter.jpg']
+    cell = lambda a, b, n: '<td width="50%%" valign="top" style="padding:0 5px 10px 5px;"><table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border:1px solid #E9E4DA;border-radius:8px;"><tr><td style="padding:0;border-radius:8px 8px 0 0;overflow:hidden;"><img src="{{SHARED}}/%s" width="270" alt="%s" style="display:block;width:100%%;max-width:270px;height:auto;border:0;border-radius:8px 8px 0 0;"></td></tr><tr><td align="center" style="padding:12px 10px 14px 10px;">%s%s</td></tr></table></td>' % (
+        GI[n - 1], re.sub('<[^>]+>|&[^;]+;', ' ', a), txt(a, 14, 19, INK, 600, 'text-align:center;'), txt(b, 12, 17, '#8A847A', 500, 'text-align:center;padding-top:3px;'))
     t = '<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0"><tr>%s%s</tr><tr>%s%s</tr></table>' % tuple(cell(a, b, i + 1) for i, (a, b) in enumerate(it))
     return row(bg, '26px 20px 14px 20px', serif('4 gifts with every order', 30, 34, INK, 'h1s', True, 'text-align:center;padding-bottom:16px;') + t, 'center', 'padx')
 def pricebar(k, us, int_label='70% OFF', bg='#FFFFFF', pad='22px 20px 0 20px'):
@@ -180,7 +181,7 @@ VS_ROWS = [('Pure titanium surface', 'A PTFE or ceramic coating'), ('No coating 
            ('Third-party tested by Light Labs', 'Testing varies by brand'), ('Dishwasher safe', 'Hand wash advised')]
 def compare(bg=CREAM):
     r = '<tr><td width="50%%" bgcolor="%s" style="background-color:%s;padding:12px 12px;border-radius:10px 0 0 0;">%s</td><td width="50%%" bgcolor="#EFEAE1" style="background-color:#EFEAE1;padding:12px 12px;border-radius:0 10px 0 0;">%s</td></tr>' % (
-        INK, INK, txt('Siraat Titanium', 14, 18, Y, 700), txt('Coated nonstick', 14, 18, '#6E6A64', 700))
+        INK, INK, txt('Siraat Titanium', 14, 18, '#FFFFFF', 700), txt('Coated nonstick', 14, 18, '#6E6A64', 700))
     for i, (a, b) in enumerate(VS_ROWS):
         last = i == len(VS_ROWS) - 1; bb = '' if last else 'border-bottom:1px solid %s;' % HAIR
         r += '<tr><td valign="top" bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:12px;%s%s">%s</td><td valign="top" bgcolor="#F9F7F3" style="background-color:#F9F7F3;padding:12px;%s%s">%s</td></tr>' % (
@@ -211,8 +212,8 @@ def promises():
     for a, b in it:
         i += '<div style="height:10px;line-height:10px;font-size:0;">&nbsp;</div>' + boxed(txt(a, 16, 22, INK, 700) + txt(b, 15, 23, '#4A4A4A', 400, 'padding-top:4px;'), HAIR, '#FFFFFF', '16px 18px')
     return row(CREAM, '28px 20px 26px 20px', i, 'left', 'padx')
-def hero_btn(label, url, us, bg='#FFFFFF', pad='16px 30px 26px 30px'): return button(label, url, bg, pad, sub=FRIC(us), fill=Y, fg=INK)
-def pbtn(label, url, us, pad='4px 30px 28px 30px', bg='#FFFFFF'): return button(label, url, bg, pad, sub=FRIC(us), fill=Y, fg=INK)
+def hero_btn(label, url, us, bg='#FFFFFF', pad='16px 30px 26px 30px'): return button(label, url, bg, pad, sub=FRIC(us), fill=INK, fg='#FFFFFF')
+def pbtn(label, url, us, pad='4px 30px 28px 30px', bg='#FFFFFF'): return button(label, url, bg, pad, sub=FRIC(us), fill=INK, fg='#FFFFFF')
 
 files = {}
 WHO5 = 'E30 (Homestead-segment, engaged 30 dagen), %s; smart sending aan'

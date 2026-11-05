@@ -102,3 +102,7 @@ Bijwerken bij elk nieuw besluit. Datum per regel.
 ## Figma bij elk voorbeeld (Floris, 4 nov 2026)
 
 Elke set HTML-voorbeelden of nieuwe mailontwerpen gaat altijd ook als rij in Figma (bestand oaxnBkz3MAbePRnorCrQwz), zonder dat Floris erom hoeft te vragen. Geef de link naar de rij mee bij de oplevering.
+
+## Kleur geel alleen voor sale-tags (Floris, 5 nov 2026)
+
+Geel #FFB800 is de Black Friday-kleur, niet onze huiskleur. Alleen sale-tags (70% OFF, 68% OFF, prijsbadges) zijn geel. Knoppen, labels, balken en topbalk in huisstijl: ink #272727 met wit/crème, op donker een witte knop met ink tekst; decoratie in goud #B8862B. Cadeaus altijd met de echte gift-beelden ({{SHARED}}/gift-*.jpg).
