@@ -13,6 +13,11 @@ for mid in ids:
     src=os.path.join(N,mid+'.html')
     r=subprocess.run([sys.executable,'-I',Q.BT,src,ad,os.path.join(ad,'klaviyo-urls.txt')],capture_output=True,text=True,cwd='/tmp')
     if r.returncode: print(mid,'BUILD',r.stderr[-500:],r.stdout[-300:]); continue
+    kf=os.path.join(N,mid+'.klaviyo.html')
+    if '-final' in mid and os.path.exists(kf):  # 6 nov: ook beelden uit blokken (gifts) krijgen een link
+        import importlib.util as _iu; _sp=_iu.spec_from_file_location('mf_link',os.path.join(os.path.dirname(os.path.abspath(__file__)),'link_all.py')); _m=_iu.module_from_spec(_sp); _sp.loader.exec_module(_m)
+        _src=open(kf).read(); assert len(_src)>1000, kf
+        open(kf,'w').write(_m.link_all(_src))
     raw=os.path.join(OUT,mid+'.raw.html')
     r=subprocess.run([sys.executable,'-I',Q.BT,src,ad,tu,'--out='+raw,'--shared-urls='+ts,'--no-preview'],capture_output=True,text=True,cwd='/tmp')
     if r.returncode: print(mid,'RAW',r.stderr[-500:]); continue

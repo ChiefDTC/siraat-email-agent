@@ -31,10 +31,11 @@ def glass_img(src, link, eyebrow_, title, meta_, h_desk=440, h_mob=290, title_si
         txt(eyebrow_, 11, 14, '#E9DFC8', 700, 'letter-spacing:2px;text-transform:uppercase;'),
         serif(title, title_size, title_size + 4, '#FFFFFF', 'gtitle', True, 'padding-top:6px;'),
         txt(meta_, 14, 20, '#F1EEE8', 500, 'padding-top:4px;') if meta_ else '')
-    inner = '<a href="%s" style="text-decoration:none;display:block;">%s</a>' % (link, panel) if link else panel
-    return ('<tr><td class="gpad" align="left" valign="bottom" bgcolor="#2A2622" background="%s" style="background-color:#2A2622;background-image:url(%s);background-size:cover;background-position:center center;background-repeat:no-repeat;padding:%dpx 16px 16px 16px;border-radius:0;">'
+    # 6 nov (Homestead-review): hele beeld klikbaar, niet alleen het glaspaneel. Padding zit daarom op de link.
+    inner = ('<a class="gpad" href="%s" style="text-decoration:none;display:block;padding:%dpx 16px 16px 16px;">%s</a>' % (link, h_desk, panel)) if link else ('<div class="gpad" style="padding:%dpx 16px 16px 16px;">%s</div>' % (h_desk, panel))
+    return ('<tr><td align="left" valign="bottom" bgcolor="#2A2622" background="%s" style="background-color:#2A2622;background-image:url(%s);background-size:cover;background-position:center center;background-repeat:no-repeat;padding:0;border-radius:0;">'
             '<!--[if gte mso 9]><v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;height:%dpx;"><v:fill type="frame" src="%s" color="#2A2622" /><v:textbox inset="0,0,0,0"><![endif]-->'
-            '%s<!--[if gte mso 9]></v:textbox></v:rect><![endif]--></td></tr>\n') % (src, src, h_desk, h_desk + 140, src, inner)
+            '%s<!--[if gte mso 9]></v:textbox></v:rect><![endif]--></td></tr>\n') % (src, src, h_desk + 140, src, inner)
 head.__globals__['CSS'] += '    .gpad{padding-top:290px!important;}\n    .gtitle{font-size:23px!important;line-height:27px!important;}\n'
 def icons_row(items, bg=CREAM):
     cell = lambda ic, t: '<td width="33%%" align="center" valign="top" style="padding:0 6px;"><img src="{{SHARED}}/%s" width="44" alt="" style="display:block;margin:0 auto;width:44px;height:auto;border:0;">%s</td>' % (ic, txt(t, 13, 18, INK, 600, 'text-align:center;padding-top:8px;'))
@@ -51,6 +52,26 @@ def gifts(us):
     h = gifts_tiles(False)
     return h.replace('Free shipping, duties paid', 'Free shipping') if us else h
 BAD = ('next batch', 'reserve', 'arriving', 'next shipment', 'purifier', 'lifetime', 'for life', 'free filter', 'scratch-proof', 'while supplies last', 'VRAAG FLORIS')
+
+def link_all(v):
+    """6 nov (Homestead-review): elk beeld zonder link krijgt de link van de eerstvolgende link in de mail."""
+    import re as _re
+    out, pos, depth = [], 0, 0
+    for m in _re.finditer(r'<a\b[^>]*>|</a>|<img\b[^>]*>', v):
+        out.append(v[pos:m.start()]); tag = m.group(0); pos = m.end()
+        if tag.startswith('<a'): depth += 1; out.append(tag); continue
+        if tag == '</a>': depth = max(0, depth - 1); out.append(tag); continue
+        if depth == 0 and 'width="1"' not in tag:
+            ok = lambda x: x and 'unsubscribe' not in x and 'preferences' not in x and '-ft-' not in x and 'utm_content' in x
+            nxt = _re.search(r'<a\b[^>]*href="([^"]+)"', v[m.end():])
+            href = nxt.group(1) if nxt and ok(nxt.group(1)) else None
+            if not href:
+                prev = [h for h in _re.findall(r'<a\b[^>]*href="([^"]+)"', v[:m.start()]) if ok(h)]
+                href = prev[-1] if prev else None
+            if href:
+                out.append('<a href="%s" style="text-decoration:none;">%s</a>' % (href, tag)); continue
+        out.append(tag)
+    out.append(v[pos:]); return ''.join(out)
 files = {}
 for mkt in ('us', 'int'):
     US = mkt == 'us'; M = mkt.upper(); c5 = 'e5-1110-' + mkt; c6 = 'e6-1111-' + mkt
@@ -105,4 +126,5 @@ for k, v in files.items():
     assert '$' not in body and not re.search(r'\{\{(PRICE|WAS|FROM)', body), (k, 'prijs')
     for bad in BAD: assert bad.lower() not in re.sub(r'<[^>]+>', ' ', body).lower(), (k, bad)
     if '-int-' in k: assert 'Veterans' not in body and not re.search(r'\{\{(GIFTS|FRICTION)', body), k
+    v = link_all(v)
     open(os.path.join(N, k + '.html'), 'w').write(v); print('geschreven', k, len(v))

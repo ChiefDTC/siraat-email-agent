@@ -110,3 +110,4 @@ Geel #FFB800 is de Black Friday-kleur, niet onze huiskleur. Alleen sale-tags (70
 ## Claims E5/E6 (Floris, 5 nov 2026)
 
 Floris bevestigt: "Nothing sticks when the heat is right", "clean up in under a minute", "the pan Siraat started with" (Pan Pro Standard) en de review "Buy it because it is safe, it is the only pan you will need in your kitchen, life long." mogen gebruikt worden.
+| 2026-11-06 | Elk beeld en elk beeldblok in een mail is klikbaar (Harmony-review E5/E6). Build linkt losse beelden automatisch (link_all). | Floris/Harmony |
