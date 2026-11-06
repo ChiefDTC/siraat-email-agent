@@ -391,3 +391,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 6 nov 2026: concurrenten-tijdlijn dag 25 (8 mails: HexClad Thanksgiving VIP Sale, Our Place 3 mails op BF-startdag incl. brief, Made In sets in dollars).
 - 6 nov 2026: stand Rn556d (profielniveau sinds 31 okt 22:00): BF 3.662 aanm., 635 kopers (17,34%), $172.903 ($47,22/aanm.), uitschr. 5,30%; controle 6.182, 984 kopers (15,92%), $263.020 ($42,55/aanm.), uitschr. 4,89%. z 1,84. Flow-toegeschreven sinds 1 nov $17.705, laatste 24u $7.174.
 - 6 nov 2026: Rn556d split 123113194 van 50% naar 100% (akkoord Floris), flow live. Backup scratchpad rn556d-split-backup-20261106.json. Alle nieuwe aanmelders krijgen nu BF-W1 en daarna geen welcome-reeks (open punt: welcome vanaf mail 2 erachter).
+- 6 nov 2026: flowplan november (research/plannen/2026-11-flowplan.md, Figma T9JVcU757p26si5GZ0X6Xb): triggers, timing, nieuwe mails, remmen, testen. Voorstel, niets live.
