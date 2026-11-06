@@ -387,3 +387,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 5 nov 2026: E5/E6 definitief: claims teruggezet (Floris), snijplankenzin uit E6; Figma Homestead-bestand bijgewerkt.
 - 5 nov 2026: E5 definitief visueel (Floris: zoals steak night, meer beelden, glasblokken): hero en elk recept met eigen foto en donker glaspaneel, ingrediënten en methode, pull-quotes, icoonrij. Homestead-Figma bijgewerkt.
 - 5 nov 2026: E5 definitief: beelden hoger (mobiel 290 px boven het glasblok), glasblok compacter. Homestead-Figma bijgewerkt (4 delen per E5-mail).
+- 6 nov 2026 08:50 UTC: dagelijkse bewaking (daily.py opnieuw aangemaakt na lege scratchpad). Splits 100% nieuw, flows live. 24u flowomzet $12.601 (BF-direct $7.174). Alarm: BF-direct uitschr. 2,17%; browse 1,01% en mystery 1,01% (1 persoon) op de grens. Checkout-bounce terug naar 1,0%. Gepost in #claude-mail. Niets aangepast.
