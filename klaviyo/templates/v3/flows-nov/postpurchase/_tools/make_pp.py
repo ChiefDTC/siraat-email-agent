@@ -21,7 +21,7 @@ NAME.update({'lid': 'Stainless Steel Lid', 'utensils': 'Titanium Utensil Set', '
 URL.update({'lid': PRD + 'stainless-steel-lid', 'utensils': PRD + 'siraat-pure-titanium-utensils-bundle', 'wok': PRD + 'titanium-hammered-wok-pan-pro',
             'pizza': PRD + 'titanium-hammered-pizza-steel', 'roast': PRD + 'titanium-hammered-roasting-pan', 'crepe': PRD + 'titanium-hammered-crepe-pan-pro'})
 # Nieuwe beelden (Higgsfield Nano Banana 2.1, 6 nov 2026, referentie: echte packshots Pan Pro Standard, Deep Pan, lid, utensils)
-IM_FLAT = 'https://cdn.klaviyomail.com/company/TdtTzz/images/e9c89f6f-5deb-4fa0-a78d-a086028e6177.jpeg'
+IM_FLAT = 'https://cdn.klaviyomail.com/company/TdtTzz/images/255f8718-68e6-44f4-8d68-83e4aa0ffb50.jpeg'
 IM_STOVE = 'https://cdn.klaviyomail.com/company/TdtTzz/images/7c283dac-1ece-4826-b7d8-fa75413f4688.jpeg'
 IM_TWO = 'https://cdn.klaviyomail.com/company/TdtTzz/images/d8be6234-2812-44cf-b381-e49dd0dbaf46.jpeg'
 IM_CHICK = 'https://cdn.klaviyomail.com/company/TdtTzz/images/a18c1d4c-2e08-4207-a87c-b6791a01b779.jpeg'

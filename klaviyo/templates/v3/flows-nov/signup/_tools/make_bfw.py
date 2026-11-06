@@ -81,34 +81,24 @@ for mkt in ('us', 'int'):
     END = 'Monday, November 30' if US else 'Monday 30 November'
     SMALL = ('Offer valid November 1 to 30. Gifts while the sale runs; the water filter is a weekly draw.' if US else 'Offer valid 1 to 30 November. The water filter is a weekly draw.')
 
-    # ======================= BF-W2 · brief van Benjamin (en de sets) =======================
-    subj = ('A note from Benjamin (and the sets)', 'Which set fits your kitchen?')
-    alts = ('Why our pans have nothing to wear off', 'December 20, 2024', '"I ordered one pan to try it out"', 'Up to 70% off the sets')
-    pre = "Who we are, why there's no coating, and the set I'd start with."
-    b = HEADBF(meta_bf('bfw2-%s · Brief van Benjamin + welke set' % mkt, M, 'Benjamin from Siraat', subj, alts, pre, 'dag 1, 10:00 lokale tijd (na BF-W1)', who,
-                       'Plan 2026-11: wie we zijn, waarom puur titanium zonder coating, welke set past. A/B: liking (afzender) tegen vraag.'), subj[0], pre) + OPEN3()
-    b += P("Hi, Benjamin here. You joined us yesterday, so I wanted to write you a short note myself: who we are, why our pans have no coating, and which set I'd pick.", '#FFFFFF', '34px 40px 18px 40px')
+    # ======================= BF-W2 · kort, direct response (Floris 6 nov: korter en meer sale) =======================
+    subj = ('Your 70% off is still here', 'A note from Benjamin (and the sets)')
+    alts = ('Where I would start at 70% off', 'Still deciding? Here is the short version', 'Up to 70% off the sets')
+    pre = 'Up to 70% off, 4 free gifts, no code needed. Here is where I would start.'
+    b = HEADBF(meta_bf('bfw2-%s · Kort, direct response, sale voorop' % mkt, M, 'Benjamin from Siraat', subj, alts, pre, 'dag 1, 10:00 lokale tijd (na BF-W1)', who,
+                       'Floris 6 nov: korter en meer sale. Aanbod en knop bovenaan, één keuze tussen twee sets, deadline.'), subj[0], pre) + OPEN3()
+    b += P("Hi, Benjamin here. Quick one: your VIP Black Friday prices are still live. <b>Up to 70% off</b>, 4 gifts with every order, no code needed.", '#FFFFFF', '34px 40px 16px 40px')
+    b += pbtn('Shop VIP Black Friday', utm(SALE, c2, 'cta-top'), US, '4px 30px 22px 30px')
     b += row('#FFFFFF', '0 20px 22px 20px', img(IM_EGGS, 'Two friends laughing as fried eggs slide out of a Siraat hammered titanium pan onto toast', utm(SALE, c2, 'img'), 560, 10), 'center', 'padx')
-    b += P('The Pan Pro is the pan Siraat started with: the original hammered titanium pan. The first orders shipped on %s. A little over a year later, more than 100,000 people cook with our pans.' % ('December 20, 2024' if US else '20 December 2024'))
-    b += P("The idea hasn't changed since. A coated pan has a layer on it, and that layer wears. Ours has a pure titanium cooking surface and no coatings, so there is no layer to peel or flake into your eggs. That's why every pan is covered for 75 years.")
-    b += P('We had it tested too. Light Labs checked it for 31 PFAS compounds, and every one came back below the detection limit.')
-    b += P('One honest thing: titanium wants a little heat first. Medium heat for 2 to 3 minutes, a teaspoon of oil, and the egg lets go. Cold metal grabs your food, hot metal lets it go.')
-    b += note_head('Which set I&#39;d pick')
+    b += note_head('Where I&#39;d start')
     if US:
-        b += P("Replacing the whole stove? The 12-piece set: three pans, three pots and six lids. Right now a Titanium Hammered Pizza Steel comes with it, free. That's Thanksgiving covered, and every Friday night after.")
-        b += P('Cooking for one or two, mostly in a frying pan? The 6-piece set: the Mini, Small and Large pan, each with its own lid.', '#FFFFFF', '0 40px 20px 40px')
-        b += wide_card('set12', '3 pans, 3 pots, 6 lids, plus a free Pizza Steel. Just arrived and selling fast.', US, '70% OFF', 'Get the 12-piece set', utm(URL['set12'], c2, 'card-set12'))
+        b += wide_card('set12', 'The whole stove in one box, plus a free Pizza Steel. Just arrived and selling fast.', US, '70% OFF', 'Get the 12-piece set', utm(URL['set12'], c2, 'card-set12'))
         b += wide_card('set6', 'Mini, Small and Large, each with its own lid. Just arrived and selling fast.', US, '70% OFF', 'Get the 6-piece set', utm(URL['set6'], c2, 'card-set6'))
     else:
-        b += P('Replacing your pans? The 6-piece set: the Mini, Small and Large pan, each with its own lid. Breakfast for one, dinner for six.')
-        b += P('Only need one? Start with the Pan Pro Standard. It&#39;s the pan Siraat started with.', '#FFFFFF', '0 40px 20px 40px')
         b += wide_card('set6', 'Mini, Small and Large, each with its own lid. Just arrived and selling fast.', US, '70% OFF', 'Get the 6-piece set', utm(URL['set6'], c2, 'card-set6'))
-        b += wide_card('standard', 'The everyday size. The pan Siraat started with.', US, '70% OFF', 'Get the Pan Pro', utm(URL['standard'], c2, 'card-standard'))
-    b += pbtn('Pick my set at up to 70% off', utm(SALE, c2, 'cta'), US, '14px 30px 26px 30px')
-    b += P('One customer put it better than I can:')
-    b += quote('R025')
-    b += P('The sale runs until %s. Stuck between two sets? Reply and our team will help.' % END, '#FFFFFF', '4px 40px 8px 40px') + sign()
-    b += ps('Every order this month ships with 4 gifts, including a weekly chance to win a PFAS water filter. And you have 30 days from delivery to send it back unused.')
+        b += wide_card('standard', 'Only need one? The pan Siraat started with.', US, '70% OFF', 'Get the Pan Pro', utm(URL['standard'], c2, 'card-standard'))
+    b += P('Pure titanium, no coating, nothing to wear off. Covered for 75 years, and 30 days to send it back unused.', '#FFFFFF', '10px 40px 12px 40px')
+    b += P('<b>The sale ends %s.</b> After that, prices go back to normal.' % END, '#FFFFFF', '0 40px 8px 40px') + sign()
     files['bfw2-%s' % mkt] = b + small(SMALL) + TAIL
 
     # ======================= BF-W3 · Built to last. Priced for Black Friday. =======================
