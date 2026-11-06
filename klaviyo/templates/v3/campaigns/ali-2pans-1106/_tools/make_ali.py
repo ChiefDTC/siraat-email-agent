@@ -37,6 +37,8 @@ def full(v, table=False):
     r += L('<b>' + a(u(SET, v, 'four-pieces'), 'All FOUR pieces for just $249.') + '</b>')
     r += L('A set with an MSRP of $664. ' + a(u(SET, v, 'yours-199'), 'Yours for $249 this Black Friday.'))
     r += L('That&rsquo;s <b>$415 in savings</b>.')
+    r += L('And if you order today, you get <b>' + a(u(SET, v, 'gifts-today'), '+5 free gifts') + '</b> with your order.')
+    r += L('Plus, every order placed today goes into a random draw. <b>10 orders will be chosen today</b> to ' + a(u(SET, v, 'draw-today'), 'get their order back, on us') + '.')
     if table:
         r += ('<tr><td class="pad" style="padding:18px 40px 4px 40px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #E6E2DA;border-bottom:1px solid #E6E2DA;">'
           + ''.join('<tr><td style="padding:9px 0;%sfont-size:16px;line-height:22px;color:#222222;">%s</td><td align="right" style="padding:9px 0;%sfont-size:16px;line-height:22px;color:#222222;white-space:nowrap;">%s</td></tr>' % (S, l, S, rr)
@@ -52,6 +54,7 @@ def full(v, table=False):
     r += L('100% pure titanium cooking surface. No PFAS, PFOA, or BPA. Backed by our 75-year warranty.')
     r += L('And right now, ' + a(u(COL, v, 'prices'), 'at prices we don&rsquo;t normally offer') + '.')
     r += L('If you&rsquo;ve been thinking about upgrading your cookware, ' + a(u(SET, v, 'your-moment'), 'this is your moment') + '.')
+    r += L('Remember: order today for +5 free gifts and a chance to win your order back.')
     r += L('<b>' + a(u(SET, v, 'get-yours'), 'Get your 2 Pans + 2 Lids for $249 here:') + '</b>')
     r += p(a(u(SET, v, 'main-link'), 'siraatskitchen.com/products/2-pans-and-2-lids'), 6)
     r += L(a(u(SET, v, 'better-cookware'), 'Your family deserves better cookware.'))
