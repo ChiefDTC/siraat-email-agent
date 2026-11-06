@@ -215,6 +215,14 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 - **Geen mail van Caraway, Made In, Okura, Plateful of Taima.**
 - **8 nieuwe mails** (Our Place 6, HexClad 2). Idee voor Siraat: Our Place zit nu op 68%, wij op "up to 70%". Ons percentage blijft het hoogste, dus altijd "70%" vooraan in onderwerp en hero, en het verschil "pure titanium, geen coating" erbij. Hun bonuspunten bij $350 lijken op onze gratis cadeaus: ons cadeaupakket met de waarde in dollars noemen houdt ons aanbod sterker.
 
+## Dag 25 (6 nov)
+
+- **HexClad start een "Thanksgiving VIP Sale".** "Thanksgiving VIP Sale starts now 🦃" (preview "Gobble, gobble") op 5 nov 20:30 UTC naar hex-b en hex-c, met de Complete Roast Kit en de Sweet Tooth Baking Kit. Geen percentage in de mail zelf. Opvallend: ook HexClad gebruikt het woord VIP, net als wij. 47 minuten later nog "Your kitchen needs this!" naar hex-b. hex-w kreeg niets.
+- **Our Place stuurt op de BF-startdag drie mails.** Na de beeldmail (05:15) en de productmail (06:23) kwam om 21:38 UTC "A Note to Start Black Friday": een platte-tekstbrief van Morgan, Head of Customer Experience, met tot 68% off en $30 bonuspunten bij $350. De beeldmail kwam ook bij op-c (12:15).
+- **Made In komt terug met sets, in dollars.** "Get Ready for Holiday: The Core of the Kitchen" op 5 nov 13:30 UTC naar b, c en w: Stainless Clad-sets met "save $175", "save $88" enz., een chef-quote en "back in stock". Geen percentage en geen Black Friday-woord.
+- **Geen mail van Caraway, Okura, Plateful of Taima.**
+- **8 nieuwe mails** (Our Place 2, HexClad 3, Made In 3). Ideeën voor Siraat: (1) Our Place laat zien dat beeldmail, productmail en een persoonlijke brief op één dag werkt; onze BF-startdagen kunnen hetzelfde ritme krijgen met een brief van Benjamin als derde mail. (2) HexClad en wij zeggen allebei "VIP": ons verschil zit in het percentage (70%) en "pure titanium, no coating", dus die twee altijd vooraan.
+
 ## Korting: wanneer en hoe hoog
 
 - **Plateful** is het enige merk met een kortingscode: 10% in de abandoned checkout na 12,5 uur, 2 dagen geldig en al verrekend in de checkout-link (kortingscode aanwezig, niet uitgeschreven).
