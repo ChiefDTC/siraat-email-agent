@@ -24,43 +24,41 @@ def wrap(pre, rows):
       '<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF"><tr><td align="center">'
       '<table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%%;max-width:600px;">\n'
       '<tr><td style="height:12px;font-size:1px;line-height:1px;">&nbsp;</td></tr>\n%s%s</table></td></tr></table></body></html>') % (pre, rows, FOOT)
-HI = "Hi {{ first_name|default:'there' }},"
-V = {}
-# A: Ali's tekst, zo dicht mogelijk bij het origineel, prijzen gecorrigeerd
-r = p(HI, 20) + p('I need to show you something.')
-r += p('Right now, one of our bestselling Titanium Hammered Pans is already down to <b>$144</b>.') + p('But here&rsquo;s where it gets crazy.')
-r += p('For just <b>$55 more</b>, you get:', 16) + p('&bull; 2 Titanium Hammered Pans<br>&bull; 2 matching stainless steel lids', 6, extra='padding-left:58px;')
-r += p('All four pieces for <b>$199</b>. A set with an MSRP of $664. That&rsquo;s $465 in savings.')
-r += p('And here&rsquo;s why we&rsquo;re doing this.')
-r += p('We believe what you cook with matters just as much as what you cook. Your family deserves cookware without a coating. Cookware that doesn&rsquo;t need replacing every few years. Cookware made to last for decades, and maybe even be passed down.')
-r += p('That&rsquo;s why we started Siraat. And that&rsquo;s why our VIP Black Friday prices are this low. We&rsquo;re not trying to sell you another pan next year. We want to make the pan you reach for, year after year.')
-r += p('No PFAS, PFOA, or BPA. No coatings. Backed by our 75-year warranty, with 30 days to decide.')
-r += p('If you&rsquo;ve been thinking about upgrading your cookware, this is your moment.')
-r += p('<b>' + a(u(SET, 'a', 'main-link'), 'Get your 2 Pans + 2 Lids for $199 here') + '</b>')
-r += p('Your family deserves better cookware.') + p('Benjamin<br><span style="color:#7A746B;font-size:15px;">Founder, Siraat</span>', 22)
-r += p('P.S. Want to upgrade your whole kitchen? The full VIP Black Friday collection is live ' + a(u(COL, 'a', 'ps-link'), 'here') + '. It ends Monday, November 30.', 22, 15, 24, '#444444')
-V['ali-a'] = ('Ali, gecorrigeerd', 'I need to show you something', 'One pan is $144. For $55 more you get four pieces.', r)
-# B: zelfde brief, rekensom als nette tekstregels, serif-briefgevoel
-r = p(HI, 20, fam=F) + p('I need to show you something.', fam=F)
-r += p('One of our bestselling Titanium Hammered Pans is already down to $144. Here&rsquo;s the part that surprised even me.', fam=F)
-r += ('<tr><td class="pad" style="padding:20px 40px 0 40px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #E6E2DA;border-bottom:1px solid #E6E2DA;">'
-      + ''.join('<tr><td style="padding:9px 0;%sfont-size:16px;line-height:22px;color:#222222;">%s</td><td align="right" style="padding:9px 0;%sfont-size:16px;line-height:22px;color:#222222;white-space:nowrap;">%s</td></tr>' % (S, l, S, rr)
-                for l, rr in [('1 Titanium Hammered Pan', '$144'), ('2 pans + 2 stainless steel lids', '<b>$199</b>'), ('MSRP of the set', '<s style="color:#8A847B;">$664</s>'), ('You save', '<b>$465</b>')])
-      + '</table></td></tr>\n')
-r += p('That&rsquo;s $55 more for a second pan and both lids.', 16, fam=F)
-r += p('Why so low? Because we&rsquo;re not trying to sell you another pan next year. We want to make the pan you reach for, year after year. No coating to wear off. No PFAS, PFOA, or BPA. A 75-year warranty, and 30 days to decide.', fam=F)
-r += p('<b>' + a(u(SET, 'b', 'main-link'), 'Get 2 Pans + 2 Lids for $199 &rarr;') + '</b>', 20, 18, 28)
-r += p('Your family deserves better cookware.', fam=F) + p('Benjamin<br><span style="color:#7A746B;font-size:15px;">Founder, Siraat</span>', 22, fam=F)
-r += p('P.S. Upgrading the whole kitchen? Everything is up to 70% off in ' + a(u(COL, 'b', 'ps-link'), 'the VIP Black Friday sale') + ', until Monday, November 30.', 22, 15, 24, '#444444', F)
-V['ali-b'] = ('Brief met rekensom', '$144 for one, or $199 for four', 'Two pans and two lids. MSRP $664. Here is why it is this low.', r)
-# C: kort, direct response
-r = p(HI, 20) + p('Quick one.') + p('One Titanium Hammered Pan: $144.<br>Two pans + two lids: <b>$199</b>.')
-r += p('That&rsquo;s $55 for a second pan and both lids. MSRP $664, so you save $465.')
-r += p('No coating to wear off, a 75-year warranty, and 30 days to decide if it&rsquo;s right for you.')
-r += p('<b>' + a(u(SET, 'c', 'main-link'), 'Get the 4-piece set for $199') + '</b>', 18)
-r += p('Benjamin<br><span style="color:#7A746B;font-size:15px;">Founder, Siraat</span>', 22)
-r += p('P.S. VIP Black Friday ends Monday, November 30. ' + a(u(COL, 'c', 'ps-link'), 'See everything that&rsquo;s on sale') + '.', 22, 15, 24, '#444444')
-V['ali-c'] = ('Kort, direct response', 'Two pans, two lids, $199', 'That is $55 more than one pan. MSRP $664.', r)
+
+def full(v, table=False):
+    L = lambda t, top=14: p(t, top)
+    r = p('Hey {{ first_name|default:\'\' }},'.replace(" {{ first_name|default:'' }}", "{% if first_name %} {{ first_name }}{% endif %}"), 20)
+    r += L('I need to show you something.')
+    r += L('Right now, one of our bestselling Titanium Hammered Pans is already discounted to <b>$144</b>.')
+    r += L('But here&rsquo;s where things get crazy.')
+    r += L('For just <b>$55 MORE</b>, you can get:')
+    r += p('2 Titanium Hammered Pans.<br>2 Matching Stainless Steel Lids.', 6)
+    r += L('All FOUR pieces for just <b>$199</b>.')
+    r += L('A set with an MSRP of $664. Yours for $199 this Black Friday.')
+    r += L('That&rsquo;s <b>$465 in savings</b>.')
+    if table:
+        r += ('<tr><td class="pad" style="padding:18px 40px 4px 40px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #E6E2DA;border-bottom:1px solid #E6E2DA;">'
+          + ''.join('<tr><td style="padding:9px 0;%sfont-size:16px;line-height:22px;color:#222222;">%s</td><td align="right" style="padding:9px 0;%sfont-size:16px;line-height:22px;color:#222222;white-space:nowrap;">%s</td></tr>' % (S, l, S, rr)
+                    for l, rr in [('1 Titanium Hammered Pan', '$144'), ('2 pans + 2 stainless steel lids', '<b>$199</b>'), ('MSRP of the set', '<s style="color:#8A847B;">$664</s>'), ('You save', '<b>$465</b>')])
+          + '</table></td></tr>\n')
+    r += L('And here&rsquo;s why we&rsquo;re doing this.')
+    r += L('We genuinely believe that what you cook with matters just as much as what you cook.')
+    r += L('Your family deserves cookware without chemical nonstick coatings. Cookware that doesn&rsquo;t need replacing every few years. Cookware that&rsquo;s made to last for decades, and maybe even be passed down to the next generation.')
+    r += L('That&rsquo;s why we created Siraat.')
+    r += L('And that&rsquo;s why our VIP Black Friday prices are so aggressive.')
+    r += L('We&rsquo;re not trying to sell you another pan next year.')
+    r += L('We want to make the pan you reach for year after year.')
+    r += L('100% pure titanium cooking surface. No PFAS, PFOA, or BPA. Backed by our 75-year warranty.')
+    r += L('And right now, at prices we don&rsquo;t normally offer.')
+    r += L('If you&rsquo;ve been thinking about upgrading your cookware, this is your moment.')
+    r += L('Get your 2 Pans + 2 Lids for $199 here:')
+    r += p(a(u(SET, v, 'main-link'), 'siraatskitchen.com/products/2-pans-and-2-lids'), 6)
+    r += L('Your family deserves better cookware.')
+    r += p('Benjamin<br>Siraat', 20)
+    r += p('P.S. Want to upgrade your entire kitchen? Our full VIP Black Friday collection is live here:<br>' + a(u(COL, v, 'ps-link'), 'siraatskitchen.com/collections/black-friday-sale'), 20)
+    return r
+V = {'ali-a': ('Volledige tekst Ali, prijzen gecorrigeerd', 'I need to show you something', 'One pan is $144. For $55 more you get all four pieces.', full('a')),
+     'ali-b': ('Volledige tekst Ali + prijsoverzicht', 'I need to show you something', 'One pan is $144. For $55 more you get all four pieces.', full('b', True))}
 for k, (desc, sub, pre, rows) in V.items():
     h = wrap(pre, rows)
     assert '—' not in h and '–' not in h and 'CVX79' not in h
