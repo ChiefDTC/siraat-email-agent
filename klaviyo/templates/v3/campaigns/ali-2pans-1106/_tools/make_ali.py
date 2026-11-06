@@ -3,6 +3,7 @@ Hammered Pan Pro Standard $144 (MSRP $480), 2 Pans + 2 Lids $199 (MSRP $664). Ge
 import os
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 SET = 'https://siraatskitchen.com/products/2-pans-and-2-lids'
+PAN = 'https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern'
 COL = 'https://siraatskitchen.com/collections/black-friday-sale'
 def u(url, v, ct): return '%s?utm_source=klaviyo&amp;utm_medium=email&amp;utm_campaign=2pans-1106-%s&amp;utm_content=%s' % (url, v, ct)
 F = "font-family:Georgia,'Times New Roman',serif;" 
@@ -29,17 +30,17 @@ def full(v, table=False):
     L = lambda t, top=14: p(t, top)
     r = p('Hey {{ first_name|default:\'\' }},'.replace(" {{ first_name|default:'' }}", "{% if first_name %} {{ first_name }}{% endif %}"), 20)
     r += L('I need to show you something.')
-    r += L('Right now, one of our bestselling Titanium Hammered Pans is already discounted to <b>$144</b>.')
+    r += L('Right now, one of our ' + a(u(PAN, v, 'single-pan'), 'bestselling Titanium Hammered Pans') + ' is already discounted to <b>$144</b>.')
     r += L('But here&rsquo;s where things get crazy.')
     r += L('For just <b>$55 MORE</b>, you can get:')
-    r += p('2 Titanium Hammered Pans.<br>2 Matching Stainless Steel Lids.', 6)
-    r += L('All FOUR pieces for just <b>$199</b>.')
-    r += L('A set with an MSRP of $664. Yours for $199 this Black Friday.')
+    r += p(a(u(SET, v, 'items-pans'), '2 Titanium Hammered Pans.') + '<br>' + a(u(SET, v, 'items-lids'), '2 Matching Stainless Steel Lids.'), 6)
+    r += L('<b>' + a(u(SET, v, 'four-pieces'), 'All FOUR pieces for just $199.') + '</b>')
+    r += L('A set with an MSRP of $664. ' + a(u(SET, v, 'yours-199'), 'Yours for $199 this Black Friday.'))
     r += L('That&rsquo;s <b>$465 in savings</b>.')
     if table:
         r += ('<tr><td class="pad" style="padding:18px 40px 4px 40px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #E6E2DA;border-bottom:1px solid #E6E2DA;">'
           + ''.join('<tr><td style="padding:9px 0;%sfont-size:16px;line-height:22px;color:#222222;">%s</td><td align="right" style="padding:9px 0;%sfont-size:16px;line-height:22px;color:#222222;white-space:nowrap;">%s</td></tr>' % (S, l, S, rr)
-                    for l, rr in [('1 Titanium Hammered Pan', '$144'), ('2 pans + 2 stainless steel lids', '<b>$199</b>'), ('MSRP of the set', '<s style="color:#8A847B;">$664</s>'), ('You save', '<b>$465</b>')])
+                    for l, rr in [('1 Titanium Hammered Pan', '$144'), (a(u(SET, v, 'table-set'), '2 pans + 2 stainless steel lids'), '<b>' + a(u(SET, v, 'table-price'), '$199') + '</b>'), ('MSRP of the set', '<s style="color:#8A847B;">$664</s>'), ('You save', '<b>$465</b>')])
           + '</table></td></tr>\n')
     r += L('And here&rsquo;s why we&rsquo;re doing this.')
     r += L('We genuinely believe that what you cook with matters just as much as what you cook.')
@@ -49,11 +50,11 @@ def full(v, table=False):
     r += L('We&rsquo;re not trying to sell you another pan next year.')
     r += L('We want to make the pan you reach for year after year.')
     r += L('100% pure titanium cooking surface. No PFAS, PFOA, or BPA. Backed by our 75-year warranty.')
-    r += L('And right now, at prices we don&rsquo;t normally offer.')
-    r += L('If you&rsquo;ve been thinking about upgrading your cookware, this is your moment.')
-    r += L('Get your 2 Pans + 2 Lids for $199 here:')
+    r += L('And right now, ' + a(u(COL, v, 'prices'), 'at prices we don&rsquo;t normally offer') + '.')
+    r += L('If you&rsquo;ve been thinking about upgrading your cookware, ' + a(u(SET, v, 'your-moment'), 'this is your moment') + '.')
+    r += L('<b>' + a(u(SET, v, 'get-yours'), 'Get your 2 Pans + 2 Lids for $199 here:') + '</b>')
     r += p(a(u(SET, v, 'main-link'), 'siraatskitchen.com/products/2-pans-and-2-lids'), 6)
-    r += L('Your family deserves better cookware.')
+    r += L(a(u(SET, v, 'better-cookware'), 'Your family deserves better cookware.'))
     r += p('Benjamin<br>Siraat', 20)
     r += p('P.S. Want to upgrade your entire kitchen? Our full VIP Black Friday collection is live here:<br>' + a(u(COL, v, 'ps-link'), 'siraatskitchen.com/collections/black-friday-sale'), 20)
     return r
