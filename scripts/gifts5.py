@@ -1,26 +1,30 @@
 """gifts5.py: van 4 naar 5 gratis gifts in bestaande Klaviyo-templates (HTML in, HTML uit).
 
-Nieuw sinds november 2026 op de site: Mystery gift ($35), Express shipping ($15), Plastic-free e-book ($30),
-Favorites Cookbook ($25, nieuw) plus een wekelijkse kans op een PFAS water filter ($450).
+Sinds november 2026 op de site: Mystery gift ($35), Free shipping ($15), Plastic-free e-book ($30),
+Favorites Cookbook ($25, nieuw) plus een wekelijkse kans om een PFAS water filter te winnen ($450). Samen "$555 value".
+
+Besluiten Floris (7 nov 2026): tegel blijft "Free shipping"; filter altijd "win / chance to win a PFAS water filter";
+totaal is "$555 value", alleen in US-takken en US-mails, en alleen waar al een totaal stond of in de kop van het
+gift-blok. Buiten de US geen valuta in het totaal.
 
 Wat het script doet, per template:
   1. Telwoord in zichtbare copy: "4 gifts", "4 free gifts", "four gifts" (ook hoofdletters) wordt 5/five.
-     Alleen in tekst en in alt/title-attributen, ook in Outlook-blokken (<!--[if mso]>); nooit in URL's,
-     <style>, of Django-code (<!--{% ... %}-->).
-  2. Waarden (--values, standaard AAN): mystery $25 -> $35 en totaal "$70 in gifts" -> "$105 in gifts",
-     per markt (zie VALUES; buiten de US afgeleid volgens research/v5/01-markten.md sectie 6: USD x koers, afgerond op 5).
-  3. Cookbook als vijfde tegel in elk herkend gift-blok, vlak voor de filter (de filter blijft de laatste tegel):
+     Alleen in tekst en alt/title, ook in Outlook-blokken (<!--[if mso]>); nooit in URL's, <style> of Django-code.
+  2. Totaal (--no-values zet dit uit): "$70 in gifts" (US-tak) wordt "5 free gifts ($555 value)",
+     "$70 in gifts, on us" wordt "5 free gifts, on us ($555 value)"; de andere markten (C$95, £55 ...) worden
+     "5 free gifts" zonder bedrag. Mystery-tegel US $25 wordt $35; mystery buiten de US blijft zoals hij is.
+  3. Cookbook als vijfde tegel in elk herkend gift-blok, vlak voor de filter (filter blijft de laatste tegel):
        row   (data-gifts5="row", 4 naast elkaar)  -> 5 naast elkaar, tegels 20 procent, beeld 64 -> 56 px
        grid  (data-gifts5="grid", 2x2 / 4 breed)   -> extra gecentreerde rij met 1 tegel (2+2+1 mobiel, 4+1 desktop)
        cards (pp-complete, kaarten 270 px, 2x2)    -> derde rij met 1 kaart van 50 procent, gecentreerd
-     De nieuwe tegel kopieert de e-book-tegel ernaast (zelfde opmaak, zelfde link, zelfde marktketen).
-  4. --express (standaard AAN): tegel "Free shipping" heet "Express shipping" (alleen in de shipping-tegel zelf).
+     De nieuwe tegel kopieert de e-book-tegel (zelfde opmaak, link, marktketen); waarde US "$25 value", elders "Included".
+     In een US-kaartenmail wordt de kop "5 free gifts with every order ($555 value)".
 
-Idempotent: een blok met data-gifts-n="5" of het cookbook-beeld wordt overgeslagen; tellingen en bedragen
-matchen na de eerste ronde niet meer. Draai het twee keer en vergelijk (--check doet dat zelf).
+Idempotent: een blok met het cookbook-beeld wordt overgeslagen en de tellingen matchen na de eerste ronde niet meer.
+Het script draait elke template zelf twee keer en weigert als de tweede ronde iets verandert.
 
 Gebruik (alleen lokaal, schrijft niets naar Klaviyo):
-  python3 -I scripts/gifts5.py IN_DIR OUT_DIR --cookbook-img https://cdn.klaviyomail.com/... [--no-values] [--no-express] [--report r.json]
+  python3 -I scripts/gifts5.py IN_DIR OUT_DIR --cookbook-img https://cdn.klaviyomail.com/... [--no-values] [--report r.json]
 Templates die het script niet veilig aankan komen in het rapport onder "manual" en worden NIET geschreven.
 """
 import argparse, json, os, re, sys
@@ -30,12 +34,7 @@ CUR = {'US': '$', 'CA': 'C$', 'UK': '£', 'EU': '€', 'AU': 'A$', 'NZ': 'NZ$', 
 OLD = {  # (ship, ebook, mystery, filter, totaal) zoals live (v5lib.GIFT, 8 okt)
     'US': (15, 30, 25, 450, 70), 'CA': (20, 40, 35, 620, 95), 'UK': (10, 25, 20, 350, 55), 'EU': (15, 30, 25, 410, 70),
     'AU': (20, 45, 35, 660, 100), 'NZ': (25, 50, 45, 820, 120), 'SG': (20, 40, 35, 590, 95)}
-# Nieuw: mystery $35 en cookbook $25 (site, nov 2026). Buiten de US: USD x koers (GBP .773, EUR .912, AUD 1.469,
-# NZD 1.816, SGD 1.301, CAD 1.374), afgerond op 5. Cookbook $25 = zelfde bedrag als het oude mystery-bedrag.
-# AFGELEID, niet uit een Shopify-prijslijst: laten bevestigen door Floris.
-MYSTERY = {'US': 35, 'CA': 50, 'UK': 25, 'EU': 30, 'AU': 50, 'NZ': 65, 'SG': 45}
-COOKBOOK = {'US': 25, 'CA': 35, 'UK': 20, 'EU': 25, 'AU': 35, 'NZ': 45, 'SG': 35}
-TOTAL = {m: OLD[m][0] + OLD[m][1] + MYSTERY[m] + COOKBOOK[m] for m in MARKETS}   # US 105
+MYSTERY_US, COOKBOOK_US, TOTAL_US = 35, 25, '$555&nbsp;value'   # 35 + 15 + 30 + 25 + 450; nbsp: nooit '($555' los van 'value)'
 
 def amt(m, v): return '%s%d' % (CUR[m], v)
 def amt_re(m, v):  # bedrag als los token: "$70" niet in "C$70" of "$700"
@@ -72,8 +71,14 @@ def five(m):
     return n + m.group(2) + (m.group(3) or '') + m.group(4)
 
 def totals(s):
+    """US: "$70 in gifts[, on us]" -> "5 free gifts[, on us] ($555 value)"; andere markten zonder bedrag."""
     for m in MARKETS:
-        s = re.sub(amt_re(m, OLD[m][4]) + r'(' + SP + r'(?i:in' + SP + r'gifts))', amt(m, TOTAL[m]) + r'\1', s)
+        pat = amt_re(m, OLD[m][4]) + SP + r'(in|IN)' + SP + r'(gifts|GIFTS)((?:,' + SP + r'(?:on|ON)' + SP + r'(?:us|US))?)'
+        def rep(mo, m=m):
+            up = mo.group(1) == 'IN'
+            base = ('5 FREE GIFTS' if up else '5 free gifts') + mo.group(3)
+            return base + ((' (%s)' % (TOTAL_US.replace('value', 'VALUE') if up else TOTAL_US)) if m == 'US' else '')
+        s = re.sub(pat, rep, s)
     return s
 
 # ------------------------------------------------------------------ element helpers
@@ -98,18 +103,13 @@ def enclosing_start(h, idx, tag):
     return stack[-1]
 
 def ebook_to_cookbook_values(s):
-    for m in MARKETS:
-        s = re.sub(amt_re(m, OLD[m][1]) + r'(' + SP + r'value)', amt(m, COOKBOOK[m]) + r'\1', s)
+    s = re.sub(amt_re('US', OLD['US'][1]) + r'(' + SP + r'value)', amt('US', COOKBOOK_US) + r'\1', s)
+    for m in MARKETS[1:]:   # geen afgeleide bedragen buiten de US
+        s = re.sub(amt_re(m, OLD[m][1]) + SP + r'value', 'Included', s)
     return s
 
 def mystery_values(s):
-    for m in MARKETS:
-        s = re.sub(amt_re(m, OLD[m][2]) + r'(' + SP + r'value)', amt(m, MYSTERY[m]) + r'\1', s)
-    return s
-
-def express(s):
-    s = re.sub(r'Free(<br\s*/?>|\s)shipping', r'Express\1shipping', s)
-    return re.sub(r'(alt=")Free shipping', r'\1Express shipping', s)
+    return re.sub(amt_re('US', OLD['US'][2]) + r'(' + SP + r'value)', amt('US', MYSTERY_US) + r'\1', s)
 
 def make_tile(ebook_td, img):
     t = re.sub(r'data-gift="[^"]*"', 'data-gift="gift-cookbook.jpg"', ebook_td)
@@ -178,13 +178,14 @@ def do_cards(h, img, opt):
     ins = ('<tr><td colspan="2" align="center" style="padding:0;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>'
            '<td width="25%" style="font-size:0;line-height:0;">&nbsp;</td>' + card + '<td width="25%" style="font-size:0;line-height:0;">&nbsp;</td></tr></table></td></tr>')
     pos = ge - len('</table>')
-    region = h[grid:pos] + ins
-    if opt:
-        region = re.sub(r'(alt=")Free shipping', r'\1Express shipping', region)
-        region = re.sub(r'(font-weight:600;text-align:center;">)Free shipping', r'\1Express shipping', region)
-    return h[:grid] + region + h[pos:], 1
+    head = h[:grid]
+    if opt and 'alt="Free shipping"' in h[grid:pos]:   # US-mail (INT-variant heet "Free shipping, duties paid"): totaal in de kop
+        k = head.rfind('4 gifts with every order</div>')
+        if k > 0 and grid - k < 400:
+            head = head[:k] + '5 free gifts with every order (%s)</div>' % TOTAL_US + head[k + len('4 gifts with every order</div>'):]
+    return head + h[grid:pos] + ins + h[pos:], 1
 
-def transform(h, img, values=True, exp=True):
+def transform(h, img, values=True):
     notes = []
     # 1. blokken
     n_blocks = 0
@@ -198,12 +199,10 @@ def transform(h, img, values=True, exp=True):
             if not todo: break
             s, e = todo; b = fn(h[s:e], img, None)
             if values: b = re.sub(r'(data-gift="gift-mystery.jpg".*?</td>)', lambda m: mystery_values(m.group(1)), b, flags=re.S)
-            if exp:
-                ss, se = tile_td(b, 'gift-shipping.jpg'); b = b[:ss] + express(b[ss:se]) + b[se:]
             b = b.replace('data-gifts5="%s"' % kind, 'data-gifts5="%s" data-gifts-n="5"' % kind, 1)
             h = h[:s] + b + h[e:]; n_blocks += 1; notes.append(kind)
     if 'max-width:270px' in h and 'alt="Chance to win a PFAS water filter"' in h and 'data-gifts5' not in h:
-        h, k = do_cards(h, img, exp)
+        h, k = do_cards(h, img, values)
         if k: n_blocks += 1; notes.append('cards')
     # 2. telwoord en totalen in zichtbare copy
     def ft(s):
@@ -211,8 +210,6 @@ def transform(h, img, values=True, exp=True):
         return totals(s) if values else s
     h = map_text(h, ft, ft)
     return h, n_blocks, notes
-
-GIFT_IMG = re.compile(r'(?i)alt="[^"]*(PFAS water filter|Mystery gift)[^"]*"')
 
 def audit(before, after):
     """Restpunten: wat het script niet kon of wat met de hand moet."""
@@ -235,8 +232,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('indir'); ap.add_argument('outdir')
     ap.add_argument('--cookbook-img', required=True, help='Klaviyo-gehoste URL van gift-cookbook.jpg (320x320)')
-    ap.add_argument('--no-values', action='store_true', help='mystery- en totaalbedragen niet aanpassen')
-    ap.add_argument('--no-express', action='store_true', help='"Free shipping"-tegel niet hernoemen')
+    ap.add_argument('--no-values', action='store_true', help='totaal en mystery-bedrag niet aanpassen')
     ap.add_argument('--report', default=None)
     a = ap.parse_args()
     os.makedirs(a.outdir, exist_ok=True)
@@ -245,8 +241,8 @@ def main():
         if not f.endswith('.html'): continue
         h = open(os.path.join(a.indir, f), encoding='utf-8').read(); t = f[:-5]
         try:
-            out, nb, notes = transform(h, a.cookbook_img, not a.no_values, not a.no_express)
-            again, _, _ = transform(out, a.cookbook_img, not a.no_values, not a.no_express)
+            out, nb, notes = transform(h, a.cookbook_img, not a.no_values)
+            again, _, _ = transform(out, a.cookbook_img, not a.no_values)
             if again != out: raise ValueError('niet idempotent')
             iss = audit(h, out)
             if iss: raise ValueError('; '.join(iss))
