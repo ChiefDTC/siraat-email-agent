@@ -15,8 +15,8 @@ Wat het script doet, per template:
      "5 free gifts" zonder bedrag. Mystery-tegel US $25 wordt $35; mystery buiten de US blijft zoals hij is.
   3. Cookbook als vijfde tegel in elk herkend gift-blok, vlak voor de filter (filter blijft de laatste tegel):
        row   (data-gifts5="row", 4 naast elkaar)  -> 5 naast elkaar, tegels 20 procent, beeld 64 -> 56 px
-       grid  (data-gifts5="grid", 2x2 / 4 breed)   -> extra gecentreerde rij met 1 tegel (2+2+1 mobiel, 4+1 desktop)
-       cards (pp-complete, kaarten 270 px, 2x2)    -> derde rij met 1 kaart van 50 procent, gecentreerd
+       grid  (data-gifts5="grid", 2x2 / 4 breed)   -> cookbook op de filterplek, filter gecentreerd in een extra rij (2+2+1 mobiel, 4+1 desktop)
+       cards (pp-complete, kaarten 270 px, 2x2)    -> cookbook op de filterplek, filterkaart gecentreerd in een derde rij
      De nieuwe tegel kopieert de e-book-tegel (zelfde opmaak, link, marktketen); waarde US "$25 value", elders "Included".
      In een US-kaartenmail wordt de kop "5 free gifts with every order ($555 value)".
 
@@ -146,14 +146,18 @@ def do_grid(block, img, opt):
     if 'gift-cookbook.jpg' in block: return block
     keys = re.findall(r'data-gift="([^"]+)"', block)
     if keys != ['gift-shipping.jpg', 'gift-ebook.jpg', 'gift-mystery.jpg', 'gift-filter.jpg']: raise ValueError('grid: onverwachte tegels %s' % keys)
+    # 7 nov (Floris): de vier vaste gifts in het raster, de filter (kans) gecentreerd eronder.
     es, ee = tile_td(block, 'gift-ebook.jpg')
-    new = make_tile(block[es:ee], img).replace('width="50%"', 'width="140"', 1)
-    new = new.replace('font-family:Inter,Arial,Helvetica,sans-serif;"', 'font-family:Inter,Arial,Helvetica,sans-serif;width:126px;"', 1)
+    cook = make_tile(block[es:ee], img)
+    fs, fe = tile_td(block, 'gift-filter.jpg')
+    ftile = block[fs:fe].replace('width="50%"', 'width="140"', 1)
+    ftile = ftile.replace('font-family:Inter,Arial,Helvetica,sans-serif;"', 'font-family:Inter,Arial,Helvetica,sans-serif;width:126px;"', 1)
+    block = block[:fs] + cook + block[fe:]
     # buitenste rastertabel: de <table> die de eerste g2-cel omsluit
     g = block.find('class="g2"')
     ts = enclosing_start(block, g, 'table'); te = elem_end(block, ts, 'table')
     row = ('\n<table role="presentation" align="center" cellpadding="0" cellspacing="0" border="0" data-gift5row="1" style="margin:10px auto 0 auto;"><tr>\n'
-           + new + '\n</tr></table>')
+           + ftile + '\n</tr></table>')
     return block[:te] + row + block[te:]
 
 def do_cards(h, img, opt):
@@ -173,6 +177,10 @@ def do_cards(h, img, opt):
     card = re.sub(r'Plastic-Free Home e(?:‑|-| )book|The Green Clean E-Guide', 'Favorites Cookbook', card)
     card = card.replace('width="50%"', 'width="50%" align="center"', 1)
     fs, fe = card_td(fi)
+    # 7 nov (Floris): cookbook op de plek van de filter, filterkaart gecentreerd in de derde rij
+    fcard = h[fs:fe].replace('width="50%"', 'width="50%" align="center"', 1)
+    h = h[:fs] + card.replace('width="50%" align="center"', 'width="50%"', 1) + h[fe:]
+    card = fcard
     grid = enclosing_start(h, fs, 'table'); ge = elem_end(h, grid, 'table')
     if h[ge - len('</tr></table>'):ge] != '</tr></table>': raise ValueError('cards: raster eindigt anders')
     ins = ('<tr><td colspan="2" align="center" style="padding:0;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>'
