@@ -44,4 +44,4 @@ Hoofdsegment Hammered Pan Pro-landingspagina, mobiel, betaald (100.341 sessies, 
 - 37% van de sessies wordt nooit zichtbaar (in-app prefetch van Instagram/Facebook); die ziet geen enkele pop-up.
 - Bijvangst: JavaScript-fout "form.id.indexOf is not a function" bij elke Add to cart-klik. Laten checken door dev.
 
-Besluit voorstel: 40 s valt af (nog maar 32% aanwezig). Test A direct (huidig) / B 10 s / C 20 s, scroll als extra trigger op 10% in plaats van 30%. Meten op aanmeldingen per sessie, met conversie als vangrail.
+Besluit voorstel: 40 s valt af (nog maar 32% aanwezig). Test A direct (huidig) / B 10 s / C 20 s, scroll als extra trigger op 20% in B en C (10% kan binnen een paar seconden gehaald worden en maakt de pop-up dan weer te snel; 20% haalt 16,5% en is echte interesse). Of scroll weglaten; in elk geval gelijk in B en C. Meten op aanmeldingen per sessie, met conversie als vangrail.
