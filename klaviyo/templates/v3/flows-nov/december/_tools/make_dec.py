@@ -22,7 +22,7 @@ IM = {l.split()[0]: l.split()[1] for l in open(os.path.join(N, 'assets', 'klaviy
 IM_DROP, IM_OIL, IM_KITCHEN, IM_SPAT = IM['dec-waterdrop'], IM['dec-oil'], IM['dec-kitchen'], IM['dec-spatula']
 IM_FAMILY = C11(FAMILY)
 IM_RANGE = CDN + 'P022-A_GasRange_2560w_q76.webp?width=1200&height=800&crop=center&format=pjpg'
-PANS = 'https://siraatskitchen.com/collections/pans'
+PANS = 'https://siraatskitchen.com/collections/cookware'  # Floris 7 nov: /pans altijd naar /collections/cookware
 COOKWARE = 'https://siraatskitchen.com/collections/cookware'  # Floris 7 nov: dec1-CTA 'Explore pans' hierheen
 TEST = 'https://siraatskitchen.com/pages/third-party-testing'
 WARR = 'https://siraatskitchen.com/pages/warranty'
