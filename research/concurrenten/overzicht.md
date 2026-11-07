@@ -7,7 +7,7 @@ Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmai
 | Merk | w | b | c | co | Totaal | Status inschrijving |
 |---|---|---|---|---|---|---|
 | HexClad | 9 | 20 | 20 | n.v.t. | 49 | w/b/c handmatig (Floris), co niet gedaan |
-| Our Place | 20 | 27 | 21 | 0 | 68 | alles gelukt; c pas om 11:18 in winkelwagen |
+| Our Place | 21 | 28 | 22 | 0 | 71 | alles gelukt; c pas om 11:18 in winkelwagen |
 | Caraway | 5 (op hex-w) | 0 | 0 | 0 | 5 | w/b/c via footer "gelukt", maar geen enkele mail op cw-adressen; beide Caraway-mails kwamen op hex-w binnen |
 | Made In | 1 | 1 | 1 | 0 | 3 | w/b/c footer "Thanks! You've been subscribed", co gestopt (telefoon verplicht); eerste mail pas na 388 uur (campagne, geen welkom) |
 | Okura | 0 | 0 | 0 | 0 | 0 | w/b/c captcha, alleen co (checkout zonder betaling, opt-in aan) |
@@ -223,6 +223,12 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 - **Geen mail van Caraway, Okura, Plateful of Taima.**
 - **8 nieuwe mails** (Our Place 2, HexClad 3, Made In 3). Ideeën voor Siraat: (1) Our Place laat zien dat beeldmail, productmail en een persoonlijke brief op één dag werkt; onze BF-startdagen kunnen hetzelfde ritme krijgen met een brief van Benjamin als derde mail. (2) HexClad en wij zeggen allebei "VIP": ons verschil zit in het percentage (70%) en "pure titanium, no coating", dus die twee altijd vooraan.
 
+## Dag 26 (7 nov)
+
+- **Stille dag na de BF-start.** Op 6 nov kwam van geen enkel merk een mail. HexClad en Made In bleven ook 7 nov tot 09:39 UTC stil.
+- **Our Place stuurt een keuzehulp.** "Which Wonder Oven Is Yours?" (preview "Find the Wonder Oven that fits the way you cook.") op 7 nov 06:20 UTC naar op-b, op-c en op-w, binnen 15 seconden. Drie modellen naast elkaar met per model het aantal functies en de inhoud (12 L, 30 L), elk met een eigen knop. De sale staat alleen in de bovenbalk en de onderbanner ("BIGGEST DISCOUNT 68% OFF", met bundel). Geen prijzen in de mail, geen code.
+- **3 nieuwe mails** (alle drie Our Place, dezelfde campagne). Idee voor Siraat: een keuzehulp "Which Pan Pro is yours?" met Standard, Large, Deep en Wok naast elkaar (maat, waarvoor, een knop per pan), met de sale alleen in de balk. Dat helpt twijfelaars kiezen zonder dat elke mail een prijsmail is.
+
 ## Korting: wanneer en hoe hoog
 
 - **Plateful** is het enige merk met een kortingscode: 10% in de abandoned checkout na 12,5 uur, 2 dagen geldig en al verrekend in de checkout-link (kortingscode aanwezig, niet uitgeschreven).
@@ -300,6 +306,7 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 37. **Een cadeau vanaf een drempel in plaats van korting.** Our Place geeft voor de tweede keer een gratis titanium pot vanaf $300, zonder code. Als Siraat in november een echt cadeau heeft (accessoire of sheets), kan een drempelactie de orderwaarde verhogen zonder de pan af te prijzen; het cadeau en de drempel moeten dan concreet in onderwerp of preview staan, niet "of our choice". [VRAAG FLORIS: is er een cadeau-item en een drempel die bij de BFCM-setprijs past?]
 38. **Een startpakket als "alles wat je nodig hebt".** Our Place verkoopt de Cookware Set als "All The Essentials You Need" en "every recipe in the book", dus als compleet in plaats van als korting. Siraat kan de Pan Pro Duo of een set in een campagne brengen als de complete basis voor elke dag (aanbraden, bakken, stoven), met per product in een regel waarvoor hij is, en het echte setvoordeel in getal in de preview (zie idee 21).
 39. **Een deadline op winkansen of extra's in plaats van op prijs.** HexClad geeft dubbele winkansen tot 2 november op nieuwe producten en accessoires. Siraat kan richting BFCM een echte deadline gebruiken die geen marge kost, bijvoorbeeld een cadeau-item of sheets bij bestellingen tot een vaste datum, alleen als dat aanbod echt bestaat en eindigt (zie de copyregels). [VRAAG FLORIS: hebben we in november een extraatje met een echte einddatum?]
+40. **Een keuzehulp per product.** Our Place zet drie Wonder Ovens naast elkaar ("Which Wonder Oven Is Yours?"). Siraat kan hetzelfde doen met de Pan Pro-lijn: per pan de maat en waarvoor hij het best is, een knop per pan, sale alleen in de balk.
 
 ## Open punten
 
