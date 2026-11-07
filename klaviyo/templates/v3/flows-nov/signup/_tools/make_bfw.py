@@ -70,23 +70,38 @@ def HEADBF(meta_, subj, pre):
                                           'FLOW Rn556d AANMELDING · BF-W2/BF-W3 (concept 6 nov 2026, niet in Klaviyo, niets live).').replace(
         'ROASTING PAN INT · NEW IN STOCK + BLACK FRIDAY SPECIAL (concept 1 nov 2026, niet in Klaviyo, niets live).',
         'FLOW Rn556d AANMELDING · BF-W2/BF-W3 (concept 6 nov 2026, niet in Klaviyo, niets live).')
+# ---------------------------------------------------------------- Floris 7 nov: geen einddatum van de sale meer, BF-topbalk oranje met zwarte tekst
+# Alleen binnen flows-nov: de gedeelde helpers (make_e56/make_final) blijven ongewijzigd voor andere campagnes.
+def topbar_bf():
+    return ('{{BLOCK:bf-topbar text="<a href=\'%s\' style=\'color:#000000;text-decoration:none;\'>%s</a>" bg="#FFB800" color="#000000"}}\n{{HEADER}}\n') % (SALE, TOPBAR)
+HG['topbar'] = topbar_bf
+_bf_short = bf_short
+def bf_short(us, camp, ct):
+    h = _bf_short(us, camp, ct)
+    for e in ('Ends Monday, November 30.', 'Ends Monday 30 November.'): h = h.replace(e, 'No code needed.')
+    assert 'Ends Monday' not in h, 'einddatum in bf_short'
+    return h
+NODATE = re.compile(r'(?i)(30 nov|nov 30|november 30|30 november|1 to 30|sale ends|ends monday|until nov|until 30|until it ends|while the sale runs|through nov|after that, (prices|regular))')
+
 WHO = 'Flow Rn556d (lijst Uw8eZG), groep B van de test BF-W1 tegen BF-W1+W2+W3; %s; filter Placed Order = 0 sinds flowstart; smart sending aan'
 BAD = ('next batch', 'reserve', 'arriving', 'next shipment', 'purifier', 'lifetime', 'for life', 'free filter', 'scratch-proof', 'while supplies last',
        'vraag floris', 'risk-free', 'money-back', 'free returns', '100-day', 'shop now', 'learn more', 'buy now', 'delve', 'unlock', 'elevate', 'journey', 'seamless', "don't miss")
+
+# Floris 7 nov (regel: elk beeld klikbaar): losse beelden (iconen) krijgen de link van de eerstvolgende link, zoals homestead-e5-e6
+exec(open('/home/user/siraat-email-agent/klaviyo/templates/v3/campaigns/homestead-e5-e6/_tools/link_all.py').read())
 
 files = {}
 for mkt in ('us', 'int'):
     US = mkt == 'us'; M = mkt.upper(); c2 = 'bfw2-' + mkt; c3 = 'bfw3-' + mkt
     who = WHO % ('US + geen land (person.Country)' if US else 'INT (land bekend, niet US)')
-    END = 'Monday, November 30' if US else 'Monday 30 November'
-    SMALL = ('Offer valid November 1 to 30. Gifts while the sale runs; the water filter is a weekly draw.' if US else 'Offer valid 1 to 30 November. The water filter is a weekly draw.')
+    SMALL = 'The water filter is a weekly draw.'  # Floris 7 nov: geen einddatum (was 'Offer valid November 1 to 30. Gifts while the sale runs; ...')
 
     # ======================= BF-W2 · kort, direct response (Floris 6 nov: korter en meer sale) =======================
     subj = ('Your 70% off is still here', 'A note from Benjamin (and the sets)')
     alts = ('Where I would start at 70% off', 'Still deciding? Here is the short version', 'Up to 70% off the sets')
     pre = 'Up to 70% off, 4 free gifts, no code needed. Here is where I would start.'
     b = HEADBF(meta_bf('bfw2-%s · Kort, direct response, sale voorop' % mkt, M, 'Benjamin from Siraat', subj, alts, pre, 'dag 1, 10:00 lokale tijd (na BF-W1)', who,
-                       'Floris 6 nov: korter en meer sale. Aanbod en knop bovenaan, één keuze tussen twee sets, deadline.'), subj[0], pre) + OPEN3()
+                       'Floris 6 nov: korter en meer sale. Aanbod en knop bovenaan, één keuze tussen twee sets. Floris 7 nov: geen einddatum.'), subj[0], pre) + OPEN3()
     b += P("Hi, Benjamin here. Quick one: your VIP Black Friday prices are still live. <b>Up to 70% off</b>, 4 gifts with every order, no code needed.", '#FFFFFF', '34px 40px 16px 40px')
     b += pbtn('Shop VIP Black Friday', utm(SALE, c2, 'cta-top'), US, '4px 30px 22px 30px')
     b += row('#FFFFFF', '0 20px 22px 20px', img(IM_EGGS, 'Two friends laughing as fried eggs slide out of a Siraat hammered titanium pan onto toast', utm(SALE, c2, 'img'), 560, 10), 'center', 'padx')
@@ -98,16 +113,16 @@ for mkt in ('us', 'int'):
         b += wide_card('set6', 'Mini, Small and Large, each with its own lid. Just arrived and selling fast.', US, '70% OFF', 'Get the 6-piece set', utm(URL['set6'], c2, 'card-set6'))
         b += wide_card('standard', 'Only need one? The pan Siraat started with.', US, '70% OFF', 'Get the Pan Pro', utm(URL['standard'], c2, 'card-standard'))
     b += P('Pure titanium, no coating, nothing to wear off. Covered for 75 years, and 30 days to send it back unused.', '#FFFFFF', '10px 40px 12px 40px')
-    b += P('<b>The sale ends %s.</b> After that, prices go back to normal.' % END, '#FFFFFF', '0 40px 8px 40px') + sign()
+    b += P('Questions before you order? Reply and our team will help.', '#FFFFFF', '0 40px 8px 40px') + sign()  # Floris 7 nov: was 'The sale ends ... After that, prices go back to normal.'
     files['bfw2-%s' % mkt] = b + small(SMALL) + TAIL
 
     # ======================= BF-W3 · Built to last. Priced for Black Friday. =======================
     subj = ('Built to last. Priced for Black Friday.', 'Report no. 25895')
     alts = ('Why ours is covered for 75 years', 'Has your pan ever been tested?', '"The last pans we ever have to purchase"')
-    pre = '75 years of cover, no coating, 30 days to decide. Up to 70%% off until %s.' % ('Nov 30' if US else '30 Nov')
+    pre = '75 years of cover, no coating, 30 days to decide. Up to 70% off, plus 4 gifts.'  # Floris 7 nov: was '... until Nov 30.'
     b = HEADBF(meta_bf('bfw3-%s · Twijfels weg: garantie, geen coating, retour, Light Labs, reviews' % mkt, M, 'Siraat', subj, alts, pre, 'dag 2, 09:00 lokale tijd', who,
                        'Plan 2026-11: twijfels wegnemen, visueel zoals E5. A/B: belofte (specifiek) tegen autoriteit (rapportnummer).'), subj[0], pre) + OPEN3()
-    b += glass_img(IM_DROP, utm(SALE, c3, 'hero'), 'VIP Black Friday', 'Built to last.<br>Priced for Black Friday.', 'Up to 70%% off. Ends %s.' % END, 460, 290, 34)
+    b += glass_img(IM_DROP, utm(SALE, c3, 'hero'), 'VIP Black Friday', 'Built to last.<br>Priced for Black Friday.', 'Up to 70% off, plus 4 gifts.', 460, 290, 34)
     b += hero_btn('Get my Black Friday price', utm(SALE, c3, 'cta1'), US, '#FFFFFF', '20px 30px 22px 30px')
     b += P("Benjamin here. 70% off is only a good deal if the pan is still in your kitchen in twenty years. So before you pick one, here's what stands behind it.", '#FFFFFF', '4px 40px 18px 40px')
     b += proof4([('icon-warranty-75-year.png', '75-year warranty', 'Against defects'), ('icon-no-coating.png', 'No coatings', 'Pure titanium surface'),
@@ -131,8 +146,11 @@ for mkt in ('us', 'int'):
 for k, v in files.items():
     assert '—' not in v and '–' not in v, (k, 'streepje')
     body = v.split('-->', 1)[1]
+    m = NODATE.search(re.sub(r'<[^>]+>', ' ', v.replace('&nbsp;', ' '))); assert not m, (k, 'einddatum', m and m.group(0))
+    assert 'bg="#FFB800" color="#000000"' in body and 'color:#F8F7F2;text-decoration:none' not in body.split('{{HEADER}}')[0], (k, 'oranje topbalk')
     assert '$' not in body and not re.search(r'\{\{(PRICE|WAS|FROM)', body), (k, 'prijs')
     plain = re.sub(r'<[^>]+>', ' ', body).lower()
     for bad in BAD: assert bad not in plain, (k, bad)
     if '-int' in k: assert 'thanksgiving' not in plain and 'veterans' not in plain and not re.search(r'\{\{(GIFTS|FRICTION)', body) and 'set12' not in body and '12-piece' not in plain, k
+    v = link_all(v)
     open(os.path.join(N, k + '.html'), 'w').write(v); print('geschreven', k, len(v))

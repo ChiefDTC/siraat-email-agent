@@ -23,6 +23,7 @@ IM_DROP, IM_OIL, IM_KITCHEN, IM_SPAT = IM['dec-waterdrop'], IM['dec-oil'], IM['d
 IM_FAMILY = C11(FAMILY)
 IM_RANGE = CDN + 'P022-A_GasRange_2560w_q76.webp?width=1200&height=800&crop=center&format=pjpg'
 PANS = 'https://siraatskitchen.com/collections/pans'
+COOKWARE = 'https://siraatskitchen.com/collections/cookware'  # Floris 7 nov: dec1-CTA 'Explore pans' hierheen
 TEST = 'https://siraatskitchen.com/pages/third-party-testing'
 WARR = 'https://siraatskitchen.com/pages/warranty'
 
@@ -78,13 +79,16 @@ def bigquote(k, bg=CREAM):
 def btn(label, url, us, pad='6px 30px 28px 30px', bg='#FFFFFF'): return pbtn(label, url, us, pad, bg)
 def line_center(t, bg='#FFFFFF', pad='0 30px 22px 30px', size=14): return row(bg, pad, txt(t, size, 21, GREY, 500, 'text-align:center;'), 'center')
 
+# Floris 7 nov (regel: elk beeld klikbaar): losse beelden (iconen) krijgen de link van de eerstvolgende link, zoals homestead-e5-e6
+exec(open('/home/user/siraat-email-agent/klaviyo/templates/v3/campaigns/homestead-e5-e6/_tools/link_all.py').read())
+
 files = {}
 for mkt in ('us', 'int'):
     US = mkt == 'us'; M = mkt.upper()
     D24 = 'December 20, 2024' if US else '20 December 2024'
 
     # =============================== DEC 1 · How to cook on titanium ===============================
-    c = 'dec1-' + mkt; std = utm(URL['standard'], c, 'card'); pans = utm(PANS, c, 'cta1')
+    c = 'dec1-' + mkt; std = utm(URL['standard'], c, 'card'); pans = utm(COOKWARE, c, 'cta1')
     subj = ('How to cook on titanium', 'The one mistake that makes titanium stick', '2 to 3 minutes on medium',
             'Ever seen a drop of water dance?', '"The egg released completely"')
     pre = 'Medium heat, one drop of water, then oil. Nothing sticks when the heat is right.'
@@ -94,7 +98,7 @@ for mkt in ('us', 'int'):
     b += glass_img(IM_DROP, utm(PANS, c, 'hero'), 'How to cook on titanium', 'Watch the water dance.', 'Nothing sticks when the heat is right.', 440, 290, 36)
     b += P("Benjamin here. The question I get most from people who haven't bought yet: does titanium really work, or does everything stick?", '#FFFFFF', '26px 40px 14px 40px')
     b += P("It works. It just asks for one thing a coated pan never did. Heat first, food second. Four steps, and the first time takes about three minutes longer than you're used to.", '#FFFFFF', '0 40px 22px 40px')
-    b += btn('Find my first titanium pan', pans, US, '0 30px 26px 30px')
+    b += btn('Explore pans', pans, US, '0 30px 26px 30px')
     b += stepcard(1, 'Heat it on medium', 'Put the empty pan on medium heat and give it 2 to 3 minutes. Not high. Titanium spreads the heat, it just needs a moment to get there.', None, '', None)
     b += stepcard(2, 'The water drop test', 'Flick in a few drops of water, like the photo at the top. If they hiss and vanish, wait a little longer. When they pull into round beads and glide across the surface, the pan is ready.', None, '', None)
     b += stepcard(3, 'Then the oil', 'About a teaspoon of oil or a knob of butter. Tilt the pan so it runs into the hammered pattern.',
@@ -110,7 +114,7 @@ for mkt in ('us', 'int'):
     b += revblock(['R169', 'R112'], CREAM, 'From their kitchens')
     b += gap('#FFFFFF', 24)
     b += wcard('standard', 'The pan Siraat started with. The everyday size for eggs, steak and weeknights.', 'Shop the Pan Pro', std)
-    b += btn('Find my first titanium pan', utm(PANS, c, 'cta-end'), US, '10px 30px 26px 30px')
+    b += btn('Explore pans', utm(COOKWARE, c, 'cta-end'), US, '10px 30px 26px 30px')
     b += closing('Happy cooking,') + sign()
     b += ps('Tested free from PFAS by Light Labs, report no. 25895. 31 compounds, every one below the detection limit. <a href="%s" style="color:#272727;">Read the report</a>.' % utm(TEST, c, 'ps'))
     files['dec1-' + mkt] = b + TAIL
@@ -177,4 +181,5 @@ for k, v in files.items():
     assert '$' not in body and not re.search(r'\{\{(PRICE|WAS|FROM|GIFTS)', body), (k, 'prijs')
     assert 'FFB800' not in body.upper(), (k, 'geel')
     if k.endswith('-int'): assert '{{FRICTION' not in body, k
+    v = link_all(v)
     open(os.path.join(N, k + '.html'), 'w').write(v); print('geschreven', k, len(v))

@@ -40,6 +40,19 @@ SETQ = "'pan set' in s or 'cookware set' in s or 'lids' in s or 'everything' in 
 def W(inner): return "{% with s=event.Items|join:','|lower %}" + inner + "{% endwith %}"
 def IF(cond, a, b): return '{%% if %s %%}%s{%% else %%}%s{%% endif %%}' % (cond, a, b)
 
+# ---------------------------------------------------------------- Floris 7 nov: geen einddatum van de sale meer, BF-topbalk oranje met zwarte tekst
+# Alleen binnen flows-nov: de gedeelde helpers (make_e56/make_final) blijven ongewijzigd voor andere campagnes.
+def topbar_bf():
+    return ('{{BLOCK:bf-topbar text="<a href=\'%s\' style=\'color:#000000;text-decoration:none;\'>%s</a>" bg="#FFB800" color="#000000"}}\n{{HEADER}}\n') % (SALE, TOPBAR)
+HG['topbar'] = topbar_bf
+_bf_short = bf_short
+def bf_short(us, camp, ct):
+    h = _bf_short(us, camp, ct)
+    for e in ('Ends Monday, November 30.', 'Ends Monday 30 November.'): h = h.replace(e, 'No code needed.')
+    assert 'Ends Monday' not in h, 'einddatum in bf_short'
+    return h
+NODATE = re.compile(r'(?i)(30 nov|nov 30|november 30|30 november|1 to 30|sale ends|ends monday|until nov|until 30|until it ends|while the sale runs|through nov|after that, (prices|regular)|then regular prices)')
+
 def OPEN_PLAIN(bg='#FFFFFF'):  # zonder BF-topbalk (mail 3 moet na 30 nov ook kloppen), wel de vaste header
     return '<table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:%s;" bgcolor="%s">\n\n{{HEADER}}\n' % (bg, bg)
 def HEADP(meta_, subj, pre):
@@ -81,13 +94,15 @@ def recipe2(us):
     i += txt("One honest note: if the skin sticks when you try to lift it, it isn't ready. Give it two more minutes and it lets go on its own.", 15, 23, '#4A4A4A', 400, 'padding-top:14px;')
     return row('#FFFFFF', '6px 20px 0 20px', boxed(i, HAIR, '#FFFFFF', '20px 18px 18px 18px'), 'left', 'padx')
 
+# Floris 7 nov (regel: elk beeld klikbaar): losse beelden (iconen) krijgen de link van de eerstvolgende link, zoals homestead-e5-e6
+exec(open('/home/user/siraat-email-agent/klaviyo/templates/v3/campaigns/homestead-e5-e6/_tools/link_all.py').read())
+
 BAD = ('next batch', 'reserve', 'arriving', 'next shipment', 'purifier', 'lifetime', 'for life', 'free filter', 'scratch-proof', 'while supplies last',
        'same box', 'same package', 'same shipment', 'together with your order', 'combined', 'risk-free', 'money-back', 'free returns', 'VRAAG FLORIS')
 files = {}
 for mkt in ('us', 'int'):
     US = mkt == 'us'; M = mkt.upper()
     FLOW = 'Flow X3ySuU (Placed Order RSNxYV), %s; filters zoals de bestaande stappen ($value > 0); smart sending aan' % ('US-tak' if US else 'INT-tak')
-    END = 'Monday, November 30' if US else 'Monday 30 November'
     SEP = ('Ships free from the US as its own order. 30-day returns. 100,000+ happy customers.' if US else
            'Ships free, duties paid, as its own order. 30-day returns. 100,000+ happy customers.')
     size = (lambda a, b: a) if US else (lambda a, b: b)
@@ -112,21 +127,21 @@ for mkt in ('us', 'int'):
     b += W(IF("'lid' in s or " + SETQ, IF("'deep' in s", wok, deep), lid) + IF("'utensil' in s", roast, ute) + IF("'large' in s or " + SETQ, std, large))
     b += rule_line(SEP)
     b += quote('R138')
-    b += P('The sale ends %s. After that, regular prices apply.' % END, '#FFFFFF', '0 40px 6px 40px') + sign()
-    b += small('Added items ship as a separate order. Black Friday prices until %s.' % ('November 30' if US else '30 November'))
+    b += P('Not sure which size fits your pan? Reply and our team will help.', '#FFFFFF', '0 40px 6px 40px') + sign()  # Floris 7 nov: was 'The sale ends ... After that, regular prices apply.'
+    b += small('Added items ship as a separate order.')
     files['pp-addon-' + mkt] = b + TAIL
 
     # ================= 2 · dag 3: complete your kitchen =================
     c = 'pp-complete-' + mkt
     subj = ('Complete your kitchen', "What's missing from your stove?")
-    pre = 'Picked for what you just ordered. 70%% off until %s.' % ('November 30' if US else '30 November')
+    pre = 'Picked for what you just ordered, at 70% off.'  # Floris 7 nov: was '70% off until November 30.'
     b = HEADP(meta4('pp-complete-%s · dag 3 09:00, cross-sell per aankoop' % mkt, M, 'Siraat', subj, pre, 'Placed Order + 3 dagen, 09:00 lokale tijd (stap na de upsell)', FLOW + '; alleen tot 30 nov 23:59 (daarna stap overslaan of uitzetten)',
                     'Flowplan nov: cross-sell op wat ze kochten. Pannenkoper: Deep Pan, Wok, deksel. Setkoper: utensils, Pizza Steel, Roasting Pan. Nooit iets wat al in de order zit.'), subj[0], pre) + OPEN3()
     b += glass_img(IM_STOVE, utm(SALE, c, 'hero'), 'Day three', 'Complete your kitchen.', 'Picked for what you ordered.', 440, 290, 34)
     b += P(W(IF(SETQ, "Benjamin here. Your set covers the stove. These three cover the rest: the tools, the oven and pizza night.",
                 "Benjamin here. Your pan does the everyday work. These three handle what it can't: one-pan dinners, a fast stir-fry, and anything that needs a lid.")),
            '#FFFFFF', '24px 40px 10px 40px')
-    b += row('#FFFFFF', '0 20px 16px 20px', '<div style="text-align:center;">%s</div>' % badge('70%% OFF UNTIL %s' % ('NOV 30' if US else '30 NOV'), 12), 'center', 'padx')
+    b += row('#FFFFFF', '0 20px 16px 20px', '<div style="text-align:center;">%s</div>' % badge('70% OFF', 12), 'center', 'padx')
     deep = wide_card('deep', 'Higher sides for sauces, pasta and one-pan dinners.', US, '70% OFF', 'Get the Deep Pan Pro', utm(URL['deep'], c, 'card-deep'))
     large = wide_card('large', size('12 inch. One size up, for family portions.', '30 cm. One size up, for family portions.'), US, '70% OFF', 'Get the Pan Pro Large', utm(URL['large'], c, 'card-large'))
     wok = wide_card('wok', 'Deep and wide, to toss a stir-fry without spilling.', US, '70% OFF', 'Get the Wok Pan Pro', utm(URL['wok'], c, 'card-wok'))
@@ -143,7 +158,7 @@ for mkt in ('us', 'int'):
     b += icons_row([('icon-no-coating.png', 'No coatings'), ('icon-pfas-tested.png', 'Tested PFAS-free'), ('icon-dishwasher-safe.png', 'Dishwasher safe')], '#FFFFFF')
     b += bf_short(US, c, 'band') + gifts(US)
     b += closing('Happy cooking,').replace('6px 40px 4px 40px', '22px 40px 4px 40px') + sign()
-    b += small('Every new order is its own shipment, shipped free. Black Friday prices until %s, then regular prices.' % ('November 30' if US else '30 November'))
+    b += small('Every new order is its own shipment, shipped free.')
     files['pp-complete-' + mkt] = b + TAIL
 
     # ================= 3 · dag 21: two pans, one dinner =================
@@ -174,9 +189,14 @@ for k, v in files.items():
     assert '—' not in v and '–' not in v, (k, 'streepje')
     body = v.split('-->', 1)[1]
     assert '$' not in body and not re.search(r'\{\{(PRICE|WAS|FROM|GIFTS)', body), (k, 'prijs')
-    assert 'FFB800' not in re.sub(r'<span style="display:inline-block;background-color:#FFB800[^>]*>[^<]*</span>', '', body), (k, 'geel buiten tag')
+    m = NODATE.search(re.sub(r'<[^>]+>', ' ', body.replace('&nbsp;', ' '))); assert not m, (k, 'einddatum', m and m.group(0))
+    # geel alleen op de 70%-tag en (Floris 7 nov) in de BF-topbalk: oranje #FFB800 met zwarte tekst
+    nobar = re.sub(r'\{\{BLOCK:bf-topbar [^\n]*bg="#FFB800" color="#000000"\}\}', '', body)
+    assert 'FFB800' not in re.sub(r'<span style="display:inline-block;background-color:#FFB800[^>]*>[^<]*</span>', '', nobar), (k, 'geel buiten tag en topbalk')
+    if 'twopans' not in k: assert nobar != body and 'color:#F8F7F2;text-decoration:none' not in body.split('{{HEADER}}')[0], (k, 'oranje topbalk')
     plain = re.sub(r'<[^>]+>', ' ', body).lower()
     for bad in BAD: assert bad.lower() not in plain, (k, bad)
     if 'twopans' in k: assert '70%' not in body.split('SALE-BLOK START')[0] and 'bf-topbar' not in body, (k, 'sale buiten blok')
     v = v.replace('Free shipping, from the US.', 'Free shipping from the US.')  # bf_short (make_final) zet een komma in de US-regel
+    v = link_all(v)
     open(os.path.join(N, k + '.html'), 'w').write(v); print('geschreven', k, len(v))
