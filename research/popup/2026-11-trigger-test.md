@@ -35,3 +35,13 @@ Gelijk houden in alle drie: ontwerp, aanbod en tekst; "Don't trigger if another 
 ## Snelle winst los van de test
 - Opnieuw tonen na sluiten van 5 naar 7 dagen.
 - Uitsluiten van cart/checkout en van bezoekers uit e-mail/sms.
+
+## Update 7 nov: Clarity-data (24 okt t/m 7 nov, via Claude Cowork)
+Hoofdsegment Hammered Pan Pro-landingspagina, mobiel, betaald (100.341 sessies, grootste groep):
+- Nog op de site na 10 s 66,8%, 15 s 59,4%, 20 s 51,0%, 30 s 39,1%, 40 s 31,9%.
+- 30% scroll haalt maar 10,8% (PDP is lang); 10% scroll 35%. Een scrolltrigger van 30% doet op mobiel dus bijna niets.
+- Add to cart: mediaan 1:35, eerste klikken rond 36 s. De pop-up komt nu op 2 tot 9 s.
+- 37% van de sessies wordt nooit zichtbaar (in-app prefetch van Instagram/Facebook); die ziet geen enkele pop-up.
+- Bijvangst: JavaScript-fout "form.id.indexOf is not a function" bij elke Add to cart-klik. Laten checken door dev.
+
+Besluit voorstel: 40 s valt af (nog maar 32% aanwezig). Test A direct (huidig) / B 10 s / C 20 s, scroll als extra trigger op 10% in plaats van 30%. Meten op aanmeldingen per sessie, met conversie als vangrail.
