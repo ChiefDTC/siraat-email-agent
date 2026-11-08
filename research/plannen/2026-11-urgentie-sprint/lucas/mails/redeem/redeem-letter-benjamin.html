@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>You have $12 to spend at Siraat</title>
+<style>
+  
+  body{margin:0;padding:0;background:#FFFFFF;-webkit-text-size-adjust:100%;}
+  table{border-collapse:collapse;}
+  img{border:0;display:block;line-height:100%;outline:none;text-decoration:none;}
+  h1{margin:0;padding:0;}
+  a{color:#272727;}
+  @media only screen and (max-width:620px){
+    .w{width:100%!important;}
+    .pad{padding-left:24px!important;padding-right:24px!important;}
+    .navhide{display:none!important;}
+    .h1u{font-size:36px!important;line-height:40px!important;}
+    .bigc{font-size:56px!important;line-height:60px!important;}
+    .lt{padding-left:24px!important;padding-right:24px!important;}
+    .tb{font-size:11px!important;letter-spacing:0.8px!important;padding:12px 12px!important;}
+    .btn{font-size:15px!important;letter-spacing:0.5px!important;padding:19px 12px!important;}
+    .bb{display:block!important;width:100%!important;}
+  }
+</style>
+</head>
+<body style="margin:0;padding:0;background:#FFFFFF;">
+<div class="ann" style="background:#E6E6E6;border-bottom:2px solid #BDBDBD;padding:16px 16px 18px 16px;font-family:Menlo,Consolas,monospace;font-size:12px;line-height:18px;"><div style="max-width:600px;margin:0 auto;"><div style="font-size:11px;letter-spacing:1px;color:#777;padding-bottom:8px;">NOTE FOR LUCAS &middot; NOT PART OF THE EMAIL &middot; EXAMPLE BUILD 8 NOV 2026</div><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%;"><tr><td valign="top" style="padding:3px 12px 3px 0;font-weight:700;white-space:nowrap;color:#333;">Flow</td><td valign="top" style="padding:3px 0;color:#444;">NEW &middot; Redeem ($12 code) &middot; Klaviyo flow <b>new flow, ID after creation</b></td></tr><tr><td valign="top" style="padding:3px 12px 3px 0;font-weight:700;white-space:nowrap;color:#333;">Position</td><td valign="top" style="padding:3px 0;color:#444;">Email 1</td></tr><tr><td valign="top" style="padding:3px 12px 3px 0;font-weight:700;white-space:nowrap;color:#333;">From</td><td valign="top" style="padding:3px 0;color:#444;">Benjamin from Siraat</td></tr><tr><td valign="top" style="padding:3px 12px 3px 0;font-weight:700;white-space:nowrap;color:#333;">Subject</td><td valign="top" style="padding:3px 0;color:#444;">You have $12 to spend at Siraat</td></tr><tr><td valign="top" style="padding:3px 12px 3px 0;font-weight:700;white-space:nowrap;color:#333;">Preview</td><td valign="top" style="padding:3px 0;color:#444;">Your code is inside. It works until Sunday 30 November, 11:59 PM ET.</td></tr><tr><td valign="top" style="padding:3px 12px 3px 0;font-weight:700;white-space:nowrap;color:#333;">Replaces reference:</td><td valign="top" style="padding:3px 0;color:#444;">&ldquo;(1) Your store credit is updated.&rdquo;<br>&ldquo;This is a little bit urgent. I saw your store credit expired yesterday.&rdquo;<br>&ldquo;I really did not want to just have you lose $12.24, it was already yours.&rdquo;<br>&ldquo;I know Halloween weekends can get busy, so I extended your credit with just 24 hours (until tonight).&rdquo;<br>&ldquo;Please note: your credit cannot be extended again. After tonight it will disappear.&rdquo; (subject of the Smooche letter: "(1) Your store credit is updated.")</td></tr><tr><td valign="top" style="padding:3px 12px 3px 0;font-weight:700;white-space:nowrap;color:#333;">Implementation</td><td valign="top" style="padding:3px 0;color:#444;">&middot; Code: unique Klaviyo coupon <code>{% coupon_code 'SIRAAT12' %}</code> (one code per profile), backed by a Shopify discount: fixed $12 off, one use per customer, ends Nov 30 2026 11:59 PM ET. "SIR-7K2Q9" is an example, never a real code. Not Rise.ai.<br>&middot; Expiry in the mail must equal the real end date of the Shopify discount. Nothing is extended, ever.<br>&middot; Flow trigger and audience: to be decided by Floris (new flow, e.g. past buyers; optionally v4 &middot; Winback UyFc78).<br>&middot; Redeem link: <code>https://siraatskitchen.com/discount/{% coupon_code 'SIRAAT12' %}?redirect=/collections/black-friday-sale</code> (Klaviyo reuses the same code within one message).<br>&middot; "Account:" line = <code>{{ email }}</code>; example shows you@example.com.<br>&middot; Plain letter, no header and no logo at the top (approved for this letter), fixed minimal footer.</td></tr></table></div></div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Your code is inside. It works until Sunday 30 November, 11:59 PM ET.</div>
+<!-- ======== EMAIL START ======== -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
+<tr><td align="center" style="padding:0 0 32px 0;">
+<table role="presentation" class="w" width="560" cellpadding="0" cellspacing="0" border="0" style="width:560px;max-width:560px;background:#FFFFFF;" bgcolor="#FFFFFF">
+<tr><td class="lt" style="padding:28px 40px 14px 40px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:17px;line-height:26px;color:#272727;">Hi there,</td></tr>
+<tr><td class="lt" style="padding:0 40px 14px 40px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:17px;line-height:26px;color:#272727;"><b>Account:</b> you@example.com<br><b>Credit:</b> $12<br><b>Expiry date:</b> Sunday 30 November, 11:59 PM ET</td></tr>
+<tr><td class="lt" style="padding:0 40px 14px 40px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:17px;line-height:26px;color:#272727;">Benjamin here. You have ordered from Siraat before, so I made you a $12 code to use on your next order.</td></tr>
+<tr><td class="lt" style="padding:0 40px 14px 40px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:17px;line-height:26px;color:#272727;">It works on anything on the site and comes off at checkout. It is yours until Sunday 30 November, 11:59 PM ET. After that it expires.</td></tr>
+<tr><td class="lt" style="padding:0 40px 14px 40px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:17px;line-height:26px;color:#272727;">Your code: <b style="font-size:19px;letter-spacing:1px;">SIR-7K2Q9</b> <span style="display:inline-block;font-family:Menlo,Consolas,monospace;font-size:10px;line-height:14px;font-weight:400;letter-spacing:0;color:#555;background:#E6E6E6;border:1px dashed #999;padding:2px 6px;vertical-align:middle;text-transform:none;">EXAMPLE CODE, real one = {% coupon_code 'SIRAAT12' %}</span></td></tr>
+<tr><td class="lt" style="padding:0 40px 16px 40px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:17px;line-height:26px;color:#272727;"><a href="https://siraatskitchen.com/collections/black-friday-sale" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:18px;line-height:24px;font-weight:700;color:#AC3B19;text-decoration:underline;">Click here to redeem your $12.</a></td></tr>
+<tr><td class="lt" style="padding:0 40px 14px 40px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:17px;line-height:26px;color:#272727;">If you have a question about a pan or a size, just reply.</td></tr>
+<tr><td class="lt" style="padding:0 40px 14px 40px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:17px;line-height:26px;color:#272727;">Benjamin<br>Founder, Siraat</td></tr>
+<tr><td class="lt" style="padding:30px 40px 0 40px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-top:1px solid #ECE7DD;font-size:1px;line-height:1px;">&nbsp;</td></tr></table></td></tr>
+<tr><td class="lt" align="left" style="padding:16px 40px 8px 40px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:12px;line-height:18px;color:#727272;text-align:left;"><a href="#unsubscribe" style="color:#727272;">Unsubscribe</a> &nbsp;|&nbsp; <a href="#preferences" style="color:#727272;">Manage preferences</a><br>Siraat&#39;s Kitchen &middot; [company address]</td></tr>
+
+</table>
+</td></tr>
+</table>
+<!-- ======== EMAIL END ======== -->
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Benjamin here: a quick note before it ends</title>
+<style>
+  
+  body{margin:0;padding:0;background:#FFFFFF;-webkit-text-size-adjust:100%;}
+  table{border-collapse:collapse;}
+  img{border:0;display:block;line-height:100%;outline:none;text-decoration:none;}
+  h1{margin:0;padding:0;}
+  a{color:#272727;}
+  @media only screen and (max-width:620px){
+    .w{width:100%!important;}
+    .pad{padding-left:24px!important;padding-right:24px!important;}
+    .navhide{display:none!important;}
+    .h1u{font-size:36px!important;line-height:40px!important;}
+    .bigc{font-size:56px!important;line-height:60px!important;}
+    .lt{padding-left:24px!important;padding-right:24px!important;}
+    .tb{font-size:11px!important;letter-spacing:0.8px!important;padding:12px 12px!important;}
+    .btn{font-size:15px!important;letter-spacing:0.5px!important;padding:19px 12px!important;}
+    .bb{display:block!important;width:100%!important;}
+  }
+</style>
+</head>
+<body style="margin:0;padding:0;background:#FFFFFF;">
+<div class="ann" style="background:#E6E6E6;border-bottom:2px solid #BDBDBD;padding:16px 16px 18px 16px;font-family:Menlo,Consolas,monospace;font-size:12px;line-height:18px;"><div style="max-width:600px;margin:0 auto;"><div style="font-size:11px;letter-spacing:1px;color:#777;padding-bottom:8px;">NOTE FOR LUCAS &middot; NOT PART OF THE EMAIL &middot; EXAMPLE BUILD 8 NOV 2026</div><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%;"><tr><td valign="top" style="padding:3px 12px 3px 0;font-weight:700;white-space:nowrap;color:#333;">Flow</td><td valign="top" style="padding:3px 0;color:#444;">v4 &middot; Checkout abandonment &middot; Klaviyo flow <b>QUBUQV</b></td></tr><tr><td valign="top" style="padding:3px 12px 3px 0;font-weight:700;white-space:nowrap;color:#333;">Position</td><td valign="top" style="padding:3px 0;color:#444;">Last email of the flow (replaces the current last checkout mail)</td></tr><tr><td valign="top" style="padding:3px 12px 3px 0;font-weight:700;white-space:nowrap;color:#333;">From</td><td valign="top" style="padding:3px 0;color:#444;">Benjamin from Siraat</td></tr><tr><td valign="top" style="padding:3px 12px 3px 0;font-weight:700;white-space:nowrap;color:#333;">Subject</td><td valign="top" style="padding:3px 0;color:#444;">Benjamin here: a quick note before it ends</td></tr><tr><td valign="top" style="padding:3px 12px 3px 0;font-weight:700;white-space:nowrap;color:#333;">Preview</td><td valign="top" style="padding:3px 0;color:#444;">Reply and tell me what you cook. I read these.</td></tr><tr><td valign="top" style="padding:3px 12px 3px 0;font-weight:700;white-space:nowrap;color:#333;">Replaces reference:</td><td valign="top" style="padding:3px 0;color:#444;">&ldquo;Your order is pending.&rdquo;<br>&ldquo;pending orders not completed within 24 hours will be marked as canceled&rdquo;<br>&ldquo;This exclusive sale is set to end very soon&rdquo;</td></tr><tr><td valign="top" style="padding:3px 12px 3px 0;font-weight:700;white-space:nowrap;color:#333;">Implementation</td><td valign="top" style="padding:3px 0;color:#444;">&middot; Plain text letter: no header, no logo, no images, minimal footer (unsubscribe, preferences, address). Same format as the affiliate letters; Floris to confirm this exception in DECISIONS.md.<br>&middot; No "Re:" or "Fwd:" in the subject. Reply-to must be an inbox that is really read.<br>&middot; Deadline sentence: conditional on the real last day (Nov 30). On other days use the version without "tonight": "The VIP Sale runs until Nov 30, 11:59 PM ET."<br>&middot; Product name: <code>{{ event.extra.line_items.0.product.title }}</code>; example 2 Pans + 2 Lids. Link: checkout URL + <code>&amp;discount=BFCODE</code>.<br>&middot; Universal Content block "Benjamin signature".</td></tr></table></div></div>
+<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">Reply and tell me what you cook. I read these.</div>
+<!-- ======== EMAIL START ======== -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
+<tr><td align="center" style="padding:0 0 32px 0;">
+<table role="presentation" class="w" width="560" cellpadding="0" cellspacing="0" border="0" style="width:560px;max-width:560px;background:#FFFFFF;" bgcolor="#FFFFFF">
+<tr><td class="lt" style="padding:28px 40px 14px 40px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:17px;line-height:26px;color:#272727;">Hi there,</td></tr>
+<tr><td class="lt" style="padding:0 40px 14px 40px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:17px;line-height:26px;color:#272727;">Benjamin here, the founder of Siraat. You left the 2 Pans + 2 Lids in your checkout, and I wanted to send one quick note before the VIP Sale ends tonight at 11:59 PM ET.</td></tr>
+<tr><td class="lt" style="padding:0 40px 14px 40px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:17px;line-height:26px;color:#272727;">Your extra 10% is still applied. One pan on its own is $144. The four pieces are $199, and the 10% comes off that at checkout.</td></tr>
+<tr><td class="lt" style="padding:0 40px 16px 40px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:17px;line-height:26px;color:#272727;"><a href="https://siraatskitchen.com/cart" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:18px;line-height:24px;font-weight:700;color:#AC3B19;text-decoration:underline;">&rarr; Finish my checkout</a></td></tr>
+<tr><td class="lt" style="padding:0 40px 14px 40px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:17px;line-height:26px;color:#272727;">After 11:59 PM ET the sale price is over. Free shipping and 30-day returns stay, so if the pans are not for you, you send them back.</td></tr>
+<tr><td class="lt" style="padding:0 40px 14px 40px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:17px;line-height:26px;color:#272727;">If something held you back, a question about sizes, induction or anything else, just hit reply. Reply and tell me what you cook. I read these.</td></tr>
+<tr><td class="lt" style="padding:0 40px 14px 40px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:17px;line-height:26px;color:#272727;">Benjamin<br>Founder, Siraat</td></tr>
+<tr><td class="lt" style="padding:30px 40px 0 40px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-top:1px solid #ECE7DD;font-size:1px;line-height:1px;">&nbsp;</td></tr></table></td></tr>
+<tr><td class="lt" align="left" style="padding:16px 40px 8px 40px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:12px;line-height:18px;color:#727272;text-align:left;"><a href="#unsubscribe" style="color:#727272;">Unsubscribe</a> &nbsp;|&nbsp; <a href="#preferences" style="color:#727272;">Manage preferences</a><br>Siraat&#39;s Kitchen &middot; [company address]</td></tr>
+
+</table>
+</td></tr>
+</table>
+<!-- ======== EMAIL END ======== -->
+</body>
+</html>
