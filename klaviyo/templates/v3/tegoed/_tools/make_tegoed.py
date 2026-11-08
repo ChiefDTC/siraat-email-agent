@@ -122,7 +122,7 @@ def small(t):
 
 
 HI = P("Hi {{ first_name|default:'there' }},", '0 40px 12px 40px')
-TERMS = ('One $12 code per customer, for one order. It cannot be exchanged for cash and stops working after the expiry date shown above. '
+TERMS = ('One $12 code per customer, for one order of $100 or more. It cannot be exchanged for cash and stops working after the expiry date shown above. '
          'You get this because you ordered from Siraat before.')
 TAMMY = ("I am on my 4th pan from Siraat... I even gifted one to my son, and he says it's the best pan he owns.", 'Tammy, verified buyer')
 
@@ -149,7 +149,7 @@ b += H1('You have $12<br>in your account.', 'A thank-you from Benjamin')
 b += HI
 b += P("Benjamin here. You ordered from Siraat before, so I made you a $12 code for your next order. That&#39;s it. A thank-you for being a customer.")
 b += summary(COUPON, EXP_T1)
-b += P("It&#39;s one code, made for you. It works once, on anything on the site, and the button below applies it for you.")
+b += P("It&#39;s one code, made for you. It works once, on any order of $100 or more, and the button below applies it for you.")
 b += P("It has a real end date: %s. A thank-you shouldn&#39;t hang around forever, so after that day the code stops working and the regular price applies." % EXP_T1)
 b += btn('Use my $12', link(COUPON, m, 'cta1'))
 b += P("Not sure what to get? Most people add a second size, so there&#39;s one pan for the eggs and one big enough for everyone. Reply and our team will help you pick.", '0 40px 16px 40px')

@@ -115,3 +115,6 @@ Floris bevestigt: "Nothing sticks when the heat is right", "clean up in under a 
 
 ## 2 Pans + 2 Lids = $249 (Floris, 8 nov 2026)
 De bundel 2 Pans + 2 Lids (/products/2-pans-and-2-lids) kost $249 (siteprijs, compare-at $664). Geen $199 gebruiken in mails of voorbeelden.
+
+## Tegoed $12 (Floris, 8 nov 2026)
+Tegoed-flow (Ubi9m5, draft): $12 code, minimaal $100 orderbedrag, een keer per klant, 30 dagen geldig. Start na BFCM (1 dec).
