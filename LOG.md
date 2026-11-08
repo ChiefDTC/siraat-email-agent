@@ -455,3 +455,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 2026-11-08 · HTML-voorbeelden urgentie per flow voor Lucas (12 mails + redeem met kortingscode + site-koopbox) in research/plannen/2026-11-urgentie-sprint/lucas/mails/, gepubliceerd als artifact. Niets live.
 - 2026-11-08 · Quiz-popup volgende stap per antwoord (next-step.md, copy, mock) + correctie 41%-claim in quizdocs. Read-only.
 - 2026-11-08 · VoC: analyse advertentiecomments (9,224 rijen), synthese 9 bestanden, Reddit (deels). research/voc/. Read-only.
+- 2026-11-08 · Figma-bestand 'BFCM mail designs · review' (14 mails) gemaakt voor Floris. Niets live.
