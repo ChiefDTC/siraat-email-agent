@@ -1,5 +1,8 @@
 # Brief: quiz-popup met angles + welkomflow per angle (Floris, 8 nov 2026)
 
+> **Correctie (8 nov 2026):** het cijfer "41% coating die afbladdert/slijt" uit de PDF-samenvatting klopt niet met de ruwe surveytelling. Ruwe open antwoorden (n=760): plakken 34.1%, toxisch/PFAS 29.9%, gezondheid 15.8%, coating bladdert/krast 14.5%. Gebruik voor de performance-angle geen 41%; zie next-step.md voor de juiste bewijsregels.
+
+
 Idee (Floris, na gesprek met Colin, die de e-mails voor Siraat doet): de popup stelt eerst een vraag zoals "What is your main goal?" met 4 of 5 angles die bewezen zijn in de post-purchase survey. Bijvoorbeeld "Ditch the toxins from my home", "Better performance from my cookware" of "It's a gift". Na de klik volgt een offer en tekst die bij dat antwoord past, zoals "70% of our customers came for the same reason: non-toxic cookware. Here is your offer." Daarna volgt een volledige welkomflow per gekozen angle. Alles moet A/B-testbaar en meetbaar zijn.
 
 ## Surveydata (anoniem, geaggregeerd, 22,160 antwoorden, 2025 tot mei 2026)

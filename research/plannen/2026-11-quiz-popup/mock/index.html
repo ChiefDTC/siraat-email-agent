@@ -1,0 +1,170 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quiz Popup Next Step</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#272727;--cream:#F4F1EA;--paper:#FFFFFF;--line:#E4DED3;--grey:#727272;--legal:#9A948B;--yellow:#FFB800;--gold:#B8862B}
+*{box-sizing:border-box}
+body{margin:0;background:#FFFFFF;color:var(--ink);font-family:Inter,Arial,sans-serif;padding:24px 16px 64px}
+header.page{max-width:1200px;margin:0 auto 8px}
+header.page h1{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400;font-size:34px;margin:0 0 6px}
+header.page p{margin:0;color:var(--grey);font-size:14px;max-width:760px;line-height:1.5}
+section{max-width:1200px;margin:28px auto 0}
+section h3{font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 12px;color:var(--ink)}
+.row{display:flex;flex-wrap:wrap;gap:24px}
+.ph{margin:0;width:375px;max-width:100%}
+.ph figcaption{font-size:12px;color:var(--grey);margin:0 0 6px}
+.ph figcaption b{background:var(--ink);color:#fff;font-weight:600;padding:1px 6px;border-radius:3px;margin-left:4px}
+.screen{position:relative;width:375px;max-width:100%;min-height:760px;border:1px solid var(--line);border-radius:28px;overflow:hidden;background:#d9d6cf}
+.site{position:absolute;inset:0;background:repeating-linear-gradient(180deg,#e9e6df 0 120px,#f3f1ec 120px 240px);filter:blur(1px)}
+.screen:after{content:"";position:absolute;inset:0;background:rgba(39,39,39,.45);pointer-events:none}
+.card{position:relative;z-index:1;margin:44px 14px 24px;background:var(--cream);border-radius:16px;padding:16px 20px 18px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.top{display:flex;justify-content:center;align-items:center;position:relative;margin-bottom:10px}
+.logo{height:26px;width:auto}
+.x{position:absolute;right:-4px;top:-6px;font-size:26px;line-height:1;color:var(--ink);width:36px;height:36px;display:flex;align-items:center;justify-content:center}
+.label{font-size:11px;letter-spacing:.14em;font-weight:600;text-align:center;margin:6px 0 4px;color:var(--gold)}
+h2{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400;font-size:29px;line-height:1.08;text-align:center;margin:2px 0 10px}
+.sub{text-align:center;font-size:16px;margin:0 0 14px;color:var(--ink)}
+.ans{display:flex;align-items:center;gap:12px;width:100%;min-height:56px;margin:0 0 10px;padding:12px 14px;background:var(--paper);border:1.5px solid var(--ink);border-radius:10px;font:500 17px/1.25 Inter,Arial,sans-serif;color:var(--ink);text-align:left}
+.dot{flex:0 0 20px;height:20px;border:1.5px solid var(--ink);border-radius:50%}
+.skip{text-align:center;margin:12px 0 2px}.skip a{font-size:15px;text-decoration:underline;color:var(--ink)}
+.chosen{font-size:12px;color:var(--grey);text-align:center;margin:0}
+.proof{font-size:16px;line-height:1.4;font-weight:600;text-align:center;margin:0 0 8px}
+.mech{font-size:16px;line-height:1.45;text-align:center;margin:0 0 12px}
+.gifts{display:flex;justify-content:center;gap:6px;margin:4px 0 6px}
+.gifts img{width:46px;height:46px;border-radius:8px;border:1px solid var(--line);background:#fff}
+.offer{font-size:15px;line-height:1.4;text-align:center;margin:0 0 12px}
+.tag{display:inline-block;background:var(--yellow);color:var(--ink);font-weight:700;font-size:11px;letter-spacing:.06em;padding:2px 6px;border-radius:3px;vertical-align:1px}
+.email{width:100%;height:54px;border:1.5px solid #bdb7ab;border-radius:10px;padding:0 14px;font:16px Inter,Arial,sans-serif;background:#fff;margin:0 0 10px}
+.cta{width:100%;min-height:56px;background:var(--ink);color:#fff;border:0;border-radius:10px;font:600 17px Inter,Arial,sans-serif;margin:0 0 8px}
+.ghost{width:100%;min-height:52px;background:transparent;color:var(--ink);border:1.5px solid var(--ink);border-radius:10px;font:600 16px Inter,Arial,sans-serif;margin:0 0 8px}
+.fric{font-size:13px;color:var(--grey);text-align:center;margin:0 0 6px}
+.no{font-size:14px;text-align:center;text-decoration:underline;margin:0 0 8px}
+.fine{font-size:11px;line-height:1.4;color:var(--legal);text-align:center;margin:6px 0 0}
+.msq{font-weight:600;font-size:16px;text-align:center;margin:4px 0 8px}
+.taps{display:flex;flex-direction:column;gap:8px;margin:0 0 10px}
+.tap{display:flex;align-items:center;gap:12px;min-height:60px;background:#fff;border:1.5px solid var(--ink);border-radius:10px;padding:6px 12px 6px 6px;color:var(--ink);font-size:16px;line-height:1.25}
+.tap img{width:48px;height:48px;border-radius:6px;flex:0 0 48px}
+.tap span{flex:1}.tap small{color:var(--grey);font-size:13px}
+.tap i{font-style:normal;font-size:24px}
+.tap span.gc{flex:0 0 48px;width:48px;height:48px;border-radius:6px;background:var(--ink);color:#fff;font-size:9px;font-weight:700;letter-spacing:.08em;display:flex;align-items:center;justify-content:center;text-align:center}
+.dl{font-size:13px;text-align:center;margin:4px 0;padding:6px;border:1px dashed var(--gold);color:var(--ink)}
+.inbox{margin:10px 0 0;padding:10px 12px;background:#fff;border:1px solid var(--line);border-radius:8px;font-size:13px;line-height:1.35}
+.inbox span{display:block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:2px}
+.inbox b{display:block}.inbox small{color:var(--grey)}
+@media (max-width:420px){.row{gap:16px}}
+</style></head><body>
+<header class="page"><h1>Quiz-popup: de volgende stap per antwoord</h1>
+<p>Concept 8 nov 2026, mobiel 375 px. Aanbod voor iedereen gelijk (5 free gifts, geen code, geen nieuwe korting). Per antwoord verschilt de kop, het bewijs en de volgende stap na de aanmelding. Koppen in Instrument Serif als vervanger van TT Ramillas. Niets is live gezet.</p></header>
+<section><h3>1. De vraag</h3><div class="row"><figure class="ph"><figcaption>Scherm 1: de vraag (geen e-mailveld)</figcaption>
+<div class="screen"><div class="site"></div><div class="card"><div class="top"><span class="x" aria-label="Close">&#215;</span>
+<img class="logo" src="assets/siraat-lockup-black-email.png" alt="SIRAAT" width="140" height="32"></div><p class="label">ONE QUICK QUESTION</p><h2>What made you look today?</h2><p class="sub">Tap one. We&#x27;ll show you where to start.</p>
+<button class="ans"><span class="dot"></span>I want PFAS out of my kitchen</button><button class="ans"><span class="dot"></span>My non-stick keeps peeling</button><button class="ans"><span class="dot"></span>Stainless and cast iron are too much work</button><button class="ans"><span class="dot"></span>I&#x27;m shopping for a gift</button><p class="skip"><a>Skip, just show me the gifts</a></p></div></div></figure></div></section><section><h3>2. Resultaatscherm per antwoord (A rationeel, B emotioneel) en overslaan</h3><div class="row"><figure class="ph"><figcaption>Resultaat non_toxic A <b>A rationeel</b></figcaption>
+<div class="screen"><div class="site"></div><div class="card"><div class="top"><span class="x" aria-label="Close">&#215;</span>
+<img class="logo" src="assets/siraat-lockup-black-email.png" alt="SIRAAT" width="140" height="32"></div><p class="chosen">You picked: I want PFAS out of my kitchen</p>
+<p class="label">NO PFAS. ON PAPER.</p><h2>No coating. No PFAS. Here&#x27;s the paper.</h2>
+<p class="proof">7 in 10 of our customers told us toxin-free cookware mattered most to them.</p><p class="mech">A pure titanium cooking surface with no coatings. Light Labs tested it for 31 PFAS, and every one came in below the detection limit (report no. 25895).</p>
+<div class="gifts"><img src="assets/gift-mystery.jpg" alt=""><img src="assets/gift-shipping.jpg" alt=""><img src="assets/gift-ebook.jpg" alt=""><img src="assets/gift-cookbook.jpg" alt=""><img src="assets/gift-filter.jpg" alt=""></div><p class="offer">Get the full lab report in your inbox, plus 5 free gifts with every order <span class="tag">$555 VALUE</span>.</p>
+<input class="email" placeholder="Your email address" aria-label="Email">
+<button class="cta">Send me the lab report</button>
+<p class="fric">Free shipping. 30-day returns. 100,000+ happy customers.</p><p class="no">No thanks</p>
+<p class="fine">By signing up you agree to receive marketing emails from Siraat. Unsubscribe anytime. PFAS water filter: weekly draw, see official rules.</p></div></div></figure><figure class="ph"><figcaption>Resultaat non_toxic B <b>B emotioneel</b></figcaption>
+<div class="screen"><div class="site"></div><div class="card"><div class="top"><span class="x" aria-label="Close">&#215;</span>
+<img class="logo" src="assets/siraat-lockup-black-email.png" alt="SIRAAT" width="140" height="32"></div><p class="chosen">You picked: I want PFAS out of my kitchen</p>
+<p class="label">YOU WERE ALREADY LOOKING</p><h2>Stop wondering what&#x27;s in your pan.</h2>
+<p class="proof">6 in 10 of our customers were already searching for non-toxic, PFAS-free cookware before they found us.</p><p class="mech">There&#x27;s no coating on ours, so there&#x27;s nothing to wear off and nothing to wonder about. No PFAS, PFOA, or BPA.</p>
+<div class="gifts"><img src="assets/gift-mystery.jpg" alt=""><img src="assets/gift-shipping.jpg" alt=""><img src="assets/gift-ebook.jpg" alt=""><img src="assets/gift-cookbook.jpg" alt=""><img src="assets/gift-filter.jpg" alt=""></div><p class="offer">Get the lab report and 5 free gifts with every order <span class="tag">$555 VALUE</span>.</p>
+<input class="email" placeholder="Your email address" aria-label="Email">
+<button class="cta">Show me the proof</button>
+<p class="fric">Free shipping. 30-day returns. 100,000+ happy customers.</p><p class="no">No thanks</p>
+<p class="fine">By signing up you agree to receive marketing emails from Siraat. Unsubscribe anytime. PFAS water filter: weekly draw, see official rules.</p></div></div></figure><figure class="ph"><figcaption>Resultaat performance A <b>A rationeel</b></figcaption>
+<div class="screen"><div class="site"></div><div class="card"><div class="top"><span class="x" aria-label="Close">&#215;</span>
+<img class="logo" src="assets/siraat-lockup-black-email.png" alt="SIRAAT" width="140" height="32"></div><p class="chosen">You picked: My non-stick keeps peeling</p>
+<p class="label">NOTHING TO PEEL</p><h2>No coating, so nothing to peel.</h2>
+<p class="proof">Sticking was the frustration our customers named most with their old pans: about 1 in 3.</p><p class="mech">Pure titanium, no coatings. It&#x27;s naturally low-stick, not zero-stick like a coated pan: preheat on medium for 2 to 3 minutes, add a little oil, and let food sear before you move it.</p>
+<div class="gifts"><img src="assets/gift-mystery.jpg" alt=""><img src="assets/gift-shipping.jpg" alt=""><img src="assets/gift-ebook.jpg" alt=""><img src="assets/gift-cookbook.jpg" alt=""><img src="assets/gift-filter.jpg" alt=""></div><p class="offer">Get the 2-minute egg guide, plus 5 free gifts with every order <span class="tag">$555 VALUE</span>.</p>
+<input class="email" placeholder="Your email address" aria-label="Email">
+<button class="cta">Send me the egg guide</button>
+<p class="fric">Free shipping. 30-day returns. 100,000+ happy customers.</p><p class="no">No thanks</p>
+<p class="fine">By signing up you agree to receive marketing emails from Siraat. Unsubscribe anytime. PFAS water filter: weekly draw, see official rules.</p></div></div></figure><figure class="ph"><figcaption>Resultaat performance B <b>B emotioneel</b></figcaption>
+<div class="screen"><div class="site"></div><div class="card"><div class="top"><span class="x" aria-label="Close">&#215;</span>
+<img class="logo" src="assets/siraat-lockup-black-email.png" alt="SIRAAT" width="140" height="32"></div><p class="chosen">You picked: My non-stick keeps peeling</p>
+<p class="label">THE LAST PAN YOU REPLACE</p><h2>Done buying the same pan again?</h2>
+<p class="proof">&quot;Degrading non-stick coatings.&quot; One of our customers, word for word, on what was wrong with their old pans.</p><p class="mech">Ours has no coating to wear thin, and it&#x27;s covered for 75 years. Give it two minutes of heat first. That&#x27;s the whole trick.</p>
+<div class="gifts"><img src="assets/gift-mystery.jpg" alt=""><img src="assets/gift-shipping.jpg" alt=""><img src="assets/gift-ebook.jpg" alt=""><img src="assets/gift-cookbook.jpg" alt=""><img src="assets/gift-filter.jpg" alt=""></div><p class="offer">Get the egg guide and 5 free gifts with every order <span class="tag">$555 VALUE</span>.</p>
+<input class="email" placeholder="Your email address" aria-label="Email">
+<button class="cta">Show me how it cooks</button>
+<p class="fric">Free shipping. 30-day returns. 100,000+ happy customers.</p><p class="no">No thanks</p>
+<p class="fine">By signing up you agree to receive marketing emails from Siraat. Unsubscribe anytime. PFAS water filter: weekly draw, see official rules.</p></div></div></figure><figure class="ph"><figcaption>Resultaat switch A <b>A rationeel</b></figcaption>
+<div class="screen"><div class="site"></div><div class="card"><div class="top"><span class="x" aria-label="Close">&#215;</span>
+<img class="logo" src="assets/siraat-lockup-black-email.png" alt="SIRAAT" width="140" height="32"></div><p class="chosen">You picked: Stainless and cast iron are too much work</p>
+<p class="label">NO COATING, LESS UPKEEP</p><h2>The no-coating pan, without the upkeep.</h2>
+<p class="proof">4 in 10 of our customers seriously compared us with stainless steel before choosing Siraat.</p><p class="mech">Same rhythm as stainless: heat first, then oil. The difference comes after dinner. No seasoning, dishwasher safe, metal utensil safe.</p>
+<div class="gifts"><img src="assets/gift-mystery.jpg" alt=""><img src="assets/gift-shipping.jpg" alt=""><img src="assets/gift-ebook.jpg" alt=""><img src="assets/gift-cookbook.jpg" alt=""><img src="assets/gift-filter.jpg" alt=""></div><p class="offer">We&#x27;ll help you pick one pan or the set. Plus 5 free gifts with every order <span class="tag">$555 VALUE</span>.</p>
+<input class="email" placeholder="Your email address" aria-label="Email">
+<button class="cta">Help me pick</button>
+<p class="fric">Free shipping. 30-day returns. 100,000+ happy customers.</p><p class="no">No thanks</p>
+<p class="fine">By signing up you agree to receive marketing emails from Siraat. Unsubscribe anytime. PFAS water filter: weekly draw, see official rules.</p></div></div></figure><figure class="ph"><figcaption>Resultaat switch B <b>B emotioneel</b></figcaption>
+<div class="screen"><div class="site"></div><div class="card"><div class="top"><span class="x" aria-label="Close">&#215;</span>
+<img class="logo" src="assets/siraat-lockup-black-email.png" alt="SIRAAT" width="140" height="32"></div><p class="chosen">You picked: Stainless and cast iron are too much work</p>
+<p class="label">THE EASIER SWITCH</p><h2>You wanted no coating. Not a chore.</h2>
+<p class="proof">Stainless steel is what our customers compared us with most: 4 in 10 of them.</p><p class="mech">No seasoning. Heat it for 2 to 3 minutes, add a little oil, and clean up in under a minute.</p>
+<div class="gifts"><img src="assets/gift-mystery.jpg" alt=""><img src="assets/gift-shipping.jpg" alt=""><img src="assets/gift-ebook.jpg" alt=""><img src="assets/gift-cookbook.jpg" alt=""><img src="assets/gift-filter.jpg" alt=""></div><p class="offer">Pick your first pan, or the set with lids. 5 free gifts with every order <span class="tag">$555 VALUE</span>.</p>
+<input class="email" placeholder="Your email address" aria-label="Email">
+<button class="cta">Find my first pan</button>
+<p class="fric">Free shipping. 30-day returns. 100,000+ happy customers.</p><p class="no">No thanks</p>
+<p class="fine">By signing up you agree to receive marketing emails from Siraat. Unsubscribe anytime. PFAS water filter: weekly draw, see official rules.</p></div></div></figure><figure class="ph"><figcaption>Resultaat gift A <b>A rationeel</b></figcaption>
+<div class="screen"><div class="site"></div><div class="card"><div class="top"><span class="x" aria-label="Close">&#215;</span>
+<img class="logo" src="assets/siraat-lockup-black-email.png" alt="SIRAAT" width="140" height="32"></div><p class="chosen">You picked: I&#x27;m shopping for a gift</p>
+<p class="label">GIFTING THIS YEAR</p><h2>A gift that&#x27;s covered for 75 years.</h2>
+<p class="proof">Almost 1 in 5 of our customers bought Siraat as a gift last holiday season.</p><p class="mech">Pure titanium, no coatings. Dishwasher safe, and it works on gas, electric, ceramic and induction.</p>
+<div class="gifts"><img src="assets/gift-mystery.jpg" alt=""><img src="assets/gift-shipping.jpg" alt=""><img src="assets/gift-ebook.jpg" alt=""><img src="assets/gift-cookbook.jpg" alt=""><img src="assets/gift-filter.jpg" alt=""></div><p class="offer">We&#x27;ll help you pick the right one for them. Plus 5 free gifts with every order <span class="tag">$555 VALUE</span>.</p>
+<input class="email" placeholder="Your email address" aria-label="Email">
+<button class="cta">Help me choose their gift</button>
+<p class="fric">Free shipping. 30-day returns. 100,000+ happy customers.</p><p class="no">No thanks</p>
+<p class="fine">By signing up you agree to receive marketing emails from Siraat. Unsubscribe anytime. PFAS water filter: weekly draw, see official rules.</p></div></div></figure><figure class="ph"><figcaption>Resultaat gift B <b>B emotioneel</b></figcaption>
+<div class="screen"><div class="site"></div><div class="card"><div class="top"><span class="x" aria-label="Close">&#215;</span>
+<img class="logo" src="assets/siraat-lockup-black-email.png" alt="SIRAAT" width="140" height="32"></div><p class="chosen">You picked: I&#x27;m shopping for a gift</p>
+<p class="label">FOR SOMEONE WHO COOKS</p><h2>Give the pan they&#x27;d never buy themselves.</h2>
+<p class="proof">You&#x27;re in good company: almost 1 in 5 of our customers bought Siraat as a gift last holiday season.</p><p class="mech">The original hammered titanium pan. Nothing on it to wear off, so it&#x27;s still a good gift years from now.</p>
+<div class="gifts"><img src="assets/gift-mystery.jpg" alt=""><img src="assets/gift-shipping.jpg" alt=""><img src="assets/gift-ebook.jpg" alt=""><img src="assets/gift-cookbook.jpg" alt=""><img src="assets/gift-filter.jpg" alt=""></div><p class="offer">We&#x27;ll help you pick their size. And 5 free gifts with every order <span class="tag">$555 VALUE</span>.</p>
+<input class="email" placeholder="Your email address" aria-label="Email">
+<button class="cta">Find their pan</button>
+<p class="fric">Free shipping. 30-day returns. 100,000+ happy customers.</p><p class="no">No thanks</p>
+<p class="fine">By signing up you agree to receive marketing emails from Siraat. Unsubscribe anytime. PFAS water filter: weekly draw, see official rules.</p></div></div></figure><figure class="ph"><figcaption>Resultaat other A <b>A rationeel</b></figcaption>
+<div class="screen"><div class="site"></div><div class="card"><div class="top"><span class="x" aria-label="Close">&#215;</span>
+<img class="logo" src="assets/siraat-lockup-black-email.png" alt="SIRAAT" width="140" height="32"></div><p class="chosen">You picked: Skip, just show me the gifts</p>
+<p class="label">5 FREE GIFTS</p><h2>5 free gifts with every order.</h2>
+<p class="proof">100,000+ happy customers cook on Siraat.</p><p class="mech">Mystery gift, free shipping, Plastic-free e-book, Favorites cookbook, and a chance to win a PFAS water filter.</p>
+<div class="gifts"><img src="assets/gift-mystery.jpg" alt=""><img src="assets/gift-shipping.jpg" alt=""><img src="assets/gift-ebook.jpg" alt=""><img src="assets/gift-cookbook.jpg" alt=""><img src="assets/gift-filter.jpg" alt=""></div><p class="offer">5 free gifts with every order <span class="tag">$555 VALUE</span>.</p>
+<input class="email" placeholder="Your email address" aria-label="Email">
+<button class="cta">Claim my 5 gifts</button>
+<p class="fric">Free shipping. 30-day returns. 100,000+ happy customers.</p><p class="no">No thanks</p>
+<p class="fine">By signing up you agree to receive marketing emails from Siraat. Unsubscribe anytime. PFAS water filter: weekly draw, see official rules.</p></div></div></figure></div></section><section><h3>3. Succesvenster per antwoord, met de volgende stap en de onderwerpregel van W1</h3><div class="row"><figure class="ph"><figcaption>Succes non_toxic A <b>A</b></figcaption>
+<div class="screen"><div class="site"></div><div class="card"><div class="top"><span class="x" aria-label="Close">&#215;</span>
+<img class="logo" src="assets/siraat-lockup-black-email.png" alt="SIRAAT" width="140" height="32"></div><p class="label">YOU'RE IN</p><h2>Check your inbox.</h2><p class="mech">Report no. 25895 is in your first email, so you can read it yourself. Most people start with the pan we had tested.</p>
+<button class="cta">Read the lab report now</button><button class="ghost">See the pan we tested</button><p class="fine">No code needed. Your 5 gifts are added at checkout.</p></div></div><div class="inbox"><span>Welkomstmail 1</span><b>Report no. 25895, as promised</b><small>31 PFAS tested. Every one below the detection limit. Your 5 gifts inside.</small></div></figure><figure class="ph"><figcaption>Succes non_toxic B <b>B</b></figcaption>
+<div class="screen"><div class="site"></div><div class="card"><div class="top"><span class="x" aria-label="Close">&#215;</span>
+<img class="logo" src="assets/siraat-lockup-black-email.png" alt="SIRAAT" width="140" height="32"></div><p class="label">YOU'RE IN</p><h2>One less thing to wonder about.</h2><p class="mech">Your first email is on its way, with the lab report and the pan most people start with.</p>
+<button class="cta">See the pan we tested</button><button class="ghost">Read the lab report now</button><p class="fine">No code needed. Your 5 gifts are added at checkout.</p></div></div><div class="inbox"><span>Welkomstmail 1</span><b>Has your cookware actually been tested?</b><small>Not the label. The paper. Plus your 5 free gifts.</small></div></figure><figure class="ph"><figcaption>Succes performance A <b>A</b></figcaption>
+<div class="screen"><div class="site"></div><div class="card"><div class="top"><span class="x" aria-label="Close">&#215;</span>
+<img class="logo" src="assets/siraat-lockup-black-email.png" alt="SIRAAT" width="140" height="32"></div><p class="label">YOU'RE IN</p><h2>Your egg guide is on its way.</h2><p class="mech">The short version: medium heat for 2 to 3 minutes, until a drop of water beads and glides. Then a teaspoon of oil. Then the egg.</p>
+<p class="msq">Which size do you cook with most?</p><div class="taps"><a class="tap"><img src="assets/pc-mini.jpg" alt=""><span><b>8″ Mini</b><br><small>eggs, sauces and sides</small></span><i>&#8250;</i></a><a class="tap"><img src="assets/pc-small.jpg" alt=""><span><b>10″ Small</b><br><small>everyday meals for two</small></span><i>&#8250;</i></a><a class="tap"><img src="assets/pc-standard.jpg" alt=""><span><b>11″ Standard</b><br><small>best-seller, most people start here</small></span><i>&#8250;</i></a><a class="tap"><img src="assets/pc-large.jpg" alt=""><span><b>12″ Large</b><br><small>family meals, searing steaks</small></span><i>&#8250;</i></a></div><button class="cta">Watch the water-drop test</button><p class="fine">No code needed. Your 5 gifts are added at checkout.</p></div></div><div class="inbox"><span>Welkomstmail 1</span><b>The egg test (and the one rule that makes it work)</b><small>Medium heat, 2 to 3 minutes, one drop of water. Your 5 gifts inside.</small></div></figure><figure class="ph"><figcaption>Succes performance B <b>B</b></figcaption>
+<div class="screen"><div class="site"></div><div class="card"><div class="top"><span class="x" aria-label="Close">&#215;</span>
+<img class="logo" src="assets/siraat-lockup-black-email.png" alt="SIRAAT" width="140" height="32"></div><p class="label">YOU'RE IN</p><h2>Good. Nothing left to peel.</h2><p class="mech">Your first email shows you how to cook an egg on titanium, step by step. One thing first:</p>
+<p class="msq">Which size do you cook with most?</p><div class="taps"><a class="tap"><img src="assets/pc-mini.jpg" alt=""><span><b>8″ Mini</b><br><small>eggs, sauces and sides</small></span><i>&#8250;</i></a><a class="tap"><img src="assets/pc-small.jpg" alt=""><span><b>10″ Small</b><br><small>everyday meals for two</small></span><i>&#8250;</i></a><a class="tap"><img src="assets/pc-standard.jpg" alt=""><span><b>11″ Standard</b><br><small>best-seller, most people start here</small></span><i>&#8250;</i></a><a class="tap"><img src="assets/pc-large.jpg" alt=""><span><b>12″ Large</b><br><small>family meals, searing steaks</small></span><i>&#8250;</i></a></div><p class="fine">No code needed. Your 5 gifts are added at checkout.</p></div></div><div class="inbox"><span>Welkomstmail 1</span><b>Cold metal grabs. Hot metal lets go.</b><small>Why titanium has nothing to peel, and the 2-minute heat trick.</small></div></figure><figure class="ph"><figcaption>Succes switch A <b>A</b></figcaption>
+<div class="screen"><div class="site"></div><div class="card"><div class="top"><span class="x" aria-label="Close">&#215;</span>
+<img class="logo" src="assets/siraat-lockup-black-email.png" alt="SIRAAT" width="140" height="32"></div><p class="label">YOU'RE IN</p><h2>Check your inbox.</h2><p class="mech">Your first email puts titanium next to stainless, row by row. Where do you want to start?</p>
+<p class="msq">Replace one pan, or the whole stack?</p><div class="taps"><a class="tap"><img src="assets/pc-standard.jpg" alt=""><span><b>One pan to start</b><br><small>Hammered Pan Pro Standard, 11″</small></span><i>&#8250;</i></a><a class="tap"><img src="assets/pc-set6.jpg" alt=""><span><b>The whole stack</b><br><small>6-piece set: 8″, 10″ and 12″ pans, each with a lid</small></span><i>&#8250;</i></a></div><p class="fine">No code needed. Your 5 gifts are added at checkout.</p></div></div><div class="inbox"><span>Welkomstmail 1</span><b>Titanium vs stainless, honestly</b><small>Two rows where stainless ties. Three where it doesn&#x27;t. Your 5 gifts inside.</small></div></figure><figure class="ph"><figcaption>Succes switch B <b>B</b></figcaption>
+<div class="screen"><div class="site"></div><div class="card"><div class="top"><span class="x" aria-label="Close">&#215;</span>
+<img class="logo" src="assets/siraat-lockup-black-email.png" alt="SIRAAT" width="140" height="32"></div><p class="label">YOU'RE IN</p><h2>Your first email is on its way.</h2><p class="mech">It puts titanium next to stainless, row by row. Want a head start?</p>
+<p class="msq">Replace one pan, or the whole stack?</p><div class="taps"><a class="tap"><img src="assets/pc-standard.jpg" alt=""><span><b>One pan to start</b><br><small>Hammered Pan Pro Standard, 11″</small></span><i>&#8250;</i></a><a class="tap"><img src="assets/pc-set6.jpg" alt=""><span><b>The whole stack</b><br><small>6-piece set: 8″, 10″ and 12″ pans, each with a lid</small></span><i>&#8250;</i></a></div><p class="fine">No code needed. Your 5 gifts are added at checkout.</p></div></div><div class="inbox"><span>Welkomstmail 1</span><b>No coating, no seasoning, no fuss</b><small>Why stainless fans switch, and the 2-minute heat rule. 5 gifts inside.</small></div></figure><figure class="ph"><figcaption>Succes gift A <b>A</b></figcaption>
+<div class="screen"><div class="site"></div><div class="card"><div class="top"><span class="x" aria-label="Close">&#215;</span>
+<img class="logo" src="assets/siraat-lockup-black-email.png" alt="SIRAAT" width="140" height="32"></div><p class="label">YOU'RE IN</p><h2>Who&#x27;s it for?</h2><p class="mech">Tap one and we&#x27;ll take you straight there. Your first email has the same picks.</p>
+<div class="taps"><a class="tap"><img src="assets/pc-standard.jpg" alt=""><span><b>Someone who cooks for one or two</b><br><small>Hammered Pan Pro Standard, 11″</small></span><i>&#8250;</i></a><a class="tap"><img src="assets/pc-set6.jpg" alt=""><span><b>A whole household</b><br><small>6-piece set, 3 pans and 3 lids</small></span><i>&#8250;</i></a><a class="tap"><span class="gc">GIFT<br>CARD</span><span><b>Not sure what they&#x27;d like</b><br><small>Gift card, $20 to $200</small></span><i>&#8250;</i></a></div><p class="dl">Order by [DATUM FLORIS] for delivery before December 25 (US).</p><p class="fine">30-day returns on unused items, counted from delivery. No code needed. Your 5 gifts are added at checkout.</p></div></div><div class="inbox"><span>Welkomstmail 1</span><b>The gift they won&#x27;t buy themselves</b><small>Which pan for which cook, 30-day returns, and your 5 gifts.</small></div></figure><figure class="ph"><figcaption>Succes gift B <b>B</b></figcaption>
+<div class="screen"><div class="site"></div><div class="card"><div class="top"><span class="x" aria-label="Close">&#215;</span>
+<img class="logo" src="assets/siraat-lockup-black-email.png" alt="SIRAAT" width="140" height="32"></div><p class="label">YOU'RE IN</p><h2>Let&#x27;s find their pan.</h2><p class="mech">Tap one and we&#x27;ll take you straight there. Your first email is on its way too.</p>
+<p class="msq">Who&#x27;s it for?</p><div class="taps"><a class="tap"><img src="assets/pc-standard.jpg" alt=""><span><b>Someone who cooks for one or two</b><br><small>Hammered Pan Pro Standard, 11″</small></span><i>&#8250;</i></a><a class="tap"><img src="assets/pc-set6.jpg" alt=""><span><b>A whole household</b><br><small>6-piece set, 3 pans and 3 lids</small></span><i>&#8250;</i></a><a class="tap"><span class="gc">GIFT<br>CARD</span><span><b>Not sure what they&#x27;d like</b><br><small>Gift card, $20 to $200</small></span><i>&#8250;</i></a></div><p class="dl">Order by [DATUM FLORIS] for delivery before December 25 (US).</p><p class="fine">30-day returns on unused items, counted from delivery. No code needed. Your 5 gifts are added at checkout.</p></div></div><div class="inbox"><span>Welkomstmail 1</span><b>Who&#x27;s on your list?</b><small>Three cooks, three picks. Plus 5 free gifts with every order.</small></div></figure><figure class="ph"><figcaption>Succes other A <b>A</b></figcaption>
+<div class="screen"><div class="site"></div><div class="card"><div class="top"><span class="x" aria-label="Close">&#215;</span>
+<img class="logo" src="assets/siraat-lockup-black-email.png" alt="SIRAAT" width="140" height="32"></div><p class="label">YOU'RE IN</p><h2>Your 5 gifts are waiting.</h2><p class="mech">Check your inbox for your welcome email.</p>
+<button class="cta">See the pans</button><p class="fine">No code needed. Your 5 gifts are added at checkout.</p></div></div><div class="inbox"><span>Welkomstmail 1</span><b>(huidige W1, ongewijzigd)</b><small>(huidig)</small></div></figure></div></section>
+</body></html>

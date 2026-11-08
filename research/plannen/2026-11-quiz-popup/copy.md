@@ -1,5 +1,8 @@
 # Quiz-popup: copy per angle (concept, 8 nov 2026)
 
+> **Correctie (8 nov 2026):** het cijfer "41% coating die afbladdert/slijt" uit de PDF-samenvatting klopt niet met de ruwe surveytelling. Ruwe open antwoorden (n=760): plakken 34.1%, toxisch/PFAS 29.9%, gezondheid 15.8%, coating bladdert/krast 14.5%. Gebruik voor de performance-angle geen 41%; zie next-step.md voor de juiste bewijsregels.
+
+
 Rol: copywriter. Bron: `BRIEF.md`, skill siraat-direct-response, DECISIONS.md (5 gifts 7 nov, BF 31 okt), `.agents/product-marketing.md` en de surveyrapport-PDF (vraagteksten letterlijk gecontroleerd). Popup-copy in het Engels (US), notities in het Nederlands. Gestructureerde versie: `copy.json` (zelfde inhoud). Niets in Klaviyo of Alia aangepast, niet gecommit.
 
 ## Kort

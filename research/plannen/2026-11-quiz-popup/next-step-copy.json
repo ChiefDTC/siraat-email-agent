@@ -1,0 +1,421 @@
+{
+  "meta": {
+    "version": "quiz_v1 next step, 8 nov 2026",
+    "status": "concept, not live. Nothing changed in Alia, Klaviyo or Shopify.",
+    "rules": "No em or en dash. No new discount. Same offer for every answer. BFCODE never shown in the popup (DECISIONS 31 okt). $555 value only for US visitors; INT uses offer_int.",
+    "offer_note": "The 5-gifts offer is the live offer on 8 nov. The test starts 2 dec; if the offer changes after 30 nov, swap offer_us/offer_int/gift_list only, nothing else.",
+    "property": "siraat_goal",
+    "question_text_frozen": "What made you look today?"
+  },
+  "shared": {
+    "offer_us": "5 free gifts with every order ($555 value).",
+    "offer_int": "5 free gifts with every order.",
+    "gift_list": "Mystery gift, free shipping, Plastic-free e-book, Favorites cookbook, and a chance to win a PFAS water filter.",
+    "email_placeholder": "Your email address",
+    "friction_us": "Free shipping. 30-day returns. 100,000+ happy customers.",
+    "friction_int": "Free shipping, duties paid. 30-day returns. 100,000+ happy customers.",
+    "no_code_line": "No code needed. Your 5 gifts are added at checkout.",
+    "fine_print": "By signing up you agree to receive marketing emails from Siraat. Unsubscribe anytime. PFAS water filter: weekly draw, see official rules.",
+    "decline_link": "No thanks"
+  },
+  "question": {
+    "label": "ONE QUICK QUESTION",
+    "headline": "What made you look today?",
+    "subline": "Tap one. We'll show you where to start.",
+    "answers": [
+      {
+        "text": "I want PFAS out of my kitchen",
+        "value": "non_toxic"
+      },
+      {
+        "text": "My non-stick keeps peeling",
+        "value": "performance"
+      },
+      {
+        "text": "Stainless and cast iron are too much work",
+        "value": "switch"
+      },
+      {
+        "text": "I'm shopping for a gift",
+        "value": "gift"
+      }
+    ],
+    "skip": {
+      "text": "Skip, just show me the gifts",
+      "value": "other"
+    }
+  },
+  "branches": {
+    "non_toxic": {
+      "next_step": "Proof first: the lab report (report no. 25895) and the pan that was tested, Hammered Pan Pro Standard 11″.",
+      "lead_product": {
+        "name": "Titanium Hammered Pan Pro Standard, 11″ (28 cm)",
+        "handle": "original-siraat-100-pure-titanium-pan-with-hammered-pattern"
+      },
+      "survey_source": {
+        "A": "What is most important for you? n=4,930 (16 mrt tot 14 mei 2026): Toxin-Free Cookware 3,448 = 69.9%",
+        "B": "Which statement best describes you as a home cook? n=3,602 (3 feb tot 16 mrt 2026): actively searching for non-toxic/PFAS-free cookware 2,176 = 60.4%"
+      },
+      "A": {
+        "label": "NO PFAS. ON PAPER.",
+        "headline": "No coating. No PFAS. Here's the paper.",
+        "proof": "7 in 10 of our customers told us toxin-free cookware mattered most to them.",
+        "mechanism": "A pure titanium cooking surface with no coatings. Light Labs tested it for 31 PFAS, and every one came in below the detection limit (report no. 25895).",
+        "offer": "Get the full lab report in your inbox, plus 5 free gifts with every order ($555 value).",
+        "button": "Send me the lab report",
+        "friction": "Free shipping. 30-day returns. 100,000+ happy customers.",
+        "success": {
+          "headline": "Check your inbox.",
+          "body": "Report no. 25895 is in your first email, so you can read it yourself. Most people start with the pan we had tested.",
+          "micro_step": null,
+          "buttons": [
+            {
+              "label": "Read the lab report now",
+              "url": "https://siraatskitchen.com/pages/third-party-testing?utm_source=alia&utm_medium=popup&utm_campaign=quiz_v1&utm_content=non_toxic_report&angle=non_toxic"
+            },
+            {
+              "label": "See the pan we tested",
+              "url": "https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern?utm_source=alia&utm_medium=popup&utm_campaign=quiz_v1&utm_content=non_toxic_pdp&angle=non_toxic"
+            }
+          ],
+          "small": "No code needed. Your 5 gifts are added at checkout."
+        },
+        "w1": {
+          "subject": "Report no. 25895, as promised",
+          "preview": "31 PFAS tested. Every one below the detection limit. Your 5 gifts inside."
+        }
+      },
+      "B": {
+        "label": "YOU WERE ALREADY LOOKING",
+        "headline": "Stop wondering what's in your pan.",
+        "proof": "6 in 10 of our customers were already searching for non-toxic, PFAS-free cookware before they found us.",
+        "mechanism": "There's no coating on ours, so there's nothing to wear off and nothing to wonder about. No PFAS, PFOA, or BPA.",
+        "offer": "Get the lab report and 5 free gifts with every order ($555 value).",
+        "button": "Show me the proof",
+        "friction": "Free shipping. 30-day returns. 100,000+ happy customers.",
+        "success": {
+          "headline": "One less thing to wonder about.",
+          "body": "Your first email is on its way, with the lab report and the pan most people start with.",
+          "micro_step": null,
+          "buttons": [
+            {
+              "label": "See the pan we tested",
+              "url": "https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern?utm_source=alia&utm_medium=popup&utm_campaign=quiz_v1&utm_content=non_toxic_pdp&angle=non_toxic"
+            },
+            {
+              "label": "Read the lab report now",
+              "url": "https://siraatskitchen.com/pages/third-party-testing?utm_source=alia&utm_medium=popup&utm_campaign=quiz_v1&utm_content=non_toxic_report&angle=non_toxic"
+            }
+          ],
+          "small": "No code needed. Your 5 gifts are added at checkout."
+        },
+        "w1": {
+          "subject": "Has your cookware actually been tested?",
+          "preview": "Not the label. The paper. Plus your 5 free gifts."
+        }
+      }
+    },
+    "performance": {
+      "next_step": "Honest how-to, not a bigger promise: the egg guide (preheat, water drop, oil) and a size tap. Lead product Hammered Pan Pro Standard 11″.",
+      "lead_product": {
+        "name": "Titanium Hammered Pan Pro Standard, 11″ (28 cm)",
+        "handle": "original-siraat-100-pure-titanium-pan-with-hammered-pattern"
+      },
+      "survey_source": {
+        "A": "Main reason + biggest frustration (open, keyword-grouped) n=760 (25 sep tot 7 nov 2025): Sticking 259 = 34.1% (#1)",
+        "B": "Same open question, verbatim answer (Australia), anonymous: \"Degrading non-stick coatings\""
+      },
+      "A": {
+        "label": "NOTHING TO PEEL",
+        "headline": "No coating, so nothing to peel.",
+        "proof": "Sticking was the frustration our customers named most with their old pans: about 1 in 3.",
+        "mechanism": "Pure titanium, no coatings. It's naturally low-stick, not zero-stick like a coated pan: preheat on medium for 2 to 3 minutes, add a little oil, and let food sear before you move it.",
+        "offer": "Get the 2-minute egg guide, plus 5 free gifts with every order ($555 value).",
+        "button": "Send me the egg guide",
+        "friction": "Free shipping. 30-day returns. 100,000+ happy customers.",
+        "success": {
+          "headline": "Your egg guide is on its way.",
+          "body": "The short version: medium heat for 2 to 3 minutes, until a drop of water beads and glides. Then a teaspoon of oil. Then the egg.",
+          "micro_step": {
+            "question": "Which size do you cook with most?",
+            "taps": [
+              {
+                "label": "8″ Mini",
+                "sub": "eggs, sauces and sides",
+                "url": "https://siraatskitchen.com/products/titanium-hammered-pan-pro-mini?utm_source=alia&utm_medium=popup&utm_campaign=quiz_v1&utm_content=performance_size_mini&angle=performance"
+              },
+              {
+                "label": "10″ Small",
+                "sub": "everyday meals for two",
+                "url": "https://siraatskitchen.com/products/titanium-hammered-pan-pro-small?utm_source=alia&utm_medium=popup&utm_campaign=quiz_v1&utm_content=performance_size_small&angle=performance"
+              },
+              {
+                "label": "11″ Standard",
+                "sub": "best-seller, most people start here",
+                "url": "https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern?utm_source=alia&utm_medium=popup&utm_campaign=quiz_v1&utm_content=performance_size_standard&angle=performance"
+              },
+              {
+                "label": "12″ Large",
+                "sub": "family meals, searing steaks",
+                "url": "https://siraatskitchen.com/products/titanium-hammered-pan-pro-large?utm_source=alia&utm_medium=popup&utm_campaign=quiz_v1&utm_content=performance_size_large&angle=performance"
+              }
+            ]
+          },
+          "buttons": [
+            {
+              "label": "Watch the water-drop test",
+              "url": "https://siraatskitchen.com/pages/non-stick-test?utm_source=alia&utm_medium=popup&utm_campaign=quiz_v1&utm_content=performance_howto&angle=performance"
+            }
+          ],
+          "small": "No code needed. Your 5 gifts are added at checkout."
+        },
+        "w1": {
+          "subject": "The egg test (and the one rule that makes it work)",
+          "preview": "Medium heat, 2 to 3 minutes, one drop of water. Your 5 gifts inside."
+        }
+      },
+      "B": {
+        "label": "THE LAST PAN YOU REPLACE",
+        "headline": "Done buying the same pan again?",
+        "proof": "\"Degrading non-stick coatings.\" One of our customers, word for word, on what was wrong with their old pans.",
+        "mechanism": "Ours has no coating to wear thin, and it's covered for 75 years. Give it two minutes of heat first. That's the whole trick.",
+        "offer": "Get the egg guide and 5 free gifts with every order ($555 value).",
+        "button": "Show me how it cooks",
+        "friction": "Free shipping. 30-day returns. 100,000+ happy customers.",
+        "success": {
+          "headline": "Good. Nothing left to peel.",
+          "body": "Your first email shows you how to cook an egg on titanium, step by step. One thing first:",
+          "micro_step": {
+            "question": "Which size do you cook with most?",
+            "taps": [
+              {
+                "label": "8″ Mini",
+                "sub": "eggs, sauces and sides",
+                "url": "https://siraatskitchen.com/products/titanium-hammered-pan-pro-mini?utm_source=alia&utm_medium=popup&utm_campaign=quiz_v1&utm_content=performance_size_mini&angle=performance"
+              },
+              {
+                "label": "10″ Small",
+                "sub": "everyday meals for two",
+                "url": "https://siraatskitchen.com/products/titanium-hammered-pan-pro-small?utm_source=alia&utm_medium=popup&utm_campaign=quiz_v1&utm_content=performance_size_small&angle=performance"
+              },
+              {
+                "label": "11″ Standard",
+                "sub": "best-seller, most people start here",
+                "url": "https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern?utm_source=alia&utm_medium=popup&utm_campaign=quiz_v1&utm_content=performance_size_standard&angle=performance"
+              },
+              {
+                "label": "12″ Large",
+                "sub": "family meals, searing steaks",
+                "url": "https://siraatskitchen.com/products/titanium-hammered-pan-pro-large?utm_source=alia&utm_medium=popup&utm_campaign=quiz_v1&utm_content=performance_size_large&angle=performance"
+              }
+            ]
+          },
+          "buttons": [],
+          "small": "No code needed. Your 5 gifts are added at checkout."
+        },
+        "w1": {
+          "subject": "Cold metal grabs. Hot metal lets go.",
+          "preview": "Why titanium has nothing to peel, and the 2-minute heat trick."
+        }
+      }
+    },
+    "switch": {
+      "next_step": "A choice, not a pitch: one pan or the 6-piece set with 3 lids (answers the lid question). Mechanism in stainless terms: heat first, then oil.",
+      "lead_product": {
+        "name": "Titanium Hammered Pan Set With Lids, 6-Pcs (Mini 8″, Small 10″, Large 12″ + 3 lids)",
+        "handle": "titanium-hammered-pan-set-with-lids-6-pcs"
+      },
+      "survey_source": {
+        "A": "Which options did you seriously compare? n=6,662 (7 nov tot 3 dec 2025): Stainless steel 2,733 = 41.0%",
+        "B": "Same question and figure"
+      },
+      "A": {
+        "label": "NO COATING, LESS UPKEEP",
+        "headline": "The no-coating pan, without the upkeep.",
+        "proof": "4 in 10 of our customers seriously compared us with stainless steel before choosing Siraat.",
+        "mechanism": "Same rhythm as stainless: heat first, then oil. The difference comes after dinner. No seasoning, dishwasher safe, metal utensil safe.",
+        "offer": "We'll help you pick one pan or the set. Plus 5 free gifts with every order ($555 value).",
+        "button": "Help me pick",
+        "friction": "Free shipping. 30-day returns. 100,000+ happy customers.",
+        "success": {
+          "headline": "Check your inbox.",
+          "body": "Your first email puts titanium next to stainless, row by row. Where do you want to start?",
+          "micro_step": {
+            "question": "Replace one pan, or the whole stack?",
+            "taps": [
+              {
+                "label": "One pan to start",
+                "sub": "Hammered Pan Pro Standard, 11″",
+                "url": "https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern?utm_source=alia&utm_medium=popup&utm_campaign=quiz_v1&utm_content=switch_one_pan&angle=switch"
+              },
+              {
+                "label": "The whole stack",
+                "sub": "6-piece set: 8″, 10″ and 12″ pans, each with a lid",
+                "url": "https://siraatskitchen.com/products/titanium-hammered-pan-set-with-lids-6-pcs?utm_source=alia&utm_medium=popup&utm_campaign=quiz_v1&utm_content=switch_set6&angle=switch"
+              }
+            ]
+          },
+          "buttons": [],
+          "small": "No code needed. Your 5 gifts are added at checkout."
+        },
+        "w1": {
+          "subject": "Titanium vs stainless, honestly",
+          "preview": "Two rows where stainless ties. Three where it doesn't. Your 5 gifts inside."
+        }
+      },
+      "B": {
+        "label": "THE EASIER SWITCH",
+        "headline": "You wanted no coating. Not a chore.",
+        "proof": "Stainless steel is what our customers compared us with most: 4 in 10 of them.",
+        "mechanism": "No seasoning. Heat it for 2 to 3 minutes, add a little oil, and clean up in under a minute.",
+        "offer": "Pick your first pan, or the set with lids. 5 free gifts with every order ($555 value).",
+        "button": "Find my first pan",
+        "friction": "Free shipping. 30-day returns. 100,000+ happy customers.",
+        "success": {
+          "headline": "Your first email is on its way.",
+          "body": "It puts titanium next to stainless, row by row. Want a head start?",
+          "micro_step": {
+            "question": "Replace one pan, or the whole stack?",
+            "taps": [
+              {
+                "label": "One pan to start",
+                "sub": "Hammered Pan Pro Standard, 11″",
+                "url": "https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern?utm_source=alia&utm_medium=popup&utm_campaign=quiz_v1&utm_content=switch_one_pan&angle=switch"
+              },
+              {
+                "label": "The whole stack",
+                "sub": "6-piece set: 8″, 10″ and 12″ pans, each with a lid",
+                "url": "https://siraatskitchen.com/products/titanium-hammered-pan-set-with-lids-6-pcs?utm_source=alia&utm_medium=popup&utm_campaign=quiz_v1&utm_content=switch_set6&angle=switch"
+              }
+            ]
+          },
+          "buttons": [],
+          "small": "No code needed. Your 5 gifts are added at checkout."
+        },
+        "w1": {
+          "subject": "No coating, no seasoning, no fuss",
+          "preview": "Why stainless fans switch, and the 2-minute heat rule. 5 gifts inside."
+        }
+      }
+    },
+    "gift": {
+      "next_step": "Gift picker by recipient (Standard, 6-piece set, or gift card) and the return rule spelled out. Shipping deadline only after Floris confirms dates.",
+      "lead_product": {
+        "name": "Pan Pro Standard 11″, 6-piece set, or Gift Card ($20, $25, $50, $100, $200)",
+        "handle": "original-siraat-100-pure-titanium-pan-with-hammered-pattern | titanium-hammered-pan-set-with-lids-6-pcs | e-gift-card"
+      },
+      "survey_source": {
+        "A": "Who is this purchase for? n=8,709 (7 nov tot 3 dec 2025): A gift 1,611 = 18.5%. Seizoen: buiten de feestdagen 1.7% ('Its a gift', n=4,930).",
+        "B": "Same question and figure"
+      },
+      "A": {
+        "label": "GIFTING THIS YEAR",
+        "headline": "A gift that's covered for 75 years.",
+        "proof": "Almost 1 in 5 of our customers bought Siraat as a gift last holiday season.",
+        "mechanism": "Pure titanium, no coatings. Dishwasher safe, and it works on gas, electric, ceramic and induction.",
+        "offer": "We'll help you pick the right one for them. Plus 5 free gifts with every order ($555 value).",
+        "button": "Help me choose their gift",
+        "friction": "Free shipping. 30-day returns. 100,000+ happy customers.",
+        "success": {
+          "headline": "Who's it for?",
+          "body": "Tap one and we'll take you straight there. Your first email has the same picks.",
+          "micro_step": {
+            "question": "Who's it for?",
+            "taps": [
+              {
+                "label": "Someone who cooks for one or two",
+                "sub": "Hammered Pan Pro Standard, 11″",
+                "url": "https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern?utm_source=alia&utm_medium=popup&utm_campaign=quiz_v1&utm_content=gift_standard&angle=gift"
+              },
+              {
+                "label": "A whole household",
+                "sub": "6-piece set, 3 pans and 3 lids",
+                "url": "https://siraatskitchen.com/products/titanium-hammered-pan-set-with-lids-6-pcs?utm_source=alia&utm_medium=popup&utm_campaign=quiz_v1&utm_content=gift_set6&angle=gift"
+              },
+              {
+                "label": "Not sure what they'd like",
+                "sub": "Gift card, $20 to $200",
+                "url": "https://siraatskitchen.com/products/e-gift-card?utm_source=alia&utm_medium=popup&utm_campaign=quiz_v1&utm_content=gift_giftcard&angle=gift"
+              }
+            ]
+          },
+          "buttons": [],
+          "small": "30-day returns on unused items, counted from delivery. No code needed. Your 5 gifts are added at checkout.",
+          "deadline_line_if_floris_confirms": "Order by [DATUM FLORIS] for delivery before December 25 (US)."
+        },
+        "w1": {
+          "subject": "The gift they won't buy themselves",
+          "preview": "Which pan for which cook, 30-day returns, and your 5 gifts."
+        }
+      },
+      "B": {
+        "label": "FOR SOMEONE WHO COOKS",
+        "headline": "Give the pan they'd never buy themselves.",
+        "proof": "You're in good company: almost 1 in 5 of our customers bought Siraat as a gift last holiday season.",
+        "mechanism": "The original hammered titanium pan. Nothing on it to wear off, so it's still a good gift years from now.",
+        "offer": "We'll help you pick their size. And 5 free gifts with every order ($555 value).",
+        "button": "Find their pan",
+        "friction": "Free shipping. 30-day returns. 100,000+ happy customers.",
+        "success": {
+          "headline": "Let's find their pan.",
+          "body": "Tap one and we'll take you straight there. Your first email is on its way too.",
+          "micro_step": {
+            "question": "Who's it for?",
+            "taps": [
+              {
+                "label": "Someone who cooks for one or two",
+                "sub": "Hammered Pan Pro Standard, 11″",
+                "url": "https://siraatskitchen.com/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern?utm_source=alia&utm_medium=popup&utm_campaign=quiz_v1&utm_content=gift_standard&angle=gift"
+              },
+              {
+                "label": "A whole household",
+                "sub": "6-piece set, 3 pans and 3 lids",
+                "url": "https://siraatskitchen.com/products/titanium-hammered-pan-set-with-lids-6-pcs?utm_source=alia&utm_medium=popup&utm_campaign=quiz_v1&utm_content=gift_set6&angle=gift"
+              },
+              {
+                "label": "Not sure what they'd like",
+                "sub": "Gift card, $20 to $200",
+                "url": "https://siraatskitchen.com/products/e-gift-card?utm_source=alia&utm_medium=popup&utm_campaign=quiz_v1&utm_content=gift_giftcard&angle=gift"
+              }
+            ]
+          },
+          "buttons": [],
+          "small": "30-day returns on unused items, counted from delivery. No code needed. Your 5 gifts are added at checkout.",
+          "deadline_line_if_floris_confirms": "Order by [DATUM FLORIS] for delivery before December 25 (US)."
+        },
+        "w1": {
+          "subject": "Who's on your list?",
+          "preview": "Three cooks, three picks. Plus 5 free gifts with every order."
+        }
+      }
+    },
+    "other": {
+      "next_step": "Skip route = the current offer, unchanged.",
+      "A": {
+        "label": "5 FREE GIFTS",
+        "headline": "5 free gifts with every order.",
+        "proof": "100,000+ happy customers cook on Siraat.",
+        "mechanism": "Mystery gift, free shipping, Plastic-free e-book, Favorites cookbook, and a chance to win a PFAS water filter.",
+        "offer": "5 free gifts with every order ($555 value).",
+        "button": "Claim my 5 gifts",
+        "friction": "Free shipping. 30-day returns. 100,000+ happy customers.",
+        "success": {
+          "headline": "Your 5 gifts are waiting.",
+          "body": "Check your inbox for your welcome email.",
+          "micro_step": null,
+          "buttons": [
+            {
+              "label": "See the pans",
+              "url": "https://siraatskitchen.com/collections/titanium-pans?utm_source=alia&utm_medium=popup&utm_campaign=quiz_v1&utm_content=other_collection&angle=other"
+            }
+          ],
+          "small": "No code needed. Your 5 gifts are added at checkout."
+        },
+        "w1": {
+          "subject": "(huidige W1, ongewijzigd)",
+          "preview": "(huidig)"
+        }
+      }
+    }
+  }
+}

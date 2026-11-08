@@ -1,5 +1,8 @@
 # Strategie: quiz-pop-up met angles (8 nov 2026)
 
+> **Correctie (8 nov 2026):** het cijfer "41% coating die afbladdert/slijt" uit de PDF-samenvatting klopt niet met de ruwe surveytelling. Ruwe open antwoorden (n=760): plakken 34.1%, toxisch/PFAS 29.9%, gezondheid 15.8%, coating bladdert/krast 14.5%. Gebruik voor de performance-angle geen 41%; zie next-step.md voor de juiste bewijsregels.
+
+
 Rol: STRATEEG. Vraag van Floris (na gesprek met Colin): hoe zinnig is een pop-up die eerst vraagt "wat is je doel?", daarna tekst en aanbod per antwoord toont en elke angle een eigen welkomflow geeft? En wat is de beste versie?
 Bronnen: BRIEF.md, research/survey/ (pdf, 22,160 antwoorden), research/popup/2026-11-trigger-test.md, research/lijstkwaliteit/01-giveaway-instroom.md, research/plannen/2026-11-welcome-audit.md, DECISIONS.md. Klaviyo (account TdtTzz) en Shopify alleen gelezen. Niets gewijzigd, niets gecommit.
 

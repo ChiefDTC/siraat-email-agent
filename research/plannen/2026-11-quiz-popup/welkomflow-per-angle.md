@@ -1,5 +1,8 @@
 # Welkomflow per angle (quiz-popup), plan (8 nov 2026)
 
+> **Correctie (8 nov 2026):** het cijfer "41% coating die afbladdert/slijt" uit de PDF-samenvatting klopt niet met de ruwe surveytelling. Ruwe open antwoorden (n=760): plakken 34.1%, toxisch/PFAS 29.9%, gezondheid 15.8%, coating bladdert/krast 14.5%. Gebruik voor de performance-angle geen 41%; zie next-step.md voor de juiste bewijsregels.
+
+
 Rol: FLOW PLANNER. Alleen gelezen: Klaviyo (GET en rapporten), de site (publieke pagina's), de repo. Niets aangepast, niets gecommit.
 Bronnen in de repo: `BRIEF.md` (deze map), `research/plannen/2026-11-welcome-audit.md`, `klaviyo/templates/v3/flows-nov/welcome/` (wn2 t/m wn5, US en INT), PLAYBOOK.md, DECISIONS.md, skill siraat-direct-response, `research/copy/01-dr-research.md` (reviewshortlist), `research/ux-round2/comparisons.md` (vergelijkingsrijen).
 
@@ -78,7 +81,7 @@ Wanneer toch apart: alleen als de gifttak na de feestdagen een eigen ritme krijg
 | Popupknop (Engels, voorstel) | `siraat_goal` | Tak | Grond in de enquête |
 | --- | --- | --- | --- |
 | "Get the toxins out of my kitchen" | `non_toxic` | Non-toxic | 68 tot 76% noemt non-toxic als belangrijkste reden |
-| "A pan that actually performs" | `performance` | Performance | 41% had een coating die afbladderde of sleet |
+| "A pan that actually performs" | `performance` | Performance | (41% geschrapt, zie correctie) |
 | "I'm switching from stainless or cast iron" | `switch` | Performance, volgorde B | 41% vergeleek met roestvrij staal |
 | "It's a gift" | `gift` | Gift | ongeveer 1 op 5 koopt als cadeau |
 | (optioneel) "Safer cooking for my family" | `family` | Non-toxic, met eigen alinea's | partner/familie is het restant van "voor wie" |
@@ -110,7 +113,7 @@ Algemene regels voor alle takken (skill siraat-direct-response): kalm register, 
 Alleen deze, letterlijk, altijd als "our customers" (anoniem, geaggregeerd, 22,160 antwoorden):
 - "68% of our customers say non-toxic is what matters most to them." (of afgerond: "About 7 in 10 of our customers...")
 - "60% of our customers were already looking for PFAS-free cookware before they found us."
-- "41% of our customers told us their old pan's coating was peeling or wearing off."
+- (geschrapt: 41%-claim klopt niet, zie correctie bovenaan)
 - "41% of our customers compared us with stainless steel before they bought."
 - "About 1 in 5 of our customers buy Siraat as a gift."
 - "15% of our customers almost didn't buy because they weren't sure titanium really works."
