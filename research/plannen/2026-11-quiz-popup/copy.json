@@ -1,0 +1,369 @@
+{
+  "meta": {
+    "project": "Quiz popup met angles (Alia)",
+    "date": "2026-11-08",
+    "status": "concept, niets live, niets in Klaviyo/Alia aangepast",
+    "brief": "research/plannen/2026-11-quiz-popup/BRIEF.md",
+    "placeholders": {
+      "BFCODE": "placeholder voor de BF-code, nooit de echte code in de repo"
+    },
+    "shared": {
+      "offer_us": "5 free gifts with every order ($555 value)",
+      "offer_int": "5 free gifts with every order",
+      "gift_list": "Mystery gift, Free shipping, Plastic-free e-book, Favorites cookbook, and a chance to win a PFAS water filter.",
+      "friction": "Free shipping. 30-day returns. 100,000+ happy customers.",
+      "fine_print": "By signing up you agree to receive marketing emails from Siraat. Unsubscribe anytime. PFAS water filter: weekly draw, see official rules.",
+      "email_placeholder": "Your email address",
+      "no_code_line": "No code needed. Your 5 gifts are added at checkout."
+    }
+  },
+  "question_screens": [
+    {
+      "id": "Q1",
+      "name": "What brings you",
+      "headline": "What brings you to Siraat?",
+      "subline": "Pick one. We'll show you what fits.",
+      "answers": [
+        {
+          "label": "Non-toxic cookware, no coatings",
+          "angle": "non_toxic"
+        },
+        {
+          "label": "My nonstick keeps peeling",
+          "angle": "performance"
+        },
+        {
+          "label": "Moving on from stainless or cast iron",
+          "angle": "switch"
+        },
+        {
+          "label": "Cooking for my family",
+          "angle": "family"
+        },
+        {
+          "label": "It's a gift",
+          "angle": "gift"
+        }
+      ],
+      "skip": "Skip, just show me the gifts"
+    },
+    {
+      "id": "Q2",
+      "name": "Main goal",
+      "headline": "What's your main goal?",
+      "subline": "One tap. Then your offer.",
+      "answers": [
+        {
+          "label": "Get coatings out of my kitchen",
+          "angle": "non_toxic"
+        },
+        {
+          "label": "A pan that doesn't flake off",
+          "angle": "performance"
+        },
+        {
+          "label": "Easier than stainless or cast iron",
+          "angle": "switch"
+        },
+        {
+          "label": "Cook clean for my family",
+          "angle": "family"
+        },
+        {
+          "label": "Find a gift that lasts",
+          "angle": "gift"
+        }
+      ],
+      "skip": "Skip, just show me the gifts"
+    },
+    {
+      "id": "Q3",
+      "name": "What made you look",
+      "headline": "What made you look today?",
+      "subline": "Be honest. It changes what we show you.",
+      "answers": [
+        {
+          "label": "I want PFAS out of my kitchen",
+          "angle": "non_toxic"
+        },
+        {
+          "label": "The coating on my pan is peeling",
+          "angle": "performance"
+        },
+        {
+          "label": "Stainless and cast iron are hard work",
+          "angle": "switch"
+        },
+        {
+          "label": "I cook for little ones",
+          "angle": "family"
+        },
+        {
+          "label": "I'm shopping for a gift",
+          "angle": "gift"
+        }
+      ],
+      "skip": "Skip, just show me the gifts"
+    }
+  ],
+  "angles": [
+    {
+      "id": "non_toxic",
+      "name": "Non-toxic / health",
+      "survey_source": "S6 (n=3,358) en S9 (n=1,675) 'What is most important for them?': toxin-free cookware ~70%. S8 (n=3,678): 60% zocht al actief naar non-toxic/PFAS-free.",
+      "landing": "https://siraatskitchen.com/pages/third-party-testing",
+      "variants": {
+        "A": {
+          "tone": "rationeel",
+          "label": "YOU'RE IN GOOD COMPANY",
+          "headline": "No PFAS. And the paper to prove it.",
+          "proof": "7 in 10 Siraat customers told us toxin-free cookware is what matters most to them.",
+          "body": "A pure titanium cooking surface with no coatings. Tested by Light Labs, report no. 25895: 31 PFAS compounds, every one below the detection limit.",
+          "offer_lead": "Here's your offer:",
+          "cta": "Claim my 5 gifts",
+          "thank_you": {
+            "headline": "Your 5 gifts are waiting",
+            "body": "Check your inbox. The first email has report no. 25895, so you can read it yourself.",
+            "code_line": "Your code: BFCODE",
+            "button": "Read the lab report"
+          }
+        },
+        "B": {
+          "tone": "emotioneel",
+          "label": "YOU WERE ALREADY LOOKING",
+          "headline": "You don't have to wonder what's in your pan.",
+          "proof": "6 in 10 Siraat customers were already searching for PFAS-free cookware before they found us.",
+          "body": "No coating means nothing on the surface to question. No PFAS, PFOA, or BPA.",
+          "offer_lead": "Here's what comes with your first order:",
+          "cta": "Send me my offer",
+          "thank_you": {
+            "headline": "That's one less thing to wonder about",
+            "body": "Your welcome email is on its way, with the full lab report inside.",
+            "code_line": "Your code: BFCODE",
+            "button": "Shop the Black Friday Sale"
+          }
+        }
+      },
+      "welcome_teaser": {
+        "subjects": [
+          "Report no. 25895, as promised",
+          "Has your cookware been tested?"
+        ],
+        "preview": "31 PFAS tested. Every one below the detection limit. Your 5 gifts inside."
+      }
+    },
+    {
+      "id": "performance",
+      "name": "Performance / failing coating",
+      "survey_source": "S3 (n=776, open text, auto-grouped): coating/non-stick wearing off 41%, grootste frustratie met oude pannen.",
+      "landing": "https://siraatskitchen.com/collections/black-friday-sale",
+      "variants": {
+        "A": {
+          "tone": "rationeel",
+          "label": "NOTHING TO WEAR OFF",
+          "headline": "A pan with no coating can't peel.",
+          "proof": "4 in 10 Siraat customers say their biggest frustration with their old pans was the coating wearing off.",
+          "body": "Pure titanium cooking surface, no coatings. Nothing sticks when the heat is right. Covered for 75 years.",
+          "offer_lead": "Here's your offer:",
+          "cta": "Claim my 5 gifts",
+          "thank_you": {
+            "headline": "Your 5 gifts are waiting",
+            "body": "Check your inbox. We'll show you the one trick that makes titanium release: medium heat, 2 to 3 minutes, then a teaspoon of oil.",
+            "code_line": "Your code: BFCODE",
+            "button": "See the pans"
+          }
+        },
+        "B": {
+          "tone": "emotioneel",
+          "label": "THE LAST PAN YOU REPLACE",
+          "headline": "Tired of buying the same pan again?",
+          "proof": "You're not alone. 4 in 10 Siraat customers came to us because their old coating wore off.",
+          "body": "There's nothing on ours to flake off. That's why it comes with a 75-year warranty.",
+          "offer_lead": "With your first order:",
+          "cta": "Send me my offer",
+          "thank_you": {
+            "headline": "Good. No more peeling.",
+            "body": "Your welcome email is on its way, with how to cook your first egg on titanium.",
+            "code_line": "Your code: BFCODE",
+            "button": "Shop the Black Friday Sale"
+          }
+        }
+      },
+      "welcome_teaser": {
+        "subjects": [
+          "Nothing on it to peel",
+          "15 pans, or one."
+        ],
+        "preview": "Why titanium doesn't flake, the heat trick, and your 5 gifts."
+      }
+    },
+    {
+      "id": "gift",
+      "name": "Gift",
+      "survey_source": "S1 (n=8,885) 'Who is this purchase for?': ~1 in 5 koopt als cadeau (19%).",
+      "landing": "https://siraatskitchen.com/collections/black-friday-sale",
+      "variants": {
+        "A": {
+          "tone": "rationeel",
+          "label": "GIFTING THIS YEAR",
+          "headline": "A gift that's covered for 75 years.",
+          "proof": "About 1 in 5 Siraat customers buy their pan as a gift.",
+          "body": "No PFAS, PFOA, or BPA. 30-day returns if it's not quite right. The 5 gifts come with it.",
+          "offer_lead": "Here's your offer:",
+          "cta": "Claim my 5 gifts",
+          "thank_you": {
+            "headline": "Your 5 gifts are waiting",
+            "body": "Check your inbox. We'll help you pick the right size for them.",
+            "code_line": "Your code: BFCODE",
+            "button": "Find their pan"
+          }
+        },
+        "B": {
+          "tone": "emotioneel",
+          "label": "FOR SOMEONE WHO COOKS",
+          "headline": "Give them the pan they'd never buy themselves.",
+          "proof": "They'd be in good company. About 1 in 5 Siraat customers buy for someone else.",
+          "body": "The original hammered titanium pan. No coating to wear off, so it's still a good gift years from now.",
+          "offer_lead": "And something for you, with every order:",
+          "cta": "Send me my offer",
+          "thank_you": {
+            "headline": "That's one gift sorted",
+            "body": "Your welcome email is on its way, with gift picks by size.",
+            "code_line": "Your code: BFCODE",
+            "button": "Shop the Black Friday Sale"
+          }
+        }
+      },
+      "welcome_teaser": {
+        "subjects": [
+          "Who are you cooking for?",
+          "A gift covered for 75 years"
+        ],
+        "preview": "Gift picks by size, 30-day returns, and 5 gifts with every order."
+      }
+    },
+    {
+      "id": "switch",
+      "name": "Stainless / cast iron switch",
+      "survey_source": "S1 (n=6,792) 'Which options did they seriously compare?': stainless steel 41%, ceramic 17%, cast iron 13%.",
+      "landing": "https://siraatskitchen.com/collections/black-friday-sale",
+      "variants": {
+        "A": {
+          "tone": "rationeel",
+          "label": "NO COATING, LIKE STAINLESS",
+          "headline": "No coating, like stainless. Eggs that let go.",
+          "proof": "4 in 10 Siraat customers compared us with stainless steel before choosing titanium.",
+          "body": "Cold metal grabs your food, hot metal lets it go. Medium heat for 2 to 3 minutes, a teaspoon of oil, and it slides. No seasoning.",
+          "offer_lead": "Here's your offer:",
+          "cta": "Claim my 5 gifts",
+          "thank_you": {
+            "headline": "Your 5 gifts are waiting",
+            "body": "Check your inbox. We'll show you the water-drop test that tells you the pan is ready.",
+            "code_line": "Your code: BFCODE",
+            "button": "See the pans"
+          }
+        },
+        "B": {
+          "tone": "emotioneel",
+          "label": "THE EASIER SWITCH",
+          "headline": "You wanted no coating. Not a fight with every egg.",
+          "proof": "Stainless steel is what most Siraat customers weighed us against. 4 in 10 of them.",
+          "body": "Titanium keeps the part you liked about stainless, nothing on the surface. Get the heat right and it lets go. No seasoning, dishwasher safe.",
+          "offer_lead": "With your first order:",
+          "cta": "Send me my offer",
+          "thank_you": {
+            "headline": "Breakfast is about to get easier",
+            "body": "Your welcome email is on its way, with how to heat titanium so food lets go.",
+            "code_line": "Your code: BFCODE",
+            "button": "Shop the Black Friday Sale"
+          }
+        }
+      },
+      "welcome_teaser": {
+        "subjects": [
+          "Cold metal grabs. Hot metal lets go.",
+          "No coating, no seasoning, no fight"
+        ],
+        "preview": "The 2-minute heat trick for titanium, and your 5 gifts."
+      }
+    },
+    {
+      "id": "family",
+      "name": "Family / kids",
+      "survey_source": "S2 (n=592) 'What do they value most when cooking?': health & safety 76%. Partner/familie 11 tot 19% (S6, S9); 'family safety' 5% (S6). Geen kids-specifieke data.",
+      "landing": "https://siraatskitchen.com/pages/third-party-testing",
+      "variants": {
+        "A": {
+          "tone": "rationeel",
+          "label": "WHAT DINNER COOKS ON",
+          "headline": "Know exactly what your family's dinner cooks on.",
+          "proof": "76% of Siraat customers say health and safety is what they value most when cooking.",
+          "body": "A pure titanium cooking surface with no coatings. No PFAS, PFOA, or BPA, tested by Light Labs, report no. 25895.",
+          "offer_lead": "Here's your offer:",
+          "cta": "Claim my 5 gifts",
+          "thank_you": {
+            "headline": "Your 5 gifts are waiting",
+            "body": "Check your inbox. The lab report is in the first email, so you can read it yourself.",
+            "code_line": "Your code: BFCODE",
+            "button": "Read the lab report"
+          }
+        },
+        "B": {
+          "tone": "emotioneel",
+          "label": "FOR THE PEOPLE YOU FEED",
+          "headline": "One less thing to worry about at dinner.",
+          "proof": "You're like most of our customers. 76% say health and safety matters most when they cook.",
+          "body": "Nothing on the surface to wear off into the pan. Dishwasher safe for the nights the kids win.",
+          "offer_lead": "With your first order:",
+          "cta": "Send me my offer",
+          "thank_you": {
+            "headline": "Dinner just got simpler",
+            "body": "Your welcome email is on its way, with the lab report and how to pick a size for your table.",
+            "code_line": "Your code: BFCODE",
+            "button": "Shop the Black Friday Sale"
+          }
+        }
+      },
+      "welcome_teaser": {
+        "subjects": [
+          "What your family's dinner cooks on",
+          "Report no. 25895, for your kitchen"
+        ],
+        "preview": "No PFAS, PFOA, or BPA. The lab report, and your 5 gifts."
+      }
+    }
+  ],
+  "skip_and_control": {
+    "skip_result": {
+      "label": "5 FREE GIFTS",
+      "headline": "5 free gifts with every order.",
+      "proof": "100,000+ happy customers cook on Siraat.",
+      "cta": "Claim my 5 gifts",
+      "thank_you": {
+        "headline": "Your 5 gifts are waiting",
+        "body": "Check your inbox for your welcome email.",
+        "code_line": "Your code: BFCODE",
+        "button": "Shop the Black Friday Sale"
+      }
+    },
+    "control": {
+      "note": "Controle = de huidige live Alia-popup, ongewijzigd gedupliceerd. Onderstaande tekst is alleen een referentie als de live tekst niet bruikbaar is; de live tekst wint.",
+      "screen_1": {
+        "label": "BLACK FRIDAY",
+        "headline": "5 free gifts with every order.",
+        "subline": "$555 value. Plus a chance to win a PFAS water filter.",
+        "proof": "100,000+ happy customers.",
+        "email_placeholder": "Your email address",
+        "cta": "Claim my 5 gifts",
+        "friction": "Free shipping. 30-day returns. 100,000+ happy customers.",
+        "decline": "No thanks"
+      },
+      "thank_you": {
+        "headline": "Your 5 gifts are waiting",
+        "body": "Check your inbox for your welcome email.",
+        "code_line": "Your code: BFCODE",
+        "button": "Shop the Black Friday Sale"
+      }
+    }
+  }
+}
