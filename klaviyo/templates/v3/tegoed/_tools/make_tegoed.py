@@ -210,6 +210,6 @@ b += sign() + small(TERMS) + TAIL
 files[m] = b
 
 for k, v in files.items():
-    assert '—' not in v and '–' not in v, k
+    assert '\u2014' not in v and '\u2013' not in v, k
     open(os.path.join(N, k + '.html'), 'w').write(v)
     print('geschreven', k)

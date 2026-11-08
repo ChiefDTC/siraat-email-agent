@@ -21,5 +21,5 @@ for mid in ('t1','t2','t3','t4'):
     probs=Q.after_render(h)+Q.foster(h)
     open(os.path.join(OUT,mid+'.html'),'w').write(h)
     kv=open(os.path.join(N,mid+'.klaviyo.html')).read()
-    print(mid,probs[:3] or 'ok','| emdash:%d'%(kv.count('—')+kv.count('–')),'| header:%s'%('logo-black-cream' in kv or '68a06000' in kv),
+    print(mid,probs[:3] or 'ok','| emdash:%d'%(kv.count('\u2014')+kv.count('\u2013')),'| header:%s'%('logo-black-cream' in kv or '68a06000' in kv),
           '| footer-unsub:%s'%('unsubscribe' in kv.lower()),'| coupon-tags:%d'%kv.count('coupon_code'),'| yellow:%d'%kv.upper().count('FFB800'),'| KB %.0f'%(len(kv.encode())/1024))
