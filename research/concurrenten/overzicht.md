@@ -6,8 +6,8 @@ Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmai
 
 | Merk | w | b | c | co | Totaal | Status inschrijving |
 |---|---|---|---|---|---|---|
-| HexClad | 9 | 20 | 20 | n.v.t. | 49 | w/b/c handmatig (Floris), co niet gedaan |
-| Our Place | 21 | 28 | 22 | 0 | 71 | alles gelukt; c pas om 11:18 in winkelwagen |
+| HexClad | 9 | 20 | 21 | n.v.t. | 50 | w/b/c handmatig (Floris), co niet gedaan |
+| Our Place | 21 | 28 | 23 | 0 | 72 | alles gelukt; c pas om 11:18 in winkelwagen |
 | Caraway | 5 (op hex-w) | 0 | 0 | 0 | 5 | w/b/c via footer "gelukt", maar geen enkele mail op cw-adressen; beide Caraway-mails kwamen op hex-w binnen |
 | Made In | 1 | 1 | 1 | 0 | 3 | w/b/c footer "Thanks! You've been subscribed", co gestopt (telefoon verplicht); eerste mail pas na 388 uur (campagne, geen welkom) |
 | Okura | 0 | 0 | 0 | 0 | 0 | w/b/c captcha, alleen co (checkout zonder betaling, opt-in aan) |
@@ -229,6 +229,12 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 - **Our Place stuurt een keuzehulp.** "Which Wonder Oven Is Yours?" (preview "Find the Wonder Oven that fits the way you cook.") op 7 nov 06:20 UTC naar op-b, op-c en op-w, binnen 15 seconden. Drie modellen naast elkaar met per model het aantal functies en de inhoud (12 L, 30 L), elk met een eigen knop. De sale staat alleen in de bovenbalk en de onderbanner ("BIGGEST DISCOUNT 68% OFF", met bundel). Geen prijzen in de mail, geen code.
 - **3 nieuwe mails** (alle drie Our Place, dezelfde campagne). Idee voor Siraat: een keuzehulp "Which Pan Pro is yours?" met Standard, Large, Deep en Wok naast elkaar (maat, waarvoor, een knop per pan), met de sale alleen in de balk. Dat helpt twijfelaars kiezen zonder dat elke mail een prijsmail is.
 
+## Dag 27 (8 nov)
+
+- **HexClad: Thanksgiving-productmail.** "Host Thanksgiving like a pro" (preview "Our cookware bundles are on sale now!") op 7 nov 18:05 UTC, alleen naar hex-c. Casserole & Sides Set, Carving Set, Cocktail Shaker, barware, plus refer-a-friend "Give a friend $100, earn a free reward". Geen percentage. Opvallend: de platte-tekstversie bevat een lange verborgen tekst over accountbeveiliging met lege placeholders, waarschijnlijk opvulling om spamfilters te sussen. Slordig en riskant; niet overnemen.
+- **Our Place: het bekendste product vooraan.** "The One You Know" (preview "Now on sale") op 7 nov 15:17 UTC, alleen naar op-c. De Always Pan als "An Icon, A Legend, A Steal", korting als bedrag ("Save $40") in plaats van percentage, daarna de rest van de collectie en 300 bonuspunten bij $350.
+- **2 nieuwe mails.** Idee voor Siraat: een mail rond het bekendste product, de Titanium Hammered Pan Pro, met de besparing als bedrag in de kop ("Save $336") in plaats van "70% off". Bedragen voelen bij een duur product concreter dan een percentage.
+
 ## Korting: wanneer en hoe hoog
 
 - **Plateful** is het enige merk met een kortingscode: 10% in de abandoned checkout na 12,5 uur, 2 dagen geldig en al verrekend in de checkout-link (kortingscode aanwezig, niet uitgeschreven).
@@ -307,6 +313,7 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 38. **Een startpakket als "alles wat je nodig hebt".** Our Place verkoopt de Cookware Set als "All The Essentials You Need" en "every recipe in the book", dus als compleet in plaats van als korting. Siraat kan de Pan Pro Duo of een set in een campagne brengen als de complete basis voor elke dag (aanbraden, bakken, stoven), met per product in een regel waarvoor hij is, en het echte setvoordeel in getal in de preview (zie idee 21).
 39. **Een deadline op winkansen of extra's in plaats van op prijs.** HexClad geeft dubbele winkansen tot 2 november op nieuwe producten en accessoires. Siraat kan richting BFCM een echte deadline gebruiken die geen marge kost, bijvoorbeeld een cadeau-item of sheets bij bestellingen tot een vaste datum, alleen als dat aanbod echt bestaat en eindigt (zie de copyregels). [VRAAG FLORIS: hebben we in november een extraatje met een echte einddatum?]
 40. **Een keuzehulp per product.** Our Place zet drie Wonder Ovens naast elkaar ("Which Wonder Oven Is Yours?"). Siraat kan hetzelfde doen met de Pan Pro-lijn: per pan de maat en waarvoor hij het best is, een knop per pan, sale alleen in de balk.
+41. **Besparing als bedrag op het heldenproduct.** Our Place zet "Save $40" op de Always Pan in plaats van een percentage. Siraat kan de Pan Pro Standard brengen als "Save $336" (compare-at $480, nu $144), mits de compare-at echt gold.
 
 ## Open punten
 
