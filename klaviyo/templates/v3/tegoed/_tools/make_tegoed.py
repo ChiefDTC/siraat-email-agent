@@ -1,11 +1,11 @@
-"""Tegoed-flow '$12 in your account' (plan research/plannen/2026-11-tegoed/systeem.md, 8 nov 2026). Concept, flow staat als DRAFT in Klaviyo.
+"""Tegoed-flow '$15 in your account' (plan research/plannen/2026-11-tegoed/systeem.md, 8 nov 2026). Concept, flow staat als DRAFT in Klaviyo.
 Schrijft de vier bron-templates t1..t4.html in klaviyo/templates/v3/tegoed/. Vaste header en footer via {{HEADER}}/{{FOOTER}} (build_template.py).
-T1 geeft de code uit met {% coupon_code 'SIRAAT_CREDIT_12' %} (placeholder, coupon maakt Floris aan).
+T1 geeft de code uit met {% coupon_code 'SIRAAT_CREDIT_15' %} (placeholder, coupon maakt Floris aan).
 T2 t/m T4 lezen dezelfde code en de echte einddatum van het profiel (siraat_credit_code, siraat_credit_expires_at): een tweede
 coupon_code-tag zou per mail een NIEUWE code met een nieuwe einddatum maken. Gebruik: python3 -I make_tegoed.py"""
 import os
 N = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-COUPON = "{% coupon_code 'SIRAAT_CREDIT_12' %}"
+COUPON = "{% coupon_code 'SIRAAT_CREDIT_15' %}"
 F = "font-family:Inter,Arial,Helvetica,sans-serif;"
 SITE = 'https://siraatskitchen.com'
 EXP_T1 = "{{DATE:29:l, F j}}"      # build_template: vandaag + 29 dagen; de echte code loopt minimaal tot het eind van die dag (zie systeem.md 3.3)
@@ -86,7 +86,7 @@ def summary(code, exp, status=''):
     """Kaart 'Account / Credit / Expires / Code' (Smooche-achtig accountformaat, maar met echte waarden)."""
     row = ('<tr><td class="kv" style="%sfont-size:16px;line-height:24px;color:#8A847A;font-weight:500;padding:5px 0;width:96px;" width="96" valign="top">%s</td>'
            '<td class="kv" style="%sfont-size:16px;line-height:24px;color:#272727;font-weight:600;padding:5px 0;" valign="top">%s</td></tr>')
-    rows = ''.join(row % (F, k, F, v) for k, v in (('Account', '{{ email }}'), ('Credit', '$12'), ('Expires', exp)))
+    rows = ''.join(row % (F, k, F, v) for k, v in (('Account', '{{ email }}'), ('Credit', '$15'), ('Expires', exp)))
     rows += row % (F, 'Code', F, '<span style="font-family:Menlo,Consolas,monospace;font-size:17px;letter-spacing:1px;color:#272727;">%s</span>' % code)
     st = ('<div style="%sfont-size:12px;line-height:16px;color:#B8862B;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;padding-bottom:8px;">%s</div>' % (F, status)) if status else ''
     return ('<tr><td class="pad" align="left" bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:0 40px 20px 40px;">'
@@ -122,13 +122,13 @@ def small(t):
 
 
 HI = P("Hi {{ first_name|default:'there' }},", '0 40px 12px 40px')
-TERMS = ('One $12 code per customer, for one order of $100 or more. It cannot be exchanged for cash and stops working after the expiry date shown above. '
+TERMS = ('One $15 code per customer, for one order of $75 or more. It cannot be exchanged for cash and stops working after the expiry date shown above. '
          'You get this because you ordered from Siraat before.')
 TAMMY = ("I am on my 4th pan from Siraat... I even gifted one to my son, and he says it's the best pan he owns.", 'Tammy, verified buyer')
 
 
 def meta(mid, subj, alts, pre, when, extra):
-    return ('TEGOED · v4 · Tegoed ($12 in your account) · DRAFT (concept 8 nov 2026, flow als DRAFT in Klaviyo, niets live).\n'
+    return ('TEGOED · v4 · Tegoed ($15 in your account) · DRAFT (concept 8 nov 2026, flow als DRAFT in Klaviyo, niets live).\n'
             'ID: %s\nSENDER: Benjamin from Siraat\nSUBJECT A: %s\nSUBJECT B: %s\nANDERE ONDERWERPEN: %s\nPREVIEW: %s\nWANNEER: %s\n'
             'WIE: lijst "Tegoed uitgegeven" (placeholder-trigger), aanbevolen cohort: kopers zonder order in 120 dagen, US; flowfilter geen order sinds flowstart.\n%s'
             % (mid, subj[0], subj[1], ' · '.join(alts), pre, when, extra))
@@ -138,37 +138,37 @@ files = {}
 
 # ---------------- T1 · uitgifte: de code wordt hier gemaakt (coupon-tag) ----------------
 m = 't1'
-subj = ('You have $12 in your account', '$12 for your next order, from Benjamin')
-alts = ('What would you cook next?', '$12, yours for 30 days', '"I am on my 4th pan from Siraat"')
-pre = 'Benjamin here. A $12 code for your next order, good for 30 days.'
+subj = ('You have $15 in your account', '$15 for your next order, from Benjamin')
+alts = ('What would you cook next?', '$15, yours for 30 days', '"I am on my 4th pan from Siraat"')
+pre = 'Benjamin here. A $15 code for your next order, good for 30 days.'
 b = head(meta(m, subj, alts, pre, 'dag 0, 09:00 lokale tijd',
-              'CODE: coupon_code SIRAAT_CREDIT_12 (placeholder; Klaviyo-coupon gekoppeld aan Shopify, $12 vast, 1x per klant, vervalt 29 dagen na aanmaak + 24 u Klaviyo-marge).\n'
+              'CODE: coupon_code SIRAAT_CREDIT_15 (placeholder; Klaviyo-coupon gekoppeld aan Shopify, $15 vast, 1x per klant, vervalt 29 dagen na aanmaak + 24 u Klaviyo-marge).\n'
               'EXPIRES: vandaag + 29 dagen (conservatief: de code werkt minimaal tot het eind van die dag). Coupon Assigned schrijft code en echte einddatum naar het profiel.'),
          subj[0], pre)
-b += H1('You have $12<br>in your account.', 'A thank-you from Benjamin')
+b += H1('You have $15<br>in your account.', 'A thank-you from Benjamin')
 b += HI
-b += P("Benjamin here. You ordered from Siraat before, so I made you a $12 code for your next order. That&#39;s it. A thank-you for being a customer.")
+b += P("Benjamin here. You ordered from Siraat before, so I made you a $15 code for your next order. That&#39;s it. A thank-you for being a customer.")
 b += summary(COUPON, EXP_T1)
-b += P("It&#39;s one code, made for you. It works once, on any order of $100 or more, and the button below applies it for you.")
+b += P("It&#39;s one code, made for you. It works once, on any order of $75 or more, and the button below applies it for you.")
 b += P("It has a real end date: %s. A thank-you shouldn&#39;t hang around forever, so after that day the code stops working and the regular price applies." % EXP_T1)
-b += btn('Use my $12', link(COUPON, m, 'cta1'))
+b += btn('Use my $15', link(COUPON, m, 'cta1'))
 b += P("Not sure what to get? Most people add a second size, so there&#39;s one pan for the eggs and one big enough for everyone. Reply and our team will help you pick.", '0 40px 16px 40px')
 b += sign() + small(TERMS) + TAIL
 files[m] = b
 
 # ---------------- T2 · herinnering dag 14 (code en datum van het profiel) ----------------
 m = 't2'
-subj = ('Your $12 is still in your account', 'Still yours: $12 until ' + EXP_P)
-alts = ('Two weeks left on your $12', 'Where your $12 goes furthest', '"I am on my 4th pan from Siraat"')
+subj = ('Your $15 is still in your account', 'Still yours: $15 until ' + EXP_P)
+alts = ('Two weeks left on your $15', 'Where your $15 goes furthest', '"I am on my 4th pan from Siraat"')
 pre = 'Unused, and good until ' + EXP_P + '. Same code as before.'
 b = head(meta(m, subj, alts, pre, 'dag 14, 09:00 lokale tijd',
               'CODE: person.siraat_credit_code en person.siraat_credit_expires_at (geschreven vanuit Coupon Assigned). Split vooraf: alleen als siraat_credit_code gezet is.'),
          subj[0], pre)
-b += H1('Your $12 is<br>still here.', 'Your credit')
+b += H1('Your $15 is<br>still here.', 'Your credit')
 b += HI
-b += P("Quick note. The $12 I sent you two weeks ago hasn&#39;t been used yet, so it&#39;s still in your account. Same code, same end date.")
+b += P("Quick note. The $15 I sent you two weeks ago hasn&#39;t been used yet, so it&#39;s still in your account. Same code, same end date.")
 b += summary(CODE_P, EXP_P, 'Unused')
-b += btn('Use my $12', link(CODE_P, m, 'cta1'))
+b += btn('Use my $15', link(CODE_P, m, 'cta1'))
 b += P("If you&#39;re wondering where it goes furthest: on a second pan. Every one has the same pure titanium cooking surface and no coatings, so there&#39;s nothing on it to wear off. One of our regulars put it like this:", '4px 40px 16px 40px')
 b += quote(*TAMMY)
 b += P("Questions about a size? Reply and our team will help.", '0 40px 14px 40px')
@@ -177,33 +177,33 @@ files[m] = b
 
 # ---------------- T3 · 3 dagen voor einddatum ----------------
 m = 't3'
-subj = ('Your $12 expires in 3 days', 'Three days left on your $12')
-alts = ('Your $12 ends ' + EXP_P, 'Before your $12 runs out', 'Still thinking about that second pan?')
+subj = ('Your $15 expires in 3 days', 'Three days left on your $15')
+alts = ('Your $15 ends ' + EXP_P, 'Before your $15 runs out', 'Still thinking about that second pan?')
 pre = 'It stops working on ' + EXP_P + '. After that it is gone.'
 b = head(meta(m, subj, alts, pre, 'dag 27, 09:00 lokale tijd (resterend 2,6 tot 3 dagen, zie systeem.md 3.3)', 'Smart Sending uit (echte deadline).'),
          subj[0], pre)
-b += H1('Your $12 expires<br>in 3 days.', 'Your credit')
+b += H1('Your $15 expires<br>in 3 days.', 'Your credit')
 b += HI
-b += P("Your $12 code ends on %s. After that it stops working and I can&#39;t bring it back, because it was made for a set period from the start." % EXP_P)
+b += P("Your $15 code ends on %s. After that it stops working and I can&#39;t bring it back, because it was made for a set period from the start." % EXP_P)
 b += summary(CODE_P, EXP_P, '3 days left')
-b += btn('Use my $12', link(CODE_P, m, 'cta1'))
+b += btn('Use my $15', link(CODE_P, m, 'cta1'))
 b += P("If something has been on your list, a lid, a second size, a gift for someone who cooks, this is a good week for it. Every pan is covered for 75 years against defects.", '4px 40px 16px 40px')
 b += sign() + small(TERMS) + TAIL
 files[m] = b
 
 # ---------------- T4 · laatste dag ----------------
 m = 't4'
-subj = ('Last day for your $12', 'Your $12 expires in less than 24 hours')
-alts = ('Your $12 ends ' + EXP_P, 'The last email about your $12', 'Today is the last day')
+subj = ('Last day for your $15', 'Your $15 expires in less than 24 hours')
+alts = ('Your $15 ends ' + EXP_P, 'The last email about your $15', 'Today is the last day')
 pre = 'Less than 24 hours left. This is the last email about it.'
 b = head(meta(m, subj, alts, pre, 'dag 29, 09:00 lokale tijd (resterend 14 tot 24 uur)',
               'Geen "tonight" in onderwerp: de echte eindtijd ligt tussen 23:00 en 09:00 (Klaviyo-batch + 24 u marge). "tonight" pas als de einddatum vast op 23:59 ET staat (optie B, systeem.md).\nSmart Sending uit (echte deadline).'),
          subj[0], pre)
-b += H1('Last day for<br>your $12.', 'Your credit')
+b += H1('Last day for<br>your $15.', 'Your credit')
 b += HI
-b += P("This is the last email about your $12. The code stops working in less than 24 hours, and I won&#39;t send another one.")
+b += P("This is the last email about your $15. The code stops working in less than 24 hours, and I won&#39;t send another one.")
 b += summary(CODE_P, EXP_P, 'Less than 24 hours left')
-b += btn('Use my $12 today', link(CODE_P, m, 'cta1'))
+b += btn('Use my $15 today', link(CODE_P, m, 'cta1'))
 b += P("Two promises if you use it. Changed your mind? Send it back unused within 30 days for a full refund. Something wrong? If it arrives damaged or defective within 30 days, we refund or replace it and pay the shipping. After that, the 75-year warranty covers defects.", '4px 40px 16px 40px')
 b += P("And if now isn&#39;t the moment, that&#39;s fine. Thank you for cooking with us.", '0 40px 14px 40px')
 b += sign() + small(TERMS) + TAIL

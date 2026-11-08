@@ -463,3 +463,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 2026-11-08 · Tegoed-templates (VaRdvM, V6dXap, W6nhmt, Xb9RTV) bijgewerkt met minimaal $100; flow Ubi9m5 blijft draft.
 - 2026-11-08 · Onderzoek bedrag tegoed (psychologie): advies $15 rond, $75 minimum.
 - 2026-11-08 · Figma-overzicht 'Siraat · Alles · BFCM 2026 (overzicht)' (m2Z3ImS1woxrL949CMBh8Z) voor Floris: index, quizpopup, tegoed-flow Ubi9m5 met flowdiagram en T1 tot T4, 13 Lucas-voorbeeldmails, campagnes, flows te agressief, black-hat, site-koopbox. Alles bewerkbare tekst en vectoren (Figma via SVG-export plus tekstlagen, HTML via DOM naar SVG). 2 Pans + 2 Lids overal $249. Lucas-testbestanden niet opgenomen. Niets naar Klaviyo.
+- 2026-11-08 · Tegoed naar $15, minimaal $75: templates (VaRdvM, V6dXap, W6nhmt, Xb9RTV) en onderwerpen in draft-flow Ubi9m5 bijgewerkt. Flownaam zegt nog $12 (naam niet via API aanpasbaar).
