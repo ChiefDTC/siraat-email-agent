@@ -1,0 +1,212 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quiz Popup v2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#272727;--cream:#F4F1EA;--paper:#FFFFFF;--line:#E4DED3;--grey:#5E5A54;--legal:#8A847B;--yellow:#FFB800}
+*{box-sizing:border-box}
+body{margin:0;background:#FFFFFF;color:var(--ink);font-family:Inter,Arial,sans-serif;padding:32px 24px 64px}
+.page-title{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400;font-size:36px;margin:0 0 4px}
+.page-sub{margin:0 0 28px;color:var(--grey);font-size:15px}
+h3.row-title{font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin:36px 0 12px}
+.grid{display:grid;grid-template-columns:repeat(6,375px);gap:28px;align-items:start}
+.flow{display:flex;gap:28px;align-items:start;flex-wrap:nowrap}
+figure{margin:0}
+figcaption{font-size:13px;font-weight:600;color:var(--grey);margin:0 0 8px}
+.empty{width:375px}
+/* phone backdrop */
+.screen{position:relative;width:375px;border-radius:28px;overflow:hidden;background:#cfccc5;padding:40px 14px 32px;border:1px solid var(--line)}
+.screen.desk{width:1000px;border-radius:16px;padding:48px 140px}
+.screen:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(180deg,#e9e6df 0 120px,#f3f1ec 120px 240px)}
+.screen:after{content:"";position:absolute;inset:0;background:rgba(39,39,39,.5)}
+.card{position:relative;z-index:1;background:var(--cream);border-radius:16px;padding:18px 20px 20px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.top{display:flex;justify-content:center;align-items:center;position:relative;margin-bottom:14px;min-height:36px}
+.logo{height:28px;width:auto;display:block}
+.x{position:absolute;right:-8px;top:-4px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:28px;line-height:1}
+.chip{display:table;margin:0 auto 12px;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:6px 12px;text-align:center;line-height:1.35;font-size:13px;font-weight:500;color:var(--grey)}
+h2{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400;font-size:32px;line-height:1.08;text-align:center;margin:0 0 10px}
+.sub{text-align:center;font-size:17px;line-height:1.4;margin:0 0 18px}
+.because{text-align:center;font-size:16px;line-height:1.45;margin:0 0 16px}
+.ans{display:flex;align-items:center;width:100%;min-height:60px;margin:0 0 10px;padding:12px 16px;background:var(--paper);border:1.5px solid var(--ink);border-radius:12px;font:500 17px/1.3 Inter,Arial,sans-serif;color:var(--ink);text-align:left}
+.ans:after{content:"\203A";margin-left:auto;padding-left:10px;font-size:24px;line-height:1}
+.skip{display:block;text-align:center;margin:14px 0 2px;font-size:16px;text-decoration:underline;color:var(--ink)}
+/* offer block */
+.offer{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 12px 12px;text-align:center;margin:0 0 14px}
+.tag{display:inline-block;background:var(--yellow);color:var(--ink);font-weight:700;font-size:13px;letter-spacing:.08em;padding:5px 10px;border-radius:4px}
+.o-gifts{font-weight:700;font-size:19px;line-height:1.25;margin:10px 0 2px}
+.o-ship{font-size:16px;margin:0 0 12px}
+.tiles{display:flex;gap:6px;justify-content:center}
+.tiles img{width:50px;height:50px;border-radius:8px;border:1px solid var(--line);background:#fff;display:block}
+.email{display:flex;align-items:center;width:100%;height:56px;border:1.5px solid #A8A296;border-radius:12px;padding:0 16px;font-size:17px;color:#7A756C;background:#fff;margin:0 0 10px}
+.cta{display:flex;align-items:center;justify-content:center;width:100%;min-height:58px;background:var(--ink);color:#fff;border:0;border-radius:12px;font:600 17px/1.2 Inter,Arial,sans-serif;margin:0 0 10px;text-align:center;padding:0 12px}
+.small{font-size:14px;color:var(--grey);text-align:center;margin:0}
+.fine{font-size:12px;line-height:1.4;color:var(--legal);text-align:center;margin:10px 0 0}
+.check{width:56px;height:56px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;margin:4px auto 14px}
+.tailored{text-align:center;font-size:17px;line-height:1.45;margin:0 0 18px}
+/* desktop */
+.d-answers{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 4px}
+.d-answers .ans{margin:0}
+.d-split{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
+.d-split h2,.d-split .because,.d-split .chip{text-align:left;margin-left:0}
+.desk .card{padding:22px 32px 26px}
+.desk h2{font-size:38px}
+.desk .tiles img{width:50px;height:50px}
+</style></head><body>
+<h1 class="page-title">Quiz popup: What made you look today?</h1>
+<p class="page-sub">Concept v2, 8 Nov 2026. Same offer for everyone. Only the headline and the because line change per answer.</p>
+
+<h3 class="row-title">Mobile, 375 px</h3>
+<div class="grid">
+<!-- ROW 1 -->
+<figure><figcaption>Question</figcaption><div class="screen"><div class="card">
+<div class="top"><img class="logo" src="assets/siraat-lockup-black-email.png" alt="SIRAAT"><span class="x">&#215;</span></div>
+<h2>What made you look today?</h2>
+<p class="sub">Be honest. It changes what we show you.</p>
+<div class="ans">I want PFAS out of my kitchen</div>
+<div class="ans">My non-stick keeps peeling</div>
+<div class="ans">Stainless and cast iron are too much work</div>
+<div class="ans">I'm shopping for a gift</div>
+<a class="skip">Skip, just show me the gifts</a>
+</div></div></figure>
+
+<!--RESULTS-->
+<figure><figcaption>Result: PFAS</figcaption><div class="screen"><div class="card">
+<div class="top"><img class="logo" src="assets/siraat-lockup-black-email.png" alt="SIRAAT"><span class="x">&#215;</span></div>
+<span class="chip">You picked: I want PFAS out of my kitchen</span>
+<h2>Let's get the coatings out of your kitchen.</h2>
+<p class="because">You're not alone: 7 in 10 of our customers say toxin-free cookware matters most to them. Good timing, because everything is up to 70% off right now.</p>
+<div class="offer"><span class="tag">UP TO 70% OFF</span>
+<p class="o-gifts">+ 5 free gifts worth $555</p>
+<p class="o-ship">Free shipping on every order</p>
+<div class="tiles"><img src="assets/gift-mystery.jpg" alt="Mystery gift"><img src="assets/gift-shipping.jpg" alt="Free shipping"><img src="assets/gift-ebook.jpg" alt="Green Clean e-book"><img src="assets/gift-cookbook.jpg" alt="Favorites cookbook"><img src="assets/gift-filter.jpg" alt="PFAS water filter"></div></div>
+<div class="email">Your email address</div>
+<div class="cta">Unlock my 70% off + 5 gifts</div>
+<p class="small">No code needed. Free shipping on every order.</p>
+<p class="fine">By signing up you agree to receive marketing emails from Siraat. Unsubscribe anytime. PFAS water filter: weekly draw, see official rules.</p>
+</div></div></figure>
+
+<figure><figcaption>Result: Peeling</figcaption><div class="screen"><div class="card">
+<div class="top"><img class="logo" src="assets/siraat-lockup-black-email.png" alt="SIRAAT"><span class="x">&#215;</span></div>
+<span class="chip">You picked: My non-stick keeps peeling</span>
+<h2>Done replacing pans every year?</h2>
+<p class="because">Titanium has no coating to peel. And since you've already paid for pans that didn't last, this one comes at up to 70% off.</p>
+<div class="offer"><span class="tag">UP TO 70% OFF</span>
+<p class="o-gifts">+ 5 free gifts worth $555</p>
+<p class="o-ship">Free shipping on every order</p>
+<div class="tiles"><img src="assets/gift-mystery.jpg" alt="Mystery gift"><img src="assets/gift-shipping.jpg" alt="Free shipping"><img src="assets/gift-ebook.jpg" alt="Green Clean e-book"><img src="assets/gift-cookbook.jpg" alt="Favorites cookbook"><img src="assets/gift-filter.jpg" alt="PFAS water filter"></div></div>
+<div class="email">Your email address</div>
+<div class="cta">Unlock my 70% off + 5 gifts</div>
+<p class="small">No code needed. Free shipping on every order.</p>
+<p class="fine">By signing up you agree to receive marketing emails from Siraat. Unsubscribe anytime. PFAS water filter: weekly draw, see official rules.</p>
+</div></div></figure>
+
+<figure><figcaption>Result: Switch</figcaption><div class="screen"><div class="card">
+<div class="top"><img class="logo" src="assets/siraat-lockup-black-email.png" alt="SIRAAT"><span class="x">&#215;</span></div>
+<span class="chip">You picked: Stainless and cast iron are too much work</span>
+<h2>Cooking shouldn't come with a workout.</h2>
+<p class="because">No seasoning, no endless scrubbing. Making the switch? Perfect timing: up to 70% off, plus 5 free gifts.</p>
+<div class="offer"><span class="tag">UP TO 70% OFF</span>
+<p class="o-gifts">+ 5 free gifts worth $555</p>
+<p class="o-ship">Free shipping on every order</p>
+<div class="tiles"><img src="assets/gift-mystery.jpg" alt="Mystery gift"><img src="assets/gift-shipping.jpg" alt="Free shipping"><img src="assets/gift-ebook.jpg" alt="Green Clean e-book"><img src="assets/gift-cookbook.jpg" alt="Favorites cookbook"><img src="assets/gift-filter.jpg" alt="PFAS water filter"></div></div>
+<div class="email">Your email address</div>
+<div class="cta">Unlock my 70% off + 5 gifts</div>
+<p class="small">No code needed. Free shipping on every order.</p>
+<p class="fine">By signing up you agree to receive marketing emails from Siraat. Unsubscribe anytime. PFAS water filter: weekly draw, see official rules.</p>
+</div></div></figure>
+
+<figure><figcaption>Result: Gift</figcaption><div class="screen"><div class="card">
+<div class="top"><img class="logo" src="assets/siraat-lockup-black-email.png" alt="SIRAAT"><span class="x">&#215;</span></div>
+<span class="chip">You picked: I'm shopping for a gift</span>
+<h2>A gift they'll use every single day.</h2>
+<p class="because">Shopping for someone you love? Perfect timing: up to 70% off, and 5 free gifts come with it. One for them, a few for you.</p>
+<div class="offer"><span class="tag">UP TO 70% OFF</span>
+<p class="o-gifts">+ 5 free gifts worth $555</p>
+<p class="o-ship">Free shipping on every order</p>
+<div class="tiles"><img src="assets/gift-mystery.jpg" alt="Mystery gift"><img src="assets/gift-shipping.jpg" alt="Free shipping"><img src="assets/gift-ebook.jpg" alt="Green Clean e-book"><img src="assets/gift-cookbook.jpg" alt="Favorites cookbook"><img src="assets/gift-filter.jpg" alt="PFAS water filter"></div></div>
+<div class="email">Your email address</div>
+<div class="cta">Unlock my 70% off + 5 gifts</div>
+<p class="small">No code needed. Free shipping on every order.</p>
+<p class="fine">By signing up you agree to receive marketing emails from Siraat. Unsubscribe anytime. PFAS water filter: weekly draw, see official rules.</p>
+</div></div></figure>
+
+<figure><figcaption>Skip</figcaption><div class="screen"><div class="card">
+<div class="top"><img class="logo" src="assets/siraat-lockup-black-email.png" alt="SIRAAT"><span class="x">&#215;</span></div>
+<h2>Up to 70% off + 5 free gifts</h2>
+<div class="offer"><span class="tag">UP TO 70% OFF</span>
+<p class="o-gifts">+ 5 free gifts worth $555</p>
+<p class="o-ship">Free shipping on every order</p>
+<div class="tiles"><img src="assets/gift-mystery.jpg" alt="Mystery gift"><img src="assets/gift-shipping.jpg" alt="Free shipping"><img src="assets/gift-ebook.jpg" alt="Green Clean e-book"><img src="assets/gift-cookbook.jpg" alt="Favorites cookbook"><img src="assets/gift-filter.jpg" alt="PFAS water filter"></div></div>
+<div class="email">Your email address</div>
+<div class="cta">Unlock my 70% off + 5 gifts</div>
+<p class="small">No code needed. Free shipping on every order.</p>
+<p class="fine">By signing up you agree to receive marketing emails from Siraat. Unsubscribe anytime. PFAS water filter: weekly draw, see official rules.</p>
+</div></div></figure>
+
+<!-- ROW 2 -->
+<div class="empty"></div>
+<figure><figcaption>Success: PFAS</figcaption><div class="screen"><div class="card">
+<div class="top"><img class="logo" src="assets/siraat-lockup-black-email.png" alt="SIRAAT"><span class="x">&#215;</span></div>
+<div class="check">&#10003;</div>
+<h2>You're in. Your 70% off and 5 gifts are unlocked.</h2>
+<p class="tailored">Check your inbox for our PFAS lab results.</p>
+<div class="cta">Shop the sale</div>
+</div></div></figure>
+<figure><figcaption>Success: Peeling</figcaption><div class="screen"><div class="card">
+<div class="top"><img class="logo" src="assets/siraat-lockup-black-email.png" alt="SIRAAT"><span class="x">&#215;</span></div>
+<div class="check">&#10003;</div>
+<h2>You're in. Your 70% off and 5 gifts are unlocked.</h2>
+<p class="tailored">Check your inbox: how to cook the perfect egg in titanium.</p>
+<div class="cta">Shop the sale</div>
+</div></div></figure>
+<figure><figcaption>Success: Switch</figcaption><div class="screen"><div class="card">
+<div class="top"><img class="logo" src="assets/siraat-lockup-black-email.png" alt="SIRAAT"><span class="x">&#215;</span></div>
+<div class="check">&#10003;</div>
+<h2>You're in. Your 70% off and 5 gifts are unlocked.</h2>
+<p class="tailored">Check your inbox: how titanium compares to steel and cast iron.</p>
+<div class="cta">Shop the sale</div>
+</div></div></figure>
+<figure><figcaption>Success: Gift</figcaption><div class="screen"><div class="card">
+<div class="top"><img class="logo" src="assets/siraat-lockup-black-email.png" alt="SIRAAT"><span class="x">&#215;</span></div>
+<div class="check">&#10003;</div>
+<h2>You're in. Your 70% off and 5 gifts are unlocked.</h2>
+<p class="tailored">Check your inbox for our holiday shipping dates.</p>
+<div class="cta">Shop the sale</div>
+</div></div></figure>
+<div class="empty"></div>
+</div>
+
+<h3 class="row-title">Desktop, 720 px popup</h3>
+<div class="flow">
+<figure><figcaption>Desktop: Question</figcaption><div class="screen desk"><div class="card">
+<div class="top"><img class="logo" src="assets/siraat-lockup-black-email.png" alt="SIRAAT"><span class="x">&#215;</span></div>
+<h2>What made you look today?</h2>
+<p class="sub">Be honest. It changes what we show you.</p>
+<div class="d-answers">
+<div class="ans">I want PFAS out of my kitchen</div>
+<div class="ans">My non-stick keeps peeling</div>
+<div class="ans">Stainless and cast iron are too much work</div>
+<div class="ans">I'm shopping for a gift</div>
+</div>
+<a class="skip">Skip, just show me the gifts</a>
+</div></div></figure>
+</div>
+<div class="flow" style="margin-top:28px">
+<figure><figcaption>Desktop: Result PFAS</figcaption><div class="screen desk"><div class="card">
+<div class="top"><img class="logo" src="assets/siraat-lockup-black-email.png" alt="SIRAAT"><span class="x">&#215;</span></div>
+<div class="d-split"><div>
+<span class="chip">You picked: I want PFAS out of my kitchen</span>
+<h2>Let's get the coatings out of your kitchen.</h2>
+<p class="because">You're not alone: 7 in 10 of our customers say toxin-free cookware matters most to them. Good timing, because everything is up to 70% off right now.</p>
+</div><div>
+<div class="offer"><span class="tag">UP TO 70% OFF</span>
+<p class="o-gifts">+ 5 free gifts worth $555</p>
+<p class="o-ship">Free shipping on every order</p>
+<div class="tiles"><img src="assets/gift-mystery.jpg" alt="Mystery gift"><img src="assets/gift-shipping.jpg" alt="Free shipping"><img src="assets/gift-ebook.jpg" alt="Green Clean e-book"><img src="assets/gift-cookbook.jpg" alt="Favorites cookbook"><img src="assets/gift-filter.jpg" alt="PFAS water filter"></div></div>
+<div class="email">Your email address</div>
+<div class="cta">Unlock my 70% off + 5 gifts</div>
+<p class="small">No code needed. Free shipping on every order.</p>
+</div></div>
+<p class="fine">By signing up you agree to receive marketing emails from Siraat. Unsubscribe anytime. PFAS water filter: weekly draw, see official rules.</p>
+</div></div></figure>
+</div>
+</body></html>
