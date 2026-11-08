@@ -16,7 +16,7 @@ Reference = exacte tekst die we NIET gebruiken (Smooche-mails 30 okt tot 1 nov, 
 
 ## Checkout + Cart + BFCM Welcome (Rn556d) + BF follow-up (YqKCmH): deadline
 - Reference: subject "Found your new make-up?" / "the sale we're running right now ends tonight at midnight" / "No extensions this time." (sale kept running)
-- Ours: subject "VIP Sale ends tonight at 11:59 PM ET", preview "Ends tonight 11:59 PM ET. 2 Pans + 2 Lids $199." Real last day only (date condition).
+- Ours: subject "VIP Sale ends tonight at 11:59 PM ET", preview "Ends tonight 11:59 PM ET. 2 Pans + 2 Lids $249." Real last day only (date condition).
 - After the end time. Reference: subject "(1) Your store credit is updated." / "I extended your credit with just 24 hours (until tonight)... cannot be extended again". Ours: subject "It ended. Here's what's still on." body "The flash price is over. Free shipping and 30-day returns stay." (auto-switch)
 - Countdown. Reference: subject "Your [amount] is about to disappear" / "Final hours" / "ends tonight" / "use it or lose it" + countdownmail.com timer. Ours: live GIF (Sendtric/NiftyImages) to the real end time, then "SALE ENDED". During the sale only.
 

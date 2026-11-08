@@ -457,3 +457,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 2026-11-08 · VoC: analyse advertentiecomments (9,224 rijen), synthese 9 bestanden, Reddit (deels). research/voc/. Read-only.
 - 2026-11-08 · Figma-bestand 'BFCM mail designs · review' (14 mails) gemaakt voor Floris. Niets live.
 - 2026-11-08 · Besluit: 2 Pans + 2 Lids = $249, niet $199 (DECISIONS.md).
+- 2026-11-08 · Plan urgentie in flows voor Lucas (aanpak-urgentie-flows.md); brief naar $249.
