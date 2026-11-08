@@ -461,3 +461,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 2026-11-08 · Quiz-popup mock v2 (HTML + Figma, zelfde aanbod, because-regel per antwoord).
 - 2026-11-08 · Tegoed-systeem '$12 in your account' (research/plannen/2026-11-tegoed/systeem.md): advies trigger b (120 dagen geen order, US), coupon-placeholder SIRAAT_CREDIT_12, code en echte einddatum via Coupon Assigned naar profiel. 4 templates in klaviyo/templates/v3/tegoed/ (VaRdvM, V6dXap, W6nhmt, Xb9RTV), lijst TvEQxz 'Tegoed uitgegeven', flow Ubi9m5 als DRAFT (10% holdout). Geen coupon of Shopify-korting gemaakt, niets live, geen live flow aangeraakt.
 - 2026-11-08 · Tegoed-templates (VaRdvM, V6dXap, W6nhmt, Xb9RTV) bijgewerkt met minimaal $100; flow Ubi9m5 blijft draft.
+- 2026-11-08 · Onderzoek bedrag tegoed (psychologie): advies $15 rond, $75 minimum.
