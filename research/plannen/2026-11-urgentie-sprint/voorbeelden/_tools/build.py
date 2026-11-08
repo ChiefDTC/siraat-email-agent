@@ -656,7 +656,7 @@ def main():
 
 <footer class="end">Gebouwd met voorbeelden/_tools/build.py uit flows-agressief.json, copy-agressief.json, copy.json, black-hat-referentie.md en de lokaal gerenderde live templates (Klaviyo alleen GET). Niets in Klaviyo of Shopify gewijzigd, niets verstuurd.</footer>
 </div></body></html>"""
-    assert not re.search('[–—]', doc), 'gedachtestreepje in uitvoer'
+    assert not re.search('[\\u2013\\u2014]', doc), 'gedachtestreepje in uitvoer'
     assert not re.search(r'BF-[A-Z0-9]{4,}', doc), 'echte code in uitvoer'
     open(os.path.join(OUT, 'index.html'), 'w').write(doc)
     print('flows', nflows, 'mails', nmails, 'rebuilt', nreb, 'blackhat', nbh, 'bytes', len(doc))
