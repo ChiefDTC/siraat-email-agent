@@ -56,7 +56,7 @@ COOKBOOK = 'https://cdn.klaviyomail.com/company/TdtTzz/images/dabf0446-a5d7-49ae
 SOCIAL = {'fb.png': 'https://cdn.klaviyomail.com/company/TdtTzz/images/17c00632-f9db-4dcd-a27e-bf0adc4987da.png',
           'ig.png': 'https://cdn.klaviyomail.com/company/TdtTzz/images/6b905e47-7bf9-4aec-a63b-0538ecc6bd60.png'}
 CDN = 'https://cdn.shopify.com/s/files/1/0907/0877/1156/files/'
-SQ = lambda n: CDN + n + '?width=600&height=600&crop=center&format=pjpg'
+SQ = lambda n: CDN + n + '?width=600&height=420&crop=center&format=pjpg'
 PROD = {  # key: (naam, beeld)
     'standard': ('Pan Pro Standard', 'Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-40a5-9ad7-523bdddc54d4.webp'),
     'set6': ('Pan Set with Lids, 6 Pcs', '6pcscookwareset.webp'),
@@ -86,6 +86,8 @@ CSS = '''
     .h1u{font-size:36px!important;line-height:40px!important;}
     .bigc{font-size:56px!important;line-height:60px!important;}
     .lt{padding-left:24px!important;padding-right:24px!important;}
+    .tb{font-size:11px!important;letter-spacing:0.8px!important;padding:12px 12px!important;}
+    .btn{font-size:15px!important;letter-spacing:0.5px!important;padding:19px 12px!important;}
 '''
 def head(meta, title, pre):
     return '''<!--
@@ -136,12 +138,12 @@ def h1(t, href, color, align='left'):
             '<a href="%s" data-urg="h1" style="display:block;text-decoration:none;color:%s;">%s</a></h1>') % (FF, color, align, href, color, t)
 def topbar(t, href):
     return ('<tr><td align="center" bgcolor="%s" style="background-color:%s;padding:0;text-align:center;">'
-            '<a href="%s" data-urg="topbar" style="display:block;padding:12px 20px;font-family:%s;font-size:12px;line-height:16px;letter-spacing:1.6px;font-weight:800;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">%s</a></td></tr>\n{{HEADER}}\n') % (INK, INK, href, FF, t)
+            '<a href="%s" data-urg="topbar" class="tb" style="display:block;padding:12px 20px;font-family:%s;font-size:12px;line-height:16px;letter-spacing:1.6px;font-weight:800;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">%s</a></td></tr>\n{{HEADER}}\n') % (INK, INK, href, FF, t)
 def button(label, url, bg, dark=False, pad='0 40px 0 40px', ur='cta'):
     fill_, fg = ('#FFFFFF', INK) if dark else (INK, '#FFFFFF')
     vml = ('<!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="%s" style="height:56px;v-text-anchor:middle;width:360px;" arcsize="50%%" stroke="f" fillcolor="%s">'
            '<center style="color:%s;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;letter-spacing:1px;">%s</center></v:roundrect><![endif]-->') % (url, fill_, fg, label.upper())
-    a = ('<!--[if !mso]><!--><a href="%s" data-urg="%s" style="display:block;padding:19px 16px;font-family:%s;font-size:16px;line-height:18px;font-weight:800;letter-spacing:1px;color:%s;text-decoration:none;text-transform:uppercase;white-space:nowrap;">%s &rarr;</a><!--<![endif]-->') % (url, ur, FF, fg, label)
+    a = ('<!--[if !mso]><!--><a href="%s" data-urg="%s" class="btn" style="display:block;padding:19px 16px;font-family:%s;font-size:16px;line-height:18px;font-weight:800;letter-spacing:1px;color:%s;text-decoration:none;text-transform:uppercase;">%s&nbsp;&rarr;</a><!--<![endif]-->') % (url, ur, FF, fg, label)
     b = ('<table role="presentation" width="360" cellpadding="0" cellspacing="0" border="0" style="width:100%%;max-width:360px;margin:0 auto;"><tr>'
          '<td align="center" bgcolor="%s" style="background-color:%s;border-radius:28px;">%s%s</td></tr></table>') % (fill_, fill_, vml, a)
     return row(bg, pad, b, 'center')
@@ -156,7 +158,7 @@ def quote(q, who, href, bg=CREAM):
     h = txt('&#9733;&#9733;&#9733;&#9733;&#9733;', 15, 18, GOLD, 400, 'letter-spacing:3px;text-align:center;padding-bottom:10px;')
     h += al('&ldquo;%s&rdquo;' % q, href, 20, 28, INK, 600, 'text-align:center;', 'review')
     h += txt('%s, verified buyer' % who, 13, 18, GREY, 600, 'text-align:center;padding-top:10px;')
-    return row(bg, '30px 40px 28px 40px', h, 'center')
+    return row(bg, '26px 40px 24px 40px', h, 'center')
 def eyebrow(t, href, dark):
     return al(t, href, 12, 16, GOLD if dark else BRICK, 700, 'letter-spacing:2px;text-transform:uppercase;padding-bottom:10px;', 'eyebrow')
 
@@ -167,12 +169,19 @@ def gift_list(us, int_ship=False):
             ('gift-ebook.jpg', 'Plastic-free ebook', 'Plastic-free<br>ebook', '$30 value' if us else 'Included'),
             ('gift-cookbook.jpg', 'Favorites cookbook', 'Favorites<br>cookbook', '$25 value' if us else 'Included'),
             ('gift-filter.jpg', 'Chance to win a PFAS water filter', 'Chance to win a<br>PFAS water filter', '$450 value, weekly draw' if us else 'Weekly draw')]
-def gifts_grid(us, href, bg=WHITE, eyebrow_t='WITH EVERY ORDER', title=None, note='The filter is a chance to win in our weekly draw. The rest comes with every order.'):
+def gifts_grid(us, href, bg=WHITE, eyebrow_t='WITH EVERY ORDER', title=None, note='The filter is a chance to win in our weekly draw. The rest comes with every order.', compact=True):
     def tile(g, w='50%'):
         im, alt, lab, val = g
-        return ('<td width="%s" valign="top" align="center" bgcolor="#FFFFFF" data-gift="%s" style="background-color:#FFFFFF;border:1px solid %s;padding:12px 6px 14px 6px;">'
-                '<a href="%s" data-urg="gift" style="display:block;text-decoration:none;"><img src="{{SHARED}}/%s" width="96" alt="%s" style="display:block;width:96px;height:96px;margin:0 auto;border:0;">'
-                '<span style="display:block;font-family:%s;font-size:13px;line-height:17px;font-weight:600;color:%s;padding-top:8px;">%s</span>'
+        if compact:  # zelfde 2x2 + filter gecentreerd, tegel liggend (beeld links) zodat het blok op 375 px ~260 px hoog blijft
+            return ('<td width="%s" valign="middle" bgcolor="#FFFFFF" data-gift="%s" style="background-color:#FFFFFF;border:1px solid %s;padding:8px;">'
+                    '<a href="%s" data-urg="gift" style="display:block;text-decoration:none;"><table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0"><tr>'
+                    '<td width="56" valign="middle"><img src="{{SHARED}}/%s" width="56" alt="%s" style="display:block;width:56px;height:56px;border:0;"></td>'
+                    '<td valign="middle" style="padding-left:8px;text-align:left;"><span style="display:block;font-family:%s;font-size:12px;line-height:15px;font-weight:600;color:%s;">%s</span>'
+                    '<span style="display:block;font-family:%s;font-size:11px;line-height:15px;font-weight:600;color:%s;padding-top:2px;">%s</span></td></tr></table></a></td>') % (
+                w, im, HAIR, href, im, alt, FF, INK, lab, FF, BRICK, val)
+        return ('<td width="%s" valign="top" align="center" bgcolor="#FFFFFF" data-gift="%s" style="background-color:#FFFFFF;border:1px solid %s;padding:8px 6px 10px 6px;">'
+                '<a href="%s" data-urg="gift" style="display:block;text-decoration:none;"><img src="{{SHARED}}/%s" width="72" alt="%s" style="display:block;width:72px;height:72px;margin:0 auto;border:0;">'
+                '<span style="display:block;font-family:%s;font-size:13px;line-height:17px;font-weight:600;color:%s;padding-top:6px;">%s</span>'
                 '<span style="display:block;font-family:%s;font-size:12px;line-height:16px;font-weight:600;color:%s;padding-top:2px;">%s</span></a></td>') % (
             w, im, HAIR, href, im, alt, FF, INK, lab, FF, BRICK, val)
     g = gift_list(us, int_ship=not us)
@@ -237,7 +246,7 @@ def check_reviews(proofs):
         for part in [x.strip() for x in p['quote'].split('...') if x.strip()]:
             j = o.find(part, pos); assert j >= 0, (p['id'], 'niet letterlijk', part); pos = j + len(part)
 def meta(mid, mkt, m, c, extra=''):
-    notes = ' | '.join(m.get('notes_nl', []))
+    notes = ' | '.join(m.get('notes_nl', [])).replace('{{BLOCK:', 'BLOCK ').replace('{{', '[[').replace('}}', ']]')
     return ('ID: %s\nMARKT: %s\nSENDER: %s\nSUBJECT A: %s\nSUBJECT B: %s\nSUBJECT C: %s\nSUBJECT KEUZE: %s (deadline in %s)\nPREVIEW: %s\nRESEND: %s / %s\nWIE: %s\n'
             'TOKENS: [[...]] = placeholder, pas verzendklaar als VALUES in _tools/make_urg.py gevuld is (UX-spec 2.3).\nNOTITIES COPY: %s\n%s') % (
         mid, mkt, m['sender'], tk(c['subject_a']), tk(c['subject_b']), tk(c['subject_c']), c['subject_pick'], c['subject_deadline'], tk(c['preview']),
@@ -252,7 +261,7 @@ def flash(mkt):
     check_reviews(c['proof'])
     x = '' if us else 'LET OP: 2 Pans + 2 Lids staat in de catalogus als US-only (content/catalog, duo2 us_only). UX-spec 3 wil INT op Pan Pro Standard; copy houdt de set. Beslissing Floris voor INT live gaat.'
     b = head(meta('urg-flash-' + mkt, mkt.upper(), m, c, x), subj(c), tk(c['preview']))
-    b += topbar('24-hour flash deal &middot; ends [[DEADLINE_CAPS]]', L('topbar'))
+    b += topbar('Flash deal ends [[DEADLINE_CAPS]]', L('topbar'))
     inner = eyebrow(c['eyebrow'], L('hero-eyebrow'), True)
     inner += h1('%s<br>%s' % (c['hero_line1'], c['hero_line2']), L('hero-kop'), '#FFFFFF')
     if us:
@@ -267,7 +276,7 @@ def flash(mkt):
     b += row(INK, '26px 40px 20px 40px', inner, 'left')
     b += button(tk(c['cta']), L('cta1'), INK, True, ur='cta1') + friction(c['friction'], INK, True, '10px 40px 22px 40px')
     b += heroimg('flash', 'Two friends laughing as shrimp sizzle in a Siraat hammered titanium pan. Flash deal ends [[DEADLINE]]', L('hero-img'), INK)
-    b += gap(WHITE, 30)
+    b += gap(WHITE, 26)
     for p in c['body']: b += para(tk(p))
     b += quote(c['proof'][0]['quote'], c['proof'][0]['name'], L('review'))
     b += gap(WHITE, 24) + para(c['authority'], WHITE, '0 40px 6px 40px', 15, 23, '#4A4A4A')
@@ -285,19 +294,18 @@ def vipmail(mkt):
     check_reviews(c['proof'])
     x = "VIP-code: {% coupon_code 'VIPWEEKEND' %} in codevak en in elke link (Klaviyo wijst per ontvanger per bericht één code toe). Couponnaam is een voorstel; 'on top' alleen als de code in Shopify op de saleprijs stapelt (UX-spec 3, open vraag 3)."
     b = head(meta('urg-vip-' + mkt, mkt.upper(), m, c, x), subj(c), tk(c['preview']))
-    b += topbar('VIP only &middot; extra 10% ends [[DEADLINE_CAPS]]', L('topbar'))
+    b += topbar('VIP extra 10% ends [[DEADLINE_CAPS]]', L('topbar'))
     inner = eyebrow(c['eyebrow'], L('hero-eyebrow'), True)
     inner += h1('%s<br>%s' % (c['hero_line1'], c['hero_line2']), L('hero-kop'), '#FFFFFF')
-    inner += al(tk(c['subline']), L('hero-offer'), 17, 24, SOFT, 600, 'padding-top:10px;', 'offer')
-    code = ('<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border:2px dashed %s;border-radius:8px;"><tr><td align="center" style="padding:12px 10px;">'
+    code = ('<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border:2px dashed %s;border-radius:8px;"><tr><td align="center" style="padding:10px 10px;">'
             '<span class="offer-code" style="display:block;font-family:%s;font-size:24px;line-height:30px;font-weight:800;letter-spacing:3px;color:%s;white-space:nowrap;">%s</span>'
             '<span style="display:block;font-family:%s;font-size:12px;line-height:16px;color:%s;padding-top:2px;">Your personal code &middot; already applied when you tap below</span></td></tr></table>') % (GOLD, FF, INK, VIPTAG, FF, GREY)
-    inner += '<div style="padding-top:16px;"><a href="%s" data-urg="code" style="display:block;text-decoration:none;">%s</a></div>' % (L('hero-code'), code)
+    inner += '<div style="padding-top:16px;"><a href="%s" data-urg="offer" style="display:block;text-decoration:none;">%s</a></div>' % (L('hero-code'), code)
     inner += al('Your code works until [[DEADLINE]].', L('hero-deadline'), 16, 22, '#FFFFFF', 700, 'padding-top:14px;', 'deadline')
-    b += row(INK, '26px 40px 20px 40px', inner, 'left')
+    b += row(INK, '20px 40px 18px 40px', inner, 'left')
     b += button(c['cta'], L('cta1'), INK, True, ur='cta1') + friction(c['friction'], INK, True, '10px 40px 22px 40px')
     b += heroimg('vip', 'A couple laughing over a steak in a Siraat hammered titanium pan. Your extra 10% ends [[DEADLINE]]', L('hero-img'), INK)
-    b += gap(WHITE, 30)
+    b += gap(WHITE, 26)
     for p in c['body']: b += para(tk(p))
     hrefs = {k: L('card-' + k, '/products/' + V.handle(k)) for k in GRID}
     b += grid(us, hrefs, 'What your 10% looks like' if us else 'Where your 10% goes', CREAM, '%s with your code' if us else 'Extra 10% with your code')
@@ -373,8 +381,8 @@ def last(mkt):
             out += linkline('&rarr; Take me to the sale', 'link2')
             continue
         p = p.replace('\n', '<br>')
-        if p.startswith(we[0][:12]):  # de deadline-zin: mag vet (UX-spec 3)
-            p = '<b>%s</b>' % p
+        if p.startswith(tk(we[0])[:12]):  # de deadline-zin: mag vet (UX-spec 3)
+            p = '<b data-urg="deadline">%s</b>' % p
         pad = '24px 40px 14px 40px' if i == 0 else '0 40px 14px 40px'
         out += '<tr><td class="lt" style="padding:%s;%s">%s</td></tr>\n' % (pad, S, p)
         if 'That&#39;s the whole change' in p or "That's the whole change" in p:
@@ -397,7 +405,7 @@ def gifts(mkt):
     b += row(INK, '26px 40px 20px 40px', inner, 'left')
     b += button(c['cta'], L('cta1'), INK, True, ur='cta1') + friction(c['friction'], INK, True, '10px 40px 22px 40px')
     b += heroimg('gifts', 'A woman opening a gift box next to a PFAS water filter and a Siraat hammered titanium pan. Gifts end [[DEADLINE]]', L('hero-img'), INK)
-    b += gap(WHITE, 30) + para(tk(c['body'][0]))
+    b += gap(WHITE, 26) + para(tk(c['body'][0]))
     b += gifts_grid(us, L('gifts'), WHITE, 'WHAT SHIPS WITH YOUR ORDER', None, 'Mystery gift stays a surprise. The filter is a chance to win in our weekly draw.')
     for p in c['body'][2:]: b += para(tk(p))
     b += button(c['cta'], L('cta2'), WHITE, pad='6px 40px 0 40px', ur='cta2') + friction(c['friction'], WHITE, pad='10px 40px 26px 40px')
@@ -416,7 +424,7 @@ def draw(mkt):
     check_reviews(c['proof'])
     x = 'BLOKKEREND: niet verzenden zonder officiele regels online ([[DRAW_RULES_URL]]). "Full rules" is de enige tweede bestemming (UX-spec 1.3).'
     b = head(meta('urg-draw-' + mkt, mkt.upper(), m, c, x), subj(c), tk(c['preview']))
-    b += topbar("This week's filter draw closes [[DEADLINE_CAPS]]", L('topbar'))
+    b += topbar('Filter draw closes [[DEADLINE_CAPS]]', L('topbar'))
     inner = eyebrow(c['eyebrow'], L('hero-eyebrow'), False)
     inner += h1('%s<br>%s' % (c['hero_line1'], tk(c['hero_line2'])), L('hero-kop'), INK)
     inner += al(c['subline'], L('hero-offer'), 17, 24, '#4A4A4A', 500, 'padding-top:10px;', 'offer')
