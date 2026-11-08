@@ -25,8 +25,8 @@ VALUES = {
     'DEADLINE': None,          # bv. 'tonight at 11:59 PM ET' (UX-spec 2.4: met tijdzone, gelijk aan de backend)
     'DEADLINE_SHORT': None,    # bv. 'tonight'
     'DEADLINE_DATE': None,     # bv. 'November 15, 2026 at 11:59 PM ET' (juridische regel CREDIT en DRAW)
-    'FLASH_PRICE': None,       # US, bv. '$199' (Floris zet de prijs in Shopify)
-    'FLASH_PERCENT': None,     # INT, bv. '20%'
+    'FLASH_PRICE': '$199',     # US: huidige websiteprijs 2 Pans + 2 Lids (besluit Floris 8 nov: flash = websiteprijzen)
+    'FLASH_PERCENT': '70%',     # INT: sale tot 70% (websiteprijzen, geen extra korting)
     'CREDIT': None,            # {{ person|lookup:'rise_wallet_balance'|floatformat:"-2" }} pas na Klaviyo-preview en segment saldo > 0
     'POINTS': None,            # {{ person|lookup:'siraat_points'|floatformat:0 }}
     'PAN_AFTER_CREDIT': None,  # 144 min CREDIT, in Klaviyo te berekenen
@@ -34,7 +34,7 @@ VALUES = {
 }
 # Voorbeeldwaarden voor -preview.html en de QA-render (opdracht: DEADLINE "tonight at 11:59 PM", DEADLINE_SHORT "tonight", CREDIT 12).
 SAMPLE = {'DEADLINE': 'tonight at 11:59 PM', 'DEADLINE_SHORT': 'tonight', 'DEADLINE_DATE': 'November 8, 2026 at 11:59 PM ET',
-          'FLASH_PRICE': '$199', 'FLASH_PERCENT': '20%', 'CREDIT': '12', 'POINTS': '1,200', 'PAN_AFTER_CREDIT': '132',
+          'FLASH_PRICE': '$199', 'FLASH_PERCENT': '70%', 'CREDIT': '12', 'POINTS': '1,200', 'PAN_AFTER_CREDIT': '132',
           'DRAW_RULES_URL': 'https://siraatskitchen.com/pages/filter-draw-rules'}
 def caps(d):
     d = dict(d)
@@ -266,7 +266,7 @@ def flash(mkt):
     inner += h1('%s<br>%s' % (c['hero_line1'], c['hero_line2']), L('hero-kop'), '#FFFFFF')
     if us:
         offer = ('<span style="font-size:30px;line-height:36px;font-weight:800;color:#FFFFFF;">[[FLASH_PRICE]]</span>&nbsp; '
-                 '<span style="font-size:18px;line-height:36px;font-weight:600;color:%s;text-decoration:line-through;">$249</span>&nbsp; '
+                 '<span style="font-size:18px;line-height:36px;font-weight:600;color:%s;text-decoration:line-through;">$664</span>&nbsp; '
                  '<span style="font-size:15px;line-height:36px;font-weight:600;color:%s;">for 2 pans + 2 lids</span>') % (SOFT, SOFT)
     else:
         offer = ('<span style="display:inline-block;background-color:%s;color:%s;font-size:15px;line-height:18px;font-weight:800;letter-spacing:0.6px;padding:6px 10px;border-radius:3px;">EXTRA [[FLASH_PERCENT]] OFF</span>&nbsp; '
