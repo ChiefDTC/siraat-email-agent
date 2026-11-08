@@ -1,0 +1,2015 @@
+{
+  "meta": {
+    "sprint": "Urgentie-sprint 8 nov 2026, rol AGGRESSIVE COPY (edge-finder)",
+    "doel": "Maximale stand (Smooche-hard) die Floris per mail met de hand afzwakt. Elke regel heeft waar_als (backend-voorwaarde) en risico.",
+    "basis": "Normale copy: ../copy/copy.json. Dezelfde mails, zelfde producten, zelfde reviews.",
+    "risico_legenda": {
+      "groen": "Waar zodra de backend-voorwaarde klopt; geen spamwoorden, geen caps-onderwerp.",
+      "oranje": "Waar onder een strikte extra voorwaarde (verzendtijd, segment, tijdzone, regels) of met caps/emoji/'free'/verlies-framing. Floris checkt per verzending.",
+      "rood": "Alleen met extra techniek (live GIF, AMOE in Klaviyo) of hoog deliverability-risico (caps-onderwerp). Standaard niet versturen; staat erin als maximale stand om af te zwakken."
+    },
+    "placeholders": {
+      "{{DEADLINE}}": "Volledig moment met tijdzone, bv. 'tonight at 11:59 PM ET'. Moet exact de backend-eindtijd zijn.",
+      "{{DEADLINE_SHORT}}": "Kort, bv. 'tonight' of 'Sunday'. Zelfde moment als {{DEADLINE}}.",
+      "{{DEADLINE_PAST}}": "Mail 8B: moment waarop het echt eindigde, bv. 'last night at 11:59 PM ET'.",
+      "{{HOURS_LEFT}}": "Echte uren tot {{DEADLINE}} op het verzendmoment (afronden naar beneden). Nieuw t.o.v. copy.md.",
+      "{{MINUTES_LEFT}}": "Echte minuten tot {{DEADLINE}} op het verzendmoment; bij T-15min alleen naast een live GIF.",
+      "{{FLASH_PRICE}} / {{FLASH_PERCENT}}": "Zie copy.md (US prijs, INT procent).",
+      "{{VIP_CODE}}": "Unieke Klaviyo-code per profiel, one use, einde {{DEADLINE}}.",
+      "{{CREDIT}} / {{POINTS}} / {{PAN_AFTER_CREDIT}}": "Rise.ai-saldo per profiel (US zonder $-teken), punten, 144 min credit.",
+      "{{WHAT_ENDS}} / {{WHAT_ENDS_SHORT}} / {{AFTER}} / {{AFTER_SHORT}}": "Mail 4, 7, 8: per bronmail uit de tabel in copy.md.",
+      "{{DRAW_RULES_URL}}": "Officiële trekkingsregels; zonder deze link geen trekkingsmail.",
+      "{{LINK}}": "Doel-URL (codelink of BF-collectie).",
+      "BFCODE": "Echte BF-code nooit in bestanden; alleen in abandonment-flows, niet in deze campagnes."
+    },
+    "tijdzone_en_verzendregels": [
+      "Shopify-prijzen, codes en Rise-vervaldata hebben één eindtijd, geen eindtijd per ontvanger. 'Tonight' of 'midnight' is dus alleen waar voor de tijdzone die je noemt. US: schrijf 'midnight ET' of splits de US-lijst per tijdzone met elk een eigen code-einde. INT: gebruik uren/minuten of {{DEADLINE}} met tijdzone.",
+      "Klaviyo 'send in recipient's local time' verschuift de verzending, niet de deadline: niet gebruiken voor T-1h en T-15min.",
+      "Statische '60 minutes left' veroudert in de inbox. Daarom: absolute tijd in de body ('ends at 11:59 PM ET') en bij T-15min alleen met live GIF.",
+      "Grote verzendingen (75k) kunnen 10 tot 30 min duren. T-1h en T-15min alleen naar kleine segmenten (klikkers zonder order, < 10k), zodat de mail vóór de deadline aankomt.",
+      "Volume: max 3 mails per 24 u per profiel (4 op BF/CM, volumeplan 06). De volledige reeks T-24h + T-6h + T-1h + T-15min gaat dus nooit naar hetzelfde profiel: T-6h alleen niet-openers, T-1h alleen niet-klikkers, T-15min alleen klikkers zonder order.",
+      "Stopregel blijft: spam boven 0,15% op een nieuwe stap (1.000+ ontvangers) of 0,3% op een verzending = terug naar de rustige versie uit copy.md."
+    ],
+    "velden": "per mail: name, sender, base (voorwaarde voor de hele mail), US/INT: subjects[5], previews[3], heroes[3] ('|' = regelbreuk), countdown{T-24h,T-6h,T-1h,T-15min}, buttons[3], body, resend; elk item {text, waar_als, risico, noot?}"
+  },
+  "smooche_mechanieken": [
+    {
+      "onderdeel": "Onderwerp-formules",
+      "patroon": "[DEADLINE IN CAPS]: [aanbod] ('The sale ENDS TONIGHT'); persoonlijk bedrag + verlies ('Your [bedrag] is about to disappear'); status-imitatie ('Your order is pending.', '(1) Your store credit is updated.'); productnaam + 'is waiting for you'; thema + emoji ('Happy Halloween 🎃', 'You joined at the right time 👻')."
+    },
+    {
+      "onderdeel": "Preview-formules",
+      "patroon": "Deadline in de eerste zin ('the sale we're running right now ends tonight at midnight'); 'no code needed / already applied'; 'Expires Today'; aanbod + gifts ('60% Off + Free Gifts')."
+    },
+    {
+      "onderdeel": "Hero-regels",
+      "patroon": "Kort, bedrag of deadline centraal: 'Your Halloween Surprise' + 'You have [bedrag] store credit left' + zegel 'Expires Today'; 'Final hours'; 'Use it or lose it'."
+    },
+    {
+      "onderdeel": "Countdown",
+      "patroon": "Live aftelklok (countdownmail.com) alleen in de slotmail van de kredietreeks (+41 u); verder tekstdeadlines ('tonight', 'within 24 hours', 'SOON' in caps)."
+    },
+    {
+      "onderdeel": "Slotreeks",
+      "patroon": "Kredietketting: dag 0 'expires today' (13,5 u), dag 1 'extended 24 hours, cannot be extended again' (38,5 u), dag 1 avond 'about to disappear' + klok (41,3 u). Cart/checkout in blokken van 3 (+10 min, +1 u, +1 u 15) en 24 u later nog eens 3."
+    },
+    {
+      "onderdeel": "Resend-onderwerpen",
+      "patroon": "'(1) Your ... is updated', 'Your foundation order is pending.' (tweede ronde), 'You missed this' en 'Final hours' (laatste twee uit de opdracht, niet in deze mailbox gemeten)."
+    },
+    {
+      "onderdeel": "Emoji",
+      "patroon": "Alleen in merkmails (👻 🎃), niet in de Chloe-brieven; max 1 per onderwerp, aan het eind."
+    },
+    {
+      "onderdeel": "Caps",
+      "patroon": "Eén woord of frase in caps ('SOON', 'ENDS TONIGHT', 'VIP ONLY', 'YOUR PASSWORD'), nooit het hele onderwerp."
+    },
+    {
+      "onderdeel": "Getallen",
+      "patroon": "Oneven, persoonlijk ogend bedrag ($12.24), percentages (60%, 58%, 97% said it matched), 100,000+ women, 24 hours."
+    },
+    {
+      "onderdeel": "Cadans",
+      "patroon": "13 mails in 41 uur, 5 in de eerste 3 uur, elke mail een nieuwe reden; persona (Chloe, platte tekst) bij de 'persoonlijke' momenten, merk (beeldmail) bij aanbod."
+    }
+  ],
+  "eerlijk_overnemen": [
+    "Deadline in onderwerp, preview, hero en vlak boven de laatste knop (zelfde moment overal).",
+    "Relatieve tijd ('6 hours left', '60 minutes left', 'Final hour') op echte verzend-offsets T-24h, T-6h, T-1h; waar voor elke tijdzone tegelijk.",
+    "Eén woord in caps plus één emoji ('ENDS TONIGHT ... ⏰').",
+    "Persoonlijk bedrag in het onderwerp ('Your ${{CREDIT}} is about to disappear'), mits echt Rise-saldo met echte vervaldatum.",
+    "'VIP ONLY' + code in het onderwerp, met unieke one-use code per profiel in plaats van een wachtwoord.",
+    "Verlies-framing ('use it or lose it', 'goes to $0') als het saldo echt vervalt.",
+    "Resend naar niet-openers met nieuw onderwerp ('You missed this: ...'), en een platte Benjamin-brief naar niet-klikkers.",
+    "Live countdown-GIF naar de echte backend-tijd, die na afloop 'ENDED' toont.",
+    "Na de deadline: 'It ended. Here's what's still on.' Geen verlenging, wel de volgende echte reden.",
+    "'No code needed / already applied' alleen via /discount/CODE?redirect= of automatische korting, getest per markt."
+  ],
+  "mails": {
+    "1-flash": {
+      "name": "FLASH: 24-hour flash deal ends tonight",
+      "sender": "Siraat",
+      "base": "Shopify: 2 Pans + 2 Lids staat op {{FLASH_PRICE}} en gaat op {{DEADLINE}} echt terug naar $249 (geplande prijswijziging of app, getest) / INT: Shopify/Markets: extra {{FLASH_PERCENT}} op de 2 Pans + 2 Lids stopt op {{DEADLINE}} (automatische korting met einddatum)",
+      "US": {
+        "subjects": [
+          {
+            "text": "ENDS TONIGHT: 2 pans + 2 lids for {{FLASH_PRICE}} ⏰",
+            "waar_als": "Shopify: 2 Pans + 2 Lids staat op {{FLASH_PRICE}} en gaat op {{DEADLINE}} echt terug naar $249 (geplande prijswijziging of app, getest); {{DEADLINE}} valt vandaag om 23:59 in de tijdzone die genoemd wordt (ET); bij een US-brede lijst ET noemen, want voor Pacific is 23:59 ET 20:59",
+            "risico": "oranje",
+            "noot": "Twee caps-woorden plus één emoji: Smooche-stijl, binnen de grens. Hele onderwerp in caps zou rood zijn."
+          },
+          {
+            "text": "24 hours. 4 pieces. {{FLASH_PRICE}}.",
+            "waar_als": "Shopify: 2 Pans + 2 Lids staat op {{FLASH_PRICE}} en gaat op {{DEADLINE}} echt terug naar $249 (geplande prijswijziging of app, getest); verzendtijd = {{DEADLINE}} min 24 uur of minder",
+            "risico": "groen"
+          },
+          {
+            "text": "6 hours left on the flash price",
+            "waar_als": "Shopify: 2 Pans + 2 Lids staat op {{FLASH_PRICE}} en gaat op {{DEADLINE}} echt terug naar $249 (geplande prijswijziging of app, getest); verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          {
+            "text": "Order now: 60 minutes left",
+            "waar_als": "Shopify: 2 Pans + 2 Lids staat op {{FLASH_PRICE}} en gaat op {{DEADLINE}} echt terug naar $249 (geplande prijswijziging of app, getest); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn",
+            "risico": "oranje",
+            "noot": "Statische tekst veroudert: wie om 01:00 opent leest nog '60 minutes'. Body moet het absolute tijdstip noemen."
+          },
+          {
+            "text": "It's gone at midnight ET",
+            "waar_als": "Shopify: 2 Pans + 2 Lids staat op {{FLASH_PRICE}} en gaat op {{DEADLINE}} echt terug naar $249 (geplande prijswijziging of app, getest); de backend-deadline is precies 23:59 ET (Shopify-prijs, code of Rise-vervaldatum), niet later",
+            "risico": "groen"
+          }
+        ],
+        "previews": [
+          {
+            "text": "Then the set goes back to $249. No code, the price is already on the page.",
+            "waar_als": "Shopify: 2 Pans + 2 Lids staat op {{FLASH_PRICE}} en gaat op {{DEADLINE}} echt terug naar $249 (geplande prijswijziging of app, getest); flashprijs staat zonder code op de PDP",
+            "risico": "groen"
+          },
+          {
+            "text": "{{FLASH_PRICE}} for 2 pans + 2 lids until {{DEADLINE}}. After that, $249.",
+            "waar_als": "Shopify: 2 Pans + 2 Lids staat op {{FLASH_PRICE}} en gaat op {{DEADLINE}} echt terug naar $249 (geplande prijswijziging of app, getest)",
+            "risico": "groen"
+          },
+          {
+            "text": "5 free gifts ship with it. This price does not.",
+            "waar_als": "Shopify: 2 Pans + 2 Lids staat op {{FLASH_PRICE}} en gaat op {{DEADLINE}} echt terug naar $249 (geplande prijswijziging of app, getest); gifts lopen door na de flash (tot 30 nov)",
+            "risico": "groen"
+          }
+        ],
+        "heroes": [
+          {
+            "text": "24 hours.|Then it's $249.",
+            "waar_als": "Shopify: 2 Pans + 2 Lids staat op {{FLASH_PRICE}} en gaat op {{DEADLINE}} echt terug naar $249 (geplande prijswijziging of app, getest); verzendtijd = {{DEADLINE}} min 24 uur of minder",
+            "risico": "groen"
+          },
+          {
+            "text": "{{FLASH_PRICE}}|until midnight ET",
+            "waar_als": "Shopify: 2 Pans + 2 Lids staat op {{FLASH_PRICE}} en gaat op {{DEADLINE}} echt terug naar $249 (geplande prijswijziging of app, getest); de backend-deadline is precies 23:59 ET (Shopify-prijs, code of Rise-vervaldatum), niet later",
+            "risico": "groen"
+          },
+          {
+            "text": "2 pans. 2 lids.|Gone tonight.",
+            "waar_als": "Shopify: 2 Pans + 2 Lids staat op {{FLASH_PRICE}} en gaat op {{DEADLINE}} echt terug naar $249 (geplande prijswijziging of app, getest); {{DEADLINE}} valt vandaag om 23:59 in de tijdzone die genoemd wordt (ET); bij een US-brede lijst ET noemen, want voor Pacific is 23:59 ET 20:59",
+            "risico": "groen"
+          }
+        ],
+        "countdown": {
+          "T-24h": {
+            "text": "24 hours at {{FLASH_PRICE}}. Ends {{DEADLINE}}.",
+            "waar_als": "Shopify: 2 Pans + 2 Lids staat op {{FLASH_PRICE}} en gaat op {{DEADLINE}} echt terug naar $249 (geplande prijswijziging of app, getest); verzendtijd = {{DEADLINE}} min 24 uur of minder",
+            "risico": "groen"
+          },
+          "T-6h": {
+            "text": "6 hours left. At {{DEADLINE}} it's $249 again.",
+            "waar_als": "Shopify: 2 Pans + 2 Lids staat op {{FLASH_PRICE}} en gaat op {{DEADLINE}} echt terug naar $249 (geplande prijswijziging of app, getest); verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          "T-1h": {
+            "text": "Final hour. {{FLASH_PRICE}} until {{DEADLINE}}.",
+            "waar_als": "Shopify: 2 Pans + 2 Lids staat op {{FLASH_PRICE}} en gaat op {{DEADLINE}} echt terug naar $249 (geplande prijswijziging of app, getest); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn",
+            "risico": "oranje"
+          },
+          "T-15min": {
+            "text": "{{MINUTES_LEFT}} minutes left at {{FLASH_PRICE}}.",
+            "waar_als": "Shopify: 2 Pans + 2 Lids staat op {{FLASH_PRICE}} en gaat op {{DEADLINE}} echt terug naar $249 (geplande prijswijziging of app, getest); verzendtijd = {{DEADLINE}} min 15 min, alleen naar klikkers zonder order (< 10k profielen, levering binnen 5 min); tekst ernaast is een live countdown-GIF die na het einde 'ENDED' toont",
+            "risico": "rood",
+            "noot": "Alleen met live GIF. Als tekst: op Gmail-tijdstip geopend kan hij al voorbij zijn. Zonder GIF niet sturen."
+          }
+        },
+        "buttons": [
+          {
+            "text": "Get both pans for {{FLASH_PRICE}}",
+            "waar_als": "Shopify: 2 Pans + 2 Lids staat op {{FLASH_PRICE}} en gaat op {{DEADLINE}} echt terug naar $249 (geplande prijswijziging of app, getest)",
+            "risico": "groen"
+          },
+          {
+            "text": "Lock in {{FLASH_PRICE}} now",
+            "waar_als": "Shopify: 2 Pans + 2 Lids staat op {{FLASH_PRICE}} en gaat op {{DEADLINE}} echt terug naar $249 (geplande prijswijziging of app, getest); prijs staat vast zodra de order geplaatst is (niet bij winkelwagen)",
+            "risico": "oranje",
+            "noot": "'Lock in' alleen als het om de order gaat; nooit suggereren dat de winkelwagen de prijs vasthoudt (= 'price held', verboden)."
+          },
+          {
+            "text": "Order before midnight ET",
+            "waar_als": "Shopify: 2 Pans + 2 Lids staat op {{FLASH_PRICE}} en gaat op {{DEADLINE}} echt terug naar $249 (geplande prijswijziging of app, getest); de backend-deadline is precies 23:59 ET (Shopify-prijs, code of Rise-vervaldatum), niet later",
+            "risico": "groen"
+          }
+        ],
+        "body": {
+          "text": "For 24 hours the 2 Pans + 2 Lids set is {{FLASH_PRICE}}, already on the page, no code. At {{DEADLINE}} it goes back to $249, the same set with the same 5 free gifts, just not this price. If you've been waiting for the moment, this is it.",
+          "waar_als": "Shopify: 2 Pans + 2 Lids staat op {{FLASH_PRICE}} en gaat op {{DEADLINE}} echt terug naar $249 (geplande prijswijziging of app, getest); $664 compare-at niet genoemd tenzij bevestigd",
+          "risico": "groen"
+        },
+        "resend": {
+          "text": "You missed this: {{FLASH_PRICE}} for 4 pieces",
+          "waar_als": "Shopify: 2 Pans + 2 Lids staat op {{FLASH_PRICE}} en gaat op {{DEADLINE}} echt terug naar $249 (geplande prijswijziging of app, getest); segment: ontvangen bronmail, niet geopend, geen order sinds verzending; deadline nog niet voorbij; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+          "risico": "oranje",
+          "noot": "'You missed this' kan lezen als 'voorbij'. Preview moet zeggen dat het nog loopt: 'Still on until {{DEADLINE}}.'"
+        }
+      },
+      "INT": {
+        "subjects": [
+          {
+            "text": "ENDS IN 24 HOURS: an extra {{FLASH_PERCENT}} off 2 pans ⏰",
+            "waar_als": "Shopify/Markets: extra {{FLASH_PERCENT}} op de 2 Pans + 2 Lids stopt op {{DEADLINE}} (automatische korting met einddatum); verzendtijd = {{DEADLINE}} min 24 uur of minder",
+            "risico": "oranje"
+          },
+          {
+            "text": "24 hours. 4 pieces. {{FLASH_PERCENT}} extra off.",
+            "waar_als": "Shopify/Markets: extra {{FLASH_PERCENT}} op de 2 Pans + 2 Lids stopt op {{DEADLINE}} (automatische korting met einddatum); verzendtijd = {{DEADLINE}} min 24 uur of minder",
+            "risico": "groen"
+          },
+          {
+            "text": "{{HOURS_LEFT}} hours left on the flash price",
+            "waar_als": "Shopify/Markets: extra {{FLASH_PERCENT}} op de 2 Pans + 2 Lids stopt op {{DEADLINE}} (automatische korting met einddatum); {{HOURS_LEFT}} = echte uren tot {{DEADLINE}} op verzendmoment, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt",
+            "risico": "groen"
+          },
+          {
+            "text": "Order now: 60 minutes left",
+            "waar_als": "Shopify/Markets: extra {{FLASH_PERCENT}} op de 2 Pans + 2 Lids stopt op {{DEADLINE}} (automatische korting met einddatum); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn",
+            "risico": "oranje"
+          },
+          {
+            "text": "Final hour: the 2-pan flash deal",
+            "waar_als": "Shopify/Markets: extra {{FLASH_PERCENT}} op de 2 Pans + 2 Lids stopt op {{DEADLINE}} (automatische korting met einddatum); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn",
+            "risico": "groen"
+          }
+        ],
+        "previews": [
+          {
+            "text": "Then it's the regular Black Friday price again. Already applied, no code.",
+            "waar_als": "Shopify/Markets: extra {{FLASH_PERCENT}} op de 2 Pans + 2 Lids stopt op {{DEADLINE}} (automatische korting met einddatum); automatische korting zonder code",
+            "risico": "groen"
+          },
+          {
+            "text": "An extra {{FLASH_PERCENT}} on top of Black Friday, for 24 hours only.",
+            "waar_als": "Shopify/Markets: extra {{FLASH_PERCENT}} op de 2 Pans + 2 Lids stopt op {{DEADLINE}} (automatische korting met einddatum); verzendtijd = {{DEADLINE}} min 24 uur of minder",
+            "risico": "groen"
+          },
+          {
+            "text": "5 free gifts ship with it. The extra {{FLASH_PERCENT}} does not stay.",
+            "waar_als": "Shopify/Markets: extra {{FLASH_PERCENT}} op de 2 Pans + 2 Lids stopt op {{DEADLINE}} (automatische korting met einddatum)",
+            "risico": "groen"
+          }
+        ],
+        "heroes": [
+          {
+            "text": "24 hours.|Then it's gone.",
+            "waar_als": "Shopify/Markets: extra {{FLASH_PERCENT}} op de 2 Pans + 2 Lids stopt op {{DEADLINE}} (automatische korting met einddatum); verzendtijd = {{DEADLINE}} min 24 uur of minder",
+            "risico": "groen"
+          },
+          {
+            "text": "Extra {{FLASH_PERCENT}} off|for {{HOURS_LEFT}} more hours",
+            "waar_als": "Shopify/Markets: extra {{FLASH_PERCENT}} op de 2 Pans + 2 Lids stopt op {{DEADLINE}} (automatische korting met einddatum); INT: geen 'tonight' of 'midnight' zonder tijdzone; relatieve tijd (uren/minuten) is waar voor elke tijdzone tegelijk",
+            "risico": "groen"
+          },
+          {
+            "text": "2 pans. 2 lids.|One day only.",
+            "waar_als": "Shopify/Markets: extra {{FLASH_PERCENT}} op de 2 Pans + 2 Lids stopt op {{DEADLINE}} (automatische korting met einddatum); looptijd is echt maximaal 24 uur",
+            "risico": "groen"
+          }
+        ],
+        "countdown": {
+          "T-24h": {
+            "text": "24 hours at an extra {{FLASH_PERCENT}} off. Ends {{DEADLINE}}.",
+            "waar_als": "Shopify/Markets: extra {{FLASH_PERCENT}} op de 2 Pans + 2 Lids stopt op {{DEADLINE}} (automatische korting met einddatum); {{DEADLINE}} met tijdzone of per markt ingevuld",
+            "risico": "groen"
+          },
+          "T-6h": {
+            "text": "6 hours left. Then it's the regular Black Friday price.",
+            "waar_als": "Shopify/Markets: extra {{FLASH_PERCENT}} op de 2 Pans + 2 Lids stopt op {{DEADLINE}} (automatische korting met einddatum); verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          "T-1h": {
+            "text": "Final hour on the extra {{FLASH_PERCENT}}.",
+            "waar_als": "Shopify/Markets: extra {{FLASH_PERCENT}} op de 2 Pans + 2 Lids stopt op {{DEADLINE}} (automatische korting met einddatum); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn",
+            "risico": "oranje"
+          },
+          "T-15min": {
+            "text": "{{MINUTES_LEFT}} minutes left on the extra {{FLASH_PERCENT}}.",
+            "waar_als": "Shopify/Markets: extra {{FLASH_PERCENT}} op de 2 Pans + 2 Lids stopt op {{DEADLINE}} (automatische korting met einddatum); verzendtijd = {{DEADLINE}} min 15 min, alleen naar klikkers zonder order (< 10k profielen, levering binnen 5 min); tekst ernaast is een live countdown-GIF die na het einde 'ENDED' toont",
+            "risico": "rood",
+            "noot": "Alleen met live GIF."
+          }
+        },
+        "buttons": [
+          {
+            "text": "Get both pans, {{FLASH_PERCENT}} extra off",
+            "waar_als": "Shopify/Markets: extra {{FLASH_PERCENT}} op de 2 Pans + 2 Lids stopt op {{DEADLINE}} (automatische korting met einddatum)",
+            "risico": "groen"
+          },
+          {
+            "text": "Order before it ends",
+            "waar_als": "Shopify/Markets: extra {{FLASH_PERCENT}} op de 2 Pans + 2 Lids stopt op {{DEADLINE}} (automatische korting met einddatum)",
+            "risico": "groen"
+          },
+          {
+            "text": "Use the flash price",
+            "waar_als": "Shopify/Markets: extra {{FLASH_PERCENT}} op de 2 Pans + 2 Lids stopt op {{DEADLINE}} (automatische korting met einddatum)",
+            "risico": "groen"
+          }
+        ],
+        "body": {
+          "text": "For 24 hours the 2 Pans + 2 Lids set has an extra {{FLASH_PERCENT}} off its Black Friday price, already applied. When the {{HOURS_LEFT}} hours are up, the extra {{FLASH_PERCENT}} stops and the regular Black Friday price is back. Same set, same 5 free gifts, duties paid.",
+          "waar_als": "Shopify/Markets: extra {{FLASH_PERCENT}} op de 2 Pans + 2 Lids stopt op {{DEADLINE}} (automatische korting met einddatum); INT: geen 'tonight' of 'midnight' zonder tijdzone; relatieve tijd (uren/minuten) is waar voor elke tijdzone tegelijk",
+          "risico": "groen"
+        },
+        "resend": {
+          "text": "You missed this: {{FLASH_PERCENT}} extra off 2 pans",
+          "waar_als": "Shopify/Markets: extra {{FLASH_PERCENT}} op de 2 Pans + 2 Lids stopt op {{DEADLINE}} (automatische korting met einddatum); segment: ontvangen bronmail, niet geopend, geen order sinds verzending; deadline nog niet voorbij",
+          "risico": "oranje"
+        }
+      }
+    },
+    "2-vip-weekend": {
+      "name": "VIP-WEEKEND: VIP only, extra 10% on top, ends Sunday midnight",
+      "sender": "Benjamin from Siraat",
+      "base": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites",
+      "US": {
+        "subjects": [
+          {
+            "text": "VIP ONLY: an extra 10% off this weekend",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites",
+            "risico": "oranje",
+            "noot": "Smooche-formule zonder vast wachtwoord. 'VIP ONLY' is waar zolang de code uniek is en alleen naar dit segment gaat."
+          },
+          {
+            "text": "YOUR CODE: {{VIP_CODE}} (extra 10%, ends Sunday)",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites; code is per profiel, dus doorsturen maakt hem niet publiek (one use)",
+            "risico": "oranje",
+            "noot": "Eerlijke versie van 'YOUR PASSWORD: SMOOCHEVIP'. Caps op twee woorden."
+          },
+          {
+            "text": "Your extra 10% ends at midnight ET",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites; de backend-deadline is precies 23:59 ET (Shopify-prijs, code of Rise-vervaldatum), niet later; verzending op zondag",
+            "risico": "groen"
+          },
+          {
+            "text": "Final hours: your extra 10% on top",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min); profiel heeft code nog niet gebruikt",
+            "risico": "groen"
+          },
+          {
+            "text": "60 minutes left on your code",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites; verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn; code nog ongebruikt",
+            "risico": "oranje"
+          }
+        ],
+        "previews": [
+          {
+            "text": "On top of up to 70% off. One use, not on the website.",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites",
+            "risico": "groen"
+          },
+          {
+            "text": "It stops working Sunday at 11:59 PM ET. Then it's the regular Black Friday price.",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites; de backend-deadline is precies 23:59 ET (Shopify-prijs, code of Rise-vervaldatum), niet later",
+            "risico": "groen"
+          },
+          {
+            "text": "The Pan Pro goes from $144 to $129.60 with it.",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites; code werkt bovenop de saleprijs en stapelt niet met BFCODE/HI10",
+            "risico": "groen"
+          }
+        ],
+        "heroes": [
+          {
+            "text": "VIP only.|Extra 10% off.",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites",
+            "risico": "groen"
+          },
+          {
+            "text": "Your code ends|Sunday at midnight",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites; de backend-deadline is precies 23:59 ET (Shopify-prijs, code of Rise-vervaldatum), niet later; in de subline 'ET' toevoegen",
+            "risico": "groen"
+          },
+          {
+            "text": "10% on top|of Black Friday",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites",
+            "risico": "groen"
+          }
+        ],
+        "countdown": {
+          "T-24h": {
+            "text": "Your code {{VIP_CODE}} works until {{DEADLINE}}.",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites; verzendtijd = {{DEADLINE}} min 24 uur of minder",
+            "risico": "groen"
+          },
+          "T-6h": {
+            "text": "6 hours left on {{VIP_CODE}}.",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          "T-1h": {
+            "text": "Final hour. {{VIP_CODE}} stops at {{DEADLINE}}.",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites; verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn",
+            "risico": "oranje"
+          },
+          "T-15min": {
+            "text": "{{MINUTES_LEFT}} minutes left on your extra 10%.",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites; verzendtijd = {{DEADLINE}} min 15 min, alleen naar klikkers zonder order (< 10k profielen, levering binnen 5 min); tekst ernaast is een live countdown-GIF die na het einde 'ENDED' toont",
+            "risico": "rood"
+          }
+        },
+        "buttons": [
+          {
+            "text": "Use my extra 10%",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites; knop zet de code via /discount/{{VIP_CODE}}?redirect= in de sessie",
+            "risico": "groen"
+          },
+          {
+            "text": "Apply {{VIP_CODE}} now",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites",
+            "risico": "groen"
+          },
+          {
+            "text": "Use it before midnight ET",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites; de backend-deadline is precies 23:59 ET (Shopify-prijs, code of Rise-vervaldatum), niet later",
+            "risico": "groen"
+          }
+        ],
+        "body": {
+          "text": "Benjamin here. I made you a code that takes an extra 10% off the Black Friday price: {{VIP_CODE}}, one use, already applied through the button. It stops working {{DEADLINE}}, and there's no second one this weekend.",
+          "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites; er komt dit weekend echt geen tweede VIP-code naar dit profiel",
+          "risico": "oranje",
+          "noot": "'no second one this weekend' alleen als Floris VIP-weekend 2 pas op 26 nov doet. Anders schrappen."
+        },
+        "resend": {
+          "text": "You missed this: your own extra 10%",
+          "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites; segment: ontvangen bronmail, niet geopend, geen order sinds verzending; deadline nog niet voorbij",
+          "risico": "oranje"
+        }
+      },
+      "INT": {
+        "subjects": [
+          {
+            "text": "VIP ONLY: an extra 10% off this weekend",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites",
+            "risico": "oranje"
+          },
+          {
+            "text": "YOUR CODE: {{VIP_CODE}} (extra 10%, ends Sunday)",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites; INT: geen 'tonight' of 'midnight' zonder tijdzone; relatieve tijd (uren/minuten) is waar voor elke tijdzone tegelijk: 'Sunday' klopt alleen als de code in de tijdzone van de ontvanger nog op zondag eindigt",
+            "risico": "oranje"
+          },
+          {
+            "text": "Your extra 10% ends in {{HOURS_LEFT}} hours",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites; {{HOURS_LEFT}} echt op verzendmoment; verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt",
+            "risico": "groen"
+          },
+          {
+            "text": "Final hours: your extra 10% on top",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          {
+            "text": "60 minutes left on your code",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites; verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn",
+            "risico": "oranje"
+          }
+        ],
+        "previews": [
+          {
+            "text": "On top of up to 70% off. One use, not on the website.",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites",
+            "risico": "groen"
+          },
+          {
+            "text": "It stops working {{DEADLINE}}. Then it's the regular Black Friday price.",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites; {{DEADLINE}} met tijdzone",
+            "risico": "groen"
+          },
+          {
+            "text": "Any pan or set in the sale. Duties paid.",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites; code geldig in alle Markets",
+            "risico": "groen"
+          }
+        ],
+        "heroes": [
+          {
+            "text": "VIP only.|Extra 10% off.",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites",
+            "risico": "groen"
+          },
+          {
+            "text": "Your code ends|in {{HOURS_LEFT}} hours",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites; INT: geen 'tonight' of 'midnight' zonder tijdzone; relatieve tijd (uren/minuten) is waar voor elke tijdzone tegelijk",
+            "risico": "groen"
+          },
+          {
+            "text": "10% on top|of Black Friday",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites",
+            "risico": "groen"
+          }
+        ],
+        "countdown": {
+          "T-24h": {
+            "text": "Your code {{VIP_CODE}} works until {{DEADLINE}}.",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites; verzendtijd = {{DEADLINE}} min 24 uur of minder",
+            "risico": "groen"
+          },
+          "T-6h": {
+            "text": "6 hours left on {{VIP_CODE}}.",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          "T-1h": {
+            "text": "Final hour on {{VIP_CODE}}.",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites; verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn",
+            "risico": "oranje"
+          },
+          "T-15min": {
+            "text": "{{MINUTES_LEFT}} minutes left on your extra 10%.",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites; verzendtijd = {{DEADLINE}} min 15 min, alleen naar klikkers zonder order (< 10k profielen, levering binnen 5 min); tekst ernaast is een live countdown-GIF die na het einde 'ENDED' toont",
+            "risico": "rood"
+          }
+        },
+        "buttons": [
+          {
+            "text": "Use my extra 10%",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites",
+            "risico": "groen"
+          },
+          {
+            "text": "Apply {{VIP_CODE}} now",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites",
+            "risico": "groen"
+          },
+          {
+            "text": "Use it before it ends",
+            "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites",
+            "risico": "groen"
+          }
+        ],
+        "body": {
+          "text": "Benjamin here. I made you a code that takes an extra 10% off the Black Friday price: {{VIP_CODE}}, one use, already applied through the button. It stops working {{DEADLINE}}, then it's the regular Black Friday price again.",
+          "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites",
+          "risico": "groen"
+        },
+        "resend": {
+          "text": "You missed this: your own extra 10%",
+          "waar_als": "unieke Klaviyo-code per profiel ({% coupon_code %}), one use, Shopify-einddatum = {{DEADLINE}}, alleen naar kopers + E30, niet op de site of couponsites; segment: ontvangen bronmail, niet geopend, geen order sinds verzending; deadline nog niet voorbij",
+          "risico": "oranje"
+        }
+      }
+    },
+    "3-credit": {
+      "name": "CREDIT: Your $X store credit expires tonight",
+      "sender": "Benjamin from Siraat",
+      "base": "Rise.ai heeft echt saldo ${{CREDIT}} op dit profiel gezet met vervaldatum = {{DEADLINE}}; segment rise_wallet_balance > 0 (US) / Rise.ai-saldo > 0 op dit profiel met vervaldatum = {{DEADLINE}}; INT-tegoed werkt in checkout in lokale valuta (getest) (INT). Mail bestaat pas als Rise.ai live is.",
+      "US": {
+        "subjects": [
+          {
+            "text": "Your ${{CREDIT}} expires at midnight ET",
+            "waar_als": "Rise.ai heeft echt saldo ${{CREDIT}} op dit profiel gezet met vervaldatum = {{DEADLINE}}; segment rise_wallet_balance > 0; de backend-deadline is precies 23:59 ET (Shopify-prijs, code of Rise-vervaldatum), niet later",
+            "risico": "groen"
+          },
+          {
+            "text": "Your ${{CREDIT}} is about to disappear",
+            "waar_als": "Rise.ai heeft echt saldo ${{CREDIT}} op dit profiel gezet met vervaldatum = {{DEADLINE}}; segment rise_wallet_balance > 0; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "oranje",
+            "noot": "Letterlijk Smooche (mail 13). Waar omdat het saldo echt naar nul gaat."
+          },
+          {
+            "text": "Expires today: ${{CREDIT}} in store credit",
+            "waar_als": "Rise.ai heeft echt saldo ${{CREDIT}} op dit profiel gezet met vervaldatum = {{DEADLINE}}; segment rise_wallet_balance > 0; vervaldatum valt op de verzenddag (ET)",
+            "risico": "groen"
+          },
+          {
+            "text": "Use it or lose it: ${{CREDIT}}, {{HOURS_LEFT}} hours left",
+            "waar_als": "Rise.ai heeft echt saldo ${{CREDIT}} op dit profiel gezet met vervaldatum = {{DEADLINE}}; segment rise_wallet_balance > 0; {{HOURS_LEFT}} echt op verzendmoment",
+            "risico": "oranje"
+          },
+          {
+            "text": "Final hour: your ${{CREDIT}} goes to $0",
+            "waar_als": "Rise.ai heeft echt saldo ${{CREDIT}} op dit profiel gezet met vervaldatum = {{DEADLINE}}; segment rise_wallet_balance > 0; verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn",
+            "risico": "oranje"
+          }
+        ],
+        "previews": [
+          {
+            "text": "Earned by your past orders. Applied at checkout, after the sale price.",
+            "waar_als": "Rise.ai heeft echt saldo ${{CREDIT}} op dit profiel gezet met vervaldatum = {{DEADLINE}}; segment rise_wallet_balance > 0; tegoed stapelt echt op de saleprijs (Rise gift card)",
+            "risico": "groen"
+          },
+          {
+            "text": "At {{DEADLINE}} the balance goes to zero. Nothing else changes.",
+            "waar_als": "Rise.ai heeft echt saldo ${{CREDIT}} op dit profiel gezet met vervaldatum = {{DEADLINE}}; segment rise_wallet_balance > 0",
+            "risico": "groen"
+          },
+          {
+            "text": "That's a ${{PAN_AFTER_CREDIT}} Pan Pro, for {{HOURS_LEFT}} more hours.",
+            "waar_als": "Rise.ai heeft echt saldo ${{CREDIT}} op dit profiel gezet met vervaldatum = {{DEADLINE}}; segment rise_wallet_balance > 0; {{PAN_AFTER_CREDIT}} = 144 min {{CREDIT}} berekend in Klaviyo; saldo dekt niet meer dan de pan",
+            "risico": "groen"
+          }
+        ],
+        "heroes": [
+          {
+            "text": "${{CREDIT}}|expires tonight",
+            "waar_als": "Rise.ai heeft echt saldo ${{CREDIT}} op dit profiel gezet met vervaldatum = {{DEADLINE}}; segment rise_wallet_balance > 0; {{DEADLINE}} valt vandaag om 23:59 in de tijdzone die genoemd wordt (ET); bij een US-brede lijst ET noemen, want voor Pacific is 23:59 ET 20:59",
+            "risico": "groen"
+          },
+          {
+            "text": "Use it|or lose it",
+            "waar_als": "Rise.ai heeft echt saldo ${{CREDIT}} op dit profiel gezet met vervaldatum = {{DEADLINE}}; segment rise_wallet_balance > 0",
+            "risico": "oranje",
+            "noot": "Verlies-framing; mag omdat het waar is, maar niet combineren met 'Final hour' in dezelfde mail (te zwaar)."
+          },
+          {
+            "text": "Your ${{CREDIT}}|ends at midnight ET",
+            "waar_als": "Rise.ai heeft echt saldo ${{CREDIT}} op dit profiel gezet met vervaldatum = {{DEADLINE}}; segment rise_wallet_balance > 0; de backend-deadline is precies 23:59 ET (Shopify-prijs, code of Rise-vervaldatum), niet later",
+            "risico": "groen"
+          }
+        ],
+        "countdown": {
+          "T-24h": {
+            "text": "${{CREDIT}} left. Expires {{DEADLINE}}.",
+            "waar_als": "Rise.ai heeft echt saldo ${{CREDIT}} op dit profiel gezet met vervaldatum = {{DEADLINE}}; segment rise_wallet_balance > 0; verzendtijd = {{DEADLINE}} min 24 uur of minder",
+            "risico": "groen"
+          },
+          "T-6h": {
+            "text": "6 hours left on your ${{CREDIT}}.",
+            "waar_als": "Rise.ai heeft echt saldo ${{CREDIT}} op dit profiel gezet met vervaldatum = {{DEADLINE}}; segment rise_wallet_balance > 0; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          "T-1h": {
+            "text": "Final hour. Your ${{CREDIT}} goes to $0 at {{DEADLINE}}.",
+            "waar_als": "Rise.ai heeft echt saldo ${{CREDIT}} op dit profiel gezet met vervaldatum = {{DEADLINE}}; segment rise_wallet_balance > 0; verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn",
+            "risico": "oranje"
+          },
+          "T-15min": {
+            "text": "{{MINUTES_LEFT}} minutes left to use ${{CREDIT}}.",
+            "waar_als": "Rise.ai heeft echt saldo ${{CREDIT}} op dit profiel gezet met vervaldatum = {{DEADLINE}}; segment rise_wallet_balance > 0; verzendtijd = {{DEADLINE}} min 15 min, alleen naar klikkers zonder order (< 10k profielen, levering binnen 5 min); tekst ernaast is een live countdown-GIF die na het einde 'ENDED' toont",
+            "risico": "rood"
+          }
+        },
+        "buttons": [
+          {
+            "text": "Use my ${{CREDIT}}",
+            "waar_als": "Rise.ai heeft echt saldo ${{CREDIT}} op dit profiel gezet met vervaldatum = {{DEADLINE}}; segment rise_wallet_balance > 0; knop opent de shop met het Rise-saldo zichtbaar in checkout",
+            "risico": "groen"
+          },
+          {
+            "text": "Spend it before midnight ET",
+            "waar_als": "Rise.ai heeft echt saldo ${{CREDIT}} op dit profiel gezet met vervaldatum = {{DEADLINE}}; segment rise_wallet_balance > 0; de backend-deadline is precies 23:59 ET (Shopify-prijs, code of Rise-vervaldatum), niet later",
+            "risico": "groen"
+          },
+          {
+            "text": "Don't let ${{CREDIT}} expire",
+            "waar_als": "Rise.ai heeft echt saldo ${{CREDIT}} op dit profiel gezet met vervaldatum = {{DEADLINE}}; segment rise_wallet_balance > 0",
+            "risico": "oranje"
+          }
+        ],
+        "body": {
+          "text": "Benjamin here. Your past orders earned you ${{CREDIT}} in store credit, and it's already on your account. At {{DEADLINE}} the balance goes to zero, and I'd rather you cooked with it. It comes off at checkout, on top of the Black Friday price.",
+          "waar_als": "Rise.ai heeft echt saldo ${{CREDIT}} op dit profiel gezet met vervaldatum = {{DEADLINE}}; segment rise_wallet_balance > 0; promotionele tegoed, gratis gegeven, vervaldatum in de kleine lettertekst (CA Civil Code 1749.5)",
+          "risico": "oranje",
+          "noot": "Juridische regel uit copy.md verplicht onderaan."
+        },
+        "resend": {
+          "text": "Your ${{CREDIT}}, last hours",
+          "waar_als": "Rise.ai heeft echt saldo ${{CREDIT}} op dit profiel gezet met vervaldatum = {{DEADLINE}}; segment rise_wallet_balance > 0; segment: ontvangen bronmail, niet geopend, geen order sinds verzending; deadline nog niet voorbij; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+          "risico": "groen"
+        }
+      },
+      "INT": {
+        "subjects": [
+          {
+            "text": "Your store credit expires in {{HOURS_LEFT}} hours",
+            "waar_als": "Rise.ai-saldo > 0 op dit profiel met vervaldatum = {{DEADLINE}}; INT-tegoed werkt in checkout in lokale valuta (getest); INT: geen 'tonight' of 'midnight' zonder tijdzone; relatieve tijd (uren/minuten) is waar voor elke tijdzone tegelijk",
+            "risico": "groen"
+          },
+          {
+            "text": "Your store credit is about to disappear",
+            "waar_als": "Rise.ai-saldo > 0 op dit profiel met vervaldatum = {{DEADLINE}}; INT-tegoed werkt in checkout in lokale valuta (getest); verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "oranje"
+          },
+          {
+            "text": "Expires today: your store credit",
+            "waar_als": "Rise.ai-saldo > 0 op dit profiel met vervaldatum = {{DEADLINE}}; INT-tegoed werkt in checkout in lokale valuta (getest); vervaldatum valt op de verzenddag in de tijdzone van de grootste INT-markt (anders 'in {{HOURS_LEFT}} hours')",
+            "risico": "oranje"
+          },
+          {
+            "text": "Use it or lose it: {{POINTS}} points",
+            "waar_als": "Rise.ai-saldo > 0 op dit profiel met vervaldatum = {{DEADLINE}}; INT-tegoed werkt in checkout in lokale valuta (getest); {{POINTS}} uit Rise",
+            "risico": "oranje"
+          },
+          {
+            "text": "Final hour: your store credit goes to zero",
+            "waar_als": "Rise.ai-saldo > 0 op dit profiel met vervaldatum = {{DEADLINE}}; INT-tegoed werkt in checkout in lokale valuta (getest); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn",
+            "risico": "oranje"
+          }
+        ],
+        "previews": [
+          {
+            "text": "Earned by your past orders. Applied at checkout, in your currency.",
+            "waar_als": "Rise.ai-saldo > 0 op dit profiel met vervaldatum = {{DEADLINE}}; INT-tegoed werkt in checkout in lokale valuta (getest)",
+            "risico": "groen"
+          },
+          {
+            "text": "When it expires, the balance goes to zero. Nothing else changes.",
+            "waar_als": "Rise.ai-saldo > 0 op dit profiel met vervaldatum = {{DEADLINE}}; INT-tegoed werkt in checkout in lokale valuta (getest)",
+            "risico": "groen"
+          },
+          {
+            "text": "{{POINTS}} points, ready to use for {{HOURS_LEFT}} more hours.",
+            "waar_als": "Rise.ai-saldo > 0 op dit profiel met vervaldatum = {{DEADLINE}}; INT-tegoed werkt in checkout in lokale valuta (getest)",
+            "risico": "groen"
+          }
+        ],
+        "heroes": [
+          {
+            "text": "Your credit|expires in {{HOURS_LEFT}} hours",
+            "waar_als": "Rise.ai-saldo > 0 op dit profiel met vervaldatum = {{DEADLINE}}; INT-tegoed werkt in checkout in lokale valuta (getest)",
+            "risico": "groen"
+          },
+          {
+            "text": "Use it|or lose it",
+            "waar_als": "Rise.ai-saldo > 0 op dit profiel met vervaldatum = {{DEADLINE}}; INT-tegoed werkt in checkout in lokale valuta (getest)",
+            "risico": "oranje"
+          },
+          {
+            "text": "{{POINTS}} points|gone at {{DEADLINE_SHORT}}",
+            "waar_als": "Rise.ai-saldo > 0 op dit profiel met vervaldatum = {{DEADLINE}}; INT-tegoed werkt in checkout in lokale valuta (getest); {{DEADLINE_SHORT}} met tijdzone",
+            "risico": "groen"
+          }
+        ],
+        "countdown": {
+          "T-24h": {
+            "text": "{{POINTS}} points left. Expires {{DEADLINE}}.",
+            "waar_als": "Rise.ai-saldo > 0 op dit profiel met vervaldatum = {{DEADLINE}}; INT-tegoed werkt in checkout in lokale valuta (getest); verzendtijd = {{DEADLINE}} min 24 uur of minder",
+            "risico": "groen"
+          },
+          "T-6h": {
+            "text": "6 hours left on your store credit.",
+            "waar_als": "Rise.ai-saldo > 0 op dit profiel met vervaldatum = {{DEADLINE}}; INT-tegoed werkt in checkout in lokale valuta (getest); verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          "T-1h": {
+            "text": "Final hour. Your credit goes to zero at {{DEADLINE}}.",
+            "waar_als": "Rise.ai-saldo > 0 op dit profiel met vervaldatum = {{DEADLINE}}; INT-tegoed werkt in checkout in lokale valuta (getest); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn",
+            "risico": "oranje"
+          },
+          "T-15min": {
+            "text": "{{MINUTES_LEFT}} minutes left to use your credit.",
+            "waar_als": "Rise.ai-saldo > 0 op dit profiel met vervaldatum = {{DEADLINE}}; INT-tegoed werkt in checkout in lokale valuta (getest); verzendtijd = {{DEADLINE}} min 15 min, alleen naar klikkers zonder order (< 10k profielen, levering binnen 5 min); tekst ernaast is een live countdown-GIF die na het einde 'ENDED' toont",
+            "risico": "rood"
+          }
+        },
+        "buttons": [
+          {
+            "text": "Use my store credit",
+            "waar_als": "Rise.ai-saldo > 0 op dit profiel met vervaldatum = {{DEADLINE}}; INT-tegoed werkt in checkout in lokale valuta (getest)",
+            "risico": "groen"
+          },
+          {
+            "text": "Spend it before it expires",
+            "waar_als": "Rise.ai-saldo > 0 op dit profiel met vervaldatum = {{DEADLINE}}; INT-tegoed werkt in checkout in lokale valuta (getest)",
+            "risico": "groen"
+          },
+          {
+            "text": "Don't let it expire",
+            "waar_als": "Rise.ai-saldo > 0 op dit profiel met vervaldatum = {{DEADLINE}}; INT-tegoed werkt in checkout in lokale valuta (getest)",
+            "risico": "oranje"
+          }
+        ],
+        "body": {
+          "text": "Benjamin here. Your past orders earned you {{POINTS}} points in store credit, already on your account. In {{HOURS_LEFT}} hours the balance goes to zero, and I'd rather you cooked with it. It comes off at checkout in your currency, on top of the Black Friday price.",
+          "waar_als": "Rise.ai-saldo > 0 op dit profiel met vervaldatum = {{DEADLINE}}; INT-tegoed werkt in checkout in lokale valuta (getest); INT: geen 'tonight' of 'midnight' zonder tijdzone; relatieve tijd (uren/minuten) is waar voor elke tijdzone tegelijk",
+          "risico": "oranje"
+        },
+        "resend": {
+          "text": "Your store credit, last hours",
+          "waar_als": "Rise.ai-saldo > 0 op dit profiel met vervaldatum = {{DEADLINE}}; INT-tegoed werkt in checkout in lokale valuta (getest); segment: ontvangen bronmail, niet geopend, geen order sinds verzending; deadline nog niet voorbij; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+          "risico": "groen"
+        }
+      }
+    },
+    "4-last-hours": {
+      "name": "LAST-HOURS: resend naar openers zonder klik (platte brief Benjamin)",
+      "sender": "Benjamin from Siraat",
+      "base": "bronmail (1, 2, 3, 5 of 6) heeft een echte deadline {{DEADLINE}} die nog niet voorbij is; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; platte brief van Benjamin",
+      "US": {
+        "subjects": [
+          {
+            "text": "Last hours",
+            "waar_als": "bronmail (1, 2, 3, 5 of 6) heeft een echte deadline {{DEADLINE}} die nog niet voorbij is; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; platte brief van Benjamin; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          {
+            "text": "{{HOURS_LEFT}} hours left",
+            "waar_als": "bronmail (1, 2, 3, 5 of 6) heeft een echte deadline {{DEADLINE}} die nog niet voorbij is; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; platte brief van Benjamin; {{HOURS_LEFT}} echt op verzendmoment, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt",
+            "risico": "groen"
+          },
+          {
+            "text": "Benjamin here: it ends in {{HOURS_LEFT}} hours",
+            "waar_als": "bronmail (1, 2, 3, 5 of 6) heeft een echte deadline {{DEADLINE}} die nog niet voorbij is; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; platte brief van Benjamin",
+            "risico": "groen"
+          },
+          {
+            "text": "Before it's gone",
+            "waar_als": "bronmail (1, 2, 3, 5 of 6) heeft een echte deadline {{DEADLINE}} die nog niet voorbij is; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; platte brief van Benjamin",
+            "risico": "groen"
+          },
+          {
+            "text": "Final hour",
+            "waar_als": "bronmail (1, 2, 3, 5 of 6) heeft een echte deadline {{DEADLINE}} die nog niet voorbij is; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; platte brief van Benjamin; verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn",
+            "risico": "oranje",
+            "noot": "Dan is dit de T-1h-mail; niet ook nog de losse final-hour-mail naar hetzelfde profiel."
+          }
+        ],
+        "previews": [
+          {
+            "text": "One short note from me, then I'll leave you alone.",
+            "waar_als": "bronmail (1, 2, 3, 5 of 6) heeft een echte deadline {{DEADLINE}} die nog niet voorbij is; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; platte brief van Benjamin; dit is echt de laatste mail over deze deadline",
+            "risico": "groen"
+          },
+          {
+            "text": "{{WHAT_ENDS_SHORT}} ends {{DEADLINE}}.",
+            "waar_als": "bronmail (1, 2, 3, 5 of 6) heeft een echte deadline {{DEADLINE}} die nog niet voorbij is; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; platte brief van Benjamin",
+            "risico": "groen"
+          },
+          {
+            "text": "After this, it's the regular Black Friday price.",
+            "waar_als": "bronmail (1, 2, 3, 5 of 6) heeft een echte deadline {{DEADLINE}} die nog niet voorbij is; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; platte brief van Benjamin; geldt voor flash, VIP en credit; bij gifts/draw de {{AFTER}}-regel uit copy.md",
+            "risico": "groen"
+          }
+        ],
+        "heroes": [
+          {
+            "text": "(geen hero: platte tekst)",
+            "waar_als": "n.v.t.",
+            "risico": "groen"
+          },
+          {
+            "text": "Eerste regel: {{WHAT_ENDS}} ends {{DEADLINE}}.",
+            "waar_als": "bronmail (1, 2, 3, 5 of 6) heeft een echte deadline {{DEADLINE}} die nog niet voorbij is; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; platte brief van Benjamin",
+            "risico": "groen"
+          },
+          {
+            "text": "Eerste regel: Last hours. Then it's over.",
+            "waar_als": "bronmail (1, 2, 3, 5 of 6) heeft een echte deadline {{DEADLINE}} die nog niet voorbij is; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; platte brief van Benjamin; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          }
+        ],
+        "countdown": {
+          "T-24h": {
+            "text": "(niet gebruiken: 'last hours' is pas waar in de laatste 6 uur)",
+            "waar_als": "n.v.t.",
+            "risico": "groen"
+          },
+          "T-6h": {
+            "text": "{{WHAT_ENDS}} ends in 6 hours.",
+            "waar_als": "bronmail (1, 2, 3, 5 of 6) heeft een echte deadline {{DEADLINE}} die nog niet voorbij is; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; platte brief van Benjamin; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          "T-1h": {
+            "text": "One hour left. {{WHAT_ENDS}} ends {{DEADLINE}}.",
+            "waar_als": "bronmail (1, 2, 3, 5 of 6) heeft een echte deadline {{DEADLINE}} die nog niet voorbij is; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; platte brief van Benjamin; verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn",
+            "risico": "oranje"
+          },
+          "T-15min": {
+            "text": "(niet als platte brief: geen GIF mogelijk, statische minuten verouderen)",
+            "waar_als": "n.v.t.",
+            "risico": "groen"
+          }
+        },
+        "buttons": [
+          {
+            "text": "Kale link: {{LINK}}",
+            "waar_als": "bronmail (1, 2, 3, 5 of 6) heeft een echte deadline {{DEADLINE}} die nog niet voorbij is; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; platte brief van Benjamin",
+            "risico": "groen"
+          },
+          {
+            "text": "Here's the link, it ends {{DEADLINE}}:",
+            "waar_als": "bronmail (1, 2, 3, 5 of 6) heeft een echte deadline {{DEADLINE}} die nog niet voorbij is; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; platte brief van Benjamin",
+            "risico": "groen"
+          },
+          {
+            "text": "Use it here before it ends:",
+            "waar_als": "bronmail (1, 2, 3, 5 of 6) heeft een echte deadline {{DEADLINE}} die nog niet voorbij is; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; platte brief van Benjamin",
+            "risico": "groen"
+          }
+        ],
+        "body": {
+          "text": "{{WHAT_ENDS}} ends {{DEADLINE}}. {{AFTER}} If it's for you, this is the moment, and if it isn't, send it back unused within 30 days.",
+          "waar_als": "bronmail (1, 2, 3, 5 of 6) heeft een echte deadline {{DEADLINE}} die nog niet voorbij is; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; platte brief van Benjamin",
+          "risico": "groen"
+        },
+        "resend": {
+          "text": "One more time, then it's over",
+          "waar_als": "bronmail (1, 2, 3, 5 of 6) heeft een echte deadline {{DEADLINE}} die nog niet voorbij is; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; platte brief van Benjamin; segment: ontvangen bronmail, niet geopend, geen order sinds verzending; deadline nog niet voorbij; dit is echt de laatste mail over deze deadline",
+          "risico": "oranje"
+        }
+      },
+      "INT": {
+        "subjects": [
+          {
+            "text": "Last hours",
+            "waar_als": "bronmail (1, 2, 3, 5 of 6) heeft een echte deadline {{DEADLINE}} die nog niet voorbij is; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; platte brief van Benjamin; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          {
+            "text": "{{HOURS_LEFT}} hours left",
+            "waar_als": "bronmail (1, 2, 3, 5 of 6) heeft een echte deadline {{DEADLINE}} die nog niet voorbij is; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; platte brief van Benjamin; {{HOURS_LEFT}} echt op verzendmoment, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt",
+            "risico": "groen"
+          },
+          {
+            "text": "Benjamin here: it ends in {{HOURS_LEFT}} hours",
+            "waar_als": "bronmail (1, 2, 3, 5 of 6) heeft een echte deadline {{DEADLINE}} die nog niet voorbij is; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; platte brief van Benjamin",
+            "risico": "groen"
+          },
+          {
+            "text": "Before it's gone",
+            "waar_als": "bronmail (1, 2, 3, 5 of 6) heeft een echte deadline {{DEADLINE}} die nog niet voorbij is; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; platte brief van Benjamin",
+            "risico": "groen"
+          },
+          {
+            "text": "Final hour",
+            "waar_als": "bronmail (1, 2, 3, 5 of 6) heeft een echte deadline {{DEADLINE}} die nog niet voorbij is; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; platte brief van Benjamin; verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn",
+            "risico": "oranje",
+            "noot": "Dan is dit de T-1h-mail; niet ook nog de losse final-hour-mail naar hetzelfde profiel."
+          }
+        ],
+        "previews": [
+          {
+            "text": "One short note from me, then I'll leave you alone.",
+            "waar_als": "bronmail (1, 2, 3, 5 of 6) heeft een echte deadline {{DEADLINE}} die nog niet voorbij is; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; platte brief van Benjamin; dit is echt de laatste mail over deze deadline",
+            "risico": "groen"
+          },
+          {
+            "text": "{{WHAT_ENDS_SHORT}} ends {{DEADLINE}}.",
+            "waar_als": "bronmail (1, 2, 3, 5 of 6) heeft een echte deadline {{DEADLINE}} die nog niet voorbij is; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; platte brief van Benjamin",
+            "risico": "groen"
+          },
+          {
+            "text": "After this, it's the regular Black Friday price.",
+            "waar_als": "bronmail (1, 2, 3, 5 of 6) heeft een echte deadline {{DEADLINE}} die nog niet voorbij is; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; platte brief van Benjamin; geldt voor flash, VIP en credit; bij gifts/draw de {{AFTER}}-regel uit copy.md",
+            "risico": "groen"
+          }
+        ],
+        "heroes": [
+          {
+            "text": "(geen hero: platte tekst)",
+            "waar_als": "n.v.t.",
+            "risico": "groen"
+          },
+          {
+            "text": "Eerste regel: {{WHAT_ENDS}} ends {{DEADLINE}}.",
+            "waar_als": "bronmail (1, 2, 3, 5 of 6) heeft een echte deadline {{DEADLINE}} die nog niet voorbij is; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; platte brief van Benjamin",
+            "risico": "groen"
+          },
+          {
+            "text": "Eerste regel: Last hours. Then it's over.",
+            "waar_als": "bronmail (1, 2, 3, 5 of 6) heeft een echte deadline {{DEADLINE}} die nog niet voorbij is; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; platte brief van Benjamin; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          }
+        ],
+        "countdown": {
+          "T-24h": {
+            "text": "(niet gebruiken: 'last hours' is pas waar in de laatste 6 uur)",
+            "waar_als": "n.v.t.",
+            "risico": "groen"
+          },
+          "T-6h": {
+            "text": "{{WHAT_ENDS}} ends in 6 hours.",
+            "waar_als": "bronmail (1, 2, 3, 5 of 6) heeft een echte deadline {{DEADLINE}} die nog niet voorbij is; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; platte brief van Benjamin; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          "T-1h": {
+            "text": "One hour left. {{WHAT_ENDS}} ends {{DEADLINE}}.",
+            "waar_als": "bronmail (1, 2, 3, 5 of 6) heeft een echte deadline {{DEADLINE}} die nog niet voorbij is; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; platte brief van Benjamin; verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn",
+            "risico": "oranje"
+          },
+          "T-15min": {
+            "text": "(niet als platte brief: geen GIF mogelijk, statische minuten verouderen)",
+            "waar_als": "n.v.t.",
+            "risico": "groen"
+          }
+        },
+        "buttons": [
+          {
+            "text": "Kale link: {{LINK}}",
+            "waar_als": "bronmail (1, 2, 3, 5 of 6) heeft een echte deadline {{DEADLINE}} die nog niet voorbij is; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; platte brief van Benjamin",
+            "risico": "groen"
+          },
+          {
+            "text": "Here's the link, it ends {{DEADLINE}}:",
+            "waar_als": "bronmail (1, 2, 3, 5 of 6) heeft een echte deadline {{DEADLINE}} die nog niet voorbij is; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; platte brief van Benjamin",
+            "risico": "groen"
+          },
+          {
+            "text": "Use it here before it ends:",
+            "waar_als": "bronmail (1, 2, 3, 5 of 6) heeft een echte deadline {{DEADLINE}} die nog niet voorbij is; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; platte brief van Benjamin",
+            "risico": "groen"
+          }
+        ],
+        "body": {
+          "text": "{{WHAT_ENDS}} ends {{DEADLINE}}. {{AFTER}} If it's for you, this is the moment, and if it isn't, send it back unused within 30 days.",
+          "waar_als": "bronmail (1, 2, 3, 5 of 6) heeft een echte deadline {{DEADLINE}} die nog niet voorbij is; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; platte brief van Benjamin",
+          "risico": "groen"
+        },
+        "resend": {
+          "text": "One more time, then it's over",
+          "waar_als": "bronmail (1, 2, 3, 5 of 6) heeft een echte deadline {{DEADLINE}} die nog niet voorbij is; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; platte brief van Benjamin; segment: ontvangen bronmail, niet geopend, geen order sinds verzending; deadline nog niet voorbij; dit is echt de laatste mail over deze deadline",
+          "risico": "oranje"
+        }
+      }
+    },
+    "5-gifts": {
+      "name": "GIFTS: Your 5 free gifts end tonight",
+      "sender": "Siraat",
+      "base": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet. Gratis verzending blijft na de sale, dus nooit 'all 5 gifts end'; zeg 'free gifts' of 'the 4 gifts'.",
+      "US": {
+        "subjects": [
+          {
+            "text": "Your free gifts end tonight 🎁",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet; $555 value alleen US; {{DEADLINE}} valt vandaag om 23:59 in de tijdzone die genoemd wordt (ET); bij een US-brede lijst ET noemen, want voor Pacific is 23:59 ET 20:59",
+            "risico": "oranje",
+            "noot": "'free' plus emoji: let op promotietab, geen spamtrigger op zich. Nooit 'FREE' in caps."
+          },
+          {
+            "text": "$555 in gifts, gone at midnight ET",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet; $555 value alleen US; de backend-deadline is precies 23:59 ET (Shopify-prijs, code of Rise-vervaldatum), niet later",
+            "risico": "oranje",
+            "noot": "$555 telt gratis verzending mee, die blijft. Alleen gebruiken als Floris akkoord is dat de waarde als geheel 'gone' heet; anders 'The gifts are gone at midnight ET'."
+          },
+          {
+            "text": "6 hours left: 4 free gifts with every order",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet; $555 value alleen US; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          {
+            "text": "Final hour for your free gifts",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet; $555 value alleen US; verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn",
+            "risico": "oranje"
+          },
+          {
+            "text": "Order in the next 60 minutes, get the gifts",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet; $555 value alleen US; verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn",
+            "risico": "oranje"
+          }
+        ],
+        "previews": [
+          {
+            "text": "Mystery gift, two books and a draw entry. Tomorrow orders ship without them.",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet; $555 value alleen US; na {{DEADLINE}} echt geen gifts meer",
+            "risico": "groen"
+          },
+          {
+            "text": "One pan or the whole set, same gifts. Until {{DEADLINE}}.",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet; $555 value alleen US",
+            "risico": "groen"
+          },
+          {
+            "text": "The pan stays up to 70% off a little longer. The gifts don't.",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet; $555 value alleen US; de sale loopt echt langer dan de gifts",
+            "risico": "rood",
+            "noot": "Alleen waar bij een gift-deadline vóór 30 nov. Op 30 nov eindigen sale en gifts tegelijk: dan schrappen."
+          }
+        ],
+        "heroes": [
+          {
+            "text": "The gifts end|tonight",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet; $555 value alleen US; {{DEADLINE}} valt vandaag om 23:59 in de tijdzone die genoemd wordt (ET); bij een US-brede lijst ET noemen, want voor Pacific is 23:59 ET 20:59",
+            "risico": "groen"
+          },
+          {
+            "text": "$555 in gifts.|Gone at midnight ET.",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet; $555 value alleen US; de backend-deadline is precies 23:59 ET (Shopify-prijs, code of Rise-vervaldatum), niet later",
+            "risico": "oranje"
+          },
+          {
+            "text": "Last day|for the free gifts",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet; $555 value alleen US; verzenddag = laatste giftdag",
+            "risico": "groen"
+          }
+        ],
+        "countdown": {
+          "T-24h": {
+            "text": "Free gifts end {{DEADLINE}}.",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet; $555 value alleen US; verzendtijd = {{DEADLINE}} min 24 uur of minder",
+            "risico": "groen"
+          },
+          "T-6h": {
+            "text": "6 hours left for the free gifts.",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet; $555 value alleen US; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          "T-1h": {
+            "text": "Final hour. Order by {{DEADLINE}} and the gifts ship with it.",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet; $555 value alleen US; verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn",
+            "risico": "oranje"
+          },
+          "T-15min": {
+            "text": "{{MINUTES_LEFT}} minutes left for the free gifts.",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet; $555 value alleen US; verzendtijd = {{DEADLINE}} min 15 min, alleen naar klikkers zonder order (< 10k profielen, levering binnen 5 min); tekst ernaast is een live countdown-GIF die na het einde 'ENDED' toont",
+            "risico": "rood"
+          }
+        },
+        "buttons": [
+          {
+            "text": "Claim my free gifts",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet; $555 value alleen US; gifts worden automatisch toegevoegd (geen code nodig)",
+            "risico": "groen"
+          },
+          {
+            "text": "Order before midnight ET",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet; $555 value alleen US; de backend-deadline is precies 23:59 ET (Shopify-prijs, code of Rise-vervaldatum), niet later",
+            "risico": "groen"
+          },
+          {
+            "text": "Get the pan + the gifts",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet; $555 value alleen US",
+            "risico": "groen"
+          }
+        ],
+        "body": {
+          "text": "Every order placed before {{DEADLINE}} ships with a mystery gift, two books and an entry in the PFAS water filter draw. After that, orders ship without them; free shipping stays. One pan or the whole set, the gifts are the same, so tonight is the night to order.",
+          "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet; $555 value alleen US; officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order (voor de trekkingsregel)",
+          "risico": "oranje"
+        },
+        "resend": {
+          "text": "You missed this: the free gifts end tonight",
+          "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet; $555 value alleen US; segment: ontvangen bronmail, niet geopend, geen order sinds verzending; deadline nog niet voorbij; {{DEADLINE}} valt vandaag om 23:59 in de tijdzone die genoemd wordt (ET); bij een US-brede lijst ET noemen, want voor Pacific is 23:59 ET 20:59",
+          "risico": "oranje"
+        }
+      },
+      "INT": {
+        "subjects": [
+          {
+            "text": "Your free gifts end in {{HOURS_LEFT}} hours 🎁",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet; INT: geen 'tonight' of 'midnight' zonder tijdzone; relatieve tijd (uren/minuten) is waar voor elke tijdzone tegelijk",
+            "risico": "oranje"
+          },
+          {
+            "text": "The free gifts are gone in {{HOURS_LEFT}} hours",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet; INT: geen 'tonight' of 'midnight' zonder tijdzone; relatieve tijd (uren/minuten) is waar voor elke tijdzone tegelijk",
+            "risico": "groen"
+          },
+          {
+            "text": "6 hours left: 4 free gifts with every order",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          {
+            "text": "Final hour for your free gifts",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet; verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn",
+            "risico": "oranje"
+          },
+          {
+            "text": "Order in the next 60 minutes, get the gifts",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet; verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn",
+            "risico": "oranje"
+          }
+        ],
+        "previews": [
+          {
+            "text": "Mystery gift, two books and a draw entry. After that, orders ship without them.",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet",
+            "risico": "groen"
+          },
+          {
+            "text": "One pan or the whole set, same gifts. Until {{DEADLINE}}.",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet; {{DEADLINE}} met tijdzone",
+            "risico": "groen"
+          },
+          {
+            "text": "Free shipping, duties paid, stays. The gifts don't.",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet",
+            "risico": "groen"
+          }
+        ],
+        "heroes": [
+          {
+            "text": "The gifts end|in {{HOURS_LEFT}} hours",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet; INT: geen 'tonight' of 'midnight' zonder tijdzone; relatieve tijd (uren/minuten) is waar voor elke tijdzone tegelijk",
+            "risico": "groen"
+          },
+          {
+            "text": "4 free gifts.|Last hours.",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          {
+            "text": "Last day|for the free gifts",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet; laatste giftdag in de tijdzone van de ontvanger",
+            "risico": "oranje"
+          }
+        ],
+        "countdown": {
+          "T-24h": {
+            "text": "Free gifts end {{DEADLINE}}.",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet; verzendtijd = {{DEADLINE}} min 24 uur of minder",
+            "risico": "groen"
+          },
+          "T-6h": {
+            "text": "6 hours left for the free gifts.",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          "T-1h": {
+            "text": "Final hour for the free gifts.",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet; verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn",
+            "risico": "oranje"
+          },
+          "T-15min": {
+            "text": "{{MINUTES_LEFT}} minutes left for the free gifts.",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet; verzendtijd = {{DEADLINE}} min 15 min, alleen naar klikkers zonder order (< 10k profielen, levering binnen 5 min); tekst ernaast is een live countdown-GIF die na het einde 'ENDED' toont",
+            "risico": "rood"
+          }
+        },
+        "buttons": [
+          {
+            "text": "Claim my free gifts",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet",
+            "risico": "groen"
+          },
+          {
+            "text": "Order before it ends",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet",
+            "risico": "groen"
+          },
+          {
+            "text": "Get the pan + the gifts",
+            "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet",
+            "risico": "groen"
+          }
+        ],
+        "body": {
+          "text": "Every order placed before {{DEADLINE}} ships with a mystery gift, two books and an entry in the PFAS water filter draw. After that, orders ship without them; free shipping, duties paid, stays. One pan or the whole set, the gifts are the same.",
+          "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet; officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order (voor de trekkingsregel)",
+          "risico": "oranje"
+        },
+        "resend": {
+          "text": "You missed this: the free gifts end soon",
+          "waar_als": "gifts (mystery gift, ebook, cookbook, trekkingsdeelname) worden op {{DEADLINE}} echt uit nieuwe orders gehaald (gift-app/automatisering uit); in de praktijk alleen 30 nov tenzij Floris een eerdere gift-deadline zet; segment: ontvangen bronmail, niet geopend, geen order sinds verzending; deadline nog niet voorbij",
+          "risico": "oranje"
+        }
+      }
+    },
+    "6-draw": {
+      "name": "DRAW: Order by Sunday midnight to enter this week's filter draw",
+      "sender": "Siraat",
+      "base": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order. Elke trekkingsmail draagt 'No purchase necessary' en de regelslink.",
+      "US": {
+        "subjects": [
+          {
+            "text": "This week's draw closes at midnight ET ⏰",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order; de backend-deadline is precies 23:59 ET (Shopify-prijs, code of Rise-vervaldatum), niet later",
+            "risico": "groen"
+          },
+          {
+            "text": "6 hours left to enter this week's filter draw",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          {
+            "text": "Order in the next hour: you're in this week's draw",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order; verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn",
+            "risico": "oranje",
+            "noot": "Nooit 'win a PFAS water filter' zonder 'chance'. 'You're in' klopt alleen met 1 entry per order."
+          },
+          {
+            "text": "Final hour: this week's PFAS water filter draw",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order; verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn",
+            "risico": "oranje"
+          },
+          {
+            "text": "You're not in this week's draw yet",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order; profiel heeft deze week geen order (Klaviyo: Placed Order sinds start trekking = 0) EN AMOE-deelnames staan als event in Klaviyo; anders niet waar",
+            "risico": "rood",
+            "noot": "Rood tot AMOE-deelnames in Klaviyo zichtbaar zijn: wie via AMOE meedeed krijgt anders een onware mail."
+          }
+        ],
+        "previews": [
+          {
+            "text": "One order, one entry. No purchase necessary, rules inside.",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order",
+            "risico": "groen"
+          },
+          {
+            "text": "After {{DEADLINE}}, your order counts for next week's draw instead.",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order; er IS een volgende wekelijkse trekking (niet in de laatste BF-week)",
+            "risico": "oranje"
+          },
+          {
+            "text": "And the pan is still up to 70% off, with 4 more gifts.",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order",
+            "risico": "groen"
+          }
+        ],
+        "heroes": [
+          {
+            "text": "This week's draw|closes tonight",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order; {{DEADLINE}} valt vandaag om 23:59 in de tijdzone die genoemd wordt (ET); bij een US-brede lijst ET noemen, want voor Pacific is 23:59 ET 20:59",
+            "risico": "groen"
+          },
+          {
+            "text": "6 hours|to get in",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          {
+            "text": "One order.|One entry.",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order; 1 entry per order in de regels",
+            "risico": "groen"
+          }
+        ],
+        "countdown": {
+          "T-24h": {
+            "text": "This week's draw closes {{DEADLINE}}.",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order; verzendtijd = {{DEADLINE}} min 24 uur of minder",
+            "risico": "groen"
+          },
+          "T-6h": {
+            "text": "6 hours left to enter this week's draw.",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          "T-1h": {
+            "text": "Final hour. The draw closes at {{DEADLINE}}.",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order; verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn",
+            "risico": "oranje"
+          },
+          "T-15min": {
+            "text": "{{MINUTES_LEFT}} minutes until this week's draw closes.",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order; verzendtijd = {{DEADLINE}} min 15 min, alleen naar klikkers zonder order (< 10k profielen, levering binnen 5 min); tekst ernaast is een live countdown-GIF die na het einde 'ENDED' toont",
+            "risico": "rood"
+          }
+        },
+        "buttons": [
+          {
+            "text": "Order and enter this week",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order",
+            "risico": "groen"
+          },
+          {
+            "text": "Get in before midnight ET",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order; de backend-deadline is precies 23:59 ET (Shopify-prijs, code of Rise-vervaldatum), niet later",
+            "risico": "groen"
+          },
+          {
+            "text": "Enter with one pan",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order",
+            "risico": "groen"
+          }
+        ],
+        "body": {
+          "text": "Every order placed before {{DEADLINE}} is an entry in this week's PFAS water filter draw. One pan counts the same as the whole set, and the pan itself is still up to 70% off. No purchase necessary, see the rules: {{DRAW_RULES_URL}}.",
+          "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order",
+          "risico": "oranje",
+          "noot": "Oranje vanwege kansspelrecht: regels, AMOE en landen moeten kloppen."
+        },
+        "resend": {
+          "text": "Last hours to enter this week's draw",
+          "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order; segment: ontvangen bronmail, niet geopend, geen order sinds verzending; deadline nog niet voorbij; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+          "risico": "groen"
+        }
+      },
+      "INT": {
+        "subjects": [
+          {
+            "text": "This week's draw closes in {{HOURS_LEFT}} hours ⏰",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order; INT: geen 'tonight' of 'midnight' zonder tijdzone; relatieve tijd (uren/minuten) is waar voor elke tijdzone tegelijk; INT-landen staan in de regels als toegestaan",
+            "risico": "groen"
+          },
+          {
+            "text": "6 hours left to enter this week's filter draw",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          {
+            "text": "Order in the next hour: you're in this week's draw",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order; verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn",
+            "risico": "oranje"
+          },
+          {
+            "text": "Final hour: this week's PFAS water filter draw",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order; verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn",
+            "risico": "oranje"
+          },
+          {
+            "text": "You're not in this week's draw yet",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order; profiel heeft deze week geen order (Klaviyo: Placed Order sinds start trekking = 0) EN AMOE-deelnames staan als event in Klaviyo; anders niet waar",
+            "risico": "rood"
+          }
+        ],
+        "previews": [
+          {
+            "text": "One order, one entry. No purchase necessary, rules inside.",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order",
+            "risico": "groen"
+          },
+          {
+            "text": "After {{DEADLINE}}, your order counts for next week's draw instead.",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order; er is een volgende trekking",
+            "risico": "oranje"
+          },
+          {
+            "text": "And the pan is still up to 70% off, duties paid.",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order",
+            "risico": "groen"
+          }
+        ],
+        "heroes": [
+          {
+            "text": "This week's draw|closes in {{HOURS_LEFT}} hours",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order; INT: geen 'tonight' of 'midnight' zonder tijdzone; relatieve tijd (uren/minuten) is waar voor elke tijdzone tegelijk",
+            "risico": "groen"
+          },
+          {
+            "text": "6 hours|to get in",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          {
+            "text": "One order.|One entry.",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order",
+            "risico": "groen"
+          }
+        ],
+        "countdown": {
+          "T-24h": {
+            "text": "This week's draw closes {{DEADLINE}}.",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order; verzendtijd = {{DEADLINE}} min 24 uur of minder",
+            "risico": "groen"
+          },
+          "T-6h": {
+            "text": "6 hours left to enter this week's draw.",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          "T-1h": {
+            "text": "Final hour before this week's draw closes.",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order; verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn",
+            "risico": "oranje"
+          },
+          "T-15min": {
+            "text": "{{MINUTES_LEFT}} minutes until this week's draw closes.",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order; verzendtijd = {{DEADLINE}} min 15 min, alleen naar klikkers zonder order (< 10k profielen, levering binnen 5 min); tekst ernaast is een live countdown-GIF die na het einde 'ENDED' toont",
+            "risico": "rood"
+          }
+        },
+        "buttons": [
+          {
+            "text": "Order and enter this week",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order",
+            "risico": "groen"
+          },
+          {
+            "text": "Get in before it closes",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order",
+            "risico": "groen"
+          },
+          {
+            "text": "Enter with one pan",
+            "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order",
+            "risico": "groen"
+          }
+        ],
+        "body": {
+          "text": "Every order placed before {{DEADLINE}} is an entry in this week's PFAS water filter draw. One pan counts the same as the whole set, and the pan itself is still up to 70% off, duties paid. No purchase necessary, see the rules: {{DRAW_RULES_URL}}.",
+          "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order",
+          "risico": "oranje"
+        },
+        "resend": {
+          "text": "Last hours to enter this week's draw",
+          "waar_als": "officiële trekkingsregels gepubliceerd ({{DRAW_RULES_URL}}) met sluitmoment = {{DEADLINE}}, AMOE ('no purchase necessary'), 1 entry per order; segment: ontvangen bronmail, niet geopend, geen order sinds verzending; deadline nog niet voorbij; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+          "risico": "groen"
+        }
+      }
+    },
+    "7-final-hour": {
+      "name": "FINAL HOUR mini-mail (generiek, vult {{WHAT_ENDS}} per deadline)",
+      "sender": "Siraat (of Benjamin from Siraat bij VIP/credit)",
+      "base": "er loopt een echte deadline {{DEADLINE}} (één van mail 1, 2, 3, 5, 6); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; max 3 mails per 24 u per profiel (4 op BF/CM) inclusief deze",
+      "US": {
+        "subjects": [
+          {
+            "text": "Final hour",
+            "waar_als": "er loopt een echte deadline {{DEADLINE}} (één van mail 1, 2, 3, 5, 6); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; max 3 mails per 24 u per profiel (4 op BF/CM) inclusief deze",
+            "risico": "groen"
+          },
+          {
+            "text": "Order now: 60 minutes left",
+            "waar_als": "er loopt een echte deadline {{DEADLINE}} (één van mail 1, 2, 3, 5, 6); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; max 3 mails per 24 u per profiel (4 op BF/CM) inclusief deze",
+            "risico": "oranje"
+          },
+          {
+            "text": "It's gone at midnight ET",
+            "waar_als": "er loopt een echte deadline {{DEADLINE}} (één van mail 1, 2, 3, 5, 6); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; max 3 mails per 24 u per profiel (4 op BF/CM) inclusief deze; de backend-deadline is precies 23:59 ET (Shopify-prijs, code of Rise-vervaldatum), niet later",
+            "risico": "groen"
+          },
+          {
+            "text": "{{MINUTES_LEFT}} minutes left: {{WHAT_ENDS_SHORT}}",
+            "waar_als": "er loopt een echte deadline {{DEADLINE}} (één van mail 1, 2, 3, 5, 6); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; max 3 mails per 24 u per profiel (4 op BF/CM) inclusief deze; {{MINUTES_LEFT}} = echte minuten op verzendmoment",
+            "risico": "oranje"
+          },
+          {
+            "text": "FINAL HOUR ⏰ {{WHAT_ENDS_SHORT}} ends at {{DEADLINE_SHORT}}",
+            "waar_als": "er loopt een echte deadline {{DEADLINE}} (één van mail 1, 2, 3, 5, 6); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; max 3 mails per 24 u per profiel (4 op BF/CM) inclusief deze",
+            "risico": "rood",
+            "noot": "Maximale Smooche-stand: caps plus emoji. Deliverability rood; Floris kiest. Nooit vaker dan één keer per deadline."
+          }
+        ],
+        "previews": [
+          {
+            "text": "{{WHAT_ENDS}} ends {{DEADLINE}}. One button, that's it.",
+            "waar_als": "er loopt een echte deadline {{DEADLINE}} (één van mail 1, 2, 3, 5, 6); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; max 3 mails per 24 u per profiel (4 op BF/CM) inclusief deze",
+            "risico": "groen"
+          },
+          {
+            "text": "{{AFTER}}",
+            "waar_als": "er loopt een echte deadline {{DEADLINE}} (één van mail 1, 2, 3, 5, 6); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; max 3 mails per 24 u per profiel (4 op BF/CM) inclusief deze",
+            "risico": "groen"
+          },
+          {
+            "text": "Last email about this. Promise.",
+            "waar_als": "er loopt een echte deadline {{DEADLINE}} (één van mail 1, 2, 3, 5, 6); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; max 3 mails per 24 u per profiel (4 op BF/CM) inclusief deze; er komt over deze deadline echt geen mail meer",
+            "risico": "groen"
+          }
+        ],
+        "heroes": [
+          {
+            "text": "Final hour.",
+            "waar_als": "er loopt een echte deadline {{DEADLINE}} (één van mail 1, 2, 3, 5, 6); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; max 3 mails per 24 u per profiel (4 op BF/CM) inclusief deze",
+            "risico": "groen"
+          },
+          {
+            "text": "60 minutes.|Then it's over.",
+            "waar_als": "er loopt een echte deadline {{DEADLINE}} (één van mail 1, 2, 3, 5, 6); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; max 3 mails per 24 u per profiel (4 op BF/CM) inclusief deze",
+            "risico": "groen"
+          },
+          {
+            "text": "Live countdown-GIF + '{{WHAT_ENDS_SHORT}} ends at {{DEADLINE}}'",
+            "waar_als": "er loopt een echte deadline {{DEADLINE}} (één van mail 1, 2, 3, 5, 6); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; max 3 mails per 24 u per profiel (4 op BF/CM) inclusief deze; GIF telt af naar exact {{DEADLINE}} en toont daarna 'ENDED'",
+            "risico": "oranje"
+          }
+        ],
+        "countdown": {
+          "T-24h": {
+            "text": "(n.v.t.: dit is de T-1h-mail)",
+            "waar_als": "n.v.t.",
+            "risico": "groen"
+          },
+          "T-6h": {
+            "text": "(n.v.t.)",
+            "waar_als": "n.v.t.",
+            "risico": "groen"
+          },
+          "T-1h": {
+            "text": "{{WHAT_ENDS}} ends at {{DEADLINE}}.",
+            "waar_als": "er loopt een echte deadline {{DEADLINE}} (één van mail 1, 2, 3, 5, 6); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; max 3 mails per 24 u per profiel (4 op BF/CM) inclusief deze",
+            "risico": "groen"
+          },
+          "T-15min": {
+            "text": "Variant T-15: '15 minutes left. Then {{AFTER_SHORT}}.'",
+            "waar_als": "er loopt een echte deadline {{DEADLINE}} (één van mail 1, 2, 3, 5, 6); verzendtijd = {{DEADLINE}} min 15 min, alleen naar klikkers zonder order (< 10k profielen, levering binnen 5 min); tekst ernaast is een live countdown-GIF die na het einde 'ENDED' toont; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; max 3 mails per 24 u per profiel (4 op BF/CM) inclusief deze",
+            "risico": "rood",
+            "noot": "Alleen naar klikkers zonder order, alleen met GIF."
+          }
+        },
+        "buttons": [
+          {
+            "text": "Order before {{DEADLINE_SHORT}}",
+            "waar_als": "er loopt een echte deadline {{DEADLINE}} (één van mail 1, 2, 3, 5, 6); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; max 3 mails per 24 u per profiel (4 op BF/CM) inclusief deze",
+            "risico": "groen"
+          },
+          {
+            "text": "Use it now",
+            "waar_als": "er loopt een echte deadline {{DEADLINE}} (één van mail 1, 2, 3, 5, 6); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; max 3 mails per 24 u per profiel (4 op BF/CM) inclusief deze",
+            "risico": "groen"
+          },
+          {
+            "text": "Finish my order",
+            "waar_als": "er loopt een echte deadline {{DEADLINE}} (één van mail 1, 2, 3, 5, 6); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; max 3 mails per 24 u per profiel (4 op BF/CM) inclusief deze; alleen naar profielen met Started Checkout in de laatste 48 u (er is een checkout, geen order)",
+            "risico": "oranje",
+            "noot": "Nooit 'complete your pending order'."
+          }
+        ],
+        "body": {
+          "text": "{{WHAT_ENDS}} ends at {{DEADLINE}}, about an hour from now. {{AFTER}} This is the last email about it.",
+          "waar_als": "er loopt een echte deadline {{DEADLINE}} (één van mail 1, 2, 3, 5, 6); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; max 3 mails per 24 u per profiel (4 op BF/CM) inclusief deze",
+          "risico": "groen"
+        },
+        "resend": {
+          "text": "(geen resend: na de deadline is er niets meer om te resenden; zie mail 8B)",
+          "waar_als": "n.v.t.",
+          "risico": "groen"
+        }
+      },
+      "INT": {
+        "subjects": [
+          {
+            "text": "Final hour",
+            "waar_als": "er loopt een echte deadline {{DEADLINE}} (één van mail 1, 2, 3, 5, 6); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; max 3 mails per 24 u per profiel (4 op BF/CM) inclusief deze",
+            "risico": "groen"
+          },
+          {
+            "text": "Order now: 60 minutes left",
+            "waar_als": "er loopt een echte deadline {{DEADLINE}} (één van mail 1, 2, 3, 5, 6); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; max 3 mails per 24 u per profiel (4 op BF/CM) inclusief deze",
+            "risico": "oranje"
+          },
+          {
+            "text": "It's gone in 60 minutes",
+            "waar_als": "er loopt een echte deadline {{DEADLINE}} (één van mail 1, 2, 3, 5, 6); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; max 3 mails per 24 u per profiel (4 op BF/CM) inclusief deze; INT: geen 'tonight' of 'midnight' zonder tijdzone; relatieve tijd (uren/minuten) is waar voor elke tijdzone tegelijk",
+            "risico": "groen"
+          },
+          {
+            "text": "{{MINUTES_LEFT}} minutes left: {{WHAT_ENDS_SHORT}}",
+            "waar_als": "er loopt een echte deadline {{DEADLINE}} (één van mail 1, 2, 3, 5, 6); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; max 3 mails per 24 u per profiel (4 op BF/CM) inclusief deze; {{MINUTES_LEFT}} = echte minuten op verzendmoment",
+            "risico": "oranje"
+          },
+          {
+            "text": "FINAL HOUR ⏰ {{WHAT_ENDS_SHORT}} ends in 60 minutes",
+            "waar_als": "er loopt een echte deadline {{DEADLINE}} (één van mail 1, 2, 3, 5, 6); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; max 3 mails per 24 u per profiel (4 op BF/CM) inclusief deze",
+            "risico": "rood"
+          }
+        ],
+        "previews": [
+          {
+            "text": "{{WHAT_ENDS}} ends {{DEADLINE}}. One button, that's it.",
+            "waar_als": "er loopt een echte deadline {{DEADLINE}} (één van mail 1, 2, 3, 5, 6); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; max 3 mails per 24 u per profiel (4 op BF/CM) inclusief deze",
+            "risico": "groen"
+          },
+          {
+            "text": "{{AFTER}}",
+            "waar_als": "er loopt een echte deadline {{DEADLINE}} (één van mail 1, 2, 3, 5, 6); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; max 3 mails per 24 u per profiel (4 op BF/CM) inclusief deze",
+            "risico": "groen"
+          },
+          {
+            "text": "Last email about this. Promise.",
+            "waar_als": "er loopt een echte deadline {{DEADLINE}} (één van mail 1, 2, 3, 5, 6); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; max 3 mails per 24 u per profiel (4 op BF/CM) inclusief deze; er komt over deze deadline echt geen mail meer",
+            "risico": "groen"
+          }
+        ],
+        "heroes": [
+          {
+            "text": "Final hour.",
+            "waar_als": "er loopt een echte deadline {{DEADLINE}} (één van mail 1, 2, 3, 5, 6); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; max 3 mails per 24 u per profiel (4 op BF/CM) inclusief deze",
+            "risico": "groen"
+          },
+          {
+            "text": "60 minutes.|Then it's over.",
+            "waar_als": "er loopt een echte deadline {{DEADLINE}} (één van mail 1, 2, 3, 5, 6); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; max 3 mails per 24 u per profiel (4 op BF/CM) inclusief deze",
+            "risico": "groen"
+          },
+          {
+            "text": "Live countdown-GIF + '{{WHAT_ENDS_SHORT}} ends at {{DEADLINE}}'",
+            "waar_als": "er loopt een echte deadline {{DEADLINE}} (één van mail 1, 2, 3, 5, 6); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; max 3 mails per 24 u per profiel (4 op BF/CM) inclusief deze; GIF telt af naar exact {{DEADLINE}} en toont daarna 'ENDED'",
+            "risico": "oranje"
+          }
+        ],
+        "countdown": {
+          "T-24h": {
+            "text": "(n.v.t.: dit is de T-1h-mail)",
+            "waar_als": "n.v.t.",
+            "risico": "groen"
+          },
+          "T-6h": {
+            "text": "(n.v.t.)",
+            "waar_als": "n.v.t.",
+            "risico": "groen"
+          },
+          "T-1h": {
+            "text": "{{WHAT_ENDS}} ends at {{DEADLINE}}.",
+            "waar_als": "er loopt een echte deadline {{DEADLINE}} (één van mail 1, 2, 3, 5, 6); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; max 3 mails per 24 u per profiel (4 op BF/CM) inclusief deze",
+            "risico": "groen"
+          },
+          "T-15min": {
+            "text": "Variant T-15: '15 minutes left. Then {{AFTER_SHORT}}.'",
+            "waar_als": "er loopt een echte deadline {{DEADLINE}} (één van mail 1, 2, 3, 5, 6); verzendtijd = {{DEADLINE}} min 15 min, alleen naar klikkers zonder order (< 10k profielen, levering binnen 5 min); tekst ernaast is een live countdown-GIF die na het einde 'ENDED' toont; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; max 3 mails per 24 u per profiel (4 op BF/CM) inclusief deze",
+            "risico": "rood",
+            "noot": "Alleen naar klikkers zonder order, alleen met GIF."
+          }
+        },
+        "buttons": [
+          {
+            "text": "Order before it ends",
+            "waar_als": "er loopt een echte deadline {{DEADLINE}} (één van mail 1, 2, 3, 5, 6); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; max 3 mails per 24 u per profiel (4 op BF/CM) inclusief deze",
+            "risico": "groen"
+          },
+          {
+            "text": "Use it now",
+            "waar_als": "er loopt een echte deadline {{DEADLINE}} (één van mail 1, 2, 3, 5, 6); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; max 3 mails per 24 u per profiel (4 op BF/CM) inclusief deze",
+            "risico": "groen"
+          },
+          {
+            "text": "Finish my order",
+            "waar_als": "er loopt een echte deadline {{DEADLINE}} (één van mail 1, 2, 3, 5, 6); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; max 3 mails per 24 u per profiel (4 op BF/CM) inclusief deze; alleen naar profielen met Started Checkout in de laatste 48 u (er is een checkout, geen order)",
+            "risico": "oranje",
+            "noot": "Nooit 'complete your pending order'."
+          }
+        ],
+        "body": {
+          "text": "{{WHAT_ENDS}} ends at {{DEADLINE}}, about an hour from now. {{AFTER}} This is the last email about it.",
+          "waar_als": "er loopt een echte deadline {{DEADLINE}} (één van mail 1, 2, 3, 5, 6); verzendtijd = {{DEADLINE}} min 60 min, verzending direct (niet 'local time'), zodat iedereen hem op hetzelfde moment krijgt, segment klein genoeg om binnen 10 min afgeleverd te zijn; segment: geopend of ontvangen bronmail, niet geklikt, geen order sinds verzending; max 3 mails per 24 u per profiel (4 op BF/CM) inclusief deze",
+          "risico": "groen"
+        },
+        "resend": {
+          "text": "(geen resend: na de deadline is er niets meer om te resenden; zie mail 8B)",
+          "waar_als": "n.v.t.",
+          "risico": "groen"
+        }
+      }
+    },
+    "8-missed-last-call": {
+      "name": "YOU MISSED THIS / LAST CALL (8A vóór de deadline naar niet-openers, 8B ná de deadline)",
+      "sender": "Siraat",
+      "base": "8A vóór de deadline: segment: ontvangen bronmail, niet geopend, geen order sinds verzending; deadline nog niet voorbij; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min) | 8B ná de deadline: deadline {{DEADLINE}} is echt voorbij en het aanbod is echt weg; ontvangers = kregen bronmail, geen order; er loopt nog iets anders echts (sale tot 30 nov of een volgende deadline)",
+      "US": {
+        "subjects": [
+          {
+            "text": "You missed this",
+            "waar_als": "8A vóór de deadline: segment: ontvangen bronmail, niet geopend, geen order sinds verzending; deadline nog niet voorbij; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "oranje",
+            "noot": "Smooche-resend. Alleen als 8A (nog niet voorbij); preview moet het nog-lopen zeggen."
+          },
+          {
+            "text": "You missed this: {{WHAT_ENDS_SHORT}}, {{HOURS_LEFT}} hours left",
+            "waar_als": "8A vóór de deadline: segment: ontvangen bronmail, niet geopend, geen order sinds verzending; deadline nog niet voorbij; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          {
+            "text": "Last call: {{WHAT_ENDS_SHORT}} ends at midnight ET",
+            "waar_als": "8A vóór de deadline: segment: ontvangen bronmail, niet geopend, geen order sinds verzending; deadline nog niet voorbij; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min); de backend-deadline is precies 23:59 ET (Shopify-prijs, code of Rise-vervaldatum), niet later; dit is echt de laatste mail over deze deadline",
+            "risico": "oranje",
+            "noot": "'Last call' alleen in de laatste mail over die specifieke deadline; 'Last chance' alleen op 30 nov."
+          },
+          {
+            "text": "It ended. Here's what's still on.",
+            "waar_als": "8B ná de deadline: deadline {{DEADLINE}} is echt voorbij en het aanbod is echt weg; ontvangers = kregen bronmail, geen order; er loopt nog iets anders echts (sale tot 30 nov of een volgende deadline)",
+            "risico": "groen",
+            "noot": "Eerlijke Smooche-truc ná de deadline: geen nep-verlenging, wel een volgende reden."
+          },
+          {
+            "text": "You missed the flash price. The gifts are still here.",
+            "waar_als": "8B ná de deadline: deadline {{DEADLINE}} is echt voorbij en het aanbod is echt weg; ontvangers = kregen bronmail, geen order; er loopt nog iets anders echts (sale tot 30 nov of een volgende deadline); gifts lopen echt nog",
+            "risico": "groen"
+          }
+        ],
+        "previews": [
+          {
+            "text": "Still on until {{DEADLINE}}. Then it's gone.",
+            "waar_als": "8A vóór de deadline: segment: ontvangen bronmail, niet geopend, geen order sinds verzending; deadline nog niet voorbij; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          {
+            "text": "{{WHAT_ENDS}} ended {{DEADLINE_PAST}}. Black Friday is still up to 70% off.",
+            "waar_als": "8B ná de deadline: deadline {{DEADLINE}} is echt voorbij en het aanbod is echt weg; ontvangers = kregen bronmail, geen order; er loopt nog iets anders echts (sale tot 30 nov of een volgende deadline); {{DEADLINE_PAST}} = moment dat het echt eindigde",
+            "risico": "groen"
+          },
+          {
+            "text": "That one is done for good. This is still live:",
+            "waar_als": "8B ná de deadline: deadline {{DEADLINE}} is echt voorbij en het aanbod is echt weg; ontvangers = kregen bronmail, geen order; er loopt nog iets anders echts (sale tot 30 nov of een volgende deadline); er komt voor deze actie echt geen herhaling (Floris bevestigt vooraf)",
+            "risico": "oranje",
+            "noot": "Achteraf feitelijk, geen belofte vooraf. Schrappen als de actie later toch terugkomt."
+          }
+        ],
+        "heroes": [
+          {
+            "text": "You missed this.|It's still on.",
+            "waar_als": "8A vóór de deadline: segment: ontvangen bronmail, niet geopend, geen order sinds verzending; deadline nog niet voorbij; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          {
+            "text": "{{HOURS_LEFT}} hours left.",
+            "waar_als": "8A vóór de deadline: segment: ontvangen bronmail, niet geopend, geen order sinds verzending; deadline nog niet voorbij; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          {
+            "text": "It's over.|This isn't.",
+            "waar_als": "8B ná de deadline: deadline {{DEADLINE}} is echt voorbij en het aanbod is echt weg; ontvangers = kregen bronmail, geen order; er loopt nog iets anders echts (sale tot 30 nov of een volgende deadline)",
+            "risico": "groen"
+          }
+        ],
+        "countdown": {
+          "T-24h": {
+            "text": "(8A) Still on until {{DEADLINE}}.",
+            "waar_als": "8A vóór de deadline: segment: ontvangen bronmail, niet geopend, geen order sinds verzending; deadline nog niet voorbij; verzendtijd = {{DEADLINE}} min 24 uur of minder",
+            "risico": "groen"
+          },
+          "T-6h": {
+            "text": "(8A) 6 hours left. Then it's gone.",
+            "waar_als": "8A vóór de deadline: segment: ontvangen bronmail, niet geopend, geen order sinds verzending; deadline nog niet voorbij; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          "T-1h": {
+            "text": "(8A) Final hour. Use the final-hour mini-mail (7) instead.",
+            "waar_als": "n.v.t.",
+            "risico": "groen"
+          },
+          "T-15min": {
+            "text": "(n.v.t.)",
+            "waar_als": "n.v.t.",
+            "risico": "groen"
+          }
+        },
+        "buttons": [
+          {
+            "text": "See what I missed",
+            "waar_als": "8A vóór de deadline: segment: ontvangen bronmail, niet geopend, geen order sinds verzending; deadline nog niet voorbij; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          {
+            "text": "Use it before midnight ET",
+            "waar_als": "8A vóór de deadline: segment: ontvangen bronmail, niet geopend, geen order sinds verzending; deadline nog niet voorbij; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min); de backend-deadline is precies 23:59 ET (Shopify-prijs, code of Rise-vervaldatum), niet later",
+            "risico": "groen"
+          },
+          {
+            "text": "Shop what's still on",
+            "waar_als": "8B ná de deadline: deadline {{DEADLINE}} is echt voorbij en het aanbod is echt weg; ontvangers = kregen bronmail, geen order; er loopt nog iets anders echts (sale tot 30 nov of een volgende deadline)",
+            "risico": "groen"
+          }
+        ],
+        "body": {
+          "text": "8A: In case it got buried: {{WHAT_ENDS}} ends {{DEADLINE}}, and you haven't opened it yet. Here it is again, one button. / 8B: {{WHAT_ENDS}} ended {{DEADLINE_PAST}}, and it won't return. What is still on: up to 70% off and the free gifts until the end of Black Friday.",
+          "waar_als": "8A vóór de deadline: segment: ontvangen bronmail, niet geopend, geen order sinds verzending; deadline nog niet voorbij; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min) / 8B ná de deadline: deadline {{DEADLINE}} is echt voorbij en het aanbod is echt weg; ontvangers = kregen bronmail, geen order; er loopt nog iets anders echts (sale tot 30 nov of een volgende deadline)",
+          "risico": "oranje",
+          "noot": "8B alleen als de actie echt niet terugkomt. 'won't return' in plaats van 'coming back' (BRIEF verbiedt 'coming')."
+        },
+        "resend": {
+          "text": "(dit is zelf de resend)",
+          "waar_als": "n.v.t.",
+          "risico": "groen"
+        }
+      },
+      "INT": {
+        "subjects": [
+          {
+            "text": "You missed this",
+            "waar_als": "8A vóór de deadline: segment: ontvangen bronmail, niet geopend, geen order sinds verzending; deadline nog niet voorbij; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "oranje",
+            "noot": "Smooche-resend. Alleen als 8A (nog niet voorbij); preview moet het nog-lopen zeggen."
+          },
+          {
+            "text": "You missed this: {{WHAT_ENDS_SHORT}}, {{HOURS_LEFT}} hours left",
+            "waar_als": "8A vóór de deadline: segment: ontvangen bronmail, niet geopend, geen order sinds verzending; deadline nog niet voorbij; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          {
+            "text": "Last call: {{WHAT_ENDS_SHORT}} ends in {{HOURS_LEFT}} hours",
+            "waar_als": "8A vóór de deadline: segment: ontvangen bronmail, niet geopend, geen order sinds verzending; deadline nog niet voorbij; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min); INT: geen 'tonight' of 'midnight' zonder tijdzone; relatieve tijd (uren/minuten) is waar voor elke tijdzone tegelijk; laatste mail over deze deadline",
+            "risico": "oranje"
+          },
+          {
+            "text": "It ended. Here's what's still on.",
+            "waar_als": "8B ná de deadline: deadline {{DEADLINE}} is echt voorbij en het aanbod is echt weg; ontvangers = kregen bronmail, geen order; er loopt nog iets anders echts (sale tot 30 nov of een volgende deadline)",
+            "risico": "groen",
+            "noot": "Eerlijke Smooche-truc ná de deadline: geen nep-verlenging, wel een volgende reden."
+          },
+          {
+            "text": "You missed the flash price. The gifts are still here.",
+            "waar_als": "8B ná de deadline: deadline {{DEADLINE}} is echt voorbij en het aanbod is echt weg; ontvangers = kregen bronmail, geen order; er loopt nog iets anders echts (sale tot 30 nov of een volgende deadline); gifts lopen echt nog",
+            "risico": "groen"
+          }
+        ],
+        "previews": [
+          {
+            "text": "Still on until {{DEADLINE}}. Then it's gone.",
+            "waar_als": "8A vóór de deadline: segment: ontvangen bronmail, niet geopend, geen order sinds verzending; deadline nog niet voorbij; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          {
+            "text": "{{WHAT_ENDS}} ended {{DEADLINE_PAST}}. Black Friday is still up to 70% off.",
+            "waar_als": "8B ná de deadline: deadline {{DEADLINE}} is echt voorbij en het aanbod is echt weg; ontvangers = kregen bronmail, geen order; er loopt nog iets anders echts (sale tot 30 nov of een volgende deadline); {{DEADLINE_PAST}} = moment dat het echt eindigde",
+            "risico": "groen"
+          },
+          {
+            "text": "That one is done for good. This is still live:",
+            "waar_als": "8B ná de deadline: deadline {{DEADLINE}} is echt voorbij en het aanbod is echt weg; ontvangers = kregen bronmail, geen order; er loopt nog iets anders echts (sale tot 30 nov of een volgende deadline); er komt voor deze actie echt geen herhaling (Floris bevestigt vooraf)",
+            "risico": "oranje",
+            "noot": "Achteraf feitelijk, geen belofte vooraf. Schrappen als de actie later toch terugkomt."
+          }
+        ],
+        "heroes": [
+          {
+            "text": "You missed this.|It's still on.",
+            "waar_als": "8A vóór de deadline: segment: ontvangen bronmail, niet geopend, geen order sinds verzending; deadline nog niet voorbij; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          {
+            "text": "{{HOURS_LEFT}} hours left.",
+            "waar_als": "8A vóór de deadline: segment: ontvangen bronmail, niet geopend, geen order sinds verzending; deadline nog niet voorbij; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          {
+            "text": "It's over.|This isn't.",
+            "waar_als": "8B ná de deadline: deadline {{DEADLINE}} is echt voorbij en het aanbod is echt weg; ontvangers = kregen bronmail, geen order; er loopt nog iets anders echts (sale tot 30 nov of een volgende deadline)",
+            "risico": "groen"
+          }
+        ],
+        "countdown": {
+          "T-24h": {
+            "text": "(8A) Still on until {{DEADLINE}}.",
+            "waar_als": "8A vóór de deadline: segment: ontvangen bronmail, niet geopend, geen order sinds verzending; deadline nog niet voorbij; verzendtijd = {{DEADLINE}} min 24 uur of minder",
+            "risico": "groen"
+          },
+          "T-6h": {
+            "text": "(8A) 6 hours left. Then it's gone.",
+            "waar_als": "8A vóór de deadline: segment: ontvangen bronmail, niet geopend, geen order sinds verzending; deadline nog niet voorbij; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          "T-1h": {
+            "text": "(8A) Final hour. Use the final-hour mini-mail (7) instead.",
+            "waar_als": "n.v.t.",
+            "risico": "groen"
+          },
+          "T-15min": {
+            "text": "(n.v.t.)",
+            "waar_als": "n.v.t.",
+            "risico": "groen"
+          }
+        },
+        "buttons": [
+          {
+            "text": "See what I missed",
+            "waar_als": "8A vóór de deadline: segment: ontvangen bronmail, niet geopend, geen order sinds verzending; deadline nog niet voorbij; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          {
+            "text": "Use it before it ends",
+            "waar_als": "8A vóór de deadline: segment: ontvangen bronmail, niet geopend, geen order sinds verzending; deadline nog niet voorbij; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min)",
+            "risico": "groen"
+          },
+          {
+            "text": "Shop what's still on",
+            "waar_als": "8B ná de deadline: deadline {{DEADLINE}} is echt voorbij en het aanbod is echt weg; ontvangers = kregen bronmail, geen order; er loopt nog iets anders echts (sale tot 30 nov of een volgende deadline)",
+            "risico": "groen"
+          }
+        ],
+        "body": {
+          "text": "8A: In case it got buried: {{WHAT_ENDS}} ends {{DEADLINE}}, and you haven't opened it yet. Here it is again, one button. / 8B: {{WHAT_ENDS}} ended {{DEADLINE_PAST}}, and it won't return. What is still on: up to 70% off and the free gifts until the end of Black Friday.",
+          "waar_als": "8A vóór de deadline: segment: ontvangen bronmail, niet geopend, geen order sinds verzending; deadline nog niet voorbij; verzendtijd = {{DEADLINE}} min 6 uur (marge 30 min) / 8B ná de deadline: deadline {{DEADLINE}} is echt voorbij en het aanbod is echt weg; ontvangers = kregen bronmail, geen order; er loopt nog iets anders echts (sale tot 30 nov of een volgende deadline)",
+          "risico": "oranje",
+          "noot": "8B alleen als de actie echt niet terugkomt. 'won't return' in plaats van 'coming back' (BRIEF verbiedt 'coming')."
+        },
+        "resend": {
+          "text": "(dit is zelf de resend)",
+          "waar_als": "n.v.t.",
+          "risico": "groen"
+        }
+      }
+    }
+  },
+  "smooche_doet_dit_wij_niet": [
+    {
+      "smooche": "Your order is pending. / Pending orders not completed within 24 hours will be marked as canceled.",
+      "waarom_niet": "Er bestaat geen order; misleidend onderwerp (CAN-SPAM 15 USC 7704(a)(2)) en nep-orderstatus (FTC Act sectie 5). Wel: 'Your checkout is still open' naar echte Started Checkout."
+    },
+    {
+      "smooche": "(1) Your store credit is updated.",
+      "waarom_niet": "'(1)' doet zich voor als ongelezen notificatie en er is niets bijgewerkt; misleidend onderwerp."
+    },
+    {
+      "smooche": "I extended your credit by 24 hours (until tonight). It cannot be extended again.",
+      "waarom_niet": "Verzonnen handeling en geplande nep-verlenging; maakt de eerste 'expires today' achteraf vals. BRIEF verbiedt 'no extensions' en verzonnen tegoed."
+    },
+    {
+      "smooche": "The sale ends tonight at midnight. No extensions this time.",
+      "waarom_niet": "Hun sale liep door; bij ons loopt BF tot 30 nov, dus 'sale ends tonight' vóór 30 nov is een valse deadline (FTC dark patterns-rapport 2022, EU UCPD bijlage I punt 7)."
+    },
+    {
+      "smooche": "Running pretty low on stock / selling out fast / only while current stock lasts",
+      "waarom_niet": "Zonder echte voorraaddata per markt is dit valse schaarste. Ook bij ons de 12-delige set niet pushen (0 bij ShipBob)."
+    },
+    {
+      "smooche": "Yesterday we added $12.24 to your account. Our customer support team just checked and noticed you haven't used it.",
+      "waarom_niet": "Verzonnen tegoed (eigenlijk een kortingscode met $30 minimum) en verzonnen supportcheck. Wij alleen echt Rise-saldo, en geen nep-handeling."
+    },
+    {
+      "smooche": "Expires Today-zegel op een code die morgen gewoon weer werkt / aftelklok die reset",
+      "waarom_niet": "Nep-countdown: FTC noemt dit expliciet misleidend. Onze GIF telt naar de echte backend-tijd en toont daarna 'ENDED'."
+    },
+    {
+      "smooche": "VIP ONLY ... YOUR PASSWORD: SMOOCHEVIP (vaste code)",
+      "waarom_niet": "Een vaste code lekt naar couponsites; dan is 'VIP only' niet meer waar. Wij: unieke {{VIP_CODE}} per profiel, one use."
+    },
+    {
+      "smooche": "Free shipping has been activated for you",
+      "waarom_niet": "Gratis verzending geldt voor iedereen; 'activated for you' suggereert een persoonlijke handeling die niet bestaat."
+    },
+    {
+      "smooche": "Try your luck... see what you win (iedereen wint hetzelfde)",
+      "waarom_niet": "Valse indruk van winst (EU UCPD bijlage I punt 31); bij ons geen 'win' zonder 'chance' en regels."
+    },
+    {
+      "smooche": "Final hours / about to disappear terwijl er niets eindigt",
+      "waarom_niet": "Smooche gebruikt 'final hours' als stijl; bij ons alleen in de laatste 6 uur van een echte deadline."
+    },
+    {
+      "smooche": "Your cart is reserved / price held / next batch",
+      "waarom_niet": "Expliciet verboden in DECISIONS (1 nov); de winkelwagen houdt geen prijs vast."
+    },
+    {
+      "smooche": "Persona die verzonnen dingen doet ('Chloe: I extended...')",
+      "waarom_niet": "Benjamin bestaat; hij zegt alleen wat echt gebeurd is ('I made you a code' alleen als de code echt voor dit segment is gemaakt)."
+    },
+    {
+      "smooche": "Sterren zonder bron of aantal",
+      "waarom_niet": "FTC-regel nepreviews (2024); wij alleen letterlijke geverifieerde reviews met naam en ID."
+    }
+  ]
+}
