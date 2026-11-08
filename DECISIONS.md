@@ -112,3 +112,6 @@ Geel #FFB800 is de Black Friday-kleur, niet onze huiskleur. Alleen sale-tags (70
 Floris bevestigt: "Nothing sticks when the heat is right", "clean up in under a minute", "the pan Siraat started with" (Pan Pro Standard) en de review "Buy it because it is safe, it is the only pan you will need in your kitchen, life long." mogen gebruikt worden.
 | 2026-11-06 | Elk beeld en elk beeldblok in een mail is klikbaar (Harmony-review E5/E6). Build linkt losse beelden automatisch (link_all). | Floris/Harmony |
 | 2026-11-07 | 5 gifts (Floris, 7 nov 2026): Mystery gift, Free shipping, Plastic-free ebook, Favorites cookbook (nieuw), plus kans om een PFAS water filter te winnen. Tekst altijd "5 free gifts"; label "Free shipping" (niet Express); "win a PFAS water filter", nooit purifier; totaalwaarde "$555 value" alleen in USD-mails, INT zonder bedrag. | Alle flows en campagnes aanpassen (scripts/gifts5.py). |
+
+## 2 Pans + 2 Lids = $249 (Floris, 8 nov 2026)
+De bundel 2 Pans + 2 Lids (/products/2-pans-and-2-lids) kost $249 (siteprijs, compare-at $664). Geen $199 gebruiken in mails of voorbeelden.
