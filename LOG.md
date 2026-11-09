@@ -475,3 +475,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 2026-11-09 · Dagcheck: splits 100% nieuw, flows live, 24u flowomzet $15,382. Alarm: QUBUQV bounce 12.9% (7d 7.5%), Rn556d uitschrijving 1.42%. Gemeld in #claude-mail, niets aangepast.
 - 2026-11-09 · Concurrenten-tijdlijn: 8 nieuwe mails (Our Place 5: 'Running Low', 'Steam Makes a Difference'; Made In 3: 'First Access to Deals on Thanksgiving Essentials', 15% met code TGIVING2026). tijdlijn.csv en overzicht.md (dag 28) bijgewerkt.
 - 2026-11-09 · 24 testmails naar testadres (4 redeem-abandonment R1/R2, 4 tegoed T1-T4, 12 black-hat test v3 met $13.78). $12.24 en '4 gifts' weg uit Figma-testmateriaal.
+- 2026-11-09 · Gecheckt: 8 nieuwe mails staan in Klaviyo (draft YxSs2Y, QX2Cg6, Ubi9m5). 12 reviewtemplates neutraal hernoemd ('v4 · ... · nov review').
