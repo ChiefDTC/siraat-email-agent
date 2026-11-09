@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Your dishwasher sheets</title></head>
+<body style="margin:0;padding:0;background:#ffffff;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#ffffff;"><tr><td align="left" style="padding:24px 20px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;"><tr><td style="font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#222222;">
+<p style="margin:0 0 16px 0;">Hi {{ first_name|default:'there' }},</p>
+<p style="margin:0 0 16px 0;">Your free pack of dishwasher sheets came with your Siraat order. Tomorrow it turns into a subscription: a fresh pack every 4 weeks.</p>
+<p style="margin:0 0 16px 0;">Not for you? Cancel in one click. No questions.<br/>👉 <a href="https://siraatskitchen.com/tools/recurring/login" style="color:#1a0dab;text-decoration:underline;">Cancel my subscription</a></p>
+<p style="margin:0 0 16px 0;"><strong>Why most people keep them:</strong><br/>You kicked the toxic coating out of your kitchen. Then your clean pan goes into the dishwasher with a pod full of dyes, perfume and plastic film. These sheets finish the job.</p>
+<p style="margin:0 0 16px 0;">✅ No phosphates, no chlorine<br/>✅ No plastic film, dissolves completely<br/>✅ Cuts grease and baked-on food<br/>✅ Plastic-free packaging</p>
+<p style="margin:0 0 16px 0;"><strong>Every 4 weeks too often?</strong><br/>👉 <a href="https://siraatskitchen.com/tools/recurring/login" style="color:#1a0dab;text-decoration:underline;">Skip a delivery or switch to every 2 or 3 months</a></p>
+<p style="margin:0 0 16px 0;">No contract. Pause, skip or cancel whenever you want.</p>
+<p style="margin:0 0 16px 0;">Happy with them? Do nothing. Your next pack ships after tomorrow.<br/>👉 <a href="https://siraatskitchen.com/tools/recurring/login" style="color:#1a0dab;text-decoration:underline;">Manage my subscription</a></p>
+<p style="margin:0 0 16px 0;">Benjamin<br/>Siraat</p>
+<p style="margin:0 0 24px 0;">P.S. Questions? Just reply. A real person reads every one.</p>
+<p style="margin:0;font-size:12px;line-height:18px;color:#888888;">{% unsubscribe 'Unsubscribe' %} &middot; {% manage_preferences 'Manage preferences' %}<br/>{{ organization.name }}, {{ organization.full_address }}</p>
+</td></tr></table>
+</td></tr></table>
+</body></html>

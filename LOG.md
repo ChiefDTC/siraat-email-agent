@@ -479,3 +479,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 2026-11-09 · Op verzoek Floris: draft-flow SRGrQs 'v4 · Nov updates · review (draft)' met de 12 reviewmails, trigger lege lijst XGAi6E. Niet live; black-hat niet naar klanten.
 - 2026-11-09 · Review-flow SRGrQs live gezet op verzoek Floris (trigger lege interne lijst XGAi6E, 0 profielen; geen klanten). [TEST]-banners uit 12 reviewtemplates. Niet in echte klantflows.
 - 2026-11-09 · Live (akkoord Floris): giftblok 4->5 tegels (cookbook) met scripts/gifts5.py in W1 Y3S52m, B1 Wn3U5P, B1-A R6E5Zv, B1-B Ye4tQy. Back-up scratchpad/live5/backup. Reviewflow SRGrQs flow-kopieen bijgewerkt.
+- 2026-11-09 · Draft-campagne 01M70T2JMF28TQGKH7B5DXD44J 'Sub renewal copytest · Recharge (30) · text-only' (lijst VvSCyS, template X2nsGm/kopie S2e5Km). Niet ingepland.
