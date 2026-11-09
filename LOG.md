@@ -477,3 +477,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 2026-11-09 · 24 testmails naar testadres (4 redeem-abandonment R1/R2, 4 tegoed T1-T4, 12 black-hat test v3 met $13.78). $12.24 en '4 gifts' weg uit Figma-testmateriaal.
 - 2026-11-09 · Gecheckt: 8 nieuwe mails staan in Klaviyo (draft YxSs2Y, QX2Cg6, Ubi9m5). 12 reviewtemplates neutraal hernoemd ('v4 · ... · nov review').
 - 2026-11-09 · Op verzoek Floris: draft-flow SRGrQs 'v4 · Nov updates · review (draft)' met de 12 reviewmails, trigger lege lijst XGAi6E. Niet live; black-hat niet naar klanten.
+- 2026-11-09 · Review-flow SRGrQs live gezet op verzoek Floris (trigger lege interne lijst XGAi6E, 0 profielen; geen klanten). [TEST]-banners uit 12 reviewtemplates. Niet in echte klantflows.
