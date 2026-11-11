@@ -1,0 +1,300 @@
+{%- comment -%}
+  Siraat order confirmation, variant A (Calm receipt).
+  Source: klaviyo/templates/v3/shopify-order-confirmation (built by _tools/build.py). Do not edit in Shopify only:
+  change the source, rebuild, paste again.
+  ===== FLORIS: fill in or confirm these values =====
+{%- endcomment -%}
+{%- assign sk_portal_url = 'https://siraatskitchen.com/a/loop_subscriptions/customer' -%}{%- comment -%} subscription portal: Loop (LOG 30 Oct) or Recharge customer portal link. One click, no login if possible. {%- endcomment -%}
+{%- assign sk_support = 'support@siraatskitchen.com' -%}
+{%- assign sk_ebook_url = 'https://delivery.shopifyapps.com/-/396da74b7735ff7f/6d8678add81ad2ad' -%}
+{%- assign sk_cookbook_url = '' -%}{%- comment -%} empty = 'link arrives by email' {%- endcomment -%}
+{%- assign sk_days_us = '7 to 12' -%}{%- comment -%} Fulfilled to Delivered, US: median 7.1 d, p90 12.5 d (Klaviyo), Ecomflow US 9.1 d {%- endcomment -%}
+{%- assign sk_days_int = '6 to 14' -%}{%- comment -%} shipping policy: 6-10 days, Ireland/Denmark 8-14 {%- endcomment -%}
+{%- assign sk_cancel_window = '1 hour' -%}{%- comment -%} shipping policy: cancellation request within 1 hour {%- endcomment -%}
+{%- comment -%} ===== end of settings ===== {%- endcomment -%}
+{%- assign sk_cur = presentment_currency | default: currency | default: 'USD' | upcase -%}
+{%- assign sk_country = shipping_address.country_code | default: billing_address.country_code | default: 'US' -%}
+{%- if sk_country == 'US' -%}{%- assign sk_days = sk_days_us -%}{%- else -%}{%- assign sk_days = sk_days_int -%}{%- endif -%}
+{%- assign sk_paid = 0 -%}{%- assign sk_gifts = 0 -%}{%- assign sk_subs = 0 -%}{%- assign sk_ship = 0 -%}
+{%- assign sk_first = '' -%}{%- assign sk_sep = '' -%}
+{%- for line in subtotal_line_items -%}
+  {%- assign t = line.title | downcase -%}
+  {%- assign kind = 'item' -%}
+  {%- if line.selling_plan_allocation -%}{%- assign kind = 'sub' -%}
+  {%- elsif line.final_line_price == 0 -%}
+    {%- if t contains 'mystery' -%}{%- assign kind = 'mystery' -%}
+    {%- elsif t contains 'shipping' -%}{%- assign kind = 'shipping' -%}
+    {%- elsif t contains 'cookbook' -%}{%- assign kind = 'cookbook' -%}
+    {%- elsif t contains 'book' or t contains 'guide' -%}{%- assign kind = 'ebook' -%}
+    {%- elsif t contains 'filter' or t contains 'draw' -%}{%- assign kind = 'filter' -%}
+    {%- else -%}{%- assign kind = 'freebie' -%}{%- endif -%}
+  {%- endif -%}
+  {%- if kind == 'sub' -%}{%- assign sk_subs = sk_subs | plus: 1 -%}
+  {%- elsif kind == 'item' -%}{%- assign sk_paid = sk_paid | plus: 1 -%}{%- if sk_first == '' -%}{%- assign sk_first = line.title -%}{%- endif -%}
+  {%- else -%}{%- assign sk_gifts = sk_gifts | plus: 1 -%}{%- endif -%}
+  {%- if line.requires_shipping and kind != 'shipping' and kind != 'ebook' and kind != 'cookbook' and kind != 'filter' -%}
+    {%- assign sk_ship = sk_ship | plus: 1 -%}
+    {%- if kind != 'item' -%}{%- assign sk_short = line.title -%}
+      {%- if kind == 'sub' -%}{%- assign sk_short = 'dishwasher sheets' -%}{%- if t contains 'sheet' -%}{%- else -%}{%- assign sk_short = line.title -%}{%- endif -%}{%- endif -%}
+      {%- if kind == 'mystery' -%}{%- assign sk_short = 'mystery gift' -%}{%- endif -%}
+      {%- assign sk_sep = sk_sep | append: '|' | append: sk_short -%}
+    {%- elsif t contains 'lid' -%}{%- assign sk_sep = sk_sep | append: '|lid' -%}{%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign sk_sep_list = sk_sep | remove_first: '|' | split: '|' -%}
+{%- assign sk_sep_text = '' -%}
+{%- for s in sk_sep_list -%}
+  {%- if forloop.first -%}{%- assign sk_sep_text = s | capitalize -%}
+  {%- elsif forloop.last -%}{%- assign sk_sep_text = sk_sep_text | append: ' and ' | append: s -%}
+  {%- else -%}{%- assign sk_sep_text = sk_sep_text | append: ', ' | append: s -%}{%- endif -%}
+{%- endfor -%}
+{%- assign sk_more = sk_paid | minus: 1 -%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light only">
+<title>Order {{ order_name }} confirmed</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
+  body{margin:0;padding:0;background:#FFFFFF;-webkit-text-size-adjust:100%;}
+  table{border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;}
+  img{border:0;display:block;line-height:100%;outline:none;text-decoration:none;}
+  a{color:#AC3B19;}
+  @media only screen and (max-width:620px){
+    .w{width:100%!important;}
+    .pad{padding-left:22px!important;padding-right:22px!important;}
+    .h1{font-size:36px!important;line-height:40px!important;}
+    .h2{font-size:28px!important;line-height:32px!important;}
+    .btnw{width:100%!important;}
+    .hidem{display:none!important;}
+    .cardin{padding-left:16px!important;padding-right:16px!important;}
+    .ck-l{width:92px!important;}
+  }
+  @media only screen and (max-width:480px){
+    .ic3{display:block!important;width:100%!important;padding:0 0 14px 0!important;}
+    .pill{display:inline-block!important;margin:0 4px 8px 0!important;}
+  }
+</style>
+</head>
+<body style="margin:0;padding:0;background:#FFFFFF;">
+<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;font-size:1px;line-height:1px;color:#FFFFFF;">Order {{ order_name }} is confirmed. What you ordered, what ships when, and how to change anything.&#8204;&nbsp;&#8204;&nbsp;&#8204;&nbsp;&#8204;&nbsp;&#8204;&nbsp;&#8204;&nbsp;&#8204;&nbsp;&#8204;&nbsp;&#8204;&nbsp;&#8204;&nbsp;&#8204;&nbsp;&#8204;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background-color:#FFFFFF;"><tr><td align="center" style="padding:8px 0 0 0;">
+<table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" bgcolor="#F8F7F2" style="width:600px;background-color:#F8F7F2;">
+<!-- HEADER (look van partials/header.html, lockup zwart op licht) -->
+<tr><td bgcolor="#F8F7F2" class="pad" style="padding:18px 36px;background-color:#F8F7F2;border-bottom:1px solid #ECE7DD;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+    <td valign="middle"><a href="https://siraatskitchen.com"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/ae4dfc27-1e05-481a-90b6-f6467bc3db78.png" width="150" alt="Siraat" style="display:block;width:150px;height:auto;border:0;"></a></td>
+    <td valign="middle" align="right" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:18px;letter-spacing:1.5px;font-weight:600;color:#282828;">ORDER {{ order_name }}</td>
+  </tr></table>
+</td></tr>
+<tr><td class="pad" align="center" style="padding:40px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:center;">ORDER CONFIRMED</td></tr>
+<tr><td class="pad h1" align="center" style="padding:10px 44px 0 44px;font-family:'Instrument Serif','Times New Roman',Times,serif;font-style:italic;font-weight:400;font-size:44px;line-height:48px;color:#282828;text-align:center;">Thank you, {{ customer.first_name | default: 'friend' }}.</td></tr>
+<tr><td class="pad" align="center" style="padding:12px 60px 0 60px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#4A4744;text-align:center;">Order {{ order_name }} is in. Below: what you ordered, what it cost, and exactly what happens next.</td></tr>
+<tr><td class="pad" align="center" style="padding:24px 44px 0 44px;">
+  <table role="presentation" class="btnw" width="340" cellpadding="0" cellspacing="0" border="0" style="width:340px;"><tr><td align="center" bgcolor="#282828" style="background-color:#282828;border-radius:3px;">
+    <a href="{{ order_status_url }}" style="display:block;padding:18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">View my order &rarr;</a>
+  </td></tr></table>
+</td></tr>
+<tr><td class="pad" align="center" style="padding:10px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#727272;text-align:center;">Tracking appears here as soon as each parcel ships.</td></tr>
+<tr><td style="font-size:0;line-height:0;height:8px;">&nbsp;</td></tr>
+<tr><td class="pad" align="left" style="padding:36px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:left;">YOUR ORDER {{ order_name }}</td></tr>
+<tr><td class="pad h2" align="left" style="padding:8px 44px 0 44px;font-family:'Instrument Serif','Times New Roman',Times,serif;font-style:italic;font-weight:400;font-size:32px;line-height:36px;color:#282828;text-align:left;">What you ordered</td></tr>
+<tr><td class="pad" style="padding:20px 44px 0 44px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border:1px solid #ECE7DD;border-radius:4px;"><tr><td class="cardin" style="padding:22px 22px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+{%- for line in subtotal_line_items -%}
+{%- if line.final_line_price > 0 or line.selling_plan_allocation -%}
+<tr>
+  <td width="64" valign="top" style="width:64px;padding:{% if forloop.first %}0{% else %}14px{% endif %} 0 14px 0;border-bottom:1px solid #ECE7DD;">{%- if line.image -%}<img src="{{ line.image | img_url: 'compact_cropped' }}" width="64" height="64" alt="{{ line.title | escape }}" style="display:block;width:64px;height:64px;border-radius:3px;border:1px solid #ECE7DD;object-fit:cover;">{%- else -%}<div style="width:64px;height:64px;background:#ECE7DD;border-radius:3px;"></div>{%- endif -%}</td>
+  <td valign="top" style="padding:{% if forloop.first %}0{% else %}14px{% endif %} 10px 14px 14px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:21px;color:#282828;">
+    <span style="font-weight:600;">{{ line.title }}</span>
+    {%- if line.variant.title and line.variant.title != 'Default Title' -%}<br><span style="font-size:13px;color:#727272;">{{ line.variant.title }}</span>{%- endif -%}
+    <br><span style="font-size:13px;color:#727272;">Qty {{ line.quantity }}</span>
+    {%- if line.selling_plan_allocation -%}<br><span style="display:inline-block;margin-top:6px;padding:3px 8px;background-color:#F6E7E1;color:#AC3B19;font-size:11px;line-height:15px;letter-spacing:1px;font-weight:600;border-radius:2px;">SUBSCRIPTION</span><br><span style="font-size:13px;line-height:19px;color:#282828;">{{ line.selling_plan_allocation.selling_plan.name }}</span>{%- endif -%}
+  </td>
+  <td valign="top" align="right" style="padding:{% if forloop.first %}0{% else %}14px{% endif %} 0 14px 0;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:21px;color:#282828;white-space:nowrap;">{% if line.final_line_price == 0 %}Free{% else %}{{ line.final_line_price | money }}{% endif %}</td>
+</tr>
+{%- endif -%}
+{%- endfor -%}
+{%- if sk_gifts > 0 -%}
+<tr><td colspan="3" style="padding:14px 0 14px 0;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:21px;color:#282828;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+    <td style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:21px;color:#282828;"><span style="font-weight:600;">{{ sk_gifts }} free gifts</span><br><span style="font-size:13px;color:#727272;">Details below</span></td>
+    <td align="right" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:21px;color:#282828;white-space:nowrap;">{{ 0 | money }}</td>
+  </tr></table>
+</td></tr>
+{%- endif -%}
+<tr><td colspan="2" style="padding:14px 0 0 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#282828;font-weight:400;">Subtotal</td><td align="right" style="padding:14px 0 0 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#282828;font-weight:400;white-space:nowrap;">{{ subtotal_price | money }}</td></tr>
+{%- if total_discounts > 0 -%}<tr><td colspan="2" style="padding:4px 0 0 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#282828;font-weight:400;">Discount</td><td align="right" style="padding:4px 0 0 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#282828;font-weight:400;white-space:nowrap;">-{{ total_discounts | money }}</td></tr>
+{%- endif -%}
+<tr><td colspan="2" style="padding:4px 0 0 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#282828;font-weight:400;">Shipping</td><td align="right" style="padding:4px 0 0 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#282828;font-weight:400;white-space:nowrap;">{% if shipping_price == 0 %}Free{% else %}{{ shipping_price | money }}{% endif %}</td></tr>
+{%- if tax_price > 0 -%}<tr><td colspan="2" style="padding:4px 0 0 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#282828;font-weight:400;">Tax</td><td align="right" style="padding:4px 0 0 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#282828;font-weight:400;white-space:nowrap;">{{ tax_price | money }}</td></tr>
+{%- endif -%}
+<tr><td colspan="2" style="padding:10px 0 0 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;color:#282828;font-weight:600;">Total charged today</td><td align="right" style="padding:10px 0 0 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;color:#282828;font-weight:600;white-space:nowrap;">{{ total_price | money_with_currency }}</td></tr>
+{%- if sk_cur != 'USD' -%}<tr><td colspan="3" style="padding:10px 0 0 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#727272;">You were charged in {{ sk_cur }}, the currency you saw at checkout. If your card uses another currency, your bank converts it and may add its own fee.</td></tr>{%- endif -%}
+</table>
+</td></tr></table>
+</td></tr>
+{%- if shipping_address -%}
+<tr><td class="pad" align="left" style="padding:16px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:22px;color:#282828;text-align:left;"><span style="font-weight:600;">Shipping to</span><br>{{ shipping_address.name }}<br>{{ shipping_address.address1 }}{% if shipping_address.address2 != blank %}, {{ shipping_address.address2 }}{% endif %}<br>{{ shipping_address.city }}{% if shipping_address.province_code != blank %}, {{ shipping_address.province_code }}{% endif %} {{ shipping_address.zip }}<br>{{ shipping_address.country }}<br><span style="font-size:13px;color:#727272;">Something wrong? Reply within {{ sk_cancel_window }} and we fix it before it ships.</span></td></tr>
+
+{%- endif -%}
+<tr><td class="pad" align="left" style="padding:36px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:left;">WHAT HAPPENS NEXT</td></tr>
+<tr><td class="pad h2" align="left" style="padding:8px 44px 0 44px;font-family:'Instrument Serif','Times New Roman',Times,serif;font-style:italic;font-weight:400;font-size:32px;line-height:36px;color:#282828;text-align:left;">From our shelf to your stove</td></tr>
+<tr><td class="pad" style="padding:20px 44px 0 44px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border:1px solid #ECE7DD;border-radius:4px;"><tr><td class="cardin" style="padding:22px 22px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+  <td width="30" valign="top" style="width:30px;padding:0 0 18px 0;"><span style="display:inline-block;width:26px;height:26px;background-color:#AC3B19;border:2px solid #AC3B19;border-radius:50%;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:26px;font-weight:600;color:#FFFFFF;text-align:center;">1</span></td>
+  <td valign="top" style="padding:4px 0 18px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;color:#282828;"><span style="font-weight:600;">Today: order received</span><br><span style="font-size:14px;line-height:21px;color:#4A4744;">You are reading the proof. Need to change the address or cancel? Reply within {{ sk_cancel_window }} of ordering.</span></td>
+</tr>
+<tr>
+  <td width="30" valign="top" style="width:30px;padding:0 0 18px 0;"><span style="display:inline-block;width:26px;height:26px;background-color:#FFFFFF;border:2px solid #AC3B19;border-radius:50%;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:26px;font-weight:600;color:#AC3B19;text-align:center;">2</span></td>
+  <td valign="top" style="padding:4px 0 18px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;color:#282828;"><span style="font-weight:600;">Within 1 business day: packed</span><br><span style="font-size:14px;line-height:21px;color:#4A4744;">We check every piece before it goes in the box.</span></td>
+</tr>
+<tr>
+  <td width="30" valign="top" style="width:30px;padding:0 0 18px 0;"><span style="display:inline-block;width:26px;height:26px;background-color:#FFFFFF;border:2px solid #AC3B19;border-radius:50%;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:26px;font-weight:600;color:#AC3B19;text-align:center;">3</span></td>
+  <td valign="top" style="padding:4px 0 18px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;color:#282828;"><span style="font-weight:600;">Shipped: tracking by email</span><br><span style="font-size:14px;line-height:21px;color:#4A4744;">{% if sk_ship > 1 %}One email per parcel, each with its own tracking link. {% else %}You get an email with your tracking link. {% endif %}Tracking can take 24 to 72 hours to show movement.</span></td>
+</tr>
+<tr>
+  <td width="30" valign="top" style="width:30px;padding:0 0 0px 0;"><span style="display:inline-block;width:26px;height:26px;background-color:#FFFFFF;border:2px solid #AC3B19;border-radius:50%;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:26px;font-weight:600;color:#AC3B19;text-align:center;">4</span></td>
+  <td valign="top" style="padding:4px 0 0px 14px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;color:#282828;"><span style="font-weight:600;">Delivered: usually {{ sk_days }} days after it ships</span><br><span style="font-size:14px;line-height:21px;color:#4A4744;">{% if sk_country == 'US' %}That is the US average. Holidays and peak weeks can add a few days.{% else %}That is our average outside the US. Customs and peak weeks can add a few days.{% endif %}</span></td>
+</tr>
+</table>
+</td></tr></table>
+</td></tr>
+{%- if sk_ship > 1 -%}
+<tr><td class="pad" style="padding:20px 44px 0 44px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FBF3EF" style="background-color:#FBF3EF;border:1px solid #E3C9BE;border-radius:4px;"><tr><td class="cardin" style="padding:22px 22px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr><td style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;">YOUR ORDER MAY COME IN MORE THAN ONE PARCEL</td></tr>
+<tr><td style="padding-top:8px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#282828;">
+{%- if sk_sep_text != '' -%}{{ sk_sep_text }} {% if sk_sep_list.size > 1 %}often ship on their own{% else %}often ships on its own{% endif %} and can arrive first.{%- else -%}Some items ship on their own and can arrive first.{%- endif %} So if one box arrives and the rest is not there yet, nothing is missing. It is on its way.</td></tr>
+<tr><td style="padding-top:12px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:22px;color:#4A4744;">
+&bull;&nbsp; Every parcel gets its own tracking email.<br>
+&bull;&nbsp; A &ldquo;delivered&rdquo; notice can be for one parcel only.<br>
+&bull;&nbsp; Check all tracking emails, or see every parcel on <a href="{{ order_status_url }}" style="color:#AC3B19;">your order page</a>.<br>
+&bull;&nbsp; No movement 14 days after a parcel shipped? Email us and we will trace it.</td></tr>
+</table>
+</td></tr></table>
+</td></tr>
+{%- endif -%}
+{%- for line in subtotal_line_items -%}{%- if line.selling_plan_allocation -%}
+{%- assign sp_name = line.selling_plan_allocation.selling_plan.name -%}
+{%- assign sp_days = sp_name | split: 'every ' | last | split: ' ' | first | plus: 0 -%}
+<tr><td class="pad" style="padding:20px 44px 0 44px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border:1px solid #282828;border-radius:4px;"><tr><td class="cardin" style="padding:22px 22px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr><td style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;">YOU STARTED A SUBSCRIPTION</td></tr>
+<tr><td style="padding-top:6px;font-family:'Instrument Serif','Times New Roman',Times,serif;font-style:italic;font-weight:400;font-size:26px;line-height:30px;color:#282828;">{{ line.title }}</td></tr>
+<tr><td style="padding-top:12px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr><td width="112" valign="top" style="width:112px;padding:6px 0;border-top:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;">Plan</td><td valign="top" style="padding:6px 0;border-top:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;font-weight:600;">{{ sp_name }}</td></tr>
+    <tr><td valign="top" style="padding:6px 0;border-top:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;">Today</td><td valign="top" style="padding:6px 0;border-top:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">{% if line.final_line_price == 0 %}Free, nothing charged for this item{% else %}{{ line.final_line_price | money }}{% endif %}</td></tr>
+    {%- if sp_days > 0 -%}{%- assign sp_secs = sp_days | times: 86400 -%}<tr><td valign="top" style="padding:6px 0;border-top:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;">First charge</td><td valign="top" style="padding:6px 0;border-top:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">Around {{ created_at | date: '%s' | plus: sp_secs | date: '%B %-d, %Y' }}, then every {{ sp_days }} days</td></tr>{%- endif -%}
+    <tr><td valign="top" style="padding:6px 0;border-top:1px solid #ECE7DD;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:#727272;">Cancel</td><td valign="top" style="padding:6px 0;border-top:1px solid #ECE7DD;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#282828;">Any time before a charge, in one click</td></tr>
+  </table>
+</td></tr>
+<tr><td style="padding-top:12px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:22px;color:#4A4744;">Didn&rsquo;t mean to subscribe, or want to skip or pause? It takes one click{% if line.final_line_price == 0 %}, and nothing has been charged yet{% endif %}.</td></tr>
+<tr><td align="center" style="padding-top:16px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border:2px solid #282828;border-radius:3px;">
+    <a href="{{ sk_portal_url }}" style="display:block;padding:14px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:18px;font-weight:600;letter-spacing:1.2px;color:#282828;text-decoration:none;text-transform:uppercase;">Manage or cancel my subscription &rarr;</a>
+  </td></tr></table>
+</td></tr>
+</table>
+</td></tr></table>
+</td></tr>
+{%- endif -%}{%- endfor -%}
+{%- if sk_gifts > 0 -%}
+<tr><td class="pad" align="left" style="padding:36px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:left;">INCLUDED WITH EVERY ORDER</td></tr>
+<tr><td class="pad h2" align="left" style="padding:8px 44px 0 44px;font-family:'Instrument Serif','Times New Roman',Times,serif;font-style:italic;font-weight:400;font-size:32px;line-height:36px;color:#282828;text-align:left;">Your {{ sk_gifts }} free gifts</td></tr>
+<tr><td class="pad" align="left" style="padding:8px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:22px;color:#727272;text-align:left;">What ships, what is digital, and what you are entered in.</td></tr>
+<tr><td class="pad" style="padding:20px 44px 0 44px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border:1px solid #ECE7DD;border-radius:4px;"><tr><td class="cardin" style="padding:6px 22px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+{%- for line in subtotal_line_items -%}
+{%- assign t = line.title | downcase -%}
+{%- unless line.selling_plan_allocation -%}{%- if line.final_line_price == 0 -%}
+{%- if t contains 'mystery' -%}<tr>
+  <td width="56" valign="top" style="width:56px;padding:12px 0;border-bottom:1px solid #ECE7DD;"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/c97cf7a9-cccf-4472-a592-d49747b6d6a7.jpeg" width="56" height="56" alt="" style="display:block;width:56px;height:56px;border-radius:3px;object-fit:cover;"></td>
+  <td valign="top" style="padding:12px 0 12px 14px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:21px;color:#282828;"><span style="font-weight:600;">{{ line.title }}</span> &nbsp;<span style="display:inline-block;padding:2px 7px;background-color:#F8F7F2;border:1px solid #ECE7DD;color:#727272;font-size:10px;line-height:14px;letter-spacing:1px;font-weight:600;border-radius:2px;white-space:nowrap;">SHIPS</span><br><span style="font-size:13px;line-height:19px;color:#4A4744;">A surprise in a box of its own. It often ships separately, so it may arrive before or after your cookware.</span></td>
+</tr>
+
+{%- elsif t contains 'shipping' -%}<tr>
+  <td width="56" valign="top" style="width:56px;padding:12px 0;border-bottom:1px solid #ECE7DD;"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/fc1878e8-1cc0-4699-8f62-1110afb1750e.jpeg" width="56" height="56" alt="" style="display:block;width:56px;height:56px;border-radius:3px;object-fit:cover;"></td>
+  <td valign="top" style="padding:12px 0 12px 14px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:21px;color:#282828;"><span style="font-weight:600;">{{ line.title }}</span> &nbsp;<span style="display:inline-block;padding:2px 7px;background-color:#F8F7F2;border:1px solid #ECE7DD;color:#727272;font-size:10px;line-height:14px;letter-spacing:1px;font-weight:600;border-radius:2px;white-space:nowrap;">APPLIED</span><br><span style="font-size:13px;line-height:19px;color:#4A4744;">Already taken off this order. Nothing to do.</span></td>
+</tr>
+
+{%- elsif t contains 'cookbook' -%}<tr>
+  <td width="56" valign="top" style="width:56px;padding:12px 0;border-bottom:1px solid #ECE7DD;"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/dabf0446-a5d7-49ae-87f8-672e5692bf5b.jpeg" width="56" height="56" alt="" style="display:block;width:56px;height:56px;border-radius:3px;object-fit:cover;"></td>
+  <td valign="top" style="padding:12px 0 12px 14px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:21px;color:#282828;"><span style="font-weight:600;">{{ line.title }}</span> &nbsp;<span style="display:inline-block;padding:2px 7px;background-color:#F8F7F2;border:1px solid #ECE7DD;color:#727272;font-size:10px;line-height:14px;letter-spacing:1px;font-weight:600;border-radius:2px;white-space:nowrap;">DIGITAL</span><br><span style="font-size:13px;line-height:19px;color:#4A4744;">{% if sk_cookbook_url != blank %}Nothing ships. <a href="{{ sk_cookbook_url }}" style="color:#AC3B19;">Download it here</a>.{% else %}Nothing ships. Your download link arrives in a separate email.{% endif %}</span></td>
+</tr>
+
+{%- elsif t contains 'book' or t contains 'guide' -%}<tr>
+  <td width="56" valign="top" style="width:56px;padding:12px 0;border-bottom:1px solid #ECE7DD;"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/3fab7ff2-1993-48d2-8567-d9f3d0ce04dd.jpeg" width="56" height="56" alt="" style="display:block;width:56px;height:56px;border-radius:3px;object-fit:cover;"></td>
+  <td valign="top" style="padding:12px 0 12px 14px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:21px;color:#282828;"><span style="font-weight:600;">{{ line.title }}</span> &nbsp;<span style="display:inline-block;padding:2px 7px;background-color:#F8F7F2;border:1px solid #ECE7DD;color:#727272;font-size:10px;line-height:14px;letter-spacing:1px;font-weight:600;border-radius:2px;white-space:nowrap;">DIGITAL</span><br><span style="font-size:13px;line-height:19px;color:#4A4744;">Nothing ships. <a href="{{ sk_ebook_url }}" style="color:#AC3B19;">Download it here</a>, the link also comes by email.</span></td>
+</tr>
+
+{%- elsif t contains 'filter' or t contains 'draw' -%}<tr>
+  <td width="56" valign="top" style="width:56px;padding:12px 0;border-bottom:1px solid #ECE7DD;"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/a6aec8e7-f289-424e-ab60-689f1ae85c39.jpeg" width="56" height="56" alt="" style="display:block;width:56px;height:56px;border-radius:3px;object-fit:cover;"></td>
+  <td valign="top" style="padding:12px 0 12px 14px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:21px;color:#282828;"><span style="font-weight:600;">{{ line.title }}</span> &nbsp;<span style="display:inline-block;padding:2px 7px;background-color:#F8F7F2;border:1px solid #ECE7DD;color:#727272;font-size:10px;line-height:14px;letter-spacing:1px;font-weight:600;border-radius:2px;white-space:nowrap;">DRAW</span><br><span style="font-size:13px;line-height:19px;color:#4A4744;">You are entered in the weekly draw for a PFAS water filter. Winners hear from us by email.</span></td>
+</tr>
+
+{%- else -%}<tr>
+  <td width="56" valign="top" style="width:56px;padding:12px 0;border-bottom:1px solid #ECE7DD;"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/c97cf7a9-cccf-4472-a592-d49747b6d6a7.jpeg" width="56" height="56" alt="" style="display:block;width:56px;height:56px;border-radius:3px;object-fit:cover;"></td>
+  <td valign="top" style="padding:12px 0 12px 14px;border-bottom:1px solid #ECE7DD;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:21px;color:#282828;"><span style="font-weight:600;">{{ line.title }}</span> &nbsp;<span style="display:inline-block;padding:2px 7px;background-color:#F8F7F2;border:1px solid #ECE7DD;color:#727272;font-size:10px;line-height:14px;letter-spacing:1px;font-weight:600;border-radius:2px;white-space:nowrap;">INCLUDED</span><br><span style="font-size:13px;line-height:19px;color:#4A4744;">Included with your order.</span></td>
+</tr>
+
+{%- endif -%}
+{%- endif -%}{%- endunless -%}
+{%- endfor -%}</table>
+</td></tr></table>
+</td></tr>
+{%- endif -%}
+<tr><td class="pad" style="padding:32px 44px 0 44px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-top:1px solid #ECE7DD;font-size:0;line-height:0;height:1px;">&nbsp;</td></tr></table></td></tr>
+<tr><td class="pad" align="left" style="padding:36px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:left;">HELP</td></tr>
+<tr><td class="pad h2" align="left" style="padding:8px 44px 0 44px;font-family:'Instrument Serif','Times New Roman',Times,serif;font-style:italic;font-weight:400;font-size:32px;line-height:36px;color:#282828;text-align:left;">Need to change something?</td></tr>
+<tr><td class="pad" align="left" style="padding:12px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;text-align:left;">Reply to this email or write to <a href="mailto:{{ sk_support }}" style="color:#AC3B19;">{{ sk_support }}</a>. Our team answers within 1 hour on business days.</td></tr>
+<tr><td class="pad" align="left" style="padding:10px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;color:#282828;text-align:left;"><span style="font-weight:600;">Change or cancel:</span> ask within {{ sk_cancel_window }} of ordering. After that your order may already be packed. Write anyway, we will tell you honestly what is still possible.</td></tr>
+<tr><td class="pad" align="center" style="padding:22px 44px 0 44px;">
+  <table role="presentation" class="btnw" width="340" cellpadding="0" cellspacing="0" border="0" style="width:340px;"><tr><td align="center" bgcolor="#282828" style="background-color:#282828;border-radius:3px;">
+    <a href="{{ order_status_url }}" style="display:block;padding:18px 20px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:15px;line-height:18px;font-weight:600;letter-spacing:1.5px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">View my order &rarr;</a>
+  </td></tr></table>
+</td></tr>
+<tr><td class="pad" style="padding:30px 44px 36px 44px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+<td class="ic3" width="33%" valign="top" align="center" style="width:33%;padding:0 6px;text-align:center;"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/543e925f-fed4-4f3b-a811-a70761a13542.png" width="44" height="44" alt="" style="display:block;margin:0 auto;width:44px;height:44px;"><div style="padding-top:8px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;font-weight:600;color:#282828;">30-day returns</div><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:17px;color:#727272;">Unused, within 30 days of delivery</div></td>
+<td class="ic3" width="33%" valign="top" align="center" style="width:33%;padding:0 6px;text-align:center;"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/e39ac58c-e419-47b6-ab84-b2cd8185e946.png" width="44" height="44" alt="" style="display:block;margin:0 auto;width:44px;height:44px;"><div style="padding-top:8px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;font-weight:600;color:#282828;">75-year warranty</div><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:17px;color:#727272;">Against defects, as long as you own it</div></td>
+<td class="ic3" width="33%" valign="top" align="center" style="width:33%;padding:0 6px;text-align:center;"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/c2ae0306-f0fa-48e5-817c-6b41e95f16aa.png" width="44" height="44" alt="" style="display:block;margin:0 auto;width:44px;height:44px;"><div style="padding-top:8px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;font-weight:600;color:#282828;">100,000+</div><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:17px;color:#727272;">happy customers</div></td>
+</tr></table></td></tr>
+<!-- FOOTER (look van partials/footer.html; transactioneel, dus zonder afmeldlinks) -->
+<tr><td class="pad" bgcolor="#282828" style="padding:38px 40px 30px 40px;background-color:#282828;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#282828" style="background-color:#282828;">
+  <tr><td bgcolor="#282828" style="background-color:#282828;"><a href="https://siraatskitchen.com"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/c8e347f7-34c0-42d9-8ddc-32949f48155e.png" width="190" alt="Siraat" style="display:block;width:190px;height:auto;border:0;"></a></td></tr>
+  <tr><td bgcolor="#282828" style="background-color:#282828;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;letter-spacing:2px;font-weight:600;color:#BDB8B0;padding-top:14px;">NON-TOXIC COOKWARE &middot; BUILT FOR LIFE</td></tr>
+  <tr><td bgcolor="#282828" style="background-color:#282828;padding-top:28px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#282828" style="background-color:#282828;">
+    <tr><td bgcolor="#282828" style="background-color:#282828;border-top:1px solid #5A5856;padding:15px 4px;"><a href="{{ order_status_url }}" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;font-weight:600;color:#F2F2F2;text-decoration:none;">MY ORDER &amp; TRACKING &nbsp;&rarr;</a></td></tr>
+    <tr><td bgcolor="#282828" style="background-color:#282828;border-top:1px solid #5A5856;padding:15px 4px;"><a href="https://siraatskitchen.com/pages/warranty" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;font-weight:600;color:#F2F2F2;text-decoration:none;">RETURNS &amp; WARRANTY &nbsp;&rarr;</a></td></tr>
+    <tr><td bgcolor="#282828" style="background-color:#282828;border-top:1px solid #5A5856;border-bottom:1px solid #5A5856;padding:15px 4px;"><a href="https://siraatskitchen.com/pages/third-party-testing" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:2px;font-weight:600;color:#F2F2F2;text-decoration:none;">LAB RESULTS &nbsp;&rarr;</a></td></tr>
+  </table>
+  </td></tr>
+  <tr><td align="center" bgcolor="#282828" style="background-color:#282828;padding:28px 0 22px 0;">
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#282828" style="background-color:#282828;margin:0 auto;"><tr>
+    <td bgcolor="#282828" style="background-color:#282828;padding:0 16px;"><a href="https://www.facebook.com/people/SiraatsKitchen/61567176126958/"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/17c00632-f9db-4dcd-a27e-bf0adc4987da.png" width="32" alt="Facebook" style="width:32px;height:32px;"></a></td>
+    <td bgcolor="#282828" style="background-color:#282828;padding:0 16px;"><a href="https://www.instagram.com/siraatskitchen"><img src="https://cdn.klaviyomail.com/company/TdtTzz/images/6b905e47-7bf9-4aec-a63b-0538ecc6bd60.png" width="32" alt="Instagram" style="width:32px;height:32px;"></a></td>
+  </tr></table>
+  </td></tr>
+  <tr><td align="center" bgcolor="#282828" style="background-color:#282828;font-family:Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:19px;color:#BDB8B0;text-align:center;">
+    Free shipping on all orders &middot; 30-day returns &middot; 75-year warranty<br><br>
+    Questions? Reply to this email or write to <a href="mailto:{{ sk_support }}" style="color:#F2F2F2;">{{ sk_support }}</a><br>
+    {{ shop.name }} &middot; siraatskitchen.com
+  </td></tr>
+</table>
+</td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>

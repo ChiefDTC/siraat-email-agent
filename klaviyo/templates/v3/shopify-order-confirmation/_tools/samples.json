@@ -1,0 +1,38 @@
+{
+  "us_sub": {
+    "shop": {"name": "Siraat"},
+    "order_name": "#SIRAAT1042",
+    "created_at": "2026-11-11T15:20:00Z",
+    "customer": {"first_name": "Sarah"},
+    "order_status_url": "https://siraatskitchen.com/account/orders/sample",
+    "presentment_currency": "USD",
+    "subtotal_price": 20800, "shipping_price": 0, "tax_price": 0, "total_discounts": 0, "total_price": 20800,
+    "shipping_address": {"name": "Sarah Miller", "address1": "1450 Maple Avenue", "address2": "", "city": "Austin", "province_code": "TX", "zip": "78704", "country": "United States", "country_code": "US"},
+    "subtotal_line_items": [
+      {"title": "Titanium Hammered Pan Pro", "variant": {"title": "Standard / 11\" (28 cm)"}, "quantity": 1, "final_line_price": 14900, "requires_shipping": true, "image": "https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-40a5-9ad7-523bdddc54d4.webp?width=200&height=200&crop=center&format=pjpg"},
+      {"title": "Stainless Steel Lid", "variant": {"title": "11\" (28 cm)"}, "quantity": 1, "final_line_price": 5900, "requires_shipping": true, "image": "https://cdn.klaviyomail.com/company/TdtTzz/images/fef2213b-f218-4f6e-b70a-d858ea6728d4.jpeg"},
+      {"title": "Non-Toxic Dishwasher Sheets", "variant": {"title": "Default Title"}, "quantity": 1, "final_line_price": 0, "requires_shipping": true, "image": "https://cdn.klaviyomail.com/company/TdtTzz/images/132da4ad-cd51-4303-8108-659e03db6327.jpeg", "selling_plan_allocation": {"selling_plan": {"name": "Free first pack, then $20 every 28 days"}}},
+      {"title": "Mystery Gift", "variant": {"title": "Default Title"}, "quantity": 1, "final_line_price": 0, "requires_shipping": true},
+      {"title": "Free Shipping", "variant": {"title": "Default Title"}, "quantity": 1, "final_line_price": 0, "requires_shipping": false},
+      {"title": "Plastic-Free Home E-Book", "variant": {"title": "Default Title"}, "quantity": 1, "final_line_price": 0, "requires_shipping": false},
+      {"title": "Favorites Cookbook", "variant": {"title": "Default Title"}, "quantity": 1, "final_line_price": 0, "requires_shipping": false},
+      {"title": "Weekly Draw: PFAS Water Filter", "variant": {"title": "Default Title"}, "quantity": 1, "final_line_price": 0, "requires_shipping": false}
+    ]
+  },
+  "au_nosub": {
+    "shop": {"name": "Siraat"},
+    "order_name": "#SIRAAT1043",
+    "created_at": "2026-11-11T22:05:00Z",
+    "customer": {"first_name": "Liam"},
+    "order_status_url": "https://siraatskitchen.com/account/orders/sample2",
+    "presentment_currency": "AUD",
+    "subtotal_price": 22900, "shipping_price": 0, "tax_price": 2082, "total_discounts": 0, "total_price": 22900,
+    "shipping_address": {"name": "Liam Carter", "address1": "22 Beach Road", "address2": "Unit 4", "city": "Bondi", "province_code": "NSW", "zip": "2026", "country": "Australia", "country_code": "AU"},
+    "subtotal_line_items": [
+      {"title": "Titanium Hammered Pan Pro", "variant": {"title": "Standard / 28 cm"}, "quantity": 1, "final_line_price": 22900, "requires_shipping": true, "image": "https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-40a5-9ad7-523bdddc54d4.webp?width=200&height=200&crop=center&format=pjpg"},
+      {"title": "Mystery Gift", "variant": {"title": "Default Title"}, "quantity": 1, "final_line_price": 0, "requires_shipping": true},
+      {"title": "Free Shipping", "variant": {"title": "Default Title"}, "quantity": 1, "final_line_price": 0, "requires_shipping": false},
+      {"title": "Plastic-Free Home E-Book", "variant": {"title": "Default Title"}, "quantity": 1, "final_line_price": 0, "requires_shipping": false}
+    ]
+  }
+}
