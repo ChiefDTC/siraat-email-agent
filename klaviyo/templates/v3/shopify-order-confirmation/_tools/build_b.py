@@ -122,7 +122,7 @@ def hero(sub):
 def welcome(serif=False, pad_top="34px"):
     head = (f"""<tr><td class="pad h2" style="padding:{pad_top} 44px 0 44px;{SERIF}font-size:34px;line-height:38px;color:{INK};">Welcome to Siraat.</td></tr>\n"""
             if serif else h2i("Welcome to Siraat.", pad=f"{pad_top} 44px 0 44px", size=30))
-    intro = B.para("{% if sk_kind == 'pan' %}You chose a pan with a pure titanium cooking surface and no coatings, so there is nothing on it to wear off.{% elsif sk_kind == 'board' %}You chose a pure titanium board. No plastic, no wood, nothing to shave off into your food.{% else %}You chose pure titanium, made to last a lifetime.{% endif %} Here is your order.", pad="10px 44px 0 44px", color=SOFT)
+    intro = B.para("{% if sk_kind == 'pan' %}You chose a pan with a pure titanium cooking surface and no coatings, so there is nothing on it to wear off.{% elsif sk_kind == 'board' %}You chose a pure titanium board. No plastic, no wood, nothing to shave off into your food.{% endif %} Here is your order.", pad="10px 44px 0 44px", color=SOFT)
     # Alle betaalde regels (max 4 zichtbaar), daarna een regel voor de rest, abonnement en gifts.
     rows = f"""{{%- assign sk_row = 0 -%}}
 {{%- for line in subtotal_line_items -%}}{{%- if line.final_line_price > 0 and line.selling_plan_allocation == nil -%}}
@@ -341,7 +341,7 @@ def _steps(pillars, eyebrow, head, lab):
 def pillars_steps():
     return ("{% if sk_kind == 'pan' %}" + _steps(PILLARS, PILLAR_HEAD_EB, PILLAR_HEAD, True) + benefit_pills()
             + "{% elsif sk_kind == 'board' %}" + _steps(PILLARS_BOARD, "WHY YOU CHOSE THIS BOARD", "You picked the board<br>that stays clean.", False)
-            + "{% else %}" + _steps(PILLARS_OTHER, "WHY YOU CHOSE TITANIUM", "You picked titanium,<br>made to last.", False) + "{% endif %}")
+            + "{% endif %}")
 
 def benefit_pills():
     return f"""<tr><td class="pad" align="center" style="padding:20px 44px 0 44px;text-align:center;">{pill('Dishwasher safe')}{pill('Metal utensil safe')}{pill('Oven safe')}{pill('Induction ready')}{pill('No seasoning')}</td></tr>\n"""
