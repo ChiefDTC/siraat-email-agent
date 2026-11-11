@@ -19,7 +19,7 @@ INK, CREAM, SAND, BRICK, GREY, PAPER = B.INK, B.CREAM, B.SAND, B.BRICK, B.GREY, 
 K, S, IMG = B.K, B.S, B.IMG
 SOFT = "#4A4744"
 
-HERO_IMG = "https://cdn.shopify.com/s/files/1/0907/0877/1156/files/siraat-titanium-hammered-deep-pan-10-family-dinner.webp?width=1200&height=904&crop=center&format=pjpg"  # familiediner Deep Pan (Floris, 11 nov); was AI-flash 5d0622a1   # Higgsfield flash, 1168x880, ocimg/hero1 (11 nov)
+HERO_IMG = K + "63c77908-61e1-4850-abd7-100bb8655ea5.jpeg"  # familiediner Deep Pan (Floris, 11 nov); was AI-flash 5d0622a1   # Higgsfield flash, 1168x880, ocimg/hero1 (11 nov)
 HERO_BG = "#1C1510"
 
 def shop(f, w=1200, h=800):
