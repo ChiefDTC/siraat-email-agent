@@ -1,3 +1,58 @@
+# Shopify-orderbevestiging · herontwerp B2, B3, B4 (11 nov 2026, middag)
+
+Floris vond B te zwak. Doel nu: een klant die net bestelde denkt "wow, dit annuleer ik zeker niet" en weet precies wat er gebeurt. Drie UX-richtingen van dezelfde opbouw (Floris): 1 hero met live kop op het beeld, 2 "Welcome to Siraat." met samenvatting, 3 "Here's what to expect", 4 vier pijlers (non-toxic, performance, titanium, lab), 5 eerste week met titanium (Benjamin), 6 de praktische blokken uit B en C. Niets naar Shopify of Klaviyo-templates; alleen het herobeeld staat in de Klaviyo-bibliotheek.
+
+| Bestand | Wat |
+| --- | --- |
+| `variant-b2.liquid` / `-b3` / `-b4` | Plakklare Shopify-code (bron: `_tools/build_b.py`, hergebruikt alle Liquid-logica van `build.py`) |
+| `variant-b2-preview.html` enz. | Render op de voorbeeldorder (Pan Pro Standard $149, deksel $59, sheets "Free first pack, then $20 every 28 days", 5 gifts) |
+| `previews/variant-b2.png` / `-mobile.png` enz. | 600 en 390 px, DSF 2. `_check-b*-au_nosub*` = AUD-order zonder abonnement. `_bg-b*` = beeld onder de herotekst (contrastmeting) |
+| `_tools/contrast.py` | Meet contrast witte herotekst tegen het beeld eronder |
+| `assets/oc-hero-flash-egg.jpg` | Nieuw herobeeld (Higgsfield gpt_image_2_6, flash-stijl, echte Pan Pro als referentie), Klaviyo-CDN in `assets/klaviyo-urls.txt` |
+
+Bouwen: `python3 -I _tools/build_b.py`, dan `VARIANTS=b2,b3,b4 LIQUIDJS=<pad>/node_modules/liquidjs node _tools/render.js`, dan `python3 -I _tools/contrast.py`.
+
+## Wat in alle drie hetzelfde is
+
+- **Hero**: live tekst "Your order is confirmed." in Inter 700 op het beeld, eyebrow "THANK YOU, SARAH", regel "Order #... is in. Here is exactly what happens next." Achtergrondbeeld via `background`-attribuut + CSS, VML `v:rect` voor Outlook, donkere `bgcolor` #1C1510 als beelden uit staan (wit op #1C1510 = ruim 15:1), plus een CSS-gradient naar donker onderaan. Contrast gemeten op het beeld zelf: mediaan 18:1, slechtste 5 procent van de pixels 9:1 (mobiel) en 11:1 (600 px). Het beeld heeft onderaan een donker aanrecht, dus ook zonder gradient (Outlook) blijft het leesbaar.
+- **Welkom**: "Welcome to Siraat." + kaart met beeld en naam van het hoofdproduct, variant, aantal, "Plus Stainless Steel Lid, a subscription and 5 free gifts.", ordernummer, totaal in de valuta van de klant. Knop "Track my order".
+- **Verwachtingen**: bevestigd, ingepakt `sk_pack`, verzonden met tracking per mail, bezorgd in `sk_days` dagen (US 7 tot 12, INT 6 tot 14). Kader "May arrive in more than one parcel" alleen bij meer dan één verzendbaar item.
+- **Pijlers** (alleen goedgekeurde claims, geen verzonnen keurmerken): Non-toxic (no coatings, no PFAS, PFOA, or BPA), Performance (sear, oven safe, metal utensil safe, dishwasher safe), Titanium (75-year warranty against defects, the original hammered pan), Lab (Light Labs, ISO/IEC 17025, 31 PFAS, report no. 25895, link naar /pages/third-party-testing). De "badges" zijn eigen feiten in pillen, geen certificaten.
+- **Eerste week**: heat, oil, food (2 tot 3 min middelhoog, waterdruppel, theelepel olie, laten loslaten, begin met eieren), ondertekend Benjamin, Founder, Siraat.
+- **Praktisch**: abonnementskader (plan letterlijk, vandaag gratis, eerste afschrijving, opzeggen, knop naar Recharge `/tools/recurring/login`), 5 gifts (wat verzonden wordt, wat digitaal is, de draw), bon met totalen en valutaregel, adres, hulp en annuleervenster (1 uur), 30-day returns, 75-year warranty, 100,000+, sterren.
+- Liquid: `subtotal_line_items`, `selling_plan_allocation`, `presentment_currency`, giftsdetectie en settings bovenaan zijn ongewijzigd uit `build.py`; nieuw zijn `sk_pack` en de samenvatting (`sk_first_img`, `sk_first_var`, `sk_first_qty`, `sk_rest`).
+
+## B2, B3, B4 vergeleken
+
+| | B2 · Editorial | B3 · Steps | B4 · Cards |
+| --- | --- | --- | --- |
+| Pijlers | Groot beeld per pijler, beeld en tekst om en om (op mobiel beeld boven), lab als groot donker "No. 25895"-blok | Verticale keten met iconen, lijn en pillen, daarna donkere "What you get is exactly what we tested"-kaart met 4 badges | 2x2 kaartraster met kleine beelden, ook op mobiel 2x2 |
+| Tijdlijn | Genummerde verticale keten | Genummerde verticale keten | Compacte rij van 4 iconen (mobiel 2x2) |
+| Koppen | Instrument Serif italic (kalm, magazine) | Inter (Create-achtig) | Inter |
+| Beelden | Hero + 3 shootfoto's + eifoto | Hero + productfoto, verder iconen | Hero + 3 kleine shootfoto's |
+| Hoogte 600 / 390 px | ~6.440 / 8.340 | ~6.170 / 7.600 | ~5.580 / 6.930 |
+| Sterk | Meeste "wow" en merkgevoel | Leest als een plan, werkt ook zonder beelden, dichtst bij de Create-referentie | Kortst en snelst te scannen |
+| Zwak | Langst op mobiel; 2-koloms beelden vragen een goede client | Weinig productbeeld na de hero | Minder verhaal per pijler |
+
+**Advies: B3 Steps.** De klant heeft net betaald en twijfelt aan twee dingen: gaat het goed komen, en was dit een goede keus. B3 beantwoordt allebei in dezelfde vorm (een keten van stappen), houdt het bewijs (rapport no. 25895) groot en concreet, en hangt niet af van beelden, dus het ziet er in Gmail met geblokkeerde beelden en in Outlook net zo uit. B4 is de tweede keus als de lengte telt. B2 is het mooiste, maar op mobiel 8.300 px.
+
+## Wat het waard is (Shopify, 13 aug tot 11 nov 2026, 91 dagen)
+
+- Orders: 21.715, total sales $4,96 mln.
+- Geannuleerd: 333 orders, waarvan 196 met een bedrag (137 zijn $0-orders, vooral bots/tests), samen **$63.129**. 209 van de 332 binnen 24 uur, 264 binnen 72 uur (Triple Whale, telt 332).
+- Terugbetaald binnen 3 dagen na de order zonder annulering: 115 orders, **$28.047** (Triple Whale, transacties).
+- Per jaar (x 365/91): annuleringen ~$253.000, met de vroege refunds ~$366.000. **40 procent minder = ~$101.000 per jaar** (alleen annuleringen) of **~$146.000** (inclusief refunds binnen 3 dagen). Dat is omzet die blijft, geen winst. Floris' schatting van 1 miljoen is met deze cijfers niet te halen; daarvoor zou het verlies $2,5 mln per jaar moeten zijn. BFCM-volume kan het bedrag in november en december wel tijdelijk hoger maken.
+
+## Floris beslist (B2 tot B4)
+
+1. **Inpakbelofte** `sk_pack`: nu "within 1 business day" (verzendbeleid en helpcenter). "Within a few hours" alleen als het magazijn dat echt haalt (8 okt: mediaan 77 uur tot fulfillment). Een gebroken belofte in deze mail geeft juist tickets.
+2. **Herobeeld**: AI-beeld (flash-stijl, geen tekst, kale gehamerde pan, handen gecontroleerd). Goedkeuren of een shootfoto kiezen.
+3. **Koppen**: serif (B2) of Inter (B3, B4) voor de sectiekoppen; de hero is in alle drie Inter.
+4. **Richting**: B2, B3 of B4. Daarna één keer "Send test notification" in Shopify en kijken in Gmail (web en iOS) en Outlook.
+5. **Figma-rij** (DECISIONS 4 nov): nog niet gemaakt.
+
+---
+
 # Shopify-orderbevestiging · 3 varianten (11 nov 2026)
 
 Nieuwe versie van Shopify Admin > Settings > Notifications > **Order confirmation**. Doel: de klant weet direct wat hij bestelde, wat het kost, wanneer het komt, wat los komt en hoe hij iets wijzigt. Minder annuleringen en minder "where is my order"-tickets. Niets is naar Shopify of Klaviyo gezet; alleen bestanden.

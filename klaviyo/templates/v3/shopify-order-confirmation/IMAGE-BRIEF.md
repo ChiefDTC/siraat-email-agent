@@ -34,3 +34,8 @@ Let op: e-book, kookboek en filter zijn in het echt digitaal of een loting. Toon
 - Orderregels: in Shopify `line.image`; in de preview Pan Pro Standard (Shopify CDN), `pc-lid.jpg`, `pc-sheets.jpg`.
 - Gifts: de echte tegels `gift-mystery`, `gift-shipping`, `gift-ebook`, `gift-cookbook`, `gift-filter` (Klaviyo-CDN, zie `partials/shared/klaviyo-urls.txt`).
 - Iconen: `icon-returns-30-day`, `icon-warranty-75-year`, `icon-customers-100k`.
+
+## Herontwerp B2 tot B4 (11 nov 2026)
+
+- Hero (alle drie): `assets/oc-hero-flash-egg.jpg`, 1168x880, Higgsfield gpt_image_2_6 met de echte Pan Pro-foto (P04-A) als referentie. Twee vrienden lachen, kale gehamerde pan met gebakken ei, onderste 40 procent donker aanrecht voor de live tekst. Klaviyo-CDN 5d0622a1. Afgekeurd: een tweede hero (witte randartefact door vignet) en een close-up met handen (waterdruppel werd een lepel).
+- Pijlers: echte shootfoto's van de Shopify-CDN: P11-E (oppervlak, non-toxic), P04-A (steak, performance), P11-C (rand, titanium), P09-B (ei, eerste week). Lab-pijler zonder foto: donker blok met "No. 25895".

@@ -15,7 +15,7 @@ eng.registerFilter('img_url', (u) => String(u));
 (async () => {
   const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' });
   const report = [];
-  for (const v of ['a', 'b', 'c']) {
+  for (const v of (process.env.VARIANTS || 'a,b,c').split(',')) {
     const src = fs.readFileSync(path.join(DIR, `variant-${v}.liquid`), 'utf8');
     for (const [sk, ctx] of Object.entries(samples)) {
       CUR = ctx.presentment_currency || 'USD';
@@ -33,11 +33,16 @@ eng.registerFilter('img_url', (u) => String(u));
           // overlap: tekstblokken die buiten hun cel lopen
           const over = [...document.querySelectorAll('td')].filter(td => td.scrollWidth > td.clientWidth + 2 && td.clientWidth > 0).length;
           const txt = document.body.innerText;
-          return { sw, vw, broken, over, h: document.body.scrollHeight, leftovers: (txt.match(/\{\{|\{%/g) || []).length, dash: /[–—]/.test(document.documentElement.outerHTML) };
+          // contrast hero-overlay: achtergrond onder de tekst (tekst tijdelijk onzichtbaar), zie _tools/contrast.py
+          const ht = document.querySelector('.herotxt'); let hero = null;
+          if (ht && ht.children.length) { const a = ht.children[0].getBoundingClientRect(), z = ht.children[ht.children.length - 1].getBoundingClientRect(); hero = [a.left, a.top + window.scrollY, a.width, z.bottom - a.top]; }
+          return { sw, vw, broken, over, h: document.body.scrollHeight, hero, leftovers: (txt.match(/\{\{|\{%/g) || []).length, dash: /[\u2013\u2014]/.test(document.documentElement.outerHTML) };
         });
         report.push({ v, sk, w, ...m });
         const png = sk === 'us_sub' ? `previews/variant-${v}${suf}.png` : `previews/_check-${v}-${sk}${suf}.png`;
         await p.screenshot({ path: path.join(DIR, png), fullPage: true });
+        if (m.hero) { await p.addStyleTag({ content: '.herotxt, .herotxt *{color:transparent!important;text-shadow:none!important}' });
+          await p.screenshot({ path: path.join(DIR, 'previews', `_bg-${v}-${sk}${suf}.png`), clip: { x: m.hero[0], y: m.hero[1], width: m.hero[2], height: m.hero[3] } }); }
         await p.close();
       }
     }
