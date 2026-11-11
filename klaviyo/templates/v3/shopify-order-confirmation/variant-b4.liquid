@@ -58,6 +58,13 @@
   {%- if t contains 'pan' or t contains 'wok' or t contains 'pot' or t contains 'cookware' or t contains 'duo' or t contains 'complete edition' or t contains 'braiser' or t contains 'skillet' or t contains 'pizza steel' -%}{%- assign sk_kind = 'pan' -%}
   {%- elsif t contains 'board' and sk_kind != 'pan' -%}{%- assign sk_kind = 'board' -%}{%- endif -%}
 {%- endif -%}{%- endfor -%}
+{%- comment -%} Upsell (one offer, only when it completes the order): pan without lid -> lid; board without mat -> mat. {%- endcomment -%}
+{%- assign sk_offer = '' -%}{%- assign sk_has_lid = false -%}{%- assign sk_has_mat = false -%}
+{%- for line in subtotal_line_items -%}{%- assign t = line.title | downcase -%}
+  {%- if t contains 'lid' or t contains ' set' or t contains 'cookware' or t contains 'edition' or t contains 'pot' -%}{%- assign sk_has_lid = true -%}{%- endif -%}
+  {%- if t contains 'mat' -%}{%- assign sk_has_mat = true -%}{%- endif -%}
+{%- endfor -%}
+{%- if sk_kind == 'pan' and sk_has_lid == false -%}{%- assign sk_offer = 'lid' -%}{%- elsif sk_kind == 'board' and sk_has_mat == false -%}{%- assign sk_offer = 'mat' -%}{%- endif -%}
 {%- assign sk_first_img = '' -%}{%- assign sk_first_var = '' -%}{%- assign sk_first_qty = 1 -%}{%- assign sk_rest = '' -%}{%- assign sk_n = 0 -%}
 {%- for line in subtotal_line_items -%}
   {%- if line.final_line_price > 0 and line.selling_plan_allocation == nil -%}
@@ -339,6 +346,27 @@
 {%- if shipping_address -%}
 <tr><td class="pad" align="left" style="padding:16px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:22px;color:#282828;text-align:left;"><span style="font-weight:600;">Shipping to</span><br>{{ shipping_address.name }}<br>{{ shipping_address.address1 }}{% if shipping_address.address2 != blank %}, {{ shipping_address.address2 }}{% endif %}<br>{{ shipping_address.city }}{% if shipping_address.province_code != blank %}, {{ shipping_address.province_code }}{% endif %} {{ shipping_address.zip }}<br>{{ shipping_address.country }}<br><span style="font-size:13px;color:#727272;">Something wrong? Reply within {{ sk_cancel_window }} and we fix it before it ships.</span></td></tr>
 
+{%- endif -%}
+{%- if sk_offer == 'lid' -%}<tr><td class="pad" style="padding:34px 44px 0 44px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border:1px solid #ECE7DD;border-radius:8px;"><tr>
+  <td width="124" valign="top" style="width:124px;padding:18px 0 18px 16px;"><a href="https://siraatskitchen.com/products/stainless-steel-lid?utm_source=shopify&utm_medium=email&utm_campaign=order-confirmation&utm_content=offer-lid" style="display:block;border:0;text-decoration:none;"><img src="https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Regular_Hammered_Panttern_Pan_with_lid_02_e1b2d9bb-75a9-41ee-ae7a-f88f008157e1.jpg?width=480&height=480&crop=center&format=pjpg" width="108" height="108" alt="Stainless steel lid on a hammered titanium pan" style="display:block;width:108px;height:108px;border-radius:6px;border:0;"></a></td>
+  <td valign="top" style="padding:16px 16px 16px 14px;font-family:Inter,Arial,Helvetica,sans-serif;color:#282828;">
+    <div style="font-size:11px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;">COMPLETE YOUR PAN</div>
+    <div style="font-size:19px;line-height:25px;font-weight:600;padding-top:6px;">Your pan has no lid yet</div>
+    <div style="font-size:14px;line-height:21px;color:#4A4744;padding-top:6px;">A stainless steel lid made for the Pan Pro. Keeps the heat in for eggs, sauces and a slow braise.</div>
+    <div style="font-size:15px;line-height:21px;font-weight:600;padding-top:10px;">{% if sk_country == 'US' %}$59{% endif %}</div>
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:12px;"><tr><td bgcolor="#282828" style="background-color:#282828;border-radius:3px;"><a href="https://siraatskitchen.com/products/stainless-steel-lid?utm_source=shopify&utm_medium=email&utm_campaign=order-confirmation&utm_content=offer-lid" style="display:block;padding:12px 18px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:16px;font-weight:600;letter-spacing:1.2px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;white-space:nowrap;">See the lid &rarr;</a></td></tr></table>
+    <div style="font-size:12px;line-height:17px;color:#727272;padding-top:8px;">Ordered separately, it ships in its own box.</div>
+  </td></tr></table></td></tr>
+{%- elsif sk_offer == 'mat' -%}<tr><td class="pad" style="padding:34px 44px 0 44px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border:1px solid #ECE7DD;border-radius:8px;"><tr>
+  <td width="124" valign="top" style="width:124px;padding:18px 0 18px 16px;"><a href="https://siraatskitchen.com/products/siraat-non-slip-mat-for-board-premium-silicone?utm_source=shopify&utm_medium=email&utm_campaign=order-confirmation&utm_content=offer-mat" style="display:block;border:0;text-decoration:none;"><img src="https://cdn.shopify.com/s/files/1/0907/0877/1156/files/NonSlipMatPremiumSilicone02.jpg?width=480&height=480&crop=center&format=pjpg" width="108" height="108" alt="Non-slip silicone mat for the cutting board" style="display:block;width:108px;height:108px;border-radius:6px;border:0;"></a></td>
+  <td valign="top" style="padding:16px 16px 16px 14px;font-family:Inter,Arial,Helvetica,sans-serif;color:#282828;">
+    <div style="font-size:11px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;">COMPLETE YOUR BOARD</div>
+    <div style="font-size:19px;line-height:25px;font-weight:600;padding-top:6px;">Keep your board in place</div>
+    <div style="font-size:14px;line-height:21px;color:#4A4744;padding-top:6px;">A premium silicone mat that stops the board from sliding while you cut.</div>
+    <div style="font-size:15px;line-height:21px;font-weight:600;padding-top:10px;">{% if sk_country == 'US' %}$45{% endif %}</div>
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:12px;"><tr><td bgcolor="#282828" style="background-color:#282828;border-radius:3px;"><a href="https://siraatskitchen.com/products/siraat-non-slip-mat-for-board-premium-silicone?utm_source=shopify&utm_medium=email&utm_campaign=order-confirmation&utm_content=offer-mat" style="display:block;padding:12px 18px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;line-height:16px;font-weight:600;letter-spacing:1.2px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;white-space:nowrap;">See the mat &rarr;</a></td></tr></table>
+    <div style="font-size:12px;line-height:17px;color:#727272;padding-top:8px;">Ordered separately, it ships in its own box.</div>
+  </td></tr></table></td></tr>
 {%- endif -%}
 <tr><td class="pad" align="left" style="padding:34px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;line-height:16px;letter-spacing:2px;font-weight:600;color:#AC3B19;text-align:left;">HELP</td></tr>
 <tr><td class="pad h2" align="left" style="padding:8px 44px 0 44px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:24px;line-height:30px;font-weight:600;letter-spacing:-0.5px;color:#282828;text-align:left;">Need to change something?</td></tr>

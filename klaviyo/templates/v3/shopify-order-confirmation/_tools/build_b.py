@@ -64,6 +64,13 @@ SETUP += """{%- assign sk_where = shipping_address.country | default: '' -%}{%- 
   {%- if t contains 'pan' or t contains 'wok' or t contains 'pot' or t contains 'cookware' or t contains 'duo' or t contains 'complete edition' or t contains 'braiser' or t contains 'skillet' or t contains 'pizza steel' -%}{%- assign sk_kind = 'pan' -%}
   {%- elsif t contains 'board' and sk_kind != 'pan' -%}{%- assign sk_kind = 'board' -%}{%- endif -%}
 {%- endif -%}{%- endfor -%}
+{%- comment -%} Upsell (one offer, only when it completes the order): pan without lid -> lid; board without mat -> mat. {%- endcomment -%}
+{%- assign sk_offer = '' -%}{%- assign sk_has_lid = false -%}{%- assign sk_has_mat = false -%}
+{%- for line in subtotal_line_items -%}{%- assign t = line.title | downcase -%}
+  {%- if t contains 'lid' or t contains ' set' or t contains 'cookware' or t contains 'edition' or t contains 'pot' -%}{%- assign sk_has_lid = true -%}{%- endif -%}
+  {%- if t contains 'mat' -%}{%- assign sk_has_mat = true -%}{%- endif -%}
+{%- endfor -%}
+{%- if sk_kind == 'pan' and sk_has_lid == false -%}{%- assign sk_offer = 'lid' -%}{%- elsif sk_kind == 'board' and sk_has_mat == false -%}{%- assign sk_offer = 'mat' -%}{%- endif -%}
 {%- assign sk_first_img = '' -%}{%- assign sk_first_var = '' -%}{%- assign sk_first_qty = 1 -%}{%- assign sk_rest = '' -%}{%- assign sk_n = 0 -%}
 {%- for line in subtotal_line_items -%}
   {%- if line.final_line_price > 0 and line.selling_plan_allocation == nil -%}
@@ -304,6 +311,32 @@ def first_week(variant):
 def stars_line(pad="0 44px 34px 44px"):
     return f"""<tr><td class="pad" align="center" style="padding:{pad};text-align:center;"><div style="{F}font-size:18px;line-height:22px;letter-spacing:3px;color:{BRICK};">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div style="padding-top:4px;{F}font-size:13px;line-height:19px;color:{SOFT};">You are in good company.</div></td></tr>\n"""
 
+LID_IMG = "https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Regular_Hammered_Panttern_Pan_with_lid_02_e1b2d9bb-75a9-41ee-ae7a-f88f008157e1.jpg?width=480&height=480&crop=center&format=pjpg"
+MAT_IMG = "https://cdn.shopify.com/s/files/1/0907/0877/1156/files/NonSlipMatPremiumSilicone02.jpg?width=480&height=480&crop=center&format=pjpg"
+LID_URL = "https://siraatskitchen.com/products/stainless-steel-lid?utm_source=shopify&utm_medium=email&utm_campaign=order-confirmation&utm_content=offer-lid"
+MAT_URL = "https://siraatskitchen.com/products/siraat-non-slip-mat-for-board-premium-silicone?utm_source=shopify&utm_medium=email&utm_campaign=order-confirmation&utm_content=offer-mat"
+
+def offer_block():
+    """Een rustig aanbod dat de bestelling compleet maakt. Alleen bij pan zonder deksel of plank zonder mat."""
+    def card(img, alt, eyebrow, title, body, price, url, btn):
+        return f"""<tr><td class="pad" style="padding:34px 44px 0 44px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="{PAPER}" style="background-color:{PAPER};border:1px solid {SAND};border-radius:8px;"><tr>
+  <td width="124" valign="top" style="width:124px;padding:18px 0 18px 16px;"><a href="{url}" style="display:block;border:0;text-decoration:none;"><img src="{img}" width="108" height="108" alt="{alt}" style="display:block;width:108px;height:108px;border-radius:6px;border:0;"></a></td>
+  <td valign="top" style="padding:16px 16px 16px 14px;{F}color:{INK};">
+    <div style="font-size:11px;line-height:16px;letter-spacing:2px;font-weight:600;color:{BRICK};">{eyebrow}</div>
+    <div style="font-size:19px;line-height:25px;font-weight:600;padding-top:6px;">{title}</div>
+    <div style="font-size:14px;line-height:21px;color:{SOFT};padding-top:6px;">{body}</div>
+    <div style="font-size:15px;line-height:21px;font-weight:600;padding-top:10px;">{price}</div>
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:12px;"><tr><td bgcolor="{INK}" style="background-color:{INK};border-radius:3px;"><a href="{url}" style="display:block;padding:12px 18px;{F}font-size:13px;line-height:16px;font-weight:600;letter-spacing:1.2px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;white-space:nowrap;">{btn} &rarr;</a></td></tr></table>
+    <div style="font-size:12px;line-height:17px;color:{GREY};padding-top:8px;">Ordered separately, it ships in its own box.</div>
+  </td></tr></table></td></tr>
+"""
+    us = "{% if sk_country == 'US' %}$59{% endif %}"
+    lid = card(LID_IMG, "Stainless steel lid on a hammered titanium pan", "COMPLETE YOUR PAN", "Your pan has no lid yet",
+               "A stainless steel lid made for the Pan Pro. Keeps the heat in for eggs, sauces and a slow braise.", us, LID_URL, "See the lid")
+    mat = card(MAT_IMG, "Non-slip silicone mat for the cutting board", "COMPLETE YOUR BOARD", "Keep your board in place",
+               "A premium silicone mat that stops the board from sliding while you cut.", "{% if sk_country == 'US' %}$45{% endif %}", MAT_URL, "See the mat")
+    return "{%- if sk_offer == 'lid' -%}" + lid + "{%- elsif sk_offer == 'mat' -%}" + mat + "{%- endif -%}\n"
+
 def practical(serif):
     head = B.eyebrow("THE PRACTICAL PART") + (B.h2("Everything else, in one place") if serif else h2i("Everything else, in one place"))
     help_ = (B.eyebrow("HELP", pad="34px 44px 0 44px") + (B.h2("Need to change something?") if serif else h2i("Need to change something?", size=24))
@@ -313,7 +346,7 @@ def practical(serif):
     blocks = B.SUB + B.gifts() + B.items("Your receipt")
     if not serif:
         blocks = blocks.replace(SERIF, F + "font-weight:600;letter-spacing:-0.5px;").replace("font-size:32px;line-height:36px", "font-size:24px;line-height:30px").replace("font-size:26px;line-height:30px", "font-size:20px;line-height:26px")
-    return (B.rule("38px 44px 0 44px") + head + blocks + B.address() + help_)
+    return (B.rule("38px 44px 0 44px") + head + blocks + B.address() + offer_block() + help_)
 
 def section_head(serif, align="left"):
     return (B.eyebrow(PILLAR_HEAD_EB, pad="42px 44px 0 44px", align=align)
