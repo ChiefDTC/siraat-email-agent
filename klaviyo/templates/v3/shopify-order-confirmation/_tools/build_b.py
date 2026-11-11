@@ -34,7 +34,7 @@ PIL = {  # echte shootfoto's (hp-shoot), Shopify-CDN
     "panpro": "Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-40a5-9ad7-523bdddc54d4.webp",  # packshot Pan Pro Standard (Floris 11 nov: een schone pan als zijbeeld)
     "board": "TitaniumCuttingBoard08_9c3268c8-b730-405a-8253-b9d7c6ab24e5.jpg",  # packshot Cutting Board V2
 }
-BOX_BAND = K + "29a85cbb-25c1-411a-a3ba-b9042531daac.jpeg"  # 1200x760, uitsnede van siraat-flow-pp-flatlay (e9c89f6f): pan, deksel, keukengerei op hout
+BOX_BAND = K + "c6219caa-d53a-4100-b1be-f087f5926d28.jpeg"  # 1200x760, uitsnede van siraat-flow-pp-flatlay (e9c89f6f): pan, deksel, keukengerei op hout
 ICON = {
     "nocoat": IMG["icon_nocoat"], "pfas": IMG["icon_pfas"], "warranty": IMG["icon_warranty"],
     "customers": IMG["icon_customers"], "returns": IMG["icon_returns"],
@@ -372,8 +372,7 @@ BOARD_SIDE = side_img(shop(PIL["board"], 400, 400), 200, 200, "Titanium Cutting 
 
 def box_band():
     """Volle breedte beeldband 'what's in your box' (alleen pan-orders: de flat lay toont een pan en deksel)."""
-    return f"""<tr><td style="padding:40px 0 0 0;"><img src="{BOX_BAND}" width="600" alt="A hammered titanium pan, its lid and utensils on a wooden table" class="w" style="display:block;width:100%;max-width:600px;height:auto;border:0;"></td></tr>
-<tr><td class="pad bandcap" align="center" style="padding:10px 44px 0 44px;{F}font-size:13px;line-height:19px;color:{GREY};text-align:center;">{{% if sk_gifts > 0 %}}Your pan and your gifts. Some come in their own box.{{% else %}}Your pan, ready for its first cook.{{% endif %}}</td></tr>\n"""
+    return f"""<tr><td style="padding:40px 0 0 0;"><img src="{BOX_BAND}" width="600" alt="A hammered titanium pan, its lid and utensils on a wooden table" class="w" style="display:block;width:100%;max-width:600px;height:auto;border:0;"></td></tr>\n"""
 
 def pillars_steps():
     pan = [p for p in PILLARS if p["key"] != "lab"]  # lab-inhoud staat in de donkere kaart eronder
