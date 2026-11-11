@@ -9,7 +9,7 @@
 {%- assign sk_ebook_url = 'https://delivery.shopifyapps.com/-/396da74b7735ff7f/6d8678add81ad2ad' -%}
 {%- assign sk_cookbook_url = '' -%}{%- comment -%} empty = 'link arrives by email' {%- endcomment -%}
 {%- assign sk_days_us = '3 to 10' -%}{%- comment -%} Fulfilled to Delivered, US: median 7.1 d, p90 12.5 d (Klaviyo), Ecomflow US 9.1 d {%- endcomment -%}
-{%- assign sk_days_int = '6 to 14' -%}{%- comment -%} shipping policy: 6-10 days, Ireland/Denmark 8-14 {%- endcomment -%}
+{%- assign sk_days_int = '3 to 10' -%}{%- comment -%} shipping policy: 6-10 days, Ireland/Denmark 8-14 {%- endcomment -%}
 {%- assign sk_pack = 'within 1 business day' -%}{%- comment -%} packing promise. Policy page and help center: processed within 1 business day. Floris wants 'within a few hours'; only switch when the warehouse really does that (8 Oct data: median 77 h to fulfillment). {%- endcomment -%}
 {%- assign sk_cancel_window = '1 hour' -%}{%- comment -%} shipping policy: cancellation request within 1 hour {%- endcomment -%}
 {%- comment -%} ===== end of settings ===== {%- endcomment -%}
@@ -50,6 +50,7 @@
   {%- else -%}{%- assign sk_sep_text = sk_sep_text | append: ', ' | append: s -%}{%- endif -%}
 {%- endfor -%}
 {%- assign sk_more = sk_paid | minus: 1 -%}
+{%- assign sk_where = shipping_address.country | default: '' -%}{%- case sk_country -%}{%- when 'US' -%}{%- assign sk_where = 'the US' -%}{%- when 'GB' -%}{%- assign sk_where = 'the UK' -%}{%- when 'NL' -%}{%- assign sk_where = 'the Netherlands' -%}{%- when 'AE' -%}{%- assign sk_where = 'the UAE' -%}{%- when 'PH' -%}{%- assign sk_where = 'the Philippines' -%}{%- endcase -%}
 {%- comment -%} sk_kind: pan (any cookware in the order), board (cutting board, no cookware) or other (accessories only). Drives the intro, the pillars and the first-week block. {%- endcomment -%}
 {%- assign sk_kind = 'other' -%}
 {%- for line in subtotal_line_items -%}{%- if line.final_line_price > 0 and line.selling_plan_allocation == nil -%}
@@ -194,7 +195,7 @@
 </tr>
 <tr>
   <td width="36" valign="top" style="width:36px;"><div style="width:36px;height:36px;border-radius:18px;background-color:#FFFFFF;border:2px solid #AC3B19;box-sizing:border-box;"><div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:32px;font-weight:700;color:#AC3B19;text-align:center;">4</div></div></td>
-  <td valign="top" style="padding:6px 0 0px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:22px;color:#282828;"><div style="font-weight:600;">Delivered in {{ sk_days }} days</div><div style="padding-top:4px;font-size:14px;line-height:21px;color:#4A4744;">Counted from the day it ships{% if sk_country == 'US' %}, within the US{% endif %}. Peak weeks can add a few days.</div></td>
+  <td valign="top" style="padding:6px 0 0px 16px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:22px;color:#282828;"><div style="font-weight:600;">Delivered in {{ sk_days }} days</div><div style="padding-top:4px;font-size:14px;line-height:21px;color:#4A4744;">Counted from the day it ships{% if sk_where != '' %}, within {{ sk_where }}{% endif %}. Peak weeks can add a few days.</div></td>
 </tr>
 </table></td></tr>
 {%- if sk_ship > 1 -%}<tr><td class="pad" style="padding:18px 44px 0 44px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FBF3EF" style="background-color:#FBF3EF;border-radius:6px;border:1px solid #E3C9BE;"><tr><td style="padding:14px 18px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#282828;"><span style="font-weight:600;color:#AC3B19;">May arrive in more than one parcel.</span> {% if sk_ship > 1 %}{% if sk_sep_text != '' %}{{ sk_sep_text }} {% if sk_sep_list.size > 1 %}often ship on their own{% else %}often ships on its own{% endif %}{% else %}Some items ship on their own{% endif %}, so your order may arrive in more than one parcel. Nothing is missing, it is on its way.{%- endif -%}</td></tr></table></td></tr>

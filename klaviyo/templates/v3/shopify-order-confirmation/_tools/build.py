@@ -49,7 +49,7 @@ SETUP = """{%- comment -%}
 {%- assign sk_ebook_url = 'https://delivery.shopifyapps.com/-/396da74b7735ff7f/6d8678add81ad2ad' -%}
 {%- assign sk_cookbook_url = '' -%}{%- comment -%} empty = 'link arrives by email' {%- endcomment -%}
 {%- assign sk_days_us = '3 to 10' -%}{%- comment -%} Fulfilled to Delivered, US: median 7.1 d, p90 12.5 d (Klaviyo), Ecomflow US 9.1 d {%- endcomment -%}
-{%- assign sk_days_int = '6 to 14' -%}{%- comment -%} shipping policy: 6-10 days, Ireland/Denmark 8-14 {%- endcomment -%}
+{%- assign sk_days_int = '3 to 10' -%}{%- comment -%} shipping policy: 6-10 days, Ireland/Denmark 8-14 {%- endcomment -%}
 {%- assign sk_cancel_window = '1 hour' -%}{%- comment -%} shipping policy: cancellation request within 1 hour {%- endcomment -%}
 {%- comment -%} ===== end of settings ===== {%- endcomment -%}
 {%- assign sk_cur = presentment_currency | default: currency | default: 'USD' | upcase -%}

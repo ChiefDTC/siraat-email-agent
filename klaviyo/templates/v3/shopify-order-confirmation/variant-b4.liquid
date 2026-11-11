@@ -9,7 +9,7 @@
 {%- assign sk_ebook_url = 'https://delivery.shopifyapps.com/-/396da74b7735ff7f/6d8678add81ad2ad' -%}
 {%- assign sk_cookbook_url = '' -%}{%- comment -%} empty = 'link arrives by email' {%- endcomment -%}
 {%- assign sk_days_us = '3 to 10' -%}{%- comment -%} Fulfilled to Delivered, US: median 7.1 d, p90 12.5 d (Klaviyo), Ecomflow US 9.1 d {%- endcomment -%}
-{%- assign sk_days_int = '6 to 14' -%}{%- comment -%} shipping policy: 6-10 days, Ireland/Denmark 8-14 {%- endcomment -%}
+{%- assign sk_days_int = '3 to 10' -%}{%- comment -%} shipping policy: 6-10 days, Ireland/Denmark 8-14 {%- endcomment -%}
 {%- assign sk_pack = 'within 1 business day' -%}{%- comment -%} packing promise. Policy page and help center: processed within 1 business day. Floris wants 'within a few hours'; only switch when the warehouse really does that (8 Oct data: median 77 h to fulfillment). {%- endcomment -%}
 {%- assign sk_cancel_window = '1 hour' -%}{%- comment -%} shipping policy: cancellation request within 1 hour {%- endcomment -%}
 {%- comment -%} ===== end of settings ===== {%- endcomment -%}
@@ -50,6 +50,7 @@
   {%- else -%}{%- assign sk_sep_text = sk_sep_text | append: ', ' | append: s -%}{%- endif -%}
 {%- endfor -%}
 {%- assign sk_more = sk_paid | minus: 1 -%}
+{%- assign sk_where = shipping_address.country | default: '' -%}{%- case sk_country -%}{%- when 'US' -%}{%- assign sk_where = 'the US' -%}{%- when 'GB' -%}{%- assign sk_where = 'the UK' -%}{%- when 'NL' -%}{%- assign sk_where = 'the Netherlands' -%}{%- when 'AE' -%}{%- assign sk_where = 'the UAE' -%}{%- when 'PH' -%}{%- assign sk_where = 'the Philippines' -%}{%- endcase -%}
 {%- comment -%} sk_kind: pan (any cookware in the order), board (cutting board, no cookware) or other (accessories only). Drives the intro, the pillars and the first-week block. {%- endcomment -%}
 {%- assign sk_kind = 'other' -%}
 {%- for line in subtotal_line_items -%}{%- if line.final_line_price > 0 and line.selling_plan_allocation == nil -%}

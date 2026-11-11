@@ -53,7 +53,8 @@ SETUP = (B.SETUP
     .replace("{%- assign sk_cancel_window = '1 hour' -%}",
              "{%- assign sk_pack = 'within 1 business day' -%}{%- comment -%} packing promise. Policy page and help center: processed within 1 business day. Floris wants 'within a few hours'; only switch when the warehouse really does that (8 Oct data: median 77 h to fulfillment). {%- endcomment -%}\n{%- assign sk_cancel_window = '1 hour' -%}"))
 assert PORTAL in SETUP and "sk_pack" in SETUP
-SETUP += """{%- comment -%} sk_kind: pan (any cookware in the order), board (cutting board, no cookware) or other (accessories only). Drives the intro, the pillars and the first-week block. {%- endcomment -%}
+SETUP += """{%- assign sk_where = shipping_address.country | default: '' -%}{%- case sk_country -%}{%- when 'US' -%}{%- assign sk_where = 'the US' -%}{%- when 'GB' -%}{%- assign sk_where = 'the UK' -%}{%- when 'NL' -%}{%- assign sk_where = 'the Netherlands' -%}{%- when 'AE' -%}{%- assign sk_where = 'the UAE' -%}{%- when 'PH' -%}{%- assign sk_where = 'the Philippines' -%}{%- endcase -%}
+{%- comment -%} sk_kind: pan (any cookware in the order), board (cutting board, no cookware) or other (accessories only). Drives the intro, the pillars and the first-week block. {%- endcomment -%}
 {%- assign sk_kind = 'other' -%}
 {%- for line in subtotal_line_items -%}{%- if line.final_line_price > 0 and line.selling_plan_allocation == nil -%}
   {%- assign t = line.title | downcase -%}
@@ -162,7 +163,7 @@ STEPS_EXPECT = [
     ("Order confirmed", "That is this email. Want to change the address? Reply within {{ sk_cancel_window }}.", "check"),
     (PACK_T, "We check every piece before it goes in the box.", "clock"),
     (SHIP_T, "{% if sk_ship > 1 %}One email per parcel, each with its own tracking link.{% else %}You get an email with your tracking link.{% endif %} It can take 24 to 72 hours to show movement.", "truck"),
-    (DELIV_T, "Counted from the day it ships{% if sk_country == 'US' %}, within the US{% endif %}. Peak weeks can add a few days.", "gift"),
+    (DELIV_T, "Counted from the day it ships{% if sk_where != '' %}, within {{ sk_where }}{% endif %}. Peak weeks can add a few days.", "gift"),
 ]
 PARCEL_NOTE = ("{% if sk_ship > 1 %}{% if sk_sep_text != '' %}{{ sk_sep_text }} {% if sk_sep_list.size > 1 %}often ship on their own{% else %}often ships on its own{% endif %}"
                "{% else %}Some items ship on their own{% endif %}, so your order may arrive in more than one parcel. Nothing is missing, it is on its way.{%- endif -%}")
