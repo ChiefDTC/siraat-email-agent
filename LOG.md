@@ -504,3 +504,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 2026-11-11: B3 hero terug naar familiediner Deep Pan (Floris), verloop donkerder (0,55 op 38%, 0,92 onderaan) voor leesbaarheid van de tekst.
 - 2026-11-11: B3 levertijd US naar '3 to 10' dagen (Floris; data eerder: mediaan 7,1 d, p90 12,5 d na fulfilment). Internationaal blijft 6 to 14.
 - 2026-11-11: B3 levertijd wereldwijd '3 to 10' dagen (Floris); regel 'within {land}' gelokaliseerd via shipping_address.country (US = the US, GB = the UK, NL, AE, PH met 'the').
+- 2026-11-11: B3 kop 'Welcome to Siraat' zonder punt, in Instrument Serif italic 36px (Floris).
