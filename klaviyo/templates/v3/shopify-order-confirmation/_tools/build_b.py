@@ -351,7 +351,8 @@ def side_split(side, main, side_w=206, gap=24, valign="top"):
 </tr></table>"""
 
 def side_img(src, w, h, alt, cls="", extra=""):
-    return f"""<img src="{src}" width="{w}" height="{h}" alt="{alt}" class="{cls}" style="display:block;width:{w}px;height:{h}px;border-radius:10px;border:0;{extra}">"""
+    # In een link gezet: Gmail toont dan geen download-knop bij hover.
+    return f"""<a href="{{{{ order_status_url }}}}" style="display:block;text-decoration:none;border:0;"><img src="{src}" width="{w}" height="{h}" alt="{alt}" class="{cls}" style="display:block;width:{w}px;height:{h}px;border-radius:10px;border:0;{extra}"></a>"""
 
 def _steps(pillars, eyebrow, head, lab, side=""):
     out = B.eyebrow(eyebrow, pad="42px 44px 0 44px") + h2i(head)
@@ -372,7 +373,7 @@ BOARD_SIDE = side_img(shop(PIL["board"], 400, 400), 200, 200, "Titanium Cutting 
 
 def box_band():
     """Volle breedte beeldband 'what's in your box' (alleen pan-orders: de flat lay toont een pan en deksel)."""
-    return f"""<tr><td style="padding:40px 0 0 0;"><img src="{BOX_BAND}" width="600" alt="A hammered titanium pan, its lid and utensils on a wooden table" class="w" style="display:block;width:100%;max-width:600px;height:auto;border:0;"></td></tr>\n"""
+    return f"""<tr><td style="padding:40px 0 0 0;"><a href="{{{{ order_status_url }}}}" style="display:block;text-decoration:none;border:0;"><img src="{BOX_BAND}" width="600" alt="A hammered titanium pan, its lid and utensils on a wooden table" class="w" style="display:block;width:100%;max-width:600px;height:auto;border:0;"></a></td></tr>\n"""
 
 def pillars_steps():
     pan = [p for p in PILLARS if p["key"] != "lab"]  # lab-inhoud staat in de donkere kaart eronder
