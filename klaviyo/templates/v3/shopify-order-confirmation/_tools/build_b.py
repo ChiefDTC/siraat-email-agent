@@ -116,23 +116,37 @@ def welcome(serif=False, pad_top="34px"):
     head = (f"""<tr><td class="pad h2" style="padding:{pad_top} 44px 0 44px;{SERIF}font-size:34px;line-height:38px;color:{INK};">Welcome to Siraat.</td></tr>\n"""
             if serif else h2i("Welcome to Siraat.", pad=f"{pad_top} 44px 0 44px", size=30))
     intro = B.para("You chose a pan with a pure titanium cooking surface and no coatings, so there is nothing on it to wear off. Here is your order.", pad="10px 44px 0 44px", color=SOFT)
-    img = """{%- if sk_first_img != '' -%}<img src="{{ sk_first_img }}" width="120" height="120" alt="{{ sk_first | escape }}" style="display:block;width:120px;height:120px;border-radius:6px;border:1px solid #ECE7DD;object-fit:cover;">{%- else -%}<div style="width:120px;height:120px;background:#ECE7DD;border-radius:6px;"></div>{%- endif -%}"""
-    card = (B.card_open(pad="20px 44px 0 44px", inner="18px 18px") + f"""<tr>
-  <td class="sumimg" width="120" valign="top" style="width:120px;">{img}</td>
-  <td valign="top" style="padding:2px 0 0 18px;{F}font-size:15px;line-height:21px;color:{INK};">
-    <div style="font-size:16px;line-height:22px;font-weight:600;">{{{{ sk_first }}}}</div>
-    {{%- if sk_first_var != '' -%}}<div style="font-size:13px;line-height:19px;color:{GREY};">{{{{ sk_first_var }}}}</div>{{%- endif -%}}
-    <div style="font-size:13px;line-height:19px;color:{GREY};">Qty {{{{ sk_first_qty }}}}</div>
-    {{%- if sk_rest != '' or sk_subs > 0 or sk_gifts > 0 -%}}<div style="padding-top:8px;font-size:13px;line-height:19px;color:{SOFT};">Plus {{% if sk_rest != '' %}}{{{{ sk_rest }}}}{{% if sk_subs > 0 or sk_gifts > 0 %}}, {{% endif %}}{{% endif %}}{{% if sk_subs > 0 %}}a subscription{{% if sk_gifts > 0 %}} and {{% endif %}}{{% endif %}}{{% if sk_gifts > 0 %}}{{{{ sk_gifts }}}} free gifts{{% endif %}}.</div>{{%- endif -%}}
+    # Alle betaalde regels (max 4 zichtbaar), daarna een regel voor de rest, abonnement en gifts.
+    rows = f"""{{%- assign sk_row = 0 -%}}
+{{%- for line in subtotal_line_items -%}}{{%- if line.final_line_price > 0 and line.selling_plan_allocation == nil -%}}
+{{%- assign sk_row = sk_row | plus: 1 -%}}{{%- if sk_row <= 4 -%}}
+<tr>
+  <td width="64" valign="top" style="width:64px;padding:{{% if sk_row == 1 %}}0{{% else %}}12px{{% endif %}} 0 12px 0;border-bottom:1px solid {SAND};">{{%- if line.image -%}}<img src="{{{{ line.image | img_url: '160x160', crop: 'center' }}}}" width="64" height="64" alt="{{{{ line.title | escape }}}}" style="display:block;width:64px;height:64px;border-radius:6px;border:1px solid {SAND};">{{%- else -%}}<div style="width:64px;height:64px;background:{SAND};border-radius:6px;"></div>{{%- endif -%}}</td>
+  <td valign="top" style="padding:{{% if sk_row == 1 %}}2px{{% else %}}14px{{% endif %}} 10px 12px 14px;border-bottom:1px solid {SAND};{F}color:{INK};">
+    <div style="font-size:15px;line-height:20px;font-weight:600;">{{{{ line.title }}}}</div>
+    <div style="font-size:13px;line-height:18px;color:{GREY};padding-top:2px;">{{% if line.variant.title != 'Default Title' %}}{{{{ line.variant.title }}}} &middot; {{% endif %}}Qty {{{{ line.quantity }}}}</div>
   </td>
+  <td valign="top" align="right" style="padding:{{% if sk_row == 1 %}}2px{{% else %}}14px{{% endif %}} 0 12px 0;border-bottom:1px solid {SAND};{F}font-size:15px;line-height:20px;color:{INK};font-weight:600;white-space:nowrap;">{{{{ line.final_line_price | money }}}}</td>
 </tr>
-<tr><td colspan="2" style="padding-top:16px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+{{%- endif -%}}{{%- endif -%}}{{%- endfor -%}}
+{{%- assign sk_extra = sk_row | minus: 4 -%}}
+{{%- if sk_extra > 0 or sk_subs > 0 or sk_gifts > 0 -%}}
+<tr><td colspan="3" style="padding:12px 0 0 0;{F}font-size:13px;line-height:19px;color:{SOFT};">{{% if sk_extra > 0 %}}+ {{{{ sk_extra }}}} more item{{% if sk_extra > 1 %}}s{{% endif %}}{{% if sk_subs > 0 or sk_gifts > 0 %}}, {{% endif %}}{{% else %}}+ {{% endif %}}{{% if sk_subs > 0 %}}a subscription{{% if sk_gifts > 0 %}} and {{% endif %}}{{% endif %}}{{% if sk_gifts > 0 %}}{{{{ sk_gifts }}}} free gifts{{% endif %}}. Full receipt below.</td></tr>
+{{%- endif -%}}
+<tr><td colspan="3" style="padding-top:14px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr><td style="padding:10px 0 0 0;border-top:1px solid {SAND};{F}font-size:13px;line-height:19px;color:{GREY};">Order</td><td align="right" style="padding:10px 0 0 0;border-top:1px solid {SAND};{F}font-size:14px;line-height:19px;color:{INK};font-weight:600;">{{{{ order_name }}}}</td></tr>
   <tr><td style="padding:6px 0 0 0;{F}font-size:13px;line-height:19px;color:{GREY};">Total charged today</td><td align="right" style="padding:6px 0 0 0;{F}font-size:16px;line-height:20px;color:{INK};font-weight:600;white-space:nowrap;">{{{{ total_price | money_with_currency }}}}</td></tr>
 </table></td></tr>
-""" + B.CARD_CLOSE)
-    btn = B.button("Track my order", "{{ order_status_url }}", pad="22px 44px 0 44px", sub="Tracking appears here as soon as each parcel ships. Full receipt below.")
-    return head + intro + card + btn
+"""
+    card = B.card_open(pad="20px 44px 0 44px", inner="18px 18px") + rows + B.CARD_CLOSE
+    track = f"""<tr><td class="pad" style="padding:18px 44px 0 44px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="{PAPER}" style="background-color:{PAPER};border-left:3px solid {BRICK};border-radius:3px;"><tr>
+  <td width="44" valign="top" style="width:44px;padding:16px 0 16px 16px;"><img src="{ICON['truck']}" width="28" height="28" alt="" style="display:block;width:28px;height:28px;"></td>
+  <td valign="top" style="padding:14px 18px 14px 12px;{F}color:{INK};">
+    <div style="font-size:17px;line-height:23px;font-weight:600;">You&rsquo;ll receive tracking once it ships.</div>
+    <div style="font-size:13px;line-height:19px;color:{SOFT};padding-top:3px;">{{% if sk_ship > 1 %}}One email per parcel, each with its own tracking link.{{% else %}}We email you the tracking link the moment your box leaves us.{{% endif %}}</div>
+  </td></tr></table></td></tr>
+"""
+    return head + intro + card + track
 
 PACK_T = "Packed {{ sk_pack }}"
 SHIP_T = "Shipped, tracking by email"
