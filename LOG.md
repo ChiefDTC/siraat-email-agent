@@ -502,3 +502,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 2026-11-11: B3 aangepast (Floris): waarom-blok alleen bij pan of snijplank; bij alleen accessoires geen waarom-blok en intro alleen 'Here is your order.'
 - 2026-11-11: Floris keurt het AI hero-beeld (flash, stel met ei in pan, 5d0622a1) goed als eerste beeld van de orderbevestiging B3; staat al zo in de code.
 - 2026-11-11: B3 hero terug naar familiediner Deep Pan (Floris), verloop donkerder (0,55 op 38%, 0,92 onderaan) voor leesbaarheid van de tekst.
+- 2026-11-11: B3 levertijd US naar '3 to 10' dagen (Floris; data eerder: mediaan 7,1 d, p90 12,5 d na fulfilment). Internationaal blijft 6 to 14.
