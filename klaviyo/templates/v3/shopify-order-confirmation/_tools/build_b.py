@@ -19,7 +19,7 @@ INK, CREAM, SAND, BRICK, GREY, PAPER = B.INK, B.CREAM, B.SAND, B.BRICK, B.GREY, 
 K, S, IMG = B.K, B.S, B.IMG
 SOFT = "#4A4744"
 
-HERO_IMG = K + "5d0622a1-d4c8-4894-9066-0aec640a6088.jpeg"   # Higgsfield flash, 1168x880, ocimg/hero1 (11 nov)
+HERO_IMG = "https://cdn.shopify.com/s/files/1/0907/0877/1156/files/siraat-titanium-hammered-deep-pan-10-family-dinner.webp?width=1200&height=904&crop=center&format=pjpg"  # familiediner Deep Pan (Floris, 11 nov); was AI-flash 5d0622a1   # Higgsfield flash, 1168x880, ocimg/hero1 (11 nov)
 HERO_BG = "#1C1510"
 
 def shop(f, w=1200, h=800):
@@ -113,7 +113,7 @@ def hero(sub):
 <div style="{F}font-size:16px;line-height:24px;font-weight:500;color:#F1EEE8;padding-top:10px;">{sub}</div>"""
     return f"""<!-- HERO: live tekst op het beeld. Achtergrondbeeld (background-attribuut + CSS) met VML voor Outlook; bgcolor als beelden uit staan. -->
 <tr><td align="left" valign="bottom" bgcolor="{HERO_BG}" background="{HERO_IMG}" style="background-color:{HERO_BG};background-image:url('{HERO_IMG}');background-size:cover;background-position:center top;background-repeat:no-repeat;"><!--[if gte mso 9]><v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;height:452px;"><v:fill type="frame" src="{HERO_IMG}" color="{HERO_BG}" /><v:textbox inset="0,0,0,0"><![endif]-->
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td class="heropad herotxt" align="left" valign="bottom" style="padding:262px 40px 34px 40px;background-image:linear-gradient(180deg,rgba(18,12,8,0) 0%,rgba(18,12,8,0.35) 40%,rgba(18,12,8,0.82) 100%);">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td class="heropad herotxt" align="left" valign="bottom" style="padding:262px 40px 34px 40px;background-image:linear-gradient(180deg,rgba(18,12,8,0) 0%,rgba(18,12,8,0.55) 38%,rgba(18,12,8,0.92) 100%);">
 {txt}
 </td></tr></table>
 <!--[if gte mso 9]></v:textbox></v:rect><![endif]--></td></tr>
