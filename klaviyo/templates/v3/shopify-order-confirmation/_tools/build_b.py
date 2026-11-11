@@ -164,8 +164,9 @@ STEPS_EXPECT = [
     (SHIP_T, "{% if sk_ship > 1 %}One email per parcel, each with its own tracking link.{% else %}You get an email with your tracking link.{% endif %} It can take 24 to 72 hours to show movement.", "truck"),
     (DELIV_T, "Counted from the day it ships{% if sk_where != '' %}, within {{ sk_where }}{% endif %}. Peak weeks can add a few days.", "gift"),
 ]
-PARCEL_NOTE = ("{% if sk_ship > 1 %}{% if sk_sep_text != '' %}{{ sk_sep_text }} {% if sk_sep_list.size > 1 %}often ship on their own{% else %}often ships on its own{% endif %}"
-               "{% else %}Some items ship on their own{% endif %}, so your order may arrive in more than one parcel. Nothing is missing, it is on its way.{%- endif -%}")
+PARCEL_NOTE = ("{% if sk_kind == 'pan' %}Cookware does not fit in an envelope.{% else %}Not everything fits in one box.{% endif %} Because of the size and weight, we pack "
+               "{% if sk_sep_text != '' %}the {{ sk_sep_text | downcase }}{% else %}some items{% endif %} separately, so you may get more than one box, "
+               "sometimes on different days. Every box has its own tracking. Nothing is missing, it is on its way.")
 
 def chain_row(n, title, body, last=False, dot_bg=BRICK, dot_fg="#FFFFFF", line=SAND, icon=None, pills=""):
     """Verticale stap met genummerde stip en doorlopende lijn (CSS-gradient; zonder gradient blijven de stippen)."""
@@ -181,7 +182,7 @@ def pill(t, bg=PAPER, fg=INK, border=SAND):
     return f"""<span class="pill" style="display:inline-block;margin:0 4px 8px 0;padding:6px 12px;background-color:{bg};border:1px solid {border};border-radius:20px;{F}font-size:12px;line-height:16px;font-weight:600;color:{fg};white-space:nowrap;">{t}</span>"""
 
 def parcel_box(pad="18px 44px 0 44px"):
-    return ("{%- if sk_ship > 1 -%}" + f"""<tr><td class="pad" style="padding:{pad};"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FBF3EF" style="background-color:#FBF3EF;border-radius:6px;border:1px solid #E3C9BE;"><tr><td style="padding:14px 18px;{F}font-size:14px;line-height:21px;color:{INK};"><span style="font-weight:600;color:{BRICK};">May arrive in more than one parcel.</span> {PARCEL_NOTE}</td></tr></table></td></tr>
+    return ("{%- if sk_ship > 1 -%}" + f"""<tr><td class="pad" style="padding:{pad};"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FBF3EF" style="background-color:#FBF3EF;border-radius:6px;border:1px solid #E3C9BE;"><tr><td style="padding:14px 18px;{F}font-size:14px;line-height:21px;color:{INK};"><div style="font-weight:600;color:{BRICK};font-size:15px;line-height:21px;padding-bottom:4px;">Your order may arrive in more than one box</div>{PARCEL_NOTE}</td></tr></table></td></tr>
 """ + "{%- endif -%}\n")
 
 def expect_chain(serif=False):
