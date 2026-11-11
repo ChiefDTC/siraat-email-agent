@@ -53,7 +53,14 @@ SETUP = (B.SETUP
     .replace("{%- assign sk_cancel_window = '1 hour' -%}",
              "{%- assign sk_pack = 'within 1 business day' -%}{%- comment -%} packing promise. Policy page and help center: processed within 1 business day. Floris wants 'within a few hours'; only switch when the warehouse really does that (8 Oct data: median 77 h to fulfillment). {%- endcomment -%}\n{%- assign sk_cancel_window = '1 hour' -%}"))
 assert PORTAL in SETUP and "sk_pack" in SETUP
-SETUP += """{%- assign sk_first_img = '' -%}{%- assign sk_first_var = '' -%}{%- assign sk_first_qty = 1 -%}{%- assign sk_rest = '' -%}{%- assign sk_n = 0 -%}
+SETUP += """{%- comment -%} sk_kind: pan (any cookware in the order), board (cutting board, no cookware) or other (accessories only). Drives the intro, the pillars and the first-week block. {%- endcomment -%}
+{%- assign sk_kind = 'other' -%}
+{%- for line in subtotal_line_items -%}{%- if line.final_line_price > 0 and line.selling_plan_allocation == nil -%}
+  {%- assign t = line.title | downcase -%}
+  {%- if t contains 'pan' or t contains 'wok' or t contains 'pot' or t contains 'cookware' or t contains 'duo' or t contains 'complete edition' or t contains 'braiser' or t contains 'skillet' or t contains 'pizza steel' -%}{%- assign sk_kind = 'pan' -%}
+  {%- elsif t contains 'board' and sk_kind != 'pan' -%}{%- assign sk_kind = 'board' -%}{%- endif -%}
+{%- endif -%}{%- endfor -%}
+{%- assign sk_first_img = '' -%}{%- assign sk_first_var = '' -%}{%- assign sk_first_qty = 1 -%}{%- assign sk_rest = '' -%}{%- assign sk_n = 0 -%}
 {%- for line in subtotal_line_items -%}
   {%- if line.final_line_price > 0 and line.selling_plan_allocation == nil -%}
     {%- assign sk_n = sk_n | plus: 1 -%}
@@ -115,7 +122,7 @@ def hero(sub):
 def welcome(serif=False, pad_top="34px"):
     head = (f"""<tr><td class="pad h2" style="padding:{pad_top} 44px 0 44px;{SERIF}font-size:34px;line-height:38px;color:{INK};">Welcome to Siraat.</td></tr>\n"""
             if serif else h2i("Welcome to Siraat.", pad=f"{pad_top} 44px 0 44px", size=30))
-    intro = B.para("You chose a pan with a pure titanium cooking surface and no coatings, so there is nothing on it to wear off. Here is your order.", pad="10px 44px 0 44px", color=SOFT)
+    intro = B.para("{% if sk_kind == 'pan' %}You chose a pan with a pure titanium cooking surface and no coatings, so there is nothing on it to wear off.{% elsif sk_kind == 'board' %}You chose a pure titanium board. No plastic, no wood, nothing to shave off into your food.{% else %}You chose pure titanium, made to last a lifetime.{% endif %} Here is your order.", pad="10px 44px 0 44px", color=SOFT)
     # Alle betaalde regels (max 4 zichtbaar), daarna een regel voor de rest, abonnement en gifts.
     rows = f"""{{%- assign sk_row = 0 -%}}
 {{%- for line in subtotal_line_items -%}}{{%- if line.final_line_price > 0 and line.selling_plan_allocation == nil -%}}
@@ -214,6 +221,31 @@ PILLARS = [
          body="Light Labs, an ISO/IEC 17025-accredited lab, tested for 31 PFAS compounds. Every one came back below the detection limit. Report no. 25895.",
          short="Light Labs tested 31 PFAS compounds. All below detection.", icon="pfas", pills=["Report no. 25895", "31 PFAS tested"]),
 ]
+PILLARS_BOARD = [
+    dict(key="nontoxic", label="NON-TOXIC", title="No plastic. No wood. No coating.",
+         body="Pure titanium all the way through. Nothing to shave off into your food and nothing to soak up raw juices.",
+         icon="nocoat", pills=["No plastic", "No coating"]),
+    dict(key="perf", label="EVERY DAY", title="Rinse, wipe, done.",
+         body="No oiling, no sanding, no stains that stay. Rinse it after raw meat and wipe it dry.",
+         icon="utensil", pills=["Easy to clean", "Nothing to oil"]),
+    dict(key="life", label="TITANIUM", title="Built for life. Covered for 75 years.",
+         body="There is nothing on it to wear out, so we cover it for 75 years against defects.",
+         icon="warranty", pills=["75-year warranty"]),
+    dict(key="try", label="RISK FREE", title="Try it for 30 days.",
+         body="Not for you? Send it back within 30 days of delivery. Join 100,000+ happy customers.",
+         icon="returns", pills=["30-day returns", "100,000+ customers"]),
+]
+PILLARS_OTHER = [
+    dict(key="nontoxic", label="NON-TOXIC", title="Pure titanium. No coating.",
+         body="Nothing to peel, flake or wear off into your food or drink.",
+         icon="nocoat", pills=["No coating"]),
+    dict(key="life", label="TITANIUM", title="Built for life. Covered for 75 years.",
+         body="Titanium does not rust or wear out, so we cover it for 75 years against defects.",
+         icon="warranty", pills=["75-year warranty"]),
+    dict(key="try", label="RISK FREE", title="Try it for 30 days.",
+         body="Not for you? Send it back within 30 days of delivery. Join 100,000+ happy customers.",
+         icon="returns", pills=["30-day returns", "100,000+ customers"]),
+]
 PILLAR_HEAD_EB = "WHY YOU CHOSE THIS PAN"
 PILLAR_HEAD = "You picked the pan with<br>nothing to wear off."
 LAB_LINK = f"""<a href="{LAB_URL}" style="{F}font-size:14px;line-height:20px;font-weight:600;color:{BRICK};text-decoration:underline;">Read the lab report&nbsp;&rarr;</a>"""
@@ -293,17 +325,23 @@ def variant_b2():
     return body, "B2 Editorial", "Your order is confirmed. Here is exactly what happens next, and how to cook your first egg in titanium."
 
 # ------------------------------------------------------------ B3 Steps (Create-achtig)
-def pillars_steps():
-    out = section_head(False)
+def _steps(pillars, eyebrow, head, lab):
+    out = B.eyebrow(eyebrow, pad="42px 44px 0 44px") + h2i(head)
     rows = ""
-    for i, p in enumerate(PILLARS):
+    for i, p in enumerate(pillars):
         pills = '<div style="padding-top:10px;">' + "".join(pill(t, bg=CREAM) for t in p["pills"]) + "</div>"
         body = (p["short"] + " Details just below.") if p["key"] == "lab" else p["body"]
         rows += chain_row(i + 1, f"<span style=\"{F}font-size:11px;letter-spacing:2px;color:{BRICK};\">{p['label']}</span><br>{p['title']}", body,
-                          last=(i == 3), dot_bg=PAPER, icon=ICON[p["icon"]], pills=pills)
+                          last=(i == len(pillars) - 1), dot_bg=PAPER, icon=ICON[p["icon"]], pills=pills)
     out += f"""<tr><td class="pad" style="padding:24px 44px 0 44px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{rows}</table></td></tr>\n"""
-    out += f"""<tr><td class="pad" style="padding:26px 44px 0 44px;">{lab_card(big=False)}</td></tr>\n"""
+    if lab:
+        out += f"""<tr><td class="pad" style="padding:26px 44px 0 44px;">{lab_card(big=False)}</td></tr>\n"""
     return out
+
+def pillars_steps():
+    return ("{% if sk_kind == 'pan' %}" + _steps(PILLARS, PILLAR_HEAD_EB, PILLAR_HEAD, True) + benefit_pills()
+            + "{% elsif sk_kind == 'board' %}" + _steps(PILLARS_BOARD, "WHY YOU CHOSE THIS BOARD", "You picked the board<br>that stays clean.", False)
+            + "{% else %}" + _steps(PILLARS_OTHER, "WHY YOU CHOSE TITANIUM", "You picked titanium,<br>made to last.", False) + "{% endif %}")
 
 def benefit_pills():
     return f"""<tr><td class="pad" align="center" style="padding:20px 44px 0 44px;text-align:center;">{pill('Dishwasher safe')}{pill('Metal utensil safe')}{pill('Oven safe')}{pill('Induction ready')}{pill('No seasoning')}</td></tr>\n"""
@@ -311,7 +349,7 @@ def benefit_pills():
 def variant_b3():
     body = (hero("Order {{ order_name }} is in. Here is exactly what happens next.")
         + welcome(serif=False) + B.rule("36px 44px 0 44px") + expect_chain(serif=False)
-        + pillars_steps() + benefit_pills() + B.rule("36px 44px 0 44px") + first_week("b3") + practical(False))
+        + pillars_steps() + "{% if sk_kind == 'pan' %}" + B.rule("36px 44px 0 44px") + first_week("b3") + "{% endif %}" + practical(False))
     return body, "B3 Steps", "Your order is confirmed. Four steps until it is in your kitchen, and three for your first cook."
 
 # ------------------------------------------------------------ B4 Cards

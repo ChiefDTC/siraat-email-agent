@@ -322,5 +322,173 @@
     "image": "https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-40a5-9ad7-523bdddc54d4.webp?width=200&height=200&crop=center&format=pjpg"
    }
   ]
+ },
+ "us_board": {
+  "shop": {
+   "name": "Siraat"
+  },
+  "order_name": "#SIRAAT1042",
+  "created_at": "2026-11-11T15:20:00Z",
+  "customer": {
+   "first_name": "Sarah"
+  },
+  "order_status_url": "https://siraatskitchen.com/account/orders/sample",
+  "presentment_currency": "USD",
+  "subtotal_price": 20800,
+  "shipping_price": 0,
+  "tax_price": 0,
+  "total_discounts": 0,
+  "total_price": 20800,
+  "shipping_address": {
+   "name": "Sarah Miller",
+   "address1": "1450 Maple Avenue",
+   "address2": "",
+   "city": "Austin",
+   "province_code": "TX",
+   "zip": "78704",
+   "country": "United States",
+   "country_code": "US"
+  },
+  "subtotal_line_items": [
+   {
+    "title": "Titanium Cutting Board (Anti-Microbial)",
+    "variant": {
+     "title": "Medium (34x23cm)"
+    },
+    "quantity": 1,
+    "final_line_price": 7900,
+    "requires_shipping": true,
+    "image": "https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-40a5-9ad7-523bdddc54d4.webp?width=200&height=200&crop=center&format=pjpg"
+   },
+   {
+    "title": "Mystery Gift",
+    "variant": {
+     "title": "Default Title"
+    },
+    "quantity": 1,
+    "final_line_price": 0,
+    "requires_shipping": true
+   },
+   {
+    "title": "Free Shipping",
+    "variant": {
+     "title": "Default Title"
+    },
+    "quantity": 1,
+    "final_line_price": 0,
+    "requires_shipping": false
+   },
+   {
+    "title": "Plastic-Free Home E-Book",
+    "variant": {
+     "title": "Default Title"
+    },
+    "quantity": 1,
+    "final_line_price": 0,
+    "requires_shipping": false
+   },
+   {
+    "title": "Favorites Cookbook",
+    "variant": {
+     "title": "Default Title"
+    },
+    "quantity": 1,
+    "final_line_price": 0,
+    "requires_shipping": false
+   },
+   {
+    "title": "Weekly Draw: PFAS Water Filter",
+    "variant": {
+     "title": "Default Title"
+    },
+    "quantity": 1,
+    "final_line_price": 0,
+    "requires_shipping": false
+   }
+  ]
+ },
+ "us_other": {
+  "shop": {
+   "name": "Siraat"
+  },
+  "order_name": "#SIRAAT1042",
+  "created_at": "2026-11-11T15:20:00Z",
+  "customer": {
+   "first_name": "Sarah"
+  },
+  "order_status_url": "https://siraatskitchen.com/account/orders/sample",
+  "presentment_currency": "USD",
+  "subtotal_price": 20800,
+  "shipping_price": 0,
+  "tax_price": 0,
+  "total_discounts": 0,
+  "total_price": 20800,
+  "shipping_address": {
+   "name": "Sarah Miller",
+   "address1": "1450 Maple Avenue",
+   "address2": "",
+   "city": "Austin",
+   "province_code": "TX",
+   "zip": "78704",
+   "country": "United States",
+   "country_code": "US"
+  },
+  "subtotal_line_items": [
+   {
+    "title": "Titanium Utensil Set Bundle",
+    "variant": {
+     "title": "Default Title"
+    },
+    "quantity": 1,
+    "final_line_price": 7900,
+    "requires_shipping": true,
+    "image": "https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-40a5-9ad7-523bdddc54d4.webp?width=200&height=200&crop=center&format=pjpg"
+   },
+   {
+    "title": "Mystery Gift",
+    "variant": {
+     "title": "Default Title"
+    },
+    "quantity": 1,
+    "final_line_price": 0,
+    "requires_shipping": true
+   },
+   {
+    "title": "Free Shipping",
+    "variant": {
+     "title": "Default Title"
+    },
+    "quantity": 1,
+    "final_line_price": 0,
+    "requires_shipping": false
+   },
+   {
+    "title": "Plastic-Free Home E-Book",
+    "variant": {
+     "title": "Default Title"
+    },
+    "quantity": 1,
+    "final_line_price": 0,
+    "requires_shipping": false
+   },
+   {
+    "title": "Favorites Cookbook",
+    "variant": {
+     "title": "Default Title"
+    },
+    "quantity": 1,
+    "final_line_price": 0,
+    "requires_shipping": false
+   },
+   {
+    "title": "Weekly Draw: PFAS Water Filter",
+    "variant": {
+     "title": "Default Title"
+    },
+    "quantity": 1,
+    "final_line_price": 0,
+    "requires_shipping": false
+   }
+  ]
  }
 }
