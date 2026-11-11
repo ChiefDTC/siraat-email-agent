@@ -31,7 +31,10 @@ PIL = {  # echte shootfoto's (hp-shoot), Shopify-CDN
     "life": "P11-C_Edge_2560w_q76.webp",
     "oven": "P07-A_OvenSafe_1920w_q82.webp",
     "egg": "P09-B_Pan_Lid_1920w_q82.webp",
+    "panpro": "Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-40a5-9ad7-523bdddc54d4.webp",  # packshot Pan Pro Standard (Floris 11 nov: een schone pan als zijbeeld)
+    "board": "TitaniumCuttingBoard08_9c3268c8-b730-405a-8253-b9d7c6ab24e5.jpg",  # packshot Cutting Board V2
 }
+BOX_BAND = K + "29a85cbb-25c1-411a-a3ba-b9042531daac.jpeg"  # 1200x760, uitsnede van siraat-flow-pp-flatlay (e9c89f6f): pan, deksel, keukengerei op hout
 ICON = {
     "nocoat": IMG["icon_nocoat"], "pfas": IMG["icon_pfas"], "warranty": IMG["icon_warranty"],
     "customers": IMG["icon_customers"], "returns": IMG["icon_returns"],
@@ -102,6 +105,18 @@ EXTRA_CSS = """
   }
 """
 HEAD = B.HEAD.replace("</style>", EXTRA_CSS + "</style>")
+# alleen b3: zijbeeldkolommen stapelen op mobiel
+SIDE_CSS = """  @media only screen and (max-width:480px){
+    .side{display:block!important;width:100%!important;max-width:100%!important;padding:0 0 22px 0!important;text-align:center!important;}
+    .side img{margin:0 auto!important;}
+    .sidepk{width:190px!important;height:auto!important;}
+    .side2{display:none!important;max-height:0!important;overflow:hidden!important;}
+    .sidewide img{width:100%!important;height:auto!important;}
+    .sidetxt{display:block!important;width:100%!important;padding:0!important;}
+    .bandcap{padding-left:22px!important;padding-right:22px!important;}
+  }
+"""
+HEAD_B3 = HEAD.replace("</style>", SIDE_CSS + "</style>")
 
 # ------------------------------------------------------------ shared new blocks
 def h2i(txt, pad="8px 44px 0 44px", align="left", size=28):
@@ -273,7 +288,9 @@ def first_week(variant):
     note = B.para("One tip from me before it arrives. Titanium has no coating, so food lets go because of heat, not chemistry. Cold metal grabs your food, hot metal lets it go. Skip the heat and it sticks; give it one more minute next time.", pad="10px 44px 0 44px", color=SOFT)
     if variant == "b3":
         rows = "".join(chain_row(i + 1, t, b, last=(i == 2)) for i, (t, b) in enumerate(steps))
-        body = f"""<tr><td class="pad" style="padding:20px 44px 0 44px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{rows}</table></td></tr>\n"""
+        chain = f"""<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{rows}</table>"""
+        egg = f"""<div class="sidewide">{side_img(shop(PIL['egg'], 400, 440), 200, 220, "A fried egg in a hammered titanium pan")}</div>"""
+        body = f"""<tr><td class="pad" style="padding:22px 44px 0 44px;">{side_split(egg, chain, side_w=200, valign="middle")}</td></tr>\n"""
     else:
         def cell(i, t, b):
             return f"""<td class="g2" width="33%" valign="top" style="width:33%;padding:0 6px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="{PAPER}" style="background-color:{PAPER};border:1px solid {SAND};border-radius:8px;"><tr><td class="wkc" valign="top" height="112" style="height:112px;padding:16px 16px 16px 16px;"><div style="{F}font-size:15px;line-height:22px;font-weight:600;color:{INK};"><span style="display:inline-block;width:22px;height:22px;border-radius:11px;background-color:{BRICK};color:#FFFFFF;font-size:12px;line-height:22px;text-align:center;margin-right:8px;">{i+1}</span>{t}</div><div style="padding-top:4px;{F}font-size:13px;line-height:19px;color:{SOFT};">{b}</div></td></tr></table></td>"""
@@ -326,26 +343,54 @@ def variant_b2():
     return body, "B2 Editorial", "Your order is confirmed. Here is exactly what happens next, and how to cook your first egg in titanium."
 
 # ------------------------------------------------------------ B3 Steps (Create-achtig)
-def _steps(pillars, eyebrow, head, lab):
+def side_split(side, main, side_w=206, gap=24, valign="top"):
+    """Twee kolommen op desktop: beeldkolom links (side_w px) en tekst rechts. Mobiel (<=480px): beeld boven, tekst eronder."""
+    return f"""<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+<td class="side" width="{side_w}" valign="{valign}" style="width:{side_w}px;padding:0 {gap}px 0 0;">{side}</td>
+<td class="sidetxt" valign="top" style="padding:0;">{main}</td>
+</tr></table>"""
+
+def side_img(src, w, h, alt, cls="", extra=""):
+    return f"""<img src="{src}" width="{w}" height="{h}" alt="{alt}" class="{cls}" style="display:block;width:{w}px;height:{h}px;border-radius:10px;border:0;{extra}">"""
+
+def _steps(pillars, eyebrow, head, lab, side=""):
     out = B.eyebrow(eyebrow, pad="42px 44px 0 44px") + h2i(head)
     rows = ""
     for i, p in enumerate(pillars):
         pills = '<div style="padding-top:10px;">' + "".join(pill(t, bg=CREAM) for t in p["pills"]) + "</div>"
-        body = (p["short"] + " Details just below.") if p["key"] == "lab" else p["body"]
-        rows += chain_row(i + 1, f"<span style=\"{F}font-size:11px;letter-spacing:2px;color:{BRICK};\">{p['label']}</span><br>{p['title']}", body,
+        rows += chain_row(i + 1, f"<span style=\"{F}font-size:11px;letter-spacing:2px;color:{BRICK};\">{p['label']}</span><br>{p['title']}", p["body"],
                           last=(i == len(pillars) - 1), dot_bg=PAPER, icon=ICON[p["icon"]], pills=pills)
-    out += f"""<tr><td class="pad" style="padding:24px 44px 0 44px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{rows}</table></td></tr>\n"""
+    chain = f"""<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{rows}</table>"""
+    out += f"""<tr><td class="pad" style="padding:24px 44px 0 44px;">{side_split(side, chain) if side else chain}</td></tr>\n"""
     if lab:
         out += f"""<tr><td class="pad" style="padding:26px 44px 0 44px;">{lab_card(big=False)}</td></tr>\n"""
     return out
 
+PAN_SIDE = (side_img(shop(PIL["panpro"], 412, 412), 206, 206, "Titanium Hammered Pan Pro", cls="sidepk")
+            + f"""<div class="side2" style="padding-top:12px;">{side_img(shop(PIL["nontoxic"], 412, 820), 206, 410, "The hammered titanium cooking surface up close")}</div>""")
+BOARD_SIDE = side_img(shop(PIL["board"], 400, 400), 200, 200, "Titanium Cutting Board", cls="sidepk")
+
+def box_band():
+    """Volle breedte beeldband 'what's in your box' (alleen pan-orders: de flat lay toont een pan en deksel)."""
+    return f"""<tr><td style="padding:40px 0 0 0;"><img src="{BOX_BAND}" width="600" alt="A hammered titanium pan, its lid and utensils on a wooden table" class="w" style="display:block;width:100%;max-width:600px;height:auto;border:0;"></td></tr>
+<tr><td class="pad bandcap" align="center" style="padding:10px 44px 0 44px;{F}font-size:13px;line-height:19px;color:{GREY};text-align:center;">{{% if sk_gifts > 0 %}}Your pan and your gifts. Some come in their own box.{{% else %}}Your pan, ready for its first cook.{{% endif %}}</td></tr>\n"""
+
 def pillars_steps():
-    return ("{% if sk_kind == 'pan' %}" + _steps(PILLARS, PILLAR_HEAD_EB, PILLAR_HEAD, True) + benefit_pills()
-            + "{% elsif sk_kind == 'board' %}" + _steps(PILLARS_BOARD, "WHY YOU CHOSE THIS BOARD", "You picked the board<br>that stays clean.", False)
+    pan = [p for p in PILLARS if p["key"] != "lab"]  # lab-inhoud staat in de donkere kaart eronder
+    return ("{% if sk_kind == 'pan' %}" + box_band() + _steps(pan, PILLAR_HEAD_EB, PILLAR_HEAD, True, side=PAN_SIDE) + benefit_pills_b3()
+            + "{% elsif sk_kind == 'board' %}" + _steps(PILLARS_BOARD, "WHY YOU CHOSE THIS BOARD", "You picked the board<br>that stays clean.", False, side=BOARD_SIDE)
             + "{% endif %}")
 
 def benefit_pills():
     return f"""<tr><td class="pad" align="center" style="padding:20px 44px 0 44px;text-align:center;">{pill('Dishwasher safe')}{pill('Metal utensil safe')}{pill('Oven safe')}{pill('Induction ready')}{pill('No seasoning')}</td></tr>\n"""
+
+def benefit_pills_b3():
+    """Twee gebalanceerde, gecentreerde rijen (3 korte, 2 langere); geen losse wees-pil."""
+    def bp(t):
+        return pill(t).replace("margin:0 4px 8px 0;", "margin:0 3px 8px 3px;")
+    r1 = "".join(bp(t) for t in ("Oven safe", "Induction ready", "No seasoning"))
+    r2 = "".join(bp(t) for t in ("Dishwasher safe", "Metal utensil safe"))
+    return f"""<tr><td class="pad" align="center" style="padding:20px 44px 0 44px;text-align:center;"><div style="text-align:center;">{r1}</div><div style="text-align:center;">{r2}</div></td></tr>\n"""
 
 def variant_b3():
     body = (hero("Order {{ order_name }} is in. Here is exactly what happens next.")
@@ -381,7 +426,7 @@ def build():
     for key, fn in (("b2", variant_b2), ("b3", variant_b3), ("b4", variant_b4)):
         body, name, pre = fn()
         html = (SETUP.replace("VARIANT_NAME", f"variant {key.upper()} ({name})")
-                + HEAD.replace("PREHEADER", pre) + B.HEADER + body + B.FOOTER)
+                + (HEAD_B3 if key == "b3" else HEAD).replace("PREHEADER", pre) + B.HEADER + body + B.FOOTER)
         assert "—" not in html and "–" not in html, f"dash in {key}"
         assert "loop_subscriptions" not in html
         out = os.path.join(HERE, f"variant-{key}.liquid")
