@@ -6,10 +6,10 @@ Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmai
 
 | Merk | w | b | c | co | Totaal | Status inschrijving |
 |---|---|---|---|---|---|---|
-| HexClad | 9 | 24 | 25 | n.v.t. | 58 | w/b/c handmatig (Floris), co niet gedaan |
-| Our Place | 25 | 35 | 28 | 0 | 88 | alles gelukt; c pas om 11:18 in winkelwagen |
+| HexClad | 9 | 25 | 26 | n.v.t. | 60 | w/b/c handmatig (Floris), co niet gedaan |
+| Our Place | 26 | 37 | 29 | 0 | 92 | alles gelukt; c pas om 11:18 in winkelwagen |
 | Caraway | 5 (op hex-w) | 0 | 0 | 0 | 5 | w/b/c via footer "gelukt", maar geen enkele mail op cw-adressen; beide Caraway-mails kwamen op hex-w binnen |
-| Made In | 3 | 3 | 3 | 0 | 9 | w/b/c footer "Thanks! You've been subscribed", co gestopt (telefoon verplicht); eerste mail pas na 388 uur (campagne, geen welkom), daarna alleen campagnes tegelijk naar w, b en c |
+| Made In | 4 | 4 | 4 | 0 | 12 | w/b/c footer "Thanks! You've been subscribed", co gestopt (telefoon verplicht); eerste mail pas na 388 uur (campagne, geen welkom), daarna alleen campagnes tegelijk naar w, b en c |
 | Okura | 0 | 0 | 0 | 0 | 0 | w/b/c captcha, alleen co (checkout zonder betaling, opt-in aan) |
 | Plateful | 0 | 0 | 0 | 1 | 1 | w/b/c captcha, co gelukt |
 | Taima | 0 | 0 | 0 | 0 | 0 | niet gestart |
@@ -338,6 +338,9 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 44. **Social proof als getal onder elke productmail.** HexClad zet "51,000+ Star Reviews" vast onderaan. Siraat kan "100,000+ happy customers" (goedgekeurde claim) als vaste regel boven de footer gebruiken, als live tekst en niet in een afbeelding, zodat het ook zonder beelden zichtbaar is.
 
 45. **Een set als "do-everything" verkopen.** Our Place brengt de Cookware Set op 11 nov als "A Do-Everything Set" met alleen een cadeau bij $300+ en geen percentage. Siraat kan de 2 Pans + 2 Lids ($249) op dezelfde manier brengen: wat je er allemaal mee kunt, met de 5 gifts als reden om nu te kopen.
+
+46. **Een brief van de oprichter die elk cadeau uitlegt.** Made In opende BF twee weken vroeg met een platte tekstmail van Jake: per set een cadeau met waarde in dollars en een zin waarom juist dat cadeau. Siraat kan de 5 gifts in een brief van Benjamin per stuk uitleggen (waarom de cookbook, waarom de sheets), met de echte waarde per gift.
+47. **Our Place verkoopt nu Titanium Pro.** "The Beauty of Titanium" (12 nov) noemt een titanium binnenkant. Dat is directe concurrentie op ons hoofdverhaal. Siraat moet het verschil scherp maken: puur titanium kookoppervlak zonder coating plus het labrapport (31 PFAS, rapport 25895), en de 75 jaar garantie.
 
 ## Open punten
 
