@@ -1,5 +1,12 @@
 {
   "permissions": {
-    "allow": ["mcp__Figma"]
+    "allow": [
+      "mcp__Figma", "Bash", "Edit", "Write", "Read",
+      "mcp__Klaviyo", "mcp__Shopify", "mcp__higgsfield",
+      "mcp__Gorgias", "mcp__Triplewhale", "mcp__Recharge",
+      "mcp__Ecomflow", "mcp__Shipbob", "mcp__Google_Sheets",
+      "mcp__Google_Drive", "mcp__Notion", "mcp__Fireflies",
+      "mcp__Zaymo", "mcp__Aftersell"
+    ]
   }
 }
