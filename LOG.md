@@ -524,3 +524,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 2026-11-13: LUCKY15 verlengd tot zondag 15 nov 23:59 ET (endsAt 2026-11-16T04:59:59Z, Floris). Mails US/INT aangepast: 'only this weekend', 'disappears Sunday at midnight', preview 'until Sunday'. Drafts.
 - 2026-11-13: F13 onderwerp naar 'I made Friday the 13th your lucky day 🍀' (Floris).
 - 2026-11-13: F13 productlinks naar PDP (Floris): Pan Pro, 6-Pcs en 12-Pcs via /discount/LUCKY15?redirect=/products/... (code blijft automatisch), twee knoppen blijven naar /collections/black-friday. US Yq2SSQ en INT XBKjzr bijgewerkt.
+- 2026-11-13: F13 links gerepareerd: redirect-pad nu URL-encoded inclusief UTM (/discount/LUCKY15?redirect=%2Fproducts%2F...%3Futm...), getest: landt op de PDP met discount_code-cookie LUCKY15. Floris: campagne alleen US; INT-draft blijft ongebruikt.
