@@ -525,3 +525,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 2026-11-13: F13 onderwerp naar 'I made Friday the 13th your lucky day 🍀' (Floris).
 - 2026-11-13: F13 productlinks naar PDP (Floris): Pan Pro, 6-Pcs en 12-Pcs via /discount/LUCKY15?redirect=/products/... (code blijft automatisch), twee knoppen blijven naar /collections/black-friday. US Yq2SSQ en INT XBKjzr bijgewerkt.
 - 2026-11-13: F13 links gerepareerd: redirect-pad nu URL-encoded inclusief UTM (/discount/LUCKY15?redirect=%2Fproducts%2F...%3Futm...), getest: landt op de PDP met discount_code-cookie LUCKY15. Floris: campagne alleen US; INT-draft blijft ongebruikt.
+- 2026-11-13: F13 US extra uitsluiting UJY6LA 'Siraat // Waiting on order' (Placed Order in 60 d EN (Fulfilled Order 0 in 60 d OF Wonderment Fulfillment Delayed in 30 d)), dekt wachtende kopers ouder dan 21 dagen. Smart sending stond uit, nu aan.
