@@ -12,3 +12,4 @@ tg2-carve.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/c9abda20-168a-4d
 tg2-pan.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/ea3833b8-1284-48c0-9d69-89dba9c073eb.jpeg
 tg2-life-crop.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/60d3879b-9450-4975-b9d2-6db2d5961a30.jpeg
 tg3-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/c33a48a5-c3b3-4035-8a8f-768413a5311a.jpeg
+tg4-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/fa194f72-c8bb-4a1a-b975-df218a83e0ae.jpeg
