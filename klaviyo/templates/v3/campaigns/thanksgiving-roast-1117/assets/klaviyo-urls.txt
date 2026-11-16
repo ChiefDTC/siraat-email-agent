@@ -4,3 +4,9 @@ tg-gravy.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/f9c3a9ce-5453-427
 tg-hero-turkey.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/6b02f3c0-9177-4fa1-b776-dfd7dfa58a94.jpeg
 tg-pan-rack.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/dc147dd1-f23d-4367-8774-32a34fe8aeba.jpeg
 tg-hero-turkey-43.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/c530c811-dce7-41c0-bd33-5264759c264b.jpeg
+tg2-hero.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/5b8e66bb-1e1d-4207-ba30-f778bc2ae7e9.jpeg
+tg2-life.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/66d9931e-418e-438d-b483-7f84c78d117d.jpeg
+tg2-rack.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/135758bf-4674-48c2-bb99-2aa0bbed6614.jpeg
+tg2-gravy.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/3b0aa64d-1f98-4bba-bf61-23610463d26c.jpeg
+tg2-carve.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/c9abda20-168a-4df9-8297-e657e6fd6849.jpeg
+tg2-pan.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/ea3833b8-1284-48c0-9d69-89dba9c073eb.jpeg

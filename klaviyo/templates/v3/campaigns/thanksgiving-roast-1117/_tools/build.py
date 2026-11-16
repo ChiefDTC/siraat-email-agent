@@ -46,8 +46,8 @@ def why(t):
 
 # ---------- page
 head = f13[:f13.index('<body')]
-head = re.sub(r'<title>[^<]*</title>', '<title>Your turkey timeline</title>', head)
-PREVIEW = 'Fridge dates for a 12 to 24 lb bird, two fixes that matter, and the pan with the rack built in.'
+head = re.sub(r'<title>[^<]*</title>', '<title>Your Thanksgiving roast, sorted</title>', head)
+PREVIEW = 'Order by Friday, Nov 20. V-rack included, $199, plus 5 free gifts.'
 hdr = open(os.path.join(P, 'header.html')).read().replace('{{SHARED}}/', '')
 ftr = open(os.path.join(P, 'footer.html')).read()
 for k, v in urls.items():
@@ -70,48 +70,59 @@ def gt(k, n, v):
 gifts = (f'<tr><td align="center" bgcolor="#FFFFFF" class="padx" style="background-color:#FFFFFF;padding:34px 24px 0 24px;"><div class="h1s" style="{S}font-size:28px;line-height:32px;color:{INK};text-align:center;padding-bottom:10px;">5 free gifts with every order ($555&nbsp;value)</div>'
          f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="{CREAM}" style="background-color:{CREAM};border-radius:8px;"><tr>' + ''.join(gt(*x) for x in G) + '</tr></table></td></tr>\n')
 
+# ---------- v2 (Floris 16 nov): levering voor Thanksgiving is de kern, veel meer beeld
+def tile4(w, d, day, date):
+    return (f'<td width="25%" valign="top" style="width:25%;padding:0 3px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="{CREAM}" style="background-color:{CREAM};border:1px solid {SAND};border-radius:8px;"><tr><td align="center" bgcolor="{CREAM}" style="background-color:{CREAM};padding:14px 2px 14px 2px;text-align:center;">'
+            f'<div class="tw" style="{S}font-size:30px;line-height:32px;color:{INK};">{w}</div>'
+            f'<div style="{F}font-size:11px;line-height:15px;color:#8A847A;padding-top:3px;">{d}</div>'
+            f'<div style="{F}font-size:9px;line-height:12px;letter-spacing:1.4px;font-weight:700;color:{BRICK};padding-top:9px;">IN THE FRIDGE</div>'
+            f'<div style="{F}font-size:14px;line-height:18px;font-weight:700;color:{INK};padding-top:3px;">{day}<br>{date}</div></td></tr></table></td>')
+T4 = [('12 lb', '3 days', 'Mon', 'Nov 23'), ('16 lb', '4 days', 'Sun', 'Nov 22'), ('20 lb', '5 days', 'Sat', 'Nov 21'), ('24 lb', '6 days', 'Fri', 'Nov 20')]
+cal4 = (f'<tr><td bgcolor="#FFFFFF" class="padx" style="background-color:#FFFFFF;padding:18px 33px 0 33px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>'
+        + ''.join(tile4(*t) for t in T4) + '</tr></table></td></tr>\n')
+def benefit(src, alt, title, body, c):
+    return (f'<tr><td bgcolor="#FFFFFF" class="pad" style="background-color:#FFFFFF;padding:16px 40px 0 40px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>'
+            f'<td width="120" valign="top" style="width:120px;"><a href="{U(c)}" style="display:block;text-decoration:none;"><img src="{src}" width="120" height="120" alt="{alt}" style="display:block;width:120px;height:120px;border:0;border-radius:8px;"></a></td>'
+            f'<td valign="middle" style="padding:0 0 0 16px;"><div style="{F}font-size:17px;line-height:22px;font-weight:700;color:{INK};">{title}</div><div style="{F}font-size:14px;line-height:21px;color:#4A4640;padding-top:5px;">{body}</div></td></tr></table></td></tr>\n')
+def darkbtn(label, c, sub):
+    return (f'<tr><td align="center" bgcolor="{ESP}" class="pad" style="background-color:{ESP};padding:6px 40px 0 40px;"><table border="0" cellpadding="0" cellspacing="0" role="presentation" width="400" style="width:100%;max-width:400px;margin:0 auto;"><tr><td align="center" bgcolor="#FFFFFF" style="background-color:#FFFFFF;border-radius:30px;"><a href="{U(c)}" style="display:block;padding:20px 18px;{F}font-size:15px;line-height:18px;font-weight:700;letter-spacing:1.2px;color:{INK};text-decoration:none;text-transform:uppercase;">{label}</a></td></tr></table></td></tr>\n'
+            f'<tr><td align="center" bgcolor="{ESP}" class="pad" style="background-color:{ESP};padding:12px 40px 34px 40px;text-align:center;"><div style="{F}font-size:12px;line-height:18px;color:#D9C6BC;">{sub}</div></td></tr>\n')
+FR = 'Free shipping. 30-day returns. 100,000+ happy customers.'
+
 b = ''
 b += f'<tr><td align="center" bgcolor="{INK}" style="background-color:{INK};padding:11px 20px;{F}font-size:11px;line-height:14px;letter-spacing:2px;font-weight:800;color:{CREAM};text-transform:uppercase;"><a href="https://siraatskitchen.com/collections/black-friday-sale?utm_source=klaviyo&amp;utm_medium=email&amp;utm_campaign={CAMP}&amp;utm_content=topbar" style="color:{CREAM};text-decoration:none;">VIP BLACK FRIDAY SALE IS LIVE</a></td></tr>\n'
 b += hdr + '\n'
-b += img(urls['tg-hero-turkey-43.jpg'], 'A roast turkey on the V-rack in the Siraat Titanium Hammered Roasting Pan on a Thanksgiving table', 'hero')
-b += (f'<tr><td align="center" bgcolor="{ESP}" class="pad" style="background-color:{ESP};padding:38px 36px 36px 36px;text-align:center;">'
-      f'<div style="{F}font-size:12px;line-height:16px;letter-spacing:3px;font-weight:700;color:#E2B8A4;">THE TURKEY TIMELINE</div>'
-      f'<div class="h1b" style="{S}font-size:44px;line-height:48px;color:#FFFFFF;padding-top:12px;">Thaw it on time.<br>Lift it. Pull it at 165&deg;F.</div>'
-      f'<div style="{F}font-size:16px;line-height:24px;color:#EADBD3;padding-top:14px;">The three things that decide the bird.</div></td></tr>\n')
+b += img(urls['tg2-hero.jpg'], 'Order by Fri, Nov 20. Your Thanksgiving roast, sorted. Order now, it arrives before Thanksgiving. A golden turkey on the V-rack in the Siraat Titanium Hammered Roasting Pan.', 'hero')
+b += darkbtn('Get my roasting pan', 'cta1', FR)
 b += p("Hi {{ first_name|default:'there' }}, Benjamin here.", "32px 40px 0 40px")
-b += p("Most turkey trouble starts days before Thursday. The bird is still frozen on Wednesday night, or it sits in its own juices and the bottom steams, or it gets cooked by the clock instead of by the thermometer.")
-b += p("So here is the short version. Save it, screenshot it, stick it on the fridge.")
-b += eyebrow('STEP 1 &middot; THE FRIDGE', 'When your bird goes in')
-b += p("Thawing in the fridge takes about a day for every 4 to 5 pounds (that is the USDA rule). Counting back from Thursday, November 26:", "10px 40px 0 40px", size=16)
-b += cal
-b += p("Bought it fresh? Skip this step. Running late? The USDA also allows a cold-water thaw, about 30 minutes per pound, changing the water every 30 minutes.", "8px 40px 0 40px", size=14, col=GREY)
-b += eyebrow('STEP 2 &middot; THE OVEN', 'Two fixes that matter most')
-b += fix('1', 'Lift it off the pan floor.', "A bird that sits flat in the pan cooks in its own juices, so the underside steams and stays pale. Set it on a rack: hot air reaches the bottom and the skin browns all the way round. The drippings collect underneath for the gravy.")
-b += fix('2', 'Cook to 165&deg;F, not to the clock.', "Check the thickest part of the breast and the innermost part of the thigh, without touching bone. Every spot needs to read 165&deg;F. Then let it rest at least 20 minutes before you carve, so the juices settle back into the meat instead of onto the board.")
-b += eyebrow('STEP 3 &middot; THE PAN', 'Built around the rack', "38px 40px 14px 40px")
-b += img(urls['tg-pan-rack.jpg'], 'Siraat Titanium Hammered Roasting Pan with the fitted V-rack', 'pan-img', w=520, pad="0 40px", radius=8)
-b += (f'<tr><td align="left" bgcolor="#FFFFFF" class="pad" style="background-color:#FFFFFF;padding:18px 40px 0 40px;"><div style="{F}font-size:20px;line-height:26px;font-weight:700;color:{INK};"><a href="{U("pan-name")}" style="color:{INK};text-decoration:none;">Titanium Hammered Roasting Pan</a></div>'
-      f'<div style="{F}font-size:14px;line-height:20px;color:#8A847A;padding-top:4px;">With fitted V-rack &middot; 14 x 10.6 in</div>'
-      f'<div style="padding-top:10px;"><span class="now" style="{F}font-size:34px;line-height:38px;font-weight:800;color:{INK};">$199</span><span style="{F}font-size:13px;line-height:18px;letter-spacing:1.4px;font-weight:700;color:{BRICK};padding-left:10px;">BLACK FRIDAY PRICE</span></div></td></tr>\n')
-b += (f'<tr><td bgcolor="#FFFFFF" class="pad" style="background-color:#FFFFFF;padding:16px 40px 0 40px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">'
-      + why('<b>The rack is in the box.</b> A fitted V-rack that lifts the bird, so step 2 is already handled.')
-      + why('<b>A pure titanium cooking surface, no coatings.</b> No PFAS, PFOA, or BPA. The same titanium surface as our Pan Pro, which Light Labs tested free from PFAS (report no. 25895).')
-      + why('<b>From oven to stovetop.</b> Fully clad with an induction base, so the gravy gets whisked right in the pan, on gas, electric or induction.')
-      + why('<b>Covered for 75 years.</b> Dishwasher safe, metal utensil safe, nothing on it to wear off.')
-      + '</table></td></tr>\n')
-b += btn('Get my roasting pan', 'cta1')
-b += eyebrow('A STRAIGHT ANSWER', 'Will it arrive by Thursday?', "40px 40px 4px 40px")
-b += p("I can't promise that, so I won't. With Thanksgiving next week, a pan ordered today may or may not make it to your table in time.", "10px 40px 0 40px")
-b += p("Everything above works in the pan you already own. This one is for the roasts after it: Christmas dinner, the Sunday chicken, next year's bird. And it is covered for 75 years against defects.")
-b += (f'<tr><td bgcolor="#FFFFFF" class="pad" style="background-color:#FFFFFF;padding:28px 40px 0 40px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="{CREAM}" style="background-color:{CREAM};border-left:3px solid {BRICK};"><tr><td bgcolor="{CREAM}" style="background-color:{CREAM};padding:18px 20px;">'
-      f'<div style="{F}font-size:13px;line-height:16px;letter-spacing:2px;color:{BRICK};">&#9733;&#9733;&#9733;&#9733;&#9733;</div>'
-      f'<div style="{S}font-size:22px;line-height:28px;color:{INK};padding-top:8px;">&ldquo;Siraat replaced a pan free of charge... I just sent them the picture and they honored the warranty.&rdquo;</div>'
-      f'<div style="{F}font-size:13px;line-height:18px;color:#8A847A;padding-top:8px;">Brandon W. &middot; Verified buyer</div></td></tr></table></td></tr>\n')
-b += btn('Get my roasting pan', 'cta2', "28px 40px 0 40px")
+b += p("Order this week and the pan is on your counter before Thursday, V&#8209;rack in the box. Here is the rest of the plan.")
+b += eyebrow('THE TURKEY TIMELINE', 'When your bird goes in the fridge', "36px 40px 4px 40px")
+b += p("About one day for every 4 to 5 lb (USDA), counted back from Thursday, Nov&nbsp;26.", "8px 40px 0 40px", size=15, col=GREY)
+b += cal4
+b += p("Then roast it on the rack and pull it when the breast and thigh read 165&deg;F. Rest 20 minutes before you carve.", "14px 40px 0 40px", size=15, col=GREY)
+b += eyebrow('WHY THIS PAN', 'Built around the rack', "38px 40px 2px 40px")
+b += benefit(urls['tg2-rack.jpg'], 'The fitted V-rack in the Siraat roasting pan', 'The V&#8209;rack is in the box.', 'It lifts the bird off the pan floor, so the underside browns instead of steaming in its juices.', 'why-rack')
+b += benefit(urls['tg2-gravy.jpg'], 'Whisking gravy in the roasting pan on an induction cooktop', 'Make the gravy right in it.', 'Fully clad with an induction base. From the oven straight to gas, electric or induction.', 'why-gravy')
+b += benefit(urls['tg2-carve.jpg'], 'Carving a turkey in the Siraat roasting pan', 'Nothing on it to wear off.', 'A pure titanium cooking surface, no coatings. No PFAS, PFOA, or BPA. Dishwasher safe.', 'why-surface')
+# product card, 2 kolommen
+b += (f'<tr><td bgcolor="#FFFFFF" class="pad" style="background-color:#FFFFFF;padding:30px 40px 0 40px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="{CREAM}" style="background-color:{CREAM};border:1px solid {SAND};border-radius:10px;"><tr>'
+      f'<td width="50%" valign="middle" style="width:50%;padding:12px 0 12px 12px;"><a href="{U("card-img")}" style="display:block;text-decoration:none;"><img src="{urls["tg2-pan.jpg"]}" width="248" alt="Siraat Titanium Hammered Roasting Pan with V-rack" style="display:block;width:100%;max-width:248px;height:auto;border:0;border-radius:6px;"></a></td>'
+      f'<td valign="middle" style="padding:12px 14px 12px 14px;"><div style="{F}font-size:16px;line-height:21px;font-weight:700;color:{INK};"><a href="{U("card-name")}" style="color:{INK};text-decoration:none;">Titanium Hammered Roasting Pan</a></div>'
+      f'<div style="{F}font-size:12px;line-height:17px;color:#8A847A;padding-top:4px;">V&#8209;rack included &middot; 14 x 10.6 in</div>'
+      f'<div class="now" style="{F}font-size:32px;line-height:36px;font-weight:800;color:{INK};padding-top:10px;">$199</div>'
+      f'<div style="{F}font-size:10px;line-height:14px;letter-spacing:1.4px;font-weight:700;color:{BRICK};padding-top:2px;">BLACK FRIDAY PRICE</div></td></tr></table></td></tr>\n')
+b += btn('Get my roasting pan', 'cta2', "20px 40px 0 40px")
+b += p("<b>Order by Friday, Nov 20</b> and it arrives before Thanksgiving.", "10px 40px 0 40px", size=14, col=INK, al="center")
+b += img(urls['tg2-life.jpg'], 'Friends laughing while carving a turkey in the Siraat roasting pan at a Thanksgiving table', 'lifestyle', pad="32px 0 0 0")
 b += gifts
-b += p("Happy roasting,", "28px 40px 4px 40px")
-b += f'<tr><td align="left" bgcolor="#FFFFFF" class="pad" style="background-color:#FFFFFF;padding:4px 40px 18px 40px;text-align:left;"><div style="{F}font-size:17px;line-height:24px;color:{INK};font-weight:700;">Benjamin</div><div style="{F}font-size:14px;line-height:20px;color:#8A847A;">Founder, Siraat</div></td></tr>\n'
-b += p("P.S. Write your fridge date on the turkey bag tonight. It is the one step you cannot catch up on later.", "4px 40px 32px 40px", size=15, col=GREY)
+# twee beloftes
+def prom(t, s):
+    return f'<td width="50%" valign="top" align="center" style="width:50%;padding:16px 8px;text-align:center;"><div style="{S}font-size:26px;line-height:30px;color:{INK};">{t}</div><div style="{F}font-size:12px;line-height:17px;color:#8A847A;padding-top:4px;">{s}</div></td>'
+b += (f'<tr><td bgcolor="#FFFFFF" class="pad" style="background-color:#FFFFFF;padding:26px 40px 0 40px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid {SAND};border-bottom:1px solid {SAND};"><tr>'
+      + prom('75-year warranty', 'Covered against defects.') + prom('30-day returns', 'Unused, within 30 days of delivery.') + '</tr></table></td></tr>\n')
+b += p("Happy roasting,", "26px 40px 4px 40px")
+b += f'<tr><td align="left" bgcolor="#FFFFFF" class="pad" style="background-color:#FFFFFF;padding:4px 40px 14px 40px;text-align:left;"><div style="{F}font-size:17px;line-height:24px;color:{INK};font-weight:700;">Benjamin</div><div style="{F}font-size:14px;line-height:20px;color:#8A847A;">Founder, Siraat</div></td></tr>\n'
+b += p("P.S. Order by Friday, Nov 20. The pan beats the bird to the table.", "4px 40px 32px 40px", size=15, col=GREY)
 b += ftr
 
 html = (head + '<body style="margin:0;padding:0;background:#FFFFFF;">\n'
