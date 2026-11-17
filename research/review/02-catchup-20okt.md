@@ -59,3 +59,31 @@ Lijst UXBmYd (253) en campagne 01M538JS4KMBVEPZ94EB90JB6X zijn niet aangeraakt.
 5. Uitsluiting op oude reviewflow Vixr6X (604) geldt sinds 15 aug, ook als die mail over een eerdere order ging. Strenger dan het flowfilter (30 dagen); bewust voorzichtig.
 6. Supportregel telt elk ticket, ook door een agent gestarte mails en chats vóór aankoop. Strikt zoals gevraagd.
 7. Verzenden of inplannen alleen na akkoord Floris, eerst een testmail per golf.
+
+## Golf 3
+
+17 nov 2026. Doel: wie op 20 okt buiten golf 1 en 2 viel omdat er toen nog geen bezorgbewijs was, en nu wel bezorgd is. Draft, niets verstuurd of ingepland. Per-profieldata buiten de repo (scratchpad/review-golf3-17nov/).
+
+Regels als hierboven, plus: bezorgbewijs = vroegste Postflows "4. Shipment Delivered" (UabgWz), Delivered Shipment (VcUF33) of ShipBob Delivered (SMpL9v) op een order uit het venster, en dat vroegste bewijs ligt na 20 okt 13:58 UTC (moment van de golf 1/2-selectie). Al reviewmail = Received Email sinds 15 aug uit XzHrez, TvfJYU, T5riz5, TF2B5x, Vixr6X, SxEWJV, UvHra2 of de campagnes golf 1, golf 2, backfill en de oude golf 3-draft. Wachtrij = Delivered Shipment, Postflows of ShipBob-bezorging sinds 2 nov (14 dagen wacht) of Fulfilled Order sinds 27 okt (21 dagen wacht). Zoals in 03-catchup-golf3.md: alleen orders met $value > 0, betaald en niet geannuleerd.
+
+| Stap | Eraf | Over |
+|---|---|---|
+| Profielen met Fulfilled Order 20 sep tot 19 okt 19:55 UTC | | 3.357 |
+| Niet in lijst RtpJBt of VeGwpV | 798 | 2.559 |
+| Vroegste bezorgbewijs na 20 okt 13:58 UTC (2.355 hadden toen al bewijs, 53 nog steeds geen) | 2.408 | 151 |
+| Alleen $0-, onbetaalde of geannuleerde orders | 16 | 135 |
+| Al een reviewmail (XzHrez 71, Vixr6X 2, overlap mogelijk) | 63 | 72 |
+| Zit nog in wachtrij van een reviewflow | 6 | 66 |
+| Refund of annulering sinds 1 sep | 2 | 64 |
+| Ooit de 12-delige set | 0 | 64 |
+| Geen marketingtoestemming of onderdrukt | 28 | 36 |
+| Ticketevent in Klaviyo (Gorgias, Zendesk, Ticket Created) | 13 | 23 |
+| Gorgias (analytics, order-id naar klant naar tickets, 23 van 23 orders gevonden) | 0 | 23 |
+
+De 23: allemaal bezorgd volgens Postflows (20 tot 27 okt), 16 US, 7 elders. Alle 23 zitten ook in de nooit verstuurde golf 3-draft van 1 nov (lijst YsBcUY, campagne 01M6BQVP3TDA6ERSKMRVKYVXK8); die draft niet ook versturen.
+
+Klaar in Klaviyo: lijst UwFpcT "Review catch-up golf 3 (17 nov)" (23), campagne 01M7MCB0EV5MPS2Q2P8QP1AQ2W "Review catch-up · golf 3 · 19 nov", kloon van golf 2: template Weu2mY (HTML identiek aan VQT4WK), onderwerp "Win your purchase amount back", preview "Two minutes. One honest review.", smart sending aan, UTC, UTM v4-review-catchup-g3, richtdatum do 19 nov 14:00 UTC, status Draft.
+
+Let op: de mail is een beloonde review. Onderwerp en tekst beloven dat elke maand één reviewer het volledige aankoopbedrag terugkrijgt (loting). Niet aangepast; Floris beslist vóór verzending (openbaarmaking bij reviews, regels van het reviewplatform).
+
+Niet geverifieerd: Gorgias-analytics loopt ongeveer een dag achter; flowwachtrij afgeleid uit triggertijden, niet uit Klaviyo zelf. Hercheck op de ochtend van verzending.
