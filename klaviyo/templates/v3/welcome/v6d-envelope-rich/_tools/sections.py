@@ -217,10 +217,11 @@ sec('e5-paper-sign', f'background:{CREAM};padding:0 50px 60px', f'<div style="ba
 sec('e5-arms', f'background:{BRICK}', f'<div style="position:relative;height:1500px;background:url({g("arms.png")}) center bottom/cover">'
     f'<div style="position:absolute;left:0;right:0;top:80px;text-align:center;color:{W}"><div class="eb" style="color:#F3D2BF">Your offer, in one place</div>'
     f'<div class="num" style="font-size:240px;line-height:220px;letter-spacing:-8px;margin-top:20px">10% OFF</div><div style="font-size:44px;line-height:60px;margin-top:10px">every pan and every set, with HI10<br>+ {GIFTS}</div></div></div>')
-mini = ''.join(f'<div style="flex:1;background:{TINT[k]};border-radius:30px;padding:30px 14px 34px;text-align:center"><div style="height:240px;display:flex;align-items:center;justify-content:center"><img class="shadow" src="{g(CUT[k] + ".png")}" style="max-width:300px;max-height:220px;transform:rotate(-8deg)"></div>'
-               f'<div style="font-weight:600;font-size:36px;line-height:42px;color:{INK};margin-top:14px">{PR[k][0]}</div><div style="font-size:30px;color:#7A746B;margin-top:6px">{d(PR[k][2])}</div><div class="num" style="font-size:52px;color:{INK};letter-spacing:-1px">{hi(PR[k][2])}</div></div>'
-               for k in ['standard', 'set6', 'set12'])
-sec('e5-recap', f'background:{DARK};padding:60px 50px 50px', f'<div style="font-size:36px;color:#E8E2D8;text-align:center">75-year warranty &middot; 30-day returns &middot; free shipping</div><div style="display:flex;gap:22px;margin-top:36px">{mini}</div>')
-
+def mini(k):  # losse kaart per product, zodat elke kaart naar zijn eigen productpagina linkt
+    return (f'<div style="background:{TINT[k]};border-radius:30px;padding:30px 14px 34px;text-align:center"><div style="height:240px;display:flex;align-items:center;justify-content:center"><img class="shadow" src="{g(CUT[k] + ".png")}" style="max-width:300px;max-height:220px;transform:rotate(-8deg)"></div>'
+            f'<div style="font-weight:600;font-size:36px;line-height:42px;color:{INK};margin-top:14px">{PR[k][0]}</div><div style="font-size:30px;color:#7A746B;margin-top:6px">{d(PR[k][2])}</div><div class="num" style="font-size:52px;color:{INK};letter-spacing:-1px">{hi(PR[k][2])}</div></div>')
+sec('e5-recap-top', f'width:1200px;background:{DARK};padding:60px 20px 36px', f'<div style="font-size:36px;color:#E8E2D8;text-align:center">75-year warranty &middot; 30-day returns &middot; free shipping</div>')
+for i, k in enumerate(['standard', 'set6', 'set12']):
+    sec('e5-recap-' + k, f'width:400px;background:{DARK};padding:0 20px 50px', mini(k))
 json.dump(SECS, open(os.path.join(OUT, 'list.json'), 'w'))
 print(len(SECS), 'sections')
