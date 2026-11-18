@@ -563,3 +563,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 2026-11-18: Figma-rij 348:106 (Row 1i) met BF-W1 image B (desktop + mobiel) toegevoegd onder v6d.
 - 2026-11-18: BF-W1 image B: 12-Pcs set op $699 (66% off van $2,047) op verzoek Floris (A/B-uitgangspunt duurder). Template YuNuFD en Figma 348:106 bijgewerkt. A (XXg4sn) en v6d noemen nog $649.
 - 2026-11-18 08:26 UTC: BF-W1 image B (YuNuFD) als testmail naar lolagroothuis@gmail.com op verzoek Floris.
+- 2026-11-18 08:47 UTC: 90/10-bewaking. Splits 100% nieuw, flows live. 24u: checkout 532 ontv. $3,08/ontv. uitschr. 0,95%; cart 1.269 $2,85; browse 3.120 $0,45 spam 0,10%. Alle flows 24u ca. $14.900. Bewaakte flows binnen grenzen, geen alarm, niet gepost. Buiten scope: uitschr. > 1% bij BFCM Welcome (1,96%), BF follow-up (1,37%), AFF S0 (2,12%). Welcome T4a5Mk staat sinds 18 nov op 70/30 (v6d-test), niet meer 50/50.
