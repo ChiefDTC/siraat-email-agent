@@ -33,10 +33,22 @@ BASE = f'''<!doctype html><html><head><meta charset="utf-8">
 .eb{{font-weight:600;letter-spacing:6px;font-size:30px;text-transform:uppercase}}
 .btn{{display:inline-block;border-radius:999px;font-weight:600;letter-spacing:3px;text-transform:uppercase}}
 .num{{font-weight:800;letter-spacing:-2px}}
-.shadow{{filter:drop-shadow(0 30px 34px rgba(40,30,20,.28)) drop-shadow(0 6px 8px rgba(40,30,20,.18))}}
 </style></head><body><div id="s" style="__S__">__C__</div></body></html>'''
 SECS = []
+import re, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from ground import ground
+SH = os.path.join(GEN, 'sh'); os.makedirs(SH, exist_ok=True)
+def _ground(m):
+    # schaduw op de ondergrond onder elke productuitsnede (Floris 18 nov: anders lijkt het te zweven); draaiing zit in de PNG
+    src, st = m.group(1), m.group(2)
+    r = re.search(r'transform:rotate\((-?[\d.]+)deg\);?', st); rot = float(r.group(1)) if r else 0
+    st = re.sub(r'transform:rotate\([^)]*\);?|transform-origin:[^;"]*;?', '', st)
+    path = src.replace('file://', '')
+    out = os.path.join(SH, os.path.basename(path)[:-4] + f'_{rot:g}.png')
+    return f'<img src="file://{ground(path, rot, out)}" style="{st}">'
 def sec(name, style, content):
+    content = re.sub(r'<img class="shadow" src="([^"]+)" style="([^"]*)">', _ground, content)
     open(os.path.join(OUT, name + '.html'), 'w').write(BASE.replace('__S__', style).replace('__C__', content)); SECS.append(name)
 def head(eb, title, col=INK, ebc=BRICK, size=100):
     return f'<div class="eb" style="color:{ebc};text-align:center">{eb}</div><div class="ram" style="color:{col};font-size:{size}px;line-height:{int(size*1.04)}px;text-align:center;margin-top:14px">{title}</div>'
@@ -61,7 +73,7 @@ def hero(name, img, eb, l1, l2, sub, pos='center', imgh=600, badge=None):
         f'<div style="position:relative;height:{imgh}px;background:url({f(img)}) {pos}/cover"><div style="position:absolute;left:0;right:0;top:0;height:200px;background:linear-gradient(180deg,rgba(40,40,40,1),rgba(40,40,40,0))"></div>{bd}</div>')
 hero('e2-hero', ENV + 'siraat-05-sand-path-dark.jpg', 'The pan nobody else was making', 'The original', 'hammered pan.', 'First orders shipped December 20, 2024. Look-alikes came after.')
 hero('e3-hero', ENV + 'siraat-02-front-dark.jpg', 'Report no. 25895', 'Tested for', '31 PFAS.', 'Every one below the detection limit. Read the paper, not the label.', pos='center 60%', badge=('31', 'PFAS COMPOUNDS TESTED'))
-hero('e4-hero', ENV + 'siraat-07-kitchen-counter.jpg', 'Your envelope', 'Still', 'sealed?', 'Your 10% hasn&rsquo;t been used yet.', pos='center 62%', imgh=640)
+hero('e4-hero', GEN + 'kitchen-counter-seal-fixed.jpg', 'Your envelope', 'Still', 'sealed?', 'Your 10% hasn&rsquo;t been used yet.', pos='center 62%', imgh=640)
 
 # ---------- E1 stappen (donker)
 steps = [('Pick your pan or set', 'Start with the one you cook with most.'), ('HI10 is applied', 'The button adds your 10%, or type HI10 at checkout.'), ('Gifts ship with it', '5 free gifts go in the same box.')]
@@ -161,8 +173,8 @@ labels = [('No coating to wear off', 40, 500, (300, 522), pt(0.08, 0.62)), ('Pur
 lines = ''.join(f'<line x1="{a[0]}" y1="{a[1]}" x2="{p[0]}" y2="{p[1]}" stroke="{INK}" stroke-width="2"/><circle cx="{p[0]}" cy="{p[1]}" r="10" fill="{W}" stroke="{BRICK}" stroke-width="5"/>' for t, lx, ly, a, p in labels)
 labs = ''.join(f'<div style="position:absolute;left:{lx}px;top:{ly}px;width:250px;font-size:32px;line-height:42px;color:{INK}">{t}</div>' for t, lx, ly, a, p in labels)
 sec('e3-anatomy', f'background:{CREAM};padding:70px 0 30px', f'<div style="padding:0 70px">{head("Up close", "What you&rsquo;re paying for")}</div>'
-    f'<div style="position:relative;height:{PY + PH + 40}px"><img class="shadow" src="{g("cut-standard.png")}" style="position:absolute;left:{PX}px;top:{PY}px;width:{PW}px">'
-    f'<svg width="1200" height="{PY + PH + 40}" style="position:absolute;left:0;top:0">{lines}</svg>{labs}</div>')
+    f'<div style="position:relative;height:{PY + PH + 110}px"><img class="shadow" src="{g("cut-standard.png")}" style="position:absolute;left:{PX - int(PW * 112 / 1402)}px;top:{PY}px;width:{int(PW * 1626 / 1402)}px">'
+    f'<svg width="1200" height="{PY + PH + 110}" style="position:absolute;left:0;top:0">{lines}</svg>{labs}</div>')
 
 # ---------- E3 vergelijking met foto's
 rows = [('Pure titanium surface', 'A coating on top'), ('No coating to wear off', 'Coating wears with use'), ('Metal utensils welcome', 'Wood or silicone advised'), ('Dishwasher safe', 'Hand wash advised'), ('Lab report no. 25895', 'Testing varies by brand')]

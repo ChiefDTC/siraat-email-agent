@@ -206,3 +206,5 @@ Vast voor elke mail, ook voor tekst in ontworpen beelden. Getoetst aan de v4-blo
 - Knoppen: Inter 600 (niet 700 of 800), 14 tot 15 px, hoofdletters, letterspatiëring ongeveer 1,2 px.
 - Vet of zwaar (700 tot 800) alleen voor prijzen, de code en grote heldencijfers ($293 SAVED, 10% OFF, 31).
 - In beelden op een 1200 px-canvas: koppen minimaal 48 px, overige tekst minimaal 30 px, zodat alles leesbaar blijft op 390 px. Anders live tekst.
+
+- Productuitsneden (pannen, sets, cadeaus) krijgen altijd een grondschaduw: brede zachte schaduw plus een korte contactschaduw direct onder de onderrand, zodat het product op de ondergrond staat en niet zweeft (Floris, 18 nov). Hulpmiddel: `klaviyo/templates/v3/welcome/v6d-envelope-rich/_tools/ground.py`.

@@ -10,7 +10,7 @@ ENV = '/tmp/claude-0/-home-user/63cabcd2-6467-5149-aa57-034a09c8b336/scratchpad/
 RAM = os.path.join(REPO, 'klaviyo/fonts/TTRamillas-LightItalic.ttf')
 INTER = '/usr/share/fonts/opentype/inter/Inter-SemiBold.otf'
 INTER_B = '/usr/share/fonts/opentype/inter/Inter-ExtraBold.otf'
-W, PH, CAP = 600, 450, 150
+W, PH, CAP = 600, 330, 150
 CREAM, INK, BRICK, GOLD = (248, 247, 242), (39, 39, 39), (172, 59, 25), (184, 134, 43)
 
 def fit(path, box=None):
