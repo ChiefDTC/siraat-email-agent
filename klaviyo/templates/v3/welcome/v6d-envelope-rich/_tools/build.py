@@ -20,7 +20,7 @@ H = {'standard': 'original-siraat-100-pure-titanium-pan-with-hammered-pattern', 
      'large': 'titanium-hammered-pan-pro-large', 'set6': 'titanium-hammered-pan-set-with-lids-6-pcs', 'set12': 'titanium-hammered-cookware-set',
      'duo': '2-pans-and-2-lids', 'roast': 'titanium-hammered-roasting-pan'}
 NAME = {'standard': 'Titanium Hammered Pan Pro Standard 11 inch, $149, $134.10 with HI10', 'large': 'Pan Pro Large 12 inch, $154, $138.60 with HI10',
-        'set6': '6-Piece Set, Mini, Small and Large with 3 lids, $299, $269.10 with HI10', 'set12': '12-Piece Set, 3 pans, 3 pots and 6 lids, $649, $584.10 with HI10',
+        'set6': '6-Piece Set, Mini, Small and Large with 3 lids, $299, $269.10 with HI10', 'set12': '12-Piece Set, 3 pans, 3 pots and 6 lids, $699, $629.10 with HI10',
         'duo': '2 Pans + 2 Lids, $199, $179.10 with HI10', 'roast': 'Titanium Hammered Roasting Pan with V-rack, $199, $179.10 with HI10'}
 F = "font-family:Inter,Arial,Helvetica,sans-serif;"
 INK, BODY, BRICK, CREAM, SAND, DARK, ORANGE, GOLD, W, PAPER = '#272727', '#2E2E2E', '#AC3B19', '#F8F7F2', '#ECE7DD', '#282828', '#C4642C', '#B8862B', '#FFFFFF', '#FBF8F1'
@@ -189,7 +189,7 @@ e.torn(CREAM, BRICK)
 e.img('e5-arms', 'Two hands hold up hammered titanium pans against a brick red background. Your offer in one place: 10% off every pan and every set with HI10, plus 5 free gifts with every order.', e.UP('arms', 'standard'))
 e.torn(BRICK, DARK)
 e.img('e5-recap-top', '75-year warranty, 30-day returns, free shipping.', e.U('recap-top'))
-RC = {'standard': 'Pan Pro Standard $149, $134.10 with HI10', 'set6': '6-Piece Set $299, $269.10 with HI10', 'set12': '12-Piece Set $649, $584.10 with HI10'}
+RC = {'standard': 'Pan Pro Standard $149, $134.10 with HI10', 'set6': '6-Piece Set $299, $269.10 with HI10', 'set12': '12-Piece Set $699, $629.10 with HI10'}
 for k in RC: e.imgs.append('e5-recap-' + k + '.jpg')
 e.add(f'<tr><td bgcolor="{DARK}" style="background-color:{DARK};padding:0;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>' + ''.join(
     f'<td width="200" valign="top" style="width:33.33%;padding:0;font-size:0;line-height:0;"><a href="{e.UP("recap-card-" + k, k)}" style="display:block;"><img src="{S["e5-recap-" + k + ".jpg"]}" width="200" alt="{RC[k]}" style="display:block;width:100%;max-width:200px;height:auto;border:0;"></a></td>' for k in RC) + '</tr></table></td></tr>\n')

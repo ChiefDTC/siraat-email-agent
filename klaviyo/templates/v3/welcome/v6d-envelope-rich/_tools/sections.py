@@ -15,7 +15,7 @@ CREAM, SAND, DARK, BRICK, ORANGE, GOLD, W, INK, BODY = '#F8F7F2', '#ECE7DD', '#2
 GIFTS = '5 free gifts with every order'
 PR = {'mini': ('Pan Pro Mini', '8&Prime; &middot; 20 cm', 129), 'small': ('Pan Pro Small', '10&Prime; &middot; 26 cm', 144),
       'standard': ('Pan Pro Standard', '11&Prime; &middot; 28 cm', 149), 'large': ('Pan Pro Large', '12&Prime; &middot; 30 cm', 154),
-      'set6': ('6-Piece Set', 'Mini, Small, Large + 3 lids', 299), 'set12': ('12-Piece Set', '3 pans, 3 pots, 6 lids', 649),
+      'set6': ('6-Piece Set', 'Mini, Small, Large + 3 lids', 299), 'set12': ('12-Piece Set', '3 pans, 3 pots, 6 lids', 699),
       'duo': ('2 Pans + 2 Lids', '2 hammered pans + 2 lids', 199), 'roast': ('Roasting Pan', 'V-rack included', 199)}
 CUT = {'standard': 'cut-standard', 'large': 'cut-standard', 'small': 'cut-standard', 'mini': 'cut-mini', 'set6': 'cut-set6', 'set12': 'cut-set12', 'duo': 'cut-duo', 'roast': 'cut-roast'}
 def d(n): return f'${n:,.0f}' if n == int(n) else f'${n:,.2f}'
