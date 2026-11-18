@@ -1,0 +1,26 @@
+{
+  "created": "2026-11-17",
+  "note": "Concept, not in a flow, no tests sent",
+  "templates": {
+    "e1": {
+      "id": "XmXWKG",
+      "name": "Welcome v6d · E1 · TEST"
+    },
+    "e2": {
+      "id": "REbgQF",
+      "name": "Welcome v6d · E2 · TEST"
+    },
+    "e3": {
+      "id": "V5LxaR",
+      "name": "Welcome v6d · E3 · TEST"
+    },
+    "e4": {
+      "id": "TPJrVB",
+      "name": "Welcome v6d · E4 · TEST"
+    },
+    "e5": {
+      "id": "Sv56kX",
+      "name": "Welcome v6d · E5 · TEST"
+    }
+  }
+}

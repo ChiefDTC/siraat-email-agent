@@ -195,3 +195,14 @@ Gift-waarden: US $70/$450, CA C$95/620, UK £55/350, EU €70/410, AU A$100/660,
 
 **Integratie (8 okt):** `{{BLOCK:cart}}` toont `$` alleen bij `presentment_currency == 'USD'` (geen inline kopieën meer in checkout); about en label zijn marktveilig (maten via `{{SIZE:..}}`, US-teksten via `{{IF:US}}`, generator `scripts/make_product_blocks.py`); offer-knop heeft een VML-fallback; xsell sluit deksel-varianten in codelinks aan met `%26`/`&`; profielland heeft ook `person|lookup:'country_code'` (mpcc) als terugval. Zie research/v5/08-integratie.md. Zonder die markering staan de punten als "v5-markt" in het rapport (werklijst).
 - Random sample in een conditional split kan via de API: conditie {'type': 'profile-sample', 'percentage': N} (gevonden 30 okt 2026).
+
+## 13. Typografie-baseline (17 nov 2026)
+
+Vast voor elke mail, ook voor tekst in ontworpen beelden. Getoetst aan de v4-blokken (partials/blocks: cta 600, codebar 600, offer 600; lopende tekst 16 px / 25 px) en scherper gemaakt op verzoek van Floris (te veel vet in v6c).
+
+- Lopende tekst: Inter 400, 16 tot 17 px, regelhoogte ongeveer 1,6, kleur #2E2E2E. Hoogstens één vet stuk per alinea, en alleen voor het aanbod of de kernbelofte.
+- Koppen: TT Ramillas Light Italic (in e-mail als beeld; live terugval Instrument Serif Italic). Nooit vet.
+- Labels boven koppen (eyebrows): Inter 600, 11 tot 12 px, hoofdletters, letterspatiëring ongeveer 2 px.
+- Knoppen: Inter 600 (niet 700 of 800), 14 tot 15 px, hoofdletters, letterspatiëring ongeveer 1,2 px.
+- Vet of zwaar (700 tot 800) alleen voor prijzen, de code en grote heldencijfers ($293 SAVED, 10% OFF, 31).
+- In beelden op een 1200 px-canvas: koppen minimaal 48 px, overige tekst minimaal 30 px, zodat alles leesbaar blijft op 390 px. Anders live tekst.
