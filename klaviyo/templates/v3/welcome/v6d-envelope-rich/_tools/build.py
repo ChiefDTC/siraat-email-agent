@@ -19,7 +19,7 @@ REPORT = 'https://siraatskitchen.com/pages/third-party-testing'
 H = {'standard': 'original-siraat-100-pure-titanium-pan-with-hammered-pattern', 'mini': 'titanium-hammered-pan-pro-mini', 'small': 'titanium-hammered-pan-pro-small',
      'large': 'titanium-hammered-pan-pro-large', 'set6': 'titanium-hammered-pan-set-with-lids-6-pcs', 'set12': 'titanium-hammered-cookware-set',
      'duo': '2-pans-and-2-lids', 'roast': 'titanium-hammered-roasting-pan'}
-NAME = {'standard': 'Titanium Hammered Pan Pro Standard 11 inch, $144, $129.60 with HI10', 'large': 'Pan Pro Large 12 inch, $149, $134.10 with HI10',
+NAME = {'standard': 'Titanium Hammered Pan Pro Standard 11 inch, $149, $134.10 with HI10', 'large': 'Pan Pro Large 12 inch, $154, $138.60 with HI10',
         'set6': '6-Piece Set, Mini, Small and Large with 3 lids, $299, $269.10 with HI10', 'set12': '12-Piece Set, 3 pans, 3 pots and 6 lids, $649, $584.10 with HI10',
         'duo': '2 Pans + 2 Lids, $199, $179.10 with HI10', 'roast': 'Titanium Hammered Roasting Pan with V-rack, $199, $179.10 with HI10'}
 F = "font-family:Inter,Arial,Helvetica,sans-serif;"
@@ -103,7 +103,7 @@ e.torn(DARK, SAND)
 e.img('h-bestsellers', 'Start here: our bestsellers, with your 10%', e.U('h-best'))
 e.cards([['standard', 'set6']])
 e.torn(SAND, BRICK)
-e.img('e1-bundle', 'Most people pick the 6-piece set. $293 saved: Mini $129, Small $137, Large $149 and 3 lids $177 cost $592 one by one, the set is $299. With HI10 $269.10, about $90 a pan, lid included.', e.UP('bundle', 'set6'))
+e.img('e1-bundle', 'Most people pick the 6-piece set. $305 saved: Mini $129, Small $144, Large $154 and 3 lids $177 cost $604 one by one, the set is $299. With HI10 $269.10, about $90 a pan, lid included.', e.UP('bundle', 'set6'))
 e.cta(BRICK, 'Get the set for $269.10', e.UP('bundle-cta', 'set6'), dark=True, sub='One use of HI10, applied by the button. 30-day returns.')
 e.torn(BRICK, SAND)
 e.img('gifts-flatlay', '5 free gifts in the box with every order: free shipping, the Favorites Cookbook, the plastic-free e-book, a mystery gift and a weekly chance to win a PFAS water filter.', e.U('gifts'))
@@ -122,12 +122,12 @@ e.offer(DARK, 'Yours is <b>10% off</b>, on every size and set.', 'Get 10% off th
 e.torn(DARK, CREAM)
 e.img('e2-story', 'A woman laughing as she slides a fried egg out of a hammered titanium pan. Siraat: from sirat, the Arabic word for path. We started with titanium cutting boards, then made the pan with a pure titanium cooking surface and no coatings, covered for 75 years.', e.UP('story', 'standard'))
 e.torn(CREAM, SAND)
-e.img('e2-sizes', 'Which size is yours, to scale with an egg: Mini 8 inch $129, $116.10 with HI10. Small 10 inch $137, $123.30. Standard 11 inch $144, $129.60, most picked. Large 12 inch $149, $134.10.', e.UP('sizes', 'standard'))
+e.img('e2-sizes', 'Which size is yours, to scale with an egg: Mini 8 inch $129, $116.10 with HI10. Small 10 inch $144, $129.60. Standard 11 inch $149, $134.10, most picked. Large 12 inch $154, $138.60.', e.UP('sizes', 'standard'))
 sz = lambda k, t: f'<td width="25%" align="center" style="width:25%;padding:0 3px;"><a href="{e.UP("size-" + k, k)}" style="display:block;background-color:{INK if k == "standard" else W};color:{W if k == "standard" else INK};{F}font-size:12px;line-height:15px;font-weight:600;letter-spacing:1px;padding:12px 2px;border-radius:30px;text-decoration:none;">{t}</a></td>'
 e.live(SAND, f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>{sz("mini", "MINI")}{sz("small", "SMALL")}{sz("standard", "STANDARD")}{sz("large", "LARGE")}</tr></table>', '0 30px 30px 30px')
 e.torn(SAND, DARK)
-e.img('e2-stack', 'Everything you get: Pan Pro Standard 11 inch $144, 5 free gifts worth $555, 75-year warranty and 30-day returns included. Your price $129.60 with HI10.', e.UP('stack', 'standard'))
-e.cta(DARK, 'Get my pan for $129.60', e.UP('stack-cta', 'standard'), dark=True, sub=FR)
+e.img('e2-stack', 'Everything you get: Pan Pro Standard 11 inch $149, 5 free gifts worth $555, 75-year warranty and 30-day returns included. Your price $134.10 with HI10.', e.UP('stack', 'standard'))
+e.cta(DARK, 'Get my pan for $134.10', e.UP('stack-cta', 'standard'), dark=True, sub=FR)
 e.torn(DARK, CREAM)
 e.img('e2-reviews', 'Five stars. Carole: cooking for over 60 years, the best pan she has used. Graham C.: the best omelette we have ever eaten.', e.UP('reviews', 'standard'))
 e.sign(ps='P.S. HI10 has no end date. One use, 10% off everything.')
@@ -146,7 +146,7 @@ e.img('e3-anatomy', 'Up close, the Pan Pro: pure titanium cooking surface, no co
 e.torn(CREAM, DARK)
 e.img('e3-reviews', 'The egg test, five stars. Michael G.: the egg released completely. Thomas D.: makes our other non stick pans seem really sticky.', e.UP('reviews', 'standard'))
 e.torn(DARK, BRICK)
-e.img('e3-bundle', 'Or the whole stove: 3 pans and 3 lids. $293 saved versus $592 one by one. The set is $299, $269.10 with HI10.', e.UP('bundle', 'set6'))
+e.img('e3-bundle', 'Or the whole stove: 3 pans and 3 lids. $305 saved versus $604 one by one. The set is $299, $269.10 with HI10.', e.UP('bundle', 'set6'))
 e.cta(BRICK, 'Get the set for $269.10', e.UP('bundle-cta', 'set6'), dark=True, sub='Same titanium cooking surface on every pan in the set.')
 e.torn(BRICK, CREAM)
 e.sign()
@@ -165,7 +165,7 @@ e.live(SAND, f'<div style="{F}font-size:12px;line-height:18px;color:#8A847A;">12
 e.torn(SAND, DARK)
 e.img('e4-objections', 'Quick answers. Will food stick? Not when the pan is hot: medium heat 2 to 3 minutes and a teaspoon of oil. Induction? Yes, also gas, electric and ceramic. Don&rsquo;t like it? 30-day returns, unused, full refund.', e.U('objections'))
 e.torn(DARK, ORANGE)
-e.img('e4-complete', 'Complete the set: 3 pans and 3 lids instead of one pan. $293 saved versus one by one. $299, or $269.10 with HI10.', e.UP('complete', 'set6'))
+e.img('e4-complete', 'Complete the set: 3 pans and 3 lids instead of one pan. $305 saved versus one by one. $299, or $269.10 with HI10.', e.UP('complete', 'set6'))
 e.cta(ORANGE, 'Upgrade to the 6-piece set', e.UP('complete-cta', 'set6'), dark=True, sub='One use of HI10, applied by the button.')
 e.torn(ORANGE, CREAM)
 e.img('e4-reviews', 'In their words, five stars. Fatima: I thought it was marketing hype, I ended up buying the whole collection. Brandon W.: they honored the warranty.', e.UP('reviews', 'set12'))
@@ -189,7 +189,7 @@ e.torn(CREAM, BRICK)
 e.img('e5-arms', 'Two hands hold up hammered titanium pans against a brick red background. Your offer in one place: 10% off every pan and every set with HI10, plus 5 free gifts with every order.', e.UP('arms', 'standard'))
 e.torn(BRICK, DARK)
 e.img('e5-recap-top', '75-year warranty, 30-day returns, free shipping.', e.U('recap-top'))
-RC = {'standard': 'Pan Pro Standard $144, $129.60 with HI10', 'set6': '6-Piece Set $299, $269.10 with HI10', 'set12': '12-Piece Set $649, $584.10 with HI10'}
+RC = {'standard': 'Pan Pro Standard $149, $134.10 with HI10', 'set6': '6-Piece Set $299, $269.10 with HI10', 'set12': '12-Piece Set $649, $584.10 with HI10'}
 for k in RC: e.imgs.append('e5-recap-' + k + '.jpg')
 e.add(f'<tr><td bgcolor="{DARK}" style="background-color:{DARK};padding:0;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>' + ''.join(
     f'<td width="200" valign="top" style="width:33.33%;padding:0;font-size:0;line-height:0;"><a href="{e.UP("recap-card-" + k, k)}" style="display:block;"><img src="{S["e5-recap-" + k + ".jpg"]}" width="200" alt="{RC[k]}" style="display:block;width:100%;max-width:200px;height:auto;border:0;"></a></td>' for k in RC) + '</tr></table></td></tr>\n')

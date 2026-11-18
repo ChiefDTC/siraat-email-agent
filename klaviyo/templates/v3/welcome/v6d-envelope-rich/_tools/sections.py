@@ -13,8 +13,8 @@ FONT = os.path.join(REPO, 'klaviyo/fonts/TTRamillas-LightItalic.ttf')
 OUT = os.path.join(ROOT, 'sections/src'); os.makedirs(OUT, exist_ok=True)
 CREAM, SAND, DARK, BRICK, ORANGE, GOLD, W, INK, BODY = '#F8F7F2', '#ECE7DD', '#282828', '#AC3B19', '#C4642C', '#B8862B', '#FFFFFF', '#272727', '#2E2E2E'
 GIFTS = '5 free gifts with every order'
-PR = {'mini': ('Pan Pro Mini', '8&Prime; &middot; 20 cm', 129), 'small': ('Pan Pro Small', '10&Prime; &middot; 26 cm', 137),
-      'standard': ('Pan Pro Standard', '11&Prime; &middot; 28 cm', 144), 'large': ('Pan Pro Large', '12&Prime; &middot; 30 cm', 149),
+PR = {'mini': ('Pan Pro Mini', '8&Prime; &middot; 20 cm', 129), 'small': ('Pan Pro Small', '10&Prime; &middot; 26 cm', 144),
+      'standard': ('Pan Pro Standard', '11&Prime; &middot; 28 cm', 149), 'large': ('Pan Pro Large', '12&Prime; &middot; 30 cm', 154),
       'set6': ('6-Piece Set', 'Mini, Small, Large + 3 lids', 299), 'set12': ('12-Piece Set', '3 pans, 3 pots, 6 lids', 649),
       'duo': ('2 Pans + 2 Lids', '2 hammered pans + 2 lids', 199), 'roast': ('Roasting Pan', 'V-rack included', 199)}
 CUT = {'standard': 'cut-standard', 'large': 'cut-standard', 'small': 'cut-standard', 'mini': 'cut-mini', 'set6': 'cut-set6', 'set12': 'cut-set12', 'duo': 'cut-duo', 'roast': 'cut-roast'}
@@ -100,13 +100,13 @@ for k, tag in [('standard', 'BESTSELLER'), ('set6', 'BEST VALUE'), ('duo', None)
     card(k, tag)
 
 # ---------- bundel (brick) met uitsnede set
-items = [('Pan Pro Mini 8&Prime;', 129), ('Pan Pro Small 10&Prime;', 137), ('Pan Pro Large 12&Prime;', 149), ('3 fitted lids', 177)]
+items = [('Pan Pro Mini 8&Prime;', 129), ('Pan Pro Small 10&Prime;', 144), ('Pan Pro Large 12&Prime;', 154), ('3 fitted lids', 177)]
 def bundle(name, eb, title):
     li = ''.join(f'<div style="display:flex;justify-content:space-between;font-size:36px;line-height:46px;padding:12px 0;border-bottom:2px solid rgba(255,255,255,.22)"><span>{a}</span><span>{d(b)}</span></div>' for a, b in items)
     sec(name, f'background:{BRICK};padding:70px 70px 56px;color:{W}', head(eb, title, W, '#F3D2BF', 96) +
         f'<div style="display:flex;align-items:center;gap:30px;margin-top:30px"><div style="flex:1.1;text-align:center"><img class="shadow" src="{g("cut-set6.png")}" style="width:560px;transform:rotate(-5deg)"></div>'
-        f'<div style="flex:1;text-align:center"><div class="num" style="font-size:210px;line-height:190px;letter-spacing:-6px">$293</div><div style="font-weight:600;font-size:52px;letter-spacing:12px;margin-top:6px">SAVED</div></div></div>'
-        f'<div style="margin-top:34px">{li}<div style="display:flex;justify-content:space-between;font-size:36px;margin-top:14px;opacity:.85"><span>Bought one by one</span><span>$592</span></div>'
+        f'<div style="flex:1;text-align:center"><div class="num" style="font-size:210px;line-height:190px;letter-spacing:-6px">$305</div><div style="font-weight:600;font-size:52px;letter-spacing:12px;margin-top:6px">SAVED</div></div></div>'
+        f'<div style="margin-top:34px">{li}<div style="display:flex;justify-content:space-between;font-size:36px;margin-top:14px;opacity:.85"><span>Bought one by one</span><span>$604</span></div>'
         f'<div style="display:flex;justify-content:space-between;font-size:46px;margin-top:8px"><span>The set</span><span class="num" style="letter-spacing:0">$299</span></div></div>'
         f'<div style="margin-top:40px;background:{W};color:{INK};border-radius:28px;padding:30px;text-align:center;font-size:40px;line-height:54px">With HI10: <span class="num" style="font-size:60px;letter-spacing:0">$269.10</span><br><span style="font-size:32px;color:#6F6A62">about $90 a pan, lid included</span></div>')
 bundle('e1-bundle', 'Most popular upgrade', 'Most people pick<br>the 6-piece set')
@@ -186,12 +186,12 @@ sec('e3-compare', f'background:{SAND};padding:70px 60px 70px', head('Side by sid
     f'<div style="text-align:center;font-size:30px;color:#7A746B;margin-top:22px">Illustration of a typical worn coated pan. No brand shown.</div>')
 
 # ---------- E2 value stack (donker)
-vs = [('Pan Pro Standard 11&Prime;', '$144'), ('5 free gifts', '$555 value'), ('75-year warranty', 'Included'), ('30-day returns', 'Included')]
+vs = [('Pan Pro Standard 11&Prime;', '$149'), ('5 free gifts', '$555 value'), ('75-year warranty', 'Included'), ('30-day returns', 'Included')]
 sec('e2-stack', f'background:{DARK};padding:70px 70px 56px;color:{W}', head('Everything you get', 'One pan. A lot more.', W, '#E7C988') +
     f'<div style="display:flex;gap:40px;align-items:center;margin-top:30px"><img class="shadow" src="{g("cut-standard.png")}" style="width:380px;transform:rotate(-14deg)"><div style="flex:1">'
     + ''.join(f'<div style="display:flex;justify-content:space-between;align-items:center;font-size:36px;padding:22px 0;border-bottom:2px solid #44403C"><span><span style="color:#E7C988">&#10003;</span>&nbsp; {a}</span><span style="font-weight:600">{b}</span></div>' for a, b in vs) + '</div></div>'
     + f'<div style="font-size:30px;line-height:40px;color:#BDB5A8;margin-top:18px">Gifts: free shipping, e-book, mystery gift, cookbook and a weekly chance to win a PFAS water filter.</div>'
-    + f'<div style="text-align:center;margin-top:40px;font-size:40px;color:#E8E2D8">Your price</div><div class="num" style="text-align:center;font-size:160px;line-height:160px;letter-spacing:-4px">$129.60</div><div style="text-align:center;font-weight:600;font-size:30px;letter-spacing:6px;color:#E7C988">WITH HI10</div>')
+    + f'<div style="text-align:center;margin-top:40px;font-size:40px;color:#E8E2D8">Your price</div><div class="num" style="text-align:center;font-size:160px;line-height:160px;letter-spacing:-4px">$134.10</div><div style="text-align:center;font-weight:600;font-size:30px;letter-spacing:6px;color:#E7C988">WITH HI10</div>')
 
 # ---------- E4 bezwaren (donker), oranje rand
 OBJ = [('Will food stick?', 'Not when the pan is hot. Medium heat for 2 to 3 minutes, a teaspoon of oil, and eggs slide. Skip the heat, and it sticks.'),
@@ -203,7 +203,7 @@ sec('e4-objections', f'background:{DARK};padding:70px 70px 76px;color:{W}', head
 # ---------- E4 complete the set (oranje)
 sec('e4-complete', f'background:{ORANGE};padding:70px 70px 56px;color:{W}', head('Complete the set', '3 pans + 3 lids<br>instead of one pan', W, '#FBE3D2', 92) +
     f'<div style="display:flex;align-items:center;gap:20px;margin-top:20px"><div style="flex:1.2;text-align:center"><img class="shadow" src="{g("cut-set6.png")}" style="width:600px;transform:rotate(-4deg)"></div>'
-    f'<div style="flex:1;text-align:center"><div class="num" style="font-size:190px;line-height:180px;letter-spacing:-5px">$293</div><div style="font-weight:600;font-size:48px;letter-spacing:10px">SAVED</div></div></div>'
+    f'<div style="flex:1;text-align:center"><div class="num" style="font-size:190px;line-height:180px;letter-spacing:-5px">$305</div><div style="font-weight:600;font-size:48px;letter-spacing:10px">SAVED</div></div></div>'
     f'<div style="text-align:center;font-size:38px;line-height:54px;margin-top:20px">versus buying them one by one. $299, or <span class="num" style="letter-spacing:0">$269.10</span> with HI10.</div>')
 
 # ---------- E5 brief op papier (boven en onder als beeld, tekst live) + armen + recap

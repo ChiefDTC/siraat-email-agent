@@ -123,3 +123,5 @@ Tegoed-flow (Ubi9m5, draft): $13.78 code (coupon SIRAAT_CREDIT_1378, Floris: spe
 Hammered Pan Pro Standard (11", 28 cm) kost vanaf nu $149, niet $144 (prijstest: 149 veelbelovend). Gebruik $149 in alle nieuwe mails en voorbeelden. Live templates met $144: TdfWqT (BFCM Welcome), VB9ERB, XRk6hV, VP2rKg (Anniversary); nog aan te passen na akkoord.
 
 - 2026-11-18 (Floris): HI10 hoeft niet te combineren met FREE GIFT. De cadeaus staan als producten op $0, dus er is geen korting nodig om ze mee te geven. Niet meer als risico melden.
+
+- 2026-11-18 (Floris): nieuwe panprijzen: Mini $129, Small $144, Standard $149, Large $154. Let op: Shopify toonde op 18 nov 01:10 UTC nog Small $137, Standard $144, Large $149.
