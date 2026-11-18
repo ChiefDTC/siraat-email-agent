@@ -69,7 +69,7 @@ sec('bf-h-more', f'background:{SAND};padding:56px 70px 20px', head('The rest of 
 # ---------- productkaarten (zelfde stramien als v6d card(), maar BF-prijs zonder code)
 PR = {'standard': ('Pan Pro Standard', '11&Prime; &middot; 28 cm', 480, 149, '#F3E3D3', 'cut-standard.png', -12),
       'set6': ('Pan Set, 6 Pcs', '3 pans + 3 fitted lids', 997, 299, '#E4E7DF', 'cut-set6.png', -4),
-      'set12': ('Cookware Set, 12 Pcs', '3 pans, 3 pots, 6 lids', 2047, 649, '#E8E1EA', 'cut-set12.png', -3)}
+      'set12': ('Cookware Set, 12 Pcs', '3 pans, 3 pots, 6 lids', 2047, 699, '#E8E1EA', 'cut-set12.png', -3)}
 pct = lambda was, now: round(100 * (1 - now / was))  # 68,96 -> 69; 62,5 -> 62
 def card(k, cta):
     n, sz, was, now, tint, cut, rot = PR[k]
