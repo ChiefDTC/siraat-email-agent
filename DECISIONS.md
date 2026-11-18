@@ -121,3 +121,5 @@ Tegoed-flow (Ubi9m5, draft): $13.78 code (coupon SIRAAT_CREDIT_1378, Floris: spe
 
 ## Pan Pro Standard = $149 (Floris, 8 nov 2026)
 Hammered Pan Pro Standard (11", 28 cm) kost vanaf nu $149, niet $144 (prijstest: 149 veelbelovend). Gebruik $149 in alle nieuwe mails en voorbeelden. Live templates met $144: TdfWqT (BFCM Welcome), VB9ERB, XRk6hV, VP2rKg (Anniversary); nog aan te passen na akkoord.
+
+- 2026-11-18 (Floris): HI10 hoeft niet te combineren met FREE GIFT. De cadeaus staan als producten op $0, dus er is geen korting nodig om ze mee te geven. Niet meer als risico melden.
