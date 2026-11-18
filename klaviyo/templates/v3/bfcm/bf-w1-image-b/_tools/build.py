@@ -29,7 +29,7 @@ FR = 'Free shipping. 30-day returns. 100,000+ happy customers.'
 SUBJECT = 'Black Friday is live. No code needed.'
 PREVIEW = 'Up to 70% off pans and sets, plus 5 free gifts with every order.'
 
-def U(c, path='/collections/cookware'):
+def U(c, path='/collections/black-friday-sale'):
     return f'https://siraatskitchen.com{path}?utm_source=klaviyo&amp;utm_medium=email&amp;utm_campaign={CAMP}&amp;utm_content={c}'
 def UP(c, k): return U(c, '/products/' + H[k])
 
@@ -79,7 +79,7 @@ e = Mail()
 e.add(f'<tr><td align="center" bgcolor="{INK}" style="background-color:{INK};padding:11px 16px;{F}font-size:11px;line-height:15px;letter-spacing:2px;font-weight:600;color:{CREAM};text-transform:uppercase;">'
       f'<a href="{U("codebar")}" style="color:{CREAM};text-decoration:none;">Free shipping &middot; 30-day returns &middot; 75-year warranty</a></td></tr>\n')
 e.add('{{HEADER}}\n')
-e.img('bf-hero.jpg', 'Black Friday sale is live: up to 70% off. No code needed, 5 free gifts with every order. Two hands hold up hammered titanium Pan Pro pans against a brick red background.', UP('hero', 'standard'))
+e.img('bf-hero.jpg', 'Black Friday sale is live: up to 70% off. No code needed, 5 free gifts with every order. Two hands hold up hammered titanium Pan Pro pans against a brick red background.', U('hero'))
 e.cta(BRICK, 'See my Black Friday prices', U('cta1'), dark=True, sub=FR, pad='4px 40px 34px 40px',
       lead='Your Black Friday price is already on every pan and set. Nothing to copy, nothing to type at checkout.')
 e.torn(BRICK, SAND)
