@@ -28,7 +28,7 @@ FR = 'Free shipping. 30-day returns. 100,000+ happy customers.'
 
 class Mail:
     def __init__(s, mid): s.mid, s.b, s.imgs = mid, '', []
-    def U(s, c, path='/collections/all'):
+    def U(s, c, path='/collections/cookware'):
         return f'https://siraatskitchen.com/discount/{CODE}?redirect=' + quote(f'{path}?utm_source=klaviyo&utm_medium=email&utm_campaign={CAMP}&utm_content={s.mid}-{c}', safe='')
     def UP(s, c, k): return s.U(c, '/products/' + H[k])
     def add(s, h): s.b += h; return s
