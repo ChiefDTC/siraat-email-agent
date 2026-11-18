@@ -1,0 +1,121 @@
+{
+ "triggers": [
+  {
+   "type": "list",
+   "id": "Uw8eZG"
+  }
+ ],
+ "profile_filter": {
+  "condition_groups": [
+   {
+    "conditions": [
+     {
+      "type": "profile-not-in-flow",
+      "timeframe_filter": {
+       "type": "date",
+       "operator": "alltime"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "actions": [
+  {
+   "id": "123113194",
+   "type": "conditional-split",
+   "data": {
+    "profile_filter": {
+     "condition_groups": [
+      {
+       "conditions": [
+        {
+         "type": "profile-sample",
+         "percentage": 100
+        }
+       ]
+      }
+     ]
+    }
+   },
+   "links": {
+    "next_if_true": "123113195",
+    "next_if_false": null
+   }
+  },
+  {
+   "id": "123113195",
+   "type": "send-email",
+   "data": {
+    "message": {
+     "from_email": "send@siraatskitchen.com",
+     "from_label": "Benjamin from Siraat",
+     "reply_to_email": "send@siraatskitchen.com",
+     "cc_email": null,
+     "bcc_email": null,
+     "subject_line": "(1) You\u2019re just in time \ud83e\udde1",
+     "preview_text": "92% of the Black Friday stock is claimed. Your price is still here.",
+     "template_id": "XXg4sn",
+     "smart_sending_enabled": false,
+     "transactional": false,
+     "add_tracking_params": true,
+     "custom_tracking_params": [
+      {
+       "param": "utm_source",
+       "value": "klaviyo"
+      },
+      {
+       "param": "utm_medium",
+       "value": "email"
+      },
+      {
+       "param": "utm_campaign",
+       "value": "bfcm-welcome"
+      }
+     ],
+     "additional_filters": {
+      "condition_groups": [
+       {
+        "conditions": [
+         {
+          "type": "profile-metric",
+          "metric_id": "YkRM4Q",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "equals",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 1
+          },
+          "metric_filters": [
+           {
+            "property": "$flow",
+            "filter": {
+             "type": "string",
+             "operator": "equals",
+             "value": "T4a5Mk"
+            }
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     "name": "BF-W1 direct \u00b7 D glass",
+     "id": "TauWAG"
+    },
+    "status": "live"
+   },
+   "links": {
+    "next": null
+   }
+  }
+ ],
+ "entry_action_id": "123113194"
+}
