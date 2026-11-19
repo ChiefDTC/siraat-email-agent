@@ -114,3 +114,8 @@ Renders: `tailored/renders/sNN-600.png` en `-390.png`, HTML in `tailored/sNN.htm
 4. Shopify VIP15-PICKS: start = nu, eind 2026-12-01T04:59Z (ma 30 nov 23:59 ET; dat staat in de mail).
 5. Testmail naar een intern profiel, dan in UUZr3e de drie mails op live en de flow live.
 6. Op 1 dec flow UUZr3e uit (de mail noemt een vaste einddatum). Herinnering: geen flowstap (Klaviyo kan niet wachten tot een vaste datum); voorstel een campagne op zo 29 nov naar "kreeg PPV tailored, geen order sinds".
+
+## 7. Wijziging 19 nov avond (Floris)
+
+- UUZr3e: wachttijd nu **5 minuten** na Placed Order (was 2 dagen tot 09:00). Mailfilter "geen mail uit X3ySuU in 1 dag" vervangen door "geen mail met Campaign Name VIP15 in 1 dag" (geen dubbele upsell met v5 Ukz7F9). Hero-splits op Ordered Product 12-Pcs/34-Pcs/6-Pcs/Full Hammered Pro blijven (dekken Aftersell). Preview en copy: "Thanks for your order" in plaats van "your order is on its way".
+- Hero-beelden nu Photoroom-uitsnede met harde schaduw: assets/ppv-set12-hard.jpg en ppv-set6-hard.jpg (`_tools/make_img_hard.py`). YyGsj3 en flowkopieën RSxshv, SqVeyJ, VnKWX5 bijgewerkt; 12 van 12 scenario's goed.
