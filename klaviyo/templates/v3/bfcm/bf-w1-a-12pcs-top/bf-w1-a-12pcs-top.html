@@ -309,7 +309,7 @@ img {
 </table>
 </td>
 </tr>
-<!--{% with mpc=person.Country mpcc=person|lookup:'country_code' %}{% if mpc == 'United States' or mpc == 'US' or not mpc and mpcc == 'US' %}-->
+<!--{% with mpc=person.Country mpcc=person|lookup:'country_code' mloc=person|lookup:'$country' %}{% if mloc == 'United States' or mpc == 'United States' or mpc == 'US' or mpcc == 'US' %}-->
 <tr>
 <td align="center" bgcolor="#0E0E0E" style="background-color:#0E0E0E;padding:8px 40px 4px 40px;text-align:center;">
 <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation">
@@ -447,7 +447,7 @@ img {
 </table>
 </td>
 </tr>
-<!--{% with mpc=person.Country mpcc=person|lookup:'country_code' %}{% if mpc == 'United States' or mpc == 'US' or not mpc and mpcc == 'US' %}--><tr>
+<!--{% with mpc=person.Country mpcc=person|lookup:'country_code' mloc=person|lookup:'$country' %}{% if mloc == 'United States' or mpc == 'United States' or mpc == 'US' or mpcc == 'US' %}--><tr>
 <td class="cp" style="padding:0 20px 14px 20px;">
 <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:separate;" width="100%">
 <tr>
@@ -508,7 +508,7 @@ img {
 </td>
 </tr><!--{% endif %}{% endwith %}-->
 <!-- --><!-- -->
-<!--{% with mpc=person.Country mpcc=person|lookup:'country_code' %}{% if mpc == 'United States' or mpc == 'US' or not mpc and mpcc == 'US' %}--><!--{% else %}--><tr>
+<!--{% with mpc=person.Country mpcc=person|lookup:'country_code' mloc=person|lookup:'$country' %}{% if mloc == 'United States' or mpc == 'United States' or mpc == 'US' or mpcc == 'US' %}--><!--{% else %}--><tr>
 <td class="cp" style="padding:0 20px 14px 20px;">
 <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:separate;" width="100%">
 <tr>
