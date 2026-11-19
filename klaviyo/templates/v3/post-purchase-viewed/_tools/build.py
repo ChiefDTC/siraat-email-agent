@@ -1,9 +1,9 @@
-"""PP viewed upsell VIP15 (19 nov 2026, draft). Vier mails, een product per mail, na aankoop voor wie dat product bekeek maar niet kocht.
-Bouwt <id>.html (Klaviyo, Django-tags) en <id>-preview.html (US-voorbeeld) en <id>-preview-int.html (niet-US, alleen sets6/deep/large).
+"""PP set upsell VIP15 (19 nov 2026, draft; v2 na wijziging Floris: alleen sets, AOV omhoog). Vier mails: 12-Pcs mail 1 en 2 (herinnering), 6-Pcs mail 1 en 2.
+Bouwt ppv-<id>.html (Klaviyo, Django-tags), ppv-<id>-preview.html (US-voorbeeld) en ppv-<id>-preview-int.html (niet-US, alleen 6-Pcs).
 Gebruik: python3 -I _tools/build.py   (vanuit de map post-purchase-viewed)
-Codes (Shopify, gemaakt 19 nov, status SCHEDULED met start 2027-01-01, dus NIET actief): VIP15-SET12 2371721789780, VIP15-SET6 2371721822548,
-VIP15-DEEP 2371721855316, VIP15-LARGE 2371721888084. 15%, alleen dat product, 1x per klant, combineert met productkortingen (FREE GIFT) en verzending.
-Bij livegang in Shopify: start = nu, eind = 2026-12-01T04:59Z (ma 30 nov 23:59 ET). Dat is de einddatum die de mail noemt."""
+Codes (Shopify, 19 nov, status SCHEDULED met start 2027-01-01, dus NIET actief): VIP15-SET12 2371721789780, VIP15-SET6 2371721822548.
+15%, alleen dat product, 1x per klant, combineert met productkortingen (FREE GIFT) en verzending.
+Bij livegang in Shopify: start = nu, eind = 2026-12-01T04:59Z (ma 30 nov 23:59 ET). Dat is de einddatum die de mails noemen."""
 import re, os
 from urllib.parse import quote
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
@@ -47,47 +47,36 @@ def quote_ok(rid, ex):
     assert len(ex) <= 120 and ',5,' in reviews[rid], (rid, len(ex))
     return ex
 
-M = {
- 'set12': dict(code='VIP15-SET12', handle='titanium-hammered-cookware-set', title='Titanium Hammered Cookware Set | 12-Pcs', short='12-piece set', us_only=True,
-   img='ppv-set12.jpg', alt='The Siraat 12-piece set: three pans, two saucepans and an 8 qt stockpot, each with its lid',
-   was='$2,047', now='$649', code_price='$551.65', save='$97.35', name='Titanium Hammered Cookware Set', spec='12 pieces &middot; 3 pans, 3 pots, 6 lids &middot; US only',
-   subject='Still thinking about the 12-piece set?', preview='Your order is on its way. Here is 15% off the set you looked at, once.',
-   h='Still thinking about the 12&#8209;piece set?', btn='Get 15% off the set',
-   intro="on its way. You also looked at the 12&#8209;piece set, so here is something for after your order: 15% off it, once.",
-   body=["Your pan is the one you will reach for every morning. The 12&#8209;piece set is the rest of the kitchen around it: three pans, a 2 qt and a 3 qt saucepan and an 8 qt stockpot, each with its lid. It is also the only way to get our titanium hammered pots.",
+SET12_BODY = ["Whatever is on its way to you now, the 12&#8209;piece set is the rest of the kitchen around it: three pans, a 2 qt and a 3 qt saucepan and an 8 qt stockpot, each with its lid. It is the only way to get our titanium hammered pots.",
          "Every piece has the same pure titanium cooking surface, no coatings. Nothing on it to wear off, so every piece is covered by the 75-year warranty.",
-         "<b>VIP15-SET12 takes $97.35 off the set.</b> It is a thank-you for your order: one use, the 12&#8209;piece set only, and it ends " + END_LINE + ", when our Black Friday sale ends. After that the code stops working."],
-   rev=('R025', 'Sunny C.', "I ordered one pan to try it out. I'm so glad I did. I am so happy with this pan that I'm ordering the set.")),
- 'set6': dict(code='VIP15-SET6', handle='titanium-hammered-pan-set-with-lids-6-pcs', title='Titanium Hammered Pan Set With Lids | 6-Pcs', short='6-piece set', us_only=False,
+         "<b>VIP15-SET12 takes $97.35 off the set.</b> It is a thank-you for your order: one use, the 12&#8209;piece set only, and it ends " + END_LINE + ", when our Black Friday sale ends. After that the code stops working."]
+SET6_BODY = ["Three pans and three lids mean the eggs, the sauce and the vegetables can all go at once, each with a lid that fits.",
+         "Same pure titanium cooking surface as the rest of our cookware, no coatings. Nothing on it to wear off, so every piece is covered by the 75-year warranty.",
+         "<b>VIP15-SET6 takes 15% off the set.</b> It is a thank-you for your order: one use, the 6&#8209;piece set only, and it ends " + END_LINE + ", when our Black Friday sale ends. After that the code stops working."]
+B12 = dict(code='VIP15-SET12', handle='titanium-hammered-cookware-set', title='Titanium Hammered Cookware Set | 12-Pcs', short='12-piece set', us_only=True,
+   img='ppv-set12.jpg', alt='The Siraat 12-piece set: three pans, two saucepans and an 8 qt stockpot, each with its lid',
+   was='$2,047', now='$649', code_price='$551.65', name='Titanium Hammered Cookware Set', spec='12 pieces &middot; 3 pans, 3 pots, 6 lids &middot; US only', btn='Get 15% off the set')
+B6 = dict(code='VIP15-SET6', handle='titanium-hammered-pan-set-with-lids-6-pcs', title='Titanium Hammered Pan Set With Lids | 6-Pcs', short='6-piece set', us_only=False,
    img='ppv-set6.jpg', alt='The Siraat 6-piece set: three titanium hammered pans and three lids',
-   was='$997', now='$299', code_price='$254.15', save='$44.85', name='Titanium Hammered Pan Set With Lids', spec='6 pieces &middot; 3 pans, 3 lids',
-   subject='Still thinking about the 6-piece set?', preview='Your order is on its way. Here is 15% off the set you looked at, once.',
-   h='Still thinking about the 6&#8209;piece set?', btn='Get 15% off the set',
-   intro="on its way. You also looked at the 6&#8209;piece set, so here is something for after your order: 15% off it, once.",
-   body=["One pan does a lot. Three pans and three lids mean the eggs, the sauce and the vegetables can all go at once, each with a lid that fits.",
-         "Same pure titanium cooking surface as the pan on its way to you, no coatings. Nothing on it to wear off, so every piece is covered by the 75-year warranty.",
-         "<b>VIP15-SET6 takes 15% off the set.</b> It is a thank-you for your order: one use, the 6&#8209;piece set only, and it ends " + END_LINE + ", when our Black Friday sale ends. After that the code stops working."],
-   rev=('R025', 'Sunny C.', "I ordered one pan to try it out. I'm so glad I did. I am so happy with this pan that I'm ordering the set.")),
- 'deep': dict(code='VIP15-DEEP', handle='titanium-hammered-deep-pan-pro', title='Titanium Hammered Deep Pan Pro', short='Deep Pan', us_only=False,
-   img='ppv-deep.jpg', alt='The Siraat Titanium Hammered Deep Pan Pro, 6 cm deep',
-   was='', now='from $119', code_price='from $101.15', save='', name='Titanium Hammered Deep Pan Pro', spec='6 cm deep &middot; 5 sizes, 8 to 12 inches',
-   subject='Still thinking about the Deep Pan?', preview='Your order is on its way. Here is 15% off the Deep Pan, once.',
-   h='Still thinking about the Deep&nbsp;Pan?', btn='Get 15% off the Deep Pan',
-   intro="on its way. You also looked at the Deep Pan, so here is something for after your order: 15% off it, once.",
-   body=["The Deep Pan is the one for everything that needs room: a ragu, a braise, a curry, a sauce you want to reduce slowly. It is 6 cm deep and comes in five sizes, from 8 to 12 inches (20 to 30 cm).",
-         "Same pure titanium cooking surface as the pan on its way to you, no coatings. Nothing on it to wear off, so it is covered by the 75-year warranty.",
-         "<b>VIP15-DEEP takes 15% off the Deep Pan, in any size.</b> It is a thank-you for your order: one use, the Deep Pan only, and it ends " + END_LINE + ", when our Black Friday sale ends. After that the code stops working."],
-   rev=('R542', 'Jibz C.', "We ordered almost all the pans and some in different sizes too. I've replaced all the pans and some pots in our kitchen.")),
- 'large': dict(code='VIP15-LARGE', handle='titanium-hammered-pan-pro-large', title='Titanium Hammered Pan Pro Large', short='Pan Pro Large', us_only=False,
-   img='ppv-large.jpg', alt='The Siraat Titanium Hammered Pan Pro Large, 12 inches',
-   was='$497', now='$149', code_price='$126.65', save='$22.35', name='Titanium Hammered Pan Pro Large', spec='12&Prime; (30 cm) &middot; 3-ply',
-   subject='Still thinking about the 12-inch pan?', preview='Your order is on its way. Here is 15% off the Pan Pro Large, once.',
-   h='Still thinking about the 12&#8209;inch&nbsp;pan?', btn='Get 15% off the Large',
-   intro="on its way. You also looked at the Pan Pro Large, so here is something for after your order: 15% off it, once.",
-   body=["The Large is the 12-inch (30 cm) Pan Pro. Same 3-ply build, more room: a whole family breakfast, two steaks side by side, vegetables that roast instead of steam.",
-         "Same pure titanium cooking surface as the pan on its way to you, no coatings. Nothing on it to wear off, so it is covered by the 75-year warranty.",
-         "<b>VIP15-LARGE takes 15% off the Large.</b> It is a thank-you for your order: one use, the Pan Pro Large only, and it ends " + END_LINE + ", when our Black Friday sale ends. After that the code stops working."],
-   rev=('R138', 'Tammy', "I am on my 4th pan from Siraat. ... I even gifted one to my son, and he says it's the best pan he owns.")),
+   was='$997', now='$299', code_price='$254.15', name='Titanium Hammered Pan Set With Lids', spec='6 pieces &middot; 3 pans, 3 lids', btn='Get 15% off the set')
+REV = ('R025', 'Sunny C.', "I ordered one pan to try it out. I'm so glad I did. I am so happy with this pan that I'm ordering the set.")
+M = {
+ 'set12-m1': dict(B12, reminder=False, eyebrow='A THANK&#8209;YOU FOR YOUR ORDER',
+   subject="Here's the rest of the kitchen", preview='Your order is on its way. 15% off the 12-piece set, once, until Nov 30.',
+   h="Here&rsquo;s the rest of the kitchen.", intro="on its way. Here&rsquo;s the rest of the kitchen, 15% off, once.", body=SET12_BODY, rev=REV),
+ 'set12-m2': dict(B12, reminder=True, eyebrow='ENDS MONDAY, NOV 30',
+   subject='Your VIP15 code ends Monday, Nov 30', preview='15% off the 12-piece set, one use. At 11:59 PM ET it stops working.',
+   h='Your VIP15 code ends Monday night.', intro=None,
+   body=["A short note, so it does not slip by. Your code VIP15-SET12 takes $97.35 off the 12&#8209;piece set: three pans, two saucepans and an 8 qt stockpot, each with its lid.",
+         "It works once and ends " + END_LINE + ". After that it stops working. If the set is not for you, no need to do anything."], rev=None),
+ 'set6-m1': dict(B6, reminder=False, eyebrow='A THANK&#8209;YOU FOR YOUR ORDER',
+   subject='Three pans, three lids, 15% off', preview='Your order is on its way. 15% off the 6-piece set, once, until Nov 30.',
+   h='Three pans, three lids. 15% off, once.', intro="on its way. Here is the full pan set to go with it, 15% off, once.", body=SET6_BODY, rev=REV),
+ 'set6-m2': dict(B6, reminder=True, eyebrow='ENDS MONDAY, NOV 30',
+   subject='Your VIP15 code ends Monday, Nov 30', preview='15% off the 6-piece set, one use. At 11:59 PM ET it stops working.',
+   h='Your VIP15 code ends Monday night.', intro=None,
+   body=["A short note, so it does not slip by. Your code VIP15-SET6 takes 15% off the 6&#8209;piece set: three pans and three lids.",
+         "It works once and ends " + END_LINE + ". After that it stops working. If the set is not for you, no need to do anything."], rev=None),
 }
 
 head = tg[:tg.index('<body')]
@@ -113,9 +102,9 @@ def build(key, m):
                 f'<tr><td align="center" bgcolor="#FFFFFF" class="pad" style="background-color:#FFFFFF;padding:10px 40px 0 40px;text-align:center;"><div style="{F}font-size:12px;line-height:18px;color:#727272;">{FRX}</div></td></tr>\n')
     b = f'<tr><td align="center" bgcolor="{INK}" style="background-color:{INK};padding:11px 20px;{F}font-size:11px;line-height:14px;letter-spacing:2px;font-weight:600;color:{CREAM};text-transform:uppercase;"><a href="{U("topbar")}" style="color:{CREAM};text-decoration:none;">YOUR 15% OFF THE {m["short"].upper().replace("-", "&#8209;")} &middot; <span style="white-space:nowrap;">CODE {m["code"]}</span></a></td></tr>\n'
     b += hdr + '\n'
-    b += (f'<tr><td align="center" bgcolor="#FFFFFF" class="pad" style="background-color:#FFFFFF;padding:34px 40px 0 40px;text-align:center;"><div style="{F}font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:{BRICK};">A THANK&#8209;YOU FOR YOUR ORDER</div>'
+    b += (f'<tr><td align="center" bgcolor="#FFFFFF" class="pad" style="background-color:#FFFFFF;padding:34px 40px 0 40px;text-align:center;"><div style="{F}font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:{BRICK};">{m["eyebrow"]}</div>'
           f'<div class="h1x" style="{S}font-size:42px;line-height:46px;color:{INK};padding-top:10px;">{m["h"]}</div></td></tr>\n')
-    b += p(bought(m['title']) + ' ' + m['intro'], "14px 40px 0 40px", al="center")
+    if m['intro']: b += p(bought(m['title']) + ' ' + m['intro'], "14px 40px 0 40px", al="center")
     b += f'<tr><td align="center" bgcolor="#FFFFFF" style="background-color:#FFFFFF;padding:22px 0 0 0;"><a href="{U("img")}" style="display:block;border:0;text-decoration:none;"><img src="{urls[m["img"]]}" width="600" alt="{m["alt"]}" style="display:block;width:100%;max-width:600px;height:auto;border:0;"></a></td></tr>\n'
     # prijsblok (espresso), prijzen alleen US; INT zonder bedrag
     was = f'<span style="text-decoration:line-through;">{m["was"]}</span>&nbsp;&nbsp;' if m['was'] else ''
@@ -132,12 +121,13 @@ def build(key, m):
     b += p("Hi {{ first_name|default:'there' }}, Benjamin here.", "32px 40px 0 40px")
     for t in m['body']:
         b += p(t)
-    rid, rn, rq = m['rev']; quote_ok(rid, rq)
-    b += (f'<tr><td bgcolor="#FFFFFF" class="pad" style="background-color:#FFFFFF;padding:26px 40px 0 40px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="{CREAM}" style="background-color:{CREAM};border:1px solid {SAND};border-radius:10px;"><tr><td align="center" bgcolor="{CREAM}" style="background-color:{CREAM};padding:20px 24px;text-align:center;">'
+    if m['rev']:
+      rid, rn, rq = m['rev']; quote_ok(rid, rq)
+      b += (f'<tr><td bgcolor="#FFFFFF" class="pad" style="background-color:#FFFFFF;padding:26px 40px 0 40px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="{CREAM}" style="background-color:{CREAM};border:1px solid {SAND};border-radius:10px;"><tr><td align="center" bgcolor="{CREAM}" style="background-color:{CREAM};padding:20px 24px;text-align:center;">'
           f'<div style="{F}font-size:15px;line-height:18px;letter-spacing:3px;color:{BRICK};">&#9733;&#9733;&#9733;&#9733;&#9733;</div>'
           f'<div style="{S}font-size:22px;line-height:29px;color:{INK};padding-top:8px;">&ldquo;{rq}&rdquo;</div>'
           f'<div style="{F}font-size:12px;line-height:17px;color:#8A847A;padding-top:8px;">{rn} &middot; Verified buyer</div></td></tr></table></td></tr>\n')
-    b += btn('cta2', "24px 40px 0 40px")
+    if not m['reminder']: b += btn('cta2', "24px 40px 0 40px")
     # 5 gifts, compact
     G = [('Free shipping', 'Included'), ('Plastic-Free Home e book', 'Included'), ('Mystery gift', 'Included'), ('Favorites Cookbook', 'Included'), ('Chance to win a PFAS water filter', 'Weekly draw')]
     def gt(n, v):
@@ -145,7 +135,7 @@ def build(key, m):
         return (f'<td width="20%" valign="top" align="center" class="gm" style="padding:8px 3px 12px 3px;"><a href="{U("gifts")}" style="display:block;text-decoration:none;"><img src="{gsrc[n]}" width="64" height="64" alt="{lab}" style="display:block;width:64px;height:64px;border:0;border-radius:6px;margin:0 auto;object-fit:cover;"></a>'
                 f'<div style="{F}font-size:11px;line-height:14px;font-weight:600;color:{INK};padding-top:8px;text-align:center;">{lab}</div><div style="{F}font-size:10px;line-height:13px;color:#8A847A;padding-top:2px;text-align:center;">{v}</div></td>')
     gv = ' ($555&nbsp;value)' if m['us_only'] else US + ' ($555&nbsp;value)' + END
-    b += (f'<tr><td align="center" bgcolor="#FFFFFF" class="padx" style="background-color:#FFFFFF;padding:30px 24px 0 24px;"><div class="h1s" style="{S}font-size:26px;line-height:30px;color:{INK};text-align:center;padding-bottom:10px;">5 free gifts with every order, this one too{gv}</div>'
+    if not m['reminder']: b += (f'<tr><td align="center" bgcolor="#FFFFFF" class="padx" style="background-color:#FFFFFF;padding:30px 24px 0 24px;"><div class="h1s" style="{S}font-size:26px;line-height:30px;color:{INK};text-align:center;padding-bottom:10px;">5 free gifts with every order, this one too{gv}</div>'
           f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="{CREAM}" style="background-color:{CREAM};border-radius:8px;"><tr>' + ''.join(gt(*x) for x in G) + '</tr></table></td></tr>\n')
     def prom(t, s):
         return f'<td width="50%" valign="top" align="center" style="width:50%;padding:16px 6px;text-align:center;"><div class="pr" style="{S}font-size:26px;line-height:30px;color:{INK};">{t}</div><div style="{F}font-size:12px;line-height:17px;color:#8A847A;padding-top:4px;">{s}</div></td>'

@@ -1,0 +1,6249 @@
+{
+ "data": {
+  "type": "flow",
+  "attributes": {
+   "name": "PPV tracker · Viewed Product > ppv_vr (draft, 19 nov)",
+   "definition": {
+    "triggers": [
+     {
+      "type": "metric",
+      "id": "XNtYMB",
+      "trigger_filter": null
+     }
+    ],
+    "profile_filter": null,
+    "actions": [
+     {
+      "temporary_id": "t0",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XNtYMB",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "34-Pcs"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XNtYMB",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "e34-own",
+       "next_if_false": "t1"
+      }
+     },
+     {
+      "temporary_id": "e34-own",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_e34']",
+            "filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": null,
+       "next_if_false": "e34-u1"
+      }
+     },
+     {
+      "temporary_id": "e34-u1",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_e34']",
+         "property_value": 1
+        }
+       ]
+      },
+      "links": {
+       "next": "e34-d1"
+      }
+     },
+     {
+      "temporary_id": "e34-d1",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 73,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "e34-c1"
+      }
+     },
+     {
+      "temporary_id": "e34-c1",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 3
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "34-Pcs"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_e34']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "e34-u2",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "e34-u2",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_e34']",
+         "property_value": 2
+        }
+       ]
+      },
+      "links": {
+       "next": "e34-d2"
+      }
+     },
+     {
+      "temporary_id": "e34-d2",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 169,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "e34-c2"
+      }
+     },
+     {
+      "temporary_id": "e34-c2",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 10
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "34-Pcs"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_e34']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "e34-u3",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "e34-u3",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_e34']",
+         "property_value": 3
+        }
+       ]
+      },
+      "links": {
+       "next": "e34-d3"
+      }
+     },
+     {
+      "temporary_id": "e34-d3",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 481,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "e34-c3"
+      }
+     },
+     {
+      "temporary_id": "e34-c3",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 30
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "34-Pcs"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_e34']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "e34-u4",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "e34-u4",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_e34']",
+         "property_value": 0
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t1",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XNtYMB",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "6-Pcs"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XNtYMB",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "s06-own",
+       "next_if_false": "t2"
+      }
+     },
+     {
+      "temporary_id": "s06-own",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_s06']",
+            "filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": null,
+       "next_if_false": "s06-u1"
+      }
+     },
+     {
+      "temporary_id": "s06-u1",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_s06']",
+         "property_value": 1
+        }
+       ]
+      },
+      "links": {
+       "next": "s06-d1"
+      }
+     },
+     {
+      "temporary_id": "s06-d1",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 73,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "s06-c1"
+      }
+     },
+     {
+      "temporary_id": "s06-c1",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 3
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "6-Pcs"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_s06']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "s06-u2",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "s06-u2",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_s06']",
+         "property_value": 2
+        }
+       ]
+      },
+      "links": {
+       "next": "s06-d2"
+      }
+     },
+     {
+      "temporary_id": "s06-d2",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 169,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "s06-c2"
+      }
+     },
+     {
+      "temporary_id": "s06-c2",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 10
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "6-Pcs"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_s06']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "s06-u3",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "s06-u3",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_s06']",
+         "property_value": 3
+        }
+       ]
+      },
+      "links": {
+       "next": "s06-d3"
+      }
+     },
+     {
+      "temporary_id": "s06-d3",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 481,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "s06-c3"
+      }
+     },
+     {
+      "temporary_id": "s06-c3",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 30
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "6-Pcs"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_s06']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "s06-u4",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "s06-u4",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_s06']",
+         "property_value": 0
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t2",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XNtYMB",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Full Hammered Pro"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XNtYMB",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "fhp-own",
+       "next_if_false": "t3"
+      }
+     },
+     {
+      "temporary_id": "fhp-own",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_fhp']",
+            "filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": null,
+       "next_if_false": "fhp-u1"
+      }
+     },
+     {
+      "temporary_id": "fhp-u1",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_fhp']",
+         "property_value": 1
+        }
+       ]
+      },
+      "links": {
+       "next": "fhp-d1"
+      }
+     },
+     {
+      "temporary_id": "fhp-d1",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 73,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "fhp-c1"
+      }
+     },
+     {
+      "temporary_id": "fhp-c1",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 3
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "Full Hammered Pro"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_fhp']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "fhp-u2",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "fhp-u2",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_fhp']",
+         "property_value": 2
+        }
+       ]
+      },
+      "links": {
+       "next": "fhp-d2"
+      }
+     },
+     {
+      "temporary_id": "fhp-d2",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 169,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "fhp-c2"
+      }
+     },
+     {
+      "temporary_id": "fhp-c2",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 10
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "Full Hammered Pro"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_fhp']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "fhp-u3",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "fhp-u3",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_fhp']",
+         "property_value": 3
+        }
+       ]
+      },
+      "links": {
+       "next": "fhp-d3"
+      }
+     },
+     {
+      "temporary_id": "fhp-d3",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 481,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "fhp-c3"
+      }
+     },
+     {
+      "temporary_id": "fhp-c3",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 30
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "Full Hammered Pro"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_fhp']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "fhp-u4",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "fhp-u4",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_fhp']",
+         "property_value": 0
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t3",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XNtYMB",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Knife Set (8-Piece)"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XNtYMB",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "kn8-own",
+       "next_if_false": "t4"
+      }
+     },
+     {
+      "temporary_id": "kn8-own",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_kn8']",
+            "filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": null,
+       "next_if_false": "kn8-u1"
+      }
+     },
+     {
+      "temporary_id": "kn8-u1",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_kn8']",
+         "property_value": 1
+        }
+       ]
+      },
+      "links": {
+       "next": "kn8-d1"
+      }
+     },
+     {
+      "temporary_id": "kn8-d1",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 73,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "kn8-c1"
+      }
+     },
+     {
+      "temporary_id": "kn8-c1",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 3
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "Knife Set (8-Piece)"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_kn8']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "kn8-u2",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "kn8-u2",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_kn8']",
+         "property_value": 2
+        }
+       ]
+      },
+      "links": {
+       "next": "kn8-d2"
+      }
+     },
+     {
+      "temporary_id": "kn8-d2",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 169,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "kn8-c2"
+      }
+     },
+     {
+      "temporary_id": "kn8-c2",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 10
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "Knife Set (8-Piece)"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_kn8']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "kn8-u3",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "kn8-u3",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_kn8']",
+         "property_value": 3
+        }
+       ]
+      },
+      "links": {
+       "next": "kn8-d3"
+      }
+     },
+     {
+      "temporary_id": "kn8-d3",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 481,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "kn8-c3"
+      }
+     },
+     {
+      "temporary_id": "kn8-c3",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 30
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "Knife Set (8-Piece)"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_kn8']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "kn8-u4",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "kn8-u4",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_kn8']",
+         "property_value": 0
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t4",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XNtYMB",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Complete Edition"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XNtYMB",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "cmp-own",
+       "next_if_false": "t5"
+      }
+     },
+     {
+      "temporary_id": "cmp-own",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_cmp']",
+            "filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": null,
+       "next_if_false": "cmp-u1"
+      }
+     },
+     {
+      "temporary_id": "cmp-u1",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_cmp']",
+         "property_value": 1
+        }
+       ]
+      },
+      "links": {
+       "next": "cmp-d1"
+      }
+     },
+     {
+      "temporary_id": "cmp-d1",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 73,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "cmp-c1"
+      }
+     },
+     {
+      "temporary_id": "cmp-c1",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 3
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "Complete Edition"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_cmp']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "cmp-u2",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "cmp-u2",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_cmp']",
+         "property_value": 2
+        }
+       ]
+      },
+      "links": {
+       "next": "cmp-d2"
+      }
+     },
+     {
+      "temporary_id": "cmp-d2",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 169,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "cmp-c2"
+      }
+     },
+     {
+      "temporary_id": "cmp-c2",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 10
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "Complete Edition"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_cmp']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "cmp-u3",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "cmp-u3",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_cmp']",
+         "property_value": 3
+        }
+       ]
+      },
+      "links": {
+       "next": "cmp-d3"
+      }
+     },
+     {
+      "temporary_id": "cmp-d3",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 481,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "cmp-c3"
+      }
+     },
+     {
+      "temporary_id": "cmp-c3",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 30
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "Complete Edition"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_cmp']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "cmp-u4",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "cmp-u4",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_cmp']",
+         "property_value": 0
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t5",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XNtYMB",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Cookware Set Pro"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XNtYMB",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "csp-own",
+       "next_if_false": "t6"
+      }
+     },
+     {
+      "temporary_id": "csp-own",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_csp']",
+            "filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": null,
+       "next_if_false": "csp-u1"
+      }
+     },
+     {
+      "temporary_id": "csp-u1",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_csp']",
+         "property_value": 1
+        }
+       ]
+      },
+      "links": {
+       "next": "csp-d1"
+      }
+     },
+     {
+      "temporary_id": "csp-d1",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 73,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "csp-c1"
+      }
+     },
+     {
+      "temporary_id": "csp-c1",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 3
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "Cookware Set Pro"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_csp']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "csp-u2",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "csp-u2",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_csp']",
+         "property_value": 2
+        }
+       ]
+      },
+      "links": {
+       "next": "csp-d2"
+      }
+     },
+     {
+      "temporary_id": "csp-d2",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 169,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "csp-c2"
+      }
+     },
+     {
+      "temporary_id": "csp-c2",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 10
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "Cookware Set Pro"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_csp']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "csp-u3",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "csp-u3",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_csp']",
+         "property_value": 3
+        }
+       ]
+      },
+      "links": {
+       "next": "csp-d3"
+      }
+     },
+     {
+      "temporary_id": "csp-d3",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 481,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "csp-c3"
+      }
+     },
+     {
+      "temporary_id": "csp-c3",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 30
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "Cookware Set Pro"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_csp']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "csp-u4",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "csp-u4",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_csp']",
+         "property_value": 0
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t6",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XNtYMB",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Roasting Pan"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XNtYMB",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "rst-own",
+       "next_if_false": "t7"
+      }
+     },
+     {
+      "temporary_id": "rst-own",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_rst']",
+            "filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": null,
+       "next_if_false": "rst-u1"
+      }
+     },
+     {
+      "temporary_id": "rst-u1",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_rst']",
+         "property_value": 1
+        }
+       ]
+      },
+      "links": {
+       "next": "rst-d1"
+      }
+     },
+     {
+      "temporary_id": "rst-d1",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 73,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "rst-c1"
+      }
+     },
+     {
+      "temporary_id": "rst-c1",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 3
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "Roasting Pan"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_rst']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "rst-u2",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "rst-u2",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_rst']",
+         "property_value": 2
+        }
+       ]
+      },
+      "links": {
+       "next": "rst-d2"
+      }
+     },
+     {
+      "temporary_id": "rst-d2",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 169,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "rst-c2"
+      }
+     },
+     {
+      "temporary_id": "rst-c2",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 10
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "Roasting Pan"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_rst']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "rst-u3",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "rst-u3",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_rst']",
+         "property_value": 3
+        }
+       ]
+      },
+      "links": {
+       "next": "rst-d3"
+      }
+     },
+     {
+      "temporary_id": "rst-d3",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 481,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "rst-c3"
+      }
+     },
+     {
+      "temporary_id": "rst-c3",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 30
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "Roasting Pan"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_rst']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "rst-u4",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "rst-u4",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_rst']",
+         "property_value": 0
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t7",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XNtYMB",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "2 Pans + 2 Lids"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XNtYMB",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "p22-own",
+       "next_if_false": "t8"
+      }
+     },
+     {
+      "temporary_id": "p22-own",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_p22']",
+            "filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": null,
+       "next_if_false": "p22-u1"
+      }
+     },
+     {
+      "temporary_id": "p22-u1",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_p22']",
+         "property_value": 1
+        }
+       ]
+      },
+      "links": {
+       "next": "p22-d1"
+      }
+     },
+     {
+      "temporary_id": "p22-d1",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 73,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "p22-c1"
+      }
+     },
+     {
+      "temporary_id": "p22-c1",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 3
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "2 Pans + 2 Lids"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_p22']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "p22-u2",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "p22-u2",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_p22']",
+         "property_value": 2
+        }
+       ]
+      },
+      "links": {
+       "next": "p22-d2"
+      }
+     },
+     {
+      "temporary_id": "p22-d2",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 169,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "p22-c2"
+      }
+     },
+     {
+      "temporary_id": "p22-c2",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 10
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "2 Pans + 2 Lids"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_p22']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "p22-u3",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "p22-u3",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_p22']",
+         "property_value": 3
+        }
+       ]
+      },
+      "links": {
+       "next": "p22-d3"
+      }
+     },
+     {
+      "temporary_id": "p22-d3",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 481,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "p22-c3"
+      }
+     },
+     {
+      "temporary_id": "p22-c3",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 30
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "2 Pans + 2 Lids"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_p22']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "p22-u4",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "p22-u4",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_p22']",
+         "property_value": 0
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t8",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XNtYMB",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "equals",
+             "value": "Titanium Hammered Pan Pro Large"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XNtYMB",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "lrg-own",
+       "next_if_false": "t9"
+      }
+     },
+     {
+      "temporary_id": "lrg-own",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_lrg']",
+            "filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": null,
+       "next_if_false": "lrg-u1"
+      }
+     },
+     {
+      "temporary_id": "lrg-u1",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_lrg']",
+         "property_value": 1
+        }
+       ]
+      },
+      "links": {
+       "next": "lrg-d1"
+      }
+     },
+     {
+      "temporary_id": "lrg-d1",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 73,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "lrg-c1"
+      }
+     },
+     {
+      "temporary_id": "lrg-c1",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 3
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "equals",
+               "value": "Titanium Hammered Pan Pro Large"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_lrg']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "lrg-u2",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "lrg-u2",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_lrg']",
+         "property_value": 2
+        }
+       ]
+      },
+      "links": {
+       "next": "lrg-d2"
+      }
+     },
+     {
+      "temporary_id": "lrg-d2",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 169,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "lrg-c2"
+      }
+     },
+     {
+      "temporary_id": "lrg-c2",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 10
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "equals",
+               "value": "Titanium Hammered Pan Pro Large"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_lrg']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "lrg-u3",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "lrg-u3",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_lrg']",
+         "property_value": 3
+        }
+       ]
+      },
+      "links": {
+       "next": "lrg-d3"
+      }
+     },
+     {
+      "temporary_id": "lrg-d3",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 481,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "lrg-c3"
+      }
+     },
+     {
+      "temporary_id": "lrg-c3",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 30
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "equals",
+               "value": "Titanium Hammered Pan Pro Large"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_lrg']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "lrg-u4",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "lrg-u4",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_lrg']",
+         "property_value": 0
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t9",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XNtYMB",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "equals",
+             "value": "Titanium Hammered Pizza Steel"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XNtYMB",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "piz-own",
+       "next_if_false": "t10"
+      }
+     },
+     {
+      "temporary_id": "piz-own",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_piz']",
+            "filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": null,
+       "next_if_false": "piz-u1"
+      }
+     },
+     {
+      "temporary_id": "piz-u1",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_piz']",
+         "property_value": 1
+        }
+       ]
+      },
+      "links": {
+       "next": "piz-d1"
+      }
+     },
+     {
+      "temporary_id": "piz-d1",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 73,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "piz-c1"
+      }
+     },
+     {
+      "temporary_id": "piz-c1",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 3
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "equals",
+               "value": "Titanium Hammered Pizza Steel"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_piz']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "piz-u2",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "piz-u2",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_piz']",
+         "property_value": 2
+        }
+       ]
+      },
+      "links": {
+       "next": "piz-d2"
+      }
+     },
+     {
+      "temporary_id": "piz-d2",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 169,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "piz-c2"
+      }
+     },
+     {
+      "temporary_id": "piz-c2",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 10
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "equals",
+               "value": "Titanium Hammered Pizza Steel"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_piz']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "piz-u3",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "piz-u3",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_piz']",
+         "property_value": 3
+        }
+       ]
+      },
+      "links": {
+       "next": "piz-d3"
+      }
+     },
+     {
+      "temporary_id": "piz-d3",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 481,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "piz-c3"
+      }
+     },
+     {
+      "temporary_id": "piz-c3",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 30
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "equals",
+               "value": "Titanium Hammered Pizza Steel"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_piz']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "piz-u4",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "piz-u4",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_piz']",
+         "property_value": 0
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t10",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XNtYMB",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "equals",
+             "value": "Titanium Utensil Set Bundle"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XNtYMB",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "ute-own",
+       "next_if_false": "t11"
+      }
+     },
+     {
+      "temporary_id": "ute-own",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_ute']",
+            "filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": null,
+       "next_if_false": "ute-u1"
+      }
+     },
+     {
+      "temporary_id": "ute-u1",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_ute']",
+         "property_value": 1
+        }
+       ]
+      },
+      "links": {
+       "next": "ute-d1"
+      }
+     },
+     {
+      "temporary_id": "ute-d1",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 73,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "ute-c1"
+      }
+     },
+     {
+      "temporary_id": "ute-c1",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 3
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "equals",
+               "value": "Titanium Utensil Set Bundle"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_ute']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "ute-u2",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "ute-u2",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_ute']",
+         "property_value": 2
+        }
+       ]
+      },
+      "links": {
+       "next": "ute-d2"
+      }
+     },
+     {
+      "temporary_id": "ute-d2",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 169,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "ute-c2"
+      }
+     },
+     {
+      "temporary_id": "ute-c2",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 10
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "equals",
+               "value": "Titanium Utensil Set Bundle"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_ute']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "ute-u3",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "ute-u3",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_ute']",
+         "property_value": 3
+        }
+       ]
+      },
+      "links": {
+       "next": "ute-d3"
+      }
+     },
+     {
+      "temporary_id": "ute-d3",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 481,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "ute-c3"
+      }
+     },
+     {
+      "temporary_id": "ute-c3",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 30
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "equals",
+               "value": "Titanium Utensil Set Bundle"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_ute']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "ute-u4",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "ute-u4",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_ute']",
+         "property_value": 0
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t11",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XNtYMB",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "equals",
+             "value": "Titanium Hammered Pan Pro Standard"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XNtYMB",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "std-own",
+       "next_if_false": "t12"
+      }
+     },
+     {
+      "temporary_id": "std-own",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_std']",
+            "filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": null,
+       "next_if_false": "std-u1"
+      }
+     },
+     {
+      "temporary_id": "std-u1",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_std']",
+         "property_value": 1
+        }
+       ]
+      },
+      "links": {
+       "next": "std-d1"
+      }
+     },
+     {
+      "temporary_id": "std-d1",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 73,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "std-c1"
+      }
+     },
+     {
+      "temporary_id": "std-c1",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 3
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "equals",
+               "value": "Titanium Hammered Pan Pro Standard"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_std']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "std-u2",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "std-u2",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_std']",
+         "property_value": 2
+        }
+       ]
+      },
+      "links": {
+       "next": "std-d2"
+      }
+     },
+     {
+      "temporary_id": "std-d2",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 169,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "std-c2"
+      }
+     },
+     {
+      "temporary_id": "std-c2",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 10
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "equals",
+               "value": "Titanium Hammered Pan Pro Standard"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_std']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "std-u3",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "std-u3",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_std']",
+         "property_value": 3
+        }
+       ]
+      },
+      "links": {
+       "next": "std-d3"
+      }
+     },
+     {
+      "temporary_id": "std-d3",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 481,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "std-c3"
+      }
+     },
+     {
+      "temporary_id": "std-c3",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 30
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "equals",
+               "value": "Titanium Hammered Pan Pro Standard"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_std']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "std-u4",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "std-u4",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_std']",
+         "property_value": 0
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t12",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XNtYMB",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Crêpe Pan Pro"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XNtYMB",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "crp-own",
+       "next_if_false": "t13"
+      }
+     },
+     {
+      "temporary_id": "crp-own",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_crp']",
+            "filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": null,
+       "next_if_false": "crp-u1"
+      }
+     },
+     {
+      "temporary_id": "crp-u1",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_crp']",
+         "property_value": 1
+        }
+       ]
+      },
+      "links": {
+       "next": "crp-d1"
+      }
+     },
+     {
+      "temporary_id": "crp-d1",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 73,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "crp-c1"
+      }
+     },
+     {
+      "temporary_id": "crp-c1",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 3
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "Crêpe Pan Pro"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_crp']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "crp-u2",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "crp-u2",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_crp']",
+         "property_value": 2
+        }
+       ]
+      },
+      "links": {
+       "next": "crp-d2"
+      }
+     },
+     {
+      "temporary_id": "crp-d2",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 169,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "crp-c2"
+      }
+     },
+     {
+      "temporary_id": "crp-c2",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 10
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "Crêpe Pan Pro"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_crp']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "crp-u3",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "crp-u3",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_crp']",
+         "property_value": 3
+        }
+       ]
+      },
+      "links": {
+       "next": "crp-d3"
+      }
+     },
+     {
+      "temporary_id": "crp-d3",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 481,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "crp-c3"
+      }
+     },
+     {
+      "temporary_id": "crp-c3",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 30
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "Crêpe Pan Pro"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_crp']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "crp-u4",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "crp-u4",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_crp']",
+         "property_value": 0
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t13",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XNtYMB",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "equals",
+             "value": "Titanium Hammered Pan Pro Small"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XNtYMB",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "sml-own",
+       "next_if_false": "t14"
+      }
+     },
+     {
+      "temporary_id": "sml-own",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_sml']",
+            "filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": null,
+       "next_if_false": "sml-u1"
+      }
+     },
+     {
+      "temporary_id": "sml-u1",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_sml']",
+         "property_value": 1
+        }
+       ]
+      },
+      "links": {
+       "next": "sml-d1"
+      }
+     },
+     {
+      "temporary_id": "sml-d1",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 73,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "sml-c1"
+      }
+     },
+     {
+      "temporary_id": "sml-c1",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 3
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "equals",
+               "value": "Titanium Hammered Pan Pro Small"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_sml']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "sml-u2",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "sml-u2",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_sml']",
+         "property_value": 2
+        }
+       ]
+      },
+      "links": {
+       "next": "sml-d2"
+      }
+     },
+     {
+      "temporary_id": "sml-d2",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 169,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "sml-c2"
+      }
+     },
+     {
+      "temporary_id": "sml-c2",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 10
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "equals",
+               "value": "Titanium Hammered Pan Pro Small"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_sml']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "sml-u3",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "sml-u3",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_sml']",
+         "property_value": 3
+        }
+       ]
+      },
+      "links": {
+       "next": "sml-d3"
+      }
+     },
+     {
+      "temporary_id": "sml-d3",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 481,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "sml-c3"
+      }
+     },
+     {
+      "temporary_id": "sml-c3",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 30
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "equals",
+               "value": "Titanium Hammered Pan Pro Small"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_sml']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "sml-u4",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "sml-u4",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_sml']",
+         "property_value": 0
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t14",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XNtYMB",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "equals",
+             "value": "Titanium Hammered Pan Pro Mini"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XNtYMB",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "min-own",
+       "next_if_false": "t15"
+      }
+     },
+     {
+      "temporary_id": "min-own",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_min']",
+            "filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": null,
+       "next_if_false": "min-u1"
+      }
+     },
+     {
+      "temporary_id": "min-u1",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_min']",
+         "property_value": 1
+        }
+       ]
+      },
+      "links": {
+       "next": "min-d1"
+      }
+     },
+     {
+      "temporary_id": "min-d1",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 73,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "min-c1"
+      }
+     },
+     {
+      "temporary_id": "min-c1",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 3
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "equals",
+               "value": "Titanium Hammered Pan Pro Mini"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_min']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "min-u2",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "min-u2",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_min']",
+         "property_value": 2
+        }
+       ]
+      },
+      "links": {
+       "next": "min-d2"
+      }
+     },
+     {
+      "temporary_id": "min-d2",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 169,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "min-c2"
+      }
+     },
+     {
+      "temporary_id": "min-c2",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 10
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "equals",
+               "value": "Titanium Hammered Pan Pro Mini"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_min']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "min-u3",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "min-u3",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_min']",
+         "property_value": 3
+        }
+       ]
+      },
+      "links": {
+       "next": "min-d3"
+      }
+     },
+     {
+      "temporary_id": "min-d3",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 481,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "min-c3"
+      }
+     },
+     {
+      "temporary_id": "min-c3",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 30
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "equals",
+               "value": "Titanium Hammered Pan Pro Mini"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_min']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "min-u4",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "min-u4",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_min']",
+         "property_value": 0
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t15",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XNtYMB",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "equals",
+             "value": "Titanium Hammered Deep Pan Pro"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XNtYMB",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "dep-own",
+       "next_if_false": "t16"
+      }
+     },
+     {
+      "temporary_id": "dep-own",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_dep']",
+            "filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": null,
+       "next_if_false": "dep-u1"
+      }
+     },
+     {
+      "temporary_id": "dep-u1",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_dep']",
+         "property_value": 1
+        }
+       ]
+      },
+      "links": {
+       "next": "dep-d1"
+      }
+     },
+     {
+      "temporary_id": "dep-d1",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 73,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "dep-c1"
+      }
+     },
+     {
+      "temporary_id": "dep-c1",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 3
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "equals",
+               "value": "Titanium Hammered Deep Pan Pro"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_dep']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "dep-u2",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "dep-u2",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_dep']",
+         "property_value": 2
+        }
+       ]
+      },
+      "links": {
+       "next": "dep-d2"
+      }
+     },
+     {
+      "temporary_id": "dep-d2",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 169,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "dep-c2"
+      }
+     },
+     {
+      "temporary_id": "dep-c2",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 10
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "equals",
+               "value": "Titanium Hammered Deep Pan Pro"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_dep']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "dep-u3",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "dep-u3",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_dep']",
+         "property_value": 3
+        }
+       ]
+      },
+      "links": {
+       "next": "dep-d3"
+      }
+     },
+     {
+      "temporary_id": "dep-d3",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 481,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "dep-c3"
+      }
+     },
+     {
+      "temporary_id": "dep-c3",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 30
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "equals",
+               "value": "Titanium Hammered Deep Pan Pro"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_dep']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "dep-u4",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "dep-u4",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_dep']",
+         "property_value": 0
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t16",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XNtYMB",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "equals",
+             "value": "Titanium Hammered Wok Pan Pro"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XNtYMB",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "wok-own",
+       "next_if_false": "t17"
+      }
+     },
+     {
+      "temporary_id": "wok-own",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_wok']",
+            "filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": null,
+       "next_if_false": "wok-u1"
+      }
+     },
+     {
+      "temporary_id": "wok-u1",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_wok']",
+         "property_value": 1
+        }
+       ]
+      },
+      "links": {
+       "next": "wok-d1"
+      }
+     },
+     {
+      "temporary_id": "wok-d1",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 73,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "wok-c1"
+      }
+     },
+     {
+      "temporary_id": "wok-c1",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 3
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "equals",
+               "value": "Titanium Hammered Wok Pan Pro"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_wok']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "wok-u2",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "wok-u2",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_wok']",
+         "property_value": 2
+        }
+       ]
+      },
+      "links": {
+       "next": "wok-d2"
+      }
+     },
+     {
+      "temporary_id": "wok-d2",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 169,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "wok-c2"
+      }
+     },
+     {
+      "temporary_id": "wok-c2",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 10
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "equals",
+               "value": "Titanium Hammered Wok Pan Pro"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_wok']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "wok-u3",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "wok-u3",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_wok']",
+         "property_value": 3
+        }
+       ]
+      },
+      "links": {
+       "next": "wok-d3"
+      }
+     },
+     {
+      "temporary_id": "wok-d3",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 481,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "wok-c3"
+      }
+     },
+     {
+      "temporary_id": "wok-c3",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 30
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "equals",
+               "value": "Titanium Hammered Wok Pan Pro"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_wok']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "wok-u4",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "wok-u4",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_wok']",
+         "property_value": 0
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t17",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XNtYMB",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "equals",
+             "value": "Titanium Cutting Board (Anti-Microbial)"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XNtYMB",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "brd-own",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "brd-own",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_brd']",
+            "filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": null,
+       "next_if_false": "brd-u1"
+      }
+     },
+     {
+      "temporary_id": "brd-u1",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_brd']",
+         "property_value": 1
+        }
+       ]
+      },
+      "links": {
+       "next": "brd-d1"
+      }
+     },
+     {
+      "temporary_id": "brd-d1",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 73,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "brd-c1"
+      }
+     },
+     {
+      "temporary_id": "brd-c1",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 3
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "equals",
+               "value": "Titanium Cutting Board (Anti-Microbial)"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_brd']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "brd-u2",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "brd-u2",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_brd']",
+         "property_value": 2
+        }
+       ]
+      },
+      "links": {
+       "next": "brd-d2"
+      }
+     },
+     {
+      "temporary_id": "brd-d2",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 169,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "brd-c2"
+      }
+     },
+     {
+      "temporary_id": "brd-c2",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 10
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "equals",
+               "value": "Titanium Cutting Board (Anti-Microbial)"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_brd']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "brd-u3",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "brd-u3",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_brd']",
+         "property_value": 3
+        }
+       ]
+      },
+      "links": {
+       "next": "brd-d3"
+      }
+     },
+     {
+      "temporary_id": "brd-d3",
+      "type": "time-delay",
+      "data": {
+       "unit": "hours",
+       "value": 481,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": null,
+       "delay_until_weekdays": null
+      },
+      "links": {
+       "next": "brd-c3"
+      }
+     },
+     {
+      "temporary_id": "brd-c3",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 30
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "equals",
+               "value": "Titanium Cutting Board (Anti-Microbial)"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-property",
+            "property": "properties['ppv_vr_brd']",
+            "filter": {
+             "type": "numeric",
+             "operator": "not-equals",
+             "value": 9
+            }
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "brd-u4",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "brd-u4",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_brd']",
+         "property_value": 0
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     }
+    ],
+    "entry_action_id": "t0"
+   }
+  }
+ }
+}

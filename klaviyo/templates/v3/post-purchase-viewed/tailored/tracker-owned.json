@@ -1,0 +1,1565 @@
+{
+ "data": {
+  "type": "flow",
+  "attributes": {
+   "name": "PPV tracker · Ordered Product > ppv_vr = 9 (draft, 19 nov)",
+   "definition": {
+    "triggers": [
+     {
+      "type": "metric",
+      "id": "XT7f8Z",
+      "trigger_filter": null
+     }
+    ],
+    "profile_filter": null,
+    "actions": [
+     {
+      "temporary_id": "t0",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XT7f8Z",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "34-Pcs"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XT7f8Z",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "u0",
+       "next_if_false": "t1"
+      }
+     },
+     {
+      "temporary_id": "u0",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_brd']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_crp']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_dep']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_e34']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_lrg']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_min']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_piz']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_rst']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_s06']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_s12']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_sml']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_ute']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_wok']",
+         "property_value": 9
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t1",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XT7f8Z",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "FREE PIZZA STEEL"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XT7f8Z",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "u1",
+       "next_if_false": "t2"
+      }
+     },
+     {
+      "temporary_id": "u1",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_lrg']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_min']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_piz']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_s06']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_s12']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_sml']",
+         "property_value": 9
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t2",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XT7f8Z",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "12-Pcs"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XT7f8Z",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "u2",
+       "next_if_false": "t3"
+      }
+     },
+     {
+      "temporary_id": "u2",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_lrg']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_min']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_s06']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_s12']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_sml']",
+         "property_value": 9
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t3",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XT7f8Z",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "6-Pcs"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XT7f8Z",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "u3",
+       "next_if_false": "t4"
+      }
+     },
+     {
+      "temporary_id": "u3",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_lrg']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_min']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_s06']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_sml']",
+         "property_value": 9
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t4",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XT7f8Z",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Full Hammered Pro"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XT7f8Z",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "u4",
+       "next_if_false": "t5"
+      }
+     },
+     {
+      "temporary_id": "u4",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_fhp']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_lrg']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_min']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_p22']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_s06']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_sml']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_std']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_ute']",
+         "property_value": 9
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t5",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XT7f8Z",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Complete Edition"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XT7f8Z",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "u5",
+       "next_if_false": "t6"
+      }
+     },
+     {
+      "temporary_id": "u5",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_cmp']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_crp']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_dep']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_std']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_wok']",
+         "property_value": 9
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t6",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XT7f8Z",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Cookware Set Pro"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XT7f8Z",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "u6",
+       "next_if_false": "t7"
+      }
+     },
+     {
+      "temporary_id": "u6",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_csp']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_dep']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_std']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_wok']",
+         "property_value": 9
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t7",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XT7f8Z",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "2 Pans + 2 Lids"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XT7f8Z",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "u7",
+       "next_if_false": "t8"
+      }
+     },
+     {
+      "temporary_id": "u7",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_min']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_p22']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_std']",
+         "property_value": 9
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t8",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XT7f8Z",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Pan Pro Duo"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XT7f8Z",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "u8",
+       "next_if_false": "t9"
+      }
+     },
+     {
+      "temporary_id": "u8",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_min']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_sml']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_std']",
+         "property_value": 9
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t9",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XT7f8Z",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Pro Duo"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XT7f8Z",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "u9",
+       "next_if_false": "t10"
+      }
+     },
+     {
+      "temporary_id": "u9",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_std']",
+         "property_value": 9
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t10",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XT7f8Z",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Pan Pro Kit"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XT7f8Z",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "u10",
+       "next_if_false": "t11"
+      }
+     },
+     {
+      "temporary_id": "u10",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_sml']",
+         "property_value": 9
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t11",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XT7f8Z",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Cook & Prep"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XT7f8Z",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "u11",
+       "next_if_false": "t12"
+      }
+     },
+     {
+      "temporary_id": "u11",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_brd']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_std']",
+         "property_value": 9
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t12",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XT7f8Z",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Pan Pro & Utensil"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XT7f8Z",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "u12",
+       "next_if_false": "t13"
+      }
+     },
+     {
+      "temporary_id": "u12",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_std']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_ute']",
+         "property_value": 9
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t13",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XT7f8Z",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Wok & Deep"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XT7f8Z",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "u13",
+       "next_if_false": "t14"
+      }
+     },
+     {
+      "temporary_id": "u13",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_dep']",
+         "property_value": 9
+        },
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_wok']",
+         "property_value": 9
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t14",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XT7f8Z",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Knife Set (8-Piece)"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XT7f8Z",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "u14",
+       "next_if_false": "t15"
+      }
+     },
+     {
+      "temporary_id": "u14",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_kn8']",
+         "property_value": 9
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t15",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XT7f8Z",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Roasting Pan"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XT7f8Z",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "u15",
+       "next_if_false": "t16"
+      }
+     },
+     {
+      "temporary_id": "u15",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_rst']",
+         "property_value": 9
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t16",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XT7f8Z",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Utensil Set Bundle"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XT7f8Z",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "u16",
+       "next_if_false": "t17"
+      }
+     },
+     {
+      "temporary_id": "u16",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_ute']",
+         "property_value": 9
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t17",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XT7f8Z",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Titanium Cutting Board"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XT7f8Z",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "u17",
+       "next_if_false": "t18"
+      }
+     },
+     {
+      "temporary_id": "u17",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_brd']",
+         "property_value": 9
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t18",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XT7f8Z",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Pizza Steel"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XT7f8Z",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "u18",
+       "next_if_false": "t19"
+      }
+     },
+     {
+      "temporary_id": "u18",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_piz']",
+         "property_value": 9
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t19",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XT7f8Z",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Pan Pro Standard"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XT7f8Z",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "u19",
+       "next_if_false": "t20"
+      }
+     },
+     {
+      "temporary_id": "u19",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_std']",
+         "property_value": 9
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t20",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XT7f8Z",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Pan Pro Large"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XT7f8Z",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "u20",
+       "next_if_false": "t21"
+      }
+     },
+     {
+      "temporary_id": "u20",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_lrg']",
+         "property_value": 9
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t21",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XT7f8Z",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Pan Pro Small"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XT7f8Z",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "u21",
+       "next_if_false": "t22"
+      }
+     },
+     {
+      "temporary_id": "u21",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_sml']",
+         "property_value": 9
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t22",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XT7f8Z",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Pan Pro Mini"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XT7f8Z",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "u22",
+       "next_if_false": "t23"
+      }
+     },
+     {
+      "temporary_id": "u22",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_min']",
+         "property_value": 9
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t23",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XT7f8Z",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Crêpe Pan Pro"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XT7f8Z",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "u23",
+       "next_if_false": "t24"
+      }
+     },
+     {
+      "temporary_id": "u23",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_crp']",
+         "property_value": 9
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t24",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XT7f8Z",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Deep Pan Pro"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XT7f8Z",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "u24",
+       "next_if_false": "t25"
+      }
+     },
+     {
+      "temporary_id": "u24",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_dep']",
+         "property_value": 9
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     },
+     {
+      "temporary_id": "t25",
+      "type": "trigger-split",
+      "data": {
+       "trigger_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "metric-property",
+            "metric_id": "XT7f8Z",
+            "field": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Wok Pan Pro"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       "trigger_id": "XT7f8Z",
+       "trigger_type": "metric",
+       "trigger_subtype": null
+      },
+      "links": {
+       "next_if_true": "u25",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "u25",
+      "type": "update-profile",
+      "data": {
+       "status": "draft",
+       "profile_operations": [
+        {
+         "operator": "update",
+         "property_type": "numeric",
+         "property_key": "properties['ppv_vr_wok']",
+         "property_value": 9
+        }
+       ]
+      },
+      "links": {
+       "next": null
+      }
+     }
+    ],
+    "entry_action_id": "t0"
+   }
+  }
+ }
+}

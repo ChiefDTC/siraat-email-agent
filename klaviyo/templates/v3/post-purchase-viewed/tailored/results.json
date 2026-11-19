@@ -1,0 +1,166 @@
+{
+ "s01": {
+  "title": "VS · kocht Pan Pro Standard · bekeek Wok (gisteren) en Deep Pan (vorige week)",
+  "hero": "12-Pcs",
+  "cards": [
+   "wok",
+   "dep"
+  ],
+  "expect_hero": "12-Pcs",
+  "expect": [
+   "wok",
+   "dep"
+  ],
+  "ok": true,
+  "leftovers": 0,
+  "bytes": 29394
+ },
+ "s02": {
+  "title": "VS · kocht 12-Pcs · bekeek Pan Pro Large (zit in de set), Pizza Steel en de Damascus-messenset",
+  "hero": null,
+  "cards": [
+   "piz",
+   "kn8"
+  ],
+  "expect_hero": null,
+  "expect": [
+   "piz",
+   "kn8"
+  ],
+  "ok": true,
+  "leftovers": 0,
+  "bytes": 25057
+ },
+ "s03": {
+  "title": "VS · kocht 12-Pcs · bekeek Pan Pro Standard 11\" (zit NIET in de set), Pizza Steel",
+  "hero": null,
+  "cards": [
+   "piz",
+   "std"
+  ],
+  "expect_hero": null,
+  "expect": [
+   "piz",
+   "std"
+  ],
+  "ok": true,
+  "leftovers": 0,
+  "bytes": 25177
+ },
+ "s04": {
+  "title": "VS · kocht Pan Pro Mini · niets bekeken",
+  "hero": "12-Pcs",
+  "cards": [],
+  "expect_hero": "12-Pcs",
+  "expect": [],
+  "ok": true,
+  "leftovers": 0,
+  "bytes": 23487
+ },
+ "s05": {
+  "title": "VS · kocht 6-Pcs · bekeek alleen Mini en Large (al in bezit)",
+  "hero": "12-Pcs",
+  "cards": [],
+  "expect_hero": "12-Pcs",
+  "expect": [],
+  "ok": true,
+  "leftovers": 0,
+  "bytes": 23487
+ },
+ "s06": {
+  "title": "VS · kocht Pan Pro Standard · bekeek 5 producten (Wok en Deep gisteren, Pizza Steel vorige week, Crêpe en Board 3 weken terug)",
+  "hero": "12-Pcs",
+  "cards": [
+   "dep",
+   "wok",
+   "piz"
+  ],
+  "expect_hero": "12-Pcs",
+  "expect": [
+   "dep",
+   "wok",
+   "piz"
+  ],
+  "ok": true,
+  "leftovers": 0,
+  "bytes": 32051
+ },
+ "s07": {
+  "title": "VK · kocht Pan Pro Standard · bekeek Wok, 2 Pans + 2 Lids (alleen VS) en 12-Pcs (alleen VS)",
+  "hero": "6-Pcs",
+  "cards": [
+   "wok"
+  ],
+  "expect_hero": "6-Pcs",
+  "expect": [
+   "wok"
+  ],
+  "ok": true,
+  "leftovers": 0,
+  "bytes": 26380
+ },
+ "s08": {
+  "title": "VS · kocht The Just Everything Bundle 34-Pcs · bekeek Wok (in bezit), Pan Pro Standard en messenset",
+  "hero": null,
+  "cards": [
+   "std",
+   "kn8"
+  ],
+  "expect_hero": null,
+  "expect": [
+   "std",
+   "kn8"
+  ],
+  "ok": true,
+  "leftovers": 0,
+  "bytes": 25199
+ },
+ "s09": {
+  "title": "VS · kocht Pan Pro Standard, nam via Aftersell de 12-Pcs erbij · bekeek Deep Pan en Pan Pro Large",
+  "hero": null,
+  "cards": [
+   "dep"
+  ],
+  "expect_hero": null,
+  "expect": [
+   "dep"
+  ],
+  "ok": true,
+  "leftovers": 0,
+  "bytes": 22399
+ },
+ "s10": {
+  "title": "Land onbekend · kocht Pan Pro Standard · bekeek de 6-Pcs en de Roasting Pan (alleen VS)",
+  "hero": "6-Pcs",
+  "cards": [],
+  "expect_hero": "6-Pcs",
+  "expect": [],
+  "ok": true,
+  "leftovers": 0,
+  "bytes": 23276
+ },
+ "s11": {
+  "title": "VS · kocht Wok, had eerder al de 12-Pcs (alleen in siraat_owned) · bekeek alleen de Wok",
+  "hero": null,
+  "cards": [],
+  "expect_hero": null,
+  "expect": [],
+  "ok": true,
+  "leftovers": 0,
+  "bytes": 14856
+ },
+ "s12": {
+  "title": "VS · tracker gemist: kocht Deep Pan in deze order, ppv_vr_dep staat nog op 1 · bekeek ook Wok",
+  "hero": "12-Pcs",
+  "cards": [
+   "wok"
+  ],
+  "expect_hero": "12-Pcs",
+  "expect": [
+   "wok"
+  ],
+  "ok": true,
+  "leftovers": 0,
+  "bytes": 26870
+ }
+}
