@@ -30,6 +30,7 @@ OWN.update(load(os.path.join(ROOT, 'sections/floris2/klaviyo-urls.txt')))  # 19 
 OWN.update(load(os.path.join(ROOT, 'sections/floris3/klaviyo-urls.txt')))  # 19 nov laat: plank en messen van Floris
 OWN.update(load(os.path.join(ROOT, 'sections/floris4/klaviyo-urls.txt')))  # 19 nov laat: deksel, utensils, 2+2, 34-Pcs van Floris; Small/Mini = Standard kleiner
 OWN.update(load(os.path.join(ROOT, 'sections/floris5/klaviyo-urls.txt')))  # 19 nov laat: Cookware Set Pro en Full Hammered Pro van Floris
+OWN.update(load(os.path.join(ROOT, 'sections/floris6/klaviyo-urls.txt')))  # 19 nov laat: Complete Edition van Floris
 LOCAL = '--local' in sys.argv
 def src(key):
     if key.startswith('torn-') or key == 'gifts-flatlay.jpg':
