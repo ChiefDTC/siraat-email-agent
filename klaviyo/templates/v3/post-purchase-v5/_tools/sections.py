@@ -11,10 +11,10 @@ REPO = os.path.abspath(os.path.join(ROOT, '../../../..'))
 V6D = os.path.join(REPO, 'klaviyo/templates/v3/welcome/v6d-envelope-rich')
 PP = os.path.join(REPO, 'klaviyo/templates/v3/post-purchase')
 sys.path.insert(0, os.path.join(V6D, '_tools')); sys.path.insert(0, os.path.dirname(__file__))
-from ground import ground  # noqa: E402
+from hardshadow import hard  # noqa: E402  (harde schaduw, Floris 19 nov; ground.py niet meer gebruikt)
 from catalog import CARDS, TINT  # noqa: E402
 CUT = os.path.join(ROOT, 'gen/clean/')
-SH = os.path.join(ROOT, 'gen/sh'); os.makedirs(SH, exist_ok=True)
+SH = os.path.join(ROOT, 'gen/hard'); os.makedirs(SH, exist_ok=True)
 FONT = os.path.join(REPO, 'klaviyo/fonts/TTRamillas-LightItalic.ttf')
 OUT = os.path.join(ROOT, 'sections/src'); os.makedirs(OUT, exist_ok=True)
 CREAM, SAND, DARK, BRICK, GOLD, W, INK, BODY, YEL, ESP = '#F8F7F2', '#ECE7DD', '#282828', '#AC3B19', '#B8862B', '#FFFFFF', '#272727', '#2E2E2E', '#FFB800', '#321E1D'
@@ -39,7 +39,7 @@ def _ground(m):
     st = re.sub(r'transform:rotate\([^)]*\);?', '', st)
     path = src.replace('file://', '')
     out = os.path.join(SH, os.path.basename(path)[:-4] + f'_{rot:g}.png')
-    return f'<img src="file://{ground(path, rot, out)}" style="{st}">'
+    return f'<img src="file://{hard(path, rot, out)}" style="{st}">'
 def sec(name, style, content):
     content = re.sub(r'<img class="shadow" src="([^"]+)" style="([^"]*)">', _ground, content)
     open(os.path.join(OUT, name + '.html'), 'w').write(BASE.replace('__S__', style).replace('__C__', content)); SECS.append(name)
@@ -99,7 +99,7 @@ for k, (cut, rot, mw, mh) in CARDS.items():
     bundle = os.path.exists(CUT + f'bundle-{k}.png')  # samengestelde bundel: schaduw zit al per onderdeel in het beeld
     img = (f'<img src="{f(CUT + f"bundle-{k}.png")}" style="max-width:{mw}px;max-height:{mh}px">' if bundle else
            f'<img class="shadow" src="{c(cut)}" style="max-width:{mw}px;max-height:{mh}px;transform:rotate({rot}deg)">')
-    sec(f'card-{k}', f'background:{CREAM};padding:20px 40px 0', f'<div style="background:{TINT[k]};border-radius:40px 40px 0 0;height:540px;display:flex;align-items:center;justify-content:center;padding:50px 60px 20px">'
+    sec(f'card-{k}', f'background:{CREAM};padding:20px 40px 0', f'<div style="background:{TINT[k]};border-radius:40px 40px 0 0;height:680px;display:flex;align-items:center;justify-content:center;padding:46px 40px 18px">'
         + img + '</div>')
 
 # ================= reviewkaarten (letterlijk uit content/reviews/reviews.csv, gecontroleerd in build.py)

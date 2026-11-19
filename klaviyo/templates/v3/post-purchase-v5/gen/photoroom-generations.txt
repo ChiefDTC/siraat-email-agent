@@ -13,3 +13,6 @@ brd gen_6cf10deb-b217-4f82-833f-9c4dee527671
 ute gen_2137c95b-3e58-4600-bb28-0552bdde8df3
 lid gen_c549e770-45c6-43d6-9e65-f6950a900a75
 rst gen_cc8cb6a2-20f9-431c-b482-d0b8f21e141e
+wok34 gen_ce4a3a7d-3259-434d-b4b7-0f1601ea3c34 (bron: siraat-titanium-hammered-wok-09-fully-clad-layers, uitsnede)
+dep34 gen_ae10f2a0-8f37-426a-98ed-1007b230b727 (bron: siraat-titanium-hammered-deep-pan-03-room-for-the-sauce, uitsnede)
+crp34 gen_c5857bf8-f55f-4a9b-8f41-310250cebb55 (bron: siraat-titanium-hammered-crepe-pan-02, uitsnede, tekstchips vooraf weggeschilderd)

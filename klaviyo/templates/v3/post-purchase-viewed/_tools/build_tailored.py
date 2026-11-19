@@ -62,7 +62,7 @@ def btn(label, url, pad="20px 40px 0 40px", fr=True):
 def hero(kind):
     """kind 'set12' (VS) of 'set6' (niet-VS)."""
     if kind == 'set12':
-        h, im, name, spec, alt = SET12['handle'], urls['ppv-set12.jpg'], SET12['name'], '12 pieces &middot; 3 pans, 3 pots, 6 lids', 'The Siraat 12-piece set: three pans, two saucepans and an 8 qt stockpot, each with its lid'
+        h, im, name, spec, alt = SET12['handle'], urls['ppv-set12-hard.jpg'], SET12['name'], '12 pieces &middot; 3 pans, 3 pots, 6 lids', 'The Siraat 12-piece set: three pans, two saucepans and an 8 qt stockpot, each with its lid'
         price = (f'<div style="{F}font-size:15px;line-height:22px;color:#D9C6BC;"><span style="text-decoration:line-through;">{money(SET12["was"])}</span>&nbsp;&nbsp;{money(SET12["price"])}</div>'
                  f'<div style="{F}font-size:40px;line-height:46px;font-weight:800;color:#FFFFFF;padding-top:2px;">{cp(SET12["price"])}</div>'
                  f'<div style="{F}font-size:13px;line-height:19px;color:#D9C6BC;padding-top:4px;">with your code</div>')
@@ -70,7 +70,7 @@ def hero(kind):
         body = "Three pans, a 2&nbsp;qt and a 3&nbsp;qt saucepan and an 8&nbsp;qt stockpot, each with its lid. It is the only way to get our titanium hammered pots."
     else:
         s6 = BYKEY['s06']
-        h, im, name, spec, alt = s6['handle'], urls['ppv-set6.jpg'], s6['name'], '6 pieces &middot; 3 pans, 3 lids', 'The Siraat 6-piece set: three titanium hammered pans and three lids'
+        h, im, name, spec, alt = s6['handle'], urls['ppv-set6-hard.jpg'], s6['name'], '6 pieces &middot; 3 pans, 3 lids', 'The Siraat 6-piece set: three titanium hammered pans and three lids'
         price = (f'<div style="{F}font-size:40px;line-height:46px;font-weight:800;color:#FFFFFF;">15% OFF</div>'
                  f'<div style="{F}font-size:13px;line-height:19px;color:#D9C6BC;padding-top:4px;">the 6&#8209;piece set, with your code</div>')
         lab = 'Get 15% off the set'

@@ -11,12 +11,12 @@ ALL = {p['key']: p for p in P} | {'lid': LID}
 ALL['s06'] = dict(ALL['s06'], line='Mini, Small and Large pans, each with a fitted lid.')
 
 # key -> (uitsnede, rotatie in graden, max breedte, max hoogte) op de kaart van 1120 x 540
-CARDS = {
-    'e34': ('e34', 0, 900, 440), 'fhp': ('fhp', 0, 940, 400), 'kn8': ('kn8', 0, 760, 450), 'cmp': ('cmp', 0, 860, 450),
-    'csp': ('csp', 0, 900, 440), 's06': ('s06', -4, 640, 450), 'rst': ('rst', -3, 640, 430), 'p22': ('p22', 0, 680, 450),
-    'lrg': ('lrg', -10, 560, 450), 'piz': ('piz', -4, 600, 440), 'ute': ('ute', 0, 620, 450), 'std': ('std', -10, 540, 450),
-    'crp': ('crp', -4, 980, 360), 'sml': ('sml', -10, 520, 430), 'min': ('min', -10, 480, 410), 'dep': ('dep', -3, 960, 430),
-    'wok': ('wok', -3, 960, 440), 'brd': ('brd', -6, 520, 450), 'lid': ('lid', -3, 560, 420),
+CARDS = {  # 19 nov avond: product 70 tot 80% van de kaartbreedte (Floris), 3/4-aanzicht waar mogelijk
+    'e34': ('e34', 0, 960, 600), 'fhp': ('fhp', 0, 1000, 560), 'kn8': ('kn8', 0, 860, 600), 'cmp': ('cmp', 0, 900, 600),
+    'csp': ('csp', 0, 920, 600), 's06': ('s06', -4, 820, 600), 'rst': ('rst', -3, 840, 600), 'p22': ('p22', 0, 820, 600),
+    'lrg': ('lrg', -8, 800, 610), 'piz': ('piz', -4, 820, 600), 'ute': ('ute', 0, 800, 600), 'std': ('std', -8, 800, 610),
+    'crp': ('crp34', -2, 900, 600), 'sml': ('sml', -8, 780, 600), 'min': ('min', -8, 760, 590), 'dep': ('dep34', -2, 900, 600),
+    'wok': ('wok34', -2, 900, 600), 'brd': ('brd', -6, 720, 610), 'lid': ('lid', -3, 820, 590),
 }
 _T = ['#F3E3D3', '#E4E7DF', '#E8E1EA', '#E2E8EC', '#EFE6D6']
 TINT = {k: _T[i % len(_T)] for i, k in enumerate(CARDS)}

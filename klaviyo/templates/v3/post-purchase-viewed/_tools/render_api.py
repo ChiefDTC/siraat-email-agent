@@ -23,7 +23,7 @@ for s in S:
     if 'data' not in d: print(s['id'], json.dumps(d)[:400]); continue
     out = d['data']['attributes']['html']
     open(os.path.join(D, 'tailored', s['id'] + '.html'), 'w').write(out)
-    hero = '12-Pcs' if 'ppv-set12' in out or '813a3024' in out else ('6-Pcs' if '03423581' in out else None)
+    hero = '12-Pcs' if 'da0a489a' in out else ('6-Pcs' if 'c526c214' in out else None)
     got = re.findall(r'utm_content%3D([a-z0-9]{3})(?:%26|")', out)
     seen = []
     for g in got:
