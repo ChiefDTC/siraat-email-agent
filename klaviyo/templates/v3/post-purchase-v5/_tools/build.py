@@ -106,7 +106,7 @@ class Mail:
                 '<table bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color:#FFFFFF;" width="100%">\n<tr><td align="center" style="padding:8px 0 32px 0;">\n'
                 f'<table bgcolor="{CREAM}" border="0" cellpadding="0" cellspacing="0" class="w" role="presentation" style="width:100%;max-width:600px;background-color:{CREAM};" width="600">\n'
                 + pre + body + post + '</table>\n</td></tr>\n</table>\n</body>\n</html>\n')
-        assert '—' not in html, s.name
+        assert chr(0x2014) not in html, s.name
         assert '{{SHARED}}' not in html and '{{IMG}}' not in html
         # besturingstags tussen tabelrijen in commentaar (PLAYBOOK 12), uitvoertags laten staan
         html = re.sub(r'(?<!<!--)(\{%\s*(?:if|elif|else|endif|for|endfor|with|endwith)\b[^%]*%\})', r'<!--\1-->', html)
