@@ -1,5 +1,5 @@
 """BF-W1 B · 12pcs top (US) · TEST (19 nov 2026), kopie van bf-w1-image-b. NIET LIVE. Bovenste aanbod per land: VS 12-Pcs (bf-top12), rest 6-Pcs (bf-top6);
-lagere dubbele kaart per tak weg (VS zonder card-set12-wide, rest met card-standard-wide in plaats van de rij standard + set6). Landconditie als scripts/v5lib.py.
+lagere kaarten: VS rij standard + set6, rest alleen card-standard-wide; card-set12-wide nergens (12-Pcs is alleen VS en staat daar bovenaan, Floris 19 nov). Landconditie als scripts/v5lib.py.
 Origineel: BF-W1 image B (concept, 18 nov 2026). NIET LIVE. B-variant voor de A/B in flow Rn556d (A = template XXg4sn).
 Zelfde aanbod en prijzen als A, geen nep-urgentie (geen 'ends at midnight', geen '92% claimed').
 Header en footer uit klaviyo/templates/partials (zoals v6d build.py). Geen discount-redirect (geen code), wel UTM.
@@ -85,7 +85,7 @@ e.img('bf-hero.jpg', 'Black Friday sale is live: up to 70% off. No code needed, 
 e.cta(BRICK, 'See my Black Friday prices', U('cta1'), dark=True, sub=FR, pad='4px 40px 34px 40px',
       lead='Your Black Friday price is already on every pan and set. Nothing to copy, nothing to type at checkout.')
 e.torn(BRICK, SAND)
-e.add("<!--{% with mpc=person.Country mpcc=person|lookup:'country_code' %}{% if mpc == 'United States' or mpc == 'US' or not mpc and mpcc == 'US' %}-->\n")
+e.add("<!--{% with mpc=person.Country mpcc=person|lookup:'country_code' mloc=person|lookup:'$country' %}{% if mloc == 'United States' or mpc == 'United States' or mpc == 'US' or mpcc == 'US' %}-->\n")
 e.img('bf-top12.jpg', 'Start here, the complete kitchen: Cookware Set, 12 pieces, 3 pans, 3 pots and 6 lids. 68% off: $649, was $2,047. Black Friday price, no code.', UP('top12', 'set12'))
 e.cta(SAND, 'Get the 12-piece set for $649', UP('top12-cta', 'set12'), sub=FR, pad='0 40px 30px 40px')
 e.add('<!--{% else %}-->\n')
@@ -93,12 +93,11 @@ e.img('bf-top6.jpg', 'Start here, three pans, three lids: Pan Set, 6 pieces, 3 p
 e.cta(SAND, 'Get the 6-piece set for $299', UP('top6-cta', 'set6'), sub=FR, pad='0 40px 30px 40px')
 e.add('<!--{% endif %}{% endwith %}-->\n')
 e.img('bf-h-more.jpg', 'The rest of the sale: pick your pan or your whole kitchen.', U('h-more'))
-e.add("<!--{% with mpc=person.Country mpcc=person|lookup:'country_code' %}{% if mpc == 'United States' or mpc == 'US' or not mpc and mpcc == 'US' %}-->\n")
+e.add("<!--{% with mpc=person.Country mpcc=person|lookup:'country_code' mloc=person|lookup:'$country' %}{% if mloc == 'United States' or mpc == 'United States' or mpc == 'US' or mpcc == 'US' %}-->\n")
 e.pair([('card-standard.jpg', 'Pan Pro Standard, 11 inch, 28 cm. 69% off: $149, was $480.', UP('card-standard', 'standard')),
         ('card-set6.jpg', 'Pan Set, 6 pieces: 3 pans and 3 fitted lids. 70% off: $299, was $997.', UP('card-set6', 'set6'))])
 e.add('<!--{% else %}-->\n')
 e.img('card-standard-wide.jpg', 'Pan Pro Standard, our bestseller, 11 inch, 28 cm. 69% off: $149, was $480.', UP('card-standard', 'standard'))
-e.img('card-set12-wide.jpg', 'Cookware Set, 12 pieces: 3 pans, 3 pots and 6 lids, the complete kitchen. 68% off: $649, was $2,047.', UP('card-set12', 'set12'))
 e.add('<!--{% endif %}{% endwith %}-->\n')
 e.torn(SAND, DARK)
 e.img('bf-reasons.jpg', 'Why now, five honest reasons, no countdown. 1: Black Friday prices, up to 70% off pans and sets. 2: No code needed, the sale price is already on the product page. 3: 5 free gifts in the box with every order. 4: 30-day returns, unused within 30 days of delivery, full refund. 5: 75-year warranty against defects; a pure titanium cooking surface with no coatings, so nothing to wear off.', U('reasons'))
@@ -129,10 +128,11 @@ html, imgs = page(local=not OWN)
 open(os.path.join(ROOT, 'bf-w1-b-12pcs-top.html'), 'w').write(html)
 prev, _ = page(local=True)
 prev = prev.replace("{{ first_name|default:'there' }}", 'Sarah').replace('{{ organization.name }}', "Siraat's Kitchen").replace('{{ organization.full_address }}', '(address)')
-IFX = re.escape("<!--{% with mpc=person.Country mpcc=person|lookup:'country_code' %}{% if mpc == 'United States' or mpc == 'US' or not mpc and mpcc == 'US' %}-->")
+IFX = re.escape("<!--{% with mpc=person.Country mpcc=person|lookup:'country_code' mloc=person|lookup:'$country' %}{% if mloc == 'United States' or mpc == 'United States' or mpc == 'US' or mpcc == 'US' %}-->")
 for nm, us in (('us', True), ('int', False)):
     x = re.sub(IFX + r'(.*?)' + re.escape('<!--{% else %}-->') + r'(.*?)' + re.escape('<!--{% endif %}{% endwith %}-->'), lambda m: m.group(1 if us else 2), prev, flags=re.S)
     assert '{% if' not in x
+    if not us: assert not re.search(r'12.(Pcs|piece)|cookware-set\?|\$649|2,047|card-set12|bf-top12', x), 'niet-VS noemt 12-Pcs'
     x = re.sub(r'\{%.*?%\}', '#', x); x = re.sub(r'\{\{.*?\}\}', '', x)
     open(os.path.join(ROOT, f'preview-{nm}.html'), 'w').write(x)
 kb = sum(os.path.getsize(src(k, True)) for k in set(imgs)) // 1024
