@@ -33,7 +33,8 @@ def neutral(im, thr=95):
     hsv = np.array(im.convert('RGB').convert('HSV')).astype(float)
     s_, v = hsv[..., 1], hsv[..., 2]
     edge = (np.array(a) > 0) & ~ndimage.binary_erosion(np.array(a) > 200, iterations=10)  # rand: bruine zweem van het decor
-    metal = (s_ < thr) | edge
+    rows = np.arange(hsv.shape[0])[:, None] > hsv.shape[0] * .78  # onderkant: spiegeling van het bruine werkblad
+    metal = (s_ < thr) | edge | (rows & np.ones_like(edge))
     hsv[..., 1] = np.where(metal, s_ * 0.18, s_)
     hsv[..., 2] = np.where(metal, np.clip(v * 1.06 + 6, 0, 255), v)
     out = Image.fromarray(hsv.astype('uint8'), 'HSV').convert('RGB').convert('RGBA'); out.putalpha(a)

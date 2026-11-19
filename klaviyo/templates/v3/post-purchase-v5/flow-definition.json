@@ -34,178 +34,10 @@
       "temporary_id": "d0",
       "type": "time-delay",
       "data": {
-       "unit": "hours",
-       "value": 1,
+       "unit": "minutes",
+       "value": 5,
        "secondary_value": null,
        "timezone": "profile"
-      },
-      "links": {
-       "next": "pp1f"
-      }
-     },
-     {
-      "temporary_id": "pp1f",
-      "type": "send-email",
-      "data": {
-       "status": "draft",
-       "message": {
-        "name": "PP v5 · PP1-FIRST",
-        "from_email": "send@siraatskitchen.com",
-        "from_label": "Siraat's Kitchen",
-        "reply_to_email": "support@siraatskitchen.com",
-        "cc_email": null,
-        "bcc_email": null,
-        "subject_line": "Good call. Here's what happens next.",
-        "preview_text": "Order confirmed. Your 5 free gifts, your e-book and the one tip that matters.",
-        "template_id": "UYYaHy",
-        "smart_sending_enabled": false,
-        "transactional": false,
-        "add_tracking_params": false,
-        "additional_filters": {
-         "condition_groups": [
-          {
-           "conditions": [
-            {
-             "type": "profile-metric",
-             "metric_id": "RSNxYV",
-             "measurement": "count",
-             "measurement_filter": {
-              "type": "numeric",
-              "operator": "equals",
-              "value": 1
-             },
-             "timeframe_filter": {
-              "type": "date",
-              "operator": "alltime"
-             },
-             "metric_filters": null
-            }
-           ]
-          },
-          {
-           "conditions": [
-            {
-             "type": "profile-metric",
-             "metric_id": "RSNxYV",
-             "measurement": "count",
-             "measurement_filter": {
-              "type": "numeric",
-              "operator": "greater-than",
-              "value": 0
-             },
-             "timeframe_filter": {
-              "type": "date",
-              "operator": "in-the-last",
-              "unit": "day",
-              "quantity": 4
-             },
-             "metric_filters": [
-              {
-               "property": "$value",
-               "filter": {
-                "type": "numeric",
-                "operator": "greater-than",
-                "value": 0.0
-               }
-              }
-             ]
-            }
-           ]
-          }
-         ]
-        }
-       }
-      },
-      "links": {
-       "next": "pp1r"
-      }
-     },
-     {
-      "temporary_id": "pp1r",
-      "type": "send-email",
-      "data": {
-       "status": "draft",
-       "message": {
-        "name": "PP v5 · PP1-REPEAT",
-        "from_email": "send@siraatskitchen.com",
-        "from_label": "Siraat's Kitchen",
-        "reply_to_email": "support@siraatskitchen.com",
-        "cc_email": null,
-        "bcc_email": null,
-        "subject_line": "Good to see you again",
-        "preview_text": "Order confirmed. Your 5 free gifts, your e-book and the one tip that matters.",
-        "template_id": "WanZBq",
-        "smart_sending_enabled": false,
-        "transactional": false,
-        "add_tracking_params": false,
-        "additional_filters": {
-         "condition_groups": [
-          {
-           "conditions": [
-            {
-             "type": "profile-metric",
-             "metric_id": "RSNxYV",
-             "measurement": "count",
-             "measurement_filter": {
-              "type": "numeric",
-              "operator": "greater-than",
-              "value": 1
-             },
-             "timeframe_filter": {
-              "type": "date",
-              "operator": "alltime"
-             },
-             "metric_filters": null
-            }
-           ]
-          },
-          {
-           "conditions": [
-            {
-             "type": "profile-metric",
-             "metric_id": "RSNxYV",
-             "measurement": "count",
-             "measurement_filter": {
-              "type": "numeric",
-              "operator": "greater-than",
-              "value": 0
-             },
-             "timeframe_filter": {
-              "type": "date",
-              "operator": "in-the-last",
-              "unit": "day",
-              "quantity": 4
-             },
-             "metric_filters": [
-              {
-               "property": "$value",
-               "filter": {
-                "type": "numeric",
-                "operator": "greater-than",
-                "value": 0.0
-               }
-              }
-             ]
-            }
-           ]
-          }
-         ]
-        }
-       }
-      },
-      "links": {
-       "next": "d2"
-      }
-     },
-     {
-      "temporary_id": "d2",
-      "type": "time-delay",
-      "data": {
-       "unit": "days",
-       "value": 2,
-       "secondary_value": null,
-       "timezone": "profile",
-       "delay_until_time": "09:00:00"
       },
       "links": {
        "next": "pp2"
@@ -224,7 +56,7 @@
         "cc_email": null,
         "bcc_email": null,
         "subject_line": "A thank-you: 15% off, picked for you",
-        "preview_text": "Your order is on its way. Here is 15% off, once, until Monday, Nov 30.",
+        "preview_text": "Thanks for your order. Here is 15% off, once, until Monday, Nov 30.",
         "template_id": "T7V2RF",
         "smart_sending_enabled": false,
         "transactional": false,
@@ -1227,6 +1059,36 @@
            "conditions": [
             {
              "type": "profile-metric",
+             "metric_id": "YkRM4Q",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 1
+             },
+             "metric_filters": [
+              {
+               "property": "Campaign Name",
+               "filter": {
+                "type": "string",
+                "operator": "contains",
+                "value": "VIP15"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
              "metric_id": "Xg6cwn",
              "measurement": "count",
              "measurement_filter": {
@@ -1259,7 +1121,174 @@
               "type": "date",
               "operator": "in-the-last",
               "unit": "day",
-              "quantity": 6
+              "quantity": 2
+             },
+             "metric_filters": [
+              {
+               "property": "$value",
+               "filter": {
+                "type": "numeric",
+                "operator": "greater-than",
+                "value": 0.0
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       }
+      },
+      "links": {
+       "next": "d1"
+      }
+     },
+     {
+      "temporary_id": "d1",
+      "type": "time-delay",
+      "data": {
+       "unit": "minutes",
+       "value": 55,
+       "secondary_value": null,
+       "timezone": "profile"
+      },
+      "links": {
+       "next": "pp1f"
+      }
+     },
+     {
+      "temporary_id": "pp1f",
+      "type": "send-email",
+      "data": {
+       "status": "draft",
+       "message": {
+        "name": "PP v5 · PP1-FIRST",
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Good call. Here's what happens next.",
+        "preview_text": "Order confirmed. Your 5 free gifts, your e-book and the one tip that matters.",
+        "template_id": "UYYaHy",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": false,
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 1
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "alltime"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 4
+             },
+             "metric_filters": [
+              {
+               "property": "$value",
+               "filter": {
+                "type": "numeric",
+                "operator": "greater-than",
+                "value": 0.0
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       }
+      },
+      "links": {
+       "next": "pp1r"
+      }
+     },
+     {
+      "temporary_id": "pp1r",
+      "type": "send-email",
+      "data": {
+       "status": "draft",
+       "message": {
+        "name": "PP v5 · PP1-REPEAT",
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Good to see you again",
+        "preview_text": "Order confirmed. Your 5 free gifts, your e-book and the one tip that matters.",
+        "template_id": "WanZBq",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": false,
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 1
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "alltime"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 4
              },
              "metric_filters": [
               {
@@ -1287,7 +1316,7 @@
       "type": "time-delay",
       "data": {
        "unit": "days",
-       "value": 6,
+       "value": 7,
        "secondary_value": null,
        "timezone": "profile",
        "delay_until_time": "09:00:00"

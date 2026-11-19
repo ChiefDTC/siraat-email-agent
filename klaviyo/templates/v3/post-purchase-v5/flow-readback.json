@@ -1,13 +1,13 @@
 {
  "data": {
   "type": "flow",
-  "id": "SqSdTv",
+  "id": "Ukz7F9",
   "attributes": {
    "name": "v5 \u00b7 Post-purchase + delivery (draft)",
    "status": "draft",
    "archived": false,
-   "created": "2026-11-19T18:47:17+00:00",
-   "updated": "2026-11-19T18:47:17+00:00",
+   "created": "2026-11-19T19:14:37+00:00",
+   "updated": "2026-11-19T19:14:37+00:00",
    "trigger_type": "Metric",
    "definition": {
     "triggers": [
@@ -36,192 +36,20 @@
     },
     "actions": [
      {
-      "id": "125893857",
+      "id": "125896899",
       "type": "time-delay",
       "data": {
-       "unit": "hours",
-       "value": 1,
-       "secondary_value": 0,
+       "unit": "minutes",
+       "value": 5,
+       "secondary_value": null,
        "timezone": "profile"
       },
       "links": {
-       "next": "125893858"
+       "next": "125896900"
       }
      },
      {
-      "id": "125893858",
-      "type": "send-email",
-      "data": {
-       "message": {
-        "from_email": "send@siraatskitchen.com",
-        "from_label": "Siraat's Kitchen",
-        "reply_to_email": "support@siraatskitchen.com",
-        "cc_email": null,
-        "bcc_email": null,
-        "subject_line": "Good call. Here's what happens next.",
-        "preview_text": "Order confirmed. Your 5 free gifts, your e-book and the one tip that matters.",
-        "template_id": "SXg2aJ",
-        "smart_sending_enabled": false,
-        "transactional": false,
-        "add_tracking_params": false,
-        "custom_tracking_params": null,
-        "additional_filters": {
-         "condition_groups": [
-          {
-           "conditions": [
-            {
-             "type": "profile-metric",
-             "metric_id": "RSNxYV",
-             "measurement": "count",
-             "measurement_filter": {
-              "type": "numeric",
-              "operator": "equals",
-              "value": 1
-             },
-             "timeframe_filter": {
-              "type": "date",
-              "operator": "alltime"
-             },
-             "metric_filters": null
-            }
-           ]
-          },
-          {
-           "conditions": [
-            {
-             "type": "profile-metric",
-             "metric_id": "RSNxYV",
-             "measurement": "count",
-             "measurement_filter": {
-              "type": "numeric",
-              "operator": "greater-than",
-              "value": 0
-             },
-             "timeframe_filter": {
-              "type": "date",
-              "operator": "in-the-last",
-              "unit": "day",
-              "quantity": 4
-             },
-             "metric_filters": [
-              {
-               "property": "$value",
-               "filter": {
-                "type": "numeric",
-                "operator": "greater-than",
-                "value": 0.0
-               }
-              }
-             ]
-            }
-           ]
-          }
-         ]
-        },
-        "name": "PP v5 \u00b7 PP1-FIRST",
-        "id": "Xb8PNj"
-       },
-       "status": "draft"
-      },
-      "links": {
-       "next": "125893862"
-      }
-     },
-     {
-      "id": "125893862",
-      "type": "send-email",
-      "data": {
-       "message": {
-        "from_email": "send@siraatskitchen.com",
-        "from_label": "Siraat's Kitchen",
-        "reply_to_email": "support@siraatskitchen.com",
-        "cc_email": null,
-        "bcc_email": null,
-        "subject_line": "Good to see you again",
-        "preview_text": "Order confirmed. Your 5 free gifts, your e-book and the one tip that matters.",
-        "template_id": "YfUqkM",
-        "smart_sending_enabled": false,
-        "transactional": false,
-        "add_tracking_params": false,
-        "custom_tracking_params": null,
-        "additional_filters": {
-         "condition_groups": [
-          {
-           "conditions": [
-            {
-             "type": "profile-metric",
-             "metric_id": "RSNxYV",
-             "measurement": "count",
-             "measurement_filter": {
-              "type": "numeric",
-              "operator": "greater-than",
-              "value": 1
-             },
-             "timeframe_filter": {
-              "type": "date",
-              "operator": "alltime"
-             },
-             "metric_filters": null
-            }
-           ]
-          },
-          {
-           "conditions": [
-            {
-             "type": "profile-metric",
-             "metric_id": "RSNxYV",
-             "measurement": "count",
-             "measurement_filter": {
-              "type": "numeric",
-              "operator": "greater-than",
-              "value": 0
-             },
-             "timeframe_filter": {
-              "type": "date",
-              "operator": "in-the-last",
-              "unit": "day",
-              "quantity": 4
-             },
-             "metric_filters": [
-              {
-               "property": "$value",
-               "filter": {
-                "type": "numeric",
-                "operator": "greater-than",
-                "value": 0.0
-               }
-              }
-             ]
-            }
-           ]
-          }
-         ]
-        },
-        "name": "PP v5 \u00b7 PP1-REPEAT",
-        "id": "SSCKPk"
-       },
-       "status": "draft"
-      },
-      "links": {
-       "next": "125893863"
-      }
-     },
-     {
-      "id": "125893863",
-      "type": "time-delay",
-      "data": {
-       "unit": "days",
-       "value": 2,
-       "secondary_value": null,
-       "timezone": "profile",
-       "delay_until_time": "09:00:00"
-      },
-      "links": {
-       "next": "125893864"
-      }
-     },
-     {
-      "id": "125893864",
+      "id": "125896900",
       "type": "send-email",
       "data": {
        "message": {
@@ -231,8 +59,8 @@
         "cc_email": null,
         "bcc_email": null,
         "subject_line": "A thank-you: 15% off, picked for you",
-        "preview_text": "Your order is on its way. Here is 15% off, once, until Monday, Nov 30.",
-        "template_id": "Tr2y6z",
+        "preview_text": "Thanks for your order. Here is 15% off, once, until Monday, Nov 30.",
+        "template_id": "T6x2rT",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": false,
@@ -1235,6 +1063,36 @@
            "conditions": [
             {
              "type": "profile-metric",
+             "metric_id": "YkRM4Q",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 1
+             },
+             "metric_filters": [
+              {
+               "property": "Campaign Name",
+               "filter": {
+                "type": "string",
+                "operator": "contains",
+                "value": "VIP15"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
              "metric_id": "Xg6cwn",
              "measurement": "count",
              "measurement_filter": {
@@ -1267,7 +1125,7 @@
               "type": "date",
               "operator": "in-the-last",
               "unit": "day",
-              "quantity": 6
+              "quantity": 2
              },
              "metric_filters": [
               {
@@ -1285,30 +1143,201 @@
          ]
         },
         "name": "PP v5 \u00b7 PP2-UPSELL \u00b7 VIP15",
-        "id": "RCAEA6"
+        "id": "Ri78Vq"
        },
        "status": "draft"
       },
       "links": {
-       "next": "125893866"
+       "next": "125896903"
       }
      },
      {
-      "id": "125893866",
+      "id": "125896903",
+      "type": "time-delay",
+      "data": {
+       "unit": "minutes",
+       "value": 55,
+       "secondary_value": null,
+       "timezone": "profile"
+      },
+      "links": {
+       "next": "125896904"
+      }
+     },
+     {
+      "id": "125896904",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Good call. Here's what happens next.",
+        "preview_text": "Order confirmed. Your 5 free gifts, your e-book and the one tip that matters.",
+        "template_id": "VrkGdB",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": false,
+        "custom_tracking_params": null,
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 1
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "alltime"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 4
+             },
+             "metric_filters": [
+              {
+               "property": "$value",
+               "filter": {
+                "type": "numeric",
+                "operator": "greater-than",
+                "value": 0.0
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "name": "PP v5 \u00b7 PP1-FIRST",
+        "id": "XQMCkH"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "125896906"
+      }
+     },
+     {
+      "id": "125896906",
+      "type": "send-email",
+      "data": {
+       "message": {
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Good to see you again",
+        "preview_text": "Order confirmed. Your 5 free gifts, your e-book and the one tip that matters.",
+        "template_id": "RdtSA2",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": false,
+        "custom_tracking_params": null,
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 1
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "alltime"
+             },
+             "metric_filters": null
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "RSNxYV",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "greater-than",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 4
+             },
+             "metric_filters": [
+              {
+               "property": "$value",
+               "filter": {
+                "type": "numeric",
+                "operator": "greater-than",
+                "value": 0.0
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "name": "PP v5 \u00b7 PP1-REPEAT",
+        "id": "XdLzJ6"
+       },
+       "status": "draft"
+      },
+      "links": {
+       "next": "125896907"
+      }
+     },
+     {
+      "id": "125896907",
       "type": "time-delay",
       "data": {
        "unit": "days",
-       "value": 6,
+       "value": 7,
        "secondary_value": null,
        "timezone": "profile",
        "delay_until_time": "09:00:00"
       },
       "links": {
-       "next": "125893869"
+       "next": "125896908"
       }
      },
      {
-      "id": "125893869",
+      "id": "125896908",
       "type": "send-email",
       "data": {
        "message": {
@@ -1319,7 +1348,7 @@
         "bcc_email": null,
         "subject_line": "Your first egg, step by step",
         "preview_text": "Medium on titanium works like high on a normal pan. The chef's five steps.",
-        "template_id": "RxXqeG",
+        "template_id": "VXJuuQ",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": false,
@@ -1568,16 +1597,16 @@
          ]
         },
         "name": "PP v5 \u00b7 PP3-DELIVERED",
-        "id": "SaYsRj"
+        "id": "UbiAYm"
        },
        "status": "draft"
       },
       "links": {
-       "next": "125893870"
+       "next": "125896909"
       }
      },
      {
-      "id": "125893870",
+      "id": "125896909",
       "type": "time-delay",
       "data": {
        "unit": "days",
@@ -1587,11 +1616,11 @@
        "delay_until_time": "09:00:00"
       },
       "links": {
-       "next": "125893871"
+       "next": "125896910"
       }
      },
      {
-      "id": "125893871",
+      "id": "125896910",
       "type": "send-email",
       "data": {
        "message": {
@@ -1602,7 +1631,7 @@
         "bcc_email": null,
         "subject_line": "Before your first cook: the egg",
         "preview_text": "Heat first, then oil, then the egg. Keep this for your first cook.",
-        "template_id": "TSM62q",
+        "template_id": "X99jnG",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": false,
@@ -1862,16 +1891,16 @@
          ]
         },
         "name": "PP v5 \u00b7 PP3-SAFE",
-        "id": "Y6DTDZ"
+        "id": "VkHrSd"
        },
        "status": "draft"
       },
       "links": {
-       "next": "125893874"
+       "next": "125896912"
       }
      },
      {
-      "id": "125893874",
+      "id": "125896912",
       "type": "time-delay",
       "data": {
        "unit": "days",
@@ -1881,11 +1910,11 @@
        "delay_until_time": "09:00:00"
       },
       "links": {
-       "next": "125893875"
+       "next": "125896914"
       }
      },
      {
-      "id": "125893875",
+      "id": "125896914",
       "type": "conditional-split",
       "data": {
        "profile_filter": {
@@ -1924,12 +1953,12 @@
        }
       },
       "links": {
-       "next_if_true": "125893877",
-       "next_if_false": "125893879"
+       "next_if_true": "125896915",
+       "next_if_false": "125896916"
       }
      },
      {
-      "id": "125893877",
+      "id": "125896915",
       "type": "send-email",
       "data": {
        "message": {
@@ -1940,7 +1969,7 @@
         "bcc_email": null,
         "subject_line": "How is the pan treating you?",
         "preview_text": "What owners add next. 5 free gifts with every order.",
-        "template_id": "Y22DiB",
+        "template_id": "VT7e9s",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": false,
@@ -2020,7 +2049,7 @@
          ]
         },
         "name": "PP v5 \u00b7 PP4 nocode \u00b7 cooldown",
-        "id": "UraShD"
+        "id": "U6FkCX"
        },
        "status": "draft"
       },
@@ -2029,7 +2058,7 @@
       }
      },
      {
-      "id": "125893879",
+      "id": "125896916",
       "type": "send-email",
       "data": {
        "message": {
@@ -2040,7 +2069,7 @@
         "bcc_email": null,
         "subject_line": "How is the pan treating you?",
         "preview_text": "What owners add next, with your own 10% for 14 days.",
-        "template_id": "WKYy5m",
+        "template_id": "X4w53i",
         "smart_sending_enabled": false,
         "transactional": false,
         "add_tracking_params": false,
@@ -2120,7 +2149,7 @@
          ]
         },
         "name": "CODE \u00b7 PP v5 \u00b7 PP4",
-        "id": "Tb8M4p"
+        "id": "TtEi2k"
        },
        "status": "draft"
       },
@@ -2129,7 +2158,7 @@
       }
      }
     ],
-    "entry_action_id": "125893857",
+    "entry_action_id": "125896899",
     "reentry_criteria": {
      "duration": 30,
      "unit": "day"
@@ -2139,22 +2168,22 @@
   "relationships": {
    "flow-actions": {
     "links": {
-     "self": "https://a.klaviyo.com/api/flows/SqSdTv/relationships/flow-actions/",
-     "related": "https://a.klaviyo.com/api/flows/SqSdTv/flow-actions/"
+     "self": "https://a.klaviyo.com/api/flows/Ukz7F9/relationships/flow-actions/",
+     "related": "https://a.klaviyo.com/api/flows/Ukz7F9/flow-actions/"
     }
    },
    "tags": {
     "links": {
-     "self": "https://a.klaviyo.com/api/flows/SqSdTv/relationships/tags/",
-     "related": "https://a.klaviyo.com/api/flows/SqSdTv/tags/"
+     "self": "https://a.klaviyo.com/api/flows/Ukz7F9/relationships/tags/",
+     "related": "https://a.klaviyo.com/api/flows/Ukz7F9/tags/"
     }
    }
   },
   "links": {
-   "self": "https://a.klaviyo.com/api/flows/SqSdTv/"
+   "self": "https://a.klaviyo.com/api/flows/Ukz7F9/"
   }
  },
  "links": {
-  "self": "https://a.klaviyo.com/api/flows/SqSdTv/?additional-fields[flow]=definition"
+  "self": "https://a.klaviyo.com/api/flows/Ukz7F9/?additional-fields[flow]=definition"
  }
 }

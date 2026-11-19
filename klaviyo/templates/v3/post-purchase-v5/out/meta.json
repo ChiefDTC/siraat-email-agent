@@ -11,8 +11,8 @@
  },
  "pp2-upsell": {
   "subject": "A thank-you: 15% off, picked for you",
-  "preview": "Your order is on its way. Here is 15% off, once, until Monday, Nov 30.",
-  "bytes": 81195
+  "preview": "Thanks for your order. Here is 15% off, once, until Monday, Nov 30.",
+  "bytes": 81209
  },
  "pp3-delivered": {
   "subject": "Your first egg, step by step",

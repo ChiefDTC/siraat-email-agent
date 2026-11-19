@@ -24,7 +24,7 @@ urls.update({k: v for k, v in load(os.path.join(REPO, 'klaviyo/templates/v3/post
 V6U = load(os.path.join(V6D, 'klaviyo-urls.txt'))
 PPU = load(os.path.join(REPO, 'klaviyo/templates/v3/post-purchase/assets/klaviyo-urls.txt'))
 OWN = load(os.path.join(ROOT, 'sections/klaviyo-urls.txt'))
-OWN.update(load(os.path.join(ROOT, 'sections/hard/klaviyo-urls.txt')))  # 19 nov avond: kaarten en topkaarten met harde schaduw
+OWN.update(load(os.path.join(ROOT, 'sections/hard2/klaviyo-urls.txt')))  # 19 nov avond: kaarten en topkaarten met harde schaduw (hard2 = kortere schaduw, 3/4 Wok/Deep/Crepe)
 LOCAL = '--local' in sys.argv
 def src(key):
     if key.startswith('torn-') or key == 'gifts-flatlay.jpg':
@@ -188,13 +188,13 @@ for kind in ('first', 'repeat'):
 bt.CAMP = CAMP + '-upsell'
 CODE = bt.CODE
 END = bt.END_LINE
-m = Mail('pp2-upsell', 'A thank-you: 15% off, picked for you', 'Your order is on its way. Here is 15% off, once, until Monday, Nov 30.')
+m = Mail('pp2-upsell', 'A thank-you: 15% off, picked for you', 'Thanks for your order. Here is 15% off, once, until Monday, Nov 30.')
 m.add('{% if h or s %}')
 m.topbar(f'Your 15% thank&#8209;you &middot; <span style="white-space:nowrap;">code {CODE}</span> &middot; <span style="white-space:nowrap;">ends Nov 30</span>', U('topbar'))
 m.add('{% endif %}')
 m.add('{{HEADER}}\n')
 m.add('{% if h or s %}')
-m.text(CREAM, "Hi {{ first_name|default:'there' }}, your order is on its way. As a thank&#8209;you, here is 15% off, once, " +
+m.text(CREAM, "Hi {{ first_name|default:'there' }}, thanks for your order. As a thank&#8209;you, here is 15% off, once, " +
        "{% if h %}{% if s %}on the set that rounds out your kitchen and on the pieces you had a look at.{% else %}on the set that rounds out your kitchen.{% endif %}{% else %}on the pieces you had a look at.{% endif %} The code is already in every button.",
        '30px 40px 26px 40px')
 m.add('{% if h %}')
@@ -219,7 +219,7 @@ m.add('{% endif %}')
 m.promises()
 m.sign(f'P.S. {CODE} works once and ends {END}. Reply and our team will help with anything about your order.')
 m.add('{% else %}')
-m.text(CREAM, "Hi {{ first_name|default:'there' }}, your order is on its way. Thank you for cooking with us. If anything about your order is not right, reply and our team will help.", '34px 40px 0 40px')
+m.text(CREAM, "Hi {{ first_name|default:'there' }}, thanks for your order. We will email your tracking link as soon as it ships. If anything about your order is not right, reply and our team will help.", '34px 40px 0 40px')
 m.sign()
 m.add('{% endif %}')
 m.add('{{FOOTER}}\n')

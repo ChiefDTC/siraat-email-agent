@@ -147,7 +147,7 @@ def build():
     b += hdr + '\n'
     b += ('{% if h or s %}' + f'<tr><td align="center" bgcolor="#FFFFFF" class="pad" style="background-color:#FFFFFF;padding:34px 40px 0 40px;text-align:center;"><div style="{F}font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:{BRICK};">A THANK&#8209;YOU FOR YOUR ORDER</div>'
           f'<div class="h1x" style="{S}font-size:42px;line-height:46px;color:{INK};padding-top:10px;">' + '{% if h %}{% if io == 0 %}The rest of the kitchen, 15% off.{% else %}Three pans, three lids. 15% off.{% endif %}{% else %}Picked from what you looked at.{% endif %}</div></td></tr>\n')
-    b += p("Hi {{ first_name|default:'there' }}, your order is on its way. As a thank&#8209;you, here is 15% off, once, " +
+    b += p("Hi {{ first_name|default:'there' }}, thanks for your order. As a thank&#8209;you, here is 15% off, once, " +
            "{% if h %}{% if s %}on the set that rounds out your kitchen and on the pieces you had a look at.{% else %}on the set that rounds out your kitchen.{% endif %}{% else %}on the pieces you had a look at.{% endif %}",
            "14px 40px 0 40px", al="center")
     b += '{% if h %}{% if io == 0 %}' + hero('set12') + '{% else %}' + hero('set6') + '{% endif %}{% endif %}'
@@ -163,7 +163,7 @@ def build():
           f'<div style="padding-top:10px;"><span style="display:inline-block;border:1px dashed #D9C6BC;border-radius:6px;padding:8px 16px;{F}font-size:20px;line-height:24px;font-weight:800;letter-spacing:2px;color:#FFFFFF;white-space:nowrap;">{CODE}</span></div>'
           f'<div style="{F}font-size:13px;line-height:20px;color:#D9C6BC;padding-top:10px;">15% off, one use, on any of the pieces in this email. Already applied through every button. Ends {END_LINE}, when our Black Friday sale ends.</div></td></tr></table></td></tr>\n')
     # Benjamin
-    b += p("{% if h %}Every pan and pot we make has the same pure titanium cooking surface as the one on its way to you, no coatings. Nothing on it to wear off, so our cookware is covered by the 75-year warranty.{% else %}Thank you for cooking with us. If anything about your order is not right, reply and our team will help.{% endif %}", "26px 40px 0 40px")
+    b += p("{% if h %}Every pan and pot we make has the same pure titanium cooking surface as the one you just ordered, no coatings. Nothing on it to wear off, so our cookware is covered by the 75-year warranty.{% else %}Thank you for cooking with us. If anything about your order is not right, reply and our team will help.{% endif %}", "26px 40px 0 40px")
     rq = quote_ok('R025', "I ordered one pan to try it out. I'm so glad I did. I am so happy with this pan that I'm ordering the set.")
     b += ('{% if h %}' + f'<tr><td bgcolor="#FFFFFF" class="pad" style="background-color:#FFFFFF;padding:22px 40px 0 40px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="{CREAM}" style="background-color:{CREAM};border:1px solid {SAND};border-radius:10px;"><tr><td align="center" bgcolor="{CREAM}" style="background-color:{CREAM};padding:20px 24px;text-align:center;">'
           f'<div style="{F}font-size:15px;line-height:18px;letter-spacing:3px;color:{BRICK};">&#9733;&#9733;&#9733;&#9733;&#9733;</div>'
@@ -176,7 +176,7 @@ def build():
     b += p("Thank you for cooking with us,", "22px 40px 4px 40px")
     b += f'<tr><td align="left" bgcolor="#FFFFFF" class="pad" style="background-color:#FFFFFF;padding:4px 40px 14px 40px;text-align:left;"><div style="{F}font-size:17px;line-height:24px;color:{INK};font-weight:600;">Benjamin</div><div style="{F}font-size:14px;line-height:20px;color:#8A847A;">Founder, Siraat</div></td></tr>\n'
     b += p(f"P.S. {CODE} works once and ends {END_LINE}. After that it stops working. Reply and our team will help with anything about your order.", "4px 40px 26px 40px", size=15, col=GREY)
-    b += ('{% else %}' + p("Hi {{ first_name|default:'there' }}, your order is on its way. Thank you for cooking with us. If anything about your order is not right, reply and our team will help.", "34px 40px 0 40px")
+    b += ('{% else %}' + p("Hi {{ first_name|default:'there' }}, thanks for your order. We will email your tracking link as soon as it ships. If anything about your order is not right, reply and our team will help.", "34px 40px 0 40px")
           + f'<tr><td align="left" bgcolor="#FFFFFF" class="pad" style="background-color:#FFFFFF;padding:14px 40px 30px 40px;text-align:left;"><div style="{F}font-size:17px;line-height:24px;color:{INK};font-weight:600;">Benjamin</div><div style="{F}font-size:14px;line-height:20px;color:#8A847A;">Founder, Siraat</div></td></tr>\n'
           + '{% endif %}')
     b += ftr
@@ -185,7 +185,7 @@ def build():
            '{% with items0=event.Items|join:"|" so0=person|lookup:\'siraat_owned\'|join:"|" %}{% with items="|"|add:items0|add:"|" so="|"|add:so0|add:"|" %}'
            + CHAIN)
     post = CHAIN_END + '{% endwith %}{% endwith %}{% endwith %}{% endwith %}{% endwith %}'
-    preview = 'Your order is on its way. Here is 15% off, once, until Monday, Nov 30.'
+    preview = 'Thanks for your order. Here is 15% off, once, until Monday, Nov 30.'
     html = (head.replace(re.search(r'<title>[^<]*</title>', head).group(0), '<title>15% off, once, as a thank-you</title>') + '<body style="margin:0;padding:0;background:#FFFFFF;">\n'
             f'<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;color:transparent;">{preview}' + '&#847;&zwnj;&nbsp;' * 60 + '</div>\n'
             '<table bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color:#FFFFFF;" width="100%">\n<tr><td align="center" style="padding:8px 0 32px 0;">\n'

@@ -13,7 +13,7 @@
   ],
   "ok": true,
   "leftovers": 0,
-  "bytes": 29394
+  "bytes": 29387
  },
  "s02": {
   "title": "VS · kocht 12-Pcs · bekeek Pan Pro Large (zit in de set), Pizza Steel en de Damascus-messenset",
@@ -29,7 +29,7 @@
   ],
   "ok": true,
   "leftovers": 0,
-  "bytes": 25057
+  "bytes": 25051
  },
  "s03": {
   "title": "VS · kocht 12-Pcs · bekeek Pan Pro Standard 11\" (zit NIET in de set), Pizza Steel",
@@ -45,7 +45,7 @@
   ],
   "ok": true,
   "leftovers": 0,
-  "bytes": 25177
+  "bytes": 25171
  },
  "s04": {
   "title": "VS · kocht Pan Pro Mini · niets bekeken",
@@ -55,7 +55,7 @@
   "expect": [],
   "ok": true,
   "leftovers": 0,
-  "bytes": 23487
+  "bytes": 23480
  },
  "s05": {
   "title": "VS · kocht 6-Pcs · bekeek alleen Mini en Large (al in bezit)",
@@ -65,7 +65,7 @@
   "expect": [],
   "ok": true,
   "leftovers": 0,
-  "bytes": 23487
+  "bytes": 23480
  },
  "s06": {
   "title": "VS · kocht Pan Pro Standard · bekeek 5 producten (Wok en Deep gisteren, Pizza Steel vorige week, Crêpe en Board 3 weken terug)",
@@ -83,7 +83,7 @@
   ],
   "ok": true,
   "leftovers": 0,
-  "bytes": 32051
+  "bytes": 32044
  },
  "s07": {
   "title": "VK · kocht Pan Pro Standard · bekeek Wok, 2 Pans + 2 Lids (alleen VS) en 12-Pcs (alleen VS)",
@@ -97,7 +97,7 @@
   ],
   "ok": true,
   "leftovers": 0,
-  "bytes": 26380
+  "bytes": 26373
  },
  "s08": {
   "title": "VS · kocht The Just Everything Bundle 34-Pcs · bekeek Wok (in bezit), Pan Pro Standard en messenset",
@@ -113,7 +113,7 @@
   ],
   "ok": true,
   "leftovers": 0,
-  "bytes": 25199
+  "bytes": 25193
  },
  "s09": {
   "title": "VS · kocht Pan Pro Standard, nam via Aftersell de 12-Pcs erbij · bekeek Deep Pan en Pan Pro Large",
@@ -127,7 +127,7 @@
   ],
   "ok": true,
   "leftovers": 0,
-  "bytes": 22399
+  "bytes": 22393
  },
  "s10": {
   "title": "Land onbekend · kocht Pan Pro Standard · bekeek de 6-Pcs en de Roasting Pan (alleen VS)",
@@ -137,7 +137,7 @@
   "expect": [],
   "ok": true,
   "leftovers": 0,
-  "bytes": 23276
+  "bytes": 23269
  },
  "s11": {
   "title": "VS · kocht Wok, had eerder al de 12-Pcs (alleen in siraat_owned) · bekeek alleen de Wok",
@@ -147,7 +147,7 @@
   "expect": [],
   "ok": true,
   "leftovers": 0,
-  "bytes": 14856
+  "bytes": 14873
  },
  "s12": {
   "title": "VS · tracker gemist: kocht Deep Pan in deze order, ppv_vr_dep staat nog op 1 · bekeek ook Wok",
@@ -161,6 +161,6 @@
   ],
   "ok": true,
   "leftovers": 0,
-  "bytes": 26870
+  "bytes": 26863
  }
 }

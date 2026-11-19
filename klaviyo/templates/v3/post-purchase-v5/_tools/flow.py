@@ -37,24 +37,24 @@ def delay(tid, val, unit='days', at='09:00:00'):
     return {'temporary_id': tid, 'type': 'time-delay', 'data': d}
 
 A = [
- delay('d0', 1, 'hours', None),
+ # 19 nov avond (Floris): upsell 5 minuten na de bestelling, bevestiging PP1 blijft op +1 uur na de bestelling (55 min na de upsell)
+ delay('d0', 5, 'minutes', None),
+ email('pp2', 'pp2-upsell', 'PP v5 · PP2-UPSELL · VIP15', [G(*VIEWED, own('12-Pcs')), G(*VIEWED, own('34-Pcs')), G(name_has('VIP15', 1)), G(pm(REFUND, 'equals', 0, last(30))), G(*paid(2))]),
+ delay('d1', 55, 'minutes', None),
  email('pp1f', 'pp1-first', 'PP v5 · PP1-FIRST', [G(pm(PO, 'equals', 1, ALLT)), G(*paid(4))]),
  email('pp1r', 'pp1-repeat', 'PP v5 · PP1-REPEAT', [G(pm(PO, 'greater-than', 1, ALLT)), G(*paid(4))]),
- delay('d2', 2),
- # PP2: bekeek iets aanbiedbaars, of heeft de 12-Pcs/34-Pcs nooit gehad (template kiest hero per land en valt terug op een bedankregel)
- email('pp2', 'pp2-upsell', 'PP v5 · PP2-UPSELL · VIP15', [G(*VIEWED, own('12-Pcs')), G(*VIEWED, own('34-Pcs')), G(pm(REFUND, 'equals', 0, last(30))), G(*paid(6))]),
- delay('d8', 6),
+ delay('d8', 7),
  email('pp3d', 'pp3-delivered', 'PP v5 · PP3-DELIVERED', [G(pm(DELIV, 'greater-than', 0, START)), G(*pan(10)), G(nomail('VQ93sx')), G(nomail('R9dcdY')),
                                                           G(name_has('P2-SAFE')), G(pm(REFUND, 'equals', 0, last(30))), G(*paid(10))]),
  delay('d11', 3),
  email('pp3s', 'pp3-safe', 'PP v5 · PP3-SAFE', [G(name_has('PP v5 · PP3')), G(*pan(13)), G(nomail('VQ93sx')), G(nomail('R9dcdY')),
                                                 G(name_has('P2-SAFE')), G(pm(REFUND, 'equals', 0, last(30))), G(*paid(13))]),
  delay('d21', 10),
- {'temporary_id': 'cool', 'type': 'conditional-split', 'data': {'profile_filter': {'condition_groups': [G(pm(RECV, 'greater-than', 0, last(30), [{'property': 'Campaign Name', 'filter': {'type': 'string', 'operator': 'contains', 'value': 'CODE ·'}}]))]}}},
+ {'temporary_id': 'cool', 'type': 'conditional-split', 'data': {'profile_filter': {'condition_groups': [G(pm(RECV, 'greater-than', 0, last(30), [{'property': 'Campaign Name', 'filter': {'type': 'string', 'operator': 'contains', 'value': 'CODE \u00b7'}}]))]}}},
  email('pp4n', 'pp4-nocode', 'PP v5 · PP4 nocode · cooldown', [G(pm(PO, 'equals', 0, START)), G(pm(REFUND, 'equals', 0, last(30))), G(*paid(24))]),
  email('pp4c', 'pp4-code', 'CODE · PP v5 · PP4', [G(pm(PO, 'equals', 0, START)), G(pm(REFUND, 'equals', 0, last(30))), G(*paid(24))]),
 ]
-nxt = ['pp1f', 'pp1r', 'd2', 'pp2', 'd8', 'pp3d', 'd11', 'pp3s', 'd21', 'cool']
+nxt = ['pp2', 'd1', 'pp1f', 'pp1r', 'd8', 'pp3d', 'd11', 'pp3s', 'd21', 'cool']
 for i, a in enumerate(A):
     if a['temporary_id'] == 'cool': a['links'] = {'next_if_true': 'pp4n', 'next_if_false': 'pp4c'}
     elif a['temporary_id'] in ('pp4n', 'pp4c'): a['links'] = {'next': None}
@@ -66,7 +66,7 @@ body = {'data': {'type': 'flow', 'attributes': {'name': 'v5 · Post-purchase + d
 json.dump(body, open(os.path.join(ROOT, 'flow-definition.json'), 'w'), indent=1, ensure_ascii=False)
 if '--dry' in sys.argv: print('dry', len(A), 'acties'); sys.exit()
 idf = os.path.join(ROOT, 'flow-id.txt')
-assert not os.path.exists(idf), 'flow bestaat al: ' + open(idf).read()
+if os.path.exists(idf): os.rename(idf, idf + '.old')  # vorige draft (SqSdTv, upsell op dag 2) is vervangen
 r = api('POST', '/api/flows/', body)
 if 'data' not in r: print(json.dumps(r)[:1500]); sys.exit(1)
 fid = r['data']['id']; open(idf, 'w').write(fid + '\n')
