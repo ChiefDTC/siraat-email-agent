@@ -598,3 +598,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 2026-11-19 laat: tweede levering productfoto's Floris (Crepe, Pizza Steel, Roasting Pan transparant/wit met harde schaduw; 12-Pcs en Wok dubbel) in brand/product-photos/2026-11-19-prio-extra. Kaarten crp/piz/rst in v5 (sections/floris2), templates + flowkopieen Ukz7F9 bijgewerkt.
 - 2026-11-19 laat: plank en Damascus-messen van Floris in v5 (sections/floris3), templates + flowkopieen bijgewerkt. Peper- en zoutmolens ontvangen maar niet in de v5-catalogus.
 - 2026-11-19 laat: derde levering Floris (deksel, utensils, 2 Pans + 2 Lids, 34-Pcs, 6-Pcs v2) in prio-extra; Small/Mini tonen de Standard-foto kleiner (82%/68%). v5 sections/floris4, templates + flowkopieen bijgewerkt. Nog eigen versie: cmp, csp, fhp.
+- 2026-11-19 laat: Cookware Set Pro en Full Hammered Pro van Floris in v5 (sections/floris5), templates + flowkopieen bijgewerkt. Alleen Complete Edition (cmp) nog eigen versie.

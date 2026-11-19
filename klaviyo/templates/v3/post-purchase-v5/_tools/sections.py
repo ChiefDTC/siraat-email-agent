@@ -24,7 +24,7 @@ c = lambda k: f(CUT + f'cut-{k}.png')
 FL = os.path.join(REPO, 'brand/product-photos/2026-11-19-prio6/')
 FLORIS = {'s12': '12-delige-set', 's06': '6-delige-set', 'std': 'pan-pro-standard', 'lrg': 'pan-pro-large', 'dep': 'deep-pan', 'wok': 'wok'}
 FL2 = os.path.join(REPO, 'brand/product-photos/2026-11-19-prio-extra/')  # tweede levering Floris: Crepe, Pizza Steel, Roasting Pan (wit, multiply)
-FLORIS2 = {'crp': ('crepe-pan_leeg_hard.png', ''), 'piz': ('pizza-steel_leeg_hard.png', ''), 'rst': ('roasting-pan_wit_hard.jpg', 'mix-blend-mode:multiply;'), 'brd': ('cutting-board_leeg_hard.png', ''), 'kn8': ('damascus-knives_leeg_hard.png', ''), 'lid': ('lid_leeg_hard.png', ''), 'ute': ('utensils_leeg_hard.png', ''), 'p22': ('2-pans-2-lids_leeg_hard.png', ''), 'e34': ('34-pcs_leeg_hard.png', '')}
+FLORIS2 = {'crp': ('crepe-pan_leeg_hard.png', ''), 'piz': ('pizza-steel_leeg_hard.png', ''), 'rst': ('roasting-pan_wit_hard.jpg', 'mix-blend-mode:multiply;'), 'brd': ('cutting-board_leeg_hard.png', ''), 'kn8': ('damascus-knives_leeg_hard.png', ''), 'lid': ('lid_leeg_hard.png', ''), 'ute': ('utensils_leeg_hard.png', ''), 'p22': ('2-pans-2-lids_leeg_hard.png', ''), 'e34': ('34-pcs_leeg_hard.png', ''), 'csp': ('cookware-set-pro_leeg_hard.png', ''), 'fhp': ('full-hammered-pro_leeg_hard.png', '')}
 # Small en Mini: de foto van de Standard, kleiner afgebeeld (Floris 19 nov)
 SMALLER = {'sml': .82, 'min': .68}
 FLORIS.update({'sml': 'pan-pro-standard', 'min': 'pan-pro-standard'})
