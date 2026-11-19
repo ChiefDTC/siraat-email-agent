@@ -23,7 +23,13 @@ c = lambda k: f(CUT + f'cut-{k}.png')
 # 19 nov laat: Floris leverde zelf productfoto's met harde schaduw (brand/product-photos/2026-11-19-prio6). Die gaan voor op eigen uitsneden.
 FL = os.path.join(REPO, 'brand/product-photos/2026-11-19-prio6/')
 FLORIS = {'s12': '12-delige-set', 's06': '6-delige-set', 'std': 'pan-pro-standard', 'lrg': 'pan-pro-large', 'dep': 'deep-pan', 'wok': 'wok'}
+FL2 = os.path.join(REPO, 'brand/product-photos/2026-11-19-prio-extra/')  # tweede levering Floris: Crepe, Pizza Steel, Roasting Pan (wit, multiply)
+FLORIS2 = {'crp': ('crepe-pan_leeg_hard.png', ''), 'piz': ('pizza-steel_leeg_hard.png', ''), 'rst': ('roasting-pan_wit_hard.jpg', 'mix-blend-mode:multiply;')}
+FLORIS.update({k: None for k in FLORIS2})
 def pimg(key, cut, rot, mw, mh):
+    if key in FLORIS2:
+        fn, bl = FLORIS2[key]
+        return f'<img src="{f(FL2 + fn)}" style="max-width:{mw}px;max-height:{mh}px;{bl}">'
     if key in FLORIS:
         return f'<img src="{f(FL + FLORIS[key] + "_leeg_hard.png")}" style="max-width:{mw}px;max-height:{mh}px">'
     return f'<img class="shadow" src="{c(cut)}" style="max-width:{mw}px;max-height:{mh}px;transform:rotate({rot}deg)">'
