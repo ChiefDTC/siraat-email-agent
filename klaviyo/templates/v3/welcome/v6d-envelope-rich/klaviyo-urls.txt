@@ -2,7 +2,7 @@ e1-envelope.gif https://cdn.klaviyomail.com/company/TdtTzz/images/692e8051-61b6-
 card-duo.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/7eee3eca-f7b8-4563-b18a-c996e8148303.jpeg
 card-large.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/a1e0e4d9-8ce6-4f2f-a18e-696617128c79.jpeg
 card-roast.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/cf36145d-1412-4a46-84df-98f015132e96.jpeg
-card-set12.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/fb1d2017-92ec-46a8-b99d-0861c4ee284e.jpeg
+card-set12.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/92d7821d-23b1-4ca6-a3d7-9c9383b46766.jpeg
 card-set6.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/1a36bfd7-5c96-4e81-a176-e20697d150fa.jpeg
 card-standard.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/9c06ec7e-38a5-4e75-ae08-f627219f3283.jpeg
 e1-bundle.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/27141274-c445-428e-a5f6-296dd6040a5a.jpeg
@@ -46,4 +46,4 @@ torn-F8F7F2-ECE7DD.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/5e89bd4
 e5-recap-top.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/cb7c0493-6cbb-4ce7-9416-6d33755e6af1.jpeg
 e5-recap-standard.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/d7fcef13-a596-42da-b223-57f1ee314658.jpeg
 e5-recap-set6.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/1ed49a6e-732c-4819-a4e4-5d7305992652.jpeg
-e5-recap-set12.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/37260dff-8e8c-480e-8dab-ef8512fb3bf2.jpeg
+e5-recap-set12.jpg https://cdn.klaviyomail.com/company/TdtTzz/images/b9795bb2-32d9-4316-ab9e-6d58df6353c0.jpeg

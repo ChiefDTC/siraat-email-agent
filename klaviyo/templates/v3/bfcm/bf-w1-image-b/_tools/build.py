@@ -88,7 +88,7 @@ e.cta(SAND, 'Get 2 pans + 2 lids for $249', UP('duo-cta', 'duo'), sub=FR, pad='0
 e.img('bf-h-more.jpg', 'The rest of the sale: pick your pan or your whole kitchen.', U('h-more'))
 e.pair([('card-standard.jpg', 'Pan Pro Standard, 11 inch, 28 cm. 69% off: $149, was $480.', UP('card-standard', 'standard')),
         ('card-set6.jpg', 'Pan Set, 6 pieces: 3 pans and 3 fitted lids. 70% off: $299, was $997.', UP('card-set6', 'set6'))])
-e.img('card-set12-wide.jpg', 'Cookware Set, 12 pieces: 3 pans, 3 pots and 6 lids, the complete kitchen. 67% off: $699, was $2,097.', UP('card-set12', 'set12'))
+e.img('card-set12-wide.jpg', 'Cookware Set, 12 pieces: 3 pans, 3 pots and 6 lids, the complete kitchen. 68% off: $649, was $2,047.', UP('card-set12', 'set12'))
 e.torn(SAND, DARK)
 e.img('bf-reasons.jpg', 'Why now, five honest reasons, no countdown. 1: Black Friday prices, up to 70% off pans and sets. 2: No code needed, the sale price is already on the product page. 3: 5 free gifts in the box with every order. 4: 30-day returns, unused within 30 days of delivery, full refund. 5: 75-year warranty against defects; a pure titanium cooking surface with no coatings, so nothing to wear off.', U('reasons'))
 e.torn(DARK, SAND)

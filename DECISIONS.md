@@ -127,3 +127,4 @@ Hammered Pan Pro Standard (11", 28 cm) kost vanaf nu $149, niet $144 (prijstest:
 - 2026-11-18 (Floris): nieuwe panprijzen: Mini $129, Small $144, Standard $149, Large $154. Let op: Shopify toonde op 18 nov 01:10 UTC nog Small $137, Standard $144, Large $149.
 
 - 2026-11-18 (Floris): 12-Pcs set in alle mails $699, compare-at $2,097 (compare-at gaat mee omhoog met $50, zodat de besparing gelijk blijft). Shopify toonde 18 nov nog $649 / $2,047.
+- 2026-11-19 (Floris): 12-Pcs set weer $649 / $2,047 (Shopify staat ook zo). Besluit van 18 nov ($699 / $2,097) vervalt.
