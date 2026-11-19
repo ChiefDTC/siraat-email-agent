@@ -24,6 +24,7 @@ urls.update({k: v for k, v in load(os.path.join(REPO, 'klaviyo/templates/v3/post
 V6U = load(os.path.join(V6D, 'klaviyo-urls.txt'))
 PPU = load(os.path.join(REPO, 'klaviyo/templates/v3/post-purchase/assets/klaviyo-urls.txt'))
 OWN = load(os.path.join(ROOT, 'sections/klaviyo-urls.txt'))
+OWN.update(load(os.path.join(ROOT, 'sections/hard/klaviyo-urls.txt')))  # 19 nov avond: kaarten en topkaarten met harde schaduw
 LOCAL = '--local' in sys.argv
 def src(key):
     if key.startswith('torn-') or key == 'gifts-flatlay.jpg':

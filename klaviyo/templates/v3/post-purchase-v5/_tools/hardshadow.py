@@ -11,7 +11,7 @@ import numpy as np
 from scipy import ndimage
 from PIL import Image, ImageFilter, ImageChops
 
-def hard(src, rot=0, out=None, squash=0.26, shift=(0.035, 0.012), op=0.52, blur=2.0, contact=0.70):
+def hard(src, rot=0, out=None, squash=0.26, shift=(0.017, 0.010), op=0.52, blur=2.0, contact=0.70):
     if out and os.path.exists(out) and os.path.getmtime(out) > max(os.path.getmtime(src), os.path.getmtime(__file__)):
         return out
     im = Image.open(src).convert('RGBA')
@@ -33,8 +33,13 @@ def hard(src, rot=0, out=None, squash=0.26, shift=(0.035, 0.012), op=0.52, blur=
         y0, y1, x0, x1 = sl[0].start, sl[0].stop, sl[1].start, sl[1].stop
         part = Image.fromarray(((lab[sl] == i + 1) & mask[sl]).astype('uint8') * 255)
         ph = y1 - y0; sh_h = max(4, int(ph * squash))
-        flat = part.resize((x1 - x0, sh_h), Image.BILINEAR).point(lambda v: 255 if v > 90 else 0)
-        cast.paste(255, (padx + x0 + int(w * shift[0]), y1 - sh_h + int(ph * shift[1] * 1.2) + int(h * .004)), flat)
+        # alleen het onderste deel van het silhouet werpt de schaduw (de opstaande steel niet), zodat er geen losse streep naast de pan ligt
+        low = part.crop((0, int(ph * .45), x1 - x0, ph))
+        lb = low.getbbox() or (0, 0, x1 - x0, ph - int(ph * .45))
+        low = low.crop((lb[0], 0, lb[2], low.height))
+        flat = low.resize((lb[2] - lb[0], sh_h), Image.BILINEAR).point(lambda v: 255 if v > 90 else 0)
+        sx = x0 + lb[0]
+        cast.paste(255, (padx + sx + int(w * shift[0]), y1 - sh_h + int(ph * shift[1] * 1.2) + int(h * .004)), flat)
         # 2. contactschaduw van dit onderdeel: onderste ~4% van zijn silhouet, een paar px omlaag, nauwelijks blur
         band = int(max(3, ph * .04))
         bot = part.crop((0, ph - band, x1 - x0, ph)).point(lambda v: 255 if v > 90 else 0)
