@@ -197,3 +197,7 @@ Screenshot van het geheel: `research/figma/alle-emails-overzicht.png` (verkleind
 - **A · Clean delivery card** (echte e-book cover, advies) en **A-alt** (placeholder-cover The Plastic-Free Home): Siraat · Your two books are ready · 25 recipes and a 90-page home guide. Yours to keep.
 - **B · Brief van Benjamin**: Benjamin from Siraat · Start with an egg · Your cookbook and e-book are inside. A note from Benjamin.
 - **C · What's inside showcase**: Siraat · 25 recipes, 6 chapters, yours · Your Favorites Cookbook and e-book are ready to download.
+
+### Row 1k · Post-purchase viewed upsell VIP15 (draft, 19 nov)
+
+[Naar de rij](https://www.figma.com/design/oaxnBkz3MAbePRnorCrQwz?node-id=371-106) · Pagina "All emails", frame 371:106 onder rij 1j (364:106). Vier mails op 600 px (US-preview, koper Pan Pro Standard): 12-Pcs (371:112), 6-Pcs (371:115), Deep Pan Pro (371:118), Pan Pro Large (371:121). Draft-flow X6KkAM, templates S75tGF, TguiAx, UrT9up, SyPZCw. Bron: klaviyo/templates/v3/post-purchase-viewed/. Status: draft, niet live.

@@ -1,0 +1,696 @@
+{
+ "data": {
+  "type": "flow",
+  "attributes": {
+   "name": "PP viewed upsell · VIP15 (draft, 19 nov)",
+   "definition": {
+    "triggers": [
+     {
+      "type": "metric",
+      "id": "RSNxYV",
+      "trigger_filter": null
+     }
+    ],
+    "profile_filter": {
+     "condition_groups": [
+      {
+       "conditions": [
+        {
+         "type": "profile-not-in-flow",
+         "timeframe_filter": {
+          "type": "date",
+          "operator": "in-the-last",
+          "unit": "day",
+          "quantity": 30
+         }
+        }
+       ]
+      }
+     ]
+    },
+    "actions": [
+     {
+      "temporary_id": "delay",
+      "type": "time-delay",
+      "data": {
+       "unit": "days",
+       "value": 2,
+       "secondary_value": null,
+       "timezone": "profile",
+       "delay_until_time": "09:00:00"
+      },
+      "links": {
+       "next": "split-set12"
+      }
+     },
+     {
+      "temporary_id": "split-set12",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "greater-than",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 30
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "Cookware Set | 12-Pcs"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XT7f8Z",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "alltime"
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "Cookware Set | 12-Pcs"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-region",
+            "in_region": true,
+            "region": "united_states"
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "mail-set12",
+       "next_if_false": "split-set6"
+      }
+     },
+     {
+      "temporary_id": "mail-set12",
+      "type": "send-email",
+      "links": {
+       "next": null
+      },
+      "data": {
+       "status": "draft",
+       "message": {
+        "name": "PPV-SET12 VIP15",
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Still thinking about the 12-piece set?",
+        "preview_text": "Your order is on its way. Here is 15% off the set you looked at, once.",
+        "template_id": "S75tGF",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": false,
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "XT7f8Z",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "alltime"
+             },
+             "metric_filters": [
+              {
+               "property": "Name",
+               "filter": {
+                "type": "string",
+                "operator": "contains",
+                "value": "Cookware Set | 12-Pcs"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "YkRM4Q",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 1
+             },
+             "metric_filters": [
+              {
+               "property": "$flow",
+               "filter": {
+                "type": "string",
+                "operator": "equals",
+                "value": "X3ySuU"
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       }
+      }
+     },
+     {
+      "temporary_id": "split-set6",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "greater-than",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 30
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "Pan Set With Lids | 6-Pcs"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XT7f8Z",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "alltime"
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "contains",
+               "value": "Pan Set With Lids | 6-Pcs"
+              }
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "mail-set6",
+       "next_if_false": "split-deep"
+      }
+     },
+     {
+      "temporary_id": "mail-set6",
+      "type": "send-email",
+      "links": {
+       "next": null
+      },
+      "data": {
+       "status": "draft",
+       "message": {
+        "name": "PPV-SET6 VIP15",
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Still thinking about the 6-piece set?",
+        "preview_text": "Your order is on its way. Here is 15% off the set you looked at, once.",
+        "template_id": "TguiAx",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": false,
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "XT7f8Z",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "alltime"
+             },
+             "metric_filters": [
+              {
+               "property": "Name",
+               "filter": {
+                "type": "string",
+                "operator": "contains",
+                "value": "Pan Set With Lids | 6-Pcs"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "YkRM4Q",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 1
+             },
+             "metric_filters": [
+              {
+               "property": "$flow",
+               "filter": {
+                "type": "string",
+                "operator": "equals",
+                "value": "X3ySuU"
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       }
+      }
+     },
+     {
+      "temporary_id": "split-deep",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "greater-than",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 30
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "equals",
+               "value": "Titanium Hammered Deep Pan Pro"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XT7f8Z",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "alltime"
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "equals",
+               "value": "Titanium Hammered Deep Pan Pro"
+              }
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "mail-deep",
+       "next_if_false": "split-large"
+      }
+     },
+     {
+      "temporary_id": "mail-deep",
+      "type": "send-email",
+      "links": {
+       "next": null
+      },
+      "data": {
+       "status": "draft",
+       "message": {
+        "name": "PPV-DEEP VIP15",
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Still thinking about the Deep Pan?",
+        "preview_text": "Your order is on its way. Here is 15% off the Deep Pan, once.",
+        "template_id": "UrT9up",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": false,
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "XT7f8Z",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "alltime"
+             },
+             "metric_filters": [
+              {
+               "property": "Name",
+               "filter": {
+                "type": "string",
+                "operator": "equals",
+                "value": "Titanium Hammered Deep Pan Pro"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "YkRM4Q",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 1
+             },
+             "metric_filters": [
+              {
+               "property": "$flow",
+               "filter": {
+                "type": "string",
+                "operator": "equals",
+                "value": "X3ySuU"
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       }
+      }
+     },
+     {
+      "temporary_id": "split-large",
+      "type": "conditional-split",
+      "data": {
+       "profile_filter": {
+        "condition_groups": [
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XNtYMB",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "greater-than",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "in-the-last",
+             "unit": "day",
+             "quantity": 30
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "equals",
+               "value": "Titanium Hammered Pan Pro Large"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "conditions": [
+           {
+            "type": "profile-metric",
+            "metric_id": "XT7f8Z",
+            "measurement": "count",
+            "measurement_filter": {
+             "type": "numeric",
+             "operator": "equals",
+             "value": 0
+            },
+            "timeframe_filter": {
+             "type": "date",
+             "operator": "alltime"
+            },
+            "metric_filters": [
+             {
+              "property": "Name",
+              "filter": {
+               "type": "string",
+               "operator": "equals",
+               "value": "Titanium Hammered Pan Pro Large"
+              }
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "links": {
+       "next_if_true": "mail-large",
+       "next_if_false": null
+      }
+     },
+     {
+      "temporary_id": "mail-large",
+      "type": "send-email",
+      "links": {
+       "next": null
+      },
+      "data": {
+       "status": "draft",
+       "message": {
+        "name": "PPV-LARGE VIP15",
+        "from_email": "send@siraatskitchen.com",
+        "from_label": "Siraat's Kitchen",
+        "reply_to_email": "support@siraatskitchen.com",
+        "cc_email": null,
+        "bcc_email": null,
+        "subject_line": "Still thinking about the 12-inch pan?",
+        "preview_text": "Your order is on its way. Here is 15% off the Pan Pro Large, once.",
+        "template_id": "SyPZCw",
+        "smart_sending_enabled": false,
+        "transactional": false,
+        "add_tracking_params": false,
+        "additional_filters": {
+         "condition_groups": [
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "XT7f8Z",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "alltime"
+             },
+             "metric_filters": [
+              {
+               "property": "Name",
+               "filter": {
+                "type": "string",
+                "operator": "equals",
+                "value": "Titanium Hammered Pan Pro Large"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "conditions": [
+            {
+             "type": "profile-metric",
+             "metric_id": "YkRM4Q",
+             "measurement": "count",
+             "measurement_filter": {
+              "type": "numeric",
+              "operator": "equals",
+              "value": 0
+             },
+             "timeframe_filter": {
+              "type": "date",
+              "operator": "in-the-last",
+              "unit": "day",
+              "quantity": 1
+             },
+             "metric_filters": [
+              {
+               "property": "$flow",
+               "filter": {
+                "type": "string",
+                "operator": "equals",
+                "value": "X3ySuU"
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       }
+      }
+     }
+    ],
+    "entry_action_id": "delay",
+    "reentry_criteria": {
+     "duration": 30,
+     "unit": "day"
+    }
+   }
+  }
+ }
+}
