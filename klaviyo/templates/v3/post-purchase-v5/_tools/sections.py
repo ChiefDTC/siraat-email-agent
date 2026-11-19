@@ -24,14 +24,18 @@ c = lambda k: f(CUT + f'cut-{k}.png')
 FL = os.path.join(REPO, 'brand/product-photos/2026-11-19-prio6/')
 FLORIS = {'s12': '12-delige-set', 's06': '6-delige-set', 'std': 'pan-pro-standard', 'lrg': 'pan-pro-large', 'dep': 'deep-pan', 'wok': 'wok'}
 FL2 = os.path.join(REPO, 'brand/product-photos/2026-11-19-prio-extra/')  # tweede levering Floris: Crepe, Pizza Steel, Roasting Pan (wit, multiply)
-FLORIS2 = {'crp': ('crepe-pan_leeg_hard.png', ''), 'piz': ('pizza-steel_leeg_hard.png', ''), 'rst': ('roasting-pan_wit_hard.jpg', 'mix-blend-mode:multiply;'), 'brd': ('cutting-board_leeg_hard.png', ''), 'kn8': ('damascus-knives_leeg_hard.png', '')}
+FLORIS2 = {'crp': ('crepe-pan_leeg_hard.png', ''), 'piz': ('pizza-steel_leeg_hard.png', ''), 'rst': ('roasting-pan_wit_hard.jpg', 'mix-blend-mode:multiply;'), 'brd': ('cutting-board_leeg_hard.png', ''), 'kn8': ('damascus-knives_leeg_hard.png', ''), 'lid': ('lid_leeg_hard.png', ''), 'ute': ('utensils_leeg_hard.png', ''), 'p22': ('2-pans-2-lids_leeg_hard.png', ''), 'e34': ('34-pcs_leeg_hard.png', '')}
+# Small en Mini: de foto van de Standard, kleiner afgebeeld (Floris 19 nov)
+SMALLER = {'sml': .82, 'min': .68}
+FLORIS.update({'sml': 'pan-pro-standard', 'min': 'pan-pro-standard'})
 FLORIS.update({k: None for k in FLORIS2})
 def pimg(key, cut, rot, mw, mh):
     if key in FLORIS2:
         fn, bl = FLORIS2[key]
         return f'<img src="{f(FL2 + fn)}" style="max-width:{mw}px;max-height:{mh}px;{bl}">'
     if key in FLORIS:
-        return f'<img src="{f(FL + FLORIS[key] + "_leeg_hard.png")}" style="max-width:{mw}px;max-height:{mh}px">'
+        sc = SMALLER.get(key, 1)
+        return f'<img src="{f(FL + FLORIS[key] + "_leeg_hard.png")}" style="max-width:{int(mw*sc)}px;max-height:{int(mh*sc)}px">'
     return f'<img class="shadow" src="{c(cut)}" style="max-width:{mw}px;max-height:{mh}px;transform:rotate({rot}deg)">'
 
 BASE = f'''<!doctype html><html><head><meta charset="utf-8">
