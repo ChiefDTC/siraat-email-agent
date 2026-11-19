@@ -1,0 +1,57 @@
+{
+ "pp1": {
+  "title": "In their words",
+  "quotes": [
+   {
+    "id": "R028",
+    "name": "Carlos C.",
+    "quote": "Spend the time reading the emails Siraat sends you detailing best cooking methods, cleaning methods..."
+   },
+   {
+    "id": "R157",
+    "name": "Robert H.",
+    "quote": "Pans and lids arrived promptly and in good condition. Excellent quality..."
+   }
+  ]
+ },
+ "pp2": {
+  "title": "One pan first, then the set",
+  "quotes": [
+   {
+    "id": "R025",
+    "name": "Sunny C.",
+    "quote": "I ordered one pan to try it out. I'm so glad I did. I am so happy with this pan that I'm ordering the set."
+   }
+  ]
+ },
+ "pp3": {
+  "title": "The first cook, in their words",
+  "quotes": [
+   {
+    "id": "R117",
+    "name": "Kendric",
+    "quote": "The water will glide when it's ready... When the water did start too glide, I definitely had a smile on my face."
+   },
+   {
+    "id": "R518",
+    "name": "Graham C.",
+    "quote": "We cooked the best omelette we have ever eaten when we used the pan for the first time."
+   }
+  ]
+ },
+ "pp4": {
+  "title": "Built for life, in their words",
+  "quotes": [
+   {
+    "id": "R138",
+    "name": "Tammy",
+    "quote": "I am on my 4th pan from Siraat... I even gifted one to my son, and he says it's the best pan he owns."
+   },
+   {
+    "id": "R240",
+    "name": "Brandon W.",
+    "quote": "Siraat replaced a pan free of charge that had the handle started to become loose on my favorite pan."
+   }
+  ]
+ }
+}

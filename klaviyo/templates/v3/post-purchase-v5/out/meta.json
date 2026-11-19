@@ -1,0 +1,37 @@
+{
+ "pp1-first": {
+  "subject": "Good call. Here's what happens next.",
+  "preview": "Order confirmed. Your 5 free gifts, your e-book and the one tip that matters.",
+  "bytes": 21219
+ },
+ "pp1-repeat": {
+  "subject": "Good to see you again",
+  "preview": "Order confirmed. Your 5 free gifts, your e-book and the one tip that matters.",
+  "bytes": 21144
+ },
+ "pp2-upsell": {
+  "subject": "A thank-you: 15% off, picked for you",
+  "preview": "Your order is on its way. Here is 15% off, once, until Monday, Nov 30.",
+  "bytes": 81195
+ },
+ "pp3-delivered": {
+  "subject": "Your first egg, step by step",
+  "preview": "Medium on titanium works like high on a normal pan. The chef's five steps.",
+  "bytes": 21001
+ },
+ "pp3-safe": {
+  "subject": "Before your first cook: the egg",
+  "preview": "Heat first, then oil, then the egg. Keep this for your first cook.",
+  "bytes": 21029
+ },
+ "pp4-code": {
+  "subject": "How is the pan treating you?",
+  "preview": "What owners add next, with your own 10% for 14 days.",
+  "bytes": 73920
+ },
+ "pp4-nocode": {
+  "subject": "How is the pan treating you?",
+  "preview": "What owners add next. 5 free gifts with every order.",
+  "bytes": 60780
+ }
+}

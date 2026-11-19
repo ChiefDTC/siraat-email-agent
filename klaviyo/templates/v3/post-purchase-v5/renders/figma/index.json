@@ -1,0 +1,166 @@
+[
+ {
+  "k": "pp1-first--us",
+  "h": 9414,
+  "parts": [
+   [
+    "renders/figma/pp1-first--us-0.jpg",
+    4000
+   ],
+   [
+    "renders/figma/pp1-first--us-1.jpg",
+    4000
+   ],
+   [
+    "renders/figma/pp1-first--us-2.jpg",
+    1414
+   ]
+  ]
+ },
+ {
+  "k": "pp1-repeat--us",
+  "h": 9276,
+  "parts": [
+   [
+    "renders/figma/pp1-repeat--us-0.jpg",
+    4000
+   ],
+   [
+    "renders/figma/pp1-repeat--us-1.jpg",
+    4000
+   ],
+   [
+    "renders/figma/pp1-repeat--us-2.jpg",
+    1276
+   ]
+  ]
+ },
+ {
+  "k": "pp2-upsell--std-wok-deep",
+  "h": 7198,
+  "parts": [
+   [
+    "renders/figma/pp2-upsell--std-wok-deep-0.jpg",
+    4000
+   ],
+   [
+    "renders/figma/pp2-upsell--std-wok-deep-1.jpg",
+    3198
+   ]
+  ]
+ },
+ {
+  "k": "pp2-upsell--s12-pizza-knives",
+  "h": 4862,
+  "parts": [
+   [
+    "renders/figma/pp2-upsell--s12-pizza-knives-0.jpg",
+    4000
+   ],
+   [
+    "renders/figma/pp2-upsell--s12-pizza-knives-1.jpg",
+    862
+   ]
+  ]
+ },
+ {
+  "k": "pp2-upsell--uk-std-wok",
+  "h": 6174,
+  "parts": [
+   [
+    "renders/figma/pp2-upsell--uk-std-wok-0.jpg",
+    4000
+   ],
+   [
+    "renders/figma/pp2-upsell--uk-std-wok-1.jpg",
+    2174
+   ]
+  ]
+ },
+ {
+  "k": "pp3-delivered--us-std",
+  "h": 8134,
+  "parts": [
+   [
+    "renders/figma/pp3-delivered--us-std-0.jpg",
+    4000
+   ],
+   [
+    "renders/figma/pp3-delivered--us-std-1.jpg",
+    4000
+   ],
+   [
+    "renders/figma/pp3-delivered--us-std-2.jpg",
+    134
+   ]
+  ]
+ },
+ {
+  "k": "pp3-safe--uk-std",
+  "h": 8054,
+  "parts": [
+   [
+    "renders/figma/pp3-safe--uk-std-0.jpg",
+    4000
+   ],
+   [
+    "renders/figma/pp3-safe--uk-std-1.jpg",
+    4000
+   ],
+   [
+    "renders/figma/pp3-safe--uk-std-2.jpg",
+    54
+   ]
+  ]
+ },
+ {
+  "k": "pp4-code--us-std",
+  "h": 8462,
+  "parts": [
+   [
+    "renders/figma/pp4-code--us-std-0.jpg",
+    4000
+   ],
+   [
+    "renders/figma/pp4-code--us-std-1.jpg",
+    4000
+   ],
+   [
+    "renders/figma/pp4-code--us-std-2.jpg",
+    462
+   ]
+  ]
+ },
+ {
+  "k": "pp4-code--us-s12",
+  "h": 8462,
+  "parts": [
+   [
+    "renders/figma/pp4-code--us-s12-0.jpg",
+    4000
+   ],
+   [
+    "renders/figma/pp4-code--us-s12-1.jpg",
+    4000
+   ],
+   [
+    "renders/figma/pp4-code--us-s12-2.jpg",
+    462
+   ]
+  ]
+ },
+ {
+  "k": "pp4-nocode--de-acc",
+  "h": 7646,
+  "parts": [
+   [
+    "renders/figma/pp4-nocode--de-acc-0.jpg",
+    4000
+   ],
+   [
+    "renders/figma/pp4-nocode--de-acc-1.jpg",
+    3646
+   ]
+  ]
+ }
+]
