@@ -107,7 +107,7 @@ top('pp2-top12', 'The rest of the kitchen', 's12', -3, 900, 'Cookware Set, 12 Pc
 top('pp2-top6', 'Three pans, three lids', 's06', -4, 860, 'Pan Set, 6 Pcs', 'Mini, Small and Large, each with a fitted lid',
     f'<div class="num" style="font-size:150px;line-height:160px;color:{INK};letter-spacing:-5px;margin-top:24px">15% OFF</div>'
     f'<div style="font-weight:600;font-size:30px;letter-spacing:5px;color:{BRICK};margin-top:4px">WITH YOUR CODE VIP15-PICKS</div>')
-sec('pp2-h-viewed', f'background:{CREAM};padding:70px 70px 34px', head('You had a look at these', 'Same code, 15% off each', size=88))
+sec('pp2-h-viewed', f'background:{CREAM};padding:70px 70px 34px', head('Black Friday special deals', 'Same code, 15% off each', size=88))
 sec('pp4-h-next', f'background:{CREAM};padding:70px 70px 34px', head('Picked for your kitchen', 'What owners add next', size=88))
 
 # ================= productkaart-bovenkant (gedeeld door PP2 en PP4): getinte kaart met afgeronde bovenhoeken, uitsnede met grondschaduw.

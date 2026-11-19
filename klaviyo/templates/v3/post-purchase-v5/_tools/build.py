@@ -31,6 +31,7 @@ OWN.update(load(os.path.join(ROOT, 'sections/floris3/klaviyo-urls.txt')))  # 19 
 OWN.update(load(os.path.join(ROOT, 'sections/floris4/klaviyo-urls.txt')))  # 19 nov laat: deksel, utensils, 2+2, 34-Pcs van Floris; Small/Mini = Standard kleiner
 OWN.update(load(os.path.join(ROOT, 'sections/floris5/klaviyo-urls.txt')))  # 19 nov laat: Cookware Set Pro en Full Hammered Pro van Floris
 OWN.update(load(os.path.join(ROOT, 'sections/floris6/klaviyo-urls.txt')))  # 19 nov laat: Complete Edition van Floris
+OWN.update(load(os.path.join(ROOT, 'sections/bf/klaviyo-urls.txt')))  # 19 nov laat: kop 'Black Friday special deals' (Floris)
 LOCAL = '--local' in sys.argv
 def src(key):
     if key.startswith('torn-') or key == 'gifts-flatlay.jpg':
@@ -215,7 +216,7 @@ m.torn(SAND, CREAM)
 m.add('{% endif %}')
 cards = ''.join(('{% if t == "' + prod['t'] + '" %}{% if ' + bt.owned_cond(prod['key']) + ' %}{% else %}' + card_live(prod, 15, CODE, prod['key']) + '{% endif %}{% endif %}') for prod in P)
 m.add('{% if s %}')
-m.img('pp2-h-viewed.jpg', 'You had a look at these. Same code, 15% off each.', U('h-viewed'))
+m.img('pp2-h-viewed.jpg', 'Black Friday special deals. Same code, 15% off each.', U('h-viewed'))
 m.add('{% for t in s|slice:":3" %}' + cards + '{% endfor %}')
 m.add('{% endif %}')
 m.add(codebox(CODE, f'15% off, one use, on any of the pieces in this email. Already applied through every button. Ends {END}, when our Black Friday sale ends. After that the regular price applies.'))

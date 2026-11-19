@@ -600,3 +600,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 2026-11-19 laat: derde levering Floris (deksel, utensils, 2 Pans + 2 Lids, 34-Pcs, 6-Pcs v2) in prio-extra; Small/Mini tonen de Standard-foto kleiner (82%/68%). v5 sections/floris4, templates + flowkopieen bijgewerkt. Nog eigen versie: cmp, csp, fhp.
 - 2026-11-19 laat: Cookware Set Pro en Full Hammered Pro van Floris in v5 (sections/floris5), templates + flowkopieen bijgewerkt. Alleen Complete Edition (cmp) nog eigen versie.
 - 2026-11-19 laat: Complete Edition van Floris in v5 (sections/floris6); nu alle 19 producten + topkaarten met Floris' foto's. Templates + flowkopieen Ukz7F9 bijgewerkt, Figma rij 1m (PP2, PP3, PP4) opnieuw gevuld met de nieuwe renders.
+- 2026-11-19 laat: PP2-kop boven de bekeken producten 'You had a look at these' -> 'Black Friday special deals' (Floris). Template T6x2rT + bibliotheek + Figma rij 1m bijgewerkt.
