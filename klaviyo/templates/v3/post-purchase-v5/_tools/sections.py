@@ -20,6 +20,13 @@ OUT = os.path.join(ROOT, 'sections/src'); os.makedirs(OUT, exist_ok=True)
 CREAM, SAND, DARK, BRICK, GOLD, W, INK, BODY, YEL, ESP = '#F8F7F2', '#ECE7DD', '#282828', '#AC3B19', '#B8862B', '#FFFFFF', '#272727', '#2E2E2E', '#FFB800', '#321E1D'
 f = lambda p: 'file://' + p
 c = lambda k: f(CUT + f'cut-{k}.png')
+# 19 nov laat: Floris leverde zelf productfoto's met harde schaduw (brand/product-photos/2026-11-19-prio6). Die gaan voor op eigen uitsneden.
+FL = os.path.join(REPO, 'brand/product-photos/2026-11-19-prio6/')
+FLORIS = {'s12': '12-delige-set', 's06': '6-delige-set', 'std': 'pan-pro-standard', 'lrg': 'pan-pro-large', 'dep': 'deep-pan', 'wok': 'wok'}
+def pimg(key, cut, rot, mw, mh):
+    if key in FLORIS:
+        return f'<img src="{f(FL + FLORIS[key] + "_leeg_hard.png")}" style="max-width:{mw}px;max-height:{mh}px">'
+    return f'<img class="shadow" src="{c(cut)}" style="max-width:{mw}px;max-height:{mh}px;transform:rotate({rot}deg)">'
 
 BASE = f'''<!doctype html><html><head><meta charset="utf-8">
 <style>
@@ -80,7 +87,7 @@ def top(name, title, cut, rot, maxw, pname, sub, price_html):
     sec(name, f'background:{SAND};padding:76px 50px 44px', head('A thank-you for your order', title) +
         f'<div style="position:relative;margin-top:44px;background:#FBF7F0;border-radius:44px;box-shadow:0 10px 30px rgba(60,40,20,.07);padding:56px 50px 60px;text-align:center">'
         f'<div class="tag" style="position:absolute;left:44px;top:40px;font-size:40px;padding:14px 26px">15% OFF</div>'
-        f'<div style="height:560px;display:flex;align-items:center;justify-content:center;padding-top:40px"><img class="shadow" src="{c(cut)}" style="max-width:{maxw}px;max-height:520px;transform:rotate({rot}deg)"></div>'
+        f'<div style="height:560px;display:flex;align-items:center;justify-content:center;padding-top:40px">' + pimg(cut, cut, rot, maxw, 520) + '</div>'
         f'<div style="font-weight:600;font-size:52px;line-height:60px;color:{INK};margin-top:26px">{pname}</div>'
         f'<div style="font-size:36px;line-height:50px;color:#6F6A62;margin-top:10px">{sub}</div>' + price_html + '</div>')
 top('pp2-top12', 'The rest of the kitchen', 's12', -3, 900, 'Cookware Set, 12 Pcs', '3 pans, 3 pots and 6 lids',
@@ -97,8 +104,8 @@ sec('pp4-h-next', f'background:{CREAM};padding:70px 70px 34px', head('Picked for
 # Naam, prijs en knop staan live eronder in dezelfde tint (build.py), dus dynamisch per markt en per code.
 for k, (cut, rot, mw, mh) in CARDS.items():
     bundle = os.path.exists(CUT + f'bundle-{k}.png')  # samengestelde bundel: schaduw zit al per onderdeel in het beeld
-    img = (f'<img src="{f(CUT + f"bundle-{k}.png")}" style="max-width:{mw}px;max-height:{mh}px">' if bundle else
-           f'<img class="shadow" src="{c(cut)}" style="max-width:{mw}px;max-height:{mh}px;transform:rotate({rot}deg)">')
+    img = (pimg(k, cut, rot, mw, mh) if k in FLORIS else f'<img src="{f(CUT + f"bundle-{k}.png")}" style="max-width:{mw}px;max-height:{mh}px">' if bundle else
+           pimg(k, cut, rot, mw, mh))
     sec(f'card-{k}', f'background:{CREAM};padding:20px 40px 0', f'<div style="background:{TINT[k]};border-radius:40px 40px 0 0;height:680px;display:flex;align-items:center;justify-content:center;padding:46px 40px 18px">'
         + img + '</div>')
 

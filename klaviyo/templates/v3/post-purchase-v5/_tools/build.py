@@ -25,6 +25,7 @@ V6U = load(os.path.join(V6D, 'klaviyo-urls.txt'))
 PPU = load(os.path.join(REPO, 'klaviyo/templates/v3/post-purchase/assets/klaviyo-urls.txt'))
 OWN = load(os.path.join(ROOT, 'sections/klaviyo-urls.txt'))
 OWN.update(load(os.path.join(ROOT, 'sections/hard2/klaviyo-urls.txt')))  # 19 nov avond: kaarten en topkaarten met harde schaduw (hard2 = kortere schaduw, 3/4 Wok/Deep/Crepe)
+OWN.update(load(os.path.join(ROOT, 'sections/floris/klaviyo-urls.txt')))  # 19 nov laat: productfoto's van Floris (12-Pcs, 6-Pcs, Standard, Large, Deep, Wok)
 LOCAL = '--local' in sys.argv
 def src(key):
     if key.startswith('torn-') or key == 'gifts-flatlay.jpg':
