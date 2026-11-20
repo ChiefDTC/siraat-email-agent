@@ -35,7 +35,7 @@ Wijziging 19 nov avond (Floris): de upsell komt **5 minuten na de bestelling**; 
 
 | # | Mail | Timing | Doel | Wie (filter/split) | Onderwerp | Preview |
 |---|---|---|---|---|---|---|
-| 2 | PP2-UPSELL · VIP15 | +5 min | Getailorde upsell: 12-Pcs (VS) / 6-Pcs (rest) bovenaan, max 3 bekeken producten, nooit iets in bezit | bekeek een aanbiedbaar product (30 d) of had nooit 12-Pcs/34-Pcs; geen VIP15-mail in 1 d; geen refund | A thank-you: 15% off, picked for you | Thanks for your order. Here is 15% off, once, until Monday, Nov 30. |
+| 2 | PP2-UPSELL · VIP15 | +5 min | Getailorde upsell: 12-Pcs (VS) / 6-Pcs (rest) bovenaan, max 5 bekeken producten, nooit iets in bezit | bekeek een aanbiedbaar product (30 d) of had nooit 12-Pcs/34-Pcs; geen VIP15-mail in 1 d; geen refund | A thank-you: 15% off, picked for you | Thanks for your order. Here is 15% off, once, until Monday, Nov 30. |
 | 1 | PP1-FIRST | +1 uur | Bevestiging, verwachting, e-book, de ene tip | eerste order ooit, betaalde order | Good call. Here's what happens next. | Order confirmed. Your 5 free gifts, your e-book and the one tip that matters. |
 | 1b | PP1-REPEAT | +1 uur | idem, herkenning | meer dan 1 order | Good to see you again | idem |
 | 3 | PP3-DELIVERED | dag 8, 09:00 | Eerste gebruik: het ei, de chef-stappen, deksel in de juiste maat | Delivered Shipment sinds start, pankoper, geen VQ93sx/R9dcdY/P2-SAFE in 30 d | Your first egg, step by step | Medium on titanium works like high on a normal pan. The chef's five steps. |

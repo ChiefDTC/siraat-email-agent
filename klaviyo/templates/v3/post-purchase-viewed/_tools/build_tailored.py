@@ -5,7 +5,7 @@ Bouwt ../ppv-tailored.html (Klaviyo code-template met Django-tags).
 Logica in de mail (zie SCENARIOS.md):
   - Land = verzendland van de order (event.extra.shipping_address.country_code); onbekend telt als niet-VS.
   - Hero: VS = 12-Pcs set, niet-VS = 6-Pcs set; weg als de klant die set (of een bundel die hem bevat) al heeft.
-  - Daaronder max 3 kaarten uit ppv_vr_<key> (profieleigenschap, gezet door de tracker-flows):
+  - Daaronder max 5 kaarten (Floris 20 nov, was 3) uit ppv_vr_<key> (profieleigenschap, gezet door de tracker-flows):
     1 = bekeken laatste ~3 dagen, 2 = 3 tot 10 dagen, 3 = 10 tot 30 dagen, 9 = in bezit. Volgorde: emmer 1, 2, 3,
     binnen een emmer de prioriteit uit ppv_catalog.P. Alleen-VS-producten nooit buiten de VS; 6-Pcs buiten de VS alleen als hero.
   - Vangnet: kaart en hero vallen ook weg als het product (of een bundel ermee) in deze order (event.Items) of in siraat_owned staat.
@@ -155,7 +155,7 @@ def build():
     cards = ''.join(('{% if t == "' + prod['t'] + '" %}{% if ' + owned_cond(prod['key']) + ' %}{% else %}' + card(prod) + '{% endif %}{% endif %}') for prod in CARD_P)
     b += ('{% if s %}' + f'<tr><td align="center" bgcolor="#FFFFFF" class="pad" style="background-color:#FFFFFF;padding:34px 40px 2px 40px;text-align:center;"><div style="{F}font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:{BRICK};">YOU HAD A LOOK AT THESE</div>'
           f'<div style="{S}font-size:28px;line-height:32px;color:{INK};padding-top:8px;">Same code, 15% off each.</div></td></tr>\n'
-          '{% for t in s|slice:":3" %}' + cards + '{% endfor %}{% endif %}')
+          '{% for t in s|slice:":5" %}' + cards + '{% endfor %}{% endif %}')
     # code-blok
     b += (
           f'<tr><td bgcolor="#FFFFFF" class="pad" style="background-color:#FFFFFF;padding:28px 40px 0 40px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="{ESP}" style="background-color:{ESP};border-radius:10px;"><tr><td align="center" bgcolor="{ESP}" style="background-color:{ESP};padding:22px 24px;text-align:center;">'
