@@ -1,4 +1,4 @@
-# Concurrenten-inbox: overzicht na dag 38 (stand 19 nov 2026, ca. 09:40 UTC)
+# Concurrenten-inbox: overzicht na dag 39 (stand 20 nov 2026, ca. 09:40 UTC)
 
 Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmail.com, per regel in `tijdlijn.csv`. Acties uit `log-*.csv` (HexClad en Our Place b handmatig door Floris, geen log). Kortingscodes staan nergens uitgeschreven.
 
@@ -6,8 +6,8 @@ Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmai
 
 | Merk | w | b | c | co | Totaal | Status inschrijving |
 |---|---|---|---|---|---|---|
-| HexClad | 9 | 31 | 31 | n.v.t. | 71 | w/b/c handmatig (Floris), co niet gedaan |
-| Our Place | 36 | 52 | 36 | 0 | 124 | alles gelukt; c pas om 11:18 in winkelwagen |
+| HexClad | 9 | 32 | 31 | n.v.t. | 72 | w/b/c handmatig (Floris), co niet gedaan |
+| Our Place | 37 | 53 | 37 | 0 | 127 | alles gelukt; c pas om 11:18 in winkelwagen |
 | Caraway | 5 (op hex-w) | 0 | 0 | 0 | 5 | w/b/c via footer "gelukt", maar geen enkele mail op cw-adressen; beide Caraway-mails kwamen op hex-w binnen |
 | Made In | 9 | 9 | 9 | 0 | 27 | w/b/c footer "Thanks! You've been subscribed", co gestopt (telefoon verplicht); eerste mail pas na 388 uur (campagne, geen welkom), daarna alleen campagnes tegelijk naar w, b en c |
 | Okura | 0 | 0 | 0 | 0 | 0 | w/b/c captcha, alleen co (checkout zonder betaling, opt-in aan) |
@@ -308,6 +308,15 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 - **Geen mail van Made In, Caraway, Plateful of Taima** sinds de laatste run. Made In sloeg 18 nov over (laatste 17 nov 15:15), net als 16 nov; dagelijks is het dus niet meer.
 - **6 nieuwe mails** (Our Place 4, HexClad 2). Ideeen voor Siraat: 66 tot 68 hieronder.
 
+## Dag 39 (20 nov)
+
+- **Our Place: eindelijk het product achter "tot 68%".** "The Biggest Deal" (preview "(Of the entire sale)") op 20 nov om 06:15 UTC naar op-b (931,4 uur). Eén product, één kleur: de Essentials Cookware Set in Char, "at 68% off with bundle and sale savings", "SAVE $374*", met "Bring yours home while it's still in stock" en één knop. Na vijf weken banner met "Our Biggest Discount Is 68%*" laat Our Place nu zien welk product dat percentage haalt (en dat het een bundel in één kleur is). Onderwerp van drie woorden, de preview maakt de zin af.
+- **Our Place: Minis met per pan een gerecht, en EXTRA10 nu ook op c en w.** "Small Pans, Big Appetite" (preview "Just the right size for one egg, a little sauce, or a midnight snack.") op 20 nov om 06:26 UTC naar op-c en 13 seconden later naar op-w (931,5 uur), niet naar op-b, buiten het :15-slot. "Which Mini Do I Need?" koppelt elke mini aan één moment ("A midnight ramen moment", "risotto for one", "Solo time with a shrimp tostada"), keramisch en Titanium Pro naast elkaar, plus twee mini-duo's als "Bundle & Save". Onderaan "Save an extra 10% with code EXTRA10": c en w krijgen de code die op-b gisteren als brief kreeg dus alleen als balk. Derde mini-campagne (na "Party of One" en "Mini Gifts").
+- **HexClad: nog steeds termijnen in plaats van korting.** "Price holding you back? We got you." (preview "Buy now, pay over time with Affirm") op 19 nov om 21:19 UTC naar hex-b (info@, 922,7 uur). Zelfde sjabloon als op hex-w (14 okt) en hex-c (26 okt), nu met de Sweet Tooth Baking Kit als product en een BF-balk. Ook midden in de eigen "Up to 52% off"-sale antwoordt HexClad op het prijsbezwaar met Affirm. De Sweet Tooth Baking Kit staat niet in de acties van hex-b, dus vermoedelijk een nieuw bezoek of een hertrigger op een ander product.
+- **Op-w kreeg de EXTRA10-brief niet** binnen 26 uur, en ook "Upgrade to Titanium Pro for Less" (18 nov, op-b) volgde niet op w. Our Place lijkt de brief en de titaniumupgrade alleen voor op-b (browse, engaged) te houden.
+- **Geen mail van Made In, Caraway, Plateful of Taima** sinds de laatste run. Made In laatst 17 nov 15:15, dus al twee dagen stil op de dag van de eigen Thanksgiving-deadline (20 nov 11:00 EST).
+- **4 nieuwe mails** (Our Place 3, HexClad 1). Ideeen voor Siraat: 69 en 70 hieronder.
+
 ## Korting: wanneer en hoe hoog
 
 - **Plateful** is het enige merk met een kortingscode: 10% in de abandoned checkout na 12,5 uur, 2 dagen geldig en al verrekend in de checkout-link (kortingscode aanwezig, niet uitgeschreven).
@@ -329,6 +338,7 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 - **Our Place** stuurde op dag 36 (854,4 uur op op-b, 855,4 op op-w) een drempelcadeau met waarde: "Gift Value $100+" vanaf $300, geen code, cadeau naar keuze van Our Place, "while supplies last".
 - **Our Place** noemde op dag 37 (870,4 uur, op-b en later op-w) weer een bedrag: "SAVE $125+" op de Complete Wonder Oven Pro Set (met bundel- en salevoordeel). **Made In** blijft op tot 40% plus gratis cadeaus en zet de levertijd centraal. Geen enkele nieuwe code.
 - **Our Place** gaf op dag 38 (907,4 uur, op-b) de eerste uitgeschreven code op eigen kookgerei: EXTRA10, 10% extra op select products bovenop de saleprijzen, een per klant, tot 30 nov (voorwaarden: 1 dec 9:00 PT), in een platte brief van de Head of Customer Experience. **HexClad** noemt op dag 38 voor het eerst een percentage per product (messen 52% en 39%), nog steeds zonder code.
+- **Our Place** toonde op dag 39 (931,4 uur, op-b) voor het eerst het product achter de 68%: Essentials Cookware Set in Char, SAVE $374 (met bundel- en salevoordeel). EXTRA10 staat sinds dag 39 ook in mails aan op-c en op-w, als onderbalk. **HexClad** stuurde op dag 39 op hex-b weer Affirm (termijnen) in plaats van korting, terwijl de sale tot 52% loopt.
 - **Caraway** geeft geen welkomstkorting; in mail 2 belooft het $50 korting op een tweede aankoop van $300+ (code pas na de eerste aankoop).
 
 ## Opvallende onderwerpen en previews
@@ -372,6 +382,7 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 - Our Place: "Need It for Thanksgiving?" met preview "Last chance for Thanksgiving delivery!" (vraag als onderwerp, geen datum in de mail) en "Mini Gifts, Major Savings" (alliteratie, klein product als cadeau).
 - Our Place: "Sale Prices Plus an Extra 10% on Select Products, Starting Now" met preview "Use Code EXTRA10 now to save even more." (code al in de preview, brief van een medewerker) en "Upgrade to Titanium Pro for Less" (upgrade als frame voor bestaande klanten).
 - HexClad: "We've slashed prices on knives" met preview "🔪Up to 52% off" (categorie in het onderwerp, getal in de preview).
+- Our Place: "The Biggest Deal" met preview "(Of the entire sale)" (onderwerp en preview als één zin) en "Small Pans, Big Appetite" (tegenstelling, per mini een gerecht).
 - Caraway: "Greetings From Caraway 🍳", "Our Top Caraway Picks" met preview "All ⭐️⭐️⭐️⭐️⭐️ across the board."
 - Plateful: "Lola, about your Titanium Pro Pan™ order": platte tekst, ondertekend door een persoon (Dannah), met factuurnummer en telefoonnummer. Leest als service, niet als marketing.
 
@@ -456,6 +467,9 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 66. **Een extra voordeel voor wie al ingeschreven is, als brief van iemand uit het team.** Our Place brengt een week voor Black Friday een extra 10% bovenop de sale als nieuws ("I wanted you to hear it first") in een platte brief van de Head of Customer Experience, met twee producten die klanten het vaakst noemen. Siraat kan in de week voor BFCM een korte brief van Benjamin sturen aan de lijst met één echt extra voordeel voor abonnees (bijvoorbeeld vroege toegang of de 5 gifts een dag eerder) en de pan die klanten in reviews het vaakst noemen, binnen de vaste header en footer. Alleen als het voordeel echt bestaat en de einddatum in tekst en voorwaarden gelijk is; Our Place zegt 30 nov in de tekst en 1 dec in de voorwaarden. [VRAAG FLORIS: is er een extra voordeel voor abonnees bovenop het BFCM-aanbod?]
 67. **Een upgrademail voor wie al een andere pan heeft.** Our Place verkoopt titanium als "Upgrade to Titanium Pro" met drie korte vergelijkingen ("Sears like stainless", "Releases like nonstick", "Cleans up in the dishwasher"). Siraat kan in BFCM een segment maken van mensen die nog niet kochten maar wel klikten op vergelijkingscontent, en een mail sturen met drie korte vergelijkingsregels voor de Pan Pro, met alleen goedgekeurde claims en de BFCM-prijs als getal (aanvulling op idee 29 en 62).
 68. **Per categorie een eigen BFCM-mail met het voordeel per product in de knop.** HexClad stuurt na de algemene sale-start losse mails per categorie (specialty, messen) met het percentage per product op de knop ("52% off the Damascus Steel Knife Set"). Siraat heeft minder producten, maar kan in BFCM per set of per pan een korte mail sturen met het voordeel als getal op de knop zelf, zodat wie scant meteen ziet wat het oplevert. Getallen moeten exact kloppen met de prijs op de site.
+
+69. **Het product achter het hoogste percentage tonen.** Our Place noemde vijf weken "tot 68%" en stuurt nu één mail met het ene product dat dat haalt, met bedrag en kleur. Als Siraat "Save up to 70%" gebruikt, kan één BFCM-mail van Benjamin precies laten zien welk product of welke set die 70% haalt, met de echte oude en nieuwe prijs, zodat het percentage niet abstract blijft (en de lezer ziet dat het klopt).
+70. **Per pan één moment of gerecht, ook voor kleine maten.** Our Place verkoopt de Minis met "Which Mini Do I Need?" en per pan één gerecht voor één persoon. Siraat kan in een BFCM- of cadeaumail per maat (Small, Mini, Standard) één concreet moment noemen, zodat de lezer zelf de juiste maat kiest; past ook bij de giftmails voor kleine huishoudens (aanvulling op idee 64).
 
 ## Open punten
 
