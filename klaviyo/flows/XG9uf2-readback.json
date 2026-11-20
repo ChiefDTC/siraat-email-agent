@@ -1,0 +1,1228 @@
+{
+ "name": "PP Flash deals \u00b7 US \u00b7 A/B holdout 50/50 (Nov 20)",
+ "status": "live",
+ "archived": false,
+ "created": "2026-11-20T12:44:37+00:00",
+ "updated": "2026-11-20T12:44:38+00:00",
+ "trigger_type": "Metric",
+ "definition": {
+  "triggers": [
+   {
+    "type": "metric",
+    "id": "RSNxYV",
+    "trigger_filter": null
+   }
+  ],
+  "profile_filter": {
+   "condition_groups": [
+    {
+     "conditions": [
+      {
+       "type": "profile-not-in-flow",
+       "timeframe_filter": {
+        "type": "date",
+        "operator": "in-the-last",
+        "unit": "day",
+        "quantity": 30
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "actions": [
+   {
+    "id": "126006077",
+    "type": "time-delay",
+    "data": {
+     "unit": "minutes",
+     "value": 5,
+     "secondary_value": null,
+     "timezone": "profile"
+    },
+    "links": {
+     "next": "126006078"
+    }
+   },
+   {
+    "id": "126006078",
+    "type": "conditional-split",
+    "data": {
+     "profile_filter": {
+      "condition_groups": [
+       {
+        "conditions": [
+         {
+          "type": "profile-property",
+          "property": "location['country']",
+          "filter": {
+           "type": "string",
+           "operator": "equals",
+           "value": "United States"
+          }
+         },
+         {
+          "type": "profile-property",
+          "property": "location['country']",
+          "filter": {
+           "type": "string",
+           "operator": "equals",
+           "value": "US"
+          }
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "links": {
+     "next_if_true": "126006079",
+     "next_if_false": null
+    }
+   },
+   {
+    "id": "126006079",
+    "type": "conditional-split",
+    "data": {
+     "profile_filter": {
+      "condition_groups": [
+       {
+        "conditions": [
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "34-Pcs"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "6-Pcs"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Full Hammered Pro"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Knife Set (8-Piece)"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Complete Edition"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Cookware Set Pro"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Roasting Pan"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "2 Pans + 2 Lids"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "equals",
+             "value": "Titanium Hammered Pan Pro Large"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "equals",
+             "value": "Titanium Hammered Pizza Steel"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "equals",
+             "value": "Titanium Utensil Set Bundle"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "equals",
+             "value": "Titanium Hammered Pan Pro Standard"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Cr\u00eape Pan Pro"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "equals",
+             "value": "Titanium Hammered Pan Pro Small"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "equals",
+             "value": "Titanium Hammered Pan Pro Mini"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "equals",
+             "value": "Titanium Hammered Deep Pan Pro"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "equals",
+             "value": "Titanium Hammered Wok Pan Pro"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "equals",
+             "value": "Titanium Cutting Board (Anti-Microbial)"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XT7f8Z",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "equals",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "alltime"
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "12-Pcs"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "conditions": [
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "34-Pcs"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "6-Pcs"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Full Hammered Pro"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Knife Set (8-Piece)"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Complete Edition"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Cookware Set Pro"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Roasting Pan"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "2 Pans + 2 Lids"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "equals",
+             "value": "Titanium Hammered Pan Pro Large"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "equals",
+             "value": "Titanium Hammered Pizza Steel"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "equals",
+             "value": "Titanium Utensil Set Bundle"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "equals",
+             "value": "Titanium Hammered Pan Pro Standard"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "Cr\u00eape Pan Pro"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "equals",
+             "value": "Titanium Hammered Pan Pro Small"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "equals",
+             "value": "Titanium Hammered Pan Pro Mini"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "equals",
+             "value": "Titanium Hammered Deep Pan Pro"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "equals",
+             "value": "Titanium Hammered Wok Pan Pro"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XNtYMB",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "equals",
+             "value": "Titanium Cutting Board (Anti-Microbial)"
+            }
+           }
+          ]
+         },
+         {
+          "type": "profile-metric",
+          "metric_id": "XT7f8Z",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "equals",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "alltime"
+          },
+          "metric_filters": [
+           {
+            "property": "Name",
+            "filter": {
+             "type": "string",
+             "operator": "contains",
+             "value": "34-Pcs"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "conditions": [
+         {
+          "type": "profile-metric",
+          "metric_id": "Xg6cwn",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "equals",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 30
+          },
+          "metric_filters": null
+         }
+        ]
+       },
+       {
+        "conditions": [
+         {
+          "type": "profile-metric",
+          "metric_id": "RSNxYV",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "greater-than",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 2
+          },
+          "metric_filters": [
+           {
+            "property": "$value",
+            "filter": {
+             "type": "numeric",
+             "operator": "greater-than",
+             "value": 0.0
+            }
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "links": {
+     "next_if_true": "126006081",
+     "next_if_false": null
+    }
+   },
+   {
+    "id": "126006081",
+    "type": "conditional-split",
+    "data": {
+     "profile_filter": {
+      "condition_groups": [
+       {
+        "conditions": [
+         {
+          "type": "profile-sample",
+          "percentage": 50
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "links": {
+     "next_if_true": "126006082",
+     "next_if_false": "126006086"
+    }
+   },
+   {
+    "id": "126006082",
+    "type": "update-profile",
+    "data": {
+     "profile_operations": [
+      {
+       "operator": "update",
+       "property_type": "string",
+       "property_key": "properties['pp_flash_ab']",
+       "property_value": "B"
+      }
+     ],
+     "status": "live"
+    },
+    "links": {
+     "next": "126006087"
+    }
+   },
+   {
+    "id": "126006086",
+    "type": "update-profile",
+    "data": {
+     "profile_operations": [
+      {
+       "operator": "update",
+       "property_type": "string",
+       "property_key": "properties['pp_flash_ab']",
+       "property_value": "A"
+      }
+     ],
+     "status": "live"
+    },
+    "links": {
+     "next": null
+    }
+   },
+   {
+    "id": "126006087",
+    "type": "send-email",
+    "data": {
+     "message": {
+      "from_email": "send@siraatskitchen.com",
+      "from_label": "Siraat's Kitchen",
+      "reply_to_email": "support@siraatskitchen.com",
+      "cc_email": null,
+      "bcc_email": null,
+      "subject_line": "Flash deals: up to $75 off, picked for you",
+      "preview_text": "Thanks for your order. Your flash deal prices are already applied, until Monday, Nov 30.",
+      "template_id": "WYvbgZ",
+      "smart_sending_enabled": false,
+      "transactional": false,
+      "add_tracking_params": false,
+      "custom_tracking_params": null,
+      "additional_filters": null,
+      "name": "PP Flash deals \u00b7 B",
+      "id": "Vc5hLw"
+     },
+     "status": "draft"
+    },
+    "links": {
+     "next": null
+    }
+   }
+  ],
+  "entry_action_id": "126006077"
+ }
+}

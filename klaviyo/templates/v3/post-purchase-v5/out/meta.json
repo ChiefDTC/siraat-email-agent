@@ -33,5 +33,10 @@
   "subject": "How is the pan treating you?",
   "preview": "What owners add next. 5 free gifts with every order.",
   "bytes": 60780
+ },
+ "pp2-flash": {
+  "subject": "Flash deals: up to $75 off, picked for you",
+  "preview": "Thanks for your order. Your flash deal prices are already applied, until Monday, Nov 30.",
+  "bytes": 81048
  }
 }

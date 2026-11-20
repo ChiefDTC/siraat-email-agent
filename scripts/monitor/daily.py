@@ -1,6 +1,6 @@
 import sys,datetime as d; sys.path.insert(0,'/tmp/claude-0/-home-user/63cabcd2-6467-5149-aa57-034a09c8b336/scratchpad/golive')
 from kl import api
-flows=["Rn556d","YqKCmH","Vd38Vc","VbYwA8","WTY94m","YwsKcf","X3ySuU","VQ93sx","QUBUQV","TZG9Mx","T4a5Mk","WdRz5k","QNZyEb","TvfJYU","XzHrez","T5riz5","TF2B5x","VTkxFL","VLGhbR","T2SmtR","TbYQmX","UEfh4h","YyaMjx","VPixnJ"]
+flows=["XG9uf2","Rn556d","YqKCmH","Vd38Vc","VbYwA8","WTY94m","YwsKcf","X3ySuU","VQ93sx","QUBUQV","TZG9Mx","T4a5Mk","WdRz5k","QNZyEb","TvfJYU","XzHrez","T5riz5","TF2B5x","VTkxFL","VLGhbR","T2SmtR","TbYQmX","UEfh4h","YyaMjx","VPixnJ"]
 for aid,fid in (('119850685','WdRz5k'),('119850622','TZG9Mx'),('119850583','QUBUQV')):
     df=api('GET','/api/flow-actions/'+aid).get('data',{}).get('attributes',{}).get('definition') or {}
     pct=(df.get('data') or {}).get('profile_filter',{}).get('condition_groups',[{}])[0].get('conditions',[{}])[0].get('percentage')

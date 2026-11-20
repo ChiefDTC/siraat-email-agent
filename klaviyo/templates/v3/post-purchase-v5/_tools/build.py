@@ -31,7 +31,8 @@ OWN.update(load(os.path.join(ROOT, 'sections/floris3/klaviyo-urls.txt')))  # 19 
 OWN.update(load(os.path.join(ROOT, 'sections/floris4/klaviyo-urls.txt')))  # 19 nov laat: deksel, utensils, 2+2, 34-Pcs van Floris; Small/Mini = Standard kleiner
 OWN.update(load(os.path.join(ROOT, 'sections/floris5/klaviyo-urls.txt')))  # 19 nov laat: Cookware Set Pro en Full Hammered Pro van Floris
 OWN.update(load(os.path.join(ROOT, 'sections/floris6/klaviyo-urls.txt')))  # 19 nov laat: Complete Edition van Floris
-OWN.update(load(os.path.join(ROOT, 'sections/bf/klaviyo-urls.txt')))  # 19 nov laat: kop 'Black Friday special deals' (Floris)
+OWN.update(load(os.path.join(ROOT, 'sections/bf/klaviyo-urls.txt')))
+OWN.update(load(os.path.join(ROOT, 'sections/flash/klaviyo-urls.txt')))  # 20 nov: FLASH DEALS-banner, 12-Pcs \$574, 'More flash deals'  # 19 nov laat: kop 'Black Friday special deals' (Floris)
 LOCAL = '--local' in sys.argv
 def src(key):
     if key.startswith('torn-') or key == 'gifts-flatlay.jpg':
@@ -312,10 +313,73 @@ for kind in ('code', 'nocode'):
     m.add('{{FOOTER}}\n')
     MAILS[m.name] = (m, '{% with items0=event.Items|join:"|" so0=person|lookup:\'siraat_owned\'|join:"|" %}{% with items="|"|add:items0|add:"|" so="|"|add:so0|add:"|" %}', '{% endwith %}{% endwith %}')
 
+# =====================================================================================  PP2-FLASH · VS, dollarbedragen (Floris 20 nov), losse A/B-flow met holdout
+FLASH = {75: 'FLASH75', 30: 'FLASH30', 15: 'FLASH15'}
+def ftier(prod):
+    pr = prod['price']
+    return 75 if pr >= 299 else (30 if pr >= 119 else 15)
+SHORT = {'e34': 'bundle', 'fhp': 'set', 'kn8': 'knife set', 'cmp': 'set', 'csp': 'set', 's06': 'pan set', 'rst': 'Roasting Pan', 'p22': 'duo',
+         'lrg': 'Pan Pro Large', 'piz': 'Pizza Steel', 'ute': 'utensils', 'std': 'Pan Pro', 'crp': 'Cr&ecirc;pe Pan', 'sml': 'Pan Pro Small',
+         'min': 'Pan Pro Mini', 'dep': 'Deep Pan', 'wok': 'Wok', 'brd': 'board', 'lid': 'lid'}
+def card_flash(prod):
+    k, h, tint = prod['key'], prod['handle'], TINT[prod['key']]
+    off = ftier(prod); code = FLASH[off]; now = prod['price'] - off
+    url = 'https://siraatskitchen.com/discount/' + code + '?redirect=' + quote(f'/products/{h}?utm_source=klaviyo&utm_medium=email&utm_campaign=pp-flash&utm_content={k}', safe='')
+    pre = 'from ' if prod['frm'] else ''
+    alt = re.sub('&[a-zA-Z]+;', '', prod['name'])
+    return (f'<tr><td bgcolor="{CREAM}" style="background-color:{CREAM};padding:0;font-size:0;line-height:0;"><a href="{url}" style="display:block;border:0;"><img src="{src("card-" + k + ".jpg")}" width="600" alt="{alt}" style="display:block;width:100%;max-width:600px;height:auto;border:0;"></a></td></tr>\n'
+            f'<tr><td align="center" bgcolor="{CREAM}" style="background-color:{CREAM};padding:0 0 18px 0;">'
+            f'<table role="presentation" width="93.4%" cellpadding="0" cellspacing="0" border="0" bgcolor="{tint}" style="width:93.4%;background-color:{tint};border-radius:0 0 20px 20px;"><tr><td align="center" bgcolor="{tint}" style="background-color:{tint};padding:4px 22px 24px 22px;text-align:center;border-radius:0 0 20px 20px;">'
+            f'<div style="{F}font-size:18px;line-height:24px;font-weight:600;color:{INK};"><a href="{url}" style="color:{INK};text-decoration:none;">{prod["name"]}</a></div>'
+            f'<div style="{F}font-size:14px;line-height:21px;color:#5E5A54;padding-top:4px;">{prod["line"]}</div>'
+            f'<div style="padding-top:12px;"><span style="display:inline-block;background:#FFB800;color:{INK};{F}font-size:12px;line-height:14px;font-weight:800;letter-spacing:1.5px;padding:5px 10px;border-radius:6px;">${off} OFF</span></div>'
+            f'<div style="{F}font-size:26px;line-height:32px;font-weight:800;color:{INK};padding-top:8px;">{pre}<span style="font-size:17px;font-weight:400;color:#8A847A;text-decoration:line-through;">{money(prod["price"])}</span>&nbsp; {money(now)}</div>'
+            f'<div style="{F}font-size:13px;line-height:18px;color:#5E5A54;">Flash deal, already applied</div>'
+            f'<div style="padding-top:14px;"><a href="{url}" style="display:inline-block;background-color:{INK};border-radius:24px;padding:13px 22px;{F}font-size:13px;line-height:14px;font-weight:600;letter-spacing:1.2px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">Get my {SHORT.get(k, "pick")} for {money(now)} &rarr;</a></div>'
+            '</td></tr></table></td></tr>\n')
+S12H = bt.SET12['handle']
+def UF(c, handle, code='FLASH75'):
+    return 'https://siraatskitchen.com/discount/' + code + '?redirect=' + quote(f'/products/{handle}?utm_source=klaviyo&utm_medium=email&utm_campaign=pp-flash&utm_content={c}', safe='')
+m = Mail('pp2-flash', 'Flash deals: up to $75 off, picked for you', 'Thanks for your order. Your flash deal prices are already applied, until Monday, Nov 30.')
+m.add('{% if io == 0 %}{% if h or s %}')
+m.topbar('Flash deals &middot; up to $75 off &middot; ends Nov 30', 'https://siraatskitchen.com/collections/black-friday-sale?utm_source=klaviyo&amp;utm_medium=email&amp;utm_campaign=pp-flash&amp;utm_content=topbar')
+m.add('{% endif %}{% endif %}')
+m.add('{{HEADER}}\n')
+m.add('{% if io == 0 %}{% if h or s %}')
+m.img('flash-banner.jpg', 'Thanks for your order. Flash deals, up to $75 off. Prices already applied. Ends Monday, Nov 30.', UF('banner', S12H), bg=INK)
+m.add('{% if h %}')
+m.img('pp2-top12-flash.jpg', 'Cookware Set, 12 pieces: 3 pans, 3 pots and 6 lids. $75 off: $574, was $649, compare at $2,047. Flash deal, already applied.', UF('set12-img', S12H), bg=SAND)
+m.cta(SAND, 'Get the set for $574', UF('set12-cta', S12H), sub='Price already applied. 30-day returns. 100,000+ happy customers.', pad='0 40px 34px 40px')
+m.torn(SAND, CREAM)
+m.add('{% endif %}')
+fcards = ''.join(('{% if t == "' + prod['t'] + '" %}{% if ' + bt.owned_cond(prod['key']) + ' %}{% else %}' + card_flash(prod) + '{% endif %}{% endif %}') for prod in P)
+m.add('{% if s %}')
+m.img('pp2-h-more.jpg', 'More flash deals for you, picked from what you looked at.', UF('h-more', S12H))
+m.add('{% for t in s|slice:":5" %}' + fcards + '{% endfor %}')
+m.add('{% endif %}')
+m.add(f'<tr><td bgcolor="{CREAM}" class="pad" style="background-color:{CREAM};padding:10px 40px 6px 40px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="{ESP}" style="background-color:{ESP};border-radius:16px;"><tr><td align="center" bgcolor="{ESP}" style="background-color:{ESP};padding:24px 24px;text-align:center;border-radius:16px;">'
+      f'<div style="{F}font-size:12px;line-height:16px;letter-spacing:2px;font-weight:600;color:#D9C6BC;">NO CODE NEEDED</div>'
+      f'<div style="{F}font-size:20px;line-height:26px;font-weight:800;color:#FFFFFF;padding-top:8px;">Your flash deal prices are in every button</div>'
+      f'<div style="{F}font-size:13px;line-height:20px;color:#D9C6BC;padding-top:10px;">For one order, until Monday, Nov 30 at 11:59&nbsp;PM&nbsp;ET, when our Black Friday sale ends. Then the regular price applies.</div></td></tr></table></td></tr>\n')
+m.add('{% if h %}')
+m.img('rev-pp2.jpg', revalt('pp2'), UP('reviews', 'original-siraat-100-pure-titanium-pan-with-hammered-pattern'))
+m.add('{% endif %}')
+m.promises()
+m.sign('P.S. Your flash deal prices work for one order and end Monday, Nov 30 at 11:59 PM ET. Reply and our team will help with anything about your order.')
+m.add('{% else %}')
+m.text(CREAM, "Hi {{ first_name|default:'there' }}, thanks for your order. We will email your tracking link as soon as it ships. If anything about your order is not right, reply and our team will help.", '34px 40px 0 40px')
+m.sign()
+m.add('{% endif %}{% else %}')
+m.text(CREAM, "Hi {{ first_name|default:'there' }}, thanks for your order. We will email your tracking link as soon as it ships. If anything about your order is not right, reply and our team will help.", '34px 40px 0 40px')
+m.sign()
+m.add('{% endif %}')
+m.add('{{FOOTER}}\n')
+MAILS['pp2-flash'] = (m, PRE2, POST2)
+
 META = {}
 for name, (m, pre, post) in MAILS.items():
     html = m.html(pre, post)
-    if name == 'pp2-upsell': html = _pp2_fix(html)
+    if name in ('pp2-upsell', 'pp2-flash'): html = _pp2_fix(html)
     open(os.path.join(OUTD, name + '.html'), 'w').write(html)
     META[name] = {'subject': m.subject, 'preview': m.preview, 'bytes': len(html)}
     print(name, len(html) // 1024, 'KB')
