@@ -67,7 +67,7 @@ Prijzen: Shopify-siteprijs vandaag. DECISIONS noemt hogere panprijzen (18 nov) e
 
 1. Land = verzendland van de order (`event.extra.shipping_address.country_code`). Onbekend telt als niet-VS.
 2. Hero: VS = 12-Pcs; niet-VS = 6-Pcs (de 12-Pcs is daar niet te koop; de 6-Pcs is de best verkochte set buiten de VS en dezelfde keuze als BF-W1 van 19 nov). Hero valt weg als de klant die set al heeft (12-Pcs, 34-Pcs; voor de 6-Pcs ook Full Hammered Pro).
-3. Kaarten: max 3, alleen producten met `ppv_vr_<key>` 1, 2 of 3. Volgorde: eerst emmer 1 (bekeken in de laatste ~3 dagen), dan 2 (3 tot 10 dagen), dan 3 (10 tot 30 dagen); binnen een emmer de hoogste prijs eerst. Alleen-VS-producten nooit buiten de VS.
+3. Kaarten: max 5 (Floris 20 nov, was 3), alleen producten met `ppv_vr_<key>` 1, 2 of 3. Volgorde: eerst emmer 1 (bekeken in de laatste ~3 dagen), dan 2 (3 tot 10 dagen), dan 3 (10 tot 30 dagen); binnen een emmer de hoogste prijs eerst. Alleen-VS-producten nooit buiten de VS.
 4. Nooit tonen wat de klant heeft: `ppv_vr == 9` (tracker), plus vangnet op deze order (`event.Items`, ook bundels via hun inhoud) en `siraat_owned` (historie).
 5. Geen hero en geen kaart: korte bedankregel zonder aanbod (komt zelden voor, de flow filtert dit grotendeels weg).
 
@@ -80,7 +80,7 @@ Prijzen: Shopify-siteprijs vandaag. DECISIONS noemt hogere panprijzen (18 nov) e
 | s03 | 12-Pcs | Standard 11″ (1), Pizza Steel (1) | VS | geen hero, Pizza Steel, Standard (zit niet in de set) |
 | s04 | Mini | niets | VS | alleen 12-Pcs hero |
 | s05 | 6-Pcs | Mini en Large (in bezit) | VS | alleen 12-Pcs hero |
-| s06 | Standard | Wok (1), Deep (1), Pizza (2), Crêpe (3), Board (3) | VS | 12-Pcs hero, Deep, Wok, Pizza Steel (max 3) |
+| s06 | Standard | Wok (1), Deep (1), Pizza (2), Crêpe (3), Board (3) | VS | 12-Pcs hero, Deep, Wok, Pizza Steel, Crêpe, Board (max 5) |
 | s07 | Standard | Wok (2), 2+2 (1), 12-Pcs (1) | VK | 6-Pcs hero, Wok (geen VS-only, geen bedragen) |
 | s08 | 34-Pcs | Wok (in bezit), Standard (1), messenset (3) | VS | geen hero, Standard, messenset |
 | s09 | Standard + via Aftersell 12-Pcs | Deep (1), Large (in set) | VS | geen hero, Deep Pan |
