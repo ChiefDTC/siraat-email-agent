@@ -1,0 +1,34 @@
+{
+ "name": "HS // Siraats Kitchen // November SMS 5: Black Friday Week Is Here // 11.23.2026 US",
+ "status": "Queued without Recipients",
+ "archived": false,
+ "audiences": {
+  "included": [
+   "Xrxk9P"
+  ],
+  "excluded": [
+   "R5LmyU",
+   "SLVWps",
+   "TriYPe"
+  ]
+ },
+ "send_options": {
+  "use_smart_sending": true
+ },
+ "tracking_options": {
+  "add_tracking_params": true,
+  "custom_tracking_params": []
+ },
+ "send_strategy": {
+  "method": "static",
+  "datetime": "2026-11-23T11:00:00+00:00",
+  "options": {
+   "is_local": true,
+   "send_past_recipients_immediately": true
+  }
+ },
+ "created_at": "2026-11-17T16:02:37.481660+00:00",
+ "scheduled_at": "2026-11-19T23:59:31.000994+00:00",
+ "updated_at": "2026-11-19T23:59:31.091438+00:00",
+ "send_time": "2026-11-23T11:00:00+00:00"
+}

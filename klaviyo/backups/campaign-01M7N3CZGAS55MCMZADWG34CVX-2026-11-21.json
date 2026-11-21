@@ -1,0 +1,41 @@
+{
+ "name": "HS // Siraats Kitchen // November Email 11: Black Friday Week Is Here // 11.23.2026 INTL",
+ "status": "Queued without Recipients",
+ "archived": false,
+ "audiences": {
+  "included": [
+   "R5LmyU"
+  ],
+  "excluded": [
+   "RNuYDm",
+   "TLqivd",
+   "Ur6Ehr",
+   "VSnBnJ",
+   "W3q7Zy",
+   "W4vNzF",
+   "XTpfNG"
+  ]
+ },
+ "send_options": {
+  "use_smart_sending": true,
+  "ignore_unsubscribes": false
+ },
+ "tracking_options": {
+  "add_tracking_params": true,
+  "custom_tracking_params": [],
+  "is_tracking_clicks": true,
+  "is_tracking_opens": true
+ },
+ "send_strategy": {
+  "method": "static",
+  "datetime": "2026-11-23T08:15:00+00:00",
+  "options": {
+   "is_local": true,
+   "send_past_recipients_immediately": false
+  }
+ },
+ "created_at": "2026-11-17T15:53:22.189811+00:00",
+ "scheduled_at": "2026-11-19T22:11:17.878926+00:00",
+ "updated_at": "2026-11-19T22:11:17.916524+00:00",
+ "send_time": "2026-11-23T08:15:00+00:00"
+}

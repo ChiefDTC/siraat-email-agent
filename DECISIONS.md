@@ -128,3 +128,6 @@ Hammered Pan Pro Standard (11", 28 cm) kost vanaf nu $149, niet $144 (prijstest:
 
 - 2026-11-18 (Floris): 12-Pcs set in alle mails $699, compare-at $2,097 (compare-at gaat mee omhoog met $50, zodat de besparing gelijk blijft). Shopify toonde 18 nov nog $649 / $2,047.
 - 2026-11-19 (Floris): 12-Pcs set weer $649 / $2,047 (Shopify staat ook zo). Besluit van 18 nov ($699 / $2,097) vervalt.
+
+## 21 nov 2026 · Uitsluiting wachtende klanten (Floris)
+Alle campagnes (e-mail en SMS) sluiten het segment UJY6LA 'Siraat // Waiting on order (ordered 60d, not fulfilled or delayed)' uit, tot Floris anders zegt. Ook nieuwe campagnes die Claude bouwt.
