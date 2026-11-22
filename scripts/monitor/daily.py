@@ -29,7 +29,7 @@ print('totaal',round(tot))
 def _abtests():
     import datetime as _dt
     tests=[('BF-W1 image B (SdaYcV 60/40)','SdaYcV','125640456','2026-11-18T12:52:00'),
-           ('Browse B2 brief (WdRz5k 80/20)','WdRz5k','125683568','2026-11-18T16:34:00')]
+           ('Browse B2 brief met links (WdRz5k 50/50)','WdRz5k','125683568','2026-11-22T00:58:00')]
     now=_dt.datetime.now(_dt.UTC).strftime('%Y-%m-%dT%H:%M:%S')
     for lab,fid,aid,start in tests:
         d=api('GET',f'/api/flows/{fid}?additional-fields[flow]=definition')['data']['attributes']['definition']
