@@ -59,7 +59,7 @@ Tested free from PFAS by Light Labs, report no. 25895.
 5 free gifts with every order ($555 value): free shipping, a mystery gift, two e-books (Plastic-Free Cooking and The Favorites Cookbook) and a chance to win a $450 PFAS water filter.
 
 ### Block 5 · CTA + sign-off
-If it was something else, the size or whether titanium really works, just reply and tell me. A real person reads every email.
+If it was something else, the size or whether titanium really works, just reply and our team will help.
 
 Button: **Get my set + free Pizza Steel**
 Friction reducer: Free shipping from the US. 30-day returns. 100,000+ happy customers.

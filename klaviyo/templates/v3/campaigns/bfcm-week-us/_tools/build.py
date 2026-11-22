@@ -51,7 +51,7 @@ SHARED['gift-cookbook.jpg'] = 'https://cdn.klaviyomail.com/company/TdtTzz/images
 
 # ---------------------------------------------------------------- vaste feiten (BRIEF.md, DECISIONS.md, Shopify 22 nov)
 SITE = 'https://siraatskitchen.com'
-U_SET = SITE + '/products/titanium-hammered-cookware-set'
+U_SET = SITE + '/products/titanium-hammered-cookware-set-12-pcs-free-pizza-steel-1'  # bundel met gratis Pizza Steel, $649 / $2,047 (Floris 22 nov)
 U_STEEL = SITE + '/products/titanium-hammered-pizza-steel'
 U_SALE = SITE + '/collections/black-friday-sale'
 U_LAB = SITE + '/pages/third-party-testing'
@@ -61,9 +61,9 @@ IMG_STEEL = ('https://cdn.shopify.com/s/files/1/0907/0877/1156/files/SK_PIZZA_LI
              '?v=1793715479&width=1200&height=640&crop=center')                                          # Shopify-productfoto, uitsnede 15:8
 GIFTS = [  # beeld, waarde (US, BRIEF), naam. Cookbook zonder bedrag in de brief.
     ('gift-shipping.jpg', '$15 value', 'Free shipping'),
-    ('gift-mystery.jpg', '$25 value', 'A mystery gift'),
+    ('gift-mystery.jpg', '$35 value', 'A mystery gift'),
     ('gift-ebook.jpg', '$30 value', 'The Plastic-Free Cooking e-book'),
-    ('gift-cookbook.jpg', 'Included', 'The Favorites Cookbook e-book'),
+    ('gift-cookbook.jpg', '$25 value', 'The Favorites Cookbook e-book'),
     ('gift-filter.jpg', '$450 value', 'A chance to win a PFAS water filter'),
 ]
 
@@ -86,11 +86,12 @@ BASE = dict(
     quote=None, lab='Tested free from PFAS by Light Labs, report no. 25895.', promises=None,
     gifts_head='5 free gifts with every order', gifts_style='rows', gifts_text='',
     close_pre=[], close_post=[], sign='Benjamin', sign_role='Founder, Siraat',
+    pay='normal', scarcity='The current batch is almost gone.',
     ps=PH + 'P.S. One line that restates the deal. (link: %s)' % U_SALE, cta2=None,
 )
 MAILS = {
     'm1-buyers-bf': {'email.html': {}},
-    'm2-abandoners-sat': {'email.html': dict(gifts_style='compact')},
+    'm2-abandoners-sat': {'email.html': dict(gifts_style='compact', pay='prominent')},
     'm3-buyers-cm': {'email-a.html': {}, 'email-b.html': {}},
     'm4-24h-left': {'email.html': {}},
 }
@@ -339,6 +340,15 @@ def para(html_text, color=TXT, size=16, lh=26, mb=16, align='left'):
     return '<p class="bp" style="margin:0 0 %dpx 0;font-family:%s;font-size:%dpx;line-height:%dpx;color:%s;text-align:%s;">%s</p>' % (mb, SANS, size, lh, color, align, html_text)
 
 
+PAYLINE = 'Pay over time with Affirm or Shop Pay.'  # Floris 22 nov, US
+
+
+def payline(big=False):
+    if big:
+        return ('<div style="font-family:%s;font-size:15px;line-height:22px;font-weight:600;color:%s;">%s</div>' % (SANS, WHITE, PAYLINE))
+    return '<div style="font-family:%s;font-size:13px;line-height:19px;color:%s;">%s</div>' % (SANS, TXT, PAYLINE)
+
+
 def rule(): return '<div style="border-top:1px solid %s;font-size:0;line-height:0;height:1px;">&nbsp;</div>' % LINE
 
 
@@ -380,6 +390,7 @@ def s_hero(c, im, mp, tex):
     alt = 'Titanium Hammered Cookware Set, 12 pieces: 3 pans, 2 saucepans, a stock pot and 6 lids'
     pic = row(img(im.get('hero') or IMG_SET, u, alt), BLACK, '0')
     act = offerbar(c['offerbar']) + gap(26) + button(c['cta'], u) + gap(12) + sub(c['friction'])
+    if c['pay'] == 'prominent': act += gap(10) + payline(True)
     return top + pic + row('<div style="text-align:center;">%s</div>' % act, BLACK, '8px 40px 40px 40px', 'pad', 'center')
 
 
@@ -413,13 +424,14 @@ def s_deal(c, im, mp):
     gl = md(c['gifts_line'], mp, 'deal')
     body = ('<div style="text-align:center;">'
             '<span style="display:inline-block;background-color:%s;color:#111111;font-family:%s;font-size:12px;line-height:16px;font-weight:800;letter-spacing:1.5px;padding:5px 12px;border-radius:12px;">68%% OFF</span>'
+            '&nbsp;&nbsp;<span style="display:inline-block;border:1px solid %s;color:%s;font-family:%s;font-size:12px;line-height:14px;font-weight:600;letter-spacing:1.5px;padding:4px 11px;border-radius:12px;">ALMOST SOLD OUT</span>'
             '%s<div class="tw" style="font-family:%s;font-size:20px;line-height:26px;font-weight:600;color:%s;">Titanium Hammered Cookware Set, 12&nbsp;Pcs</div>'
             '<div style="padding-top:6px;font-family:%s;font-size:16px;line-height:32px;color:%s;">Regular price <span style="text-decoration:line-through;">$2,047</span>'
             '&nbsp;&nbsp;<span class="pr" style="font-size:32px;line-height:32px;font-weight:800;color:%s;vertical-align:-4px;">$649</span></div>%s%s'
             '<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto;"><tr>'
             '<td bgcolor="%s" style="background-color:%s;border:1px solid %s;border-radius:4px;padding:10px 16px;font-family:%s;font-size:15px;line-height:21px;font-weight:600;color:%s;">+ %s</td></tr></table>'
             '%s<div style="font-family:%s;font-size:14px;line-height:20px;color:%s;">%s</div>%s</div>'
-            % (YEL, SANS, gap(14), SANS, WHITE, SANS, MUTED, WHITE, gap(16), desc, BLACK, BLACK, RED, SANS, WHITE, steel,
+            % (YEL, SANS, PINK, PINK, SANS, gap(14), SANS, WHITE, SANS, MUTED, WHITE, gap(6) + payline(c['pay'] == 'prominent') + gap(4) + '<div style="font-family:%s;font-size:13px;line-height:19px;color:%s;">%s</div>' % (SANS, PINK, esc(c['scarcity'])) + gap(16), desc, BLACK, BLACK, RED, SANS, WHITE, steel,
                gap(10), SANS, TXT, gl, s_code(c, mp)))
     body += gap(26) + button(c['cta'], u) + gap(12) + '<div style="text-align:center;">%s</div>' % sub(c['friction'])
     pic = row(img(im['deal'], u, 'Titanium Hammered Cookware Set, 12 pieces with the Pizza Steel'), BLACK, '0') if im.get('deal') else ''
@@ -431,7 +443,7 @@ def s_deal(c, im, mp):
 def s_steel(c, im, mp):
     u = utm(U_SET, mp, 'pizza-steel')
     line = c['steel_line']
-    if 'Pizza Steel' not in line: line = '**FREE Titanium Hammered Pizza Steel** with the 12-piece set. ' + line
+    if 'Pizza Steel' not in line: line = '**FREE Titanium Hammered Pizza Steel**, a $129 value. ' + line
     if not line.rstrip().endswith('.'): line = line.rstrip() + '.'
     pic = row(img(im.get('steel') or IMG_STEEL, u, 'Titanium Hammered Pizza Steel with a fresh pizza on the dinner table'), BLACK, '0')
     txt = ('<div style="text-align:center;">%s%s<div class="lead" style="font-family:%s;font-size:17px;line-height:26px;color:%s;">%s</div></div>'
@@ -510,7 +522,9 @@ def s_proof(c, mp):
 def s_close(c, mp):
     u = utm(c['cta_url'], mp, 'cta2')
     out = ''.join(para(md(p, mp, 'close')) for p in c['close_pre'])
-    out += gap(8) + button(c['cta2'] or c['cta'], u) + gap(12) + '<div style="text-align:center;">%s</div>' % sub(c['friction']) + gap(32)
+    out += gap(8) + button(c['cta2'] or c['cta'], u) + gap(12) + '<div style="text-align:center;">%s</div>' % sub(c['friction'])
+    if c['pay'] == 'prominent': out += gap(8) + '<div style="text-align:center;">%s</div>' % payline()
+    out += gap(32)
     out += ''.join(para(md(p, mp, 'close')) for p in c['close_post'])
     out += ('<p style="margin:4px 0 0 0;font-family:%s;font-size:16px;line-height:24px;color:%s;"><span style="font-weight:600;color:%s;">%s</span><br>'
             '<span style="color:%s;font-size:14px;">%s</span></p>' % (SANS, TXT, WHITE, esc(c['sign']), MUTED, esc(c['sign_role'])))
@@ -586,6 +600,8 @@ def check(h, name):
     if re.search(r'(?i)purifier', h): bad.append('purifier')
     if re.search(r'(?i)\b(4|four) (free )?gifts', txt): bad.append('4 gifts')
     if 'VRAAG' in h: bad.append('[VRAAG] in mail')
+    if re.search(r'/products/titanium-hammered-cookware-set[?"]', h): bad.append('12-Pcs link zonder Pizza Steel-bundel')
+    if re.search(r'(?i)\b(wok|deep pan)\b', re.sub(r'<[^>]+>', ' ', h)): bad.append('wok/deep pan in de set')
     for u in re.findall(r'href="(https://siraatskitchen\.com[^"]*)"', h):
         if 'utm_source=klaviyo&utm_medium=email&utm_campaign=%s-' % CAMPAIGN not in u: bad.append('no utm: ' + u)
     for u in re.findall(r'href="(https?://[^"]*)"', h):
