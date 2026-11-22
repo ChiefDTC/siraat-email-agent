@@ -17,9 +17,9 @@ Bronnen per map (ontbreekt iets, dan een duidelijk gemarkeerde [PLACEHOLDER]):
   <map>/images/README.md   image-agent. Elke regel met een https-URL telt; de plek is het eerste trefwoord in die regel
                            (hero / deal|set|12-p / pizza|steel). Regels met 'variant a|b' of 'email-a|b' alleen voor die variant.
   shared/images/README.md  gedeelde textuur (achtergrond van het gifts-blok).
-Opmaak (600 px, tabellen, donker, Homestead-stijl):
-  1 rode aankondigingsbalk  2 vaste header (donkere variant van partials/header.html, witte lockup)
-  3 hero: beeld, label, schreefkop (live tekst), subline, aanbodbalk, rode knop, friction
+Opmaak (600 px, tabellen, licht thema sinds Floris 22 nov, Homestead-indeling):
+  1 rode aankondigingsbalk  2 vaste header (partials/header.html ongewijzigd, zwarte lockup op crème)
+  3 hero: label, schreefkop, subline (live tekst), setfoto in afgeronde kaart, aanbodbalk, rode knop, friction
   4 opener van Benjamin  5 deal 12-Pcs (+ code-blok in m3-B)  6 pizza steel  7 5 gifts (rijen, M2 compact)
   8 bewijs: review, Light Labs, (M4: two promises), vier cijfers, '30-day returns. 100,000+ happy customers.'
   9 slot: knop, friction, slotregel, Benjamin, P.S.  10 vaste footer (partials/footer.html)
@@ -56,7 +56,9 @@ U_STEEL = SITE + '/products/titanium-hammered-pizza-steel'
 U_SALE = SITE + '/collections/black-friday-sale'
 U_LAB = SITE + '/pages/third-party-testing'
 U_WARRANTY = SITE + '/pages/warranty'
-IMG_SET = 'https://cdn.klaviyomail.com/company/TdtTzz/images/0736e895-5f4b-42d5-b84b-2a6b9380f4ed.jpeg'  # BF-W1 a-top12.jpg, 1200x760, op zwart
+# 12-Pcs: officiele Shopify-productfoto op warm wit (#F6F1EB), uitsnede 1200x1060 (onderkant, de grote pan blijft heel)
+IMG_SET = ('https://cdn.shopify.com/s/files/1/0907/0877/1156/files/12pcsset.webp'
+           '?v=1781591412&width=1200&height=1060&crop=bottom&format=pjpg')
 IMG_STEEL = ('https://cdn.shopify.com/s/files/1/0907/0877/1156/files/SK_PIZZA_LIFE_05_2048_031126.jpg'
              '?v=1793715479&width=1200&height=640&crop=center')                                          # Shopify-productfoto, uitsnede 15:8
 GIFTS = [  # beeld, waarde (US, BRIEF), naam. Cookbook zonder bedrag in de brief.
@@ -68,8 +70,9 @@ GIFTS = [  # beeld, waarde (US, BRIEF), naam. Cookbook zonder bedrag in de brief
 ]
 
 # ---------------------------------------------------------------- kleuren en letters
-BLACK = '#000000'; PANEL = '#302E2F'; RED = '#C9252C'; YEL = '#FFB800'; PINK = '#FF6B70'
-WHITE = '#FFFFFF'; TXT = '#E8E5E0'; MUTED = '#A8A39B'; LINE = '#3A3838'; HEAD = '#282828'; TEX_BG = '#111110'
+# licht thema (Floris 22 nov: 'veel te zwart, lichter'): pagina warm gebroken wit, panelen wit, tekst ink
+PAGE = '#F8F7F2'; BG = '#FFFFFF'; PANEL = '#F1EEE7'; RED = '#C9252C'; YEL = '#FFB800'
+INK = '#282828'; TXT = '#282828'; MUTED = '#6B6660'; LINE = '#E5E0D6'; TEX_BG = '#111110'
 SERIF = "'Instrument Serif','Times New Roman',Times,serif"
 SANS = 'Inter,Arial,Helvetica,sans-serif'
 
@@ -276,11 +279,11 @@ def utm(url, mp, block):
     return url + ('&' if '?' in url else '?') + 'utm_source=klaviyo&utm_medium=email&utm_campaign=%s-%s&utm_content=%s' % (CAMPAIGN, mp, block)
 
 
-def link(text, url, color=WHITE):
+def link(text, url, color=INK):
     return '<a href="%s" style="color:%s;text-decoration:underline;">%s</a>' % (url, color, text)
 
 
-def md(s, mp, block, strong=WHITE):
+def md(s, mp, block, strong=INK):
     """Markdown-inline naar html. '(link: URL)' maakt van de zin ervoor een link; 'report no. 25895' linkt naar het labrapport."""
     s = re.sub(r'\s*\[VRAAG FLORIS[^\]]*\]', '', s)
     url = None
@@ -300,7 +303,7 @@ def md(s, mp, block, strong=WHITE):
 
 
 # ---------------------------------------------------------------- bouwstenen
-def row(inner, bg=BLACK, pad='0', cls='', align=''):
+def row(inner, bg=BG, pad='0', cls='', align=''):
     c = ' class="%s"' % cls if cls else ''
     a = ' align="%s"' % align if align else ''
     return '<tr><td%s%s bgcolor="%s" style="background-color:%s;padding:%s;">%s</td></tr>\n' % (c, a, bg, bg, pad, inner)
@@ -313,7 +316,7 @@ def button(label, url, w=360):
     return ('<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" class="btnw" style="margin:0 auto;width:%dpx;">'
             '<tr><td align="center" bgcolor="%s" style="background-color:%s;border-radius:4px;">'
             '<!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="%s" style="height:54px;v-text-anchor:middle;width:%dpx;" arcsize="8%%" stroke="f" fillcolor="%s"><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:15px;font-weight:bold;letter-spacing:1px;">%s</center></v:roundrect><![endif]-->'
-            '<!--[if !mso]><!--><a href="%s" class="tw" style="display:block;padding:18px 18px;font-family:%s;font-size:15px;line-height:20px;font-weight:600;letter-spacing:1.2px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;border-radius:4px;">%s</a><!--<![endif]-->'
+            '<!--[if !mso]><!--><a href="%s" class="bw" style="display:block;padding:18px 18px;font-family:%s;font-size:15px;line-height:20px;font-weight:600;letter-spacing:1.2px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;border-radius:4px;">%s</a><!--<![endif]-->'
             '</td></tr></table>') % (w, RED, RED, url, w, RED, esc(label.upper()), url, SANS, esc(label))
 
 
@@ -326,7 +329,7 @@ def eyebrow(t, color=MUTED):
     return '<div style="font-family:%s;font-size:12px;line-height:18px;font-weight:600;letter-spacing:2px;color:%s;text-transform:uppercase;">%s</div>' % (SANS, color, esc(t))
 
 
-def serif(t, size=50, lh=54, color=WHITE, cls='h1'):
+def serif(t, size=50, lh=54, color=INK, cls='h1'):
     t = '<br>'.join(esc(x.strip()) for x in t.split('|'))
     return ('<div class="%s tw" style="font-family:%s;font-style:italic;font-weight:400;font-size:%dpx;line-height:%dpx;letter-spacing:-0.3px;color:%s;">%s</div>'
             % (cls, SERIF, size, lh, color, t))
@@ -345,7 +348,7 @@ PAYLINE = 'Pay over time with Affirm or Shop Pay.'  # Floris 22 nov, US
 
 def payline(big=False):
     if big:
-        return ('<div style="font-family:%s;font-size:15px;line-height:22px;font-weight:600;color:%s;">%s</div>' % (SANS, WHITE, PAYLINE))
+        return ('<div style="font-family:%s;font-size:15px;line-height:22px;font-weight:600;color:%s;">%s</div>' % (SANS, INK, PAYLINE))
     return '<div style="font-family:%s;font-size:13px;line-height:19px;color:%s;">%s</div>' % (SANS, TXT, PAYLINE)
 
 
@@ -354,18 +357,14 @@ def rule(): return '<div style="border-top:1px solid %s;font-size:0;line-height:
 
 # ---------------------------------------------------------------- secties
 def s_banner(c, mp):
-    return row('<a href="%s" class="tw" style="font-family:%s;font-size:13px;line-height:19px;font-weight:600;letter-spacing:0.6px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">%s&nbsp;&rarr;</a>'
+    return row('<a href="%s" class="bw" style="font-family:%s;font-size:13px;line-height:19px;font-weight:600;letter-spacing:0.6px;color:#FFFFFF;text-decoration:none;text-transform:uppercase;">%s&nbsp;&rarr;</a>'
                % (utm(U_SET, mp, 'banner'), SANS, re.sub(r'(?i)(12-PIECE SET|\$\d+ OFF \$\d+\+|5 FREE GIFTS)', lambda m: '<span style="white-space:nowrap;">%s</span>' % m.group(1), esc(c['banner']))), RED, '11px 20px', 'ban', 'center')
 
 
 def s_header(mp):
-    """Vaste header uit partials/header.html, donkere variant: zelfde opbouw en navigatie, vlak #282828 en de witte lockup
-    (logo-white-dark.png = brand/logo/lockup/siraat-lockup-white-email-on-dark.png, gehost; zelfde beeld als de footer)."""
-    h = open(os.path.join(P, 'header.html')).read()
-    h = h.replace('style="color:#282828;', 'style="color:#F2F2F2;')
-    h = h.replace('#F8F7F2', HEAD).replace('border-bottom:1px solid #ECE7DD;', 'border-bottom:1px solid %s;' % LINE)
-    h = h.replace('{{SHARED}}/logo-black-cream.png', SHARED['logo-white-dark.png'])
-    assert '{{' not in h and 'logo-black' not in h
+    """Vaste header uit partials/header.html, ongewijzigd (crème, zwarte lockup logo-black-cream.png, navigatie)."""
+    h = open(os.path.join(P, 'header.html')).read().replace('{{SHARED}}/logo-black-cream.png', SHARED['logo-black-cream.png'])
+    assert '{{' not in h
     h = re.sub(r'href="(https://siraatskitchen\.com[^"]*)"', lambda m: 'href="%s"' % utm(m.group(1), mp, 'header'), h)
     return h + '\n'
 
@@ -375,28 +374,35 @@ def offerbar(t):
     t = re.sub(r'(\$2,047)(\s*&rarr;)', r'<span style="text-decoration:line-through;color:%s;">\1</span>\2' % MUTED, t)
     t = re.sub(r'(WAS \$2,047)', r'<span style="text-decoration:line-through;color:%s;">\1</span>' % MUTED, t)
     return ('<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto;"><tr>'
-            '<td class="ob" align="center" bgcolor="#141414" style="background-color:#141414;border:1px solid #4A4747;padding:10px 16px;font-family:%s;font-size:12px;line-height:18px;font-weight:600;letter-spacing:1.4px;color:%s;text-transform:uppercase;">%s</td></tr></table>'
-            % (SANS, WHITE, t))
+            '<td class="ob" align="center" bgcolor="#F8F7F2" style="background-color:#F8F7F2;border:1px solid #E5E0D6;padding:10px 16px;font-family:%s;font-size:12px;line-height:18px;font-weight:600;letter-spacing:1.4px;color:%s;text-transform:uppercase;">%s</td></tr></table>'
+            % (SANS, INK, t))
+
+
+def card_img(url, href, alt):
+    """Foto in een afgeronde kaart met dunne rand, zodat hij als beeld leest en niet als vlak."""
+    return ('<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F6F1EB" style="background-color:#F6F1EB;border:1px solid %s;border-radius:10px;overflow:hidden;font-size:0;line-height:0;">'
+            '<a href="%s" style="display:block;border:0;"><img src="%s" width="550" alt="%s" style="display:block;width:100%%;max-width:550px;height:auto;border:0;border-radius:10px;"></a></td></tr></table>'
+            % (LINE, href, url, html.escape(alt)))
 
 
 def s_hero(c, im, mp, tex):
-    """Geen AI-beeld (Higgsfield zonder tegoed): kop als live tekst op de donkere hamerslag-textuur (shared/images), daaronder
-    de echte productfoto van de 12-Pcs set op zwart (BF-W1 a-top12.jpg). Levert de image-agent later een 'hero' in
+    """Geen AI-beeld (Higgsfield zonder tegoed): label, schreefkop en subline als live tekst op wit, daaronder de echte
+    productfoto van de 12-Pcs set (Shopify, warm wit) in een afgeronde kaart. Levert de image-agent later een 'hero' in
     images/README.md, dan komt die foto op de plek van de setfoto."""
     u = utm(c['cta_url'], mp, 'hero')
-    txt = (eyebrow(c['label'], WHITE) + gap(14) + serif(c['headline']) + gap(14) +
-           '<div class="lead" style="font-family:%s;font-size:18px;line-height:27px;color:%s;">%s</div>' % (SANS, TXT, md(c['subline'], mp, 'hero')))
-    top = bg_cell('<div style="text-align:center;">%s</div>' % txt, tex, '44px 40px 40px 40px', 'pad')
+    txt = (eyebrow(c['label'], RED) + gap(16) + serif(c['headline'], 52, 56) + gap(16) +
+           '<div class="lead" style="font-family:%s;font-size:18px;line-height:28px;color:%s;">%s</div>' % (SANS, MUTED, md(c['subline'], mp, 'hero')))
+    top = row('<div style="text-align:center;">%s</div>' % txt, BG, '48px 40px 32px 40px', 'pad', 'center')
     alt = 'Titanium Hammered Cookware Set, 12 pieces: 3 pans, 2 saucepans, a stock pot and 6 lids'
-    pic = row(img(im.get('hero') or IMG_SET, u, alt), BLACK, '0')
+    pic = row(card_img(im.get('hero') or IMG_SET, u, alt), BG, '0 24px 0 24px', 'gp')
     act = offerbar(c['offerbar']) + gap(26) + button(c['cta'], u) + gap(12) + sub(c['friction'])
     if c['pay'] == 'prominent': act += gap(10) + payline(True)
-    return top + pic + row('<div style="text-align:center;">%s</div>' % act, BLACK, '8px 40px 40px 40px', 'pad', 'center')
+    return top + pic + row('<div style="text-align:center;">%s</div>' % act, BG, '28px 40px 44px 40px', 'pad', 'center')
 
 
 def s_opener(c, mp):
     if not c['opener']: return ''
-    return row(rule() + gap(32) + ''.join(para(md(p, mp, 'opener')) for p in c['opener']), BLACK, '0 40px 18px 40px', 'pad')
+    return row(rule() + gap(32) + ''.join(para(md(p, mp, 'opener')) for p in c['opener']), BG, '0 40px 18px 40px', 'pad')
 
 
 def s_code(c, mp):
@@ -407,11 +413,11 @@ def s_code(c, mp):
     lis = ''.join('<tr><td valign="top" style="padding:0 10px 10px 0;font-family:%s;font-size:15px;line-height:23px;color:%s;">&bull;</td>'
                   '<td style="padding:0 0 10px 0;font-family:%s;font-size:15px;line-height:23px;color:%s;">%s</td></tr>'
                   % (SANS, YEL, SANS, TXT, md(x, mp, 'code')) for x in items)
-    box = ('<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0" bgcolor="#272727" style="background-color:#272727;border:1px dashed #6A6662;">'
-           '<tr><td align="center" bgcolor="#272727" style="background-color:#272727;padding:20px 20px 6px 20px;">%s%s'
+    box = ('<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0" bgcolor="#F8F7F2" style="background-color:#F8F7F2;border:2px dashed #C9C2B6;border-radius:6px;">'
+           '<tr><td align="center" bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:22px 20px 6px 20px;">%s%s'
            '<div class="cd" style="font-family:%s;font-size:30px;line-height:36px;font-weight:800;letter-spacing:4px;color:%s;">%s</div></td></tr>'
-           '<tr><td bgcolor="#272727" style="background-color:#272727;padding:14px 22px 8px 22px;text-align:left;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="text-align:left;">%s</table></td></tr></table>'
-           % (eyebrow(head, MUTED), gap(6), SANS, WHITE, esc(code.group(0) if code else '[CODE]'), lis))
+           '<tr><td bgcolor="#F8F7F2" style="background-color:#F8F7F2;padding:14px 22px 10px 22px;text-align:left;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" style="text-align:left;">%s</table></td></tr></table>'
+           % (eyebrow(head, MUTED), gap(6), SANS, INK, esc(code.group(0) if code else '[CODE]'), lis))
     return gap(22) + box
 
 
@@ -420,24 +426,24 @@ def s_deal(c, im, mp):
     desc = ''.join(para(md(p, mp, 'deal'), TXT, 16, 25, 12, 'center') for p in c['desc'])
     steel = re.sub(r'\*\*|\s*\(.*?\)|\..*$', '', c['steel_line']).strip()
     steel = steel if 'Pizza Steel' in steel else 'FREE Titanium Hammered Pizza Steel'
-    steel = esc(steel).replace('FREE', '<span style="color:%s;">FREE</span>' % PINK, 1)
+    steel = esc(steel).replace('FREE', '<span style="color:%s;">FREE</span>' % RED, 1)
     gl = md(c['gifts_line'], mp, 'deal')
     body = ('<div style="text-align:center;">'
             '<span style="display:inline-block;background-color:%s;color:#111111;font-family:%s;font-size:12px;line-height:16px;font-weight:800;letter-spacing:1.5px;padding:5px 12px;border-radius:12px;">68%% OFF</span>'
             '&nbsp;&nbsp;<span style="display:inline-block;border:1px solid %s;color:%s;font-family:%s;font-size:12px;line-height:14px;font-weight:600;letter-spacing:1.5px;padding:4px 11px;border-radius:12px;">ALMOST SOLD OUT</span>'
-            '%s<div class="tw" style="font-family:%s;font-size:20px;line-height:26px;font-weight:600;color:%s;">Titanium Hammered Cookware Set, 12&nbsp;Pcs</div>'
-            '<div style="padding-top:6px;font-family:%s;font-size:16px;line-height:32px;color:%s;">Regular price <span style="text-decoration:line-through;">$2,047</span>'
-            '&nbsp;&nbsp;<span class="pr" style="font-size:32px;line-height:32px;font-weight:800;color:%s;vertical-align:-4px;">$649</span></div>%s%s'
+            '%s<div class="tw" style="font-family:%s;font-size:22px;line-height:28px;font-weight:600;color:%s;">Titanium Hammered Cookware Set, 12&nbsp;Pcs</div>'
+            '<div style="padding-top:6px;font-family:%s;font-size:16px;line-height:40px;color:%s;">Regular price <span style="text-decoration:line-through;">$2,047</span>'
+            '&nbsp;&nbsp;<span class="pr" style="font-size:40px;line-height:40px;font-weight:800;color:%s;vertical-align:-6px;">$649</span></div>%s%s'
             '<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto;"><tr>'
             '<td bgcolor="%s" style="background-color:%s;border:1px solid %s;border-radius:4px;padding:10px 16px;font-family:%s;font-size:15px;line-height:21px;font-weight:600;color:%s;">+ %s</td></tr></table>'
             '%s<div style="font-family:%s;font-size:14px;line-height:20px;color:%s;">%s</div>%s</div>'
-            % (YEL, SANS, PINK, PINK, SANS, gap(14), SANS, WHITE, SANS, MUTED, WHITE, gap(6) + payline(c['pay'] == 'prominent') + gap(4) + '<div style="font-family:%s;font-size:13px;line-height:19px;color:%s;">%s</div>' % (SANS, PINK, esc(c['scarcity'])) + gap(16), desc, BLACK, BLACK, RED, SANS, WHITE, steel,
+            % (YEL, SANS, RED, RED, SANS, gap(14), SANS, INK, SANS, MUTED, INK, gap(6) + payline(c['pay'] == 'prominent') + gap(4) + '<div style="font-family:%s;font-size:13px;line-height:19px;color:%s;">%s</div>' % (SANS, RED, esc(c['scarcity'])) + gap(16), desc, BG, BG, RED, SANS, INK, steel,
                gap(10), SANS, TXT, gl, s_code(c, mp)))
     body += gap(26) + button(c['cta'], u) + gap(12) + '<div style="text-align:center;">%s</div>' % sub(c['friction'])
-    pic = row(img(im['deal'], u, 'Titanium Hammered Cookware Set, 12 pieces with the Pizza Steel'), BLACK, '0') if im.get('deal') else ''
+    pic = row(img(im['deal'], u, 'Titanium Hammered Cookware Set, 12 pieces with the Pizza Steel'), BG, '0') if im.get('deal') else ''
     head = row(rule() + gap(30) + '<div style="text-align:center;">%s</div>' % eyebrow('THE CYBER MONDAY DEAL' if 'CYBER' in c['label'].upper() else 'THE BLACK FRIDAY DEAL', MUTED),
-               BLACK, '0 40px 10px 40px', 'pad')
-    return head + pic + row(body, BLACK, '8px 40px 44px 40px', 'pad')
+               BG, '0 40px 10px 40px', 'pad')
+    return head + pic + row(body, BG, '8px 40px 44px 40px', 'pad')
 
 
 def s_steel(c, im, mp):
@@ -445,14 +451,14 @@ def s_steel(c, im, mp):
     line = c['steel_line']
     if 'Pizza Steel' not in line: line = '**FREE Titanium Hammered Pizza Steel**, a $129 value. ' + line
     if not line.rstrip().endswith('.'): line = line.rstrip() + '.'
-    pic = row(img(im.get('steel') or IMG_STEEL, u, 'Titanium Hammered Pizza Steel with a fresh pizza on the dinner table'), BLACK, '0')
+    pic = row(card_img(im.get('steel') or IMG_STEEL, u, 'Titanium Hammered Pizza Steel with a fresh pizza on the dinner table'), BG, '8px 24px 0 24px', 'gp')
     txt = ('<div style="text-align:center;">%s%s<div class="lead" style="font-family:%s;font-size:17px;line-height:26px;color:%s;">%s</div></div>'
-           % (eyebrow('FREE WITH THE 12-PIECE SET', PINK), gap(10), SANS, TXT, md(line, mp, 'pizza-steel')))
-    return pic + row(txt, BLACK, '22px 44px 44px 44px', 'pad')
+           % (eyebrow('FREE WITH THE 12-PIECE SET', RED), gap(10), SANS, TXT, md(line, mp, 'pizza-steel')))
+    return pic + row(txt, BG, '22px 44px 44px 44px', 'pad')
 
 
 def bg_cell(inner, tex, pad, cls):
-    if not tex: return row(inner, BLACK, pad, cls)
+    if not tex: return row(inner, PAGE, pad, cls)
     return ('<tr><td class="%s" background="%s" bgcolor="%s" style="background-color:%s;background-image:url(\'%s\');background-size:600px auto;background-repeat:repeat;background-position:center top;padding:%s;">'
             '<!--[if gte mso 9]><v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;"><v:fill type="tile" src="%s" color="%s"/><v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0"><![endif]-->'
             '%s<!--[if gte mso 9]></v:textbox></v:rect><![endif]--></td></tr>\n' % (cls, tex, TEX_BG, TEX_BG, tex, pad, tex, TEX_BG, inner))
@@ -460,8 +466,9 @@ def bg_cell(inner, tex, pad, cls):
 
 def s_gifts(c, mp, tex):
     u = utm(U_SALE, mp, 'gifts')
+    tex = None  # licht thema: geen donkere textuur
     head = ('<div style="text-align:center;">%s%s%s</div>%s'
-            % (eyebrow('$555 VALUE', MUTED), gap(10), serif(c['gifts_head'].replace('5 free gifts', '5 FREE gifts', 1).replace(' ship with', '|ship with', 1) if ' ship with' in c['gifts_head'] else c['gifts_head'].replace('5 free gifts', '5 FREE gifts', 1).replace(' with every', '|with every', 1), 40, 44, WHITE, 'h2'), gap(24)))
+            % (eyebrow('$555 VALUE', MUTED), gap(10), serif(c['gifts_head'].replace('5 free gifts', '5 FREE gifts', 1).replace(' ship with', '|ship with', 1) if ' ship with' in c['gifts_head'] else c['gifts_head'].replace('5 free gifts', '5 FREE gifts', 1).replace(' with every', '|with every', 1), 40, 44, INK, 'h2'), gap(24)))
     if c['gifts_style'] == 'compact':
         cells = ''.join('<td class="gc" width="20%%" align="center" valign="top" style="padding:0 4px;"><a href="%s" style="text-decoration:none;">'
                         '<img src="%s" width="96" alt="%s" style="display:block;width:96px;max-width:100%%;height:auto;border:0;margin:0 auto;border-radius:4px;"></a></td>'
@@ -471,15 +478,15 @@ def s_gifts(c, mp, tex):
         return bg_cell(head + inner, tex, '40px 32px 40px 32px', 'pad')
     rows = ''
     for i, (f, val, name) in enumerate(GIFTS, 1):
-        rows += ('<tr><td style="padding:0 0 8px 0;"><a href="%s" style="text-decoration:none;display:block;">'
-                 '<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0" bgcolor="%s" style="background-color:%s;"><tr>'
-                 '<td class="gi" width="112" valign="middle" bgcolor="#FFFFFF" style="width:112px;background-color:#FFFFFF;font-size:0;line-height:0;">'
+        rows += ('<tr><td style="padding:0 0 10px 0;"><a href="%s" style="text-decoration:none;display:block;">'
+                 '<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0" bgcolor="%s" style="background-color:%s;border:1px solid #E5E0D6;border-radius:6px;"><tr>'
+                 '<td class="gi" width="112" valign="middle" bgcolor="#FFFFFF" style="width:112px;background-color:#FFFFFF;font-size:0;line-height:0;border-radius:6px 0 0 6px;">'
                  '<img src="%s" width="112" height="112" alt="%s" style="display:block;width:112px;height:112px;border:0;"></td>'
                  '<td class="gt" valign="middle" bgcolor="%s" style="background-color:%s;padding:14px 24px;">'
                  '<div class="gv" style="font-family:%s;font-size:12px;line-height:17px;font-weight:600;letter-spacing:1.6px;color:%s;text-transform:uppercase;">Gift %d &middot; %s</div>'
                  '<div class="gn tw" style="font-family:%s;font-size:18px;line-height:24px;font-weight:600;color:%s;padding-top:4px;">%s</div></td>'
                  '</tr></table></a></td></tr>'
-                 % (u, PANEL, PANEL, SHARED[f], html.escape(name), PANEL, PANEL, SANS, MUTED, i, esc(val), SANS, WHITE, esc(name)))
+                 % (u, BG, BG, SHARED[f], html.escape(name), BG, BG, SANS, RED, i, esc(val), SANS, INK, esc(name)))
     return bg_cell(head + '<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0">%s</table>' % rows, tex, '40px 24px 34px 24px', 'gp')
 
 
@@ -489,16 +496,16 @@ def s_proof(c, mp):
         q, name = c['quote']
         out += ('<div style="text-align:center;"><div style="font-family:Arial,Helvetica,sans-serif;font-size:18px;line-height:20px;letter-spacing:3px;color:%s;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>%s%s%s'
                 '<div style="font-family:%s;font-size:12px;line-height:18px;font-weight:600;letter-spacing:1.6px;color:%s;text-transform:uppercase;">%s &middot; Verified buyer</div></div>'
-                % (WHITE, gap(14), serif('\u201c' + q + '\u201d', 28, 36, WHITE, 'h3'), gap(14), SANS, MUTED, esc(name)))
+                % (INK, gap(14), serif('\u201c' + q + '\u201d', 28, 36, INK, 'h3'), gap(14), SANS, MUTED, esc(name)))
     if c['lab']:
         out += gap(22) + para(md(c['lab'], mp, 'proof'), TXT, 15, 24, 0, 'center')
     if c['promises']:
         title, items = c['promises']
-        lis = ''.join('<tr><td valign="top" width="34" style="padding:0 0 14px 0;"><div style="width:24px;height:24px;line-height:24px;border-radius:12px;background-color:%s;text-align:center;font-family:%s;font-size:13px;font-weight:600;color:#111111;">%d</div></td>'
-                      '<td style="padding:0 0 14px 0;font-family:%s;font-size:15px;line-height:23px;color:%s;">%s</td></tr>' % (WHITE, SANS, i, SANS, TXT, md(x, mp, 'promises')) for i, x in enumerate(items, 1))
+        lis = ''.join('<tr><td valign="top" width="34" style="padding:0 0 14px 0;"><div style="width:24px;height:24px;line-height:24px;border-radius:12px;background-color:%s;text-align:center;font-family:%s;font-size:13px;font-weight:600;color:#FFFFFF;">%d</div></td>'
+                      '<td style="padding:0 0 14px 0;font-family:%s;font-size:15px;line-height:23px;color:%s;">%s</td></tr>' % (INK, SANS, i, SANS, TXT, md(x, mp, 'promises')) for i, x in enumerate(items, 1))
         out += (gap(32) + '<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0" bgcolor="%s" style="background-color:%s;"><tr><td style="padding:24px 24px 10px 24px;">'
                 '%s%s<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0">%s</table></td></tr></table>'
-                % (PANEL, PANEL, serif(title, 28, 34, WHITE, 'h3'), gap(16), lis))
+                % (PANEL, PANEL, serif(title, 28, 34, INK, 'h3'), gap(16), lis))
     stats = [('No. 25895', 'Light Labs report', utm(U_LAB, mp, 'proof-lab')), ('75-year', 'Warranty', utm(U_WARRANTY, mp, 'proof-warranty')),
              ]
 
@@ -506,7 +513,7 @@ def s_proof(c, mp):
         return ('<td width="50%%" align="center" valign="top" style="padding:18px 4px;border-left:%s;">'
                 '<a href="%s" style="text-decoration:none;"><div class="pv tw" style="font-family:%s;font-size:22px;line-height:26px;font-weight:800;color:%s;">%s</div>'
                 '<div style="font-family:%s;font-size:11px;line-height:16px;font-weight:600;letter-spacing:1.6px;color:%s;text-transform:uppercase;padding-top:4px;">%s</div></a></td>'
-                % ('0' if first else '1px solid %s' % LINE, u, SANS, WHITE, a, SANS, MUTED, esc(b)))
+                % ('0' if first else '1px solid %s' % LINE, u, SANS, INK, a, SANS, MUTED, esc(b)))
 
     def half(a, b, k):
         return ('<!--[if mso]><td width="520" valign="top"><![endif]--><div class="%s" style="display:inline-block;width:100%%;max-width:520px;vertical-align:top;">'
@@ -515,8 +522,8 @@ def s_proof(c, mp):
     grid = ('<div style="font-size:0;text-align:center;border-top:1px solid %s;border-bottom:1px solid %s;">'
             '<!--[if mso]><table role="presentation" width="520" cellpadding="0" cellspacing="0" border="0"><tr><![endif]-->%s%s<!--[if mso]></tr></table><![endif]--></div>'
             % (LINE, LINE, half(stats[0], stats[1], 'hf'), ''))
-    out += gap(36) + grid + gap(36) + '<div style="text-align:center;">%s</div>' % serif('30-day returns.|100,000+ happy customers.', 40, 46, WHITE, 'h2')
-    return row(out, BLACK, '44px 40px 40px 40px', 'pad')
+    out += gap(36) + grid + gap(36) + '<div style="text-align:center;">%s</div>' % serif('30-day returns.|100,000+ happy customers.', 40, 46, INK, 'h2')
+    return row(out, BG, '44px 40px 40px 40px', 'pad')
 
 
 def s_close(c, mp):
@@ -527,10 +534,10 @@ def s_close(c, mp):
     out += gap(32)
     out += ''.join(para(md(p, mp, 'close')) for p in c['close_post'])
     out += ('<p style="margin:4px 0 0 0;font-family:%s;font-size:16px;line-height:24px;color:%s;"><span style="font-weight:600;color:%s;">%s</span><br>'
-            '<span style="color:%s;font-size:14px;">%s</span></p>' % (SANS, TXT, WHITE, esc(c['sign']), MUTED, esc(c['sign_role'])))
+            '<span style="color:%s;font-size:14px;">%s</span></p>' % (SANS, TXT, INK, esc(c['sign']), MUTED, esc(c['sign_role'])))
     if c.get('ps'):
         out += gap(22) + para(md(c['ps'], mp, 'ps', TXT), MUTED, 15, 24, 0)
-    return row(rule() + gap(34) + out, BLACK, '0 40px 50px 40px', 'pad')
+    return row(rule() + gap(34) + out, BG, '0 40px 50px 40px', 'pad')
 
 
 def s_footer(mp):
@@ -547,7 +554,7 @@ def s_footer(mp):
 HEADCSS = """<style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Instrument+Serif:ital@0;1&display=swap');
 :root{color-scheme:light only;supported-color-schemes:light only;}
-body{margin:0;padding:0;background:#000000;-webkit-text-size-adjust:100%;}
+body{margin:0;padding:0;background:#F8F7F2;-webkit-text-size-adjust:100%;}
 table{border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;}
 img{border:0;display:block;line-height:100%;outline:none;text-decoration:none;}
 @media only screen and (max-width:599px){
@@ -568,11 +575,11 @@ img{border:0;display:block;line-height:100%;outline:none;text-decoration:none;}
   .gn{font-size:16px!important;line-height:21px!important;}
   .gc{padding:0 2px!important;}
   .hf{max-width:100%!important;}
-  .hf2{border-top:1px solid #3A3838!important;}
+  .hf2{border-top:1px solid #E5E0D6!important;}
   .pv{font-size:20px!important;line-height:24px!important;}
   .cd{font-size:26px!important;}
 }
-[data-ogsc] .tw,[data-ogsb] .tw{color:#FFFFFF!important;}
+[data-ogsc] .bw,[data-ogsb] .bw{color:#FFFFFF!important;}
 </style>"""
 
 
@@ -585,10 +592,10 @@ def page(c, im, mp, tex):
             '<meta name="color-scheme" content="light only"><meta name="supported-color-schemes" content="light only">\n'
             '<title>%s</title>\n<!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->\n'
             '<!--[if mso]><style>body,table,td,div,p,a,span{font-family:Arial,Helvetica,sans-serif!important;}</style><![endif]-->\n%s\n</head>\n'
-            '<body bgcolor="#000000" style="margin:0;padding:0;background-color:#000000;">\n'
-            '<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;color:#000000;">%s</div>\n'
-            '<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0" bgcolor="#000000" style="background-color:#000000;"><tr><td align="center" bgcolor="#000000" style="background-color:#000000;">\n'
-            '<table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" bgcolor="#000000" style="width:600px;max-width:600px;background-color:#000000;">\n'
+            '<body bgcolor="#F8F7F2" style="margin:0;padding:0;background-color:#F8F7F2;">\n'
+            '<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;color:#F8F7F2;">%s</div>\n'
+            '<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" border="0" bgcolor="#F8F7F2" style="background-color:#F8F7F2;"><tr><td align="center" bgcolor="#F8F7F2" style="background-color:#F8F7F2;">\n'
+            '<table role="presentation" class="w" width="600" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:600px;max-width:600px;background-color:#FFFFFF;">\n'
             '%s</table>\n</td></tr></table>\n</body>\n</html>\n') % (esc(c['subject']), HEADCSS, pre, body)
 
 
