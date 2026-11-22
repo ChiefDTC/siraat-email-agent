@@ -98,7 +98,7 @@ Founder, Siraat
 - [B] P.S. [CODE] works on any order over $400, not just the set. Every Black Friday price is here. (link: https://siraatskitchen.com/collections/black-friday-sale)
 
 ## Links
-- Buttons + product block [A]: https://siraatskitchen.com/products/titanium-hammered-cookware-set
+- Buttons + product block [A]: https://siraatskitchen.com/products/titanium-hammered-cookware-set-12-pcs-free-pizza-steel-1
 - Buttons [B]: https://siraatskitchen.com/discount/[CODE]?redirect=/products/titanium-hammered-cookware-set (only if Floris wants the code pre-applied)
 - 11" Pan Pro [B]: Pan Pro Standard listing (design agent: use the PRICE macro key `standard`)
 - Report: https://siraatskitchen.com/pages/third-party-testing

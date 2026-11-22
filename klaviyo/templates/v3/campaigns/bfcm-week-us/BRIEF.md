@@ -14,7 +14,7 @@ Niets naar klanten sturen, niets inplannen. Alleen bouwen + tests naar lolagroot
 | M4 | `m4-24h-left` | vr 4 dec 18:00 | US Engaged 30 + afhakers | "24 hours left". Einddatum sale = **5 dec** (Email 11 footer "11/01 to 12/05"), nog te bevestigen door Floris; schrijf `[END: Sat, Dec 5]` als markering. |
 
 ## Vaste feiten (check claims.csv / DECISIONS.md)
-- 12-Pcs set: `$649`, compare-at `$2,047` (68% off). URL https://siraatskitchen.com/products/titanium-hammered-cookware-set
+- 12-Pcs set: `$649`, compare-at `$2,047` (68% off). URL https://siraatskitchen.com/products/titanium-hammered-cookware-set-12-pcs-free-pizza-steel-1
 - Gratis Titanium Hammered Pizza Steel, alleen bij de 12-Pcs set, alleen tijdens de sale. URL https://siraatskitchen.com/products/titanium-hammered-pizza-steel
 - 5 free gifts with every order ($555 value, alleen in US): Free shipping, A mystery gift, The Plastic-Free Cooking e-book, The Favorites Cookbook e-book, A chance to win a PFAS water filter ($450 value). Nooit "purifier", nooit "4 gifts".
 - Collectie: https://siraatskitchen.com/collections/black-friday-sale

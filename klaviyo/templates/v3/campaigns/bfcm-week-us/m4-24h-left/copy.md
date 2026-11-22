@@ -71,7 +71,7 @@ Founder, Siraat
 P.S. Not the set? Every Black Friday price ends at the same time, and the 5 gifts still come with any order until then. (link: https://siraatskitchen.com/collections/black-friday-sale)
 
 ## Links
-- Buttons + product block: https://siraatskitchen.com/products/titanium-hammered-cookware-set
+- Buttons + product block: https://siraatskitchen.com/products/titanium-hammered-cookware-set-12-pcs-free-pizza-steel-1
 - Report: https://siraatskitchen.com/pages/third-party-testing
 - P.S.: https://siraatskitchen.com/collections/black-friday-sale
 

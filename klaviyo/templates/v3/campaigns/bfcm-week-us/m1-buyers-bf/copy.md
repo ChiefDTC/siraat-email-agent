@@ -77,7 +77,7 @@ Founder, Siraat
 P.S. Not ready for twelve pieces? Pick one. Every Black Friday price is here, and the 5 gifts come with any order. (link: https://siraatskitchen.com/collections/black-friday-sale)
 
 ## Links
-- Buttons + product block: https://siraatskitchen.com/products/titanium-hammered-cookware-set
+- Buttons + product block: https://siraatskitchen.com/products/titanium-hammered-cookware-set-12-pcs-free-pizza-steel-1
 - Pizza Steel mention (optional link): https://siraatskitchen.com/products/titanium-hammered-pizza-steel
 - Report: https://siraatskitchen.com/pages/third-party-testing
 - P.S.: https://siraatskitchen.com/collections/black-friday-sale

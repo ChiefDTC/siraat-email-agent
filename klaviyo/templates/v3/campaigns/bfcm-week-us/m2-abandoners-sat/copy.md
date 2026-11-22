@@ -71,7 +71,7 @@ Founder, Siraat
 P.S. Only wanted one pan? That's fine too. The 5 gifts come with any order, and every piece is on sale here. (link: https://siraatskitchen.com/collections/black-friday-sale)
 
 ## Links
-- Buttons + product block: https://siraatskitchen.com/products/titanium-hammered-cookware-set
+- Buttons + product block: https://siraatskitchen.com/products/titanium-hammered-cookware-set-12-pcs-free-pizza-steel-1
 - Report line: https://siraatskitchen.com/pages/third-party-testing
 - P.S.: https://siraatskitchen.com/collections/black-friday-sale
 
