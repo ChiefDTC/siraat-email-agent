@@ -1,0 +1,125 @@
+{
+ "id": "125683568",
+ "type": "ab-test",
+ "data": {
+  "status": "live",
+  "experiment_status": "completed",
+  "main_action": {
+   "id": "119850700",
+   "type": "send-email",
+   "data": {
+    "message": {
+     "from_email": "send@siraatskitchen.com",
+     "from_label": "Siraat's Kitchen",
+     "reply_to_email": "support@siraatskitchen.com",
+     "cc_email": null,
+     "bcc_email": null,
+     "subject_line": "Skeptical? So were they.",
+     "preview_text": "One thought it was a scam. One is on her fourth pan. An extra 10% on top of the sale.",
+     "template_id": "Tk7ySu",
+     "smart_sending_enabled": false,
+     "transactional": false,
+     "add_tracking_params": true,
+     "custom_tracking_params": [
+      {
+       "param": "utm_source",
+       "value": "klaviyo"
+      },
+      {
+       "param": "utm_medium",
+       "value": "email"
+      },
+      {
+       "param": "utm_campaign",
+       "value": "v4-browse"
+      }
+     ],
+     "additional_filters": {
+      "condition_groups": [
+       {
+        "conditions": [
+         {
+          "type": "profile-metric",
+          "metric_id": "RSNxYV",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "equals",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "flow-start"
+          },
+          "metric_filters": null
+         }
+        ]
+       },
+       {
+        "conditions": [
+         {
+          "type": "profile-metric",
+          "metric_id": "QXcV8K",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "equals",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "flow-start"
+          },
+          "metric_filters": null
+         }
+        ]
+       },
+       {
+        "conditions": [
+         {
+          "type": "profile-metric",
+          "metric_id": "YkRM4Q",
+          "measurement": "count",
+          "measurement_filter": {
+           "type": "numeric",
+           "operator": "equals",
+           "value": 0
+          },
+          "timeframe_filter": {
+           "type": "date",
+           "operator": "in-the-last",
+           "unit": "day",
+           "quantity": 7
+          },
+          "metric_filters": [
+           {
+            "property": "$flow",
+            "filter": {
+             "type": "string",
+             "operator": "equals",
+             "value": "QNZyEb"
+            }
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     "name": "B2-NOTCLICKED",
+     "id": "Yu3YvE"
+    },
+    "status": "live"
+   },
+   "links": {
+    "next": null
+   }
+  },
+  "current_experiment": null,
+  "concluded_experiment_id": "01M7QR14SBHARPD0TZZ5MF4NC0",
+  "winning_variation_id": "125683569"
+ },
+ "links": {
+  "next": null
+ }
+}
