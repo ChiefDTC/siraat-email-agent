@@ -1,4 +1,4 @@
-# Concurrenten-inbox: overzicht na dag 40 (stand 21 nov 2026, ca. 09:40 UTC)
+# Concurrenten-inbox: overzicht na dag 41 (stand 22 nov 2026, ca. 10:25 UTC)
 
 Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmail.com, per regel in `tijdlijn.csv`. Acties uit `log-*.csv` (HexClad en Our Place b handmatig door Floris, geen log). Kortingscodes staan nergens uitgeschreven.
 
@@ -6,10 +6,10 @@ Bron: alle mails sinds 12 okt 00:00 UTC aan lolagroothuis+<code>-<scenario>@gmai
 
 | Merk | w | b | c | co | Totaal | Status inschrijving |
 |---|---|---|---|---|---|---|
-| HexClad | 9 | 33 | 32 | n.v.t. | 74 | w/b/c handmatig (Floris), co niet gedaan |
-| Our Place | 37 | 54 | 37 | 0 | 128 | alles gelukt; c pas om 11:18 in winkelwagen |
-| Caraway | 5 (op hex-w) | 0 | 0 | 0 | 5 | w/b/c via footer "gelukt", maar geen enkele mail op cw-adressen; beide Caraway-mails kwamen op hex-w binnen |
-| Made In | 9 | 9 | 9 | 0 | 27 | w/b/c footer "Thanks! You've been subscribed", co gestopt (telefoon verplicht); eerste mail pas na 388 uur (campagne, geen welkom), daarna alleen campagnes tegelijk naar w, b en c |
+| HexClad | 9 | 34 | 33 | n.v.t. | 76 | w/b/c handmatig (Floris), co niet gedaan |
+| Our Place | 37 | 56 | 37 | 0 | 130 | alles gelukt; c pas om 11:18 in winkelwagen |
+| Caraway | 6 (op hex-w) | 0 | 0 | 0 | 6 | w/b/c via footer "gelukt", maar geen enkele mail op cw-adressen; beide Caraway-mails kwamen op hex-w binnen |
+| Made In | 10 | 10 | 10 | 0 | 30 | w/b/c footer "Thanks! You've been subscribed", co gestopt (telefoon verplicht); eerste mail pas na 388 uur (campagne, geen welkom), daarna alleen campagnes tegelijk naar w, b en c |
 | Okura | 0 | 0 | 0 | 0 | 0 | w/b/c captcha, alleen co (checkout zonder betaling, opt-in aan) |
 | Plateful | 0 | 0 | 0 | 1 | 1 | w/b/c captcha, co gelukt |
 | Taima | 0 | 0 | 0 | 0 | 0 | niet gestart |
@@ -325,6 +325,16 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 - **Geen mail van Made In, Caraway, Plateful of Taima** sinds de laatste run. Made In is nu drie dagen stil (laatst 17 nov 15:15), ook na de eigen Thanksgiving-deadline van 20 nov.
 - **3 nieuwe mails** (Our Place 1, HexClad 2). Ideeen voor Siraat: 71 en 72 hieronder.
 
+## Dag 41 (22 nov)
+
+- **Made In: één set, het bedrag in de kop, de rest gerangschikt op besparing.** "This Deal Is Actually Insane..." (preview "This is the lowest price this best seller has been in years.") op 21 nov om 13:30 UTC naar mi-b, mi-w en mi-c binnen 42 seconden (962,5 uur). Eerste mail sinds 17 nov, dus vier dagen stil. De kop zegt het getal meteen: "$167 off the Stainless Clad Frying Pan Set, made in Italy", $249.99 voor drie 5-Ply pannen (8, 10 en 12 inch). Daarna de vier 3-delige sets "by how much they save" ($167, $152, $127, $97), elk met prijs en land van herkomst, een quote van een chef over de pan en de zin "The set gives you that pan in three sizes, so the 10" no longer has to do every job". Geen percentage per product, alleen dollars.
+- **HexClad: eerste mail met één set centraal.** "Price Drop 🚨" (preview "Best price of year on 6-pc set! 🍳") op 21 nov om 15:20 UTC naar hex-b en hex-c in dezelfde seconde (964,7 uur), beide vanaf hello@, niet naar hex-w. Vrijwel alleen beeld: "New Price on our 6-Piece Set". Na drie categoriemails (specialty, messen, keukentools) nu een prijsdaling op de kernset, maar zonder bedrag of percentage in de tekst; het getal zit alleen in het beeld.
+- **Caraway: terug na vijf weken, met een nieuwsartikel als haak en zonder sale.** "Cooking With Plastics? 🧪" (preview "Swap your cookware, reduce your exposure.") op 21 nov om 10:42 UTC op hex-w (960,1 uur), de eerste Caraway-mail sinds 17 okt. Kop "Your Cookware Shouldn't Be Carcinogenic", daarna "In The News: Microplastics may lead to lung and colon cancer, study shows" en drie vergelijkingen (PTFE-pannen, plastic bakjes, synthetische snijplanken tegenover Caraway). Geen BF-korting, geen percentage: Caraway verkoopt in de week voor Black Friday op angst en nieuws, niet op prijs. De cw-adressen kregen nog steeds niets. Generiek verborgen beveiligingsblok in de tekstversie genegeerd.
+- **Our Place: veiligheid als reden, daarna EXTRA10 in het onderwerp.** "Be Picky" (preview "Save on cookware you feel good about") op 21 nov 17:15 UTC alleen naar op-b (966,4 uur): "Cook With Care", non-toxic en "made without PFAS", "Independently tested ... by a third-party lab" met link naar de testpagina, en de Titanium Pro Cookware Set+ "On sale for Black Friday". Op 22 nov 06:15 UTC volgde "Your Code for Even More Savings" (preview "Take an extra 10% off select products on top of Black Friday prices", 979,4 uur), ook alleen op-b: één pan (Titanium Always Pan Pro, "designed to take the heat so you can take the compliments") en EXTRA10 als onderbalk. Derde keer EXTRA10 in vier dagen, nu voor het eerst in het onderwerp; de mail zelf noemt de code alleen in de balk.
+- **Op-c en op-w kregen niets** in 26 uur, hex-w alleen de Caraway-mail. Op-b krijgt nog steeds twee mails per dag (06:15 en 17:15), c en w hooguit een.
+- **Geen mail van Okura, Plateful of Taima** sinds de laatste run.
+- **8 nieuwe mails** (Made In 3, HexClad 2, Our Place 2, Caraway 1). Ideeen voor Siraat: 73 en 74 hieronder.
+
 ## Korting: wanneer en hoe hoog
 
 - **Plateful** is het enige merk met een kortingscode: 10% in de abandoned checkout na 12,5 uur, 2 dagen geldig en al verrekend in de checkout-link (kortingscode aanwezig, niet uitgeschreven).
@@ -483,6 +493,9 @@ HexClad-tijden zijn benaderd met de eerste welkomstmail als actietijd; de echte 
 
 71. **Een receptmail in de BFCM-week die het product in de eerste zin noemt.** Our Place stuurt midden in de sale "A New November Recipe": één bijgerecht voor Thanksgiving, en de eerste zin zegt welk product je ervoor gebruikt en dat het in de sale is; de korting staat alleen als bijzin in de preview. Siraat kan in de BFCM-week naast de aanbodmails één korte mail van Benjamin sturen met één recept voor het feestmaal (bijvoorbeeld de korst op vlees of een saus in de Pan Pro), met de pan in de eerste zin en de BFCM-prijs pas daarna, zodat de lijst een reden krijgt om te openen die geen korting is.
 72. **Kleine producten als eigen mail met een lage instap.** HexClad bundelt in "Big savings on little necessities" vier kleine producten (pepermolens, spatels, kommen, plank) in een eigen BF-mail. Als Siraat accessoires of kleinere maten heeft, kan één BFCM-mail die als cadeau onder een vast bedrag brengen voor wie al een pan heeft of een klein cadeau zoekt, met de echte prijs per product op de knop (aanvulling op idee 68 en 70).
+
+73. **Een vergelijkingsmail met alle opties gerangschikt op het voordeel in dollars.** Made In zet in "This Deal Is Actually Insane..." één set met het bedrag in de kop en zet daarna alle vier sets op volgorde van besparing, met prijs per set en één zin waarom drie maten handig zijn ("so the 10" no longer has to do every job"). Siraat kan in de BFCM-week een mail van Benjamin sturen met de sets of maten van de Pan Pro naast elkaar, gerangschikt op het echte voordeel in dollars, met per regel de prijs en één zin wat die maat doet. Getallen exact gelijk aan de site; "lowest price in years" alleen met aantoonbare prijsgeschiedenis (zie idee 52).
+74. **Het labrapport als eigen mail in de BFCM-week, met link naar het bewijs.** Our Place ("Be Picky", met link naar de testpagina) en Caraway ("Cooking With Plastics?", met een nieuwsartikel) verkopen in de week voor Black Friday op veiligheid in plaats van prijs. Siraat kan tussen de aanbodmails één korte mail van Benjamin sturen over wat er niet in de Pan Pro zit, met het echte labrapport (31 PFAS, rapport 25895) als link en de BFCM-prijs pas onderaan. Geen angstclaims over kanker of nieuwsartikelen die we niet kunnen onderbouwen; alleen goedgekeurde claims (aanvulling op idee 51).
 
 ## Open punten
 
