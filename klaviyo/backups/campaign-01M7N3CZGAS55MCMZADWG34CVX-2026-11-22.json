@@ -1,0 +1,134 @@
+{
+ "data": {
+  "type": "campaign",
+  "id": "01M7N3CZGAS55MCMZADWG34CVX",
+  "attributes": {
+   "name": "HS // Siraats Kitchen // November Email 11: Black Friday Week Is Here // 11.23.2026 INTL",
+   "status": "Scheduled",
+   "archived": false,
+   "audiences": {
+    "included": [
+     "R5LmyU"
+    ],
+    "excluded": [
+     "RNuYDm",
+     "TLqivd",
+     "UJY6LA",
+     "Ur6Ehr",
+     "VSnBnJ",
+     "W3q7Zy",
+     "W4vNzF",
+     "XTpfNG"
+    ]
+   },
+   "send_options": {
+    "use_smart_sending": true,
+    "ignore_unsubscribes": false
+   },
+   "tracking_options": {
+    "add_tracking_params": true,
+    "custom_tracking_params": [],
+    "is_tracking_clicks": true,
+    "is_tracking_opens": true
+   },
+   "send_strategy": {
+    "method": "static",
+    "datetime": "2026-11-23T08:15:00+00:00",
+    "options": {
+     "is_local": true,
+     "send_past_recipients_immediately": false
+    }
+   },
+   "created_at": "2026-11-17T15:53:22.189811+00:00",
+   "scheduled_at": "2026-11-21T20:26:12.703667+00:00",
+   "updated_at": "2026-11-21T20:26:12.787183+00:00",
+   "send_time": "2026-11-23T08:15:00+00:00"
+  },
+  "relationships": {
+   "campaign-messages": {
+    "data": [
+     {
+      "type": "campaign-message",
+      "id": "01M7N3CZHGQYG57V3GG540ASMT"
+     }
+    ],
+    "links": {
+     "self": "https://a.klaviyo.com/api/campaigns/01M7N3CZGAS55MCMZADWG34CVX/relationships/campaign-messages/",
+     "related": "https://a.klaviyo.com/api/campaigns/01M7N3CZGAS55MCMZADWG34CVX/campaign-messages/"
+    }
+   },
+   "tags": {
+    "links": {
+     "self": "https://a.klaviyo.com/api/campaigns/01M7N3CZGAS55MCMZADWG34CVX/relationships/tags/",
+     "related": "https://a.klaviyo.com/api/campaigns/01M7N3CZGAS55MCMZADWG34CVX/tags/"
+    }
+   }
+  },
+  "links": {
+   "self": "https://a.klaviyo.com/api/campaigns/01M7N3CZGAS55MCMZADWG34CVX/"
+  }
+ },
+ "included": [
+  {
+   "type": "campaign-message",
+   "id": "01M7N3CZHGQYG57V3GG540ASMT",
+   "attributes": {
+    "definition": {
+     "channel": "email",
+     "label": "HS // Siraats Kitchen // November Email 11: Black Friday Week Is Here // 11.23.2026 INTL",
+     "content": {
+      "subject": "A Black Friday sale note from Benjamin",
+      "preview_text": "",
+      "from_email": "send@siraatskitchen.com",
+      "from_label": "SiraatsKitchen",
+      "reply_to_email": null,
+      "cc_email": null,
+      "bcc_email": null
+     }
+    },
+    "send_times": [
+     {
+      "datetime": "2026-11-23T08:15:00+00:00",
+      "is_local": false
+     }
+    ],
+    "created_at": "2026-11-17T15:53:22.227448+00:00",
+    "updated_at": "2026-11-17T15:53:22.227470+00:00"
+   },
+   "relationships": {
+    "campaign": {
+     "data": {
+      "type": "campaign",
+      "id": "01M7N3CZGAS55MCMZADWG34CVX"
+     },
+     "links": {
+      "self": "https://a.klaviyo.com/api/campaign-messages/01M7N3CZHGQYG57V3GG540ASMT/relationships/campaign/",
+      "related": "https://a.klaviyo.com/api/campaign-messages/01M7N3CZHGQYG57V3GG540ASMT/campaign/"
+     }
+    },
+    "template": {
+     "data": {
+      "type": "template",
+      "id": "RqbkxM"
+     },
+     "links": {
+      "self": "https://a.klaviyo.com/api/campaign-messages/01M7N3CZHGQYG57V3GG540ASMT/relationships/template/",
+      "related": "https://a.klaviyo.com/api/campaign-messages/01M7N3CZHGQYG57V3GG540ASMT/template/"
+     }
+    },
+    "image": {
+     "links": {
+      "self": "https://a.klaviyo.com/api/campaign-messages/01M7N3CZHGQYG57V3GG540ASMT/relationships/image/",
+      "related": "https://a.klaviyo.com/api/campaign-messages/01M7N3CZHGQYG57V3GG540ASMT/image/"
+     }
+    }
+   },
+   "links": {
+    "self": "https://a.klaviyo.com/api/campaign-messages/01M7N3CZHGQYG57V3GG540ASMT/"
+   }
+  }
+ ],
+ "links": {
+  "self": "https://a.klaviyo.com/api/campaigns/01M7N3CZGAS55MCMZADWG34CVX/?include=campaign-messages"
+ }
+}
