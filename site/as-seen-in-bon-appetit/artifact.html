@@ -50,6 +50,14 @@
   .strip .head{font-size:21px}
   .strip .issue{font-size:11px;color:var(--ink-soft)}
 
+
+  /* clipping variant */
+  .hp .clip{position:absolute;left:-28px;bottom:-40px;width:58%;background:#FBFAF6;color:#141414;padding:16px 18px 18px;border-radius:2px;transform:rotate(-3deg);box-shadow:0 26px 50px -18px rgba(0,0,0,.85)}
+  .hp .clip .src{font:600 9px/1 var(--body);letter-spacing:2.2px;text-transform:uppercase;color:#7A746B;display:flex;justify-content:space-between;border-bottom:1px solid #E3DED4;padding-bottom:8px;margin-bottom:10px}
+  .hp .clip h3{font:800 17px/1.15 Arial, Helvetica, sans-serif;margin:0 0 6px;letter-spacing:-.2px}
+  .hp .clip p{font:400 13px/1.45 Arial, Helvetica, sans-serif;margin:0;color:#2a2a2a}
+  .v2 .badge{display:none}
+  @media (max-width:860px){ .hp .clip{left:-4px;bottom:-56px;width:72%} .v2 .in{padding-block:56px 88px} }
   @media (max-width:860px){
     .hp .in{grid-template-columns:1fr;gap:56px;padding-block:56px}
     .hp .cover{right:-6px;width:32%}
@@ -58,7 +66,29 @@
   }
 </style>
 
-<div class="tag gut">Homepage section</div>
+<div class="tag gut">Homepage section, with the clipping</div>
+<section class="hp v2 gut">
+  <div class="in">
+    <div class="media">
+      <img class="photo" src="img/set-red-tiles.jpg" alt="Siraat hammered titanium 12-piece set on a kitchen counter">
+      <img class="cover" src="img/ba-cover.jpg" alt="Bon Appétit, Holiday 2026 issue cover">
+      <div class="clip">
+        <div class="src"><span>Bon App&eacute;tit</span><span>Holiday 2026</span></div>
+        <h3>This Holiday, Cook with the Best</h3>
+        <p>No better gift for the home chef than a stellar, non-toxic cooking surface. Siraat&rsquo;s Hammered Titanium Cookware serves up zero coatings, impeccable quality &amp; trusted by 100K+ customers.</p>
+      </div>
+    </div>
+    <div class="txt">
+      <div class="seen">As seen in</div>
+      <h2 class="mag">Bon App&eacute;tit</h2>
+      <p class="head">&ldquo;This holiday, cook with the best.&rdquo;</p>
+      <div class="issue">The Holiday 2026 Issue</div>
+      <a class="btn" href="/products/titanium-hammered-cookware-set-12-pcs-free-pizza-steel-1">Shop the 12-piece set</a>
+    </div>
+  </div>
+</section>
+
+<div class="tag gut">Homepage section, text under the headline</div>
 <section class="hp gut">
   <div class="in">
     <div class="media">
