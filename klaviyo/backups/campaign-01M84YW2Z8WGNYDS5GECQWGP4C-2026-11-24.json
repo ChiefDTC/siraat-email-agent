@@ -1,0 +1,40 @@
+{
+ "name": "HS // Siraats Kitchen // November Email 13: Still Deciding? Black Friday Prices Are On // 11.25.2026 US",
+ "status": "Draft",
+ "archived": false,
+ "audiences": {
+  "included": [
+   "TqFRCn",
+   "VJkN42"
+  ],
+  "excluded": [
+   "SLVWps",
+   "VSnBnJ",
+   "W3q7Zy",
+   "W4vNzF",
+   "XTpfNG"
+  ]
+ },
+ "send_options": {
+  "use_smart_sending": true,
+  "ignore_unsubscribes": false
+ },
+ "tracking_options": {
+  "add_tracking_params": true,
+  "custom_tracking_params": [],
+  "is_tracking_clicks": true,
+  "is_tracking_opens": true
+ },
+ "send_strategy": {
+  "method": "static",
+  "datetime": "2026-11-23T20:42:04.649000+00:00",
+  "options": {
+   "is_local": true,
+   "send_past_recipients_immediately": false
+  }
+ },
+ "created_at": "2026-11-23T19:42:05.291736+00:00",
+ "scheduled_at": null,
+ "updated_at": "2026-11-23T19:46:18.028788+00:00",
+ "send_time": null
+}
