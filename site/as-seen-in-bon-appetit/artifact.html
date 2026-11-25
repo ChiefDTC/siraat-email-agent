@@ -76,9 +76,24 @@
   .gal figure{margin:0;background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.08)}
   .gal figcaption{font:500 13px/1.4 var(--body);padding:10px 12px;color:var(--ink)}
   .gal figcaption b{font-weight:600}
+  .pv{max-width:1240px;margin:0 auto;padding-block:40px 24px;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;align-items:start}
+  .pv h4{font:600 11px/1 var(--body);letter-spacing:2.4px;text-transform:uppercase;color:var(--ink-soft);margin:0 0 12px}
+  .browser{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 24px 60px -24px rgba(0,0,0,.35);border:1px solid #d9d4ca}
+  .browser .bar{display:flex;align-items:center;gap:6px;padding:10px 12px;background:#f3f0ea;border-bottom:1px solid #e3ded5}
+  .browser .bar i{width:10px;height:10px;border-radius:50%;background:#d6d0c6;display:block}
+  .browser .bar span{margin-left:10px;flex:1;background:#fff;border-radius:6px;font:500 11px/1 var(--body);color:#8a847a;padding:6px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .phone{background:#111;border-radius:42px;padding:12px;box-shadow:0 30px 60px -24px rgba(0,0,0,.5);max-width:300px;margin:0 auto}
+  .phone .scr{border-radius:32px;overflow:hidden;background:#1E1D1B}
+  .phone .notch{height:22px;display:flex;justify-content:center;align-items:center}
+  .phone .notch b{width:84px;height:8px;border-radius:8px;background:#000;display:block}
+  @media (max-width:860px){ .pv{grid-template-columns:1fr} }
 </style>
 
-<div class="tag gut">Homepage section · final</div>
+<div class="pv gut">
+  <div><h4>Desktop</h4><div class="browser"><div class="bar"><i></i><i></i><i></i><span>siraatskitchen.com</span></div><img src="img/preview-desktop.jpg" alt="Desktop preview of the As seen in Bon Appétit section"></div></div>
+  <div><h4>Mobile</h4><div class="phone"><div class="scr"><div class="notch"><b></b></div><img src="img/preview-mobile.jpg" alt="Mobile preview of the As seen in Bon Appétit section"></div></div></div>
+</div>
+<div class="tag gut">Live section (resize your window to test)</div>
 <section class="sec s4 gut">
   <div class="in">
     <div class="stage">
