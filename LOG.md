@@ -660,3 +660,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 2026-11-25 · Bon Appétit sectie: 5 Revana-knipsels gemaakt (nano-banana-pro 2K, $0,20 totaal), tekst letter voor letter gecontroleerd, nr 4 uitgeknipt en rechtsboven in variant 4 gezet; artifact v8 Gd86MUgrVtS35QsF8uNyMc. Originelen in site/as-seen-in-bon-appetit/img/revana/.
 - 2026-11-25 · Bon Appétit sectie: Floris kiest knipsel 4. Artifact v9 toont alleen de eindversie. Volgende stap: Shopify-sectie bouwen na akkoord.
 - 2026-11-25 · Bon Appétit sectie: desktop- en mobielvoorbeeld (browser- en telefoonframe) toegevoegd aan artifact v10.
+- 2026-11-25 · Bon Appétit sectie in Shopify: nieuwe sectie sections/siraat-as-seen-in.liquid in thema ecomspace/holiday-sale (209676468564, niet live), op homepage na circles. Afbeeldingen in Shopify Files (siraat-bon-appetit-hero.jpg, siraat-bon-appetit-clipping.png). Kopie live thema kon niet: 100-thema-limiet. Niets gepubliceerd.
