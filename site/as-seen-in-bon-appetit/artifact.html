@@ -70,9 +70,41 @@
   }
   .s4 .clip{top:44px;right:44px;bottom:auto;width:400px;z-index:2;transform:rotate(3deg)}
   @media (max-width:860px){ .s4 .clip{top:18px;right:12px;width:min(300px,82%)} .s4 .clip h3{font-size:15px} .s4 .clip p{font-size:12px} .s4 .stage{min-height:700px} }
+  .s4 .stage img.cutout{position:absolute;inset:auto;height:auto;object-fit:initial;top:28px;right:28px;width:440px;z-index:2;transform:rotate(2deg);filter:drop-shadow(0 22px 30px rgba(0,0,0,.6))}
+  @media (max-width:860px){ .s4 .stage img.cutout{top:14px;right:8px;width:min(330px,86%)} }
+  .gal{max-width:1200px;margin:0 auto;padding-block:8px 64px;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+  .gal figure{margin:0;background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.08)}
+  .gal figcaption{font:500 13px/1.4 var(--body);padding:10px 12px;color:var(--ink)}
+  .gal figcaption b{font-weight:600}
 </style>
 
-<div class="tag gut">Homepage section</div>
+<div class="tag gut">Homepage section · Revana clipping</div>
+<section class="sec s4 gut">
+  <div class="in">
+    <div class="stage">
+      <img src="img/set-red-tiles.jpg" alt="Siraat hammered titanium 12-piece set on a kitchen counter">
+      <img class="cutout" src="img/revana/clip-4-cutout-900.png" alt="Magazine clipping: This Holiday, Cook with the Best. No better gift for the home chef than a stellar, non-toxic cooking surface. Siraat's Hammered Titanium Cookware serves up zero coatings, impeccable quality and trusted by 100K+ customers.">
+      <div class="txt">
+        <div class="seen">As seen in</div>
+        <h2 class="name">Bon App&eacute;tit</h2>
+        <p class="head">&ldquo;This holiday, cook with the best.&rdquo;</p>
+        <div class="issue">The Holiday 2026 Issue</div>
+        <a class="btn" href="/products/titanium-hammered-cookware-set-12-pcs-free-pizza-steel-1">Shop the 12-piece set</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="tag gut">The 5 Revana images (text checked, all correct)</div>
+<div class="gal gut">
+  <figure><img src="img/revana/clip-1-cream-900.jpg" alt=""><figcaption><b>1 · Cream</b>, torn, flat from above</figcaption></figure>
+  <figure><img src="img/revana/clip-2-wood-900.jpg" alt=""><figcaption><b>2 · Wood</b>, at an angle, odd letter spacing</figcaption></figure>
+  <figure><img src="img/revana/clip-3-tape-900.jpg" alt=""><figcaption><b>3 · Tape on linen</b>, cut with scissors</figcaption></figure>
+  <figure><img src="img/revana/clip-4-white-900.jpg" alt=""><figcaption><b>4 · Torn on white</b>, used above (background removed)</figcaption></figure>
+  <figure><img src="img/revana/clip-5-slate-900.jpg" alt=""><figcaption><b>5 · Dark slate</b>, curled corner</figcaption></figure>
+</div>
+
+<div class="tag gut">Previous version · HTML clipping</div>
 <section class="sec s4 gut">
   <div class="in">
     <div class="stage">
