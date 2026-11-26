@@ -91,7 +91,7 @@ def us():
     story = (p('<b>Happy Thanksgiving 2026.</b>', 19, 28, pad='0 0 12px 0') +
              p('This morning I was at the office going through the Black Friday orders, and I kept thinking about this year. More than 100,000 of you now cook on our pans. When we started, that number was zero.') +
              p('Today a lot of you are cooking Thanksgiving dinner on them. The turkey, the stuffing, the gravy your family argues about every year. That still doesn&rsquo;t feel real to me.') +
-             p('So I did something without running it by the team first: I put an <b>extra 10% off everything</b>, on top of the Black Friday sale. No meeting, no approval. Just a thank you for a year we never expected.') +
+             p(f'So I did something without running it by the team first: I put an <a href="{link(SALE, m, "story-extra10")}" style="color:#B3262C;font-weight:800;text-decoration:underline;">EXTRA 10% OFF EVERYTHING</a>, on top of the Black Friday sale. No meeting, no approval. Just a thank you for a year we never expected.') +
              p(f'It&rsquo;s already applied when you tap the button or any image in this email. <a href="{link(SALE, m, "story-link")}" style="color:#B3262C;font-weight:700;text-decoration:underline;">The extra 10% ends tonight at midnight.</a>') +
              p('Here&rsquo;s to a full table today, and a healthy end of the year for you and yours.') +
              p('<i>Don&rsquo;t tell anyone, but this discount is honestly a bit crazy. I have to switch it off tonight, or my marketing team is going to be mad at me. But in the end I&rsquo;m the founder, so what does it matter.</i>') + signoff())
@@ -110,7 +110,7 @@ def intl():
              p('Then Bon App&eacute;tit reached out to us. One of the most iconic food magazines in the world wanted Siraat in their <b>Holiday 2026 issue</b>. In the holiday issue, right in the season when people decide what to cook with and what to give.') +
              p('I&rsquo;m honestly proud of that. Not for the name, but because of what it says. More and more people are starting to see that what you cook on matters. That there is a better way. For us, Siraat is the path to a non-toxic life, and it&rsquo;s beautiful to see that message reach this far.') +
              p('Here&rsquo;s what they wrote: <i>&ldquo;No better gift for the home chef than a stellar, non-toxic cooking surface.&rdquo;</i>') +
-             p(f'To celebrate, I added an <b>extra 10% off everything</b> with code BONAPPETIT10, on top of the Black Friday sale. <a href="{L(SALE, "story-link")}" style="color:#B3262C;font-weight:700;text-decoration:underline;">It&rsquo;s already applied when you tap here.</a>') +
+             p(f'To celebrate, I added an <a href="{L(SALE, "story-extra10")}" style="color:#B3262C;font-weight:800;text-decoration:underline;">EXTRA 10% OFF EVERYTHING</a> with code BONAPPETIT10, on top of the Black Friday sale. <a href="{L(SALE, "story-link")}" style="color:#B3262C;font-weight:700;text-decoration:underline;">It&rsquo;s already applied when you tap here.</a>') +
              p('Thank you for being part of this from the start. You were on this path before any magazine was.') + signoff())
     b += row(story, '30px 40px 28px 40px')
     # groot aanbodblok, donker, direct onder de hero
