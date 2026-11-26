@@ -698,3 +698,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 2026-11-26 · INTL test-templates UhQ9Pd (E15), UdcTtP (E16), R67EnG (18:00) aangemaakt en naar Lola gestuurd.
 - 2026-11-26 · E15 INTL opnieuw opgebouwd vanuit HS-origineel (vorige versie had footer-stukken tussen de producten door slechte splits): alleen beeld/link-wissels + 1 gekopieerd blok, tagbalans gecontroleerd. Nieuwe tests naar Lola.
 - 2026-11-26 · INTL 08:00 opnieuw gebouwd in eigen schone template (HS-HTML gaf footer-rommel in mail-apps): intl-0800-bfextra10.html, eigen productblokken met CTA 'SHOP 70% OFF + 10% OFF', hero-knop vervangen. Test naar Lola (UhQ9Pd).
+- 2026-11-26 · INTL 08:00: balk '10% ALREADY APPLIED' + codeblok onder hero ('YOUR EXTRA 10% IS ALREADY APPLIED' + backup code BFEXTRA10). Test naar Lola.
