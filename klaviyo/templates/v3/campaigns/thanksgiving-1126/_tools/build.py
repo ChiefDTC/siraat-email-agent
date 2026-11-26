@@ -159,7 +159,7 @@ def intl():
              f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="border:2px dashed #CDB27A;border-radius:6px;padding:12px;">'
              f'<div style="font-family:{SANS};font-size:12px;letter-spacing:2px;font-weight:600;color:#BDB8B0;">USE CODE</div>'
              f'<div style="font-family:{SANS};font-size:30px;line-height:38px;letter-spacing:4px;font-weight:800;color:#FFFFFF;">{CODE}</div>'
-             f'<div style="font-family:{SANS};font-size:13px;line-height:19px;color:#BDB8B0;">Already applied when you tap any button below</div></td></tr></table>'
+             f'<div style="font-family:{SANS};font-size:13px;line-height:19px;color:#BDB8B0;">Already applied when you tap the button below</div></td></tr></table>'
              f'<div style="height:20px;">&nbsp;</div>' + btn('Shop the sale now &rarr;', L(SALE, 'offer-btn')) +
              p('+ 5 FREE gifts with every order &middot; Ends Sunday, Nov 30', 14, 20, '#BDB8B0', '12px 0 0 0', 'center'))
     b += row(offer, '34px 40px 34px 40px', '#1E1D1B')
@@ -174,19 +174,18 @@ def intl():
     b += row(why, '36px 40px 26px 40px')
     # productkaart 6-delig met kortingsbadge
     prod = (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid {LINE};border-radius:8px;"><tr><td style="padding:0;position:relative;">'
-            f'<a href="{L(SET6, "set6-img")}"><img src="{IMG6}" width="558" alt="Siraat Titanium Hammered Pan Set with Lids, 6 pieces" style="display:block;width:100%;max-width:558px;height:auto;border:0;border-radius:8px 8px 0 0;"></a></td></tr>'
+            f'<a href="{L(SALE, "set6-img")}"><img src="{IMG6}" width="558" alt="Siraat Titanium Hammered Pan Set with Lids, 6 pieces" style="display:block;width:100%;max-width:558px;height:auto;border:0;border-radius:8px 8px 0 0;"></a></td></tr>'
             f'<tr><td style="padding:20px 22px 22px 22px;">'
             f'<table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="{RED}" style="background-color:{RED};border-radius:3px;padding:6px 10px;font-family:{SANS};font-size:12px;font-weight:800;letter-spacing:1.5px;color:#FFFFFF;">70% OFF + EXTRA 10%</td>'
             f'</tr></table>'
             f'<div class="h2" style="font-family:{SERIF};font-size:30px;line-height:34px;color:{INK};padding:12px 0 8px 0;">The 6-piece Titanium Hammered Pan Set with Lids</div>' +
             p('Three hammered pans and a lid for each. The easiest way to start cooking without coatings. For yourself, or as the gift this year.', 16, 24, pad='0 0 16px 0') +
-            btn('Get the 6-piece set &rarr;', L(SET6, 'set6-btn')) +
-            p(f'Code {CODE} already applied &middot; 5 free gifts included', 13, 19, MUTED, '10px 0 0 0', 'center') +
+            p(f'Code {CODE} already applied &middot; 5 free gifts included', 13, 19, MUTED, '0', 'left') +
             '</td></tr></table>')
     b += row(prod, '30px 20px 30px 20px', PANEL)
     # stappen: hoe werkt het
     steps = (eyebrow('How it works') +
-             bullets(['Tap any button in this email. Your extra 10% is applied automatically.',
+             bullets(['Tap the button or any image in this email. Your extra 10% is applied automatically.',
                       'Pick your set or pan. Black Friday prices are already up to 70% off.',
                       'Check out. 5 free gifts are added to every order. (No discount showing? Enter BONAPPETIT10 at checkout.)']))
     b += row(steps, '30px 40px 10px 40px')
@@ -195,8 +194,7 @@ def intl():
                     for a, b2 in [('75 yrs', 'warranty'), ('30 days', 'returns'), ('PFAS', 'lab tested'), ('100K+', 'customers')])
     b += row(f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid {LINE};border-bottom:1px solid {LINE};"><tr><td style="padding:18px 0;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>{trust}</tr></table></td></tr></table>', '18px 40px 6px 40px')
     close = (p('<b>Your extra 10% ends Sunday, Nov 30 at 11:59 PM ET.</b> After that it&rsquo;s gone, and the sale ends Dec 5.', 16, 25, pad='22px 0 18px 0', align='center') +
-             btn('Shop the sale with BONAPPETIT10 &rarr;', L(SALE, 'close-btn')) +
-             p('Being in Bon App&eacute;tit is a big moment for a small team. Thank you for cooking with us first.<br>Benjamin, Founder', 15, 23, MUTED, '24px 0 0 0', 'center'))
+             '')
     b += row(close, '0 40px 40px 40px')
     return shell('As seen in Bon Appétit', 'Up to 70% off + an extra 10% with BONAPPETIT10. Already applied, ends Sunday.', b)
 
