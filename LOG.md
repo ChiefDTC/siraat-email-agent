@@ -672,3 +672,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 2026-11-26 · US: nieuwe hero (Revana, glad van buiten, gehamerd van binnen; 4 pogingen, $0,16), knop over model-'Shop Now', 'midnight' zonder ET, deadline-zin als rode link. INTL: verhaal Benjamin over Bon Appétit en de missie bovenaan. Templates, tests (Lola) en Figma bijgewerkt.
 - 2026-11-26 · US hero-knop nu 'CLAIM 70% OFF' (Floris; 80% afgewezen want max 73%). R7fybM bijgewerkt, beide tests naar Lola.
 - 2026-11-26 · INTL: alleen nog knop 'Shop the sale now'; alle links (hero, verhaal, productfoto) naar /collections/black-friday-sale met BONAPPETIT10; dubbele groet onderaan weg. SgEp5D bijgewerkt, test naar Lola.
+- 2026-11-26 · US: ook één knop (Shop the Black Friday sale), alle links naar BF-sale met THANKSGIVING10, hero-knop 'CLAIM 70% OFF' groter en hoger (onderste strook met model-'Shop Now' weggesneden). R7fybM + Figma bijgewerkt, test naar Lola.
