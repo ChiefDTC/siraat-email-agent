@@ -80,46 +80,56 @@ def gifts(items, title):
                     f'<td style="font-family:{SANS};font-size:15px;line-height:21px;color:{INK};">{t}</td></tr>' for f, t in items)
     return eyebrow(title) + f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{cells}</table>'
 
-# ------------------------------------------------------------------ US
+# ------------------------------------------------------------------ US (Floris 26 nov: CTA direct onder hero, sale laten zien, vierkante setfoto; nooit 80%)
+IMG12SQ = 'https://cdn.shopify.com/s/files/1/0907/0877/1156/files/12pcsset.webp?v=1781591412&width=1100&height=1100&crop=center&format=pjpg'
 def us():
     m = 'us'
-    b = topbar('THANKSGIVING X BLACK FRIDAY &middot; EXTRA 10% OFF, ALREADY APPLIED')
-    b += f'<tr><td style="padding:0;"><a href="{link(SET12, m, "hero")}"><img src="{UP["us-hero-thanksgiving.jpg"]}" width="600" alt="Happy Thanksgiving. Thanksgiving x Black Friday, an extra 10% off Siraat titanium hammered cookware." style="display:block;width:100%;max-width:600px;height:auto;border:0;"></a></td></tr>\n'
-    note = (p('Hey {{ first_name|default:\'there\' }},') + p('Happy Thanksgiving.') +
-            p('Right now the kitchen is the loudest room in the house. Someone&rsquo;s basting, someone&rsquo;s sneaking stuffing, someone&rsquo;s asking when we eat.') +
-            p('This year, 100,000+ of you are cooking that dinner in a Siraat pan. I still find that hard to believe.') +
-            p('So, thank you. For letting us into your kitchen, and onto your family&rsquo;s table.') + signoff())
-    b += row(note, '36px 40px 30px 40px')
-    offer = (eyebrow('Thanksgiving x Black Friday') + h2('An extra 10% off, on top of the sale') +
-             bullets(['Up to 70% off, plus an extra 10% off everything', 'Code THANKSGIVING10, already applied when you click any button',
-                      '5 free gifts with every US order ($555 value)', 'A pure titanium cooking surface, no coatings. Covered for 75 years.']) +
-             '<div style="height:18px;line-height:18px;">&nbsp;</div>' + codebar('Already applied when you click any button. Ends Sunday, Nov 30, 11:59 PM ET.'))
-    b += row(offer, '8px 40px 30px 40px')
-    prod = (img(IMG12, link(SET12, m, 'set12-img'), 'Siraat Titanium Hammered Cookware Set, 12 pieces') +
-            '<div style="height:18px;">&nbsp;</div>' + eyebrow('The one everyone asks about', MUTED) +
-            h2('The 12-piece Titanium Hammered Cookware Set', 30) +
-            p(f'<span style="text-decoration:line-through;color:{MUTED};">$2,047</span> &nbsp;$649 &nbsp;&rarr;&nbsp; <b style="color:{RED};">$584.10 with THANKSGIVING10</b>', 19, 28) +
-            p('<b>Plus a FREE Titanium Hammered Pizza Steel.</b> Still $149 on its own, even at sale price.') +
-            p('Three hammered pans (8, 10, 12 inch), 2-qt and 3-qt saucepans, an 8-qt stock pot, six lids. In stock in our US warehouses (Riverside, California and Illinois). 93% sold.', 15, 23, MUTED) +
-            btn('Get my 12-piece set + free Pizza Steel', link(SET12, m, 'set12-btn')) +
-            p('Code already applied. 30-day returns. 100,000+ happy customers.', 13, 19, MUTED, '10px 0 0 0', 'center'))
-    b += row(prod, '30px 40px 30px 40px')
-    six = (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>'
-           f'<td width="150" valign="middle" style="padding-right:16px;"><a href="{link(SET6, m, "set6-img")}"><img src="{IMG6}" width="140" alt="Siraat 6-piece hammered pan set with lids" style="display:block;width:140px;height:auto;border-radius:6px;border:0;"></a></td>'
-           f'<td valign="middle">{p("<b>Starting smaller?</b> The 6-piece set:", 16, 24, pad="0 0 4px 0")}'
-           f'{p(f"<span style=text-decoration:line-through;color:{MUTED};>$1,163</span> $349 &rarr; <b>$314.10 with the code</b>", 16, 24, pad="0 0 10px 0")}'
-           f'<a href="{link(SET6, m, "set6-btn")}" style="font-family:{SANS};font-size:14px;font-weight:700;letter-spacing:1px;color:{RED};">GET THE 6-PIECE SET FOR $314.10 &rarr;</a></td></tr></table>')
-    b += row(six, '22px 40px', PANEL)
+    b = topbar('BLACK FRIDAY SALE &middot; EXTRA 10% OFF, ALREADY APPLIED')
+    b += f'<tr><td style="padding:0;"><a href="{link(SALE, m, "hero")}"><img src="{UP["us-hero-thanksgiving.jpg"]}" width="600" alt="Happy Thanksgiving. Thanksgiving x Black Friday, extra 10% off." style="display:block;width:100%;max-width:600px;height:auto;border:0;"></a></td></tr>\n'
+    b += row(btn('Claim 70% + extra 10% off &rarr;', link(SALE, m, 'hero-btn')) +
+             p('Black Friday sale &middot; code THANKSGIVING10 already applied &middot; ends Sunday', 13, 19, MUTED, '10px 0 0 0', 'center'), '22px 40px 26px 40px')
+    offer = (f'<div style="font-family:{SANS};font-size:13px;line-height:18px;letter-spacing:3px;font-weight:700;color:#CDB27A;text-align:center;">BLACK FRIDAY SALE &middot; THANKSGIVING EXTRA</div>'
+             f'<div style="font-family:{SANS};font-size:60px;line-height:62px;font-weight:800;color:#FFFFFF;text-align:center;padding:12px 0 2px 0;letter-spacing:-1px;">UP TO 70% OFF</div>'
+             f'<div style="font-family:{SANS};font-size:30px;line-height:36px;font-weight:800;color:#F2C14E;text-align:center;padding-bottom:16px;">+ AN EXTRA 10% OFF</div>'
+             f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="border:2px dashed #CDB27A;border-radius:6px;padding:12px;">'
+             f'<div style="font-family:{SANS};font-size:12px;letter-spacing:2px;font-weight:600;color:#BDB8B0;">USE CODE</div>'
+             f'<div style="font-family:{SANS};font-size:30px;line-height:38px;letter-spacing:4px;font-weight:800;color:#FFFFFF;">THANKSGIVING10</div>'
+             f'<div style="font-family:{SANS};font-size:13px;line-height:19px;color:#BDB8B0;">Already applied when you tap any button</div></td></tr></table>'
+             f'<div style="height:20px;">&nbsp;</div>' + btn('Shop the Black Friday sale &rarr;', link(SALE, m, 'offer-btn')) +
+             p('+ 5 FREE gifts with every order ($555 value) &middot; Ends Sunday, Nov 30', 14, 20, '#BDB8B0', '12px 0 0 0', 'center'))
+    b += row(offer, '34px 40px 34px 40px', '#1E1D1B')
+    prod = (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid {LINE};border-radius:8px;"><tr><td style="padding:0;">'
+            f'<a href="{link(SET12, m, "set12-img")}"><img src="{IMG12SQ}" width="558" alt="Siraat Titanium Hammered Cookware Set, 12 pieces" style="display:block;width:100%;max-width:558px;height:auto;border:0;border-radius:8px 8px 0 0;"></a></td></tr>'
+            f'<tr><td style="padding:20px 22px 22px 22px;">'
+            f'<table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="{RED}" style="background-color:{RED};border-radius:3px;padding:6px 10px;font-family:{SANS};font-size:12px;font-weight:800;letter-spacing:1.5px;color:#FFFFFF;">68% OFF + EXTRA 10%</td>'
+            f'<td style="padding-left:10px;font-family:{SANS};font-size:12px;font-weight:700;letter-spacing:1.5px;color:{MUTED};">+ FREE PIZZA STEEL</td></tr></table>'
+            f'<div class="h2" style="font-family:{SERIF};font-size:30px;line-height:34px;color:{INK};padding:12px 0 8px 0;">The 12-piece Titanium Hammered Cookware Set</div>' +
+            p(f'<span style="text-decoration:line-through;color:{MUTED};">$2,047</span> &nbsp;$649 &nbsp;&rarr;&nbsp; <b style="color:{RED};font-size:22px;">$584.10</b> <span style="color:{MUTED};font-size:14px;">with THANKSGIVING10</span>', 18, 28, pad='0 0 10px 0') +
+            p('<b>Plus a FREE Titanium Hammered Pizza Steel</b> (still $149 on its own). Three hammered pans (8, 10, 12 inch), 2-qt and 3-qt saucepans, an 8-qt stock pot and six lids. Ships from our US warehouses. 93% sold.', 15, 23, pad='0 0 16px 0') +
+            btn('Claim my 12-piece set &rarr;', link(SET12, m, 'set12-btn')) +
+            p('Code already applied &middot; 30-day returns &middot; 75-year warranty', 13, 19, MUTED, '10px 0 0 0', 'center') +
+            '</td></tr></table>')
+    b += row(prod, '30px 20px 16px 20px', PANEL)
+    six = (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid {LINE};border-radius:8px;"><tr>'
+           f'<td width="150" valign="middle" style="padding:14px;"><a href="{link(SET6, m, "set6-img")}"><img src="{IMG6}" width="130" alt="Siraat 6-piece hammered pan set with lids" style="display:block;width:130px;height:auto;border-radius:6px;border:0;"></a></td>'
+           f'<td valign="middle" style="padding:14px 14px 14px 0;">{p("<b>Starting smaller? The 6-piece set</b>", 16, 22, pad="0 0 4px 0")}'
+           f'{p(f"<span style=text-decoration:line-through;color:{MUTED};>$1,163</span> $349 &rarr; <b style=color:{RED};>$314.10</b> with the code", 15, 22, pad="0 0 8px 0")}'
+           f'<a href="{link(SET6, m, "set6-btn")}" style="font-family:{SANS};font-size:13px;font-weight:800;letter-spacing:1px;color:{RED};">CLAIM THE 6-PIECE SET &rarr;</a></td></tr></table>')
+    b += row(six, '0 20px 30px 20px', PANEL)
     b += row(gifts(GIFTS_US, 'Your 5 free gifts with every order'), '30px 40px 18px 40px')
-    proof = (p('Tested free from PFAS by Light Labs, <a href="https://siraatskitchen.com/pages/third-party-testing" style="color:#282828;">report no. 25895</a>.', 15, 23) +
-             p('As seen in Bon App&eacute;tit, Holiday 2026: <i>&ldquo;This holiday, cook with the best.&rdquo;</i>', 15, 23))
-    b += row(proof, '6px 40px 10px 40px')
-    close = (f'<div style="border-top:1px solid {LINE};height:1px;line-height:1px;">&nbsp;</div>' +
-             p('<b>The extra 10% ends Sunday, Nov 30 at 11:59 PM ET.</b> After that, the regular Black Friday prices apply until Dec 5.', 16, 25, pad='20px 0 18px 0') +
-             btn('Shop with my extra 10%', link(SET12, m, 'close-btn')) +
+    trust = ''.join(f'<td width="25%" align="center" valign="top" style="padding:0 4px;font-family:{SANS};font-size:12px;line-height:17px;color:{INK};">'
+                    f'<div style="font-family:{SERIF};font-size:24px;line-height:28px;">{x}</div>{y}</td>'
+                    for x, y in [('75 yrs', 'warranty'), ('30 days', 'returns'), ('PFAS', 'lab tested'), ('100K+', 'customers')])
+    b += row(f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid {LINE};border-bottom:1px solid {LINE};"><tr><td style="padding:18px 0;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>{trust}</tr></table></td></tr></table>', '10px 40px 6px 40px')
+    note = (p('Hey {{ first_name|default:\'there\' }}, happy Thanksgiving.', pad='26px 0 12px 0') +
+            p('Right now the kitchen is the loudest room in the house. This year, 100,000+ of you are cooking that dinner in a Siraat pan. I still find that hard to believe.') +
+            p('So, thank you. The extra 10% is our way of saying it.') + signoff())
+    b += row(note, '0 40px 10px 40px')
+    close = (p('<b>Your extra 10% ends Sunday, Nov 30 at 11:59 PM ET.</b> The Black Friday sale ends Dec 5.', 16, 25, pad='18px 0 18px 0', align='center') +
+             btn('Claim 70% + extra 10% off &rarr;', link(SALE, m, 'close-btn')) +
              p('P.S. The free Pizza Steel only comes with the 12-piece set, and the set is 93% sold. If it&rsquo;s on your list, this is the weekend.', 15, 23, MUTED, '22px 0 0 0'))
-    b += row(close, '10px 40px 40px 40px')
-    return shell('Happy Thanksgiving', 'On top of the Black Friday sale. Already applied, ends Sunday.', b)
+    b += row(close, '0 40px 40px 40px')
+    return shell('Happy Thanksgiving', 'Up to 70% off + an extra 10%, already applied. Ends Sunday.', b)
 
 # ------------------------------------------------------------------ INTL (Floris 26 nov: duidelijker, direct response, sale laten zien, code BONAPPETIT10)
 def intl():
