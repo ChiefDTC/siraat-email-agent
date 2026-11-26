@@ -696,3 +696,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 2026-11-26 · E15 INTL: dishwasher sheets eruit, Wok Pan Pro + Deep Pan Pro + Roasting Pan blokken (zelfde HS-stijl) toegevoegd voor de cutting board. Figma bijgewerkt.
 - 2026-11-26 · E15 INTL: Pan Pro Large eruit, Roasting Pan op die plek; hero-subregel nu 'THE CRAZIEST BLACK FRIDAY EVER / An EXTRA 10% OFF on top of up to 70% off'. Alle 12 lander-links getest (200).
 - 2026-11-26 · INTL test-templates UhQ9Pd (E15), UdcTtP (E16), R67EnG (18:00) aangemaakt en naar Lola gestuurd.
+- 2026-11-26 · E15 INTL opnieuw opgebouwd vanuit HS-origineel (vorige versie had footer-stukken tussen de producten door slechte splits): alleen beeld/link-wissels + 1 gekopieerd blok, tagbalans gecontroleerd. Nieuwe tests naar Lola.
