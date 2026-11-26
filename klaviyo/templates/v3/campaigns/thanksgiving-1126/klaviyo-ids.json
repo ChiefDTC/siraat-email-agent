@@ -1,1 +1,16 @@
-{"templates": {"us": "R7fybM", "intl": "SgEp5D"}}
+{
+ "templates": {
+  "us": "R7fybM",
+  "intl": "SgEp5D"
+ },
+ "us": {
+  "campaign": "01M8AQT4QCVKCMAEVGSSTG62D8",
+  "message": "01M8AQT4QTQEM1GKE1V7B6STEH",
+  "template_in_campaign": "RVGmn5"
+ },
+ "intl": {
+  "campaign": "01M8AQT6SZ8FB8F2CEM519FKN5",
+  "message": "01M8AQT6TAYGVEKCAN5F1DAE9E",
+  "template_in_campaign": "UbSLNp"
+ }
+}

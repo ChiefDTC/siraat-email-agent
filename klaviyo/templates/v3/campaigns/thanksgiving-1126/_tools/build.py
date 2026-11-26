@@ -103,19 +103,19 @@ def us():
 def intl():
     m = 'intl'; CODE = 'BONAPPETIT10'
     L = lambda path, c: link(path, m, c, CODE)
-    b = topbar('AS SEEN IN BON APP&Eacute;TIT &middot; EXTRA 10% OFF WITH CODE BONAPPETIT10')
+    b = topbar('AS SEEN IN BON APP&Eacute;TIT &middot; EXTRA 10% OFF ENDS TONIGHT')
     b += f'<tr><td style="padding:0;"><a href="{L(SALE, "hero")}"><img src="{UP["intl-hero-bon-appetit.jpg"]}" width="600" alt="As seen in Bon Appétit, the Holiday 2026 issue: This holiday, cook with the best." style="display:block;width:100%;max-width:600px;height:auto;border:0;"></a></td></tr>\n'
     story = (p('<b>A note from Benjamin</b>', 19, 28, pad='0 0 12px 0') +
              p('When I started Siraat, the idea was simple: cookware with no coatings, so nothing from your pan ends up in your food. A lot of people told me nobody would care what their pan is made of.') +
              p('Then Bon App&eacute;tit reached out to us. One of the most iconic food magazines in the world wanted Siraat in their <b>Holiday 2026 issue</b>. In the holiday issue, right in the season when people decide what to cook with and what to give.') +
              p('I&rsquo;m honestly proud of that. Not for the name, but because of what it says. More and more people are starting to see that what you cook on matters. That there is a better way. For us, Siraat is the path to a non-toxic life, and it&rsquo;s beautiful to see that message reach this far.') +
              p('Here&rsquo;s what they wrote: <i>&ldquo;No better gift for the home chef than a stellar, non-toxic cooking surface.&rdquo;</i>') +
-             p(f'To celebrate, I added an <a href="{L(SALE, "story-extra10")}" style="color:#B3262C;font-weight:800;text-decoration:underline;">EXTRA 10% OFF EVERYTHING</a> with code BONAPPETIT10, on top of the Black Friday sale. <a href="{L(SALE, "story-link")}" style="color:#B3262C;font-weight:700;text-decoration:underline;">It&rsquo;s already applied when you tap here.</a>') +
+             p(f'To celebrate, I added an <a href="{L(SALE, "story-extra10")}" style="color:#B3262C;font-weight:800;text-decoration:underline;">EXTRA 10% OFF EVERYTHING</a> with code BONAPPETIT10, on top of the Black Friday sale. It&rsquo;s already applied when you tap the button or any image. <a href="{L(SALE, "story-link")}" style="color:#B3262C;font-weight:700;text-decoration:underline;">The extra 10% ends tonight at midnight.</a>') +
              p('Thank you for being part of this from the start. You were on this path before any magazine was.') + signoff())
     b += row(story, '30px 40px 28px 40px')
     # groot aanbodblok, donker, direct onder de hero
     b += row(btn('Shop the sale now &rarr;', L(SALE, 'offer-btn')), '6px 40px 40px 40px')
-    return shell('As seen in Bon Appétit', 'Up to 70% off + an extra 10% with BONAPPETIT10. Already applied, ends Sunday.', b)
+    return shell('As seen in Bon Appétit', 'Up to 70% off + an extra 10% with BONAPPETIT10. Ends tonight at midnight.', b)
 
 os.makedirs(os.path.join(T, '.preview'), exist_ok=True)
 for name, h in (('us', us()), ('intl', intl())):
