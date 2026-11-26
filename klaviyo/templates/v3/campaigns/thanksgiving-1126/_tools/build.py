@@ -86,12 +86,12 @@ def gifts(items, title):
 IMG12SQ = 'https://cdn.shopify.com/s/files/1/0907/0877/1156/files/12pcsset.webp?v=1781591412&width=1100&height=1100&crop=center&format=pjpg'
 def us():
     m = 'us'
-    b = topbar('EXTRA 10% OFF ENDS TONIGHT AT MIDNIGHT ET')
-    b += f'<tr><td style="padding:0;"><a href="{link(SALE, m, "hero")}"><img src="{UP["us-hero-thanksgiving-btn.jpg"]}" width="600" alt="Happy Thanksgiving. Thanksgiving x Black Friday, extra 10% off. Claim 70% + extra 10% off." style="display:block;width:100%;max-width:600px;height:auto;border:0;"></a></td></tr>\n'
+    b = topbar('EXTRA 10% OFF ENDS TONIGHT AT MIDNIGHT')
+    b += f'<tr><td style="padding:0;"><a href="{link(SALE, m, "hero")}"><img src="{UP["us-hero-thanksgiving-v5.jpg"]}" width="600" alt="Happy Thanksgiving. Thanksgiving x Black Friday, extra 10% off. Claim 70% + extra 10% off." style="display:block;width:100%;max-width:600px;height:auto;border:0;"></a></td></tr>\n'
     story = (p('<b>Happy Thanksgiving 2026.</b>', 19, 28, pad='0 0 12px 0') +
              p('This morning I was at the office going through the Black Friday orders, and I kept thinking about this year. More than 100,000 of you now cook on our pans. That still doesn&rsquo;t feel real to me.') +
              p('So I did something without running it by the team first: I put an <b>extra 10% off everything</b>, on top of the Black Friday sale. No meeting, no approval. Just a thank you for a year we never expected.') +
-             p('It&rsquo;s already applied when you tap any button in this email. But I can only keep it on for today, so <b style="color:#B3262C;">the extra 10% ends tonight at midnight ET.</b>') +
+             p(f'It&rsquo;s already applied when you tap any button in this email. But I can only keep it on for today, so <a href="{link(SALE, m, "story-link")}" style="color:#B3262C;font-weight:700;text-decoration:underline;">the extra 10% ends tonight at midnight.</a>') +
              p('Here&rsquo;s to a full table today, and a healthy end of the year for you and yours.') + signoff())
     b += row(story, '30px 40px 28px 40px')
     offer = (f'<div style="font-family:{SANS};font-size:13px;line-height:18px;letter-spacing:3px;font-weight:700;color:#CDB27A;text-align:center;">BLACK FRIDAY SALE &middot; THANKSGIVING EXTRA</div>'
@@ -100,7 +100,7 @@ def us():
              f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="border:2px dashed #CDB27A;border-radius:6px;padding:12px;">'
              f'<div style="font-family:{SANS};font-size:12px;letter-spacing:2px;font-weight:600;color:#BDB8B0;">USE CODE</div>'
              f'<div style="font-family:{SANS};font-size:30px;line-height:38px;letter-spacing:4px;font-weight:800;color:#FFFFFF;">THANKSGIVING10</div>'
-             f'<div style="font-family:{SANS};font-size:13px;line-height:19px;color:#BDB8B0;">Already applied when you tap any button &middot; <b style="color:#F2C14E;">ends tonight at midnight ET</b></div></td></tr></table>'
+             f'<div style="font-family:{SANS};font-size:13px;line-height:19px;color:#BDB8B0;">Already applied when you tap any button &middot; <b style="color:#F2C14E;">ends tonight at midnight</b></div></td></tr></table>'
              f'<div style="height:20px;">&nbsp;</div>' + btn('Shop the Black Friday sale &rarr;', link(SALE, m, 'offer-btn')) +
              p('+ 5 FREE gifts with every order ($555 value) &middot; Extra 10% ends tonight', 14, 20, '#BDB8B0', '12px 0 0 0', 'center'))
     b += row(offer, '34px 40px 34px 40px', '#1E1D1B')
@@ -133,7 +133,7 @@ def us():
                     f'<div style="font-family:{SERIF};font-size:24px;line-height:28px;">{x}</div>{y}</td>'
                     for x, y in [('75 yrs', 'warranty'), ('30 days', 'returns'), ('PFAS', 'lab tested'), ('100K+', 'customers')])
     b += row(f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid {LINE};border-bottom:1px solid {LINE};"><tr><td style="padding:18px 0;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>{trust}</tr></table></td></tr></table>', '10px 40px 6px 40px')
-    close = (p('<b>Your extra 10% ends tonight at midnight ET.</b> Tomorrow it&rsquo;s gone. The Black Friday sale itself runs until Dec 5.', 16, 25, pad='18px 0 18px 0', align='center') +
+    close = (p('<b>Your extra 10% ends tonight at midnight.</b> Tomorrow it&rsquo;s gone. The Black Friday sale itself runs until Dec 5.', 16, 25, pad='18px 0 18px 0', align='center') +
              btn('Claim 70% + extra 10% off &rarr;', link(SALE, m, 'close-btn')) +
              p('P.S. The free Pizza Steel only comes with the 12-piece set, and the set is 93% sold. If it&rsquo;s on your list, get it before midnight while the extra 10% still applies.', 15, 23, MUTED, '22px 0 0 0'))
     b += row(close, '0 40px 40px 40px')
@@ -145,6 +145,13 @@ def intl():
     L = lambda path, c: link(path, m, c, CODE)
     b = topbar('AS SEEN IN BON APP&Eacute;TIT &middot; EXTRA 10% OFF WITH CODE BONAPPETIT10')
     b += f'<tr><td style="padding:0;"><a href="{L(SALE, "hero")}"><img src="{UP["intl-hero-bon-appetit.jpg"]}" width="600" alt="As seen in Bon Appétit, the Holiday 2026 issue: This holiday, cook with the best." style="display:block;width:100%;max-width:600px;height:auto;border:0;"></a></td></tr>\n'
+    story = (p('<b>A note from Benjamin</b>', 19, 28, pad='0 0 12px 0') +
+             p('When I started Siraat, the idea was simple: cookware with no coatings, so nothing from your pan ends up in your food. A lot of people told me nobody would care what their pan is made of.') +
+             p('This holiday season, our hammered titanium cookware is in the <b>Holiday 2026 issue of Bon App&eacute;tit</b>, one of the most iconic food magazines in the world. Right in the season when people decide what to cook with, and what to give.') +
+             p('I&rsquo;m honestly proud of that. Not for the name, but because it shows the mission is landing: more and more people want to know what they cook on.') +
+             p(f'To celebrate, I added an <b>extra 10% off everything</b> with code BONAPPETIT10, on top of the Black Friday sale. <a href="{L(SALE, "story-link")}" style="color:#B3262C;font-weight:700;text-decoration:underline;">It&rsquo;s already applied when you tap here.</a>') +
+             p('Thank you for being part of this from the start.') + signoff())
+    b += row(story, '30px 40px 28px 40px')
     # groot aanbodblok, donker, direct onder de hero
     offer = (f'<div style="font-family:{SANS};font-size:13px;line-height:18px;letter-spacing:3px;font-weight:700;color:#CDB27A;text-align:center;">BLACK FRIDAY SALE &middot; AS SEEN IN BON APP&Eacute;TIT</div>'
              f'<div style="font-family:{SANS};font-size:60px;line-height:62px;font-weight:800;color:#FFFFFF;text-align:center;padding:12px 0 2px 0;letter-spacing:-1px;">UP TO 70% OFF</div>'
