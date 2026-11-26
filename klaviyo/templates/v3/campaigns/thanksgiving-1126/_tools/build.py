@@ -16,8 +16,8 @@ def partial(n):
     return re.sub(r'\{\{IMG\}\}/([\w.-]+)', lambda m: AS[m.group(1)], h)
 
 SITE = 'https://siraatskitchen.com'
-def link(path, market, content):
-    return (f'{SITE}/discount/THANKSGIVING10?redirect={path}&utm_source=klaviyo&utm_medium=email'
+def link(path, market, content, code='THANKSGIVING10'):
+    return (f'{SITE}/discount/{code}?redirect={path}&utm_source=klaviyo&utm_medium=email'
             f'&utm_campaign=thanksgiving-1126-{market}&utm_content={content}')
 SET12 = '/products/titanium-hammered-cookware-set-12-pcs-free-pizza-steel-1'
 SET6 = '/products/titanium-hammered-pan-set-with-lids-6-pcs'
@@ -44,11 +44,11 @@ def bullets(items):
     li = ''.join(f'<tr><td width="22" valign="top" style="font-family:{SANS};font-size:16px;line-height:25px;color:{RED};font-weight:700;">&#10003;</td>'
                  f'<td style="font-family:{SANS};font-size:16px;line-height:25px;color:{INK};padding-bottom:6px;">{i}</td></tr>' for i in items)
     return f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{li}</table>'
-def codebar(note):
+def codebar(note, code='THANKSGIVING10'):
     return (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" bgcolor="{PANEL}" '
             f'style="background-color:{PANEL};border:1px dashed #BFB7A8;border-radius:4px;padding:14px 12px;">'
             f'<div style="font-family:{SANS};font-size:12px;letter-spacing:2px;font-weight:600;color:{MUTED};">YOUR CODE</div>'
-            f'<div style="font-family:{SANS};font-size:24px;line-height:32px;letter-spacing:3px;font-weight:800;color:{INK};">THANKSGIVING10</div>'
+            f'<div style="font-family:{SANS};font-size:24px;line-height:32px;letter-spacing:3px;font-weight:800;color:{INK};">{code}</div>'
             f'<div style="font-family:{SANS};font-size:13px;line-height:19px;color:{MUTED};">{note}</div></td></tr></table>')
 def img(src, href, alt, w=520):
     return f'<a href="{href}"><img src="{src}" width="{w}" alt="{alt}" style="display:block;width:100%;max-width:{w}px;height:auto;border:0;border-radius:6px;"></a>'
@@ -121,34 +121,59 @@ def us():
     b += row(close, '10px 40px 40px 40px')
     return shell('Happy Thanksgiving', 'On top of the Black Friday sale. Already applied, ends Sunday.', b)
 
-# ------------------------------------------------------------------ INTL
+# ------------------------------------------------------------------ INTL (Floris 26 nov: duidelijker, direct response, sale laten zien, code BONAPPETIT10)
 def intl():
-    m = 'intl'
-    b = topbar('AS SEEN IN BON APP&Eacute;TIT &middot; EXTRA 10% OFF, ALREADY APPLIED')
-    b += f'<tr><td style="padding:0;"><a href="{link(SET6, m, "hero")}"><img src="{UP["intl-hero-bon-appetit.jpg"]}" width="600" alt="As seen in Bon Appétit, the Holiday 2026 issue: This holiday, cook with the best. Magazine clipping featuring Siraat\'s hammered titanium cookware." style="display:block;width:100%;max-width:600px;height:auto;border:0;"></a></td></tr>\n'
-    note = (p('Hey {{ first_name|default:\'there\' }},') +
-            p('Our hammered titanium cookware is in Bon App&eacute;tit&rsquo;s Holiday 2026 issue. I&rsquo;m proud of that, and grateful to every one of you who cooked with us first.') +
-            p('Here&rsquo;s what they printed:') +
-            f'<div style="border-left:3px solid {RED};padding:4px 0 4px 18px;margin:4px 0 18px 0;font-family:{SERIF};font-style:italic;font-size:22px;line-height:30px;color:{INK};">&ldquo;No better gift for the home chef than a stellar, non-toxic cooking surface. Siraat&rsquo;s Hammered Titanium Cookware serves up zero coatings, impeccable quality &amp; trusted by 100K+ customers.&rdquo;</div>' +
-            p('That&rsquo;s the point for me. No coatings means nothing to peel or flake. So we can cover every pan for 75 years, and give you 30 days to change your mind.') + signoff())
-    b += row(note, '36px 40px 30px 40px')
-    offer = (eyebrow('As seen in Bon App&eacute;tit') + h2('This holiday, cook with the best') +
-             bullets(['Up to 70% off, plus our Black Friday extra: 10% off everything', 'Already applied when you click any button (code THANKSGIVING10)',
-                      '5 free gifts with every order', 'Tested free from PFAS by Light Labs, report no. 25895']) +
-             '<div style="height:18px;line-height:18px;">&nbsp;</div>' + codebar('Already applied when you click any button. Ends Sunday, Nov 30.'))
-    b += row(offer, '8px 40px 30px 40px')
-    prod = (img(IMG6, link(SET6, m, 'set6-img'), 'Siraat Titanium Hammered Pan Set with Lids, 6 pieces') +
-            '<div style="height:18px;">&nbsp;</div>' + h2('The 6-piece Titanium Hammered Pan Set with Lids', 30) +
-            p('Three hammered pans and a lid for each. A pure titanium cooking surface, no coatings. No better gift for the home chef, or for your own stove.') +
-            btn('Get my 6-piece set with 10% extra off', link(SET6, m, 'set6-btn')) +
-            p('Code already applied. 30-day returns. 100,000+ happy customers.', 13, 19, MUTED, '10px 0 18px 0', 'center') +
-            p(f'Want to see everything? <a href="{link(SALE, m, "sale-link")}" style="color:{RED};font-weight:700;">Shop the sale with my extra 10% &rarr;</a>', 15, 23, pad='0', align='center'))
-    b += row(prod, '30px 40px 30px 40px', PANEL)
-    close = (p('<b>The extra 10% ends Sunday, Nov 30 at 11:59 PM ET.</b> After that, the regular Black Friday prices apply until Dec 5.', 16, 25, pad='28px 0 18px 0') +
-             btn('Shop with my extra 10%', link(SET6, m, 'close-btn')) +
-             p('P.S. Your 5 free gifts come with every order, the 6-piece set included. Covered for 75 years, starting with the first egg.', 15, 23, MUTED, '22px 0 0 0'))
+    m = 'intl'; CODE = 'BONAPPETIT10'
+    L = lambda path, c: link(path, m, c, CODE)
+    b = topbar('AS SEEN IN BON APP&Eacute;TIT &middot; EXTRA 10% OFF WITH CODE BONAPPETIT10')
+    b += f'<tr><td style="padding:0;"><a href="{L(SALE, "hero")}"><img src="{UP["intl-hero-bon-appetit.jpg"]}" width="600" alt="As seen in Bon Appétit, the Holiday 2026 issue: This holiday, cook with the best." style="display:block;width:100%;max-width:600px;height:auto;border:0;"></a></td></tr>\n'
+    # groot aanbodblok, donker, direct onder de hero
+    offer = (f'<div style="font-family:{SANS};font-size:13px;line-height:18px;letter-spacing:3px;font-weight:700;color:#CDB27A;text-align:center;">BLACK FRIDAY SALE &middot; AS SEEN IN BON APP&Eacute;TIT</div>'
+             f'<div style="font-family:{SANS};font-size:60px;line-height:62px;font-weight:800;color:#FFFFFF;text-align:center;padding:12px 0 2px 0;letter-spacing:-1px;">UP TO 70% OFF</div>'
+             f'<div style="font-family:{SANS};font-size:30px;line-height:36px;font-weight:800;color:#F2C14E;text-align:center;padding-bottom:16px;">+ AN EXTRA 10% OFF</div>'
+             f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="border:2px dashed #CDB27A;border-radius:6px;padding:12px;">'
+             f'<div style="font-family:{SANS};font-size:12px;letter-spacing:2px;font-weight:600;color:#BDB8B0;">USE CODE</div>'
+             f'<div style="font-family:{SANS};font-size:30px;line-height:38px;letter-spacing:4px;font-weight:800;color:#FFFFFF;">{CODE}</div>'
+             f'<div style="font-family:{SANS};font-size:13px;line-height:19px;color:#BDB8B0;">Already applied when you tap any button below</div></td></tr></table>'
+             f'<div style="height:20px;">&nbsp;</div>' + btn('Shop the sale now &rarr;', L(SALE, 'offer-btn')) +
+             p('+ 5 FREE gifts with every order &middot; Ends Sunday, Nov 30', 14, 20, '#BDB8B0', '12px 0 0 0', 'center'))
+    b += row(offer, '34px 40px 34px 40px', '#1E1D1B')
+    # waarom: het citaat + uitleg
+    why = (eyebrow('What Bon App&eacute;tit wrote') + h2('&ldquo;This holiday, cook with the best.&rdquo;', 32) +
+           f'<div style="border-left:3px solid {RED};padding:2px 0 2px 16px;margin:0 0 18px 0;font-family:{SERIF};font-style:italic;font-size:20px;line-height:28px;color:{INK};">&ldquo;No better gift for the home chef than a stellar, non-toxic cooking surface. Siraat&rsquo;s Hammered Titanium Cookware serves up zero coatings, impeccable quality &amp; trusted by 100K+ customers.&rdquo;</div>' +
+           p('Here&rsquo;s what that means in your kitchen:', 16, 25) +
+           bullets(['<b>Zero coatings.</b> A pure titanium cooking surface, nothing to peel or flake into your food.',
+                    '<b>Tested free from PFAS</b> by Light Labs, report no. 25895.',
+                    '<b>Built to last.</b> Covered by a 75-year warranty.',
+                    '<b>No risk.</b> 30 days to change your mind.']))
+    b += row(why, '36px 40px 26px 40px')
+    # productkaart 6-delig met kortingsbadge
+    prod = (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid {LINE};border-radius:8px;"><tr><td style="padding:0;position:relative;">'
+            f'<a href="{L(SET6, "set6-img")}"><img src="{IMG6}" width="558" alt="Siraat Titanium Hammered Pan Set with Lids, 6 pieces" style="display:block;width:100%;max-width:558px;height:auto;border:0;border-radius:8px 8px 0 0;"></a></td></tr>'
+            f'<tr><td style="padding:20px 22px 22px 22px;">'
+            f'<table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="{RED}" style="background-color:{RED};border-radius:3px;padding:6px 10px;font-family:{SANS};font-size:12px;font-weight:800;letter-spacing:1.5px;color:#FFFFFF;">70% OFF + EXTRA 10%</td>'
+            f'</tr></table>'
+            f'<div class="h2" style="font-family:{SERIF};font-size:30px;line-height:34px;color:{INK};padding:12px 0 8px 0;">The 6-piece Titanium Hammered Pan Set with Lids</div>' +
+            p('Three hammered pans and a lid for each. The easiest way to start cooking without coatings. For yourself, or as the gift this year.', 16, 24, pad='0 0 16px 0') +
+            btn('Get the 6-piece set &rarr;', L(SET6, 'set6-btn')) +
+            p(f'Code {CODE} already applied &middot; 5 free gifts included', 13, 19, MUTED, '10px 0 0 0', 'center') +
+            '</td></tr></table>')
+    b += row(prod, '30px 20px 30px 20px', PANEL)
+    # stappen: hoe werkt het
+    steps = (eyebrow('How it works') +
+             bullets(['Tap any button in this email. Your extra 10% is applied automatically.',
+                      'Pick your set or pan. Black Friday prices are already up to 70% off.',
+                      'Check out. 5 free gifts are added to every order. (No discount showing? Enter BONAPPETIT10 at checkout.)']))
+    b += row(steps, '30px 40px 10px 40px')
+    trust = ''.join(f'<td width="25%" align="center" valign="top" style="padding:0 4px;font-family:{SANS};font-size:12px;line-height:17px;color:{INK};">'
+                    f'<div style="font-family:{SERIF};font-size:24px;line-height:28px;">{a}</div>{b2}</td>'
+                    for a, b2 in [('75 yrs', 'warranty'), ('30 days', 'returns'), ('PFAS', 'lab tested'), ('100K+', 'customers')])
+    b += row(f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid {LINE};border-bottom:1px solid {LINE};"><tr><td style="padding:18px 0;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>{trust}</tr></table></td></tr></table>', '18px 40px 6px 40px')
+    close = (p('<b>Your extra 10% ends Sunday, Nov 30 at 11:59 PM ET.</b> After that it&rsquo;s gone, and the sale ends Dec 5.', 16, 25, pad='22px 0 18px 0', align='center') +
+             btn('Shop the sale with BONAPPETIT10 &rarr;', L(SALE, 'close-btn')) +
+             p('Being in Bon App&eacute;tit is a big moment for a small team. Thank you for cooking with us first.<br>Benjamin, Founder', 15, 23, MUTED, '24px 0 0 0', 'center'))
     b += row(close, '0 40px 40px 40px')
-    return shell('As seen in Bon Appétit', '“No better gift for the home chef.” Plus an extra 10% off, until Sunday.', b)
+    return shell('As seen in Bon Appétit', 'Up to 70% off + an extra 10% with BONAPPETIT10. Already applied, ends Sunday.', b)
 
 os.makedirs(os.path.join(T, '.preview'), exist_ok=True)
 for name, h in (('us', us()), ('intl', intl())):
