@@ -94,16 +94,7 @@ def us():
              p(f'It&rsquo;s already applied when you tap the button or any image in this email. But I can only keep it on for today, so <a href="{link(SALE, m, "story-link")}" style="color:#B3262C;font-weight:700;text-decoration:underline;">the extra 10% ends tonight at midnight.</a>') +
              p('Here&rsquo;s to a full table today, and a healthy end of the year for you and yours.') + signoff())
     b += row(story, '30px 40px 28px 40px')
-    offer = (f'<div style="font-family:{SANS};font-size:13px;line-height:18px;letter-spacing:3px;font-weight:700;color:#CDB27A;text-align:center;">BLACK FRIDAY SALE &middot; THANKSGIVING EXTRA</div>'
-             f'<div style="font-family:{SANS};font-size:60px;line-height:62px;font-weight:800;color:#FFFFFF;text-align:center;padding:12px 0 2px 0;letter-spacing:-1px;">UP TO 70% OFF</div>'
-             f'<div style="font-family:{SANS};font-size:30px;line-height:36px;font-weight:800;color:#F2C14E;text-align:center;padding-bottom:16px;">+ AN EXTRA 10% OFF</div>'
-             f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="border:2px dashed #CDB27A;border-radius:6px;padding:12px;">'
-             f'<div style="font-family:{SANS};font-size:12px;letter-spacing:2px;font-weight:600;color:#BDB8B0;">USE CODE</div>'
-             f'<div style="font-family:{SANS};font-size:30px;line-height:38px;letter-spacing:4px;font-weight:800;color:#FFFFFF;">THANKSGIVING10</div>'
-             f'<div style="font-family:{SANS};font-size:13px;line-height:19px;color:#BDB8B0;">Already applied when you tap the button or any image &middot; <b style="color:#F2C14E;">ends tonight at midnight</b></div></td></tr></table>'
-             f'<div style="height:20px;">&nbsp;</div>' + btn('Shop the Black Friday sale &rarr;', link(SALE, m, 'offer-btn')) +
-             p('+ 5 FREE gifts with every order ($555 value) &middot; Extra 10% ends tonight', 14, 20, '#BDB8B0', '12px 0 0 0', 'center'))
-    b += row(offer, '34px 40px 34px 40px', '#1E1D1B')
+    b += row(btn('Shop the Black Friday sale &rarr;', link(SALE, m, 'offer-btn')), '6px 40px 34px 40px')
     prod = (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid {LINE};border-radius:8px;"><tr><td style="padding:0;">'
             f'<a href="{link(SALE, m, "set12-img")}"><img src="{IMG12SQ}" width="558" alt="Siraat Titanium Hammered Cookware Set, 12 pieces" style="display:block;width:100%;max-width:558px;height:auto;border:0;border-radius:8px 8px 0 0;"></a></td></tr>'
             f'<tr><td style="padding:20px 22px 22px 22px;">'
@@ -151,16 +142,7 @@ def intl():
              p('Thank you for being part of this from the start.') + signoff())
     b += row(story, '30px 40px 28px 40px')
     # groot aanbodblok, donker, direct onder de hero
-    offer = (f'<div style="font-family:{SANS};font-size:13px;line-height:18px;letter-spacing:3px;font-weight:700;color:#CDB27A;text-align:center;">BLACK FRIDAY SALE &middot; AS SEEN IN BON APP&Eacute;TIT</div>'
-             f'<div style="font-family:{SANS};font-size:60px;line-height:62px;font-weight:800;color:#FFFFFF;text-align:center;padding:12px 0 2px 0;letter-spacing:-1px;">UP TO 70% OFF</div>'
-             f'<div style="font-family:{SANS};font-size:30px;line-height:36px;font-weight:800;color:#F2C14E;text-align:center;padding-bottom:16px;">+ AN EXTRA 10% OFF</div>'
-             f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="border:2px dashed #CDB27A;border-radius:6px;padding:12px;">'
-             f'<div style="font-family:{SANS};font-size:12px;letter-spacing:2px;font-weight:600;color:#BDB8B0;">USE CODE</div>'
-             f'<div style="font-family:{SANS};font-size:30px;line-height:38px;letter-spacing:4px;font-weight:800;color:#FFFFFF;">{CODE}</div>'
-             f'<div style="font-family:{SANS};font-size:13px;line-height:19px;color:#BDB8B0;">Already applied when you tap the button below</div></td></tr></table>'
-             f'<div style="height:20px;">&nbsp;</div>' + btn('Shop the sale now &rarr;', L(SALE, 'offer-btn')) +
-             p('+ 5 FREE gifts with every order &middot; Ends Sunday, Nov 30', 14, 20, '#BDB8B0', '12px 0 0 0', 'center'))
-    b += row(offer, '34px 40px 34px 40px', '#1E1D1B')
+    b += row(btn('Shop the sale now &rarr;', L(SALE, 'offer-btn')), '6px 40px 34px 40px')
     # waarom: het citaat + uitleg
     why = (eyebrow('What Bon App&eacute;tit wrote') + h2('&ldquo;This holiday, cook with the best.&rdquo;', 32) +
            f'<div style="border-left:3px solid {RED};padding:2px 0 2px 16px;margin:0 0 18px 0;font-family:{SERIF};font-style:italic;font-size:20px;line-height:28px;color:{INK};">&ldquo;No better gift for the home chef than a stellar, non-toxic cooking surface. Siraat&rsquo;s Hammered Titanium Cookware serves up zero coatings, impeccable quality &amp; trusted by 100K+ customers.&rdquo;</div>' +

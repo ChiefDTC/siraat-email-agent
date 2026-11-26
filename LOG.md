@@ -673,3 +673,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 2026-11-26 · US hero-knop nu 'CLAIM 70% OFF' (Floris; 80% afgewezen want max 73%). R7fybM bijgewerkt, beide tests naar Lola.
 - 2026-11-26 · INTL: alleen nog knop 'Shop the sale now'; alle links (hero, verhaal, productfoto) naar /collections/black-friday-sale met BONAPPETIT10; dubbele groet onderaan weg. SgEp5D bijgewerkt, test naar Lola.
 - 2026-11-26 · US: ook één knop (Shop the Black Friday sale), alle links naar BF-sale met THANKSGIVING10, hero-knop 'CLAIM 70% OFF' groter en hoger (onderste strook met model-'Shop Now' weggesneden). R7fybM + Figma bijgewerkt, test naar Lola.
+- 2026-11-26 · US + INTL: zwart aanbodblok volledig weg, alleen de knop blijft (US 'Shop the Black Friday sale', INTL 'Shop the sale now'). Templates + Figma bijgewerkt, beide tests naar Lola.
