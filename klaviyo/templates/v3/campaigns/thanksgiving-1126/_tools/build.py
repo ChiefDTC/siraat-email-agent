@@ -94,38 +94,7 @@ def us():
              p(f'It&rsquo;s already applied when you tap the button or any image in this email. But I can only keep it on for today, so <a href="{link(SALE, m, "story-link")}" style="color:#B3262C;font-weight:700;text-decoration:underline;">the extra 10% ends tonight at midnight.</a>') +
              p('Here&rsquo;s to a full table today, and a healthy end of the year for you and yours.') + signoff())
     b += row(story, '30px 40px 28px 40px')
-    b += row(btn('Shop the Black Friday sale &rarr;', link(SALE, m, 'offer-btn')), '6px 40px 34px 40px')
-    prod = (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid {LINE};border-radius:8px;"><tr><td style="padding:0;">'
-            f'<a href="{link(SALE, m, "set12-img")}"><img src="{IMG12SQ}" width="558" alt="Siraat Titanium Hammered Cookware Set, 12 pieces" style="display:block;width:100%;max-width:558px;height:auto;border:0;border-radius:8px 8px 0 0;"></a></td></tr>'
-            f'<tr><td style="padding:20px 22px 22px 22px;">'
-            f'<table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="{RED}" style="background-color:{RED};border-radius:3px;padding:6px 10px;font-family:{SANS};font-size:12px;font-weight:800;letter-spacing:1.5px;color:#FFFFFF;">68% OFF + EXTRA 10%</td>'
-            f'<td style="padding-left:10px;font-family:{SANS};font-size:12px;font-weight:700;letter-spacing:1.5px;color:{MUTED};">+ FREE PIZZA STEEL</td></tr></table>'
-            f'<div class="h2" style="font-family:{SERIF};font-size:30px;line-height:34px;color:{INK};padding:12px 0 8px 0;">The 12-piece Titanium Hammered Cookware Set</div>' +
-            p(f'<span style="text-decoration:line-through;color:{MUTED};">$2,047</span> &nbsp;$649 &nbsp;&rarr;&nbsp; <b style="color:{RED};font-size:22px;">$584.10</b> <span style="color:{MUTED};font-size:14px;">with THANKSGIVING10</span>', 18, 28, pad='0 0 10px 0') +
-            p('<b>Plus a FREE Titanium Hammered Pizza Steel</b> (still $149 on its own). Three hammered pans (8, 10, 12 inch), 2-qt and 3-qt saucepans, an 8-qt stock pot and six lids. Ships from our US warehouses. 93% sold.', 15, 23, pad='0 0 16px 0') +
-            p('Code already applied &middot; 30-day returns &middot; 75-year warranty', 13, 19, MUTED, '0', 'left') +
-            '</td></tr></table>')
-    b += row(prod, '30px 20px 16px 20px', PANEL)
-    six = (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid {LINE};border-radius:8px;"><tr>'
-           f'<td width="150" valign="middle" style="padding:14px;"><a href="{link(SALE, m, "set6-img")}"><img src="{IMG6}" width="130" alt="Siraat 6-piece hammered pan set with lids" style="display:block;width:130px;height:auto;border-radius:6px;border:0;"></a></td>'
-           f'<td valign="middle" style="padding:14px 14px 14px 0;">{p("<b>Starting smaller? The 6-piece set</b>", 16, 22, pad="0 0 4px 0")}'
-           f'{p(f"<span style=text-decoration:line-through;color:{MUTED};>$1,163</span> $349 &rarr; <b style=color:{RED};>$314.10</b> with the code", 15, 22, pad="0 0 8px 0")}'
-           f'</td></tr></table>')
-    pan = (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid {LINE};border-radius:8px;"><tr>'
-           f'<td width="150" valign="middle" style="padding:14px;"><a href="{link(SALE, m, "pan-img")}"><img src="{IMGPAN}" width="130" alt="Siraat Titanium Hammered Pan Pro Standard" style="display:block;width:130px;height:auto;border-radius:6px;border:0;"></a></td>'
-           f'<td valign="middle" style="padding:14px 14px 14px 0;">{p("<b>Just one pan? The Titanium Hammered Pan Pro</b>", 16, 22, pad="0 0 4px 0")}'
-           f'{p(f"<span style=text-decoration:line-through;color:{MUTED};>$480</span> $144 &rarr; <b style=color:{RED};>$129.60</b> with the code", 15, 22, pad="0 0 8px 0")}'
-           f'</td></tr></table>')
-    b += row(six, '0 20px 12px 20px', PANEL)
-    b += row(pan, '0 20px 30px 20px', PANEL)
-    b += row(gifts(GIFTS_US, 'Your 5 free gifts with every order'), '30px 40px 18px 40px')
-    trust = ''.join(f'<td width="25%" align="center" valign="top" style="padding:0 4px;font-family:{SANS};font-size:12px;line-height:17px;color:{INK};">'
-                    f'<div style="font-family:{SERIF};font-size:24px;line-height:28px;">{x}</div>{y}</td>'
-                    for x, y in [('75 yrs', 'warranty'), ('30 days', 'returns'), ('PFAS', 'lab tested'), ('100K+', 'customers')])
-    b += row(f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid {LINE};border-bottom:1px solid {LINE};"><tr><td style="padding:18px 0;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>{trust}</tr></table></td></tr></table>', '10px 40px 6px 40px')
-    close = (p('<b>Your extra 10% ends tonight at midnight.</b> Tomorrow it&rsquo;s gone. The Black Friday sale itself runs until Dec 5.', 16, 25, pad='18px 0 18px 0', align='center') +
-             p('P.S. The free Pizza Steel only comes with the 12-piece set, and the set is 93% sold. If it&rsquo;s on your list, get it before midnight while the extra 10% still applies.', 15, 23, MUTED, '22px 0 0 0'))
-    b += row(close, '0 40px 40px 40px')
+    b += row(btn('Shop the Black Friday sale &rarr;', link(SALE, m, 'offer-btn')), '6px 40px 40px 40px')
     return shell('Happy Thanksgiving', 'Benjamin added an extra 10% off. It ends tonight at midnight.', b)
 
 # ------------------------------------------------------------------ INTL (Floris 26 nov: duidelijker, direct response, sale laten zien, code BONAPPETIT10)
@@ -142,40 +111,7 @@ def intl():
              p('Thank you for being part of this from the start.') + signoff())
     b += row(story, '30px 40px 28px 40px')
     # groot aanbodblok, donker, direct onder de hero
-    b += row(btn('Shop the sale now &rarr;', L(SALE, 'offer-btn')), '6px 40px 34px 40px')
-    # waarom: het citaat + uitleg
-    why = (eyebrow('What Bon App&eacute;tit wrote') + h2('&ldquo;This holiday, cook with the best.&rdquo;', 32) +
-           f'<div style="border-left:3px solid {RED};padding:2px 0 2px 16px;margin:0 0 18px 0;font-family:{SERIF};font-style:italic;font-size:20px;line-height:28px;color:{INK};">&ldquo;No better gift for the home chef than a stellar, non-toxic cooking surface. Siraat&rsquo;s Hammered Titanium Cookware serves up zero coatings, impeccable quality &amp; trusted by 100K+ customers.&rdquo;</div>' +
-           p('Here&rsquo;s what that means in your kitchen:', 16, 25) +
-           bullets(['<b>Zero coatings.</b> A pure titanium cooking surface, nothing to peel or flake into your food.',
-                    '<b>Tested free from PFAS</b> by Light Labs, report no. 25895.',
-                    '<b>Built to last.</b> Covered by a 75-year warranty.',
-                    '<b>No risk.</b> 30 days to change your mind.']))
-    b += row(why, '36px 40px 26px 40px')
-    # productkaart 6-delig met kortingsbadge
-    prod = (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid {LINE};border-radius:8px;"><tr><td style="padding:0;position:relative;">'
-            f'<a href="{L(SALE, "set6-img")}"><img src="{IMG6}" width="558" alt="Siraat Titanium Hammered Pan Set with Lids, 6 pieces" style="display:block;width:100%;max-width:558px;height:auto;border:0;border-radius:8px 8px 0 0;"></a></td></tr>'
-            f'<tr><td style="padding:20px 22px 22px 22px;">'
-            f'<table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="{RED}" style="background-color:{RED};border-radius:3px;padding:6px 10px;font-family:{SANS};font-size:12px;font-weight:800;letter-spacing:1.5px;color:#FFFFFF;">70% OFF + EXTRA 10%</td>'
-            f'</tr></table>'
-            f'<div class="h2" style="font-family:{SERIF};font-size:30px;line-height:34px;color:{INK};padding:12px 0 8px 0;">The 6-piece Titanium Hammered Pan Set with Lids</div>' +
-            p('Three hammered pans and a lid for each. The easiest way to start cooking without coatings. For yourself, or as the gift this year.', 16, 24, pad='0 0 16px 0') +
-            p(f'Code {CODE} already applied &middot; 5 free gifts included', 13, 19, MUTED, '0', 'left') +
-            '</td></tr></table>')
-    b += row(prod, '30px 20px 30px 20px', PANEL)
-    # stappen: hoe werkt het
-    steps = (eyebrow('How it works') +
-             bullets(['Tap the button or any image in this email. Your extra 10% is applied automatically.',
-                      'Pick your set or pan. Black Friday prices are already up to 70% off.',
-                      'Check out. 5 free gifts are added to every order. (No discount showing? Enter BONAPPETIT10 at checkout.)']))
-    b += row(steps, '30px 40px 10px 40px')
-    trust = ''.join(f'<td width="25%" align="center" valign="top" style="padding:0 4px;font-family:{SANS};font-size:12px;line-height:17px;color:{INK};">'
-                    f'<div style="font-family:{SERIF};font-size:24px;line-height:28px;">{a}</div>{b2}</td>'
-                    for a, b2 in [('75 yrs', 'warranty'), ('30 days', 'returns'), ('PFAS', 'lab tested'), ('100K+', 'customers')])
-    b += row(f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid {LINE};border-bottom:1px solid {LINE};"><tr><td style="padding:18px 0;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>{trust}</tr></table></td></tr></table>', '18px 40px 6px 40px')
-    close = (p('<b>Your extra 10% ends Sunday, Nov 30 at 11:59 PM ET.</b> After that it&rsquo;s gone, and the sale ends Dec 5.', 16, 25, pad='22px 0 18px 0', align='center') +
-             '')
-    b += row(close, '0 40px 40px 40px')
+    b += row(btn('Shop the sale now &rarr;', L(SALE, 'offer-btn')), '6px 40px 40px 40px')
     return shell('As seen in Bon Appétit', 'Up to 70% off + an extra 10% with BONAPPETIT10. Already applied, ends Sunday.', b)
 
 os.makedirs(os.path.join(T, '.preview'), exist_ok=True)
