@@ -22,6 +22,8 @@ def link(path, market, content, code='THANKSGIVING10'):
 SET12 = '/products/titanium-hammered-cookware-set-12-pcs-free-pizza-steel-1'
 SET6 = '/products/titanium-hammered-pan-set-with-lids-6-pcs'
 SALE = '/collections/black-friday-sale'
+PAN = '/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern'
+IMGPAN = 'https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-40a5-9ad7-523bdddc54d4.webp?v=1781682831&width=400&height=400&crop=center&format=pjpg'
 IMG12 = 'https://cdn.shopify.com/s/files/1/0907/0877/1156/files/12pcsset.webp?v=1781591412&width=1100&height=900&crop=bottom&format=pjpg'
 IMG6 = 'https://cdn.shopify.com/s/files/1/0907/0877/1156/files/6pcscookwareset.webp?v=1783062518&width=1100&height=900&crop=center&format=pjpg'
 
@@ -85,9 +87,7 @@ IMG12SQ = 'https://cdn.shopify.com/s/files/1/0907/0877/1156/files/12pcsset.webp?
 def us():
     m = 'us'
     b = topbar('BLACK FRIDAY SALE &middot; EXTRA 10% OFF, ALREADY APPLIED')
-    b += f'<tr><td style="padding:0;"><a href="{link(SALE, m, "hero")}"><img src="{UP["us-hero-thanksgiving.jpg"]}" width="600" alt="Happy Thanksgiving. Thanksgiving x Black Friday, extra 10% off." style="display:block;width:100%;max-width:600px;height:auto;border:0;"></a></td></tr>\n'
-    b += row(btn('Claim 70% + extra 10% off &rarr;', link(SALE, m, 'hero-btn')) +
-             p('Black Friday sale &middot; code THANKSGIVING10 already applied &middot; ends Sunday', 13, 19, MUTED, '10px 0 0 0', 'center'), '22px 40px 26px 40px')
+    b += f'<tr><td style="padding:0;"><a href="{link(SALE, m, "hero")}"><img src="{UP["us-hero-thanksgiving-btn.jpg"]}" width="600" alt="Happy Thanksgiving. Thanksgiving x Black Friday, extra 10% off. Claim 70% + extra 10% off." style="display:block;width:100%;max-width:600px;height:auto;border:0;"></a></td></tr>\n'
     offer = (f'<div style="font-family:{SANS};font-size:13px;line-height:18px;letter-spacing:3px;font-weight:700;color:#CDB27A;text-align:center;">BLACK FRIDAY SALE &middot; THANKSGIVING EXTRA</div>'
              f'<div style="font-family:{SANS};font-size:60px;line-height:62px;font-weight:800;color:#FFFFFF;text-align:center;padding:12px 0 2px 0;letter-spacing:-1px;">UP TO 70% OFF</div>'
              f'<div style="font-family:{SANS};font-size:30px;line-height:36px;font-weight:800;color:#F2C14E;text-align:center;padding-bottom:16px;">+ AN EXTRA 10% OFF</div>'
@@ -115,7 +115,13 @@ def us():
            f'<td valign="middle" style="padding:14px 14px 14px 0;">{p("<b>Starting smaller? The 6-piece set</b>", 16, 22, pad="0 0 4px 0")}'
            f'{p(f"<span style=text-decoration:line-through;color:{MUTED};>$1,163</span> $349 &rarr; <b style=color:{RED};>$314.10</b> with the code", 15, 22, pad="0 0 8px 0")}'
            f'<a href="{link(SET6, m, "set6-btn")}" style="font-family:{SANS};font-size:13px;font-weight:800;letter-spacing:1px;color:{RED};">CLAIM THE 6-PIECE SET &rarr;</a></td></tr></table>')
-    b += row(six, '0 20px 30px 20px', PANEL)
+    pan = (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid {LINE};border-radius:8px;"><tr>'
+           f'<td width="150" valign="middle" style="padding:14px;"><a href="{link(PAN, m, "pan-img")}"><img src="{IMGPAN}" width="130" alt="Siraat Titanium Hammered Pan Pro Standard" style="display:block;width:130px;height:auto;border-radius:6px;border:0;"></a></td>'
+           f'<td valign="middle" style="padding:14px 14px 14px 0;">{p("<b>Just one pan? The Titanium Hammered Pan Pro</b>", 16, 22, pad="0 0 4px 0")}'
+           f'{p(f"<span style=text-decoration:line-through;color:{MUTED};>$480</span> $144 &rarr; <b style=color:{RED};>$129.60</b> with the code", 15, 22, pad="0 0 8px 0")}'
+           f'<a href="{link(PAN, m, "pan-btn")}" style="font-family:{SANS};font-size:13px;font-weight:800;letter-spacing:1px;color:{RED};">CLAIM THE PAN PRO &rarr;</a></td></tr></table>')
+    b += row(six, '0 20px 12px 20px', PANEL)
+    b += row(pan, '0 20px 30px 20px', PANEL)
     b += row(gifts(GIFTS_US, 'Your 5 free gifts with every order'), '30px 40px 18px 40px')
     trust = ''.join(f'<td width="25%" align="center" valign="top" style="padding:0 4px;font-family:{SANS};font-size:12px;line-height:17px;color:{INK};">'
                     f'<div style="font-family:{SERIF};font-size:24px;line-height:28px;">{x}</div>{y}</td>'

@@ -667,3 +667,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 2026-11-26 · Thanksgiving US + INTL mails in Figma gezet (pagina 'Thanksgiving 26 nov', node 492:106).
 - 2026-11-26 · INTL Thanksgiving-mail herschreven op verzoek Floris: As seen in Bon Appétit, direct response met groot aanbodblok, code BONAPPETIT10 (nieuw in Shopify, 10% alles t/m 30 nov 23:59 ET), template SgEp5D bijgewerkt, test verstuurd, Figma bijgewerkt.
 - 2026-11-26 · US Thanksgiving-mail omgebouwd (Floris): knop direct onder hero 'Claim 70% + extra 10% off' (geen 80%: echte max 73%), groot aanbodblok, vierkante setfoto, Benjamin lager. R7fybM bijgewerkt, test verstuurd, Figma bijgewerkt.
+- 2026-11-26 · US Thanksgiving: losse knop onder hero weg, ronde rode knop met witte rand in de hero ('Claim 70% + extra 10% off', niet 80%), Pan Pro Standard ($144 -> $129.60) onder 6-delige set. R7fybM + Figma bijgewerkt, test verstuurd. Codes THANKSGIVING10 en BONAPPETIT10 actief.
