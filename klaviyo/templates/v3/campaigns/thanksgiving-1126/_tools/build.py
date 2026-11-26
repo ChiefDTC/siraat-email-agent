@@ -87,7 +87,7 @@ IMG12SQ = 'https://cdn.shopify.com/s/files/1/0907/0877/1156/files/12pcsset.webp?
 def us():
     m = 'us'
     b = topbar('EXTRA 10% OFF ENDS TONIGHT AT MIDNIGHT')
-    b += f'<tr><td style="padding:0;"><a href="{link(SALE, m, "hero")}"><img src="{UP["us-hero-thanksgiving-v5.jpg"]}" width="600" alt="Happy Thanksgiving. Thanksgiving x Black Friday, extra 10% off. Claim 70% + extra 10% off." style="display:block;width:100%;max-width:600px;height:auto;border:0;"></a></td></tr>\n'
+    b += f'<tr><td style="padding:0;"><a href="{link(SALE, m, "hero")}"><img src="{UP["us-hero-thanksgiving-v6.jpg"]}" width="600" alt="Happy Thanksgiving. Thanksgiving x Black Friday, extra 10% off. Claim 70% off." style="display:block;width:100%;max-width:600px;height:auto;border:0;"></a></td></tr>\n'
     story = (p('<b>Happy Thanksgiving 2026.</b>', 19, 28, pad='0 0 12px 0') +
              p('This morning I was at the office going through the Black Friday orders, and I kept thinking about this year. More than 100,000 of you now cook on our pans. That still doesn&rsquo;t feel real to me.') +
              p('So I did something without running it by the team first: I put an <b>extra 10% off everything</b>, on top of the Black Friday sale. No meeting, no approval. Just a thank you for a year we never expected.') +
