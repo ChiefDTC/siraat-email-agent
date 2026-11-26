@@ -1,0 +1,419 @@
+[
+ {
+  "id": "01M8AQE7ACHZJHTB6A5FW3KX6S",
+  "ch": "email",
+  "name": "HS // Siraats Kitchen // November Email 17: A Note Before Black Friday Ends // 11.27.2026 INTL",
+  "status": "Queued without Recipients",
+  "time": "2026-11-27T18:00:00+00:00",
+  "local": true,
+  "smart": false,
+  "incl": [
+   "HS // INT Subscribers (non US) Engaged 180D v2 (S9BZVJ)"
+  ],
+  "excl": [
+   "HS // US Subscribers v2 (RNuYDm)",
+   "Siraat // Waiting on order (ordered 60d, not fulfilled or delayed) (UJY6LA)",
+   "bought in the last 30 days (UfyDPs)",
+   "EB [DG] Unengaged 180 Days | Non-Buyers (Ur6Ehr)",
+   "EB [DG] Unsubscribe (Exclusion for regular Emails) | 9/10/25 (VSnBnJ)",
+   "EB [DG] Bounced Emails (Exclusion) | 4/09/25 (W3q7Zy)",
+   "EB [DG] For Suppression (W4vNzF)",
+   "HS // Purchased in the last 3 days (W92553)",
+   "Siraat // Buyers last 30 days (F13 exclusion) (WFqvwp)",
+   "EB [DG] Marked us as Spam (Exclusion) | 4/09/25 (XTpfNG)"
+  ],
+  "subject": "A note before the day ends",
+  "preview": ""
+ },
+ {
+  "id": "01M8AQDHEGAPS7GA9GJBXVBZH4",
+  "ch": "email",
+  "name": "HS // Siraats Kitchen // November Email 17: A Note Before Black Friday Ends // 11.27.2026 US",
+  "status": "Queued without Recipients",
+  "time": "2026-11-27T18:00:00+00:00",
+  "local": true,
+  "smart": false,
+  "incl": [
+   "HS // US Subscribers Engaged 180D v2 (TntB6g)"
+  ],
+  "excl": [
+   "Siraat // Waiting on order (ordered 60d, not fulfilled or delayed) (UJY6LA)",
+   "bought in the last 30 days (UfyDPs)",
+   "EB [DG] Unengaged 180 Days | Non-Buyers (Ur6Ehr)",
+   "EB [DG] Unsubscribe (Exclusion for regular Emails) | 9/10/25 (VSnBnJ)",
+   "HS // INT Subscribers (non US) v2 (VdfJTJ)",
+   "EB [DG] Bounced Emails (Exclusion) | 4/09/25 (W3q7Zy)",
+   "EB [DG] For Suppression (W4vNzF)",
+   "HS // Purchased in the last 3 days (W92553)",
+   "Siraat // Buyers last 30 days (F13 exclusion) (WFqvwp)",
+   "EB [DG] Marked us as Spam (Exclusion) | 4/09/25 (XTpfNG)"
+  ],
+  "subject": "A note before the day ends",
+  "preview": ""
+ },
+ {
+  "id": "01M8AQC3SDZB7W9KQG6XZTRJ4T",
+  "ch": "email",
+  "name": "HS // Siraats Kitchen // November Email 16: Black Friday Bestsellers // 11.27.2026 US",
+  "status": "Queued without Recipients",
+  "time": "2026-11-27T13:00:00+00:00",
+  "local": true,
+  "smart": false,
+  "incl": [
+   "HS // US Subscribers Engaged 180D v2 (TntB6g)"
+  ],
+  "excl": [
+   "Siraat // Waiting on order (ordered 60d, not fulfilled or delayed) (UJY6LA)",
+   "bought in the last 30 days (UfyDPs)",
+   "EB [DG] Unengaged 180 Days | Non-Buyers (Ur6Ehr)",
+   "EB [DG] Unsubscribe (Exclusion for regular Emails) | 9/10/25 (VSnBnJ)",
+   "HS // INT Subscribers (non US) v2 (VdfJTJ)",
+   "EB [DG] Bounced Emails (Exclusion) | 4/09/25 (W3q7Zy)",
+   "EB [DG] For Suppression (W4vNzF)",
+   "HS // Purchased in the last 3 days (W92553)",
+   "Siraat // Buyers last 30 days (F13 exclusion) (WFqvwp)",
+   "EB [DG] Marked us as Spam (Exclusion) | 4/09/25 (XTpfNG)"
+  ],
+  "subject": "Everyone\u2019s grabbing these right now",
+  "preview": "Shop up to 70% off + FREE gifts"
+ },
+ {
+  "id": "01M8AQD2VWEN5SCEFY7EZJ347H",
+  "ch": "email",
+  "name": "HS // Siraats Kitchen // November Email 16: Black Friday Bestsellers // 11.27.2026 INTL",
+  "status": "Queued without Recipients",
+  "time": "2026-11-27T13:00:00+00:00",
+  "local": true,
+  "smart": false,
+  "incl": [
+   "HS // INT Subscribers (non US) Engaged 180D v2 (S9BZVJ)"
+  ],
+  "excl": [
+   "HS // US Subscribers v2 (RNuYDm)",
+   "Siraat // Waiting on order (ordered 60d, not fulfilled or delayed) (UJY6LA)",
+   "bought in the last 30 days (UfyDPs)",
+   "EB [DG] Unengaged 180 Days | Non-Buyers (Ur6Ehr)",
+   "EB [DG] Unsubscribe (Exclusion for regular Emails) | 9/10/25 (VSnBnJ)",
+   "EB [DG] Bounced Emails (Exclusion) | 4/09/25 (W3q7Zy)",
+   "EB [DG] For Suppression (W4vNzF)",
+   "Siraat // Buyers last 30 days (F13 exclusion) (WFqvwp)",
+   "EB [DG] Marked us as Spam (Exclusion) | 4/09/25 (XTpfNG)"
+  ],
+  "subject": "Everyone\u2019s grabbing these right now",
+  "preview": "Shop up to 70% off + FREE gifts"
+ },
+ {
+  "id": "01M87S8X06D6GG316KVNFD3D1T",
+  "ch": "email",
+  "name": "HS // Siraats Kitchen // November Email 15: Black Friday: Up to 70% Off Plus Free Gifts // 11.27.2026 INTL",
+  "status": "Queued without Recipients",
+  "time": "2026-11-27T08:00:00+00:00",
+  "local": true,
+  "smart": false,
+  "incl": [
+   "HS // INT Subscribers (non US) v2 (VdfJTJ)"
+  ],
+  "excl": [
+   "HS // US Subscribers v2 (RNuYDm)",
+   "Siraat // Waiting on order (ordered 60d, not fulfilled or delayed) (UJY6LA)",
+   "bought in the last 30 days (UfyDPs)",
+   "EB [DG] Unengaged 180 Days | Non-Buyers (Ur6Ehr)",
+   "EB [DG] Unsubscribe (Exclusion for regular Emails) | 9/10/25 (VSnBnJ)",
+   "EB [DG] Bounced Emails (Exclusion) | 4/09/25 (W3q7Zy)",
+   "EB [DG] For Suppression (W4vNzF)",
+   "Siraat // Buyers last 30 days (F13 exclusion) (WFqvwp)",
+   "EB [DG] Marked us as Spam (Exclusion) | 4/09/25 (XTpfNG)"
+  ],
+  "subject": "\ud83d\udd25 UP TO 70% OFF + FREE GIFTS \ud83d\udd25",
+  "preview": "BLACK FRIDAY STARTS NOW"
+ },
+ {
+  "id": "01M87S80JBDRFH9QE9HVQZSH7G",
+  "ch": "email",
+  "name": "HS // Siraats Kitchen // November Email 15: Black Friday: Up to 70% Off Plus Free Gifts // 11.27.2026 US",
+  "status": "Queued without Recipients",
+  "time": "2026-11-27T08:00:00+00:00",
+  "local": true,
+  "smart": false,
+  "incl": [
+   "HS // US Subscribers v2 (RNuYDm)"
+  ],
+  "excl": [
+   "Siraat // Waiting on order (ordered 60d, not fulfilled or delayed) (UJY6LA)",
+   "bought in the last 30 days (UfyDPs)",
+   "EB [DG] Unengaged 180 Days | Non-Buyers (Ur6Ehr)",
+   "EB [DG] Unsubscribe (Exclusion for regular Emails) | 9/10/25 (VSnBnJ)",
+   "HS // INT Subscribers (non US) v2 (VdfJTJ)",
+   "EB [DG] Bounced Emails (Exclusion) | 4/09/25 (W3q7Zy)",
+   "EB [DG] For Suppression (W4vNzF)",
+   "Siraat // Buyers last 30 days (F13 exclusion) (WFqvwp)",
+   "EB [DG] Marked us as Spam (Exclusion) | 4/09/25 (XTpfNG)"
+  ],
+  "subject": "\ud83d\udd25 UP TO 70% OFF + FREE GIFTS \ud83d\udd25",
+  "preview": "BLACK FRIDAY STARTS NOW"
+ },
+ {
+  "id": "01M87SCN2ASM5H9EV4D2JQTYF3",
+  "ch": "email",
+  "name": "HS // Siraats Kitchen // November Email 19: Cyber Monday: Final Day of the Sale // 11.30.2026 INTL",
+  "status": "Draft",
+  "time": "2026-11-24T23:03:59.617000+00:00",
+  "local": true,
+  "smart": false,
+  "incl": [
+   "HS // INT Subscribers (non US) v2 (VdfJTJ)"
+  ],
+  "excl": [
+   "HS // US Subscribers v2 (RNuYDm)",
+   "HS // Purchased in the last 14 days (TriYPe)",
+   "Siraat // Waiting on order (ordered 60d, not fulfilled or delayed) (UJY6LA)",
+   "bought in the last 30 days (UfyDPs)",
+   "EB [DG] Unengaged 180 Days | Non-Buyers (Ur6Ehr)",
+   "EB [DG] Unsubscribe (Exclusion for regular Emails) | 9/10/25 (VSnBnJ)",
+   "EB [DG] Bounced Emails (Exclusion) | 4/09/25 (W3q7Zy)",
+   "EB [DG] For Suppression (W4vNzF)",
+   "Siraat // Buyers last 30 days (F13 exclusion) (WFqvwp)",
+   "EB [DG] Marked us as Spam (Exclusion) | 4/09/25 (XTpfNG)"
+  ],
+  "subject": "\ud83d\udd25 CYBER MONDAY: PFAS-free deals \ud83d\udd25",
+  "preview": "5 FREE gifts + up to 70% off"
+ },
+ {
+  "id": "01M87SBQ03TF6VGFVWE512NXKA",
+  "ch": "email",
+  "name": "HS // Siraats Kitchen // November Email 19: Cyber Monday: Final Day of the Sale // 11.30.2026 US",
+  "status": "Draft",
+  "time": "2026-11-24T23:03:28.821000+00:00",
+  "local": true,
+  "smart": false,
+  "incl": [
+   "HS // US Subscribers v2 (RNuYDm)"
+  ],
+  "excl": [
+   "HS // Purchased in the last 14 days (TriYPe)",
+   "Siraat // Waiting on order (ordered 60d, not fulfilled or delayed) (UJY6LA)",
+   "bought in the last 30 days (UfyDPs)",
+   "EB [DG] Unengaged 180 Days | Non-Buyers (Ur6Ehr)",
+   "EB [DG] Unsubscribe (Exclusion for regular Emails) | 9/10/25 (VSnBnJ)",
+   "HS // INT Subscribers (non US) v2 (VdfJTJ)",
+   "EB [DG] Bounced Emails (Exclusion) | 4/09/25 (W3q7Zy)",
+   "EB [DG] For Suppression (W4vNzF)",
+   "Siraat // Buyers last 30 days (F13 exclusion) (WFqvwp)",
+   "EB [DG] Marked us as Spam (Exclusion) | 4/09/25 (XTpfNG)"
+  ],
+  "subject": "\ud83d\udd25 CYBER MONDAY: PFAS-free deals \ud83d\udd25",
+  "preview": "5 FREE gifts + up to 70% off"
+ },
+ {
+  "id": "01M87SATM4378XE9QZPJ7F02R8",
+  "ch": "email",
+  "name": "HS // Siraats Kitchen // November Resend E4: The Thanksgiving Pans at Black Friday Prices // 11.28.2026 INTL",
+  "status": "Draft",
+  "time": "2026-11-24T23:02:59.634000+00:00",
+  "local": true,
+  "smart": false,
+  "incl": [
+   "HS // INT Subscribers (non US) v2 (VdfJTJ)"
+  ],
+  "excl": [
+   "HS // US Subscribers v2 (RNuYDm)",
+   "HS // Purchased in the last 14 days (TriYPe)",
+   "Siraat // Waiting on order (ordered 60d, not fulfilled or delayed) (UJY6LA)",
+   "bought in the last 30 days (UfyDPs)",
+   "EB [DG] Unengaged 180 Days | Non-Buyers (Ur6Ehr)",
+   "EB [DG] Unsubscribe (Exclusion for regular Emails) | 9/10/25 (VSnBnJ)",
+   "EB [DG] Bounced Emails (Exclusion) | 4/09/25 (W3q7Zy)",
+   "EB [DG] For Suppression (W4vNzF)",
+   "Siraat // Buyers last 30 days (F13 exclusion) (WFqvwp)",
+   "EB [DG] Marked us as Spam (Exclusion) | 4/09/25 (XTpfNG)"
+  ],
+  "subject": "Your Thanksgiving pans: ON SALE \ud83c\udf57",
+  "preview": "Up to 70% off + 5 FREE gifts"
+ },
+ {
+  "id": "01M87S9XGS6HW86TC33X76PNY0",
+  "ch": "email",
+  "name": "HS // Siraats Kitchen // November Resend E4: The Thanksgiving Pans at Black Friday Prices // 11.28.2026 US",
+  "status": "Draft",
+  "time": "2026-11-24T23:02:29.838000+00:00",
+  "local": true,
+  "smart": false,
+  "incl": [
+   "HS // US Subscribers v2 (RNuYDm)"
+  ],
+  "excl": [
+   "HS // Purchased in the last 14 days (TriYPe)",
+   "Siraat // Waiting on order (ordered 60d, not fulfilled or delayed) (UJY6LA)",
+   "bought in the last 30 days (UfyDPs)",
+   "EB [DG] Unengaged 180 Days | Non-Buyers (Ur6Ehr)",
+   "EB [DG] Unsubscribe (Exclusion for regular Emails) | 9/10/25 (VSnBnJ)",
+   "HS // INT Subscribers (non US) v2 (VdfJTJ)",
+   "EB [DG] Bounced Emails (Exclusion) | 4/09/25 (W3q7Zy)",
+   "EB [DG] For Suppression (W4vNzF)",
+   "Siraat // Buyers last 30 days (F13 exclusion) (WFqvwp)",
+   "EB [DG] Marked us as Spam (Exclusion) | 4/09/25 (XTpfNG)"
+  ],
+  "subject": "Your Thanksgiving pans: ON SALE \ud83c\udf57",
+  "preview": "Up to 70% off + 5 FREE gifts"
+ },
+ {
+  "id": "01M7TZTDZWX5BVFQDNY5VDN69D",
+  "ch": "sms",
+  "name": "HS // Siraats Kitchen // November SMS 6: It's Black Friday // 11.27.2026 INTL",
+  "status": "Queued without Recipients",
+  "time": "2026-11-27T13:00:00+00:00",
+  "local": true,
+  "smart": true,
+  "incl": [
+   "HS // INT Subscribers (non US) v2 (VdfJTJ)"
+  ],
+  "excl": [
+   "HS // US Subscribers v2 (RNuYDm)",
+   "EB | Texas Subscribers | SMS Exclusion (SLVWps)",
+   "HS // Purchased in the last 7 days (TLqivd)",
+   "Siraat // Waiting on order (ordered 60d, not fulfilled or delayed) (UJY6LA)"
+  ],
+  "subject": "IT'S BLACK FRIDAY!\n\nUp to 70% OFF + 5 FREE gifts with every order. Shop the 6-piece set: https://siraatskitchen.com/prod",
+  "preview": null
+ },
+ {
+  "id": "01M7TZN7P7A3N1KMXQP2YTG7XJ",
+  "ch": "sms",
+  "name": "HS // Siraats Kitchen // November SMS 6: It's Black Friday // 11.27.2026 US",
+  "status": "Queued without Recipients",
+  "time": "2026-11-27T09:00:00+00:00",
+  "local": true,
+  "smart": true,
+  "incl": [
+   "HS // US SMS Subscribers v2 (VJdd3C)"
+  ],
+  "excl": [
+   "HS // INT SMS Subscribers (non US) v2 (R5LmyU)",
+   "EB | Texas Subscribers | SMS Exclusion (SLVWps)",
+   "Siraat // Waiting on order (ordered 60d, not fulfilled or delayed) (UJY6LA)",
+   "HS // Purchased in the last 3 days (W92553)"
+  ],
+  "subject": "IT'S BLACK FRIDAY!\n\nUp to 70% OFF + 5 FREE gifts + FREE Titanium Hammered Pizza Steel with the 12-piece set: https://sir",
+  "preview": null
+ },
+ {
+  "id": "01M7TYWZ01TNFSRSAKNFDJ5J3J",
+  "ch": "sms",
+  "name": "HS // Siraats Kitchen // November SMS 8: Last Day for These Prices // 11.30.2026 INTL",
+  "status": "Draft",
+  "time": "2026-11-19T22:08:07+00:00",
+  "local": true,
+  "smart": true,
+  "incl": [
+   "HS // INT SMS Subscribers (non US) Engaged 180D v2 (Y7wCYe)"
+  ],
+  "excl": [
+   "HS // INT SMS Subscribers (non US) v2 (R5LmyU)",
+   "EB | Texas Subscribers | SMS Exclusion (SLVWps)",
+   "HS // Purchased in the last 7 days (TLqivd)",
+   "Siraat // Waiting on order (ordered 60d, not fulfilled or delayed) (UJY6LA)"
+  ],
+  "subject": "CYBER MONDAY: Up to 70% off + 5 FREE gifts with every order! \n\nSwap to PFAS-free today with the 6-piece set: https://sir",
+  "preview": null
+ },
+ {
+  "id": "01M7TZFS941HDR9AGGM0APK3A0",
+  "ch": "sms",
+  "name": "HS // Siraats Kitchen // November SMS 7: Buy From the Family Who Made It // 11.28.2026 INTL",
+  "status": "Draft",
+  "time": "2026-11-19T22:08:07+00:00",
+  "local": true,
+  "smart": true,
+  "incl": [
+   "HS // INT SMS Subscribers (non US) Engaged 180D v2 (Y7wCYe)"
+  ],
+  "excl": [
+   "HS // INT SMS Subscribers (non US) v2 (R5LmyU)",
+   "EB | Texas Subscribers | SMS Exclusion (SLVWps)",
+   "HS // Purchased in the last 7 days (TLqivd)",
+   "Siraat // Waiting on order (ordered 60d, not fulfilled or delayed) (UJY6LA)"
+  ],
+  "subject": "It's Small Business Saturday. Shop small, cook PFAS-free. \n\nUp to 70% off + 5 FREE gifts: https://siraatskitchen.com/pro",
+  "preview": null
+ },
+ {
+  "id": "01M7TY68BB4QTA3AJ2RDFX9VCE",
+  "ch": "sms",
+  "name": "HS // Siraats Kitchen // November SMS 9: Final Hours // 11.30.2026 INTL",
+  "status": "Draft",
+  "time": "2026-11-19T22:08:07+00:00",
+  "local": true,
+  "smart": true,
+  "incl": [
+   "HS // INT SMS Subscribers (non US) Engaged 180D v2 (Y7wCYe)"
+  ],
+  "excl": [
+   "HS // INT SMS Subscribers (non US) v2 (R5LmyU)",
+   "EB | Texas Subscribers | SMS Exclusion (SLVWps)",
+   "HS // Purchased in the last 7 days (TLqivd)",
+   "Siraat // Waiting on order (ordered 60d, not fulfilled or delayed) (UJY6LA)"
+  ],
+  "subject": "Don't miss Cyber Monday: pure titanium cookware up to 70% off + 5 FREE gifts with every order. \n\nSave on the 6-piece set",
+  "preview": null
+ },
+ {
+  "id": "01M7TZ9C8T9MPSWJQTDZRQT9EP",
+  "ch": "sms",
+  "name": "HS // Siraats Kitchen // November SMS 7: Buy From the Family Who Made It // 11.28.2026 US",
+  "status": "Draft",
+  "time": "2026-11-19T22:08:07+00:00",
+  "local": true,
+  "smart": true,
+  "incl": [
+   "HS // US SMS Subscribers Engaged 180D v2 (Xrxk9P)"
+  ],
+  "excl": [
+   "HS // INT SMS Subscribers (non US) v2 (R5LmyU)",
+   "EB | Texas Subscribers | SMS Exclusion (SLVWps)",
+   "HS // Purchased in the last 7 days (TLqivd)",
+   "Siraat // Waiting on order (ordered 60d, not fulfilled or delayed) (UJY6LA)"
+  ],
+  "subject": "It's Small Business Saturday. Shop small, cook PFAS-free. Up to 70% off + 5 FREE gifts + Pizza Steel w/ the 12-piece set",
+  "preview": null
+ },
+ {
+  "id": "01M7TYJ957B5NYW6RP78RQQCSM",
+  "ch": "sms",
+  "name": "HS // Siraats Kitchen // November SMS 8: Last Day for These Prices // 11.30.2026 US",
+  "status": "Draft",
+  "time": "2026-11-19T22:08:07+00:00",
+  "local": true,
+  "smart": true,
+  "incl": [
+   "HS // US SMS Subscribers Engaged 180D v2 (Xrxk9P)"
+  ],
+  "excl": [
+   "HS // INT SMS Subscribers (non US) v2 (R5LmyU)",
+   "EB | Texas Subscribers | SMS Exclusion (SLVWps)",
+   "HS // Purchased in the last 7 days (TLqivd)",
+   "Siraat // Waiting on order (ordered 60d, not fulfilled or delayed) (UJY6LA)"
+  ],
+  "subject": "CYBER MONDAY: Up to 70% off + 5 FREE gifts!\u00a0\n\nPlus, a FREE Titanium Hammered Pizza Steel with the 12-piece set. Get your",
+  "preview": null
+ },
+ {
+  "id": "01M7TXPF2V13Y8SER950BP0XFR",
+  "ch": "sms",
+  "name": "HS // Siraats Kitchen // November SMS 9: Final Hours // 11.30.2026 US",
+  "status": "Draft",
+  "time": "2026-11-19T22:08:07+00:00",
+  "local": true,
+  "smart": true,
+  "incl": [
+   "HS // US SMS Subscribers Engaged 180D v2 (Xrxk9P)"
+  ],
+  "excl": [
+   "HS // INT SMS Subscribers (non US) v2 (R5LmyU)",
+   "EB | Texas Subscribers | SMS Exclusion (SLVWps)",
+   "HS // Purchased in the last 7 days (TLqivd)",
+   "Siraat // Waiting on order (ordered 60d, not fulfilled or delayed) (UJY6LA)"
+  ],
+  "subject": "Don't miss Cyber Monday: pure titanium cookware up to 70% off + 5 FREE gifts.\n\nGet a FREE Pizza Steel w/ the 12-piece se",
+  "preview": null
+ }
+]

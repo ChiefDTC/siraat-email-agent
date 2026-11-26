@@ -1,0 +1,699 @@
+[
+ {
+  "id": "01M8AQE7ACHZJHTB6A5FW3KX6S",
+  "ch": "email",
+  "name": "HS // Siraats Kitchen // November Email 17: A Note Before Black Friday Ends // 11.27.2026 INTL",
+  "status": "Queued without Recipients",
+  "send_time": "2026-11-27T18:00:00+00:00",
+  "strategy": {
+   "method": "static",
+   "datetime": "2026-11-27T18:00:00+00:00",
+   "options": {
+    "is_local": true,
+    "send_past_recipients_immediately": true
+   }
+  },
+  "smart": true,
+  "incl": [
+   "S9BZVJ"
+  ],
+  "excl": [
+   "RNuYDm",
+   "UJY6LA",
+   "Ur6Ehr",
+   "VSnBnJ",
+   "W3q7Zy",
+   "W4vNzF",
+   "W92553",
+   "XTpfNG"
+  ],
+  "subject": "A note before the day ends",
+  "preview": ""
+ },
+ {
+  "id": "01M8AQDHEGAPS7GA9GJBXVBZH4",
+  "ch": "email",
+  "name": "HS // Siraats Kitchen // November Email 17: A Note Before Black Friday Ends // 11.27.2026 US",
+  "status": "Queued without Recipients",
+  "send_time": "2026-11-27T18:00:00+00:00",
+  "strategy": {
+   "method": "static",
+   "datetime": "2026-11-27T18:00:00+00:00",
+   "options": {
+    "is_local": true,
+    "send_past_recipients_immediately": true
+   }
+  },
+  "smart": true,
+  "incl": [
+   "TntB6g"
+  ],
+  "excl": [
+   "UJY6LA",
+   "Ur6Ehr",
+   "VSnBnJ",
+   "VdfJTJ",
+   "W3q7Zy",
+   "W4vNzF",
+   "W92553",
+   "XTpfNG"
+  ],
+  "subject": "A note before the day ends",
+  "preview": ""
+ },
+ {
+  "id": "01M8AQC3SDZB7W9KQG6XZTRJ4T",
+  "ch": "email",
+  "name": "HS // Siraats Kitchen // November Email 16: Black Friday Bestsellers // 11.27.2026 US",
+  "status": "Queued without Recipients",
+  "send_time": "2026-11-27T13:00:00+00:00",
+  "strategy": {
+   "method": "static",
+   "datetime": "2026-11-27T13:00:00+00:00",
+   "options": {
+    "is_local": true,
+    "send_past_recipients_immediately": true
+   }
+  },
+  "smart": true,
+  "incl": [
+   "TntB6g"
+  ],
+  "excl": [
+   "UJY6LA",
+   "Ur6Ehr",
+   "VSnBnJ",
+   "VdfJTJ",
+   "W3q7Zy",
+   "W4vNzF",
+   "W92553",
+   "XTpfNG"
+  ],
+  "subject": "Everyone\u2019s grabbing these right now",
+  "preview": "Shop up to 70% off + FREE gifts"
+ },
+ {
+  "id": "01M8AQD2VWEN5SCEFY7EZJ347H",
+  "ch": "email",
+  "name": "HS // Siraats Kitchen // November Email 16: Black Friday Bestsellers // 11.27.2026 INTL",
+  "status": "Queued without Recipients",
+  "send_time": "2026-11-27T13:00:00+00:00",
+  "strategy": {
+   "method": "static",
+   "datetime": "2026-11-27T13:00:00+00:00",
+   "options": {
+    "is_local": true,
+    "send_past_recipients_immediately": true
+   }
+  },
+  "smart": true,
+  "incl": [
+   "S9BZVJ"
+  ],
+  "excl": [
+   "RNuYDm",
+   "UJY6LA",
+   "Ur6Ehr",
+   "VSnBnJ",
+   "W3q7Zy",
+   "W4vNzF",
+   "XTpfNG"
+  ],
+  "subject": "Everyone\u2019s grabbing these right now",
+  "preview": "Shop up to 70% off + FREE gifts"
+ },
+ {
+  "id": "01M8AQT4QCVKCMAEVGSSTG62D8",
+  "ch": "email",
+  "name": "Thanksgiving x Black Friday \u00b7 US \u00b7 2026-11-26",
+  "status": "Sending",
+  "send_time": "2026-11-26T08:15:00+00:00",
+  "strategy": {
+   "method": "static",
+   "datetime": "2026-11-26T08:15:00+00:00",
+   "options": {
+    "is_local": true,
+    "send_past_recipients_immediately": true
+   }
+  },
+  "smart": true,
+  "incl": [
+   "VMjhb2"
+  ],
+  "excl": [
+   "UJY6LA",
+   "UfyDPs",
+   "Ur6Ehr",
+   "VSnBnJ",
+   "VdfJTJ",
+   "W3q7Zy",
+   "W4vNzF",
+   "WFqvwp",
+   "XTpfNG"
+  ],
+  "subject": "\ud83e\udd83 Happy Thanksgiving (+ an extra 10% off)",
+  "preview": "Benjamin added an extra 10% off. It ends tonight at midnight."
+ },
+ {
+  "id": "01M8AQT6SZ8FB8F2CEM519FKN5",
+  "ch": "email",
+  "name": "As seen in Bon App\u00e9tit \u00b7 INTL \u00b7 2026-11-26",
+  "status": "Sending",
+  "send_time": "2026-11-26T08:15:00+00:00",
+  "strategy": {
+   "method": "static",
+   "datetime": "2026-11-26T08:15:00+00:00",
+   "options": {
+    "is_local": true,
+    "send_past_recipients_immediately": true
+   }
+  },
+  "smart": true,
+  "incl": [
+   "VdfJTJ"
+  ],
+  "excl": [
+   "RNuYDm",
+   "UJY6LA",
+   "UfyDPs",
+   "Ur6Ehr",
+   "VSnBnJ",
+   "W3q7Zy",
+   "W4vNzF",
+   "WFqvwp",
+   "XTpfNG"
+  ],
+  "subject": "As seen in Bon App\u00e9tit (+ an extra 10% off)",
+  "preview": "Up to 70% off + an extra 10% with BONAPPETIT10. Ends tonight at midnight."
+ },
+ {
+  "id": "01M8APFCVE2J4R2GE6DQJ0BPY3",
+  "ch": "email",
+  "name": "HS // Siraats Kitchen // November Email 14: A Thank You From Our Kitchen // 11.26.2026 US",
+  "status": "Draft",
+  "send_time": null,
+  "strategy": {
+   "method": "static",
+   "datetime": "2026-11-26T08:00:00+00:00",
+   "options": {
+    "is_local": true,
+    "send_past_recipients_immediately": true
+   }
+  },
+  "smart": false,
+  "incl": [
+   "VMjhb2"
+  ],
+  "excl": [
+   "TriYPe",
+   "UJY6LA",
+   "Ur6Ehr",
+   "VSnBnJ",
+   "VdfJTJ",
+   "W3q7Zy",
+   "W4vNzF",
+   "XTpfNG"
+  ],
+  "subject": "Thank you for cooking with us",
+  "preview": ""
+ },
+ {
+  "id": "01M87S8X06D6GG316KVNFD3D1T",
+  "ch": "email",
+  "name": "HS // Siraats Kitchen // November Email 15: Black Friday: Up to 70% Off Plus Free Gifts // 11.27.2026 INTL",
+  "status": "Queued without Recipients",
+  "send_time": "2026-11-27T08:00:00+00:00",
+  "strategy": {
+   "method": "static",
+   "datetime": "2026-11-27T08:00:00+00:00",
+   "options": {
+    "is_local": true,
+    "send_past_recipients_immediately": true
+   }
+  },
+  "smart": true,
+  "incl": [
+   "VdfJTJ"
+  ],
+  "excl": [
+   "RNuYDm",
+   "UJY6LA",
+   "Ur6Ehr",
+   "VSnBnJ",
+   "W3q7Zy",
+   "W4vNzF",
+   "XTpfNG"
+  ],
+  "subject": "\ud83d\udd25 UP TO 70% OFF + FREE GIFTS \ud83d\udd25",
+  "preview": "BLACK FRIDAY STARTS NOW"
+ },
+ {
+  "id": "01M87S80JBDRFH9QE9HVQZSH7G",
+  "ch": "email",
+  "name": "HS // Siraats Kitchen // November Email 15: Black Friday: Up to 70% Off Plus Free Gifts // 11.27.2026 US",
+  "status": "Queued without Recipients",
+  "send_time": "2026-11-27T08:00:00+00:00",
+  "strategy": {
+   "method": "static",
+   "datetime": "2026-11-27T08:00:00+00:00",
+   "options": {
+    "is_local": true,
+    "send_past_recipients_immediately": true
+   }
+  },
+  "smart": true,
+  "incl": [
+   "RNuYDm"
+  ],
+  "excl": [
+   "UJY6LA",
+   "Ur6Ehr",
+   "VSnBnJ",
+   "VdfJTJ",
+   "W3q7Zy",
+   "W4vNzF",
+   "XTpfNG"
+  ],
+  "subject": "\ud83d\udd25 UP TO 70% OFF + FREE GIFTS \ud83d\udd25",
+  "preview": "BLACK FRIDAY STARTS NOW"
+ },
+ {
+  "id": "01M87QY397T7S4YXT8V7J3NP1V",
+  "ch": "email",
+  "name": "HS // Siraats Kitchen // November Email 14: A Thank You From Our Kitchen // 11.26.2026 INTL",
+  "status": "Draft",
+  "send_time": null,
+  "strategy": {
+   "method": "static",
+   "datetime": "2026-11-24T21:30:18+00:00",
+   "options": {
+    "is_local": true,
+    "send_past_recipients_immediately": false
+   }
+  },
+  "smart": true,
+  "incl": [
+   "VMjhb2"
+  ],
+  "excl": [
+   "TriYPe",
+   "UJY6LA",
+   "Ur6Ehr",
+   "VSnBnJ",
+   "VdfJTJ",
+   "W3q7Zy",
+   "W4vNzF",
+   "XTpfNG"
+  ],
+  "subject": "Thank you for cooking with us",
+  "preview": ""
+ },
+ {
+  "id": "01M87SCN2ASM5H9EV4D2JQTYF3",
+  "ch": "email",
+  "name": "HS // Siraats Kitchen // November Email 19: Cyber Monday: Final Day of the Sale // 11.30.2026 INTL",
+  "status": "Draft",
+  "send_time": null,
+  "strategy": {
+   "method": "static",
+   "datetime": "2026-11-24T23:03:59.617000+00:00",
+   "options": {
+    "is_local": true,
+    "send_past_recipients_immediately": false
+   }
+  },
+  "smart": true,
+  "incl": [
+   "VdfJTJ"
+  ],
+  "excl": [
+   "RNuYDm",
+   "TriYPe",
+   "UJY6LA",
+   "Ur6Ehr",
+   "VSnBnJ",
+   "W3q7Zy",
+   "W4vNzF",
+   "XTpfNG"
+  ],
+  "subject": "\ud83d\udd25 CYBER MONDAY: PFAS-free deals \ud83d\udd25",
+  "preview": "5 FREE gifts + up to 70% off"
+ },
+ {
+  "id": "01M87SBQ03TF6VGFVWE512NXKA",
+  "ch": "email",
+  "name": "HS // Siraats Kitchen // November Email 19: Cyber Monday: Final Day of the Sale // 11.30.2026 US",
+  "status": "Draft",
+  "send_time": null,
+  "strategy": {
+   "method": "static",
+   "datetime": "2026-11-24T23:03:28.821000+00:00",
+   "options": {
+    "is_local": true,
+    "send_past_recipients_immediately": false
+   }
+  },
+  "smart": true,
+  "incl": [
+   "RNuYDm"
+  ],
+  "excl": [
+   "TriYPe",
+   "UJY6LA",
+   "Ur6Ehr",
+   "VSnBnJ",
+   "VdfJTJ",
+   "W3q7Zy",
+   "W4vNzF",
+   "XTpfNG"
+  ],
+  "subject": "\ud83d\udd25 CYBER MONDAY: PFAS-free deals \ud83d\udd25",
+  "preview": "5 FREE gifts + up to 70% off"
+ },
+ {
+  "id": "01M87SATM4378XE9QZPJ7F02R8",
+  "ch": "email",
+  "name": "HS // Siraats Kitchen // November Resend E4: The Thanksgiving Pans at Black Friday Prices // 11.28.2026 INTL",
+  "status": "Draft",
+  "send_time": null,
+  "strategy": {
+   "method": "static",
+   "datetime": "2026-11-24T23:02:59.634000+00:00",
+   "options": {
+    "is_local": true,
+    "send_past_recipients_immediately": false
+   }
+  },
+  "smart": true,
+  "incl": [
+   "VdfJTJ"
+  ],
+  "excl": [
+   "RNuYDm",
+   "TriYPe",
+   "UJY6LA",
+   "Ur6Ehr",
+   "VSnBnJ",
+   "W3q7Zy",
+   "W4vNzF",
+   "XTpfNG"
+  ],
+  "subject": "Your Thanksgiving pans: ON SALE \ud83c\udf57",
+  "preview": "Up to 70% off + 5 FREE gifts"
+ },
+ {
+  "id": "01M87S9XGS6HW86TC33X76PNY0",
+  "ch": "email",
+  "name": "HS // Siraats Kitchen // November Resend E4: The Thanksgiving Pans at Black Friday Prices // 11.28.2026 US",
+  "status": "Draft",
+  "send_time": null,
+  "strategy": {
+   "method": "static",
+   "datetime": "2026-11-24T23:02:29.838000+00:00",
+   "options": {
+    "is_local": true,
+    "send_past_recipients_immediately": false
+   }
+  },
+  "smart": true,
+  "incl": [
+   "RNuYDm"
+  ],
+  "excl": [
+   "TriYPe",
+   "UJY6LA",
+   "Ur6Ehr",
+   "VSnBnJ",
+   "VdfJTJ",
+   "W3q7Zy",
+   "W4vNzF",
+   "XTpfNG"
+  ],
+  "subject": "Your Thanksgiving pans: ON SALE \ud83c\udf57",
+  "preview": "Up to 70% off + 5 FREE gifts"
+ },
+ {
+  "id": "01M7MCB0EV5MPS2Q2P8QP1AQ2W",
+  "ch": "email",
+  "name": "Review catch-up \u00b7 golf 3 \u00b7 19 nov",
+  "status": "Draft",
+  "send_time": null,
+  "strategy": {
+   "method": "static",
+   "datetime": "2026-11-19T14:00:00+00:00",
+   "options": {
+    "is_local": false
+   }
+  },
+  "smart": true,
+  "incl": [
+   "UwFpcT"
+  ],
+  "excl": [],
+  "subject": "Win your purchase amount back",
+  "preview": "Two minutes. One honest review."
+ },
+ {
+  "id": "01M7TZTDZWX5BVFQDNY5VDN69D",
+  "ch": "sms",
+  "name": "HS // Siraats Kitchen // November SMS 6: It's Black Friday // 11.27.2026 INTL",
+  "status": "Queued without Recipients",
+  "send_time": "2026-11-27T13:00:00+00:00",
+  "strategy": {
+   "method": "static",
+   "datetime": "2026-11-27T13:00:00+00:00",
+   "options": {
+    "is_local": true,
+    "send_past_recipients_immediately": false
+   }
+  },
+  "smart": true,
+  "incl": [
+   "VdfJTJ"
+  ],
+  "excl": [
+   "RNuYDm",
+   "SLVWps",
+   "TLqivd",
+   "UJY6LA"
+  ],
+  "subject": "IT'S BLACK FRIDAY!\n\nUp to 70% OFF + 5 FREE gifts with every order. Shop the 6-piece set: https://siraatskitchen.com/prod",
+  "preview": null
+ },
+ {
+  "id": "01M7TZN7P7A3N1KMXQP2YTG7XJ",
+  "ch": "sms",
+  "name": "HS // Siraats Kitchen // November SMS 6: It's Black Friday // 11.27.2026 US",
+  "status": "Queued without Recipients",
+  "send_time": "2026-11-27T09:00:00+00:00",
+  "strategy": {
+   "method": "static",
+   "datetime": "2026-11-27T09:00:00+00:00",
+   "options": {
+    "is_local": true,
+    "send_past_recipients_immediately": false
+   }
+  },
+  "smart": true,
+  "incl": [
+   "VJdd3C"
+  ],
+  "excl": [
+   "R5LmyU",
+   "SLVWps",
+   "UJY6LA",
+   "W92553"
+  ],
+  "subject": "IT'S BLACK FRIDAY!\n\nUp to 70% OFF + 5 FREE gifts + FREE Titanium Hammered Pizza Steel with the 12-piece set: https://sir",
+  "preview": null
+ },
+ {
+  "id": "01M7TYWZ01TNFSRSAKNFDJ5J3J",
+  "ch": "sms",
+  "name": "HS // Siraats Kitchen // November SMS 8: Last Day for These Prices // 11.30.2026 INTL",
+  "status": "Draft",
+  "send_time": null,
+  "strategy": {
+   "method": "static",
+   "datetime": "2026-11-19T22:08:07+00:00",
+   "options": {
+    "is_local": true,
+    "send_past_recipients_immediately": true
+   }
+  },
+  "smart": true,
+  "incl": [
+   "Y7wCYe"
+  ],
+  "excl": [
+   "R5LmyU",
+   "SLVWps",
+   "TLqivd",
+   "UJY6LA"
+  ],
+  "subject": "CYBER MONDAY: Up to 70% off + 5 FREE gifts with every order! \n\nSwap to PFAS-free today with the 6-piece set: https://sir",
+  "preview": null
+ },
+ {
+  "id": "01M7TZFS941HDR9AGGM0APK3A0",
+  "ch": "sms",
+  "name": "HS // Siraats Kitchen // November SMS 7: Buy From the Family Who Made It // 11.28.2026 INTL",
+  "status": "Draft",
+  "send_time": null,
+  "strategy": {
+   "method": "static",
+   "datetime": "2026-11-19T22:08:07+00:00",
+   "options": {
+    "is_local": true,
+    "send_past_recipients_immediately": true
+   }
+  },
+  "smart": true,
+  "incl": [
+   "Y7wCYe"
+  ],
+  "excl": [
+   "R5LmyU",
+   "SLVWps",
+   "TLqivd",
+   "UJY6LA"
+  ],
+  "subject": "It's Small Business Saturday. Shop small, cook PFAS-free. \n\nUp to 70% off + 5 FREE gifts: https://siraatskitchen.com/pro",
+  "preview": null
+ },
+ {
+  "id": "01M7TY68BB4QTA3AJ2RDFX9VCE",
+  "ch": "sms",
+  "name": "HS // Siraats Kitchen // November SMS 9: Final Hours // 11.30.2026 INTL",
+  "status": "Draft",
+  "send_time": null,
+  "strategy": {
+   "method": "static",
+   "datetime": "2026-11-19T22:08:07+00:00",
+   "options": {
+    "is_local": true,
+    "send_past_recipients_immediately": true
+   }
+  },
+  "smart": true,
+  "incl": [
+   "Y7wCYe"
+  ],
+  "excl": [
+   "R5LmyU",
+   "SLVWps",
+   "TLqivd",
+   "UJY6LA"
+  ],
+  "subject": "Don't miss Cyber Monday: pure titanium cookware up to 70% off + 5 FREE gifts with every order. \n\nSave on the 6-piece set",
+  "preview": null
+ },
+ {
+  "id": "01M7TZ9C8T9MPSWJQTDZRQT9EP",
+  "ch": "sms",
+  "name": "HS // Siraats Kitchen // November SMS 7: Buy From the Family Who Made It // 11.28.2026 US",
+  "status": "Draft",
+  "send_time": null,
+  "strategy": {
+   "method": "static",
+   "datetime": "2026-11-19T22:08:07+00:00",
+   "options": {
+    "is_local": true,
+    "send_past_recipients_immediately": true
+   }
+  },
+  "smart": true,
+  "incl": [
+   "Xrxk9P"
+  ],
+  "excl": [
+   "R5LmyU",
+   "SLVWps",
+   "TLqivd",
+   "UJY6LA"
+  ],
+  "subject": "It's Small Business Saturday. Shop small, cook PFAS-free. Up to 70% off + 5 FREE gifts + Pizza Steel w/ the 12-piece set",
+  "preview": null
+ },
+ {
+  "id": "01M7TYJ957B5NYW6RP78RQQCSM",
+  "ch": "sms",
+  "name": "HS // Siraats Kitchen // November SMS 8: Last Day for These Prices // 11.30.2026 US",
+  "status": "Draft",
+  "send_time": null,
+  "strategy": {
+   "method": "static",
+   "datetime": "2026-11-19T22:08:07+00:00",
+   "options": {
+    "is_local": true,
+    "send_past_recipients_immediately": true
+   }
+  },
+  "smart": true,
+  "incl": [
+   "Xrxk9P"
+  ],
+  "excl": [
+   "R5LmyU",
+   "SLVWps",
+   "TLqivd",
+   "UJY6LA"
+  ],
+  "subject": "CYBER MONDAY: Up to 70% off + 5 FREE gifts!\u00a0\n\nPlus, a FREE Titanium Hammered Pizza Steel with the 12-piece set. Get your",
+  "preview": null
+ },
+ {
+  "id": "01M7TXPF2V13Y8SER950BP0XFR",
+  "ch": "sms",
+  "name": "HS // Siraats Kitchen // November SMS 9: Final Hours // 11.30.2026 US",
+  "status": "Draft",
+  "send_time": null,
+  "strategy": {
+   "method": "static",
+   "datetime": "2026-11-19T22:08:07+00:00",
+   "options": {
+    "is_local": true,
+    "send_past_recipients_immediately": true
+   }
+  },
+  "smart": true,
+  "incl": [
+   "Xrxk9P"
+  ],
+  "excl": [
+   "R5LmyU",
+   "SLVWps",
+   "TLqivd",
+   "UJY6LA"
+  ],
+  "subject": "Don't miss Cyber Monday: pure titanium cookware up to 70% off + 5 FREE gifts.\n\nGet a FREE Pizza Steel w/ the 12-piece se",
+  "preview": null
+ },
+ {
+  "id": "01M7N3ZB1RD0255TSFKJ07P1PC",
+  "ch": "sms",
+  "name": "HS // Siraats Kitchen // November SMS 5: Black Friday Week Is Here // 11.23.2026 INTL",
+  "status": "Draft",
+  "send_time": null,
+  "strategy": {
+   "method": "static",
+   "datetime": "2026-11-17T15:57:38+00:00",
+   "options": {
+    "is_local": true,
+    "send_past_recipients_immediately": false
+   }
+  },
+  "smart": true,
+  "incl": [
+   "Y7wCYe"
+  ],
+  "excl": [
+   "R5LmyU",
+   "SLVWps",
+   "TriYPe",
+   "UJY6LA"
+  ],
+  "subject": "Benjamin here. Black Friday Week starts today.\n\nUp to 70% off + 5 FREE gifts with every order: https://siraatskitchen.co",
+  "preview": null
+ }
+]
