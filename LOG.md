@@ -675,3 +675,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 2026-11-26 · US: ook één knop (Shop the Black Friday sale), alle links naar BF-sale met THANKSGIVING10, hero-knop 'CLAIM 70% OFF' groter en hoger (onderste strook met model-'Shop Now' weggesneden). R7fybM + Figma bijgewerkt, test naar Lola.
 - 2026-11-26 · US + INTL: zwart aanbodblok volledig weg, alleen de knop blijft (US 'Shop the Black Friday sale', INTL 'Shop the sale now'). Templates + Figma bijgewerkt, beide tests naar Lola.
 - 2026-11-26 · US + INTL ingekort (Floris): alleen header, hero, verhaal Benjamin, één knop, footer. Templates + Figma bijgewerkt, beide tests naar Lola.
+- 2026-11-26 · Verhalen langer. US eindigt met 'don't tell anyone ... I'm the founder, so what does it matter.' INTL: 'Bon Appétit reached out to us' (Floris bevestigt, met Cynthia besproken) en 'the path to a non-toxic life'. Templates + Figma bijgewerkt, tests naar Lola.
