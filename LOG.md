@@ -681,3 +681,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 2026-11-26 · Verzendtijd beide campagnes op 08:15 lokale tijd gezet (Floris klikt zelf op Schedule).
 - 2026-11-26 · US hero-knop 'CLAIM 70% OFF + 10% OFF' (v8). R7fybM en campagnetemplate RVGmn5 bijgewerkt; US-campagne nog Draft (08:15 lokaal). INTL-campagne staat op Sending (door Floris ingepland).
 - 2026-11-26 · Check na live: US + INTL op Sending (08:15 lokaal, past tz direct), uitsluitingen kloppen, hero-beelden laden (200), links -> /collections/black-friday-sale met discount-cookie THANKSGIVING10/BONAPPETIT10. Morgen BFCM-mails samen doornemen.
+- 2026-11-26 · THANKSGIVING10 + BONAPPETIT10: combineren met productkortingen aan (Intelligems, Aftersell, Apron Duo automatisch actief). Let op: beide codes hebben nu geen einddatum (endsAt leeg) terwijl mails 'ends tonight' zeggen; gevraagd aan Floris.
