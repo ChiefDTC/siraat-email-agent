@@ -18,7 +18,7 @@ Preview: An extra 23% off the 12-piece set, on top of Black Friday. Ends at midn
 ## Body
 Hey {{ first_name|default:'there' }},
 
-It's Black Friday, and I want to start with a thank you. More than 100,000 people now cook on our titanium. A little over a year ago that number was zero.
+It's Black Friday, and our store is going crazy. Orders keep coming in, and I should be the happiest guy in the world.
 
 But honestly? I'm not happy yet.
 
