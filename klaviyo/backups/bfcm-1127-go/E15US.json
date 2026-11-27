@@ -1,0 +1,130 @@
+{
+ "data": {
+  "type": "campaign",
+  "id": "01M87S80JBDRFH9QE9HVQZSH7G",
+  "attributes": {
+   "name": "HS // Siraats Kitchen // November Email 15: Black Friday: Up to 70% Off Plus Free Gifts // 11.27.2026 US",
+   "status": "Sending",
+   "archived": false,
+   "audiences": {
+    "included": [
+     "RNuYDm"
+    ],
+    "excluded": [
+     "UJY6LA",
+     "UfyDPs",
+     "Ur6Ehr",
+     "VSnBnJ",
+     "VdfJTJ",
+     "W3q7Zy",
+     "W4vNzF",
+     "WFqvwp",
+     "XTpfNG"
+    ]
+   },
+   "send_options": {
+    "use_smart_sending": false,
+    "ignore_unsubscribes": false
+   },
+   "tracking_options": {
+    "add_tracking_params": true,
+    "custom_tracking_params": [],
+    "is_tracking_clicks": true,
+    "is_tracking_opens": true
+   },
+   "send_strategy": {
+    "method": "static",
+    "options_static": {
+     "datetime": "2026-11-27T08:00:00+00:00",
+     "is_local": true,
+     "send_past_recipients_immediately": true
+    },
+    "options_throttled": null,
+    "options_sto": null
+   },
+   "created_at": "2026-11-24T22:01:27.886482+00:00",
+   "scheduled_at": "2026-11-26T15:15:11.818586+00:00",
+   "updated_at": "2026-11-26T18:45:14.916584+00:00",
+   "send_time": "2026-11-27T08:00:00+00:00"
+  },
+  "relationships": {
+   "campaign-messages": {
+    "data": [
+     {
+      "type": "campaign-message",
+      "id": "01M87S80JNSKT6KPJA4R4D4AJC"
+     }
+    ],
+    "links": {
+     "self": "https://a.klaviyo.com/api/campaigns/01M87S80JBDRFH9QE9HVQZSH7G/relationships/campaign-messages/",
+     "related": "https://a.klaviyo.com/api/campaigns/01M87S80JBDRFH9QE9HVQZSH7G/campaign-messages/"
+    }
+   },
+   "tags": {
+    "links": {
+     "self": "https://a.klaviyo.com/api/campaigns/01M87S80JBDRFH9QE9HVQZSH7G/relationships/tags/",
+     "related": "https://a.klaviyo.com/api/campaigns/01M87S80JBDRFH9QE9HVQZSH7G/tags/"
+    }
+   }
+  },
+  "links": {
+   "self": "https://a.klaviyo.com/api/campaigns/01M87S80JBDRFH9QE9HVQZSH7G/"
+  }
+ },
+ "included": [
+  {
+   "type": "campaign-message",
+   "id": "01M87S80JNSKT6KPJA4R4D4AJC",
+   "attributes": {
+    "label": "Email",
+    "channel": "email",
+    "content": {
+     "subject": "\ud83d\udd25 UP TO 70% OFF + FREE GIFTS \ud83d\udd25",
+     "preview_text": "BLACK FRIDAY STARTS NOW",
+     "from_email": "send@siraatskitchen.com",
+     "from_label": "SiraatsKitchen",
+     "reply_to_email": null,
+     "cc_email": null,
+     "bcc_email": null
+    },
+    "send_times": [
+     {
+      "datetime": "2026-11-27T08:00:00+00:00",
+      "is_local": false
+     }
+    ],
+    "render_options": null,
+    "created_at": "2026-11-24T22:01:27.895955+00:00",
+    "updated_at": "2026-11-26T00:35:13.706705+00:00"
+   },
+   "relationships": {
+    "campaign": {
+     "data": {
+      "type": "campaign",
+      "id": "01M87S80JBDRFH9QE9HVQZSH7G"
+     },
+     "links": {
+      "self": "https://a.klaviyo.com/api/campaign-messages/01M87S80JNSKT6KPJA4R4D4AJC/relationships/campaign/",
+      "related": "https://a.klaviyo.com/api/campaign-messages/01M87S80JNSKT6KPJA4R4D4AJC/campaign/"
+     }
+    },
+    "template": {
+     "data": {
+      "type": "template",
+      "id": "WAdHeU"
+     },
+     "links": {
+      "self": "https://a.klaviyo.com/api/campaign-messages/01M87S80JNSKT6KPJA4R4D4AJC/relationships/template/",
+      "related": "https://a.klaviyo.com/api/campaign-messages/01M87S80JNSKT6KPJA4R4D4AJC/template/"
+     }
+    }
+   },
+   "links": {
+    "self": "https://a.klaviyo.com/api/campaign-messages/01M87S80JNSKT6KPJA4R4D4AJC/"
+   }
+  }
+ ],
+ "links": {
+  "self": "https://a.klaviyo.com/api/campaigns/01M87S80JBDRFH9QE9HVQZSH7G?include=campaign-messages"
+ }
+}

@@ -1,0 +1,131 @@
+{
+ "data": {
+  "type": "campaign",
+  "id": "01M8AQDHEGAPS7GA9GJBXVBZH4",
+  "attributes": {
+   "name": "HS // Siraats Kitchen // November Email 17: A Note Before Black Friday Ends // 11.27.2026 US",
+   "status": "Sending",
+   "archived": false,
+   "audiences": {
+    "included": [
+     "TntB6g"
+    ],
+    "excluded": [
+     "UJY6LA",
+     "UfyDPs",
+     "Ur6Ehr",
+     "VSnBnJ",
+     "VdfJTJ",
+     "W3q7Zy",
+     "W4vNzF",
+     "W92553",
+     "WFqvwp",
+     "XTpfNG"
+    ]
+   },
+   "send_options": {
+    "use_smart_sending": false,
+    "ignore_unsubscribes": false
+   },
+   "tracking_options": {
+    "add_tracking_params": true,
+    "custom_tracking_params": [],
+    "is_tracking_clicks": true,
+    "is_tracking_opens": true
+   },
+   "send_strategy": {
+    "method": "static",
+    "options_static": {
+     "datetime": "2026-11-27T18:00:00+00:00",
+     "is_local": true,
+     "send_past_recipients_immediately": true
+    },
+    "options_throttled": null,
+    "options_sto": null
+   },
+   "created_at": "2026-11-26T01:27:15.156121+00:00",
+   "scheduled_at": "2026-11-26T15:15:50.661241+00:00",
+   "updated_at": "2026-11-27T04:45:23.189360+00:00",
+   "send_time": "2026-11-27T18:00:00+00:00"
+  },
+  "relationships": {
+   "campaign-messages": {
+    "data": [
+     {
+      "type": "campaign-message",
+      "id": "01M8AQDHEWQM3CKEWWA7XR8995"
+     }
+    ],
+    "links": {
+     "self": "https://a.klaviyo.com/api/campaigns/01M8AQDHEGAPS7GA9GJBXVBZH4/relationships/campaign-messages/",
+     "related": "https://a.klaviyo.com/api/campaigns/01M8AQDHEGAPS7GA9GJBXVBZH4/campaign-messages/"
+    }
+   },
+   "tags": {
+    "links": {
+     "self": "https://a.klaviyo.com/api/campaigns/01M8AQDHEGAPS7GA9GJBXVBZH4/relationships/tags/",
+     "related": "https://a.klaviyo.com/api/campaigns/01M8AQDHEGAPS7GA9GJBXVBZH4/tags/"
+    }
+   }
+  },
+  "links": {
+   "self": "https://a.klaviyo.com/api/campaigns/01M8AQDHEGAPS7GA9GJBXVBZH4/"
+  }
+ },
+ "included": [
+  {
+   "type": "campaign-message",
+   "id": "01M8AQDHEWQM3CKEWWA7XR8995",
+   "attributes": {
+    "label": "Email",
+    "channel": "email",
+    "content": {
+     "subject": "A note before the day ends",
+     "preview_text": "",
+     "from_email": "send@siraatskitchen.com",
+     "from_label": "SiraatsKitchen",
+     "reply_to_email": null,
+     "cc_email": null,
+     "bcc_email": null
+    },
+    "send_times": [
+     {
+      "datetime": "2026-11-27T18:00:00+00:00",
+      "is_local": false
+     }
+    ],
+    "render_options": null,
+    "created_at": "2026-11-26T01:27:15.167155+00:00",
+    "updated_at": "2026-11-26T01:27:17.493573+00:00"
+   },
+   "relationships": {
+    "campaign": {
+     "data": {
+      "type": "campaign",
+      "id": "01M8AQDHEGAPS7GA9GJBXVBZH4"
+     },
+     "links": {
+      "self": "https://a.klaviyo.com/api/campaign-messages/01M8AQDHEWQM3CKEWWA7XR8995/relationships/campaign/",
+      "related": "https://a.klaviyo.com/api/campaign-messages/01M8AQDHEWQM3CKEWWA7XR8995/campaign/"
+     }
+    },
+    "template": {
+     "data": {
+      "type": "template",
+      "id": "QS72WQ"
+     },
+     "links": {
+      "self": "https://a.klaviyo.com/api/campaign-messages/01M8AQDHEWQM3CKEWWA7XR8995/relationships/template/",
+      "related": "https://a.klaviyo.com/api/campaign-messages/01M8AQDHEWQM3CKEWWA7XR8995/template/"
+     }
+    }
+   },
+   "links": {
+    "self": "https://a.klaviyo.com/api/campaign-messages/01M8AQDHEWQM3CKEWWA7XR8995/"
+   }
+  }
+ ],
+ "links": {
+  "self": "https://a.klaviyo.com/api/campaigns/01M8AQDHEGAPS7GA9GJBXVBZH4?include=campaign-messages"
+ }
+}

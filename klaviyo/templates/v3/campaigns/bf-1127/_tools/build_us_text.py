@@ -27,13 +27,13 @@ body = (p(f'Hey {FIRST},') +
     head(f'{a("THE 12-PIECE SET", L(SET,"set-title"))}: an extra 23% off. <s>$649</s>, now $499.') +
     p('That&rsquo;s 76% off the regular price of $2,047. Here&rsquo;s what&rsquo;s inside:', pad='0 0 6px 0') + ul +
     p('About $83 a piece, lids included.') +
-    head(f'{a("THE HAMMERED PAN PRO STANDARD (11&quot;)", L(STD,"std-title"))}: an extra 15% off. <s>$144</s>, now $122.40.') +
+    head(f'{a("THE HAMMERED PAN PRO STANDARD (11&quot;)", L(STD,"std-title"))}: an extra 15% off. <s>$149</s>, now $126.65.') +
     head(f'{a("THE WOK PAN PRO", L(WOK,"wok-title"))} and {a("THE DEEP PAN PRO", L(DEEP,"deep-title"))}: an extra 10% off. From $107.10.') +
     p('Every discount is already applied when you tap a link in this email. No code needed.', pad='10px 0 14px 0') +
     p('If you ask me, take the set. It&rsquo;s the only way to get our hammered titanium pots. The pattern goes all the way into the pots, not just the pans.') +
     p(f'&#128073; {a("Get my 12-piece set for $499", L(SET, "button"))}', pad='4px 0 4px 0') +
     p('Already applied. Free shipping. 30-day returns. 100,000+ happy customers.', 14, 21, MUTED, '0 0 18px 0') +
-    p(f'Or pick one pan: {a("Pan Pro Standard, $122.40", L(STD,"pick"))} &middot; {a("Wok Pan Pro", L(WOK,"pick"))} &middot; {a("Deep Pan Pro", L(DEEP,"pick"))}') +
+    p(f'Or pick one pan: {a("Pan Pro Standard, $126.65", L(STD,"pick"))} &middot; {a("Wok Pan Pro", L(WOK,"pick"))} &middot; {a("Deep Pan Pro", L(DEEP,"pick"))}') +
     p('These prices end at midnight ET. After that I switch them off, because I can&rsquo;t keep them this low.') +
     signoff() +
     p(f'P.S. Every pan and pot has a pure titanium cooking surface with no coatings. Nothing to wear off, which is why it&rsquo;s covered for 75 years. {a("Get the set for $499", L(SET,"ps"))}.', 15, 23, MUTED, '18px 0 0 0'))

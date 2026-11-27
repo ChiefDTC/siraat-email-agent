@@ -1,0 +1,126 @@
+{
+ "data": {
+  "type": "campaign",
+  "id": "01M8DEFHM6KQ6MZR4YYSRH94D3",
+  "attributes": {
+   "name": "BF 27 nov \u00b7 US 08:00 \u00b7 tekstbrief Benjamin ($499 set)",
+   "status": "Draft",
+   "archived": false,
+   "audiences": {
+    "included": [
+     "RNuYDm"
+    ],
+    "excluded": [
+     "TriYPe",
+     "UJY6LA",
+     "UfyDPs",
+     "Ur6Ehr",
+     "VSnBnJ",
+     "VdfJTJ",
+     "W3q7Zy",
+     "W4vNzF",
+     "WFqvwp",
+     "XTpfNG"
+    ]
+   },
+   "send_options": {
+    "use_smart_sending": false,
+    "ignore_unsubscribes": false
+   },
+   "tracking_options": {
+    "add_tracking_params": false,
+    "custom_tracking_params": [],
+    "is_tracking_clicks": true,
+    "is_tracking_opens": true
+   },
+   "send_strategy": {
+    "method": "static",
+    "options_static": {
+     "datetime": "2026-11-27T08:00:00+00:00",
+     "is_local": true,
+     "send_past_recipients_immediately": false
+    },
+    "options_throttled": null,
+    "options_sto": null
+   },
+   "created_at": "2026-11-27T02:48:46.985731+00:00",
+   "scheduled_at": null,
+   "updated_at": "2026-11-27T02:48:47.636196+00:00",
+   "send_time": null
+  },
+  "relationships": {
+   "campaign-messages": {
+    "data": [
+     {
+      "type": "campaign-message",
+      "id": "01M8DEFHMHD4CD0TX8BH8TCA5B"
+     }
+    ],
+    "links": {
+     "self": "https://a.klaviyo.com/api/campaigns/01M8DEFHM6KQ6MZR4YYSRH94D3/relationships/campaign-messages/",
+     "related": "https://a.klaviyo.com/api/campaigns/01M8DEFHM6KQ6MZR4YYSRH94D3/campaign-messages/"
+    }
+   },
+   "tags": {
+    "links": {
+     "self": "https://a.klaviyo.com/api/campaigns/01M8DEFHM6KQ6MZR4YYSRH94D3/relationships/tags/",
+     "related": "https://a.klaviyo.com/api/campaigns/01M8DEFHM6KQ6MZR4YYSRH94D3/tags/"
+    }
+   }
+  },
+  "links": {
+   "self": "https://a.klaviyo.com/api/campaigns/01M8DEFHM6KQ6MZR4YYSRH94D3/"
+  }
+ },
+ "included": [
+  {
+   "type": "campaign-message",
+   "id": "01M8DEFHMHD4CD0TX8BH8TCA5B",
+   "attributes": {
+    "label": "Tekstbrief",
+    "channel": "email",
+    "content": {
+     "subject": "The biggest discount we've ever given",
+     "preview_text": "An extra 23% off the 12-piece set, on top of Black Friday. Ends at midnight.",
+     "from_email": "send@siraatskitchen.com",
+     "from_label": "Benjamin from Siraat",
+     "reply_to_email": null,
+     "cc_email": null,
+     "bcc_email": null
+    },
+    "send_times": [],
+    "render_options": null,
+    "created_at": "2026-11-27T02:48:46.995906+00:00",
+    "updated_at": "2026-11-27T02:48:47.473649+00:00"
+   },
+   "relationships": {
+    "campaign": {
+     "data": {
+      "type": "campaign",
+      "id": "01M8DEFHM6KQ6MZR4YYSRH94D3"
+     },
+     "links": {
+      "self": "https://a.klaviyo.com/api/campaign-messages/01M8DEFHMHD4CD0TX8BH8TCA5B/relationships/campaign/",
+      "related": "https://a.klaviyo.com/api/campaign-messages/01M8DEFHMHD4CD0TX8BH8TCA5B/campaign/"
+     }
+    },
+    "template": {
+     "data": {
+      "type": "template",
+      "id": "TmkfmA"
+     },
+     "links": {
+      "self": "https://a.klaviyo.com/api/campaign-messages/01M8DEFHMHD4CD0TX8BH8TCA5B/relationships/template/",
+      "related": "https://a.klaviyo.com/api/campaign-messages/01M8DEFHMHD4CD0TX8BH8TCA5B/template/"
+     }
+    }
+   },
+   "links": {
+    "self": "https://a.klaviyo.com/api/campaign-messages/01M8DEFHMHD4CD0TX8BH8TCA5B/"
+   }
+  }
+ ],
+ "links": {
+  "self": "https://a.klaviyo.com/api/campaigns/01M8DEFHM6KQ6MZR4YYSRH94D3?include=campaign-messages"
+ }
+}

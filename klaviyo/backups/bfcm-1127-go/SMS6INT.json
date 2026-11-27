@@ -1,0 +1,118 @@
+{
+ "data": {
+  "type": "campaign",
+  "id": "01M7TZTDZWX5BVFQDNY5VDN69D",
+  "attributes": {
+   "name": "HS // Siraats Kitchen // November SMS 6: It's Black Friday // 11.27.2026 INTL",
+   "status": "Sending",
+   "archived": false,
+   "audiences": {
+    "included": [
+     "VdfJTJ"
+    ],
+    "excluded": [
+     "RNuYDm",
+     "SLVWps",
+     "TLqivd",
+     "UJY6LA"
+    ]
+   },
+   "send_options": {
+    "use_smart_sending": true
+   },
+   "tracking_options": {
+    "add_tracking_params": true,
+    "custom_tracking_params": []
+   },
+   "send_strategy": {
+    "method": "static",
+    "options_static": {
+     "datetime": "2026-11-27T13:00:00+00:00",
+     "is_local": true,
+     "send_past_recipients_immediately": false
+    },
+    "options_throttled": null,
+    "options_sto": null
+   },
+   "created_at": "2026-11-19T22:46:15.295630+00:00",
+   "scheduled_at": "2026-11-26T04:33:57.848933+00:00",
+   "updated_at": "2026-11-27T01:45:11.662561+00:00",
+   "send_time": "2026-11-27T13:00:00+00:00"
+  },
+  "relationships": {
+   "campaign-messages": {
+    "data": [
+     {
+      "type": "campaign-message",
+      "id": "01M7TZTE2MPEZSSHRQC6BPAXK0"
+     }
+    ],
+    "links": {
+     "self": "https://a.klaviyo.com/api/campaigns/01M7TZTDZWX5BVFQDNY5VDN69D/relationships/campaign-messages/",
+     "related": "https://a.klaviyo.com/api/campaigns/01M7TZTDZWX5BVFQDNY5VDN69D/campaign-messages/"
+    }
+   },
+   "tags": {
+    "links": {
+     "self": "https://a.klaviyo.com/api/campaigns/01M7TZTDZWX5BVFQDNY5VDN69D/relationships/tags/",
+     "related": "https://a.klaviyo.com/api/campaigns/01M7TZTDZWX5BVFQDNY5VDN69D/tags/"
+    }
+   }
+  },
+  "links": {
+   "self": "https://a.klaviyo.com/api/campaigns/01M7TZTDZWX5BVFQDNY5VDN69D/"
+  }
+ },
+ "included": [
+  {
+   "type": "campaign-message",
+   "id": "01M7TZTE2MPEZSSHRQC6BPAXK0",
+   "attributes": {
+    "label": "HS // Siraats Kitchen // November SMS 6: It's Black Friday // 11.27.2026 INTL",
+    "channel": "sms",
+    "content": {
+     "body": "IT'S BLACK FRIDAY!\n\nUp to 70% OFF + 5 FREE gifts with every order. Shop the 6-piece set: https://siraatskitchen.com/products/titanium-hammered-pan-set-with-lids-6-pcs",
+     "media_url": null
+    },
+    "send_times": [
+     {
+      "datetime": "2026-11-27T13:00:00+00:00",
+      "is_local": false
+     }
+    ],
+    "render_options": {
+     "shorten_links": true,
+     "add_org_prefix": true,
+     "add_info_link": true,
+     "add_opt_out_language": true
+    },
+    "created_at": "2026-11-19T22:46:15.383392+00:00",
+    "updated_at": "2026-11-26T04:32:56.058316+00:00"
+   },
+   "relationships": {
+    "campaign": {
+     "data": {
+      "type": "campaign",
+      "id": "01M7TZTDZWX5BVFQDNY5VDN69D"
+     },
+     "links": {
+      "self": "https://a.klaviyo.com/api/campaign-messages/01M7TZTE2MPEZSSHRQC6BPAXK0/relationships/campaign/",
+      "related": "https://a.klaviyo.com/api/campaign-messages/01M7TZTE2MPEZSSHRQC6BPAXK0/campaign/"
+     }
+    },
+    "template": {
+     "links": {
+      "self": "https://a.klaviyo.com/api/campaign-messages/01M7TZTE2MPEZSSHRQC6BPAXK0/relationships/template/",
+      "related": "https://a.klaviyo.com/api/campaign-messages/01M7TZTE2MPEZSSHRQC6BPAXK0/template/"
+     }
+    }
+   },
+   "links": {
+    "self": "https://a.klaviyo.com/api/campaign-messages/01M7TZTE2MPEZSSHRQC6BPAXK0/"
+   }
+  }
+ ],
+ "links": {
+  "self": "https://a.klaviyo.com/api/campaigns/01M7TZTDZWX5BVFQDNY5VDN69D?include=campaign-messages"
+ }
+}
