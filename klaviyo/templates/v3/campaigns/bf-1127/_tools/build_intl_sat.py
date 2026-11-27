@@ -36,7 +36,7 @@ intro=row(p(f'Hey {FIRST},')+p('Black Friday is almost over, and so is your extr
           p('Not showing at checkout? Use code <b>BFEXTRA10</b>.',15,23,MUTED),'28px 40px 0 40px')
 outro=row('<div style="padding:6px 0 10px 0;">'+btn('Shop the full sale + extra 10%',L(SALE,'bottom'))+'</div>'+
           p('Free shipping, duties paid. 30-day returns. 100,000+ happy customers.',13,19,MUTED,'0 0 6px 0','center'),'10px 40px 34px 40px')
-h=shell('Last chance: extra 10% off everything','Your extra 10% on top of up to 70% off is almost gone. Already applied.',hero+intro+grid+outro)
+h=shell('Last chance: extra 10% off everything','I just extended the Black Friday sale with a few more hours..',hero+intro+grid+outro)
 h=h.replace('@media only screen and (max-width:620px){','@media only screen and (max-width:620px){.gcol{display:block!important;width:100%!important;padding:0 0 14px 0!important}')
 assert '—' not in h and '$' not in re.sub(r'\{\{.*?\}\}|\{%.*?%\}','',h)
 open(os.path.join(C,'intl-1128-lastchance.html'),'w').write(h)
