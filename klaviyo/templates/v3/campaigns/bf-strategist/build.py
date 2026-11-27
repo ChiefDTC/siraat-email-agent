@@ -8,8 +8,10 @@ g = {'__file__': os.path.join(BT, 'build.py')}; exec(src, g)
 p, a, btn, row, signoff, shell, FIRST, MUTED, SANS, SERIF, INK, RED, IMG12, LINE, PANEL = (g[k] for k in
  ('p','a','btn','row','signoff','shell','FIRST','MUTED','SANS','SERIF','INK','RED','IMG12','LINE','PANEL'))
 SITE = 'https://siraatskitchen.com'
-def L(path, c): return f'{SITE}{path}?utm_source=klaviyo&utm_medium=email&utm_campaign=bf-strategist-12pc&utm_content={c}'
 SET = '/products/titanium-hammered-cookware-set'
+def L(path, c):
+    pre = f'{SITE}/discount/SET30?redirect={path}&' if path == SET else f'{SITE}{path}?'
+    return f'{pre}utm_source=klaviyo&utm_medium=email&utm_campaign=bf-strategist-12pc&utm_content={c}'
 LAB = '/pages/third-party-testing'
 GOLD = '#F2C14E'
 hero = (f'<tr><td bgcolor="#111111" style="background-color:#111111;padding:34px 30px 10px 30px;text-align:center;font-family:{SANS};">'
@@ -20,7 +22,7 @@ hero = (f'<tr><td bgcolor="#111111" style="background-color:#111111;padding:34px
         f'</td></tr>\n'
         f'<tr><td bgcolor="#111111" style="background-color:#111111;padding:16px 30px 0 30px;"><a href="{L(SET,"hero-img")}"><img src="{IMG12}" width="540" alt="The 12-Piece Titanium Hammered Set" style="display:block;width:100%;max-width:540px;height:auto;border:0;border-radius:6px;"></a></td></tr>\n'
         f'<tr><td bgcolor="#111111" style="background-color:#111111;padding:24px 40px 36px 40px;">' + btn('Grab my set', L(SET,'hero-btn')) +
-        f'<div style="font-family:{SANS};font-size:13px;line-height:19px;color:#BDB8B0;text-align:center;padding-top:12px;">Free shipping. 30-day returns. 100,000+ happy customers.</div></td></tr>\n')
+        f'<div style="font-family:{SANS};font-size:13px;line-height:19px;color:#BDB8B0;text-align:center;padding-top:12px;">30% already applied. Free shipping. 30-day returns. 100,000+ happy customers.</div></td></tr>\n')
 story = row(
     p(f'Hey {FIRST},') +
     p('Go to your kitchen. Pull out the frying pan you use every morning. The one you’ve had for three, five, maybe eight years.') +
@@ -59,7 +61,7 @@ compare = row(f'<div style="font-family:{SERIF};font-size:30px;line-height:36px;
 deal = (f'<tr><td bgcolor="#111111" style="background-color:#111111;padding:34px 40px 36px 40px;font-family:{SANS};">'
         f'<div style="font-size:13px;letter-spacing:2.5px;font-weight:800;color:{GOLD};text-align:center;">THIS DEAL WON’T LAST</div>'
         f'<div style="font-size:17px;line-height:27px;color:#FFFFFF;padding-top:14px;">Black Friday isn’t about margin for me. It’s about getting pure titanium into as many kitchens as possible before another year of coated pans goes by.</div>'
-        f'<div style="font-size:17px;line-height:27px;color:#FFFFFF;padding-top:12px;">So the 12-piece set is 30% off, with 5 free gifts. This price ends [END DATE]. After that, it’s back to the regular sale price.</div>'
+        f'<div style="font-size:17px;line-height:27px;color:#FFFFFF;padding-top:12px;">So the 12-piece set is 30% off, with 5 free gifts. Already applied when you tap a button, no code needed. This price ends Cyber Monday at midnight ET. After that, it’s back to $649.</div>'
         f'<div style="font-size:16px;line-height:24px;color:#BDB8B0;padding-top:12px;">Benjamin, Founder</div>'
         f'<div style="padding-top:22px;">' + btn('Claim 30% off + 5 free gifts', L(SET,'deal-btn')) + '</div>'
         f'<div style="font-size:13px;line-height:20px;color:#BDB8B0;text-align:center;padding-top:14px;">&#10003; Tested PFAS-free (report no. 25895) &middot; &#10003; 75-year warranty &middot; &#10003; 30-day returns &middot; &#10003; Free shipping</div>'
