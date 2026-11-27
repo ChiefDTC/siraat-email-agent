@@ -1,5 +1,5 @@
 """US vr 27 nov 08:00 (vervangt HS Email 15 US): tekstbrief Benjamin, copy v4 uit ../us-0800-text-copy.md.
-Links zonder code (aanname: automatische kortingen per product, US, tot middernacht ET). Op verzoek Floris 27 nov: platte tekst, geen header/logo/footer, alleen minimale afmeldregel.
+Links met code per product (BF499, PANPRO15, WOKDEEP10), alleen via de mail. Op verzoek Floris 27 nov: platte tekst, geen header/logo/footer, alleen minimale afmeldregel.
 Gebruik: python3 -I build_us_text.py"""
 import os, re
 T = os.path.dirname(os.path.abspath(__file__)); C = os.path.dirname(T)
@@ -8,7 +8,9 @@ g = {'__file__': os.path.join(T, 'build.py')}; exec(src, g)
 p, a, btn, row, signoff, shell, FIRST, MUTED, SANS, INK = (g[k] for k in ('p','p','btn','row','signoff','shell','FIRST','MUTED','SANS','INK'))
 SITE = 'https://siraatskitchen.com'
 def a(t, href): return f'<a href="{href}" style="color:#1155CC;text-decoration:underline;">{t}</a>'
-def L(path, c): return f'{SITE}{path}?utm_source=klaviyo&utm_medium=email&utm_campaign=bf-1127-us-0800-text&utm_content={c}'
+CODE = {'/products/titanium-hammered-cookware-set': 'BF499', '/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern': 'PANPRO15',
+        '/products/titanium-hammered-wok-pan-pro': 'WOKDEEP10', '/products/titanium-hammered-deep-pan-pro': 'WOKDEEP10'}
+def L(path, c): return f'{SITE}/discount/{CODE[path]}?redirect={path}&utm_source=klaviyo&utm_medium=email&utm_campaign=bf-1127-us-0800-text&utm_content={c}'
 SET = '/products/titanium-hammered-cookware-set'
 STD = '/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern'
 WOK = '/products/titanium-hammered-wok-pan-pro'
@@ -32,7 +34,7 @@ body = (p(f'Hey {FIRST},') +
     p('Every discount is already applied when you tap a link in this email. No code needed.', pad='10px 0 14px 0') +
     p('If you ask me, take the set. It&rsquo;s the only way to get our hammered titanium pots. The pattern goes all the way into the pots, not just the pans.') +
     p(f'&#128073; {a("Get my 12-piece set for $499", L(SET, "button"))}', pad='4px 0 4px 0') +
-    p('Already applied. Free shipping. 30-day returns. 100,000+ happy customers.', 14, 21, MUTED, '0 0 18px 0') +
+    p('Already applied. Not showing? Use code BF499 at checkout. Free shipping. 30-day returns. 100,000+ happy customers.', 14, 21, MUTED, '0 0 18px 0') +
     p(f'Or pick one pan: {a("Pan Pro Standard, $126.65", L(STD,"pick"))} &middot; {a("Wok Pan Pro", L(WOK,"pick"))} &middot; {a("Deep Pan Pro", L(DEEP,"pick"))}') +
     p('These prices end at midnight ET. After that I switch them off, because I can&rsquo;t keep them this low.') +
     signoff() +

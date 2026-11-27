@@ -1,5 +1,5 @@
 # US vr 27 nov 08:00 · tekstbrief Benjamin, v4
-Status: copy-concept, niets in Klaviyo/Shopify gewijzigd.
+Status 27 nov 13:00 UTC: alleen via mail, codes in links: BF499 (set $150), PANPRO15, WOKDEEP10 (US-markt, tot 28 nov 05:00 UTC). Automatische kortingen gedeactiveerd.
 Aanbod (tot middernacht ET, already applied):
 - 12-delige set $649 -> $499 ($150 = 23% extra; 76% onder compare-at $2,047)
 - Hammered Pan Pro Standard 11" $149 -> $126.65 in US-markt (15% extra; compare $485)
