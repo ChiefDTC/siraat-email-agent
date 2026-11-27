@@ -728,3 +728,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 2026-11-27 23:15 UTC: Floris plande INTL last-chance (01M8FKMQSHMSMY4AZM5RV0TG96) in: 28 nov 10:00 recipient local, send immediately, ~59.407 ontv. Gecontroleerd: onderwerp/preview/afzender, 6 producten, BFEXTRA10, geen $, geen 12-pc.
 - 2026-11-27 23:07 UTC: SMS INTL za 19:00 lokaal 'last hours' als draft via nieuwe API (variant-body): 01M8FM5SK1DKFBEV0AYSG3QA6K, R5LmyU (INT SMS), excl. US, 14d-kopers, wacht op order, Texas. Floris controleert tekst in UI (eerdere API-bodies kwamen niet aan) en plant 19:00 lokaal.
 - 2026-11-27 23:10 UTC: SMS INTL za avond tekst (Floris): 'Siraat: Your extra 10% is still pending.. including the 70% off. Already applied: {BFEXTRA10-link}'.
+- 2026-11-27 23:21 UTC: SMS INTL 'extra 10% still pending' (01M8FM5SPY1M9VM9JDHVF6KNRY) ingepland door Floris: za 28 nov 17:00 recipient local, R5LmyU, excl. US/Texas/14d/wacht op order, smart sending uit.
