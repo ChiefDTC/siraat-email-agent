@@ -10,10 +10,10 @@ def L(path,c): return f'{SITE}/discount/BFEXTRA10?redirect={path}&utm_source=kla
 IMG=lambda u: u.split('?')[0]+'?width=560&height=560&crop=center&format=pjpg'
 P=[('6-Piece Set','Three pans, three lids. The set most people start with.','/products/titanium-hammered-pan-set-with-lids-6-pcs','https://cdn.shopify.com/s/files/1/0907/0877/1156/files/6pcscookwareset.webp'),
    ('Pan Pro Standard','The pan Siraat started with. Eggs to steak.','/products/original-siraat-100-pure-titanium-pan-with-hammered-pattern','https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Titanium_hammered_pan_pro_standard_b69d1fc5-43d8-40a5-9ad7-523bdddc54d4.webp'),
-   ('Pan Pro Large','Big enough for a crowd. Even heat edge to edge.','/products/titanium-hammered-pan-pro-large','https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Titanium_hammered_pan_pro_large_6d4ce352-c4ff-48c9-b4d1-170232007e4f.webp'),
-   ('Deep Pan Pro','For braises, sauces and Sunday stews.','/products/titanium-hammered-deep-pan-pro','https://cdn.shopify.com/s/files/1/0907/0877/1156/files/DeepHammeredPan.webp'),
    ('Wok Pan Pro','High sides, fast heat. Stir-fry night, sorted.','/products/titanium-hammered-wok-pan-pro','https://cdn.shopify.com/s/files/1/0907/0877/1156/files/siraat-wok-real-side.jpg'),
-   ('Roasting Pan','Rack included. Ready for the holiday table.','/products/titanium-hammered-roasting-pan','https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Roastingpanwithrack.webp')]
+   ('Deep Pan Pro','For braises, sauces and Sunday stews.','/products/titanium-hammered-deep-pan-pro','https://cdn.shopify.com/s/files/1/0907/0877/1156/files/DeepHammeredPan.webp'),
+   ('Roasting Pan','Rack included. Ready for the holiday table.','/products/titanium-hammered-roasting-pan','https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Roastingpanwithrack.webp'),
+   ('Titanium Cutting Board','Anti-microbial titanium. No plastic in your food prep.','/products/titanium-cutting-board-v2','https://cdn.shopify.com/s/files/1/0907/0877/1156/files/Titanium_Cutting_Board_08.jpg')]
 def card(t,d,path,img,i):
     k=re.sub(r'\W+','-',t.lower())
     return (f'<td class="gcol" width="50%" valign="top" style="width:50%;padding:0 6px 14px 6px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#F1EEE7" style="background:#F1EEE7;border-radius:8px;">'
