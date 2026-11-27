@@ -8,7 +8,7 @@ src = open(os.path.join(BT, 'build.py')).read().split("os.makedirs(os.path.join(
 g = {'__file__': os.path.join(BT, 'build.py')}; exec(src, g)
 p, btn, row, shell, MUTED, SANS, INK, RED, IMG12, LINE, PANEL = (g[k] for k in ('p','btn','row','shell','MUTED','SANS','INK','RED','IMG12','LINE','PANEL'))
 SITE='https://siraatskitchen.com'; SET='/products/titanium-hammered-cookware-set'
-def L(camp,c): return f'{SITE}/discount/SET499?redirect={SET}&utm_source=klaviyo&utm_medium=email&utm_campaign={camp}&utm_content={c}'
+def L(camp,c): return f'{SITE}/discount/BF499?redirect={SET}&utm_source=klaviyo&utm_medium=email&utm_campaign={camp}&utm_content={c}'
 def C(t,size=16,w='400',color=INK,pad='0 0 10px 0'): return f'<div style="font-family:{SANS};font-size:{size}px;line-height:{int(size*1.45)}px;font-weight:{w};color:{color};text-align:center;padding:{pad};">{t}</div>'
 def Hd(t): return f'<div style="font-family:{SANS};font-size:24px;line-height:30px;font-weight:900;color:{INK};padding:6px 0 12px 0;">{t}</div>'
 def ul(items): return '<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 12px 0;">'+''.join(f'<tr><td valign="top" style="font-family:{SANS};font-size:16px;line-height:24px;color:{INK};padding:0 8px 6px 0;">&bull;</td><td style="font-family:{SANS};font-size:16px;line-height:24px;color:{INK};padding-bottom:6px;">{i}</td></tr>' for i in items)+'</table>'
