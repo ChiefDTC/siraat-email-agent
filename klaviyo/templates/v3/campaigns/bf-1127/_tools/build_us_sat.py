@@ -23,15 +23,15 @@ ul = ''.join(f'<tr><td valign="top" style="font-family:{SANS};font-size:17px;lin
 ul = f'<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 10px 0;">{ul}</table>'
 body = (p(f'Hey {FIRST},') +
     p('Quick one. On Black Friday I dropped our 12-piece set to $499. The biggest discount we&rsquo;ve ever given, and a lot of you grabbed it.') +
-    p('So I&rsquo;m keeping it on through Cyber Monday. After that, it goes back to $649.') +
+    p('So I kept it on for one more day. It ends today at midnight ET, then it goes back to $649.') +
     head(f'{a("THE 12-PIECE SET", L(SET,"set-title"))}: <s>$649</s>, now $499.') +
     p('That&rsquo;s an extra 23% off, and 76% off the regular price of $2,047. Here&rsquo;s what&rsquo;s inside:', pad='0 0 6px 0') + ul +
     p('About $83 a piece, lids included. And it&rsquo;s the only way to get our hammered titanium pots.') +
     p(f'&#128073; {a("Get my 12-piece set for $499", L(SET, "button"))}', pad='4px 0 4px 0') +
     p('Already applied. Not showing? Use code BF499 at checkout. Free shipping. 30-day returns. 100,000+ happy customers.', 14, 21, MUTED, '0 0 18px 0') +
     signoff() +
-    p(f'P.S. Every pan and pot has a pure titanium cooking surface with no coatings. Nothing to wear off, which is why it&rsquo;s covered for 75 years. {a("The $499 ends Cyber Monday at midnight ET", L(SET,"ps"))}.', 15, 23, MUTED, '18px 0 0 0'))
-PRE = 'I&rsquo;m keeping it on through Cyber Monday.' + '&#847;&zwnj;&nbsp;' * 60
+    p(f'P.S. Every pan and pot has a pure titanium cooking surface with no coatings. Nothing to wear off, which is why it&rsquo;s covered for 75 years. {a("The $499 ends today at midnight ET", L(SET,"ps"))}.', 15, 23, MUTED, '18px 0 0 0'))
+PRE = 'It ends today.' + '&#847;&zwnj;&nbsp;' * 60
 foot = p('Siraats Kitchen &middot; {{ organization.full_address }}<br><a href="{% unsubscribe_link %}" style="color:#6B6660;">Unsubscribe</a> &middot; <a href="{% manage_preferences_link %}" style="color:#6B6660;">Preferences</a>', 12, 18, MUTED, '28px 0 0 0')
 h = f'''<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The 12-piece set is still $499</title></head>
