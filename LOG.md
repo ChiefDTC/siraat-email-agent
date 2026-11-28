@@ -737,3 +737,4 @@ Nieuwste bovenaan. Elke regel: datum, wat er gedaan is, wat het opleverde of wat
 - 2026-11-28 11:15 UTC: Za avond US: segment VQUryr (opende/klikte tekstbrief of A/B in 3d, 0 orders in 2d); last-call tekstmail template WBaYHj, concept 01M8GXK7YZ075M2NHV6THHQ0DS (18:00 lokaal, BF499); SMS last call concept 01M8GXKGCBG667AMX5VBH0J597 (VJdd3C, excl. INT SMS, Texas, wacht op order, 3d/14d kopers, 19:00 lokaal). VIP-mail kopers afgeraden (restitutierisico, 'ships with order' niet waar te maken).
 - 2026-11-28 11:20 UTC: SMS US last call (01M8GXKGCBG667AMX5VBH0J597) ingepland op verzoek Floris: 28 nov 19:00 recipient local.
 - 2026-11-28 11:20 UTC: SMS US last call (01M8GXKGG77SQ0GF14E2FVP9KM) ingepland op verzoek Floris: 28 nov 19:00 recipient local.
+- 2026-11-28 11:30 UTC: Resend 3 US geannuleerd (Floris). Tekstbrief niet-openers 01M8GWVY30X2CK0H2VVNP4Y36N ingepland 10:00 recipient local (Sending). Last call mail 01M8GXK7YZ075M2NHV6THHQ0DS nog draft.
